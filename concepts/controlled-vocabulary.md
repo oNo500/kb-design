@@ -47,34 +47,26 @@ Z39.19 把受控词表分为四个层级,本体虽不在其范围内但常作为
 
 ### 标准
 
-- **ISO 25964-1:2011** Information and documentation — Thesauri and interoperability with other vocabularies — Part 1: Thesauri for information retrieval
-  <https://www.iso.org/standard/53657.html>
+- [ISO 25964-1:2011 — Thesauri and interoperability with other vocabularies, Part 1: Thesauri for information retrieval](https://www.iso.org/standard/53657.html)
   取代 ISO 2788 和 ISO 5964;2022 年复审确认。
-  ⚠️ 正在修订中,新版 (ISO/FDIS 25964-1, 标题改为 "...for information retrieval, management and use") 预计 2026 年出版,数据模型扩展到知识图谱、AI 等场景:<https://www.iso.org/standard/86713.html>
-- **ISO 25964-2:2013** Part 2: Interoperability with other vocabularies
-  <https://www.iso.org/standard/53658.html>
-- NISO 维护的 ISO 25964 数据模型、XML schema 与 SKOS 映射:
-  <https://www.niso.org/schemas/iso25964>
-- **ANSI/NISO Z39.19-2005 (R2010)** Guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies
-  <https://www.niso.org/publications/ansiniso-z3919-2005-r2010>
+  ⚠️ 正在修订中:[ISO/FDIS 25964-1](https://www.iso.org/standard/86713.html)(标题改为 "...for information retrieval, management and use")预计 2026 年出版,数据模型扩展到知识图谱、AI 等场景。
+- [ISO 25964-2:2013 — Part 2: Interoperability with other vocabularies](https://www.iso.org/standard/53658.html)
+- [NISO: ISO 25964 数据模型、XML schema 与 SKOS 映射](https://www.niso.org/schemas/iso25964)
+- [ANSI/NISO Z39.19-2005 (R2010) — Guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies](https://www.niso.org/publications/ansiniso-z3919-2005-r2010)
   美国标准,可免费下载 PDF。list / synonym ring / taxonomy / thesaurus 四层分类出自此。
-- **GB/T 13190.1-2015** 信息与文献 叙词表及与其他词表的互操作 第1部分:用于信息检索的叙词表(等同采用 ISO 25964-1)
-  <https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D7A385D3A7E05397BE0A0AB82A>
-- **GB/T 13190.2-2018** 第2部分:与其他词表的互操作
-  <https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D82DD2D3A7E05397BE0A0AB82A>
-- **W3C SKOS** Simple Knowledge Organization System Reference (2009 Recommendation)
-  <https://www.w3.org/TR/skos-reference/>
+- [GB/T 13190.1-2015 信息与文献 叙词表及与其他词表的互操作 第1部分:用于信息检索的叙词表](https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D7A385D3A7E05397BE0A0AB82A)(等同采用 ISO 25964-1)
+- [GB/T 13190.2-2018 第2部分:与其他词表的互操作](https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D82DD2D3A7E05397BE0A0AB82A)
+- [W3C SKOS Simple Knowledge Organization System Reference](https://www.w3.org/TR/skos-reference/)(2009 Recommendation)
 
 ### 教材 / 参考资料
 
-- Harpring, Patricia. *Introduction to Controlled Vocabularies: Terminology for Art, Architecture, and Other Cultural Works*. Getty Research Institute. 在线免费版(2023 修订):
-  <https://www.getty.edu/research/publications/electronic_publications/intro_controlled_vocab/>
+- Harpring, Patricia. [*Introduction to Controlled Vocabularies: Terminology for Art, Architecture, and Other Cultural Works*](https://www.getty.edu/research/publications/electronic_publications/intro_controlled_vocab/). Getty Research Institute. 在线免费版,2023 修订。
 - Lancaster, F.W. *Vocabulary Control for Information Retrieval*. 2nd ed. Information Resources Press, 1986.(奠基性著作,无官方在线版)
 - Aitchison, J., Gilchrist, A., Bawden, D. *Thesaurus Construction and Use: A Practical Manual*. 4th ed. Europa Publications, 2000.
 
 ### 实际词表范例
 
-- MeSH (Medical Subject Headings, 美国国家医学图书馆):<https://www.nlm.nih.gov/mesh/>
-- LCSH (Library of Congress Subject Headings):<https://id.loc.gov/authorities/subjects.html>
-- AAT (Getty Art & Architecture Thesaurus):<https://www.getty.edu/research/tools/vocabularies/aat/>
-- 《汉语主题词表》(中国科学技术信息研究所):<https://ct.istic.ac.cn/>
+- [MeSH (Medical Subject Headings)](https://www.nlm.nih.gov/mesh/) —— 美国国家医学图书馆
+- [LCSH (Library of Congress Subject Headings)](https://id.loc.gov/authorities/subjects.html)
+- [AAT (Getty Art & Architecture Thesaurus)](https://www.getty.edu/research/tools/vocabularies/aat/)
+- [《汉语主题词表》](https://ct.istic.ac.cn/) —— 中国科学技术信息研究所
