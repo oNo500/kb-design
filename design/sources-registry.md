@@ -6,12 +6,12 @@
 
 ```yaml
 - id: cwe
-  name: MITRE Common Weakness Enumeration
+  entity: cwe                    # 实体表里的 standard;名称、分级、版本、URL 记在那边
   role: [mapping, structure, group]
-  version: "4.20"
-  checked: 2026-08-20
-  url: https://cwe.mitre.org/
+  checked: 2026-08-20            # 上次核对作为来源的条目与版本
 ```
+
+名称、`tier`、`version`、`url` 记在[命名实体词表](entities.md),本表不重复;`entity` 必须指向 `kind` 为 `standard` 或 `publication` 的实体。
 
 `role` 可多选:
 
@@ -24,7 +24,7 @@
 
 `candidate` 与其余三者互斥:条目不稳定无编号,只用来发现词。
 
-复核周期的分档见[来源分级草案](drafts/sources.md),草案生效前只记 `version` 和 `checked`。借入来源的进一步条件(分级、版本要求)留待治理方案。
+复核周期按实体的 `tier`,见[来源分级](drafts/sources.md)。借入来源的进一步条件(分级、版本要求)留待治理方案。
 
 ## 三种用法
 

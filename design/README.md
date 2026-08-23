@@ -11,7 +11,7 @@
 │   ├─ 层级结构 hierarchy.md    树怎么分层、借入规则、各概念下的来源、结构预览
 │   └─ 来源名称规范表 sources-registry.md   外部体系怎么登记、借入 / 映射 / 派生组、match 怎么写
 │
-├─ 命名实体词表 entities.md     产品、语言、组织:个体不进主题树,通过 subjects 挂主题
+├─ 命名实体词表 entities.md     产品、语言、组织、标准、文献:个体不进主题树,通过 subjects 挂主题
 │
 └─ drafts/                       未生效
     ├─ tree-by-discipline.md     决定记录:顶层为什么按学科不按分面
@@ -19,7 +19,7 @@
     ├─ division-characteristics.md   零自定的唯一例外:划分特征的治理
     ├─ facet-field.md            分面字段:取值、触发条件
     ├─ concept-groups.md         手工概念组:登记、规则
-    └─ sources.md                来源分级与复核周期
+    └─ sources.md                来源分级与复核周期(依据已落实,待转正)
 ```
 
 ## 词表一览
@@ -27,7 +27,7 @@
 | 词表 | 文件 | 管什么 | 设计 |
 |---|---|---|---|
 | 主题词表 | `vocab/topics.yaml` | 类:领域与概念,层级树 | topics.md、hierarchy.md |
-| 命名实体词表 | `vocab/entities.yaml` | 个体:产品、语言、组织 | entities.md |
+| 命名实体词表 | `vocab/entities.yaml` | 个体:产品、语言、组织、标准、文献 | entities.md |
 | 来源名称规范表 | `vocab/sources.yaml` | 外部知识体系与词表 | sources-registry.md |
 | 划分特征登记 | `vocab/characteristics.yaml` | 分析层数组的划分特征 | drafts/division-characteristics.md |
 | 手工概念组 | `vocab/groups.yaml` | 按用途圈的视图 | drafts/concept-groups.md |

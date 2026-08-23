@@ -111,6 +111,7 @@
     指通过拼接用户输入改变 SQL 语义的攻击及对应缺陷;
     参数化查询等防御手段不在此。
   source: self                           # 借入的概念:借自哪个知识体系;本地建立:self
+  origin: []                             # 本地概念的源头文献:实体表里的 publication / standard id
   match:                                 # 到外部词表的映射
     - { source: cwe, id: CWE-89, rel: exactMatch }
     - { source: owasp-top10, id: "A03:2021", rel: broadMatch }
@@ -121,7 +122,18 @@
 
 必填:`id` `label.zh` `label.en` `broader` `status` `added`。其余按需。`scope` 对本地建立的概念强烈建议填——它比定义更实用,能防止同一概念被两个人(或半年后的自己)理解成两样。
 
-字段名与标准的对应:`alt` / `hidden` 对应 SKOS `altLabel` / `hiddenLabel`;`broader` `related` 对应 SKOS 同名属性;`arrays` 对应 ISO 25964-1 数据模型的 ThesaurusArray;`scope` 对应 ISO 25964-1 范围注释;`history` 对应历史注释;`status` 对应 ISO 25964-1 数据模型的 `status`。
+`origin` 是本地概念的文献依据:它最早在哪篇文献里提出或定型。例:
+
+```yaml
+- id: hexagonal-architecture
+  broader: [software-design]
+  origin: [cockburn-2005-hexagonal]      # 实体表里的 publication,tier archival
+  source: self
+```
+
+这对应 Z39.19 §11.1.4 词记录的「来源」字段——对新词和生僻词尤其重要,可引用出版物。它不是 `match`:映射指向外部词表的条目,源头文献不是词表。按 `origin` 反查,能看出哪些概念出自标准、哪些出自论文、哪些出自博文。
+
+字段名与标准的对应:`alt` / `hidden` 对应 SKOS `altLabel` / `hiddenLabel`;`broader` `related` 对应 SKOS 同名属性;`arrays` 对应 ISO 25964-1 数据模型的 ThesaurusArray;`scope` 对应 ISO 25964-1 范围注释;`history` 对应历史注释;`status` 对应 ISO 25964-1 数据模型的 `status`;`origin` 对应 Z39.19 §11.1.4 词记录的 source 字段。
 
 数组在文件顶部单独登记,对应 ISO 25964-1 数据模型的 ThesaurusArray 与 NodeLabel。标识二选一或都有:`source`(按来源分组)或 `characteristic`(按划分特征分组,需在 `characteristics.yaml` 登记):
 
@@ -173,6 +185,7 @@ arrays:
 - `arrays` 指向存在的数组,且该数组的 `superordinate` 在本概念的 `broader` 里
 - 数组的 `source` 或 `characteristic` 至少一个;`characteristic` 在 `characteristics.yaml` 里;分析层数组的成员都在上位的下位集合内,且同一划分特征下每个下位至多属一组
 - `source` 不是 `self` 的概念必有一条 `match` 指向同一来源
+- `origin` 指向实体表里 `kind` 为 `publication` 或 `standard` 的实体
 - `label.en` 和 `alt` 在全表内不重复(重复 = 可能是同一概念建了两次)
 - 统计:每个第 2 层概念下 `unassigned` 的比例(盲区地图)、`candidate` 被引用次数
 
@@ -182,7 +195,7 @@ arrays:
 |---|---|---|
 | 树怎么分层、每层按什么分、从哪借入 | [层级结构](hierarchy.md) | 本文的 `broader`、`arrays`、`source` 字段按它的规则填 |
 | 外部体系怎么登记、借入 / 映射 / 派生组三种用法、`match` 怎么写 | [来源名称规范表](sources-registry.md) | 本文的 `source`、`match.source` 只能写它登记的 id |
-| 分面字段 | [草案](drafts/facet-field.md) | 未生效,本文不设该字段 |
+| 分面字段 | [草案](drafts/facet-field.md) | 未生效,本文不设该字段;「所有标准」「所有文献」由实体表回答 |
 | 手工概念组 | [草案](drafts/concept-groups.md) | 未生效;派生组已随映射自动存在 |
 | 导航 | — | 把树渲染成目录就是导航;树不依赖界面 |
 | 知识图谱 | [概念文](../concepts/knowledge-graph.md) | 现在边只有 `broader` / `related` 两种,节点是概念不是实体。以后加带类型的边时节点复用,不重建 |
