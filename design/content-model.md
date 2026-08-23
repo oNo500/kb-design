@@ -12,7 +12,10 @@
 |---|---|---|---|
 | `identifier` | identifier | 是 | 按下文 id 规则，稳定不变 |
 | `title` | title | 是 | 字面值 |
-| `type` | type | 是 | [文档类型词表](#文档类型词表)的 id，恰好一个 |
+| `type` | type | 是 | 体裁：[文档类型词表](#文档类型词表)的 id，恰好一个 |
+| `genre` | 本库扩展，依据 IPTC genre | 是 | 作者立场：[体裁词表](#体裁词表)的 id，恰好一个 |
+| `form` | 本库扩展 | 否 | 载体：Wikidata 的类，如 `cheat-sheet`（Q2309859）；长文不填 |
+| `level` | 本库扩展 | 否 | 认知层级：Bloom 修订版六级之一，见下 |
 | `subject` | subject | 是 | 主题词表的概念 id，一个或多个 |
 | `entities` | 本库扩展，最近的 DCMI 属性是 `references` | 否 | 命名实体词表的 id，零个或多个 |
 | `source` | source | 否 | 本单元派生自的内容单元或实体 id |
@@ -32,16 +35,47 @@
 
 ## 文档类型词表
 
-`vocab/types.yaml`，`type` 字段的取值。一份术语表（Z39.19 的 list），取 Diátaxis 的四类：
+`vocab/types.yaml`，`type` 字段的取值：体裁，按读者来做什么分。一份术语表（Z39.19 的 list），取 Diátaxis 的四类，加 DITA 1.3 技术内容里 Diátaxis 没有的两类：
 
-| id | 首选词 | 读者来做什么 | 写法 |
+| id | 首选词 | 读者来做什么 | 来源 |
 |---|---|---|---|
-| `tutorial` | 教程 | 学习，动手 | 带着做一遍，保证成功 |
-| `how-to` | 操作指南 | 工作，动手 | 完成一个具体任务的步骤 |
-| `reference` | 参考 | 工作，查阅 | 事实，克制，结构镜像对象 |
-| `explanation` | 解释 | 学习，理解 | 为什么，讨论，多角度 |
+| `tutorial` | 教程 | 学习，动手 | Diátaxis |
+| `how-to` | 操作指南 | 工作，动手 | Diátaxis |
+| `reference` | 参考 | 工作，查阅 | Diátaxis |
+| `explanation` | 解释 | 学习，理解 | Diátaxis |
+| `troubleshooting` | 排障 | 工作，纠正 | DITA 1.3 §2.7.1.6 |
+| `glossary-entry` | 术语条目 | 查阅一个术语的一个义项 | DITA 1.3 §2.7.1.7 |
 
-DCMI Type Vocabulary 分的是媒介（Text、Image……），本库的内容单元都是 Text，不用它区分；体裁用 Diátaxis。一条内容单元恰好一类，这是 Diátaxis 的核心主张：四类不能混，混合是多数文档问题的根源。以后需要第五类时先看能否归入四类，不能再加，加时登记来源。
+一条内容单元恰好一类，这是 Diátaxis 的核心主张。DCMI Type Vocabulary 分的是媒介（Text、Image……），本库的内容单元都是 Text，不用它区分。
+
+## 体裁词表
+
+`vocab/genres.yaml`，`genre` 字段的取值：作者立场，按作者与内容的关系分。取 IPTC NewsCodes genre 词表的子集，每条 `match` 到 IPTC 的 URI：
+
+| id | 首选词 | IPTC 定义 | 笔记里的意思 |
+|---|---|---|---|
+| `background` | 背景 | 为所报事件提供背景与解释 | 转述事实、原理，不评价 |
+| `analysis` | 分析 | 深入研究后得出的数据与结论 | 个人理解、比较、推断 |
+| `opinion` | 观点 | 反映作者观点的评论 | 心得、偏好、立场 |
+| `review` | 评价 | 对创作活动或服务的评价 | 工具、书、课程好不好 |
+| `advice` | 建议 | 对个人问题的解答 | 给自己或他人的操作建议 |
+
+IPTC 的词表是为新闻设计的，定义里的“记者”“事件”按笔记语境理解；映射用 `closeMatch`。理论见[笔记的类型](../concepts/note-types.md)。
+
+## 认知层级
+
+`level` 的取值，Bloom 修订版（Anderson & Krathwohl 2001，据 Krathwohl 2002）六级，作者对自己理解深度的评估，可选：
+
+| id | 层级 | 含义 |
+|---|---|---|
+| `remember` | 记忆 | 从长期记忆中提取 |
+| `understand` | 理解 | 确定材料的含义 |
+| `apply` | 应用 | 在给定情境中执行或使用程序 |
+| `analyze` | 分析 | 拆成部分并确定部分之间、与整体的关系 |
+| `evaluate` | 评价 | 基于标准做判断 |
+| `create` | 创造 | 把元素组合成新的整体 |
+
+成熟度（Ahrens 的闪念 / 文献 / 永久笔记）不另设字段，由 `status` 的 `draft` / `active` 表达；文献笔记的特征由 `references` 非空表达。
 
 ## id 规则
 
@@ -60,6 +94,8 @@ DCMI Type Vocabulary 分的是媒介（Text、Image……），本库的内容�
 | 字段 | 词表 | 校验 |
 |---|---|---|
 | `type` | `vocab/types.yaml` | 值在表内 |
+| `genre` | `vocab/genres.yaml` | 值在表内 |
+| `level` | 本文认知层级表 | 值在表内 |
 | `subject` | `vocab/topics.yaml` | 值在表内，且 `status` 不是 `deprecated`。引用对概念状态的影响见[主题词表设计](topics.md)生命周期 |
 | `entities`、`references`、`source` | `vocab/entities.yaml` 或内容单元 | 值在表内 |
 
@@ -95,13 +131,14 @@ DCMI Type Vocabulary 分的是媒介（Text、Image……），本库的内容�
 
 ## 待定事项
 
-- 文档类型词表只有 Diátaxis 四类，装不下学习笔记的形态（选材策略、载体、事实与观点的关系）；待概念调研后重定 `type`，可能拆成多个字段
 
 ## 权威来源
 
 - [ISO 15836-1:2017](https://www.iso.org/standard/71339.html)、[ISO 15836-2:2019](https://www.iso.org/standard/71341.html)、[DCMI Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)：字段
 - [DITA 1.3 §2.2.1 DITA topics](https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/archSpec/base/topicover.html)：内容单元的定义参照
-- [Diátaxis](https://diataxis.fr/)：文档类型
+- [Diátaxis](https://diataxis.fr/)、[DITA 1.3 §2.7.1](https://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/technicalContent/dita-technicalContent-InformationTypes.html)：文档类型
+- [IPTC NewsCodes Genre](https://cv.iptc.org/newscodes/genre/)：体裁
+- Krathwohl, D. R. [*A Revision of Bloom's Taxonomy: An Overview*](https://cmapspublic2.ihmc.us/rid=1Q2PTM7HL-26LTFBX-9YN8/Krathwohl%202002.pdf), 2002：认知层级
 - ANSI/NISO Z39.19-2005 §6.2.1 Homographs：限定词；§11.3 Maintenance：生命周期
 - [ISO 15489-1:2016](https://www.iso.org/standard/62542.html) §3.8 disposition、§8.5 disposition authorities：处置决定的写法，见[笔记](../sources/iso-15489.md)
 - ISO 25964-1:2011 §2.25 identifier

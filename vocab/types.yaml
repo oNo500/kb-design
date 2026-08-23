@@ -2,7 +2,7 @@
 version:
   id: "2026.08"
   date: 2026-08-23
-  note: 初版，Diátaxis 四类
+  note: Diátaxis 四类加 DITA 两类
 
 types:
   - id: tutorial
@@ -27,5 +27,17 @@ types:
     label: { zh: 解释, en: Explanation }
     scope: 读者为了理解为什么；讨论，多角度，承认观点
     match: [{ source: diataxis, id: explanation, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: troubleshooting
+    label: { zh: 排障, en: Troubleshooting }
+    scope: 读者为了纠正一个已出现的问题；症状、原因、处理
+    match: [{ source: dita, id: "2.7.1.6", rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: glossary-entry
+    label: { zh: 术语条目, en: Glossary entry }
+    scope: 一个术语的一个义项
+    match: [{ source: dita, id: "2.7.1.7", rel: exactMatch }]
     status: active
     added: 2026-08-23

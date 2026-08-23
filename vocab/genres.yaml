@@ -1,0 +1,37 @@
+# 体裁词表。设计见 design/content-model.md「体裁词表」。取值为 IPTC NewsCodes genre 的子集。
+version:
+  id: "2026.08"
+  date: 2026-08-23
+  note: 初版，IPTC genre 五类
+
+genres:
+  - id: background
+    label: { zh: 背景, en: Background }
+    scope: 转述事实、原理，不评价
+    match: [{ source: iptc-genre, id: "http://cv.iptc.org/newscodes/genre/Background", rel: closeMatch }]
+    status: active
+    added: 2026-08-23
+  - id: analysis
+    label: { zh: 分析, en: Analysis }
+    scope: 个人理解、比较、推断
+    match: [{ source: iptc-genre, id: "http://cv.iptc.org/newscodes/genre/Analysis", rel: closeMatch }]
+    status: active
+    added: 2026-08-23
+  - id: opinion
+    label: { zh: 观点, en: Opinion }
+    scope: 心得、偏好、立场
+    match: [{ source: iptc-genre, id: "http://cv.iptc.org/newscodes/genre/Opinion", rel: closeMatch }]
+    status: active
+    added: 2026-08-23
+  - id: review
+    label: { zh: 评价, en: Review }
+    scope: 工具、书、课程好不好
+    match: [{ source: iptc-genre, id: "http://cv.iptc.org/newscodes/genre/Review", rel: closeMatch }]
+    status: active
+    added: 2026-08-23
+  - id: advice
+    label: { zh: 建议, en: Advice }
+    scope: 给自己或他人的操作建议
+    match: [{ source: iptc-genre, id: "http://cv.iptc.org/newscodes/genre/Advice", rel: closeMatch }]
+    status: active
+    added: 2026-08-23

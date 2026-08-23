@@ -113,3 +113,11 @@ sources:
     entity: db-engines
     role: [candidate]
     checked: 2026-08-23
+  - id: dita
+    entity: dita
+    role: [mapping, structure]
+    checked: 2026-08-23
+  - id: iptc-genre
+    entity: iptc-genre
+    role: [mapping, structure]
+    checked: 2026-08-23

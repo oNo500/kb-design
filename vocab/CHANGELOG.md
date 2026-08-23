@@ -33,6 +33,15 @@
 ### types.yaml
 
 - 新增 Diátaxis 四类
+- 加 DITA 1.3 的排障、术语条目两类
+
+### genres.yaml
+
+- 新增：IPTC genre 的五类（背景、分析、观点、评价、建议），closeMatch 到 IPTC URI
+
+### entities.yaml、sources.yaml
+
+- 加 dita、iptc-genre 两个来源
 
 ### 治理
 
