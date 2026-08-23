@@ -13,7 +13,7 @@
 | 依据 warrant | [词表的建设与维护](../concepts/vocabulary-construction.md) | Hulme, *Principles of Book Classification*, Library Association Record 1911–12；Z39.19 §5.3.5 | [topics.md](topics.md)：从内容抽词、候选词、废除无引用的词 |
 | 借入层级求完整 | [词表的建设与维护](../concepts/vocabulary-construction.md)（自上而下、未标引词） | 本库 README；Z39.19 §11.1.3.1、§11.1.8 | [hierarchy.md](hierarchy.md)：规则 4、5；未标引状态 |
 | 第一原理与设计理由 | [第一原理与设计理由](../concepts/first-principles.md) | Aristotle；Kunz & Rittel IBIS（1970）；Nygard ADR（2011） | 本文；设计文档不删旧决定 |
-| 写作规范 | [写作规范](../concepts/writing-conventions.md) | 原则：ISO 24495-1:2023；中文书面语：GB/T 15834、W3C clreq；技术写作：Google、Microsoft style guide；文档分类：Diátaxis | [writing.md](writing.md)；CLAUDE.md 为其摘要；目录划分 `concepts/` 解释、`design/` 参考 |
+| 写作规范 | [写作规范](../concepts/writing-conventions.md) | 原则：ISO 24495-1:2023；中文书面语：GB/T 15834、W3C clreq；技术写作：Google、Microsoft style guide；文档分类：Diátaxis | [writing.md](writing.md)；CLAUDE.md 为其摘要；目录划分 `concepts/` 解释、`design/` 参考；[content-model.md](content-model.md) 文档类型词表取 Diátaxis 四类 |
 | 知识体系作上层结构 | [知识体系](../concepts/body-of-knowledge.md) | SWEBOK / ISO/IEC TR 19759；CS2023；GB/T 13745；ISO 25964-2 §19 | [hierarchy.md](hierarchy.md)：第 2、3 层取自知识领域与知识单元 |
 | 词表映射 | [词表映射](../concepts/vocabulary-mapping.md) | ISO 25964-2 §6–11；SKOS §10 | [sources-registry.md](sources-registry.md)：三种用法、`match`、默认 closeMatch |
 | 借入照抄与本地分析分层 | [词表的层级](../concepts/vocabulary-hierarchy.md)（数组可选、多数组归属）、[分面](../concepts/facet.md)（分析是重组）、[知识体系](../concepts/body-of-knowledge.md)（枚举、只借上层） | ISO 25964-1 数据模型；Z39.19 §8.3.5 | [decisions/borrow-and-analyze.md](decisions/borrow-and-analyze.md)；[hierarchy.md](hierarchy.md) 规则 6、9–12 |
