@@ -16,7 +16,7 @@
 ### 借入
 
 3. **可借入的来源**:[来源名称规范表](sources-registry.md)中 `role` 含 `structure` 的。分级与版本方面的进一步要求留待治理方案
-4. **起步全借**:每个可借入的来源,在它对应的概念下全部以未标引状态建入。未标引节点多是目的——它们就是盲区地图
+4. **顶层由范围决定,顶层之下起步全借**:顶层概念是[范围](topics.md)声明的学科,`source: self`,各自 `match` 到 GB/T 13745;顶层之下,每个可借入的来源在它对应的概念下全部以未标引状态建入。未标引节点多是目的——它们就是盲区地图。范围之内求完整,范围之外不存在
 5. **借入深度**:借到第 3 层,即知识体系中有稳定编号、可被引用的最深一层。CS2023 的知识单元有代码,其下的主题没有;SWEBOK 的主题有章节号,子主题没有;GB/T 13745 三级学科有代码——都落在第 3 层。再往下没有可引用的权威结构
 
 ```
@@ -49,9 +49,16 @@
 
 | 概念 | 下位来源 | 借到 |
 |---|---|---|
-| (根) | GB/T 13745 一级学科:520 计算机科学技术 → computing;870 图书馆、情报与文献学 → library-and-information-science | 第 1 层 |
+| (根) | 范围声明的八个学科,`source: self`,各 `match` GB/T 13745 一级学科 | 第 1 层 |
+| mathematics | GB/T 13745 二级学科 110.xx | 第 2 层 |
+| information-and-systems-science | GB/T 13745 二级学科 120.xx | 第 2 层 |
 | computing | 待定,见下 | 第 2 层 |
+| management | GB/T 13745 二级学科 630.xx | 第 2 层 |
+| linguistics | GB/T 13745 二级学科 740.xx | 第 2 层 |
+| journalism-and-communication | GB/T 13745 二级学科 860.xx | 第 2 层 |
 | library-and-information-science | GB/T 13745 二级学科 870.10–870.50 | 第 2 层 |
+| education | GB/T 13745 二级学科 880.xx | 第 2 层 |
+| 以上六个新顶层的二级学科之下 | GB/T 13745 三级学科 | 第 3 层 |
 | foundations | CS2023 相关知识领域(待定,见下) | 第 3 层 |
 | engineering | SWEBOK v4 18 章 | 第 3 层 |
 | security | ASVS 5.0 章;CWE 顶层类别;ATT&CK 14 个战术——三个数组 | 第 3 层 |
@@ -67,7 +74,7 @@
 | archival-science | GB/T 13745 三级学科 870.40xx | 第 3 层 |
 | museology | 无三级学科 | — |
 
-**computing 的第 2 层是未解决的问题。** 现在的九个概念(engineering、security、web……)是本库原表里的,「借自」有 ACM CCS、CS2023、self 三种——这一层不是从某个体系整体借入的,违反规则 4 和 13。两条路:整体借入 CS2023 的 17 个知识领域(foundations 拆散,web 降为 SPD 下的知识单元,多出 OS、PDC、GIT 等盲区节点),或承认这层为 self 并放弃它的完整性。待定。
+**computing 的第 2 层是未解决的问题。** 现在的九个概念(engineering、security、web……)是本库原表里的,「借自」有 ACM CCS、CS2023、self 三种——这一层不是从某个体系整体借入的,违反规则 4 和 13;顶层之下必须全借,所以「承认为 self」不成立。剩下的选择是借哪个体系:CS2023 的 17 个知识领域(foundations 拆散,web 降为 SPD 下的知识单元,多出 OS、PDC、GIT 等盲区节点),或 GB/T 13745 520 的二级学科(与其他七个顶层一致,但 GB 对计算机的划分偏旧),或 ACM CCS 顶层类目。待定。
 
 只作映射和候选来源、不借入的体系登记在[来源名称规范表](sources-registry.md)。
 
@@ -76,7 +83,17 @@
 ## 结构预览
 
 ```
-computing 计算与信息技术                        ← GB/T 13745 520
+(根)                                           ← 范围声明,八个顶层
+├─ mathematics 数学                            ← GB/T 13745 110;二级、三级学科待借入
+├─ information-and-systems-science 信息科学与系统科学   ← 120;待借入
+├─ computing 计算机科学技术                    ← 520;第 2 层来源待定,见下
+├─ management 管理学                           ← 630;待借入
+├─ linguistics 语言学                          ← 740;待借入
+├─ journalism-and-communication 新闻学与传播学  ← 860;待借入
+├─ library-and-information-science 图书馆、情报与文献学   ← 870;见下
+└─ education 教育学                            ← 880;待借入
+
+computing 计算机科学技术                        ← GB/T 13745 520
   ├─ foundations 计算机科学基础                 ← 第 2 层来源待定
   │   ├─ 数学与统计基础                          ← CS2023 MSF;数学落这里
   │   ├─ 体系结构与组织                          ← CS2023 AR;硬件落这里
@@ -168,7 +185,8 @@ programming-languages
 
 ## 待定事项
 
-- computing 的第 2 层来源:整体借入 CS2023 17 个知识领域,还是承认为 self
+- computing 的第 2 层来源:CS2023 17 个知识领域、GB/T 13745 520 二级学科、ACM CCS 顶层类目,三选一
+- 六个新顶层(110、120、630、740、860、880)的二级、三级学科清单待从 GB/T 13745 取
 - artificial-intelligence 下 ATLAS、OWASP LLM Top 10 的结构核对
 - 多层级时 `broader` 列表的顺序是否赋予含义(显示、排序)
 - 分析层数组何时启用,见[划分特征治理](drafts/division-characteristics.md)

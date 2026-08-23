@@ -54,22 +54,31 @@
 
 ### 覆盖范围
 
-两个顶层概念:
+顶层概念由范围决定,不借入。取 GB/T 13745-2009 一级学科中的八个,各自 `match` 到对应代码:
 
-- `computing` 计算与信息技术
-- `library-and-information-science` 图书馆、情报与文献学(GB/T 13745 一级学科 870 的名称)
+| id | 首选词 | GB/T 13745 |
+|---|---|---|
+| `mathematics` | 数学 | 110 |
+| `information-and-systems-science` | 信息科学与系统科学 | 120 |
+| `computing` | 计算机科学技术 | 520 |
+| `management` | 管理学 | 630 |
+| `linguistics` | 语言学 | 740 |
+| `journalism-and-communication` | 新闻学与传播学 | 860 |
+| `library-and-information-science` | 图书馆、情报与文献学 | 870 |
+| `education` | 教育学 | 880 |
+
+顶层之下按[层级结构](hierarchy.md)规则 4 全部借入该学科的二级、三级学科;`computing` 的第 2 层另有决定,见层级结构。
 
 ### 邻近主题的处理
 
-挨着上述范围的主题,不另立顶层概念,作为某个第 2 层概念的下位收入。每项注明落点和依据,避免相关笔记无处可放。
+原先作为邻近主题降级处理的,其中数学、管理学、语言学已升为顶层。仍按降级处理的:
 
 | 主题 | 落点 | 依据 |
 |---|---|---|
-| 数学 | `foundations` 下的「数学与统计基础」 | CS2023 知识领域 MSF (Mathematical and Statistical Foundations) |
-| 硬件、体系结构 | `foundations` 下的「体系结构与组织」 | CS2023 知识领域 AR (Architecture and Organization) |
-| 项目管理 | `engineering` 下的「软件工程管理」 | SWEBOK v4 第 9 章 Software Engineering Management |
-| 通用职业技能(写作、沟通、时间管理) | `engineering` 下的「软件工程职业实践」 | SWEBOK v4 第 14 章 Software Engineering Professional Practice |
-| 术语学(ISO 704、1087、30042) | 待定:GB/T 13745 把术语学归语言学(740),本库无此顶层 | — |
+| 硬件、体系结构 | `computing` 下 CS2023 AR (Architecture and Organization) | CS2023 |
+| 项目管理 | 同时在 `engineering` 下 SWEBOK 第 9 章「软件工程管理」和 `management` 之下;多层级 | SWEBOK v4;GB/T 13745 630 |
+| 通用职业技能(写作、沟通、时间管理) | `engineering` 下 SWEBOK 第 14 章「软件工程职业实践」;写作另可挂 `journalism-and-communication` 之下 | SWEBOK v4 |
+| 术语学(ISO 704、1087、30042) | `linguistics` 之下,具体二级学科待核 | GB/T 13745 740 |
 | 结构化写作(DITA) | 待定:`engineering` 或 `web` 下某知识单元 | — |
 
 ### 排除范围
@@ -181,7 +190,7 @@ arrays:
 ## 待定事项
 
 - 排除范围:非技术的生活领域(健康、理财、旅行)是否排除
-- 术语学、结构化写作(DITA)的落点
+- 结构化写作(DITA)的落点;术语学在 740 语言学下的具体二级学科
 - 分面字段,见 [草案](drafts/facet-field.md)
 - 文件格式:YAML 单文件,还是每个第 2 层概念一个文件(概念过几百条时再考虑)
 - `related` 的使用规则:什么情况下加、是否要求互反
