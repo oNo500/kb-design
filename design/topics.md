@@ -181,7 +181,7 @@ arrays:
 
 ## 校验规则
 
-`scripts/check-topics`，每次改 `topics.yaml` 后跑：
+`scripts/check-topics.py`，每次改 `topics.yaml` 后跑：
 
 - 所有 `broader` 指向存在的 id；无环
 - `source` 和 `match.source` 在 `sources.yaml` 里

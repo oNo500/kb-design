@@ -37,7 +37,7 @@
 | 划分特征登记 | `vocab/characteristics.yaml` | 分析层数组的划分特征 | drafts/division-characteristics.md |
 | 手工概念组 | `vocab/groups.yaml` | 按用途圈的视图 | drafts/concept-groups.md |
 
-`vocab/` 目前尚未建任何文件。
+`vocab/` 初版 2026.08 已建，见 [CHANGELOG](../vocab/CHANGELOG.md)；`vocab/build/` 是生成输入，`scripts/build-topics.py` 生成，`scripts/check-topics.py` 校验。
 
 ## 阅读顺序
 

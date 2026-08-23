@@ -35,7 +35,7 @@
 | `design/drafts/` | 没有外部依据或未到触发条件的设计 | |
 | `design/targets/` | 各执行形态的映射（待建） | |
 | `sources/` | 对标准和文献的阅读笔记与抓取的清单 | |
-| `vocab/` | 词表数据（待建） | |
+| `vocab/` | 词表数据；`build/` 是生成输入 | [vocab/CHANGELOG.md](vocab/CHANGELOG.md) |
 | `scripts/` | 校验与转换脚本 | |
 | `CLAUDE.md` | 全库写作与术语规则的摘要 | [design/writing.md](design/writing.md) 为全文 |
 
@@ -45,4 +45,5 @@
 
 - 已定：主题词表的记录、层级、借入规则；命名实体词表；来源分级与复核；写作规则；内容模型与 id 规则；词表版本与回流；概念文十一篇
 - 草案：划分特征治理、分面字段、手工概念组
-- 待建：`vocab/` 数据、Obsidian 映射、导出
+- 已建：`vocab/` 五份词表初版 2026.08（700 个主题概念、27 个来源实体）
+- 待建：Obsidian 映射、导出

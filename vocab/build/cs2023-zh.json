@@ -1,0 +1,20 @@
+{
+"AL":"算法基础","AR":"体系结构与组织","AI":"人工智能","DM":"数据管理","FPL":"编程语言基础","GIT":"图形与交互技术","HCI":"人机交互","MSF":"数学与统计基础","NC":"网络与通信","OS":"操作系统","PDC":"并行与分布式计算","SEC":"安全","SEP":"社会、伦理与职业","SDF":"软件开发基础","SE":"软件工程","SPD":"专门平台开发","SF":"系统基础",
+"AL-Complexity":"复杂度","AL-Foundational":"基础数据结构与算法","AL-Models":"计算模型与形式语言","AL-SEP":"社会、伦理与职业","AL-Strategies":"算法策略",
+"AR-Assembly":"汇编级机器组织","AR-Heterogeneity":"异构体系结构","AR-IO":"接口与通信","AR-Logic":"数字逻辑与数字系统","AR-Memory":"存储层次","AR-Organization":"功能组织","AR-Performance-Energy":"性能与能效","AR-Quantum":"量子体系结构","AR-Representation":"机器级数据表示","AR-Security":"安全处理器体系结构","AR-SEP":"可持续性问题",
+"AI-Agents":"智能体与认知系统","AI-Introduction":"基本问题","AI-KRR":"知识表示与推理基础","AI-LRR":"逻辑表示与推理","AI-ML":"机器学习","AI-NLP":"自然语言处理","AI-Planning":"规划","AI-Probability":"概率表示与推理","AI-Robotics":"机器人学","AI-Search":"搜索","AI-SEP":"应用与社会影响","AI-Vision":"感知与计算机视觉",
+"DM-Analytics":"数据分析","DM-Core":"数据库系统核心概念","DM-Data":"数据的角色与数据生命周期","DM-Distributed":"分布式数据库与云计算","DM-Internals":"数据库管理系统内部","DM-Modeling":"数据建模","DM-NoSQL":"NoSQL 系统","DM-Processing":"查询处理","DM-Querying":"查询构造","DM-Relational":"关系数据库","DM-Security":"数据安全与隐私","DM-SEP":"社会、伦理与职业","DM-Unstructured":"半结构化与非结构化数据库",
+"FPL-OOP":"面向对象编程","FPL-Functional":"函数式编程","FPL-Logic":"逻辑编程","FPL-Scripting":"Shell 脚本","FPL-Event-Driven":"事件驱动与响应式编程","FPL-Parallel":"并行与分布式计算","FPL-Aspect":"面向切面编程","FPL-Types":"类型系统","FPL-Systems":"系统执行与内存模型","FPL-Translation":"语言翻译与执行","FPL-Syntax":"语法分析","FPL-Semantics":"编译器语义分析","FPL-Analysis":"程序分析与分析器","FPL-Code":"代码生成","FPL-Run-Time":"运行时行为与系统","FPL-Abstraction":"程序抽象与表示","FPL-Constructs":"高级程序构造","FPL-Pragmatics":"语言语用","FPL-Formalism":"形式语义","FPL-Design":"编程语言设计原则","FPL-Methodologies":"形式化开发方法","FPL-SEP":"社会、伦理与职业",
+"GIT-Animation":"计算机动画","GIT-Fundamentals":"基本概念","GIT-Image":"图像处理","GIT-Immersion":"沉浸","GIT-Interaction":"交互","GIT-Modeling":"几何建模","GIT-Physical":"实体计算","GIT-Rendering":"应用渲染与技术","GIT-SEP":"社会、伦理与职业","GIT-Shading":"着色与高级渲染","GIT-Simulation":"仿真","GIT-Visualization":"可视化",
+"HCI-Accessibility":"可访问性与包容性设计","HCI-Accountability":"设计中的责任与问责","HCI-Design":"系统设计","HCI-Evaluation":"设计评估","HCI-SEP":"社会、伦理与职业","HCI-User":"理解用户",
+"MSF-Discrete":"离散数学","MSF-Linear":"线性代数","MSF-Probability":"概率","MSF-Statistics":"统计","MSF-Calculus":"微积分",
+"NC-Applications":"网络应用","NC-Emerging":"新兴主题","NC-Fundamentals":"基础","NC-Mobility":"移动性","NC-Reliability":"可靠性支持","NC-Routing":"路由与转发","NC-Security":"网络安全","NC-SingleHop":"单跳通信",
+"OS-Advanced-Files":"高级文件系统","OS-Concurrency":"并发","OS-Devices":"设备管理","OS-Faults":"容错","OS-Files":"文件系统接口与实现","OS-Memory":"内存管理","OS-Principles":"操作系统原理","OS-Process":"进程模型","OS-Protection":"保护与安全","OS-Purpose":"操作系统的角色与目的","OS-Real-time":"实时与嵌入式系统","OS-Scheduling":"调度","OS-SEP":"社会、伦理与职业","OS-Virtualization":"虚拟化",
+"PDC-Algorithms":"算法","PDC-Communication":"通信","PDC-Coordination":"协调","PDC-Evaluation":"评估","PDC-Programs":"程序",
+"SEC-Coding":"安全编码","SEC-Crypto":"密码学","SEC-Engineering":"安全分析、设计与工程","SEC-Forensics":"数字取证","SEC-Foundations":"安全基础","SEC-Governance":"安全治理","SEC-SEP":"社会、伦理与职业",
+"SEP-Communication":"沟通","SEP-Context":"社会背景","SEP-DEIA":"多元、公平、包容与可访问","SEP-Economies":"计算经济","SEP-Ethical-Analysis":"伦理分析方法","SEP-History":"计算史","SEP-IP":"知识产权","SEP-Privacy":"隐私与公民自由","SEP-Professional-Ethics":"职业伦理","SEP-Security":"安全政策、法律与计算机犯罪","SEP-Sustainability":"可持续性",
+"SDF-Algorithms":"算法","SDF-Data-Structures":"基础数据结构","SDF-Fundamentals":"编程基本概念与实践","SDF-Practices":"软件开发实践","SDF-SEP":"社会、伦理与职业",
+"SE-Construction":"软件构造","SE-Design":"软件设计","SE-Formal":"形式化方法","SE-Refactoring":"重构与代码演化","SE-Reliability":"软件可靠性","SE-Requirements":"产品需求","SE-Teamwork":"团队协作","SE-Tools":"工具与环境","SE-Validation":"软件验证与确认",
+"SPD-Common":"共性问题","SPD-Embedded":"嵌入式平台","SPD-Game":"游戏平台","SPD-Interactive":"交互计算平台","SPD-Mobile":"移动平台","SPD-Robot":"机器人平台","SPD-Web":"Web 平台",
+"SF-Design":"系统设计","SF-Evaluation":"性能评估","SF-Foundations":"基本概念","SF-Overview":"计算机系统概览","SF-Performance":"系统性能","SF-Reliability":"系统可靠性","SF-Resource":"资源管理","SF-Security":"系统安全","SF-SEP":"社会、伦理与职业"
+}
