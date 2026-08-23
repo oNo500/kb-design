@@ -51,6 +51,8 @@
 | 6 | [来源复核](review.md) | 多久回头看一次来源 |
 | 7 | [写作规则](writing.md) | 写任何文件前要遵守什么 |
 | 8 | [内容模型](content-model.md) | 一条内容单元有什么、id 怎么取 |
+| 9 | [词表版本](versioning.md) | 什么时候发版、记什么 |
+| 10 | [回流](feedback.md) | 内容怎么反过来长出词表 |
 | — | [decisions/](decisions/) | 两份决定记录 |
 | — | [drafts/](drafts/) | 按需 |
 
