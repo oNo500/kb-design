@@ -24,7 +24,7 @@
 | `modified` | modified | 否 | ISO 8601 日期 |
 | `status` | 本库扩展 | 是 | `draft` / `active` / `deprecated` |
 | `isReplacedBy` | isReplacedBy | `deprecated` 时必填 | 替代它的内容单元 id |
-| `relation` | relation | 否 | 有关但不属前述关系的内容单元 id；必须互反 |
+| `relation` | relation | 否 | 有关但不属前述关系的内容单元 id；约束同主题词表的 RT：必须互反，只在两者主题不同、且常被一起读时加 |
 | `language` | language | 否 | 默认 `zh`，与默认不同时填 |
 
 不设 `description`：`title` 加 `subject` 已足够定位，正文本身就是说明。不设 `creator`、`publisher`、`rights`：单人库，值恒定，不记。
