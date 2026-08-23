@@ -1,6 +1,8 @@
 # 主题词表的层级结构
 
-`vocab/topics.yaml` 的树怎么分层、每层按什么分、从哪借入。整棵树是[层级](../concepts/vocabulary-hierarchy.md)的结果:每一层按一个划分特征往下分。字段、生命周期、流程见[主题词表设计](topics.md);外部来源的登记与用法见[来源名称规范表](sources-registry.md)。
+主题词表的树分四层以上:前三层从知识体系借入,第 4 层起本地建立。每一层按一个划分特征往下分;一个概念下按几个划分特征分,就有几个数组,每个数组有节点标签说明按什么分。本文定这棵树的分层规则、每层的划分特征、每个第 2 层概念下借入哪些数组。
+
+概念记录的字段在[主题词表设计](topics.md),来源的登记在[来源名称规范表](sources-registry.md)。理论依据见 [词表的层级](../concepts/vocabulary-hierarchy.md)、[知识体系](../concepts/body-of-knowledge.md)、[树按学科而非分面的决定](drafts/tree-by-discipline.md)。
 
 ## 规则
 
@@ -116,9 +118,9 @@ library-and-information-science 图书馆、情报与文献学
       第 3 层以下不预建。
 ```
 
-## 第 2 层概念及其数组
+## 各概念下的数组
 
-每个第 2 层概念下起步借入的数组。「借自」指该概念本身来自哪个知识体系;数组一列是「划分特征 ← 来源」。
+每个第 2 层概念下起步借入的数组。「借自」指该概念本身来自哪个知识体系;「数组」一列写「(划分特征) ← 来源」,一个概念下有几个数组就写几项。
 
 | id | 首选词 | 借自 | 数组 |
 |---|---|---|---|
@@ -141,13 +143,15 @@ library-and-information-science 图书馆、情报与文献学
 
 `library-and-information-science` 下的五个概念来自 [GB/T 13745-2009《学科分类与代码》](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E)一级学科 870 下的二级学科,第 3 层取其三级学科。原拟自加的「内容工程」取消:叙词表与检索语言归 870.3050 情报检索学,分类法归 870.1040 图书分类学,元数据与编目归 870.1045 图书编目学;术语学与结构化写作见[主题词表设计](topics.md)的邻近主题表。
 
-### 人工智能的下位结构
+## 两个需要说明的概念
+
+### 人工智能
 
 取 CS2023 知识领域 AI 的 12 个知识单元:Introduction、Search、KRR、LRR、Probability、ML、NLP、Agents、Planning、Vision、Robotics、SEP。它偏学术——机器人、规划与本库侧重的 LLM 应用工程距离较远——但它是唯一有编号的人工智能知识体系;未标引的单元是盲区标记,不是负担。首选词用「人工智能」而不是原拟的「AI 应用工程」:侧重体现在内容里,不体现在知识体系的边界上。
 
-OWASP GenAI、ATLAS、NIST AI RMF 按规则 9 处理:有稳定结构的(ATLAS 的战术、OWASP LLM Top 10 的编号条目)各自借入一个数组,划分特征待核后补;Anthropic 文档随产品迭代、无稳定结构,只作映射来源。
+LLM 应用相关的外部体系按规则 9 处理:ATLAS 的战术、OWASP LLM Top 10 的编号条目有稳定结构,各借入一个数组,划分特征待核;NIST AI RMF 的四个功能是治理职能不是知识划分,只作映射;Anthropic 文档随产品迭代,只作映射。
 
-### 编程语言的下位结构
+### 编程语言
 
 编程语言有跨语言的通识——类型系统、内存模型、求值与并发模型、范式——具体语言只是这些概念的不同取舍。因此 `programming-languages` 的下位不是语言的术语表,而是 [CS2023](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf) 知识领域 FPL (Foundations of Programming Languages) 的 22 个知识单元,再加一个「具体语言」作为其中唯一的术语表:
 

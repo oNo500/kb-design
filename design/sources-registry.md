@@ -56,6 +56,39 @@
 
 `match.id` 是外部体系里的条目标识(CWE-89、RFC 9110 §8.1、ASVS V5.1),没有编号的写 URL。
 
-## 待登记的来源
+## 首批来源
 
-按[层级结构](hierarchy.md)的数组表和映射来源,首批需要登记的:CS2023、SWEBOK v4、ACM CCS、GB/T 13745、ASVS、CWE、ATT&CK、OWASP Top 10、OWASP GenAI、ATLAS、NIST AI RMF、Anthropic 文档、RFC 1122、RFC 9110–9114、OSI、MDN 技术参考、MDN Curriculum、ISO 25964、Z39.19、SKOS、roadmap.sh、teachyourselfcs、CMU 15-445、DB-Engines。每条要核对当前版本。
+按[层级结构](hierarchy.md)的数组表和各概念的映射需要,首批登记的来源及拟定的 role。版本在登记时核对。
+
+| id(拟) | 名称 | role | 用在 |
+|---|---|---|---|
+| gbt-13745 | GB/T 13745-2009 学科分类与代码 | mapping, structure | 顶层、library-and-information-science 及其五个学科 |
+| cs2023 | ACM/IEEE-CS/AAAI Computer Science Curricula 2023 | mapping, structure | computing 第 2 层;foundations、artificial-intelligence、data、programming-languages、human-centered-computing 的数组 |
+| swebok | IEEE-CS SWEBOK Guide v4.0 | mapping, structure | engineering 的两个数组 |
+| acm-ccs | ACM Computing Classification System 2012 | mapping | computing 第 2 层概念的映射 |
+| asvs | OWASP ASVS 5.0 | mapping, structure | security 数组 |
+| cwe | MITRE CWE | mapping, structure, group | security 数组;缺陷的派生组 |
+| attack | MITRE ATT&CK | mapping, structure | security 数组 |
+| owasp-top10 | OWASP Top 10 | mapping, group | 映射;派生组 |
+| owasp-genai | OWASP GenAI / LLM Top 10 | mapping, structure | artificial-intelligence 数组(划分特征待核) |
+| atlas | MITRE ATLAS | mapping, structure | artificial-intelligence 数组(划分特征待核) |
+| nist-ai-rmf | NIST AI RMF 1.0 | mapping | 映射 |
+| anthropic-docs | Anthropic 文档 | mapping | 映射 |
+| rfc-1122 | RFC 1122 | mapping, structure | network 数组 |
+| rfc-http | RFC 9110–9114 | mapping | 映射 |
+| osi | ISO/IEC 7498-1 OSI 参考模型 | mapping | 映射 |
+| mdn | MDN 技术参考 | mapping, structure | web 数组 |
+| mdn-curriculum | MDN Curriculum | candidate | 候选词来源 |
+| iso-25964 | ISO 25964-1/-2 | mapping | 映射 |
+| z39-19 | ANSI/NISO Z39.19 | mapping | 映射 |
+| skos | W3C SKOS | mapping | 映射 |
+| roadmap-sh | roadmap.sh | candidate | 候选词来源 |
+| teachyourselfcs | teachyourselfcs.com | candidate | 候选词来源 |
+| cmu-15-445 | CMU 15-445 | candidate | 候选词来源 |
+| db-engines | DB-Engines 排名 | candidate | 候选词来源 |
+
+## 待定事项
+
+- 借入来源的分级与版本要求,留待治理方案
+- MDN 技术参考没有版本号,`version` 怎么记(抓取日期?)
+- `mdn-curriculum` 标为 candidate,但它有稳定模块名,是否也给 `group`

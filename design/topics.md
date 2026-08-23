@@ -1,8 +1,8 @@
 # 主题词表设计
 
-本库的主题词表 `vocab/topics.yaml`:它管什么、长什么样、怎么建、怎么维护。它是一份叙词表——概念、三种关系、到外部词表的映射——不是知识图谱,也不是导航;后两者是它的用法和升级方向,见文末。
+`vocab/topics.yaml` 是本库的主题词表:一份叙词表,由概念、概念之间的三种关系、概念到外部词表的映射构成。它给笔记打主题标签、做检索、生成导航。它不是知识图谱,也不是导航——那两者是它的用法和升级方向。
 
-理论依据见 [受控词表](../concepts/controlled-vocabulary.md)、[词表的层级](../concepts/vocabulary-hierarchy.md)、[分面](../concepts/facet.md)、[词表的建设与维护](../concepts/vocabulary-construction.md)、[词表映射](../concepts/vocabulary-mapping.md)、[知识体系](../concepts/body-of-knowledge.md)。树的分层规则单独成篇:[层级结构](hierarchy.md);外部来源的登记与用法:[来源名称规范表](sources-registry.md)。本文只用这些标准里有的术语;本库自定的术语按 CLAUDE.md 当前阶段不使用。
+本文讲这份词表管什么、一条记录长什么样、怎么建、怎么查错。树怎么分层在[层级结构](hierarchy.md),外部来源怎么登记在[来源名称规范表](sources-registry.md)。理论依据见 [受控词表](../concepts/controlled-vocabulary.md)、[词表的建设与维护](../concepts/vocabulary-construction.md)。
 
 ## 词表的构成总览
 
@@ -87,10 +87,6 @@
 
 给本库的笔记打主题标签、做检索、生成导航。单人使用,中文为主,英文别名必备(文献是英文的)。不需要多语种对等,不需要印刷版式。
 
-## 词表的层级结构
-
-见[主题词表的层级结构](hierarchy.md):十二条规则、各层的划分特征、结构预览、每个第 2 层概念下借入的数组。
-
 ## 概念记录的字段
 
 ```yaml
@@ -127,7 +123,7 @@ arrays:
     source: asvs
 ```
 
-每个有下位的概念都登记数组并写 `label`,哪怕只有一组;规则见[层级结构](hierarchy.md)规则 5–12。
+每个有下位的概念都登记数组并写 `label`,哪怕只有一组。划分特征怎么定、节点标签怎么写,见[层级结构](hierarchy.md)。
 
 分面字段暂不设,见 [分面字段草案](drafts/facet-field.md)。
 
@@ -143,10 +139,6 @@ arrays:
 | `deprecated` | §11.3.2.1 | 不再用于新标引,保留供检索 | 合并、拆分、改名时 | 不删。必须有 `replaced_by` 和 `history` |
 
 按 Z39.19 §11.3.2:`deprecated` 的词**不删**,旧引用靠它还能找到;只有误建且无任何引用的才物理删除。借入的概念长期 `unassigned` 不删——那是盲区标记;确认不需要时在 `scope` 注明「有意不覆盖」及原因,仍保留。
-
-## 外部知识体系的用法
-
-见[来源名称规范表](sources-registry.md):`vocab/sources.yaml` 的结构、`role` 的取值、借入 / 映射 / 派生组三种用法、映射关系的五种 `rel`。
 
 ## 建设流程
 
@@ -172,13 +164,17 @@ arrays:
 - `label.en` 和 `alt` 在全表内不重复(重复 = 可能是同一概念建了两次)
 - 统计:每个第 2 层概念下 `unassigned` 的比例(盲区地图)、`candidate` 被引用次数
 
-## 与导航和知识图谱的关系
+## 与其他设计的关系
 
-| | 关系 |
-|---|---|
-| 导航 | 把树渲染成目录就是导航;树不依赖界面 |
-| 知识图谱 | 现在边只有 `broader` / `related` 两种,节点是概念不是实体,无事实性断言。以后加带类型的边(`depends_on`、`mitigates`)时,节点复用,不重建 |
-| 文档类型 `type`、人名、项目名 | 各是独立词表,不进这棵树。有内容后按需建 |
+| 事项 | 在哪 | 关系 |
+|---|---|---|
+| 树怎么分层、每层按什么分、从哪借入 | [层级结构](hierarchy.md) | 本文的 `broader`、`arrays`、`source` 字段按它的规则填 |
+| 外部体系怎么登记、借入 / 映射 / 派生组三种用法、`match` 怎么写 | [来源名称规范表](sources-registry.md) | 本文的 `source`、`match.source` 只能写它登记的 id |
+| 分面字段 | [草案](drafts/facet-field.md) | 未生效,本文不设该字段 |
+| 手工概念组 | [草案](drafts/concept-groups.md) | 未生效;派生组已随映射自动存在 |
+| 导航 | — | 把树渲染成目录就是导航;树不依赖界面 |
+| 知识图谱 | [概念文](../concepts/knowledge-graph.md) | 现在边只有 `broader` / `related` 两种,节点是概念不是实体。以后加带类型的边时节点复用,不重建 |
+| 文档类型、人名、项目名 | — | 各是独立词表,不进这棵树;有内容后按需建 |
 
 ## 待定事项
 
