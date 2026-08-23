@@ -43,6 +43,7 @@
 | 复合词 | compound term | 可拆成多个成分的词 | ISO 2.9 |
 | 复合概念 | complex concept | 由多个简单概念组成的概念;是否拆分见 ISO §7 | ISO §7 |
 | 领域 | domain | 词表覆盖的主题范围 | — |
+| 元数据 | metadata | 标识文档属性的数据;首选词常作为元数据值 | ISO 2.33 |
 | 内容对象 | content object | 被标引的东西:文档、图像、人、组织、实物 | Z 4.1;ISO 2.15 document |
 
 ## 关系
