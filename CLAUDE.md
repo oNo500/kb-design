@@ -27,5 +27,5 @@
 ## 其他约定
 
 - `concepts/` 下的文章另按 [concepts/CONVENTIONS.md](concepts/CONVENTIONS.md)
-- 来源分级与复核按 [design/sources.md](design/drafts/sources.md)
+- 来源分级见 [design/entities.md](design/entities.md),复核按 [design/review.md](design/review.md)
 - 凭记忆写的内容联网核对后才提交;链接用 `[标题](url)`
