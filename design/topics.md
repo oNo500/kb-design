@@ -305,7 +305,7 @@ programming-languages
 - **mapping**:有稳定、可引用的条目(CWE、RFC、ASVS、ACM CCS、SWEBOK、ISO、MDN 页面)
 - **candidate**:学习路线、排行榜、课程大纲(roadmap.sh、teachyourselfcs、DB-Engines 榜)。能告诉你什么重要,但条目不稳定无编号,只用来发现词,不作映射目标
 
-分档与复核周期按 [design/sources.md](sources.md)。
+分档与复核周期按 [design/sources.md](drafts/sources.md)。
 
 ## 建设流程
 

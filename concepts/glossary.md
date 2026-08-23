@@ -113,7 +113,7 @@
 | 标引词 | index term | 分配给文档的词;keyword、tag 含义更宽 | ISO 2.26 |
 | 查全率 / 查准率 | recall / precision | 检索效果的两个指标;词表对两者都有正面影响 | Z 5.3.6 |
 | 互操作性 | interoperability | 系统间交换并使用信息的能力 | ISO 2.29 |
-| 来源分级 | de-jure / de-facto / vendor / archival | 引证来源按变更方式分档 | 自定;[design/sources.md](../design/sources.md) |
+| 来源分级 | de-jure / de-facto / vendor / archival | 引证来源按变更方式分档 | 自定;[design/sources.md](../design/drafts/sources.md) |
 
 ## 词表间映射
 

@@ -17,7 +17,7 @@
 | 技术写作规范 | 待写 | Google style guide；阮一峰；GB/T 15834 | `writing.md`（待写）；CLAUDE.md 标题规则 |
 | 知识体系作骨架 | [知识体系](../concepts/body-of-knowledge.md) | SWEBOK / ISO/IEC TR 19759；CS2023；GB/T 13745；ISO 25964-2 §19 | [topics.md](topics.md)：第 2、3 层取自知识领域与知识单元 |
 | 词表映射 | [词表映射](../concepts/vocabulary-mapping.md) | ISO 25964-2 §6–11；SKOS §10 | [topics.md](topics.md)：`match` 字段、中心辐射模型、默认 closeMatch |
-| 来源分级 | 无 | **本库自定，无外部来源** | [sources.md](sources.md) |
+| 来源分级 | 无 | **本库自定，无外部来源** | [drafts/sources.md](drafts/sources.md) |
 
 ## 未登记的做法
 
