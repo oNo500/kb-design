@@ -51,7 +51,7 @@
 
 需要更多类别时从 Wikidata 取，记录其 Q 号。`publication` 的具体形式记在 `form` 字段，值是 Wikidata 的 Q 号或其 slug。
 
-`person` 只收公开人物：已发表作品的作者、公开项目的维护者、方法的提出者，且 Wikidata 有条目或有可引的公开出处。不收私人、同事、联系人。文献实体用 `creator` 字段指向人（Dublin Core creator），软件实体的个人维护者用 `vendor` 指向人。
+`person` 只收公众人物（public figure，*Gertz v. Robert Welch* 1974 的意义上：在相关领域有显著公开角色的人）：已发表作品的作者、公开项目的维护者、方法的提出者，且 Wikidata 有条目或有可引的公开出处。不收私人、同事、联系人。文献实体用 `creator` 字段指向人（Dublin Core creator），软件实体的个人维护者用 `vendor` 指向人。
 
 ### 分级
 

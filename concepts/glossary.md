@@ -168,7 +168,7 @@
 | 被替代 | superseded | 决定记录被新决定取代后的状态 | Nygard ADR 2011 |
 | 内容模型 | content model | 内容单元允许有哪些组成部分及其结构 | SGML（ISO 8879）、DITA 沿用 |
 | 知识组织 | knowledge organization | 对知识进行描述、分类和排序的活动与系统；KOS 即知识组织系统 | ISO 25964；SKOS |
-| 公开人物 | — | 已发表作品的作者、公开项目的维护者、方法的提出者；本库 `person` 实体的收录范围 | 本库收录范围，依 Wikidata Q5 human |
+| 公众人物 | public figure | 在社会事务中担任显著角色、或主动进入公共争议的人；本库 `person` 实体只收此类，具体为已发表作品的作者、公开项目的维护者、方法的提出者 | 美国判例法 *Gertz v. Robert Welch* (1974)，见 [Cornell LII](https://www.law.cornell.edu/wex/public_figure) |
 | 个体 | individual | 名称规范表所收的对象：唯一的个体，而非类 | ISO-2 3.50 注 |
 | 划分 | partition | 把一个集合分成互不重叠、合起来是全集的几组 | 数学通用术语 |
 
