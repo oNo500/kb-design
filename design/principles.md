@@ -24,7 +24,7 @@
 目前没有原理支撑、只是习惯的做法，要么补登记，要么删掉：
 
 - 概念文的固定分节（定义 / 解决的问题 / 用法 / 来源）
-- 分面字段的取值，见 [drafts/kind.md](drafts/kind.md)
+- 分面字段的取值，见 [drafts/facet-field.md](drafts/facet-field.md)
 
 ## 待办
 
