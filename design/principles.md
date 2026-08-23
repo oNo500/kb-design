@@ -1,30 +1,31 @@
-# 方法的第一原理登记
+# 方法登记
 
-本库采用的每一种方法或范式，都要登记它的第一原理和来源。没有第一原理的方法，是在症状上打补丁，不能判断新规则该不该加。
+本库采用的每一种方法或范式，在这里登记来源和导出的规则。方法的第一原理写在对应的概念文里；没有概念文的方法标「待写」。
 
-用法：引入新方法先在这里登记；提出新规则先看能否从已登记的原理推出，推不出就不加。
+准入规则：引入新方法先登记；提出新规则先看能否从已登记方法的原理推出，推不出就不加。理由见 [第一原理与设计理由](../concepts/first-principles.md)。
 
 ## 登记表
 
-| 方法 | 第一原理 | 来源 | 导出的规则在哪 |
+| 方法 | 概念文 | 来源 | 导出的规则 |
 |---|---|---|---|
-| 受控词表 | 概念先于词。概念是思维单元，词只是它的标签；标引者与检索者对同一概念用同一个词，文档才找得到 | Wüster 普通术语学（1931）；ISO 25964-1 引言与 §2.11；ISO 704 | [design/topics.md](topics.md)：ID 与名字分离、等价关系、范围注释、生命周期 |
-| 分面分析 | 知识是多维的，一棵树装不下。预先枚举组合会爆炸，应按基本范畴各自列表、使用时组合 | Ranganathan 冒号分类法（1933）；Z39.19 §5.3.4；ISO 25964-1 §11 | [design/topics.md](topics.md)：`kind` 字段与树正交、后组式标签 |
-| 依据 warrant | 词表反映实际存在的语言，不反映理想的分类。收进来的词必须在文献、用户或组织中真实出现 | Hulme「literary warrant」（1911）；Z39.19 §5.3.5 | [design/topics.md](topics.md)：从内容抽词、候选词、废除无引用的词 |
-| 骨架求完整 | 只从已有内容归纳会复制已知盲区；完整的上层结构让盲区可见 | 本库 README；Z39.19 §11.1.3.1（新建词表优先自上而下）、§11.1.8（未标引词） | [design/topics.md](topics.md)：四层树、placeholder 状态 |
-| 文档分类 | 文档服务于读者的需求，需求只有四种：做事或认知 × 学习或工作。一篇文档只服务一种 | Diátaxis（Procida）；隐含 Ryle 的 knowing-how / knowing-that 之分 | 目录划分：`concepts/` 解释、`design/` 参考、`sources/` 参考 |
-| 技术写作规范 | 为读者写，降低认知负担。读者忙、背景多元、不在现场，所以要一致、主动、短句、可预期 | Plain language 运动；Google developer documentation style guide；阮一峰《中文技术文档的写作规范》；GB/T 15834 | `design/writing.md`（待写）；CLAUDE.md 标题规则 |
-| 来源分级 | 事实会过时，过时的速度由来源的变更方式决定，复核周期应随之分档 | **本库自定，无外部来源**。候选对应：配置管理（ISO 10007）、档案学的文件生命周期 | [design/sources.md](sources.md) |
+| 受控词表 | [受控词表](../concepts/controlled-vocabulary.md) | Wüster 普通术语学（1931）；ISO 25964-1；ISO 704 | [topics.md](topics.md)：ID 与名字分离、等价关系、范围注释、生命周期 |
+| 分面分析 | [词表的结构](../concepts/vocabulary-structure.md) | Ranganathan（1933）；Z39.19 §5.3.4；ISO 25964-1 §11 | [topics.md](topics.md)：`kind` 与树正交、后组式标签 |
+| 依据 warrant | [词表的建设与维护](../concepts/vocabulary-construction.md) | Hulme（1911）；Z39.19 §5.3.5 | [topics.md](topics.md)：从内容抽词、候选词、废除无引用的词 |
+| 骨架求完整 | 待写 | 本库 README；Z39.19 §11.1.3.1、§11.1.8 | [topics.md](topics.md)：层级结构、placeholder |
+| 第一原理与设计理由 | [第一原理与设计理由](../concepts/first-principles.md) | Aristotle；Kunz & Rittel IBIS（1970）；Nygard ADR（2011） | 本文；设计文档不删旧决定 |
+| 文档分类 | 待写 | Diátaxis | 目录划分：`concepts/` 解释、`design/` 参考、`sources/` 参考 |
+| 技术写作规范 | 待写 | Google style guide；阮一峰；GB/T 15834 | `writing.md`（待写）；CLAUDE.md 标题规则 |
+| 来源分级 | 无 | **本库自定，无外部来源** | [sources.md](sources.md) |
 
 ## 未登记的做法
 
-以下做法目前没有第一原理，只是习惯。要么补登记，要么删掉：
+目前没有原理支撑、只是习惯的做法，要么补登记，要么删掉：
 
-- 概念文的固定分节（定义 / 解决的问题 / 用法 / 来源）——可挂到 Diátaxis 解释类的写法下，待确认
-- 分面五个 `kind` 值的划分——来自 Ranganathan 的基本范畴改编，对应关系未写明
+- 概念文的固定分节（定义 / 解决的问题 / 用法 / 来源）
+- 分面五个 `kind` 值的划分，与 Ranganathan 基本范畴的对应关系未写明
 
 ## 待办
 
-- 为来源分级找外部依据，或明确标为自定
-- 核对 Hulme 1911 和 Wüster 1931 的原始文献（目前凭记忆）
-- 写 `design/writing.md`，从「为读者写」一句开始
+- 为来源分级找外部依据，或明确标为自定并写出理由
+- 核对 Hulme 1911 和 Wüster 1931 的原始文献
+- 补写「骨架求完整」「文档分类」「技术写作规范」的概念文，把第一原理从本文旧版移过去
