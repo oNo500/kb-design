@@ -2,7 +2,7 @@
 version:
   id: "2026.08"
   date: 2026-08-23
-  note: 初版：LOM 的 15 个取值分两组，加速查表
+  note: 初版：LOM 的 15 个取值分两组，加速查表。中文标签按译名阶梯第 4 级不译（2026-08-23），解释在 scope
 
 arrays:
   - { id: forms-presentation, superordinate: forms, source: lom }
@@ -10,115 +10,130 @@ arrays:
 
 forms:
   - id: diagram
-    label: { zh: "图", en: "Diagram" }
-    basis: { zh: self, en: lom }
+    label: { en: "Diagram" }
+    basis: { zh: none, en: lom }
     arrays: [forms-presentation]
     match: [{ source: lom, id: "diagram", rel: exactMatch }]
+    scope: "示意图：用线条和符号表示结构或过程"
     status: unassigned
     added: 2026-08-23
   - id: figure
-    label: { zh: "图像", en: "Figure" }
-    basis: { zh: self, en: lom }
+    label: { en: "Figure" }
+    basis: { zh: none, en: lom }
     arrays: [forms-presentation]
     match: [{ source: lom, id: "figure", rel: exactMatch }]
+    scope: "图像：照片、插图等非示意性的图"
     status: unassigned
     added: 2026-08-23
   - id: graph
-    label: { zh: "图表", en: "Graph" }
-    basis: { zh: self, en: lom }
+    label: { en: "Graph" }
+    basis: { zh: none, en: lom }
     arrays: [forms-presentation]
     match: [{ source: lom, id: "graph", rel: exactMatch }]
+    scope: "图表：数据的图形化呈现"
     status: unassigned
     added: 2026-08-23
   - id: index
-    label: { zh: "索引", en: "Index" }
-    basis: { zh: self, en: lom }
+    label: { en: "Index" }
+    basis: { zh: none, en: lom }
     arrays: [forms-presentation]
     match: [{ source: lom, id: "index", rel: exactMatch }]
+    scope: "索引：按条目指向位置的查找表"
     status: unassigned
     added: 2026-08-23
   - id: slide
-    label: { zh: "幻灯片", en: "Slide" }
-    basis: { zh: self, en: lom }
+    label: { en: "Slide" }
+    basis: { zh: none, en: lom }
     arrays: [forms-presentation]
     match: [{ source: lom, id: "slide", rel: exactMatch }]
+    scope: "幻灯片式的分页呈现"
     status: unassigned
     added: 2026-08-23
   - id: table
-    label: { zh: "表格", en: "Table" }
-    basis: { zh: self, en: lom }
+    label: { en: "Table" }
+    basis: { zh: none, en: lom }
     arrays: [forms-presentation]
     match: [{ source: lom, id: "table", rel: exactMatch }]
+    scope: "表：按行列组织的数据"
     status: unassigned
     added: 2026-08-23
   - id: narrative-text
-    label: { zh: "叙述文本", en: "Narrative text" }
-    basis: { zh: self, en: lom }
+    label: { en: "Narrative text" }
+    basis: { zh: none, en: lom }
     arrays: [forms-presentation]
     match: [{ source: lom, id: "narrative text", rel: exactMatch }]
+    scope: "连续的叙述性正文"
     status: unassigned
     added: 2026-08-23
   - id: exercise
-    label: { zh: "练习", en: "Exercise" }
-    basis: { zh: self, en: lom }
+    label: { en: "Exercise" }
+    basis: { zh: none, en: lom }
     arrays: [forms-activity]
     match: [{ source: lom, id: "exercise", rel: exactMatch }]
+    scope: "练习：供读者动手完成的题"
     status: unassigned
     added: 2026-08-23
   - id: simulation
-    label: { zh: "模拟", en: "Simulation" }
-    basis: { zh: self, en: lom }
+    label: { en: "Simulation" }
+    basis: { zh: none, en: lom }
     arrays: [forms-activity]
     match: [{ source: lom, id: "simulation", rel: exactMatch }]
+    scope: "模拟：可操作的仿真环境"
     status: unassigned
     added: 2026-08-23
   - id: questionnaire
-    label: { zh: "问卷", en: "Questionnaire" }
-    basis: { zh: self, en: lom }
+    label: { en: "Questionnaire" }
+    basis: { zh: none, en: lom }
     arrays: [forms-activity]
     match: [{ source: lom, id: "questionnaire", rel: exactMatch }]
+    scope: "问卷：一组供填答的问题"
     status: unassigned
     added: 2026-08-23
   - id: exam
-    label: { zh: "考试", en: "Exam" }
-    basis: { zh: self, en: lom }
+    label: { en: "Exam" }
+    basis: { zh: none, en: lom }
     arrays: [forms-activity]
     match: [{ source: lom, id: "exam", rel: exactMatch }]
+    scope: "考试：有评分的测验"
     status: unassigned
     added: 2026-08-23
   - id: experiment
-    label: { zh: "实验", en: "Experiment" }
-    basis: { zh: self, en: lom }
+    label: { en: "Experiment" }
+    basis: { zh: none, en: lom }
     arrays: [forms-activity]
     match: [{ source: lom, id: "experiment", rel: exactMatch }]
+    scope: "实验：按步骤操作并观察结果"
     status: unassigned
     added: 2026-08-23
   - id: problem-statement
-    label: { zh: "问题陈述", en: "Problem statement" }
-    basis: { zh: self, en: lom }
+    label: { en: "Problem statement" }
+    basis: { zh: none, en: lom }
     arrays: [forms-activity]
     match: [{ source: lom, id: "problem statement", rel: exactMatch }]
+    scope: "问题陈述：只给出问题、不给解法"
     status: unassigned
     added: 2026-08-23
   - id: self-assessment
-    label: { zh: "自测", en: "Self assessment" }
-    basis: { zh: self, en: lom }
+    label: { en: "Self assessment" }
+    basis: { zh: none, en: lom }
     arrays: [forms-activity]
     match: [{ source: lom, id: "self assessment", rel: exactMatch }]
+    scope: "自测：读者自行评估掌握程度的题"
     status: unassigned
     added: 2026-08-23
   - id: lecture
-    label: { zh: "讲授", en: "Lecture" }
-    basis: { zh: self, en: lom }
+    label: { en: "Lecture" }
+    basis: { zh: none, en: lom }
     arrays: [forms-activity]
     match: [{ source: lom, id: "lecture", rel: exactMatch }]
+    scope: "讲授：面向听众的讲解"
     status: unassigned
     added: 2026-08-23
   - id: cheat-sheet
-    label: { zh: "速查表", en: "Cheat sheet" }
-    basis: { zh: self, en: wikidata:Q2309859 }
+    label: { en: "Cheat sheet" }
+    basis: { zh: none, en: wikidata:Q2309859 }
     arrays: [forms-presentation]
     match: [{ source: wikidata, id: "Q2309859", rel: exactMatch }]
-    scope: "供快速参考的简明笔记集；LOM 无此项，据 Wikidata"
+    scope: "速查表：供快速参考的简明笔记集；LOM 无此项，据 Wikidata"
     status: unassigned
     added: 2026-08-23

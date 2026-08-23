@@ -68,10 +68,10 @@ IPTC 的词表是为新闻设计的，定义里的“记者”“事件”按笔
 
 | 数组 | 取值 |
 |---|---|
-| 呈现形式 | 图、图像、图表、索引、幻灯片、表格、叙述文本 |
-| 教学活动 | 练习、模拟、问卷、考试、实验、问题陈述、自测、讲授 |
+| 呈现形式 | diagram、figure、graph、index、slide、table、narrative text |
+| 教学活动 | exercise、simulation、questionnaire、exam、experiment、problem statement、self assessment、lecture |
 
-速查表（cheat sheet）LOM 没有，据 Wikidata Q2309859 加入呈现形式数组。中文标签为本库所译（`basis.zh: self`），待按译名阶梯追溯。
+速查表（cheat sheet）LOM 没有，据 Wikidata Q2309859 加入呈现形式数组。这些取值按译名阶梯查无中文译名（LOM 无中文等同标准，值是普通名词，Wikidata 不可靠），按第 4 级不译：标签只有英文，`scope` 给一句中文解释。
 
 不取 DITA 1.3 Learning and Training 的五种学习 topic：DITA 2.0 已把它们移出基础规范（DITA TC 2018-03-13 决议），不作为稳定来源。ISO 5127:2017 对文献类型有系统划分（3.4–3.5），条款在收费部分，核到后再引。
 
