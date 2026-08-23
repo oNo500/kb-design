@@ -60,13 +60,20 @@
 - `computing` 计算与信息技术
 - `information-science` 信息与文献学
 
+### 邻近主题的处理
+
+挨着上述领域的主题,不单独立领域,降级为某分支下的类目。每项注明落点和依据,避免相关笔记无处可放。
+
+| 主题 | 落点 | 依据 |
+|---|---|---|
+| 数学 | `foundations` 下的类目「数学与统计基础」 | CS2023 知识领域 MSF (Mathematical and Statistical Foundations) |
+| 硬件、体系结构 | `foundations` 下的类目「体系结构与组织」 | CS2023 知识领域 AR (Architecture and Organization) |
+| 项目管理 | `engineering` 下的类目「软件工程管理」 | SWEBOK v4 第 9 章 Software Engineering Management |
+| 通用职业技能(写作、沟通、时间管理) | `engineering` 下的类目「软件工程职业实践」 | SWEBOK v4 第 14 章 Software Engineering Professional Practice |
+
 ### 排除范围
 
-挨着上述领域、但不建骨架的主题。每项注明碰到相关笔记时挂在哪,避免无处可放时乱打标签。
-
-| 主题 | 决定 | 相关笔记挂在 |
-|---|---|---|
-| 待定 | | |
+目前没有明确排除的主题。候选见待定事项。
 
 ### 用途
 
@@ -108,9 +115,16 @@
 | foundations | 计算机科学基础 | CS2023 知识领域 | ACM CCS、teachyourselfcs | CS2023 |
 | programming-languages | 编程语言 | 无:扁平列表,成员可枚举 | — | self |
 | human-centered-computing | 以人为中心的计算 | CS2023 HCI | ACM CCS、roadmap.sh | ACM CCS |
+| library-science | 图书馆学 | 待定 | — | GB/T 13745 870.10 |
+| documentation | 文献学 | 待定 | — | GB/T 13745 870.20 |
+| information-science | 情报学 | 待定 | — | GB/T 13745 870.30 |
+| archival-science | 档案学 | 待定 | — | GB/T 13745 870.40 |
+| museology | 博物馆学 | 待定 | — | GB/T 13745 870.50 |
 | content-engineering | 内容工程 | 待定:按标准族分(术语 / 叙词表 / 元数据 / 结构化写作) | ISO 704、1087、25964、30042、Z39.19、SKOS、DCMI、DITA | self |
 
 「借自」一列区分哪些分支有外部依据、哪些是本库自加的。标「待定」的主对标需要逐个看对标体系的当前结构后再定。
+
+`information-science` 领域的五个分支来自 [GB/T 13745-2009《学科分类与代码》](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E)一级学科 870 下的二级学科,全部为 placeholder;`content-engineering` 是本库自加的第六个分支。领域名与其中一个分支同名(information-science / 情报学),id 冲突,待定事项里记了。
 
 ## 概念记录的字段
 
@@ -233,7 +247,8 @@
 
 ## 待定事项
 
-- 排除范围:至少要决定数学、硬件、项目管理、通用职业技能各自是排除还是降级为某分支的类目,以及相关笔记挂哪
+- 排除范围:候选有自然语言学习、非技术的生活领域;需要确认是否明确排除
+- `information-science` 既是领域 id 又是「情报学」分支的自然译名,二者需区分:领域改为 `library-and-information-science`,或分支改为 `informatics`
 - 分支表中五个「待定」的主对标
 - 文件格式:YAML 单文件,还是每分支一个文件(概念过几百条时再考虑)
 - `related` 的使用规则:什么情况下加、是否要求互反
