@@ -15,7 +15,7 @@
 | 第一原理与设计理由 | [第一原理与设计理由](../concepts/first-principles.md) | Aristotle；Kunz & Rittel IBIS（1970）；Nygard ADR（2011） | 本文；设计文档不删旧决定 |
 | 文档分类 | 待写 | Diátaxis | 目录划分：`concepts/` 解释、`design/` 参考、`sources/` 参考 |
 | 技术写作规范 | 待写 | Google style guide；阮一峰；GB/T 15834 | `writing.md`（待写）；CLAUDE.md 标题规则 |
-| 知识体系作骨架 | [知识体系](../concepts/body-of-knowledge.md) | SWEBOK / ISO/IEC TR 19759；CS2023；GB/T 13745；ISO 25964-2 §19 | [topics.md](topics.md)：第 2、3 层取自知识领域与知识单元 |
+| 知识体系作上层结构 | [知识体系](../concepts/body-of-knowledge.md) | SWEBOK / ISO/IEC TR 19759；CS2023；GB/T 13745；ISO 25964-2 §19 | [topics.md](topics.md)：第 2、3 层取自知识领域与知识单元 |
 | 词表映射 | [词表映射](../concepts/vocabulary-mapping.md) | ISO 25964-2 §6–11；SKOS §10 | [topics.md](topics.md)：`match` 字段、中心辐射模型、默认 closeMatch |
 | 来源分级 | 无 | **本库自定，无外部来源** | [drafts/sources.md](drafts/sources.md) |
 
@@ -30,4 +30,4 @@
 
 - 为来源分级找外部依据，或明确标为自定并写出理由
 - 核对 Hulme 1911 和 Wüster 1931 的原始文献
-- 补写「骨架求完整」「文档分类」「技术写作规范」的概念文，把第一原理从本文旧版移过去
+- 补写「借入层级求完整」「文档分类」「技术写作规范」的概念文，把第一原理从本文旧版移过去
