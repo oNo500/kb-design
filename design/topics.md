@@ -4,6 +4,53 @@
 
 理论依据见 [受控词表](../concepts/controlled-vocabulary.md)、[词表的结构](../concepts/vocabulary-structure.md)、[词表的建设与维护](../concepts/vocabulary-construction.md)。
 
+## 0. 一图看懂
+
+```
+                          vocab/topics.yaml
+ ┌──────────────────────────────────────────────────────────────────┐
+ │                                                                  │
+ │  概念 = 一个节点,有 ID,名字只是标签                                │
+ │                                                                  │
+ │     ┌─────────────────────────────┐                              │
+ │     │ id:    sql-injection        │ ← 引用用这个,永不改            │
+ │     │ label: SQL 注入 / SQL injection   ← 首选词                  │
+ │     │ alt:   SQLi                 │ ← 非首选词                     │
+ │     │ kind:  weakness             │ ← 分面:它是什么类的东西         │
+ │     │ scope: 用于… 不用于…        │                               │
+ │     └─────────────────────────────┘                              │
+ │                                                                  │
+ │  三种关系 = 节点之间的边,只有这三种                                 │
+ │                                                                  │
+ │     ① 等价  USE/UF     SQLi ──────────▶ sql-injection             │
+ │                        (别名指向首选词;在记录内用 alt 表示)          │
+ │                                                                  │
+ │     ② 层级  BT/NT      security                                  │
+ │                          └─ input-validation                     │
+ │                               └─ sql-injection   (broader 字段)  │
+ │                                                                  │
+ │     ③ 相关  RT         sql-injection ◀────▶ parameterized-query  │
+ │                        (有关,但说不清怎么有关;related 字段)         │
+ │                                                                  │
+ │  映射 = 从本地节点指向外部词表的条目                                 │
+ │                                                                  │
+ │     sql-injection ──exactMatch──▶ CWE-89        (在 cwe 里)       │
+ │     sql-injection ──broadMatch──▶ A03:2021      (在 owasp-top10 里)│
+ │                        │                                         │
+ │                        └── source 必须是 vocab/sources.yaml 的 id  │
+ └──────────────────────────────────────────────────────────────────┘
+
+ 这份文件 = 叙词表。它能变成什么:
+
+   叙词表 ──渲染成目录──▶ 导航        边不变,只是画成侧边栏 / 面包屑
+     │
+     └──加带类型的边──▶ 知识图谱      节点复用;边从 2 种变成 N 种:
+                                      sql-injection ──mitigated_by──▶ parameterized-query
+                                      sql-injection ──instance_of───▶ CVE-2024-xxxx
+```
+
+读法:方框里是**一个节点长什么样**;①②③ 是**节点之间允许的全部边**;映射是**节点往外指**;最下面是**这份文件的两个去向**——去向不改节点,只改边。
+
 ## 1. 范围与用途
 
 **覆盖**:两个领域
