@@ -100,4 +100,4 @@ Diátaxis 把文档分四类,两条轴:给做事还是给认知、服务学习�
 ## 待办
 
 - 读 ISO 24495-1 正文(收费),核四原则下的具体指南
-- 据本文写概念文「写作规范」和 `design/writing.md`
+- 据本文写 `design/writing.md`;概念文见[写作规范](../concepts/writing-conventions.md)
