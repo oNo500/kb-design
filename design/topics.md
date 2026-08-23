@@ -102,6 +102,38 @@
 3. **每个骨架节点注明借自哪里**:`source` 字段引用来源登记的 id,自建的写 `self`
 4. **允许多层级**:`broader` 是列表,第一个是主上位,用于显示和排序
 
+### 结构预览
+
+```
+computing 计算与信息技术
+├─ foundations 计算机科学基础                 ← CS2023
+│   ├─ 数学与统计基础                          ← 数学落这里(CS2023 MSF)
+│   ├─ 体系结构与组织                          ← 硬件落这里(CS2023 AR)
+│   └─ … 其余 CS2023 知识领域
+├─ engineering 软件工程                       ← SWEBOK v4
+│   ├─ 软件工程管理                            ← 项目管理落这里(第 9 章)
+│   ├─ 软件工程职业实践                        ← 通用职业技能落这里(第 14 章)
+│   └─ … 其余 SWEBOK 知识域
+├─ security 信息安全                          ← ASVS 5.0
+├─ web Web 平台                               ← 待定
+├─ ai AI 应用工程                             ← 待定
+├─ data 数据                                  ← 待定
+├─ network 网络                               ← RFC 1122
+├─ programming-languages 编程语言             ← 扁平列表
+└─ human-centered-computing 以人为中心的计算  ← CS2023 HCI
+
+information-science 信息与文献学              ← GB/T 13745 一级学科 870
+├─ library-science 图书馆学                   ← 870.10  placeholder
+├─ documentation 文献学                       ← 870.20  placeholder
+├─ information-science 情报学                 ← 870.30  placeholder  ⚠ 与领域 id 冲突
+├─ archival-science 档案学                    ← 870.40  placeholder
+├─ museology 博物馆学                         ← 870.50  placeholder
+└─ content-engineering 内容工程               ← 本库自加
+
+图例:第 1 层领域,第 2 层分支,第 3 层类目(只画了已定的)。
+      「←」后是该层的主对标;第 3 层以下不预建。
+```
+
 ### 当前分支
 
 | 分支 | 首选词 | 第 3 层主对标(拟) | 其余映射来源 | 借自 |
