@@ -34,7 +34,7 @@
   history: []
 ```
 
-必填：`id` `label` `kind` `subjects` `status` `added`。`subjects`、`form`、`scope`、`vendor` 是判断字段，按[断言的依据](assertions.md)记 `basis`；有 `self` 的留在 `candidate`。
+必填：`id` `label` `kind` `subjects` `status` `added`。`subjects`、`form`、`scope`、`vendor` 是判断字段，按[治理](governance.md)记 `basis`；有 `self` 的留在 `candidate`。
 
 ### 类别
 
@@ -52,7 +52,7 @@
 
 ### 分级
 
-`tier` 对 `standard` 和 `publication` 必填，其余类别不填。分档依据是来源如何变更——权威程度决定能不能引，变更方式决定多久要回头看；分档本身的依据是本库获取与信任知识的方式，按 Z39.19 §5.3.5.2 属于组织依据。复核周期、链接检查、新版探测见[来源复核](review.md)。
+`tier` 对 `standard` 和 `publication` 必填，其余类别不填。分档依据是来源如何变更——权威程度决定能不能引，变更方式决定多久要回头看；分档本身的依据是本库获取与信任知识的方式，按 Z39.19 §5.3.5.2 属于组织依据。复核周期、链接检查、新版探测见[治理](governance.md)。
 
 | tier | 含义 | 适用 |
 |---|---|---|

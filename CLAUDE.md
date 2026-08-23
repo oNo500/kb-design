@@ -28,11 +28,11 @@
 
 ## 标点与间距
 
-- 中文句子用全角标点；引号用“ ”，不用“”（GB/T 15834 §4.8）
+- 中文句子用全角标点；引号用“ ”，不用 `「」`（GB/T 15834 §4.8）
 - 汉字与西文字母、数字之间加一个半角空格；与全角标点之间不加（clreq §6.3.3）
 
 ## 其他约定
 
 - `concepts/` 下的文章另按 [concepts/CONVENTIONS.md](concepts/CONVENTIONS.md)
-- 来源分级见 [design/entities.md](design/entities.md)，复核按 [design/review.md](design/review.md)
+- 来源分级见 [design/entities.md](design/entities.md)，复核按 [design/governance.md](design/governance.md)
 - 凭记忆写的内容联网核对后才提交；链接用 `[标题](url)`

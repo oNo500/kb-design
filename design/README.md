@@ -14,8 +14,12 @@
 │   └─ 来源名称规范表 sources-registry.md   外部体系作为词表来源怎么用、match 怎么写
 │
 ├─ 命名实体词表 entities.md     产品、语言、组织、标准、文献:个体不进主题树,通过 subjects 挂主题
-│   ├─ 来源复核 review.md       按 tier 的复核周期、链接检查、新版探测
-│   └─ 断言的依据 assertions.md  人判断的字段记 basis；self 不转正；判断债统计
+│
+├─ 内容模型 content-model.md    一条内容单元有什么字段、文档类型词表、id 规则、形态映射的要求
+│   ├─ 词表版本 versioning.md    版本块、变更记录
+│   └─ targets/                  各执行形态的映射(待建)
+│
+├─ 治理 governance.md           对象、信号、阈值、触发、动作、记录、周期；来源复核、候选审核、断言依据、剩余监控都在其中
 │
 ├─ decisions/                    决定记录,只追加不修改
 │   ├─ tree-by-discipline.md     顶层为什么按学科不按分面
@@ -49,12 +53,10 @@
 | 3 | [层级结构](hierarchy.md) | 树怎么分层、从哪借入、借多深 |
 | 4 | [来源名称规范表](sources-registry.md) | 外部体系怎么登记、三种用法 |
 | 5 | [命名实体词表设计](entities.md) | 产品、语言、标准、文献为什么另立词表；分级 |
-| 6 | [来源复核](review.md) | 多久回头看一次来源 |
+| 6 | [治理](governance.md) | 信号、阈值、动作、周期：词表和内容怎么随时间保持可信 |
 | 7 | [写作规则](writing.md) | 写任何文件前要遵守什么 |
 | 8 | [内容模型](content-model.md) | 一条内容单元有什么、id 怎么取 |
 | 9 | [词表版本](versioning.md) | 什么时候发版、记什么 |
-| 10 | [回流](feedback.md) | 内容怎么反过来长出词表 |
-| 11 | [断言的依据](assertions.md) | 人判断的字段怎么防腐 |
 | — | [decisions/](decisions/) | 两份决定记录 |
 | — | [drafts/](drafts/) | 按需 |
 
