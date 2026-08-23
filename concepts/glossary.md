@@ -63,32 +63,6 @@
 | 多层级 | polyhierarchy | 一个概念可有多个直接上位 | ISO 2.42 |
 | 互反 | reciprocal | 关系必须双向登记:A BT B 则 B NT A | Z 5.4.4 |
 
-## 词表间映射
-
-| 术语 | 英文 | 定义 | 出处 |
-|---|---|---|---|
-| 映射 | mapping | 一个词表中的概念与另一个词表中一个或多个概念之间的关系;通常有方向 | ISO-2 3.41 |
-| 对照表 | crosswalk | 两个以上词表之间概念映射的表 | ISO-2 3.24 |
-| 源词表 / 目标词表 | source / target vocabulary | 映射的起点 / 终点 | ISO-2 3.72, 3.82 |
-| 等价映射 | equivalence mapping | 目标概念与源概念范围相同 | ISO-2 3.29 |
-| 精确 / 不精确 / 部分等价 | exact / inexact / partial equivalence | 等价的三个程度 | ISO-2 §11 |
-| 层级映射 | hierarchical mapping | 目标概念比源概念宽或窄 | ISO-2 §9 |
-| 相关映射 | associative mapping | 有关但非等价非层级 | ISO-2 §10 |
-| 区分式映射 | differentiated mapping | 标明映射类型和等价程度的映射方法 | ISO-2 3.26 |
-| 中心辐射 | hub structure | 所有词表映射到一个中心词表的结构模型 | ISO-2 §6 |
-| exactMatch / closeMatch | — | SKOS 的精确 / 不精确等价;前者传递,后者不传递 | SKOS §10 |
-| broadMatch / narrowMatch / relatedMatch | — | SKOS 的层级 / 相关映射 | SKOS §10 |
-
-## 知识体系
-
-| 术语 | 英文 | 定义 | 出处 |
-|---|---|---|---|
-| 知识体系 | body of knowledge, BoK | 一个学科或职业公认知识范围的结构化清单 | SWEBOK;ISO/IEC TR 19759 |
-| 知识领域 | knowledge area, KA | 知识体系的主要区域 | SWEBOK;CS2023 |
-| 知识单元 | knowledge unit, KU | 知识领域内的主题簇 | CS2023 |
-| 主题 | topic | 知识单元内的具体知识点,标核心或选修 | CS2023 |
-| 普遍接受的知识 | generally accepted knowledge | 多数项目多数时候适用且广泛认同的知识;知识体系只收这类 | SWEBOK |
-
 ## 结构
 
 | 术语 | 英文 | 定义 | 出处 |
@@ -140,6 +114,32 @@
 | 查全率 / 查准率 | recall / precision | 检索效果的两个指标;词表对两者都有正面影响 | Z 5.3.6 |
 | 互操作性 | interoperability | 系统间交换并使用信息的能力 | ISO 2.29 |
 | 来源分级 | de-jure / de-facto / vendor / archival | 引证来源按变更方式分档 | 自定;[design/sources.md](../design/sources.md) |
+
+## 词表间映射
+
+| 术语 | 英文 | 定义 | 出处 |
+|---|---|---|---|
+| 映射 | mapping | 一个词表中的概念与另一个词表中一个或多个概念之间的关系;通常有方向 | ISO-2 3.41 |
+| 对照表 | crosswalk | 两个以上词表之间概念映射的表 | ISO-2 3.24 |
+| 源词表 / 目标词表 | source / target vocabulary | 映射的起点 / 终点 | ISO-2 3.72, 3.82 |
+| 等价映射 | equivalence mapping | 目标概念与源概念范围相同 | ISO-2 3.29 |
+| 精确 / 不精确 / 部分等价 | exact / inexact / partial equivalence | 等价的三个程度 | ISO-2 §11 |
+| 层级映射 | hierarchical mapping | 目标概念比源概念宽或窄 | ISO-2 §9 |
+| 相关映射 | associative mapping | 有关但非等价非层级 | ISO-2 §10 |
+| 区分式映射 | differentiated mapping | 标明映射类型和等价程度的映射方法 | ISO-2 3.26 |
+| 中心辐射 | hub structure | 所有词表映射到一个中心词表的结构模型 | ISO-2 §6 |
+| exactMatch / closeMatch | — | SKOS 的精确 / 不精确等价;前者传递,后者不传递 | SKOS §10 |
+| broadMatch / narrowMatch / relatedMatch | — | SKOS 的层级 / 相关映射 | SKOS §10 |
+
+## 知识体系
+
+| 术语 | 英文 | 定义 | 出处 |
+|---|---|---|---|
+| 知识体系 | body of knowledge, BoK | 一个学科或职业公认知识范围的结构化清单 | SWEBOK;ISO/IEC TR 19759 |
+| 知识领域 | knowledge area, KA | 知识体系的主要区域 | SWEBOK;CS2023 |
+| 知识单元 | knowledge unit, KU | 知识领域内的主题簇 | CS2023 |
+| 主题 | topic | 知识单元内的具体知识点,标核心或选修 | CS2023 |
+| 普遍接受的知识 | generally accepted knowledge | 多数项目多数时候适用且广泛认同的知识;知识体系只收这类 | SWEBOK |
 
 ## 知识图谱
 
