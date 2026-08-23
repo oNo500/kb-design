@@ -31,8 +31,12 @@
 - 中文句子用全角标点；引号用“ ”，不用 `「」`（GB/T 15834 §4.8）
 - 汉字与西文字母、数字之间加一个半角空格；与全角标点之间不加（clreq §6.3.3）
 
+## 决策权
+
+按 [design/governance.md](design/governance.md) 的三级：不改规则且可逆的直接做；改规则、改结构的先提案；范围、删除、发版、草案生效只有人能定。提案先给小节清单或改动说明，人回复后再动文件。
+
 ## 其他约定
 
 - `concepts/` 下的文章另按 [concepts/CONVENTIONS.md](concepts/CONVENTIONS.md)
-- 来源分级见 [design/entities.md](design/entities.md)，复核按 [design/maintenance.md](design/maintenance.md)
+- 全部政策见 [design/governance.md](design/governance.md)；来源分级见 [design/entities.md](design/entities.md)，复核按 [design/maintenance.md](design/maintenance.md)
 - 凭记忆写的内容联网核对后才提交；链接用 `[标题](url)`
