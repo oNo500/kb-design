@@ -34,5 +34,5 @@
 ## 其他约定
 
 - `concepts/` 下的文章另按 [concepts/CONVENTIONS.md](concepts/CONVENTIONS.md)
-- 来源分级见 [design/entities.md](design/entities.md)，复核按 [design/governance.md](design/governance.md)
+- 来源分级见 [design/entities.md](design/entities.md)，复核按 [design/maintenance.md](design/maintenance.md)
 - 凭记忆写的内容联网核对后才提交；链接用 `[标题](url)`
