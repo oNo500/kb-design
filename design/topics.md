@@ -57,7 +57,7 @@
 两个顶层概念:
 
 - `computing` 计算与信息技术
-- `information-science` 信息与文献学
+- `library-and-information-science` 图书馆、情报与文献学(GB/T 13745 一级学科 870 的名称)
 
 ### 邻近主题的处理
 
@@ -72,7 +72,14 @@
 
 ### 排除范围
 
-目前没有明确排除的主题。候选见待定事项。
+以下主题不建节点,相关笔记不进本库:
+
+| 主题 | 说明 |
+|---|---|
+| 自然语言学习 | 英语、日语等语言学习笔记 |
+| 课程和书的阅读进度 | 属于个人任务管理,不是知识 |
+
+非技术的生活领域(健康、理财、旅行)尚未决定,见待定事项。
 
 ### 用途
 
@@ -89,7 +96,7 @@
 | 第 3 层 | 按知识单元 | CS2023 的 KU;ASVS 章节;RFC 1122 分层;GB/T 13745 三级学科 |
 
 ```
-从知识体系借入  第 1 层  顶层概念    computing / information-science
+从知识体系借入  第 1 层  顶层概念    computing / library-and-information-science
                第 2 层             security / network / content-engineering …
                第 3 层             input-validation / transport-layer / thesauri …
 本地建立        第 4 层起           sql-injection / http / facet-analysis …
@@ -195,11 +202,11 @@ computing 计算与信息技术
   └─ human-centered-computing 以人为中心的计算
       (按知识单元)                            ← CS2023 HCI
 
-information-science 信息与文献学
+library-and-information-science 图书馆、情报与文献学
   (按二级学科)                                ← GB/T 13745 一级学科 870
   ├─ library-science 图书馆学                 ← 870.10  未标引
   ├─ documentation 文献学                     ← 870.20  未标引
-  ├─ information-science 情报学               ← 870.30  未标引  ⚠ 与顶层概念 id 冲突
+  ├─ information-science 情报学               ← 870.30  未标引
   ├─ archival-science 档案学                  ← 870.40  未标引
   ├─ museology 博物馆学                       ← 870.50  未标引
   └─ content-engineering 内容工程             ← 本库自加
@@ -230,7 +237,7 @@ information-science 信息与文献学
 
 「借自」一列区分哪些概念有外部依据、哪些是本库自加的。标「待定」的需要逐个看该知识体系的当前结构后再定。
 
-`information-science` 下的五个概念来自 [GB/T 13745-2009《学科分类与代码》](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E)一级学科 870 下的二级学科,全部未标引;`content-engineering` 是本库自加的第六个。顶层概念与其中一个下位同名(information-science / 情报学),id 冲突,待定事项里记了。
+`library-and-information-science` 下的五个概念来自 [GB/T 13745-2009《学科分类与代码》](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E)一级学科 870 下的二级学科,全部未标引;`content-engineering` 是本库自加的第六个。
 
 ### 编程语言的下位结构
 
@@ -410,8 +417,7 @@ arrays:
 
 ## 待定事项
 
-- 排除范围:候选有自然语言学习、非技术的生活领域;需要确认是否明确排除
-- `information-science` 既是顶层概念 id 又是「情报学」的自然译名,二者需区分:顶层改为 `library-and-information-science`,或下位改为 `informatics`
+- 排除范围:非技术的生活领域(健康、理财、旅行)是否排除
 - 第 2 层表中五个「待定」的第 3 层来源
 - 多层级时 `broader` 列表的顺序是否赋予含义(显示、排序)
 - `security` 是否建第二、第三个数组(CWE、ATT&CK),以及触发条件
