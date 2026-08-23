@@ -152,6 +152,7 @@
 | DCMI Metadata Terms | — | Dublin Core 的扩展属性与类 | ISO 15836-2:2019；DCMI 2020 |
 | DCMI Type Vocabulary | — | `type` 的推荐取值，按媒介性质分 12 类 | DCMI |
 | 资源 | resource | 被描述的东西：文档、图像、数据集、软件 | DCMI |
+| 内容单元 | — | 知识库里最小的可独立引用、可独立打标签的东西；参照 DITA topic | 本库，参照 DITA 1.3 §2.2.1 |
 
 ## 知识图谱
 
