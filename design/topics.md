@@ -95,7 +95,7 @@
   alt: [SQLi]                            # 非首选词;可检索、可显示
   hidden: []                             # 非首选词;可检索、不显示(拼写错误等)
   broader: [input-validation, data]      # 空列表 = 顶层概念
-  arrays: [security-by-requirement]      # 所属数组
+  arrays: [security-asvs]                # 所属数组;上位只有一个来源时可省略
   related: []                            # RT
   scope: >                               # 范围注释:用于……不用于……
     指通过拼接用户输入改变 SQL 语义的攻击及对应缺陷;
@@ -113,17 +113,19 @@
 
 字段名与标准的对应:`alt` / `hidden` 对应 SKOS `altLabel` / `hiddenLabel`;`broader` `related` 对应 SKOS 同名属性;`arrays` 对应 ISO 25964-1 数据模型的 ThesaurusArray;`scope` 对应 ISO 25964-1 范围注释;`history` 对应历史注释;`status` 对应 ISO 25964-1 数据模型的 `status`。
 
-数组在文件顶部单独登记,对应 ISO 25964-1 数据模型的 ThesaurusArray 与 NodeLabel:
+数组在文件顶部单独登记,对应 ISO 25964-1 数据模型的 ThesaurusArray 与 NodeLabel。标识二选一或都有:`source`(按来源分组)或 `characteristic`(按划分特征分组,需在 `characteristics.yaml` 登记):
 
 ```yaml
 arrays:
-  - id: security-by-requirement
+  - id: security-asvs
     superordinate: security             # 数组所属的上位概念
-    label: 按验证要求                    # 节点标签:划分特征;不是概念,不能标引
-    source: asvs
+    source: asvs                        # 以来源为标识
+  - id: pl-by-paradigm                  # 分析层的例子,目前没有
+    superordinate: programming-languages
+    characteristic: paradigm            # 以划分特征为标识,显示为节点标签 (按范式)
 ```
 
-每个有下位的概念都登记数组并写 `label`,哪怕只有一组。划分特征怎么定、节点标签怎么写,见[层级结构](hierarchy.md)。
+一个概念的下位只有一个来源、且未做分析时,不登记数组。规则见[层级结构](hierarchy.md)。
 
 分面字段暂不设,见 [分面字段草案](drafts/facet-field.md)。
 
@@ -159,7 +161,7 @@ arrays:
 - `source` 和 `match.source` 在 `sources.yaml` 里
 - `deprecated` 必有 `replaced_by`
 - `arrays` 指向存在的数组,且该数组的 `superordinate` 在本概念的 `broader` 里
-- 每个有下位的概念至少登记一个数组,每个数组有 `label`
+- 数组的 `source` 或 `characteristic` 至少一个;`characteristic` 在 `characteristics.yaml` 里;分析层数组的成员都在上位的下位集合内,且同一划分特征下每个下位至多属一组
 - `source` 不是 `self` 的概念必有一条 `match` 指向同一来源
 - `label.en` 和 `alt` 在全表内不重复(重复 = 可能是同一概念建了两次)
 - 统计:每个第 2 层概念下 `unassigned` 的比例(盲区地图)、`candidate` 被引用次数

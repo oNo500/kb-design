@@ -6,7 +6,7 @@
 
 ## 规则
 
-十五条,分四组。
+十五条,分四组。借入与分析分两层的理由见[借入照抄与本地分析分层的决定](drafts/borrow-and-analyze.md)。
 
 ### 树的性质
 
@@ -16,7 +16,7 @@
 ### 借入
 
 3. **可借入的来源**:[来源名称规范表](sources-registry.md)中 `role` 含 `structure` 的。分级与版本方面的进一步要求留待治理方案
-4. **起步全借**:每个可借入的来源,在它对应的概念下各建一个数组,全部以未标引状态建入。未标引节点多是目的——它们就是盲区地图
+4. **起步全借**:每个可借入的来源,在它对应的概念下全部以未标引状态建入。未标引节点多是目的——它们就是盲区地图
 5. **借入深度**:借到第 3 层,即知识体系中有稳定编号、可被引用的最深一层。CS2023 的知识单元有代码,其下的主题没有;SWEBOK 的主题有章节号,子主题没有;GB/T 13745 三级学科有代码——都落在第 3 层。再往下没有可引用的权威结构
 
 ```
@@ -26,124 +26,96 @@
 本地建立        第 4 层起           sql-injection / http / facet-analysis …
 ```
 
-6. **借入的记录**:概念写 `source`,并 `match` 回源头条目。`source` 说来历,`match` 说对应哪一条;改版后章节号可能变,两者不互相替代
-7. **本地建立**:第 4 层起由本库按依据建立,深度不限,`source: self`
-8. **派生概念组不替代借入**:派生组的成员只有本库已有的概念,暴露不了盲区;它与借入并存
+6. **借入照抄**:借入的概念作为上位的下位集合原样保留,成员、顺序按来源,不拆、不改、不配节点标签
+7. **借入的记录**:概念写 `source`,并 `match` 回源头条目。`source` 说来历,`match` 说对应哪一条;改版后章节号可能变,两者不互相替代
+8. **本地建立**:第 4 层起由本库按依据建立,深度不限,`source: self`。派生概念组的成员只有本库已有的概念,暴露不了盲区,不替代借入
 
-### 划分特征
+### 数组
 
-9. 每个有下位的概念都登记数组,每个数组有一个划分特征
-10. 划分特征必须是兄弟之间的区别属性。判据:能填进「A 和 B 的区别是 ___」。`(按年龄)`:儿童和成人的区别是年龄,成立;`(按知识单元)`:ML 和 NLP 的区别是知识单元,不成立
-11. 划分特征不得是来源名(CS2023)、来源的层级名(知识单元、三级学科)或知识体系名;来源写在数组登记的 `source`
-12. 一个数组只有一个划分特征;来源混用了多个特征的拆成多个数组。例:SWEBOK 18 章拆成「工程活动」15 章和「基础学科」3 章
-13. 同一划分特征只取一个来源。OWASP Top 10 和 CWE 都按缺陷分,只取 CWE,Top 10 只做映射
+9. **数组是可选的**。一个概念的下位默认是一个集合;只在需要区分成几组时登记数组。数组只分组,不改概念
+10. **按来源分组**:一个概念的下位来自多个来源时,每个来源的下位登记为一个数组,标识是 `source`。例:security 下 ASVS、CWE、ATT&CK 各一个
+11. **按划分特征分组**:可对下位集合做分析,每个划分特征一个数组,标识是 `characteristic`。划分特征是本库自定,必须按[划分特征治理](drafts/division-characteristics.md)登记,通过判据「A 和 B 的区别是 ___」,且完备划分
+12. 一个概念在同一划分特征下只属一组,在不同划分特征下可各属一组(ISO 25964-1 数据模型 `isMemberOfArray 0..*`)
+13. **同一视角只取一个来源**:两个来源对同一批东西做同一种划分时只借一个,另一个只做映射。OWASP Top 10 与 CWE 都是缺陷清单,取 CWE
 
 ### 节点标签
 
-14. 划分特征写 `(按 X)`,X 是名词;分面名写 `[X]`,本库的树没有分面层,此形式暂不出现
+14. 只有以划分特征为标识的数组写节点标签,形式 `(按 X)`,X 是名词;以来源为标识的数组显示来源名,那是标识不是节点标签。分面名 `[X]` 的形式本库暂不出现
 15. 节点标签不是概念:不能标引、不进术语表、不能做 `broader` 的目标;不为分组层造复合概念(Z39.19 §7.7)
 
-## 各层的划分特征
+## 各概念下的来源
 
-按规则 10 逐层核过:
+每个概念的下位从哪些来源借入。一个来源一行;一个概念下多于一个来源时,各来源的下位各成一个数组(规则 10)。分析层数组目前没有。
 
-| 位置 | 数组 | 来源 |
+| 概念 | 下位来源 | 借到 |
 |---|---|---|
-| 顶层之下 | `(按学科门类)` | GB/T 13745 一级学科 |
-| computing 之下 | `(按子领域)` | CS2023 / SWEBOK / ACM CCS 的知识领域 |
-| library-and-information-science 之下 | `(按子领域)` | GB/T 13745 二级学科 |
-| foundations、artificial-intelligence、data、programming-languages、human-centered-computing 之下 | `(按子领域)` | CS2023 各知识领域的知识单元 |
-| engineering 之下 | `(按工程活动)`;`(按基础学科)` | SWEBOK v4 第 1–15 章;第 16–18 章 |
-| security 之下 | `(按验证要求)`;`(按缺陷类型)`;`(按攻击战术)` | ASVS 5.0 章;CWE 顶层类别;ATT&CK 14 个战术 |
-| network 之下 | `(按协议层)` | RFC 1122 四层 |
-| web 之下 | `(按技术规范)` | MDN 技术参考 19 个顶层分区 |
-| 五个图书情报学科之下 | `(按子领域)` | GB/T 13745 三级学科 |
+| (根) | GB/T 13745 一级学科:520 计算机科学技术 → computing;870 图书馆、情报与文献学 → library-and-information-science | 第 1 层 |
+| computing | 待定,见下 | 第 2 层 |
+| library-and-information-science | GB/T 13745 二级学科 870.10–870.50 | 第 2 层 |
+| foundations | CS2023 相关知识领域(待定,见下) | 第 3 层 |
+| engineering | SWEBOK v4 18 章 | 第 3 层 |
+| security | ASVS 5.0 章;CWE 顶层类别;ATT&CK 14 个战术——三个数组 | 第 3 层 |
+| web | MDN 技术参考 19 个顶层分区 | 第 3 层 |
+| artificial-intelligence | CS2023 AI 12 个知识单元;ATLAS 战术;OWASP LLM Top 10——三个数组,后两个待核 | 第 3 层 |
+| data | CS2023 DM 13 个知识单元 | 第 3 层 |
+| network | RFC 1122 四层 | 第 3 层 |
+| programming-languages | CS2023 FPL 22 个知识单元 + 具体语言术语表——两个数组 | 第 3 层 |
+| human-centered-computing | CS2023 HCI 6 个知识单元 | 第 3 层 |
+| library-science | GB/T 13745 三级学科 870.10xx | 第 3 层 |
+| documentation | GB/T 13745 三级学科 870.20xx | 第 3 层 |
+| information-science | GB/T 13745 三级学科 870.30xx | 第 3 层 |
+| archival-science | GB/T 13745 三级学科 870.40xx | 第 3 层 |
+| museology | 无三级学科 | — |
 
-「按子领域」出现在多数层:学科树的本质就是逐层按子领域分。
+**computing 的第 2 层是未解决的问题。** 现在的九个概念(engineering、security、web……)是本库原表里的,「借自」有 ACM CCS、CS2023、self 三种——这一层不是从某个体系整体借入的,违反规则 4 和 13。两条路:整体借入 CS2023 的 17 个知识领域(foundations 拆散,web 降为 SPD 下的知识单元,多出 OS、PDC、GIT 等盲区节点),或承认这层为 self 并放弃它的完整性。待定。
+
+只作映射和候选来源、不借入的体系登记在[来源名称规范表](sources-registry.md)。
+
+`library-and-information-science` 下的五个概念来自 [GB/T 13745-2009《学科分类与代码》](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E)一级学科 870 下的二级学科,第 3 层取其三级学科。原拟自加的「内容工程」取消:叙词表与检索语言归 870.3050 情报检索学,分类法归 870.1040 图书分类学,元数据与编目归 870.1045 图书编目学;术语学与结构化写作见[主题词表设计](topics.md)的邻近主题表。
 
 ## 结构预览
 
 ```
-(按学科门类)                                  ← GB/T 13745
-computing 计算与信息技术
-  (按子领域)                                  ← CS2023 / SWEBOK / ACM CCS
-  ├─ foundations 计算机科学基础
-  │   (按子领域)                              ← CS2023
-  │   ├─ 数学与统计基础                        ← 数学落这里(MSF)
-  │   ├─ 体系结构与组织                        ← 硬件落这里(AR)
-  │   └─ … 其余 CS2023 知识单元
-  ├─ engineering 软件工程
-  │   (按工程活动)                            ← SWEBOK v4 第 1–15 章
-  │   ├─ 软件工程管理                          ← 项目管理落这里(第 9 章)
-  │   ├─ 软件工程职业实践                      ← 通用职业技能落这里(第 14 章)
+computing 计算与信息技术                        ← GB/T 13745 520
+  ├─ foundations 计算机科学基础                 ← 第 2 层来源待定
+  │   ├─ 数学与统计基础                          ← CS2023 MSF;数学落这里
+  │   ├─ 体系结构与组织                          ← CS2023 AR;硬件落这里
   │   └─ …
-  │   (按基础学科)                            ← SWEBOK v4 第 16–18 章
-  │   └─ 计算基础 / 数学基础 / 工程基础
+  ├─ engineering 软件工程                       ← SWEBOK v4 18 章
+  │   ├─ 软件工程管理                            ← 第 9 章;项目管理落这里
+  │   ├─ 软件工程职业实践                        ← 第 14 章;通用职业技能落这里
+  │   └─ …
   ├─ security 信息安全
-  │   (按验证要求)                            ← ASVS 5.0
-  │   (按缺陷类型)                            ← CWE 顶层类别
-  │   (按攻击战术)                            ← ATT&CK 14 战术
-  ├─ web Web 平台
-  │   (按技术规范)                            ← MDN 技术参考
+  │   [ASVS 5.0]                               ← 数组,以来源为标识
+  │   [CWE 顶层类别]
+  │   [ATT&CK 14 战术]
+  ├─ web Web 平台                               ← MDN 技术参考 19 分区
   ├─ artificial-intelligence 人工智能
-  │   (按子领域)                              ← CS2023 AI
-  │   (待核)                                  ← ATLAS、OWASP GenAI
-  ├─ data 数据
-  │   (按子领域)                              ← CS2023 DM
-  ├─ network 网络
-  │   (按协议层)                              ← RFC 1122
+  │   [CS2023 AI 12 知识单元]
+  │   [ATLAS]                                  ← 待核
+  │   [OWASP LLM Top 10]                       ← 待核
+  ├─ data 数据                                  ← CS2023 DM 13 知识单元
+  ├─ network 网络                               ← RFC 1122 四层
   ├─ programming-languages 编程语言
-  │   (按子领域)                              ← CS2023 FPL
-  │   ├─ 类型系统、内存与执行模型、范式……
-  │   └─ 具体语言                              ← 唯一的术语表:python / rust / …
-  └─ human-centered-computing 以人为中心的计算
-      (按子领域)                              ← CS2023 HCI
+  │   [CS2023 FPL 22 知识单元]
+  │   [具体语言]                                ← 术语表:python / rust / …
+  └─ human-centered-computing 以人为中心的计算  ← CS2023 HCI 6 知识单元
 
-library-and-information-science 图书馆、情报与文献学
-  (按子领域)                                  ← GB/T 13745 二级学科
-  ├─ library-science 图书馆学
-  │   (按子领域)                              ← GB/T 13745 三级学科
-  │   ├─ 图书分类学                            ← 870.1040,分类法落这里
-  │   ├─ 图书编目学                            ← 870.1045,元数据与编目落这里
+library-and-information-science 图书馆、情报与文献学   ← GB/T 13745 870
+  ├─ library-science 图书馆学                   ← 870.10xx 三级学科
+  │   ├─ 图书分类学                              ← 870.1040;分类法落这里
+  │   ├─ 图书编目学                              ← 870.1045;元数据与编目落这里
   │   └─ …
-  ├─ documentation 文献学
-  │   (按子领域)
-  ├─ information-science 情报学
-  │   (按子领域)
-  │   ├─ 情报检索学                            ← 870.3050,叙词表与检索语言落这里
+  ├─ documentation 文献学                       ← 870.20xx
+  ├─ information-science 情报学                 ← 870.30xx
+  │   ├─ 情报检索学                              ← 870.3050;叙词表与检索语言落这里
   │   └─ …
-  ├─ archival-science 档案学
-  │   (按子领域)
-  └─ museology 博物馆学                       ← 无三级学科
+  ├─ archival-science 档案学                    ← 870.40xx
+  └─ museology 博物馆学                         ← 无三级学科
 
-图例:括号行是节点标签,写划分特征;「←」后是该数组取自的知识体系,记在数组登记的 source。
-      第 3 层以下不预建。
+图例:「←」后是下位的来源。方括号行是以来源为标识的数组,出现在一个概念下有多个来源时。
+      分析层数组(按划分特征)目前没有;有了才出现 (按 X) 形式的节点标签。第 3 层以下不预建。
 ```
-
-## 各概念下的数组
-
-每个第 2 层概念下起步借入的数组。「借自」指该概念本身来自哪个知识体系;「数组」一列写「(划分特征) ← 来源」,一个概念下有几个数组就写几项。
-
-| id | 首选词 | 借自 | 数组 |
-|---|---|---|---|
-| foundations | 计算机科学基础 | CS2023 | (按子领域) ← CS2023 各知识领域 |
-| engineering | 软件工程 | ACM CCS | (按工程活动) ← SWEBOK v4 第 1–15 章;(按基础学科) ← 第 16–18 章 |
-| security | 信息安全 | ACM CCS | (按验证要求) ← ASVS 5.0;(按缺陷类型) ← CWE 顶层类别;(按攻击战术) ← ATT&CK 14 战术 |
-| web | Web 平台 | self | (按技术规范) ← MDN 技术参考 19 分区 |
-| artificial-intelligence | 人工智能 | CS2023 | (按子领域) ← CS2023 AI 12 知识单元;其余待核,见下 |
-| data | 数据 | CS2023 | (按子领域) ← CS2023 DM 13 知识单元 |
-| network | 网络 | ACM CCS | (按协议层) ← RFC 1122 四层 |
-| programming-languages | 编程语言 | CS2023 | (按子领域) ← CS2023 FPL 22 知识单元 + 具体语言术语表 |
-| human-centered-computing | 以人为中心的计算 | ACM CCS | (按子领域) ← CS2023 HCI 6 知识单元 |
-| library-science | 图书馆学 | GB/T 13745 870.10 | (按子领域) ← 三级学科 870.10xx |
-| documentation | 文献学 | GB/T 13745 870.20 | (按子领域) ← 三级学科 870.20xx |
-| information-science | 情报学 | GB/T 13745 870.30 | (按子领域) ← 三级学科 870.30xx |
-| archival-science | 档案学 | GB/T 13745 870.40 | (按子领域) ← 三级学科 870.40xx |
-| museology | 博物馆学 | GB/T 13745 870.50 | 无:GB/T 13745 无三级学科 |
-
-只作映射和候选来源、不借入的体系(OWASP Top 10、MDN Curriculum、roadmap.sh、CMU 15-445、DB-Engines、teachyourselfcs、OSI、RFC 9110–9114、ISO 25964、Z39.19、SKOS)登记在[来源名称规范表](sources-registry.md),不在此表。
-
-`library-and-information-science` 下的五个概念来自 [GB/T 13745-2009《学科分类与代码》](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E)一级学科 870 下的二级学科,第 3 层取其三级学科。原拟自加的「内容工程」取消:叙词表与检索语言归 870.3050 情报检索学,分类法归 870.1040 图书分类学,元数据与编目归 870.1045 图书编目学;术语学与结构化写作见[主题词表设计](topics.md)的邻近主题表。
 
 ## 人工智能与编程语言
 
@@ -151,7 +123,7 @@ library-and-information-science 图书馆、情报与文献学
 
 取 CS2023 知识领域 AI 的 12 个知识单元:Introduction、Search、KRR、LRR、Probability、ML、NLP、Agents、Planning、Vision、Robotics、SEP。它偏学术——机器人、规划与本库侧重的 LLM 应用工程距离较远——但它是唯一有编号的人工智能知识体系;未标引的单元是盲区标记,不是负担。首选词用「人工智能」而不是原拟的「AI 应用工程」:侧重体现在内容里,不体现在知识体系的边界上。
 
-LLM 应用相关的外部体系按规则 3、4 处理:ATLAS 的战术、OWASP LLM Top 10 的编号条目有稳定结构,各借入一个数组,划分特征待核;NIST AI RMF 的四个功能是治理职能不是知识划分,只作映射;Anthropic 文档随产品迭代,只作映射。
+LLM 应用相关的外部体系按规则 3、4、10 处理:ATLAS 的战术、OWASP LLM Top 10 的编号条目有稳定结构,各自借入为一个以来源为标识的数组,结构待核;NIST AI RMF 的四个功能是治理职能不是知识划分,只作映射;Anthropic 文档随产品迭代,只作映射。
 
 ### 编程语言
 
@@ -196,6 +168,7 @@ programming-languages
 
 ## 待定事项
 
-- artificial-intelligence 下 ATLAS、OWASP GenAI 数组的划分特征
-- network 数组的节点标签「按协议层」是本库对 RFC 1122 分层的概括,待核
+- computing 的第 2 层来源:整体借入 CS2023 17 个知识领域,还是承认为 self
+- artificial-intelligence 下 ATLAS、OWASP LLM Top 10 的结构核对
 - 多层级时 `broader` 列表的顺序是否赋予含义(显示、排序)
+- 分析层数组何时启用,见[划分特征治理](drafts/division-characteristics.md)
