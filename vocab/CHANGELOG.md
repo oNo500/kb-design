@@ -22,6 +22,7 @@
 ### entities.yaml
 
 - 新增 27 个实体，均为作为词表来源的标准、知识体系与参考资料；`kind` 为 standard 或 publication，带 `tier`
+- 第二批 30 个：4 个组织、6 个 AI 编程工具、5 种语言、15 个 JS/TS 与 Python 生态的框架和工具。Wikidata 无条目的 7 个为 `candidate`；`form` 记 Wikidata 的 instance of
 
 ### sources.yaml
 
