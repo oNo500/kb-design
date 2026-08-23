@@ -210,3 +210,4 @@ slug 为本库拟定，英文原名和代码为准；22 个知识单元全部以
 - Web 相关内容失去复制结构后是否够用，观察后决定是否在 Web Platforms 下破例复制 MDN
 - 多层级时 `broader` 列表的顺序暂不赋予含义；应用映射需要主上位时再定，记决定
 - 分析层数组何时启用，见[划分特征治理](drafts/division-characteristics.md)
+- 技术传播（技术写作、结构化写作）在树上没有节点，候选落点 `communication-studies` 下、依据 Wikidata Q1068718；暂缓，等 DITA 2.0 定稿、确定采用后再议（2026-08-23）
