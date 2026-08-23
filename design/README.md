@@ -33,6 +33,7 @@
 | 主题词表 | `vocab/topics.yaml` | 类：领域与概念，层级树 | topics.md、hierarchy.md |
 | 命名实体词表 | `vocab/entities.yaml` | 个体：产品、语言、组织、标准、文献 | entities.md |
 | 来源名称规范表 | `vocab/sources.yaml` | 外部知识体系与词表 | sources-registry.md |
+| 文档类型词表 | `vocab/types.yaml` | 内容单元的体裁，四类 | content-model.md |
 | 划分特征登记 | `vocab/characteristics.yaml` | 分析层数组的划分特征 | drafts/division-characteristics.md |
 | 手工概念组 | `vocab/groups.yaml` | 按用途圈的视图 | drafts/concept-groups.md |
 
@@ -49,6 +50,7 @@
 | 5 | [命名实体词表设计](entities.md) | 产品、语言、标准、文献为什么另立词表；分级 |
 | 6 | [来源复核](review.md) | 多久回头看一次来源 |
 | 7 | [写作规则](writing.md) | 写任何文件前要遵守什么 |
+| 8 | [内容模型](content-model.md) | 一条内容单元有什么、id 怎么取 |
 | — | [decisions/](decisions/) | 两份决定记录 |
 | — | [drafts/](drafts/) | 按需 |
 
