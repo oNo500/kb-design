@@ -21,6 +21,7 @@
 | `modified` | modified | 否 | ISO 8601 日期 |
 | `status` | 本库扩展 | 是 | `draft` / `active` / `deprecated` |
 | `isReplacedBy` | isReplacedBy | `deprecated` 时必填 | 替代它的内容单元 id |
+| `relation` | relation | 否 | 有关但不属前述关系的内容单元 id；必须互反 |
 | `language` | language | 否 | 默认 `zh`，与默认不同时填 |
 
 不设 `description`：`title` 加 `subject` 已足够定位，正文本身就是说明。不设 `creator`、`publisher`、`rights`：单人库，值恒定，不记。
@@ -94,8 +95,7 @@ DCMI Type Vocabulary 分的是媒介（Text、Image……），本库的内容�
 
 ## 待定事项
 
-- `status` 的 `draft` 是否需要：单人库可能直接写成 `active`
-- 内容单元之间除 `source`、`isReplacedBy`、`references` 外是否需要 `relation`（泛关联）
+- 文档类型词表只有 Diátaxis 四类，装不下学习笔记的形态（选材策略、载体、事实与观点的关系）；待概念调研后重定 `type`，可能拆成多个字段
 
 ## 权威来源
 

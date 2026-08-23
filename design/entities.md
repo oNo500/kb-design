@@ -48,6 +48,7 @@
 | `standard` | Q317623 technical standard | ISO 25964-1:2011、RFC 9110、ASVS 5.0、Anthropic 文档 |
 | `publication` | Q591041 scientific publication 及其下位：Q13442814 scholarly article、Q571 book、Q17928402 blog post;issue、演讲的类待核 | Hogan 2021、Aitchison 的教材、Cockburn 2005 的博文 |
 | `person` | Q5 human | Ranganathan、Wüster、Hogan、Cockburn |
+| `large-language-model` | Q115305900 large language model | Claude Opus 4、GPT-4 |
 
 需要更多类别时从 Wikidata 取，记录其 Q 号。`publication` 的具体形式记在 `form` 字段，值是 Wikidata 的 Q 号或其 slug。
 
@@ -111,6 +112,5 @@
 ## 待定事项
 
 - 类别是否需要更细（工具 vs 框架 vs 服务），以及从 Wikidata 取哪些类
-- 模型（Claude、GPT）算 `software` 还是另立类别
 - `publication` 中 issue、演讲对应的 Wikidata 类
 - 实体之间是否需要 `vendor` 以外的关系（依赖、兼容）——那是知识图谱的事，见[概念文](../concepts/knowledge-graph.md)

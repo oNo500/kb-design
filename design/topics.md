@@ -80,7 +80,7 @@
 | 通用职业技能（写作、沟通、时间管理） | `computing` › `society-ethics-and-the-profession`；写作另可挂 `journalism-and-communication` 之下 | CS2023 SEP |
 | 术语学（ISO 704、1087、30042） | `linguistics` › 740.35 应用语言学之下，作本地概念（GB/T 无此学科） | GB/T 13745 740.35 |
 | Web 开发 | `specialized-platform-development` › Web Platforms;MDN 只作映射 | CS2023 SPD |
-| 结构化写作（DITA） | 待定 | — |
+| 结构化写作（DITA） | `journalism-and-communication` 之下；DITA 标准本身是实体，`subjects` 指向同一处 | GB/T 13745 860；技术写作属传播 |
 
 ### 排除范围
 
@@ -110,7 +110,7 @@
   hidden: []                             # 非首选词;可检索、不显示(拼写错误等)
   broader: [input-validation, data]      # 空列表 = 顶层概念
   arrays: [security-asvs]                # 所属数组;上位只有一个来源时可省略
-  related: []                            # RT
+  related: []                            # RT，必须互反；只在两概念不同上位、且同一内容常同时涉及时加
   scope: >                               # 范围注释:用于……不用于……
     指通过拼接用户输入改变 SQL 语义的攻击及对应缺陷;
     参数化查询等防御手段不在此。
@@ -210,7 +210,6 @@ arrays:
 
 ## 待定事项
 
-- 排除范围：非技术的生活领域（健康、理财、旅行）是否排除
-- 结构化写作（DITA）的落点
+- 生活领域（健康、理财、旅行等）要记，按范围声明加顶层：健康对应 GB/T 13745 医学门类（310–360），理财对应 790 经济学；具体哪些顶层待列
 - 分面字段，见 [草案](drafts/facet-field.md)
-- `related` 的使用规则：什么情况下加、是否要求互反
+- 大语言模型作为本地概念挂在 `artificial-intelligence` 的哪个知识单元下（NLP 或 ML），以及术语的 `origin`
