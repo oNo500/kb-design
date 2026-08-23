@@ -72,7 +72,7 @@ ISO 15836-1:2017，即 DCMI 的 `/elements/1.1/` 命名空间：
 
 - 内容单元的字段按 Dublin Core 取，不自造字段名；本库没有的概念（如“状态”）用 DCMI Terms 里最近的属性或明确标为本库扩展
 - `subject` 的值只能是主题词表的概念 id；`type` 的值只能是文档类型词表的 id；引用的文献和工具通过实体 id
-- 元数据是形态无关的：Obsidian 的 properties、DITA 的 prolog 都是它的一种落地，字段含义不随工具变
+- 元数据是与应用无关的：Obsidian 的 properties、DITA 的 prolog 都是它的一种落地，字段含义不随工具变
 
 ## 权威来源
 

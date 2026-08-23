@@ -15,17 +15,17 @@
 │
 ├─ 命名实体词表 entities.md     产品、语言、组织、标准、文献:个体不进主题树,通过 subjects 挂主题
 │
-├─ 内容模型 content-model.md    一条内容单元有什么字段、文档类型词表、id 规则、形态映射的要求
+├─ 内容模型 content-model.md    一条内容单元有什么字段、文档类型词表、id 规则、应用映射的要求
 │   ├─ 词表版本 versioning.md    版本块、变更记录
-│   └─ targets/                  各执行形态的映射(待建)
+│   └─ targets/                  各应用的映射(待建)
 │
 ├─ 治理 governance.md           对象范围、政策、决策权、变更控制、质量与验收、审计、风险
-│   └─ 维护循环 maintenance.md  对象、信号、阈值、触发、动作、记录、周期；来源复核、候选审核、断言依据、剩余监控
+│   └─ 维护 maintenance.md  对象、信号、阈值、触发、动作、记录、周期；来源复核、编辑审核、断言依据、剩余监控
 │
 ├─ decisions/                    决定记录,只追加不修改
 │   ├─ tree-by-discipline.md     顶层为什么按学科不按分面
 │   ├─ borrow-and-analyze.md     借入照抄为底、本地分析在上
-│   ├─ form-independence.md      设计与执行形态分离
+│   ├─ form-independence.md      设计与应用分离
 │   └─ decision-rights-defaults.md  决策权的首批边界；首次越权事件
 │
 └─ drafts/                       未生效,各自写明触发条件
@@ -57,7 +57,7 @@
 | 4 | [来源名称规范表](sources-registry.md) | 外部体系怎么登记、三种用法 |
 | 5 | [命名实体词表设计](entities.md) | 产品、语言、标准、文献为什么另立词表；分级 |
 | 6 | [治理](governance.md) | 谁决定、按什么政策、怎么审计 |
-| 6a | [维护循环](maintenance.md) | 信号、阈值、动作、周期：词表和内容怎么随时间保持可信 |
+| 6a | [维护](maintenance.md) | 信号、阈值、动作、周期：词表和内容怎么随时间保持可信 |
 | 7 | [写作规则](writing.md) | 写任何文件前要遵守什么 |
 | 8 | [内容模型](content-model.md) | 一条内容单元有什么、id 怎么取 |
 | 9 | [词表版本](versioning.md) | 什么时候发版、记什么 |

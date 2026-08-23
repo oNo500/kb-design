@@ -24,7 +24,7 @@
 
 `candidate` 与其余三者互斥：条目不稳定无编号，只用来发现词。
 
-复核周期按实体的 `tier`，见[维护循环](maintenance.md)。
+复核周期按实体的 `tier`，见[维护](maintenance.md)。
 
 借入来源的资格：`role` 含 `structure` 的来源，其实体的 `tier` 必须是 de-jure，或 de-facto 且有版本号（MDN 这类无版本号的 de-facto 只作映射）；vendor 只作映射；archival 不作来源。依据是组织依据——本库只把有发布流程或版本标识的体系当作结构来源。
 
