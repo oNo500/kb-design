@@ -45,7 +45,7 @@ DCMI Type Vocabulary 分的是媒介（Text、Image……），本库的内容�
 全库三份词表和内容单元共用一套 id 规则。依据：ISO 25964-1 §2.25，标识符是在给定语境内唯一标识概念、词或其他实体的符号串；DCMI `identifier`，在给定语境内对资源的无歧义引用。
 
 1. 小写 ASCII 字母、数字、连字符；不以连字符开头或结尾；不含其他字符
-2. 从英文首选词取：`sql-injection`、`information-retrieval`。中文首选词没有通行英文名时，取 GB/T 或来源体系的英文名；都没有时用意译，不用拼音
+2. 从英文首选词取：`sql-injection`、`information-retrieval`。英文首选词按顺序取：来源体系的英文名（CS2023、SWEBOK 本身是英文）；来源只有中文的（GB/T 13745 不提供学科英文名），取 `match` 到的 Wikidata 条目的英文标签；都没有时意译，并在 `label.en` 注明为本库所译。不用拼音
 3. 借入的概念不用来源的代码作 id（`FPL-Types` 不作 id），代码记在 `match`；id 从名称取，来源改版时代码变、id 不变
 4. 一经引用不再改。名字错了，改 `label`，不改 id
 5. 同名冲突加限定词后缀：`apple-company`、`apple-fruit`；限定词取自上位概念或类别

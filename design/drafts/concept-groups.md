@@ -23,7 +23,7 @@
 # vocab/groups.yaml
 - id: project-foo
   label: 项目 foo 常用
-  purpose: 项目 foo 的笔记打标签时的候选范围
+  purpose: 项目 foo 的内容单元打标签时的候选范围
   members: [sql-injection, input-validation, postgresql]
   added: 2026-08-23
 ```

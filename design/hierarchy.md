@@ -203,7 +203,7 @@ programming-languages                 id 用 slug,代码记在 match
 
 slug 为本库拟定，英文原名和代码为准；22 个知识单元全部以未标引状态建入，预期多数长期如此，这正是规则 4 的目的。
 
-语言特性的笔记主题挂通识节点，语言记在实体字段：“Rust 的所有权”`topics: [systems-execution-and-memory]`,`entities: [rust]`。按通识检索时它与 GC、引用计数并列；按语言检索时由实体表算出。
+语言特性的内容单元主题挂通识节点，语言记在实体字段：“Rust 的所有权”`subject: [systems-execution-and-memory]`，`entities: [rust]`。按通识检索时它与 GC、引用计数并列；按语言检索时由实体表算出。
 
 ## 待定事项
 
