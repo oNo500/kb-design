@@ -45,6 +45,10 @@ for c in concepts.values():
     for a in c.get('arrays', []):
         if a not in arrays: bad.append(f"topics: {c['id']} arrays 不存在 {a}")
         elif arrays[a]['superordinate'] not in c['broader']: bad.append(f"topics: {c['id']} 数组 {a} 的上位不在 broader 里")
+    for r in c.get('related') or []:
+        if r not in concepts: bad.append(f"topics: {c['id']} related 不存在 {r}")
+        elif c['id'] not in (concepts[r].get('related') or []): bad.append(f"topics: {c['id']} related {r} 未互反")
+        elif set(c['broader']) & set(concepts[r]['broader']): bad.append(f"topics: {c['id']} related {r} 同上位，不应加 RT")
     if c['status'] == 'deprecated' and not c.get('replaced_by'): bad.append(f"topics: {c['id']} deprecated 无 replaced_by")
     if c['status'] not in ('unassigned','candidate','active','deprecated'): bad.append(f"topics: {c['id']} status 非法")
 for a in arrays.values():
