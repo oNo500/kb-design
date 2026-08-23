@@ -42,10 +42,33 @@
 
 括号里那行叫**节点标签**(node label,ISO 25964-1 §2.38)。它占一个节点的位置,但不是概念——不能用它[标引](glossary.md)一篇笔记;它只是组的名牌。
 
-节点标签能写什么,标准限定了两种(§2.38 注):
+节点标签能写什么,标准限定了两种(§2.38 注),它们用在不同位置:
 
-- 下面这组词所依据的**划分特征**:「(按年龄)」
-- 下面这组词所属的**分面名**:「[动作]」
+| 写的是 | 用在哪 | 说明什么 | 例 |
+|---|---|---|---|
+| 划分特征 | 一个概念下面,把下位分成几组 | 这组兄弟是同一种东西,按某属性再分 | `(按年龄)` |
+| 分面名 | 不同种类的东西列在一起的地方 | 接下来这几个是某一种东西 | `[动作]` |
+
+划分特征的用法就是上面「人」的例子。分面名的用法有两个典型位置。一是系统式显示的段首:分面式词表整体列出来时,每个分面是一段,段首要有标题,而「动作」「人物」不是概念——不能用它标引笔记——所以也是节点标签:
+
+```
+[人物]
+  医生
+  患者
+[动作]
+  手术
+  诊断
+```
+
+二是一个概念的相关词列表里,相关词来自不同分面时按分面分组(Z39.19 §8.4.3 例 132):
+
+```
+books
+  RT
+    [operations]
+      binding
+      printing
+```
 
 写法上,Z39.19 §8.3.5 的例子是「by + 特征」:
 
@@ -78,4 +101,4 @@ cars
 ## 权威来源
 
 - [ISO 25964-1:2011](https://www.iso.org/standard/53657.html) §2.1 array、§2.4 characteristic of division、§2.23 hierarchical relationship、§2.34 / §2.42 mono- / polyhierarchy、§2.38 node label;§10.2 层级关系;§15 数据模型的 ThesaurusConcept(`topConcept`)、ThesaurusArray、NodeLabel。见 [ISO 25964 阅读笔记](../sources/iso-25964.md)
-- [ANSI/NISO Z39.19-2005 (R2010)](https://www.niso.org/publications/ansiniso-z3919-2005-r2010) §7.7 Node Labels、§8.3.5 Node Labels in Hierarchies。[免费 PDF](http://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf)
+- [ANSI/NISO Z39.19-2005 (R2010)](https://www.niso.org/publications/ansiniso-z3919-2005-r2010) §7.7 Node Labels、§8.3.5 Node Labels in Hierarchies、§8.4.3 Node Labels for Related Terms。[免费 PDF](http://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf)
