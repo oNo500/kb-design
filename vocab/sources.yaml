@@ -1,0 +1,115 @@
+# 来源名称规范表。设计见 design/sources-registry.md。名称、分级、版本、URL 记在 entities.yaml。
+version:
+  id: "2026.08"
+  date: 2026-08-23
+  note: 初版：27 个来源
+
+sources:
+  - id: gbt-13745
+    entity: gbt-13745
+    role: [mapping, structure]
+    checked: 2026-08-23
+  - id: cs2023
+    entity: cs2023
+    role: [mapping, structure]
+    checked: 2026-08-23
+  - id: swebok
+    entity: swebok
+    role: [mapping, structure]
+    checked: 2026-08-23
+  - id: acm-ccs
+    entity: acm-ccs
+    role: [mapping]
+    checked: 2026-08-23
+  - id: asvs
+    entity: asvs
+    role: [mapping, structure]
+    checked: 2026-08-23
+  - id: cwe
+    entity: cwe
+    role: [mapping, structure, group]
+    checked: 2026-08-23
+  - id: attack
+    entity: attack
+    role: [mapping, structure]
+    checked: 2026-08-23
+  - id: owasp-top10
+    entity: owasp-top10
+    role: [mapping, group]
+    checked: 2026-08-23
+  - id: owasp-llm-top10
+    entity: owasp-llm-top10
+    role: [mapping, structure, group]
+    checked: 2026-08-23
+  - id: atlas
+    entity: atlas
+    role: [mapping, structure]
+    checked: 2026-08-23
+  - id: nist-ai-rmf
+    entity: nist-ai-rmf
+    role: [mapping]
+    checked: 2026-08-23
+  - id: anthropic-docs
+    entity: anthropic-docs
+    role: [mapping]
+    checked: 2026-08-23
+  - id: rfc-1122
+    entity: rfc-1122
+    role: [mapping, structure]
+    checked: 2026-08-23
+  - id: rfc-9110
+    entity: rfc-9110
+    role: [mapping]
+    checked: 2026-08-23
+  - id: osi
+    entity: osi
+    role: [mapping]
+    checked: 2026-08-23
+  - id: mdn
+    entity: mdn
+    role: [mapping]
+    checked: 2026-08-23
+  - id: mdn-curriculum
+    entity: mdn-curriculum
+    role: [candidate]
+    checked: 2026-08-23
+  - id: iso-25964-1
+    entity: iso-25964-1
+    role: [mapping]
+    checked: 2026-08-23
+  - id: iso-25964-2
+    entity: iso-25964-2
+    role: [mapping]
+    checked: 2026-08-23
+  - id: z39-19
+    entity: z39-19
+    role: [mapping]
+    checked: 2026-08-23
+  - id: skos
+    entity: skos
+    role: [mapping]
+    checked: 2026-08-23
+  - id: diataxis
+    entity: diataxis
+    role: [mapping, structure]
+    checked: 2026-08-23
+  - id: wikidata
+    entity: wikidata
+    role: [mapping]
+    checked: 2026-08-23
+  - id: roadmap-sh
+    entity: roadmap-sh
+    role: [candidate]
+    checked: 2026-08-23
+  - id: teachyourselfcs
+    entity: teachyourselfcs
+    role: [candidate]
+    checked: 2026-08-23
+  - id: cmu-15-445
+    entity: cmu-15-445
+    role: [candidate]
+    checked: 2026-08-23
+  - id: db-engines
+    entity: db-engines
+    role: [candidate]
+    checked: 2026-08-23

@@ -1,0 +1,294 @@
+# 命名实体词表。设计见 design/entities.md。首批为作为词表来源的标准、知识体系与参考资料。
+version:
+  id: "2026.08"
+  date: 2026-08-23
+  note: 初版：27 个来源实体
+
+entities:
+  - id: gbt-13745
+    label: { zh: "GB/T 13745-2009 学科分类与代码", en: "GB/T 13745-2009 Classification and code of disciplines" }
+    kind: standard
+    tier: de-jure
+    version: "2009"
+    checked: 2026-08-23
+    url: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
+    watch: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
+    subjects: [library-and-information-science]
+    status: active
+    added: 2026-08-23
+  - id: cs2023
+    label: { zh: "计算机科学课程 2023", en: "Computer Science Curricula 2023" }
+    kind: standard
+    tier: de-facto
+    version: "2024-01"
+    checked: 2026-08-23
+    url: https://csed.acm.org/cs2023/
+    watch: https://csed.acm.org/cs2023/
+    subjects: [computing]
+    status: active
+    added: 2026-08-23
+  - id: swebok
+    label: { zh: "软件工程知识体系指南 v4.0", en: "Guide to the Software Engineering Body of Knowledge v4.0" }
+    kind: standard
+    tier: de-facto
+    version: "4.0"
+    checked: 2026-08-23
+    url: https://www.computer.org/education/bodies-of-knowledge/software-engineering
+    watch: https://www.computer.org/education/bodies-of-knowledge/software-engineering
+    subjects: [software-engineering]
+    status: active
+    added: 2026-08-23
+  - id: acm-ccs
+    label: { zh: "ACM 计算分类系统 2012", en: "ACM Computing Classification System 2012" }
+    kind: standard
+    tier: de-facto
+    version: "2012"
+    checked: 2026-08-23
+    url: https://dl.acm.org/ccs
+    subjects: [computing]
+    status: active
+    added: 2026-08-23
+  - id: asvs
+    label: { zh: "OWASP 应用安全验证标准 5.0", en: "OWASP Application Security Verification Standard 5.0" }
+    kind: standard
+    tier: de-facto
+    version: "5.0"
+    checked: 2026-08-23
+    url: https://owasp.org/www-project-application-security-verification-standard/
+    watch: https://github.com/OWASP/ASVS/releases
+    subjects: [security]
+    status: active
+    added: 2026-08-23
+  - id: cwe
+    label: { zh: "MITRE 通用缺陷枚举", en: "MITRE Common Weakness Enumeration" }
+    kind: standard
+    tier: de-facto
+    version: "4.20"
+    checked: 2026-08-23
+    url: https://cwe.mitre.org/
+    watch: https://cwe.mitre.org/data/index.html
+    subjects: [security]
+    status: active
+    added: 2026-08-23
+  - id: attack
+    label: { zh: "MITRE ATT&CK Enterprise", en: "MITRE ATT&CK Enterprise" }
+    kind: standard
+    tier: de-facto
+    version: "19.2"
+    checked: 2026-08-23
+    url: https://attack.mitre.org/
+    watch: https://attack.mitre.org/resources/versions/
+    subjects: [security]
+    status: active
+    added: 2026-08-23
+  - id: owasp-top10
+    label: { zh: "OWASP Top 10", en: "OWASP Top 10" }
+    kind: standard
+    tier: de-facto
+    version: "2021"
+    checked: 2026-08-23
+    url: https://owasp.org/www-project-top-ten/
+    watch: https://owasp.org/www-project-top-ten/
+    subjects: [security]
+    status: active
+    added: 2026-08-23
+  - id: owasp-llm-top10
+    label: { zh: "OWASP LLM 应用 Top 10", en: "OWASP Top 10 for LLM Applications" }
+    kind: standard
+    tier: de-facto
+    version: "2025"
+    checked: 2026-08-23
+    url: https://genai.owasp.org/llm-top-10/
+    watch: https://github.com/OWASP/www-project-top-10-for-large-language-model-applications
+    subjects: [artificial-intelligence, security]
+    status: active
+    added: 2026-08-23
+  - id: atlas
+    label: { zh: "MITRE ATLAS", en: "MITRE ATLAS" }
+    kind: standard
+    tier: de-facto
+    version: "2026.07"
+    checked: 2026-08-23
+    url: https://atlas.mitre.org/
+    watch: https://github.com/mitre-atlas/atlas-data/tree/main/dist
+    subjects: [artificial-intelligence, security]
+    status: active
+    added: 2026-08-23
+  - id: nist-ai-rmf
+    label: { zh: "NIST 人工智能风险管理框架 1.0", en: "NIST AI Risk Management Framework 1.0" }
+    kind: standard
+    tier: de-jure
+    version: "1.0"
+    checked: 2026-08-23
+    url: https://www.nist.gov/itl/ai-risk-management-framework
+    watch: https://www.nist.gov/itl/ai-risk-management-framework
+    subjects: [artificial-intelligence]
+    status: active
+    added: 2026-08-23
+  - id: anthropic-docs
+    label: { zh: "Anthropic 文档", en: "Anthropic Documentation" }
+    kind: standard
+    tier: vendor
+    version: "2026-08"
+    checked: 2026-08-23
+    url: https://docs.anthropic.com/
+    subjects: [artificial-intelligence]
+    status: active
+    added: 2026-08-23
+  - id: rfc-1122
+    label: { zh: "RFC 1122 互联网主机要求：通信层", en: "RFC 1122 Requirements for Internet Hosts — Communication Layers" }
+    kind: standard
+    tier: de-jure
+    version: "1989"
+    checked: 2026-08-23
+    url: https://www.rfc-editor.org/info/rfc1122
+    watch: https://www.rfc-editor.org/info/rfc1122
+    subjects: [networking-and-communication]
+    status: active
+    added: 2026-08-23
+  - id: rfc-9110
+    label: { zh: "RFC 9110 HTTP 语义", en: "RFC 9110 HTTP Semantics" }
+    kind: standard
+    tier: de-jure
+    version: "2022"
+    checked: 2026-08-23
+    url: https://www.rfc-editor.org/info/rfc9110
+    watch: https://www.rfc-editor.org/info/rfc9110
+    subjects: [networking-and-communication]
+    status: active
+    added: 2026-08-23
+  - id: osi
+    label: { zh: "ISO/IEC 7498-1 OSI 参考模型", en: "ISO/IEC 7498-1 OSI Basic Reference Model" }
+    kind: standard
+    tier: de-jure
+    version: "1994"
+    checked: 2026-08-23
+    url: https://www.iso.org/standard/20269.html
+    watch: https://www.iso.org/standard/20269.html
+    subjects: [networking-and-communication]
+    status: active
+    added: 2026-08-23
+  - id: mdn
+    label: { zh: "MDN Web 技术参考", en: "MDN Web technology references" }
+    kind: standard
+    tier: de-facto
+    version: "2026-08-20"
+    checked: 2026-08-23
+    url: https://developer.mozilla.org/en-US/docs/Web
+    subjects: [specialized-platform-development]
+    status: active
+    added: 2026-08-23
+  - id: mdn-curriculum
+    label: { zh: "MDN 课程", en: "MDN Curriculum" }
+    kind: standard
+    tier: de-facto
+    version: "2025-10"
+    checked: 2026-08-23
+    url: https://developer.mozilla.org/en-US/curriculum/
+    subjects: [specialized-platform-development]
+    status: active
+    added: 2026-08-23
+  - id: iso-25964-1
+    label: { zh: "ISO 25964-1:2011 叙词表", en: "ISO 25964-1:2011 Thesauri for information retrieval" }
+    kind: standard
+    tier: de-jure
+    version: "2011"
+    checked: 2026-08-23
+    url: https://www.iso.org/standard/53657.html
+    watch: https://www.iso.org/standard/53657.html
+    subjects: [information-science]
+    status: active
+    added: 2026-08-23
+  - id: iso-25964-2
+    label: { zh: "ISO 25964-2:2013 与其他词表的互操作", en: "ISO 25964-2:2013 Interoperability with other vocabularies" }
+    kind: standard
+    tier: de-jure
+    version: "2013"
+    checked: 2026-08-23
+    url: https://www.iso.org/standard/53658.html
+    watch: https://www.iso.org/standard/53658.html
+    subjects: [information-science]
+    status: active
+    added: 2026-08-23
+  - id: z39-19
+    label: { zh: "ANSI/NISO Z39.19-2005 (R2010)", en: "ANSI/NISO Z39.19-2005 (R2010) Guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies" }
+    kind: standard
+    tier: de-jure
+    version: "2005 (R2010)"
+    checked: 2026-08-23
+    url: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
+    watch: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
+    subjects: [information-science]
+    status: active
+    added: 2026-08-23
+  - id: skos
+    label: { zh: "W3C SKOS 参考", en: "W3C SKOS Simple Knowledge Organization System Reference" }
+    kind: standard
+    tier: de-jure
+    version: "2009-08-18"
+    checked: 2026-08-23
+    url: https://www.w3.org/TR/skos-reference/
+    watch: https://www.w3.org/TR/skos-reference/
+    subjects: [information-science]
+    status: active
+    added: 2026-08-23
+  - id: diataxis
+    label: { zh: "Diátaxis", en: "Diátaxis" }
+    kind: standard
+    tier: de-facto
+    version: "2026-08"
+    checked: 2026-08-23
+    url: https://diataxis.fr/
+    subjects: [software-engineering]
+    status: active
+    added: 2026-08-23
+  - id: wikidata
+    label: { zh: "Wikidata", en: "Wikidata" }
+    kind: standard
+    tier: de-facto
+    version: "rolling"
+    checked: 2026-08-23
+    url: https://www.wikidata.org/
+    subjects: [library-and-information-science]
+    status: active
+    added: 2026-08-23
+  - id: roadmap-sh
+    label: { zh: "roadmap.sh", en: "roadmap.sh" }
+    kind: standard
+    tier: de-facto
+    version: "rolling"
+    checked: 2026-08-23
+    url: https://roadmap.sh/
+    subjects: [computing]
+    status: active
+    added: 2026-08-23
+  - id: teachyourselfcs
+    label: { zh: "Teach Yourself Computer Science", en: "Teach Yourself Computer Science" }
+    kind: publication
+    tier: archival
+    version: "2020"
+    checked: 2026-08-23
+    url: https://teachyourselfcs.com/
+    subjects: [computing]
+    status: active
+    added: 2026-08-23
+  - id: cmu-15-445
+    label: { zh: "CMU 15-445 数据库系统", en: "CMU 15-445 Database Systems" }
+    kind: publication
+    tier: archival
+    version: "Fall 2025"
+    checked: 2026-08-23
+    url: https://15445.courses.cs.cmu.edu/
+    subjects: [data-management]
+    status: active
+    added: 2026-08-23
+  - id: db-engines
+    label: { zh: "DB-Engines 排名", en: "DB-Engines Ranking" }
+    kind: standard
+    tier: de-facto
+    version: "rolling"
+    checked: 2026-08-23
+    url: https://db-engines.com/en/ranking
+    subjects: [data-management]
+    status: active
+    added: 2026-08-23
