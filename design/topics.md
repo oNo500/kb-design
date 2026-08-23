@@ -115,9 +115,22 @@ CS2023 的知识单元有代码(如 FPL-Types),其下的主题没有;SWEBOK 的�
 
 ### 约束
 
-**每个第 2 层概念的下位只取自一个知识体系。**
-例:`security` 下面可以按 ASVS(认证、会话、访问控制……)分,也可以按 CWE(几百种缺陷)或 ATT&CK(14 个攻击战术)分。三套都合理,但互相交叉——ASVS 的「认证」对应 CWE 十几个缺陷、ATT&CK 好几个战术。规则是选一套(ASVS)作为 `security` 的下位结构;另外两套不进树,只在概念的 `match` 里指过去:`sql-injection` 挂在 ASVS 的输入验证下,同时 `match` 到 CWE-89。
-违反会怎样:同一个东西出现在三个位置,树失去唯一性。
+**一个概念的下位,按同一划分特征只取自一个知识体系;不同划分特征可各建一个数组。**
+例:`security` 下面,ASVS 按「防御方要验证的控制项」分,CWE 按「软件缺陷类型」分,ATT&CK 按「攻击者战术」分——三个是不同的划分特征,不是同一维度的三种切法。ISO 25964-1 允许一个概念下有多个数组,每个数组前用节点标签注明划分特征:
+
+```
+security
+  (按验证要求)  ← 数组,来源 ASVS
+    认证 / 会话管理 / 输入验证 / …
+  (按缺陷类型)  ← 数组,来源 CWE
+    注入类缺陷 / 内存安全缺陷 / …
+  (按攻击战术)  ← 数组,来源 ATT&CK
+    初始访问 / 权限提升 / …
+```
+
+`sql-injection` 同时属于「输入验证」和「注入类缺陷」,靠多层级挂在两处;概念仍是一个。
+反例:OWASP Top 10 和 CWE 都按缺陷分,Top 10 是 CWE 的子集重组——这是同一划分特征的两种切法,只取一个进树,另一个只做映射。
+限制:第二个及以后的数组不默认建。起步每个概念下只建一个数组,其余知识体系只做映射;当确实需要从另一个视角浏览或检索时再建。每多一个数组就多一套未标引概念和一批多层级挂载。
 
 **每个借入的概念注明借自哪里。**
 例:
@@ -243,6 +256,7 @@ programming-languages
   alt: [SQLi]                            # 非首选词;可检索、可显示
   hidden: []                             # 非首选词;可检索、不显示(拼写错误等)
   broader: [input-validation, data]      # 空列表 = 顶层概念
+  arrays: [security-by-requirement]      # 所属数组;上位只有一个数组时可省略
   related: []                            # RT
   scope: >                               # 范围注释:用于……不用于……
     指通过拼接用户输入改变 SQL 语义的攻击及对应缺陷;
@@ -258,7 +272,19 @@ programming-languages
 
 必填:`id` `label.zh` `label.en` `broader` `status` `added`。其余按需。`scope` 对本地建立的概念强烈建议填——它比定义更实用,能防止同一概念被两个人(或半年后的自己)理解成两样。
 
-字段名与标准的对应:`alt` / `hidden` 对应 SKOS `altLabel` / `hiddenLabel`;`broader` `related` 对应 SKOS 同名属性;`scope` 对应 ISO 25964-1 范围注释;`history` 对应历史注释;`status` 对应 ISO 25964-1 数据模型的 `status`。
+字段名与标准的对应:`alt` / `hidden` 对应 SKOS `altLabel` / `hiddenLabel`;`broader` `related` 对应 SKOS 同名属性;`arrays` 对应 ISO 25964-1 数据模型的 ThesaurusArray;`scope` 对应 ISO 25964-1 范围注释;`history` 对应历史注释;`status` 对应 ISO 25964-1 数据模型的 `status`。
+
+数组在文件顶部单独登记,对应 ISO 25964-1 数据模型的 ThesaurusArray 与 NodeLabel:
+
+```yaml
+arrays:
+  - id: security-by-requirement
+    superordinate: security             # 数组所属的上位概念
+    label: 按验证要求                    # 节点标签:划分特征;不是概念,不能标引
+    source: asvs
+```
+
+一个概念下只有一个数组时可以不登记,下位直接挂 `broader`。
 
 分面字段暂不设,见 [分面字段草案](drafts/kind.md)。
 
@@ -328,6 +354,7 @@ programming-languages
 - 所有 `broader` 指向存在的 id;无环
 - `source` 和 `match.source` 在 `sources.yaml` 里
 - `deprecated` 必有 `replaced_by`
+- `arrays` 指向存在的数组,且该数组的 `superordinate` 在本概念的 `broader` 里
 - `label.en` 和 `alt` 在全表内不重复(重复 = 可能是同一概念建了两次)
 - 统计:每个第 2 层概念下 `unassigned` 的比例(盲区地图)、`candidate` 被引用次数
 
@@ -345,6 +372,7 @@ programming-languages
 - `information-science` 既是顶层概念 id 又是「情报学」的自然译名,二者需区分:顶层改为 `library-and-information-science`,或下位改为 `informatics`
 - 第 2 层表中五个「待定」的第 3 层来源
 - 多层级时 `broader` 列表的顺序是否赋予含义(显示、排序)
+- `security` 是否建第二、第三个数组(CWE、ATT&CK),以及触发条件
 - 分面字段,见 [草案](drafts/kind.md)
 - 文件格式:YAML 单文件,还是每个第 2 层概念一个文件(概念过几百条时再考虑)
 - `related` 的使用规则:什么情况下加、是否要求互反
