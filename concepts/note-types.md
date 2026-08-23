@@ -53,14 +53,17 @@ Ahrens 按笔记在工作流里的阶段分三种：
 
 ## 载体
 
-载体是笔记的物理形式。有出处的两种：
+载体是笔记的呈现形式。有国际标准级来源：IEEE 1484.12.1-2002（LOM，学习对象元数据）§5.2 Learning Resource Type，15 个取值，原文注明“按 OED 1989 及教育实践共同体的用法定义”：
 
-| 载体 | 定义 | 来源 |
-|---|---|---|
-| 速查表 cheat sheet | 供快速参考的简明笔记集；reference card 的子类 | Wikidata Q2309859、Q2689826；无标准级定义 |
-| 札记簿 commonplace book | 把重要或熟知的段落抄录并按主题整理，作为记忆辅助或参考；常附编者自己的想法 | Harvard Library Open Collections |
+| 呈现形式 | 教学活动 |
+|---|---|
+| diagram、figure、graph、index、slide、table、narrative text | exercise、simulation、questionnaire、exam、experiment、problem statement、self assessment、lecture |
 
-Cornell 笔记法（Pauk，《How to Study in College》1962）规定的是页面分区和五步（record、reduce、recite、reflect、review），是记法不是载体。
+LOM 把两类混在一个清单里；按分面分析它们是两个划分特征，用时拆开。2020 版已取代 2002 版，取值有无变动在收费正文里，未核。DITA 1.3 把同一清单作为 `lomLearningResourceType` 的枚举，是旁证。
+
+另有两种来源较弱的：速查表 cheat sheet（Wikidata Q2309859，reference card 的子类，无标准级定义）；札记簿 commonplace book（Harvard Library：把重要段落抄录并按主题整理，常附编者自己的想法）。ISO 5127:2017 对文献类型有系统划分（3.4 文献、3.5 三次文献、3.5.5 参考工具书），条款在收费部分。
+
+Cornell 笔记法（Pauk，《How to Study in College》1962）规定的是页面分区和五步（record、reduce、recite、reflect、review），是记法不是载体。DITA 1.3 的 Learning and Training 规范有五种学习 topic（overview、content、summary、assessment、plan），但 DITA 2.0 已把它移出基础规范，不作来源。
 
 ## 认知层级
 
@@ -92,6 +95,10 @@ CS2023 自己用 Bloom 标注每个主题的预期掌握层级。帕累托原则
 - Ahrens, S. *How to Take Smart Notes*. 2017, ISBN 9781542866507。三种笔记的定义据 [Zettelkasten 论坛转引](https://forum.zettelkasten.de/)，fleeting 与 permanent 有页码，literature 为转述
 - Luhmann, N. *Kommunikation mit Zettelkästen*, 1981；英译 [Communicating with Slip Boxes](https://luhmann.surge.sh/communicating-with-slip-boxes)
 - Matuschak, A. [Evergreen notes](https://notes.andymatuschak.org/Evergreen_notes)，博文
+- IEEE 1484.12.1-2002 LOM §5.2，[LICEF 镜像的 final draft](https://github.com/LICEF/lompad/blob/master/documentation/LOM_1484_12_1_v1_Final_Draft.pdf)；[IEEE 1484.12.1-2020](https://standards.ieee.org/ieee/1484.12.1/7699/) 已取代
+- OASIS DITA 1.3 Part 3 [Learning and Training](https://docs.oasis-open.org/dita/dita/v1.3/os/part3-all-inclusive/archSpec/learningTraining/learning-and-training-specializations.html)；[DITA 2.0 移除决议](https://github.com/oasis-tcs/dita/pull/111)
+- [ISO 5127:2017](https://www.iso.org/standard/59743.html)，[iTeh 样章](https://cdn.standards.iteh.ai/samples/59743/ea09c719daed4a0cb6a0fa6df352ddfb/ISO-5127-2017.pdf)
+- [schema.org 30.0](https://schema.org/docs/releases.html)：HowTo、TechArticle、Review、Question、Answer
 - Wikidata [cheat sheet Q2309859](https://www.wikidata.org/wiki/Q2309859)、[reference card Q2689826](https://www.wikidata.org/wiki/Q2689826)
 - Harvard Library, [Commonplace Books](https://web.archive.org/web/2015/http://ocp.hul.harvard.edu/reading/commonplace.html)（Wayback 存档）
 - Cornell Learning Strategies Center, [The Cornell Note Taking System](https://lsc.cornell.edu/how-to-study/taking-notes/cornell-note-taking-system/)；五步据 [UNE 的材料](https://www.une.edu/sites/default/files/Cornell-Note-Taking-System-041311-PDF-4.pdf)

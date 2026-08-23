@@ -1,0 +1,124 @@
+# 载体词表。设计见 design/content-model.md「载体词表」。取值来自 IEEE 1484.12.1-2002 LOM §5.2 Learning Resource Type，拆为两个数组；速查表据 Wikidata。
+version:
+  id: "2026.08"
+  date: 2026-08-23
+  note: 初版：LOM 的 15 个取值分两组，加速查表
+
+arrays:
+  - { id: forms-presentation, superordinate: forms, source: lom }
+  - { id: forms-activity, superordinate: forms, source: lom }
+
+forms:
+  - id: diagram
+    label: { zh: "图", en: "Diagram" }
+    basis: { zh: self, en: lom }
+    arrays: [forms-presentation]
+    match: [{ source: lom, id: "diagram", rel: exactMatch }]
+    status: unassigned
+    added: 2026-08-23
+  - id: figure
+    label: { zh: "图像", en: "Figure" }
+    basis: { zh: self, en: lom }
+    arrays: [forms-presentation]
+    match: [{ source: lom, id: "figure", rel: exactMatch }]
+    status: unassigned
+    added: 2026-08-23
+  - id: graph
+    label: { zh: "图表", en: "Graph" }
+    basis: { zh: self, en: lom }
+    arrays: [forms-presentation]
+    match: [{ source: lom, id: "graph", rel: exactMatch }]
+    status: unassigned
+    added: 2026-08-23
+  - id: index
+    label: { zh: "索引", en: "Index" }
+    basis: { zh: self, en: lom }
+    arrays: [forms-presentation]
+    match: [{ source: lom, id: "index", rel: exactMatch }]
+    status: unassigned
+    added: 2026-08-23
+  - id: slide
+    label: { zh: "幻灯片", en: "Slide" }
+    basis: { zh: self, en: lom }
+    arrays: [forms-presentation]
+    match: [{ source: lom, id: "slide", rel: exactMatch }]
+    status: unassigned
+    added: 2026-08-23
+  - id: table
+    label: { zh: "表格", en: "Table" }
+    basis: { zh: self, en: lom }
+    arrays: [forms-presentation]
+    match: [{ source: lom, id: "table", rel: exactMatch }]
+    status: unassigned
+    added: 2026-08-23
+  - id: narrative-text
+    label: { zh: "叙述文本", en: "Narrative text" }
+    basis: { zh: self, en: lom }
+    arrays: [forms-presentation]
+    match: [{ source: lom, id: "narrative text", rel: exactMatch }]
+    status: unassigned
+    added: 2026-08-23
+  - id: exercise
+    label: { zh: "练习", en: "Exercise" }
+    basis: { zh: self, en: lom }
+    arrays: [forms-activity]
+    match: [{ source: lom, id: "exercise", rel: exactMatch }]
+    status: unassigned
+    added: 2026-08-23
+  - id: simulation
+    label: { zh: "模拟", en: "Simulation" }
+    basis: { zh: self, en: lom }
+    arrays: [forms-activity]
+    match: [{ source: lom, id: "simulation", rel: exactMatch }]
+    status: unassigned
+    added: 2026-08-23
+  - id: questionnaire
+    label: { zh: "问卷", en: "Questionnaire" }
+    basis: { zh: self, en: lom }
+    arrays: [forms-activity]
+    match: [{ source: lom, id: "questionnaire", rel: exactMatch }]
+    status: unassigned
+    added: 2026-08-23
+  - id: exam
+    label: { zh: "考试", en: "Exam" }
+    basis: { zh: self, en: lom }
+    arrays: [forms-activity]
+    match: [{ source: lom, id: "exam", rel: exactMatch }]
+    status: unassigned
+    added: 2026-08-23
+  - id: experiment
+    label: { zh: "实验", en: "Experiment" }
+    basis: { zh: self, en: lom }
+    arrays: [forms-activity]
+    match: [{ source: lom, id: "experiment", rel: exactMatch }]
+    status: unassigned
+    added: 2026-08-23
+  - id: problem-statement
+    label: { zh: "问题陈述", en: "Problem statement" }
+    basis: { zh: self, en: lom }
+    arrays: [forms-activity]
+    match: [{ source: lom, id: "problem statement", rel: exactMatch }]
+    status: unassigned
+    added: 2026-08-23
+  - id: self-assessment
+    label: { zh: "自测", en: "Self assessment" }
+    basis: { zh: self, en: lom }
+    arrays: [forms-activity]
+    match: [{ source: lom, id: "self assessment", rel: exactMatch }]
+    status: unassigned
+    added: 2026-08-23
+  - id: lecture
+    label: { zh: "讲授", en: "Lecture" }
+    basis: { zh: self, en: lom }
+    arrays: [forms-activity]
+    match: [{ source: lom, id: "lecture", rel: exactMatch }]
+    status: unassigned
+    added: 2026-08-23
+  - id: cheat-sheet
+    label: { zh: "速查表", en: "Cheat sheet" }
+    basis: { zh: self, en: wikidata:Q2309859 }
+    arrays: [forms-presentation]
+    match: [{ source: wikidata, id: "Q2309859", rel: exactMatch }]
+    scope: "供快速参考的简明笔记集；LOM 无此项，据 Wikidata"
+    status: unassigned
+    added: 2026-08-23

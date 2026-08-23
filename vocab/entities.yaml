@@ -373,6 +373,33 @@ entities:
     status: active
     added: 2026-08-23
 
+  - id: lom
+    label: { zh: "IEEE 1484.12.1-2002 学习对象元数据", en: "IEEE 1484.12.1-2002 Learning Object Metadata" }
+    kind: standard
+    tier: de-jure
+    version: "2002（2020 版已取代，取值变动未核）"
+    checked: 2026-08-23
+    url: https://github.com/LICEF/lompad/blob/master/documentation/LOM_1484_12_1_v1_Final_Draft.pdf
+    watch: https://standards.ieee.org/ieee/1484.12.1/7699/
+    subjects: [education]
+    basis:
+      subjects: lom:scope
+    status: active
+    added: 2026-08-23
+  - id: schema-org
+    label: { zh: "schema.org", en: "schema.org" }
+    kind: standard
+    tier: de-facto
+    version: "30.0"
+    checked: 2026-08-23
+    url: https://schema.org/
+    watch: https://schema.org/docs/releases.html
+    subjects: [information-science]
+    basis:
+      subjects: self
+    status: candidate
+    added: 2026-08-23
+
   # 第二批：常用工具、语言、组织（2026-08-23）
   - id: anthropic
     label: { zh: "Anthropic", en: "Anthropic" }

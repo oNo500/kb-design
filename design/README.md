@@ -43,6 +43,7 @@
 | 来源名称规范表 | `vocab/sources.yaml` | 外部知识体系与词表 | sources-registry.md |
 | 文档类型词表 | `vocab/types.yaml` | 内容单元的体裁，六类 | content-model.md |
 | 体裁词表 | `vocab/genres.yaml` | 作者立场，IPTC genre 五类 | content-model.md |
+| 载体词表 | `vocab/forms.yaml` | 呈现形式与教学活动，IEEE LOM 15 项加速查表 | content-model.md |
 | 划分特征登记 | `vocab/characteristics.yaml`（未建） | 分析层数组的划分特征；草案，例外尚未开放 | drafts/division-characteristics.md |
 | 手工概念组 | `vocab/groups.yaml`（未建） | 按用途圈的视图；草案 | drafts/concept-groups.md |
 

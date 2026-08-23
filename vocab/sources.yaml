@@ -121,3 +121,11 @@ sources:
     entity: iptc-genre
     role: [mapping, structure]
     checked: 2026-08-23
+  - id: lom
+    entity: lom
+    role: [mapping, structure]
+    checked: 2026-08-23
+  - id: schema-org
+    entity: schema-org
+    role: [mapping]
+    checked: 2026-08-23

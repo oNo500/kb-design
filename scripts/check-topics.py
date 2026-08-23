@@ -7,6 +7,7 @@ E = yaml.safe_load(open(ROOT/'entities.yaml'))
 S = yaml.safe_load(open(ROOT/'sources.yaml'))
 Y = yaml.safe_load(open(ROOT/'types.yaml'))
 G = yaml.safe_load(open(ROOT/'genres.yaml'))
+F = yaml.safe_load(open(ROOT/'forms.yaml'))
 bad = []
 ID = re.compile(r'^[a-z0-9]+(-[a-z0-9]+)*$')
 
@@ -16,7 +17,7 @@ sources = {s['id']: s for s in S['sources']}
 entities = {e['id']: e for e in E['entities']}
 
 # ids
-for name, coll in [('topics', concepts), ('entities', entities), ('sources', sources), ('types', {t['id']: t for t in Y['types']}), ('genres', {g['id']: g for g in G['genres']})]:
+for name, coll in [('topics', concepts), ('entities', entities), ('sources', sources), ('types', {t['id']: t for t in Y['types']}), ('genres', {g['id']: g for g in G['genres']}), ('forms', {f['id']: f for f in F['forms']})]:
     for i in coll:
         if not ID.match(i): bad.append(f'{name}: id 不合规 {i}')
 
@@ -25,7 +26,7 @@ for s in sources.values():
     if s['entity'] not in entities: bad.append(f"sources: entity 不存在 {s['entity']}")
     if 'structure' in s['role'] and 'mapping' not in s['role']: bad.append(f"sources: {s['id']} structure 需含 mapping")
 
-for coll in (Y['types'], G['genres']):
+for coll in (Y['types'], G['genres'], F['forms']):
     for x in coll:
         for m in x.get('match', []):
             if m['source'] not in sources: bad.append(f"types/genres: {x['id']} match.source 未登记 {m['source']}")

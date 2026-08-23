@@ -26,7 +26,7 @@ genres:
   - id: review
     label: { zh: 评价, en: Review }
     scope: 工具、书、课程好不好
-    match: [{ source: iptc-genre, id: "http://cv.iptc.org/newscodes/genre/Review", rel: closeMatch }]
+    match: [{ source: iptc-genre, id: "http://cv.iptc.org/newscodes/genre/Review", rel: closeMatch }, { source: schema-org, id: Review, rel: closeMatch }]
     status: active
     added: 2026-08-23
   - id: advice

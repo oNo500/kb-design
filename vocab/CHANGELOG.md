@@ -39,9 +39,13 @@
 
 - 新增：IPTC genre 的五类（背景、分析、观点、评价、建议），closeMatch 到 IPTC URI
 
+### forms.yaml
+
+- 新增：IEEE LOM §5.2 的 15 个取值分两个数组（呈现形式、教学活动），加速查表（Wikidata）；中文标签为本库所译
+
 ### entities.yaml、sources.yaml
 
-- 加 dita、iptc-genre 两个来源
+- 加 dita、iptc-genre、lom、schema-org 四个来源；types、genres 加 schema.org 映射
 
 ### 治理
 

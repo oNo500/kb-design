@@ -14,7 +14,7 @@
 | `title` | title | 是 | 字面值 |
 | `type` | type | 是 | 体裁：[文档类型词表](#文档类型词表)的 id，恰好一个 |
 | `genre` | 本库扩展，依据 IPTC genre | 是 | 作者立场：[体裁词表](#体裁词表)的 id，恰好一个 |
-| `form` | 本库扩展 | 否 | 载体：Wikidata 的类，如 `cheat-sheet`（Q2309859）；长文不填 |
+| `form` | 本库扩展，依据 IEEE LOM | 否 | 载体：[载体词表](#载体词表)的 id；长文不填 |
 | `level` | 本库扩展 | 否 | 认知层级：Bloom 修订版六级之一，见下 |
 | `subject` | subject | 是 | 主题词表的概念 id，一个或多个 |
 | `entities` | 本库扩展，最近的 DCMI 属性是 `references` | 否 | 命名实体词表的 id，零个或多个 |
@@ -62,6 +62,19 @@
 
 IPTC 的词表是为新闻设计的，定义里的“记者”“事件”按笔记语境理解；映射用 `closeMatch`。理论见[笔记的类型](../concepts/note-types.md)。
 
+## 载体词表
+
+`vocab/forms.yaml`，`form` 字段的取值：载体，内容单元的呈现形式。取 IEEE 1484.12.1-2002（LOM）§5.2 Learning Resource Type 的 15 个取值，每条 `match` 到 LOM。LOM 的清单混了两个划分特征，按[层级结构](hierarchy.md)规则 8 拆成两个数组：
+
+| 数组 | 取值 |
+|---|---|
+| 呈现形式 | 图、图像、图表、索引、幻灯片、表格、叙述文本 |
+| 教学活动 | 练习、模拟、问卷、考试、实验、问题陈述、自测、讲授 |
+
+速查表（cheat sheet）LOM 没有，据 Wikidata Q2309859 加入呈现形式数组。中文标签为本库所译（`basis.zh: self`），待按译名阶梯追溯。
+
+不取 DITA 1.3 Learning and Training 的五种学习 topic：DITA 2.0 已把它们移出基础规范（DITA TC 2018-03-13 决议），不作为稳定来源。ISO 5127:2017 对文献类型有系统划分（3.4–3.5），条款在收费部分，核到后再引。
+
 ## 认知层级
 
 `level` 的取值，Bloom 修订版（Anderson & Krathwohl 2001，据 Krathwohl 2002）六级，作者对自己理解深度的评估，可选：
@@ -95,6 +108,7 @@ IPTC 的词表是为新闻设计的，定义里的“记者”“事件”按笔
 |---|---|---|
 | `type` | `vocab/types.yaml` | 值在表内 |
 | `genre` | `vocab/genres.yaml` | 值在表内 |
+| `form` | `vocab/forms.yaml` | 值在表内 |
 | `level` | 本文认知层级表 | 值在表内 |
 | `subject` | `vocab/topics.yaml` | 值在表内，且 `status` 不是 `deprecated`。引用对概念状态的影响见[主题词表设计](topics.md)生命周期 |
 | `entities`、`references`、`source` | `vocab/entities.yaml` 或内容单元 | 值在表内 |
@@ -138,7 +152,11 @@ IPTC 的词表是为新闻设计的，定义里的“记者”“事件”按笔
 - [DITA 1.3 §2.2.1 DITA topics](https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/archSpec/base/topicover.html)：内容单元的定义参照
 - [Diátaxis](https://diataxis.fr/)、[DITA 1.3 §2.7.1](https://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/technicalContent/dita-technicalContent-InformationTypes.html)：文档类型
 - [IPTC NewsCodes Genre](https://cv.iptc.org/newscodes/genre/)：体裁
+- IEEE 1484.12.1-2002 LOM §5.2，[LICEF 镜像的 final draft](https://github.com/LICEF/lompad/blob/master/documentation/LOM_1484_12_1_v1_Final_Draft.pdf)；2020 版[已发布](https://standards.ieee.org/ieee/1484.12.1/7699/)，取值变动未核：载体
+- [schema.org 30.0](https://schema.org/)：HowTo、TechArticle、Review 作映射目标
+- OASIS DITA TC，[移除 Learning and Training 的决议](https://github.com/oasis-tcs/dita/pull/111)，2018
 - Krathwohl, D. R. [*A Revision of Bloom's Taxonomy: An Overview*](https://cmapspublic2.ihmc.us/rid=1Q2PTM7HL-26LTFBX-9YN8/Krathwohl%202002.pdf), 2002：认知层级
 - ANSI/NISO Z39.19-2005 §6.2.1 Homographs：限定词；§11.3 Maintenance：生命周期
 - [ISO 15489-1:2016](https://www.iso.org/standard/62542.html) §3.8 disposition、§8.5 disposition authorities：处置决定的写法，见[笔记](../sources/iso-15489.md)
 - ISO 25964-1:2011 §2.25 identifier
+- ISO 5127:2017 的文献类型条款（3.4–3.5）核到后，载体词表是否据其调整

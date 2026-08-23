@@ -14,13 +14,13 @@ types:
   - id: how-to
     label: { zh: 操作指南, en: How-to guide }
     scope: 读者为了完成一个具体任务；步骤，不解释
-    match: [{ source: diataxis, id: how-to-guides, rel: exactMatch }]
+    match: [{ source: diataxis, id: how-to-guides, rel: exactMatch }, { source: schema-org, id: HowTo, rel: closeMatch }]
     status: active
     added: 2026-08-23
   - id: reference
     label: { zh: 参考, en: Reference }
     scope: 读者为了查阅事实；克制中立，结构镜像被描述的对象
-    match: [{ source: diataxis, id: reference, rel: exactMatch }]
+    match: [{ source: diataxis, id: reference, rel: exactMatch }, { source: schema-org, id: TechArticle, rel: closeMatch }]
     status: active
     added: 2026-08-23
   - id: explanation
