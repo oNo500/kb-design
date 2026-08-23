@@ -69,6 +69,8 @@
 | 硬件、体系结构 | `foundations` 下的「体系结构与组织」 | CS2023 知识领域 AR (Architecture and Organization) |
 | 项目管理 | `engineering` 下的「软件工程管理」 | SWEBOK v4 第 9 章 Software Engineering Management |
 | 通用职业技能(写作、沟通、时间管理) | `engineering` 下的「软件工程职业实践」 | SWEBOK v4 第 14 章 Software Engineering Professional Practice |
+| 术语学(ISO 704、1087、30042) | 待定:GB/T 13745 把术语学归语言学(740),本库无此顶层 | — |
+| 结构化写作(DITA) | 待定:`engineering` 或 `web` 下某知识单元 | — |
 
 ### 排除范围
 
@@ -190,9 +192,12 @@ computing 计算与信息技术
   │   └─ … 其余 SWEBOK 知识领域
   ├─ security 信息安全
   │   (按验证要求)                            ← ASVS 5.0
-  ├─ web Web 平台                             ← 第 3 层待定
-  ├─ ai AI 应用工程                           ← 第 3 层待定
-  ├─ data 数据                                ← 第 3 层待定
+  ├─ web Web 平台
+  │   (按技术规范)                            ← MDN 技术参考
+  ├─ artificial-intelligence 人工智能
+  │   (按知识单元)                            ← CS2023 AI
+  ├─ data 数据
+  │   (按知识单元)                            ← CS2023 DM
   ├─ network 网络
   │   (按协议分层)                            ← RFC 1122
   ├─ programming-languages 编程语言
@@ -204,12 +209,20 @@ computing 计算与信息技术
 
 library-and-information-science 图书馆、情报与文献学
   (按二级学科)                                ← GB/T 13745 一级学科 870
-  ├─ library-science 图书馆学                 ← 870.10  未标引
-  ├─ documentation 文献学                     ← 870.20  未标引
-  ├─ information-science 情报学               ← 870.30  未标引
-  ├─ archival-science 档案学                  ← 870.40  未标引
-  ├─ museology 博物馆学                       ← 870.50  未标引
-  └─ content-engineering 内容工程             ← 本库自加
+  ├─ library-science 图书馆学                 ← 870.10
+  │   (按三级学科)                            ← GB/T 13745
+  │   ├─ 图书分类学                            ← 870.1040,分类法落这里
+  │   ├─ 图书编目学                            ← 870.1045,元数据与编目落这里
+  │   └─ … 其余 870.10xx
+  ├─ documentation 文献学                     ← 870.20
+  │   (按三级学科)
+  ├─ information-science 情报学               ← 870.30
+  │   (按三级学科)
+  │   ├─ 情报检索学                            ← 870.3050,叙词表与检索语言落这里
+  │   └─ … 其余 870.30xx
+  ├─ archival-science 档案学                  ← 870.40
+  │   (按三级学科)
+  └─ museology 博物馆学                       ← 870.50
 
 图例:括号行是节点标签,写划分特征;「←」后是该组取自的知识体系,记在数组登记的 source。
       第 3 层以下不预建。
@@ -221,23 +234,26 @@ library-and-information-science 图书馆、情报与文献学
 |---|---|---|---|---|
 | engineering | 软件工程 | SWEBOK v4 知识领域 | roadmap.sh(候选来源) | ACM CCS |
 | security | 信息安全 | ASVS 5.0 章节 | CWE、ATT&CK、OWASP Top 10 | ACM CCS |
-| web | Web 平台 | 待定:MDN 技术参考的顶层分区 | MDN Curriculum、roadmap.sh | self |
-| ai | AI 应用工程 | 待定 | Anthropic 文档、OWASP GenAI、ATLAS、NIST AI RMF | self |
-| data | 数据 | 待定:CMU 15-445 大纲或 DB-Engines 类别 | roadmap.sh | ACM CCS |
+| web | Web 平台 | MDN 技术参考顶层分区(19 项) | MDN Curriculum(候选来源、派生组)、roadmap.sh | self |
+| artificial-intelligence | 人工智能 | CS2023 AI 知识单元(12 个) | Anthropic 文档、OWASP GenAI、ATLAS、NIST AI RMF | CS2023 |
+| data | 数据 | CS2023 DM 知识单元(13 个) | CMU 15-445、DB-Engines(候选来源)、roadmap.sh | CS2023 |
 | network | 网络 | RFC 1122 四层 | OSI、RFC 9110–9114 | ACM CCS |
 | foundations | 计算机科学基础 | CS2023 知识领域 | ACM CCS、teachyourselfcs | CS2023 |
 | programming-languages | 编程语言 | CS2023 FPL 知识单元;其中「具体语言」为术语表 | — | CS2023 |
 | human-centered-computing | 以人为中心的计算 | CS2023 HCI | ACM CCS、roadmap.sh | ACM CCS |
-| library-science | 图书馆学 | 待定 | — | GB/T 13745 870.10 |
-| documentation | 文献学 | 待定 | — | GB/T 13745 870.20 |
-| information-science | 情报学 | 待定 | — | GB/T 13745 870.30 |
-| archival-science | 档案学 | 待定 | — | GB/T 13745 870.40 |
-| museology | 博物馆学 | 待定 | — | GB/T 13745 870.50 |
-| content-engineering | 内容工程 | 待定:按标准族分(术语 / 叙词表 / 元数据 / 结构化写作) | ISO 704、1087、25964、30042、Z39.19、SKOS、DCMI、DITA | self |
+| library-science | 图书馆学 | GB/T 13745 三级学科(870.10xx) | — | GB/T 13745 870.10 |
+| documentation | 文献学 | GB/T 13745 三级学科(870.20xx) | — | GB/T 13745 870.20 |
+| information-science | 情报学 | GB/T 13745 三级学科(870.30xx) | ISO 25964、Z39.19、SKOS | GB/T 13745 870.30 |
+| archival-science | 档案学 | GB/T 13745 三级学科(870.40xx) | — | GB/T 13745 870.40 |
+| museology | 博物馆学 | GB/T 13745 无三级学科 | — | GB/T 13745 870.50 |
 
-「借自」一列区分哪些概念有外部依据、哪些是本库自加的。标「待定」的需要逐个看该知识体系的当前结构后再定。
+「借自」一列区分哪些概念有外部依据、哪些是本库自加的。
 
-`library-and-information-science` 下的五个概念来自 [GB/T 13745-2009《学科分类与代码》](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E)一级学科 870 下的二级学科,全部未标引;`content-engineering` 是本库自加的第六个。
+`library-and-information-science` 下的五个概念来自 [GB/T 13745-2009《学科分类与代码》](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E)一级学科 870 下的二级学科,第 3 层取其三级学科。原拟自加的「内容工程」取消:叙词表与检索语言归 870.3050 情报检索学,分类法归 870.1040 图书分类学,元数据与编目归 870.1045 图书编目学;术语学与结构化写作见邻近主题表。
+
+### 人工智能的下位结构
+
+取 CS2023 知识领域 AI 的 12 个知识单元:Introduction、Search、KRR、LRR、Probability、ML、NLP、Agents、Planning、Vision、Robotics、SEP。它偏学术——机器人、规划与本库侧重的 LLM 应用工程距离较远——但它是唯一有编号的人工智能知识体系;未标引的单元是盲区标记,不是负担。Anthropic 文档、OWASP GenAI、ATLAS、NIST AI RMF 全部作映射来源和派生组,不进树。首选词用「人工智能」而不是原拟的「AI 应用工程」:侧重体现在内容里,不体现在知识体系的边界上。
 
 ### 编程语言的下位结构
 
@@ -418,7 +434,7 @@ arrays:
 ## 待定事项
 
 - 排除范围:非技术的生活领域(健康、理财、旅行)是否排除
-- 第 2 层表中五个「待定」的第 3 层来源
+- 术语学、结构化写作(DITA)的落点
 - 多层级时 `broader` 列表的顺序是否赋予含义(显示、排序)
 - `security` 是否建第二、第三个数组(CWE、ATT&CK),以及触发条件
 - 分面字段,见 [草案](drafts/kind.md)
