@@ -97,6 +97,9 @@ for name, coll in [('entities', entities), ('topics', concepts)]:
                 if val == 'self':
                     selfcount[(name,'label.'+field)] += 1
                     if x.get('status') == 'active': bad.append(f"topics: {x['id']} label.{field} 为自译却 active")
+                has = bool(x['label'].get(field))
+                if val == 'none' and has: bad.append(f"topics: {x['id']} label.{field} basis 为 none 却有标签")
+                if val != 'none' and not has: bad.append(f"topics: {x['id']} label.{field} 无标签但 basis 不是 none")
                 continue
             vals = val if isinstance(val, list) else [val]
             judged[(name, field)] += 1
@@ -132,7 +135,7 @@ for c in concepts.values():
 for e in entities.values():
     if (e.get('basis') or {}).get('subjects') == 'self':
         for sj in e.get('subjects', []): self_per_parent[sj] += 1
-others = [c['id'] for c in concepts.values() if c['label']['zh'].endswith('其他学科')]
+others = [c['id'] for c in concepts.values() if c['label'].get('zh','').endswith('其他学科')]
 other_kids = collections.Counter()
 for c in concepts.values():
     for b in c['broader']:

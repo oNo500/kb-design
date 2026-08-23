@@ -1,0 +1,427 @@
+{
+ "artificial-intelligence.zh": {
+  "accept": true,
+  "q": "Q11660",
+  "label": "人工智能"
+ },
+ "data-management.zh": {
+  "accept": true,
+  "q": "Q1149776",
+  "label": "数据管理"
+ },
+ "security.zh": {
+  "accept": false,
+  "q": "Q2526135",
+  "why": "别名误中或含义不同，人工否决 2026-08-23"
+ },
+ "software-engineering.zh": {
+  "accept": true,
+  "q": "Q80993",
+  "label": "软件工程"
+ },
+ "machine-learning.zh": {
+  "accept": true,
+  "q": "Q2539",
+  "label": "机器学习"
+ },
+ "natural-language-processing.zh": {
+  "accept": true,
+  "q": "Q30642",
+  "label": "自然语言处理"
+ },
+ "object-oriented-programming.zh": {
+  "accept": true,
+  "q": "Q79872",
+  "label": "面向对象程序设计"
+ },
+ "formal-semantics.zh": {
+  "accept": false,
+  "q": "Q5469969",
+  "why": "别名误中或含义不同，人工否决 2026-08-23"
+ },
+ "discrete-mathematics.zh": {
+  "accept": true,
+  "q": "Q121416",
+  "label": "离散数学"
+ },
+ "probability.zh": {
+  "accept": true,
+  "q": "Q9492",
+  "label": "概率"
+ },
+ "statistics.zh": {
+  "accept": true,
+  "q": "Q12483",
+  "label": "统计学"
+ },
+ "linear-algebra.zh": {
+  "accept": true,
+  "q": "Q82571",
+  "label": "线性代数"
+ },
+ "calculus.zh": {
+  "accept": true,
+  "q": "Q149972",
+  "label": "微积分"
+ },
+ "cryptography.zh": {
+  "accept": true,
+  "q": "Q8789",
+  "label": "密码学"
+ },
+ "digital-forensics.zh": {
+  "accept": true,
+  "q": "Q3246940",
+  "label": "数字取证"
+ },
+ "software-construction.zh": {
+  "accept": true,
+  "q": "Q3398377",
+  "label": "软件构建"
+ },
+ "formal-methods.zh": {
+  "accept": true,
+  "q": "Q1049183",
+  "label": "形式化方法"
+ },
+ "history-of-mathematics.en": {
+  "accept": true,
+  "q": "Q185264",
+  "label": "history of mathematics"
+ },
+ "proof-theory.en": {
+  "accept": true,
+  "q": "Q852732",
+  "label": "proof theory"
+ },
+ "model-theory.en": {
+  "accept": true,
+  "q": "Q467606",
+  "label": "model theory"
+ },
+ "foundations-of-mathematics.en": {
+  "accept": true,
+  "q": "Q833585",
+  "label": "foundations of mathematics"
+ },
+ "number-theory.en": {
+  "accept": true,
+  "q": "Q12479",
+  "label": "number theory"
+ },
+ "probabilistic-number-theory.en": {
+  "accept": true,
+  "q": "Q7246860",
+  "label": "probabilistic number theory"
+ },
+ "linear-algebra-algebra.en": {
+  "accept": true,
+  "q": "Q82571",
+  "label": "linear algebra"
+ },
+ "group-theory.en": {
+  "accept": true,
+  "q": "Q874429",
+  "label": "group theory"
+ },
+ "ring-theory.en": {
+  "accept": true,
+  "q": "Q1208658",
+  "label": "ring theory"
+ },
+ "topology.en": {
+  "accept": true,
+  "q": "Q42989",
+  "label": "topology"
+ },
+ "homotopy-theory.en": {
+  "accept": true,
+  "q": "Q9357062",
+  "label": "homotopy theory"
+ },
+ "homology-theory.en": {
+  "accept": true,
+  "q": "Q1626229",
+  "label": "homology theory"
+ },
+ "geometric-topology.en": {
+  "accept": true,
+  "q": "Q1939186",
+  "label": "geometric topology"
+ },
+ "mathematical-analysis.en": {
+  "accept": true,
+  "q": "Q7754",
+  "label": "mathematical analysis"
+ },
+ "differential-calculus.en": {
+  "accept": true,
+  "q": "Q149999",
+  "label": "differential calculus"
+ },
+ "integral-calculus.en": {
+  "accept": true,
+  "q": "Q150008",
+  "label": "integral calculus"
+ },
+ "real-analysis.en": {
+  "accept": true,
+  "q": "Q854531",
+  "label": "real analysis"
+ },
+ "elliptic-pdes.en": {
+  "accept": true,
+  "q": "Q3607962",
+  "label": "elliptic differential equation"
+ },
+ "dynamical-systems.en": {
+  "accept": true,
+  "q": "Q638328",
+  "label": "dynamical system"
+ },
+ "functional-analysis.en": {
+  "accept": true,
+  "q": "Q190549",
+  "label": "functional analysis"
+ },
+ "operator-algebras.en": {
+  "accept": true,
+  "q": "Q1892554",
+  "label": "operator algebra"
+ },
+ "computational-mathematics.en": {
+  "accept": true,
+  "q": "Q1122491",
+  "label": "computational mathematics"
+ },
+ "probability-theory.en": {
+  "accept": true,
+  "q": "Q5862903",
+  "label": "probability theory"
+ },
+ "probability-distributions.en": {
+  "accept": true,
+  "q": "Q200726",
+  "label": "probability distribution"
+ },
+ "stochastic-processes.en": {
+  "accept": true,
+  "q": "Q176737",
+  "label": "stochastic process"
+ },
+ "mathematical-statistics.en": {
+  "accept": true,
+  "q": "Q745328",
+  "label": "mathematical statistics"
+ },
+ "bayesian-statistics.en": {
+  "accept": true,
+  "q": "Q4874481",
+  "label": "Bayesian statistics"
+ },
+ "design-of-experiments.en": {
+  "accept": true,
+  "q": "Q2334061",
+  "label": "design of experiments"
+ },
+ "linear-programming.en": {
+  "accept": true,
+  "q": "Q202843",
+  "label": "linear programming"
+ },
+ "integer-programming.en": {
+  "accept": true,
+  "q": "Q6042592",
+  "label": "integer programming"
+ },
+ "decision-theory.en": {
+  "accept": true,
+  "q": "Q177571",
+  "label": "decision theory"
+ },
+ "search-theory.en": {
+  "accept": true,
+  "q": "Q3526893",
+  "label": "search theory"
+ },
+ "optimization.en": {
+  "accept": false,
+  "q": "Q141495",
+  "why": "别名误中或含义不同，人工否决 2026-08-23"
+ },
+ "combinatorics.en": {
+  "accept": true,
+  "q": "Q76592",
+  "label": "combinatorics"
+ },
+ "discrete-mathematics-mathematics.en": {
+  "accept": true,
+  "q": "Q121416",
+  "label": "discrete mathematics"
+ },
+ "fuzzy-mathematics.en": {
+  "accept": true,
+  "q": "Q5511129",
+  "label": "fuzzy mathematics"
+ },
+ "applied-mathematics.en": {
+  "accept": true,
+  "q": "Q33521",
+  "label": "applied mathematics"
+ },
+ "information-theory.en": {
+  "accept": true,
+  "q": "Q131222",
+  "label": "information theory"
+ },
+ "cybernetics.en": {
+  "accept": true,
+  "q": "Q123637",
+  "label": "cybernetics"
+ },
+ "systems-theory.en": {
+  "accept": false,
+  "q": "Q11703922",
+  "why": "别名误中或含义不同，人工否决 2026-08-23"
+ },
+ "control-theory.en": {
+  "accept": true,
+  "q": "Q6501221",
+  "label": "control theory"
+ },
+ "systems-engineering.en": {
+  "accept": true,
+  "q": "Q682496",
+  "label": "systems engineering"
+ },
+ "behavioral-science.en": {
+  "accept": false,
+  "q": "Q3919817",
+  "why": "别名误中或含义不同，人工否决 2026-08-23"
+ },
+ "sociology-of-science.en": {
+  "accept": true,
+  "q": "Q2747152",
+  "label": "sociology of science"
+ },
+ "futures-studies.en": {
+  "accept": true,
+  "q": "Q188867",
+  "label": "futures studies"
+ },
+ "grammar.en": {
+  "accept": false,
+  "q": "Q37437",
+  "why": "别名误中或含义不同，人工否决 2026-08-23"
+ },
+ "lexicology.en": {
+  "accept": true,
+  "q": "Q178433",
+  "label": "lexicology"
+ },
+ "pragmatics.en": {
+  "accept": true,
+  "q": "Q181839",
+  "label": "pragmatics"
+ },
+ "dialectology.en": {
+  "accept": true,
+  "q": "Q146893",
+  "label": "dialectology"
+ },
+ "graphemics.en": {
+  "accept": false,
+  "q": "Q76953",
+  "why": "别名误中或含义不同，人工否决 2026-08-23"
+ },
+ "etymology.en": {
+  "accept": true,
+  "q": "Q35245",
+  "label": "etymology science"
+ },
+ "comparative-linguistics.en": {
+  "accept": true,
+  "q": "Q878226",
+  "label": "comparative linguistics"
+ },
+ "historical-comparative-linguistics.en": {
+  "accept": false,
+  "q": "Q18384059",
+  "why": "别名误中或含义不同，人工否决 2026-08-23"
+ },
+ "sociolinguistics.en": {
+  "accept": true,
+  "q": "Q160845",
+  "label": "sociolinguistics"
+ },
+ "applied-linguistics.en": {
+  "accept": true,
+  "q": "Q321249",
+  "label": "applied linguistics"
+ },
+ "discourse-linguistics.en": {
+  "accept": false,
+  "q": "Q1206895",
+  "why": "别名误中或含义不同，人工否决 2026-08-23"
+ },
+ "computational-linguistics.en": {
+  "accept": true,
+  "q": "Q182557",
+  "label": "computational linguistics"
+ },
+ "translation-studies.en": {
+  "accept": true,
+  "q": "Q501778",
+  "label": "translation studies"
+ },
+ "chinese-dialects.en": {
+  "accept": false,
+  "q": "Q2748296",
+  "why": "别名误中或含义不同，人工否决 2026-08-23"
+ },
+ "communication-studies.en": {
+  "accept": true,
+  "q": "Q11680831",
+  "label": "communication studies"
+ },
+ "bibliography.en": {
+  "accept": false,
+  "q": "Q11581610",
+  "why": "别名误中或含义不同，人工否决 2026-08-23"
+ },
+ "documentation.en": {
+  "accept": false,
+  "q": "Q1235196",
+  "why": "别名误中或含义不同，人工否决 2026-08-23"
+ },
+ "information-science.en": {
+  "accept": false,
+  "q": "Q13125650",
+  "why": "别名误中或含义不同，人工否决 2026-08-23"
+ },
+ "archival-science.en": {
+  "accept": true,
+  "q": "Q380313",
+  "label": "archival science"
+ },
+ "museology.en": {
+  "accept": true,
+  "q": "Q460162",
+  "label": "museology"
+ },
+ "sociology-of-education.en": {
+  "accept": true,
+  "q": "Q829367",
+  "label": "sociology of education"
+ },
+ "economics-of-education.en": {
+  "accept": true,
+  "q": "Q861689",
+  "label": "education economics"
+ },
+ "educational-technology.en": {
+  "accept": true,
+  "q": "Q1068473",
+  "label": "educational technology"
+ }
+}

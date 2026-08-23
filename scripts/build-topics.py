@@ -106,6 +106,19 @@ if sem in concepts and 'management' not in concepts[sem]['broader']:
 msf = slug('Mathematical and Statistical Foundations')
 if msf in concepts: concepts[msf]['broader'].append('mathematics')
 
+# ---------- 译名回查：本库自译的标签按译名阶梯处理 ----------
+# vocab/build/label-decisions.json 是 lookup-labels.py 结果经人工审核后的决定（治理“译名”第 3 级）。
+# 查到且采纳：标签改为 Wikidata 标签，basis 记 Q 号；其余：第 4 级不译，去掉自译标签，basis 记 none。
+decisions = json.load(open(B/'label-decisions.json'))
+for c in concepts.values():
+    for lang in ('zh','en'):
+        if c['basis'][lang] != 'self': continue
+        dec = decisions.get(f"{c['id']}.{lang}")
+        if dec and dec['accept']:
+            c['label'][lang] = dec['label']; c['basis'][lang] = f"wikidata:{dec['q']}"
+        else:
+            c['label'][lang] = ''; c['basis'][lang] = 'none'
+
 # ---------- 输出 ----------
 def q(s): return '"' + s.replace('"', '\\"') + '"'
 out = ['# 主题词表。由 scripts/build-topics.py 从 vocab/build/ 生成；人工修改后不要重跑覆盖，改输入再生成。',
@@ -116,8 +129,9 @@ for a in arrays:
 out += ['', 'concepts:']
 for c in concepts.values():
     out.append(f"  - id: {c['id']}")
-    if c['label']['en']: out.append(f"    label: {{ zh: {q(c['label']['zh'])}, en: {q(c['label']['en'])} }}")
-    else: out.append(f"    label: {{ zh: {q(c['label']['zh'])} }}")
+    labs = ', '.join(f"{l}: {q(c['label'][l])}" for l in ('zh','en') if c['label'][l])
+    assert labs, c['id']
+    out.append(f"    label: {{ {labs} }}")
     out.append(f"    basis: {{ zh: {c['basis']['zh']}, en: {c['basis']['en']} }}")
     out.append(f"    broader: [{', '.join(c['broader'])}]")
     if c['arrays']: out.append(f"    arrays: [{', '.join(c['arrays'])}]")
