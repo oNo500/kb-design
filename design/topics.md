@@ -119,7 +119,9 @@ computing 计算与信息技术
 ├─ ai AI 应用工程                             ← 待定
 ├─ data 数据                                  ← 待定
 ├─ network 网络                               ← RFC 1122
-├─ programming-languages 编程语言             ← 扁平列表
+├─ programming-languages 编程语言             ← CS2023 FPL
+│   ├─ 类型系统、内存与执行模型、范式……         ← 跨语言通识,FPL 知识单元
+│   └─ 具体语言                                ← 唯一的扁平列表:python / rust / …
 └─ human-centered-computing 以人为中心的计算  ← CS2023 HCI
 
 information-science 信息与文献学              ← GB/T 13745 一级学科 870
@@ -145,7 +147,7 @@ information-science 信息与文献学              ← GB/T 13745 一级学科 
 | data | 数据 | 待定:CMU 15-445 大纲或 DB-Engines 类别 | roadmap.sh | ACM CCS |
 | network | 网络 | RFC 1122 四层 | OSI、RFC 9110–9114 | ACM CCS |
 | foundations | 计算机科学基础 | CS2023 知识领域 | ACM CCS、teachyourselfcs | CS2023 |
-| programming-languages | 编程语言 | 无:扁平列表,成员可枚举 | — | self |
+| programming-languages | 编程语言 | CS2023 FPL 知识单元;其中「具体语言」类目为扁平列表 | — | CS2023 |
 | human-centered-computing | 以人为中心的计算 | CS2023 HCI | ACM CCS、roadmap.sh | ACM CCS |
 | library-science | 图书馆学 | 待定 | — | GB/T 13745 870.10 |
 | documentation | 文献学 | 待定 | — | GB/T 13745 870.20 |
@@ -157,6 +159,47 @@ information-science 信息与文献学              ← GB/T 13745 一级学科 
 「借自」一列区分哪些分支有外部依据、哪些是本库自加的。标「待定」的主对标需要逐个看对标体系的当前结构后再定。
 
 `information-science` 领域的五个分支来自 [GB/T 13745-2009《学科分类与代码》](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E)一级学科 870 下的二级学科,全部为 placeholder;`content-engineering` 是本库自加的第六个分支。领域名与其中一个分支同名(information-science / 情报学),id 冲突,待定事项里记了。
+
+### 编程语言分支
+
+编程语言有跨语言的通识——类型系统、内存模型、求值与并发模型、范式——具体语言只是这些概念的不同取舍。因此这个分支不是语言的扁平列表,第 3 层取 [CS2023](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf) 知识领域 FPL (Foundations of Programming Languages) 的 22 个知识单元,再加一个「具体语言」类目作为唯一的扁平列表:
+
+```
+programming-languages
+├─ FPL-OOP          面向对象编程
+├─ FPL-Functional   函数式编程
+├─ FPL-Logic        逻辑编程
+├─ FPL-Scripting    Shell 脚本
+├─ FPL-Event-Driven 事件驱动与响应式编程
+├─ FPL-Parallel     并行与分布式计算
+├─ FPL-Aspect       面向切面编程
+├─ FPL-Types        类型系统
+├─ FPL-Systems      系统执行与内存模型
+├─ FPL-Translation  语言翻译与执行
+├─ FPL-Syntax       语法分析
+├─ FPL-Semantics    编译器语义分析
+├─ FPL-Analysis     程序分析与分析器
+├─ FPL-Code         代码生成
+├─ FPL-Run-Time     运行时行为与系统
+├─ FPL-Abstraction  程序抽象与表示
+├─ FPL-Constructs   高级程序构造
+├─ FPL-Pragmatics   语言语用
+├─ FPL-Formalism    形式语义
+├─ FPL-Design       编程语言设计原则
+├─ FPL-Methodologies 形式化开发方法
+├─ FPL-SEP          社会、伦理与职业
+└─ languages        具体语言(扁平列表)
+    ├─ python
+    ├─ typescript
+    ├─ rust
+    └─ go
+```
+
+中文译名为本库所加,英文原名和代码为准。22 个知识单元全部建为 placeholder,预期多数长期为空(形式语义、逻辑编程等),这是骨架求完整的代价。
+
+语言特性的笔记用多层级挂两处:**主上位是通识节点,次上位是具体语言**。例如「Rust 的所有权」主上位 `FPL-Systems`(系统执行与内存模型),次上位 `languages/rust`。按通识检索时它与 GC、引用计数并列;按语言检索时与 Rust 的其他特性并列。
+
+不把语言做成分面字段(`lang: rust`)而做成树节点,是因为语言本身也需要别名(TS / TypeScript)、范围注释和映射,作为概念更合适。
 
 ## 概念记录的字段
 
