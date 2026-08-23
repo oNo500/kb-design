@@ -14,7 +14,7 @@
 
 1. 候选删除属第二级：AI 列清单，人批
 2. 批准：核到 `basis` 文字且校验通过的，AI 直接做；涉及 `scope`、`broader` 的判断本身，先提案
-3. 新实体录入：进 `entities.yaml` 为 candidate 的，AI 直接做；进 `sources.yaml` 或作为借入来源的，先提案
+3. 新实体录入：进 `entities.yaml` 为 candidate 的，AI 直接做；进 `sources.yaml` 或作为结构来源的，先提案
 4. CHANGELOG：AI 只在当前版节内追加；新开版节即发版，只有人定
 5. 坏链接：同一来源的新地址，AI 直接改；换来源或改用 archive 快照，先提案
 6. 已入库的 57 个实体追溯豁免；其中 `basis: self` 的 12 个保持 candidate

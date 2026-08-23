@@ -158,6 +158,19 @@
 | 资源 | resource | 被描述的东西：文档、图像、数据集、软件 | DCMI |
 | 内容单元 | — | 知识库里最小的可独立引用、可独立打标签的东西；参照 DITA topic | 本库，参照 DITA 1.3 §2.2.1 |
 
+## 写作与设计方法
+
+| 术语 | 英文 | 定义 | 出处 |
+|---|---|---|---|
+| 相关 / 可找到 / 可理解 / 可使用 | relevant / findable / understandable / usable | plain language 的四条原则 | ISO 24495-1:2023 |
+| 第一原理 | first principle | 不能再从别的命题推出、只能作为起点的命题 | Aristotle, *Posterior Analytics* |
+| 设计理由 | design rationale | 记录“为什么这样决定”而不只是“决定了什么” | Kunz & Rittel 1970；Nygard 2011 |
+| 被替代 | superseded | 决定记录被新决定取代后的状态 | Nygard ADR 2011 |
+| 内容模型 | content model | 内容单元允许有哪些组成部分及其结构 | SGML（ISO 8879）、DITA 沿用 |
+| 知识组织 | knowledge organization | 对知识进行描述、分类和排序的活动与系统；KOS 即知识组织系统 | ISO 25964；SKOS |
+| 个体 | individual | 名称规范表所收的对象：唯一的个体，而非类 | ISO-2 3.50 注 |
+| 划分 | partition | 把一个集合分成互不重叠、合起来是全集的几组 | 数学通用术语 |
+
 ## 治理与维护
 
 | 术语 | 英文 | 定义 | 出处 |
@@ -166,6 +179,8 @@
 | 政策 | policy | 治理主体定下的、管理必须遵守的规则 | ISO 15489-1 §6.2 |
 | 决策权 | decision rights | 谁有权对哪类事项做决定 | DAMA-DMBOK 数据治理 |
 | 监控与评价 | monitoring and evaluation | 对管理过程及其结果的持续检查与定期评估 | ISO 15489-1 §6.4 |
+| 审计追踪 | audit trail | 记录谁在何时做了什么变更的连续记录 | ISO 15489-1 元数据要求 |
+| 治理评审 | governance review | 治理主体对治理本身的定期评审 | ISO 37000:2021 |
 | 审计 | audit | 对记录与过程是否符合规则的检查 | ISO 15489-1 §6.4 |
 | 处置 | disposition | 执行保留、销毁或移交决定的过程 | ISO 15489-1 §3.8 |
 | 断言 | assertion | 人判断而非抄自来源的字段值 | 本库用法；溯源依据 W3C PROV-O |

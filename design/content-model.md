@@ -48,7 +48,7 @@ DCMI Type Vocabulary 分的是媒介（Text、Image……），本库的内容�
 
 1. 小写 ASCII 字母、数字、连字符；不以连字符开头或结尾；不含其他字符
 2. 从英文首选词取：`sql-injection`、`information-retrieval`。英文首选词按顺序取：来源体系的英文名（CS2023、SWEBOK 本身是英文）；来源只有中文的（GB/T 13745 不提供学科英文名），取 `match` 到的 Wikidata 条目的英文标签；都没有时意译，并在 `label.en` 注明为本库所译。不用拼音
-3. 借入的概念不用来源的代码作 id（`FPL-Types` 不作 id），代码记在 `match`；id 从名称取，来源改版时代码变、id 不变
+3. 复制的概念不用来源的代码作 id（`FPL-Types` 不作 id），代码记在 `match`；id 从名称取，来源改版时代码变、id 不变
 4. 一经引用不再改。名字错了，改 `label`，不改 id
 5. 同形异义的概念用限定词区分。Z39.19 §6.2.1：限定词是附在词上、使含义无歧义的词，用括号标在词后——`cranes (lifting equipment)`、`cranes (birds)`；能用自然语言里的复合词就不用限定词。本库 `label` 按此写括号形式；id 是 ASCII，限定词编码为后缀：`cranes-lifting-equipment`、`cranes-birds`。限定词取自上位概念或类别
 6. 长度不设上限，但不缩写：`networking-and-communication`，不写 `nc`

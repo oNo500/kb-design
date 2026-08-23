@@ -27,11 +27,11 @@
 
 | 词表 | 人工赋值字段 |
 |---|---|
-| 主题词表 | 本地概念的 `broader`、`related`、`scope`；借入概念之间的合并（同名归一） |
+| 主题词表 | 本地概念的 `broader`、`related`、`scope`；复制概念之间的合并（同名归一） |
 | 命名实体词表 | `subjects`、`form`（多个 Wikidata 类取一个时）、`scope`、`vendor` |
 | 内容单元 | `subject`、`type` |
 
-借入的值（`source` 非 self 的 `broader`、`match`、`label`）不是判断，不记依据。
+复制的值（`source` 非 self 的 `broader`、`match`、`label`）不是判断，不记依据。
 
 人工赋值字段旁边记 `basis`：
 

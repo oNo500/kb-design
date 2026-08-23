@@ -18,7 +18,7 @@
 | role | 含义 | 条件 | 例 |
 |---|---|---|---|
 | `mapping` | 可作 `match` 目标 | 条目有编号或永久 URL | CWE、RFC、ASVS、SWEBOK、CS2023、ISO、MDN 页面 |
-| `structure` | 可借入为数组 | 含 `mapping`，且有自己的分层，该层条目有编号或稳定名称 | CS2023 知识领域、SWEBOK 章、ASVS 章、ATT&CK 战术、CWE 顶层类别、GB/T 13745 学科 |
+| `structure` | 可复制为数组 | 含 `mapping`，且有自己的分层，该层条目有编号或稳定名称 | CS2023 知识领域、SWEBOK 章、ASVS 章、ATT&CK 战术、CWE 顶层类别、GB/T 13745 学科 |
 | `group` | 由映射派生一个概念组，组名即体系名 | 含 `mapping` | OWASP Top 10、MDN Curriculum |
 | `candidate` | 只作候选词来源 | — | roadmap.sh、teachyourselfcs、CMU 15-445、DB-Engines 榜 |
 
@@ -26,7 +26,7 @@
 
 复核周期按实体的 `tier`，见[维护](maintenance.md)。
 
-借入来源的资格：`role` 含 `structure` 的来源，其实体的 `tier` 必须是 de-jure，或 de-facto 且有版本号（MDN 这类无版本号的 de-facto 只作映射）；vendor 只作映射；archival 不作来源。依据是组织依据——本库只把有发布流程或版本标识的体系当作结构来源。
+结构来源的资格：`role` 含 `structure` 的来源，其实体的 `tier` 必须是 de-jure，或 de-facto 且有版本号（MDN 这类无版本号的 de-facto 只作映射）；vendor 只作映射；archival 不作来源。依据是组织依据——本库只把有发布流程或版本标识的体系当作结构来源。
 
 ## 三种用法
 
@@ -34,15 +34,15 @@
 
 | 用法 | 本库里的形式 | 需要的 role | 记在哪 |
 |---|---|---|---|
-| 借入 | 某概念下的一个数组，成员是本地概念 | `structure` | `arrays` 登记 + 概念的 `source` |
+| 复制 | 某概念下的一个数组，成员是本地概念 | `structure` | `arrays` 登记 + 概念的 `source` |
 | 映射 | 概念的 `match` 条目 | `mapping` | 概念的 `match` |
 | 派生概念组 | 映射到该体系的全部概念 | `group` | 不登记，自动 |
 
 规则：
 
-1. 借入的概念必须映射回源头。`source: asvs` 说来历，`match: {source: asvs, id: V6, rel: exactMatch}` 说对应哪一条；改版后章节号可能变，两者不互相替代
-2. 凡 `role` 含 `structure` 的来源，起步就在对应概念下全部借入，借到第 3 层，全部未标引——[层级结构](hierarchy.md)规则 3–6。同一视角只取一个来源（规则 13）
-3. 派生概念组是已映射内容的视图，成员只有本库已有的概念，暴露不了盲区；它与借入并存，不能替代借入
+1. 复制的概念必须映射回源头。`source: asvs` 说来历，`match: {source: asvs, id: V6, rel: exactMatch}` 说对应哪一条；改版后章节号可能变，两者不互相替代
+2. 凡 `role` 含 `structure` 的来源，起步就在对应概念下全部复制，借到第 3 层，全部未标引——[层级结构](hierarchy.md)规则 3–6。同一视角只取一个来源（规则 13）
+3. 派生概念组是已映射内容的视图，成员只有本库已有的概念，暴露不了盲区；它与复制并存，不能替代复制
 
 ## 映射关系
 
@@ -79,7 +79,7 @@
 | rfc-1122 | RFC 1122 | mapping, structure | networking-and-communication 下的数组 |
 | rfc-http | RFC 9110–9114 | mapping | 映射 |
 | osi | ISO/IEC 7498-1 OSI 参考模型 | mapping | 映射 |
-| mdn | MDN 技术参考 | mapping | 映射；Web Platforms 为第 3 层，其下不借入 |
+| mdn | MDN 技术参考 | mapping | 映射；Web Platforms 为第 3 层，其下不复制 |
 | mdn-curriculum | MDN Curriculum | candidate | 候选词来源 |
 | iso-25964 | ISO 25964-1/-2 | mapping | 映射 |
 | z39-19 | ANSI/NISO Z39.19 | mapping | 映射 |
@@ -92,5 +92,5 @@
 
 ## 待定事项
 
-- MDN 技术参考没有版本号，`version` 怎么记（抓取日期？）；Web 内容是否需要破例借入它
+- MDN 技术参考没有版本号，`version` 怎么记（抓取日期？）；Web 内容是否需要破例复制它
 - `mdn-curriculum` 标为 candidate，但它有稳定模块名，是否也给 `group`

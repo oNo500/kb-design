@@ -10,7 +10,7 @@
 ├─ 写作规则 writing.md          全库写作规则,按 ISO 24495-1 四原则组织;CLAUDE.md 是其摘要
 │
 ├─ 主题词表 topics.md           一条概念记录长什么样、生命周期、建设流程、校验
-│   ├─ 层级结构 hierarchy.md    树怎么分层、借入规则、各概念下的来源、结构预览
+│   ├─ 层级结构 hierarchy.md    树怎么分层、复制规则、各概念下的来源、结构预览
 │   └─ 来源名称规范表 sources-registry.md   外部体系作为词表来源怎么用、match 怎么写
 │
 ├─ 命名实体词表 entities.md     产品、语言、组织、标准、文献:个体不进主题树,通过 subjects 挂主题
@@ -24,7 +24,7 @@
 │
 ├─ decisions/                    决定记录,只追加不修改
 │   ├─ tree-by-discipline.md     顶层为什么按学科不按分面
-│   ├─ borrow-and-analyze.md     借入照抄为底、本地分析在上
+│   ├─ borrow-and-analyze.md     原样复制为底、本地分析在上
 │   ├─ form-independence.md      设计与应用分离
 │   └─ decision-rights-defaults.md  决策权的首批边界；首次越权事件
 │
@@ -53,7 +53,7 @@
 |---|---|---|
 | 1 | [方法登记](principles.md) | 本库用了哪些方法，各自的依据 |
 | 2 | [主题词表设计](topics.md) | 主题词表是什么、一条记录怎么写 |
-| 3 | [层级结构](hierarchy.md) | 树怎么分层、从哪借入、借多深 |
+| 3 | [层级结构](hierarchy.md) | 树怎么分层、从哪复制、借多深 |
 | 4 | [来源名称规范表](sources-registry.md) | 外部体系怎么登记、三种用法 |
 | 5 | [命名实体词表设计](entities.md) | 产品、语言、标准、文献为什么另立词表；分级 |
 | 6 | [治理](governance.md) | 谁决定、按什么政策、怎么审计 |
