@@ -172,6 +172,19 @@
 | 个体 | individual | 名称规范表所收的对象：唯一的个体，而非类 | ISO-2 3.50 注 |
 | 划分 | partition | 把一个集合分成互不重叠、合起来是全集的几组 | 数学通用术语 |
 
+## 笔记的类型
+
+| 术语 | 英文 | 定义 | 出处 |
+|---|---|---|---|
+| 体裁 | genre | 按读者需求或内容性质划分的文本类别 | IPTC genre；Diátaxis |
+| 排障 | troubleshooting | DITA 的 topic 类型：纠正性操作信息 | DITA 1.3 §2.7.1.6 |
+| 闪念笔记 / 文献笔记 / 永久笔记 | fleeting / literature / permanent note | 按工作流阶段分的三种笔记 | Ahrens 2017 |
+| 隐性知识 / 显性知识 | tacit / explicit knowledge | 难以形式化的个人知识 / 正式而系统、易于交流的知识 | Nonaka 1991 |
+| 速查表 | cheat sheet | 供快速参考的简明笔记集 | Wikidata Q2309859 |
+| 札记簿 | commonplace book | 抄录重要段落并按主题整理的本子 | Harvard Library |
+| 认知层级 | cognitive level | 对主题理解的深度：记忆到创造六级 | Bloom 修订版，Krathwohl 2002 |
+| 帕累托原则 | Pareto principle | 关键的少数与琐碎的多数；选材法则 | Juran 1951 命名 |
+
 ## 治理与维护
 
 | 术语 | 英文 | 定义 | 出处 |
