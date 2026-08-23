@@ -72,9 +72,13 @@ DCMI Type Vocabulary 分的是媒介（Text、Image……），本库的内容�
 | `active` | 在用 | — | 被替代或过时 → `deprecated` |
 | `deprecated` | 不再维护，保留 | 有替代或确认过时 | 不删 |
 
-三个状态是本库扩展，没有外部标准直接规定内容单元的生命周期；取值与词表的生命周期对齐（Z39.19 §11.3 的加、改、废），“不删”也来自那里。记录管理标准 ISO 15489 有文件生命周期的规定，是否适用见待定。
+三个状态是本库扩展，没有外部标准直接规定内容单元的生命周期；取值与词表的生命周期对齐（Z39.19 §11.3 的加、改、废）。内容单元不是 ISO 15489 意义上的文件（它不是业务证据），该标准不直接适用；但它的处置原则可借：每类东西的保留和销毁要有书面的决定和理由（ISO 15489-1 §3.8、§8.5），见 [ISO 15489 笔记](../sources/iso-15489.md)。
 
-`deprecated` 的内容单元必有 `isReplacedBy`，指向替代它的单元；确认过时且无替代的，`isReplacedBy` 留空并在正文首段说明原因。与词表一致：不删，保留供检索。
+`deprecated` 的内容单元必有 `isReplacedBy`，指向替代它的单元；确认过时且无替代的，`isReplacedBy` 留空并在正文首段说明原因。
+
+### 处置决定
+
+内容单元永久保留，不删。理由：内容单元被其他内容单元和概念的 `origin` 引用，删除断链；过时的内容记录了当时的理解，本身是信息。唯一例外：误建且没有任何引用的内容单元可以销毁。这是按 ISO 15489 的方式写下的处置决定，不是照搬词表的规则。
 
 ## 形态映射的要求
 
@@ -93,7 +97,6 @@ DCMI Type Vocabulary 分的是媒介（Text、Image……），本库的内容�
 - `status` 的 `draft` 是否需要：单人库可能直接写成 `active`
 - 内容单元之间除 `source`、`isReplacedBy`、`references` 外是否需要 `relation`（泛关联）
 - 是否收 `person` 实体：Wikidata Q5；只收公开人物（作者、维护者），不收私人
-- 内容单元生命周期是否引 ISO 15489 作依据
 
 ## 权威来源
 
@@ -101,4 +104,5 @@ DCMI Type Vocabulary 分的是媒介（Text、Image……），本库的内容�
 - [DITA 1.3 §2.2.1 DITA topics](https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/archSpec/base/topicover.html)：内容单元的定义参照
 - [Diátaxis](https://diataxis.fr/)：文档类型
 - ANSI/NISO Z39.19-2005 §6.2.1 Homographs：限定词；§11.3 Maintenance：生命周期
+- [ISO 15489-1:2016](https://www.iso.org/standard/62542.html) §3.8 disposition、§8.5 disposition authorities：处置决定的写法，见[笔记](../sources/iso-15489.md)
 - ISO 25964-1:2011 §2.25 identifier
