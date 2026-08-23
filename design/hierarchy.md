@@ -143,7 +143,7 @@ library-and-information-science 图书馆、情报与文献学
 
 `library-and-information-science` 下的五个概念来自 [GB/T 13745-2009《学科分类与代码》](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E)一级学科 870 下的二级学科,第 3 层取其三级学科。原拟自加的「内容工程」取消:叙词表与检索语言归 870.3050 情报检索学,分类法归 870.1040 图书分类学,元数据与编目归 870.1045 图书编目学;术语学与结构化写作见[主题词表设计](topics.md)的邻近主题表。
 
-## 两个需要说明的概念
+## 人工智能与编程语言
 
 ### 人工智能
 
