@@ -41,5 +41,5 @@ ISO 示例覆盖不到的:理论与原理(CAP 定理、OSI 模型)、缺陷与�
 
 ## 相关
 
-- [词表的结构](../../concepts/vocabulary-structure.md) 分面的两种用法
+- [分面](../../concepts/facet.md)
 - [主题词表设计](../topics.md)

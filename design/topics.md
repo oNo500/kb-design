@@ -2,7 +2,7 @@
 
 本库的主题词表 `vocab/topics.yaml`:它管什么、长什么样、怎么建、怎么维护。它是一份叙词表——概念、三种关系、到外部词表的映射——不是知识图谱,也不是导航;后两者是它的用法和升级方向,见文末。
 
-理论依据见 [受控词表](../concepts/controlled-vocabulary.md)、[词表的结构](../concepts/vocabulary-structure.md)、[词表的建设与维护](../concepts/vocabulary-construction.md)、[词表映射](../concepts/vocabulary-mapping.md)、[知识体系](../concepts/body-of-knowledge.md)。本文只用这些标准里有的术语;本库自定的术语按 CLAUDE.md 当前阶段不使用。
+理论依据见 [受控词表](../concepts/controlled-vocabulary.md)、[词表的层级](../concepts/vocabulary-hierarchy.md)、[分面](../concepts/facet.md)、[词表的建设与维护](../concepts/vocabulary-construction.md)、[词表映射](../concepts/vocabulary-mapping.md)、[知识体系](../concepts/body-of-knowledge.md)。本文只用这些标准里有的术语;本库自定的术语按 CLAUDE.md 当前阶段不使用。
 
 ## 词表的构成总览
 
