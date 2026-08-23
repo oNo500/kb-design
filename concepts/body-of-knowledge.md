@@ -4,6 +4,8 @@
 
 知识体系是一个学科或职业**公认的知识范围的结构化清单**:这个领域有哪些知识区域、每个区域包含哪些主题、从业者应掌握到什么程度。它由行业组织或标准机构编制,目的是划定学科边界、统一教育和认证的口径。
 
+这是各行业通用的做法,项目管理、业务分析、数据管理、信息安全都有自己的知识体系。本文例子偏向计算领域,因为本库的分支在那里,不是概念本身的限制。
+
 ISO/IEC TR 19759:2015(即 SWEBOK 指南)对自己的描述:**刻画软件工程学科的边界,并为支撑该学科的文献提供按主题的入口**。SWEBOK 强调收录的是「普遍接受的」(generally accepted)知识——大多数项目在大多数时候适用、且被广泛认同的——不收前沿研究和专门领域。
 
 ## 解决的问题
@@ -35,7 +37,12 @@ CS2023 的表述:知识领域 = {知识单元} + {职业素养};每个主题属�
 | [CS2023](https://csed.acm.org/cs2023/) | 计算机科学本科课程 | ACM、IEEE-CS、AAAI 联合工作组 | 17 个知识领域,下分知识单元和主题;另有能力模型 | 2024 年 1 月发布 |
 | [ACM Computing Classification System](https://dl.acm.org/ccs) | 计算领域文献分类 | ACM | 多层级分类树,用于论文标引 | 2012 版 |
 | [GB/T 13745-2009《学科分类与代码》](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E) | 全部学科 | 国家标准 | 一级 / 二级 / 三级学科,带代码 | 现行 |
-| PMBOK | 项目管理 | PMI | 本文未核对 | — |
+| [BABOK Guide v3](https://www.iiba.org/knowledgehub/business-analysis-body-of-knowledge-babok-guide/) | 业务分析 | IIBA | 6 个知识领域 | 现行 |
+| [DAMA-DMBOK](https://dama.org/learning-resources/dama-data-management-body-of-knowledge-dmbok/) | 数据管理 | DAMA | 本文未核对结构 | 第 2 版 |
+| [CISSP CBK](https://www.isc2.org/certifications/cissp) | 信息安全 | (ISC)² | 8 个领域(domain),本文未核对 | 现行 |
+| PMBOK Guide | 项目管理 | PMI | 本文未核对;官网对脚本返回 403 | 第 7 版 |
+
+图书情报领域没有一份叫「知识体系」的文件,对应物是学会的核心能力清单(如 [ALA Core Competences](https://www.ala.org/educationcareers/careers/corecomp/corecompetences))和 GB/T 13745 的学科划分。
 
 严格说 ACM CCS 和 GB/T 13745 是**分类法**而不是知识体系——前者为标引文献、后者为统计和管理而编,不描述「从业者应掌握什么」。但三者都给出了一个领域的公认划分,在本库的用途上等价。
 
