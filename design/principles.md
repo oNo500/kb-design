@@ -21,6 +21,7 @@
 | 元数据 | [元数据](../concepts/metadata.md) | Dublin Core：ISO 15836-1:2017、ISO 15836-2:2019；DCMI Metadata Terms 2020 | [content-model.md](content-model.md) |
 | 第一原理与设计理由 | [第一原理与设计理由](../concepts/first-principles.md) | Aristotle；Kunz & Rittel IBIS（1970）；Nygard ADR（2011） | 本文；[decisions/](decisions/) 不删旧决定 |
 | 写作规范 | [写作规范](../concepts/writing-conventions.md) | 原则：ISO 24495-1:2023；中文书面语：GB/T 15834、W3C clreq；技术写作：Google、Microsoft style guide；文档分类：Diátaxis | [writing.md](writing.md)；CLAUDE.md 为其摘要；目录划分 `concepts/` 解释、`design/` 参考；[content-model.md](content-model.md) 文档类型词表取 Diátaxis 四类 |
+| 治理 | [治理](../concepts/governance.md) | ISO 37000:2021；DAMA-DMBOK 数据治理；ISO 15489-1 §6 | [governance.md](governance.md) 治理层各章 |
 | 来源分级与复核 | 无 | 分档依据为组织依据（Z39.19 §5.3.5.2）；复核周期为本库估值 | [entities.md](entities.md) `tier`；[governance.md](governance.md) 阈值表 |
 | 处置决定 | [ISO 15489 笔记](../sources/iso-15489.md)（无概念文；标准不直接适用，只借其处置原则） | ISO 15489-1:2016 §3.8、§8.5 | [content-model.md](content-model.md) 处置决定；词表生命周期的“不删” |
 | 断言的依据 | 无（治理规则） | Z39.19 §11.1.4；ISO 15489-1 §4 (c)；W3C PROV-O | [governance.md](governance.md) 断言一节；`check-topics.py` 判断债统计 |
