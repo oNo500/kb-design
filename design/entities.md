@@ -84,7 +84,7 @@
 ## 与主题词表的分工
 
 - 内容单元的 `subject` 字段填主题概念，`entities` 字段填实体，见[内容模型](content-model.md)
-- “Rust 的所有权”：`subject: [systems-execution-and-memory]`，`entities: [rust]`。主题树里不再有“具体语言”数组
+- “Rust 的所有权”：`subject: [systems-execution-and-memory-model]`，`entities: [rust]`。主题树里不再有“具体语言”数组
 - 一个实体的 `subjects` 可以多个；主题概念不反向记录实体，需要时由脚本从实体表算出“某主题下的全部实体”
 - “全库所有标准”“全库所有文献”= 本表按 `kind` 的查询，不需要主题词表的分面字段
 - 本地概念的源头文献通过概念的 `origin` 指向本表

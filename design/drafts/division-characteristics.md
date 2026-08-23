@@ -11,7 +11,7 @@
   label: 按范式
   definition: 程序组织与执行的基本模型
   test: OOP 和函数式的区别是范式          # 判据句,必填
-  applies_to: [programming-languages]     # 允许用在哪些概念之下
+  applies_to: [foundations-of-programming-languages]     # 允许用在哪些概念之下
   basis: self                             # 有外部依据写来源 id;没有写 self
   added: 2026-08-23
   status: candidate

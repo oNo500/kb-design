@@ -2,7 +2,7 @@
 version:
   id: "2026.08"
   date: 2026-08-23
-  note: 初版：27 个来源实体
+  note: 初版：27 个来源实体；第二批 30 个工具、语言、组织
 
 entities:
   - id: gbt-13745
@@ -290,5 +290,243 @@ entities:
     checked: 2026-08-23
     url: https://db-engines.com/en/ranking
     subjects: [data-management]
+    status: active
+    added: 2026-08-23
+
+  # 第二批：常用工具、语言、组织（2026-08-23）
+  - id: anthropic
+    label: { zh: "Anthropic", en: "Anthropic" }
+    kind: organization
+    subjects: [artificial-intelligence]
+    match: [{ source: wikidata, id: Q116758847, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: openai
+    label: { zh: "OpenAI", en: "OpenAI" }
+    kind: organization
+    subjects: [artificial-intelligence]
+    match: [{ source: wikidata, id: Q21708200, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: moonshot-ai
+    label: { zh: "月之暗面", en: "Moonshot AI" }
+    kind: organization
+    subjects: [artificial-intelligence]
+    match: [{ source: wikidata, id: Q130270266, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: astral
+    label: { zh: "Astral", en: "Astral" }
+    kind: organization
+    subjects: [software-engineering]
+    scope: "uv、ruff、ty 的开发公司；Wikidata 条目未能确认"
+    status: candidate
+    added: 2026-08-23
+  - id: claude-code
+    label: { zh: "Claude Code", en: "Claude Code" }
+    kind: software
+    form: "command-line interface"   # Wikidata instance of
+    vendor: anthropic
+    subjects: [artificial-intelligence, tools-and-environments]
+    scope: "Anthropic 的命令行编程智能体；不含 Claude 模型本身"
+    match: [{ source: wikidata, id: Q138457287, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: codex
+    label: { zh: "Codex", en: "Codex" }
+    kind: software
+    form: "command-line interface"   # Wikidata instance of
+    vendor: openai
+    subjects: [artificial-intelligence, tools-and-environments]
+    scope: "OpenAI 的编程智能体（2025 年起的 CLI 与云端产品）；Wikidata 的 Q108582200 是 2021 年的同名模型，不映射"
+    status: candidate
+    added: 2026-08-23
+  - id: antigravity
+    label: { zh: "Antigravity", en: "Google Antigravity" }
+    kind: software
+    form: "integrated development environment"   # Wikidata instance of
+    subjects: [artificial-intelligence, tools-and-environments]
+    scope: "Google 的 AI 编程工具"
+    match: [{ source: wikidata, id: Q136827654, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: kimi-code
+    label: { zh: "Kimi Code", en: "Kimi Code" }
+    kind: software
+    vendor: moonshot-ai
+    subjects: [artificial-intelligence, tools-and-environments]
+    scope: "月之暗面的编程智能体；Wikidata 无条目"
+    status: candidate
+    added: 2026-08-23
+  - id: openclaw
+    label: { zh: "OpenClaw", en: "OpenClaw" }
+    kind: software
+    form: "autonomous agent"   # Wikidata instance of
+    subjects: [artificial-intelligence, tools-and-environments]
+    scope: "开源自主 AI 助手"
+    match: [{ source: wikidata, id: Q137916205, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: opencode
+    label: { zh: "OpenCode", en: "OpenCode" }
+    kind: software
+    subjects: [artificial-intelligence, tools-and-environments]
+    scope: "开源终端编程智能体；Wikidata 的 Q133055048 是德国的开源交换平台，不映射"
+    status: candidate
+    added: 2026-08-23
+  - id: typescript
+    label: { zh: "TypeScript", en: "TypeScript" }
+    kind: programming-language
+    subjects: [foundations-of-programming-languages]
+    match: [{ source: wikidata, id: Q978185, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: javascript
+    label: { zh: "JavaScript", en: "JavaScript" }
+    kind: programming-language
+    subjects: [foundations-of-programming-languages]
+    match: [{ source: wikidata, id: Q2005, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: python
+    label: { zh: "Python", en: "Python" }
+    kind: programming-language
+    subjects: [foundations-of-programming-languages]
+    match: [{ source: wikidata, id: Q28865, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: go
+    label: { zh: "Go", en: "Go" }
+    kind: programming-language
+    subjects: [foundations-of-programming-languages]
+    match: [{ source: wikidata, id: Q37227, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: rust
+    label: { zh: "Rust", en: "Rust" }
+    kind: programming-language
+    subjects: [foundations-of-programming-languages]
+    match: [{ source: wikidata, id: Q575650, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: vite
+    label: { zh: "Vite", en: "Vite" }
+    kind: software
+    form: "JavaScript bundler"   # Wikidata instance of
+    subjects: [tools-and-environments, web-platforms]
+    match: [{ source: wikidata, id: Q111590996, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: oxc
+    label: { zh: "oxc", en: "oxc" }
+    kind: software
+    subjects: [tools-and-environments, web-platforms]
+    scope: "JavaScript 工具链（解析器、linter 等），Rust 实现；Wikidata 无条目"
+    status: candidate
+    added: 2026-08-23
+  - id: webpack
+    label: { zh: "webpack", en: "webpack" }
+    kind: software
+    form: "JavaScript bundler"   # Wikidata instance of
+    subjects: [tools-and-environments, web-platforms]
+    match: [{ source: wikidata, id: Q22909730, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: eslint
+    label: { zh: "ESLint", en: "ESLint" }
+    kind: software
+    form: "linter"   # Wikidata instance of
+    subjects: [tools-and-environments, web-platforms]
+    match: [{ source: wikidata, id: Q55452824, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: nextjs
+    label: { zh: "Next.js", en: "Next.js" }
+    kind: software
+    form: "JavaScript framework"   # Wikidata instance of
+    subjects: [web-platforms]
+    match: [{ source: wikidata, id: Q56062435, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: react
+    label: { zh: "React", en: "React" }
+    kind: software
+    form: "web framework"   # Wikidata instance of
+    subjects: [web-platforms]
+    match: [{ source: wikidata, id: Q19399674, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: vuejs
+    label: { zh: "Vue.js", en: "Vue.js" }
+    kind: software
+    form: "JavaScript framework"   # Wikidata instance of
+    subjects: [web-platforms]
+    match: [{ source: wikidata, id: Q24589705, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: nestjs
+    label: { zh: "NestJS", en: "NestJS" }
+    kind: software
+    form: "JavaScript framework"   # Wikidata instance of
+    subjects: [web-platforms]
+    match: [{ source: wikidata, id: Q107015664, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: uv
+    label: { zh: "uv", en: "uv" }
+    kind: software
+    vendor: astral
+    subjects: [tools-and-environments]
+    scope: "Python 包与项目管理器，Rust 实现；Wikidata 无条目"
+    status: candidate
+    added: 2026-08-23
+  - id: ruff
+    label: { zh: "Ruff", en: "Ruff" }
+    kind: software
+    form: "linter"   # Wikidata instance of
+    vendor: astral
+    subjects: [tools-and-environments]
+    match: [{ source: wikidata, id: Q115911873, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: ty
+    label: { zh: "ty", en: "ty" }
+    kind: software
+    vendor: astral
+    subjects: [tools-and-environments, type-systems]
+    scope: "Python 类型检查器；Wikidata 无条目"
+    status: candidate
+    added: 2026-08-23
+  - id: pytest
+    label: { zh: "pytest", en: "pytest" }
+    kind: software
+    form: "software testing tool"   # Wikidata instance of
+    subjects: [tools-and-environments, software-verification-and-validation]
+    match: [{ source: wikidata, id: Q28975377, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: pyright
+    label: { zh: "Pyright", en: "Pyright" }
+    kind: software
+    form: "static type checker"   # Wikidata instance of
+    subjects: [tools-and-environments, type-systems]
+    match: [{ source: wikidata, id: Q102522262, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: pydantic
+    label: { zh: "Pydantic", en: "Pydantic" }
+    kind: software
+    form: "Python package"   # Wikidata instance of
+    subjects: [web-platforms, foundations-of-programming-languages]
+    scope: "数据解析与校验库；本库指 v2"
+    match: [{ source: wikidata, id: Q107381687, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: fastapi
+    label: { zh: "FastAPI", en: "FastAPI" }
+    kind: software
+    form: "web framework"   # Wikidata instance of
+    subjects: [web-platforms]
+    match: [{ source: wikidata, id: Q101119404, rel: exactMatch }]
     status: active
     added: 2026-08-23
