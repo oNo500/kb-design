@@ -14,7 +14,8 @@
 │   └─ 来源名称规范表 sources-registry.md   外部体系作为词表来源怎么用、match 怎么写
 │
 ├─ 命名实体词表 entities.md     产品、语言、组织、标准、文献:个体不进主题树,通过 subjects 挂主题
-│   └─ 来源复核 review.md       按 tier 的复核周期、链接检查、新版探测
+│   ├─ 来源复核 review.md       按 tier 的复核周期、链接检查、新版探测
+│   └─ 断言的依据 assertions.md  人判断的字段记 basis；self 不转正；判断债统计
 │
 ├─ decisions/                    决定记录,只追加不修改
 │   ├─ tree-by-discipline.md     顶层为什么按学科不按分面
@@ -53,6 +54,7 @@
 | 8 | [内容模型](content-model.md) | 一条内容单元有什么、id 怎么取 |
 | 9 | [词表版本](versioning.md) | 什么时候发版、记什么 |
 | 10 | [回流](feedback.md) | 内容怎么反过来长出词表 |
+| 11 | [断言的依据](assertions.md) | 人判断的字段怎么防腐 |
 | — | [decisions/](decisions/) | 两份决定记录 |
 | — | [drafts/](drafts/) | 按需 |
 

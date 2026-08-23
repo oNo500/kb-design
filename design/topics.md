@@ -126,6 +126,8 @@
 
 必填：`id` `label.zh` `label.en` `broader` `status` `added`。其余按需。`scope` 对本地建立的概念强烈建议填——它比定义更实用，能防止同一概念被两个人（或半年后的自己）理解成两样。
 
+本地概念的 `broader`、`related`、`scope` 是判断字段，按[断言的依据](assertions.md)记 `basis`。
+
 `origin` 是本地概念的文献依据：它最早在哪篇文献里提出或定型。例：
 
 ```yaml

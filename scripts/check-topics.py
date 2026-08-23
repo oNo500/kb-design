@@ -72,6 +72,22 @@ for e in entities.values():
     for m in e.get('match', []):
         if m['source'] not in sources: bad.append(f"entities: {e['id']} match.source 未登记")
 
+# basis
+selfcount = collections.Counter(); judged = collections.Counter()
+for name, coll in [('entities', entities), ('topics', concepts)]:
+    for x in coll.values():
+        b = x.get('basis') or {}
+        if name == 'entities' and x.get('subjects') and 'subjects' not in b: bad.append(f"entities: {x['id']} subjects 无 basis")
+        for field, val in b.items():
+            vals = val if isinstance(val, list) else [val]
+            judged[(name, field)] += 1
+            for v in vals:
+                if v == 'self': selfcount[(name, field)] += 1
+                else:
+                    src = v.split(':')[0]
+                    if src not in sources: bad.append(f"{name}: {x['id']} basis 来源未登记 {src}")
+            if 'self' in vals and x.get('status') == 'active': bad.append(f"{name}: {x['id']} {field} basis 为 self 却 active")
+
 # stats
 by_top = collections.Counter()
 def top_of(cid):
@@ -82,6 +98,7 @@ for c in concepts.values():
 
 for b in bad: print(b)
 print(f"{len(bad)} 处问题；{len(concepts)} 概念，{len(arrays)} 数组，{len(entities)} 实体，{len(sources)} 来源")
+for k in sorted(judged): print(f'判断债 {k[0]}.{k[1]}: self {selfcount[k]} / {judged[k]}')
 print('重复的英文标签（不同上位下的同名概念，允许）：', len(dups))
 tops = sorted({k[0] for k in by_top})
 for t in tops:

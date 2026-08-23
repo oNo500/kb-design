@@ -14,7 +14,9 @@ entities:
     url: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
     watch: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
     subjects: [library-and-information-science]
-    status: active
+    basis:
+      subjects: self
+    status: candidate
     added: 2026-08-23
   - id: cs2023
     label: { zh: "计算机科学课程 2023", en: "Computer Science Curricula 2023" }
@@ -25,6 +27,8 @@ entities:
     url: https://csed.acm.org/cs2023/
     watch: https://csed.acm.org/cs2023/
     subjects: [computing]
+    basis:
+      subjects: cs2023:scope
     status: active
     added: 2026-08-23
   - id: swebok
@@ -36,6 +40,8 @@ entities:
     url: https://www.computer.org/education/bodies-of-knowledge/software-engineering
     watch: https://www.computer.org/education/bodies-of-knowledge/software-engineering
     subjects: [software-engineering]
+    basis:
+      subjects: swebok:scope
     status: active
     added: 2026-08-23
   - id: acm-ccs
@@ -46,6 +52,8 @@ entities:
     checked: 2026-08-23
     url: https://dl.acm.org/ccs
     subjects: [computing]
+    basis:
+      subjects: acm-ccs:scope
     status: active
     added: 2026-08-23
   - id: asvs
@@ -57,6 +65,8 @@ entities:
     url: https://owasp.org/www-project-application-security-verification-standard/
     watch: https://github.com/OWASP/ASVS/releases
     subjects: [security]
+    basis:
+      subjects: asvs:scope
     status: active
     added: 2026-08-23
   - id: cwe
@@ -68,6 +78,8 @@ entities:
     url: https://cwe.mitre.org/
     watch: https://cwe.mitre.org/data/index.html
     subjects: [security]
+    basis:
+      subjects: cwe:scope
     status: active
     added: 2026-08-23
   - id: attack
@@ -79,6 +91,8 @@ entities:
     url: https://attack.mitre.org/
     watch: https://attack.mitre.org/resources/versions/
     subjects: [security]
+    basis:
+      subjects: attack:scope
     status: active
     added: 2026-08-23
   - id: owasp-top10
@@ -90,6 +104,8 @@ entities:
     url: https://owasp.org/www-project-top-ten/
     watch: https://owasp.org/www-project-top-ten/
     subjects: [security]
+    basis:
+      subjects: owasp-top10:scope
     status: active
     added: 2026-08-23
   - id: owasp-llm-top10
@@ -101,6 +117,8 @@ entities:
     url: https://genai.owasp.org/llm-top-10/
     watch: https://github.com/OWASP/www-project-top-10-for-large-language-model-applications
     subjects: [artificial-intelligence, security]
+    basis:
+      subjects: owasp-llm-top10:scope
     status: active
     added: 2026-08-23
   - id: atlas
@@ -112,6 +130,8 @@ entities:
     url: https://atlas.mitre.org/
     watch: https://github.com/mitre-atlas/atlas-data/tree/main/dist
     subjects: [artificial-intelligence, security]
+    basis:
+      subjects: atlas:scope
     status: active
     added: 2026-08-23
   - id: nist-ai-rmf
@@ -123,6 +143,8 @@ entities:
     url: https://www.nist.gov/itl/ai-risk-management-framework
     watch: https://www.nist.gov/itl/ai-risk-management-framework
     subjects: [artificial-intelligence]
+    basis:
+      subjects: nist-ai-rmf:scope
     status: active
     added: 2026-08-23
   - id: anthropic-docs
@@ -133,6 +155,8 @@ entities:
     checked: 2026-08-23
     url: https://docs.anthropic.com/
     subjects: [artificial-intelligence]
+    basis:
+      subjects: anthropic-docs:scope
     status: active
     added: 2026-08-23
   - id: rfc-1122
@@ -144,6 +168,8 @@ entities:
     url: https://www.rfc-editor.org/info/rfc1122
     watch: https://www.rfc-editor.org/info/rfc1122
     subjects: [networking-and-communication]
+    basis:
+      subjects: rfc-1122:scope
     status: active
     added: 2026-08-23
   - id: rfc-9110
@@ -155,6 +181,8 @@ entities:
     url: https://www.rfc-editor.org/info/rfc9110
     watch: https://www.rfc-editor.org/info/rfc9110
     subjects: [networking-and-communication]
+    basis:
+      subjects: rfc-9110:scope
     status: active
     added: 2026-08-23
   - id: osi
@@ -166,6 +194,8 @@ entities:
     url: https://www.iso.org/standard/20269.html
     watch: https://www.iso.org/standard/20269.html
     subjects: [networking-and-communication]
+    basis:
+      subjects: osi:scope
     status: active
     added: 2026-08-23
   - id: mdn
@@ -176,6 +206,8 @@ entities:
     checked: 2026-08-23
     url: https://developer.mozilla.org/en-US/docs/Web
     subjects: [specialized-platform-development]
+    basis:
+      subjects: mdn:scope
     status: active
     added: 2026-08-23
   - id: mdn-curriculum
@@ -186,6 +218,8 @@ entities:
     checked: 2026-08-23
     url: https://developer.mozilla.org/en-US/curriculum/
     subjects: [specialized-platform-development]
+    basis:
+      subjects: mdn-curriculum:scope
     status: active
     added: 2026-08-23
   - id: iso-25964-1
@@ -197,6 +231,8 @@ entities:
     url: https://www.iso.org/standard/53657.html
     watch: https://www.iso.org/standard/53657.html
     subjects: [information-science]
+    basis:
+      subjects: iso-25964-1:scope
     status: active
     added: 2026-08-23
   - id: iso-25964-2
@@ -208,6 +244,8 @@ entities:
     url: https://www.iso.org/standard/53658.html
     watch: https://www.iso.org/standard/53658.html
     subjects: [information-science]
+    basis:
+      subjects: iso-25964-2:scope
     status: active
     added: 2026-08-23
   - id: z39-19
@@ -219,6 +257,8 @@ entities:
     url: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
     watch: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
     subjects: [information-science]
+    basis:
+      subjects: z39-19:scope
     status: active
     added: 2026-08-23
   - id: skos
@@ -230,6 +270,8 @@ entities:
     url: https://www.w3.org/TR/skos-reference/
     watch: https://www.w3.org/TR/skos-reference/
     subjects: [information-science]
+    basis:
+      subjects: skos:scope
     status: active
     added: 2026-08-23
   - id: diataxis
@@ -240,7 +282,9 @@ entities:
     checked: 2026-08-23
     url: https://diataxis.fr/
     subjects: [software-engineering]
-    status: active
+    basis:
+      subjects: self
+    status: candidate
     added: 2026-08-23
   - id: wikidata
     label: { zh: "Wikidata", en: "Wikidata" }
@@ -250,7 +294,9 @@ entities:
     checked: 2026-08-23
     url: https://www.wikidata.org/
     subjects: [library-and-information-science]
-    status: active
+    basis:
+      subjects: self
+    status: candidate
     added: 2026-08-23
   - id: roadmap-sh
     label: { zh: "roadmap.sh", en: "roadmap.sh" }
@@ -260,7 +306,9 @@ entities:
     checked: 2026-08-23
     url: https://roadmap.sh/
     subjects: [computing]
-    status: active
+    basis:
+      subjects: self
+    status: candidate
     added: 2026-08-23
   - id: teachyourselfcs
     label: { zh: "Teach Yourself Computer Science", en: "Teach Yourself Computer Science" }
@@ -270,7 +318,9 @@ entities:
     checked: 2026-08-23
     url: https://teachyourselfcs.com/
     subjects: [computing]
-    status: active
+    basis:
+      subjects: self
+    status: candidate
     added: 2026-08-23
   - id: cmu-15-445
     label: { zh: "CMU 15-445 数据库系统", en: "CMU 15-445 Database Systems" }
@@ -280,6 +330,8 @@ entities:
     checked: 2026-08-23
     url: https://15445.courses.cs.cmu.edu/
     subjects: [data-management]
+    basis:
+      subjects: cmu-15-445:scope
     status: active
     added: 2026-08-23
   - id: db-engines
@@ -290,6 +342,8 @@ entities:
     checked: 2026-08-23
     url: https://db-engines.com/en/ranking
     subjects: [data-management]
+    basis:
+      subjects: db-engines:scope
     status: active
     added: 2026-08-23
 
@@ -298,27 +352,35 @@ entities:
     label: { zh: "Anthropic", en: "Anthropic" }
     kind: organization
     subjects: [artificial-intelligence]
+    basis:
+      subjects: self
     match: [{ source: wikidata, id: Q116758847, rel: exactMatch }]
-    status: active
+    status: candidate
     added: 2026-08-23
   - id: openai
     label: { zh: "OpenAI", en: "OpenAI" }
     kind: organization
     subjects: [artificial-intelligence]
+    basis:
+      subjects: self
     match: [{ source: wikidata, id: Q21708200, rel: exactMatch }]
-    status: active
+    status: candidate
     added: 2026-08-23
   - id: moonshot-ai
     label: { zh: "月之暗面", en: "Moonshot AI" }
     kind: organization
     subjects: [artificial-intelligence]
+    basis:
+      subjects: self
     match: [{ source: wikidata, id: Q130270266, rel: exactMatch }]
-    status: active
+    status: candidate
     added: 2026-08-23
   - id: astral
     label: { zh: "Astral", en: "Astral" }
     kind: organization
     subjects: [software-engineering]
+    basis:
+      subjects: self
     scope: "uv、ruff、ty 的开发公司；Wikidata 条目未能确认"
     status: candidate
     added: 2026-08-23
@@ -328,6 +390,8 @@ entities:
     form: "command-line interface"   # Wikidata instance of
     vendor: anthropic
     subjects: [artificial-intelligence, tools-and-environments]
+    basis:
+      subjects: cs2023:SE-Tools#7
     scope: "Anthropic 的命令行编程智能体；不含 Claude 模型本身"
     match: [{ source: wikidata, id: Q138457287, rel: exactMatch }]
     status: active
@@ -338,6 +402,8 @@ entities:
     form: "command-line interface"   # Wikidata instance of
     vendor: openai
     subjects: [artificial-intelligence, tools-and-environments]
+    basis:
+      subjects: cs2023:SE-Tools#7
     scope: "OpenAI 的编程智能体（2025 年起的 CLI 与云端产品）；Wikidata 的 Q108582200 是 2021 年的同名模型，不映射"
     status: candidate
     added: 2026-08-23
@@ -346,6 +412,8 @@ entities:
     kind: software
     form: "integrated development environment"   # Wikidata instance of
     subjects: [artificial-intelligence, tools-and-environments]
+    basis:
+      subjects: cs2023:SE-Tools#7
     scope: "Google 的 AI 编程工具"
     match: [{ source: wikidata, id: Q136827654, rel: exactMatch }]
     status: active
@@ -355,6 +423,8 @@ entities:
     kind: software
     vendor: moonshot-ai
     subjects: [artificial-intelligence, tools-and-environments]
+    basis:
+      subjects: cs2023:SE-Tools#7
     scope: "月之暗面的编程智能体；Wikidata 无条目"
     status: candidate
     added: 2026-08-23
@@ -363,6 +433,8 @@ entities:
     kind: software
     form: "autonomous agent"   # Wikidata instance of
     subjects: [artificial-intelligence, tools-and-environments]
+    basis:
+      subjects: cs2023:SE-Tools#7
     scope: "开源自主 AI 助手"
     match: [{ source: wikidata, id: Q137916205, rel: exactMatch }]
     status: active
@@ -371,6 +443,8 @@ entities:
     label: { zh: "OpenCode", en: "OpenCode" }
     kind: software
     subjects: [artificial-intelligence, tools-and-environments]
+    basis:
+      subjects: cs2023:SE-Tools#7
     scope: "开源终端编程智能体；Wikidata 的 Q133055048 是德国的开源交换平台，不映射"
     status: candidate
     added: 2026-08-23
@@ -378,6 +452,8 @@ entities:
     label: { zh: "TypeScript", en: "TypeScript" }
     kind: programming-language
     subjects: [foundations-of-programming-languages]
+    basis:
+      subjects: cs2023:FPL
     match: [{ source: wikidata, id: Q978185, rel: exactMatch }]
     status: active
     added: 2026-08-23
@@ -385,6 +461,8 @@ entities:
     label: { zh: "JavaScript", en: "JavaScript" }
     kind: programming-language
     subjects: [foundations-of-programming-languages]
+    basis:
+      subjects: cs2023:FPL
     match: [{ source: wikidata, id: Q2005, rel: exactMatch }]
     status: active
     added: 2026-08-23
@@ -392,6 +470,8 @@ entities:
     label: { zh: "Python", en: "Python" }
     kind: programming-language
     subjects: [foundations-of-programming-languages]
+    basis:
+      subjects: cs2023:FPL
     match: [{ source: wikidata, id: Q28865, rel: exactMatch }]
     status: active
     added: 2026-08-23
@@ -399,6 +479,8 @@ entities:
     label: { zh: "Go", en: "Go" }
     kind: programming-language
     subjects: [foundations-of-programming-languages]
+    basis:
+      subjects: cs2023:FPL
     match: [{ source: wikidata, id: Q37227, rel: exactMatch }]
     status: active
     added: 2026-08-23
@@ -406,6 +488,8 @@ entities:
     label: { zh: "Rust", en: "Rust" }
     kind: programming-language
     subjects: [foundations-of-programming-languages]
+    basis:
+      subjects: cs2023:FPL
     match: [{ source: wikidata, id: Q575650, rel: exactMatch }]
     status: active
     added: 2026-08-23
@@ -414,6 +498,8 @@ entities:
     kind: software
     form: "JavaScript bundler"   # Wikidata instance of
     subjects: [tools-and-environments, web-platforms]
+    basis:
+      subjects: cs2023:SE-Tools#4
     match: [{ source: wikidata, id: Q111590996, rel: exactMatch }]
     status: active
     added: 2026-08-23
@@ -421,6 +507,8 @@ entities:
     label: { zh: "oxc", en: "oxc" }
     kind: software
     subjects: [tools-and-environments, web-platforms]
+    basis:
+      subjects: self
     scope: "JavaScript 工具链（解析器、linter 等），Rust 实现；Wikidata 无条目"
     status: candidate
     added: 2026-08-23
@@ -429,6 +517,8 @@ entities:
     kind: software
     form: "JavaScript bundler"   # Wikidata instance of
     subjects: [tools-and-environments, web-platforms]
+    basis:
+      subjects: cs2023:SE-Tools#4
     match: [{ source: wikidata, id: Q22909730, rel: exactMatch }]
     status: active
     added: 2026-08-23
@@ -437,6 +527,8 @@ entities:
     kind: software
     form: "linter"   # Wikidata instance of
     subjects: [tools-and-environments, web-platforms]
+    basis:
+      subjects: cs2023:SE-Tools#3
     match: [{ source: wikidata, id: Q55452824, rel: exactMatch }]
     status: active
     added: 2026-08-23
@@ -445,6 +537,8 @@ entities:
     kind: software
     form: "JavaScript framework"   # Wikidata instance of
     subjects: [web-platforms]
+    basis:
+      subjects: cs2023:SPD-Web#2
     match: [{ source: wikidata, id: Q56062435, rel: exactMatch }]
     status: active
     added: 2026-08-23
@@ -453,6 +547,8 @@ entities:
     kind: software
     form: "web framework"   # Wikidata instance of
     subjects: [web-platforms]
+    basis:
+      subjects: cs2023:SPD-Web#2
     match: [{ source: wikidata, id: Q19399674, rel: exactMatch }]
     status: active
     added: 2026-08-23
@@ -461,6 +557,8 @@ entities:
     kind: software
     form: "JavaScript framework"   # Wikidata instance of
     subjects: [web-platforms]
+    basis:
+      subjects: cs2023:SPD-Web#2
     match: [{ source: wikidata, id: Q24589705, rel: exactMatch }]
     status: active
     added: 2026-08-23
@@ -469,6 +567,8 @@ entities:
     kind: software
     form: "JavaScript framework"   # Wikidata instance of
     subjects: [web-platforms]
+    basis:
+      subjects: cs2023:SPD-Web#2
     match: [{ source: wikidata, id: Q107015664, rel: exactMatch }]
     status: active
     added: 2026-08-23
@@ -477,6 +577,8 @@ entities:
     kind: software
     vendor: astral
     subjects: [tools-and-environments]
+    basis:
+      subjects: self
     scope: "Python 包与项目管理器，Rust 实现；Wikidata 无条目"
     status: candidate
     added: 2026-08-23
@@ -486,6 +588,8 @@ entities:
     form: "linter"   # Wikidata instance of
     vendor: astral
     subjects: [tools-and-environments]
+    basis:
+      subjects: cs2023:SE-Tools#3
     match: [{ source: wikidata, id: Q115911873, rel: exactMatch }]
     status: active
     added: 2026-08-23
@@ -494,6 +598,8 @@ entities:
     kind: software
     vendor: astral
     subjects: [tools-and-environments, type-systems]
+    basis:
+      subjects: [cs2023:SE-Tools#3, cs2023:FPL-Types#5]
     scope: "Python 类型检查器；Wikidata 无条目"
     status: candidate
     added: 2026-08-23
@@ -502,6 +608,8 @@ entities:
     kind: software
     form: "software testing tool"   # Wikidata instance of
     subjects: [tools-and-environments, software-verification-and-validation]
+    basis:
+      subjects: [cs2023:SE-Tools#3, cs2023:SE-Validation#4]
     match: [{ source: wikidata, id: Q28975377, rel: exactMatch }]
     status: active
     added: 2026-08-23
@@ -510,6 +618,8 @@ entities:
     kind: software
     form: "static type checker"   # Wikidata instance of
     subjects: [tools-and-environments, type-systems]
+    basis:
+      subjects: [cs2023:SE-Tools#3, cs2023:FPL-Types#5]
     match: [{ source: wikidata, id: Q102522262, rel: exactMatch }]
     status: active
     added: 2026-08-23
@@ -518,15 +628,19 @@ entities:
     kind: software
     form: "Python package"   # Wikidata instance of
     subjects: [web-platforms, foundations-of-programming-languages]
+    basis:
+      subjects: self
     scope: "数据解析与校验库；本库指 v2"
     match: [{ source: wikidata, id: Q107381687, rel: exactMatch }]
-    status: active
+    status: candidate
     added: 2026-08-23
   - id: fastapi
     label: { zh: "FastAPI", en: "FastAPI" }
     kind: software
     form: "web framework"   # Wikidata instance of
     subjects: [web-platforms]
+    basis:
+      subjects: cs2023:SPD-Web#2
     match: [{ source: wikidata, id: Q101119404, rel: exactMatch }]
     status: active
     added: 2026-08-23
