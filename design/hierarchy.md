@@ -11,7 +11,7 @@
 ### 树的性质
 
 1. 顶层按学科切,理由见[树按学科而非分面的决定](drafts/tree-by-discipline.md)。分面是概念上的横向字段,概念组是视图,都不在树里
-2. 允许多层级:`broader` 是列表,顺序不赋予含义。例:「Rust 所有权」`broader: [systems-execution-and-memory, rust]`
+2. 允许多层级:`broader` 是列表,顺序不赋予含义。例:「软件工程管理」同时在 `software-engineering` 和 `management` 之下
 
 ### 借入
 
@@ -66,7 +66,7 @@ CS2023 的 17 个知识领域作第 2 层;每个知识领域的知识单元作�
 | architecture-and-organization | AR | 11 | — | foundations 的一部分;硬件落这里 |
 | artificial-intelligence | AI | 12 | ATLAS 战术;OWASP LLM Top 10(均待核) | ai |
 | data-management | DM | 13 | — | data |
-| programming-languages | FPL | 22 | 具体语言术语表 | programming-languages |
+| programming-languages | FPL | 22 | — | programming-languages |
 | graphics-and-interactive-techniques | GIT | 12 | — | 无,新盲区 |
 | human-computer-interaction | HCI | 6 | — | human-centered-computing |
 | mathematical-and-statistical-foundations | MSF | 5 | — | foundations 的一部分;与顶层 mathematics 多层级 |
@@ -162,11 +162,10 @@ LLM 应用相关的外部体系按规则 3、4、10 处理:ATLAS 的战术、OWA
 
 ### 编程语言
 
-编程语言有跨语言的通识——类型系统、内存模型、求值与并发模型、范式——具体语言只是这些概念的不同取舍。因此 `programming-languages`(CS2023 FPL)的下位是 22 个知识单元,再加一个「具体语言」术语表作为第二个数组:
+编程语言有跨语言的通识——类型系统、内存模型、求值与并发模型、范式——具体语言只是这些概念的不同取舍。`programming-languages`(CS2023 FPL)的下位是 22 个知识单元;具体语言(Python、Rust)是个体,不在主题树里,收在[命名实体词表](entities.md):
 
 ```
-programming-languages
-  [CS2023 FPL 22 知识单元]          id 用 slug,代码记在 match
+programming-languages                 id 用 slug,代码记在 match
   ├─ object-oriented-programming     FPL-OOP
   ├─ functional-programming          FPL-Functional
   ├─ logic-programming               FPL-Logic
@@ -189,18 +188,11 @@ programming-languages
   ├─ language-design                 FPL-Design
   ├─ formal-methodologies            FPL-Methodologies
   └─ pl-society-ethics-profession    FPL-SEP
-  [具体语言]
-  ├─ python
-  ├─ typescript
-  ├─ rust
-  └─ go
 ```
 
 slug 为本库拟定,英文原名和代码为准;22 个知识单元全部以未标引状态建入,预期多数长期如此,这正是规则 4 的目的。
 
-语言特性的笔记用多层级挂两处:通识节点和具体语言。例如「Rust 的所有权」的 `broader` 为 `[systems-execution-and-memory, rust]`。按通识检索时它与 GC、引用计数并列;按语言检索时与 Rust 的其他特性并列。
-
-不把语言做成分面字段(`lang: rust`)而做成树节点,是因为语言本身也需要别名(TS / TypeScript)、范围注释和映射,作为概念更合适。
+语言特性的笔记主题挂通识节点,语言记在实体字段:「Rust 的所有权」`topics: [systems-execution-and-memory]`,`entities: [rust]`。按通识检索时它与 GC、引用计数并列;按语言检索时由实体表算出。
 
 ## 待定事项
 

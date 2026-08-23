@@ -86,6 +86,7 @@
 | teachyourselfcs | teachyourselfcs.com | candidate | 候选词来源 |
 | cmu-15-445 | CMU 15-445 | candidate | 候选词来源 |
 | db-engines | DB-Engines 排名 | candidate | 候选词来源 |
+| wikidata | Wikidata | mapping | 命名实体词表的主要映射目标 |
 
 ## 待定事项
 
