@@ -42,6 +42,25 @@
 
 括号里那行叫**节点标签**(node label,ISO 25964-1 §2.38)。它占一个节点的位置,但不是概念——不能用它[标引](glossary.md)一篇笔记;它只是组的名牌。
 
+节点标签能写什么,标准限定了两种(§2.38 注):
+
+- 下面这组词所依据的**划分特征**:「(按年龄)」
+- 下面这组词所属的**分面名**:「[动作]」
+
+写法上,Z39.19 §8.3.5 的例子是「by + 特征」:
+
+```
+cars
+  by motive power
+    diesel cars
+    electric cars
+  by purpose
+    racing cars
+    sports cars
+```
+
+并要求节点标签在排版上与词区分开——斜体,或放在括号里。Z39.19 §7.7 另有一条反向规定:不要为了在层级里凑一个分组层而造一个复合词,分组就用节点标签。「人」下面不该造一个「按年龄分的人」当概念,写「(按年龄)」就够。
+
 到这里三个词讲完了,它们是一回事的三个侧面:划分特征是问题,数组是这个问题分出来的一组,节点标签是写在组前面的问题本身。
 
 ## 一个概念可以同时在几个组里
@@ -59,3 +78,4 @@
 ## 权威来源
 
 - [ISO 25964-1:2011](https://www.iso.org/standard/53657.html) §2.1 array、§2.4 characteristic of division、§2.23 hierarchical relationship、§2.34 / §2.42 mono- / polyhierarchy、§2.38 node label;§10.2 层级关系;§15 数据模型的 ThesaurusConcept(`topConcept`)、ThesaurusArray、NodeLabel。见 [ISO 25964 阅读笔记](../sources/iso-25964.md)
+- [ANSI/NISO Z39.19-2005 (R2010)](https://www.niso.org/publications/ansiniso-z3919-2005-r2010) §7.7 Node Labels、§8.3.5 Node Labels in Hierarchies。[免费 PDF](http://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf)
