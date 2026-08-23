@@ -15,8 +15,6 @@
 | [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/top-10-tips-style-voice) | 技术写作 | 简洁、语气、大小写、标点 | de-facto;已读 top 10 |
 | [Diátaxis](https://diataxis.fr/) | 文档分类 | 四类文档及其写法 | de-facto;已读 start-here、explanation、reference |
 
-阮一峰《中文技术文档的写作规范》曾作为来源,已废弃:其可引条目均转述自 GB/T 15834、clreq 或企业内规,无自有原理;句长 20/30/40 字、段落不超七行等数字规则源头是某企业规范,本库不采用。
-
 ## 原则
 
 ISO 24495-1:2023 的四条:
