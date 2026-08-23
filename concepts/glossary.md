@@ -144,6 +144,15 @@
 | 主题 | topic | 知识单元内的具体知识点，标核心或选修 | CS2023 |
 | 普遍接受的知识 | generally accepted knowledge | 多数项目多数时候适用且广泛认同的知识；知识体系只收这类 | SWEBOK |
 
+## 元数据
+
+| 术语 | 英文 | 定义 | 出处 |
+|---|---|---|---|
+| Dublin Core | Dublin Core Metadata Element Set | 十五个核心元数据元素，任何资源都可用 | ISO 15836-1:2017 |
+| DCMI Metadata Terms | — | Dublin Core 的扩展属性与类 | ISO 15836-2:2019；DCMI 2020 |
+| DCMI Type Vocabulary | — | `type` 的推荐取值，按媒介性质分 12 类 | DCMI |
+| 资源 | resource | 被描述的东西：文档、图像、数据集、软件 | DCMI |
+
 ## 知识图谱
 
 | 术语 | 英文 | 定义 | 出处 |

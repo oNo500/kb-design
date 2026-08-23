@@ -75,7 +75,8 @@
 | 5 | [词表的建设与维护](vocabulary-construction.md) | 词从哪来、怎么建、怎么改、怎么废 |
 | 6 | [词表映射](vocabulary-mapping.md) | 本地概念怎么指向外部条目；外部词表的三种用法 |
 | 7 | [知识体系](body-of-knowledge.md) | SWEBOK、CS2023 这类东西是什么，为什么能当词表的上层结构 |
-| 8 | [知识图谱](knowledge-graph.md) | 词表和图谱的关系，什么时候需要升级 |
+| 8 | [元数据](metadata.md) | Dublin Core 是什么，和词表怎么分工 |
+| 9 | [知识图谱](knowledge-graph.md) | 词表和图谱的关系，什么时候需要升级 |
 | — | [第一原理与设计理由](first-principles.md) | 本库为什么要求每个方法都有来源 |
 | — | [写作规范](writing-conventions.md) | 本库的写作规则从哪条原则推出 |
 
