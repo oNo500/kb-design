@@ -301,7 +301,23 @@ arrays:
 
 按 Z39.19 §11.3.2:`deprecated` 的词**不删**,旧引用靠它还能找到;只有误建且无任何引用的才物理删除。借入的概念长期 `unassigned` 不删——那是盲区标记;确认不需要时在 `scope` 注明「有意不覆盖」及原因,仍保留。
 
-## 外部映射
+## 外部知识体系的用法
+
+一个外部知识体系在本库可以有三种用法(理论见[词表映射](../concepts/vocabulary-mapping.md)):
+
+| 用法 | 本库里的形式 | 条件 | 记在哪 |
+|---|---|---|---|
+| 借入 | 某概念下的一个数组,成员是本地概念,`source` 记来历 | 划分特征与该概念已有数组不同 | `arrays` 登记 + 概念的 `source` |
+| 映射 | 概念的 `match` 条目 | 外部有稳定条目 | 概念的 `match` |
+| 派生概念组 | 映射到该体系的全部概念 | 已有映射 | `sources.yaml` 的 `role` 含 `group` |
+
+规则:
+
+1. **借入的概念必须映射回源头**。`source: asvs` 只说来历;`match: {source: asvs, id: V6, rel: exactMatch}` 说对应哪一条。改版后章节号可能变,两者不互相替代
+2. **映射总是有,借入看需要**。起步每个概念下只借入一个数组;其余体系只映射
+3. **升级路径**:映射 → 派生组 → 数组。触发条件:派生组被反复打开、或需要按它的划分特征浏览时,才借入成数组
+
+### 映射关系
 
 概念级映射,不是第 2 层级别的。`rel` 直接用 SKOS 的五种:
 
@@ -322,16 +338,17 @@ arrays:
 ```yaml
 - id: cwe
   name: MITRE Common Weakness Enumeration
-  role: [mapping]                # mapping = 可作 match 目标;candidate = 只作候选词来源
+  role: [mapping, group]         # 见下
   version: "4.20"
   checked: 2026-08-20
   url: https://cwe.mitre.org/
 ```
 
-`role` 区分两类:
+`role` 可多选:
 
-- **mapping**:有稳定、可引用的条目(CWE、RFC、ASVS、ACM CCS、SWEBOK、ISO、MDN 页面)
-- **candidate**:学习路线、排行榜、课程大纲(roadmap.sh、teachyourselfcs、DB-Engines 榜)。能告诉你什么重要,但条目不稳定无编号,只用来发现词,不作映射目标
+- **mapping**:有稳定、可引用的条目,可作 `match` 目标(CWE、RFC、ASVS、ACM CCS、SWEBOK、ISO、MDN 页面)
+- **group**:由映射派生一个概念组,组名即体系名。前提是 `mapping`
+- **candidate**:学习路线、排行榜、课程大纲(roadmap.sh、teachyourselfcs、DB-Engines 榜)。条目不稳定无编号,只用来发现词,不作映射目标
 
 复核周期的分档见 [来源分级草案](drafts/sources.md),草案生效前只记 `version` 和 `checked`。
 
