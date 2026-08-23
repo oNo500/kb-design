@@ -4,12 +4,14 @@
  "artificial-intelligence.zh": {
   "q": "Q11660",
   "label": "人工智能",
-  "desc": "計算機科學分支，開發具有類似人類智能的機器和軟件 计算机科学的一个分支，开发具有类似人类智能的机器和软件 field that develops and stu"
+  "desc": "計算機科學分支，開發具有類似人類智能的機器和軟件 计算机科学的一个分支，开发具有类似人类智能的机器和软件 field that develops and stu",
+  "note": ""
  },
  "data-management.zh": {
   "q": "Q1149776",
   "label": "数据管理",
-  "desc": "disciplines related to managing data as a resource"
+  "desc": "disciplines related to managing data as a resource",
+  "note": ""
  },
  "foundations-of-programming-languages.zh": null,
  "graphics-and-interactive-techniques.zh": null,
@@ -21,131 +23,21 @@
  "security.zh": {
   "q": "Q2526135",
   "label": "保安",
-  "desc": "freedom from, or resilience against, potential harm caused by hostile forces, ci"
+  "desc": "freedom from, or resilience against, potential harm caused by hostile forces, ci",
+  "note": ""
  },
  "society-ethics-and-the-profession.zh": null,
  "software-development-fundamentals.zh": null,
  "software-engineering.zh": {
   "q": "Q80993",
   "label": "软件工程",
-  "desc": "academic discipline that studies systematic approaches to developing software 應用"
+  "desc": "academic discipline that studies systematic approaches to developing software 應用",
+  "note": ""
  },
  "specialized-platform-development.zh": null,
  "systems-fundamentals.zh": null,
  "foundational-data-structures-and-algorithms.zh": null,
- "complexity.zh": {
-  "q": "Q723897",
-  "label": "复杂",
-  "desc": "behavior of a system or model with many parts interacting in multiple ways"
- },
+ "complexity.zh": null,
  "computational-models-and-formal-languages.zh": null,
- "society-ethics-and-the-profession-algorithmic-foundations.zh": null,
- "algorithmic-strategies.zh": null,
- "digital-logic-and-digital-systems.zh": null,
- "machine-level-data-representation.zh": null,
- "assembly-level-machine-organization.zh": null,
- "memory-hierarchy.zh": {
-  "q": "Q1589327",
-  "label": "記憶體階層",
-  "desc": "computer architecture that classifies memory/storage into a hierarchy based on r"
- },
- "interfacing-and-communication.zh": null,
- "functional-organization.zh": null,
- "performance-and-energy-efficiency.zh": null,
- "heterogeneous-architectures.zh": null,
- "secure-processor-architectures.zh": null,
- "quantum-architectures.zh": null,
- "sustainability-issues.zh": null,
- "fundamental-issues.zh": null,
- "search.zh": {
-  "q": "Q647884",
-  "label": "搜查與扣押",
-  "desc": "legal procedure by which the police commence search of an entity's property and "
- },
- "fundamental-knowledge-representation-and-reasoning.zh": null,
- "machine-learning.zh": {
-  "q": "Q2539",
-  "label": "机器学习",
-  "desc": "scientific study of algorithms and statistical models that computer systems use "
- },
- "applications-and-societal-impact.zh": null,
- "logical-representation-and-reasoning.zh": null,
- "probabilistic-representation-and-reasoning.zh": null,
- "planning.zh": {
-  "q": "Q309100",
-  "label": "企劃",
-  "desc": "process of determining the activities required to achieve a desired goal 構想目標、整理"
- },
- "agents-and-cognitive-systems.zh": null,
- "natural-language-processing.zh": {
-  "q": "Q30642",
-  "label": "自然语言处理",
-  "desc": "field of computer science and linguistics 以通过语音输入文字为例，自然语言处理是用计算机来处理、理解以及运用人类语言。"
- },
- "robotics.zh": {
-  "q": "Q170978",
-  "label": "機器人學",
-  "desc": "design, construction, operation, and application of robots 機器人的設計、建造、操作和應用 机器人的设"
- },
- "perception-and-computer-vision.zh": null,
- "core-database-system-concepts.zh": null,
- "data-modeling.zh": {
-  "q": "Q367664",
-  "label": "数据建模",
-  "desc": "(in software engineering) process of creating a data model for an information sy"
- },
- "relational-databases.zh": null,
- "query-construction.zh": null,
- "query-processing.zh": null,
- "dbms-internals.zh": null,
- "nosql-systems.zh": null,
- "data-security-and-privacy.zh": null,
- "data-analytics.zh": null,
- "distributed-databases-cloud-computing.zh": null,
- "semi-structured-and-unstructured-databases.zh": null,
- "society-ethics-and-the-profession-data-management.zh": null,
- "the-role-of-data-and-the-data-life-cycle.zh": null,
- "object-oriented-programming.zh": {
-  "q": "Q79872",
-  "label": "面向对象程序设计",
-  "desc": "programming paradigm based on the concept of objects 具有物件概念的程式設計典範"
- },
- "functional-programming.zh": {
-  "q": "Q193076",
-  "label": "函数式编程",
-  "desc": "programming paradigm based on applying and composing functions 編程範式"
- },
- "logic-programming.zh": {
-  "q": "Q275603",
-  "label": "邏輯編程",
-  "desc": "programming paradigm based on formal logic"
- },
- "shell-scripting.zh": null,
- "event-driven-and-reactive-programming.zh": null,
- "parallel-and-distributed-computing-foundations-of-programming-languages.zh": null,
- "aspect-oriented-programming.zh": {
-  "q": "Q30267",
-  "label": "面向侧面的程序设计",
-  "desc": "programming paradigm"
- },
- "type-systems.zh": null,
- "systems-execution-and-memory-model.zh": null,
- "language-translation-and-execution.zh": null,
- "syntax-analysis.zh": null,
- "compiler-semantic-analysis.zh": null,
- "program-analysis-and-analyzers.zh": null,
- "code-generation.zh": null,
- "run-time-behavior-and-systems.zh": null,
- "advanced-programming-constructs.zh": null,
- "language-pragmatics.zh": null,
- "formal-semantics.zh": {
-  "q": "Q5469969",
-  "label": "形式语义分析",
-  "desc": "study of meaning in natural languages"
- },
- "formal-development-methodologies.zh": null,
- "design-principles-of-programming-languages.zh": null,
- "society-ethics-and-the-profession-foundations-of-programming-languages.zh": null,
- "program-abstraction-and-representation.zh": null,
- "fundamental-concepts.zh": null
+ "society-ethics-and-the-profession-algorithmic-foundations.zh": null
 }

@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 """为 topics.yaml 里 basis 为 self 的标签查 Wikidata（译名阶梯第 3 级）。
-只接受：对方语言标签与本库名称完全一致，且描述像学科/概念。结果写 vocab/build/label-lookup.json，不改词表。"""
+只接受：对方语言标签与本库名称完全一致，且描述像学科/概念；中文优先 zh-hans/zh-cn，繁体经 OpenCC 转简并注明。
+结果写 vocab/build/label-lookup.json 作为清单交人审，不改词表。用 `uvx --from opencc-python-reimplemented --with pyyaml python scripts/lookup-labels.py` 运行。"""
 import json, urllib.request, urllib.parse, time, pathlib, re, yaml, sys
+try:
+    import opencc; T2S = opencc.OpenCC('t2s').convert
+except ImportError:
+    T2S = None
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 H = {'User-Agent': 'kb-design/0.1 (gxagenta@gmail.com)'}
 OUT = ROOT / 'vocab' / 'build' / 'label-lookup.json'
@@ -36,12 +41,21 @@ for n, (cid, want, name, have) in enumerate(todo):
         labels = {k: v['value'] for k, v in ent.get('labels', {}).items()}
         have_label = labels.get(have) or labels.get('zh-hans') or labels.get('zh-cn')
         if not have_label or have_label.strip().lower() != name.strip().lower(): continue
-        want_label = labels.get(want) or (labels.get('zh-hans') if want == 'zh' else None) or (labels.get('zh-cn') if want == 'zh' else None)
         descs = ent.get('descriptions', {})
         dtext = ' '.join(v['value'] for v in descs.values())
+        if not FIELDY.search(dtext): continue          # 描述必须像学科或概念
+        if BAD.search(dtext): continue
+        note = ''
+        if want == 'zh':
+            want_label = labels.get('zh-hans') or labels.get('zh-cn')
+            if not want_label and labels.get('zh'):
+                want_label = labels['zh']
+                if T2S and T2S(want_label) != want_label:
+                    want_label = T2S(want_label); note = 'zh 标签为繁体，OpenCC 转简'
+        else:
+            want_label = labels.get('en')
         if not want_label: continue
-        if not FIELDY.search(dtext) and BAD.search(dtext): continue
-        hit = {'q': x['id'], 'label': want_label, 'desc': dtext[:80]}
+        hit = {'q': x['id'], 'label': want_label, 'desc': dtext[:80], 'note': note}
         break
     res[key] = hit
     if n % 20 == 0:
