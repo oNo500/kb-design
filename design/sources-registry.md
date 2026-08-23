@@ -24,7 +24,9 @@
 
 `candidate` 与其余三者互斥：条目不稳定无编号，只用来发现词。
 
-复核周期按实体的 `tier`，见[维护循环](maintenance.md)。借入来源的进一步条件（分级、版本要求）留待治理方案。
+复核周期按实体的 `tier`，见[维护循环](maintenance.md)。
+
+借入来源的资格：`role` 含 `structure` 的来源，其实体的 `tier` 必须是 de-jure，或 de-facto 且有版本号（MDN 这类无版本号的 de-facto 只作映射）；vendor 只作映射；archival 不作来源。依据是组织依据——本库只把有发布流程或版本标识的体系当作结构来源。
 
 ## 三种用法
 
@@ -90,6 +92,5 @@
 
 ## 待定事项
 
-- 借入来源的分级与版本要求，留待治理方案
 - MDN 技术参考没有版本号，`version` 怎么记（抓取日期？）；Web 内容是否需要破例借入它
 - `mdn-curriculum` 标为 candidate，但它有稳定模块名，是否也给 `group`

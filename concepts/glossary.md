@@ -118,7 +118,7 @@
 | 标引词 | index term | 分配给文档的词；keyword、tag 含义更宽 | ISO 2.26 |
 | 查全率 / 查准率 | recall / precision | 检索效果的两个指标；词表对两者都有正面影响 | Z 5.3.6 |
 | 互操作性 | interoperability | 系统间交换并使用信息的能力 | ISO 2.29 |
-| 来源分级 | de-jure / de-facto / vendor / archival | 引证来源按变更方式分档 | 自定；[design/sources.md](../design/governance.md) |
+| 来源分级 | de-jure / de-facto / vendor / archival | 引证来源按变更方式分档；依据为组织依据 | Z 5.3.5.2；[design/entities.md](../design/entities.md) |
 
 ## 词表间映射
 
@@ -157,6 +157,21 @@
 | DCMI Type Vocabulary | — | `type` 的推荐取值，按媒介性质分 12 类 | DCMI |
 | 资源 | resource | 被描述的东西：文档、图像、数据集、软件 | DCMI |
 | 内容单元 | — | 知识库里最小的可独立引用、可独立打标签的东西；参照 DITA topic | 本库，参照 DITA 1.3 §2.2.1 |
+
+## 治理与维护
+
+| 术语 | 英文 | 定义 | 出处 |
+|---|---|---|---|
+| 治理 | governance | 组织借以被指导、监督并被问责的系统；对管理的管理 | ISO 37000:2021 |
+| 政策 | policy | 治理主体定下的、管理必须遵守的规则 | ISO 15489-1 §6.2 |
+| 决策权 | decision rights | 谁有权对哪类事项做决定 | DAMA-DMBOK 数据治理 |
+| 监控与评价 | monitoring and evaluation | 对管理过程及其结果的持续检查与定期评估 | ISO 15489-1 §6.4 |
+| 审计 | audit | 对记录与过程是否符合规则的检查 | ISO 15489-1 §6.4 |
+| 处置 | disposition | 执行保留、销毁或移交决定的过程 | ISO 15489-1 §3.8 |
+| 断言 | assertion | 人判断而非抄自来源的字段值 | 本库用法；溯源依据 W3C PROV-O |
+| 指标 | indicator | 脚本能算出或外部能通知、用于监控的量 | ISO 15489-1 §6.4 的监控对象 |
+| 阈值 | threshold | 指标触发动作的界值 | 通用 |
+| 批准 | approve | 候选词审核通过转为正式词 | Z 11.1.6 |
 
 ## 知识图谱
 

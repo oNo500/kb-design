@@ -88,7 +88,7 @@ for name, coll in [('entities', entities), ('topics', concepts)]:
                     if src not in sources: bad.append(f"{name}: {x['id']} basis 来源未登记 {src}")
             if 'self' in vals and x.get('status') == 'active': bad.append(f"{name}: {x['id']} {field} basis 为 self 却 active")
 
-# ---------- 信号报告（design/governance.md）----------
+# ---------- 指标表（design/maintenance.md）----------
 import datetime
 today = datetime.date.today()
 sig = {}
@@ -101,59 +101,60 @@ for c in concepts.values():
 tops = sorted({k[0] for k in by_top})
 for t in tops:
     tot = sum(by_top[(t, st)] for st in ('active','unassigned','candidate','deprecated'))
-    sig[f'unassigned.{t}'] = (by_top[(t,'unassigned')], tot)
-for k in judged: sig[f'self.{k[0]}.{k[1]}'] = (selfcount[k], judged[k])
+    sig[f'unassigned.{t}'] = f'{by_top[(t,"unassigned")]}/{tot}'
+for k in judged: sig[f'self.{k[0]}.{k[1]}'] = f'{selfcount[k]}/{judged[k]}'
 cand = [x for coll in (concepts, entities) for x in coll.values() if x['status'] == 'candidate']
-sig['candidates'] = (len(cand), None)
-# 每个上位下的候选数、self 数
-per_parent = collections.Counter()
+sig['candidates'] = len(cand)
+# 每个上位下的候选数、self 数：两个独立阈值（阈值表）
+cand_per_parent = collections.Counter(); self_per_parent = collections.Counter()
 for c in concepts.values():
     if c['status'] == 'candidate':
-        for b in c['broader']: per_parent[b] += 1
+        for b in c['broader']: cand_per_parent[b] += 1
 for e in entities.values():
     if (e.get('basis') or {}).get('subjects') == 'self':
-        for sj in e.get('subjects', []): per_parent[sj] += 1
-hot = {k: v for k, v in per_parent.items() if v >= 5}
+        for sj in e.get('subjects', []): self_per_parent[sj] += 1
 others = [c['id'] for c in concepts.values() if c['label']['zh'].endswith('其他学科')]
 other_kids = collections.Counter()
 for c in concepts.values():
     for b in c['broader']:
         if b in others: other_kids[b] += 1
-# 来源复核到期
+TIER_MONTHS = {'de-jure': 24, 'de-facto': 12, 'vendor': 6}   # 与 maintenance.md 阈值表一致
 due = []
-TIER_MONTHS = {'de-jure': 24, 'de-facto': 12, 'vendor': 6}
 for e in entities.values():
     if e.get('checked') and e.get('tier') in TIER_MONTHS:
         d = e['checked'] if isinstance(e['checked'], datetime.date) else datetime.date.fromisoformat(str(e['checked']))
         months = (today.year - d.year) * 12 + today.month - d.month
         if months >= TIER_MONTHS[e['tier']]: due.append(e['id'])
 
-last = {}
 lp = ROOT / 'signals.yaml'
-if lp.exists(): last = yaml.safe_load(open(lp)) or {}
+hist = (yaml.safe_load(open(lp)) or {}) if lp.exists() else {}
+snaps = hist.get('snapshots', [])
+last = snaps[-1] if snaps else {}
 def line(name, cur, thr, trig):
-    prev = last.get(name)
-    print(f"  {name:<48} 当前 {cur!s:<10} 上次 {prev!s:<10} 阈值 {thr:<14} {'触发' if trig else ''}")
+    print(f"  {name:<48} 当前 {cur!s:<10} 上次 {last.get(name, '—')!s:<10} 阈值 {thr:<16} {'触发' if trig else ''}")
 
 for b in bad: print(b)
 print(f"{len(bad)} 处问题；{len(concepts)} 概念，{len(arrays)} 数组，{len(entities)} 实体，{len(sources)} 来源")
-print('信号报告：')
-for t in tops:
-    u, tot = sig[f'unassigned.{t}']
-    line(f'未标引 {t}', f'{u}/{tot}', '12 个月无变化', False)
-for k in judged:
-    line(f'self 断言 {k[0]}.{k[1]}', f'{selfcount[k]}/{judged[k]}', '—', False)
+print('指标表：')
+for t in tops: line(f'未标引 {t}', sig[f'unassigned.{t}'], '两次审核无变化', len(snaps) >= 2 and all(sn.get(f'unassigned.{t}') == sig[f'unassigned.{t}'] for sn in snaps[-2:]))
+for k in judged: line(f'self 断言 {k[0]}.{k[1]}', sig[f'self.{k[0]}.{k[1]}'], '—', False)
 line('候选总数', len(cand), '≥ 20 审核', len(cand) >= 20)
-for k, v in hot.items(): line(f'节点下候选或 self {k}', v, '≥ 5 拆分', True)
+for k, v in cand_per_parent.items():
+    if v >= 5: line(f'节点下候选 {k}', v, '≥ 5 拆分', True)
+for k, v in self_per_parent.items():
+    if v >= 5: line(f'节点下 self {k}', v, '≥ 5 拆分', True)
 for k, v in other_kids.items():
     if v >= 3: line(f'其他类目下位 {k}', v, '≥ 3 拆分', True)
 line('来源复核到期', len(due), '按 tier', bool(due))
 if due: print('    ' + ', '.join(due))
+if hist.get('last_candidate_review'): print(f"  上次候选审核 {hist['last_candidate_review']}；治理年审 {hist.get('governance_reviewed', '—')}")
 print('重复的英文标签（不同上位下的同名概念，允许）：', len(dups))
 
 if '--record' in sys.argv:
-    rec = {k: (v[0] if v[1] is None else f'{v[0]}/{v[1]}') for k, v in sig.items()}
-    rec['recorded'] = str(today)
-    yaml.safe_dump(rec, open(lp, 'w'), allow_unicode=True)
-    print('已写入 vocab/signals.yaml')
+    snap = dict(sig); snap['recorded'] = str(today)
+    snaps.append(snap)
+    hist['snapshots'] = snaps
+    hist.setdefault('last_candidate_review', None); hist.setdefault('governance_reviewed', None)
+    yaml.safe_dump(hist, open(lp, 'w'), allow_unicode=True)
+    print('已追加快照到 vocab/signals.yaml')
 sys.exit(1 if bad else 0)

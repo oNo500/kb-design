@@ -126,7 +126,7 @@
 
 必填：`id` `label.zh` `label.en` `broader` `status` `added`。其余按需。`scope` 对本地建立的概念强烈建议填——它比定义更实用，能防止同一概念被两个人（或半年后的自己）理解成两样。
 
-本地概念的 `broader`、`related`、`scope` 是判断字段，按[维护循环](maintenance.md)记 `basis`。
+本地概念的判断字段按[维护循环](maintenance.md)“断言”记 `basis`。
 
 `origin` 是本地概念的文献依据：它最早在哪篇文献里提出或定型。例：
 
@@ -163,8 +163,8 @@ arrays:
 
 | status | Z39.19 | 含义 | 进入 | 离开 |
 |---|---|---|---|---|
-| `unassigned` | §11.1.8 未标引词 | 为补全层级收入、尚未用于标引 | 借入知识体系的层级时 | 被内容单元引用或有下位 → `active` |
-| `candidate` | §11.1.6 候选词 | 提出但未审 | 任何时候 | 被 ≥ 3 个内容单元引用且有 scope → `active`；连续两个复核周期无引用 → 删除（候选词可以删）。计数与审核见[维护循环](maintenance.md) |
+| `unassigned` | §11.1.8 未标引词 | 为补全层级收入、尚未用于标引 | 借入知识体系的层级时 | 达到阈值 → `active` |
+| `candidate` | §11.1.6 候选词 | 提出但未审 | 任何时候 | 达到阈值且通过审核 → `active`；长期无引用 → 删除（候选词可以删）。阈值与审核见[维护循环](maintenance.md) |
 | `active` | — | 在用 | 审核通过 | 被替代 → `deprecated` |
 | `deprecated` | §11.3.2.1 | 不再用于新标引，保留供检索 | 合并、拆分、改名时 | 不删。必须有 `replaced_by` 和 `history` |
 

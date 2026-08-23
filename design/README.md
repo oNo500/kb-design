@@ -24,7 +24,9 @@
 │
 ├─ decisions/                    决定记录,只追加不修改
 │   ├─ tree-by-discipline.md     顶层为什么按学科不按分面
-│   └─ borrow-and-analyze.md     借入照抄为底、本地分析在上
+│   ├─ borrow-and-analyze.md     借入照抄为底、本地分析在上
+│   ├─ form-independence.md      设计与执行形态分离
+│   └─ decision-rights-defaults.md  决策权的首批边界；首次越权事件
 │
 └─ drafts/                       未生效,各自写明触发条件
     ├─ division-characteristics.md   零自定的唯一例外:划分特征的治理
@@ -40,8 +42,8 @@
 | 命名实体词表 | `vocab/entities.yaml` | 个体：产品、语言、组织、标准、文献 | entities.md |
 | 来源名称规范表 | `vocab/sources.yaml` | 外部知识体系与词表 | sources-registry.md |
 | 文档类型词表 | `vocab/types.yaml` | 内容单元的体裁，四类 | content-model.md |
-| 划分特征登记 | `vocab/characteristics.yaml` | 分析层数组的划分特征 | drafts/division-characteristics.md |
-| 手工概念组 | `vocab/groups.yaml` | 按用途圈的视图 | drafts/concept-groups.md |
+| 划分特征登记 | `vocab/characteristics.yaml`（未建） | 分析层数组的划分特征；草案，例外尚未开放 | drafts/division-characteristics.md |
+| 手工概念组 | `vocab/groups.yaml`（未建） | 按用途圈的视图；草案 | drafts/concept-groups.md |
 
 `vocab/` 初版 2026.08 已建，见 [CHANGELOG](../vocab/CHANGELOG.md)；`vocab/build/` 是生成输入，`scripts/build-topics.py` 生成，`scripts/check-topics.py` 校验。
 

@@ -34,7 +34,7 @@
   history: []
 ```
 
-必填：`id` `label` `kind` `subjects` `status` `added`。`subjects`、`form`、`scope`、`vendor` 是判断字段，按[维护循环](maintenance.md)记 `basis`；有 `self` 的留在 `candidate`。
+必填：`id` `label` `kind` `subjects` `status` `added`。判断字段按[维护循环](maintenance.md)“断言”记 `basis`；有 `self` 的留在 `candidate`。
 
 ### 类别
 
