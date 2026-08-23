@@ -1,6 +1,6 @@
 # 设计文档索引
 
-`design/` 是本库的规则:词表怎么建、怎么分层、外部来源怎么用、方法怎么登记。理论在 `concepts/`,文献笔记在 `sources/`。没有外部依据、尚未生效的设计在 `drafts/`。
+`design/` 是本库的规则：词表怎么建、怎么分层、外部来源怎么用、方法怎么登记。理论在 `concepts/`，文献笔记在 `sources/`。没有外部依据、尚未生效的设计在 `drafts/`。
 
 ## 文章的关系
 
@@ -30,8 +30,8 @@
 
 | 词表 | 文件 | 管什么 | 设计 |
 |---|---|---|---|
-| 主题词表 | `vocab/topics.yaml` | 类:领域与概念,层级树 | topics.md、hierarchy.md |
-| 命名实体词表 | `vocab/entities.yaml` | 个体:产品、语言、组织、标准、文献 | entities.md |
+| 主题词表 | `vocab/topics.yaml` | 类：领域与概念，层级树 | topics.md、hierarchy.md |
+| 命名实体词表 | `vocab/entities.yaml` | 个体：产品、语言、组织、标准、文献 | entities.md |
 | 来源名称规范表 | `vocab/sources.yaml` | 外部知识体系与词表 | sources-registry.md |
 | 划分特征登记 | `vocab/characteristics.yaml` | 分析层数组的划分特征 | drafts/division-characteristics.md |
 | 手工概念组 | `vocab/groups.yaml` | 按用途圈的视图 | drafts/concept-groups.md |
@@ -42,11 +42,11 @@
 
 | 顺序 | 文章 | 读完知道 |
 |---|---|---|
-| 1 | [方法登记](principles.md) | 本库用了哪些方法,各自的依据 |
+| 1 | [方法登记](principles.md) | 本库用了哪些方法，各自的依据 |
 | 2 | [主题词表设计](topics.md) | 主题词表是什么、一条记录怎么写 |
 | 3 | [层级结构](hierarchy.md) | 树怎么分层、从哪借入、借多深 |
 | 4 | [来源名称规范表](sources-registry.md) | 外部体系怎么登记、三种用法 |
-| 5 | [命名实体词表设计](entities.md) | 产品、语言、标准、文献为什么另立词表;分级 |
+| 5 | [命名实体词表设计](entities.md) | 产品、语言、标准、文献为什么另立词表；分级 |
 | 6 | [来源复核](review.md) | 多久回头看一次来源 |
 | 7 | [写作规则](writing.md) | 写任何文件前要遵守什么 |
 | — | [decisions/](decisions/) | 两份决定记录 |
