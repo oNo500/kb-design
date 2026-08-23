@@ -17,36 +17,38 @@ def slug(s):
 concepts = {}   # id -> dict
 arrays = []
 
-def add(cid, zh, en, broader, source, match=None, status='unassigned', arr=None, translated=None, scope=None):
+def add(cid, zh, en, broader, source, match=None, status='unassigned', arr=None, translated=None, scope=None, basis=None):
     """同一上位下同名（同 id）概念来自第二个来源时合并：加 match、加 arrays。"""
     if cid in concepts:
         c = concepts[cid]
         if c['broader'] != broader:
             cid2 = f"{cid}-{broader[0]}"
-            return add(cid2, zh, en, broader, source, match, status, arr, translated, scope)
+            return add(cid2, zh, en, broader, source, match, status, arr, translated, scope, basis)
         if match and match not in c['match']: c['match'].append(match)
         if arr and arr not in c['arrays']: c['arrays'].append(arr)
         return cid
     c = {'id': cid, 'label': {'zh': zh, 'en': en}, 'broader': broader, 'source': source,
          'match': [match] if match else [], 'arrays': [arr] if arr else [], 'status': status, 'added': TODAY}
-    if translated: c['translated'] = translated
+    # 标签依据：translated 里的语言为本库所译（self），另一语言来自来源
+    c['basis'] = basis or {'zh': 'self' if 'zh' in (translated or []) else 'source', 'en': 'self' if 'en' in (translated or []) else 'source'}
     if scope: c['scope'] = scope
     concepts[cid] = c
     return cid
 
 # ---------- 顶层：范围决定 ----------
+# 顶层：id 由范围声明决定（人定）；英文标签按译名阶梯，Wikidata 有则取，无则不给
 TOPS = [
- ('mathematics','数学','Mathematics','110'),
- ('information-and-systems-science','信息科学与系统科学','Information and Systems Science','120'),
- ('computing','计算机科学技术','Computer Science and Technology','520'),
- ('management','管理学','Management','630'),
- ('linguistics','语言学','Linguistics','740'),
- ('journalism-and-communication','新闻学与传播学','Journalism and Communication','860'),
- ('library-and-information-science','图书馆、情报与文献学','Library and Information Science','870'),
- ('education','教育学','Education','880'),
+ ('mathematics','数学','mathematics','110','wikidata:Q395'),
+ ('information-and-systems-science','信息科学与系统科学','','120','none'),
+ ('computing','计算机科学技术','','520','none'),
+ ('management','管理学','management','630','wikidata:Q2920921'),
+ ('linguistics','语言学','linguistics','740','wikidata:Q8162'),
+ ('journalism-and-communication','新闻学与传播学','','860','none'),
+ ('library-and-information-science','图书馆、情报与文献学','','870','none'),
+ ('education','教育学','pedagogy','880','wikidata:Q7922'),
 ]
-for cid, zh, en, code in TOPS:
-    add(cid, zh, en, [], 'self', {'source':'gbt-13745','id':code,'rel':'exactMatch'}, status='active', translated=['en'])
+for cid, zh, en, code, enb in TOPS:
+    add(cid, zh, en, [], 'self', {'source':'gbt-13745','id':code,'rel':'exactMatch'}, status='active', basis={'zh':'gbt-13745','en':enb})
 
 # ---------- computing：CS2023 ----------
 kus = json.load(open(B/'cs2023-kus.json'))
@@ -82,7 +84,7 @@ LIS = [('870.10','图书馆学',[('870.1010','图书馆学史'),('870.1015','比
  ('870.40','档案学',[('870.4010','档案学史'),('870.4020','档案管理学'),('870.4030','档案保护技术学'),('870.4040','档案编纂学'),('870.4099','档案学其他学科')]),
  ('870.50','博物馆学',[])]
 gbt['870'] = ['图书馆、情报与文献学', LIS]
-top_of = {code: cid for cid,_,_,code in TOPS}
+top_of = {code: cid for cid,_,_,code,_ in TOPS}
 for code in ['110','120','630','740','860','870','880']:
     top = top_of[code]
     _, subs = gbt[code]
@@ -114,8 +116,9 @@ for a in arrays:
 out += ['', 'concepts:']
 for c in concepts.values():
     out.append(f"  - id: {c['id']}")
-    out.append(f"    label: {{ zh: {q(c['label']['zh'])}, en: {q(c['label']['en'])} }}")
-    if c.get('translated'): out.append(f"    translated: [{', '.join(c['translated'])}]")
+    if c['label']['en']: out.append(f"    label: {{ zh: {q(c['label']['zh'])}, en: {q(c['label']['en'])} }}")
+    else: out.append(f"    label: {{ zh: {q(c['label']['zh'])} }}")
+    out.append(f"    basis: {{ zh: {c['basis']['zh']}, en: {c['basis']['en']} }}")
     out.append(f"    broader: [{', '.join(c['broader'])}]")
     if c['arrays']: out.append(f"    arrays: [{', '.join(c['arrays'])}]")
     out.append(f"    source: {c['source']}")

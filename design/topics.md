@@ -106,6 +106,7 @@
 ```yaml
 - id: sql-injection                      # 稳定、小写、连字符;一旦引用不改
   label: { zh: SQL 注入, en: SQL injection }
+  basis: { zh: wikidata:Q506059, en: cwe:CWE-89 }   # 每个标签的译名依据，见治理“译名”
   alt: [SQLi]                            # 非首选词;可检索、可显示
   hidden: []                             # 非首选词;可检索、不显示(拼写错误等)
   broader: [input-validation, data]      # 空列表 = 顶层概念
@@ -124,7 +125,7 @@
   history: []                            # 历史注释:日期、改了什么、为什么
 ```
 
-必填：`id` `label.zh` `label.en` `broader` `status` `added`。其余按需。`scope` 对本地建立的概念强烈建议填——它比定义更实用，能防止同一概念被两个人（或半年后的自己）理解成两样。
+必填：`id` `label.zh` `broader` `status` `added` `basis.zh` `basis.en`。`label.en` 按译名阶梯取，取不到不填（`basis.en: none`）。其余按需。`scope` 对本地建立的概念强烈建议填——它比定义更实用，能防止同一概念被两个人（或半年后的自己）理解成两样。
 
 本地概念的人工赋值字段按[维护](maintenance.md)“断言”记 `basis`。
 

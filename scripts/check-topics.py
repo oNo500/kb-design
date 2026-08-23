@@ -59,7 +59,7 @@ def has_cycle():
 if has_cycle(): bad.append('topics: broader 有环')
 
 # label duplicates
-en = collections.Counter(c['label']['en'].lower() for c in concepts.values())
+en = collections.Counter(c['label']['en'].lower() for c in concepts.values() if c['label'].get('en'))
 dups = [k for k, v in en.items() if v > 1]
 
 # entities
@@ -81,6 +81,12 @@ for name, coll in [('entities', entities), ('topics', concepts)]:
         b = x.get('basis') or {}
         if name == 'entities' and x.get('subjects') and 'subjects' not in b: bad.append(f"entities: {x['id']} subjects 无 basis")
         for field, val in b.items():
+            if field in ('zh','en') and name=='topics':
+                judged[(name,'label.'+field)] += 1
+                if val == 'self':
+                    selfcount[(name,'label.'+field)] += 1
+                    if x.get('status') == 'active': bad.append(f"topics: {x['id']} label.{field} 为自译却 active")
+                continue
             vals = val if isinstance(val, list) else [val]
             judged[(name, field)] += 1
             for v in vals:

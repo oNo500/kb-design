@@ -17,6 +17,7 @@
 - networking-and-communication 之下另有 RFC 1122 的四层
 - 其余七个顶层之下：GB/T 13745 的二级、三级学科，共 427 个；英文标签为本库所译（`translated: [en]`）
 - 多层级：`mathematical-and-statistical-foundations` 同时在 computing 与 mathematics 之下；`software-engineering-management` 同时在 software-engineering 与 management 之下
+- 标签的译名依据：每个概念带 `basis.zh`、`basis.en`；CS2023 的 265 个中文标签、GB/T 13745 的 427 个英文标签为本库所译（`self`），待按译名阶梯追溯；四个顶层的英文取自 Wikidata，四个无英文
 - 同名概念的处理：跨上位同名加上位后缀（各知识领域的“社会、伦理与职业”知识单元；ATLAS 与 ATT&CK 同名战术）
 
 ### entities.yaml
