@@ -11,7 +11,7 @@
 ### 树的性质
 
 1. 顶层按学科切,理由见[树按学科而非分面的决定](drafts/tree-by-discipline.md)。分面是概念上的横向字段,概念组是视图,都不在树里
-2. 允许多层级:`broader` 是列表,顺序不赋予含义。例:「Rust 所有权」`broader: [FPL-Systems, rust]`
+2. 允许多层级:`broader` 是列表,顺序不赋予含义。例:「Rust 所有权」`broader: [systems-execution-and-memory, rust]`
 
 ### 借入
 
@@ -45,148 +45,167 @@
 
 ## 各概念下的来源
 
-每个概念的下位从哪些来源借入。一个来源一行;一个概念下多于一个来源时,各来源的下位各成一个数组(规则 10)。分析层数组目前没有。
+每个概念的下位从哪些来源借入。一个概念下多于一个来源时,各来源的下位各成一个数组(规则 10)。分析层数组目前没有。id 用描述性 slug;来源里的代码只记在 `match`。
+
+### 顶层与第 2 层
 
 | 概念 | 下位来源 | 借到 |
 |---|---|---|
 | (根) | 范围声明的八个学科,`source: self`,各 `match` GB/T 13745 一级学科 | 第 1 层 |
-| mathematics | GB/T 13745 二级学科 110.xx | 第 2 层 |
-| information-and-systems-science | GB/T 13745 二级学科 120.xx | 第 2 层 |
-| computing | 待定,见下 | 第 2 层 |
-| management | GB/T 13745 二级学科 630.xx | 第 2 层 |
-| linguistics | GB/T 13745 二级学科 740.xx | 第 2 层 |
-| journalism-and-communication | GB/T 13745 二级学科 860.xx | 第 2 层 |
+| computing | CS2023 17 个知识领域 | 第 2 层 |
+| mathematics、information-and-systems-science、management、linguistics、journalism-and-communication、education | GB/T 13745 各自的二级学科 | 第 2 层 |
 | library-and-information-science | GB/T 13745 二级学科 870.10–870.50 | 第 2 层 |
-| education | GB/T 13745 二级学科 880.xx | 第 2 层 |
-| 以上六个新顶层的二级学科之下 | GB/T 13745 三级学科 | 第 3 层 |
-| foundations | CS2023 相关知识领域(待定,见下) | 第 3 层 |
-| engineering | SWEBOK v4 18 章 | 第 3 层 |
-| security | ASVS 5.0 章;CWE 顶层类别;ATT&CK 14 个战术——三个数组 | 第 3 层 |
-| web | MDN 技术参考 19 个顶层分区 | 第 3 层 |
-| artificial-intelligence | CS2023 AI 12 个知识单元;ATLAS 战术;OWASP LLM Top 10——三个数组,后两个待核 | 第 3 层 |
-| data | CS2023 DM 13 个知识单元 | 第 3 层 |
-| network | RFC 1122 四层 | 第 3 层 |
-| programming-languages | CS2023 FPL 22 个知识单元 + 具体语言术语表——两个数组 | 第 3 层 |
-| human-centered-computing | CS2023 HCI 6 个知识单元 | 第 3 层 |
-| library-science | GB/T 13745 三级学科 870.10xx | 第 3 层 |
-| documentation | GB/T 13745 三级学科 870.20xx | 第 3 层 |
-| information-science | GB/T 13745 三级学科 870.30xx | 第 3 层 |
-| archival-science | GB/T 13745 三级学科 870.40xx | 第 3 层 |
-| museology | 无三级学科 | — |
 
-**computing 的第 2 层是未解决的问题。** 现在的九个概念(engineering、security、web……)是本库原表里的,「借自」有 ACM CCS、CS2023、self 三种——这一层不是从某个体系整体借入的,违反规则 4 和 13;顶层之下必须全借,所以「承认为 self」不成立。剩下的选择是借哪个体系:CS2023 的 17 个知识领域(foundations 拆散,web 降为 SPD 下的知识单元,多出 OS、PDC、GIT 等盲区节点),或 GB/T 13745 520 的二级学科(与其他七个顶层一致,但 GB 对计算机的划分偏旧),或 ACM CCS 顶层类目。待定。
+### computing 之下
 
-只作映射和候选来源、不借入的体系登记在[来源名称规范表](sources-registry.md)。
+CS2023 的 17 个知识领域作第 2 层;每个知识领域的知识单元作第 3 层的第一个数组;有其他可借入来源的,各加一个数组。
 
-`library-and-information-science` 下的五个概念来自 [GB/T 13745-2009《学科分类与代码》](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E)一级学科 870 下的二级学科,第 3 层取其三级学科。原拟自加的「内容工程」取消:叙词表与检索语言归 870.3050 情报检索学,分类法归 870.1040 图书分类学,元数据与编目归 870.1045 图书编目学;术语学与结构化写作见[主题词表设计](topics.md)的邻近主题表。
+| 第 2 层 id | CS2023 | 知识单元数 | 其他来源数组 | 原分支 |
+|---|---|---|---|---|
+| algorithmic-foundations | AL | 5 | — | foundations 的一部分 |
+| architecture-and-organization | AR | 11 | — | foundations 的一部分;硬件落这里 |
+| artificial-intelligence | AI | 12 | ATLAS 战术;OWASP LLM Top 10(均待核) | ai |
+| data-management | DM | 13 | — | data |
+| programming-languages | FPL | 22 | 具体语言术语表 | programming-languages |
+| graphics-and-interactive-techniques | GIT | 12 | — | 无,新盲区 |
+| human-computer-interaction | HCI | 6 | — | human-centered-computing |
+| mathematical-and-statistical-foundations | MSF | 5 | — | foundations 的一部分;与顶层 mathematics 多层级 |
+| networking-and-communication | NC | 8 | RFC 1122 四层 | network |
+| operating-systems | OS | 14 | — | 无,新盲区 |
+| parallel-and-distributed-computing | PDC | 5 | — | 无,新盲区 |
+| security | SEC | 8 | ASVS 5.0 章;CWE 顶层类别;ATT&CK 14 战术 | security |
+| society-ethics-and-the-profession | SEP | 11 | — | 无;通用职业技能另一落点 |
+| software-development-fundamentals | SDF | 5 | — | 无,新盲区 |
+| software-engineering | SE | 9 | SWEBOK v4 18 章 | engineering |
+| specialized-platform-development | SPD | 7 | — | web 降为其下的知识单元 Web Platforms |
+| systems-fundamentals | SF | 9 | — | foundations 的一部分 |
+
+知识单元数据 CS2023 正式版(2024-01)统计,含各领域的 SEP 单元。
+
+原 `web` 的处理:CS2023 里 Web 只是 SPD 的一个知识单元,本库不另立第 2 层。MDN 技术参考的 19 个分区在 Web Platforms 之下是第 4 层,超出借入深度(规则 5),因此 MDN 只作映射来源,不借入;Web 相关的本地概念从内容里长。这是按 CS2023 全借的直接代价,待观察。
+
+### library-and-information-science 之下
+
+| 第 2 层 | GB/T 13745 | 第 3 层来源 |
+|---|---|---|
+| library-science 图书馆学 | 870.10 | 三级学科 870.10xx,10 个 |
+| documentation 文献学 | 870.20 | 三级学科 870.20xx,6 个 |
+| information-science 情报学 | 870.30 | 三级学科 870.30xx,13 个 |
+| archival-science 档案学 | 870.40 | 三级学科 870.40xx,4 个 |
+| museology 博物馆学 | 870.50 | 无三级学科 |
+
+原拟自加的「内容工程」取消:叙词表与检索语言归 870.3050 情报检索学,分类法归 870.1040 图书分类学,元数据与编目归 870.1045 图书编目学;术语学归顶层 linguistics 之下,结构化写作见[主题词表设计](topics.md)的邻近主题表。
+
+### 其他六个顶层之下
+
+mathematics、information-and-systems-science、management、linguistics、journalism-and-communication、education 的二级、三级学科清单待从 GB/T 13745 取,取到后补表。
 
 ## 结构预览
 
 ```
-(根)                                           ← 范围声明,八个顶层
-├─ mathematics 数学                            ← GB/T 13745 110;二级、三级学科待借入
-├─ information-and-systems-science 信息科学与系统科学   ← 120;待借入
-├─ computing 计算机科学技术                    ← 520;第 2 层来源待定,见下
-├─ management 管理学                           ← 630;待借入
-├─ linguistics 语言学                          ← 740;待借入
-├─ journalism-and-communication 新闻学与传播学  ← 860;待借入
-├─ library-and-information-science 图书馆、情报与文献学   ← 870;见下
-└─ education 教育学                            ← 880;待借入
+(根)                                            ← 范围声明
+├─ mathematics 数学                             ← GB/T 110;二级、三级待借入
+├─ information-and-systems-science              ← GB/T 120;待借入
+├─ computing 计算机科学技术                     ← GB/T 520
+│   ├─ algorithmic-foundations                  ← CS2023 AL,5 个知识单元
+│   ├─ architecture-and-organization            ← AR,11;硬件落这里
+│   ├─ artificial-intelligence                  ← AI
+│   │   [CS2023 AI 12 知识单元]
+│   │   [ATLAS]                                 ← 待核
+│   │   [OWASP LLM Top 10]                      ← 待核
+│   ├─ data-management                          ← DM,13
+│   ├─ programming-languages                    ← FPL
+│   │   [CS2023 FPL 22 知识单元]
+│   │   [具体语言]                               ← 术语表:python / rust / …
+│   ├─ graphics-and-interactive-techniques      ← GIT,12;新盲区
+│   ├─ human-computer-interaction               ← HCI,6
+│   ├─ mathematical-and-statistical-foundations ← MSF,5;与 mathematics 多层级
+│   ├─ networking-and-communication             ← NC
+│   │   [CS2023 NC 8 知识单元]
+│   │   [RFC 1122 四层]
+│   ├─ operating-systems                        ← OS,14;新盲区
+│   ├─ parallel-and-distributed-computing       ← PDC,5;新盲区
+│   ├─ security                                 ← SEC
+│   │   [CS2023 SEC 8 知识单元]
+│   │   [ASVS 5.0]
+│   │   [CWE 顶层类别]
+│   │   [ATT&CK 14 战术]
+│   ├─ society-ethics-and-the-profession        ← SEP,11;职业技能落这里
+│   ├─ software-development-fundamentals        ← SDF,5;新盲区
+│   ├─ software-engineering                     ← SE
+│   │   [CS2023 SE 9 知识单元]
+│   │   [SWEBOK v4 18 章]                        ← 项目管理落第 9 章
+│   ├─ specialized-platform-development         ← SPD,7;Web Platforms 在其中
+│   └─ systems-fundamentals                     ← SF,9
+├─ management 管理学                            ← GB/T 630;待借入
+├─ linguistics 语言学                           ← GB/T 740;待借入;术语学落这里
+├─ journalism-and-communication                 ← GB/T 860;待借入
+├─ library-and-information-science              ← GB/T 870
+│   ├─ library-science 图书馆学                 ← 870.10xx,10
+│   ├─ documentation 文献学                     ← 870.20xx,6
+│   ├─ information-science 情报学               ← 870.30xx,13;情报检索学在其中
+│   ├─ archival-science 档案学                  ← 870.40xx,4
+│   └─ museology 博物馆学                       ← 无三级学科
+└─ education 教育学                             ← GB/T 880;待借入
 
-computing 计算机科学技术                        ← GB/T 13745 520
-  ├─ foundations 计算机科学基础                 ← 第 2 层来源待定
-  │   ├─ 数学与统计基础                          ← CS2023 MSF;数学落这里
-  │   ├─ 体系结构与组织                          ← CS2023 AR;硬件落这里
-  │   └─ …
-  ├─ engineering 软件工程                       ← SWEBOK v4 18 章
-  │   ├─ 软件工程管理                            ← 第 9 章;项目管理落这里
-  │   ├─ 软件工程职业实践                        ← 第 14 章;通用职业技能落这里
-  │   └─ …
-  ├─ security 信息安全
-  │   [ASVS 5.0]                               ← 数组,以来源为标识
-  │   [CWE 顶层类别]
-  │   [ATT&CK 14 战术]
-  ├─ web Web 平台                               ← MDN 技术参考 19 分区
-  ├─ artificial-intelligence 人工智能
-  │   [CS2023 AI 12 知识单元]
-  │   [ATLAS]                                  ← 待核
-  │   [OWASP LLM Top 10]                       ← 待核
-  ├─ data 数据                                  ← CS2023 DM 13 知识单元
-  ├─ network 网络                               ← RFC 1122 四层
-  ├─ programming-languages 编程语言
-  │   [CS2023 FPL 22 知识单元]
-  │   [具体语言]                                ← 术语表:python / rust / …
-  └─ human-centered-computing 以人为中心的计算  ← CS2023 HCI 6 知识单元
-
-library-and-information-science 图书馆、情报与文献学   ← GB/T 13745 870
-  ├─ library-science 图书馆学                   ← 870.10xx 三级学科
-  │   ├─ 图书分类学                              ← 870.1040;分类法落这里
-  │   ├─ 图书编目学                              ← 870.1045;元数据与编目落这里
-  │   └─ …
-  ├─ documentation 文献学                       ← 870.20xx
-  ├─ information-science 情报学                 ← 870.30xx
-  │   ├─ 情报检索学                              ← 870.3050;叙词表与检索语言落这里
-  │   └─ …
-  ├─ archival-science 档案学                    ← 870.40xx
-  └─ museology 博物馆学                         ← 无三级学科
-
-图例:「←」后是下位的来源。方括号行是以来源为标识的数组,出现在一个概念下有多个来源时。
-      分析层数组(按划分特征)目前没有;有了才出现 (按 X) 形式的节点标签。第 3 层以下不预建。
+图例:「←」后是下位的来源和数量。方括号行是以来源为标识的数组,出现在一个概念下有多个来源时。
+      分析层数组目前没有。第 3 层以下不预建。
 ```
 
 ## 人工智能与编程语言
 
 ### 人工智能
 
-取 CS2023 知识领域 AI 的 12 个知识单元:Introduction、Search、KRR、LRR、Probability、ML、NLP、Agents、Planning、Vision、Robotics、SEP。它偏学术——机器人、规划与本库侧重的 LLM 应用工程距离较远——但它是唯一有编号的人工智能知识体系;未标引的单元是盲区标记,不是负担。首选词用「人工智能」而不是原拟的「AI 应用工程」:侧重体现在内容里,不体现在知识体系的边界上。
+CS2023 知识领域 AI 的 12 个知识单元:Introduction、Search、KRR、LRR、Probability、ML、NLP、Agents、Planning、Vision、Robotics、SEP。它偏学术——机器人、规划与本库侧重的 LLM 应用工程距离较远——但它是唯一有编号的人工智能知识体系;未标引的单元是盲区标记,不是负担。id 用 `artificial-intelligence`,侧重体现在内容里,不体现在知识体系的边界上。
 
 LLM 应用相关的外部体系按规则 3、4、10 处理:ATLAS 的战术、OWASP LLM Top 10 的编号条目有稳定结构,各自借入为一个以来源为标识的数组,结构待核;NIST AI RMF 的四个功能是治理职能不是知识划分,只作映射;Anthropic 文档随产品迭代,只作映射。
 
 ### 编程语言
 
-编程语言有跨语言的通识——类型系统、内存模型、求值与并发模型、范式——具体语言只是这些概念的不同取舍。因此 `programming-languages` 的下位不是语言的术语表,而是 [CS2023](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf) 知识领域 FPL (Foundations of Programming Languages) 的 22 个知识单元,再加一个「具体语言」作为其中唯一的术语表:
+编程语言有跨语言的通识——类型系统、内存模型、求值与并发模型、范式——具体语言只是这些概念的不同取舍。因此 `programming-languages`(CS2023 FPL)的下位是 22 个知识单元,再加一个「具体语言」术语表作为第二个数组:
 
 ```
 programming-languages
-├─ FPL-OOP          面向对象编程
-├─ FPL-Functional   函数式编程
-├─ FPL-Logic        逻辑编程
-├─ FPL-Scripting    Shell 脚本
-├─ FPL-Event-Driven 事件驱动与响应式编程
-├─ FPL-Parallel     并行与分布式计算
-├─ FPL-Aspect       面向切面编程
-├─ FPL-Types        类型系统
-├─ FPL-Systems      系统执行与内存模型
-├─ FPL-Translation  语言翻译与执行
-├─ FPL-Syntax       语法分析
-├─ FPL-Semantics    编译器语义分析
-├─ FPL-Analysis     程序分析与分析器
-├─ FPL-Code         代码生成
-├─ FPL-Run-Time     运行时行为与系统
-├─ FPL-Abstraction  程序抽象与表示
-├─ FPL-Constructs   高级程序构造
-├─ FPL-Pragmatics   语言语用
-├─ FPL-Formalism    形式语义
-├─ FPL-Design       编程语言设计原则
-├─ FPL-Methodologies 形式化开发方法
-├─ FPL-SEP          社会、伦理与职业
-└─ languages        具体语言(术语表)
-    ├─ python
-    ├─ typescript
-    ├─ rust
-    └─ go
+  [CS2023 FPL 22 知识单元]          id 用 slug,代码记在 match
+  ├─ object-oriented-programming     FPL-OOP
+  ├─ functional-programming          FPL-Functional
+  ├─ logic-programming               FPL-Logic
+  ├─ shell-scripting                 FPL-Scripting
+  ├─ event-driven-programming        FPL-Event-Driven
+  ├─ parallel-programming            FPL-Parallel
+  ├─ aspect-oriented-programming     FPL-Aspect
+  ├─ type-systems                    FPL-Types
+  ├─ systems-execution-and-memory    FPL-Systems
+  ├─ language-translation            FPL-Translation
+  ├─ syntax-analysis                 FPL-Syntax
+  ├─ semantic-analysis               FPL-Semantics
+  ├─ program-analysis                FPL-Analysis
+  ├─ code-generation                 FPL-Code
+  ├─ run-time-systems                FPL-Run-Time
+  ├─ program-abstraction             FPL-Abstraction
+  ├─ advanced-constructs             FPL-Constructs
+  ├─ language-pragmatics             FPL-Pragmatics
+  ├─ formal-semantics                FPL-Formalism
+  ├─ language-design                 FPL-Design
+  ├─ formal-methodologies            FPL-Methodologies
+  └─ pl-society-ethics-profession    FPL-SEP
+  [具体语言]
+  ├─ python
+  ├─ typescript
+  ├─ rust
+  └─ go
 ```
 
-中文译名为本库所加,英文原名和代码为准。22 个知识单元全部以未标引状态建入,预期多数长期如此(形式语义、逻辑编程等),这正是规则 4 的目的。
+slug 为本库拟定,英文原名和代码为准;22 个知识单元全部以未标引状态建入,预期多数长期如此,这正是规则 4 的目的。
 
-语言特性的笔记用多层级挂两处:通识节点和具体语言。例如「Rust 的所有权」的 `broader` 为 `[FPL-Systems, rust]`。按通识检索时它与 GC、引用计数并列;按语言检索时与 Rust 的其他特性并列。
+语言特性的笔记用多层级挂两处:通识节点和具体语言。例如「Rust 的所有权」的 `broader` 为 `[systems-execution-and-memory, rust]`。按通识检索时它与 GC、引用计数并列;按语言检索时与 Rust 的其他特性并列。
 
 不把语言做成分面字段(`lang: rust`)而做成树节点,是因为语言本身也需要别名(TS / TypeScript)、范围注释和映射,作为概念更合适。
 
 ## 待定事项
 
-- computing 的第 2 层来源:CS2023 17 个知识领域、GB/T 13745 520 二级学科、ACM CCS 顶层类目,三选一
 - 六个新顶层(110、120、630、740、860、880)的二级、三级学科清单待从 GB/T 13745 取
 - artificial-intelligence 下 ATLAS、OWASP LLM Top 10 的结构核对
+- Web 相关内容失去借入结构后是否够用,观察后决定是否在 Web Platforms 下破例借入 MDN
 - 多层级时 `broader` 列表的顺序是否赋予含义(显示、排序)
 - 分析层数组何时启用,见[划分特征治理](drafts/division-characteristics.md)

@@ -67,7 +67,7 @@
 | `library-and-information-science` | 图书馆、情报与文献学 | 870 |
 | `education` | 教育学 | 880 |
 
-顶层之下按[层级结构](hierarchy.md)规则 4 全部借入该学科的二级、三级学科;`computing` 的第 2 层另有决定,见层级结构。
+顶层之下按[层级结构](hierarchy.md)规则 4 全部借入:`computing` 取 CS2023 的 17 个知识领域,其余七个取 GB/T 13745 的二级、三级学科。
 
 ### 邻近主题的处理
 
@@ -75,11 +75,12 @@
 
 | 主题 | 落点 | 依据 |
 |---|---|---|
-| 硬件、体系结构 | `computing` 下 CS2023 AR (Architecture and Organization) | CS2023 |
-| 项目管理 | 同时在 `engineering` 下 SWEBOK 第 9 章「软件工程管理」和 `management` 之下;多层级 | SWEBOK v4;GB/T 13745 630 |
-| 通用职业技能(写作、沟通、时间管理) | `engineering` 下 SWEBOK 第 14 章「软件工程职业实践」;写作另可挂 `journalism-and-communication` 之下 | SWEBOK v4 |
+| 硬件、体系结构 | `computing` › `architecture-and-organization` | CS2023 AR |
+| 项目管理 | `software-engineering` 下 SWEBOK 第 9 章「软件工程管理」,同时在 `management` 之下;多层级 | SWEBOK v4;GB/T 13745 630 |
+| 通用职业技能(写作、沟通、时间管理) | `computing` › `society-ethics-and-the-profession`;写作另可挂 `journalism-and-communication` 之下 | CS2023 SEP |
 | 术语学(ISO 704、1087、30042) | `linguistics` 之下,具体二级学科待核 | GB/T 13745 740 |
-| 结构化写作(DITA) | 待定:`engineering` 或 `web` 下某知识单元 | — |
+| Web 开发 | `specialized-platform-development` › Web Platforms;MDN 只作映射 | CS2023 SPD |
+| 结构化写作(DITA) | 待定 | — |
 
 ### 排除范围
 

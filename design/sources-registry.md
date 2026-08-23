@@ -62,10 +62,10 @@
 
 | id(拟) | 名称 | role | 用在 |
 |---|---|---|---|
-| gbt-13745 | GB/T 13745-2009 学科分类与代码 | mapping, structure | 顶层、library-and-information-science 及其五个学科 |
-| cs2023 | ACM/IEEE-CS/AAAI Computer Science Curricula 2023 | mapping, structure | computing 第 2 层;foundations、artificial-intelligence、data、programming-languages、human-centered-computing 的数组 |
-| swebok | IEEE-CS SWEBOK Guide v4.0 | mapping, structure | engineering 的两个数组 |
-| acm-ccs | ACM Computing Classification System 2012 | mapping | computing 第 2 层概念的映射 |
+| gbt-13745 | GB/T 13745-2009 学科分类与代码 | mapping, structure | 顶层映射;除 computing 外七个顶层的第 2、3 层 |
+| cs2023 | ACM/IEEE-CS/AAAI Computer Science Curricula 2023 | mapping, structure | computing 第 2 层(17 个知识领域)及各领域第 3 层 |
+| swebok | IEEE-CS SWEBOK Guide v4.0 | mapping, structure | software-engineering 下的数组 |
+| acm-ccs | ACM Computing Classification System 2012 | mapping | 映射 |
 | asvs | OWASP ASVS 5.0 | mapping, structure | security 数组 |
 | cwe | MITRE CWE | mapping, structure, group | security 数组;缺陷的派生组 |
 | attack | MITRE ATT&CK | mapping, structure | security 数组 |
@@ -74,10 +74,10 @@
 | atlas | MITRE ATLAS | mapping, structure | artificial-intelligence 数组(划分特征待核) |
 | nist-ai-rmf | NIST AI RMF 1.0 | mapping | 映射 |
 | anthropic-docs | Anthropic 文档 | mapping | 映射 |
-| rfc-1122 | RFC 1122 | mapping, structure | network 数组 |
+| rfc-1122 | RFC 1122 | mapping, structure | networking-and-communication 下的数组 |
 | rfc-http | RFC 9110–9114 | mapping | 映射 |
 | osi | ISO/IEC 7498-1 OSI 参考模型 | mapping | 映射 |
-| mdn | MDN 技术参考 | mapping, structure | web 数组 |
+| mdn | MDN 技术参考 | mapping | 映射;Web Platforms 为第 3 层,其下不借入 |
 | mdn-curriculum | MDN Curriculum | candidate | 候选词来源 |
 | iso-25964 | ISO 25964-1/-2 | mapping | 映射 |
 | z39-19 | ANSI/NISO Z39.19 | mapping | 映射 |
@@ -90,5 +90,5 @@
 ## 待定事项
 
 - 借入来源的分级与版本要求,留待治理方案
-- MDN 技术参考没有版本号,`version` 怎么记(抓取日期?)
+- MDN 技术参考没有版本号,`version` 怎么记(抓取日期?);Web 内容是否需要破例借入它
 - `mdn-curriculum` 标为 candidate,但它有稳定模块名,是否也给 `group`
