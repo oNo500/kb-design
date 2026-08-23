@@ -7,6 +7,8 @@
 ```
 方法登记 principles.md          本库采用的每个方法:来源、概念文、导出的规则在哪
 │
+├─ 写作规则 writing.md          全库写作规则,按 ISO 24495-1 四原则组织;CLAUDE.md 是其摘要
+│
 ├─ 主题词表 topics.md           一条概念记录长什么样、生命周期、建设流程、校验
 │   ├─ 层级结构 hierarchy.md    树怎么分层、借入规则、各概念下的来源、结构预览
 │   └─ 来源名称规范表 sources-registry.md   外部体系作为词表来源怎么用、match 怎么写
@@ -46,7 +48,8 @@
 | 4 | [来源名称规范表](sources-registry.md) | 外部体系怎么登记、三种用法 |
 | 5 | [命名实体词表设计](entities.md) | 产品、语言、标准、文献为什么另立词表;分级 |
 | 6 | [来源复核](review.md) | 多久回头看一次来源 |
+| 7 | [写作规则](writing.md) | 写任何文件前要遵守什么 |
 | — | [decisions/](decisions/) | 两份决定记录 |
 | — | [drafts/](drafts/) | 按需 |
 
-写作规则见 [CLAUDE.md](../CLAUDE.md)。
+
