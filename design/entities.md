@@ -47,8 +47,11 @@
 | `organization` | Q43229 organization | Anthropic、MITRE、W3C |
 | `standard` | Q317623 technical standard | ISO 25964-1:2011、RFC 9110、ASVS 5.0、Anthropic 文档 |
 | `publication` | Q591041 scientific publication 及其下位：Q13442814 scholarly article、Q571 book、Q17928402 blog post;issue、演讲的类待核 | Hogan 2021、Aitchison 的教材、Cockburn 2005 的博文 |
+| `person` | Q5 human | Ranganathan、Wüster、Hogan、Cockburn |
 
 需要更多类别时从 Wikidata 取，记录其 Q 号。`publication` 的具体形式记在 `form` 字段，值是 Wikidata 的 Q 号或其 slug。
+
+`person` 只收公开人物：已发表作品的作者、公开项目的维护者、方法的提出者，且 Wikidata 有条目或有可引的公开出处。不收私人、同事、联系人。文献实体用 `creator` 字段指向人（Dublin Core creator），软件实体的个人维护者用 `vendor` 指向人。
 
 ### 分级
 
@@ -62,6 +65,8 @@
 | `archival` | 发表后内容固定 | 论文、书、博文、issue、演讲 |
 
 同一发布方可能跨档：W3C 的 Recommendation 是 de-jure,Working Draft 是 de-facto;Wikidata 的数据是 de-facto，引用它的论文是 archival。
+
+`publication` 类的实体另有 `creator` 字段，值是 `person` 或 `organization` 实体的 id，可多个。
 
 `standard` 类的实体另有三个字段：`version`（引的是哪一版，如 `ISO 25964-1:2011`、`ASVS 5.0`）、`checked`（上次核对日期）、`watch`(de-jure 必填，探测新版的页面)。
 

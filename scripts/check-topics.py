@@ -66,8 +66,10 @@ dups = [k for k, v in en.items() if v > 1]
 for e in entities.values():
     for s in e.get('subjects', []):
         if s not in concepts: bad.append(f"entities: {e['id']} subjects 不存在 {s}")
-    if e['kind'] in ('standard','publication') and not e.get('tier'): bad.append(f"entities: {e['id']} 缺 tier")
-    if e['kind'] not in ('software','programming-language','organization','standard','publication'): bad.append(f"entities: {e['id']} kind 非法")
+    if e['kind'] in ('standard','publication','person') and not e.get('tier'): bad.append(f"entities: {e['id']} 缺 tier")
+    if e['kind'] not in ('software','programming-language','organization','standard','publication','person'): bad.append(f"entities: {e['id']} kind 非法")
+    for cr in (e.get('creator') or []):
+        if cr not in entities: bad.append(f"entities: {e['id']} creator 不存在 {cr}")
     if e.get('vendor') and e['vendor'] not in entities: bad.append(f"entities: {e['id']} vendor 不存在 {e['vendor']}")
     for m in e.get('match', []):
         if m['source'] not in sources: bad.append(f"entities: {e['id']} match.source 未登记")

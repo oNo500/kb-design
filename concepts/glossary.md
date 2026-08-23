@@ -168,6 +168,7 @@
 | 被替代 | superseded | 决定记录被新决定取代后的状态 | Nygard ADR 2011 |
 | 内容模型 | content model | 内容单元允许有哪些组成部分及其结构 | SGML（ISO 8879）、DITA 沿用 |
 | 知识组织 | knowledge organization | 对知识进行描述、分类和排序的活动与系统；KOS 即知识组织系统 | ISO 25964；SKOS |
+| 公开人物 | — | 已发表作品的作者、公开项目的维护者、方法的提出者；本库 `person` 实体的收录范围 | 本库收录范围，依 Wikidata Q5 human |
 | 个体 | individual | 名称规范表所收的对象：唯一的个体，而非类 | ISO-2 3.50 注 |
 | 划分 | partition | 把一个集合分成互不重叠、合起来是全集的几组 | 数学通用术语 |
 

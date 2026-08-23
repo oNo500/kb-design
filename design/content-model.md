@@ -96,7 +96,6 @@ DCMI Type Vocabulary 分的是媒介（Text、Image……），本库的内容�
 
 - `status` 的 `draft` 是否需要：单人库可能直接写成 `active`
 - 内容单元之间除 `source`、`isReplacedBy`、`references` 外是否需要 `relation`（泛关联）
-- 是否收 `person` 实体：Wikidata Q5；只收公开人物（作者、维护者），不收私人
 
 ## 权威来源
 
