@@ -9,17 +9,19 @@
 │
 ├─ 主题词表 topics.md           一条概念记录长什么样、生命周期、建设流程、校验
 │   ├─ 层级结构 hierarchy.md    树怎么分层、借入规则、各概念下的来源、结构预览
-│   └─ 来源名称规范表 sources-registry.md   外部体系怎么登记、借入 / 映射 / 派生组、match 怎么写
+│   └─ 来源名称规范表 sources-registry.md   外部体系作为词表来源怎么用、match 怎么写
 │
 ├─ 命名实体词表 entities.md     产品、语言、组织、标准、文献:个体不进主题树,通过 subjects 挂主题
+│   └─ 来源复核 review.md       按 tier 的复核周期、链接检查、新版探测
 │
-└─ drafts/                       未生效
-    ├─ tree-by-discipline.md     决定记录:顶层为什么按学科不按分面
-    ├─ borrow-and-analyze.md     决定记录:借入照抄为底、本地分析在上
+├─ decisions/                    决定记录,只追加不修改
+│   ├─ tree-by-discipline.md     顶层为什么按学科不按分面
+│   └─ borrow-and-analyze.md     借入照抄为底、本地分析在上
+│
+└─ drafts/                       未生效,各自写明触发条件
     ├─ division-characteristics.md   零自定的唯一例外:划分特征的治理
     ├─ facet-field.md            分面字段:取值、触发条件
-    ├─ concept-groups.md         手工概念组:登记、规则
-    └─ sources.md                来源分级与复核周期(依据已落实,待转正)
+    └─ concept-groups.md         手工概念组:登记、规则
 ```
 
 ## 词表一览
@@ -42,7 +44,9 @@
 | 2 | [主题词表设计](topics.md) | 主题词表是什么、一条记录怎么写 |
 | 3 | [层级结构](hierarchy.md) | 树怎么分层、从哪借入、借多深 |
 | 4 | [来源名称规范表](sources-registry.md) | 外部体系怎么登记、三种用法 |
-| 5 | [命名实体词表设计](entities.md) | 产品和语言为什么另立词表 |
-| — | [drafts/](drafts/) | 两份决定记录先读,其余按需 |
+| 5 | [命名实体词表设计](entities.md) | 产品、语言、标准、文献为什么另立词表;分级 |
+| 6 | [来源复核](review.md) | 多久回头看一次来源 |
+| — | [decisions/](decisions/) | 两份决定记录 |
+| — | [drafts/](drafts/) | 按需 |
 
 写作规则见 [CLAUDE.md](../CLAUDE.md)。

@@ -2,15 +2,15 @@
 
 主题词表的树分四层以上:前三层从知识体系借入,第 4 层起本地建立。每一层按一个划分特征往下分;一个概念下按几个划分特征分,就有几个数组,每个数组有节点标签说明按什么分。本文定这棵树的分层规则、每层的划分特征、每个第 2 层概念下借入哪些数组。
 
-概念记录的字段在[主题词表设计](topics.md),来源的登记在[来源名称规范表](sources-registry.md)。理论依据见 [词表的层级](../concepts/vocabulary-hierarchy.md)、[知识体系](../concepts/body-of-knowledge.md)、[树按学科而非分面的决定](drafts/tree-by-discipline.md)。
+概念记录的字段在[主题词表设计](topics.md),来源的登记在[来源名称规范表](sources-registry.md)。理论依据见 [词表的层级](../concepts/vocabulary-hierarchy.md)、[知识体系](../concepts/body-of-knowledge.md)、[树按学科而非分面的决定](decisions/tree-by-discipline.md)。
 
 ## 规则
 
-十五条,分四组。借入与分析分两层的理由见[借入照抄与本地分析分层的决定](drafts/borrow-and-analyze.md)。
+十五条,分四组。借入与分析分两层的理由见[借入照抄与本地分析分层的决定](decisions/borrow-and-analyze.md)。
 
 ### 树的性质
 
-1. 顶层按学科切,理由见[树按学科而非分面的决定](drafts/tree-by-discipline.md)。分面是概念上的横向字段,概念组是视图,都不在树里
+1. 顶层按学科切,理由见[树按学科而非分面的决定](decisions/tree-by-discipline.md)。分面是概念上的横向字段,概念组是视图,都不在树里
 2. 允许多层级:`broader` 是列表,顺序不赋予含义。例:「软件工程管理」同时在 `software-engineering` 和 `management` 之下
 
 ### 借入

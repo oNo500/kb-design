@@ -52,14 +52,18 @@
 
 ### 分级
 
-`tier` 对 `standard` 和 `publication` 必填,其余类别不填。取值和复核周期见[来源分级](drafts/sources.md);分档依据是本库获取与信任知识的方式——按 Z39.19 §5.3.5.2,这是组织依据。
+`tier` 对 `standard` 和 `publication` 必填,其余类别不填。分档依据是来源如何变更——权威程度决定能不能引,变更方式决定多久要回头看;分档本身的依据是本库获取与信任知识的方式,按 Z39.19 §5.3.5.2 属于组织依据。复核周期、链接检查、新版探测见[来源复核](review.md)。
 
 | tier | 含义 | 适用 |
 |---|---|---|
-| `de-jure` | 有正式发布流程和版本标识 | ISO、GB/T、W3C Recommendation、RFC |
-| `de-facto` | 行业默认,无发布流程或版本可无通知漂移 | CS2023、SWEBOK、ASVS、CWE、MDN |
+| `de-jure` | 有正式发布流程和版本标识,变更必出新版 | ISO、GB/T、W3C Recommendation、RFC |
+| `de-facto` | 行业默认,无发布流程,或版本可无通知漂移 | CS2023、SWEBOK、ASVS、CWE、MDN、W3C 草案 |
 | `vendor` | 单一厂商文档,随产品迭代 | Anthropic 文档、Neo4j 文档 |
 | `archival` | 发表后内容固定 | 论文、书、博文、issue、演讲 |
+
+同一发布方可能跨档:W3C 的 Recommendation 是 de-jure,Working Draft 是 de-facto;Wikidata 的数据是 de-facto,引用它的论文是 archival。
+
+`standard` 类的实体另有三个字段:`version`(引的是哪一版,如 `ISO 25964-1:2011`、`ASVS 5.0`)、`checked`(上次核对日期)、`watch`(de-jure 必填,探测新版的页面)。
 
 前沿概念的权威来源常常是一篇固定的文本——一篇博文、一篇论文、一个 issue——而不是任何会更新的规范:六边形架构来自 Cockburn 2005 年的博文,洋葱架构来自 Palermo 2008 年的博文,Transformer 来自 Vaswani 等 2017 年的论文。它们都是 `publication` + `archival`,权威性来自被引用和被采纳。主题词表里的本地概念通过 `origin` 字段指向它的源头文献,见[主题词表设计](topics.md)。
 

@@ -114,7 +114,7 @@ Z39.19 §11.3。每次变更记录日期和责任人。
 
 ## 与本库来源分级的关系
 
-warrant 讲「词从哪来、凭什么收」;[design/sources.md](../design/drafts/sources.md) 讲「事实从哪来、凭什么信」。两者都是依据,分别管词表和引证。
+warrant 讲「词从哪来、凭什么收」;[design/sources.md](../design/review.md) 讲「事实从哪来、凭什么信」。两者都是依据,分别管词表和引证。
 
 ## 权威来源
 
