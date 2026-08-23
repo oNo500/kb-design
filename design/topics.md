@@ -80,7 +80,13 @@
 
 ## 词表的层级结构
 
-树的前三层从知识体系借入,第 4 层起由本库按依据建立。
+整棵树是[层级](../concepts/vocabulary-hierarchy.md)的结果:每一层按一个划分特征往下分。它不是分面(学科不是「东西的种类」),也不是概念组(组不改树)。前三层从知识体系借入,第 4 层起由本库按依据建立。
+
+| 层 | 划分特征 | 取自 |
+|---|---|---|
+| 第 1 层 | 按学科门类 | GB/T 13745 一级学科 |
+| 第 2 层 | 按知识领域 | CS2023、SWEBOK 的 KA;GB/T 13745 二级学科 |
+| 第 3 层 | 按知识单元 | CS2023 的 KU;ASVS 章节;RFC 1122 分层;GB/T 13745 三级学科 |
 
 ```
 从知识体系借入  第 1 层  顶层概念    computing / information-science
@@ -149,38 +155,57 @@ security
 例:「Rust 所有权」既属于内存模型又属于 Rust,写 `broader: [FPL-Systems, rust]`。ISO 25964 允许一个概念有多个上位。
 列表顺序目前不赋予含义:`[FPL-Systems, rust]` 和 `[rust, FPL-Systems]` 没有区别。以后做导航需要「默认显示在哪个上位下」时再定规则,见待定事项。
 
+### 节点标签
+
+每个有下位的概念都写节点标签,哪怕只有一组;以后加第二组时不用回头补。节点标签登记为数组(见「概念记录的字段」),规则据 ISO 25964-1 §2.38 和 Z39.19 §8.3.5 导出:
+
+1. 内容只写划分特征或分面名,不写来源。来源在数组登记的 `source` 字段。`(按知识单元)` 对,`(CS2023)` 不对
+2. 写法统一为「按 X」,全角括号包住:`(按学科门类)` `(按验证要求)`
+3. X 是名词,指一个属性或类别:学科门类、知识领域、验证要求、缺陷类型、攻击战术。不用动词短语,不用知识体系的名字
+4. 节点标签不是概念:不能标引、不进术语表、不能做 `broader` 的目标
+5. 不为分组层造复合概念(Z39.19 §7.7)。要分组就写节点标签
+
 ### 结构预览
 
 ```
+(按学科门类)                                  ← GB/T 13745
 computing 计算与信息技术
-├─ foundations 计算机科学基础                 ← CS2023
-│   ├─ 数学与统计基础                          ← 数学落这里(CS2023 MSF)
-│   ├─ 体系结构与组织                          ← 硬件落这里(CS2023 AR)
-│   └─ … 其余 CS2023 知识领域
-├─ engineering 软件工程                       ← SWEBOK v4
-│   ├─ 软件工程管理                            ← 项目管理落这里(第 9 章)
-│   ├─ 软件工程职业实践                        ← 通用职业技能落这里(第 14 章)
-│   └─ … 其余 SWEBOK 知识领域
-├─ security 信息安全                          ← ASVS 5.0
-├─ web Web 平台                               ← 待定
-├─ ai AI 应用工程                             ← 待定
-├─ data 数据                                  ← 待定
-├─ network 网络                               ← RFC 1122
-├─ programming-languages 编程语言             ← CS2023 FPL
-│   ├─ 类型系统、内存与执行模型、范式……         ← 跨语言通识,FPL 知识单元
-│   └─ 具体语言                                ← 唯一的术语表:python / rust / …
-└─ human-centered-computing 以人为中心的计算  ← CS2023 HCI
+  (按知识领域)                                ← CS2023 / SWEBOK / ACM CCS
+  ├─ foundations 计算机科学基础
+  │   (按知识单元)                            ← CS2023
+  │   ├─ 数学与统计基础                        ← 数学落这里(MSF)
+  │   ├─ 体系结构与组织                        ← 硬件落这里(AR)
+  │   └─ … 其余 CS2023 知识领域
+  ├─ engineering 软件工程
+  │   (按知识领域)                            ← SWEBOK v4
+  │   ├─ 软件工程管理                          ← 项目管理落这里(第 9 章)
+  │   ├─ 软件工程职业实践                      ← 通用职业技能落这里(第 14 章)
+  │   └─ … 其余 SWEBOK 知识领域
+  ├─ security 信息安全
+  │   (按验证要求)                            ← ASVS 5.0
+  ├─ web Web 平台                             ← 第 3 层待定
+  ├─ ai AI 应用工程                           ← 第 3 层待定
+  ├─ data 数据                                ← 第 3 层待定
+  ├─ network 网络
+  │   (按协议分层)                            ← RFC 1122
+  ├─ programming-languages 编程语言
+  │   (按知识单元)                            ← CS2023 FPL
+  │   ├─ 类型系统、内存与执行模型、范式……       ← 跨语言通识
+  │   └─ 具体语言                              ← 唯一的术语表:python / rust / …
+  └─ human-centered-computing 以人为中心的计算
+      (按知识单元)                            ← CS2023 HCI
 
-information-science 信息与文献学              ← GB/T 13745 一级学科 870
-├─ library-science 图书馆学                   ← 870.10  未标引
-├─ documentation 文献学                       ← 870.20  未标引
-├─ information-science 情报学                 ← 870.30  未标引  ⚠ 与顶层概念 id 冲突
-├─ archival-science 档案学                    ← 870.40  未标引
-├─ museology 博物馆学                         ← 870.50  未标引
-└─ content-engineering 内容工程               ← 本库自加
+information-science 信息与文献学
+  (按二级学科)                                ← GB/T 13745 一级学科 870
+  ├─ library-science 图书馆学                 ← 870.10  未标引
+  ├─ documentation 文献学                     ← 870.20  未标引
+  ├─ information-science 情报学               ← 870.30  未标引  ⚠ 与顶层概念 id 冲突
+  ├─ archival-science 档案学                  ← 870.40  未标引
+  ├─ museology 博物馆学                       ← 870.50  未标引
+  └─ content-engineering 内容工程             ← 本库自加
 
-图例:第 1 层顶层概念,第 2 层,第 3 层(只画了已定的)。
-      「←」后是该层取自的知识体系;第 3 层以下不预建。
+图例:括号行是节点标签,写划分特征;「←」后是该组取自的知识体系,记在数组登记的 source。
+      第 3 层以下不预建。
 ```
 
 ### 第 2 层概念
@@ -256,7 +281,7 @@ programming-languages
   alt: [SQLi]                            # 非首选词;可检索、可显示
   hidden: []                             # 非首选词;可检索、不显示(拼写错误等)
   broader: [input-validation, data]      # 空列表 = 顶层概念
-  arrays: [security-by-requirement]      # 所属数组;上位只有一个数组时可省略
+  arrays: [security-by-requirement]      # 所属数组
   related: []                            # RT
   scope: >                               # 范围注释:用于……不用于……
     指通过拼接用户输入改变 SQL 语义的攻击及对应缺陷;
@@ -284,7 +309,7 @@ arrays:
     source: asvs
 ```
 
-一个概念下只有一个数组时可以不登记,下位直接挂 `broader`。
+每个有下位的概念都登记数组并写 `label`,哪怕只有一组;规则见「节点标签」。
 
 分面字段暂不设,见 [分面字段草案](drafts/kind.md)。
 
