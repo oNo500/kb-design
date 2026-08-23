@@ -109,6 +109,10 @@
 | 用户依据 | user warrant | 词是用户检索时实际用的说法 | Z 5.3.5.3 |
 | 自上而下 / 自下而上 | top down / bottom up | 委员会法的两个方向；新建词表优先前者 | Z 11.1.3.1 |
 | 演绎法 / 归纳法 | deductive / inductive | 经验法的两种：先收集后控制 / 从头控制 | Z 11.1.3.2 |
+| 分析综合式分类 | analytico-synthetic classification | 先把主题分析成基本范畴，再综合类号；新主题是旧面的新组合 | Ranganathan 1957 |
+| 好客准则 | canon of hospitality | 分类法容纳新类目而不扰动已有类号 | Ranganathan 1957 |
+| 领域分析 | domain analysis | 分类反映话语共同体的目的与立场，无唯一正确分类 | Hjørland & Albrechtsen 1995 |
+| 剩余类目 | residual category | “其他”“杂项”；其大小是分类失效的信号 | Star & Bowker 2007 |
 | 词汇控制 | vocabulary control | 让标引者和检索者对同一概念用同一个词 | ISO §4.2;Z 1.1 |
 | 标引 | indexing | 分析文档主题、识别概念、分配标引词 | ISO 2.27 |
 | 标引词 | index term | 分配给文档的词；keyword、tag 含义更宽 | ISO 2.26 |
