@@ -77,7 +77,7 @@
 | 节点标签 | node label | 树里说明一组兄弟按什么分的标签;内容只能是划分特征或分面名;非词,不能标引 | ISO 2.38;Z 8.3.5 |
 | 数组 | array | 一组同级概念 | ISO 2.1 |
 | 概念组 / 分组 | concept group | 按用途圈出的一批概念,可跨树、可嵌套 | ISO 数据模型 |
-| 微词表 | micro-thesaurus | 概念组的一种:大词表的子领域切片 | ISO 数据模型 |
+| 微词表 | micro-thesaurus | 叙词表的指定子集,可独立作为完整叙词表使用 | ISO-2 3.46;ISO 数据模型 |
 | 辅助表 / 复分表 | auxiliary table | 分类法中单独列出的通用维度表(地区、时间、形式),拼接到主表号后 | 分类法实践,未核原文 |
 | 组配号 | synthesized notation | 主表号与辅助表号拼接而成的号码 | ISO 2.22 facet indicator |
 | 先组 | pre-coordination | 建表或标引时就组合概念 | ISO 2.44 |
@@ -121,13 +121,15 @@
 | 术语 | 英文 | 定义 | 出处 |
 |---|---|---|---|
 | 映射 | mapping | 一个词表中的概念与另一个词表中一个或多个概念之间的关系;通常有方向 | ISO-2 3.41 |
-| 对照表 | crosswalk | 两个以上词表之间概念映射的表 | ISO-2 3.24 |
-| 源词表 / 目标词表 | source / target vocabulary | 映射的起点 / 终点 | ISO-2 3.72, 3.82 |
-| 等价映射 | equivalence mapping | 目标概念与源概念范围相同 | ISO-2 3.29 |
+| 映射簇 | mapping cluster | 三个以上词表之间协调维护的一组映射 | ISO-2 3.42 |
+| 名称规范表 | name authority list | 为一致地命名特定个体而设的受控词表 | ISO-2 3.50 |
+| 对照表 | crosswalk | 两个以上词表之间概念映射的表 | ISO-2 3.21 |
+| 源词表 / 目标词表 | source / target vocabulary | 映射的起点 / 终点 | ISO-2 §3(条款号在样章之外) |
+| 等价映射 | equivalence mapping | 目标概念与源概念范围相同 | ISO-2 3.27 |
 | 精确 / 不精确 / 部分等价 | exact / inexact / partial equivalence | 等价的三个程度 | ISO-2 §11 |
 | 层级映射 | hierarchical mapping | 目标概念比源概念宽或窄 | ISO-2 §9 |
 | 相关映射 | associative mapping | 有关但非等价非层级 | ISO-2 §10 |
-| 区分式映射 | differentiated mapping | 标明映射类型和等价程度的映射方法 | ISO-2 3.26 |
+| 区分式映射 | differentiated mapping | 标明映射类型和等价程度的映射方法 | ISO-2 3.23 |
 | 中心辐射 | hub structure | 所有词表映射到一个中心词表的结构模型 | ISO-2 §6 |
 | exactMatch / closeMatch | — | SKOS 的精确 / 不精确等价;前者传递,后者不传递 | SKOS §10 |
 | broadMatch / narrowMatch / relatedMatch | — | SKOS 的层级 / 相关映射 | SKOS §10 |
@@ -170,9 +172,10 @@
 | W3C SKOS / RDF / OWL / SPARQL | 语义网标准族 |
 | ISO/IEC 39075:2024 GQL | 属性图查询语言标准 |
 | Cutter (1876) | 字典式目录规则,主题标目「一主题一词」的源头;未核对 |
+| Hulme (1911) | *Principles of Book Classification*,Library Association Record 连载;文献依据的源头 |
 | Dewey (1876) | 十进分类法;未核对 |
 | Ranganathan (1933) | 冒号分类法,分面分析的源头;经 Z39.19 §5.3.4 转述 |
-| Wüster (1931) | 普通术语学理论,「概念先于词」;未核对 |
+| Wüster (1931) | 斯图加特博士论文 *Internationale Sprachnormung in der Technik*;术语学奠基,ISO/TC 37 1936 年由此成立 |
 | Gruber (1993) | 计算机领域本体的定义;未核对 |
 | Hogan et al. (2021) | 知识图谱综述,[arXiv](https://arxiv.org/abs/2003.02320) |
 | Ehrlinger & Wöß (2016) | 知识图谱定义梳理,[CEUR](https://ceur-ws.org/Vol-1695/paper4.pdf) |

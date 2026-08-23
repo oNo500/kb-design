@@ -11,9 +11,10 @@
 | [Diátaxis](https://diataxis.fr/) | 文档体系框架，Canonical 等采用 | 文档分四类、各类怎么写、为什么不能混 | de-facto |
 | [Google developer documentation style guide](https://developers.google.com/style) | 事实标准，2017 年公开 | 语气、语法、标题、列表、表格、链接、用词表 | de-facto |
 | [阮一峰《中文技术文档的写作规范》](https://github.com/ruanyf/document-style-guide) | 中文社区最常引用的规范 | 标题层级、段落、句子、中英混排、标点、文件名 | de-facto |
-| [GB/T 15834-2011《标点符号用法》](https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=8AE2BFCBF3AE49FCC69ADF7E0B8F2DB1) | 国标 | 中文标点 | de-jure，本次未读原文，阮一峰的标点节以它为据 |
+| [GB/T 15834-2011《标点符号用法》](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=22EA6D162E4110E752259661E1A0D0A8) | 国标 | 中文标点 | de-jure，已读 §4.8–4.14，见下 |
+| [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/top-10-tips-style-voice) | 事实标准 | 语气、简洁、大小写、标点 | de-facto，已读 top 10 |
 
-Microsoft Writing Style Guide 和 ISO/IEC/IEEE 26514 本次未读。
+ISO/IEC/IEEE 26514 本次未读。
 
 ## 文档类型
 
@@ -130,7 +131,9 @@ Diátaxis 把文档分成四类，两条轴：给**做事**还是给**认知**�
 | 代码相关文字用代码字体；界面元素用粗体 | Google·highlights |
 | 日期格式无歧义 | Google·highlights |
 
-注：阮一峰用「“ ”」作引号。本库此前用「」，这是台湾和部分大陆技术社区的习惯，GB/T 15834 两者都认可（「」为直排引号，横排亦可用）。需要定一个。
+GB/T 15834-2011 原文核对：§4.8 引号形式为双引号“ ”、单引号‘ ’，竖排改用﹃﹄﹁﹂；**「」不在国标之内**，是台湾和部分技术社区的习惯。§4.11 省略号“……”六点占两字位；§4.10 破折号“——”占两字位；§4.13 连接号三种：短横线“-”半字位（化合物、号码）、一字线“―”一字位（起止）、浪纹线“～”一字位（数值范围）；§4.9 括号主要形式全角圆括号“（）”。本库此前用「」，与国标不符，需要定。
+
+Microsoft top 10 与 Google 的共识：句首大写（when in doubt, don't capitalize）、标题末不加句号或冒号、序列逗号、简短、口语、去掉 *there is* 之类弱写法、以动词开头。与中文写作直接相关的是后四条。
 
 ## 本次犯的错对应哪条
 
@@ -150,6 +153,4 @@ Diátaxis 把文档分成四类，两条轴：给**做事**还是给**认知**�
 
 ## 待办
 
-- 读 GB/T 15834 原文，确认引号和省略号的规定
-- 读 Microsoft Writing Style Guide 的 top 10 tips，看与 Google 的共识
 - 据本文写 `design/writing.md`，并决定：引号用哪种、数字前后是否留空格、`design/` 是否按 Diátaxis 拆成参考和解释两部分

@@ -68,10 +68,10 @@
 | acm-ccs | ACM Computing Classification System 2012 | mapping | 映射 |
 | asvs | OWASP ASVS 5.0 | mapping, structure | security 数组 |
 | cwe | MITRE CWE | mapping, structure, group | security 数组;缺陷的派生组 |
-| attack | MITRE ATT&CK | mapping, structure | security 数组 |
+| attack | MITRE ATT&CK(v19.2,Enterprise 15 战术) | mapping, structure | security 数组 |
 | owasp-top10 | OWASP Top 10 | mapping, group | 映射;派生组 |
-| owasp-genai | OWASP GenAI / LLM Top 10 | mapping, structure | artificial-intelligence 数组(划分特征待核) |
-| atlas | MITRE ATLAS | mapping, structure | artificial-intelligence 数组(划分特征待核) |
+| owasp-llm-top10 | OWASP Top 10 for LLM Applications 2025 | mapping, structure, group | artificial-intelligence 数组 |
+| atlas | MITRE ATLAS(2026.07,16 战术;按月发布) | mapping, structure | artificial-intelligence 数组 |
 | nist-ai-rmf | NIST AI RMF 1.0 | mapping | 映射 |
 | anthropic-docs | Anthropic 文档 | mapping | 映射 |
 | rfc-1122 | RFC 1122 | mapping, structure | networking-and-communication 下的数组 |

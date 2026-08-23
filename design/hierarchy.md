@@ -64,7 +64,7 @@ CS2023 的 17 个知识领域作第 2 层;每个知识领域的知识单元作�
 |---|---|---|---|---|
 | algorithmic-foundations | AL | 5 | — | foundations 的一部分 |
 | architecture-and-organization | AR | 11 | — | foundations 的一部分;硬件落这里 |
-| artificial-intelligence | AI | 12 | ATLAS 战术;OWASP LLM Top 10(均待核) | ai |
+| artificial-intelligence | AI | 12 | ATLAS 16 战术;OWASP LLM Top 10 2025 | ai |
 | data-management | DM | 13 | — | data |
 | programming-languages | FPL | 22 | — | programming-languages |
 | graphics-and-interactive-techniques | GIT | 12 | — | 无,新盲区 |
@@ -73,7 +73,7 @@ CS2023 的 17 个知识领域作第 2 层;每个知识领域的知识单元作�
 | networking-and-communication | NC | 8 | RFC 1122 四层 | network |
 | operating-systems | OS | 14 | — | 无,新盲区 |
 | parallel-and-distributed-computing | PDC | 5 | — | 无,新盲区 |
-| security | SEC | 8 | ASVS 5.0 章;CWE 顶层类别;ATT&CK 14 战术 | security |
+| security | SEC | 8 | ASVS 5.0 章;CWE 顶层类别;ATT&CK 15 战术 | security |
 | society-ethics-and-the-profession | SEP | 11 | — | 无;通用职业技能另一落点 |
 | software-development-fundamentals | SDF | 5 | — | 无,新盲区 |
 | software-engineering | SE | 9 | SWEBOK v4 18 章 | engineering |
@@ -98,14 +98,25 @@ CS2023 的 17 个知识领域作第 2 层;每个知识领域的知识单元作�
 
 ### 其他六个顶层之下
 
-mathematics、information-and-systems-science、management、linguistics、journalism-and-communication、education 的二级、三级学科清单待从 GB/T 13745 取,取到后补表。
+二级、三级学科清单见 [GB/T 13745 学科分类清单](../sources/gbt-13745.md)。
+
+| 顶层 | GB/T 13745 | 二级学科 | 三级学科 |
+|---|---|---|---|
+| mathematics | 110 | 25 | 142 |
+| information-and-systems-science | 120 | 7 | 18 |
+| management | 630 | 12 | 43 |
+| linguistics | 740 | 10 | 73 |
+| journalism-and-communication | 860 | 7 | 30 |
+| education | 880 | 18 | 0(标准原文无三级) |
+
+术语学在 GB/T 13745 里没有对应学科,作本地概念挂在 740.35 应用语言学之下。
 
 ## 结构预览
 
 ```
 (根)                                            ← 范围声明
-├─ mathematics 数学                             ← GB/T 110;二级、三级待借入
-├─ information-and-systems-science              ← GB/T 120;待借入
+├─ mathematics 数学                             ← GB/T 110;25 二级 / 142 三级
+├─ information-and-systems-science              ← GB/T 120;7 / 18
 ├─ computing 计算机科学技术                     ← GB/T 520
 │   ├─ algorithmic-foundations                  ← CS2023 AL,5 个知识单元
 │   ├─ architecture-and-organization            ← AR,11;硬件落这里
@@ -129,7 +140,7 @@ mathematics、information-and-systems-science、management、linguistics、journ
 │   │   [CS2023 SEC 8 知识单元]
 │   │   [ASVS 5.0]
 │   │   [CWE 顶层类别]
-│   │   [ATT&CK 14 战术]
+│   │   [ATT&CK 15 战术]
 │   ├─ society-ethics-and-the-profession        ← SEP,11;职业技能落这里
 │   ├─ software-development-fundamentals        ← SDF,5;新盲区
 │   ├─ software-engineering                     ← SE
@@ -137,16 +148,16 @@ mathematics、information-and-systems-science、management、linguistics、journ
 │   │   [SWEBOK v4 18 章]                        ← 项目管理落第 9 章
 │   ├─ specialized-platform-development         ← SPD,7;Web Platforms 在其中
 │   └─ systems-fundamentals                     ← SF,9
-├─ management 管理学                            ← GB/T 630;待借入
-├─ linguistics 语言学                           ← GB/T 740;待借入;术语学落这里
-├─ journalism-and-communication                 ← GB/T 860;待借入
+├─ management 管理学                            ← GB/T 630;12 / 43
+├─ linguistics 语言学                           ← GB/T 740;10 / 73;术语学挂 740.35 之下
+├─ journalism-and-communication                 ← GB/T 860;7 / 30
 ├─ library-and-information-science              ← GB/T 870
 │   ├─ library-science 图书馆学                 ← 870.10xx,10
 │   ├─ documentation 文献学                     ← 870.20xx,6
 │   ├─ information-science 情报学               ← 870.30xx,13;情报检索学在其中
 │   ├─ archival-science 档案学                  ← 870.40xx,4
 │   └─ museology 博物馆学                       ← 无三级学科
-└─ education 教育学                             ← GB/T 880;待借入
+└─ education 教育学                             ← GB/T 880;18 二级,无三级
 
 图例:「←」后是下位的来源和数量。方括号行是以来源为标识的数组,出现在一个概念下有多个来源时。
       分析层数组目前没有。第 3 层以下不预建。
@@ -158,7 +169,7 @@ mathematics、information-and-systems-science、management、linguistics、journ
 
 CS2023 知识领域 AI 的 12 个知识单元:Introduction、Search、KRR、LRR、Probability、ML、NLP、Agents、Planning、Vision、Robotics、SEP。它偏学术——机器人、规划与本库侧重的 LLM 应用工程距离较远——但它是唯一有编号的人工智能知识体系;未标引的单元是盲区标记,不是负担。id 用 `artificial-intelligence`,侧重体现在内容里,不体现在知识体系的边界上。
 
-LLM 应用相关的外部体系按规则 3、4、10 处理:ATLAS 的战术、OWASP LLM Top 10 的编号条目有稳定结构,各自借入为一个以来源为标识的数组,结构待核;NIST AI RMF 的四个功能是治理职能不是知识划分,只作映射;Anthropic 文档随产品迭代,只作映射。
+LLM 应用相关的外部体系按规则 3、4、10 处理:ATLAS(2026.07 版,16 个战术,`AML.TA0000`–`AML.TA0015`)和 OWASP LLM Top 10(2025 版,`LLM01:2025`–`LLM10:2025`)有稳定编号,各自借入为一个以来源为标识的数组;NIST AI RMF 的四个功能是治理职能不是知识划分,只作映射;Anthropic 文档随产品迭代,只作映射。
 
 ### 编程语言
 
@@ -196,8 +207,6 @@ slug 为本库拟定,英文原名和代码为准;22 个知识单元全部以未�
 
 ## 待定事项
 
-- 六个新顶层(110、120、630、740、860、880)的二级、三级学科清单待从 GB/T 13745 取
-- artificial-intelligence 下 ATLAS、OWASP LLM Top 10 的结构核对
 - Web 相关内容失去借入结构后是否够用,观察后决定是否在 Web Platforms 下破例借入 MDN
 - 多层级时 `broader` 列表的顺序是否赋予含义(显示、排序)
 - 分析层数组何时启用,见[划分特征治理](drafts/division-characteristics.md)

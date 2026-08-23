@@ -78,7 +78,7 @@
 | 硬件、体系结构 | `computing` › `architecture-and-organization` | CS2023 AR |
 | 项目管理 | `software-engineering` 下 SWEBOK 第 9 章「软件工程管理」,同时在 `management` 之下;多层级 | SWEBOK v4;GB/T 13745 630 |
 | 通用职业技能(写作、沟通、时间管理) | `computing` › `society-ethics-and-the-profession`;写作另可挂 `journalism-and-communication` 之下 | CS2023 SEP |
-| 术语学(ISO 704、1087、30042) | `linguistics` 之下,具体二级学科待核 | GB/T 13745 740 |
+| 术语学(ISO 704、1087、30042) | `linguistics` › 740.35 应用语言学之下,作本地概念(GB/T 无此学科) | GB/T 13745 740.35 |
 | Web 开发 | `specialized-platform-development` › Web Platforms;MDN 只作映射 | CS2023 SPD |
 | 结构化写作(DITA) | 待定 | — |
 
@@ -192,7 +192,7 @@ arrays:
 ## 待定事项
 
 - 排除范围:非技术的生活领域(健康、理财、旅行)是否排除
-- 结构化写作(DITA)的落点;术语学在 740 语言学下的具体二级学科
+- 结构化写作(DITA)的落点
 - 分面字段,见 [草案](drafts/facet-field.md)
 - 文件格式:YAML 单文件,还是每个第 2 层概念一个文件(概念过几百条时再考虑)
 - `related` 的使用规则:什么情况下加、是否要求互反
