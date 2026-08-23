@@ -17,7 +17,7 @@
 - networking-and-communication 之下另有 RFC 1122 的四层
 - 其余七个顶层之下：GB/T 13745 的二级、三级学科，共 427 个；英文标签为本库所译（`translated: [en]`）
 - 多层级：`mathematical-and-statistical-foundations` 同时在 computing 与 mathematics 之下；`software-engineering-management` 同时在 software-engineering 与 management 之下
-- 标签的译名依据：每个概念带 `basis.zh`、`basis.en`；CS2023 的 265 个中文标签、GB/T 13745 的 427 个英文标签为本库所译（`self`），2026-08-23 按译名阶梯追溯：Wikidata 查到并采纳 72 条（其中 11 条改用 Wikidata 标签），否决 13 条，其余 607 条不译（只保留来源语言的标签，`basis` 记 `none`）；决定见 `build/label-decisions.json`；四个顶层的英文取自 Wikidata，四个无英文
+- 标签的译名依据：每个概念带 `basis.zh`、`basis.en`；CS2023 的 265 个中文标签、GB/T 13745 的 427 个英文标签为本库所译（`self`），2026-08-23 按译名阶梯追溯：Wikidata 查到并采纳 72 条（其中 11 条改用 Wikidata 标签），否决 13 条，其余 607 条不译（只保留来源语言的标签，`basis` 记 `none`）；决定见 `build/label-decisions.json`。不译的概念给中文 `scope`（译名阶梯第 4 级的解释）：CS2023 的 174 条按各知识领域与知识单元的主题清单写，ASVS、CWE、ATT&CK、ATLAS、SWEBOK v4、RFC 1122 的 77 条按来源自身的描述写，输入在 `build/scope-zh.json`；OWASP LLM Top 10 的 10 条中文改用项目官方 zh-CN 译文（`basis.zh: source`）。GB/T 13745 的 359 条无英文标签，不给英文解释；四个顶层的英文取自 Wikidata，四个无英文
 - 同名概念的处理：跨上位同名加上位后缀（各知识领域的“社会、伦理与职业”知识单元；ATLAS 与 ATT&CK 同名战术）
 
 ### entities.yaml

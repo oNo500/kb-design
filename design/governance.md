@@ -120,7 +120,7 @@ AI 在第 4 级只能给解释，不能给名；“有译名但不达意”的�
 
 检测：`check-topics.py` 报 `self`；`check-terms.py` 报同一英文在全库对应不同中文，或反之。
 
-追溯的做法：`scripts/lookup-labels.py` 按阶梯第 3 级查 Wikidata，只接受对方语言标签与本库名称完全一致、且描述像学科或概念的条目；中文优先简体标签，繁体经 OpenCC 转简并注明。结果是清单，交人审；词义是否对得上是判断，AI 不直接写入。人审后的决定记在 `vocab/build/label-decisions.json`（采纳的记 Q 号与标签，否决的记理由），`build-topics.py` 据此改标签与 `basis`；未查到和否决的一律不译，去掉自译标签，`basis` 记 `none`。2026-08-23 首次追溯：692 条自译，采纳 72，否决 13，不译 607。
+追溯的做法：`scripts/lookup-labels.py` 按阶梯第 3 级查 Wikidata，只接受对方语言标签与本库名称完全一致、且描述像学科或概念的条目；中文优先简体标签，繁体经 OpenCC 转简并注明。结果是清单，交人审；词义是否对得上是判断，AI 不直接写入。人审后的决定记在 `vocab/build/label-decisions.json`（采纳的记 Q 号与标签，否决的记理由），`build-topics.py` 据此改标签与 `basis`；未查到和否决的一律不译，去掉自译标签，`basis` 记 `none`。2026-08-23 首次追溯：692 条自译，采纳 72，否决 13，不译 607。不译的概念在 `scope` 里给一句中文解释，解释按来源原文写（输入 `vocab/build/scope-zh.json`），不另起名；来源自带官方译文的（OWASP LLM Top 10 的 zh-CN）直接用，`basis` 记 `source`。
 
 ## 质量与验收
 

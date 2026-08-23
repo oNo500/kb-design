@@ -74,7 +74,8 @@ for parent, srcs in extra.items():
         arr = f"{parent}-{src}"
         arrays.append({'id': arr, 'superordinate': parent, 'source': src})
         for code, en, zhn in d['items']:
-            add(slug(en), zhn, en, [parent], src, {'source':src,'id':code,'rel':'exactMatch'}, arr=arr, translated=['zh'])
+            add(slug(en), zhn, en, [parent], src, {'source':src,'id':code,'rel':'exactMatch'}, arr=arr,
+                translated=[] if d.get('zh_basis')=='source' else ['zh'])
 
 # ---------- 其余七个顶层：GB/T 13745 ----------
 gbt = json.load(open(B/'gbt-13745.json'))
@@ -119,6 +120,15 @@ for c in concepts.values():
         else:
             c['label'][lang] = ''; c['basis'][lang] = 'none'
 
+# ---------- 不译概念的范围注释 ----------
+# 译名阶梯第 4 级：不译，给解释。解释按来源原文写，键为 来源:条目编号。
+scopes = json.load(open(B/'scope-zh.json'))
+for c in concepts.values():
+    if c.get('scope') or c['label'].get('zh'): continue
+    for m in c['match']:
+        sc = scopes.get(f"{m['source']}:{m['id']}:{c['label']['en']}") or scopes.get(f"{m['source']}:{m['id']}")
+        if sc: c['scope'] = sc; break
+
 # ---------- 输出 ----------
 def q(s): return '"' + s.replace('"', '\\"') + '"'
 out = ['# 主题词表。由 scripts/build-topics.py 从 vocab/build/ 生成；人工修改后不要重跑覆盖，改输入再生成。',
@@ -135,6 +145,7 @@ for c in concepts.values():
     out.append(f"    basis: {{ zh: {c['basis']['zh']}, en: {c['basis']['en']} }}")
     out.append(f"    broader: [{', '.join(c['broader'])}]")
     if c['arrays']: out.append(f"    arrays: [{', '.join(c['arrays'])}]")
+    if c.get('scope'): out.append(f"    scope: {q(c['scope'])}")
     out.append(f"    source: {c['source']}")
     if c['match']:
         out.append('    match:')
