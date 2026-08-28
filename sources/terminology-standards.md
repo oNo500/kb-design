@@ -19,13 +19,13 @@
 
 ## 基础术语
 
-[ISO 704:2022 — Terminology work — Principles and methods](https://www.iso.org/standard/79077.html) 的公开摘要只确认其描述 `objects`、`concepts`、`definitions` 和 `designations` 之间的联系，并覆盖术语和专名的形成原则及定义的撰写原则。摘要没有给出这四项的术语条目或定义，因此本笔记只保留页面实际出现的原文，不给出中文译名，也不据此扩写原则。
+[ISO 704:2022 — Terminology work — Principles and methods](https://www.iso.org/standard/79077.html) 的公开摘要只确认其描述 `objects`、`concepts`、`definitions` 和 `designations` 之间的联系，并说明 `terms` 和 `proper names` 的形成原则以及 `definitions` 的撰写原则。摘要没有给出这些项目的术语条目或定义，因此本笔记只保留页面实际出现的原文，不给出中文译名，也不据此扩写原则。
 
 [ISO 1087:2019 — Terminology work and terminology science — Vocabulary](https://www.iso.org/standard/62330.html) 的公开摘要只说明该标准给出术语工作和术语科学的基础术语及定义，并排除术语工作中计算机应用所特有的术语及定义。摘要没有展示任何具体术语条目。[术语工作及术语科学 词汇](https://std.samr.gov.cn/gb/search/gbDetailed?id=33D40F1160ED5D92E06397BE0A0A5B93) 确认 GB/T 15237-2025 等同采用 ISO 1087:2019，但官方文本页不提供正文。本笔记因而不登记中文基础术语，也不从等同采用关系推断任何术语或定义逐项等同。
 
 ## 条目结构
 
-[ISO 10241-1:2011 — Terminological entries in standards — Part 1: General requirements and examples of presentation](https://www.iso.org/standard/40362.html) 的公开摘要支持以下范围：标准中术语条目的起草和结构；单语、多语术语条目及其索引；术语和其他称谓中可能出现的字母、数字、数学符号、排印符号、句法符号及标准化符号。版式和呈现只在抽象层面处理，标准化机构的行政程序和编制术语标准所需的技术规范不在范围内。
+[ISO 10241-1:2011 — Terminological entries in standards — Part 1: General requirements and examples of presentation](https://www.iso.org/standard/40362.html) 的公开摘要支持以下范围：标准中术语条目的起草和结构；单语、多语术语条目及其索引；`terms` 和 `other designations` 中可能出现的字母、数字、数学符号、排印符号、句法符号及标准化符号。版式和呈现只在抽象层面处理，标准化机构的行政程序和编制术语标准所需的技术规范不在范围内。
 
 摘要没有公开条目组成、排列次序、必选性、重复次数或具体版式规则，因此本笔记不据此制定字段结构。[标准起草规则 第1部分:术语](https://std.samr.gov.cn/gb/search/gbDetailed?id=14156507D1FC0337E06397BE0A0AE656) 只确认 GB/T 20001.1-2024 非等效采用 ISO 10241-1:2011；没有取得两份正文，不能从该关系推断条款或术语逐项对应。
 
@@ -37,7 +37,7 @@
 
 ## 交换边界
 
-[ISO 30042:2019 — Management of terminology resources — TermBase eXchange (TBX)](https://www.iso.org/standard/62510.html) 的公开摘要覆盖基本概念、元模型、数据类目、DCA 和 DCT 两种 XML 样式，以及定义 TBX 方言的方法；该版详细描述 `TBX-Core`，其他行业支持的方言不在其范围内。摘要支持把它作为术语数据交换范围的来源，不支持从摘要还原元模型、XML 约束或一致性要求。
+[ISO 30042:2019 — Management of terminology resources — TermBase eXchange (TBX)](https://www.iso.org/standard/62510.html) 的公开摘要说明该标准解释基本概念，描述元模型、数据类目及 DCA、DCT 两种 XML 样式，并规定定义 `TBX dialects` 的方法；该版详细描述 `TBX-Core`，并把 `all other industry-supported dialects` 排除在范围外。摘要支持把它作为术语数据交换范围的来源，不支持从摘要还原元模型、XML 约束或一致性要求。
 
 [术语资源管理 术语数据库交换（TBX）](https://std.samr.gov.cn/gb/search/gbDetailed?id=1E5A13A77F9BBC8DE06397BE0A0A87E8) 只确认 GB/T 44227-2024 修改采用 ISO 30042:2019。正文未取得，不能据此确定修改了哪些内容，也不能推断条款、数据类目或术语逐项等同。
 
@@ -49,7 +49,7 @@
 - `TermNote Elements`：`administrativeStatus`（T；`preferredTerm-admn-sts`、`admittedTerm-admn-sts`、`deprecatedTerm-admn-sts`、`supersededTerm-admn-sts`）、`geographicalUsage`（T）、`grammaticalGender`（T；`masculine`、`feminine`、`neuter`、`other`）、`partOfSpeech`（T；`noun`、`verb`、`adjective`、`adverb`、`properNoun`、`other`）、`responsibility`（CLT）、`source`（CLT）、`termLocation`（T）、`termType`（T；`abbreviation`、`acronym`、`fullForm`、`shortForm`、`variant`、`phrase`）、`transactionType`（CLT；`origination`、`modification`）。
 - `xRef Elements`：`externalCrossReference`（CLT）、`xGraphic`（CLT）。
 
-ISO 30042 的公开范围规定 TBX 交换所用的元模型、数据类目和 XML 表示；TBX-Basic 页面公开一个方言的数据类目。二者不规定本库内部 YAML，也不能据以把页面中的层次、数据类目或取值直接变成本库字段。
+ISO 30042 的公开摘要说明该标准描述元模型、数据类目及 DCA、DCT 两种 XML 样式，并规定定义 `TBX dialects` 的方法。TBX-Basic 页面列出其命名空间的数据类目。两份公开材料都不规定本库内部 YAML，也不能据以把页面中的层次、数据类目或取值直接变成本库字段。
 
 ## 版本状态
 
