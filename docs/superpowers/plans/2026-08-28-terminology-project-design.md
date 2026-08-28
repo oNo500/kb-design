@@ -14,7 +14,8 @@
 
 - [术语概念基础](2026-08-28-terminology-concept-foundations.md) 已全部执行、审查和校验通过。
 - `sources/terminology-standards.md`、`sources/metadata-standards.md` 与 `concepts/terminology-database.md` 已存在。
-- 术语表和相关概念文不再依赖未读条款、自定中文译名或混合含义的来源断言。
+- 术语表全表审查已经完成，“基本单位”整节已经批准并取得可定位依据；其余每个问题及活跃消费者都在获准执行的“术语迁移”清单中明确延期，没有被写成已解决。
+- `/tmp/kb-terminology-glossary-review.tsv` 必须随执行交接保留；新会话无法取得时，从 `git merge-base master HEAD` 取出分支起点的术语表，重新执行前一计划“术语审查”的全部固定批次，并与当前术语表逐项比较后交人复核，不能凭摘要重建。
 
 ## 全局约束
 
@@ -173,6 +174,10 @@ match:
 - [ ] 运行 `git status --short --branch`；预期位于独立功能分支且工作区为空。
 - [ ] 运行 `git rev-parse HEAD > /tmp/kb-terminology-project-design-base.sha`，再运行 `test -s /tmp/kb-terminology-project-design-base.sha`；预期退出码为 0。后续所有范围校验使用这个固定基线。
 - [ ] 运行 `test -f sources/terminology-standards.md && test -f sources/metadata-standards.md && test -f concepts/terminology-database.md`；预期退出码为 0。
+- [ ] 运行 `test -s /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0。若失败，运行 `git show "$(git merge-base master HEAD):concepts/glossary.md" > /tmp/kb-terminology-glossary-branch-base.md`，重新保存前一计划的临时提取器，以分支起点文件执行“术语审查”的固定批次，再与当前术语表的提取结果逐项比较并交人复核；完成前不得创建草案。
+- [ ] 运行 `test -s /tmp/kb-extract-glossary-forms.py`；预期退出码为 0。若只有提取器丢失，从前一计划的固定代码块原样重建，不改写脚本逻辑。
+- [ ] 运行 `awk -F'\t' 'NR > 1 && (NF != 10 || $5 == "" || $6 == "" || $7 == "" || $8 == "" || $9 == "" || $10 == "") {bad=1} END {exit bad ? 1 : 0}' /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0，证明依据结论、依据位置、概念对应、全库引用、动作和处理阶段均已填写。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv`；把消费者位置刷新到本计划基线。
 - [ ] 运行 `python3 scripts/check-links.py` 与 `python3 scripts/check-topics.py`；保存基线输出。再运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-project-design-terms-before.txt`，只保存候选报告。
 - [ ] 运行 `test ! -e design/drafts/source-governance.md && test ! -e design/drafts/terminology-governance.md`；预期退出码为 0，证明不是覆盖未知草案。
 - [ ] 向人提交精确 L2 提案：新建两份未生效项目草案，并整篇重写 `design/README.md`；附上本计划“草案结构”和“接口边界”。
@@ -270,7 +275,17 @@ match:
 
 **Steps:**
 
-- [ ] 建立字段矩阵，逐项列 `basis`、`source`、`match`、`decision`、`review`、`history`、`status` 的定义文件、使用文件、引用目标和失效动作。
+- [ ] 在 `/tmp/kb-terminology-field-matrix.tsv` 建立“字段、定义文件、使用文件、引用目标、失效动作”五列标题；该文件不加入仓库。
+- [ ] 填写 `basis` 一行；定义位置只能是来源草案“引用结构”。
+- [ ] 填写 `source` 一行；定义位置只能是来源草案“引用结构”。
+- [ ] 填写 `match` 一行；定义位置只能是来源草案“引用结构”。
+- [ ] 填写 `decision` 一行；明确它与外部证据分开。
+- [ ] 填写 `review` 一行；明确来源复核与术语复核的使用位置。
+- [ ] 填写 `history` 一行；明确只追加约束和两份草案的使用位置。
+- [ ] 填写 `status` 一行；分别列来源实体、来源用途、概念工作流和术语管理状态，不合并枚举。
+- [ ] 运行 `test "$(tail -n +2 /tmp/kb-terminology-field-matrix.tsv | wc -l | tr -d ' ')" = 7`；预期退出码为 0。
+- [ ] 运行 `awk -F'\t' 'NR > 1 && (NF != 5 || $1 == "" || $2 == "" || $3 == "" || $4 == "" || $5 == "") {bad=1} END {exit bad ? 1 : 0}' /tmp/kb-terminology-field-matrix.tsv`；预期退出码为 0。
+- [ ] 运行 `for field_name in basis source match decision review history status; do test "$(awk -F'\t' -v wanted="$field_name" 'NR > 1 && $1 == wanted {n++} END {print n+0}' /tmp/kb-terminology-field-matrix.tsv)" = 1; done`；预期退出码为 0。
 - [ ] 确认每个共享字段只在来源草案定义；术语草案只链接，不复制或改写定义。
 - [ ] 确认来源用途批准不能推出概念映射，概念映射不能推出译名，外部依据不能推出项目批准，项目批准不能替代外部依据。
 - [ ] 确认 `candidate` 只作概念工作流状态，`discovery` 只作来源用途，`unassigned` 不进入两份草案的数据模型。
@@ -328,10 +343,16 @@ match:
 - [ ] 运行 `python3 scripts/check-topics.py`；预期与基线同样通过，证明没有修改正式数据。
 - [ ] 运行 `git diff --check "$(cat /tmp/kb-terminology-project-design-base.sha)"..HEAD`；预期无错误，并覆盖全部已提交改动。
 - [ ] 运行 `git diff --name-only "$(cat /tmp/kb-terminology-project-design-base.sha)"..HEAD`；预期本计划只改变三份“文件职责”所列文件。
-- [ ] 阅读最终 diff，确认现行 `design/*.md`、`vocab/`、`scripts/`、`concepts/` 和 `sources/` 未被本计划修改。
+- [ ] 阅读 `git diff "$(cat /tmp/kb-terminology-project-design-base.sha)"..HEAD`，确认现行 `design/*.md`、`vocab/`、`scripts/`、`concepts/` 和 `sources/` 未被本计划修改。
 - [ ] 确认执行记录明确写着“程序分支不可合并”，不得在两份草案尚未获准或正式迁移尚未完成时调用分支收尾技能。
 - [ ] 使用 `superpowers:requesting-code-review` 分别审查来源草案和术语草案，再做一次跨文档接口审查；反馈涉及一节以上时整节或整篇重写。
-- [ ] 重新运行全部校验；有收口修改时提交 `[L2] 治理草案:完成设计复核`，无修改时不创建空提交。
+- [ ] 逐项处理审查反馈；有内容修正时提交 `[L2] 治理草案:完成设计复核`，无修改时不创建空提交。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv`，再运行 `python3 /tmp/kb-extract-glossary-forms.py audit-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-consumers-reviewed.tsv`；把消费者位置刷新到审查后的 `HEAD`。
+- [ ] 重新运行前一计划“术语审查”中的消费者差异、十列完整性、值域与动作约束、同原行概念对应四项命令；预期全部通过，且两份新草案中的消费者已进入临时清单。
+- [ ] 运行 `python3 scripts/check-links.py`、`python3 scripts/check-topics.py` 和 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-project-design-terms-post-review.txt`；前两项预期通过，第三项仍只生成候选报告并逐项复核。
+- [ ] 运行 `git diff --check "$(cat /tmp/kb-terminology-project-design-base.sha)"..HEAD`；预期无错误，覆盖审查后的全部提交。
+- [ ] 运行 `git diff --name-only "$(cat /tmp/kb-terminology-project-design-base.sha)"..HEAD`；预期本计划只改变三份“文件职责”所列文件。
+- [ ] 运行 `git status --short`；预期无输出，证明最终审查修正已经提交且工作区为空。
 
 ## 完成条件
 

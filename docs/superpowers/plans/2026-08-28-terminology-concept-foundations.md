@@ -216,10 +216,13 @@
 - [ ] 打开 ISO 30042、GB/T 44227 与 TBX-Basic 官方页面，分别记录交换标准、采标关系和公开数据类目。
 - [ ] 对每项材料分别标明“公开页面已读”“可访问正文已读”“付费或未取得正文”，不把摘要扩写成条款。
 - [ ] 新建标题 `# 术语标准`，并建立 `阅读范围`、`基础术语`、`条目结构`、`数据库`、`交换边界`、`版本状态`、`未读范围` 七个小节。
-- [ ] 重写“阅读范围”和“基础术语”；中文只使用实际读到的 GB/T 术语条目，没有条目时不反译。
-- [ ] 重写“条目结构”和“数据库”；分别限制在 ISO 10241-1 与 ISO 26162 官方材料实际支持的范围。
+- [ ] 重写“阅读范围”；逐项写已读页面、正文与未取得正文。
+- [ ] 重写“基础术语”；中文只使用实际读到的 GB/T 术语条目，没有条目时不反译。
+- [ ] 重写“条目结构”；限制在 ISO 10241-1 官方材料实际支持的范围。
+- [ ] 重写“数据库”；限制在 ISO 26162 官方材料实际支持的范围。
 - [ ] 重写“交换边界”；记录 ISO 30042 的公开范围和 TBX-Basic 页面列出的层次与数据类目，明确它们不规定本库内部 YAML。
-- [ ] 重写“版本状态”和“未读范围”；现行标准与修订项目分开，不推测后继文本。
+- [ ] 重写“版本状态”；现行标准与修订项目分开，不推测后继文本。
+- [ ] 重写“未读范围”；逐项列出不能据以作答的内容。
 - [ ] 运行 `python3 scripts/check-links.py`；预期“全部链接有效”。
 - [ ] 运行 `git diff --check`；预期无空白错误。
 - [ ] 提交：`git add sources/terminology-standards.md && git commit -m "[L1] 来源:记录术语标准阅读边界"`。
@@ -241,10 +244,13 @@
 - [ ] 打开 [DCMI Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) 与 [PROV-O](https://www.w3.org/TR/prov-o/)，记录版本、状态、实际阅读位置和核对日期。
 - [ ] 打开 [SKOS Reference](https://www.w3.org/TR/skos-reference/) 与 [BCP 47](https://www.rfc-editor.org/info/bcp47/)，记录版本、状态、实际阅读位置和核对日期。
 - [ ] 新建标题 `# 元数据标准`，并建立 `阅读范围`、`元数据来源`、`派生关系`、`概念映射`、`语言标签`、`适用边界`、`未读范围` 七个小节。
-- [ ] 重写“阅读范围”和“元数据来源”；只说明 DCMI `source` 的定义域和值域，不把它扩写成本地逐值证据规则。
+- [ ] 重写“阅读范围”；逐项记录四份规范实际读到的位置。
+- [ ] 重写“元数据来源”；只说明 DCMI `source` 的定义域和值域，不把它扩写成本地逐值证据规则。
 - [ ] 重写“派生关系”；分别记录 PROV-O 的 derivation、revision、primary source 和 invalidation，不把日常“来自”自动映射为这些关系。
-- [ ] 重写“概念映射”和“语言标签”；记录 SKOS 映射边界与 RFC 5646 用途，不自行规定本库字段形状。
-- [ ] 重写“适用边界”和“未读范围”；逐项指出外部词汇不能替项目决定什么。
+- [ ] 重写“概念映射”；记录 SKOS 映射关系的概念边界。
+- [ ] 重写“语言标签”；记录 RFC 5646 用途，不自行规定本库字段形状。
+- [ ] 重写“适用边界”；逐项指出外部词汇不能替项目决定什么。
+- [ ] 重写“未读范围”；只列实际没有核对的内容。
 - [ ] 运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 提交：`git add sources/metadata-standards.md && git commit -m "[L1] 来源:记录元数据标准边界"`。
 
@@ -267,16 +273,24 @@
 - [ ] 运行 `rg -n '可以无损落到 RDF' sources/iso-25964.md`；预期先命中旧过度断言，作为失败基线。
 - [ ] 按“小节去向”逐行核对 `sources/iso-25964.md` 的十六项映射；预期每个现有标题恰有一个去向或删除理由。
 - [ ] 为 ISO 25964 笔记建立 `材料身份`、`阅读范围`、`已核定义`、`关系模型`、`数据材料`、`修订状态`、`适用边界`、`未读范围` 八个小节。
-- [ ] 重写“材料身份”和“阅读范围”；每项材料记录版次、来源、核对日期和可读范围。
-- [ ] 重写“已核定义”和“关系模型”；每条定义记录实际材料和位置，免费样本范围之外不引用编号。
+- [ ] 重写“材料身份”；记录两个部分及公开材料的身份。
+- [ ] 重写“阅读范围”；每项材料记录版次、来源、核对日期和可读范围。
+- [ ] 重写“已核定义”；每条定义记录实际材料和位置，免费样本范围之外不引用编号。
+- [ ] 重写“关系模型”；只保留已读材料支持的关系。
 - [ ] 重写“数据材料”；删除“ISO 模型可无损映射 RDF”等没有材料直接支持的结论，SKOS 对应只保留公开材料能够确认的内容。
 - [ ] 重写“修订状态”；现行版与后继项目分开，不推测后继文本。
-- [ ] 重写“适用边界”和“未读范围”；不得从未读正文推出项目规则。
+- [ ] 重写“适用边界”；不得从来源事实直接推出项目规则。
+- [ ] 重写“未读范围”；列出没有实际读取的条款。
 - [ ] 运行 `rg -n '可以无损落到 RDF|后继版本将' sources/iso-25964.md`；预期无匹配。再运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 提交：`git add sources/iso-25964.md && git commit -m "[L1] 来源:重写 ISO 25964 阅读笔记"`。
 - [ ] 按“小节去向”核对 `sources/z39-19.md` 的三项映射，再建立 `材料身份`、`阅读范围`、`已核条款`、`维护依据`、`修订状态`、`适用边界`、`未读范围` 七个小节。
-- [ ] 重写 Z39.19 的“材料身份”“阅读范围”和“已核条款”；每个条款号必须存在于已读正文。
-- [ ] 重写 Z39.19 的“维护依据”“修订状态”“适用边界”和“未读范围”；修订项目只记录官方项目页可确认的状态。
+- [ ] 重写 Z39.19 的“材料身份”。
+- [ ] 重写 Z39.19 的“阅读范围”。
+- [ ] 重写 Z39.19 的“已核条款”；每个条款号必须存在于已读正文。
+- [ ] 重写 Z39.19 的“维护依据”；只保留正文实际支持的活动。
+- [ ] 重写 Z39.19 的“修订状态”；只记录官方项目页可确认的状态。
+- [ ] 重写 Z39.19 的“适用边界”。
+- [ ] 重写 Z39.19 的“未读范围”。
 - [ ] 运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 提交：`git add sources/z39-19.md && git commit -m "[L1] 来源:重写 Z39.19 阅读笔记"`。
 - [ ] 运行 `rg -n '内容单元不删|一律不删|origin' sources/iso-15489.md`；预期先命中旧项目结论，作为失败基线。
@@ -297,10 +311,114 @@
 - Consumes: 三份新旧来源笔记以及每行术语能够重复定位的官方材料。
 - Produces: 全表逐行审查结果，以及“基本单位”整节可安全准入的术语清单；审查过程只留在执行会话，不改变正式文件。
 
+**Temporary extractor:** 把下列固定脚本保存为 `/tmp/kb-extract-glossary-forms.py`。脚本只读取 Git 已跟踪文件并生成临时审查表，不修改仓库文件；`docs/superpowers/` 是执行资料，不计作项目消费者。
+
+```python
+from pathlib import Path
+import re
+import subprocess
+import sys
+
+def forms(value, language):
+    value = re.sub(r"[`*]", "", value).strip()
+    if value in {"", "—"}:
+        return []
+    pattern = r"\s*/\s*|、" if language == "zh" else r"\s*/\s*|,\s*"
+    return [item.strip() for item in re.split(pattern, value) if item.strip()]
+
+def consumer_locations(form):
+    command = [
+        "git", "grep", "-n", "-F", "-I", "-e", form, "--", ".",
+        ":(exclude)concepts/glossary.md",
+        ":(exclude)docs/superpowers/**",
+    ]
+    result = subprocess.run(command, check=False, capture_output=True, text=True)
+    if result.returncode not in {0, 1}:
+        raise SystemExit(result.stderr or f"git grep failed for {form!r}")
+    locations = []
+    for match in result.stdout.splitlines():
+        path, line_number, _ = match.split(":", 2)
+        if not line_number.isdigit():
+            raise SystemExit(f"unexpected git grep output: {match}")
+        locations.append(f"{path}:{line_number}")
+    return ";".join(sorted(set(locations))) or "无引用"
+
+def extract(source, forms_target, consumers_target):
+    section = ""
+    rows = []
+    for line_number, line in enumerate(source.read_text(encoding="utf-8").splitlines(), 1):
+        if line.startswith("## "):
+            section = line[3:].strip()
+            continue
+        if not line.startswith("|"):
+            continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if cells[0] in {"术语", "缩写", "名称", "---"}:
+            continue
+        if len(cells) == 2:
+            form = re.sub(r"[`*]", "", cells[0]).strip()
+            if form:
+                rows.append((form, "und", section or "出处缩写", str(line_number)))
+            continue
+        if len(cells) != 4:
+            continue
+        for language, value in (("zh", cells[0]), ("en", cells[1])):
+            for form in forms(value, language):
+                rows.append((form, language, section, str(line_number)))
+    rows.sort(key=lambda row: (row[2], row[1], row[0], int(row[3])))
+    forms_text = "形式\t语言\t小节\t原行\n" + "\n".join("\t".join(row) for row in rows) + "\n"
+    forms_target.write_text(forms_text, encoding="utf-8")
+    consumer_rows = [row + (consumer_locations(row[0]),) for row in rows]
+    consumers_text = "形式\t语言\t小节\t原行\t全库引用\n" + "\n".join("\t".join(row) for row in consumer_rows) + "\n"
+    consumers_target.write_text(consumers_text, encoding="utf-8")
+
+def audit_consumers(review, target):
+    rows = []
+    for line_number, line in enumerate(review.read_text(encoding="utf-8").splitlines(), 1):
+        if line_number == 1:
+            continue
+        cells = line.split("\t")
+        if len(cells) != 10:
+            raise SystemExit(f"review row {line_number} does not have 10 columns")
+        rows.append(tuple(cells[:4]) + (consumer_locations(cells[0]),))
+    rows.sort()
+    text = "形式\t语言\t小节\t原行\t全库引用\n" + "\n".join("\t".join(row) for row in rows) + "\n"
+    target.write_text(text, encoding="utf-8")
+
+def refresh_consumers(review, target):
+    lines = review.read_text(encoding="utf-8").splitlines()
+    output = [lines[0]]
+    for line_number, line in enumerate(lines[1:], 2):
+        cells = line.split("\t")
+        if len(cells) != 10:
+            raise SystemExit(f"review row {line_number} does not have 10 columns")
+        cells[7] = consumer_locations(cells[0])
+        output.append("\t".join(cells))
+    target.write_text("\n".join(output) + "\n", encoding="utf-8")
+
+if sys.argv[1] == "extract" and len(sys.argv) == 5:
+    extract(Path(sys.argv[2]), Path(sys.argv[3]), Path(sys.argv[4]))
+elif sys.argv[1] == "audit-consumers" and len(sys.argv) == 4:
+    audit_consumers(Path(sys.argv[2]), Path(sys.argv[3]))
+elif sys.argv[1] == "refresh-consumers" and len(sys.argv) == 4:
+    refresh_consumers(Path(sys.argv[2]), Path(sys.argv[3]))
+else:
+    raise SystemExit(
+        "usage: extract SOURCE FORMS_TSV CONSUMERS_TSV | "
+        "audit-consumers REVIEW_TSV CONSUMERS_TSV | "
+        "refresh-consumers REVIEW_TSV REFRESHED_TSV"
+    )
+```
+
 **Steps:**
 
+- [ ] 保存临时提取器后运行 `python3 /tmp/kb-extract-glossary-forms.py extract concepts/glossary.md /tmp/kb-terminology-glossary-forms-before.tsv /tmp/kb-terminology-glossary-consumers-before.tsv`；预期退出码为 0 且两个输出文件非空。
+- [ ] 运行 `awk '/^## 基本单位$/{skip=1; next} /^## /{skip=0} !skip{print}' concepts/glossary.md > /tmp/kb-terminology-glossary-nonbasic-before.md`；保存术语表中本计划无权修改的全部内容。
 - [ ] 运行 `awk -F'|' 'NF == 6 {s=$5; gsub(/^ +| +$/, "", s); if (s == "" || s == "—" || s == "自定" || s ~ /^本库/) print NR ":" $0}' concepts/glossary.md`，再运行 `rg -n '^\| 自定 \|' concepts/glossary.md`；预期命中当前问题，证明通用术语报告不能代替逐行来源审查。
-- [ ] 在 `/tmp/kb-terminology-glossary-review.tsv` 建立“形式、语言、小节、依据位置、概念对应、全库引用、处理阶段”七列临时清单；一行只放一个语言中的一个形式，表格单元格中的 `/`、`、` 或英文逗号形式分别成行；该文件不加入仓库。
+- [ ] 运行基本单位来源检查 `awk -F'|' '/^## 基本单位$/{inside=1; next} /^## /{inside=0} inside && NF == 6 && $2 !~ /^(术语|---)$/ {source=$5; if (source !~ /\[[^]]+\]\([^)]*#[^)]+\)/) bad=1} END {exit bad ? 1 : 0}' concepts/glossary.md`；预期退出码为 1，证明现状缺少带标题、带锚点的可重复定位来源。
+- [ ] 运行 `awk -F'\t' 'BEGIN{OFS="\t"} NR == 1 {print $1,$2,$3,$4,"依据结论","依据位置","概念对应",$5,"动作","处理阶段"; next} {print $1,$2,$3,$4,"","","",$5,"",""}' /tmp/kb-terminology-glossary-consumers-before.tsv > /tmp/kb-terminology-glossary-review.tsv`；建立十列临时清单并自动带入所有现有形式和库内引用。
+- [ ] 明确临时值域：依据结论只用 `有依据`、`无依据`、`有冲突`；概念对应只用 `同一概念`、`不同概念`、`未确定`、`不适用`；动作只用 `keep`、`add`、`remove`、`defer`；处理阶段只用 `基本单位`、`已核`、`术语迁移`。这些值只服务本次审查，不进入项目设计或正式术语记录。
+- [ ] 有依据时，“依据位置”至少填写一个带标题和锚点的 Markdown 链接；无依据或有冲突时，以“检索记录：”开头，填写核对日期和实际检索过的带标题链接，不把“未找到”伪装成支持依据。
 - [ ] 审查第 9–14 行的出处缩写并写入临时清单；缩写不得掩盖版次、条款或“自定”。
 - [ ] 审查第 20–24 行并写入临时清单；只处理“词表的类型”前五个条目。
 - [ ] 审查第 25–27 行并写入临时清单；完成“词表的类型”。
@@ -336,10 +454,18 @@
 - [ ] 审查第 226–230 行并写入临时清单；标准版次与 `sources/` 一致。
 - [ ] 审查第 231–235 行并写入临时清单；未核材料不得继续支持术语。
 - [ ] 审查第 236–239 行并写入临时清单；完成“引用的标准与文献”。
-- [ ] 运行 `tail -n +2 /tmp/kb-terminology-glossary-review.tsv | while IFS=$'\t' read -r form language section locator correspondence consumers phase; do rg -n -F -- "$form" concepts design || true; done`；把每个形式的全部消费者写回对应临时行。
-- [ ] 任何消费者位于活跃 `design/` 或本计划未列出的概念文时，将该形式的处理阶段记为“术语迁移”，本计划不得修改或删除对应术语表行。
+- [ ] 新增形式另加一行，“原行”写 `新增`，“全库引用”暂留空；全部新增行登记后，由临时提取器的 `refresh-consumers` 模式统一填入精确消费者值。
+- [ ] 非“基本单位”小节的现有形式，有依据且中英概念对应明确时记为 `keep` 与“已核”；其余一律记为 `defer` 与“术语迁移”，本计划不修改对应行。
+- [ ] “基本单位”的现有形式只有在形式保留、依据可定位且中英概念对应明确时才能记为 `keep`；没有消费者的无依据或冲突形式可提请 `remove`，新形式只有取得依据后才能提请 `add`。
+- [ ] “基本单位”的 `remove` 形式只要在术语表外有消费者，就停止本计划并提交扩大消费者迁移范围的 L2 提案；不得留下无依据形式，也不得只改其余行形成半套小节。
 - [ ] 只有新 `concepts/terminology-database.md` 必需、来源与中英对应均已核清、且不会删除活跃消费者写法的条目，处理阶段才能记为“基本单位”。
-- [ ] 如果“基本单位”现有任一行无法取得依据且删除或改名会影响未授权消费者，停止本计划并提交扩大迁移范围的 L2 提案；不得只改其余行形成半套小节。
+- [ ] 运行 `tail -n +2 /tmp/kb-terminology-glossary-forms-before.tsv | sort > /tmp/kb-terminology-glossary-before.keys`，再运行 `awk -F'\t' 'NR > 1 && $9 != "add" {print $1 "\t" $2 "\t" $3 "\t" $4}' /tmp/kb-terminology-glossary-review.tsv | sort > /tmp/kb-terminology-glossary-reviewed.keys` 和 `diff -u /tmp/kb-terminology-glossary-before.keys /tmp/kb-terminology-glossary-reviewed.keys`；预期无差异，证明没有漏审现有形式。
+- [ ] 运行 `test -z "$(tail -n +2 /tmp/kb-terminology-glossary-review.tsv | cut -f1-4 | sort | uniq -d)"`；预期退出码为 0，证明审查行没有重复。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv`，再运行 `python3 /tmp/kb-extract-glossary-forms.py audit-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-consumers-reviewed.tsv`。已跟踪二进制构建物由 `-I` 排除，不作为正文消费者。
+- [ ] 运行 `tail -n +2 /tmp/kb-terminology-glossary-consumers-reviewed.tsv | sort > /tmp/kb-terminology-glossary-consumers-actual.keys`，再运行 `awk -F'\t' 'NR > 1 {print $1 "\t" $2 "\t" $3 "\t" $4 "\t" $8}' /tmp/kb-terminology-glossary-review.tsv | sort > /tmp/kb-terminology-glossary-consumers-recorded.keys` 和 `diff -u /tmp/kb-terminology-glossary-consumers-actual.keys /tmp/kb-terminology-glossary-consumers-recorded.keys`；预期无差异，证明除术语表、Superpowers 文档和二进制构建物外，其余 Git 已跟踪文本消费者没有漏记。
+- [ ] 运行 `awk -F'\t' 'NR > 1 && (NF != 10 || $1 == "" || $2 == "" || $3 == "" || $4 == "" || $5 == "" || $6 == "" || $7 == "" || $8 == "" || $9 == "" || $10 == "") {bad=1} END {exit bad ? 1 : 0}' /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0，证明十列均已填写。
+- [ ] 运行 `awk -F'\t' 'NR > 1 && ($5 !~ /^(有依据|无依据|有冲突)$/ || $7 !~ /^(同一概念|不同概念|未确定|不适用)$/ || $9 !~ /^(keep|add|remove|defer)$/ || $10 !~ /^(基本单位|已核|术语迁移)$/) {bad=1} NR > 1 && $5 == "有依据" && $6 !~ /\[[^]]+\]\([^)]*#[^)]+\)/ {bad=1} NR > 1 && $5 != "有依据" && ($6 !~ /^检索记录：/ || $6 !~ /[0-9]{4}-[0-9]{2}-[0-9]{2}/ || $6 !~ /\[[^]]+\]\([^)]+\)/) {bad=1} NR > 1 && $2 == "und" && $7 != "不适用" {bad=1} NR > 1 && $2 != "und" && $7 == "不适用" {bad=1} NR > 1 && $9 == "add" && ($4 != "新增" || $3 != "基本单位" || $5 != "有依据" || $7 != "同一概念" || $10 != "基本单位") {bad=1} NR > 1 && $9 != "add" && $4 !~ /^[0-9]+$/ {bad=1} NR > 1 && $9 == "remove" && ($3 != "基本单位" || $8 != "无引用" || $10 != "基本单位") {bad=1} NR > 1 && $10 == "术语迁移" && $9 != "defer" {bad=1} NR > 1 && $10 == "已核" && ($9 != "keep" || $5 != "有依据" || $7 !~ /^(同一概念|不适用)$/) {bad=1} NR > 1 && $10 == "基本单位" && $9 == "keep" && ($3 != "基本单位" || $5 != "有依据" || $7 != "同一概念") {bad=1} END {exit bad ? 1 : 0}' /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0。
+- [ ] 运行 `awk -F'\t' 'NR > 1 && $2 != "und" {key=$3 SUBSEP $4; if (key in seen && seen[key] != $7) bad=1; seen[key]=$7} END {exit bad ? 1 : 0}' /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0，证明同一原行拆出的中英形式没有互相矛盾的概念对应结论。
 - [ ] 将全表问题和“基本单位”准入清单交人复核；人只批准“基本单位”清单，不以此批准其余术语迁移。
 
 ### 数据库概念
@@ -358,14 +484,21 @@
 
 - [ ] 运行 `test ! -e concepts/terminology-database.md`；预期退出码为 0。
 - [ ] 新建标题 `# 术语数据库 (Terminology Database)`，并建立 `定义`、`解决的问题`、`记录层次`、`多语对应`、`状态层次`、`维护要求`、`本库用途`、`权威来源` 八个小节。
-- [ ] 重写“定义”和“解决的问题”；区分 terminological data collection、terminological entry、concept、designation 与 term，没有已核中文形式时保留英文。
+- [ ] 重写“定义”；区分 terminological data collection、terminological entry、concept、designation 与 term，没有已核中文形式时保留英文。
+- [ ] 重写“解决的问题”；只说明为何需要按概念、语言和术语分层。
 - [ ] 重写“记录层次”；解释概念层、语言层、术语层为何分开，不给出 YAML 字段或基数。
 - [ ] 重写“多语对应”；说明两种语言形式进入同一概念需要概念一致性证据，字符串相似和机器翻译不构成证据。
-- [ ] 重写“状态层次”和“维护要求”；区分术语管理状态与项目工作流，只引用 TBX-Basic 与 ISO 26162-3 已核范围。
-- [ ] 重写“本库用途”和“权威来源”；明确 YAML、周期和生成规则属于后续本地决定。
+- [ ] 重写“状态层次”；区分术语管理状态与项目工作流，只引用 TBX-Basic 已核范围。
+- [ ] 重写“维护要求”；只引用 ISO 26162-3 已核范围。
+- [ ] 重写“本库用途”；明确 YAML、周期和生成规则属于后续本地决定。
+- [ ] 重写“权威来源”；每项来源链接到实际阅读笔记或官方位置。
 - [ ] 按获准“基本单位”清单整节重写 `concepts/glossary.md` 的“基本单位”；其他小节逐字保持，不处理活跃设计消费者。
-- [ ] 运行 `awk -F'|' '/^## 基本单位$/{inside=1; next} /^## /{inside=0} inside && NF == 6 {s=$5; gsub(/^ +| +$/, "", s); if (s == "" || s == "—" || s == "自定" || s ~ /^本库/) print NR ":" $0}' concepts/glossary.md`；预期无输出。
-- [ ] 逐行人工确认“基本单位”每个来源单元格同时包含带标题链接和可重复定位位置；中文与英文不是同一来源直接对应时，分别列出两项证据。
+- [ ] 运行 `awk '/^## 基本单位$/{skip=1; next} /^## /{skip=0} !skip{print}' concepts/glossary.md > /tmp/kb-terminology-glossary-nonbasic-after.md` 和 `diff -u /tmp/kb-terminology-glossary-nonbasic-before.md /tmp/kb-terminology-glossary-nonbasic-after.md`；预期无差异。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py extract concepts/glossary.md /tmp/kb-terminology-glossary-forms-after.tsv /tmp/kb-terminology-glossary-consumers-after.tsv`；预期退出码为 0。
+- [ ] 运行 `awk -F'\t' 'NR > 1 && $9 ~ /^(keep|defer|add)$/ {print $1 "\t" $2 "\t" $3}' /tmp/kb-terminology-glossary-review.tsv | sort > /tmp/kb-terminology-glossary-expected-after.keys`，再运行 `tail -n +2 /tmp/kb-terminology-glossary-forms-after.tsv | cut -f1-3 | sort > /tmp/kb-terminology-glossary-actual-after.keys` 和 `diff -u /tmp/kb-terminology-glossary-expected-after.keys /tmp/kb-terminology-glossary-actual-after.keys`；预期无差异。
+- [ ] 运行 `diff -u /tmp/kb-terminology-glossary-forms-before.tsv /tmp/kb-terminology-glossary-forms-after.tsv > /tmp/kb-terminology-glossary-forms.diff || true`；逐项确认差异只对应人批准的 `add` 或 `remove` 行。
+- [ ] 运行 `awk -F'|' '/^## 基本单位$/{inside=1; next} /^## /{inside=0} inside && NF == 6 && $2 !~ /^(术语|---)$/ {source=$5; if (source !~ /\[[^]]+\]\([^)]*#[^)]+\)/) bad=1} END {exit bad ? 1 : 0}' concepts/glossary.md`；预期退出码为 0，证明每个保留行至少有一个带标题、带锚点的来源链接。
+- [ ] 逐行人工确认“基本单位”每个来源单元格中的锚点确实落到支持该定义或形式的位置；中文与英文不是同一来源直接对应时，分别列出两项证据。
 - [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-database.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-before.txt /tmp/kb-terminology-foundation-terms-after-database.txt || true`；该命令只生成正文候选报告，不证明术语表正确。逐项复核差异，预期新概念文没有新增未登记候选。
 - [ ] 运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 提交：`git add concepts/terminology-database.md concepts/glossary.md && git commit -m "[L2] 概念:新增术语数据库依据"`。
@@ -388,16 +521,26 @@
 - [ ] 按“小节去向”逐项核对 `concepts/vocabulary-construction.md`；预期全部旧标题和旧例子有确切处置。
 - [ ] 运行 `rg -n '词与词的三种关系|PostgreSQL|词从哪来:|候选词与层级补位' concepts/controlled-vocabulary.md concepts/vocabulary-construction.md`；预期先命中旧标题或旧例，作为失败基线。
 - [ ] 为受控词表文建立 `定义`、`解决的问题`、`结构形态`、`术语关系`、`概念关系`、`标签表示`、`本库用途`、`权威来源` 八个小节。
-- [ ] 重写受控词表的“定义”“解决的问题”和“结构形态”。
-- [ ] 重写“术语关系”“概念关系”和“标签表示”；SKOS 跨体系映射只链接映射文。
-- [ ] 重写“本库用途”和“权威来源”；个体实例不进入主题概念层级。
+- [ ] 重写受控词表的“定义”。
+- [ ] 重写受控词表的“解决的问题”。
+- [ ] 重写受控词表的“结构形态”。
+- [ ] 重写“术语关系”；只处理同一概念的语言形式。
+- [ ] 重写“概念关系”；只处理层级与相关关系。
+- [ ] 重写“标签表示”；SKOS 跨体系映射只链接映射文。
+- [ ] 重写“本库用途”；个体实例不进入主题概念层级。
+- [ ] 重写“权威来源”；只列正文实际使用的来源。
 - [ ] 运行 `rg -n '^#{2,4} .*[:：]|权威性.*借|PostgreSQL' concepts/controlled-vocabulary.md`；预期无匹配。再运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-controlled.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-after-database.txt /tmp/kb-terminology-foundation-terms-after-controlled.txt || true`；逐项复核该文新增候选。
 - [ ] 提交：`git add concepts/controlled-vocabulary.md && git commit -m "[L2] 概念:重写受控词表边界"`。
 - [ ] 为建设文建立 `定义`、`依据类型`、`候选发现`、`建设方法`、`条目内容`、`维护活动`、`本库用途`、`权威来源` 八个小节。
-- [ ] 重写建设文的“定义”“依据类型”和“候选发现”；三种 warrant 不等同支持具体值的 `basis`。
-- [ ] 重写“建设方法”“条目内容”和“维护活动”；不把主题概念、未标引概念和术语候选混成一种状态。
-- [ ] 重写“本库用途”和“权威来源”；项目字段与状态只指向后续设计。
+- [ ] 重写建设文的“定义”。
+- [ ] 重写“依据类型”；三种 warrant 不等同支持具体值的 `basis`。
+- [ ] 重写“候选发现”；不把主题概念、未标引概念和术语候选混成一种状态。
+- [ ] 重写“建设方法”。
+- [ ] 重写“条目内容”。
+- [ ] 重写“维护活动”。
+- [ ] 重写“本库用途”；项目字段与状态只指向后续设计。
+- [ ] 重写“权威来源”。
 - [ ] 运行 `rg -n '^#{2,4} .*[:：]|候选词.*unassigned' concepts/vocabulary-construction.md`；预期无匹配。再运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-construction.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-after-controlled.txt /tmp/kb-terminology-foundation-terms-after-construction.txt || true`；逐项复核该文新增候选。
 - [ ] 提交：`git add concepts/vocabulary-construction.md && git commit -m "[L2] 概念:重写词表建设依据"`。
@@ -420,16 +563,27 @@
 - [ ] 按“小节去向”逐项核对 `concepts/metadata.md`；预期全部旧标题有确切处置。
 - [ ] 运行 `rg -n '权威性.*借|拿不准时.*closeMatch|映射总是有' concepts/vocabulary-mapping.md`；预期先命中旧结论，作为失败基线。
 - [ ] 为映射文建立 `定义`、`解决的问题`、`关系类型`、`映射模型`、`证据要求`、`互操作边界`、`本库用途`、`权威来源` 八个小节。
-- [ ] 重写映射文的“定义”“解决的问题”和“关系类型”；mapping relation 连接概念，不连接字符串。
-- [ ] 重写“映射模型”“证据要求”和“互操作边界”；每种关系比较定义和范围，拿不准不自动选择 `closeMatch`。
-- [ ] 重写“本库用途”和“权威来源”；映射不替本地标签、层级、归属和批准提供依据。
+- [ ] 重写映射文的“定义”；mapping relation 连接概念，不连接字符串。
+- [ ] 重写映射文的“解决的问题”。
+- [ ] 重写“关系类型”；分别说明五种 SKOS 映射关系。
+- [ ] 重写“映射模型”。
+- [ ] 重写“证据要求”；每种关系比较定义和范围，拿不准不自动选择 `closeMatch`。
+- [ ] 重写“互操作边界”。
+- [ ] 重写“本库用途”；映射不替本地标签、层级、归属和批准提供依据。
+- [ ] 重写“权威来源”。
 - [ ] 运行 `rg -n '权威性借过来|拿不准时用.*closeMatch|映射总是有' concepts/vocabulary-mapping.md`；预期无匹配。再运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-mapping.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-after-construction.txt /tmp/kb-terminology-foundation-terms-after-mapping.txt || true`；逐项复核该文新增候选。
 - [ ] 提交：`git add concepts/vocabulary-mapping.md && git commit -m "[L2] 概念:重写词表映射边界"`。
 - [ ] 为元数据文建立 `定义`、`解决的问题`、`核心元素`、`术语体系`、`来源属性`、`派生关系`、`词表关系`、`本库用途`、`权威来源` 九个小节。
-- [ ] 重写元数据文的“定义”“解决的问题”“核心元素”和“术语体系”。
-- [ ] 重写“来源属性”“派生关系”和“词表关系”；分别解释 DCMI `source` 与 PROV-O derivation。
-- [ ] 重写“本库用途”和“权威来源”；本地 `basis` 只作为后续设计问题，不伪装成 DCMI 或 PROV 要求。
+- [ ] 重写元数据文的“定义”。
+- [ ] 重写元数据文的“解决的问题”。
+- [ ] 重写“核心元素”。
+- [ ] 重写“术语体系”。
+- [ ] 重写“来源属性”；解释 DCMI `source`。
+- [ ] 重写“派生关系”；解释 PROV-O derivation。
+- [ ] 重写“词表关系”。
+- [ ] 重写“本库用途”；本地 `basis` 只作为后续设计问题，不伪装成 DCMI 或 PROV 要求。
+- [ ] 重写“权威来源”。
 - [ ] 人工逐节确认字符串、DCMI `source`、PROV-O derivation 和本地 `basis` 没有被写成同一种关系。
 - [ ] 运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。再运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-metadata.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-after-mapping.txt /tmp/kb-terminology-foundation-terms-after-metadata.txt || true`；逐项复核该文新增候选。
 - [ ] 提交：`git add concepts/metadata.md && git commit -m "[L2] 概念:重写元数据来源边界"`。
@@ -456,32 +610,54 @@
 - [ ] 按“小节去向”逐项核对 `concepts/governance.md`；预期具体权限全部移出。
 - [ ] 运行 `rg -n '张三|只借.*层|origin|单人加 AI' concepts/vocabulary-hierarchy.md concepts/classifying-new-subjects.md concepts/body-of-knowledge.md concepts/governance.md`；预期先命中旧例、旧参数或旧混用，作为失败基线。
 - [ ] 为层级文建立 `定义`、`层级类型`、`划分特征`、`数组`、`节点标签`、`多层级`、`适用边界`、`本库用途`、`权威来源` 九个小节。
-- [ ] 重写层级文的“定义”“层级类型”“划分特征”和“数组”；例子只使用概念。
-- [ ] 重写“节点标签”“多层级”和“适用边界”；分别解释多个上位与多个展示分组。
-- [ ] 重写“本库用途”和“权威来源”；不写项目数组字段或数量。
+- [ ] 重写层级文的“定义”。
+- [ ] 重写“层级类型”；例子只使用概念。
+- [ ] 重写“划分特征”。
+- [ ] 重写“数组”。
+- [ ] 重写“节点标签”。
+- [ ] 重写“多层级”；分别解释多个上位与多个展示分组。
+- [ ] 重写“适用边界”。
+- [ ] 重写“本库用途”；不写项目数组字段或数量。
+- [ ] 重写“权威来源”。
 - [ ] 运行 `rg -n '张三' concepts/vocabulary-hierarchy.md`；预期无匹配。再运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-hierarchy.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-after-metadata.txt /tmp/kb-terminology-foundation-terms-after-hierarchy.txt || true`；逐项复核该文新增候选。
 - [ ] 提交：`git add concepts/vocabulary-hierarchy.md && git commit -m "[L2] 概念:重写词表层级边界"`。
 - [ ] 为新主题分类文建立 `定义`、`解决的问题`、`分析综合`、`依据类型`、`概念判定`、`剩余监控`、`适用边界`、`本库用途`、`权威来源` 九个小节。
-- [ ] 重写新主题分类文的“定义”“解决的问题”“分析综合”和“依据类型”。
+- [ ] 重写新主题分类文的“定义”。
+- [ ] 重写“解决的问题”。
+- [ ] 重写“分析综合”。
+- [ ] 重写“依据类型”。
 - [ ] 重写“概念判定”；只解释一般概念判定，不出现项目字段。
-- [ ] 重写“剩余监控”和“适用边界”；一般性区分候选发现、逐项证据与实际派生，不出现项目字段。
-- [ ] 重写“本库用途”和“权威来源”；具体迁移交项目设计。
+- [ ] 重写“剩余监控”。
+- [ ] 重写“适用边界”；一般性区分候选发现、逐项证据与实际派生，不出现项目字段。
+- [ ] 重写“本库用途”；具体迁移交项目设计。
+- [ ] 重写“权威来源”。
 - [ ] 运行 `rg -n 'origin' concepts/classifying-new-subjects.md`；预期无匹配。再运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-classifying.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-after-hierarchy.txt /tmp/kb-terminology-foundation-terms-after-classifying.txt || true`；逐项复核该文新增候选。
 - [ ] 提交：`git add concepts/classifying-new-subjects.md && git commit -m "[L2] 概念:重写新主题分类依据"`。
 - [ ] 为知识体系文建立 `定义`、`解决的问题`、`组成`、`常见实例`、`词表关系`、`使用角色`、`适用边界`、`本库用途`、`权威来源` 九个小节。
-- [ ] 重写知识体系文的“定义”“解决的问题”“组成”和“常见实例”。
+- [ ] 重写知识体系文的“定义”。
+- [ ] 重写“解决的问题”。
+- [ ] 重写“组成”。
+- [ ] 重写“常见实例”。
 - [ ] 重写“词表关系”；不把 BOK、分类表和 taxonomy 当同义词。
-- [ ] 重写“使用角色”和“适用边界”；材料身份与映射、结构、分组、发现用途分开，删除“只借上两层”等参数。
-- [ ] 重写“本库用途”和“权威来源”；项目角色值只留给设计草案。
+- [ ] 重写“使用角色”；材料身份与映射、结构、分组、发现用途分开。
+- [ ] 重写“适用边界”；删除“只借上两层”等项目参数。
+- [ ] 重写“本库用途”；项目角色值只留给设计草案。
+- [ ] 重写“权威来源”。
 - [ ] 运行 `rg -n '只借.*层' concepts/body-of-knowledge.md`；预期无匹配。再运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-bok.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-after-classifying.txt /tmp/kb-terminology-foundation-terms-after-bok.txt || true`；逐项复核该文新增候选。
 - [ ] 提交：`git add concepts/body-of-knowledge.md && git commit -m "[L2] 概念:重写知识体系边界"`。
 - [ ] 为治理文建立 `定义`、`解决的问题`、`治理层次`、`证据边界`、`批准边界`、`维护边界`、`执行角色`、`本库用途`、`权威来源` 九个小节。
-- [ ] 重写治理文的“定义”“解决的问题”和“治理层次”。
-- [ ] 重写“证据边界”“批准边界”和“维护边界”；外部依据、项目批准和复核义务互不替代。
-- [ ] 重写“执行角色”“本库用途”和“权威来源”；具体权限不写进概念文。
+- [ ] 重写治理文的“定义”。
+- [ ] 重写“解决的问题”。
+- [ ] 重写“治理层次”。
+- [ ] 重写“证据边界”；外部依据不等于项目批准。
+- [ ] 重写“批准边界”；项目批准不代替外部依据。
+- [ ] 重写“维护边界”；复核义务不代替前两者。
+- [ ] 重写“执行角色”；具体权限不写进概念文。
+- [ ] 重写“本库用途”。
+- [ ] 重写“权威来源”。
 - [ ] 运行 `rg -n '单人加 AI' concepts/governance.md`；预期无匹配。再运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-governance.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-after-bok.txt /tmp/kb-terminology-foundation-terms-after-governance.txt || true`；逐项复核该文新增候选。
 - [ ] 提交：`git add concepts/governance.md && git commit -m "[L2] 概念:重写治理概念边界"`。
@@ -531,10 +707,17 @@
 - [ ] 运行 `python3 scripts/check-topics.py`；预期与基线同样通过，证明本计划未改词表数据。
 - [ ] 运行 `git diff --check "$(cat /tmp/kb-terminology-foundation-base.sha)"..HEAD`；预期无错误，并覆盖全部已提交改动。
 - [ ] 运行 `git diff --name-only "$(cat /tmp/kb-terminology-foundation-base.sha)"..HEAD`；预期只出现“文件职责”中的 `sources/` 与 `concepts/` 文件。
-- [ ] 阅读最终 `git diff`，确认没有 `design/` 规则、YAML 字段、阈值、Obsidian 或 TBX 实现混入概念层。
+- [ ] 阅读 `git diff "$(cat /tmp/kb-terminology-foundation-base.sha)"..HEAD`，确认没有 `design/` 规则、YAML 字段、阈值、Obsidian 或 TBX 实现混入概念层。
 - [ ] 确认执行记录明确写着“程序分支不可合并”，直到项目草案、数据迁移和现行设计同步完成；不得在本计划后调用分支收尾技能。
 - [ ] 如校验修正了内容，按文件职责提交一笔 `[L1]` 来源或 `[L2]` 概念收口提交；没有修正则不制造空提交。
 - [ ] 使用 `superpowers:requesting-code-review` 审查来源可定位性、术语准入、目录职责和旧文去向；处理反馈后重新运行全部校验。
+- [ ] 逐项处理审查反馈；每次涉及内容的修正按整节或整篇规则提交，反馈全部关闭后再继续。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv`，再运行 `python3 /tmp/kb-extract-glossary-forms.py audit-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-consumers-reviewed.tsv`；把消费者位置刷新到审查后的 `HEAD`。
+- [ ] 重新运行“术语审查”中的现有形式覆盖差异、重复键、消费者差异、十列完整性、值域与动作约束、同原行概念对应六项命令；预期全部通过，且 `remove` 行仍无项目消费者。
+- [ ] 运行 `python3 scripts/check-links.py`、`python3 scripts/check-topics.py` 和 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-post-review.txt`；前两项预期通过，第三项仍只生成候选报告并逐项复核。
+- [ ] 运行 `git diff --check "$(cat /tmp/kb-terminology-foundation-base.sha)"..HEAD`；预期无错误，覆盖审查后的全部提交。
+- [ ] 运行 `git diff --name-only "$(cat /tmp/kb-terminology-foundation-base.sha)"..HEAD`；预期只出现“文件职责”中的 `sources/` 与 `concepts/` 文件。
+- [ ] 运行 `git status --short`；预期无输出，证明最终审查修正已经提交且工作区为空。
 
 ## 完成条件
 
