@@ -311,13 +311,15 @@
 - Consumes: 三份新旧来源笔记以及每行术语能够重复定位的官方材料。
 - Produces: 全表逐行审查结果，以及“基本单位”整节可安全准入的术语清单；审查过程只留在执行会话，不改变正式文件。
 
-**Temporary extractor:** 把下列固定脚本保存为 `/tmp/kb-extract-glossary-forms.py`。脚本只读取 Git 已跟踪文件并生成临时审查表，不修改仓库文件；`docs/superpowers/` 是执行资料，不计作项目消费者。
+**Temporary extractor:** 把下列固定脚本保存为 `/tmp/kb-extract-glossary-forms.py`。脚本读取 Git 已跟踪和未忽略的未跟踪文本文件，以不区分大小写的固定字符串查找消费者；术语表自身、`docs/superpowers/` 和二进制文件不计作项目消费者。脚本只生成临时审查表，不修改仓库文件。
 
 ```python
 from pathlib import Path
 import re
 import subprocess
 import sys
+
+_PROJECT_TEXT_FILES = None
 
 def forms(value, language):
     value = re.sub(r"[`*]", "", value).strip()
@@ -326,24 +328,7 @@ def forms(value, language):
     pattern = r"\s*/\s*|、" if language == "zh" else r"\s*/\s*|,\s*"
     return [item.strip() for item in re.split(pattern, value) if item.strip()]
 
-def consumer_locations(form):
-    command = [
-        "git", "grep", "-n", "-F", "-I", "-e", form, "--", ".",
-        ":(exclude)concepts/glossary.md",
-        ":(exclude)docs/superpowers/**",
-    ]
-    result = subprocess.run(command, check=False, capture_output=True, text=True)
-    if result.returncode not in {0, 1}:
-        raise SystemExit(result.stderr or f"git grep failed for {form!r}")
-    locations = []
-    for match in result.stdout.splitlines():
-        path, line_number, _ = match.split(":", 2)
-        if not line_number.isdigit():
-            raise SystemExit(f"unexpected git grep output: {match}")
-        locations.append(f"{path}:{line_number}")
-    return ";".join(sorted(set(locations))) or "无引用"
-
-def extract(source, forms_target, consumers_target):
+def glossary_rows(source):
     section = ""
     rows = []
     for line_number, line in enumerate(source.read_text(encoding="utf-8").splitlines(), 1):
@@ -366,11 +351,60 @@ def extract(source, forms_target, consumers_target):
             for form in forms(value, language):
                 rows.append((form, language, section, str(line_number)))
     rows.sort(key=lambda row: (row[2], row[1], row[0], int(row[3])))
+    return rows
+
+def project_text_files():
+    global _PROJECT_TEXT_FILES
+    if _PROJECT_TEXT_FILES is not None:
+        return _PROJECT_TEXT_FILES
+    result = subprocess.run(
+        ["git", "ls-files", "-z", "--cached", "--others", "--exclude-standard"],
+        check=True,
+        capture_output=True,
+    )
+    files = []
+    for raw_path in result.stdout.split(b"\0"):
+        if not raw_path:
+            continue
+        name = raw_path.decode("utf-8")
+        if name == "concepts/glossary.md" or name.startswith("docs/superpowers/"):
+            continue
+        path = Path(name)
+        if not path.is_file():
+            continue
+        data = path.read_bytes()
+        if b"\0" in data:
+            continue
+        try:
+            lines = data.decode("utf-8").splitlines()
+        except UnicodeDecodeError:
+            continue
+        files.append((name, lines))
+    _PROJECT_TEXT_FILES = files
+    return files
+
+def consumer_locations(form):
+    needle = form.casefold()
+    locations = []
+    for name, lines in project_text_files():
+        for line_number, line in enumerate(lines, 1):
+            if needle in line.casefold():
+                locations.append(f"{name}:{line_number}")
+    return ";".join(locations) or "无引用"
+
+def write_forms(rows, target):
     forms_text = "形式\t语言\t小节\t原行\n" + "\n".join("\t".join(row) for row in rows) + "\n"
-    forms_target.write_text(forms_text, encoding="utf-8")
+    target.write_text(forms_text, encoding="utf-8")
+
+def extract(source, forms_target, consumers_target):
+    rows = glossary_rows(source)
+    write_forms(rows, forms_target)
     consumer_rows = [row + (consumer_locations(row[0]),) for row in rows]
     consumers_text = "形式\t语言\t小节\t原行\t全库引用\n" + "\n".join("\t".join(row) for row in consumer_rows) + "\n"
     consumers_target.write_text(consumers_text, encoding="utf-8")
+
+def extract_forms(source, target):
+    write_forms(glossary_rows(source), target)
 
 def audit_consumers(review, target):
     rows = []
@@ -396,23 +430,43 @@ def refresh_consumers(review, target):
         output.append("\t".join(cells))
     target.write_text("\n".join(output) + "\n", encoding="utf-8")
 
+def guard_removals(review):
+    violations = []
+    for line_number, line in enumerate(review.read_text(encoding="utf-8").splitlines(), 1):
+        if line_number == 1:
+            continue
+        cells = line.split("\t")
+        if len(cells) != 10:
+            raise SystemExit(f"review row {line_number} does not have 10 columns")
+        if cells[8] == "remove" and cells[7] != "无引用":
+            violations.append(f"{cells[0]}: {cells[7]}")
+    if violations:
+        raise SystemExit("removed forms still have consumers:\n" + "\n".join(violations))
+
 if sys.argv[1] == "extract" and len(sys.argv) == 5:
     extract(Path(sys.argv[2]), Path(sys.argv[3]), Path(sys.argv[4]))
+elif sys.argv[1] == "extract-forms" and len(sys.argv) == 4:
+    extract_forms(Path(sys.argv[2]), Path(sys.argv[3]))
 elif sys.argv[1] == "audit-consumers" and len(sys.argv) == 4:
     audit_consumers(Path(sys.argv[2]), Path(sys.argv[3]))
 elif sys.argv[1] == "refresh-consumers" and len(sys.argv) == 4:
     refresh_consumers(Path(sys.argv[2]), Path(sys.argv[3]))
+elif sys.argv[1] == "guard-removals" and len(sys.argv) == 3:
+    guard_removals(Path(sys.argv[2]))
 else:
     raise SystemExit(
         "usage: extract SOURCE FORMS_TSV CONSUMERS_TSV | "
+        "extract-forms SOURCE FORMS_TSV | "
         "audit-consumers REVIEW_TSV CONSUMERS_TSV | "
-        "refresh-consumers REVIEW_TSV REFRESHED_TSV"
+        "refresh-consumers REVIEW_TSV REFRESHED_TSV | "
+        "guard-removals REVIEW_TSV"
     )
 ```
 
 **Steps:**
 
 - [ ] 保存临时提取器后运行 `python3 /tmp/kb-extract-glossary-forms.py extract concepts/glossary.md /tmp/kb-terminology-glossary-forms-before.tsv /tmp/kb-terminology-glossary-consumers-before.tsv`；预期退出码为 0 且两个输出文件非空。
+- [ ] 运行 `test "$(tail -n +2 /tmp/kb-terminology-glossary-forms-before.tsv | wc -l | tr -d ' ')" = 348` 与 `test "$(tail -n +2 /tmp/kb-terminology-glossary-consumers-before.tsv | wc -l | tr -d ' ')" = 348`；预期均通过，固定本计划起点的完整形式数。
 - [ ] 运行 `awk '/^## 基本单位$/{skip=1; next} /^## /{skip=0} !skip{print}' concepts/glossary.md > /tmp/kb-terminology-glossary-nonbasic-before.md`；保存术语表中本计划无权修改的全部内容。
 - [ ] 运行 `awk -F'|' 'NF == 6 {s=$5; gsub(/^ +| +$/, "", s); if (s == "" || s == "—" || s == "自定" || s ~ /^本库/) print NR ":" $0}' concepts/glossary.md`，再运行 `rg -n '^\| 自定 \|' concepts/glossary.md`；预期命中当前问题，证明通用术语报告不能代替逐行来源审查。
 - [ ] 运行基本单位来源检查 `awk -F'|' '/^## 基本单位$/{inside=1; next} /^## /{inside=0} inside && NF == 6 && $2 !~ /^(术语|---)$/ {source=$5; if (source !~ /\[[^]]+\]\([^)]*#[^)]+\)/) bad=1} END {exit bad ? 1 : 0}' concepts/glossary.md`；预期退出码为 1，证明现状缺少带标题、带锚点的可重复定位来源。
@@ -461,10 +515,10 @@ else:
 - [ ] 只有新 `concepts/terminology-database.md` 必需、来源与中英对应均已核清、且不会删除活跃消费者写法的条目，处理阶段才能记为“基本单位”。
 - [ ] 运行 `tail -n +2 /tmp/kb-terminology-glossary-forms-before.tsv | sort > /tmp/kb-terminology-glossary-before.keys`，再运行 `awk -F'\t' 'NR > 1 && $9 != "add" {print $1 "\t" $2 "\t" $3 "\t" $4}' /tmp/kb-terminology-glossary-review.tsv | sort > /tmp/kb-terminology-glossary-reviewed.keys` 和 `diff -u /tmp/kb-terminology-glossary-before.keys /tmp/kb-terminology-glossary-reviewed.keys`；预期无差异，证明没有漏审现有形式。
 - [ ] 运行 `test -z "$(tail -n +2 /tmp/kb-terminology-glossary-review.tsv | cut -f1-4 | sort | uniq -d)"`；预期退出码为 0，证明审查行没有重复。
-- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv`，再运行 `python3 /tmp/kb-extract-glossary-forms.py audit-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-consumers-reviewed.tsv`。已跟踪二进制构建物由 `-I` 排除，不作为正文消费者。
-- [ ] 运行 `tail -n +2 /tmp/kb-terminology-glossary-consumers-reviewed.tsv | sort > /tmp/kb-terminology-glossary-consumers-actual.keys`，再运行 `awk -F'\t' 'NR > 1 {print $1 "\t" $2 "\t" $3 "\t" $4 "\t" $8}' /tmp/kb-terminology-glossary-review.tsv | sort > /tmp/kb-terminology-glossary-consumers-recorded.keys` 和 `diff -u /tmp/kb-terminology-glossary-consumers-actual.keys /tmp/kb-terminology-glossary-consumers-recorded.keys`；预期无差异，证明除术语表、Superpowers 文档和二进制构建物外，其余 Git 已跟踪文本消费者没有漏记。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv`，再运行 `python3 /tmp/kb-extract-glossary-forms.py audit-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-consumers-reviewed.tsv`；消费者清单必须覆盖已跟踪和未忽略的未跟踪文本，二进制构建物不作为正文消费者。
+- [ ] 运行 `tail -n +2 /tmp/kb-terminology-glossary-consumers-reviewed.tsv | sort > /tmp/kb-terminology-glossary-consumers-actual.keys`，再运行 `awk -F'\t' 'NR > 1 {print $1 "\t" $2 "\t" $3 "\t" $4 "\t" $8}' /tmp/kb-terminology-glossary-review.tsv | sort > /tmp/kb-terminology-glossary-consumers-recorded.keys` 和 `diff -u /tmp/kb-terminology-glossary-consumers-actual.keys /tmp/kb-terminology-glossary-consumers-recorded.keys`；预期无差异，证明除术语表、Superpowers 文档和二进制构建物外，其余 Git 已跟踪及未忽略的未跟踪文本消费者没有漏记。
 - [ ] 运行 `awk -F'\t' 'NR > 1 && (NF != 10 || $1 == "" || $2 == "" || $3 == "" || $4 == "" || $5 == "" || $6 == "" || $7 == "" || $8 == "" || $9 == "" || $10 == "") {bad=1} END {exit bad ? 1 : 0}' /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0，证明十列均已填写。
-- [ ] 运行 `awk -F'\t' 'NR > 1 && ($5 !~ /^(有依据|无依据|有冲突)$/ || $7 !~ /^(同一概念|不同概念|未确定|不适用)$/ || $9 !~ /^(keep|add|remove|defer)$/ || $10 !~ /^(基本单位|已核|术语迁移)$/) {bad=1} NR > 1 && $5 == "有依据" && $6 !~ /\[[^]]+\]\([^)]*#[^)]+\)/ {bad=1} NR > 1 && $5 != "有依据" && ($6 !~ /^检索记录：/ || $6 !~ /[0-9]{4}-[0-9]{2}-[0-9]{2}/ || $6 !~ /\[[^]]+\]\([^)]+\)/) {bad=1} NR > 1 && $2 == "und" && $7 != "不适用" {bad=1} NR > 1 && $2 != "und" && $7 == "不适用" {bad=1} NR > 1 && $9 == "add" && ($4 != "新增" || $3 != "基本单位" || $5 != "有依据" || $7 != "同一概念" || $10 != "基本单位") {bad=1} NR > 1 && $9 != "add" && $4 !~ /^[0-9]+$/ {bad=1} NR > 1 && $9 == "remove" && ($3 != "基本单位" || $8 != "无引用" || $10 != "基本单位") {bad=1} NR > 1 && $10 == "术语迁移" && $9 != "defer" {bad=1} NR > 1 && $10 == "已核" && ($9 != "keep" || $5 != "有依据" || $7 !~ /^(同一概念|不适用)$/) {bad=1} NR > 1 && $10 == "基本单位" && $9 == "keep" && ($3 != "基本单位" || $5 != "有依据" || $7 != "同一概念") {bad=1} END {exit bad ? 1 : 0}' /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0。
+- [ ] 运行 `awk -F'\t' 'NR > 1 && ($5 !~ /^(有依据|无依据|有冲突)$/ || $7 !~ /^(同一概念|不同概念|未确定|不适用)$/ || $9 !~ /^(keep|add|remove|defer)$/ || $10 !~ /^(基本单位|已核|术语迁移)$/) {bad=1} NR > 1 && $5 == "有依据" && $6 !~ /\[[^]]+\]\([^)]*#[^)]+\)/ {bad=1} NR > 1 && $5 != "有依据" && ($6 !~ /^检索记录：/ || $6 !~ /[0-9]{4}-[0-9]{2}-[0-9]{2}/ || $6 !~ /\[[^]]+\]\([^)]+\)/) {bad=1} NR > 1 && $2 == "und" && $7 != "不适用" {bad=1} NR > 1 && $2 != "und" && $7 == "不适用" {bad=1} NR > 1 && $9 == "add" && ($4 != "新增" || $5 != "有依据" || $7 != "同一概念") {bad=1} NR > 1 && $9 != "add" && $4 !~ /^[0-9]+$/ {bad=1} NR > 1 && $9 == "remove" && $8 != "无引用" {bad=1} NR > 1 && $3 == "基本单位" && ($10 != "基本单位" || $9 !~ /^(keep|add|remove)$/) {bad=1} NR > 1 && $3 != "基本单位" && !(($9 == "keep" && $10 == "已核") || ($9 == "defer" && $10 == "术语迁移")) {bad=1} NR > 1 && $10 == "已核" && ($5 != "有依据" || $7 !~ /^(同一概念|不适用)$/) {bad=1} NR > 1 && $10 == "基本单位" && $9 == "keep" && ($5 != "有依据" || $7 != "同一概念") {bad=1} END {exit bad ? 1 : 0}' /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0；“基本单位”不得以 `defer` 绕过整节准入，其他小节不得使用 `add` 或 `remove`。
 - [ ] 运行 `awk -F'\t' 'NR > 1 && $2 != "und" {key=$3 SUBSEP $4; if (key in seen && seen[key] != $7) bad=1; seen[key]=$7} END {exit bad ? 1 : 0}' /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0，证明同一原行拆出的中英形式没有互相矛盾的概念对应结论。
 - [ ] 将全表问题和“基本单位”准入清单交人复核；人只批准“基本单位”清单，不以此批准其余术语迁移。
 
@@ -494,14 +548,16 @@ else:
 - [ ] 重写“权威来源”；每项来源链接到实际阅读笔记或官方位置。
 - [ ] 按获准“基本单位”清单整节重写 `concepts/glossary.md` 的“基本单位”；其他小节逐字保持，不处理活跃设计消费者。
 - [ ] 运行 `awk '/^## 基本单位$/{skip=1; next} /^## /{skip=0} !skip{print}' concepts/glossary.md > /tmp/kb-terminology-glossary-nonbasic-after.md` 和 `diff -u /tmp/kb-terminology-glossary-nonbasic-before.md /tmp/kb-terminology-glossary-nonbasic-after.md`；预期无差异。
-- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py extract concepts/glossary.md /tmp/kb-terminology-glossary-forms-after.tsv /tmp/kb-terminology-glossary-consumers-after.tsv`；预期退出码为 0。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py extract-forms concepts/glossary.md /tmp/kb-terminology-glossary-forms-after.tsv`；预期退出码为 0。
 - [ ] 运行 `awk -F'\t' 'NR > 1 && $9 ~ /^(keep|defer|add)$/ {print $1 "\t" $2 "\t" $3}' /tmp/kb-terminology-glossary-review.tsv | sort > /tmp/kb-terminology-glossary-expected-after.keys`，再运行 `tail -n +2 /tmp/kb-terminology-glossary-forms-after.tsv | cut -f1-3 | sort > /tmp/kb-terminology-glossary-actual-after.keys` 和 `diff -u /tmp/kb-terminology-glossary-expected-after.keys /tmp/kb-terminology-glossary-actual-after.keys`；预期无差异。
 - [ ] 运行 `diff -u /tmp/kb-terminology-glossary-forms-before.tsv /tmp/kb-terminology-glossary-forms-after.tsv > /tmp/kb-terminology-glossary-forms.diff || true`；逐项确认差异只对应人批准的 `add` 或 `remove` 行。
 - [ ] 运行 `awk -F'|' '/^## 基本单位$/{inside=1; next} /^## /{inside=0} inside && NF == 6 && $2 !~ /^(术语|---)$/ {source=$5; if (source !~ /\[[^]]+\]\([^)]*#[^)]+\)/) bad=1} END {exit bad ? 1 : 0}' concepts/glossary.md`；预期退出码为 0，证明每个保留行至少有一个带标题、带锚点的来源链接。
 - [ ] 逐行人工确认“基本单位”每个来源单元格中的锚点确实落到支持该定义或形式的位置；中文与英文不是同一来源直接对应时，分别列出两项证据。
 - [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-database.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-before.txt /tmp/kb-terminology-foundation-terms-after-database.txt || true`；该命令只生成正文候选报告，不证明术语表正确。逐项复核差异，预期新概念文没有新增未登记候选。
 - [ ] 运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
-- [ ] 提交：`git add concepts/terminology-database.md concepts/glossary.md && git commit -m "[L2] 概念:新增术语数据库依据"`。
+- [ ] 运行 `git add concepts/terminology-database.md concepts/glossary.md`；只暂存本任务的两个文件。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv`，再运行 `python3 /tmp/kb-extract-glossary-forms.py guard-removals /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0，证明新建但尚未提交的概念文没有重新引用待移除形式。
+- [ ] 提交：`git commit -m "[L2] 概念:新增术语数据库依据"`。
 
 ### 词表概念
 
@@ -531,7 +587,9 @@ else:
 - [ ] 重写“权威来源”；只列正文实际使用的来源。
 - [ ] 运行 `rg -n '^#{2,4} .*[:：]|权威性.*借|PostgreSQL' concepts/controlled-vocabulary.md`；预期无匹配。再运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-controlled.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-after-database.txt /tmp/kb-terminology-foundation-terms-after-controlled.txt || true`；逐项复核该文新增候选。
-- [ ] 提交：`git add concepts/controlled-vocabulary.md && git commit -m "[L2] 概念:重写受控词表边界"`。
+- [ ] 运行 `git add concepts/controlled-vocabulary.md`。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv && python3 /tmp/kb-extract-glossary-forms.py guard-removals /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0。
+- [ ] 提交：`git commit -m "[L2] 概念:重写受控词表边界"`。
 - [ ] 为建设文建立 `定义`、`依据类型`、`候选发现`、`建设方法`、`条目内容`、`维护活动`、`本库用途`、`权威来源` 八个小节。
 - [ ] 重写建设文的“定义”。
 - [ ] 重写“依据类型”；三种 warrant 不等同支持具体值的 `basis`。
@@ -543,7 +601,9 @@ else:
 - [ ] 重写“权威来源”。
 - [ ] 运行 `rg -n '^#{2,4} .*[:：]|候选词.*unassigned' concepts/vocabulary-construction.md`；预期无匹配。再运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-construction.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-after-controlled.txt /tmp/kb-terminology-foundation-terms-after-construction.txt || true`；逐项复核该文新增候选。
-- [ ] 提交：`git add concepts/vocabulary-construction.md && git commit -m "[L2] 概念:重写词表建设依据"`。
+- [ ] 运行 `git add concepts/vocabulary-construction.md`。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv && python3 /tmp/kb-extract-glossary-forms.py guard-removals /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0。
+- [ ] 提交：`git commit -m "[L2] 概念:重写词表建设依据"`。
 
 ### 映射概念
 
@@ -573,7 +633,9 @@ else:
 - [ ] 重写“权威来源”。
 - [ ] 运行 `rg -n '权威性借过来|拿不准时用.*closeMatch|映射总是有' concepts/vocabulary-mapping.md`；预期无匹配。再运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-mapping.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-after-construction.txt /tmp/kb-terminology-foundation-terms-after-mapping.txt || true`；逐项复核该文新增候选。
-- [ ] 提交：`git add concepts/vocabulary-mapping.md && git commit -m "[L2] 概念:重写词表映射边界"`。
+- [ ] 运行 `git add concepts/vocabulary-mapping.md`。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv && python3 /tmp/kb-extract-glossary-forms.py guard-removals /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0。
+- [ ] 提交：`git commit -m "[L2] 概念:重写词表映射边界"`。
 - [ ] 为元数据文建立 `定义`、`解决的问题`、`核心元素`、`术语体系`、`来源属性`、`派生关系`、`词表关系`、`本库用途`、`权威来源` 九个小节。
 - [ ] 重写元数据文的“定义”。
 - [ ] 重写元数据文的“解决的问题”。
@@ -586,7 +648,9 @@ else:
 - [ ] 重写“权威来源”。
 - [ ] 人工逐节确认字符串、DCMI `source`、PROV-O derivation 和本地 `basis` 没有被写成同一种关系。
 - [ ] 运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。再运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-metadata.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-after-mapping.txt /tmp/kb-terminology-foundation-terms-after-metadata.txt || true`；逐项复核该文新增候选。
-- [ ] 提交：`git add concepts/metadata.md && git commit -m "[L2] 概念:重写元数据来源边界"`。
+- [ ] 运行 `git add concepts/metadata.md`。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv && python3 /tmp/kb-extract-glossary-forms.py guard-removals /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0。
+- [ ] 提交：`git commit -m "[L2] 概念:重写元数据来源边界"`。
 
 ### 组织概念
 
@@ -621,7 +685,9 @@ else:
 - [ ] 重写“权威来源”。
 - [ ] 运行 `rg -n '张三' concepts/vocabulary-hierarchy.md`；预期无匹配。再运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-hierarchy.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-after-metadata.txt /tmp/kb-terminology-foundation-terms-after-hierarchy.txt || true`；逐项复核该文新增候选。
-- [ ] 提交：`git add concepts/vocabulary-hierarchy.md && git commit -m "[L2] 概念:重写词表层级边界"`。
+- [ ] 运行 `git add concepts/vocabulary-hierarchy.md`。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv && python3 /tmp/kb-extract-glossary-forms.py guard-removals /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0。
+- [ ] 提交：`git commit -m "[L2] 概念:重写词表层级边界"`。
 - [ ] 为新主题分类文建立 `定义`、`解决的问题`、`分析综合`、`依据类型`、`概念判定`、`剩余监控`、`适用边界`、`本库用途`、`权威来源` 九个小节。
 - [ ] 重写新主题分类文的“定义”。
 - [ ] 重写“解决的问题”。
@@ -634,7 +700,9 @@ else:
 - [ ] 重写“权威来源”。
 - [ ] 运行 `rg -n 'origin' concepts/classifying-new-subjects.md`；预期无匹配。再运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-classifying.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-after-hierarchy.txt /tmp/kb-terminology-foundation-terms-after-classifying.txt || true`；逐项复核该文新增候选。
-- [ ] 提交：`git add concepts/classifying-new-subjects.md && git commit -m "[L2] 概念:重写新主题分类依据"`。
+- [ ] 运行 `git add concepts/classifying-new-subjects.md`。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv && python3 /tmp/kb-extract-glossary-forms.py guard-removals /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0。
+- [ ] 提交：`git commit -m "[L2] 概念:重写新主题分类依据"`。
 - [ ] 为知识体系文建立 `定义`、`解决的问题`、`组成`、`常见实例`、`词表关系`、`使用角色`、`适用边界`、`本库用途`、`权威来源` 九个小节。
 - [ ] 重写知识体系文的“定义”。
 - [ ] 重写“解决的问题”。
@@ -647,7 +715,9 @@ else:
 - [ ] 重写“权威来源”。
 - [ ] 运行 `rg -n '只借.*层' concepts/body-of-knowledge.md`；预期无匹配。再运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-bok.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-after-classifying.txt /tmp/kb-terminology-foundation-terms-after-bok.txt || true`；逐项复核该文新增候选。
-- [ ] 提交：`git add concepts/body-of-knowledge.md && git commit -m "[L2] 概念:重写知识体系边界"`。
+- [ ] 运行 `git add concepts/body-of-knowledge.md`。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv && python3 /tmp/kb-extract-glossary-forms.py guard-removals /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0。
+- [ ] 提交：`git commit -m "[L2] 概念:重写知识体系边界"`。
 - [ ] 为治理文建立 `定义`、`解决的问题`、`治理层次`、`证据边界`、`批准边界`、`维护边界`、`执行角色`、`本库用途`、`权威来源` 九个小节。
 - [ ] 重写治理文的“定义”。
 - [ ] 重写“解决的问题”。
@@ -660,7 +730,9 @@ else:
 - [ ] 重写“权威来源”。
 - [ ] 运行 `rg -n '单人加 AI' concepts/governance.md`；预期无匹配。再运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
 - [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-after-governance.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-after-bok.txt /tmp/kb-terminology-foundation-terms-after-governance.txt || true`；逐项复核该文新增候选。
-- [ ] 提交：`git add concepts/governance.md && git commit -m "[L2] 概念:重写治理概念边界"`。
+- [ ] 运行 `git add concepts/governance.md`。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv && python3 /tmp/kb-extract-glossary-forms.py guard-removals /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0。
+- [ ] 提交：`git commit -m "[L2] 概念:重写治理概念边界"`。
 
 ### 概念索引
 
@@ -681,7 +753,9 @@ else:
 - [ ] 重写“阅读顺序”；顺序按真实依赖排列，表中只回答每篇文章的概念问题。
 - [ ] 检查索引中的每个链接与文章标题一致。
 - [ ] 运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。
-- [ ] 提交：`git add concepts/README.md && git commit -m "[L2] 概念:重写概念文索引"`。
+- [ ] 运行 `git add concepts/README.md`。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv && python3 /tmp/kb-extract-glossary-forms.py guard-removals /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0。
+- [ ] 提交：`git commit -m "[L2] 概念:重写概念文索引"`。
 
 ### 最终校验
 
@@ -697,27 +771,33 @@ else:
 
 **Steps:**
 
+- [ ] 确认执行记录明确写着“程序分支不可合并”，直到项目草案、数据迁移和现行设计同步完成；不得在本计划后调用分支收尾技能。
+- [ ] 使用 `superpowers:requesting-code-review` 审查来源可定位性、术语准入、概念示例、目录职责和旧文去向。
+- [ ] 逐项处理审查反馈；每次涉及内容的修正按整节或整篇规则完成并提交，反馈全部关闭后再继续。无修改时不创建空提交。
+- [ ] 从下一项开始执行最终验收；任何一项失败时，重写受影响的完整小节或文章，运行对应任务校验并提交，再重新请求审查，随后从本项重新执行全部最终验收。
 - [ ] 按“旧文去向”逐行核销；每项必须标为“保留重写”“移入指定文档”或“删除并有理由”，不得留下无去向事项。
 - [ ] 运行 `rg -n '^#{2,6} .*[:：]|^#{2,6} [0-9一二三四五六七八九十]' sources/terminology-standards.md sources/metadata-standards.md sources/iso-25964.md sources/z39-19.md sources/iso-15489.md concepts/glossary.md concepts/terminology-database.md concepts/controlled-vocabulary.md concepts/vocabulary-construction.md concepts/vocabulary-mapping.md concepts/vocabulary-hierarchy.md concepts/metadata.md concepts/classifying-new-subjects.md concepts/body-of-knowledge.md concepts/governance.md concepts/README.md`；预期无匹配。
 - [ ] 人工核对每个小节标题是 2–8 字名词短语，且不含字段、文件名、数量或实现参数。
-- [ ] 运行 `rg -n '^# 术语数据库 \(Terminology Database\)$' concepts/terminology-database.md`；预期恰好一处。
-- [ ] 运行 `rg -n '^# 术语标准$' sources/terminology-standards.md` 与 `rg -n '^# 元数据标准$' sources/metadata-standards.md`；预期各恰好一处。
+- [ ] 运行 `for entry in 'sources/terminology-standards.md|# 术语标准' 'sources/metadata-standards.md|# 元数据标准' 'sources/iso-25964.md|# ISO 25964 叙词表标准' 'sources/z39-19.md|# ANSI/NISO Z39.19 受控词表指南' 'sources/iso-15489.md|# ISO 15489 文件管理标准' 'concepts/glossary.md|# 术语表 (Glossary)' 'concepts/terminology-database.md|# 术语数据库 (Terminology Database)' 'concepts/README.md|# 概念文索引'; do file=${entry%%|*}; title=${entry#*|}; test "$(head -n 1 "$file")" = "$title" || exit 1; done`；预期退出码为 0。
+- [ ] 运行 `for file in concepts/controlled-vocabulary.md concepts/vocabulary-construction.md concepts/vocabulary-mapping.md concepts/vocabulary-hierarchy.md concepts/metadata.md concepts/classifying-new-subjects.md concepts/body-of-knowledge.md concepts/governance.md; do head -n 1 "$file" | rg -q '^# [^()]+ \([^()]+\)$' || exit 1; done`；预期退出码为 0。再逐篇核对中英文标题的术语形式与全表审查依据，不为保持旧标题而保留无依据译名。
+- [ ] 按 `concepts/CONVENTIONS.md` 人工逐节核对：每个抽象概念至少一个本库场景例子，每条事实断言能在“权威来源”定位，链接文字是来源标题。
+- [ ] 运行 `awk '/^## 基本单位$/{skip=1; next} /^## /{skip=0} !skip{print}' concepts/glossary.md > /tmp/kb-terminology-glossary-nonbasic-final.md` 和 `diff -u /tmp/kb-terminology-glossary-nonbasic-before.md /tmp/kb-terminology-glossary-nonbasic-final.md`；预期无差异。
+- [ ] 运行 `awk -F'|' '/^## 基本单位$/{inside=1; next} /^## /{inside=0} inside && NF == 6 && $2 !~ /^(术语|---)$/ {source=$5; if (source !~ /\[[^]]+\]\([^)]*#[^)]+\)/) bad=1} END {exit bad ? 1 : 0}' concepts/glossary.md`；预期退出码为 0，并人工确认每个锚点支持该形式、定义和中英对应。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv`，再运行 `python3 /tmp/kb-extract-glossary-forms.py audit-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-consumers-reviewed.tsv`；消费者位置对应审查后的 `HEAD`。
+- [ ] 运行 `tail -n +2 /tmp/kb-terminology-glossary-forms-before.tsv | sort > /tmp/kb-terminology-glossary-before.keys`，再运行 `awk -F'\t' 'NR > 1 && $9 != "add" {print $1 "\t" $2 "\t" $3 "\t" $4}' /tmp/kb-terminology-glossary-review.tsv | sort > /tmp/kb-terminology-glossary-reviewed.keys` 和 `diff -u /tmp/kb-terminology-glossary-before.keys /tmp/kb-terminology-glossary-reviewed.keys`；预期无差异。
+- [ ] 运行 `test -z "$(tail -n +2 /tmp/kb-terminology-glossary-review.tsv | cut -f1-4 | sort | uniq -d)"`；预期退出码为 0。
+- [ ] 运行 `tail -n +2 /tmp/kb-terminology-glossary-consumers-reviewed.tsv | sort > /tmp/kb-terminology-glossary-consumers-actual.keys`，再运行 `awk -F'\t' 'NR > 1 {print $1 "\t" $2 "\t" $3 "\t" $4 "\t" $8}' /tmp/kb-terminology-glossary-review.tsv | sort > /tmp/kb-terminology-glossary-consumers-recorded.keys` 和 `diff -u /tmp/kb-terminology-glossary-consumers-actual.keys /tmp/kb-terminology-glossary-consumers-recorded.keys`；预期无差异。
+- [ ] 运行 `awk -F'\t' 'NR > 1 && (NF != 10 || $1 == "" || $2 == "" || $3 == "" || $4 == "" || $5 == "" || $6 == "" || $7 == "" || $8 == "" || $9 == "" || $10 == "") {bad=1} END {exit bad ? 1 : 0}' /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0。
+- [ ] 运行 `awk -F'\t' 'NR > 1 && ($5 !~ /^(有依据|无依据|有冲突)$/ || $7 !~ /^(同一概念|不同概念|未确定|不适用)$/ || $9 !~ /^(keep|add|remove|defer)$/ || $10 !~ /^(基本单位|已核|术语迁移)$/) {bad=1} NR > 1 && $5 == "有依据" && $6 !~ /\[[^]]+\]\([^)]*#[^)]+\)/ {bad=1} NR > 1 && $5 != "有依据" && ($6 !~ /^检索记录：/ || $6 !~ /[0-9]{4}-[0-9]{2}-[0-9]{2}/ || $6 !~ /\[[^]]+\]\([^)]+\)/) {bad=1} NR > 1 && $2 == "und" && $7 != "不适用" {bad=1} NR > 1 && $2 != "und" && $7 == "不适用" {bad=1} NR > 1 && $9 == "add" && ($4 != "新增" || $5 != "有依据" || $7 != "同一概念") {bad=1} NR > 1 && $9 != "add" && $4 !~ /^[0-9]+$/ {bad=1} NR > 1 && $9 == "remove" && $8 != "无引用" {bad=1} NR > 1 && $3 == "基本单位" && ($10 != "基本单位" || $9 !~ /^(keep|add|remove)$/) {bad=1} NR > 1 && $3 != "基本单位" && !(($9 == "keep" && $10 == "已核") || ($9 == "defer" && $10 == "术语迁移")) {bad=1} NR > 1 && $10 == "已核" && ($5 != "有依据" || $7 !~ /^(同一概念|不适用)$/) {bad=1} NR > 1 && $10 == "基本单位" && $9 == "keep" && ($5 != "有依据" || $7 != "同一概念") {bad=1} END {exit bad ? 1 : 0}' /tmp/kb-terminology-glossary-review.tsv`；预期退出码为 0。
+- [ ] 运行 `awk -F'\t' 'NR > 1 && $2 != "und" {key=$3 SUBSEP $4; if (key in seen && seen[key] != $7) bad=1; seen[key]=$7} END {exit bad ? 1 : 0}' /tmp/kb-terminology-glossary-review.tsv` 与 `python3 /tmp/kb-extract-glossary-forms.py guard-removals /tmp/kb-terminology-glossary-review.tsv`；预期均通过。
+- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py extract-forms concepts/glossary.md /tmp/kb-terminology-glossary-forms-final.tsv`，再运行 `awk -F'\t' 'NR > 1 && $9 ~ /^(keep|defer|add)$/ {print $1 "\t" $2 "\t" $3}' /tmp/kb-terminology-glossary-review.tsv | sort > /tmp/kb-terminology-glossary-expected-final.keys`、`tail -n +2 /tmp/kb-terminology-glossary-forms-final.tsv | cut -f1-3 | sort > /tmp/kb-terminology-glossary-actual-final.keys` 和 `diff -u /tmp/kb-terminology-glossary-expected-final.keys /tmp/kb-terminology-glossary-actual-final.keys`；预期无差异。
 - [ ] 运行 `python3 scripts/check-links.py`；预期输出“全部链接有效”。
-- [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-final.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-before.txt /tmp/kb-terminology-foundation-terms-final.txt || true`；逐项人工复核差异，预期本计划改动的概念文没有新增无依据术语，全表审查中延期的项目用语仍明确留给后续迁移。
+- [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-final.txt` 和 `diff -u /tmp/kb-terminology-foundation-terms-before.txt /tmp/kb-terminology-foundation-terms-final.txt || true`；逐项人工复核差异，预期本计划改动的概念文没有新增无依据术语，延期用语没有被写成已经批准。
 - [ ] 运行 `python3 scripts/check-topics.py`；预期与基线同样通过，证明本计划未改词表数据。
-- [ ] 运行 `git diff --check "$(cat /tmp/kb-terminology-foundation-base.sha)"..HEAD`；预期无错误，并覆盖全部已提交改动。
-- [ ] 运行 `git diff --name-only "$(cat /tmp/kb-terminology-foundation-base.sha)"..HEAD`；预期只出现“文件职责”中的 `sources/` 与 `concepts/` 文件。
+- [ ] 运行 `git diff --check "$(cat /tmp/kb-terminology-foundation-base.sha)"..HEAD`；预期无错误，并覆盖审查修正后的全部提交。
+- [ ] 运行 `test "$(git diff --name-only "$(cat /tmp/kb-terminology-foundation-base.sha)"..HEAD | sort)" = "$(printf '%s\n' concepts/README.md concepts/body-of-knowledge.md concepts/classifying-new-subjects.md concepts/controlled-vocabulary.md concepts/glossary.md concepts/governance.md concepts/metadata.md concepts/terminology-database.md concepts/vocabulary-construction.md concepts/vocabulary-hierarchy.md concepts/vocabulary-mapping.md sources/iso-15489.md sources/iso-25964.md sources/metadata-standards.md sources/terminology-standards.md sources/z39-19.md | sort)"`；预期退出码为 0，证明交付文件无遗漏且没有越界文件。
 - [ ] 阅读 `git diff "$(cat /tmp/kb-terminology-foundation-base.sha)"..HEAD`，确认没有 `design/` 规则、YAML 字段、阈值、Obsidian 或 TBX 实现混入概念层。
-- [ ] 确认执行记录明确写着“程序分支不可合并”，直到项目草案、数据迁移和现行设计同步完成；不得在本计划后调用分支收尾技能。
-- [ ] 如校验修正了内容，按文件职责提交一笔 `[L1]` 来源或 `[L2]` 概念收口提交；没有修正则不制造空提交。
-- [ ] 使用 `superpowers:requesting-code-review` 审查来源可定位性、术语准入、目录职责和旧文去向；处理反馈后重新运行全部校验。
-- [ ] 逐项处理审查反馈；每次涉及内容的修正按整节或整篇规则提交，反馈全部关闭后再继续。
-- [ ] 运行 `python3 /tmp/kb-extract-glossary-forms.py refresh-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-review-refreshed.tsv && mv /tmp/kb-terminology-glossary-review-refreshed.tsv /tmp/kb-terminology-glossary-review.tsv`，再运行 `python3 /tmp/kb-extract-glossary-forms.py audit-consumers /tmp/kb-terminology-glossary-review.tsv /tmp/kb-terminology-glossary-consumers-reviewed.tsv`；把消费者位置刷新到审查后的 `HEAD`。
-- [ ] 重新运行“术语审查”中的现有形式覆盖差异、重复键、消费者差异、十列完整性、值域与动作约束、同原行概念对应六项命令；预期全部通过，且 `remove` 行仍无项目消费者。
-- [ ] 运行 `python3 scripts/check-links.py`、`python3 scripts/check-topics.py` 和 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-foundation-terms-post-review.txt`；前两项预期通过，第三项仍只生成候选报告并逐项复核。
-- [ ] 运行 `git diff --check "$(cat /tmp/kb-terminology-foundation-base.sha)"..HEAD`；预期无错误，覆盖审查后的全部提交。
-- [ ] 运行 `git diff --name-only "$(cat /tmp/kb-terminology-foundation-base.sha)"..HEAD`；预期只出现“文件职责”中的 `sources/` 与 `concepts/` 文件。
-- [ ] 运行 `git status --short`；预期无输出，证明最终审查修正已经提交且工作区为空。
+- [ ] 运行 `git status --short`；预期无输出，证明审查修正和最终验收修正都已提交。
 
 ## 完成条件
 
