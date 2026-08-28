@@ -29,6 +29,8 @@
 - 现有 `tier` 不在本计划中删除或改档。草案可提议它的过渡语义；任何具体来源改档仍需 L3。
 - 不创建 `vocab/terms.yaml`，不改任何现有 YAML，不写模式、生成器、探测器、维护脚本或迁移代码。
 - 不实现 TBX、Obsidian 或应用导出；只记录它们依赖的稳定语义。
+- `scripts/check-terms.py` 只产生候选报告，不扫描术语表、标题或代码，也不以候选非零退出；本计划只用前后报告差异发现草案正文的新候选。
+- 本计划仍是程序分支的中间阶段，不是可合并状态。两份草案获准、正式数据迁移和现行设计同步前不得调用分支收尾流程。
 - 标题、标点、间距、整篇重写和零自定要求与仓库现行规则相同。
 - 提交说明使用 `[L2]`；不得用一次草案批准覆盖后续 L3 生效或数据迁移决定。
 
@@ -169,8 +171,9 @@ match:
 **Steps:**
 
 - [ ] 运行 `git status --short --branch`；预期位于独立功能分支且工作区为空。
+- [ ] 运行 `git rev-parse HEAD > /tmp/kb-terminology-project-design-base.sha`，再运行 `test -s /tmp/kb-terminology-project-design-base.sha`；预期退出码为 0。后续所有范围校验使用这个固定基线。
 - [ ] 运行 `test -f sources/terminology-standards.md && test -f sources/metadata-standards.md && test -f concepts/terminology-database.md`；预期退出码为 0。
-- [ ] 运行 `python3 scripts/check-links.py`、`python3 scripts/check-topics.py` 和 `python3 scripts/check-terms.py --all`；保存基线输出。
+- [ ] 运行 `python3 scripts/check-links.py` 与 `python3 scripts/check-topics.py`；保存基线输出。再运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-project-design-terms-before.txt`，只保存候选报告。
 - [ ] 运行 `test ! -e design/drafts/source-governance.md && test ! -e design/drafts/terminology-governance.md`；预期退出码为 0，证明不是覆盖未知草案。
 - [ ] 向人提交精确 L2 提案：新建两份未生效项目草案，并整篇重写 `design/README.md`；附上本计划“草案结构”和“接口边界”。
 - [ ] 明确说明本次批准只允许写草案，不批准字段生效、数据迁移、来源改档或草案激活。
@@ -190,10 +193,11 @@ match:
 **Steps:**
 
 - [ ] 新建文章标题 `# 来源治理`，下一行写“草案，未生效。”，再按“草案结构”建立全部小节。
-- [ ] 在“草案边界”列出外部概念、本地提案、现行规则和不在本草案决定的事项；明确 Superpowers 规格和评审记录不属于项目正文。
+- [ ] 在“草案边界”列出外部概念、本地提案、现行规则和不在本草案决定的事项；正文不提审查工具、对话或代理过程。
 - [ ] 在“对象边界”区分来源实体、来源用途、逐值依据、实际派生、概念映射、项目决定和复核义务七种对象。
 - [ ] 在“引用结构”完整定义本计划“接口边界”的三个对象、字段类型、必填条件和引用目标；不允许裸网址、自由文本来源名、`self` 或无位置标准号作为现行断言的完整依据。
 - [ ] 在“实体记录”提出精确记录形状：`id`、`label`、`kind`、`version`、`url`、`status`、`basis`、`review`、`watch`、`replaced_by`、`history`。
+- [ ] `kind` 在本草案中只复用现行 `standard` 与 `publication`；增加或改变实体类别留给独立的实体类别提案。
 - [ ] 将来源实体 `status` 提议为 `current`、`superseded`、`withdrawn`；网页暂时不可访问只进入探测报告，不自动改变生命周期状态。
 - [ ] 将 `review` 提议为 `checked`、`due`、`reason`；将 `watch` 提议为若干 `url` 与 `signal`，其中 `signal` 只允许 `version`、`status`、`content`。
 - [ ] 在“用途登记”提出精确记录形状：`id`、`entity`、`roles`、`history`；每个角色分别保存 `status`、`basis`、`decision` 和 `review`。
@@ -273,7 +277,7 @@ match:
 - [ ] 确认所有状态都有进入、退出、替代、复核和历史条件，没有只能进入不能处置的状态。
 - [ ] 确认 `origin` 在两份草案中只有迁移说明，没有新记录形状或新增用法。
 - [ ] 如发现跨节冲突，整节重写受影响小节并重新核对旧内容去向，不追加“例外说明”补丁。
-- [ ] 运行 `python3 scripts/check-links.py`、`python3 scripts/check-terms.py --all` 和 `git diff --check`；预期均通过，未登记候选不因草案增加。
+- [ ] 运行 `python3 scripts/check-links.py` 与 `git diff --check`；预期均通过。再运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-project-design-terms-interface.txt` 和 `diff -u /tmp/kb-terminology-project-design-terms-before.txt /tmp/kb-terminology-project-design-terms-interface.txt || true`；逐项处理草案正文新增候选，不把脚本退出码当作验收。
 - [ ] 如有修改，提交：`git add design/drafts/source-governance.md design/drafts/terminology-governance.md && git commit -m "[L2] 治理草案:统一共享接口"`；无修改则不提交。
 
 ### 设计索引
@@ -289,7 +293,7 @@ match:
 
 **Steps:**
 
-- [ ] 为旧索引“文章的关系”“词表一览”“阅读顺序”分别登记去向，再整篇重写索引。
+- [ ] 核对旧索引的确切去向：“文章的关系”重写为现行链与未生效草案分支，“词表一览”保留现行编辑源，“阅读顺序”增加草案入口；再建立完整标题骨架。
 - [ ] 在文章关系中保留现行设计链；另建清楚标注“未生效”的草案分支，分别链接来源治理和术语治理。
 - [ ] 在词表一览中保持现有正式编辑源不变；不得把尚未创建的 `vocab/terms.yaml` 写成现行文件。
 - [ ] 在阅读顺序末尾加入“项目草案”入口，并说明阅读草案不等于规则生效。
@@ -316,14 +320,16 @@ match:
 - [ ] 按“旧文去向”逐项确认两份草案已经为后续现行文档重写指定唯一目的地，没有把旧规则静默丢弃。
 - [ ] 运行 `rg -n '^#{2,6} .*[:：]|^#{2,6} [0-9一二三四五六七八九十]' design/drafts/source-governance.md design/drafts/terminology-governance.md design/README.md`；预期无标题违规。
 - [ ] 人工核对全部小节标题为 2–8 字名词短语。
+- [ ] 运行 `rg -n '^# 来源治理$' design/drafts/source-governance.md`、`rg -n '^# 术语治理$' design/drafts/terminology-governance.md` 和 `rg -n '^# 设计文档索引$' design/README.md`；预期各恰好一处。
 - [ ] 运行 `rg -n '草案，未生效' design/drafts/source-governance.md design/drafts/terminology-governance.md`；预期恰好两处，每篇一处。
-- [ ] 运行 `rg -n 'Superpowers|评审对话|代理记录' design/drafts/source-governance.md design/drafts/terminology-governance.md`；除“草案边界”中排除 Superpowers 文档的一句外，不得出现审查过程。
+- [ ] 运行 `rg -n 'Superpowers|评审对话|代理记录' design/drafts/source-governance.md design/drafts/terminology-governance.md`；预期无匹配。
 - [ ] 运行 `python3 scripts/check-links.py`；预期“全部链接有效”。
-- [ ] 运行 `python3 scripts/check-terms.py --all`；与基线比较，预期没有因两份草案新增无依据术语。
+- [ ] 运行 `python3 scripts/check-terms.py --all > /tmp/kb-terminology-project-design-terms-final.txt`，再运行 `diff -u /tmp/kb-terminology-project-design-terms-before.txt /tmp/kb-terminology-project-design-terms-final.txt || true`；预期差异中没有两份草案正文新增的无依据术语，且该结论经逐项人工复核。
 - [ ] 运行 `python3 scripts/check-topics.py`；预期与基线同样通过，证明没有修改正式数据。
-- [ ] 运行 `git diff --check`；预期无错误。
-- [ ] 以“基线核对”记录的提交 SHA 为左端运行 `git diff --name-only`；预期本计划只改变三份“文件职责”所列文件。
+- [ ] 运行 `git diff --check "$(cat /tmp/kb-terminology-project-design-base.sha)"..HEAD`；预期无错误，并覆盖全部已提交改动。
+- [ ] 运行 `git diff --name-only "$(cat /tmp/kb-terminology-project-design-base.sha)"..HEAD`；预期本计划只改变三份“文件职责”所列文件。
 - [ ] 阅读最终 diff，确认现行 `design/*.md`、`vocab/`、`scripts/`、`concepts/` 和 `sources/` 未被本计划修改。
+- [ ] 确认执行记录明确写着“程序分支不可合并”，不得在两份草案尚未获准或正式迁移尚未完成时调用分支收尾技能。
 - [ ] 使用 `superpowers:requesting-code-review` 分别审查来源草案和术语草案，再做一次跨文档接口审查；反馈涉及一节以上时整节或整篇重写。
 - [ ] 重新运行全部校验；有收口修改时提交 `[L2] 治理草案:完成设计复核`，无修改时不创建空提交。
 
@@ -336,6 +342,7 @@ match:
 - 译名阶梯、无译名行为、逐项依据、委托和确定性生成边界都已写成精确项目提案。
 - 两份草案都列出决策权限、校验规则、生效条件和确切的未决定行为。
 - 设计索引明确标出草案未生效，正式数据和现行设计保持不变。
+- 当前程序分支明确不可合并；两份草案只是后续实现的规则提案。
 
 ## 后续入口
 
