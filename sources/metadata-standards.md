@@ -7,9 +7,9 @@
 | 材料 | 版本状态 | 正文已读 | 未读 |
 |---|---|---|---|
 | [DCMI Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) | 标识版本日期为 2020-01-20；DCMI Recommendation | 文档元数据；第 1 节对术语属性的说明；第 2 节 `dcterms:source` 条目 | 其余术语条目、版本历史、链接的 RDF schema 和 `More details` 页面 |
-| [PROV-O: The PROV Ontology](https://www.w3.org/TR/prov-o/) | W3C Recommendation，2013-04-30；页面说明英文版是唯一规范性版本 | 文档状态；`prov:wasDerivedFrom`、`prov:hadPrimarySource`、`prov:wasRevisionOf`、`prov:invalidatedAtTime` 和 `prov:wasInvalidatedBy` 的属性条目及其列出的关系 | 其余类、属性、示例和附录；PROV 系列其他文档；勘误页 |
+| [PROV-O: The PROV Ontology](https://www.w3.org/TR/prov-o/) | W3C Recommendation，2013-04-30；页面说明英文版是唯一规范性版本 | 文档状态；`prov:wasDerivedFrom`、`prov:hadPrimarySource`、`prov:wasRevisionOf`、`prov:invalidatedAtTime` 和 `prov:wasInvalidatedBy` 的属性条目，以及 `prov:PrimarySource` 类条目与这些条目列出的关系 | 其余类、属性、示例和附录；PROV 系列其他文档；勘误页 |
 | [SKOS Simple Knowledge Organization System Reference](https://www.w3.org/TR/skos-reference/) | W3C Recommendation，2009-08-18 | 文档状态与摘要；第 10.1 至 10.4 节；第 10.6.1、10.6.3、10.6.7 和 10.6.8 节中与映射属性边界有关的内容 | 第 10 节其余说明和非目标示例；其他各章、SKOS Primer、SKOS-XL 与勘误页 |
-| [BCP 47](https://www.rfc-editor.org/info/bcp47/) | RFC Editor 当前页面列出 RFC 4647 与 RFC 5646，两者状态均为 Best Current Practice | BCP 信息页；[RFC 5646: Tags for Identifying Languages](https://www.rfc-editor.org/rfc/rfc5646.html) 的标题、摘要、第 1 节、第 2 节、第 2.1 节、第 2.1.1 节及第 2.2 节中与 subtag 类型和顺序有关的段落；[RFC 4647: Matching of Language Tags](https://www.rfc-editor.org/rfc/rfc4647.html) 的标题、摘要、第 1 节、第 2 节中 `language-range` 的语法边界，以及第 3 节和第 3.1 节的 matching 概览 | 两份 RFC 的其余正文、附录和勘误记录；IANA Language Subtag Registry 的实际记录 |
+| [BCP 47](https://www.rfc-editor.org/info/bcp47/) | RFC Editor 当前页面列出 RFC 4647 与 RFC 5646，两者状态均为 Best Current Practice | BCP 信息页；[RFC 5646: Tags for Identifying Languages](https://www.rfc-editor.org/rfc/rfc5646.html) 的标题、摘要、第 1 节、第 2 节、第 2.1 节、第 2.1.1 节、第 2.2 节中与 subtag 类型和顺序有关的段落，以及第 2.2.9 节 `Classes of Conformance`；[RFC 4647: Matching of Language Tags](https://www.rfc-editor.org/rfc/rfc4647.html) 的标题、摘要、第 1 节、第 2 节中 `language-range` 的语法边界，以及第 3 节和第 3.1 节的 matching 概览 | 两份 RFC 的其余正文、附录和勘误记录；IANA Language Subtag Registry 的实际记录 |
 
 ## 元数据来源
 
@@ -27,12 +27,13 @@
 |---|---|---|
 | `prov:wasDerivedFrom` | derivation 包括一个 Entity 到另一个 Entity 的 transformation、产生新 Entity 的 update，或基于已有 Entity 构造新 Entity | Domain 和 Range 都是 `prov:Entity`；是 `prov:wasInfluencedBy` 的 subproperty；更具体的 subproperty 包括 `prov:hadPrimarySource`、`prov:wasQuotedFrom` 和 `prov:wasRevisionOf` |
 | `prov:wasRevisionOf` | resulting Entity 是 original Entity 的 revised version，并含有 original 的 substantial content；revision 是 derivation 的特例 | Domain 和 Range 都是 `prov:Entity`；是 `prov:wasDerivedFrom` 的 subproperty |
-| `prov:hadPrimarySource` | 对某一 topic，相关 Entity 由在研究发生时对该 topic 有 direct experience and knowledge 的 Agent 产生，且不借助 hindsight；规范同时说明判定可能依赖解释，并应遵守应用领域接受的惯例 | 从 secondary `prov:Entity` 指向 earlier primary `prov:Entity`；是 `prov:wasDerivedFrom` 的 subproperty |
+| `prov:hadPrimarySource` | 属性条目把 primary source 说明为由在研究发生时对某一 topic 有 direct experience and knowledge 的 Agent 产生，且不借助 hindsight；它同时说明 primary source 的判定可能依赖解释，并应遵守应用领域接受的惯例 | Domain 和 Range 都是 `prov:Entity`；是 `prov:wasDerivedFrom` 的 subproperty |
+| `prov:PrimarySource` | 类条目说明，其实例为 `prov:hadPrimarySource` 二元关系增加描述；该关系从 secondary `prov:Entity` 指向 earlier, primary `prov:Entity` | 是 `prov:Derivation` 的 subclass；qualifies `prov:hadPrimarySource` |
 | `prov:wasInvalidatedBy` | invalidation 是 Activity 使既有 Entity 开始 destruction、cessation 或 expiry；此后该 Entity 不再可用，任何 generation 或 usage 都先于 invalidation | Domain 是 `prov:Entity`，Range 是 `prov:Activity`；是 `prov:wasInfluencedBy` 的 subproperty |
 
 `prov:invalidatedAtTime` 记录 Entity 被 invalidated 的时间；它与 `prov:wasInvalidatedBy` 一样采用上述 invalidation 边界。PROV-O 没有把 `prov:wasInvalidatedBy` 列为 `prov:wasDerivedFrom` 的 subproperty，也不能由“页面打不开”“来源有新版”或本地状态值直接推出 invalidation。
 
-日常的“来自”没有说明是否发生了 transformation、产生新 Entity 的 update 或基于已有 Entity 的 construction；日常的“更新”也没有说明 resulting Entity 是否保留 original 的 substantial content。只有实际关系满足规范边界时，才能用相应 PROV-O 属性描述。
+日常的“来自”没有说明是否发生了 transformation、产生新 Entity 的 update 或基于已有 Entity 的 construction；日常的“更新”也没有说明 resulting Entity 是否保留 original 的 substantial content；日常所称“首要来源”也没有自动满足 `prov:hadPrimarySource` 属性与 `prov:PrimarySource` 类条目分别给出的边界。只有实际关系满足规范边界时，才能用相应 PROV-O 术语描述。
 
 ## 概念映射
 
@@ -57,7 +58,14 @@
 
 第 2.1 节的 ABNF 把 `Language-Tag` 分为普通 `langtag`、`privateuse` 和 `grandfathered` 三种。普通 `langtag` 以 `language` 开始；`language` 内可带 `extlang`，其后依次可有 `script`、`region`、一个或多个 `variant`、一个或多个 `extension`，最后可有 `privateuse`。subtag 以连字符 `-` 分隔，只使用 ASCII 字母或数字；单个 subtag 最长 8 个字符，tag 中不允许空白。tag 与 subtag 的比较不区分大小写，大小写惯例本身不携带含义。
 
-RFC 5646 还区分 well-formed 与 valid：符合第 2.1 节 ABNF 只构成 well-formed；valid 还要求 grandfathered tag 在固定清单中，或其中的 primary language、extended language、script、region 和 variant subtag 出现在特定日期的 IANA Language Subtag Registry，并满足重复项等条件。这个区别没有规定本库应允许哪些 tag，也没有规定保存 tag 的字段形状。
+第 2.2.9 节 `Classes of Conformance` 区分 well-formed 与 valid。tag 符合第 2.1 节 ABNF 时是 well-formed；valid 则须同时满足以下条件。
+
+- tag 是 well-formed。
+- 整个 tag 位于 grandfathered tags 清单中，或者它的 primary language、extended language、script、region 和 variant subtags 都出现在所用特定日期的 IANA Language Subtag Registry 中。
+- 没有重复的 variant subtags。
+- 没有重复的 singleton（extension）subtags。
+
+validity 取决于验证所用 Registry 的日期。对于 `valid for a given extension`，除满足上述 valid 条件外，截至该 extension 的特定 version、revision 和 date，extension 部分使用的每个 subtag 还须依该 extension 为 valid。这些边界没有规定本库应允许哪些 tag，也没有规定保存 tag 的字段形状。
 
 [BCP 47](https://www.rfc-editor.org/info/bcp47/) 同时包含 [RFC 4647: Matching of Language Tags](https://www.rfc-editor.org/rfc/rfc4647.html)。RFC 4647 中的 `language-range` 用于表达语言偏好并同 language tag 比较，不是 information object 上的 language tag。basic `language-range` 使用与 RFC 3066 language tag 相同的语法，或整体为通配符 `*`；extended `language-range` 可以在 subtag 位置使用 `*`。basic `language-range` 也不要求本身是 well-formed 或经 IANA Registry 验证的 language tag。matching 中，filtering 返回零个或多个 language tag，lookup 返回一个结果；Basic Filtering、Extended Filtering 和 Lookup 是不同机制。RFC 5646 的 tag 构造与 RFC 4647 的 range 和 matching 回答不同问题，两份 RFC 不提供把它们视为同一对象或同一判断的依据。
 
@@ -79,8 +87,8 @@ RFC 5646 还区分 well-formed 与 valid：符合第 2.1 节 ABNF 只构成 well
 ## 未读范围
 
 - DCMI 页面除文档元数据、第 1 节术语属性说明和 `dcterms:source` 条目外未核对；版本历史、RDF schema 与 `More details` 页面未读。
-- PROV-O 除文档状态和本笔记列出的目标属性条目外未通读；PROV-DM、PROV-CONSTRAINTS、PROV-DC 等 PROV 系列文档及 PROV-O 勘误页未读。
+- PROV-O 除文档状态、本笔记列出的五个目标属性条目和 `prov:PrimarySource` 类条目外未通读；其他类、属性、示例与附录，以及 PROV-DM、PROV-CONSTRAINTS、PROV-DC 等 PROV 系列文档和 PROV-O 勘误页未读。
 - SKOS Reference 除文档状态、摘要和本笔记列出的第 10 节范围外未通读；SKOS Primer、SKOS-XL、其他章节和勘误页未读。
-- RFC 5646 只读到本笔记记录的用途、ABNF、格式、subtag 顺序和 well-formed/valid 边界；注册流程、维护程序、完整使用指南、canonicalization、安全章节、附录和勘误记录未读。
+- RFC 5646 除标题、摘要、第 1 节、第 2 节、第 2.1 节、第 2.1.1 节、第 2.2 节中与 subtag 类型和顺序有关的段落，以及第 2.2.9 节 `Classes of Conformance` 外未通读；注册与维护程序、完整使用指南、canonicalization、安全章节、附录和勘误记录未读。
 - RFC 4647 只读到 `language-range` 语法边界与 matching 机制概览；各 matching 算法的完整步骤、默认值、协议考虑、安全章节、参考文献和勘误记录未读。
 - IANA Language Subtag Registry 的实际记录未核对；本笔记不据 RFC 示例声明任何具体 language tag 或 subtag 当前有效。
