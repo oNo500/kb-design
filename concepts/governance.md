@@ -42,7 +42,7 @@ ISO 15489-1 把两层分得很清楚：第 6 章“政策与职责”——政�
 ## 在知识库中的用法
 
 - 治理层和维护层各自成章，见 [design/governance.md](../design/governance.md)
-- 政策集中一处列出，CLAUDE.md 是它的摘要
+- 政策集中一处列出，`AGENTS.md` 是它的摘要
 - 规则变更走决定记录（[第一原理与设计理由](first-principles.md)）
 - 维护的阈值由治理层定复核周期
 

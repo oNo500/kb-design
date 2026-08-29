@@ -37,7 +37,7 @@
 | `sources/` | 对标准和文献的阅读笔记与抓取的清单 | |
 | `vocab/` | 词表数据；`build/` 是生成输入 | [vocab/CHANGELOG.md](vocab/CHANGELOG.md) |
 | `scripts/` | 校验与转换脚本 | |
-| `CLAUDE.md` | 全库写作与术语规则的摘要 | [design/writing.md](design/writing.md) 为全文 |
+| `AGENTS.md` | 全库写作与术语规则的摘要 | [design/writing.md](design/writing.md) 为全文 |
 
 ## 现状
 

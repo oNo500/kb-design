@@ -20,7 +20,7 @@
 | 新主题的分类 | [新主题的分类](../concepts/classifying-new-subjects.md) | Ranganathan 好客准则（1957）；Hulme（1911）；Hjørland & Albrechtsen（1995）；Bowker & Star（1999、2007） | 实体表的 kind / form / subjects；本地概念 candidate + origin；[maintenance.md](maintenance.md) 剩余监控 |
 | 元数据 | [元数据](../concepts/metadata.md) | Dublin Core：ISO 15836-1:2017、ISO 15836-2:2019；DCMI Metadata Terms 2020 | [content-model.md](content-model.md) |
 | 第一原理与设计理由 | [第一原理与设计理由](../concepts/first-principles.md) | Aristotle；Kunz & Rittel IBIS（1970）；Nygard ADR（2011） | 本文；[decisions/](decisions/) 不删旧决定 |
-| 写作规范 | [写作规范](../concepts/writing-conventions.md) | 原则：ISO 24495-1:2023；中文书面语：GB/T 15834、W3C clreq；技术写作：Google、Microsoft style guide；文档分类：Diátaxis | [writing.md](writing.md)；CLAUDE.md 为其摘要；目录划分 `concepts/` 解释、`design/` 参考；[content-model.md](content-model.md) 文档类型词表取 Diátaxis 四类 |
+| 写作规范 | [写作规范](../concepts/writing-conventions.md) | 原则：ISO 24495-1:2023；中文书面语：GB/T 15834、W3C clreq；技术写作：Google、Microsoft style guide；文档分类：Diátaxis | [writing.md](writing.md)；`AGENTS.md` 为其摘要；目录划分 `concepts/` 解释、`design/` 参考；[content-model.md](content-model.md) 文档类型词表取 Diátaxis 四类 |
 | 治理 | [治理](../concepts/governance.md) | ISO 37000:2021；DAMA-DMBOK 数据治理；ISO 15489-1 §6 | [governance.md](governance.md) 政策、决策权、变更控制、审计 |
 | 笔记的类型 | [笔记的类型](../concepts/note-types.md) | Diátaxis；DITA 1.3；IPTC genre；Ahrens 2017；Nonaka 1991；Bloom / Krathwohl 2002；SOLO 1982 | [content-model.md](content-model.md) `type` 的重定（待） |
 | 来源分级与复核 | 无概念文；依据见[词表的建设与维护](../concepts/vocabulary-construction.md)的组织依据 | Z39.19 §5.3.5.2；复核周期为本库估值 | [entities.md](entities.md) `tier`；[maintenance.md](maintenance.md) 阈值表 |

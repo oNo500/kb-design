@@ -7,7 +7,7 @@
 ```
 方法登记 principles.md          本库采用的每个方法:来源、概念文、导出的规则在哪
 │
-├─ 写作规则 writing.md          全库写作规则,按 ISO 24495-1 四原则组织;CLAUDE.md 是其摘要
+├─ 写作规则 writing.md          全库写作规则,按 ISO 24495-1 四原则组织;AGENTS.md 是其摘要
 │
 ├─ 主题词表 topics.md           一条概念记录长什么样、生命周期、建设流程、校验
 │   ├─ 层级结构 hierarchy.md    树怎么分层、复制规则、各概念下的来源、结构预览
@@ -26,7 +26,8 @@
 │   ├─ tree-by-discipline.md     顶层为什么按学科不按分面
 │   ├─ borrow-and-analyze.md     原样复制为底、本地分析在上
 │   ├─ form-independence.md      设计与应用分离
-│   └─ decision-rights-defaults.md  决策权的首批边界；首次越权事件
+│   ├─ decision-rights-defaults.md  决策权的首批边界；首次越权事件
+│   └─ project-instructions-entry.md 项目约定的文件入口
 │
 └─ drafts/                       未生效,各自写明触发条件
     ├─ division-characteristics.md   零自定的唯一例外:划分特征的治理
@@ -63,7 +64,6 @@
 | 7 | [写作规则](writing.md) | 写任何文件前要遵守什么 |
 | 8 | [内容模型](content-model.md) | 一条内容单元有什么、id 怎么取 |
 | 9 | [词表版本](versioning.md) | 什么时候发版、记什么 |
-| — | [decisions/](decisions/) | 两份决定记录 |
+| — | [decisions/](decisions/) | 已采纳决定及其后果 |
 | — | [drafts/](drafts/) | 按需 |
-
 
