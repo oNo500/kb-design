@@ -21,7 +21,6 @@
 |---|---|---|---|
 | 归堆理由 | 概念本身是什么类 | 按某个划分特征 | 谁用、用在哪 |
 | 一个概念属于几个 | 一个 | 每个划分特征一个 | 任意多 |
-| 稳定性 | 领域不变就不变 | 随分析深入增加 | 随组织、项目变 |
 | 改变树吗 | 决定有几棵树 | 决定树里怎么分叉 | 否，只是视图 |
 | ISO 数据模型 | — | `ThesaurusArray` + `NodeLabel` | `ConceptGroup` |
 | [SKOS](../sources/iso-25964.md) 对应 | — | `iso-thes:ThesaurusArray`(`skos:Collection` 子类） | `iso-thes:ConceptGroup`(`skos:Collection` 子类）；微词表加 `iso-thes:microThesaurusOf` |

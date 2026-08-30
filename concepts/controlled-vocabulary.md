@@ -2,115 +2,120 @@
 
 ## 定义
 
-受控词表是一套**预先定义、受管理**的标准化术语集合，用于描述和标引信息资源。核心目的是让同一概念始终用同一个词表达，消除自然语言的歧义，从而提高检索的查全率和查准率。
+受控词表是一份预先规定并持续管理的名称、标目或代码列表，每一项表示一个概念。ISO 25964-1:2011 §2.12 明确把列表中的每一项与概念相连；ANSI/NISO Z39.19-2005 (R2010) 则强调列表须明确列举、消除歧义和冗余，并由指定机构维护。
 
-ANSI/NISO Z39.19 的正式定义（意译）：受控词表是一个经过明确枚举的术语列表，每个术语必须有非歧义、不冗余的定义；词表由权威机构（registration authority）维护。
+受控词表控制的是概念如何被表示和关联，不是把自然语言中的每个字符串都变成独立节点。例如，`PostgreSQL` 与 `postgres` 可以表示同一个概念；概念仍只有一个，两个字符串在记录中承担不同的检索作用。
 
 ## 解决的问题
 
-| 问题 | 例子 | 受控词表的处理 |
+受控词表把概念判断与表示形式的处理分开，从而处理以下问题。
+
+| 问题 | 例子 | 处理方式 |
 |---|---|---|
-| 同义词 | 汽车 / 轿车 / car / automobile | 选一个**首选词 (preferred term)**，其余作为**非首选词 / 入口词**指向它 |
-| 多义词 | Apple（水果）vs Apple（公司） | 加限定词：`Apple (fruit)` / `Apple (company)` |
-| 拼写变体、缩写 | USA / U.S.A. / United States | 统一为一个首选形式 |
+| 同一概念有多种表示 | `PostgreSQL`、`postgres` | 选择一个首选标签，其余形式作为替代标签或入口 |
+| 同一字符串可能表示不同概念 | `Apple` 可指水果，也可指公司 | 分别建立概念，并用限定说明帮助消歧 |
+| 拼写、缩写或语言不同 | `USA`、`U.S.A.`、`United States` | 将已核实的形式连接到同一概念 |
 
-## 词表的五种结构
+表示形式只有在概念对应和形式依据均已核实后才能进入正式记录。机器识别出的字符串只提供线索，不自动成为项目采用的名称。
 
-“形式”指的是受控词表可以长成什么样的结构。同一个“受控”的理念，按投入多少结构，有几种不同的形态：从最简单的一张平铺列表，到带层级和关系网络的叙词表。往下一行，表达能力变强，维护成本也跟着涨。
+## 结构类型
 
-Z39.19 正式定义了前四种；本体不算受控词表本身，但是它的自然延伸，所以一起列出。
+Z39.19 区分列表、同义词环、分类法和叙词表四种受控词表结构。本体不是该标准所列的受控词表类型，但可作为结构能力的对照。结构越丰富，可表达的关系越多，维护成本也越高。
 
-| 形式 | 结构 | 能表达什么 | 知识库里的例子 |
+| 结构 | 组织方式 | 可表达的内容 | 知识库示例 |
 |---|---|---|---|
-| **术语表 / 代码表** (list) | 一张平铺的词列表 | 只有“允许的值是这些” | `status` 字段只能取 `draft` / `review` / `published` |
-| **同义词环** (synonym ring) | 一组互相等价的词，没有谁是“正式的” | “这几个词算一回事” | 搜 `k8s` 也命中 `Kubernetes` |
-| **分类法** (taxonomy) | 树：每个词有一个父节点 | 上下位关系 | `技术 > 后端 > 数据库 > PostgreSQL` |
-| **叙词表** (thesaurus) | 网：首选词 + 等价词 + 上下位 + 相关词 | 下面“三类关系”全有 | `PostgreSQL`：别名 `pg`，上位 `关系型数据库`，相关 `pgvector` |
-| **本体** (ontology) | 图：关系类型自定义，可推理 | 任意关系，如“依赖于”“由谁维护” | `服务A → 依赖 → PostgreSQL → 维护者 → 张三` |
+| 列表 | 平铺列出允许值 | 成员资格 | `status` 只允许 `draft`、`review`、`published` |
+| 同义词环 | 多种表示被同等用于检索 | 表示形式等价 | 搜索 `k8s` 时也检索 `Kubernetes` |
+| 分类法 | 用层级关系组织概念 | 上下位关系 | `技术 > 后端 > 数据库 > PostgreSQL` |
+| 叙词表 | 结合首选表示、替代表示、层级关系和相关关系 | 表示形式控制与概念关系 | `PostgreSQL` 有替代标签 `postgres`，上位概念是 `关系型数据库` |
+| 本体 | 用可定义的关系类型连接实体并支持形式语义 | 超出叙词表关系的知识表示 | 服务依赖数据库，数据库由某组织维护 |
 
-对个人知识库，通常的实际落点是：**元数据字段用代码表，标签体系用分类法或轻量叙词表**，本体一般用不上。
+本知识库的元数据枚举适合使用列表，主题结构适合使用分类法或轻量叙词表。是否增加关系类型取决于检索用途，不由字符串数量决定。
 
-## 词与词的三种关系
+## 关系类型
 
-叙词表里，词和词之间只允许三种关系。每种关系有一对标准缩写（出自 ISO 25964 / Z39.19），词表条目里就用这些缩写标注。
+叙词表须区分表示同一概念的形式之间的等价关系，以及概念之间的层级关系和相关关系。ISO 25964-1:2011 §2.18 把等价关系连接到表示同一概念的两个 `term`；§2.23 和 §2.2 分别把层级关系和相关关系连接到概念。
 
-### 等价关系 USE / UF
+### 等价关系
 
-- `USE`：从别名指向正式名。读作“用 ×× 代替”
-- `UF` (use for)：从正式名反向列出它的所有别名。读作“代替了 ××”
+`USE` 从非首选表示指向首选表示，`UF` 从首选表示反向列出可作为入口的其他表示。它们连接同一概念记录内的表示形式，不连接两个概念。
 
+```text
+postgres    USE  PostgreSQL
+PostgreSQL  UF   postgres
 ```
-pg          USE  PostgreSQL        ← 你写 pg,系统告诉你应该用 PostgreSQL
-PostgreSQL  UF   pg, postgres      ← PostgreSQL 这个正式名收编了 pg 和 postgres
-```
 
-作用：消灭同义词。一个概念只留一个首选词，其他写法都是入口，指过去。
+旧表示因改名而不再首选时，可按检索、替代和历史追踪的需要继续保留。保留旧表示不等于保留一个独立概念。
 
-### 层级关系 BT / NT
+### 层级关系
 
-- `BT` (broader term)：上位词，范围更大的那个
-- `NT` (narrower term)：下位词，范围更小的那个
+`BT` 和 `NT` 是层级关系的标准指示符，关系端点是概念。Z39.19 将 `BT` 的标签展开为 `broader term`，将 `NT` 的标签展开为 `narrower term`；这些完整英文形式是标准中的来源事实，不构成本库对形式的另行准入。
 
-```
+```text
 PostgreSQL   BT  关系型数据库
 关系型数据库  NT  PostgreSQL, MySQL, SQLite
 ```
 
-作用：支撑分类和检索扩展。搜“关系型数据库”时可以自动把所有 NT 一起搜出来。
+层级关系支持按上位概念浏览，也支持沿下位概念扩展检索。
 
-### 相关关系 RT
+### 相关关系
 
-- `RT` (related term)：双向，A RT B 则 B RT A
+`RT` 表示两个概念之间没有层级关系，但存在强语义联系。Z39.19 将该标签展开为 `related term`，并把关系规定为对称关系；该完整英文形式同样只作为标准标签的来源事实保留。
 
-```
+```text
 PostgreSQL  RT  pgvector
 ```
 
-作用：提示“看这个的人可能也要看那个”。它是兜底关系：凡是有关联但塞不进前两类的，都放这里。
+相关关系不是无法分类时的任意兜底。只有概念间的语义联系经核实后，才能建立该关系。
 
-### SKOS 对应属性
+### SKOS 属性
 
-W3C SKOS 是用 RDF 表达这套关系的标准，属性名一一对应：
+SKOS 把概念与词法标签分开，也把概念体系内部的语义关系与跨概念体系的映射分开。
 
-| 关系 | ISO / Z39.19 | SKOS |
+| 作用 | ISO 25964／Z39.19 | SKOS |
 |---|---|---|
-| 等价 | USE / UF | `skos:prefLabel`（首选词）/ `skos:altLabel`（别名） |
-| 层级 | BT / NT | `skos:broader` / `skos:narrower` |
-| 相关 | RT | `skos:related` |
+| 首选与替代表示 | `USE`／`UF` | `skos:prefLabel`／`skos:altLabel` |
+| 概念层级 | `BT`／`NT` | `skos:broader`／`skos:narrower` |
+| 概念相关 | `RT` | `skos:related` |
 
-## 在知识库中的用法
+标签属性附着于概念；层级和相关属性连接概念。两类属性不能因为界面上都显示文字而合并成同一种关系。
 
-- **标签体系**：标签从词表中选，新词需审核入表，而不是随意打 tag
-- **元数据枚举值**：文档类型、状态、领域等字段的取值范围
-- **实体规范化**：人名、产品名、系统名的唯一标准写法，便于跨文档关联
-- **检索扩展**：搜索时把入口词映射到首选词，或沿层级向下扩展
+## 知识库用法
 
-**治理是关键**：谁能新增词、怎么审核、废弃词如何处理（deprecation 与映射）。词表的价值取决于维护流程，而非初始设计。
+本知识库按以下边界使用受控词表。
+
+1. 机器或人工先识别带上下文的字符串，再与已登记的首选、替代和隐藏标签比较；未解析字符串等待人工判断。
+2. 只有完成概念判断和依据核验后，才建立或更新 `candidate` 概念记录。`candidate` 是概念记录状态，不是字符串的独立生命周期。
+3. 内容的主题范围继续由现有 `subject` 字段表达；允许值是主题词表中存在且状态不是 `deprecated` 的概念 ID，可取一个或多个。
+4. 搜索先把已登记标签解析到概念 ID，再沿等价表示或概念关系扩展。未解析字符串不直接进入主题树。
+5. 人名、产品名和系统名由[命名实体词表](../design/entities.md)管理；实体记录与主题概念的关系另行维护。
+6. `deprecated` 概念记录继续保留；旧表示只在既有检索、替代关系或历史追踪需要时随记录保留。只有满足既定条件的 `candidate` 概念记录可以取得删除资格，实际删除仍服从治理权限。
+
+这些用法的正式字段、状态和维护动作分别见[主题词表](../design/topics.md)、[内容模型](../design/content-model.md)和[维护](../design/maintenance.md)。
 
 ## 权威来源
 
+以下标准、教材和实例分别支持定义、结构、关系模型与实际用途。
+
 ### 标准
 
-- [ISO 25964-1:2011 — Thesauri and interoperability with other vocabularies, Part 1: Thesauri for information retrieval](https://www.iso.org/standard/53657.html)
-  取代 ISO 2788 和 ISO 5964;2022 年复审确认。
-  ⚠️ 正在修订中：[ISO/FDIS 25964-1](https://www.iso.org/standard/86713.html)（标题改为 "...for information retrieval, management and use"）预计 2026 年出版，数据模型扩展到知识图谱、AI 等场景。
-- [ISO 25964-2:2013 — Part 2: Interoperability with other vocabularies](https://www.iso.org/standard/53658.html)
-- [NISO: ISO 25964 数据模型、XML schema 与 SKOS 映射](https://www.niso.org/schemas/iso25964)
-- [ANSI/NISO Z39.19-2005 (R2010) — Guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies](https://www.niso.org/publications/ansiniso-z3919-2005-r2010)
-  美国标准，可免费下载 PDF。list / synonym ring / taxonomy / thesaurus 四层分类出自此。
-- [GB/T 13190.1-2015 信息与文献 叙词表及与其他词表的互操作 第1部分：用于信息检索的叙词表](https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D7A385D3A7E05397BE0A0AB82A)（等同采用 ISO 25964-1）
-- [GB/T 13190.2-2018 第2部分：与其他词表的互操作](https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D82DD2D3A7E05397BE0A0AB82A)
-- [W3C SKOS Simple Knowledge Organization System Reference](https://www.w3.org/TR/skos-reference/)(2009 Recommendation)
+- [ISO 25964-1:2011 — Thesauri and interoperability with other vocabularies, Part 1: Thesauri for information retrieval](https://www.iso.org/standard/53657.html)。2022 年复审确认；[ISO/FDIS 25964-1](https://www.iso.org/standard/86713.html) 修订项目仍在进行，正文未取得，不预测发布日期或内容
+- [ISO 25964-2:2013 — Part 2: Interoperability with other vocabularies](https://www.iso.org/standard/53658.html)。2023 年复审确认；[ISO/AWI 25964-2](https://www.iso.org/standard/92117.html) 修订项目正文未取得。材料身份和阅读边界见 [ISO 25964 阅读笔记](../sources/iso-25964.md)
+- [NISO 的 ISO 25964 数据模型、XML Schema 与 SKOS 对应材料](https://www.niso.org/schemas/iso25964)
+- [ANSI/NISO Z39.19-2005 (R2010) — Guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies](https://www.niso.org/publications/ansiniso-z3919-2005-r2010)。列表、同义词环、分类法和叙词表四种结构出自该标准
+- [GB/T 13190.1-2015 信息与文献 叙词表及与其他词表的互操作 第 1 部分：用于信息检索的叙词表](https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D7A385D3A7E05397BE0A0AB82A)，等同采用 ISO 25964-1
+- [GB/T 13190.2-2018 第 2 部分：与其他词表的互操作](https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D82DD2D3A7E05397BE0A0AB82A)
+- [W3C SKOS Simple Knowledge Organization System Reference](https://www.w3.org/TR/skos-reference/)，2009 Recommendation
 
 ### 教材
 
-- Harpring, Patricia. [*Introduction to Controlled Vocabularies: Terminology for Art, Architecture, and Other Cultural Works*](https://www.getty.edu/research/publications/electronic_publications/intro_controlled_vocab/). Getty Research Institute. 在线免费版，2023 修订。
-- Lancaster, F.W. *Vocabulary Control for Information Retrieval*. 2nd ed. Information Resources Press, 1986.（奠基性著作，无官方在线版）
-- Aitchison, J., Gilchrist, A., Bawden, D. *Thesaurus Construction and Use: A Practical Manual*. 4th ed. Europa Publications, 2000.
+- Harpring, Patricia. [*Introduction to Controlled Vocabularies: Terminology for Art, Architecture, and Other Cultural Works*](https://www.getty.edu/research/publications/electronic_publications/intro_controlled_vocab/). Getty Research Institute. 在线版，2023 修订
+- Lancaster, F. W. *Vocabulary Control for Information Retrieval*. 2nd ed. Information Resources Press, 1986
+- Aitchison, J., Gilchrist, A., Bawden, D. *Thesaurus Construction and Use: A Practical Manual*. 4th ed. Europa Publications, 2000
 
 ### 词表实例
 
-- [MeSH (Medical Subject Headings)](https://www.nlm.nih.gov/mesh/) —— 美国国家医学图书馆
+- [MeSH (Medical Subject Headings)](https://www.nlm.nih.gov/mesh/)，美国国家医学图书馆
 - [LCSH (Library of Congress Subject Headings)](https://id.loc.gov/authorities/subjects.html)
 - [AAT (Getty Art & Architecture Thesaurus)](https://www.getty.edu/research/tools/vocabularies/aat/)
-- [《汉语主题词表》](https://ct.istic.ac.cn/) —— 中国科学技术信息研究所
+- [《汉语主题词表》](https://ct.istic.ac.cn/)，中国科学技术信息研究所
