@@ -1,39 +1,37 @@
 # 设计文档索引
 
-`design/` 是本库的规则：词表怎么建、怎么分层、外部来源怎么用、方法怎么登记。理论在 `concepts/`，文献笔记在 `sources/`。没有外部依据、尚未生效的设计在 `drafts/`。
+`design/` 中的现行设计规定本库当前使用的规则：词表怎样建立和分层、外部来源怎样使用、方法怎样登记、内容怎样建模。理论在 `concepts/`，文献笔记在 `sources/`。项目草案集中在 `design/drafts/`，全部未生效。
 
 ## 文章的关系
 
-```
-方法登记 principles.md          本库采用的每个方法:来源、概念文、导出的规则在哪
-│
-├─ 写作规则 writing.md          全库写作规则,按 ISO 24495-1 四原则组织;AGENTS.md 是其摘要
-│
-├─ 主题词表 topics.md           一条概念记录长什么样、生命周期、建设流程、校验
-│   ├─ 层级结构 hierarchy.md    树怎么分层、复制规则、各概念下的来源、结构预览
-│   └─ 来源名称规范表 sources-registry.md   外部体系作为词表来源怎么用、match 怎么写
-│
-├─ 命名实体词表 entities.md     产品、语言、组织、标准、文献:个体不进主题树,通过 subjects 挂主题
-│
-├─ 内容模型 content-model.md    一条内容单元有什么字段、文档类型词表、id 规则、应用映射的要求
-│   ├─ 词表版本 versioning.md    版本块、变更记录
-│   └─ targets/                  各应用的映射(待建)
-│
-├─ 治理 governance.md           对象范围、政策、决策权、变更控制、质量与验收、审计、风险
-│   └─ 维护 maintenance.md  对象、信号、阈值、触发、动作、记录、周期；来源复核、编辑审核、断言依据、剩余监控
-│
-├─ decisions/                    决定记录,只追加不修改
-│   ├─ tree-by-discipline.md     顶层为什么按学科不按分面
-│   ├─ borrow-and-analyze.md     原样复制为底、本地分析在上
-│   ├─ form-independence.md      设计与应用分离
-│   ├─ decision-rights-defaults.md  决策权的首批边界；首次越权事件
-│   └─ project-instructions-entry.md 项目约定的文件入口
-│
-└─ drafts/                       未生效,各自写明触发条件
-    ├─ division-characteristics.md   零自定的唯一例外:划分特征的治理
-    ├─ facet-field.md            分面字段:取值、触发条件
-    └─ concept-groups.md         手工概念组:登记、规则
-```
+现行设计与项目草案分属两条分支。
+
+- 现行设计
+  - [方法登记](principles.md)：登记本库采用的方法、概念依据和导出的规则。
+    - [写作规则](writing.md)：规定全库写作规则；`AGENTS.md` 是其摘要。
+    - [主题词表设计](topics.md)：规定概念记录、关系、生命周期、建设流程和校验。
+      - [层级结构](hierarchy.md)：规定树的分层、结构复制、数组和结构来源。
+      - [来源名称规范表](sources-registry.md)：规定外部体系的登记、复制、映射和派生概念组。
+    - [命名实体词表设计](entities.md)：规定产品、语言、组织、标准和文献等个体的记录方式。
+    - [内容模型](content-model.md)：规定内容单元字段、受控值、标识符和应用映射接口。
+      - [词表版本](versioning.md)：规定版本块、发版时机和变更记录。
+      - 应用映射尚无可索引的项目文件；接口要求保留在内容模型中。
+    - [治理](governance.md)：规定对象范围、政策、决策权、变更控制、验收和审计。
+      - [维护](maintenance.md)：规定对象、指标、阈值、触发、动作、审计追踪和复审。
+  - [决定记录](decisions/)：保存已采纳决定，只追加不修改。
+    - [树按学科而非分面的决定](decisions/tree-by-discipline.md)
+    - [原样复制与本地分析分层的决定](decisions/borrow-and-analyze.md)
+    - [设计与应用分离](decisions/form-independence.md)
+    - [决策权的首批边界](decisions/decision-rights-defaults.md)
+    - [项目约定入口](decisions/project-instructions-entry.md)
+- 项目草案（未生效）
+  - [来源治理](drafts/source-governance.md)：提出来源身份、用途、引用、复核和失效处理规则。
+  - [术语治理](drafts/terminology-governance.md)：提出术语概念、多语形式、状态、委托和生成边界。
+  - [划分特征的自定治理](drafts/division-characteristics.md)：提出划分特征的登记与复核；零自定例外尚未开放。
+  - [分面字段草案](drafts/facet-field.md)：记录分面研究、模型职责和生效条件。
+  - [概念组草案](drafts/concept-groups.md)：提出手工概念组的登记和规则。
+
+草案分支中的文件全部未生效。阅读或引用草案不等于规则生效；现行规则仍以现行设计分支和正式数据为准。
 
 ## 词表一览
 
@@ -64,5 +62,5 @@
 | 7 | [写作规则](writing.md) | 写任何文件前要遵守什么 |
 | 8 | [内容模型](content-model.md) | 一条内容单元有什么、id 怎么取 |
 | 9 | [词表版本](versioning.md) | 什么时候发版、记什么 |
-| — | [decisions/](decisions/) | 已采纳决定及其后果 |
-| — | [drafts/](drafts/) | 按需 |
+| — | [决定记录](decisions/) | 已采纳决定及其后果 |
+| — | 项目草案：[来源治理](drafts/source-governance.md)、[术语治理](drafts/terminology-governance.md)、[划分特征的自定治理](drafts/division-characteristics.md)、[分面字段草案](drafts/facet-field.md)、[概念组草案](drafts/concept-groups.md) | 五份均未生效；阅读草案不等于规则生效 |
