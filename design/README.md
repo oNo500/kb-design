@@ -39,7 +39,7 @@
 
 | 词表 | 文件 | 管什么 | 设计 |
 |---|---|---|---|
-| 主题词表 | `vocab/topics.yaml` | 类：领域与概念，层级树 | topics.md、hierarchy.md |
+| 主题词表 | `vocab/topics.yaml` | 概念；顶层概念可表示学科，概念之间构成层级树 | topics.md、hierarchy.md |
 | 命名实体词表 | `vocab/entities.yaml` | 个体：产品、语言、组织、标准、文献 | entities.md |
 | 来源名称规范表 | `vocab/sources.yaml` | 外部知识体系与词表 | sources-registry.md |
 | 文档类型词表 | `vocab/types.yaml` | 内容单元的体裁，六类 | content-model.md |
@@ -66,4 +66,3 @@
 | 9 | [词表版本](versioning.md) | 什么时候发版、记什么 |
 | — | [decisions/](decisions/) | 已采纳决定及其后果 |
 | — | [drafts/](drafts/) | 按需 |
-
