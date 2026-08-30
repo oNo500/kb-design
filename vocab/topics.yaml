@@ -408,7 +408,7 @@ concepts:
     basis: { zh: none, en: source }
     broader: [architecture-and-organization]
     arrays: [architecture-and-organization-cs2023]
-    scope: "异构体系结构：SIMD 与 MIMD（GPGPU、TPU、NPU），异构存储，领域专用体系结构，3DIC 与 chiplet 封装，机器学习在体系结构设计中的应用。"
+    scope: "异构体系结构：SIMD 与 MIMD（GPGPU、TPU、NPU），异构存储，Domain-Specific Architectures (DSAs) 及其代表性实现（机器学习加速器、网络内计算、面向新兴应用的嵌入式系统、神经形态计算和边缘计算设备），3DIC 与 chiplet 封装，机器学习在体系结构设计中的应用。"
     source: cs2023
     match:
       - { source: cs2023, id: "AR-Heterogeneity", rel: exactMatch }
@@ -495,7 +495,7 @@ concepts:
     basis: { zh: none, en: source }
     broader: [artificial-intelligence]
     arrays: [artificial-intelligence-cs2023]
-    scope: "人工智能的应用与社会影响：具体领域的应用案例，已部署的深度生成模型，公平、信任、可解释性、人的监督与法规。"
+    scope: "人工智能的应用与社会影响：至少选择一个针对具体问题、用于某一具体情境的人工智能应用案例，将该应用表述为人工智能问题并加以评价；另包括已部署的深度生成模型，以及公平、信任、可解释性、人的监督与法规。"
     source: cs2023
     match:
       - { source: cs2023, id: "AI-SEP", rel: exactMatch }
@@ -1500,7 +1500,7 @@ concepts:
     basis: { zh: none, en: source }
     broader: [parallel-and-distributed-computing]
     arrays: [parallel-and-distributed-computing-cs2023]
-    scope: "并行与分布式算法：在给定语言与框架中表达和实现算法，多核、响应式、数据并行、集群、云等应用领域概览，算法领域。"
+    scope: "并行与分布式算法：在给定语言与框架中表达和实现算法；概览算法在多核、响应式、数据并行、集群、云和开放式分布系统等系统或执行环境中的应用；典型类别包括线性代数、数据处理、图与搜索、建模与仿真。"
     source: cs2023
     match:
       - { source: cs2023, id: "PDC-Algorithms", rel: exactMatch }
