@@ -11,11 +11,11 @@
 | 受控词表 | [受控词表](../concepts/controlled-vocabulary.md) | Wüster, *Internationale Sprachnormung in der Technik*, 1931 博士论文；ISO 25964-1；ISO 704 | [topics.md](topics.md)：ID 与名字分离、等价关系、范围注释、生命周期 |
 | 分面分析 | [分面](../concepts/facet.md) | Ranganathan（1933）；Z39.19 §5.3.4；ISO 25964-1 §11 | 分面字段草案；后组式标签；实体表的 kind / form / subjects |
 | 划分特征与数组 | [词表的层级](../concepts/vocabulary-hierarchy.md) | ISO 25964-1 §2.1、§2.4、§2.38 | [hierarchy.md](hierarchy.md) 规则 9–12；`arrays` 字段 |
-| 依据 warrant | [词表的建设与维护](../concepts/vocabulary-construction.md) | Hulme, *Principles of Book Classification*, Library Association Record 1911–12；Z39.19 §5.3.5 | [topics.md](topics.md)：从内容抽词、候选词、废除无引用的词；[maintenance.md](maintenance.md) 信号 |
-| 复制的层级求完整 | [词表的建设与维护](../concepts/vocabulary-construction.md)（自上而下、未标引词） | 本库 README；Z39.19 §11.1.3.1、§11.1.8 | [hierarchy.md](hierarchy.md) 规则 4、5；未标引状态 |
+| 依据 warrant | [词表的建设与维护](../concepts/vocabulary-construction.md) | Hulme, *Principles of Book Classification*, Library Association Record 1911–12；Z39.19 §5.3.5 | 从带上下文的字符串开始，经概念判断和依据核验建立 `candidate` 概念记录；两次零引用只使该记录取得删除资格；[maintenance.md](maintenance.md) 记录相应信号 |
+| 复制的层级求完整 | [词表的建设与维护](../concepts/vocabulary-construction.md)（自上而下、层级补位） | 本库 README；Z39.19 §11.1.3.1、§11.1.8 | [hierarchy.md](hierarchy.md) 规则 4、5；`unassigned` 作为概念记录状态 |
 | 原样复制与本地分析分层 | [词表的层级](../concepts/vocabulary-hierarchy.md)（数组可选、多数组归属）、[分面](../concepts/facet.md)（分析是重组）、[知识体系](../concepts/body-of-knowledge.md)（枚举、只借上层） | ISO 25964-1 数据模型；Z39.19 §8.3.5 | [decisions/borrow-and-analyze.md](decisions/borrow-and-analyze.md)；[hierarchy.md](hierarchy.md) 规则 6、9–12 |
 | 知识体系作上层结构 | [知识体系](../concepts/body-of-knowledge.md) | SWEBOK / ISO/IEC TR 19759；CS2023；GB/T 13745；ISO 25964-2 §19 | [hierarchy.md](hierarchy.md)：第 2、3 层取自知识领域与知识单元 |
-| 词表映射 | [词表映射](../concepts/vocabulary-mapping.md) | ISO 25964-2 §6–11；SKOS §10 | [sources-registry.md](sources-registry.md)：三种用法、`match`、默认 closeMatch |
+| 词表映射 | [词表映射](../concepts/vocabulary-mapping.md) | ISO 25964-2 §6–11；SKOS §10 | [sources-registry.md](sources-registry.md)：来源用法、`match`、默认 closeMatch |
 | 名称规范表 | [词表映射](../concepts/vocabulary-mapping.md)（与各类词表互操作）、[受控词表](../concepts/controlled-vocabulary.md) | ISO 25964-2 §23 | [entities.md](entities.md) |
 | 新主题的分类 | [新主题的分类](../concepts/classifying-new-subjects.md) | Ranganathan 好客准则（1957）；Hulme（1911）；Hjørland & Albrechtsen（1995）；Bowker & Star（1999、2007） | 实体表的 kind / form / subjects；本地概念 candidate + origin；[maintenance.md](maintenance.md) 剩余监控 |
 | 元数据 | [元数据](../concepts/metadata.md) | Dublin Core：ISO 15836-1:2017、ISO 15836-2:2019；DCMI Metadata Terms 2020 | [content-model.md](content-model.md) |
