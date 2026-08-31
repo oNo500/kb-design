@@ -1,6 +1,6 @@
 # 首轮维护计划 (First Maintenance Implementation Plan)
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:dispatching-parallel-agents for read-only context batches, then superpowers:subagent-driven-development for the tracked review record. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:dispatching-parallel-agents for read-only context batches, superpowers:test-driven-development for the generated status behavior, then superpowers:subagent-driven-development for tracked changes. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** 完成第一次编辑审核，逐项处理当前候选、`unassigned`、`self`、来源指标和名称线索，并用真实证据校准现行阈值是否需要变化。
 
@@ -23,7 +23,7 @@
 - 31 个来源按现行 `tier` 和 `checked` 计算到期；固定夹具、0 个到期或相对链接通过都不能证明真实内容、版本、替代、撤回和地址已经联网复核。
 - 5 个旧 `candidate` 来源角色在来源草案生效前保持现状；不得在本轮迁移为 `discovery`。
 - 阈值校准只使用本轮可取得的纵向和内容证据。缺少第二次审核、内容引用、应用映射、live 来源观察或治理年审起算点时，相应阈值保持不变，并在审核记录说明证据缺口；不为完成“校准”强行改数字。
-- 正式写集最多为 `vocab/signals.yaml`、`vocab/CHANGELOG.md` 和 `docs/superpowers/plans/2026-08-31-project-roadmap.md`。任何实体、主题、来源、glossary、schema、脚本、测试、设计或决定修改都阻断本计划。
+- 正式写集最多为 `scripts/build-topics.py`、`tests/test_build_topics_sources.py`、`vocab/topics.yaml`、`vocab/signals.yaml`、`vocab/CHANGELOG.md` 和 `docs/superpowers/plans/2026-08-31-project-roadmap.md`。任何实体、来源、glossary、schema、其他脚本／测试、设计或决定修改都阻断本计划。
 - 文档和确定性数据不使用 TDD。高价值门禁只保留身份覆盖、上下文逐项阅读、权限、快照只追加、阈值证据、主题校验、链接基线、名称线索差异和写集；不增加低价值测试或机械独立复审。
 - 提交说明使用 `[L2]`，因为本轮形成维护结论并关闭路线阶段；不得推送、合并或发版。
 
@@ -99,7 +99,53 @@ python3 scripts/check-terms.py --all --format tsv --output .superpowers/sdd/2026
 
 任何 designation 准入、概念归属、状态提升、角色迁移、阈值改变、删除、来源改档或发版没有精确人工授权时，正式对象写集保持为空。若决定包有此类开放项，Task 3 只记录审核和未执行边界，不应用开放项。
 
-### Task 3: 审核记录
+### Task 3: 状态生成
+
+**Files:**
+
+- Modify: `tests/test_build_topics_sources.py`
+- Modify: `scripts/build-topics.py`
+- Generate: `vocab/topics.yaml`
+
+**Interfaces:**
+
+- Consumes: Task 2 锁定的 58 个有直接下位且仍为 `unassigned` 的稳定 id，以及现行“有下位即可 `active`”规则。
+- Produces: 生成器按最终层级确定这些记录状态，正式主题输出只有精确 58 个 `status` 发生变化。
+
+- [ ] **Step 1: 写入失败测试**
+
+在现有真实生成器测试中增加一个行为：生成结果中不得存在仍为 `unassigned` 的父节点。测试从完整临时生成结果取得反向 `broader` 集合，断言集合为空；它防止删除状态提升逻辑后再次出现本轮 58 项缺陷，不硬编码实现函数。
+
+- [ ] **Step 2: 运行 RED**
+
+运行：
+
+```bash
+python3 -m unittest tests.test_build_topics_sources -v
+```
+
+预期新增测试失败，准确报告 58 个仍为 `unassigned` 的父节点；既有依据保持测试继续通过。测试必须因生成器缺少状态提升而失败，不得因导入、路径或夹具错误失败。
+
+- [ ] **Step 3: 实现最小状态提升**
+
+在所有概念、层级和多层级关系建立完成后、输出前，从最终 `broader` 反向集合取得父节点。只把其中仍为 `unassigned` 的记录改为 `active`；顶层现有 `active` 不重复修改，其他状态不改变。更新生成文件的版本注释，使其不再声称除八个顶层外全部未标引；版本 id 和日期不变，本任务不发版。
+
+- [ ] **Step 4: 运行 GREEN**
+
+运行同一 unittest，预期全部通过且输出无警告。随后在两个独立临时根连续生成，预期逐字节一致。
+
+- [ ] **Step 5: 重建并核对正式输出**
+
+从生成输入重建 `vocab/topics.yaml`。逐项证明：变化身份恰为 Task 2 的 58 个 id；全部由 `unassigned` 变为 `active`；状态总数为 66／634；除 `status` 和版本注释外的概念字段及全部数组逐项不变；`check-topics.py` 返回零问题。
+
+- [ ] **Step 6: 提交状态批次**
+
+```bash
+git add tests/test_build_topics_sources.py scripts/build-topics.py vocab/topics.yaml
+git commit -m "[L1] 主题维护:批准有下位记录"
+```
+
+### Task 4: 审核记录
 
 **Files:**
 
@@ -109,16 +155,16 @@ python3 scripts/check-terms.py --all --format tsv --output .superpowers/sdd/2026
 
 **Interfaces:**
 
-- Consumes: Tasks 1–2 的全量审核、已关闭动作和开放决定包。
+- Consumes: Tasks 1–2 的全量审核、开放决定包和 Task 3 已执行的 58 个 L1 动作。
 - Produces: 第一次编辑审核的只追加快照、审核记录和下一阶段路线。
 
 - [ ] **Step 1: 追加指标快照**
 
-从干净 HEAD 运行 `python3 scripts/check-topics.py --record` 恰好一次。确认只在 `snapshots` 末尾追加 2026-09-01 当前指标，不修改旧快照；把 `last_candidate_review` 从 null 设为 `2026-09-01`，`governance_reviewed` 保持 null。
+从干净 HEAD 运行 `python3 scripts/check-topics.py --record` 恰好一次。确认只在 `snapshots` 末尾追加 2026-09-01 当前指标，反映 66 个 `active` 和 634 个 `unassigned`，不修改旧快照；把 `last_candidate_review` 从 null 设为 `2026-09-01`，`governance_reviewed` 保持 null。
 
 - [ ] **Step 2: 追加维护记录**
 
-只在 CHANGELOG 当前版“治理”节末尾追加 2026-09-01 首轮维护记录：审核集合、实际动作、保持项、阈值校准结论、开放决定和后置证据边界。不得改旧条目或重新描述整个词表。
+只在 CHANGELOG 当前版“治理”节末尾追加 2026-09-01 首轮维护记录：审核集合、58 个状态动作、保持项、阈值校准结论、73 个名称形式、13 个归属、4 个候选接受条件和后置证据边界。明确状态批次尚未取得 L3 发版决定；不得改旧条目或重新描述整个词表。
 
 - [ ] **Step 3: 更新项目路线**
 
@@ -136,7 +182,7 @@ python3 scripts/check-terms.py --all
 git status --short
 ```
 
-确认第二次不带 `--record` 的主题检查不会修改 signals；当前快照与脚本输出一致；旧快照字节保持；正式写集恰为三份允许文件；所有实体、主题、来源和 glossary 字节不变。
+确认第二次不带 `--record` 的主题检查不会修改 signals；当前快照与脚本输出一致；旧快照字节保持；本任务写集恰为三份允许文件；实体、来源和 glossary 字节不变。整个计划的六文件写集与各任务提交边界一致。
 
 - [ ] **Step 5: 提交维护记录**
 
