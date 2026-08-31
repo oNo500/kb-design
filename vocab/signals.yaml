@@ -1,5 +1,5 @@
 governance_reviewed: null
-last_candidate_review: null
+last_candidate_review: '2026-09-01'
 snapshots:
 - candidates: 16
   recorded: '2026-08-23'
@@ -12,3 +12,16 @@ snapshots:
   unassigned.linguistics: 83/84
   unassigned.management: 55/56
   unassigned.mathematics: 167/168
+- candidates: 17
+  recorded: '2026-09-01'
+  self.entities.subjects: 13/61
+  self.topics.label.en: 0/700
+  self.topics.label.zh: 0/700
+  unassigned.computing: 248/266
+  unassigned.education: 18/19
+  unassigned.information-and-systems-science: 21/26
+  unassigned.journalism-and-communication: 32/38
+  unassigned.library-and-information-science: 38/43
+  unassigned.linguistics: 77/84
+  unassigned.management: 49/56
+  unassigned.mathematics: 151/168
