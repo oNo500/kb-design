@@ -1,12 +1,12 @@
 # 层级结构
 
-主题词表的节点都是概念。顶层概念表示本库范围内的学科；一个主题分支由某个顶层概念及其传递下位概念构成。树表达学科归属和概念层级，顶层以下的起步结构从现行来源复制，更深层的概念按本库依据建立。
+主题词表中的节点都是概念。顶层概念表示本库范围内的学科；一个主题分支由某个顶层概念及其传递下位概念构成。树只表达学科归属和概念层级：顶层以下的起步结构从现行来源复制，更深层的概念按本库依据建立。
 
-概念记录字段见[主题词表设计](topics.md)，来源身份和用途见[来源名称规范表](sources-registry.md)。理论依据见[词表的层级](../concepts/vocabulary-hierarchy.md)、[知识体系](../concepts/body-of-knowledge.md)和[树按学科而非分面的决定](decisions/tree-by-discipline.md)。正式主题词表仍使用旧引用形状；共享来源引用已经实现但尚未迁移。
+概念记录字段见[主题词表设计](topics.md)，来源身份和用途见[来源名称规范表](sources-registry.md)。理论依据见[词表的层级](../concepts/vocabulary-hierarchy.md)、[知识体系](../concepts/body-of-knowledge.md)和[树按学科而非分面的决定](decisions/tree-by-discipline.md)。正式主题词表仍使用旧引用形状；共享来源引用已经实现，但尚未迁移。
 
 ## 结构规则
 
-以下规则分为树的性质、结构复制、数组分组和节点标签四组。复制与分析分层的理由见[原样复制与本地分析分层的决定](decisions/borrow-and-analyze.md)。规则编号继续供其他现行设计引用。
+以下规则按树的性质、结构复制、数组分组和节点标签分列。复制与分析分层的理由见[原样复制与本地分析分层的决定](decisions/borrow-and-analyze.md)。规则编号继续供其他现行设计引用。
 
 ### 树的性质
 
@@ -81,7 +81,7 @@ CS2023 的 17 个 Knowledge Area 作为第 2 层，每个 Knowledge Area 的知�
 | networking-and-communication | NC | 8 | RFC 1122 四层 | network |
 | operating-systems | OS | 14 | — | 无，新盲区 |
 | parallel-and-distributed-computing | PDC | 5 | — | 无，新盲区 |
-| security | SEC | 8 | ASVS 5.0 章；CWE 顶层类别；ATT&CK 15 战术 | security |
+| security | SEC | 7 | ASVS 5.0 章；CWE 顶层类别；ATT&CK 15 战术 | security |
 | society-ethics-and-the-profession | SEP | 11 | — | 无；通用职业技能的另一个落点 |
 | software-development-fundamentals | SDF | 5 | — | 无，新盲区 |
 | software-engineering | SE | 9 | SWEBOK v4 18 章 | engineering |
@@ -146,7 +146,7 @@ CS2023 的 17 个 Knowledge Area 作为第 2 层，每个 Knowledge Area 的知�
 │   ├─ operating-systems                        ← OS，14；新盲区
 │   ├─ parallel-and-distributed-computing       ← PDC，5；新盲区
 │   ├─ security                                 ← SEC
-│   │   [CS2023 SEC 8 个知识单元]
+│   │   [CS2023 SEC 7 个知识单元]
 │   │   [ASVS 5.0]
 │   │   [CWE 顶层类别]
 │   │   [ATT&CK 15 战术]
@@ -219,7 +219,12 @@ foundations-of-programming-languages   现行 id 取自已有且有依据的英�
 
 ## 待定事项
 
+以下条目只记录尚未生效的问题入口。草案中的推荐、方案和名称候选不改变现行范围、实体类别、层级、记录、来源、数据或消费者。
+
 - Web 相关内容失去复制结构后是否够用，观察后决定是否在 Web Platforms 下破例复制 MDN。
 - 多层级时 `broader` 列表的顺序暂不赋予含义；应用映射需要主上位时再定，并记录决定。
 - 分析层数组何时启用，见[划分特征治理](drafts/division-characteristics.md)。
-- 技术传播（技术写作、结构化写作）在树上没有节点，候选落点为 `communication-studies` 以下，依据 Wikidata Q1068718；暂缓，等 DITA 2.0 定稿并确定采用后再议（2026-08-23）。
+- 生活相关研究对象是否进入范围，见[生活领域范围](drafts/life-scope.md)。现行八个顶层、自然语言学习排除和个人任务管理排除均不改变。
+- 实体类别及相邻字段怎样分工，见[实体类别职责](drafts/entity-categories.md)。方案 B、15 条身份疑虑和 12 项开放决定均未改变现行 5 个实有类别或正式记录。
+- 待审模型类概念、模型家族、具体模型和应用实体怎样分层，见[模型对象分层](drafts/large-language-models.md)。四层方向与 ML、NLP 双上位都只是未生效提案。
+- 完整传播学科是否成为 `communication-studies` 的本地下位，见[传播学科范围](drafts/communication-scope.md)。该下位、中文 designation、DITA 实体归属和内容类型均未获批准。
