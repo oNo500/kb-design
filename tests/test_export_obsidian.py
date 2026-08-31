@@ -178,6 +178,72 @@ class ExportObsidianTests(unittest.TestCase):
             with self.subTest(name):
                 self.assert_invalid_input(relative_path, object_id, field_path, mutate)
 
+    def test_topic_basis_requires_both_language_decisions(self):
+        self.assert_invalid_input(
+            "vocab/topics.yaml",
+            "mathematics",
+            "concepts[mathematics].basis.en",
+            lambda document: find_record(document, "concepts", "mathematics")["basis"].pop("en"),
+        )
+
+    def test_topic_source_and_match_are_optional(self):
+        baseline_files = build_content_files(ROOT)
+        baseline_properties, baseline_body = split_note(
+            baseline_files["KB/Topics/mathematics.md"]
+        )
+
+        cases = (
+            (
+                "source",
+                lambda document: find_record(document, "concepts", "mathematics").pop("source"),
+            ),
+            (
+                "match",
+                lambda document: find_record(document, "concepts", "mathematics").pop("match"),
+            ),
+        )
+        for field, mutate in cases:
+            with self.subTest(field), mutated_repository(
+                "vocab/topics.yaml", mutate
+            ) as repo_root:
+                files = build_content_files(repo_root)
+                properties, body = split_note(files["KB/Topics/mathematics.md"])
+                self.assertEqual(847, len(files))
+                if field == "source":
+                    expected_properties = dict(baseline_properties)
+                    expected_properties.pop("kb_source")
+                    self.assertEqual(expected_properties, properties)
+                    self.assertEqual(baseline_body, body)
+                else:
+                    expected_body = (
+                        baseline_body.split("\n## 外部映射\n", 1)[0].rstrip("\n")
+                        + "\n"
+                    )
+                    self.assertEqual(baseline_properties, properties)
+                    self.assertEqual(expected_body, body)
+
+    def test_entity_basis_is_optional(self):
+        baseline_files = build_content_files(ROOT)
+        baseline_properties, baseline_body = split_note(
+            baseline_files["KB/Entities/claude-code.md"]
+        )
+
+        with mutated_repository(
+            "vocab/entities.yaml",
+            lambda document: find_record(
+                document, "entities", "claude-code"
+            ).pop("basis"),
+        ) as repo_root:
+            files = build_content_files(repo_root)
+        properties, body = split_note(files["KB/Entities/claude-code.md"])
+        before_basis, after_basis = baseline_body.split("\n## 形式依据\n", 1)
+        _, after_mapping = after_basis.split("\n## 外部映射\n", 1)
+        expected_body = before_basis + "\n## 外部映射\n" + after_mapping
+
+        self.assertEqual(847, len(files))
+        self.assertEqual(baseline_properties, properties)
+        self.assertEqual(expected_body, body)
+
     def test_form_internal_arrays_are_preserved_and_validated(self):
         readme = build_content_files(ROOT)["README.md"].decode("utf-8")
         with self.subTest("README table"):

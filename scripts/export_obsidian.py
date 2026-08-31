@@ -130,8 +130,6 @@ _REQUIRED_FIELDS = {
         "label",
         "basis",
         "broader",
-        "source",
-        "match",
         "status",
         "added",
     },
@@ -140,7 +138,6 @@ _REQUIRED_FIELDS = {
         "label",
         "kind",
         "subjects",
-        "basis",
         "status",
         "added",
     },
@@ -285,7 +282,8 @@ def _validate_record(
             raise _error(relative_path, object_id, f"{record_path}.{field}", "expected date")
 
     if "label" in record:
-        _check_language_forms(relative_path, object_id, f"{record_path}.label", record["label"], False)
+        label_path = f"{record_path}.label"
+        _check_language_forms(relative_path, object_id, label_path, record["label"], False)
     for field in ("alt", "hidden"):
         if field in record:
             _check_language_forms(relative_path, object_id, f"{record_path}.{field}", record[field], True)
@@ -299,8 +297,13 @@ def _validate_record(
             record["basis"],
             allowed_basis,
         )
-        if not record["basis"]:
-            raise _error(relative_path, object_id, f"{record_path}.basis", "expected non-empty mapping")
+        _check_required_keys(
+            relative_path,
+            object_id,
+            f"{record_path}.basis",
+            record["basis"],
+            allowed_basis,
+        )
         for field, basis in record["basis"].items():
             path = f"{record_path}.basis.{field}"
             if isinstance(basis, list):
