@@ -1,5 +1,7 @@
 # 术语实施计划 (Terminology Schema and Generation Implementation Plan)
 
+状态：子计划，当前范围已经完成。三层模式、状态规则、三百四十八条结论继承、确定性生成、正文诊断和维护接口已经交付；正式术语数据、委托、所有权切换和严格应用冻结到正式激活阶段。本文未勾选步骤不自动成为当前待办，顶层顺序以[项目路线](2026-08-31-project-roadmap.md)为准。
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans. 只有写集互斥且没有顺序依赖的实现任务使用 superpowers:dispatching-parallel-agents。独立审查只执行本计划保留的 T12 与 T13 两个高价值门禁。Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** 在来源治理原子切换完成后，继承既有术语审查结论，建立可审计的术语模式、按风险升级的决定物化、确定性生成、委托、正文诊断和维护接口，并以同时更新来源索引的原子切换启用唯一术语编辑源。

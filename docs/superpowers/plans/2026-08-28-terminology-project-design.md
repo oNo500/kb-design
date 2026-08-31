@@ -1,5 +1,7 @@
 # 项目治理草案
 
+状态：历史计划，草案形成阶段已完成。后续顶层顺序以[项目路线](2026-08-31-project-roadmap.md)为准；本文保留原始七项目标、执行证据和当时门禁，不再作为当前待办清单。
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** 把已经核实的外部概念转成两份职责分离、字段精确但尚未生效的项目设计草案，为来源数据和术语数据的后续实现提供唯一规则入口。

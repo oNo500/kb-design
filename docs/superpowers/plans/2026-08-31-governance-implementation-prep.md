@@ -1,5 +1,7 @@
 # 治理实施准备
 
+状态：历史计划，库存、旁路研究和两份详细子计划均已完成。当前执行顺序以[项目路线](2026-08-31-project-roadmap.md)为准。
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:dispatching-parallel-agents for independent inventories, then superpowers:writing-plans for the two implementation plans.
 
 **Goal:** 从当前真实数据生成来源治理与术语治理的完整库存、旁路研究和实施边界，再分别编写可执行的来源模式迁移计划与术语模式生成计划。

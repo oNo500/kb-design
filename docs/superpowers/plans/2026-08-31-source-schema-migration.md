@@ -1,5 +1,7 @@
 # 来源迁移计划 (Source Schema Migration Implementation Plan)
 
+状态：子计划，当前范围已经完成。模式、离线校验、反向索引、只读探测、迁移预演、六份账本和复核义务已经交付；完整候选、交付绑定、原子应用和补偿回滚冻结到正式激活阶段。本文未勾选步骤不自动成为当前待办，顶层顺序以[项目路线](2026-08-31-project-roadmap.md)为准。
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans in the current session. 只有写集互斥且没有顺序依赖的实现任务使用 superpowers:dispatching-parallel-agents。审查和回归按本计划的阶段门禁执行，不恢复逐任务复审。Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** 在不自动裁定来源身份、用途、依据、派生或映射语义的前提下，建立来源实体与用途模式、共享引用结构、反向引用、复核义务、只读探测、可审计迁移预演和原子切换能力。

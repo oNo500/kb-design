@@ -27,6 +27,7 @@
 - 项目草案（未生效）
   - [来源治理](drafts/source-governance.md)：提出来源身份、用途、引用、复核和失效处理规则。
   - [术语治理](drafts/terminology-governance.md)：提出术语概念、多语形式、状态、委托和生成边界。
+  - [TBX 导出](drafts/tbx-export.md)：记录术语交换的后置触发条件；当前无接收方，不选择方言或实施导出。
   - [划分特征的自定治理](drafts/division-characteristics.md)：提出划分特征的登记与复核；零自定例外尚未开放。
   - [分面字段草案](drafts/facet-field.md)：记录分面研究、模型职责和生效条件。
   - [概念组草案](drafts/concept-groups.md)：提出手工概念组的登记和规则。
@@ -63,4 +64,4 @@
 | 8 | [内容模型](content-model.md) | 一条内容单元有什么、id 怎么取 |
 | 9 | [词表版本](versioning.md) | 什么时候发版、记什么 |
 | — | [决定记录](decisions/) | 已采纳决定及其后果 |
-| — | 项目草案：[来源治理](drafts/source-governance.md)、[术语治理](drafts/terminology-governance.md)、[划分特征的自定治理](drafts/division-characteristics.md)、[分面字段草案](drafts/facet-field.md)、[概念组草案](drafts/concept-groups.md) | 五份均未生效；阅读草案不等于规则生效 |
+| — | 项目草案：[来源治理](drafts/source-governance.md)、[术语治理](drafts/terminology-governance.md)、[TBX 导出](drafts/tbx-export.md)、[划分特征的自定治理](drafts/division-characteristics.md)、[分面字段草案](drafts/facet-field.md)、[概念组草案](drafts/concept-groups.md) | 六份均未生效；阅读草案不等于规则生效 |
