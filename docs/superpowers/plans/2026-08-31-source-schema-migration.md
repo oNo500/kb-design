@@ -23,7 +23,7 @@
 - 离线校验不得联网；联网探测只读 `watch` 与获准地址，输出到 ignored 运行目录，正式项目写集必须为零。
 - 正式文档改动涉及一节以上时，先列旧节去向，再按目的整节或整篇重写并逐项核销；不得顺手修复 31 个标题债务、8 个只追加旧标题或 2 个旧 SDD 链接。
 - 生成输入先于生成输出。`scripts/build-topics.py`、`vocab/build/` 与 `vocab/topics.yaml` 必须在同一切换批次对账，连续两次生成逐字节一致。
-- 每个任务先建立预期 RED，再运行任务定向 GREEN、核对写集、说明回滚边界并提交。全量回归只在离线校验、迁移预演、文档分流和原子切换四个阶段结束时运行；机械事实不另派独立复审。提交说明标注本批最高决策级别。
+- 只有“验证矩阵”保留的高风险行为测试使用 RED／GREEN；文档、静态模式、确定性数据和纯机械迁移使用直接解析、schema、哈希、差异或端到端门禁，不为 TDD 形式另造测试。每个任务运行定向检查、核对写集、说明回滚边界并提交。全量回归只在离线校验、迁移预演、文档分流和原子切换四个阶段结束时运行；机械事实不另派独立复审。提交说明标注本批最高决策级别。
 - 冻结库存中的身份、旧值、旧哈希、文件、字段路径、消费者和既有分类由程序无损继承。只有新增或改变外部状态、实体边界、角色批准、正式 `basis`、实际派生、概念关系、删除或正式效力时，才需要 identity／field 级人工决定。
 - 任何任务的人工门禁未满足时，执行者记录阻断并停止该任务；不得采用计划推荐、空值、兼容字段或迁移分类冒充人的批准。
 
@@ -976,11 +976,6 @@ class SourceContractTests(unittest.TestCase):
         self.assertIn("SOURCE_ROLE_NOT_APPROVED", ERROR_CODES)
         self.assertIn("SOURCE_DECISION_DELIVERY_MISSING", ERROR_CODES)
 
-    def test_consumer_import_works_without_adapter(self):
-        namespace = {}
-        exec("from scripts.source_model import Issue, ReferenceUse, validate_references", namespace)
-        self.assertEqual({"Issue", "ReferenceUse", "validate_references"},
-                         {key for key in namespace if not key.startswith("__")})
 ```
 
   `tests/test_source_schema.py` 读取七份完整 schema 和正反例。
@@ -1434,7 +1429,7 @@ print("KNOWN_LINK_BASELINE_OK count=2")
 
   Run: `python3 -m pip install -r requirements-dev.txt && python3 scripts/source_model.py write-schemas --directory schemas && python3 -m unittest tests.test_source_contract tests.test_source_schema -v && python3 scripts/check_link_baseline.py`
 
-  Expected: 20 tests PASS；七份 schema 通过 meta validation；有效夹具零错误；payload 自引用／缺 topics hash 与 handoff 缺七份 schema 反例被拒绝；输出 `KNOWN_LINK_BASELINE_OK count=2`。
+  Expected: 19 项高风险测试通过；七份 schema 通过 meta validation；有效夹具零错误；payload 自引用／缺 topics hash 与 handoff 缺七份 schema 反例被拒绝；输出 `KNOWN_LINK_BASELINE_OK count=2`。
 
 - [ ] **延后阶段回归**
 
@@ -1671,7 +1666,7 @@ def is_review_overdue(next_due, today, grace_days=30):
 
   Run: `python3 -m unittest tests.test_check_sources -v`
 
-  Expected: 15 tests PASS；稳定错误码、external_group 资格、24／12／6 个月、archival null、30 日边界和 replacement patches 全部通过。
+  Expected: 15 项高风险测试通过；稳定错误码、external_group 资格、24／12／6 个月、archival null、30 日边界和 replacement patches 全部通过。
 
 - [ ] **验证命令接口**
 
@@ -1808,10 +1803,6 @@ class SourceIndexTests(unittest.TestCase):
                   and row["file"] == "vocab/topics.yaml"}
         self.assertEqual(expected, actual)
 
-    def test_index_module_defines_no_recursive_reference_walker(self):
-        tree = ast.parse((ROOT / "scripts/build_source_index.py").read_text(encoding="utf-8"))
-        names = {node.name for node in ast.walk(tree) if isinstance(node, ast.FunctionDef)}
-        self.assertTrue({"walk_reference_uses", "_walk_reference_uses"}.isdisjoint(names))
 ```
 
   `reference_use_index_key()` 是测试侧的直接 kind 映射：basis → source_entity／basis.entity／`.entity`，其他三类 → source_use／`<kind>.registry`／`.registry`。`index-expected.json` 由人逐行列出夹具中的全部正式引用，不能由生产索引生成；`index_reference_set()` 只读取生成条目。
@@ -1936,7 +1927,7 @@ def visit_obligations(root):
 
   Run: `python3 -m unittest tests.test_source_index -v`
 
-  Expected: 10 tests PASS；basis／source／match／external_group 的索引条目逐字等于 public collector 转换结果；索引模块没有局部递归函数；未来术语夹具无需新增 visitor 即进入索引；隔离载体数组不产生来源引用。
+  Expected: 9 项高风险测试通过；basis／source／match／external_group 的索引条目逐字等于 public collector 转换结果；未来术语夹具无需新增 visitor 即进入索引；隔离载体数组不产生来源引用。
 
 - [ ] **运行迁移基线索引**
 
@@ -2391,7 +2382,7 @@ def probe_repository(root, output_dir, transport, today, human_reproducible):
 
   Run: `python3 -m unittest tests.test_probe_sources -v`
 
-  Expected: 22 tests PASS；六类场景、五类 urls 证据 endpoint、生产证据选择、publisher_version 缺失／相同／不同边界、1／3／6／12 月调度、14 日三次独立观察、误报追加和 previous 链均通过，正式夹具哈希不变。
+  Expected: 22 项高风险测试通过；六类场景、五类 urls 证据 endpoint、生产证据选择、publisher_version 缺失／相同／不同边界、1／3／6／12 月调度、14 日三次独立观察、误报追加和 previous 链均通过，正式夹具哈希不变。
 
 - [ ] **验证命令隔离**
 
@@ -2577,12 +2568,6 @@ class SourceMigrationTests(unittest.TestCase):
         self.assertEqual(expected_patch_signatures(REPLACEMENT), actual_patch_signatures(plan))
         self.assertEqual(3187, len(all_plan_rows(plan)))
         self.assertNotEqual(actual_patch_signatures(self.plan()), actual_patch_signatures(plan))
-
-    def test_every_decision_patch_has_one_trace(self):
-        expected = expected_patch_signatures(DECISIONS)
-        actual = actual_patch_signatures(self.plan())
-        self.assertEqual(expected, actual)
-        self.assertEqual(len(actual), len(set(actual)))
 
     def test_duplicate_identity_field_patch_is_rejected(self):
         with self.assertRaisesRegex(ValueError, "SOURCE_DECISION_PATCH_CONFLICT"):
@@ -2775,7 +2760,7 @@ def write_candidate_tree(root, plan, output_root):
 
   Run: `python3 -m unittest tests.test_source_migration -v`
 
-  Expected: 17 tests PASS；推荐与 replacement patches 分别逐项进入 decision_trace；重复 identity／field、字段越权和 identity 域越权被拒绝；25 个 Q 全覆盖；缺决定零输出；阻断计划零 candidate 写入；零阻断计划返回单层 ApplyResult。
+  Expected: 16 项高风险测试通过；推荐与 replacement patches 分别物化最终字段；重复 identity／field、字段越权和 identity 域越权被拒绝；25 个 Q 全覆盖；缺决定零输出；阻断计划零 candidate 写入；零阻断计划返回单层 ApplyResult。
 
 - [ ] **运行真实只读预演**
 
@@ -2829,12 +2814,6 @@ def test_existing_entity_ids_are_frozen(self):
     self.assertEqual(31, len(rows))
     self.assertTrue(all(row["old_id"] == row["proposed_id"] for row in rows))
 
-def test_existing_entity_tier_rows_consume_q23_patches_once(self):
-    assert_q_patches_consumed(self, ("Q23",), actual_plan())
-
-def test_existing_entities_consume_q10_patches_once(self):
-    assert_q_patches_consumed(self, ("Q10",), actual_plan())
-
 def test_q10_replacement_can_materialize_resolved_statuses(self):
     rows = rows_touched_by_q(fixture_plan(REPLACEMENT), "Q10")
     self.assertTrue(any(row["disposition"] == "register" and
@@ -2858,7 +2837,7 @@ def test_existing_entity_review_and_watch_values_consume_q07_to_q09(self):
 
 - [ ] **运行 RED**
 
-  Run: `python3 -m unittest tests.test_source_migration.SourceMigrationTests.test_existing_entity_ids_are_frozen tests.test_source_migration.SourceMigrationTests.test_existing_entity_tier_rows_consume_q23_patches_once tests.test_source_migration.SourceMigrationTests.test_existing_entities_consume_q10_patches_once tests.test_source_migration.SourceMigrationTests.test_q10_replacement_can_materialize_resolved_statuses tests.test_source_migration.SourceMigrationTests.test_existing_entity_ledger_preserves_old_record_hashes tests.test_source_migration.SourceMigrationTests.test_existing_entity_review_and_watch_values_consume_q07_to_q09 -v`
+  Run: `python3 -m unittest tests.test_source_migration.SourceMigrationTests.test_existing_entity_ids_are_frozen tests.test_source_migration.SourceMigrationTests.test_q10_replacement_can_materialize_resolved_statuses tests.test_source_migration.SourceMigrationTests.test_existing_entity_ledger_preserves_old_record_hashes tests.test_source_migration.SourceMigrationTests.test_existing_entity_review_and_watch_values_consume_q07_to_q09 -v`
 
   Expected: FAIL，报告账本不存在或 31 行未生成。
 
@@ -2897,7 +2876,7 @@ def test_existing_entity_review_and_watch_values_consume_q07_to_q09(self):
 
   Run: `python3 -m unittest tests.test_source_migration -v`
 
-  Expected: 本任务 6 项通过；推荐 patch fixture 保持阻断，replacement patch fixture 可形成非阻断行；accepted Q07 至 Q10、Q23 的每个 patch 恰好进入一个 decision_trace。
+  Expected: 本任务 4 项高风险测试通过；推荐 patch fixture 保持阻断，replacement patch fixture 可形成非阻断行；旧 ID、旧记录哈希和复核语义保持。
 
 - [ ] **延后阶段回归**
 
@@ -2946,14 +2925,6 @@ def test_sixteen_identity_ambiguities_remain_explicit(self):
     rows = load_ledger(ROOT / "vocab/migrations/source-v1/entities.yaml", "unregistered")
     self.assertEqual(16, sum(row["identity_ambiguous"] for row in rows))
 
-def test_focus_identity_rows_consume_q05_patches_once(self):
-    assert_q_patches_consumed(self, ("Q05",), actual_plan())
-
-def test_q05_replacement_can_change_focus_identity_outcomes(self):
-    recommended = actual_patch_signatures(fixture_plan(DECISIONS), ("Q05",))
-    replacement = actual_patch_signatures(fixture_plan(REPLACEMENT), ("Q05",))
-    self.assertNotEqual(recommended, replacement)
-
 def test_no_new_id_exists_without_register_disposition(self):
     rows = load_ledger(ROOT / "vocab/migrations/source-v1/entities.yaml", "unregistered")
     self.assertTrue(all((row.get("proposed_id") is not None) ==
@@ -2962,7 +2933,7 @@ def test_no_new_id_exists_without_register_disposition(self):
 
 - [ ] **运行 RED**
 
-  Run: `python3 -m unittest tests.test_source_migration.SourceMigrationTests.test_unregistered_inventory_has_exactly_107_rows tests.test_source_migration.SourceMigrationTests.test_sixteen_identity_ambiguities_remain_explicit tests.test_source_migration.SourceMigrationTests.test_focus_identity_rows_consume_q05_patches_once tests.test_source_migration.SourceMigrationTests.test_q05_replacement_can_change_focus_identity_outcomes tests.test_source_migration.SourceMigrationTests.test_no_new_id_exists_without_register_disposition -v`
+  Run: `python3 -m unittest tests.test_source_migration.SourceMigrationTests.test_unregistered_inventory_has_exactly_107_rows tests.test_source_migration.SourceMigrationTests.test_sixteen_identity_ambiguities_remain_explicit tests.test_source_migration.SourceMigrationTests.test_no_new_id_exists_without_register_disposition -v`
 
   Expected: FAIL，现有账本只有 31 个 existing 行。
 
@@ -2976,7 +2947,7 @@ def test_no_new_id_exists_without_register_disposition(self):
 
   Run: `python3 -m unittest tests.test_source_migration -v`
 
-  Expected: 本任务 5 项通过；账本共 138 行，31 与 107 分区不混合；推荐与 replacement fixture 产生不同且各自逐字匹配的结论。
+  Expected: 本任务 3 项高风险测试通过；账本共 138 行，31 与 107 分区不混合；16 个歧义保持，未批准身份不生成新 ID。
 
 - [ ] **延后阶段回归**
 
@@ -3021,9 +2992,6 @@ def test_role_ledger_has_exactly_47_rows(self):
     rows = load_ledger(ROOT / "vocab/migrations/source-v1/uses.yaml", "roles")
     self.assertEqual(47, len(rows))
 
-def test_role_rows_consume_q11_and_q12_patches_once(self):
-    assert_q_patches_consumed(self, ("Q11", "Q12"), actual_plan())
-
 def test_role_inventory_preserves_five_candidate_and_eleven_unused_mapping_identities(self):
     rows = load_ledger(ROOT / "vocab/migrations/source-v1/uses.yaml", "roles")
     self.assertEqual(5, sum(row["old_role"] == "candidate" for row in rows))
@@ -3044,7 +3012,7 @@ def test_replacement_patches_can_approve_roles(self):
 
 - [ ] **运行 RED**
 
-  Run: `python3 -m unittest tests.test_source_migration.SourceMigrationTests.test_role_ledger_has_exactly_47_rows tests.test_source_migration.SourceMigrationTests.test_role_rows_consume_q11_and_q12_patches_once tests.test_source_migration.SourceMigrationTests.test_role_inventory_preserves_five_candidate_and_eleven_unused_mapping_identities tests.test_source_migration.SourceMigrationTests.test_approved_and_retired_roles_have_accepted_decision tests.test_source_migration.SourceMigrationTests.test_replacement_patches_can_approve_roles -v`
+  Run: `python3 -m unittest tests.test_source_migration.SourceMigrationTests.test_role_ledger_has_exactly_47_rows tests.test_source_migration.SourceMigrationTests.test_role_inventory_preserves_five_candidate_and_eleven_unused_mapping_identities tests.test_source_migration.SourceMigrationTests.test_approved_and_retired_roles_have_accepted_decision tests.test_source_migration.SourceMigrationTests.test_replacement_patches_can_approve_roles -v`
 
   Expected: FAIL，`uses.yaml` 不存在。
 
@@ -3058,7 +3026,7 @@ def test_replacement_patches_can_approve_roles(self):
 
   Run: `python3 -m unittest tests.test_source_migration -v`
 
-  Expected: 本任务 5 项通过；47 行一一对应；推荐 patch fixture 保持 proposed，replacement patch fixture 可批准角色且带 accepted 决定。
+  Expected: 本任务 4 项高风险测试通过；47 行一一对应；推荐 patch fixture 保持 proposed，replacement patch fixture 可批准角色且带 accepted 决定。
 
 - [ ] **延后阶段回归**
 
@@ -3116,9 +3084,6 @@ def test_old_none_and_self_counts_remain_auditable(self):
                               for row in rows))
     self.assertEqual(13, sum(row["old_value"] == "self" and row["scope"] == "formal"
                              for row in rows))
-
-def test_basis_rows_consume_q19_and_q20_patches_once(self):
-    assert_q_patches_consumed(self, ("Q19", "Q20"), actual_plan())
 
 def test_replacement_patches_can_supply_missing_locators(self):
     replacement = rows_touched_by_q(fixture_plan(REPLACEMENT), "Q19")
@@ -3219,9 +3184,6 @@ class BuildTopicsSourceTests(unittest.TestCase):
     def test_candidate_generation_is_byte_deterministic(self):
         self.assertEqual(build_candidate_topics_bytes(), build_candidate_topics_bytes())
 
-    def test_generator_configuration_has_explicit_disposition(self):
-        ledger = load_yaml(ROOT / "vocab/migrations/source-v1/basis.yaml")
-        self.assertEqual(1, sum(row["scope"] == "generator" for row in ledger["rows"]))
 ```
 
 - [ ] **运行 RED**
@@ -3240,7 +3202,7 @@ class BuildTopicsSourceTests(unittest.TestCase):
 
   Run: `python3 -m unittest tests.test_source_migration tests.test_build_topics_sources -v`
 
-  Expected: 新增 10 项全部 PASS；1,501 行完整，旧 630／13／23 身份可审计，accepted patches 全部进入 decision_trace，候选生成连续两次逐字节一致。
+  Expected: 新增 8 项高风险测试全部通过；1,501 行完整，旧 630／13／23 身份可审计，候选生成连续两次逐字节一致。
 
 - [ ] **延后阶段回归**
 
@@ -3290,14 +3252,6 @@ def test_source_ledger_has_726_rows_and_four_partitions(self):
     self.assertEqual({"derivation": 692, "array_label": 24,
                       "project_assertion": 8, "local_analysis": 2}, ledger["partitions"])
 
-def test_source_rows_consume_q13_to_q17_patches_once(self):
-    assert_q_patches_consumed(self, ("Q13", "Q14", "Q15", "Q16", "Q17"),
-                              actual_plan())
-
-def test_replacement_patches_can_change_multi_source_and_rfc_outcomes(self):
-    self.assertNotEqual(actual_patch_signatures(fixture_plan(DECISIONS), ("Q14", "Q17")),
-                        actual_patch_signatures(fixture_plan(REPLACEMENT), ("Q14", "Q17")))
-
 def test_q16_recommended_patches_isolate_two_form_arrays_without_blocking(self):
     rows = [row for row in rows_touched_by_q(fixture_plan(DECISIONS), "Q16")
             if row["partition"] == "local_analysis"]
@@ -3341,7 +3295,7 @@ def test_candidate_generation_preserves_all_array_memberships(self):
 
   Run: `python3 -m unittest tests.test_source_migration tests.test_build_topics_sources -v`
 
-  Expected: 新增 7 项全部 PASS；726 行与 692／24／8／2 完整对账；accepted patches 全部进入 decision_trace；推荐与 replacement patch fixture 都可独立 GREEN。
+  Expected: 新增 5 项高风险测试全部通过；726 行与 692／24／8／2 完整对账；推荐与 replacement patch fixture 都可独立物化最终语义。
 
 - [ ] **延后阶段回归**
 
@@ -3401,9 +3355,6 @@ def test_old_relation_counts_remain_auditable(self):
     self.assertEqual(748, sum(row["old_rel"] == "exactMatch" for row in rows))
     self.assertEqual(8, sum(row["old_rel"] == "closeMatch" for row in rows))
 
-def test_match_rows_consume_q17_and_q18_patches_once(self):
-    assert_q_patches_consumed(self, ("Q17", "Q18"), actual_plan())
-
 def test_recommended_and_replacement_match_patches_both_materialize(self):
     recommended = fixture_plan(DECISIONS)
     replacement_plan = fixture_plan(REPLACEMENT)
@@ -3446,7 +3397,7 @@ def test_candidate_match_items_all_have_adjacent_basis(self):
 
   Run: `python3 -m unittest tests.test_source_migration tests.test_build_topics_sources -v`
 
-  Expected: 新增 8 项全部 PASS；756 行完整；旧关系计数保留审计；推荐与 replacement patches 各自进入 decision_trace；所有 register 行有相邻 basis 与 approved mapping。
+  Expected: 新增 7 项高风险测试全部通过；756 行完整；旧关系计数保留审计；推荐与 replacement patches 各自物化；所有 register 行有相邻 basis 与 approved mapping。
 
 - [ ] **延后阶段回归**
 
@@ -3553,9 +3504,6 @@ class SourceObligationTests(unittest.TestCase):
         result = retrigger(resolved_document(), "source-review-20260902-001")
         self.assertEqual("source-review-20260831-001", result["obligations"][-1]["previous"])
 
-    def test_source_to_term_handoff_contains_only_source_obligation_id(self):
-        trigger = term_trigger("source-review-20260831-001")
-        self.assertEqual({"kind": "source_obligation", "id": "source-review-20260831-001"}, trigger)
 ```
 
 - [ ] **运行 RED**
@@ -3602,7 +3550,7 @@ def resolve_obligation(document, obligation_id, resolved, conclusions, decisions
 
   Run: `python3 -m unittest tests.test_source_obligations -v`
 
-  Expected: 6 tests PASS；输入文档保持不变，resolved 不重开，再触发得到新 ID 与 previous。
+  Expected: 5 项高风险测试通过；输入文档保持不变，resolved 不重开，再触发得到新 ID 与 previous。
 
 - [ ] **延后阶段回归**
 
@@ -3668,8 +3616,6 @@ def test_origin_zero_use_evidence_stays_separate_from_data(self):
     rows = load_yaml(ROOT / "vocab/migrations/source-v1/origin.yaml")["rows"]
     self.assertTrue(any(row["disposition"] == "zero_use_evidence" for row in rows))
 
-def test_origin_rows_consume_q21_patches_once(self):
-    assert_q_patches_consumed(self, ("Q21",), actual_plan())
 ```
 
   `tests/test_source_docs.py` 写入：
@@ -3737,7 +3683,7 @@ class SourceDocsTests(unittest.TestCase):
 
   Run: `python3 -m unittest tests.test_source_migration tests.test_source_docs -v`
 
-  Expected: 新增 8 项全部 PASS；19 行全部关闭，accepted Q21 patches 全部进入 decision_trace，零正式 `origin`，冻结债务写集为零。
+  Expected: 新增 7 项高风险测试全部通过；19 行全部关闭，零正式 `origin`，冻结债务写集为零。
 
 - [ ] **运行迁移账本闭合回归**
 
@@ -3911,9 +3857,6 @@ class SourceCutoverTests(unittest.TestCase):
     def test_all_six_ledgers_have_zero_cutover_blockers(self):
         self.assertEqual(0, count_cutover_blockers(ROOT / "vocab/migrations/source-v1"))
 
-    def test_formal_tree_has_no_legacy_source_fields(self):
-        self.assertEqual([], find_legacy_source_fields(ROOT))
-
     def test_formal_counts_match_frozen_identities(self):
         self.assertEqual((700, 24), formal_topic_and_array_counts(ROOT))
 
@@ -4026,11 +3969,6 @@ class SourceCutoverTests(unittest.TestCase):
                 self.assertEqual((ROOT / path).read_bytes(), (candidate / path).read_bytes())
             self.assertTrue(audit_sequences_preserved(ROOT, candidate))
 
-    def test_link_baseline_command_exits_zero_with_exact_two_failures(self):
-        result = subprocess.run(["python3", "scripts/check_link_baseline.py"], cwd=ROOT,
-                                text=True, capture_output=True)
-        self.assertEqual((0, "KNOWN_LINK_BASELINE_OK count=2\n"),
-                         (result.returncode, result.stdout))
 ```
 
 - [ ] **运行 RED**
@@ -4331,7 +4269,7 @@ git commit -m "[L3] governance: authorize source schema cutover"
 
   Run: `python3 -m unittest tests.test_source_cutover -v`
 
-  Expected: 17 tests PASS；ignored 与正式安装阶段使用同一四路径 verifier，返回类型为 `Issue`；严格模式零旧结构，反向索引双向完整，义务引用可解析，decision → handoff → payload 两层绑定一致，篡改 handoff 或 payload 都被拒绝，补偿夹具保留全部审计对象。
+  Expected: 15 项高风险测试通过；ignored 与正式安装阶段使用同一四路径 verifier，返回类型为 `Issue`；严格模式零旧结构，反向索引双向完整，义务引用可解析，decision → handoff → payload 两层绑定一致，篡改 handoff 或 payload 都被拒绝，补偿夹具保留全部审计对象。
 
 - [ ] **运行正式切换闭合回归**
 
@@ -4379,14 +4317,14 @@ git commit -m "[L3] feat: switch to source governance schema"
 
 ## 验证矩阵
 
-任务中的测试按以下关系闭合。
+计划只设计 139 项高风险测试，覆盖 schema 负例、语义效力、稳定身份、迁移完整性、确定性、正式写集、交付绑定、篡改拒绝和补偿回滚。文件存在、实现形状、重复 patch 对账、重复计数、字面量自证和已经由阶段命令覆盖的链接基线不建立单元测试。任务中的保留测试按以下关系闭合。
 
 | 需求 | RED／GREEN 位置 | 关键反例 |
 |---|---|---|
 | 来源实体与用途分离 | `test_source_schema.py`、`test_check_sources.py`、现行实体与用途角色任务 | entity `current` 或消费者数量自动批准角色 |
 | 消费者契约 | `test_source_contract.py`、`test_check_sources.py` | 术语侧适配器、未知错误码、source／external_group 缺 approved structure |
 | 共享引用结构 | `test_source_schema.py`、逐值依据、实际派生、概念映射任务 | `self`、`none`、裸 URL、悬空 external_group、同名或默认 exactMatch |
-| 替代决定 | `test_source_migration.py` 的 recommended／replacement 测试 | 重复 identity／field、Q 越权、patch 未进入 decision_trace |
+| 替代决定 | `test_source_migration.py` 的最终字段、状态和冲突测试 | 重复 identity／field、Q 越权、替代决定未改变最终语义 |
 | 外部状态与历史 | `test_check_sources.py`、现行实体任务 | `candidate` 映射 current、暂不可用映射 withdrawn、历史改写 |
 | 反向引用 | `test_source_index.py`、原子切换任务 | 只存计数／文件名、external_group 或未来 terms 消费者漏报、索引单向不等 |
 | 复核义务 | `test_source_obligations.py`、`test_check_sources.py` | resolved 重开、义务写正式值、决定变化自动关闭 |
@@ -4398,14 +4336,14 @@ git commit -m "[L3] feat: switch to source governance schema"
 | 映射迁移 | `test_source_migration.py` 的 756 行测试 | 748 个 exactMatch 继承、未读材料通过 |
 | origin 分流 | `test_source_docs.py` 与 origin 账本测试 | 创建填空 origin、发现线索证明一切 |
 | 生成确定性 | `test_build_topics_sources.py`、`test_source_cutover.py` | 重新生成恢复旧结构、重复 ID 静默覆盖 |
-| 链接基线 | `test_source_contract.py`、4 个阶段回归门禁 | 已知退出 1 使后续命令短路、旧失败数量漂移 |
+| 链接基线 | 4 个阶段回归的直接命令门禁 | 已知退出 1 使后续命令短路、旧失败数量漂移 |
 | 双层交付绑定 | `test_source_schema.py`、`test_source_cutover.py` | payload 自引用、handoff 缺富字段、决定未绑定 handoff／payload、ignored 预验改读未来正式 payload、安装后另写第二套 verifier、应用绕过绑定路径 |
 | 原子切换与补偿 | `test_source_cutover.py` | 双层 ApplyResult、已存在 output、整提交反转、删除 ID／history／义务、切换即发版 |
 
 ## 完成条件
 
 - 每个任务要求的 Q 项都有 accepted patches；推荐或 replacement 都由同一字段物化器消费，未批准任务不产生受跟踪或 ignored 写入。
-- 14 个任务均有预期 RED、定向 GREEN、写集和回滚证据；离线校验、迁移预演、文档分流和原子切换四个阶段另有完整回归证据，统一写入 ignored `verification.md`。
+- 保留的 139 项高风险行为测试均有预期 RED 与 GREEN；不使用 TDD 的任务有直接解析、schema、哈希、差异或端到端证据。14 个任务均有定向检查、写集和回滚证据；离线校验、迁移预演、文档分流和原子切换四个阶段另有完整回归证据，统一写入 ignored `verification.md`。
 - 六份迁移账本分别完整覆盖 138、47、1,501、726、756、19 个 identity；每个 identity 只有一个 base row 和一个最终行，每个 `(identity, field)` 最多一个 patch。每份账本分别统计 `mechanically_inherited`、`human_decided` 和 `blocked`；机械继承必须保持旧身份、旧值和旧哈希，不取得新的语义资格。
 - `scripts/source_model.py` 公开精确 `ReferenceKind`、`Issue`、`ReferenceUse`、`DecisionPatch` 和 `validate_references()`；`scripts/apply_source_migration.py` 公开唯一 `verify_source_handoff(repo_root, handoff_path, payload_path, candidate_root) -> List[Issue]`。七个 `$id`、26 个错误码和四类角色资格逐字一致，术语侧无需适配器。
 - 来源实体、用途角色、`basis`、`source`、`match`、`external_group`、义务和通用反向索引的类型、字段名和枚举与“接口锁”一致；external_group 要求 approved structure 并进入 source use 索引；未来 `vocab/terms.yaml` 夹具无需新增 visitor 即被发现。

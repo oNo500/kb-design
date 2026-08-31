@@ -30,11 +30,11 @@
 - `concepts/glossary.md`、受委托标签、正文诊断、`vocab/generated/terms-v1.json`、`vocab/generated/term-reference-index.json` 与 `vocab/generated/source-reference-index.json` 必须在同一暂存根生成并验证。
 - TBX、Obsidian、应用导入、往返编辑、来源改档、生活范围、实体归属、三份旁路草案生效和发版不在本计划写集。
 - `decision-term-0001` 与 `decision-term-0002` 分别先于其模式和真实迁移数据任务提交。`decision-term-0003`、`decision-term-0004`、`decision-term-0005` 绑定的是 T11 实现提交之后才存在的完整 candidate 与 manifest，因此只能在 T12 生成、预验并经人复核后提交；不得把这三份决定前置到 T11。
-- T11 只实现并提交 `cutover_terms.py`、两份测试和夹具；真实 candidate 与真实 manifest 必须不存在。T11 只运行不需要真实 candidate、manifest 或 cutover decision 的 79 项测试，其中切换侧 8 项全部使用临时 Git 夹具。
-- T12 以干净的 T11 实现提交为 `implementation_commit`，生成完整 ignored candidate 与 ignored manifest，运行 81 项非决定绑定测试及候选结构、哈希、来源严格校验、双索引、动态 Markdown 和草案预验；不得运行任何读取 `decision-term-0003`、`0004` 或 `0005` 的测试。人审通过后才提交这三份决定。
-- T13 才运行决定绑定测试、应用已绑定 candidate，并运行完整 82 项回归。base→HEAD 允许集合恰为 `design/decisions/terminology-governance-effective.md`、`design/decisions/terminology-schema-cutover.md`、`design/decisions/terminology-schema-rollback.md`；manifest 始终 ignored，不进入 Git。
+- T11 只实现并提交 `cutover_terms.py`、两份测试和夹具；真实 candidate 与真实 manifest 必须不存在。T11 只运行不需要真实 candidate、manifest 或 cutover decision 的 69 项高风险测试，其中切换侧 8 项全部使用临时 Git 夹具。
+- T12 以干净的 T11 实现提交为 `implementation_commit`，生成完整 ignored candidate 与 ignored manifest，运行 71 项非决定绑定高风险测试及候选结构、哈希、来源严格校验、双索引、动态 Markdown 和草案预验；不得运行任何读取 `decision-term-0003`、`0004` 或 `0005` 的测试。人审通过后才提交这三份决定。
+- T13 才运行决定绑定测试、应用已绑定 candidate，并运行 72 项计划高风险门禁。全库发现测试如另行运行，只要求全部通过，不把总数当作验收条件。base→HEAD 允许集合恰为 `design/decisions/terminology-governance-effective.md`、`design/decisions/terminology-schema-cutover.md`、`design/decisions/terminology-schema-rollback.md`；manifest 始终 ignored，不进入 Git。
 - 普通实现任务可以用 `git revert` 回退自己的代码提交；正式切换不得反转删除决定、ID、义务或历史，只能按 H13、H23 创建补偿决定与处置提交。
-- 每个任务按其真实材料可用时点执行 RED、最小实现、定向 GREEN、写集检查、回滚说明和提交。普通任务不派独立审查，不重复运行全库回归；完整回归只在 T03 模式闭合、T06 迁移闭合、T10 消费链闭合、T12 完整候选和 T13 正式应用五个阶段运行。
+- 只有“测试账本”保留的高风险行为测试执行 RED／GREEN；文档、静态 schema、确定性生成物和纯机械迁移使用直接解析、模式、哈希、差异或端到端门禁，不为 TDD 形式另造测试。每个任务执行定向检查、写集检查、回滚说明和提交。普通任务不派独立审查，不重复运行全库回归；完整回归只在 T03 模式闭合、T06 迁移闭合、T10 消费链闭合、T12 完整候选和 T13 正式应用五个阶段运行。
 - 独立审查只保留两次：T12 审查完整候选、身份与决定增量、双索引和回退材料；T13 审查决定绑定、原子应用和正式唯一所有权。测试数量、测试通过、格式或哈希一致等机械事实由命令证明，不再交给独立代理重复确认。
 - 已知两处旧 SDD 链接由 `check_known_link_failures.py` 转成“恰好匹配即退出 0”的阶段门禁，不能用会短路后续命令的 `&&` 链。
 - 实施证据只写 `.superpowers/sdd/2026-08-31-terminology-schema-generation/`。本计划编写阶段不执行正式 schema、数据、脚本、迁移、决定或提交。
@@ -77,9 +77,9 @@ T01 先运行 `python3 scripts/check_sources.py --root .`，再由统一 `load_s
 
 术语候选 payload 锁只在 T12 建立。T11 提交完成时，`.superpowers/sdd/2026-08-31-terminology-schema-generation/candidate-root/` 与同级 `payload-manifest.json` 都必须不存在。T12 以干净的 T11 HEAD 为 `implementation_commit`，从该提交的 Git tree 读取 tracked path 集合，再生成完整 ignored candidate 和不含自身的 ignored manifest。manifest 每项保存 path、action、before_sha256、after_sha256；Delete 的 after_sha256 为 null。manifest 另保存 base_commit、source handoff SHA-256、source payload SHA-256、动态 Markdown 清单、preserve_paths、restore_paths；manifest 路径不进入 entries。
 
-T12 在没有 `decision-term-0003`、`0004`、`0005` 的状态下运行候选结构、逐项哈希、来源严格校验、双索引、动态 Markdown、草案核销和 81 项非绑定测试。人完成候选复核后，`decision-term-0004` 才在 front matter 绑定 ignored manifest 的精确路径与 `payload_manifest_sha256`；candidate root 或 manifest 丢失、移动或任一字节变化时，旧决定失效，必须重新生成候选并新建替代决定。manifest 始终 ignored，不提交副本。
+T12 在没有 `decision-term-0003`、`0004`、`0005` 的状态下运行候选结构、逐项哈希、来源严格校验、双索引、动态 Markdown、草案核销和 71 项非绑定高风险测试。人完成候选复核后，`decision-term-0004` 才在 front matter 绑定 ignored manifest 的精确路径与 `payload_manifest_sha256`；candidate root 或 manifest 丢失、移动或任一字节变化时，旧决定失效，必须重新生成候选并新建替代决定。manifest 始终 ignored，不提交副本。
 
-T13 以 T11 `implementation_commit` 为 base，要求 base→HEAD 的路径集合恰为三份先行决定；随后才运行决定绑定测试、应用测试和完整 82 项回归。三份允许路径固定为：
+T13 以 T11 `implementation_commit` 为 base，要求 base→HEAD 的路径集合恰为三份先行决定；随后才运行决定绑定测试、应用测试和 72 项计划高风险门禁。三份允许路径固定为：
 
 - `design/decisions/terminology-governance-effective.md`
 - `design/decisions/terminology-schema-cutover.md`
@@ -111,7 +111,7 @@ python3 scripts/governance/check_term_inputs.py verify --frozen-commit 9e7b411c2
 | H10 | `types:troubleshooting/en`、`types:troubleshooting/zh`、`forms:cheat-sheet/en` 三个候选是否分别建立委托；每项对应哪个获准术语概念 ID 和决定记录？ | 安全提案为三项都不建立。替代答案必须在 decisions.tsv 与独立委托决定中给出目标概念 ID 和语言。 | 当前三项都有未关闭门禁。 | 无生产委托试点。 | 五份词表 946 标签保持原所有权。 |
 | H11 | 是否能提供仓库外内容单元和应用映射的标签消费者清单；若不能，三个候选的影响覆盖以什么明确边界获准？ | 记录仓库外消费者未知；未来 active 委托必须先提供清单或由独立决定接受仅仓库覆盖。 | 不伪造影响完整性。 | 委托继续推迟。 | active 委托校验失败。 |
 | H12 | 术语表是否继续呈现当前缩写表和标准表；分组、排序、允许术语入口、历史区、缺少中文时的固定版式和只读声明具体是什么？ | 保留冻结的 15 个布局组；主表固定五列。概念按布局组与 ID，语言按 `zh-Hans`、`zh-Hant`、`en`，术语按状态与 ID；缺中文写 `—`，不补译；历史形式独立呈现；第二行固定只读声明。 | 保持读者结构并固定无中文呈现。 | 布局文件成为新维护对象。 | 只生成 JSON 预演。 |
-| H13 | `concepts/glossary.md` 从人工编辑切为生成视图的生效日期、决定记录、冻结哈希和回退条件是什么？ | 生效窗口仍提议 `2026-09-15`，过期即重新决定。T11 只提交切换实现、真实阶段测试定义和夹具，真实 candidate／manifest 不存在，只跑 79 项无需真实材料的测试。T12 从干净 T11 HEAD 读取 tracked paths，生成完整 ignored candidate 与无自引用 ignored manifest，跑 81 项非决定绑定测试和全部预验；人复核后才提交 decision-term-0003／0004／0005。T13 才验证决定绑定、apply-only 并跑完整 82 项。active state 指向 vocab/terms.yaml 且 consumers_enabled true；decision-term-0006 补偿后指向 concepts/glossary.md、terms_mode audit_read_only、consumers_enabled false，并保留审计对象。 | base_commit 是已提交实现，决定绑定的是该提交之后生成并预验的完整内容。 | candidate 丢失或漂移时必须重新决定。 | 不改变所有权。 |
+| H13 | `concepts/glossary.md` 从人工编辑切为生成视图的生效日期、决定记录、冻结哈希和回退条件是什么？ | 生效窗口仍提议 `2026-09-15`，过期即重新决定。T11 只提交切换实现、真实阶段测试定义和夹具，真实 candidate／manifest 不存在，只跑 69 项无需真实材料的高风险测试。T12 从干净 T11 HEAD 读取 tracked paths，生成完整 ignored candidate 与无自引用 ignored manifest，跑 71 项非决定绑定高风险测试和全部预验；人复核后才提交 decision-term-0003／0004／0005。T13 才验证决定绑定、apply-only 并跑 72 项计划高风险门禁。active state 指向 vocab/terms.yaml 且 consumers_enabled true；decision-term-0006 补偿后指向 concepts/glossary.md、terms_mode audit_read_only、consumers_enabled false，并保留审计对象。 | base_commit 是已提交实现，决定绑定的是该提交之后生成并预验的完整内容。 | candidate 丢失或漂移时必须重新决定。 | 不改变所有权。 |
 | H14 | `build-topics.py` 是否继续作为 `topics.yaml` 的正式写入器；若继续，受委托标签从哪个已发布术语快照读取；若退出，哪个获准组件接管当前 700／24 输出？ | v1 保留来源切换后的 `scripts/build-topics.py`；只在 term-cutover-state active 且 consumers_enabled 时读取 `vocab/generated/terms-v1.json`。 | 避免重写已验证主题链。 | 旧构建器复杂度上升。 | 不接入委托。 |
 | H15 | 主题 ID 从英文标签 `slug` 稳定化的规则是什么；在 ID 稳定化前是否明确禁止任何可能改变标签的委托切换？ | 从 decision-source-0005 的 700 个 ID 与来源身份建立 `vocab/build/topic-ids.json`；构建器只从映射取 ID，新项先决定。覆盖完成前禁止标签委托。 | 切断标签与身份耦合。 | 错误来源键会固化错误。 | T04 与委托阻断。 |
 | H16 | `design/topics.md` 的中文标签必填要求与当前 240 个 `basis.zh: none` 缺中文标签之间采用哪一边；这 240 项逐项是不译、待补证还是模式例外？ | 正式规则改为有依据时填写中文；无依据时保留来源语言与中文普通解释。240 项保持不译，不设例外。 | 与零自定一致。 | 中文浏览仍不完整。 | 不改 240 项。 |
@@ -447,19 +447,19 @@ class RollbackResult:
 
 ## 测试账本
 
-计划固定 82 个测试方法；零升级和显式升级通过专用夹具验证，不把当前继承结果写死为唯一 GREEN 结果。T11 的 8 项只使用临时 Git 夹具；T12 的 2 项读取真实 candidate／manifest 但不读取 cutover decision；T13 的 1 项才读取决定并执行 apply-only。
+计划只设计 72 个高风险测试方法；每项都对应语义效力、身份、迁移完整性、确定性、共享接口、切换或回滚风险。零升级和显式升级通过专用夹具验证，不把当前继承结果写死为唯一 GREEN 结果。既有兼容测试和其他计划的测试不计入本账本，也不以全库测试数量作为验收条件。
 
 | 任务 | 数量 | 测试方法 |
 |---|---:|---|
-| T01 | 7 | `test_frozen_git_blobs_match`、`test_ignored_inventory_hashes_match`、`test_source_handoff_resolves`、`test_source_handoff_hashes_match`、`test_dynamic_markdown_delta_is_explained`、`test_known_link_failures_are_exact`、`test_write_set_guard_rejects_extra_path` |
-| T02 | 11 | `test_exact_top_level_keys`、`test_rejects_duplicate_ids`、`test_requires_record_cardinalities`、`test_basis_fields_are_nonempty_arrays`、`test_schema_refs_match_source_handoff`、`test_imports_fixed_source_contract`、`test_source_issue_code_and_path_are_preserved`、`test_rejects_legacy_reference_values`、`test_accepts_only_v1_language_tags`、`test_subject_fields_resolve_to_handoff_topics`、`test_active_definition_conflicts_fail` |
-| T03 | 8 | `test_requires_one_preferred_term`、`test_preferred_demotion_is_atomic`、`test_replacement_stays_in_language`、`test_replacement_cycle_fails`、`test_restoration_rechecks_admission`、`test_history_is_append_only`、`test_same_state_is_not_transition`、`test_transition_decisions_resolve` |
-| T04 | 5 | `test_topic_id_map_matches_handoff`、`test_preserves_700_concepts_and_24_arrays`、`test_label_change_cannot_change_topic_id`、`test_topics_hash_matches_post_source_baseline`、`test_unconsumed_inputs_stay_unchanged` |
+| T01 | 6 | `test_frozen_git_blobs_match`、`test_ignored_inventory_hashes_match`、`test_source_handoff_resolves`、`test_source_handoff_hashes_match`、`test_dynamic_markdown_delta_is_explained`、`test_write_set_guard_rejects_extra_path` |
+| T02 | 8 | `test_exact_top_level_keys`、`test_rejects_duplicate_ids`、`test_basis_fields_are_nonempty_arrays`、`test_schema_refs_match_source_handoff`、`test_source_issue_code_and_path_are_preserved`、`test_accepts_only_v1_language_tags`、`test_subject_fields_resolve_to_handoff_topics`、`test_active_definition_conflicts_fail` |
+| T03 | 7 | `test_requires_one_preferred_term`、`test_preferred_demotion_is_atomic`、`test_replacement_stays_in_language`、`test_replacement_cycle_fails`、`test_restoration_rechecks_admission`、`test_history_is_append_only`、`test_transition_decisions_resolve` |
+| T04 | 4 | `test_topic_id_map_matches_handoff`、`test_label_change_cannot_change_topic_id`、`test_topics_hash_matches_post_source_baseline`、`test_unconsumed_inputs_stay_unchanged` |
 | T05 | 8 | `test_inherited_preview_reconciles_348`、`test_defer_becomes_audit_only`、`test_keep_retains_owner_without_admission`、`test_remove_is_retained_without_l3`、`test_und_language_is_not_guessed`、`test_locked_review_fields_are_unchanged`、`test_homographic_rows_stay_distinct`、`test_inherited_preview_writes_only_ignored` |
-| T06 | 7 | `test_empty_upgrades_materialize_inherited_ledger`、`test_upgrade_decisions_materialize_migrate_rows`、`test_decision_hash_must_match_adr`、`test_every_inventory_identity_has_one_ledger_row`、`test_ledger_is_byte_stable`、`test_invalid_upgrade_remains_blocked`、`test_terms_ledger_is_in_task_write_set` |
-| T07 | 7 | `test_generation_is_byte_stable`、`test_only_active_concepts_publish`、`test_missing_chinese_never_falls_back`、`test_glossary_layout_is_fixed`、`test_manual_output_drift_fails`、`test_all_consumers_share_snapshot_hash`、`test_rolled_back_state_disables_generation` |
-| T08 | 6 | `test_term_concept_structure`、`test_delegated_language_has_one_owner`、`test_inherited_rows_keep_production_undelegated`、`test_upgrade_decision_can_enable_fixture_delegation`、`test_external_consumer_boundary_blocks_switch`、`test_rolled_back_state_revokes_consumers` |
-| T09 | 6 | `test_scans_dynamic_markdown_manifest`、`test_markdown_addition_requires_allowed_write`、`test_excluded_contexts_keep_precise_locations`、`test_parenthesized_headings_are_not_truncated`、`test_homographs_require_concept_context`、`test_first_usage_baseline_is_report_only` |
+| T06 | 6 | `test_empty_upgrades_materialize_inherited_ledger`、`test_upgrade_decisions_materialize_migrate_rows`、`test_decision_hash_must_match_adr`、`test_every_inventory_identity_has_one_ledger_row`、`test_ledger_is_byte_stable`、`test_invalid_upgrade_remains_blocked` |
+| T07 | 6 | `test_generation_is_byte_stable`、`test_only_active_concepts_publish`、`test_missing_chinese_never_falls_back`、`test_manual_output_drift_fails`、`test_all_consumers_share_snapshot_hash`、`test_rolled_back_state_disables_generation` |
+| T08 | 5 | `test_delegated_language_has_one_owner`、`test_inherited_rows_keep_production_undelegated`、`test_upgrade_decision_can_enable_fixture_delegation`、`test_external_consumer_boundary_blocks_switch`、`test_rolled_back_state_revokes_consumers` |
+| T09 | 5 | `test_scans_dynamic_markdown_manifest`、`test_markdown_addition_requires_allowed_write`、`test_excluded_contexts_keep_precise_locations`、`test_homographs_require_concept_context`、`test_first_usage_baseline_is_report_only` |
 | T10 | 6 | `test_source_obligation_bridge_uses_id_only`、`test_term_index_is_bidirectional`、`test_decision_change_opens_new_obligation`、`test_resolved_obligation_never_reopens`、`test_obligation_history_is_append_only`、`test_no_periodic_threshold_is_inherited` |
 | T11 | 8 | `test_tracked_paths_come_from_implementation_commit`、`test_candidate_markdown_uses_implementation_tree_without_git`、`test_complete_candidate_contains_every_activation_change`、`test_payload_manifest_excludes_itself`、`test_payload_manifest_is_byte_stable`、`test_source_index_contains_term_references`、`test_candidate_runs_source_strict_validation`、`test_rollback_preserves_terms_ids_and_history` |
 | T12 | 2 | `test_candidate_base_commit_is_implementation_commit`、`test_real_candidate_passes_prebinding_validation` |
@@ -477,10 +477,10 @@ class RollbackResult:
 | 决定物化 | decision-term-0002、零个或多个升级行与 records.yaml | decisions.tsv、records.yaml、terms.tsv | 无升级与有升级两类夹具均 GREEN；真实账本 348／348 对账 | 新决定只修订升级行并重物化；冻结输入和旧账本 Git 历史保留 |
 | 生成委托 | H09–H15 | 布局、生成器、委托校验 | 快照、术语表和标签共享哈希 | revert T07/T08；正式所有权未切换 |
 | 诊断维护 | H17–H20 | 扫描器、义务和索引工具 | 动态 Markdown 清单、事件义务 GREEN | revert T09/T10；裁定与决定保留 |
-| 切换实现 | T01–T10 GREEN；真实 candidate／manifest 不存在 | `cutover_terms.py`、两份测试和夹具 | T11 的 79 项无需真实材料测试全绿；8 项切换测试只用夹具；提交后工作树干净，真实 candidate／manifest 仍不存在 | revert T11 实现提交；decision-term-0003／0004／0005 尚未创建 |
-| 完整候选 | T11 实现提交为干净 HEAD | 无受跟踪写入；ignored candidate 与 ignored manifest | T12 的 81 项非决定绑定测试、candidate 结构与逐项哈希、双索引、来源 strict、动态 Markdown 和草案核销通过 | 删除精确 ignored candidate 与 manifest；决定尚未创建 |
+| 切换实现 | T01–T10 GREEN；真实 candidate／manifest 不存在 | `cutover_terms.py`、两份测试和夹具 | T11 的 69 项无需真实材料高风险测试全绿；8 项切换测试只用夹具；提交后工作树干净，真实 candidate／manifest 仍不存在 | revert T11 实现提交；decision-term-0003／0004／0005 尚未创建 |
+| 完整候选 | T11 实现提交为干净 HEAD | 无受跟踪写入；ignored candidate 与 ignored manifest | T12 的 71 项非决定绑定高风险测试、candidate 结构与逐项哈希、双索引、来源 strict、动态 Markdown 和草案核销通过 | 删除精确 ignored candidate 与 manifest；决定尚未创建 |
 | 决定绑定 | T12 candidate 与 manifest 已冻结并经人复核 | 只写 decision-term-0003／0004／0005 三份决定 | 决定记录 manifest path／SHA-256 和 implementation_commit；manifest 仍 ignored；尚不运行决定绑定测试 | 不删除决定；candidate 漂移则新建候选与替代决定 |
-| 原子应用 | 已绑定 candidate；base→HEAD 恰为三份决定 | 只复制／删除 manifest entries | T13 先运行决定绑定与 apply-only 测试，再运行完整 82 项、来源严格和双索引；生成函数调用为零 | decision-term-0006 绑定补偿候选；保留 terms、ID、义务、历史、账本、ignored manifest 绑定记录和快照 |
+| 原子应用 | 已绑定 candidate；base→HEAD 恰为三份决定 | 只复制／删除 manifest entries | T13 先运行决定绑定与 apply-only 测试，再运行 72 项计划高风险门禁、来源严格和双索引；生成函数调用为零 | decision-term-0006 绑定补偿候选；保留 terms、ID、义务、历史、账本、ignored manifest 绑定记录和快照 |
 
 ### 双锁基线
 
@@ -506,7 +506,7 @@ class RollbackResult:
 - Consumes: H01 source decision 的 `delivery_handoff`／`handoff_sha256`／`delivery_payload`／`payload_sha256`、source-cutover-handoff 十个顶层键、source-cutover-payload 三个顶层键、冻结 Git 对象和术语计划输入哈希。
 - Produces: I02–I04、HLP01–HLP08；私有函数 `extract_named_json_blocks(text, name)`、`unexplained_markdown_delta(previous, current, allowed)`；命令 `check_term_inputs.py verify`、`check_known_link_failures.py`、`check_write_set.py`。
 
-- [ ] 写入 T01 的 7 个失败测试。测试必须从 Git blob 读取旧草案，不能 `Path('design/drafts/source-governance.md').read_bytes()`；全部 loader 调用使用同一四参数形式。
+- [ ] 写入 T01 的 6 个高风险失败测试。测试必须从 Git blob 读取旧草案，不能 `Path('design/drafts/source-governance.md').read_bytes()`；全部 loader 调用使用同一四参数形式。已知旧链接只保留仓库级命令门禁，不建立术语单元测试。
 
 ```python
 class TermBaselineTest(unittest.TestCase):
@@ -552,7 +552,7 @@ class TermBaselineTest(unittest.TestCase):
         ))
 ```
 
-  其余三个方法逐字使用测试账本中的 `test_ignored_inventory_hashes_match`、`test_known_link_failures_are_exact`、`test_write_set_guard_rejects_extra_path`；连同 `test_frozen_git_blobs_match` 合计 7 项。`test_ignored_inventory_hashes_match` 逐项核十五个 ignored 输入，不合并为目录哈希。
+  其余两个方法逐字使用测试账本中的 `test_ignored_inventory_hashes_match`、`test_write_set_guard_rejects_extra_path`；连同 `test_frozen_git_blobs_match` 合计 6 项。`test_ignored_inventory_hashes_match` 逐项核十五个 ignored 输入，不合并为目录哈希。
 
 - [ ] 运行 RED。
 
@@ -1031,7 +1031,7 @@ def collect_reference_uses(document, file):
 
 运行：`python3 -m unittest tests.governance.test_term_model -v`
 
-预期：11 项通过。
+预期：8 项高风险模式测试通过。
 
 - [ ] 本任务只运行 T02 定向 GREEN 与写集检查；完整回归并入 T03 模式闭合门禁。
 
@@ -1066,7 +1066,7 @@ git commit -m "[L2] 术语治理：建立来源消费模式"
 - Consumes: I05、I06、H06–H08。
 - Produces: I07；私有函数 `index_terms(document)`、`history_is_prefix(before, after)`、`replacement_cycles(document)` 在本任务定义。
 
-- [ ] 写入 T03 的 8 个失败测试，覆盖唯一优先、原子升降、同语言替代、环、恢复准入、历史前缀、同状态和决定解析。
+- [ ] 写入 T03 的 7 个高风险失败测试，覆盖唯一优先、原子升降、同语言替代、环、恢复准入、历史前缀和决定解析；同状态 no-op 由状态转换实现直接拒绝，不单设测试。
 
 ```python
 def test_preferred_demotion_is_atomic(self):
@@ -1148,7 +1148,7 @@ def replacement_cycles(document):
     return cycles
 ```
 
-- [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_model tests.governance.test_term_transitions -v`。预期 19 项通过。
+- [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_model tests.governance.test_term_transitions -v`。预期 15 项高风险测试通过。
 
 - [ ] 运行 T03 模式闭合阶段的完整回归。
 
@@ -1206,7 +1206,7 @@ git commit -m "[L2] 术语治理：约束原子状态转换"
 - Consumes: I02、H14–H16、source-cutover-handoff 顶层 `topics_sha256` 与 `outputs` 中唯一 topics 项；现行主题构建输入是被改造对象，不把本任务才产生的 I08／I09 当作前置。
 - Produces: I08、I09；私有函数 `topic_identity(record)`、`build_topic_id_map(topics, handoff)` 在本任务定义；复用 T02 的 `unique_source_output()`，不定义第二个 topics 解析器。
 
-- [ ] 写入 T04 的 5 个失败测试。测试从 handoff 读取基线哈希和 700／24 ID，不嵌入来源迁移前文件哈希。
+- [ ] 写入 T04 的 4 个高风险失败测试。测试从 handoff 读取基线哈希和稳定 ID，不嵌入来源迁移前文件哈希；700／24 计数已由 handoff 哈希和 ID 闭合覆盖，不单设重复计数测试。
 
 ```python
 def test_topics_hash_matches_post_source_baseline(self):
@@ -1471,7 +1471,7 @@ git commit -m "[L2] 术语治理：建立审查继承预演"
 - Consumes: I10–I12、decision-term-0002、H05–H10、H21。
 - Produces: I12A、只含升级行的 decisions.tsv 与覆盖全部 348 个冻结身份的 terms.tsv。
 
-- [ ] 写入 T06 的 7 个失败测试。零升级与显式升级两套输入都必须 GREEN；invalid 只验证具体效力变化错误。
+- [ ] 写入 T06 的 6 个高风险失败测试。零升级与显式升级两套输入都必须 GREEN；invalid 只验证具体效力变化错误。写集由专用命令门禁证明，不再用单元测试重复断言。
 
 ```python
 def test_upgrade_decisions_materialize_migrate_rows(self):
@@ -1544,7 +1544,7 @@ def build_terms_document(ledger, records_path):
 
 `parse_ledger_bytes()` 在 migrate_terms.py 用与测试 parse_ledger 相同的 DictReader 实现，并把单个连字符转为 None。
 
-- [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_migration tests.governance.test_term_decisions -v`，预期 15 项通过。
+- [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_migration tests.governance.test_term_decisions -v`，预期 14 项高风险测试通过。
 
 - [ ] 运行 `migrate_terms.py validate`。账本验证只要求 348／348 身份闭合、冻结字段不变和所有升级合法；未升级的 `defer`、`keep`、`remove` 不构成账本阻断。正式唯一术语编辑源的 T12／T13 另检查候选是否具有足够 active 记录重现获准发布视图，不能把该发布条件倒灌成 348 行重复审查。
 
@@ -1603,7 +1603,7 @@ git commit -m "[L2] 术语治理：物化继承迁移账本"
 - Consumes: I05–I07、H12、H13；I13／I14 由本任务实现，不作前置。
 - Produces: I13、I14；私有函数 `canonical_json(value)`、`load_cutover_state(path)`、`ordered_concepts(document, layout)` 在本任务定义。
 
-- [ ] 写入 T07 的 7 个失败测试，active 和 rolled_back 状态都必须覆盖。
+- [ ] 写入 T07 的 6 个高风险失败测试，active 和 rolled_back 状态都必须覆盖。固定布局由候选输出审查和漂移检查覆盖，不单设结构测试。
 
 ```python
 def test_generation_is_byte_stable(self):
@@ -1722,7 +1722,7 @@ git commit -m "[L2] 术语治理：建立状态化确定生成"
 - Consumes: I09、I13、terms.tsv、独立委托决定、H09–H15；I15／I16 由本任务实现，不作前置。
 - Produces: I15、I16；私有函数 `iter_delegations(vocabularies)`、`local_label_fields(record, language)` 在本任务定义。
 
-- [ ] 写入 T08 的 6 个失败测试。生产测试从真实 terms.tsv 的获准迁入行和独立委托决定得出预期，不硬编码“三项永远不委托”；夹具分别覆盖 active 与 revoked。
+- [ ] 写入 T08 的 5 个高风险失败测试。生产测试从真实 terms.tsv 的获准迁入行和独立委托决定得出预期，不硬编码“三项永远不委托”；夹具分别覆盖 active 与 revoked。局部对象形状交给 schema，不重复建立单元测试。
 
 ```python
 def test_inherited_rows_keep_production_undelegated(self):
@@ -1777,7 +1777,7 @@ def local_label_fields(record, language):
 
 - [ ] 修改 I09：加载 term-cutover-state；active 时按 active 委托读取 snapshot；rolled_back 时拒绝 snapshot 并使用恢复的本地标签。输出 ID 始终来自 topic-ids。
 
-- [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_delegation tests.governance.test_topic_id_stability -v`，预期 11 项通过。生成 post-source topics，继承结果下逐字节等于 handoff 哈希；升级夹具只改变决定列明标签，不改 ID。
+- [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_delegation tests.governance.test_topic_id_stability -v`，预期 9 项高风险测试通过。生成 post-source topics，继承结果下逐字节等于 handoff 哈希；升级夹具只改变决定列明标签，不改 ID。
 
 - [ ] 本任务只运行定向 GREEN 与写集检查；完整回归并入 T10 消费链闭合门禁。
 
@@ -1816,18 +1816,13 @@ git commit -m "[L2] 术语治理：约束委托唯一所有权"
 - Consumes: I04、I13、H17、H18；I17 由本任务实现，不作前置。
 - Produces: I17；私有函数 `classify_markdown_path(path)`、`scan_line(line, line_number, context)`、`manifest_delta(previous, current, allowed)` 在本任务定义。
 
-- [ ] 写入 T09 的 6 个失败测试。夹具在测试中新增和删除 Markdown，断言只有允许写集变化通过；不断言总数 60。
+- [ ] 写入 T09 的 5 个高风险失败测试。夹具在测试中新增和删除 Markdown，断言只有允许写集变化通过；不断言总数。括注标题的单一解析边角不单设 TDD，若真实回归再次出现再补最小测试。
 
 ```python
 def test_scans_dynamic_markdown_manifest(self):
     paths = [entry["path"] for entry in current_markdown_manifest(self.root)]
     hits = scan_markdown(self.root, paths, self.snapshot)
     self.assertEqual(set(paths), scanned_or_classified_paths(hits, paths))
-
-def test_parenthesized_headings_are_not_truncated(self):
-    hit = scan_line("# 写作规则 (Writing Rules)", 1, "prose")[0]
-    self.assertEqual("写作规则", hit.normalized)
-    self.assertEqual("写作规则 (Writing Rules)", hit.raw)
 ```
 
 `scanned_or_classified_paths()` 在测试模块内返回命中路径加明确零命中清单，确保每个输入路径有扫描状态。
@@ -1895,7 +1890,7 @@ def scan_line(line, line_number, context):
 
 - [ ] 修改旧入口：`scripts/check-terms.py` 只做 CLI 包装，保留 `--all`，新增 `--format`、`--output`、`--snapshot`、`--state`、`--decisions`；现有 6 测试继续通过，输出仍称待人工判断。
 
-- [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_usage tests.test_check_terms -v`，预期 12 项通过。运行 ignored 扫描，输出 manifest 中的 count 取实际清单长度，不与常量比较。
+- [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_usage tests.test_check_terms -v`。预期新增 5 项高风险诊断测试和既有兼容测试全部通过；不以全库固定总数验收。运行 ignored 扫描，输出 manifest 中的 count 取实际清单长度，不与常量比较。
 
 - [ ] 本任务只运行定向 GREEN 与写集检查；完整回归并入 T10 消费链闭合门禁。
 
@@ -2277,11 +2272,11 @@ def verify_bound_payload(repo_root, candidate_root, manifest_path, decision_path
 
 - [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_cutover.TermCutoverFixtureTests -v`。预期 T11 的 8 项夹具测试通过；测试候选不写正式树。只运行 `python3 -m py_compile tests/governance/test_term_activation.py` 验证真实阶段测试语法，不执行其中 3 项。
 
-- [ ] 运行 79 项无真实材料回归。命令显式列 T01–T10 十个测试模块和 `tests.governance.test_term_cutover.TermCutoverFixtureTests`；不得使用会发现 `test_term_activation.py` 的 `unittest discover`。
+- [ ] 运行 69 项无真实材料高风险门禁。命令显式列 T01–T10 十个测试模块和 `tests.governance.test_term_cutover.TermCutoverFixtureTests`；不得使用会发现 `test_term_activation.py` 的 `unittest discover`。
 
   Run: `python3 -m unittest tests.governance.test_term_baseline tests.governance.test_term_model tests.governance.test_term_transitions tests.governance.test_topic_id_stability tests.governance.test_term_migration tests.governance.test_term_decisions tests.governance.test_term_generation tests.governance.test_term_delegation tests.governance.test_term_usage tests.governance.test_term_maintenance tests.governance.test_term_cutover.TermCutoverFixtureTests -v`
 
-  Expected: 79 tests PASS；没有测试读取真实 candidate、manifest 或 decision-term-0003／0004／0005。
+  Expected: 69 tests PASS；没有测试读取真实 candidate、manifest 或 decision-term-0003／0004／0005。
 
 - [ ] 逐条运行其余回归：check-topics、check-sources strict、known-link wrapper、git diff --check。预期全绿或已知链接恰两条。
 
@@ -2329,17 +2324,17 @@ git commit -m "[L2] 术语治理：完成切换实现与测试"
 
   Expected: 2 tests PASS；只验证 base_commit、Git tree basis、candidate 结构、逐项哈希与无决定预验。
 
-- [ ] 运行 81 项非决定绑定回归。使用 T11 的 79 项显式命令，再追加 `tests.governance.test_term_activation.TermCandidatePrebindingTests`；不得运行 `TermBoundApplicationTests` 或 `unittest discover`。
+- [ ] 运行 71 项非决定绑定高风险门禁。使用 T11 的 69 项显式命令，再追加 `tests.governance.test_term_activation.TermCandidatePrebindingTests`；不得运行 `TermBoundApplicationTests` 或 `unittest discover`。
 
   Run: `KB_TERM_REPO_ROOT=/Users/xiu/code/kb-design KB_TERM_CANDIDATE_ROOT=/Users/xiu/code/kb-design/.superpowers/sdd/2026-08-31-terminology-schema-generation/candidate-root KB_TERM_MANIFEST=/Users/xiu/code/kb-design/.superpowers/sdd/2026-08-31-terminology-schema-generation/payload-manifest.json KB_TERM_IMPLEMENTATION_COMMIT=$(git rev-parse HEAD) python3 -m unittest tests.governance.test_term_baseline tests.governance.test_term_model tests.governance.test_term_transitions tests.governance.test_topic_id_stability tests.governance.test_term_migration tests.governance.test_term_decisions tests.governance.test_term_generation tests.governance.test_term_delegation tests.governance.test_term_usage tests.governance.test_term_maintenance tests.governance.test_term_cutover.TermCutoverFixtureTests tests.governance.test_term_activation.TermCandidatePrebindingTests -v`
 
-  Expected: 81 tests PASS；真实 candidate 与 manifest 被读取，decision-term-0003／0004／0005 仍不存在。
+  Expected: 71 tests PASS；真实 candidate 与 manifest 被读取，decision-term-0003／0004／0005 仍不存在。
 
 - [ ] 运行 candidate 其余预验：source strict、source index 双跑、term index 双跑、topics、usage、draft disposition、动态 Markdown 与 T13 action 集合。所有命令只读正式树或写 ignored 证据；受跟踪差异仍为零。
 
 - [ ] 人复核 candidate 与 ignored manifest；manifest 保持原路径和字节，不创建受跟踪副本。
 
-- [ ] 使用 `superpowers:requesting-code-review` 审查 implementation_commit、tracked path 集合、无 Git Markdown 算法、candidate 完整性、manifest 字节稳定、81 项非绑定测试和所有预验。审查输入不得包含 cutover decision，也不得声称决定绑定通过。APPROVED 后交人作三份决定。
+- [ ] 使用 `superpowers:requesting-code-review` 审查 implementation_commit、tracked path 集合、无 Git Markdown 算法、candidate 完整性、manifest 字节稳定、71 项非绑定高风险门禁和所有预验。审查输入不得包含 cutover decision，也不得声称决定绑定通过。APPROVED 后交人作三份决定。
 
 - [ ] 人创建 decision-term-0003／0004／0005。`decision-term-0004.delivery_manifest` 写 ignored manifest 精确路径，`payload_manifest_sha256` 等于该文件 SHA-256，`base_commit` 等于 implementation_commit；0003 绑定 candidate formal design 与草案去向；0005 绑定 restore／preserve 路径。
 
@@ -2370,7 +2365,7 @@ git commit -m "[L3] 术语治理：批准完整切换候选"
 
 **Interfaces:**
 
-- Consumes: I25、I26、I28、I29、T12 的 81 项 GREEN、T12 candidate／manifest 与先行审计提交。
+- Consumes: I25、I26、I28、I29、T12 的 71 项 GREEN、T12 candidate／manifest 与先行审计提交。
 - Produces: active 正式链，或实际回滚时 decision-term-0006 补偿链。
 
 - [ ] 运行 T13 的决定绑定与 apply-only 测试。
@@ -2385,15 +2380,15 @@ git commit -m "[L3] 术语治理：批准完整切换候选"
 
 - [ ] 运行 I26 原子复制／删除 entries。复制前保存 backup，失败时恢复；apply 返回 written／deleted／preserved。
 
-- [ ] 运行完整回归。现在真实 candidate、manifest 和三份决定都存在；T12 的预验测试显式允许 HEAD 为 implementation_commit 后代，仍从 base_commit Git blobs 复核 before 哈希。
+- [ ] 运行 72 项计划高风险门禁。现在真实 candidate、manifest 和三份决定都存在；T12 的预验测试显式允许 HEAD 为 implementation_commit 后代，仍从 base_commit Git blobs 复核 before 哈希。命令显式列出计划测试，不使用全库 discover。
 
-  Run: `KB_TERM_REPO_ROOT=/Users/xiu/code/kb-design KB_TERM_CANDIDATE_ROOT=/Users/xiu/code/kb-design/.superpowers/sdd/2026-08-31-terminology-schema-generation/candidate-root KB_TERM_MANIFEST=/Users/xiu/code/kb-design/.superpowers/sdd/2026-08-31-terminology-schema-generation/payload-manifest.json KB_TERM_IMPLEMENTATION_COMMIT=$(<.superpowers/sdd/2026-08-31-terminology-schema-generation/implementation-commit.txt) KB_TERM_CUTOVER_DECISION=/Users/xiu/code/kb-design/design/decisions/terminology-schema-cutover.md KB_TERM_ALLOW_HEAD_DESCENDANT=1 python3 -m unittest discover -s tests -p 'test_*.py' -v`
+  Run: `KB_TERM_REPO_ROOT=/Users/xiu/code/kb-design KB_TERM_CANDIDATE_ROOT=/Users/xiu/code/kb-design/.superpowers/sdd/2026-08-31-terminology-schema-generation/candidate-root KB_TERM_MANIFEST=/Users/xiu/code/kb-design/.superpowers/sdd/2026-08-31-terminology-schema-generation/payload-manifest.json KB_TERM_IMPLEMENTATION_COMMIT=$(<.superpowers/sdd/2026-08-31-terminology-schema-generation/implementation-commit.txt) KB_TERM_CUTOVER_DECISION=/Users/xiu/code/kb-design/design/decisions/terminology-schema-cutover.md KB_TERM_ALLOW_HEAD_DESCENDANT=1 python3 -m unittest tests.governance.test_term_baseline tests.governance.test_term_model tests.governance.test_term_transitions tests.governance.test_topic_id_stability tests.governance.test_term_migration tests.governance.test_term_decisions tests.governance.test_term_generation tests.governance.test_term_delegation tests.governance.test_term_usage tests.governance.test_term_maintenance tests.governance.test_term_cutover.TermCutoverFixtureTests tests.governance.test_term_activation.TermCandidatePrebindingTests tests.governance.test_term_activation.TermBoundApplicationTests -v`
 
-  Expected: 恰有 82 项通过。随后逐条运行 check-topics、build_terms check、usage 输出比较、source index 重建比较、source strict、known links、git diff --check。
+  Expected: 72 项计划高风险门禁通过。随后逐条运行 check-topics、build_terms check、usage 输出比较、source index 重建比较、source strict、known links、git diff --check。全库发现测试如另行运行，只要求全部通过，不断言固定数量。
 
 - [ ] 写集门禁从 ignored payload manifest entries 读取允许集合；三份先行决定已在 base，不出现在 apply 差异。
 
-- [ ] 使用 `superpowers:requesting-code-review` 审查决定绑定测试、base→HEAD 三路径集合、apply-only、草案核销、双索引、source strict、动态 Markdown、82 项完整回归和唯一所有权。APPROVED 后提交。
+- [ ] 使用 `superpowers:requesting-code-review` 审查决定绑定测试、base→HEAD 三路径集合、apply-only、草案核销、双索引、source strict、动态 Markdown、72 项计划高风险门禁和唯一所有权。APPROVED 后提交。
 
 - [ ] 提交 apply payload，不包含新决定或生成步骤。
 
@@ -2443,7 +2438,7 @@ if len(tasks) != 13:
     raise SystemExit(f'TASK_COUNT {len(tasks)}')
 
 tests = set(re.findall(r'`(test_[a-z0-9_]+)`', text))
-if len(tests) != 82:
+if len(tests) != 72:
     raise SystemExit(f'TEST_COUNT {len(tests)}')
 
 interfaces = [line for line in lines if re.match(r'^\| I[0-9]+[A-Z]? \|', line)]
