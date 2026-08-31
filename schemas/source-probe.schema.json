@@ -1,0 +1,98 @@
+{
+  "$id": "urn:kb-design:schema:source-probe:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "observations": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "endpoint": {
+            "format": "uri",
+            "type": "string"
+          },
+          "entity": {
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "type": "string"
+          },
+          "errors": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "id": {
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "previous": {
+            "oneOf": [
+              {
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "request": {
+            "additionalProperties": false,
+            "properties": {
+              "method": {
+                "enum": [
+                  "HEAD",
+                  "GET"
+                ]
+              }
+            },
+            "required": [
+              "method"
+            ],
+            "type": "object"
+          },
+          "response": {
+            "type": "object"
+          },
+          "signals": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "observed_at",
+          "entity",
+          "endpoint",
+          "request",
+          "response",
+          "signals",
+          "previous",
+          "errors"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema": {
+      "const": "urn:kb-design:data:source-probe"
+    },
+    "schema_version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "schema",
+    "schema_version",
+    "observations"
+  ],
+  "type": "object"
+}

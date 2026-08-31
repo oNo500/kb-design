@@ -1,0 +1,4 @@
+schema: urn:kb-design:data:source-cutover-payload
+schema_version: 1
+entries:
+  - {path: vocab/topics.yaml, after_sha256: null}

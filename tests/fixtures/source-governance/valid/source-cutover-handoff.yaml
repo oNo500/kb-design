@@ -1,0 +1,30 @@
+schema: urn:kb-design:data:source-cutover-handoff
+schema_version: 1
+payload: {path: vocab/generated/source-cutover-payload.json, sha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}
+source_contract:
+  module: scripts/source_model.py
+  sha256: "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  reference_kinds: [basis, source, match, external_group]
+  role_qualifications: {basis: null, source: structure, match: mapping, external_group: structure}
+  error_codes: [e01, e02, e03, e04, e05, e06, e07, e08, e09, e10, e11, e12, e13, e14, e15, e16, e17, e18, e19, e20, e21, e22, e23, e24, e25, e26]
+schemas:
+  - {path: schemas/source-entities.schema.json, "$id": "urn:kb-design:schema:source-entities:2", schema_version: 2, sha256: "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"}
+  - {path: schemas/source-uses.schema.json, "$id": "urn:kb-design:schema:source-uses:2", schema_version: 2, sha256: "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"}
+  - {path: schemas/source-obligations.schema.json, "$id": "urn:kb-design:schema:source-obligations:1", schema_version: 1, sha256: "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"}
+  - {path: schemas/source-reference-index.schema.json, "$id": "urn:kb-design:schema:source-reference-index:1", schema_version: 1, sha256: "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"}
+  - {path: schemas/source-probe.schema.json, "$id": "urn:kb-design:schema:source-probe:1", schema_version: 1, sha256: "1111111111111111111111111111111111111111111111111111111111111111"}
+  - {path: schemas/source-migration.schema.json, "$id": "urn:kb-design:schema:source-migration:1", schema_version: 1, sha256: "2222222222222222222222222222222222222222222222222222222222222222"}
+  - {path: schemas/decision.schema.json, "$id": "urn:kb-design:schema:decision:1", schema_version: 1, sha256: "3333333333333333333333333333333333333333333333333333333333333333"}
+topics_sha256: "4444444444444444444444444444444444444444444444444444444444444444"
+migration_ledgers:
+  - {path: vocab/migrations/source-v1/entities.yaml, sha256: "5555555555555555555555555555555555555555555555555555555555555555"}
+  - {path: vocab/migrations/source-v1/uses.yaml, sha256: "6666666666666666666666666666666666666666666666666666666666666666"}
+  - {path: vocab/migrations/source-v1/basis.yaml, sha256: "7777777777777777777777777777777777777777777777777777777777777777"}
+  - {path: vocab/migrations/source-v1/source.yaml, sha256: "8888888888888888888888888888888888888888888888888888888888888888"}
+  - {path: vocab/migrations/source-v1/match.yaml, sha256: "9999999999999999999999999999999999999999999999999999999999999999"}
+  - {path: vocab/migrations/source-v1/origin.yaml, sha256: "abababababababababababababababababababababababababababababababab"}
+markdown_manifest: [{path: design/source-governance.md, sha256: "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"}]
+outputs:
+  - {path: vocab/topics.yaml, kind: topics, sha256: "dededededededededededededededededededededededededededededededede", concepts: 700, arrays: 24}
+  - {path: vocab/generated/source-reference-index.json, kind: source_index, sha256: "efefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefef"}
+tracked_write_set: [vocab/topics.yaml]

@@ -1,0 +1,328 @@
+{
+  "$defs": {
+    "basisItem": {
+      "additionalProperties": false,
+      "properties": {
+        "checked": {
+          "format": "date",
+          "type": "string"
+        },
+        "entity": {
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "type": "string"
+        },
+        "locator": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "entity",
+        "locator"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "urn:kb-design:schema:source-entities:2",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "entities": {
+      "items": {
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "standard",
+                    "publication"
+                  ]
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "then": {
+              "required": [
+                "version",
+                "urls",
+                "status",
+                "basis",
+                "review",
+                "watch",
+                "replaced_by",
+                "history"
+              ]
+            }
+          }
+        ],
+        "properties": {
+          "basis": {
+            "additionalProperties": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "checked": {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  "entity": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "entity",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "minProperties": 1,
+            "type": "object"
+          },
+          "history": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "action": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "after": {},
+                "basis": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "checked": {
+                        "format": "date",
+                        "type": "string"
+                      },
+                      "entity": {
+                        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                        "type": "string"
+                      },
+                      "locator": {
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "entity",
+                      "locator"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "before": {},
+                "date": {
+                  "format": "date",
+                  "type": "string"
+                },
+                "decisions": {
+                  "items": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "fields": {
+                  "items": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "date",
+                "action",
+                "fields",
+                "decisions"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "id": {
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "type": "string"
+          },
+          "kind": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "label": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "minProperties": 1,
+            "type": "object"
+          },
+          "replaced_by": {
+            "oneOf": [
+              {
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "review": {
+            "additionalProperties": false,
+            "properties": {
+              "checked": {
+                "oneOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "grace_days": {
+                "const": 30
+              },
+              "interval_months": {
+                "oneOf": [
+                  {
+                    "enum": [
+                      6,
+                      12,
+                      24
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "next_due": {
+                "oneOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "obligations": {
+                "items": {
+                  "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "checked",
+              "next_due",
+              "interval_months",
+              "grace_days",
+              "obligations"
+            ],
+            "type": "object"
+          },
+          "status": {
+            "enum": [
+              "current",
+              "superseded",
+              "withdrawn"
+            ]
+          },
+          "urls": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "primary": {
+                  "type": "boolean"
+                },
+                "role": {
+                  "enum": [
+                    "canonical",
+                    "landing",
+                    "doi",
+                    "full_text",
+                    "status",
+                    "mirror",
+                    "archive"
+                  ]
+                },
+                "url": {
+                  "format": "uri",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "role",
+                "url",
+                "primary"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "version": {
+            "oneOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "watch": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "kind"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "schema": {
+      "const": "urn:kb-design:data:entities"
+    },
+    "schema_version": {
+      "const": 2
+    },
+    "version": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "schema_version",
+    "version",
+    "entities"
+  ],
+  "type": "object"
+}

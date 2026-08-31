@@ -1,0 +1,15 @@
+schema: urn:kb-design:data:source-obligations
+schema_version: 1
+obligations:
+  - id: source-review-20260831-001
+    entity: cs2023
+    trigger: periodic
+    targets:
+      - {kind: basis, file: vocab/topics.yaml, record: software-engineering, field_path: basis.en}
+    decisions: []
+    previous: null
+    state: open
+    opened: "2026-08-31"
+    resolved: null
+    history:
+      - {date: "2026-08-31", action: opened}

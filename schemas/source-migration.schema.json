@@ -1,0 +1,574 @@
+{
+  "$defs": {
+    "basisItem": {
+      "additionalProperties": false,
+      "properties": {
+        "checked": {
+          "format": "date",
+          "type": "string"
+        },
+        "entity": {
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "type": "string"
+        },
+        "locator": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "entity",
+        "locator"
+      ],
+      "type": "object"
+    },
+    "cutoverPayloadManifest": {
+      "additionalProperties": false,
+      "properties": {
+        "entries": {
+          "contains": {
+            "additionalProperties": false,
+            "properties": {
+              "after_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "path": {
+                "const": "vocab/topics.yaml"
+              }
+            },
+            "required": [
+              "path",
+              "after_sha256"
+            ],
+            "type": "object"
+          },
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "after_sha256": {
+                "oneOf": [
+                  {
+                    "pattern": "^[0-9a-f]{64}$",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "path": {
+                "allOf": [
+                  {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "not": {
+                      "enum": [
+                        "vocab/generated/source-cutover-payload.json",
+                        "vocab/generated/source-cutover-handoff.json"
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            "required": [
+              "path",
+              "after_sha256"
+            ],
+            "type": "object"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "schema": {
+          "const": "urn:kb-design:data:source-cutover-payload"
+        },
+        "schema_version": {
+          "const": 1
+        }
+      },
+      "required": [
+        "schema",
+        "schema_version",
+        "entries"
+      ],
+      "type": "object"
+    },
+    "match": {
+      "additionalProperties": false,
+      "properties": {
+        "basis": {
+          "items": {
+            "$ref": "#/$defs/basisItem"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "item": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "registry": {
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "type": "string"
+        },
+        "rel": {
+          "enum": [
+            "exactMatch",
+            "closeMatch",
+            "broadMatch",
+            "narrowMatch",
+            "relatedMatch"
+          ]
+        }
+      },
+      "required": [
+        "registry",
+        "item",
+        "rel",
+        "basis"
+      ],
+      "type": "object"
+    },
+    "row": {
+      "additionalProperties": false,
+      "properties": {
+        "blocks_cutover": {
+          "type": "boolean"
+        },
+        "decision_trace": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "field": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "qid": {
+                "pattern": "^Q(?:0[1-9]|1[0-9]|2[0-5])$"
+              },
+              "value_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "qid",
+              "field",
+              "value_sha256"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "disposition": {
+          "enum": [
+            "register",
+            "merge_address",
+            "merge_locator",
+            "retain_legacy",
+            "not_migrated_missing_locator",
+            "no_external_basis",
+            "project_assertion",
+            "blocked_unread_material",
+            "unresolved_external_status",
+            "proposed_role",
+            "approved_role",
+            "retired_role",
+            "not_in_scope",
+            "isolated_local_analysis"
+          ]
+        },
+        "identity": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "new_value": {},
+        "operation": {
+          "enum": [
+            "keep",
+            "set",
+            "delete",
+            "isolate"
+          ]
+        }
+      },
+      "required": [
+        "identity",
+        "operation",
+        "disposition",
+        "new_value",
+        "decision_trace",
+        "blocks_cutover"
+      ],
+      "type": "object"
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "basis": {
+          "items": {
+            "$ref": "#/$defs/basisItem"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "item": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "locator": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "registry": {
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "registry",
+        "item",
+        "locator",
+        "basis"
+      ],
+      "type": "object"
+    },
+    "sourceCutoverHandoff": {
+      "additionalProperties": false,
+      "properties": {
+        "markdown_manifest": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256"
+            ],
+            "type": "object"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "migration_ledgers": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256"
+            ],
+            "type": "object"
+          },
+          "maxItems": 6,
+          "minItems": 6,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "outputs": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "arrays": {
+                "type": "integer"
+              },
+              "concepts": {
+                "type": "integer"
+              },
+              "kind": {
+                "enum": [
+                  "topics",
+                  "source_index"
+                ]
+              },
+              "path": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "kind",
+              "sha256"
+            ],
+            "type": "object"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "payload": {
+          "additionalProperties": false,
+          "properties": {
+            "path": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "type": "object"
+        },
+        "schema": {
+          "const": "urn:kb-design:data:source-cutover-handoff"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "schemas": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "$id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "path": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "schema_version": {
+                "minimum": 1,
+                "type": "integer"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "$id",
+              "schema_version",
+              "sha256"
+            ],
+            "type": "object"
+          },
+          "maxItems": 7,
+          "minItems": 7,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "source_contract": {
+          "additionalProperties": false,
+          "properties": {
+            "error_codes": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "maxItems": 26,
+              "minItems": 26,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "module": {
+              "const": "scripts/source_model.py"
+            },
+            "reference_kinds": {
+              "items": {
+                "enum": [
+                  "basis",
+                  "source",
+                  "match",
+                  "external_group"
+                ]
+              },
+              "maxItems": 4,
+              "minItems": 4,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "role_qualifications": {
+              "additionalProperties": false,
+              "properties": {
+                "basis": {
+                  "type": "null"
+                },
+                "external_group": {
+                  "const": "structure"
+                },
+                "match": {
+                  "const": "mapping"
+                },
+                "source": {
+                  "const": "structure"
+                }
+              },
+              "required": [
+                "basis",
+                "source",
+                "match",
+                "external_group"
+              ],
+              "type": "object"
+            },
+            "sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "module",
+            "sha256",
+            "reference_kinds",
+            "role_qualifications",
+            "error_codes"
+          ],
+          "type": "object"
+        },
+        "topics_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "tracked_write_set": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "schema",
+        "schema_version",
+        "payload",
+        "source_contract",
+        "schemas",
+        "topics_sha256",
+        "migration_ledgers",
+        "markdown_manifest",
+        "outputs",
+        "tracked_write_set"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "urn:kb-design:schema:source-migration:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "rows": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "blocks_cutover": {
+            "type": "boolean"
+          },
+          "decision_trace": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "field": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "qid": {
+                  "pattern": "^Q(?:0[1-9]|1[0-9]|2[0-5])$"
+                },
+                "value_sha256": {
+                  "pattern": "^[0-9a-f]{64}$",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "qid",
+                "field",
+                "value_sha256"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "disposition": {
+            "enum": [
+              "register",
+              "merge_address",
+              "merge_locator",
+              "retain_legacy",
+              "not_migrated_missing_locator",
+              "no_external_basis",
+              "project_assertion",
+              "blocked_unread_material",
+              "unresolved_external_status",
+              "proposed_role",
+              "approved_role",
+              "retired_role",
+              "not_in_scope",
+              "isolated_local_analysis"
+            ]
+          },
+          "identity": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "new_value": {},
+          "operation": {
+            "enum": [
+              "keep",
+              "set",
+              "delete",
+              "isolate"
+            ]
+          }
+        },
+        "required": [
+          "identity",
+          "operation",
+          "disposition",
+          "new_value",
+          "decision_trace",
+          "blocks_cutover"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema": {
+      "const": "urn:kb-design:data:source-migration"
+    },
+    "schema_version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "schema",
+    "schema_version",
+    "rows"
+  ],
+  "type": "object"
+}

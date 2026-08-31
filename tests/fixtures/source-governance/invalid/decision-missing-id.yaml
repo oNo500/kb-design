@@ -1,0 +1,8 @@
+schema: urn:kb-design:data:decision
+schema_version: 1
+status: accepted
+date: "2026-08-31"
+level: L2
+scope: source-governance-schema
+supersedes: []
+answers: []

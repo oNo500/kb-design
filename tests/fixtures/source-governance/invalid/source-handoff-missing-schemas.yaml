@@ -1,0 +1,15 @@
+schema: urn:kb-design:data:source-cutover-handoff
+schema_version: 1
+payload: {path: vocab/generated/source-cutover-payload.json, sha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}
+source_contract:
+  module: scripts/source_model.py
+  sha256: "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  reference_kinds: [basis, source, match, external_group]
+  role_qualifications: {basis: null, source: structure, match: mapping, external_group: structure}
+  error_codes: [e01, e02, e03, e04, e05, e06, e07, e08, e09, e10, e11, e12, e13, e14, e15, e16, e17, e18, e19, e20, e21, e22, e23, e24, e25, e26]
+schemas: []
+topics_sha256: "4444444444444444444444444444444444444444444444444444444444444444"
+migration_ledgers: []
+markdown_manifest: []
+outputs: []
+tracked_write_set: [vocab/topics.yaml]

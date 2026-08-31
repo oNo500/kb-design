@@ -1,0 +1,5 @@
+schema: urn:kb-design:data:entities
+schema_version: 2
+version: {id: "2026.08"}
+entities:
+  - {id: cs2023, label: {en: CS2023}, kind: standard, url: "https://example.org"}

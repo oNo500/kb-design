@@ -1,0 +1,107 @@
+{
+  "$id": "urn:kb-design:schema:decision:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "answers": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "patches": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "field": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "identity": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "value": {}
+              },
+              "required": [
+                "identity",
+                "field",
+                "value"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "question": {
+            "pattern": "^Q(?:0[1-9]|1[0-9]|2[0-5])$"
+          },
+          "resolution": {
+            "enum": [
+              "recommended",
+              "replacement"
+            ]
+          }
+        },
+        "required": [
+          "question",
+          "resolution",
+          "patches"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "date": {
+      "format": "date",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "type": "string"
+    },
+    "level": {
+      "enum": [
+        "L1",
+        "L2",
+        "L3"
+      ]
+    },
+    "schema": {
+      "const": "urn:kb-design:data:decision"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "scope": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "proposed",
+        "accepted",
+        "superseded",
+        "overturned"
+      ]
+    },
+    "supersedes": {
+      "items": {
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "schema",
+    "schema_version",
+    "status",
+    "date",
+    "level",
+    "scope",
+    "supersedes",
+    "answers"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,9 @@
+schema: urn:kb-design:data:source-migration
+schema_version: 1
+rows:
+  - identity: row-1
+    operation: keep
+    disposition: invented
+    new_value: null
+    decision_trace: []
+    blocks_cutover: true

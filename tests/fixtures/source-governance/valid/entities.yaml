@@ -1,0 +1,19 @@
+schema: urn:kb-design:data:entities
+schema_version: 2
+version: {id: "2026.08"}
+entities:
+  - id: cs2023
+    label: {en: CS2023}
+    kind: standard
+    version: "2023"
+    urls:
+      - {role: canonical, url: "https://example.org/cs2023", primary: true}
+    status: current
+    basis:
+      label:
+        - {entity: cs2023, locator: "title"}
+    review: {checked: "2026-08-31", next_due: "2028-08-31", interval_months: 24, grace_days: 30, obligations: []}
+    watch: []
+    replaced_by: null
+    history:
+      - {date: "2026-08-31", action: registered, fields: [id], decisions: [decision-source-0001]}

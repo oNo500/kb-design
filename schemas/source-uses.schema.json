@@ -1,0 +1,190 @@
+{
+  "$id": "urn:kb-design:schema:source-uses:2",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "urn:kb-design:data:source-uses"
+    },
+    "schema_version": {
+      "const": 2
+    },
+    "sources": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "entity": {
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "type": "string"
+          },
+          "history": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "action": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "after": {},
+                "basis": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "checked": {
+                        "format": "date",
+                        "type": "string"
+                      },
+                      "entity": {
+                        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                        "type": "string"
+                      },
+                      "locator": {
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "entity",
+                      "locator"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "before": {},
+                "date": {
+                  "format": "date",
+                  "type": "string"
+                },
+                "decisions": {
+                  "items": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "fields": {
+                  "items": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "date",
+                "action",
+                "fields",
+                "decisions"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "id": {
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "type": "string"
+          },
+          "roles": {
+            "items": {
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "status": {
+                        "enum": [
+                          "approved",
+                          "retired"
+                        ]
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "decision": {
+                        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "status": {
+                        "const": "proposed"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "decision": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                }
+              ],
+              "properties": {
+                "decision": {
+                  "oneOf": [
+                    {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "role": {
+                  "enum": [
+                    "mapping",
+                    "structure",
+                    "group",
+                    "discovery"
+                  ]
+                },
+                "status": {
+                  "enum": [
+                    "proposed",
+                    "approved",
+                    "retired"
+                  ]
+                }
+              },
+              "required": [
+                "role",
+                "status",
+                "decision"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "entity",
+          "roles",
+          "history"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "version": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "schema_version",
+    "version",
+    "sources"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,5 @@
+registry: cs2023
+item: SE
+rel: sameAs
+basis:
+  - {entity: cs2023, locator: "SE"}

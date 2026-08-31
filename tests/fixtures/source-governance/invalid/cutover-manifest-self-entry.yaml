@@ -1,0 +1,5 @@
+schema: urn:kb-design:data:source-cutover-payload
+schema_version: 1
+entries:
+  - {path: vocab/generated/source-cutover-payload.json, after_sha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}
+  - {path: vocab/topics.yaml, after_sha256: "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}
