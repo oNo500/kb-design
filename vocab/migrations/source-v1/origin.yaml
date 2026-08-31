@@ -1,0 +1,410 @@
+schema: urn:kb-design:data:source-origin-disposition
+schema_version: 1
+batch: 2026-08-31-source-schema-migration
+prepared_at: 2026-08-31
+scope: origin-document-closure
+formal_write: false
+formal_document_write_set: []
+inputs:
+  inventory:
+    path: .superpowers/sdd/2026-08-31-governance-implementation-prep/origin-inventory.tsv
+    sha256: 06d0df76aa5ac7bd63cfe107ac52a5e712223f251e362b3bb9a0f4d95cbd1e3d
+  maintenance_baseline:
+    path: .superpowers/sdd/2026-08-31-governance-implementation-prep/maintenance-baseline.md
+    sha256: 494bb0e3d85700cc1860537eea8bb2e8c376619041b1277958a1544351f3383b
+  source_plan:
+    path: .superpowers/sdd/2026-08-31-governance-implementation-prep/source-plan-input.md
+    sha256: 56087db27519ea4d700e9010500c5d3cee69dd742fd538d4296e5c26cd02d69a
+decision:
+  id: decision-source-0001
+  qid: Q21
+  resolution: recommended
+  policy:
+    formal_origin_field: forbidden
+    observations: .superpowers/sdd/2026-08-31-source-schema-migration/discovery/observations.tsv
+    content_identity_separate_from_source_entity: true
+    retention_rule: design/content-model.md
+counts:
+  identities: 19
+  dispositions:
+    discovery_observation: 3
+    basis_rule: 1
+    source_rule: 1
+    process_rule: 8
+    not_in_scope: 3
+    zero_use_evidence: 3
+  blocks_cutover: 13
+  formal_origin_values: 0
+rows:
+  - identity: concepts/classifying-new-subjects.md:47
+    file: concepts/classifying-new-subjects.md
+    location: "47"
+    object: 新主题分类步骤中的 origin
+    operation: rewrite_section
+    disposition: discovery_observation
+    new_value:
+      section: 在知识库中
+      observation_path: .superpowers/sdd/2026-08-31-source-schema-migration/discovery/observations.tsv
+      rule: 提出新主题的文献只保存为带上下文的发现观察；具体值的支持另走逐值 basis，实际派生另走 source。
+      formal_origin: null
+    blocks_cutover: true
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: design/content-model.md:138
+    file: design/content-model.md
+    location: "138"
+    object: 内容单元处置规则中的 origin 反向引用
+    operation: rewrite_section
+    disposition: process_rule
+    new_value:
+      section: 处置决定
+      rule: 内容单元的保留由其生命周期、历史记录价值和书面处置决定独立支撑；误建且没有任何引用的内容单元仍可按现行例外销毁。
+      reference_check: 使用可查询反向引用，不依赖通用 origin 字段。
+      formal_origin: null
+    blocks_cutover: true
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: design/drafts/terminology-governance.md:270
+    file: design/drafts/terminology-governance.md
+    location: "270"
+    object: 术语迁移边界中的旧 origin
+    operation: retain_boundary
+    disposition: not_in_scope
+    new_value:
+      section: 迁移边界
+      rule: 保留禁止机械改写旧 origin 的迁移门禁；该位置不是 origin 数据，也不替 19 个身份选择语义去向。
+      formal_origin: null
+    blocks_cutover: false
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: design/entities.md:78
+    file: design/entities.md
+    location: "78"
+    object: 前沿概念与源头文献的关系
+    operation: rewrite_section
+    disposition: process_rule
+    new_value:
+      section: 分级
+      rule: publication 的 archival 分级只说明内容固定；发现观察、具体值依据和实际派生分别按 discovery、basis 和 source 的边界处理。
+      formal_origin: null
+    blocks_cutover: true
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: design/entities.md:100
+    file: design/entities.md
+    location: "100"
+    object: 主题概念对实体表的 origin 引用
+    operation: rewrite_section
+    disposition: process_rule
+    new_value:
+      section: 主题职责
+      rule: 来源实体只提供可解析身份；实际派生用 source，具体值支持用 basis，发现上下文写入 ignored 观察材料。
+      formal_origin: null
+    blocks_cutover: true
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: design/maintenance.md:132
+    file: design/maintenance.md
+    location: "132"
+    object: 候选产生流程中的 origin
+    operation: rewrite_section
+    disposition: discovery_observation
+    new_value:
+      section: 候选的产生
+      observation_path: .superpowers/sdd/2026-08-31-source-schema-migration/discovery/observations.tsv
+      rule: 首次出现的内容单元只作为带上下文的发现观察；它不进入正式概念记录，也不证明概念身份、表示形式准入或实际派生。
+      formal_origin: null
+    blocks_cutover: true
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: design/principles.md:20
+    file: design/principles.md
+    location: "20"
+    object: 新主题分类方法摘要中的 origin
+    operation: rewrite_section
+    disposition: discovery_observation
+    new_value:
+      section: 登记表
+      observation_path: .superpowers/sdd/2026-08-31-source-schema-migration/discovery/observations.tsv
+      rule: 方法摘要只引用候选产生流程与发现观察，不登记通用 origin 字段或新的来源语义。
+      formal_origin: null
+    blocks_cutover: true
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: design/topics.md:114
+    file: design/topics.md
+    location: "114"
+    object: 主题概念记录示例中的 origin 字段
+    operation: rewrite_section
+    disposition: process_rule
+    new_value:
+      section: 概念记录的字段
+      rule: 从记录形状和示例中删除通用 origin；只展示已经获准且材料齐备的 basis、source 和 match 接口。
+      formal_origin: null
+    blocks_cutover: true
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: design/topics.md:127
+    file: design/topics.md
+    location: "127"
+    object: 主题概念 origin 的文本定义
+    operation: rewrite_section
+    disposition: process_rule
+    new_value:
+      section: 概念记录的字段
+      rule: 删除“最早提出或定型”的通用字段定义；发现观察、逐值依据和实际派生分别说明，不互相推出。
+      formal_origin: null
+    blocks_cutover: true
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: design/topics.md:132
+    file: design/topics.md
+    location: "132"
+    object: 六边形架构的 origin 示例
+    operation: rewrite_section
+    disposition: source_rule
+    new_value:
+      section: 概念记录的字段
+      rule: 删除不存在真实概念记录和来源实体的示例；只有真实对象、真实实体、外部 item、locator 和相邻 basis 齐备时才可另行建立 source。
+      formal_origin: null
+    blocks_cutover: true
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: design/topics.md:136
+    file: design/topics.md
+    location: "136"
+    object: 主题概念 origin 与 match 的分工
+    operation: rewrite_section
+    disposition: process_rule
+    new_value:
+      section: 概念记录的字段
+      rule: 用 discovery、basis、source 和 match 的独立职责替换 origin 与 match 的二分；文献类型不决定关系语义。
+      formal_origin: null
+    blocks_cutover: true
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: design/topics.md:138
+    file: design/topics.md
+    location: "138"
+    object: 主题概念 origin 的标准对应声明
+    operation: rewrite_section
+    disposition: basis_rule
+    new_value:
+      section: 概念记录的字段
+      rule: 外部来源信息只能在定位到具体被支持值后形成相邻 basis；来源标准中的记录字段不自动定义本项目字段。
+      formal_origin: null
+    blocks_cutover: true
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: design/topics.md:190
+    file: design/topics.md
+    location: "190"
+    object: 主题概念 origin 的校验规则
+    operation: rewrite_section
+    disposition: process_rule
+    new_value:
+      section: 校验规则
+      rule: 删除按实体 kind 校验通用 origin 的规则；分别校验观察材料隔离、basis.entity 和 source.registry 的获准接口。
+      formal_origin: null
+    blocks_cutover: true
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: design/topics.md:213
+    file: design/topics.md
+    location: "213"
+    object: 大语言模型术语的 origin 待定项
+    operation: rewrite_section
+    disposition: process_rule
+    new_value:
+      section: 待定事项
+      rule: 保留概念归属问题；删除通用 origin 的待定接口，不据标签、目录或出现次数预选 discovery、basis 或 source。
+      formal_origin: null
+    blocks_cutover: true
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: docs/superpowers/specs/2026-08-27-terminology-governance-design.md:170
+    file: docs/superpowers/specs/2026-08-27-terminology-governance-design.md
+    location: "170"
+    object: 断言边界中的旧 origin
+    operation: retain_boundary
+    disposition: not_in_scope
+    new_value:
+      section: 断言边界
+      rule: 保留“不继续作为含义模糊的通用来源字段”的已批准边界；不改写冻结规格。
+      formal_origin: null
+    blocks_cutover: false
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: docs/superpowers/specs/2026-08-27-terminology-governance-design.md:178
+    file: docs/superpowers/specs/2026-08-27-terminology-governance-design.md
+    location: "178"
+    object: 旧 origin 的迁移要求
+    operation: retain_boundary
+    disposition: not_in_scope
+    new_value:
+      section: 断言边界
+      rule: 保留 discovery、basis 和 source 的分类上界；该位置不替任何库存身份作字段迁移。
+      formal_origin: null
+    blocks_cutover: false
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: vocab/topics.yaml:1-6825（全文件）
+    file: vocab/topics.yaml
+    location: 1-6825（全文件）
+    object: 700 条主题概念记录
+    operation: retain_zero_use
+    disposition: zero_use_evidence
+    new_value:
+      rule: 保留正式数据中 origin 键和值为 0 的证据；不生成 discovery、basis 或 source 填空数据。
+      formal_origin: null
+    blocks_cutover: false
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: scripts/build-topics.py:132-156
+    file: scripts/build-topics.py
+    location: 132-156
+    object: 主题词表生成器的输出形状
+    operation: retain_zero_use
+    disposition: zero_use_evidence
+    new_value:
+      rule: 保留生成路径不接收也不写出 origin 的证据；后续生成只消费获准的共享来源接口。
+      formal_origin: null
+    blocks_cutover: false
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+  - identity: scripts/check-topics.py:34-58
+    file: scripts/check-topics.py
+    location: 34-58
+    object: 主题概念校验器的字段消费
+    operation: retain_zero_use
+    disposition: zero_use_evidence
+    new_value:
+      rule: 保留现行校验器不消费 origin 的证据；后续严格校验拒绝旧字段并分别校验获准接口。
+      formal_origin: null
+    blocks_cutover: false
+    closure_status: closed
+    decision_trace: [decision-source-0001, Q21]
+
+document_dispositions:
+  - section_identity: concepts/classifying-new-subjects.md#在知识库中
+    origin_identities: [concepts/classifying-new-subjects.md:47]
+    file: concepts/classifying-new-subjects.md
+    action: 整节重写
+    future_formal_write: true
+    closure_status: closed
+  - section_identity: design/content-model.md#生命周期/处置决定
+    origin_identities: [design/content-model.md:138]
+    file: design/content-model.md
+    action: 整节重写
+    future_formal_write: true
+    closure_status: closed
+  - section_identity: design/drafts/terminology-governance.md#迁移边界
+    origin_identities: [design/drafts/terminology-governance.md:270]
+    file: design/drafts/terminology-governance.md
+    action: 保留原节
+    future_formal_write: false
+    closure_status: closed
+  - section_identity: design/entities.md#记录/分级
+    origin_identities: [design/entities.md:78]
+    file: design/entities.md
+    action: 整节重写
+    future_formal_write: true
+    closure_status: closed
+  - section_identity: design/entities.md#主题职责
+    origin_identities: [design/entities.md:100]
+    file: design/entities.md
+    action: 整节重写
+    future_formal_write: true
+    closure_status: closed
+  - section_identity: design/maintenance.md#触发与动作/候选的产生
+    origin_identities: [design/maintenance.md:132]
+    file: design/maintenance.md
+    action: 整节重写
+    future_formal_write: true
+    closure_status: closed
+  - section_identity: design/principles.md#登记表
+    origin_identities: [design/principles.md:20]
+    file: design/principles.md
+    action: 整节重写
+    future_formal_write: true
+    closure_status: closed
+  - section_identity: design/topics.md#概念记录的字段
+    origin_identities:
+      - design/topics.md:114
+      - design/topics.md:127
+      - design/topics.md:132
+      - design/topics.md:136
+      - design/topics.md:138
+    file: design/topics.md
+    action: 整节重写
+    future_formal_write: true
+    closure_status: closed
+  - section_identity: design/topics.md#校验规则
+    origin_identities: [design/topics.md:190]
+    file: design/topics.md
+    action: 整节重写
+    future_formal_write: true
+    closure_status: closed
+  - section_identity: design/topics.md#待定事项
+    origin_identities: [design/topics.md:213]
+    file: design/topics.md
+    action: 整节重写
+    future_formal_write: true
+    closure_status: closed
+  - section_identity: docs/superpowers/specs/2026-08-27-terminology-governance-design.md#断言边界
+    origin_identities:
+      - docs/superpowers/specs/2026-08-27-terminology-governance-design.md:170
+      - docs/superpowers/specs/2026-08-27-terminology-governance-design.md:178
+    file: docs/superpowers/specs/2026-08-27-terminology-governance-design.md
+    action: 保留原节
+    future_formal_write: false
+    closure_status: closed
+  - section_identity: vocab/topics.yaml#全文件
+    origin_identities: [vocab/topics.yaml:1-6825（全文件）]
+    file: vocab/topics.yaml
+    action: 零数据迁移
+    future_formal_write: false
+    closure_status: closed
+  - section_identity: scripts/build-topics.py#输出路径
+    origin_identities: [scripts/build-topics.py:132-156]
+    file: scripts/build-topics.py
+    action: 零代码迁移
+    future_formal_write: false
+    closure_status: closed
+  - section_identity: scripts/check-topics.py#字段消费
+    origin_identities: [scripts/check-topics.py:34-58]
+    file: scripts/check-topics.py
+    action: 零代码迁移
+    future_formal_write: false
+    closure_status: closed
+
+frozen_debt:
+  title_debt:
+    identities: 31
+    files: 8
+    write_set: []
+  append_only_titles:
+    identities: 8
+    file: vocab/CHANGELOG.md
+    write_set: []
+  legacy_sdd_links:
+    identities: 2
+    write_set: []

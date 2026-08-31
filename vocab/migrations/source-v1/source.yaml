@@ -1,0 +1,4359 @@
+schema: urn:kb-design:data:source-migration
+schema_version: 1
+rows:
+- identity: vocab/topics.yaml#array:algorithmic-foundations-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=algorithmic-foundations
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:architecture-and-organization-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=architecture-and-organization
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:artificial-intelligence-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=artificial-intelligence
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:data-management-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=data-management
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:foundations-of-programming-languages-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=foundations-of-programming-languages
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:graphics-and-interactive-techniques-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=graphics-and-interactive-techniques
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:human-computer-interaction-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=human-computer-interaction
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:mathematical-and-statistical-foundations-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=mathematical-and-statistical-foundations
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:networking-and-communication-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=networking-and-communication
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:operating-systems-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=operating-systems
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:parallel-and-distributed-computing-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=parallel-and-distributed-computing
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:security-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=security
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:society-ethics-and-the-profession-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=society-ethics-and-the-profession
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:software-development-fundamentals-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=software-development-fundamentals
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:software-engineering-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=software-engineering
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:specialized-platform-development-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=specialized-platform-development
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:systems-fundamentals-cs2023#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；superordinate=systems-fundamentals
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:security-asvs#source
+  operation: keep
+  disposition: not_migrated_missing_locator
+  new_value: source=asvs；superordinate=security
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:security-cwe#source
+  operation: keep
+  disposition: not_migrated_missing_locator
+  new_value: source=cwe；superordinate=security
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:security-attack#source
+  operation: keep
+  disposition: not_migrated_missing_locator
+  new_value: source=attack；superordinate=security
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:artificial-intelligence-atlas#source
+  operation: keep
+  disposition: not_migrated_missing_locator
+  new_value: source=atlas；superordinate=artificial-intelligence
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:artificial-intelligence-owasp-llm-top10#source
+  operation: keep
+  disposition: not_migrated_missing_locator
+  new_value: source=owasp-llm-top10；superordinate=artificial-intelligence
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:software-engineering-swebok#source
+  operation: keep
+  disposition: not_migrated_missing_locator
+  new_value: source=swebok；superordinate=software-engineering
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#array:networking-and-communication-rfc-1122#source
+  operation: keep
+  disposition: not_migrated_missing_locator
+  new_value: source=rfc-1122；superordinate=networking-and-communication
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:mathematics#source
+  operation: keep
+  disposition: project_assertion
+  new_value: source=self；match=gbt-13745:110:exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:information-and-systems-science#source
+  operation: keep
+  disposition: project_assertion
+  new_value: source=self；match=gbt-13745:120:exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:computing#source
+  operation: keep
+  disposition: project_assertion
+  new_value: source=self；match=gbt-13745:520:exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:management#source
+  operation: keep
+  disposition: project_assertion
+  new_value: source=self；match=gbt-13745:630:exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:linguistics#source
+  operation: keep
+  disposition: project_assertion
+  new_value: source=self；match=gbt-13745:740:exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:journalism-and-communication#source
+  operation: keep
+  disposition: project_assertion
+  new_value: source=self；match=gbt-13745:860:exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:library-and-information-science#source
+  operation: keep
+  disposition: project_assertion
+  new_value: source=self；match=gbt-13745:870:exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:education#source
+  operation: keep
+  disposition: project_assertion
+  new_value: source=self；match=gbt-13745:880:exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:algorithmic-foundations#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AL；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:architecture-and-organization#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AR；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:artificial-intelligence#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AI；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:data-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=DM；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:foundations-of-programming-languages#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:graphics-and-interactive-techniques#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=GIT；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:human-computer-interaction#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=HCI；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:mathematical-and-statistical-foundations#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=MSF；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:networking-and-communication#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=NC；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:operating-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=OS；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:parallel-and-distributed-computing#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=PDC；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:security#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEC；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:society-ethics-and-the-profession#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEP；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-development-fundamentals#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SDF；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-engineering#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SE；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:specialized-platform-development#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SPD；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:systems-fundamentals#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SF；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:foundational-data-structures-and-algorithms#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AL-Foundational；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:complexity#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AL-Complexity；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:computational-models-and-formal-languages#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AL-Models；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:society-ethics-and-the-profession-algorithmic-foundations#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AL-SEP；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:algorithmic-strategies#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AL-Strategies；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:digital-logic-and-digital-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AR-Logic；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:machine-level-data-representation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AR-Representation；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:assembly-level-machine-organization#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AR-Assembly；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:memory-hierarchy#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AR-Memory；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:interfacing-and-communication#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AR-IO；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:functional-organization#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AR-Organization；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:performance-and-energy-efficiency#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AR-Performance-Energy；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:heterogeneous-architectures#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AR-Heterogeneity；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:secure-processor-architectures#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AR-Security；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:quantum-architectures#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AR-Quantum；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:sustainability-issues#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AR-SEP；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:fundamental-issues#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AI-Introduction；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:search#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AI-Search；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:fundamental-knowledge-representation-and-reasoning#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AI-KRR；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:machine-learning#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AI-ML；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:applications-and-societal-impact#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AI-SEP；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:logical-representation-and-reasoning#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AI-LRR；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:probabilistic-representation-and-reasoning#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AI-Probability；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:planning#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AI-Planning；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:agents-and-cognitive-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AI-Agents；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:natural-language-processing#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AI-NLP；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:robotics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AI-Robotics；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:perception-and-computer-vision#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=AI-Vision；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:core-database-system-concepts#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=DM-Core；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:data-modeling#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=DM-Modeling；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:relational-databases#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=DM-Relational；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:query-construction#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=DM-Querying；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:query-processing#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=DM-Processing；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:dbms-internals#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=DM-Internals；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:nosql-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=DM-NoSQL；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:data-security-and-privacy#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=DM-Security；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:data-analytics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=DM-Analytics；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:distributed-databases-cloud-computing#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=DM-Distributed；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:semi-structured-and-unstructured-databases#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=DM-Unstructured；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:society-ethics-and-the-profession-data-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=DM-SEP；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:the-role-of-data-and-the-data-life-cycle#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=DM-Data；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:object-oriented-programming#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-OOP；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:functional-programming#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Functional；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:logic-programming#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Logic；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:shell-scripting#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Scripting；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:event-driven-and-reactive-programming#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Event-Driven；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:parallel-and-distributed-computing-foundations-of-programming-languages#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Parallel；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:aspect-oriented-programming#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Aspect；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:type-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Types；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:systems-execution-and-memory-model#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Systems；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:language-translation-and-execution#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Translation；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:syntax-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Syntax；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:compiler-semantic-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Semantics；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:program-analysis-and-analyzers#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Analysis；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:code-generation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Code；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:run-time-behavior-and-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Run-Time；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:advanced-programming-constructs#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Constructs；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:language-pragmatics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Pragmatics；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:formal-semantics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Formalism；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:formal-development-methodologies#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Methodologies；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:design-principles-of-programming-languages#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Design；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:society-ethics-and-the-profession-foundations-of-programming-languages#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-SEP；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:program-abstraction-and-representation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=FPL-Abstraction；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:fundamental-concepts#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=GIT-Fundamentals；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:visualization#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=GIT-Visualization；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:applied-rendering-and-techniques#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=GIT-Rendering；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:geometric-modeling#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=GIT-Modeling；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:shading-and-advanced-rendering#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=GIT-Shading；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:computer-animation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=GIT-Animation；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:simulation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=GIT-Simulation；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:immersion#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=GIT-Immersion；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:interaction#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=GIT-Interaction；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:image-processing#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=GIT-Image；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:tangible-physical-computing#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=GIT-Physical；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:society-ethics-and-the-profession-graphics-and-interactive-techniques#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=GIT-SEP；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:understanding-the-user-individual-goals-and-interactions-with-others#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=HCI-User；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:accountability-and-responsibility-in-design#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=HCI-Accountability；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:accessibility-and-inclusive-design#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=HCI-Accessibility；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:evaluating-the-design#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=HCI-Evaluation；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:system-design#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=HCI-Design；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:society-ethics-and-the-profession-human-computer-interaction#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=HCI-SEP；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:discrete-mathematics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=MSF-Discrete；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:probability#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=MSF-Probability；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:statistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=MSF-Statistics；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:linear-algebra#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=MSF-Linear；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:calculus#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=MSF-Calculus；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:fundamentals#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=NC-Fundamentals；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:networked-applications#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=NC-Applications；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:reliability-support#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=NC-Reliability；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:routing-and-forwarding#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=NC-Routing；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:single-hop-communication#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=NC-SingleHop；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:network-security#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=NC-Security；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:mobility#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=NC-Mobility；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:emerging-topics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=NC-Emerging；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:role-and-purpose-of-operating-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=OS-Purpose；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:principles-of-operating-system#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=OS-Principles；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:concurrency#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=OS-Concurrency；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:protection-and-safety#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=OS-Protection；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:scheduling#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=OS-Scheduling；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:process-model#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=OS-Process；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:memory-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=OS-Memory；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:file-systems-api-and-implementation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=OS-Files；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:advanced-file-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=OS-Advanced-Files；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:virtualization#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=OS-Virtualization；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:real-time-and-embedded-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=OS-Real-time；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:fault-tolerance#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=OS-Faults；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:society-ethics-and-the-profession-operating-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=OS-SEP；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:device-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=OS-Devices；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:programs#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=PDC-Programs；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:communication#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=PDC-Communication；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:coordination#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=PDC-Coordination；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:evaluation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=PDC-Evaluation；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:algorithms#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=PDC-Algorithms；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:foundational-security#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEC-Foundations；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:society-ethics-and-the-profession-security#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEC-SEP；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:secure-coding#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEC-Coding；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:cryptography#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEC-Crypto；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:security-analysis-design-and-engineering#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEC-Engineering；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:digital-forensics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEC-Forensics；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:security-governance#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEC-Governance；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:social-context#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEP-Context；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:methods-for-ethical-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEP-Ethical-Analysis；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:professional-ethics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEP-Professional-Ethics；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:intellectual-property#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEP-IP；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:privacy-and-civil-liberties#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEP-Privacy；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:communication-society-ethics-and-the-profession#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEP-Communication；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:sustainability#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEP-Sustainability；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:computing-history#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEP-History；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:economies-of-computing#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEP-Economies；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:security-policies-laws-and-computer-crimes#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEP-Security；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:diversity-equity-inclusion-and-accessibility#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SEP-DEIA；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:fundamental-data-structures#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SDF-Data-Structures；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:algorithms-software-development-fundamentals#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SDF-Algorithms；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-development-practices#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SDF-Practices；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:society-ethics-and-the-profession-software-development-fundamentals#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SDF-SEP；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:fundamental-programming-concepts-and-practices#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SDF-Fundamentals；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:teamwork#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SE-Teamwork；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:tools-and-environments#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SE-Tools；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:product-requirements#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SE-Requirements；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-design#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SE-Design；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-construction#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SE-Construction；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-verification-and-validation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SE-Validation；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:refactoring-and-code-evolution#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SE-Refactoring；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-reliability#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SE-Reliability；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:formal-methods#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SE-Formal；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:common-aspects-shared-concerns#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SPD-Common；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:web-platforms#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SPD-Web；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:mobile-platforms#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SPD-Mobile；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:robot-platforms#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SPD-Robot；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:embedded-platforms#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SPD-Embedded；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:game-platforms#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SPD-Game；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:interactive-computing-platforms#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SPD-Interactive；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:overview-of-computer-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SF-Overview；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:basic-concepts#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SF-Foundations；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:resource-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SF-Resource；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:system-performance#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SF-Performance；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:performance-evaluation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SF-Evaluation；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:system-reliability#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SF-Reliability；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:system-security#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SF-Security；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:system-design-systems-fundamentals#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SF-Design；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:society-ethics-and-the-profession-systems-fundamentals#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cs2023；same-source match.id=SF-SEP；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:encoding-and-sanitization#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=asvs；same-source match.id=V1；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:validation-and-business-logic#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=asvs；same-source match.id=V2；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:web-frontend-security#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=asvs；same-source match.id=V3；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:api-and-web-service#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=asvs；same-source match.id=V4；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:file-handling#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=asvs；same-source match.id=V5；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:authentication#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=asvs；same-source match.id=V6；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:session-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=asvs；same-source match.id=V7；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:authorization#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=asvs；same-source match.id=V8；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:self-contained-tokens#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=asvs；same-source match.id=V9；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:oauth-and-oidc#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=asvs；same-source match.id=V10；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:secure-communication#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=asvs；same-source match.id=V12；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:configuration#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=asvs；same-source match.id=V13；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:data-protection#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=asvs；same-source match.id=V14；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:secure-coding-and-architecture#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=asvs；same-source match.id=V15；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:security-logging-and-error-handling#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=asvs；same-source match.id=V16；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:webrtc#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=asvs；same-source match.id=V17；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:improper-access-control#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cwe；same-source match.id=CWE-284；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:improper-interaction-between-multiple-correctly-behaving-entities#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cwe；same-source match.id=CWE-435；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:improper-control-of-a-resource-through-its-lifetime#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cwe；same-source match.id=CWE-664；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:incorrect-calculation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cwe；same-source match.id=CWE-682；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:insufficient-control-flow-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cwe；same-source match.id=CWE-691；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:protection-mechanism-failure#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cwe；same-source match.id=CWE-693；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:incorrect-comparison#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cwe；same-source match.id=CWE-697；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:improper-check-or-handling-of-exceptional-conditions#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cwe；same-source match.id=CWE-703；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:improper-neutralization#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cwe；same-source match.id=CWE-707；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:improper-adherence-to-coding-standards#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=cwe；same-source match.id=CWE-710；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:reconnaissance#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=attack；same-source match.id=TA0043；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:resource-development#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=attack；same-source match.id=TA0042；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:initial-access#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=attack；same-source match.id=TA0001；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:execution#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=attack；same-source match.id=TA0002；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:persistence#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=attack；same-source match.id=TA0003；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:privilege-escalation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=attack；same-source match.id=TA0004；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:stealth#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=attack；same-source match.id=TA0005；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:defense-impairment#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=attack；same-source match.id=TA0112；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:credential-access#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=attack；same-source match.id=TA0006；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:discovery#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=attack；same-source match.id=TA0007；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:lateral-movement#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=attack；same-source match.id=TA0008；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:collection#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=attack；same-source match.id=TA0009；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:command-and-control#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=attack；same-source match.id=TA0011；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:exfiltration#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=attack；same-source match.id=TA0010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:impact#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=attack；same-source match.id=TA0040；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:reconnaissance-artificial-intelligence#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=atlas；same-source match.id=AML.TA0002；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:resource-development-artificial-intelligence#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=atlas；same-source match.id=AML.TA0003；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:initial-access-artificial-intelligence#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=atlas；same-source match.id=AML.TA0004；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:ai-model-access#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=atlas；same-source match.id=AML.TA0000；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:execution-artificial-intelligence#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=atlas；same-source match.id=AML.TA0005；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:persistence-artificial-intelligence#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=atlas；same-source match.id=AML.TA0006；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:privilege-escalation-artificial-intelligence#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=atlas；same-source match.id=AML.TA0012；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:defense-evasion#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=atlas；same-source match.id=AML.TA0007；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:credential-access-artificial-intelligence#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=atlas；same-source match.id=AML.TA0013；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:discovery-artificial-intelligence#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=atlas；same-source match.id=AML.TA0008；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:lateral-movement-artificial-intelligence#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=atlas；same-source match.id=AML.TA0015；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:collection-artificial-intelligence#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=atlas；same-source match.id=AML.TA0009；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:ai-attack-staging#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=atlas；same-source match.id=AML.TA0001；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:command-and-control-artificial-intelligence#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=atlas；same-source match.id=AML.TA0014；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:exfiltration-artificial-intelligence#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=atlas；same-source match.id=AML.TA0010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:impact-artificial-intelligence#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=atlas；same-source match.id=AML.TA0011；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:prompt-injection#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=owasp-llm-top10；same-source match.id=LLM01:2025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:sensitive-information-disclosure#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=owasp-llm-top10；same-source match.id=LLM02:2025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:supply-chain#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=owasp-llm-top10；same-source match.id=LLM03:2025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:data-and-model-poisoning#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=owasp-llm-top10；same-source match.id=LLM04:2025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:improper-output-handling#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=owasp-llm-top10；same-source match.id=LLM05:2025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:excessive-agency#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=owasp-llm-top10；same-source match.id=LLM06:2025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:system-prompt-leakage#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=owasp-llm-top10；same-source match.id=LLM07:2025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:vector-and-embedding-weaknesses#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=owasp-llm-top10；same-source match.id=LLM08:2025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:misinformation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=owasp-llm-top10；same-source match.id=LLM09:2025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:unbounded-consumption#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=owasp-llm-top10；same-source match.id=LLM10:2025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-requirements#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=swebok；same-source match.id=1；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-architecture#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=swebok；same-source match.id=2；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-testing#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=swebok；same-source match.id=5；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-engineering-operations#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=swebok；same-source match.id=6；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-maintenance#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=swebok；same-source match.id=7；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-configuration-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=swebok；same-source match.id=8；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-engineering-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=swebok；same-source match.id=9；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-engineering-process#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=swebok；same-source match.id=10；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-engineering-models-and-methods#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=swebok；same-source match.id=11；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-quality#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=swebok；same-source match.id=12；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-security#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=swebok；same-source match.id=13；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-engineering-professional-practice#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=swebok；same-source match.id=14；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:software-engineering-economics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=swebok；same-source match.id=15；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:computing-foundations#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=swebok；same-source match.id=16；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:mathematical-foundations#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=swebok；same-source match.id=17；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:engineering-foundations#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=swebok；same-source match.id=18；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:application-layer#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=rfc-1122；same-source match.id=1.1.3；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:transport-layer#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=rfc-1122；same-source match.id=1.1.3；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:internet-layer#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=rfc-1122；same-source match.id=1.1.3；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:link-layer#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=rfc-1122；same-source match.id=1.1.3；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:history-of-mathematics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.11；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:mathematical-logic-and-foundations-of-mathematics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.14；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:deductive-logic#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.1410；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:proof-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.1420；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:recursion-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.1430；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:model-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.1440；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:axiomatic-set-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.1450；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:foundations-of-mathematics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.1460；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-mathematical-logic-and-foundations-of-mathematics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.1499；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:number-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.17；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:elementary-number-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.1710；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:analytic-number-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.1720；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:algebraic-number-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.1730；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:transcendental-number-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.1740；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:diophantine-approximation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.1750；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:geometry-of-numbers#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.1760；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:probabilistic-number-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.1770；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:computational-number-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.1780；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-number-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.1799；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:algebra#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.21；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:linear-algebra-algebra#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2110；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:group-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2115；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:field-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2120；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:lie-groups#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2125；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:lie-algebras#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2130；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:kac-moody-algebras#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2135；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:ring-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2140；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:module-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2145；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:lattice-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2150；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:universal-algebra#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2155；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:category-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2160；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:homological-algebra#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2165；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:algebraic-k-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2170；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:differential-algebra#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2175；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:algebraic-coding-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2180；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-algebra#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2199；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:algebraic-geometry#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.24；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:geometry#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.27；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:foundations-of-geometry#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2710；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:euclidean-geometry#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2715；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:non-euclidean-geometry#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2720；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:spherical-geometry#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2725；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:vector-and-tensor-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2730；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:affine-geometry#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2735；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:projective-geometry#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2740；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:differential-geometry#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2745；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:fractal-geometry#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2750；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:computational-geometry#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2755；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-geometry#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.2799；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:topology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.31；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:point-set-topology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.3110；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:algebraic-topology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.3115；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:homotopy-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.3120；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:low-dimensional-topology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.3125；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:homology-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.3130；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:dimension-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.3135；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:topology-on-lattices#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.3140；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:fiber-bundle-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.3145；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:geometric-topology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.3150；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:singularity-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.3155；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:differential-topology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.3160；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-topology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.3199；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:mathematical-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.34；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:differential-calculus#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.3410；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:integral-calculus#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.3420；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:theory-of-series#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.3430；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-mathematical-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.3499；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:nonstandard-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.37；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:theory-of-functions#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.41；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:real-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4110；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:complex-analysis-of-one-variable#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4120；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:several-complex-variables#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4130；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:approximation-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4140；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:harmonic-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4150；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:complex-manifolds#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4160；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:special-functions#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4170；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-theory-of-functions#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4199；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:ordinary-differential-equations#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.44；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:qualitative-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4410；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:stability-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4420；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:analytic-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4430；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-ordinary-differential-equations#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4499；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:partial-differential-equations#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.47；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:elliptic-pdes#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4710；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:hyperbolic-pdes#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4720；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:parabolic-pdes#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4730；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:nonlinear-pdes#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4740；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-partial-differential-equations#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.4799；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:dynamical-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.51；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:differentiable-dynamical-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.5110；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:topological-dynamical-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.5120；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:complex-dynamical-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.5130；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-dynamical-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.5199；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:integral-equations#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.54；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:functional-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.57；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:linear-operator-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.5710；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:calculus-of-variations#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.5715；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:topological-vector-spaces#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.5720；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:hilbert-spaces#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.5725；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:function-spaces#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.5730；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:banach-spaces#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.5735；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:operator-algebras#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.5740；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:measure-and-integration#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.5745；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:theory-of-distributions#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.5750；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:nonlinear-functional-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.5755；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-functional-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.5799；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:computational-mathematics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.61；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:interpolation-and-approximation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6110；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:numerical-solution-of-odes#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6120；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:numerical-solution-of-pdes#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6130；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:numerical-solution-of-integral-equations#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6140；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:numerical-algebra#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6150；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:discretization-methods-for-continuous-problems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6160；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:stochastic-numerical-experiments#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6170；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:error-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6180；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-computational-mathematics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6199；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:probability-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.64；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:geometric-probability#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6410；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:probability-distributions#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6420；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:limit-theorems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6430；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:stochastic-processes#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6440；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:markov-processes#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6450；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:stochastic-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6460；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:martingale-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6470；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:applied-probability#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6480；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-probability-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6499；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:mathematical-statistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.67；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:sampling-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6710；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:hypothesis-testing#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6715；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:nonparametric-statistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6720；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:analysis-of-variance#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6725；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:correlation-and-regression-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6730；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:statistical-inference#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6735；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:bayesian-statistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6740；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:design-of-experiments#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6745；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:multivariate-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6750；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:statistical-decision-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6755；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:time-series-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6760；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-mathematical-statistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.6799；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:applied-statistical-mathematics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.71；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:statistical-quality-control#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7110；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:reliability-mathematics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7120；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:actuarial-mathematics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7130；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:statistical-simulation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7140；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-applied-statistical-mathematics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7199；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:operations-research#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.74；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:linear-programming#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7410；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:nonlinear-programming#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7415；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:dynamic-programming#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7420；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:combinatorial-optimization#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7425；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:parametric-programming#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7430；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:integer-programming#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7435；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:stochastic-programming#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7440；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:queueing-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7445；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:game-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7450；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:inventory-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7455；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:decision-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7460；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:search-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7465；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:graph-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7470；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:scheduling-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7475；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:optimization#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7480；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-operations-research#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.7499；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:combinatorics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.77；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:discrete-mathematics-mathematics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.81；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:fuzzy-mathematics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.84；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:applied-mathematics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.87；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=110.99；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:foundations-of-information-and-systems-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.10；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:information-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.1010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:cybernetics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.1020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:systems-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.1030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-foundations-of-information-and-systems-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.1099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:systems-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.20；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:chaos#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.2010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:general-systems-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.2020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:dissipative-structure-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.2030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:synergetics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.2040；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:catastrophe-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.2050；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:hypercycle-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.2060；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-systems-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.2099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:control-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.30；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:large-scale-systems-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.3010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:system-identification#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.3020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:state-estimation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.3030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:robust-control#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.3040；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-control-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.3099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:systems-evaluation-and-feasibility-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.40；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:systems-engineering-methodology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.50；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:system-modeling#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.5010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-systems-engineering-methodology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.5099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:systems-engineering#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.60；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-information-and-systems-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=120.99；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:history-of-management-thought#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.10；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:management-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.15；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:management-philosophy#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.1510；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:organization-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.1520；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:behavioral-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.1530；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:decision-theory-management-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.1540；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:systems-management-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.1550；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-management-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.1599；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:managerial-psychology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.20；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:management-metrics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.25；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:sectoral-economic-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.30；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:science-of-science-and-s-and-t-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.35；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:sociology-of-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.3510；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:science-and-technology-policy#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.3520；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:psychology-of-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.3530；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:scientometrics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.3540；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:science-and-technology-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.3550；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-science-of-science-and-s-and-t-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.3599；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:business-administration#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.40；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:production-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.4010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:operations-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.4015；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:financial-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.4020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:cost-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.4025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:labor-and-personnel-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.4030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:technology-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.4035；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:marketing-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.4040；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:materials-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.4045；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:equipment-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.4050；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:quality-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.4055；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-business-administration#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.4099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:public-administration#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.45；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:management-engineering#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.50；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:production-systems-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.5010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:r-and-d-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.5015；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:quality-control-and-reliability-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.5020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:logistics-systems-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.5025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:strategic-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.5030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:decision-analysis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.5035；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:decision-support-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.5040；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:management-information-systems#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.5045；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:management-systems-simulation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.5050；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:ergonomics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.5055；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:sectoral-management-engineering#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.5060；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-management-engineering#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.5099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:human-resource-development-and-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.55；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:human-resource-development-strategy#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.5510；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:talent-studies#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.5520；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-human-resource-development-and-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.5599；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:futures-studies#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.60；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:theoretical-forecasting#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.6010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:forecast-evaluation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.6020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:technology-assessment#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.6030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:global-futures-studies#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.6040；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-futures-studies#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.6099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=630.99；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:general-linguistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.10；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:phonetics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.1010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:grammar#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.1015；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:semantics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.1020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:lexicology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.1025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:pragmatics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.1030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:dialectology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.1035；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:rhetoric#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.1040；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:graphemics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.1045；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:etymology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.1050；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-general-linguistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.1099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:comparative-linguistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.15；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:historical-comparative-linguistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.1510；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:typological-linguistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.1520；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:contrastive-linguistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.1530；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-comparative-linguistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.1599；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:linguistic-geography#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.20；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:sociolinguistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.25；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:psycholinguistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.30；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:applied-linguistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.35；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:language-teaching#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.3510；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:discourse-linguistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.3520；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:experimental-phonetics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.3530；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:mathematical-linguistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.3540；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:computational-linguistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.3550；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:translation-studies#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.3560；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-applied-linguistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.3599；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:chinese-language-studies#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.40；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:putonghua#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:chinese-dialects#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4015；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:chinese-phonetics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:chinese-phonology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:chinese-grammar#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:chinese-lexicon#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4035；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:chinese-exegesis#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4040；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:chinese-rhetoric#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4045；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:chinese-character-standardization#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4050；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:history-of-the-chinese-language#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4055；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-chinese-language-studies#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:languages-and-scripts-of-chinese-ethnic-minorities#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.45；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:mongolian#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4510；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:tibetan#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4515；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:uyghur#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4520；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:kazakh#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4525；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:manchu#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4530；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:korean#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4535；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:dai#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4540；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:yi#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4545；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:zhuang#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4550；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:miao#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4555；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:yao#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4560；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:kyrgyz#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4565；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:xibe#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4570；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-languages-and-scripts-of-chinese-ethnic-minorities#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.4599；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:foreign-languages#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.50；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:english#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5011；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:german#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5014；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:swedish#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5017；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:italian#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5021；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:french#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5024；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:spanish-and-portuguese#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5027；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:romanian#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5031；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:russian#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5034；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:polish-and-czech#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5037；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:serbian-and-bulgarian#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5041；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:greek#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5044；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:albanian#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5047；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:hungarian#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5051；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:sanskrit-hindi-urdu-and-sinhala#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5054；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:persian#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5057；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:turkish#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5061；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:arabic#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5064；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:hebrew#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5067；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:hausa#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5071；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:swahili#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5074；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:vietnamese-and-khmer#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5077；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:indonesian-filipino-and-malay#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5081；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:burmese#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5084；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:thai-and-lao#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5087；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:japanese#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5091；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:esperanto#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5094；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-foreign-languages#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.5099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-linguistics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=740.99；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:journalism-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.10；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:journalism#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.1010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:marxist-journalism-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.1015；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:western-journalism-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.1020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:press-law#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.1025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:public-opinion-studies#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.1030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:journalism-ethics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.1035；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:sociology-of-journalism#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.1040；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:psychology-of-journalism#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.1045；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:comparative-journalism#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.1050；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-journalism-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.1099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:history-of-journalism#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.20；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:history-of-chinese-journalism#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.2010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:history-of-world-journalism#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.2020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:history-of-journalistic-thought#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.2030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-history-of-journalism#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.2099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:journalism-practice#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.30；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:news-interviewing#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.3010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:news-writing#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.3020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:news-editing#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.3030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:news-commentary#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.3040；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:photojournalism#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.3050；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-journalism-practice#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.3099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:news-media-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.40；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:broadcasting-and-television#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.50；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:history-of-broadcasting#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.5010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:broadcasting-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.5020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:broadcasting-practice#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.5030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:broadcast-announcing#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.5040；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-broadcasting-and-television#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.5099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:communication-studies#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.60；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:history-of-communication#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.6010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:communication-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.6020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:communication-technology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.6030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:organizational-communication#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.6040；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-communication-studies#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.6099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-journalism-and-communication#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=860.99；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:library-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.10；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:history-of-library-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.1010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:comparative-librarianship#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.1015；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:sociology-of-libraries#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.1020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:library-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.1025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:library-architecture#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.1030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:collection-development#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.1035；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:library-classification#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.1040；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:cataloging#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.1045；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:bibliography#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.1050；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:library-services#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.1055；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-library-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.1099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:documentation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.20；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:document-typology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.2010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:bibliometrics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.2020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:document-retrieval#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.2030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:history-of-the-book#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.2040；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:textual-bibliography#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.2050；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:textual-criticism#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.2060；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-documentation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.2099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:information-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.30；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:history-of-information-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.3010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:sociology-of-information#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.3015；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:comparative-information-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.3020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:informetrics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.3025；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:psychology-of-information#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.3030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:information-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.3035；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:information-services#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.3040；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:economics-of-information#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.3045；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:information-retrieval#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.3050；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:information-systems-theory#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.3055；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:information-technology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.3060；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:scientific-and-technical-information#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.3065；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:social-science-information#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.3070；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-information-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.3099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:archival-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.40；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:history-of-archival-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.4010；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:archives-management#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.4020；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:archival-preservation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.4030；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:archival-compilation#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.4040；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-archival-science#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.4099；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:museology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=870.50；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:history-of-education#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.11；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:principles-of-education#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.14；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:didactics#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.17；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:principles-of-moral-education#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.21；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:sociology-of-education#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.24；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:educational-psychology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.27；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:economics-of-education#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.31；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:educational-administration#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.34；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:comparative-education#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.37；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:educational-technology#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.41；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:military-education#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.44；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:preschool-education#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.47；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:general-education#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.51；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:higher-education#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.54；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:adult-education#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.57；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:vocational-and-technical-education#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.61；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:special-education#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.64；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/topics.yaml#concept:other-education#source
+  operation: keep
+  disposition: retain_legacy
+  new_value: source=gbt-13745；same-source match.id=880.99；rel=exactMatch
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/forms.yaml#array:forms-presentation#source
+  operation: keep
+  disposition: isolated_local_analysis
+  new_value: source=lom；superordinate=forms
+  decision_trace: []
+  blocks_cutover: true
+- identity: vocab/forms.yaml#array:forms-activity#source
+  operation: keep
+  disposition: isolated_local_analysis
+  new_value: source=lom；superordinate=forms
+  decision_trace: []
+  blocks_cutover: true
