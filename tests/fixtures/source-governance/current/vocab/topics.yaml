@@ -1,0 +1,9 @@
+schema: fixture
+concepts:
+  - id: fixture-concept
+    source:
+      registry: mapping-only
+      item: fixture
+      locator: fixture
+      basis:
+        - {entity: renamed-source, locator: fixture, checked: "2026-08-31"}

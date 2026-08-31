@@ -1,0 +1,8 @@
+- identity: entity:cs2023
+  field: new_value.replaced_by
+  value: null
+  qid: Q10
+- identity: entity:cs2023
+  field: new_value.status
+  value: current
+  qid: Q10

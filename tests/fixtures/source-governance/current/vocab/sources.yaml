@@ -1,0 +1,10 @@
+schema: urn:kb-design:data:source-uses
+schema_version: 2
+version: {id: "2026.08"}
+sources:
+  - id: mapping-only
+    entity: renamed-source
+    roles:
+      - {role: mapping, status: approved, decision: null}
+      - {role: structure, status: proposed, decision: null}
+    history: []

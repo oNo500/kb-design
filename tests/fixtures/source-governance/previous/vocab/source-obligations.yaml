@@ -1,0 +1,13 @@
+schema: urn:kb-design:data:source-obligations
+schema_version: 1
+obligations:
+  - id: source-review-20260801-001
+    entity: old-source
+    trigger: periodic
+    targets: [{kind: basis, file: vocab/topics.yaml, record: se, field_path: basis.en}]
+    decisions: [decision-source-0012]
+    previous: null
+    state: resolved
+    opened: "2026-08-01"
+    resolved: "2026-08-15"
+    history: [{date: "2026-08-01", action: opened}, {date: "2026-08-15", action: resolved}]

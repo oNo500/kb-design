@@ -1,0 +1,8 @@
+schema: urn:kb-design:data:source-uses
+schema_version: 2
+version: {id: "2026.08"}
+sources:
+  - id: cs2023
+    entity: cs2023
+    roles: [{role: structure, status: approved, decision: decision-source-0003}]
+    history: [{date: "2026-08-31", action: approved, fields: [roles], decisions: [decision-source-0003]}]

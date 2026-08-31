@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 import argparse
+import calendar
 import json
+from datetime import date, timedelta
 from pathlib import Path
-from typing import Dict, List, Literal, NamedTuple, Sequence
+from typing import Dict, List, Literal, NamedTuple, Optional, Sequence
 
 import yaml
 
@@ -81,7 +83,142 @@ class DecisionPatch(NamedTuple):
 
 def validate_references(root: Path,
                         references: Sequence[ReferenceUse]) -> List[Issue]:
-    return []
+    entities = _load_source_entities(root / "vocab/entities.yaml")
+    uses = _load_source_uses(root / "vocab/sources.yaml")
+    accepted = _load_accepted_decision_ids(root / "design/decisions")
+    issues = []
+    for reference in references:
+        if reference.kind not in ROLE_QUALIFICATIONS:
+            issues.append(_issue(reference, "SOURCE_REFERENCE_KIND_INVALID"))
+            continue
+        structural = _validate_reference_value(reference.kind, reference.value)
+        if structural:
+            issues.extend(_issue(reference, code) for code in structural)
+            continue
+        if reference.kind == "basis":
+            entity = entities.get(reference.value["entity"])
+            if entity is None:
+                issues.append(_issue(reference, "SOURCE_ENTITY_MISSING"))
+                continue
+            if _content_is_mutable(entity) and not reference.value.get("checked"):
+                issues.append(_issue(reference, "SOURCE_BASIS_CHECKED_MISSING"))
+            continue
+        registry = reference.value["registry"]
+        source_use = uses.get(registry)
+        if source_use is None:
+            issues.append(_issue(reference, "SOURCE_USE_MISSING"))
+            continue
+        role_name = ROLE_QUALIFICATIONS[reference.kind]
+        role = next((row for row in source_use.get("roles", [])
+                     if row.get("role") == role_name), None)
+        role_code = ("SOURCE_EXTERNAL_GROUP_ROLE_NOT_APPROVED"
+                     if reference.kind == "external_group" else "SOURCE_ROLE_NOT_APPROVED")
+        if role is None or role.get("status") != "approved":
+            issues.append(_issue(reference, role_code))
+        elif role.get("decision") not in accepted:
+            issues.append(_issue(reference, "SOURCE_ROLE_DECISION_MISSING"))
+        for index, basis in enumerate(reference.value["basis"]):
+            nested = ReferenceUse(
+                "basis", reference.file, reference.record,
+                f"{reference.field_path}.basis[{index}]", basis,
+            )
+            issues.extend(validate_references(root, [nested]))
+    return _sort_issues(issues)
+
+
+def _load_yaml(path: Path):
+    if not path.exists():
+        return {}
+    return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+
+
+def _load_source_entities(path: Path):
+    document = _load_yaml(path)
+    return {
+        row["id"]: row for row in document.get("entities", [])
+        if row.get("kind") in {"standard", "publication"}
+    }
+
+
+def _load_source_uses(path: Path):
+    return {row["id"]: row for row in _load_yaml(path).get("sources", [])}
+
+
+def _front_matter(path: Path):
+    text = path.read_text(encoding="utf-8")
+    if not text.startswith("---\n") or "\n---\n" not in text[4:]:
+        return None
+    return yaml.safe_load(text.split("---\n", 2)[1])
+
+
+def _load_accepted_decision_ids(directory: Path):
+    result = set()
+    if not directory.exists():
+        return result
+    for path in directory.glob("source-*.md"):
+        front = _front_matter(path)
+        if front and front.get("status") == "accepted" and front.get("id"):
+            result.add(front["id"])
+    return result
+
+
+def _issue(reference: ReferenceUse, code: str, message: str = ""):
+    return Issue(code, reference.file, reference.record, reference.field_path, message or code)
+
+
+def _sort_issues(issues):
+    return sorted(issues, key=lambda item: (
+        item.file, item.record, item.field_path, item.code, item.message,
+    ))
+
+
+def _validate_reference_value(kind, value):
+    if not isinstance(value, dict):
+        return ["SOURCE_REFERENCE_VALUE_INVALID"]
+    if kind == "basis":
+        if not value.get("locator"):
+            return ["SOURCE_BASIS_LOCATOR_MISSING"]
+        if not value.get("entity"):
+            return ["SOURCE_REFERENCE_VALUE_INVALID"]
+        return []
+    if not value.get("registry"):
+        return ["SOURCE_REFERENCE_VALUE_INVALID"]
+    issues = []
+    if not value.get("item"):
+        issues.append("SOURCE_SOURCE_ITEM_MISSING")
+    if kind in {"source", "external_group"} and not value.get("locator"):
+        issues.append("SOURCE_SOURCE_LOCATOR_MISSING")
+    if not value.get("basis"):
+        issues.append("SOURCE_MATCH_BASIS_MISSING" if kind == "match"
+                      else "SOURCE_SOURCE_BASIS_MISSING")
+    if kind == "match" and value.get("rel") not in {
+        "exactMatch", "closeMatch", "broadMatch", "narrowMatch", "relatedMatch",
+    }:
+        issues.append("SOURCE_MATCH_REL_INVALID")
+    return issues
+
+
+def _content_is_mutable(entity):
+    return not (entity.get("fixed_sha256") and entity.get("version"))
+
+
+def add_calendar_months(value: date, months: int) -> date:
+    absolute = value.year * 12 + value.month - 1 + months
+    year, month0 = divmod(absolute, 12)
+    month = month0 + 1
+    old_last = calendar.monthrange(value.year, value.month)[1]
+    new_last = calendar.monthrange(year, month)[1]
+    day = new_last if value.day == old_last else min(value.day, new_last)
+    return date(year, month, day)
+
+
+def compute_next_due(checked: date, interval_months: Optional[int]) -> Optional[date]:
+    return None if interval_months is None else add_calendar_months(checked, interval_months)
+
+
+def is_review_overdue(next_due: Optional[date], today: date,
+                      grace_days: int = 30) -> bool:
+    return next_due is not None and today > next_due + timedelta(days=grace_days)
 
 
 META = "https://json-schema.org/draft/2020-12/schema"
@@ -472,10 +609,9 @@ def write_schema_documents(directory: Path) -> None:
 def load_decision_patches(paths: Sequence[Path]) -> List[DecisionPatch]:
     patches = []
     for path in paths:
-        text = path.read_text(encoding="utf-8")
-        if not text.startswith("---\n") or "\n---\n" not in text[4:]:
+        front = _front_matter(path)
+        if front is None:
             raise ValueError(f"SOURCE_SCHEMA_INVALID {path}")
-        front = yaml.safe_load(text.split("---\n", 2)[1])
         if front.get("status") != "accepted":
             raise ValueError(f"SOURCE_DECISION_MISSING {path}")
         for answer in front.get("answers", []):
@@ -484,7 +620,144 @@ def load_decision_patches(paths: Sequence[Path]) -> List[DecisionPatch]:
                 patches.append(DecisionPatch(
                     value["identity"], value["field"], value["value"], qid,
                 ))
-    return patches
+    return sorted(patches, key=lambda patch: (
+        patch.qid, patch.identity, patch.field,
+        json.dumps(patch.value, ensure_ascii=False, sort_keys=True),
+    ))
+
+
+def _collect_reference_uses(path: Path, value, record="document", parts=()):
+    result = []
+    if isinstance(value, dict):
+        current_record = value.get("id", record)
+        for key, child in value.items():
+            child_parts = parts + (key,)
+            field_path = ".".join(str(part) for part in child_parts)
+            if key == "basis" and isinstance(child, dict):
+                for basis_key, basis_values in child.items():
+                    if isinstance(basis_values, list):
+                        for index, basis in enumerate(basis_values):
+                            result.append(ReferenceUse(
+                                "basis", str(path), str(current_record),
+                                f"{field_path}.{basis_key}[{index}]", basis,
+                            ))
+            elif key == "source" and isinstance(child, dict):
+                result.append(ReferenceUse(
+                    "source", str(path), str(current_record), field_path, child,
+                ))
+            elif key == "match" and isinstance(child, list):
+                for index, match in enumerate(child):
+                    result.append(ReferenceUse(
+                        "match", str(path), str(current_record),
+                        f"{field_path}[{index}]", match,
+                    ))
+            elif key == "external_group" and isinstance(child, dict):
+                result.append(ReferenceUse(
+                    "external_group", str(path), str(current_record), field_path, child,
+                ))
+            result.extend(_collect_reference_uses(path, child, current_record, child_parts))
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            result.extend(_collect_reference_uses(path, child, record, parts + (index,)))
+    return result
+
+
+def _schema_issues(root: Path, relative: str, schema_name: str):
+    from jsonschema import Draft202012Validator, FormatChecker
+    path = root / relative
+    if not path.exists():
+        return [Issue("SOURCE_SCHEMA_INVALID", relative, "document", "$", "missing file")]
+    document = _load_yaml(path)
+    schema = json.loads((Path(__file__).resolve().parents[1] / "schemas" / schema_name)
+                        .read_text(encoding="utf-8"))
+    return [Issue("SOURCE_SCHEMA_INVALID", relative, "document",
+                  ".".join(str(part) for part in error.path), error.message)
+            for error in Draft202012Validator(
+                schema, format_checker=FormatChecker()
+            ).iter_errors(document)]
+
+
+def _history_prefix(previous, current):
+    return current[:len(previous)] == previous
+
+
+def validate_repository(root: Path, previous_root: Optional[Path] = None,
+                        allow_legacy: bool = False) -> List[Issue]:
+    issues = []
+    for relative, schema_name in (
+        ("vocab/entities.yaml", "source-entities.schema.json"),
+        ("vocab/sources.yaml", "source-uses.schema.json"),
+        ("vocab/source-obligations.yaml", "source-obligations.schema.json"),
+    ):
+        issues.extend(_schema_issues(root, relative, schema_name))
+
+    entities_doc = _load_yaml(root / "vocab/entities.yaml")
+    uses_doc = _load_yaml(root / "vocab/sources.yaml")
+    obligations_doc = _load_yaml(root / "vocab/source-obligations.yaml")
+    accepted = _load_accepted_decision_ids(root / "design/decisions")
+
+    for row in entities_doc.get("entities", []):
+        if row.get("temporary_unavailable") and row.get("status") == "withdrawn":
+            issues.append(Issue(
+                "SOURCE_SCHEMA_INVALID", "vocab/entities.yaml", row.get("id", ""),
+                "status", "temporary unavailability cannot set withdrawn",
+            ))
+        for field in ("origin", "url"):
+            if field in row and not allow_legacy:
+                issues.append(Issue(
+                    "SOURCE_LEGACY_FIELD", "vocab/entities.yaml", row.get("id", ""),
+                    field, f"legacy field {field}",
+                ))
+
+    for use in uses_doc.get("sources", []):
+        for index, role in enumerate(use.get("roles", [])):
+            if role.get("status") in {"approved", "retired"} and role.get("decision") not in accepted:
+                issues.append(Issue(
+                    "SOURCE_ROLE_DECISION_MISSING", "vocab/sources.yaml", use.get("id", ""),
+                    f"roles[{index}].decision", "accepted role decision required",
+                ))
+
+    for path in sorted((root / "vocab").glob("*.yaml")):
+        references = _collect_reference_uses(
+            Path(path.relative_to(root)), _load_yaml(path)
+        )
+        issues.extend(validate_references(root, references))
+
+    if previous_root is not None:
+        previous_entities = _load_yaml(previous_root / "vocab/entities.yaml").get("entities", [])
+        current_entities = entities_doc.get("entities", [])
+        current_by_label = {
+            json.dumps(row.get("label"), ensure_ascii=False, sort_keys=True): row
+            for row in current_entities
+        }
+        for old in previous_entities:
+            current = current_by_label.get(json.dumps(
+                old.get("label"), ensure_ascii=False, sort_keys=True
+            ))
+            if current and current.get("id") != old.get("id"):
+                issues.append(Issue(
+                    "SOURCE_STABLE_ID_CHANGED", "vocab/entities.yaml", old.get("id", ""),
+                    "id", f"changed to {current.get('id')}",
+                ))
+            if current and not _history_prefix(old.get("history", []), current.get("history", [])):
+                issues.append(Issue(
+                    "SOURCE_HISTORY_NOT_APPEND_ONLY", "vocab/entities.yaml", old.get("id", ""),
+                    "history", "history must retain the previous prefix",
+                ))
+
+        previous_obligations = {
+            row["id"]: row for row in _load_yaml(
+                previous_root / "vocab/source-obligations.yaml"
+            ).get("obligations", [])
+        }
+        for row in obligations_doc.get("obligations", []):
+            old = previous_obligations.get(row.get("id"))
+            if old and old.get("state") == "resolved" and row.get("state") != "resolved":
+                issues.append(Issue(
+                    "SOURCE_OBLIGATION_REOPENED", "vocab/source-obligations.yaml",
+                    row.get("id", ""), "state", "resolved obligation cannot reopen",
+                ))
+    return _sort_issues(issues)
 
 
 def main(argv=None) -> int:

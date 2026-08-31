@@ -1,0 +1,18 @@
+schema: urn:kb-design:data:entities
+schema_version: 2
+version: {id: "2026.08"}
+entities:
+  - id: renamed-source
+    label: {en: Old Source}
+    kind: publication
+    version: "1"
+    urls: [{role: canonical, url: "https://example.org/old", primary: true}]
+    status: withdrawn
+    temporary_unavailable: true
+    origin: legacy
+    basis: {label: [{entity: renamed-source, locator: title}]}
+    review: {checked: "2026-08-01", next_due: "2027-08-01", interval_months: 12, grace_days: 30, obligations: []}
+    watch: []
+    replaced_by: null
+    history:
+      - {date: "2026-08-15", action: reviewed, fields: [status], decisions: [decision-source-0012]}
