@@ -108,6 +108,7 @@
 | `design/decisions/source-governance-schema.md` | 门禁后创建 | 记录 `decision-source-0001` 的模式与路径决定 |
 | `design/decisions/source-validation-policy.md` | 门禁后创建 | 记录 `decision-source-0009` 的离线校验控制规则，不填写真实来源结论 |
 | `design/decisions/source-probe-policy.md` | 门禁后创建 | 记录 `decision-source-0010` 的只读探测控制规则，不写回正式事实 |
+| `design/decisions/source-migration-policy.md` | 门禁后创建 | 记录 `decision-source-0011` 的迁移分类、隔离和切换控制规则，不代替逐行结论 |
 | `design/decisions/source-identity-boundaries.md` | 门禁后创建 | 记录 `decision-source-0002` 的身份判据与逐项结论 |
 | `design/decisions/source-role-uses.md` | 门禁后创建 | 记录 `decision-source-0003` 的 47 个逐角色结论 |
 | `design/decisions/source-governance-effective.md` | 生效时创建 | 记录 `decision-source-0004` 的草案生效边界 |
@@ -328,26 +329,26 @@ Q 到字段与 identity 域的所有权固定如下。`operation`、`disposition
 | Q01 | `@control:paths` | `paths` |
 | Q02 | `@control:schema` | `schema_versions`、`compatibility` |
 | Q03 | 全部 entity／use 行及 `@control:ids` | `proposed_id`、`id_policy` |
-| Q04 | 未登记 entity 行 | `identity_class` |
-| Q05 | focus entity 行 | `identity_resolution`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
+| Q04 | `@control:identity-boundaries` 及未登记 entity 行 | `identity_policy`、`identity_class` |
+| Q05 | `@control:focus-identities` 及 focus entity 行 | `focus_policy`、`identity_resolution`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
 | Q06 | `@control:addresses` 及现行与新 entity 行 | `url_policy`、`new_value.urls` |
 | Q07 | `@control:review` 及现行 entity 行 | `review_policy`、`new_value.review` |
 | Q08 | `@control:watch` 及现行 entity 行 | `watch_policy`、`new_value.watch` |
 | Q09 | 现行 entity 行及 `@control:unavailability` | `new_value.unavailability_policy`、`release_block_policy` |
 | Q10 | `@control:external-status` 及现行 entity 行 | `status_policy`、`new_value.status`、`new_value.replaced_by`、`operation`、`disposition`、`blocks_cutover` |
 | Q11 | `@control:roles` 及非 Q12 特殊 use-role 行 | `role_policy`、`new_role`、`new_status`、`decision`、`operation`、`disposition`、`blocks_cutover` |
-| Q12 | 5 个 candidate、11 个空 mapping 与空 group 行 | `new_role`、`new_status`、`decision`、`operation`、`disposition`、`blocks_cutover` |
+| Q12 | `@control:candidate-roles` 及 5 个 candidate、11 个空 mapping 与空 group 行 | `candidate_role_policy`、`new_role`、`new_status`、`decision`、`operation`、`disposition`、`blocks_cutover` |
 | Q13 | `@control:source` 及非 Q14／Q15／Q16／Q17 source 行 | `source_policy`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
-| Q14 | 三个多来源 concept source 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
-| Q15 | 24 个主题 array source 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
-| Q16 | 两个 form array source 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
-| Q17 | 四个 RFC 1122 source 行与对应 match 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
+| Q14 | `@control:multi-source` 及三个多来源 concept source 行 | `multi_source_policy`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
+| Q15 | `@control:external-groups` 及 24 个主题 array source 行 | `external_group_policy`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
+| Q16 | `@control:local-analysis` 及两个 form array source 行 | `local_analysis_policy`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
+| Q17 | `@control:rfc-source` 及四个 RFC 1122 source 行与对应 match 行 | `rfc_policy`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
 | Q18 | `@control:match` 及非 Q17 match 行 | `match_policy`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
 | Q19 | `@control:basis` 及非 Q20 basis 行 | `basis_policy`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
-| Q20 | 630 个 none 与 13 个正式 self basis 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
+| Q20 | `@control:unsupported-basis` 及 630 个 none 与 13 个正式 self basis 行 | `unsupported_basis_policy`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
 | Q21 | `@control:origin` 及 19 个 origin 行 | `origin_policy`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
 | Q22 | `@control:obligation-bridge` | `source_term_bridge` |
-| Q23 | 现行 entity 行 | `tier_change` |
+| Q23 | `@control:tier` 及现行 entity 行 | `tier_policy`、`tier_change` |
 | Q24 | `@control:term-admission` | `term_admissions` |
 | Q25 | `@control:cutover` | `cutover_sequence`、`rollback_sequence`、`release_sequence` |
 
@@ -356,8 +357,8 @@ Q_FIELD_OWNERSHIP = {
     "Q01": frozenset(("paths",)),
     "Q02": frozenset(("schema_versions", "compatibility")),
     "Q03": frozenset(("proposed_id", "id_policy")),
-    "Q04": frozenset(("identity_class",)),
-    "Q05": frozenset(("identity_resolution", "operation", "disposition", "new_value",
+    "Q04": frozenset(("identity_policy", "identity_class")),
+    "Q05": frozenset(("focus_policy", "identity_resolution", "operation", "disposition", "new_value",
                        "blocks_cutover")),
     "Q06": frozenset(("url_policy", "new_value.urls")),
     "Q07": frozenset(("review_policy", "new_value.review")),
@@ -367,23 +368,23 @@ Q_FIELD_OWNERSHIP = {
                        "disposition", "blocks_cutover")),
     "Q11": frozenset(("role_policy", "new_role", "new_status", "decision", "operation",
                        "disposition", "blocks_cutover")),
-    "Q12": frozenset(("new_role", "new_status", "decision", "operation",
+    "Q12": frozenset(("candidate_role_policy", "new_role", "new_status", "decision", "operation",
                        "disposition", "blocks_cutover")),
     "Q13": frozenset(("source_policy", "operation", "disposition", "new_value",
                        "blocks_cutover")),
-    "Q14": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
-    "Q15": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
-    "Q16": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
-    "Q17": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
+    "Q14": frozenset(("multi_source_policy", "operation", "disposition", "new_value", "blocks_cutover")),
+    "Q15": frozenset(("external_group_policy", "operation", "disposition", "new_value", "blocks_cutover")),
+    "Q16": frozenset(("local_analysis_policy", "operation", "disposition", "new_value", "blocks_cutover")),
+    "Q17": frozenset(("rfc_policy", "operation", "disposition", "new_value", "blocks_cutover")),
     "Q18": frozenset(("match_policy", "operation", "disposition", "new_value",
                        "blocks_cutover")),
     "Q19": frozenset(("basis_policy", "operation", "disposition", "new_value",
                        "blocks_cutover")),
-    "Q20": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
+    "Q20": frozenset(("unsupported_basis_policy", "operation", "disposition", "new_value", "blocks_cutover")),
     "Q21": frozenset(("origin_policy", "operation", "disposition", "new_value",
                        "blocks_cutover")),
     "Q22": frozenset(("source_term_bridge",)),
-    "Q23": frozenset(("tier_change",)),
+    "Q23": frozenset(("tier_policy", "tier_change")),
     "Q24": frozenset(("term_admissions",)),
     "Q25": frozenset(("cutover_sequence", "rollback_sequence", "release_sequence")),
 }
@@ -391,17 +392,26 @@ Q_CONTROL_IDENTITIES = {
     "Q01": frozenset(("@control:paths",)),
     "Q02": frozenset(("@control:schema",)),
     "Q03": frozenset(("@control:ids",)),
+    "Q04": frozenset(("@control:identity-boundaries",)),
+    "Q05": frozenset(("@control:focus-identities",)),
     "Q06": frozenset(("@control:addresses",)),
     "Q07": frozenset(("@control:review",)),
     "Q08": frozenset(("@control:watch",)),
     "Q09": frozenset(("@control:unavailability",)),
     "Q10": frozenset(("@control:external-status",)),
     "Q11": frozenset(("@control:roles",)),
+    "Q12": frozenset(("@control:candidate-roles",)),
     "Q13": frozenset(("@control:source",)),
+    "Q14": frozenset(("@control:multi-source",)),
+    "Q15": frozenset(("@control:external-groups",)),
+    "Q16": frozenset(("@control:local-analysis",)),
+    "Q17": frozenset(("@control:rfc-source",)),
     "Q18": frozenset(("@control:match",)),
     "Q19": frozenset(("@control:basis",)),
+    "Q20": frozenset(("@control:unsupported-basis",)),
     "Q21": frozenset(("@control:origin",)),
     "Q22": frozenset(("@control:obligation-bridge",)),
+    "Q23": frozenset(("@control:tier",)),
     "Q24": frozenset(("@control:term-admission",)),
     "Q25": frozenset(("@control:cutover",)),
 }
