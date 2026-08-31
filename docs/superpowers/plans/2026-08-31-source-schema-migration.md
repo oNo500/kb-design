@@ -1,6 +1,6 @@
 # 来源迁移计划 (Source Schema Migration Implementation Plan)
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task in the current session. Do not dispatch subagents. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans in the current session. 只有写集互斥且没有顺序依赖的实现任务使用 superpowers:dispatching-parallel-agents。审查和回归按本计划的阶段门禁执行，不恢复逐任务复审。Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** 在不自动裁定来源身份、用途、依据、派生或映射语义的前提下，建立来源实体与用途模式、共享引用结构、反向引用、复核义务、只读探测、可审计迁移预演和原子切换能力。
 
@@ -23,7 +23,8 @@
 - 离线校验不得联网；联网探测只读 `watch` 与获准地址，输出到 ignored 运行目录，正式项目写集必须为零。
 - 正式文档改动涉及一节以上时，先列旧节去向，再按目的整节或整篇重写并逐项核销；不得顺手修复 31 个标题债务、8 个只追加旧标题或 2 个旧 SDD 链接。
 - 生成输入先于生成输出。`scripts/build-topics.py`、`vocab/build/` 与 `vocab/topics.yaml` 必须在同一切换批次对账，连续两次生成逐字节一致。
-- 每个任务都先建立 RED，确认失败原因，再写最小实现取得 GREEN；随后运行全量回归、核对写集、说明回滚边界并提交。提交说明标注本批最高决策级别。
+- 每个任务先建立预期 RED，再运行任务定向 GREEN、核对写集、说明回滚边界并提交。全量回归只在离线校验、迁移预演、文档分流和原子切换四个阶段结束时运行；机械事实不另派独立复审。提交说明标注本批最高决策级别。
+- 冻结库存中的身份、旧值、旧哈希、文件、字段路径、消费者和既有分类由程序无损继承。只有新增或改变外部状态、实体边界、角色批准、正式 `basis`、实际派生、概念关系、删除或正式效力时，才需要 identity／field 级人工决定。
 - 任何任务的人工门禁未满足时，执行者记录阻断并停止该任务；不得采用计划推荐、空值、兼容字段或迁移分类冒充人的批准。
 
 ---
@@ -654,11 +655,11 @@ def build_source_handoff(candidate_root: Path, payload_bytes: bytes, tracked_wri
 
    精确问题：47 个角色各自进入 `proposed`、`approved` 还是 `retired`；每个 `approved` 或 `retired` 角色引用哪个已存在或新获准决定 `id`？
 
-   推荐选项：47／47 全部先迁移为 `proposed`，`decision: null`；不因现行同名 role 或消费者数量批准。人在 `source-role-uses.md` 逐行批准或退役后，相应行引用 `decision-source-0003`；该决定必须列明 47 个角色各自结论，不能用集合默认值。
+   推荐选项：`decision-source-0003` 一次批准“现行角色无损登记为同名 `proposed`、`decision: null`”的类别规则，迁移器按冻结身份确定性展开 47 行；不因现行同名 role 或消费者数量批准。只有转为 `approved`、`retired` 或改名的角色须在 `source-role-uses.md` 逐项列出并引用决定。
 
-   理由：库存显示全部 47 行缺逐角色决定，先提案不会扩大任何用途资格。
+   理由：`proposed` 不扩大用途资格，保持现状可由一次类别决定安全展开；批准、退役和改名仍改变效力，必须逐项决定。
 
-   若错误的代价：所有新 `source.registry` 和 `match.registry` 在角色逐项批准前都无法进入严格模式。
+   若错误的代价：未获批准的角色仍不能供 `source.registry` 或 `match.registry` 使用；正式派生与映射数量可能减少。
 
    不批准时行为：停止用途角色任务；不生成任何输出。
 
@@ -666,7 +667,7 @@ def build_source_handoff(candidate_root: Path, payload_bytes: bytes, tracked_wri
 
    精确问题：五个旧 `candidate` 角色是否在草案生效后的哪一个获准批次转为 `discovery`；11 个无实际 `match` 的 `mapping` 与空的 `owasp-top10` 组资格是否保留？
 
-   推荐选项：五个旧 `candidate` 在“用途角色”批次转为 `proposed discovery`，不取得批准；11 个无消费者 `mapping` 保持 `proposed`；空的 `owasp-top10` `group` 保持 `proposed`。后续批准必须引用 `decision-source-0003` 的逐角色行。
+   推荐选项：五个旧 `candidate` 在“用途角色”批次按类别规则转为 `proposed discovery`，不取得批准；11 个无消费者 `mapping` 保持 `proposed`；空的 `owasp-top10` `group` 保持 `proposed`。只有后续批准、退役或改名才新增逐角色决定。
 
    理由：保存发现与未来用途提案，不把历史声明、空集合或未使用角色当作资格。
 
@@ -868,7 +869,7 @@ print("SOURCE_DECISIONS_OK decision=decision-source-0001 count=7")
 PY
 ```
 
-后续任务统一运行 `python3 scripts/source_model.py decisions --require Q04,Q05` 形式的门禁；`--require` 参数按任务 Interfaces 列出的 Q 集合传入。命令调用 `load_decision_patches()`，输出实际 `resolution`、patch 数和 patch 集 SHA-256。任务测试断言每个 patch 都进入唯一最终行的 `decision_trace`：推荐被接受时验证推荐补丁；replacement 被接受时验证 replacement 补丁；任何未回答身份立即失败且不写输出。
+后续任务统一运行 `python3 scripts/source_model.py decisions --require Q04,Q05` 形式的门禁；`--require` 参数按任务 Interfaces 列出的 Q 集合传入。命令调用 `load_decision_patches()`，输出实际 `resolution`、patch 数和 patch 集 SHA-256。无损同类迁移可以由 accepted 类别规则绑定冻结输入哈希和确定性物化器，每个生成行记录规则与输入身份；凡新增或改变外部状态、实体边界、角色批准、正式 `basis`、实际派生、概念关系或删除结论，仍须 identity／field 级 accepted patch。测试断言每个实际 patch 都进入唯一最终行的 `decision_trace`，但不为保持现状的行制造重复 patch。
 
 所有任务使用同一个零退出链接基线命令 `python3 scripts/check_link_baseline.py`。该脚本必须验证 `scripts/check-links.py` 退出 1 且 stdout 逐字等于以下三行，然后输出 `KNOWN_LINK_BASELINE_OK count=2` 并退出 0：
 
@@ -878,7 +879,7 @@ PY
 2 处问题
 ```
 
-出现 0、1、3 个问题、路径／行号／错误种类变化或 `check-links.py` 退出码变化时，基线脚本退出 1。这样每个“运行全量回归”步骤都能继续执行后续 `git diff --check` 与其他验证。
+出现 0、1、3 个问题、路径／行号／错误种类变化或 `check-links.py` 退出码变化时，基线脚本退出 1。这样四个阶段回归门禁都能继续执行后续 `git diff --check` 与其他验证。
 
 ### 模式契约
 
@@ -1435,11 +1436,9 @@ print("KNOWN_LINK_BASELINE_OK count=2")
 
   Expected: 20 tests PASS；七份 schema 通过 meta validation；有效夹具零错误；payload 自引用／缺 topics hash 与 handoff 缺七份 schema 反例被拒绝；输出 `KNOWN_LINK_BASELINE_OK count=2`。
 
-- [ ] **运行全量回归**
+- [ ] **延后阶段回归**
 
-  Run: `python3 -m unittest discover -s tests -p 'test_*.py' -v && python3 scripts/check-topics.py && python3 scripts/check_link_baseline.py && git diff --check`
-
-  Expected: 全部既有测试通过；`check-topics.py` 为 0 处问题；链接基线输出 `KNOWN_LINK_BASELINE_OK count=2`；`git diff --check` 无输出。
+  本任务只运行模式契约的定向 GREEN 与写集检查；完整回归并入离线校验的契约闭合门禁。
 
 - [ ] **核对写集**
 
@@ -1680,7 +1679,7 @@ def is_review_overdue(next_due, today, grace_days=30):
 
   Expected: 第一条退出 0 且输出 `0 source governance issues`；第二条退出 1 并逐项列出测试期待的 code、文件、记录与字段路径。
 
-- [ ] **运行全量回归**
+- [ ] **运行契约闭合回归**
 
   Run: `python3 -m unittest discover -s tests -p 'test_*.py' -v && python3 scripts/check-topics.py && python3 scripts/check_link_baseline.py && git diff --check`
 
@@ -1945,11 +1944,9 @@ def visit_obligations(root):
 
   Expected: 记录七份词表中的 1,625 次来源引用、29 个被消费来源、756 条映射、692 条实际派生和 26 个数组来源；差异按身份逐项报告，不能只输出计数。
 
-- [ ] **运行全量回归**
+- [ ] **延后阶段回归**
 
-  Run: `python3 -m unittest discover -s tests -p 'test_*.py' -v && python3 scripts/check-topics.py && python3 scripts/check_link_baseline.py && git diff --check`
-
-  Expected: 全部测试通过；链接基线零退出；正式项目无新生成索引；差异检查继续运行。
+  本任务只运行反向索引的定向 GREEN 与写集检查；完整回归并入迁移预演的工具链闭合门禁。
 
 - [ ] **核对写集**
 
@@ -2402,11 +2399,9 @@ def probe_repository(root, output_dir, transport, today, human_reproducible):
 
   Expected: 只创建 `test-run/observations.jsonl` 与 `test-run/summary.json`，`git status --short` 不增加受跟踪文件。
 
-- [ ] **运行全量回归**
+- [ ] **延后阶段回归**
 
-  Run: `python3 -m unittest discover -s tests -p 'test_*.py' -v && python3 scripts/check-topics.py && python3 scripts/check_link_baseline.py && git diff --check`
-
-  Expected: 全部测试通过；链接基线零退出；差异检查继续运行并通过。
+  本任务只运行探测隔离的定向 GREEN 与零正式写集检查；完整回归并入迁移预演的工具链闭合门禁。
 
 - [ ] **核对写集**
 
@@ -2788,7 +2783,7 @@ def write_candidate_tree(root, plan, output_root):
 
   Expected: 18 个哈希、25 个 accepted Q、3,187 个 identity 和六类冻结计数通过；输出每行最终字段、decision_trace、阻断和候选写集；正式 Git 差异不变。
 
-- [ ] **运行全量回归**
+- [ ] **运行工具链闭合回归**
 
   Run: `python3 -m unittest discover -s tests -p 'test_*.py' -v && python3 scripts/check-topics.py && python3 scripts/check_link_baseline.py && git diff --check`
 
@@ -2904,11 +2899,9 @@ def test_existing_entity_review_and_watch_values_consume_q07_to_q09(self):
 
   Expected: 本任务 6 项通过；推荐 patch fixture 保持阻断，replacement patch fixture 可形成非阻断行；accepted Q07 至 Q10、Q23 的每个 patch 恰好进入一个 decision_trace。
 
-- [ ] **运行全量回归**
+- [ ] **延后阶段回归**
 
-  Run: `python3 -m unittest discover -s tests -p 'test_*.py' -v && python3 scripts/check-topics.py && python3 scripts/check_link_baseline.py && git diff --check`
-
-  Expected: 全部测试通过；链接基线零退出；`vocab/entities.yaml` 零差异；差异检查继续运行。
+  本任务只运行现行实体的定向 GREEN 与写集检查；完整回归并入文档分流的迁移账本闭合门禁。
 
 - [ ] **核对写集**
 
@@ -2985,11 +2978,9 @@ def test_no_new_id_exists_without_register_disposition(self):
 
   Expected: 本任务 5 项通过；账本共 138 行，31 与 107 分区不混合；推荐与 replacement fixture 产生不同且各自逐字匹配的结论。
 
-- [ ] **运行全量回归**
+- [ ] **延后阶段回归**
 
-  Run: `python3 -m unittest discover -s tests -p 'test_*.py' -v && python3 scripts/check-topics.py && python3 scripts/check_link_baseline.py && git diff --check`
-
-  Expected: 全部测试通过；链接基线零退出；正式数据零差异；差异检查继续运行。
+  本任务只运行新增身份的定向 GREEN 与写集检查；完整回归并入文档分流的迁移账本闭合门禁。
 
 - [ ] **核对写集**
 
@@ -3019,9 +3010,9 @@ git commit -m "[L2] data: classify unregistered source identities"
 **Interfaces:**
 
 - Consumes: 47 个角色、实际消费者、Q11 与 Q12 的获准结论、`decision-source-0003`。
-- Produces: 47 行逐角色账本；每行独立保存旧角色、消费者集合、目标角色、目标状态、决定和历史动作。
+- Produces: 47 行逐角色账本；同名 `proposed` 行由获准类别规则确定性生成，`approved` 或 `retired` 行独立保存角色决定和历史动作。
 
-**人工门禁:** `decision-source-0003` 必须列出 47 个角色各自状态和每个 approved／retired 的决定引用。缺一项即停止，不生成账本。
+**人工门禁:** `decision-source-0003` 批准“现行角色无损登记为同名 `proposed`、`decision: null`”的类别规则，并逐项列出任何 `approved` 或 `retired` 角色及其决定引用。保持 `proposed` 的行不再要求重复人工签字；缺少批准或退役决定时只阻断对应效力变化。
 
 - [ ] **扩充失败测试**
 
@@ -3061,7 +3052,7 @@ def test_replacement_patches_can_approve_roles(self):
 
   Run: `python3 scripts/plan_source_migration.py --root . --inventory-dir .superpowers/sdd/2026-08-31-governance-implementation-prep --decision-dir design/decisions --section uses --ledger vocab/migrations/source-v1/uses.yaml`
 
-  账本逐角色而不是逐来源汇总。每行固定保存 inventory identity、use ID、entity、old role、消费者路径、new role、new status、角色决定、operation、disposition、decision_trace 与 blocks_cutover；这些目标字段只由 Q11／Q12 patches 写入。
+  账本逐角色而不是逐来源汇总。每行固定保存 inventory identity、use ID、entity、old role、消费者路径、new role、new status、角色决定、operation、disposition、decision_trace 与 blocks_cutover。获准类别规则为保持现状的行生成同名 `proposed`；只有 `approved`、`retired` 或角色改名由 Q11／Q12 identity／field patches 写入。
 
 - [ ] **运行 GREEN**
 
@@ -3069,11 +3060,9 @@ def test_replacement_patches_can_approve_roles(self):
 
   Expected: 本任务 5 项通过；47 行一一对应；推荐 patch fixture 保持 proposed，replacement patch fixture 可批准角色且带 accepted 决定。
 
-- [ ] **运行全量回归**
+- [ ] **延后阶段回归**
 
-  Run: `python3 -m unittest discover -s tests -p 'test_*.py' -v && python3 scripts/check-topics.py && python3 scripts/check_link_baseline.py && git diff --check`
-
-  Expected: 全部测试通过；链接基线零退出；`vocab/sources.yaml` 零差异；差异检查继续运行。
+  本任务只运行用途角色的定向 GREEN 与写集检查；完整回归并入文档分流的迁移账本闭合门禁。
 
 - [ ] **核对写集**
 
@@ -3111,7 +3100,7 @@ git commit -m "[L2] data: record source role migration"
 - Consumes: 1,501 个库存行、Q13、Q18、Q19、Q20 的获准规则、来源实体解析结果。
 - Produces: 1,501 行账本；正式数据 1,496 行、生成配置 1 行、文档展示 4 行分别对账；候选树夹具不含伪造 `basis`。
 
-**人工门禁:** Q19 与 Q20 有 accepted patches；每个可迁移值有实体、locator 和按 Q19 决定的 checked。缺一项 required patch 即停止，不生成账本。
+**人工门禁:** Q19 与 Q20 的类别规则已获准。630 个 `none` 确定性记为 `no_external_basis`，13 个 `self` 记为 `project_assertion`，23 个缺 locator 的值记为阻断审计；这些行不产生正式 `basis`，也不要求逐字段人工 patch。只有拟登记为正式 `basis` 的值必须逐项具有实体、locator、按 Q19 决定的 checked 和 accepted patch。
 
 - [ ] **扩充失败测试**
 
@@ -3253,11 +3242,9 @@ class BuildTopicsSourceTests(unittest.TestCase):
 
   Expected: 新增 10 项全部 PASS；1,501 行完整，旧 630／13／23 身份可审计，accepted patches 全部进入 decision_trace，候选生成连续两次逐字节一致。
 
-- [ ] **运行全量回归**
+- [ ] **延后阶段回归**
 
-  Run: `python3 -m unittest discover -s tests -p 'test_*.py' -v && python3 scripts/check-topics.py && python3 scripts/check_link_baseline.py && git diff --check`
-
-  Expected: 全部测试通过；链接基线零退出；现行生成输出仍为 700 个概念、24 个数组、6,825 行、251,530 字节；差异检查继续运行。
+  本任务只运行逐值依据的定向 GREEN、冻结输出和写集检查；完整回归并入文档分流的迁移账本闭合门禁。
 
 - [ ] **核对写集**
 
@@ -3292,7 +3279,7 @@ git commit -m "[L2] data: record per-value basis migration"
 - Consumes: 726 个直接字段、Q13 至 Q17 的获准决定、用途角色账本。
 - Produces: 692 个实际派生候选、24 个主题数组、8 个项目 `self` 与 2 个载体数组的互斥账本；689 个唯一 registry/item 组合单独对账。
 
-**人工门禁:** Q13 至 Q17 均有 accepted patches；每个拟迁移派生对应 approved structure、item、locator 与 source.basis。缺一项 required patch 即停止，不生成账本。
+**人工门禁:** Q13 至 Q17 的类别规则和 registry 级 locator 模板已获准。692 个候选先由模板确定性展开完整 item、locator 和 source.basis；只有模板异常、多来源例外、角色未批准或语义不确定的行进入人工决定。每个最终登记的派生仍必须对应 approved structure、item、locator 与 source.basis；旧 `source` 标量本身不能自动取得派生效力。
 
 - [ ] **扩充失败测试**
 
@@ -3356,11 +3343,9 @@ def test_candidate_generation_preserves_all_array_memberships(self):
 
   Expected: 新增 7 项全部 PASS；726 行与 692／24／8／2 完整对账；accepted patches 全部进入 decision_trace；推荐与 replacement patch fixture 都可独立 GREEN。
 
-- [ ] **运行全量回归**
+- [ ] **延后阶段回归**
 
-  Run: `python3 -m unittest discover -s tests -p 'test_*.py' -v && python3 scripts/check-topics.py && python3 scripts/check_link_baseline.py && git diff --check`
-
-  Expected: 全部测试通过；链接基线零退出；正式数据零差异；差异检查继续运行。
+  本任务只运行实际派生的定向 GREEN 与写集检查；完整回归并入文档分流的迁移账本闭合门禁。
 
 - [ ] **核对写集**
 
@@ -3463,11 +3448,9 @@ def test_candidate_match_items_all_have_adjacent_basis(self):
 
   Expected: 新增 8 项全部 PASS；756 行完整；旧关系计数保留审计；推荐与 replacement patches 各自进入 decision_trace；所有 register 行有相邻 basis 与 approved mapping。
 
-- [ ] **运行全量回归**
+- [ ] **延后阶段回归**
 
-  Run: `python3 -m unittest discover -s tests -p 'test_*.py' -v && python3 scripts/check-topics.py && python3 scripts/check_link_baseline.py && git diff --check`
-
-  Expected: 全部测试通过；链接基线零退出；五份正式词表零差异；差异检查继续运行。
+  本任务只运行概念映射的定向 GREEN 与写集检查；完整回归并入文档分流的迁移账本闭合门禁。
 
 - [ ] **核对写集**
 
@@ -3621,11 +3604,9 @@ def resolve_obligation(document, obligation_id, resolved, conclusions, decisions
 
   Expected: 6 tests PASS；输入文档保持不变，resolved 不重开，再触发得到新 ID 与 previous。
 
-- [ ] **运行全量回归**
+- [ ] **延后阶段回归**
 
-  Run: `python3 -m unittest discover -s tests -p 'test_*.py' -v && python3 scripts/check-topics.py && python3 scripts/check_link_baseline.py && git diff --check`
-
-  Expected: 全部测试通过；链接基线输出 `KNOWN_LINK_BASELINE_OK count=2`；正式义务文件尚未生成；差异检查继续运行。
+  本任务只运行复核义务的定向 GREEN 与写集检查；完整回归并入文档分流的迁移账本闭合门禁。
 
 - [ ] **核对写集**
 
@@ -3758,7 +3739,7 @@ class SourceDocsTests(unittest.TestCase):
 
   Expected: 新增 8 项全部 PASS；19 行全部关闭，accepted Q21 patches 全部进入 decision_trace，零正式 `origin`，冻结债务写集为零。
 
-- [ ] **运行全量回归**
+- [ ] **运行迁移账本闭合回归**
 
   Run: `python3 -m unittest discover -s tests -p 'test_*.py' -v && python3 scripts/check-topics.py && python3 scripts/check_link_baseline.py && git diff --check`
 
@@ -4352,7 +4333,7 @@ git commit -m "[L3] governance: authorize source schema cutover"
 
   Expected: 17 tests PASS；ignored 与正式安装阶段使用同一四路径 verifier，返回类型为 `Issue`；严格模式零旧结构，反向索引双向完整，义务引用可解析，decision → handoff → payload 两层绑定一致，篡改 handoff 或 payload 都被拒绝，补偿夹具保留全部审计对象。
 
-- [ ] **运行全量回归**
+- [ ] **运行正式切换闭合回归**
 
   Run: `python3 -m unittest discover -s tests -p 'test_*.py' -v && python3 scripts/check_sources.py --root . && python3 scripts/check-topics.py && python3 scripts/build-topics.py && shasum -a 256 vocab/topics.yaml > /tmp/kb-source-topics-first.sha256 && python3 scripts/build-topics.py && shasum -a 256 vocab/topics.yaml > /tmp/kb-source-topics-second.sha256 && diff -u /tmp/kb-source-topics-first.sha256 /tmp/kb-source-topics-second.sha256 && python3 scripts/check_link_baseline.py && python3 scripts/check-terms.py --all > .superpowers/sdd/2026-08-31-source-schema-migration/terms-after.txt && git diff --check`
 
@@ -4417,23 +4398,24 @@ git commit -m "[L3] feat: switch to source governance schema"
 | 映射迁移 | `test_source_migration.py` 的 756 行测试 | 748 个 exactMatch 继承、未读材料通过 |
 | origin 分流 | `test_source_docs.py` 与 origin 账本测试 | 创建填空 origin、发现线索证明一切 |
 | 生成确定性 | `test_build_topics_sources.py`、`test_source_cutover.py` | 重新生成恢复旧结构、重复 ID 静默覆盖 |
-| 链接基线 | `test_source_contract.py`、14 个全量回归步骤 | 已知退出 1 使后续命令短路、旧失败数量漂移 |
+| 链接基线 | `test_source_contract.py`、4 个阶段回归门禁 | 已知退出 1 使后续命令短路、旧失败数量漂移 |
 | 双层交付绑定 | `test_source_schema.py`、`test_source_cutover.py` | payload 自引用、handoff 缺富字段、决定未绑定 handoff／payload、ignored 预验改读未来正式 payload、安装后另写第二套 verifier、应用绕过绑定路径 |
 | 原子切换与补偿 | `test_source_cutover.py` | 双层 ApplyResult、已存在 output、整提交反转、删除 ID／history／义务、切换即发版 |
 
 ## 完成条件
 
 - 每个任务要求的 Q 项都有 accepted patches；推荐或 replacement 都由同一字段物化器消费，未批准任务不产生受跟踪或 ignored 写入。
-- 14 个任务的 RED 均曾以预期原因出现，GREEN、全量回归、写集和回滚证据均写入 ignored `verification.md`。
-- 六份迁移账本分别完整覆盖 138、47、1,501、726、756、19 个 identity；每个 identity 只有一个 base row 和一个最终行，每个 `(identity, field)` 最多一个 patch。
+- 14 个任务均有预期 RED、定向 GREEN、写集和回滚证据；离线校验、迁移预演、文档分流和原子切换四个阶段另有完整回归证据，统一写入 ignored `verification.md`。
+- 六份迁移账本分别完整覆盖 138、47、1,501、726、756、19 个 identity；每个 identity 只有一个 base row 和一个最终行，每个 `(identity, field)` 最多一个 patch。每份账本分别统计 `mechanically_inherited`、`human_decided` 和 `blocked`；机械继承必须保持旧身份、旧值和旧哈希，不取得新的语义资格。
 - `scripts/source_model.py` 公开精确 `ReferenceKind`、`Issue`、`ReferenceUse`、`DecisionPatch` 和 `validate_references()`；`scripts/apply_source_migration.py` 公开唯一 `verify_source_handoff(repo_root, handoff_path, payload_path, candidate_root) -> List[Issue]`。七个 `$id`、26 个错误码和四类角色资格逐字一致，术语侧无需适配器。
 - 来源实体、用途角色、`basis`、`source`、`match`、`external_group`、义务和通用反向索引的类型、字段名和枚举与“接口锁”一致；external_group 要求 approved structure 并进入 source use 索引；未来 `vocab/terms.yaml` 夹具无需新增 visitor 即被发现。
 - 只读探测的正式写集为零；生产流程从 urls 采集 status／doi／landing／archive／mirror 证据；publisher_version 缺失／相同／不同、1／3／6／12 月调度、24／12／6 月 next_due、30 日宽限、14 日三次独立观察、证据优先级和误报追加均有边界测试。
 - 原子切换前 `blocks_cutover` 为 0；切换后严格模式拒绝全部旧来源结构，生成器不会恢复旧值。
+- `blocks_cutover` 只统计准备进入正式来源结构却缺少语义材料或决定的行。仅保存旧值审计的 `none`、`self`、旧关系和旧角色不要求人工逐行签字，也不因未取得新效力阻断工具与账本实现。
 - 当前 700 个主题概念、24 个数组和所有稳定身份保持不变，或每个变化都引用 accepted DecisionPatch 和迁移账本行；`decision-source-0005` 绑定 handoff path／SHA-256 与 payload path／SHA-256，handoff 提供 topics_sha256。
 - payload 在完整 ignored candidate application root 后生成，只列待原子应用路径与 after_sha256，明确排除 payload 与 handoff；handoff 绑定富交付元数据且不含自身 hash。ignored 预验、先行审计安装后验证和正式应用后验证都调用同一四路径 verifier；原子应用按 decision → handoff → payload 顺序验证后只消费 payload entries。
 - 两个载体数组隔离为非来源对象，成员不变、local_analysis 不被访问器收集、`blocks_cutover: false`；24 个 external_group 被收集、验证和索引；三份旁路草案不成为前置。
-- `scripts/check_link_baseline.py` 以 0 退出验证恰有两条旧 SDD 链接失败，14 个全量回归步骤均在其后继续执行；31 个标题债务和 8 个只追加旧标题不改。
+- `scripts/check_link_baseline.py` 以 0 退出验证恰有两条旧 SDD 链接失败，4 个阶段回归门禁均在其后继续执行；31 个标题债务和 8 个只追加旧标题不改。
 - 来源改档为 0，术语准入为 0，范围变化为 0；草案生效、迁移、回退和发版分别有决定。
 - `decision-source-0004` 至 `0006`、六份账本、ID、history、义务和 manifest 位于切换前先行提交；失败只用 `decision-source-0008` 与补偿提交，保留全部审计对象。
 - 原子切换提交完成但没有 `decision-source-0007` 时，状态只能是“已验证，未发版”。

@@ -1,10 +1,10 @@
 # 术语实施计划 (Terminology Schema and Generation Implementation Plan)
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans. 只有写集互斥且没有顺序依赖的实现任务使用 superpowers:dispatching-parallel-agents。独立审查只执行本计划保留的 T12 与 T13 两个高价值门禁。Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** 在来源治理原子切换完成后，建立可审计的术语模式、逐行决定物化、确定性生成、委托、正文诊断和维护接口，并以同时更新来源索引的原子切换启用唯一术语编辑源。
+**Goal:** 在来源治理原子切换完成后，继承既有术语审查结论，建立可审计的术语模式、按风险升级的决定物化、确定性生成、委托、正文诊断和维护接口，并以同时更新来源索引的原子切换启用唯一术语编辑源。
 
-**Architecture:** 实施分为迁移前证据锁和来源切换后共享锁两个阶段。术语侧只导入 `scripts/source_model.py` 的 `Issue`、`ReferenceUse` 和 `validate_references`；schema、角色、错误码、主题、账本、Markdown 与输出从 `decision-source-0005` 绑定的 `source-cutover-handoff.json` 消费，实际应用 entries 从 handoff 绑定的 `source-cutover-payload.json` 消费。人的 348 行决定先物化为受跟踪迁移账本；术语切换实现先提交，再生成完整候选和 manifest，决定绑定后只应用既有候选。
+**Architecture:** 实施分为迁移前证据锁和来源切换后共享锁两个阶段。术语侧只导入 `scripts/source_model.py` 的 `Issue`、`ReferenceUse` 和 `validate_references`；schema、角色、错误码、主题、账本、Markdown 与输出从 `decision-source-0005` 绑定的 `source-cutover-handoff.json` 消费，实际应用 entries 从 handoff 绑定的 `source-cutover-payload.json` 消费。已通过 E2 与后迁移回归的 348 行结论无损进入审计账本；只有状态提升、正式准入、概念合并、多语归并或删除产生新增决定。术语切换实现先提交，再生成完整候选和 manifest，决定绑定后只应用既有候选。
 
 **Tech Stack:** Python 3.9.6、来源计划 `requirements-dev.txt` 锁定的 PyYAML 6.0.3 与 jsonschema 4.23.0、`unittest`、JSON Schema 2020-12、Markdown、YAML、JSON、TSV、Git。
 
@@ -22,8 +22,9 @@
 - `basis`、`source`、`match` 的迁移职责留在来源计划；术语侧只把术语记录中的引用包装成 `ReferenceUse` 并交给 `validate_references`。
 - `vocab/terms.yaml` 只允许 `schema`、`version`、`concepts` 三个顶层键。概念、语言、术语分层；概念工作流与术语管理状态分开；`unassigned` 不进入术语工作流。
 - 同一概念、同一语言恰有一个优先术语。优先术语替换、管理状态、`replaced_by`、委托与所有权切换都按“概念身份加语言”原子验证。
-- 348 个术语表身份按冻结四元身份逐行对账；946 个词表标签身份按现有所有者对账。不得按字符串去重、猜测 20 个 `und` 的语言或合并两个“属性”身份。
-- 人的逐行决定只通过 `vocab/migrations/term-v1/decisions.tsv` 输入，并由 `decision-term-0002` 绑定哈希。`vocab/migrations/term-v1/terms.tsv` 是确定性物化账本；安全推荐和替代决定都必须通过同一算法生成。
+- 348 个术语表身份按冻结四元身份逐行对账；946 个词表标签身份按现有所有者对账。对账只证明身份和旧结论被继承，不重新研究依据，不按字符串去重，不猜测 20 个 `und` 的语言，也不合并两个“属性”身份。
+- `review-post-e2.tsv`、后迁移审查结果和 `term-glossary.tsv` 的身份、依据结论、概念对应与动作是冻结迁移输入。286 个 `defer` 进入审计，56 个 `keep` 保留原所有权，6 个 `remove` 在没有 L3 删除决定时保留；三类都不因迁移取得新效力。
+- 人的新增决定只覆盖会改变既有结论或效力的升级行，通过 `vocab/migrations/term-v1/decisions.tsv` 输入，并由 `decision-term-0002` 绑定哈希。`vocab/migrations/term-v1/terms.tsv` 确定性覆盖全部 348 行；没有升级决定的行直接继承冻结结论。
 - `decision-source-0005` 登记的主题文件哈希是术语起点；术语任务不得继续使用来源迁移前 `vocab/topics.yaml` 的字节哈希作为后置断言。700 个概念、24 个数组和稳定 ID 集合仍须保持，除非决定清单逐项解释变化。
 - Markdown 范围永不使用固定数量。每批从 `git ls-files -z -- '*.md'` 生成路径与 SHA-256 清单；与来源后置清单和本批允许写集比较，任何未解释增删改都阻断。
 - `concepts/glossary.md`、受委托标签、正文诊断、`vocab/generated/terms-v1.json`、`vocab/generated/term-reference-index.json` 与 `vocab/generated/source-reference-index.json` 必须在同一暂存根生成并验证。
@@ -33,7 +34,9 @@
 - T12 以干净的 T11 实现提交为 `implementation_commit`，生成完整 ignored candidate 与 ignored manifest，运行 81 项非决定绑定测试及候选结构、哈希、来源严格校验、双索引、动态 Markdown 和草案预验；不得运行任何读取 `decision-term-0003`、`0004` 或 `0005` 的测试。人审通过后才提交这三份决定。
 - T13 才运行决定绑定测试、应用已绑定 candidate，并运行完整 82 项回归。base→HEAD 允许集合恰为 `design/decisions/terminology-governance-effective.md`、`design/decisions/terminology-schema-cutover.md`、`design/decisions/terminology-schema-rollback.md`；manifest 始终 ignored，不进入 Git。
 - 普通实现任务可以用 `git revert` 回退自己的代码提交；正式切换不得反转删除决定、ID、义务或历史，只能按 H13、H23 创建补偿决定与处置提交。
-- 每个任务按其真实材料可用时点执行 RED、最小实现、GREEN、回归、写集、回滚、独立审查和提交。已知两处旧 SDD 链接由 `check_known_link_failures.py` 转成“恰好匹配即退出 0”的门禁，不能用会短路后续命令的 `&&` 链。
+- 每个任务按其真实材料可用时点执行 RED、最小实现、定向 GREEN、写集检查、回滚说明和提交。普通任务不派独立审查，不重复运行全库回归；完整回归只在 T03 模式闭合、T06 迁移闭合、T10 消费链闭合、T12 完整候选和 T13 正式应用五个阶段运行。
+- 独立审查只保留两次：T12 审查完整候选、身份与决定增量、双索引和回退材料；T13 审查决定绑定、原子应用和正式唯一所有权。测试数量、测试通过、格式或哈希一致等机械事实由命令证明，不再交给独立代理重复确认。
+- 已知两处旧 SDD 链接由 `check_known_link_failures.py` 转成“恰好匹配即退出 0”的阶段门禁，不能用会短路后续命令的 `&&` 链。
 - 实施证据只写 `.superpowers/sdd/2026-08-31-terminology-schema-generation/`。本计划编写阶段不执行正式 schema、数据、脚本、迁移、决定或提交。
 
 ---
@@ -92,18 +95,18 @@ python3 scripts/governance/check_term_inputs.py verify --frozen-commit 9e7b411c2
 
 ## 决定锁
 
-以下推荐是待批准提案。每个问题必须由可引用决定逐项答复；人的精确替代答案写入对应机器文件后，由任务测试验证“答案被逐字消费”，不能让测试永久锁死安全推荐。
+以下推荐是待批准提案。每个问题必须由可引用决定答复；会改变既有结论或效力的精确替代答案写入对应机器文件，并由任务测试验证“答案被逐字消费”。冻结结论的机械继承不制造逐行人工答复。
 
 | 标识 | 精确问题 | 推荐选项 | 理由 | 若错误的代价 | 未批准行为 |
 |---|---|---|---|---|---|
 | H01 | 来源治理草案何时以哪个决定记录生效；来源计划交付给术语校验器的正式调用入口、模式版本和获准用途清单是什么？ | 只有 `decision-source-0004` 已生效，且 accepted `decision-source-0005` 用 `delivery_handoff`／`handoff_sha256` 绑定 `vocab/generated/source-cutover-handoff.json`、用 `delivery_payload`／`payload_sha256` 绑定 `vocab/generated/source-cutover-payload.json`，来源严格校验通过时才启动术语实施。handoff 顶层键恰为 `schema`、`schema_version`、`payload`、`source_contract`、`schemas`、`topics_sha256`、`migration_ledgers`、`markdown_manifest`、`outputs`、`tracked_write_set`，其中 payload 恰含 path／sha256；source payload 顶层键恰为 schema／schema_version／entries。统一调用 `load_source_handoff(repo_root, handoff_path, payload_path, decision_path)`；共享来源校验只导入 `Issue`、`ReferenceUse(kind, file, record, field_path, value)` 和 `validate_references(root, references)`。来源 Issue 显示 code 加 `TERM_SOURCE_CONTRACT_` 前缀，并保留 file、record、field_path。 | 消除来源定义双写，并让术语侧逐字消费来源计划当前双文件交付。 | 任一键、嵌套、路径或哈希分裂都会让术语 schema、错误映射、主题回归或写集无法确定。 | T01–T13 全部阻断；不得在术语侧写适配器或字段别名。 |
 | H02 | `vocab/terms.yaml` 的 `schema` 与 `version` 各取什么精确值；兼容范围、升级顺序和拒绝旧版本的条件是什么？ | `schema: urn:kb-design:schema:terms:1`，`version: 1`；只接受该组合。升级固定为新增模式与迁移器、双版本只读验证、原子迁移、拒绝旧版，不做隐式升级。 | 单一组合便于离线验证和回滚。 | 下一版需要显式迁移。 | 不创建术语模式或正式数据。 |
-| H03 | 术语概念 ID 与术语 ID 分别采用什么格式、由谁分配、怎样防重复、何时冻结，以及跨文件移动和形式变化时怎样保持稳定？ | 概念 ID 为 `tc-` 加小写 UUIDv4，术语 ID 为 `tm-` 加小写 UUIDv4；提案工具分配，人的逐行决定批准时冻结。校验器检查版本、全局唯一、账本历史未复用；路径、文本、语言和状态变化不得改 ID。 | 身份不再从标签派生。 | 人工阅读依赖账本。 | 决定行保持阻断，不分配 ID。 |
+| H03 | 术语概念 ID 与术语 ID 分别采用什么格式、由谁分配、怎样防重复、何时冻结，以及跨文件移动和形式变化时怎样保持稳定？ | 概念 ID 为 `tc-` 加小写 UUIDv4，术语 ID 为 `tm-` 加小写 UUIDv4；提案工具只为获准迁入的新记录分配，人的升级决定批准时冻结。审计行不分配新概念或术语 ID。校验器检查版本、全局唯一、账本历史未复用；路径、文本、语言和状态变化不得改 ID。 | 身份不再从标签派生，审计继承也不制造新身份。 | 人工阅读依赖账本。 | 升级行保持阻断，不分配 ID；其余行继续审计迁移。 |
 | H04 | `subject_fields` 的获准值域是什么；每个概念允许多少定义；同语言定义冲突怎样保存和呈现？ | `subject_fields` 只引用 `decision-source-0005` 冻结的 700 个主题 ID，至少一项且逐值有来源引用。定义至少一项、无数值上限；active 概念每语言最多一条，candidate 可保存冲突但不发布。 | 复用稳定主题身份并保留候选分歧。 | 主题词表与适用学科可能耦合。 | 不建立概念记录。 |
-| H05 | 获准的 BCP 47 规范化规则是什么；简体、繁体、文字体系和地区变体允许哪些组合；20 个 `und` 身份逐项归入哪种语言或保持不迁入？ | v1 只接受 `en`、`zh-Hans`、`zh-Hant` 的精确写法；20 个 `und` 默认保持不迁入。人的替代答案必须逐行给出允许标签和决定 ID。 | 阻止按字符猜语言。 | 地区变体推迟到模式升级。 | 语言记录与迁移阻断。 |
-| H06 | 348 个形式身份逐项属于术语记录、只读视图、来源呈现、迁移审计还是不在范围；每个迁入身份的概念对应、语言、优先形式和管理状态是什么？ | 安全提案为 348 行 `audit-only`。人的替代答案写入 `vocab/migrations/term-v1/decisions.tsv`，每行完整给出 disposition、概念 ID、语言、术语 ID、管理状态和决定 ID；获准概念的定义、学科、逐值来源引用和历史写入 `vocab/migrations/term-v1/records.yaml`。`decision-term-0002` 同时绑定两者哈希，T06 确定性重建 `terms.tsv` 并验证 records 覆盖全部 migrate 行。 | 安全默认不取得准入，同时保留可达的替代决定路径。 | 未经逐行审核的迁入会制造准入。 | 只生成 ignored 安全预演，正式账本和切换阻断。 |
-| H07 | 286 个 `defer` 中哪些保持审计、哪些重新取证；56 个 `keep` 中哪些获正式准入；6 个 `remove` 是否逐项获得删除非 `candidate` 对象的 L3 决定？ | 安全提案为 286 个审计、56 个保留原所有权但不准入、6 个保留不删除。替代答案逐行进入 decisions.tsv；删除行必须引用独立 L3 决定。 | 现行动作不冒充术语状态。 | 清理和准入推迟。 | 不生成迁入或删除差异。 |
-| H08 | 60 个依据冲突、139 个无依据和 214 个概念对应未确定身份分别需要什么补证或人的结论；47 个“同一概念”是否逐项获准建立多语记录？ | 冲突逐项选择或不采用；无依据逐项补定位或不译；未确定逐项给出同一、不同或不适用；47 项必须分别批准。所有答案都绑定 decisions.tsv 行和 `decision-term-0002`。 | 形式、概念对应、采用和优先形式保持分门。 | 首轮正式记录减少。 | 相应行 `blocks_cutover=true`。 |
+| H05 | 获准的 BCP 47 规范化规则是什么；简体、繁体、文字体系和地区变体允许哪些组合；20 个 `und` 身份逐项归入哪种语言或保持不迁入？ | v1 只接受 `en`、`zh-Hans`、`zh-Hant` 的精确写法；20 个 `und` 机械继承为审计行且不迁入。只有人的升级决定要求其中某行进入正式记录时，才须给出允许标签和决定 ID。 | 阻止按字符猜语言，也避免为保持现状重复裁决。 | 地区变体推迟到模式升级。 | 相关升级行阻断；审计账本和其他任务继续。 |
+| H06 | 348 个形式身份怎样进入新账本；哪些变化需要新的迁移决定？ | 348 行全部从冻结审查结果确定性继承：`defer` 为 `audit-only`，`keep` 为 `retain-owner`，`remove` 为 `retain-pending-l3`。只有转为术语记录、取得概念或术语 ID、建立多语概念、改变语言、指定优先或允许状态、合并身份或删除时，才在 `decisions.tsv` 增加升级行；获准迁入的完整记录写入 `records.yaml`。`decision-term-0002` 绑定升级决定与 records 哈希，T06 重建覆盖 348 行的 `terms.tsv`。 | 继承已验证结论，同时阻止迁移暗中扩大效力。 | 升级检测漏项会制造未经批准的准入。 | 只阻断对应升级行；未升级行继续进入审计账本。 |
+| H07 | 286 个 `defer`、56 个 `keep` 和 6 个 `remove` 怎样迁移？ | 286 个 `defer` 不重新取证，进入审计；56 个 `keep` 保留原所有权，不因动作获得准入；6 个 `remove` 在没有逐项 L3 决定时保留且不删除。只有人明确要求改变其中任一结果时，才创建升级决定。 | 现行动作不冒充术语状态，也不重复已完成研究。 | 清理和正式准入推迟到真实需要出现时。 | 保持冻结结论，不生成迁入、合并或删除差异。 |
+| H08 | 既有依据冲突、无依据、概念对应未确定和“同一概念”结论怎样消费？ | 60 个冲突、139 个无依据、214 个未确定和 47 个“同一概念”逐字继承为审计事实，不重新审查。只有某行准备取得正式术语效力或参与多语概念时，才分别补足形式依据、概念对应、采用和优先形式决定；未补足的升级行阻断，其他行不受影响。 | 形式、概念对应、采用和优先形式保持分门，并把人审限定在效力变化。 | 首轮正式记录可能较少。 | 对应升级行保持未迁入；不阻断审计账本或系统实现。 |
 | H09 | `term_concept` 在每份词表中的精确结构、目标 ID 字段、语言集合表达、撤销程序和历史引用是什么？ | 结构固定为 `concept`、`languages`、`state`、`decision`、`history`；active 委托按概念加语言整体取得唯一编辑权，撤销时改为 revoked、恢复本地标签并追加历史。 | 单对象表达所有权和撤销。 | 五份词表增加统一结构。 | 只实现夹具，不改生产词表。 |
 | H10 | `types:troubleshooting/en`、`types:troubleshooting/zh`、`forms:cheat-sheet/en` 三个候选是否分别建立委托；每项对应哪个获准术语概念 ID 和决定记录？ | 安全提案为三项都不建立。替代答案必须在 decisions.tsv 与独立委托决定中给出目标概念 ID 和语言。 | 当前三项都有未关闭门禁。 | 无生产委托试点。 | 五份词表 946 标签保持原所有权。 |
 | H11 | 是否能提供仓库外内容单元和应用映射的标签消费者清单；若不能，三个候选的影响覆盖以什么明确边界获准？ | 记录仓库外消费者未知；未来 active 委托必须先提供清单或由独立决定接受仅仓库覆盖。 | 不伪造影响完整性。 | 委托继续推迟。 | active 委托校验失败。 |
@@ -116,9 +119,9 @@ python3 scripts/governance/check_term_inputs.py verify --frozen-commit 9e7b411c2
 | H18 | 正文诊断的级别、发布阻断条件、人工裁定记录位置和 298 个现有身份的首轮处置是什么；15 个标题截断噪声是否先修识别器再冻结新基线？ | 级别为 info、review、error；先修 15 个截断，再从动态 Markdown 清单生成新基线。人工裁定写 `vocab/term-usage-decisions.yaml`；只有有决定的 error 阻断。 | 先提高证据质量。 | 首轮不会自动拦截所有问题。 | 只写 ignored 报告。 |
 | H19 | 术语复核义务、项目决定和迁移审计各自保存在哪个正式文件；文件模式、ID 分配、反向索引输出和只追加历史怎样验证？ | 义务写 `vocab/term-obligations.yaml`；迁移决定、结构记录与账本写 `vocab/migrations/term-v1/decisions.tsv`、`records.yaml`、`terms.tsv`；正文裁定写 `vocab/term-usage-decisions.yaml`；术语索引写 `vocab/generated/term-reference-index.json`。决定 ID 与义务 ID 的模式由相应 schema 固定，历史以前一 Git 快照作前缀比较。 | 与来源计划的顶层 vocab、迁移和索引布局一致。 | 多文件提交复杂。 | 不创建正式维护对象。 |
 | H20 | 术语定期复核周期、触发阈值和首次起算日是什么；是否明确禁止继承现行 24／12／6 月、12 个月、1／3／5／10％／20 等阈值？ | v1 不设周期、阈值或起算日，只启用事件触发，并拒绝继承现有数字。 | 真实工作量尚不可得。 | 无事件的陈旧记录不会被发现。 | 维护工具不调度。 |
-| H21 | 17 个实体 `candidate`、13 个 `self`、4 个非 `self` 候选和 692 个主题 `unassigned` 是否确认全部留在原对象治理，任何术语迁入都必须另作逐项决定？ | 全部留在原对象；术语迁入必须有 decisions.tsv 行与独立决定。 | 防止状态换算。 | 复核可能重复。 | 迁移器只做写集保护。 |
-| H22 | 模式、校验器、生成器、迁移夹具和维护材料的正式目录与精确文件名是什么；哪些是受 Git 跟踪的正式输入、生成输出和只读审计？ | 使用“文件边界”的精确路径。新增 `vocab/term-cutover-state.yaml` 与 schema；人的逐行决定和物化账本均受跟踪；来源索引作为共享生成输出纳入术语切换；运行证据只写 ignored 目录。 | 物理职责和原子写集可机械验证。 | 文件数量增加。 | 不创建新受跟踪路径。 |
-| H23 | 每个迁移批次的决定记录、提交边界、生效顺序、可回退截止点和恢复所有权方式是什么；回退后哪些历史与义务必须继续保留？ | decision-term-0001 批准模式；0002 绑定逐行决定与 records；T11 提交切换实现和测试但不生成真实 candidate／manifest；T12 以 T11 HEAD 为 base_commit 生成并预验 ignored candidate／manifest，决定绑定测试仍不运行；人审后由 0003 审批规则、0004 绑定 ignored manifest、0005 预授权回滚，提交只含这三份决定。T13 要求 base→HEAD 恰为三份决定，才运行绑定测试、apply-only 和完整回归。实际回滚以相同顺序生成补偿 candidate／manifest，再新建 0006 绑定并 apply-only，恢复人工术语表、撤销委托、停用消费者并把 terms 标为 audit_read_only。决定、ignored manifest 的绑定记录、terms、ID、义务、history、账本和快照保留。 | 消除实现提交、候选基线和决定顺序循环，同时保持 manifest ignored。 | candidate 在 apply 前必须完整保存；任何额外 base→HEAD 路径或 manifest 漂移都阻断。 | T13 不执行。 |
+| H21 | 17 个实体 `candidate`、13 个 `self`、4 个非 `self` 候选和 692 个主题 `unassigned` 是否确认全部留在原对象治理，任何术语迁入都必须另作逐项决定？ | 全部留在原对象；只有实际进入术语记录的身份需要升级决定。未迁入对象只做写集保护，不创建重复复核义务。 | 防止状态换算和重复复核。 | 正式迁入数量较少。 | 迁移器只做写集保护。 |
+| H22 | 模式、校验器、生成器、迁移夹具和维护材料的正式目录与精确文件名是什么；哪些是受 Git 跟踪的正式输入、生成输出和只读审计？ | 使用“文件边界”的精确路径。新增 `vocab/term-cutover-state.yaml` 与 schema；只含升级行的 decisions.tsv、records.yaml 和覆盖 348 行的物化账本受跟踪；来源索引作为共享生成输出纳入术语切换；运行证据只写 ignored 目录。 | 物理职责和原子写集可机械验证。 | 文件数量增加。 | 不创建新受跟踪路径。 |
+| H23 | 每个迁移批次的决定记录、提交边界、生效顺序、可回退截止点和恢复所有权方式是什么；回退后哪些历史与义务必须继续保留？ | decision-term-0001 批准模式；0002 只绑定升级决定、records 和冻结输入，不要求 348 行重复答复；T11 提交切换实现和测试但不生成真实 candidate／manifest；T12 以 T11 HEAD 为 base_commit 生成并预验 ignored candidate／manifest，决定绑定测试仍不运行；高价值候选审查后由 0003 审批规则、0004 绑定 ignored manifest、0005 预授权回滚，提交只含这三份决定。T13 要求 base→HEAD 恰为三份决定，才运行绑定测试、apply-only 和完整回归。实际回滚以相同顺序生成补偿 candidate／manifest，再新建 0006 绑定并 apply-only，恢复人工术语表、撤销委托、停用消费者并把 terms 标为 audit_read_only。决定、ignored manifest 的绑定记录、terms、ID、义务、history、账本和快照保留。 | 消除实现提交、候选基线和决定顺序循环，同时保持 manifest ignored。 | candidate 在 apply 前必须完整保存；任何额外 base→HEAD 路径或 manifest 漂移都阻断。 | T13 不执行。 |
 | H24 | 三份旧草案是否确认继续旁路：划分特征不创建分析数组、分面字段不消费 111 个试标身份、手工概念组不创建正式文件；若任一改变，应先独立设计而不是扩张术语计划吗？ | 三份旧草案继续旁路；写集检查禁止相关正式对象。 | 保持准备计划任务图。 | 旁路工作不能借本批实现。 | 任一越界差异使任务失败。 |
 
 ## 文件边界
@@ -151,7 +154,7 @@ python3 scripts/governance/check_term_inputs.py verify --frozen-commit 9e7b411c2
 | `scripts/governance/term_model.py` | 工具 | 加载和校验术语三层记录 |
 | `scripts/governance/term_transitions.py` | 工具 | 校验原子状态和历史 |
 | `scripts/governance/stabilize_topic_ids.py` | 工具 | 从来源后置身份冻结主题 ID |
-| `scripts/governance/migrate_terms.py` | 工具 | 生成安全预演和物化人的逐行决定 |
+| `scripts/governance/migrate_terms.py` | 工具 | 继承冻结审查结果并物化按风险升级的决定 |
 | `scripts/governance/build_terms.py` | 工具 | 生成规范快照与术语表 |
 | `scripts/governance/check_term_delegations.py` | 工具 | 校验委托和唯一编辑权 |
 | `scripts/governance/check_term_usage.py` | 工具 | 动态扫描 Markdown 与精确上下文 |
@@ -163,7 +166,7 @@ python3 scripts/governance/check_term_inputs.py verify --frozen-commit 9e7b411c2
 | `tests/governance/test_term_transitions.py` | 测试 | 工作流、管理状态和历史 |
 | `tests/governance/test_topic_id_stability.py` | 测试 | 来源后置主题身份 |
 | `tests/governance/test_term_migration.py` | 测试 | 安全预演与 348 行身份 |
-| `tests/governance/test_term_decisions.py` | 测试 | 替代决定物化与账本提交 |
+| `tests/governance/test_term_decisions.py` | 测试 | 升级决定物化与账本提交 |
 | `tests/governance/test_term_generation.py` | 测试 | 快照、术语表和漂移 |
 | `tests/governance/test_term_delegation.py` | 测试 | 委托与所有权 |
 | `tests/governance/test_term_usage.py` | 测试 | 动态 Markdown 范围与上下文 |
@@ -173,7 +176,7 @@ python3 scripts/governance/check_term_inputs.py verify --frozen-commit 9e7b411c2
 | `tests/fixtures/terminology/` | 测试夹具 | 来源后置清单、术语正反例、两套决定和回滚仓库 |
 | `vocab/build/topic-ids.json` | 正式输入 | 稳定主题身份映射 |
 | `vocab/glossary-layout.yaml` | 正式输入 | 15 个布局组与固定版式 |
-| `vocab/migrations/term-v1/decisions.tsv` | 决定输入 | 人对 348 个身份的精确答案 |
+| `vocab/migrations/term-v1/decisions.tsv` | 决定输入 | 只保存改变既有结论或效力的升级行；允许零行数据 |
 | `vocab/migrations/term-v1/records.yaml` | 决定输入 | 获准迁入概念的完整三层结构与来源引用 |
 | `vocab/migrations/term-v1/terms.tsv` | 只读审计 | 从库存与决定确定性物化的迁移账本 |
 | `vocab/term-obligations.yaml` | 正式输入 | 术语复核义务 |
@@ -298,13 +301,20 @@ class TermsDocument:
     concepts: Sequence[ConceptRecord]
 
 @dataclass(frozen=True)
+class InheritedDisposition:
+    legacy_identity: str
+    disposition: Literal["audit-only", "retain-owner", "retain-pending-l3"]
+    decision_evidence: Literal["locked-review-inheritance"]
+
+@dataclass(frozen=True)
 class MigrationDecision:
     legacy_identity: str
-    disposition: Literal["audit-only", "migrate", "view-only", "source-display", "out-of-scope", "remove"]
+    operation: Literal["migrate", "merge", "change-language", "delete"]
     concept_id: Optional[str]
     language: Optional[LanguageTag]
     term_id: Optional[str]
     administrative_status: Optional[AdministrativeStatus]
+    target_identity: Optional[str]
     decision_id: str
     decision_evidence: str
 
@@ -400,10 +410,10 @@ class RollbackResult:
 | I07 | `validate_transition(previous: TermsDocument, current: TermsDocument, decisions: FrozenSet[str]) -> Sequence[TermIssue]` | 原子状态和历史校验 |
 | I08 | `load_topic_ids(path: Path) -> Mapping[str, str]` | 加载稳定主题身份 |
 | I09 | `build_topics(output: Path, term_snapshot: Optional[Path], cutover_state: Optional[Path]) -> None` | 生成主题输出并服从消费者开关 |
-| I10 | `load_migration_decisions(path: Path) -> Sequence[MigrationDecision]` | 加载 348 行人的答案 |
-| I11 | `render_migration_ledger(inventory: Path, decisions: Sequence[MigrationDecision]) -> bytes` | 物化 terms.tsv |
+| I10 | `load_migration_decisions(path: Path) -> Sequence[MigrationDecision]` | 加载零个或多个升级决定 |
+| I11 | `render_migration_ledger(inventory: Path, decisions: Sequence[MigrationDecision]) -> bytes` | 先继承 348 行冻结结论，再叠加升级决定并物化 terms.tsv |
 | I12 | `validate_migration(ledger: bytes, inventory_hashes: FrozenSet[str], document: TermsDocument, decisions: FrozenSet[str]) -> Sequence[TermIssue]` | 双向对账与准入门禁 |
-| I12A | `build_terms_document(ledger: bytes, records_path: Path) -> TermsDocument` | 从获准账本与 records.yaml 建立正式候选文档 |
+| I12A | `build_terms_document(ledger: bytes, records_path: Optional[Path]) -> TermsDocument` | 从有正式迁入的账本与 records.yaml 建立候选文档；没有迁入时返回空候选并阻止正式发布视图，不阻止审计账本 |
 | I13 | `canonical_snapshot(document: TermsDocument, source_index: Mapping[str, object], state: TermCutoverState) -> bytes` | 生成共享术语快照 |
 | I14 | `render_glossary(snapshot: Mapping[str, object], layout: Mapping[str, object], state: TermCutoverState) -> str` | 生成只读术语表 |
 | I15 | `validate_delegations(vocabularies: Mapping[str, object], snapshot: Mapping[str, object], state: TermCutoverState, external_consumers_known: bool) -> Sequence[TermIssue]` | 委托与唯一编辑权 |
@@ -437,7 +447,7 @@ class RollbackResult:
 
 ## 测试账本
 
-计划固定 82 个测试方法；人的替代决定通过专用夹具验证，不把安全推荐写死为唯一 GREEN 结果。T11 的 8 项只使用临时 Git 夹具；T12 的 2 项读取真实 candidate／manifest 但不读取 cutover decision；T13 的 1 项才读取决定并执行 apply-only。
+计划固定 82 个测试方法；零升级和显式升级通过专用夹具验证，不把当前继承结果写死为唯一 GREEN 结果。T11 的 8 项只使用临时 Git 夹具；T12 的 2 项读取真实 candidate／manifest 但不读取 cutover decision；T13 的 1 项才读取决定并执行 apply-only。
 
 | 任务 | 数量 | 测试方法 |
 |---|---:|---|
@@ -445,10 +455,10 @@ class RollbackResult:
 | T02 | 11 | `test_exact_top_level_keys`、`test_rejects_duplicate_ids`、`test_requires_record_cardinalities`、`test_basis_fields_are_nonempty_arrays`、`test_schema_refs_match_source_handoff`、`test_imports_fixed_source_contract`、`test_source_issue_code_and_path_are_preserved`、`test_rejects_legacy_reference_values`、`test_accepts_only_v1_language_tags`、`test_subject_fields_resolve_to_handoff_topics`、`test_active_definition_conflicts_fail` |
 | T03 | 8 | `test_requires_one_preferred_term`、`test_preferred_demotion_is_atomic`、`test_replacement_stays_in_language`、`test_replacement_cycle_fails`、`test_restoration_rechecks_admission`、`test_history_is_append_only`、`test_same_state_is_not_transition`、`test_transition_decisions_resolve` |
 | T04 | 5 | `test_topic_id_map_matches_handoff`、`test_preserves_700_concepts_and_24_arrays`、`test_label_change_cannot_change_topic_id`、`test_topics_hash_matches_post_source_baseline`、`test_unconsumed_inputs_stay_unchanged` |
-| T05 | 8 | `test_safe_preview_reconciles_348`、`test_defer_never_gets_status`、`test_keep_never_implies_admission`、`test_remove_requires_l3_decision`、`test_und_language_is_not_guessed`、`test_translation_conflicts_block`、`test_homographic_rows_stay_distinct`、`test_safe_preview_writes_only_ignored` |
-| T06 | 7 | `test_safe_decisions_materialize_audit_ledger`、`test_replacement_decisions_materialize_migrate_rows`、`test_decision_hash_must_match_adr`、`test_every_inventory_identity_has_one_decision`、`test_ledger_is_byte_stable`、`test_invalid_replacement_remains_blocked`、`test_terms_ledger_is_in_task_write_set` |
+| T05 | 8 | `test_inherited_preview_reconciles_348`、`test_defer_becomes_audit_only`、`test_keep_retains_owner_without_admission`、`test_remove_is_retained_without_l3`、`test_und_language_is_not_guessed`、`test_locked_review_fields_are_unchanged`、`test_homographic_rows_stay_distinct`、`test_inherited_preview_writes_only_ignored` |
+| T06 | 7 | `test_empty_upgrades_materialize_inherited_ledger`、`test_upgrade_decisions_materialize_migrate_rows`、`test_decision_hash_must_match_adr`、`test_every_inventory_identity_has_one_ledger_row`、`test_ledger_is_byte_stable`、`test_invalid_upgrade_remains_blocked`、`test_terms_ledger_is_in_task_write_set` |
 | T07 | 7 | `test_generation_is_byte_stable`、`test_only_active_concepts_publish`、`test_missing_chinese_never_falls_back`、`test_glossary_layout_is_fixed`、`test_manual_output_drift_fails`、`test_all_consumers_share_snapshot_hash`、`test_rolled_back_state_disables_generation` |
-| T08 | 6 | `test_term_concept_structure`、`test_delegated_language_has_one_owner`、`test_safe_decisions_keep_production_undelegated`、`test_replacement_decision_can_enable_fixture_delegation`、`test_external_consumer_boundary_blocks_switch`、`test_rolled_back_state_revokes_consumers` |
+| T08 | 6 | `test_term_concept_structure`、`test_delegated_language_has_one_owner`、`test_inherited_rows_keep_production_undelegated`、`test_upgrade_decision_can_enable_fixture_delegation`、`test_external_consumer_boundary_blocks_switch`、`test_rolled_back_state_revokes_consumers` |
 | T09 | 6 | `test_scans_dynamic_markdown_manifest`、`test_markdown_addition_requires_allowed_write`、`test_excluded_contexts_keep_precise_locations`、`test_parenthesized_headings_are_not_truncated`、`test_homographs_require_concept_context`、`test_first_usage_baseline_is_report_only` |
 | T10 | 6 | `test_source_obligation_bridge_uses_id_only`、`test_term_index_is_bidirectional`、`test_decision_change_opens_new_obligation`、`test_resolved_obligation_never_reopens`、`test_obligation_history_is_append_only`、`test_no_periodic_threshold_is_inherited` |
 | T11 | 8 | `test_tracked_paths_come_from_implementation_commit`、`test_candidate_markdown_uses_implementation_tree_without_git`、`test_complete_candidate_contains_every_activation_change`、`test_payload_manifest_excludes_itself`、`test_payload_manifest_is_byte_stable`、`test_source_index_contains_term_references`、`test_candidate_runs_source_strict_validation`、`test_rollback_preserves_terms_ids_and_history` |
@@ -463,8 +473,8 @@ class RollbackResult:
 | 来源后置锁 | `decision-source-0005` 已提交 | 无正式术语数据 | `delivery_handoff`／`handoff_sha256`、`delivery_payload`／`payload_sha256`、handoff 十个顶层键、payload 三个顶层键、来源模型、主题哈希、写集和 Markdown 清单一致 | 停止术语任务；不回退来源计划 |
 | 模式批次 | decision-term-0001 | 五份术语 schema、模型和测试 | T02、T03 GREEN；来源契约逐字消费 | revert 代码提交；决定保留 |
 | 主题身份 | H14–H16 | topic-ids、构建器与设计 | 来源后置 700／24 与主题哈希不变 | revert T04；decision-source-0005 保留 |
-| 安全预演 | H06–H08 安全提案 | 无正式迁移账本 | 348 行 ignored 预演可复现 | 删除 ignored 输出 |
-| 决定物化 | decision-term-0002 与 decisions.tsv | decisions.tsv、records.yaml、terms.tsv | 安全和替代两类夹具都按输入 GREEN；真实账本双向对账 | 新决定修订行并重物化；旧决定和旧账本 Git 历史保留 |
+| 继承预演 | 冻结 348 行审查与 H06–H08 | 无正式迁移账本 | 348 行 ignored 预演逐字继承旧结论且可复现 | 删除 ignored 输出 |
+| 决定物化 | decision-term-0002、零个或多个升级行与 records.yaml | decisions.tsv、records.yaml、terms.tsv | 无升级与有升级两类夹具均 GREEN；真实账本 348／348 对账 | 新决定只修订升级行并重物化；冻结输入和旧账本 Git 历史保留 |
 | 生成委托 | H09–H15 | 布局、生成器、委托校验 | 快照、术语表和标签共享哈希 | revert T07/T08；正式所有权未切换 |
 | 诊断维护 | H17–H20 | 扫描器、义务和索引工具 | 动态 Markdown 清单、事件义务 GREEN | revert T09/T10；裁定与决定保留 |
 | 切换实现 | T01–T10 GREEN；真实 candidate／manifest 不存在 | `cutover_terms.py`、两份测试和夹具 | T11 的 79 项无需真实材料测试全绿；8 项切换测试只用夹具；提交后工作树干净，真实 candidate／manifest 仍不存在 | revert T11 实现提交；decision-term-0003／0004／0005 尚未创建 |
@@ -742,27 +752,7 @@ def unexplained_markdown_delta(previous, current, allowed):
 
 预期：7 项通过。
 
-- [ ] 逐条运行全量回归，不用 `&&`。
-
-运行：`python3 -m unittest discover -s tests -p 'test_*.py' -v`
-
-预期：现有和 T01 测试全部通过。
-
-运行：`python3 scripts/check-topics.py`
-
-预期：来源切换后的主题校验 0 问题。
-
-运行：`python3 scripts/check_sources.py --root .`
-
-预期：来源严格校验 0 问题。
-
-运行：`python3 scripts/governance/check_known_link_failures.py`
-
-预期：退出码 0，输出 `KNOWN_LINK_FAILURES_OK count=2`。
-
-运行：`git diff --check`
-
-预期：无输出。
+- [ ] 本任务只运行 T01 定向 GREEN 与写集检查；完整回归并入 T03 模式闭合门禁。
 
 - [ ] 运行写集门禁。
 
@@ -771,8 +761,6 @@ def unexplained_markdown_delta(previous, current, allowed):
 预期：退出码 0，只列本任务 7 个文件。
 
 - [ ] 记录回滚：提交后被拒绝时 `git revert --no-edit HEAD`；该提交不含来源决定、术语决定或正式数据。
-
-- [ ] 使用 `superpowers:requesting-code-review` 独立审查 T01。审查输入固定为任务 Files、7 个测试、四参数 loader、四个来源决定键、十个 handoff 顶层键、三个 payload 顶层键、三条工具命令和写集输出；只有 `APPROVED` 且无 Critical／Important 才提交。
 
 - [ ] 提交本任务。
 
@@ -1045,27 +1033,7 @@ def collect_reference_uses(document, file):
 
 预期：11 项通过。
 
-- [ ] 逐条运行全量回归。
-
-运行：`python3 -m unittest discover -s tests -p 'test_*.py' -v`
-
-预期：全部测试通过。
-
-运行：`python3 scripts/check-topics.py`
-
-预期：0 问题。
-
-运行：`python3 scripts/check_sources.py --root .`
-
-预期：来源严格校验 0 问题。
-
-运行：`python3 scripts/governance/check_known_link_failures.py`
-
-预期：`KNOWN_LINK_FAILURES_OK count=2`。
-
-运行：`git diff --check`
-
-预期：无输出。
+- [ ] 本任务只运行 T02 定向 GREEN 与写集检查；完整回归并入 T03 模式闭合门禁。
 
 - [ ] 运行写集门禁。
 
@@ -1074,8 +1042,6 @@ def collect_reference_uses(document, file):
 预期：退出码 0，只列本任务 6 个创建文件；`design/decisions/terminology-governance-schema.md` 已在基线提交且不出现在差异中。
 
 - [ ] 记录回滚：`git revert --no-edit HEAD` 只移除模式、模型、夹具和测试；`decision-term-0001` 保留。回滚后重跑来源严格校验。
-
-- [ ] 使用 `superpowers:requesting-code-review` 审查完整 schema 子模式、handoff 顶层 schemas 的三个来源导出 URI、topics_sha256 与唯一 topics output、11 个测试、全量回归和写集。无 Critical／Important 后提交。
 
 - [ ] 提交本任务。
 
@@ -1184,7 +1150,7 @@ def replacement_cycles(document):
 
 - [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_model tests.governance.test_term_transitions -v`。预期 19 项通过。
 
-- [ ] 逐条运行全量回归。
+- [ ] 运行 T03 模式闭合阶段的完整回归。
 
 运行：`python3 -m unittest discover -s tests -p 'test_*.py' -v`
 
@@ -1213,8 +1179,6 @@ def replacement_cycles(document):
 预期：退出码 0，只列本任务 4 个路径。
 
 - [ ] 记录回滚：revert T03 提交；T02 模式与 decision-term-0001 保留；重跑 T02 测试和来源严格校验。
-
-- [ ] 使用 `superpowers:requesting-code-review` 审查 16 条术语路径、4 条概念路径、历史前缀与替代环；无 Critical／Important 后提交。
 
 - [ ] 提交本任务。
 
@@ -1324,27 +1288,7 @@ def build_topic_id_map(topics, handoff):
 
 - [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_topic_id_stability -v`，预期 5 项通过。随后用 I09 连续生成两份 ignored `topics.yaml`，两份与当前文件逐字节相同，哈希等于 `handoff.topics_sha256`，且等于唯一 topics output 的 sha256。
 
-- [ ] 逐条运行全量回归。
-
-运行：`python3 -m unittest discover -s tests -p 'test_*.py' -v`
-
-预期：全部测试通过。
-
-运行：`python3 scripts/check-topics.py`
-
-预期：0 问题。
-
-运行：`python3 scripts/check_sources.py --root .`
-
-预期：来源严格校验 0 问题。
-
-运行：`python3 scripts/governance/check_known_link_failures.py`
-
-预期：`KNOWN_LINK_FAILURES_OK count=2`。
-
-运行：`git diff --check`
-
-预期：无输出。
+- [ ] 本任务只运行定向 GREEN 与写集检查；完整回归并入下一阶段门禁。
 
 - [ ] 运行写集门禁。
 
@@ -1354,8 +1298,6 @@ def build_topic_id_map(topics, handoff):
 
 - [ ] 记录回滚：revert T04 实现提交；恢复来源后置构建器和 design/topics.md，decision-source-0005 与术语决定保留；重跑来源索引与严格校验。
 
-- [ ] 使用 `superpowers:requesting-code-review` 审查 700 个 identity、碰撞规则、I09 消费者开关、旧节去向与字节级输出。无 Critical／Important 后提交。
-
 - [ ] 提交本任务。
 
 ```bash
@@ -1363,35 +1305,34 @@ git add scripts/governance/stabilize_topic_ids.py tests/governance/test_topic_id
 git commit -m "[L2] 主题词表：冻结来源后置身份"
 ```
 
-### 安全预演
+### 继承预演
 
-任务标识：T05。只生成 ignored 安全提案；不创建受跟踪 decisions.tsv 或 terms.tsv。
+任务标识：T05。只生成 ignored 继承预演；不创建受跟踪 decisions.tsv、records.yaml 或 terms.tsv。预演消费冻结审查结论，不重新研究 348 行。
 
 **Files:**
 
 - Create: `scripts/governance/migrate_terms.py`
 - Create: `tests/governance/test_term_migration.py`
-- Create: `tests/fixtures/terminology/decisions/safe.tsv`
+- Create: `tests/fixtures/terminology/decisions/inherited.tsv`
 - Read: `term-glossary.tsv`、`frozen-inputs.json`
-- Write ignored: `.superpowers/sdd/2026-08-31-terminology-schema-generation/safe-preview/`
+- Write ignored: `.superpowers/sdd/2026-08-31-terminology-schema-generation/inherited-preview/`
 
 **Interfaces:**
 
 - Consumes: I05–I07、H05–H08、H21。
-- Produces: I10–I12；私有函数 `legacy_identity(row)`、`safe_decision(row)`、`parse_inventory(path)` 在本任务定义。
+- Produces: I10–I12；私有函数 `legacy_identity(row)`、`inherited_decision(row)`、`parse_inventory(path)` 在本任务定义。
 
-- [ ] 写入 T05 的 8 个失败测试。安全测试只断言 safe.tsv 的输出；不得断言所有未来 decisions.tsv 永远 audit-only。
+- [ ] 写入 T05 的 8 个失败测试。测试证明冻结字段逐字继承，并证明升级决定仍可在 T06 覆盖；不得重新评价依据充分性或概念对应。
 
 ```python
-def test_safe_preview_reconciles_348(self):
-    decisions = load_migration_decisions(SAFE_DECISIONS)
-    ledger = render_migration_ledger(INVENTORY, decisions)
+def test_inherited_preview_reconciles_348(self):
+    ledger = render_migration_ledger(INVENTORY, [])
     rows = parse_ledger(ledger)
     self.assertEqual(348, len(rows))
     self.assertEqual(348, len({row["legacy_identity"] for row in rows}))
 
-def test_safe_preview_writes_only_ignored(self):
-    root = copy_fixture_repo("migration-safe")
+def test_inherited_preview_writes_only_ignored(self):
+    root = copy_fixture_repo("migration-inherited")
     result = run_cli(root, ["python3", "scripts/governance/migrate_terms.py", "preview", "--output", str(root / ".superpowers/preview")])
     self.assertEqual(2, result.returncode)
     self.assertEqual([], tracked_changes(root))
@@ -1455,20 +1396,20 @@ def parse_inventory(path):
 `parse_location()` 只接受“第 N 行；小节=文本；”片段且恰一次；`parse_exact_action()` 只接受 `当前动作=defer`、`keep`、`remove` 中恰一个。两者在 migrate_terms.py 定义并有负例测试。
 
 ```python
-def safe_decision(row):
-    return MigrationDecision(
+def inherited_decision(row):
+    disposition = {
+        "defer": "audit-only",
+        "keep": "retain-owner",
+        "remove": "retain-pending-l3",
+    }[row.current_action]
+    return InheritedDisposition(
         legacy_identity=row.legacy_identity,
-        disposition="audit-only",
-        concept_id=None,
-        language=None,
-        term_id=None,
-        administrative_status=None,
-        decision_id="decision-term-0002",
-        decision_evidence="safe-proposal",
+        disposition=disposition,
+        decision_evidence="locked-review-inheritance",
     )
 ```
 
-- [ ] 实现 decisions.tsv 精确表头：`legacy_identity disposition concept_id language term_id administrative_status decision_id decision_evidence`，空新身份用单个连字符。`load_migration_decisions()` 把连字符转为 None，并拒绝空单元格、重复身份和未知 disposition。
+- [ ] 实现 inherited.tsv 精确表头：`legacy_identity disposition decision_evidence`，内容由冻结库存确定性生成，只作夹具和审计预演。T06 的 `load_migration_decisions()` 另读取稀疏升级表，拒绝重复身份、未知 operation、空 decision_id 和无效字段组合。
 
 - [ ] 实现 `render_migration_ledger()`。按冻结库存顺序 inner join 348 个决定，输出旧 file、line、section、language、text、action，加决定 8 字段和 `blocks_cutover`。audit-only 本身不阻断；defer、keep、remove 的语义条件由 `validate_migration()` 判断。输出 UTF-8、制表符、LF、末尾换行。
 
@@ -1476,90 +1417,69 @@ def safe_decision(row):
 def render_migration_ledger(inventory, decisions):
     rows = parse_inventory(inventory)
     by_identity = {item.legacy_identity: item for item in decisions}
-    if len(by_identity) != len(decisions) or set(by_identity) != {row.legacy_identity for row in rows}:
+    inventory_ids = {row.legacy_identity for row in rows}
+    if len(by_identity) != len(decisions) or not set(by_identity) <= inventory_ids:
         raise ValueError("TERM_DECISION_IDENTITY_SET")
     output = io.StringIO(newline="")
     writer = csv.DictWriter(output, fieldnames=LEDGER_FIELDS, delimiter="\t", lineterminator="\n")
     writer.writeheader()
     for row in rows:
-        decision = by_identity[row.legacy_identity]
-        writer.writerow(ledger_row(row, decision))
+        inherited = inherited_decision(row)
+        writer.writerow(ledger_row(row, inherited, by_identity.get(row.legacy_identity)))
     return output.getvalue().encode("utf-8")
 ```
 
-`ledger_row()` 在同文件定义，逐字段复制 InventoryRow 与 MigrationDecision；None 一律写单个连字符，blocks_cutover 只取 `decision_blocks_cutover(row, decision)` 的布尔结果。`decision_blocks_cutover()` 按 H05–H08 逐条件返回，不读取全局推荐计数。
+`ledger_row()` 在同文件定义，先逐字段复制 InventoryRow 与 InheritedDisposition，再叠加可选 MigrationDecision；None 一律写单个连字符，blocks_cutover 只取 `decision_blocks_cutover(row, upgrade)` 的布尔结果。无升级行时永远不因冻结的 `defer`、`keep`、`remove` 阻断账本；有升级行时按 H05–H08 校验效力变化，不读取全局推荐计数。
 
-- [ ] 实现 `validate_migration()`：migrate 必须有 5 个新身份字段、引用存在决定并通过 I06/I07；remove 必须有 L3 决定；und 无 language；keep 无准入决定；冲突和未确定无结论时返回稳定错误。错误只由决定内容产生，不把 safe 推荐写死进函数。
+- [ ] 实现 `validate_migration()`：继承行必须逐字保留冻结的身份、依据结论、依据位置、概念对应、动作和处理阶段；`audit-only`、`retain-owner`、`retain-pending-l3` 不携带新 ID、语言或管理状态，也不阻断账本形成。只有 T06 提供的升级行才检查正式迁入、合并、语言变更或删除条件。错误只由身份漂移或升级内容产生，不重新评价冻结语义。
 
-- [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_migration -v`，预期 8 项通过。运行 preview，预期退出码 2，输出 348 行安全账本和明确阻断原因，只写 ignored 目录。
+- [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_migration -v`，预期 8 项通过。运行 preview，预期退出码 0，输出 348 行继承账本，只写 ignored 目录；另输出升级候选清单，但候选清单不产生决定或阻断系统实现。
 
-- [ ] 逐条运行全量回归。
-
-运行：`python3 -m unittest discover -s tests -p 'test_*.py' -v`
-
-预期：全部测试通过。
-
-运行：`python3 scripts/check-topics.py`
-
-预期：0 问题。
-
-运行：`python3 scripts/check_sources.py --root .`
-
-预期：来源严格校验 0 问题。
-
-运行：`python3 scripts/governance/check_known_link_failures.py`
-
-预期：`KNOWN_LINK_FAILURES_OK count=2`。
-
-运行：`git diff --check`
-
-预期：无输出。
+- [ ] 本任务只运行定向 GREEN 与写集检查；完整回归并入下一阶段门禁。
 
 - [ ] 运行写集门禁。
 
-运行：`python3 scripts/governance/check_write_set.py --base HEAD --allow scripts/governance/migrate_terms.py --allow tests/governance/test_term_migration.py --allow tests/fixtures/terminology/decisions/safe.tsv`
+运行：`python3 scripts/governance/check_write_set.py --base HEAD --allow scripts/governance/migrate_terms.py --allow tests/governance/test_term_migration.py --allow tests/fixtures/terminology/decisions/inherited.tsv`
 
 预期：退出码 0，只列本任务 3 个路径；`vocab/migrations/term-v1/` 没有受跟踪差异。
 
-- [ ] 记录回滚：revert T05 代码与夹具提交；ignored 预演可删除；人的决定尚未创建。
-
-- [ ] 使用 `superpowers:requesting-code-review` 审查身份哈希、348 inner join、safe 与替代分支可达性、零正式写入。无 Critical／Important 后提交。
+- [ ] 记录回滚：revert T05 代码与夹具提交；ignored 预演可删除；冻结审查材料和人的决定均未改变。
 
 - [ ] 提交本任务。
 
 ```bash
-git add scripts/governance/migrate_terms.py tests/governance/test_term_migration.py tests/fixtures/terminology/decisions/safe.tsv
-git commit -m "[L2] 术语治理：建立安全迁移预演"
+git add scripts/governance/migrate_terms.py tests/governance/test_term_migration.py tests/fixtures/terminology/decisions/inherited.tsv
+git commit -m "[L2] 术语治理：建立审查继承预演"
 ```
 
 ### 决定物化
 
-任务标识：T06。任务把人的 348 行答案确定性写回受跟踪账本，是切换可达性的唯一入口。
+任务标识：T06。任务先把冻结审查结论确定性物化为 348 行受跟踪账本，再只叠加人的升级决定。它不要求人重复回答保持现状的行。
 
 **Files:**
 
-- Create after human decision: `vocab/migrations/term-v1/decisions.tsv`
-- Create after human decision: `vocab/migrations/term-v1/records.yaml`
-- Create after human decision: `design/decisions/terminology-migration-rows.md`
+- Create: `vocab/migrations/term-v1/decisions.tsv`
+- Create conditionally for approved migrations: `vocab/migrations/term-v1/records.yaml`
+- Create: `design/decisions/terminology-migration-rows.md`
 - Create or Modify: `vocab/migrations/term-v1/terms.tsv`
 - Create: `tests/governance/test_term_decisions.py`
-- Create: `tests/fixtures/terminology/decisions/replacement.tsv`
+- Create: `tests/fixtures/terminology/decisions/upgrade.tsv`
 - Create: `tests/fixtures/terminology/decisions/invalid.tsv`
 
 **Interfaces:**
 
 - Consumes: I10–I12、decision-term-0002、H05–H10、H21。
-- Produces: I12A、受跟踪 decisions.tsv 与 terms.tsv。
+- Produces: I12A、只含升级行的 decisions.tsv 与覆盖全部 348 个冻结身份的 terms.tsv。
 
-- [ ] 写入 T06 的 7 个失败测试。safe 与 replacement 两套决定都必须 GREEN；invalid 只验证具体错误。
+- [ ] 写入 T06 的 7 个失败测试。零升级与显式升级两套输入都必须 GREEN；invalid 只验证具体效力变化错误。
 
 ```python
-def test_replacement_decisions_materialize_migrate_rows(self):
-    decisions = load_migration_decisions(REPLACEMENT_DECISIONS)
+def test_upgrade_decisions_materialize_migrate_rows(self):
+    decisions = load_migration_decisions(UPGRADE_DECISIONS)
     ledger = render_migration_ledger(INVENTORY, decisions)
     rows = parse_ledger(ledger)
     migrated = [row for row in rows if row["disposition"] == "migrate"]
-    self.assertEqual(EXPECTED_MIGRATE_IDENTITIES, {row["legacy_identity"] for row in migrated})
+    self.assertEqual(EXPECTED_UPGRADE_IDENTITIES, {row["legacy_identity"] for row in migrated})
 
 def test_decision_hash_must_match_adr(self):
     expected_decisions = read_machine_value(DECISION_ADR, "decisions_sha256")
@@ -1568,7 +1488,7 @@ def test_decision_hash_must_match_adr(self):
     self.assertEqual(expected_records, hash_file(RECORDS))
 ```
 
-`EXPECTED_MIGRATE_IDENTITIES` 来自 replacement.tsv 中显式标记的夹具行；`read_machine_value()` 在测试模块按以下代码定义，不读取普通 prose。
+`EXPECTED_UPGRADE_IDENTITIES` 来自 upgrade.tsv 中显式标记的夹具行；`read_machine_value()` 在测试模块按以下代码定义，不读取普通 prose。
 
 ```python
 def read_machine_value(path, key):
@@ -1580,22 +1500,25 @@ def read_machine_value(path, key):
 
 测试模块从 `scripts.governance.check_term_inputs` 导入已经在 T01 完整实现的 `extract_named_json_blocks`，不定义第二个解析器。
 
-- [ ] 运行 RED：`python3 -m unittest tests.governance.test_term_decisions -v`。预期缺少真实 decisions.tsv／terms.tsv 或决定哈希不匹配。
+- [ ] 运行 RED：`python3 -m unittest tests.governance.test_term_decisions -v`。预期缺少 terms.tsv、升级覆盖算法或决定哈希不匹配。
 
-- [ ] 人先完成 348 行 `vocab/migrations/term-v1/decisions.tsv`。每个 legacy_identity 恰一次；安全答案和替代答案都必须填 decision_id 与 evidence。对每个 migrate 概念在 `vocab/migrations/term-v1/records.yaml` 写完整 TermsDocument 记录，并通过 T02、T03。随后创建 `design/decisions/terminology-migration-rows.md`，登记 `decision-term-0002`、decisions.tsv 与 records.yaml SHA-256、行数 348、各 disposition 计数和人的批准日期。
+- [ ] 从 T05 升级候选生成 `vocab/migrations/term-v1/decisions.tsv`，表头固定为 `legacy_identity operation concept_id language term_id administrative_status target_identity decision_id decision_evidence`。保持现状时文件只有表头；只有 `migrate`、`merge`、`change-language` 或 `delete` 才增加数据行。每个升级身份至多一次；`delete` 必须引用逐项 L3 决定，其他升级必须引用 L2 决定。对 `migrate`、`merge` 或 `change-language` 涉及的记录在 `records.yaml` 写完整 TermsDocument，并通过 T02、T03。
+
+- [ ] 创建 `design/decisions/terminology-migration-rows.md`。`decision-term-0002` 登记冻结术语表哈希、decisions.tsv 哈希、records.yaml 的可选哈希、升级行数、各 operation 计数和批准日期。决定明确批准的是升级行，不重新批准或推翻未列出的冻结结论。
 
 - [ ] 将决定输入单独提交，不能与生成账本或代码提交合并。
 
 ```bash
-git add vocab/migrations/term-v1/decisions.tsv vocab/migrations/term-v1/records.yaml design/decisions/terminology-migration-rows.md
-git commit -m "[L2] 术语治理：批准逐行迁移决定"
+git add vocab/migrations/term-v1/decisions.tsv design/decisions/terminology-migration-rows.md
+test ! -e vocab/migrations/term-v1/records.yaml || git add vocab/migrations/term-v1/records.yaml
+git commit -m "[L2] 术语治理：批准迁移升级决定"
 ```
 
 - [ ] 运行物化命令。
 
 运行：`python3 scripts/governance/migrate_terms.py materialize --inventory .superpowers/sdd/2026-08-31-governance-implementation-prep/term-glossary.tsv --decisions vocab/migrations/term-v1/decisions.tsv --output vocab/migrations/term-v1/terms.tsv --decision design/decisions/terminology-migration-rows.md`
 
-预期：退出码 0；terms.tsv 348 行、身份一一对应、哈希和计数写入 ignored 验证输出。若人的答案保留阻断，命令仍可物化但 `validate` 退出 2；不得改回安全推荐。
+预期：退出码 0；terms.tsv 348 行、身份一一对应、冻结字段不变、升级行逐项带决定引用，哈希和计数写入 ignored 验证输出。没有升级行时仍成功物化 348 行继承账本。
 
 - [ ] 实现 I12A：解析 terms.tsv 中 migrate 行，加载 records.yaml 为 TermsDocument；每个 migrate concept_id／language／term_id 必须在 records 中恰好解析，每个 records 术语必须反向对应至少一行 migrate，未使用记录或缺行都失败。返回文档后立即运行 I06、I07。
 
@@ -1623,9 +1546,9 @@ def build_terms_document(ledger, records_path):
 
 - [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_migration tests.governance.test_term_decisions -v`，预期 15 项通过。
 
-- [ ] 运行 `migrate_terms.py validate`。切换只接受退出码 0；退出码 2 表示人的已批准答案仍明确阻断，T07–T11 可开发但 T12／T13 不执行。
+- [ ] 运行 `migrate_terms.py validate`。账本验证只要求 348／348 身份闭合、冻结字段不变和所有升级合法；未升级的 `defer`、`keep`、`remove` 不构成账本阻断。正式唯一术语编辑源的 T12／T13 另检查候选是否具有足够 active 记录重现获准发布视图，不能把该发布条件倒灌成 348 行重复审查。
 
-- [ ] 逐条运行全量回归。
+- [ ] 运行 T06 迁移闭合阶段的完整回归。
 
 运行：`python3 -m unittest discover -s tests -p 'test_*.py' -v`
 
@@ -1649,19 +1572,17 @@ def build_terms_document(ledger, records_path):
 
 - [ ] 运行两次写集门禁。人的决定提交前，允许路径恰为 `vocab/migrations/term-v1/decisions.tsv`、`records.yaml` 和决定文；该提交完成后，把 HEAD 作为物化基线，再运行：
 
-运行：`python3 scripts/governance/check_write_set.py --base HEAD --allow vocab/migrations/term-v1/terms.tsv --allow tests/governance/test_term_decisions.py --allow tests/fixtures/terminology/decisions/replacement.tsv --allow tests/fixtures/terminology/decisions/invalid.tsv`
+运行：`python3 scripts/governance/check_write_set.py --base HEAD --allow vocab/migrations/term-v1/terms.tsv --allow tests/governance/test_term_decisions.py --allow tests/fixtures/terminology/decisions/upgrade.tsv --allow tests/fixtures/terminology/decisions/invalid.tsv`
 
 预期：退出码 0，只列物化提交 4 个路径；decisions.tsv、records.yaml 和决定文不在第二次差异中。
 
-- [ ] 记录回滚：不能 revert 删除 decision-term-0002 或 decisions.tsv。若物化算法错误，revert 仅物化提交并修复后重生 terms.tsv；若人的答案改变，新增决定修订 decisions.tsv，再物化新账本，旧提交保留。
-
-- [ ] 使用 `superpowers:requesting-code-review` 审查两套决定夹具、真实 348 行、决定哈希、账本可重复生成和双提交边界。无 Critical／Important 后提交物化结果。
+- [ ] 记录回滚：不能 revert 删除 decision-term-0002 或 decisions.tsv。若物化算法错误，revert 仅物化提交并修复后重生 terms.tsv；若升级答案改变，新增决定修订对应升级行，再物化新账本，旧提交保留。未升级的冻结行不进入重新裁决。
 
 - [ ] 提交物化任务。
 
 ```bash
-git add vocab/migrations/term-v1/terms.tsv tests/governance/test_term_decisions.py tests/fixtures/terminology/decisions/replacement.tsv tests/fixtures/terminology/decisions/invalid.tsv
-git commit -m "[L2] 术语治理：物化逐行迁移账本"
+git add vocab/migrations/term-v1/terms.tsv tests/governance/test_term_decisions.py tests/fixtures/terminology/decisions/upgrade.tsv tests/fixtures/terminology/decisions/invalid.tsv
+git commit -m "[L2] 术语治理：物化继承迁移账本"
 ```
 
 ### 确定生成
@@ -1765,27 +1686,7 @@ def ordered_concepts(document, layout):
 
 - [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_generation -v`，预期 7 项通过。连续生成两个 ignored 目录并 `diff -ru`，预期无差异。
 
-- [ ] 逐条运行全量回归。
-
-运行：`python3 -m unittest discover -s tests -p 'test_*.py' -v`
-
-预期：全部测试通过。
-
-运行：`python3 scripts/check-topics.py`
-
-预期：0 问题。
-
-运行：`python3 scripts/check_sources.py --root .`
-
-预期：来源严格校验 0 问题。
-
-运行：`python3 scripts/governance/check_known_link_failures.py`
-
-预期：`KNOWN_LINK_FAILURES_OK count=2`。
-
-运行：`git diff --check`
-
-预期：无输出。
+- [ ] 本任务只运行定向 GREEN 与写集检查；完整回归并入 T10 消费链闭合门禁。
 
 - [ ] 运行写集门禁。
 
@@ -1794,8 +1695,6 @@ def ordered_concepts(document, layout):
 预期：退出码 0，只列本任务 6 个文件；`concepts/glossary.md` 和 `vocab/generated/` 零差异。
 
 - [ ] 记录回滚：revert T07 实现提交；decision-term-0002、decisions.tsv、terms.tsv 保留；重跑迁移与来源严格校验。
-
-- [ ] 使用 `superpowers:requesting-code-review` 审查完整 state schema、两状态夹具、排序、无回退译名、漂移和显式输出。无 Critical／Important 后提交。
 
 - [ ] 提交本任务。
 
@@ -1806,7 +1705,7 @@ git commit -m "[L2] 术语治理：建立状态化确定生成"
 
 ### 委托所有权
 
-任务标识：T08。安全决定保持生产零委托；替代决定夹具证明 active 分支可达。
+任务标识：T08。继承结果保持生产零委托；升级决定夹具证明 active 分支可达。
 
 **Files:**
 
@@ -1820,14 +1719,14 @@ git commit -m "[L2] 术语治理：建立状态化确定生成"
 
 **Interfaces:**
 
-- Consumes: I09、I13、decisions.tsv、H09–H15；I15／I16 由本任务实现，不作前置。
+- Consumes: I09、I13、terms.tsv、独立委托决定、H09–H15；I15／I16 由本任务实现，不作前置。
 - Produces: I15、I16；私有函数 `iter_delegations(vocabularies)`、`local_label_fields(record, language)` 在本任务定义。
 
-- [ ] 写入 T08 的 6 个失败测试。生产测试从真实 decisions.tsv 得出预期，不硬编码“三项永远不委托”；夹具分别覆盖 active 与 revoked。
+- [ ] 写入 T08 的 6 个失败测试。生产测试从真实 terms.tsv 的获准迁入行和独立委托决定得出预期，不硬编码“三项永远不委托”；夹具分别覆盖 active 与 revoked。
 
 ```python
-def test_safe_decisions_keep_production_undelegated(self):
-    expected = approved_delegations(load_migration_decisions(DECISIONS))
+def test_inherited_rows_keep_production_undelegated(self):
+    expected = approved_delegations(load_migration_ledger(TERMS_LEDGER), DELEGATION_DECISIONS)
     actual = list(iter_delegations(load_five_vocabularies(ROOT)))
     self.assertEqual(expected, delegation_identities(actual))
 
@@ -1836,7 +1735,7 @@ def test_rolled_back_state_revokes_consumers(self):
     self.assertIn("TERM_DELEGATION_ACTIVE_DURING_ROLLBACK", {issue.code for issue in issues})
 ```
 
-`approved_delegations()` 和 `delegation_identities()` 在测试模块完整定义，只读取 decisions.tsv 的显式 disposition、concept_id、language 和 decision_id。
+`approved_delegations()` 和 `delegation_identities()` 在测试模块完整定义，只读取 terms.tsv 中有升级决定的迁入身份及独立委托决定的 concept_id、language 和 decision_id；继承行不能建立委托。
 
 - [ ] 运行 RED：`python3 -m unittest tests.governance.test_term_delegation -v`。预期缺少 schema 和委托模块。
 
@@ -1878,29 +1777,9 @@ def local_label_fields(record, language):
 
 - [ ] 修改 I09：加载 term-cutover-state；active 时按 active 委托读取 snapshot；rolled_back 时拒绝 snapshot 并使用恢复的本地标签。输出 ID 始终来自 topic-ids。
 
-- [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_delegation tests.governance.test_topic_id_stability -v`，预期 11 项通过。生成 post-source topics，安全决定下逐字节等于 handoff 哈希；替代夹具只改变决定列明标签，不改 ID。
+- [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_delegation tests.governance.test_topic_id_stability -v`，预期 11 项通过。生成 post-source topics，继承结果下逐字节等于 handoff 哈希；升级夹具只改变决定列明标签，不改 ID。
 
-- [ ] 逐条运行全量回归。
-
-运行：`python3 -m unittest discover -s tests -p 'test_*.py' -v`
-
-预期：全部测试通过。
-
-运行：`python3 scripts/check-topics.py`
-
-预期：0 问题。
-
-运行：`python3 scripts/check_sources.py --root .`
-
-预期：来源严格校验 0 问题。
-
-运行：`python3 scripts/governance/check_known_link_failures.py`
-
-预期：`KNOWN_LINK_FAILURES_OK count=2`。
-
-运行：`git diff --check`
-
-预期：无输出。
+- [ ] 本任务只运行定向 GREEN 与写集检查；完整回归并入 T10 消费链闭合门禁。
 
 - [ ] 运行写集门禁。
 
@@ -1909,8 +1788,6 @@ def local_label_fields(record, language):
 预期：退出码 0，只列本任务 7 个路径；五份生产词表零差异。
 
 - [ ] 记录回滚：revert T08；恢复 T04 build-topics/check-topics；决定与迁移账本保留。
-
-- [ ] 使用 `superpowers:requesting-code-review` 审查 active／revoked、五词表显式访问器、生产期望从决定输入推导、rolled_back 拒绝和 topic ID 不变。无 Critical／Important 后提交。
 
 - [ ] 提交本任务。
 
@@ -2020,27 +1897,7 @@ def scan_line(line, line_number, context):
 
 - [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_usage tests.test_check_terms -v`，预期 12 项通过。运行 ignored 扫描，输出 manifest 中的 count 取实际清单长度，不与常量比较。
 
-- [ ] 逐条运行全量回归。
-
-运行：`python3 -m unittest discover -s tests -p 'test_*.py' -v`
-
-预期：全部测试通过。
-
-运行：`python3 scripts/check-topics.py`
-
-预期：0 问题。
-
-运行：`python3 scripts/check_sources.py --root .`
-
-预期：来源严格校验 0 问题。
-
-运行：`python3 scripts/governance/check_known_link_failures.py`
-
-预期：`KNOWN_LINK_FAILURES_OK count=2`。
-
-运行：`git diff --check`
-
-预期：无输出。
+- [ ] 本任务只运行定向 GREEN 与写集检查；完整回归并入 T10 消费链闭合门禁。
 
 - [ ] 运行写集门禁。
 
@@ -2049,8 +1906,6 @@ def scan_line(line, line_number, context):
 预期：退出码 0，只列本任务 5 个文件；三个正式输出不出现。
 
 - [ ] 记录回滚：revert T09；恢复旧 check-terms 和 tests；决定、账本与术语工具保留。
-
-- [ ] 使用 `superpowers:requesting-code-review` 审查动态增删夹具、每路径 scan_state、精确位置、上下文和现有测试兼容。无 Critical／Important 后提交。
 
 - [ ] 提交本任务。
 
@@ -2130,7 +1985,7 @@ def obligation_index(value):
 
 - [ ] 运行 GREEN：`python3 -m unittest tests.governance.test_term_maintenance -v`，预期 6 项通过。双跑术语索引夹具字节相同。
 
-- [ ] 逐条运行全量回归。
+- [ ] 运行 T10 消费链闭合阶段的完整回归。
 
 运行：`python3 -m unittest discover -s tests -p 'test_*.py' -v`
 
@@ -2159,8 +2014,6 @@ def obligation_index(value):
 预期：退出码 0，只列本任务 3 个文件；正式义务和索引不出现。
 
 - [ ] 记录回滚：revert T10；义务正式文件尚未创建，人的决定与迁移账本保留。
-
-- [ ] 使用 `superpowers:requesting-code-review` 审查来源 ID-only 桥接、open/resolved、再触发、双向索引和无阈值。无 Critical／Important 后提交。
 
 - [ ] 提交本任务。
 
@@ -2436,8 +2289,6 @@ def verify_bound_payload(repo_root, candidate_root, manifest_path, decision_path
 
 - [ ] 记录回滚：revert T11 实现提交只移除实现和测试；决定与既有账本保留。
 
-- [ ] 使用 `superpowers:requesting-code-review` 审查 I21–I29、无决定预验、无 Git candidate Markdown、manifest base_commit、四个来源读取常量、apply-only、79 项运行集合和回滚顺序。审查不得把未运行的真实阶段测试写成 GREEN。无 Critical／Important 后提交。
-
 - [ ] 提交切换实现。
 
 ```bash
@@ -2562,7 +2413,7 @@ git commit -m "[L3] 术语治理：应用已批准切换候选"
 | 来源契约唯一消费 | H01、输入锁、I01–I06、T01、T02 |
 | 冻结旧草案与后置共享锁 | 全局约束、输入锁、T01 |
 | 三层模型和译名 | H02–H08、T02、T03、T06 |
-| 人的替代决定可达 | H06–H10、T05、T06 |
+| 冻结结论继承与升级决定 | H05–H10、T05、T06 |
 | 主题稳定身份 | H14–H16、T04、T08 |
 | 确定生成和委托 | H09–H15、T07、T08 |
 | 动态正文范围 | H17、H18、T09 |
@@ -2639,7 +2490,7 @@ git diff --check
 ## 已知疑虑
 
 - 当前来源计划仍需完成 source-cutover-handoff／source-cutover-payload 双文件交付；在来源实现完成、`decision-source-0005` 用 `delivery_handoff`／`handoff_sha256` 与 `delivery_payload`／`payload_sha256` 完成双绑定，且 handoff 十个顶层键、payload 三个顶层键和来源严格校验全部通过前，术语实施全部阻断。
-- 348 行人的替代决定、records.yaml 和 decision-term-0002 尚不存在；安全推荐会使 T12／T13 停止，这是预期治理结果。
+- 348 行冻结结论由 T05／T06 自动继承，不再等待人的重复答案。decisions.tsv 可以只有表头，records.yaml 只在存在获准升级行时创建；T12／T13 仅在候选不足以重现获准发布视图，或某项升级缺少决定时停止。
 - `2026-09-15` 生效窗口可能在计划获批前失效；失效后必须新建决定，不补写过去日期。
 - 仓库外标签消费者仍未知；没有独立风险接受决定时 active 委托阻断。
 - T11 提交后到 T13 应用前，完整 ignored candidate 与 manifest 必须持续存在且字节不变；任一丢失或漂移都要求回到 T12 重新生成、预验并取得替代决定，不能只重算哈希。
