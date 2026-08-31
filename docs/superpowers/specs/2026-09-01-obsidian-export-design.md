@@ -77,6 +77,7 @@ KB/
 |---|---|---|
 | `kb_id` | text | 正式稳定 `id` |
 | `kb_object` | text | `topic`、`array`、`entity`、`source`、`type`、`genre` 或 `form` |
+| `kb_label` | text | `label.zh`、`label.en`、`id` 固定回退得到的正式显示形式 |
 | `kb_status` | text | 正式记录有状态时原值；对象没有状态时省略 |
 | `kb_version` | text | 来源词表的 `version.id` |
 | `aliases` | list | 正式记录已有的非空显示形式，去重后按语言和原顺序排列 |
@@ -145,6 +146,8 @@ property 名使用固定前缀，避免与用户已有属性碰撞。不存在�
 ## 受控值映射
 
 文档类型、体裁和载体分别生成 Types、Genres、Forms 笔记。公共规则与主题相同；数组和映射按记录实际字段进入 properties 或正文。导出器不把这些值合并到一个枚举文件，避免丢失稳定 ID、范围、数组和映射。
+
+`forms.yaml` 的两个内部数组不计入主题数组对象，也不生成第八类笔记。它们的 `id`、`superordinate` 和 `source` 必须在导出 README 的“载体数组”表完整保存；每个 form 笔记保留正式数组 ID。数组来源须解析到正式来源，`superordinate` 只允许当前受控值集合声明的根 ID，未知值阻断。
 
 ## 内容映射
 
