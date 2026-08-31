@@ -1,52 +1,68 @@
 # 来源名称规范表
 
-`vocab/sources.yaml` 登记本库引用的外部知识体系和词表，每个外部实体一条记录。按 ISO 25964-2 §23，它是一份名称规范表：用一致名称标识特定实体；这里的实体是各外部体系。所有词表的 `source` 和 `match.source` 只能使用已登记 id。理论见[词表映射](../concepts/vocabulary-mapping.md)和[知识体系](../concepts/body-of-knowledge.md)。
+`vocab/sources.yaml` 登记本库当前使用的外部知识体系和词表，并以稳定 `id` 指向[命名实体词表](entities.md)中的同一来源实体。它保存来源的现行用途，不重复保存名称、类别、档级、版本和地址。理论见[词表映射](../concepts/vocabulary-mapping.md)和[知识体系](../concepts/body-of-knowledge.md)。
 
-## 记录
+正式 `vocab/sources.yaml` 仍是旧形状；正式来源数据尚未迁移，来源治理草案也未生效。已经实现的模式、校验、索引、固定夹具探测、迁移预演和复核义务接口，只规定后置迁移必须满足的结构与行为，不能替代正式记录或人工决定。
+
+## 对象分工
+
+来源身份、来源用途和具体关系分别保存，互不替代。
+
+| 对象 | 当前职责 | 不产生的效力 |
+|---|---|---|
+| 来源实体 | 在 `vocab/entities.yaml` 保存现行名称、类别、档级、版本和地址 | 不批准来源用途，不证明具体断言、派生或映射 |
+| 用途记录 | 在 `vocab/sources.yaml` 保存来源的现行用途，并以 `entity` 指向来源实体 | 不改变来源实体，不自动产生具体 `source` 或 `match` |
+| `basis` | 说明具体值的依据 | 不表示实际派生、概念映射或项目批准 |
+| `source` | 说明记录或结构的实际派生来源 | 不表示普通参考材料、人工判断依据或概念等同 |
+| `match` | 说明本地概念与外部概念的关系 | 不表示标签、译名、层级或范围依据 |
+
+项目决定另行保存。结构和校验决定可以批准接口，不能据此推出某一来源的用途、某一条实际派生或某一条概念映射。
+
+## 现行记录
+
+正式用途记录当前使用 `id`、`entity`、`role` 和 `checked`。例如，正式数据中的 CWE 记录如下。
 
 ```yaml
 - id: cwe
-  entity: cwe                    # 实体表中的 standard；名称、分级、版本和 URL 记在那里
+  entity: cwe
   role: [mapping, structure, group]
-  checked: 2026-08-20            # 上次核对作为来源使用的条目与版本
+  checked: 2026-08-23
 ```
 
-名称、`tier`、`version` 和 `url` 记在[命名实体词表](entities.md)，本表不重复。`entity` 必须指向 `kind` 为 `standard` 或 `publication` 的实体。
+`entity` 必须指向现行命名实体词表中 `kind` 为 `standard` 或 `publication` 的记录。现行 `role` 可以多选，值和含义保持不变。
 
-`role` 可以多选。
+| role | 现行用途 | 现行条件 |
+|---|---|---|
+| `mapping` | 作为现行 `match.source` 的目标 | 外部条目有编号或永久地址 |
+| `structure` | 作为结构或记录的现行 `source` | 同时有 `mapping`；体系有分层；借入层有编号或稳定名称 |
+| `group` | 从现行映射确定性计算概念组 | 同时有 `mapping`；只使用本库已有映射 |
+| `candidate` | 发现待审字符串、表达或材料线索 | 不赋予形式依据、概念身份、候选记录或项目准入 |
 
-| role | 含义 | 条件 | 例 |
+`candidate` 与其余现行角色互斥。来源的 `tier` 继续承担现行分级和复核周期含义，但不单独增加用途；现行用途只取正式 `role` 已保存的值。结构来源还须遵守[层级结构](hierarchy.md)已经收紧的来源选择、复制深度和同一视角规则。
+
+现行 `role` 含 `structure` 时，来源实体的 `tier` 必须是 `de-jure`，或为有版本号的 `de-facto`。没有版本号的 `de-facto` 当前只作映射；`vendor` 当前只作映射；`archival` 当前不作来源。这些条件限制已有用途，不能据此为其他来源增加 `role`。
+
+当前来源清单和用途以正式 [`vocab/sources.yaml`](../vocab/sources.yaml) 为唯一数据来源，不在本文复制第二份清单。现有来源 `id` 保持稳定，本次同步不改变任何 `role`、`checked`、`tier`、版本、地址或数据。
+
+## 现行用法
+
+一个外部体系可以承担复制、映射和派生概念组三种现行用法。
+
+| 用法 | 当前形式 | 所需现行 role | 记录位置 |
 |---|---|---|---|
-| `mapping` | 可作 `match` 目标 | 条目有编号或永久 URL | CWE、RFC、ASVS、SWEBOK、CS2023、ISO、MDN 页面 |
-| `structure` | 可复制为数组 | 含 `mapping`，有自己的分层，且该层条目有编号或稳定名称 | CS2023 知识领域、SWEBOK 章、ASVS 章、ATT&CK 战术、CWE 顶层类别、GB/T 13745 学科 |
-| `group` | 由映射派生概念组，组名使用体系名 | 含 `mapping` | OWASP Top 10、MDN Curriculum |
-| `candidate` | 只用于发现待审字符串或表达线索 | — | roadmap.sh、teachyourselfcs、CMU 15-445、DB-Engines 榜 |
-
-`candidate` 与其余三个角色互斥。这个角色只说明来源可用于发现待审表达，不赋予字符串形式依据、概念身份或 `candidate` 状态；概念判断、依据核验和记录建档由后续维护流程完成。
-
-复核周期按实体的 `tier` 执行，见[维护](maintenance.md)。
-
-`role` 含 `structure` 时，来源实体的 `tier` 必须是 de-jure，或为有版本号的 de-facto。没有版本号的 de-facto 只作映射；vendor 只作映射；archival 不作来源。依据是组织依据：本库只把有发布流程或版本标识的体系作为结构来源。
-
-## 来源用法
-
-一个外部体系可以在本库同时承担以下用法。
-
-| 用法 | 本库形式 | 所需 role | 记录位置 |
-|---|---|---|---|
-| 复制 | 某概念下的一个数组，成员为本地概念 | `structure` | `arrays` 登记和概念的 `source` |
+| 复制 | 某概念下的来源数组，成员为本地概念 | `structure` | `arrays` 与概念的 `source` |
 | 映射 | 概念的一条 `match` | `mapping` | 概念的 `match` |
 | 派生概念组 | 映射到该体系的全部本地概念 | `group` | 不登记，自动计算 |
 
-规则如下。
+正式词表当前继续使用旧引用形状：`source` 是来源 `id`；`match` 含 `source`、`id` 和 `rel`。现行工具在正式迁移前继续消费该形状。
 
-1. 复制的概念必须映射回来源条目。`source: asvs` 记录来历，`match: {source: asvs, id: V6, rel: exactMatch}` 记录对应条目。来源改版后章节号可能变化，来历与对应关系不能互相替代。
-2. `role` 含 `structure` 的来源在对应概念下完整复制到第 3 层，初始状态均为 `unassigned`，见[层级结构](hierarchy.md)规则 3–6。同一视角只取一个来源，见规则 13。
-3. 派生概念组是已映射内容的视图，成员只来自本库已有概念，不能显示尚未建立或映射的缺口。它可以与复制并存，不能替代复制。
+`source` 的语义已经收紧为实际派生。复制的记录填写实际来源，并用 `match` 指回相应外部条目；来历与概念对应不能互相替代。本地建立、综合判断或只受材料支持的记录没有实际派生来源，不用 `source` 表示。正式旧数据中保留的 `source: self` 是待后置迁移处理的兼容值，不作为实际派生解释，也不得用于新增记录。
+
+派生概念组只是现有映射的确定性视图。它不能显示尚未建立或映射的缺口，不能创建概念或映射，也不能替代结构复制。
 
 ## 映射关系
 
-映射落在概念层，不在第 2 层级别建立。`rel` 直接使用 SKOS 的五种关系。
+映射落在概念层，不在数组或第 2 层级别建立。现行 `rel` 继续使用 SKOS 的五种关系。
 
 | rel | 含义 |
 |---|---|
@@ -56,41 +72,33 @@
 | `narrowMatch` | 外部概念更窄 |
 | `relatedMatch` | 相关 |
 
-`match.id` 是外部体系中的条目标识，例如 CWE-89、RFC 9110 §8.1、ASVS V5.1；没有编号时写永久 URL。
+现行 `match.id` 保存外部条目标识；没有编号时保存永久地址。来源已登记、具有 `mapping` 用途、标签相同或迁移账本已有分类，都不能自动产生 `match` 或决定 `rel`。每条关系仍须经过概念范围判断。
 
-## 首批来源
+不能确认完全一致时，现行默认使用 `closeMatch`；这项默认不免除概念范围判断，也不把相似标签升级为映射。
 
-下表按[层级结构](hierarchy.md)的数组表和各概念映射需求列出首批来源及拟定 role。版本在登记时核对。
+## 后置接口
 
-| id（拟） | 名称 | role | 用在 |
-|---|---|---|---|
-| gbt-13745 | GB/T 13745-2009 学科分类与代码 | mapping, structure | 顶层映射；除 computing 外七个顶层的第 2、3 层 |
-| cs2023 | ACM／IEEE-CS／AAAI Computer Science Curricula 2023 | mapping, structure | computing 第 2 层，即 17 个知识领域；各知识领域的第 3 层 |
-| swebok | IEEE-CS SWEBOK Guide v4.0 | mapping, structure | software-engineering 下的数组 |
-| acm-ccs | ACM Computing Classification System 2012 | mapping | 映射 |
-| asvs | OWASP ASVS 5.0 | mapping, structure | security 数组 |
-| cwe | MITRE CWE | mapping, structure, group | security 数组；缺陷的派生组 |
-| attack | MITRE ATT&CK（v19.2，Enterprise，15 个战术） | mapping, structure | security 数组 |
-| owasp-top10 | OWASP Top 10 | mapping, group | 映射；派生组 |
-| owasp-llm-top10 | OWASP Top 10 for LLM Applications 2025 | mapping, structure, group | artificial-intelligence 数组 |
-| atlas | MITRE ATLAS（2026.07，16 个战术；按月发布） | mapping, structure | artificial-intelligence 数组 |
-| nist-ai-rmf | NIST AI RMF 1.0 | mapping | 映射 |
-| anthropic-docs | Anthropic 文档 | mapping | 映射 |
-| rfc-1122 | RFC 1122 | mapping, structure | networking-and-communication 下的数组 |
-| rfc-http | RFC 9110–9114 | mapping | 映射 |
-| osi | ISO/IEC 7498-1 OSI 参考模型 | mapping | 映射 |
-| mdn | MDN 技术参考 | mapping | 映射；Web Platforms 为第 3 层，其下不复制 |
-| mdn-curriculum | MDN Curriculum | candidate | 发现待审表达 |
-| iso-25964 | ISO 25964-1／-2 | mapping | 映射 |
-| z39-19 | ANSI/NISO Z39.19 | mapping | 映射 |
-| skos | W3C SKOS | mapping | 映射 |
-| roadmap-sh | roadmap.sh | candidate | 发现待审表达 |
-| teachyourselfcs | teachyourselfcs.com | candidate | 发现待审表达 |
-| cmu-15-445 | CMU 15-445 | candidate | 发现待审表达 |
-| db-engines | DB-Engines 排名 | candidate | 发现待审表达 |
-| wikidata | Wikidata | mapping | 命名实体词表的主要映射目标 |
+来源用途 v2 模式和共享引用结构已经实现，但尚未应用到正式数据。正式迁移后，用途记录改由 `roles` 保存各角色的 `role`、`status` 和 `decision`，并保存只追加 `history`；角色状态只取 `proposed`、`approved` 和 `retired`。`approved` 或 `retired` 必须引用已采纳决定。迁移账本中的角色分类全部仍是历史预演，不是正式 `roles` 值，也不批准任何角色。
+
+后置共享引用的结构如下。
+
+| 对象 | 字段 | 后置资格 |
+|---|---|---|
+| `basis` 项 | `entity`、`locator`、按内容可变性要求的 `checked` | `entity` 指向来源实体；定位必须可重复核对 |
+| `source` | `registry`、`item`、`locator`、`basis` | `registry` 指向具有已批准 `structure` 角色的用途记录；只表示实际派生 |
+| `match` 项 | `registry`、`item`、`rel`、`basis` | `registry` 指向具有已批准 `mapping` 角色的用途记录；依据与关系相邻 |
+
+这些结构已经有 schema 和离线校验实现。由于正式来源仍是旧形状、具体角色尚未逐项批准、正式引用尚未迁移，现行 `source` 和 `match` 不能直接改写成该结构。来源草案中的完整状态转换、角色转换和复核流程也没有因接口实现而生效。
+
+## 能力边界
+
+- 六份来源 schema、共享来源模型和离线校验已经存在。校验可以检查共享引用结构、角色状态、已采纳决定、稳定身份和部分历史规则；它尚未接管正式旧数据，也没有实现来源草案列出的全部转换和阻断规则。
+- 反向索引生成能力已经存在，可以定位共享引用、用途实体、角色决定、替代、决定和复核义务。正式索引尚未生成；索引只给出影响范围，不给出复核结论。
+- 来源探测只支持固定 `HEAD`／`GET` transport 夹具，`--live` 明确禁用。夹具输出只形成复核信号，不确认真实来源状态，不回写正式字段。探测器当前的 JSONL 输出与 `source-probe` schema 要求的文档结构尚未闭合，因此不能宣称探测输出已经通过该模式。
+- 六份来源迁移账本保存历史库存、分类和切换阻断。账本中的推荐值、`proposed`、操作和已关闭分类不修改正式数据。既有预演受冻结输入保护；当前 HEAD 已不能按原冻结哈希重新物化该结果，所以账本只能作为已保存的历史审计。
+- 复核义务的模式和操作接口已经存在，正式 `vocab/source-obligations.yaml` 尚未建立。观察、义务、人工结论和正式修改仍是分开的步骤。
 
 ## 待定事项
 
-- MDN 技术参考没有版本号，`version` 怎样记录（抓取日期？）；Web 内容是否需要例外复制
-- `mdn-curriculum` 当前为 `candidate`，但有稳定模块名；是否同时赋予 `group`
+- MDN 技术参考没有稳定版本号时，版本应怎样记录；抓取日期不能直接冒充版本。
+- MDN Web 内容是否取得结构用途，以及 `mdn-curriculum` 是否取得 `group` 用途，仍须分别决定；现行值在决定前不变。
