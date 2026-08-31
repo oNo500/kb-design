@@ -1,67 +1,126 @@
 # 设计文档索引
 
-`design/` 中的现行设计规定本库当前使用的规则：词表怎样建立和分层、外部来源怎样使用、方法怎样登记、内容怎样建模。理论在 `concepts/`，文献笔记在 `sources/`。项目草案集中在 `design/drafts/`，全部未生效。
+`design/` 中的现行设计规定本库当前使用的规则；已采纳决定保存规则形成与阶段边界，未激活基础只提供机器能力，迁移账本只保存审计，项目草案全部未生效。理论在 `concepts/`，文献笔记在 `sources/`。项目执行计划是过程记录，不属于项目设计组成。
 
-## 文章的关系
+## 效力层次
 
-现行设计与项目草案分属两条分支。
+| 层次 | 当前效力 | 不能替代 |
+|---|---|---|
+| 现行设计与正式数据 | 规定当前规则、编辑权和数据形状 | 不能被草案、迁移推荐值或测试夹具覆盖 |
+| 已采纳决定 | 约束已批准的规则、机器契约和阶段范围 | 不自动填写来源事实，不使草案或正式数据切换生效 |
+| 未激活基础 | 提供 schema、校验、索引、探测、生成、诊断和维护接口 | 不构成正式数据、义务、委托、消费者、切换或发版 |
+| 迁移审计 | 保存冻结身份、旧位置、分类、去向和阻断 | 不批准新值，不回写正式数据，不取得术语准入或删除权限 |
+| 项目草案 | 保存拟议规则和生效条件 | 阅读、引用或部分实现不等于规则生效 |
 
-- 现行设计
-  - [方法登记](principles.md)：登记本库采用的方法、概念依据和导出的规则。
-    - [写作规则](writing.md)：规定全库写作规则；`AGENTS.md` 是其摘要。
-    - [主题词表设计](topics.md)：规定概念记录、关系、生命周期、建设流程和校验。
-      - [层级结构](hierarchy.md)：规定树的分层、结构复制、数组和结构来源。
-      - [来源名称规范表](sources-registry.md)：规定外部体系的登记、复制、映射和派生概念组。
-    - [命名实体词表设计](entities.md)：规定产品、语言、组织、标准和文献等个体的记录方式。
-    - [内容模型](content-model.md)：规定内容单元字段、受控值、标识符和应用映射接口。
-      - [词表版本](versioning.md)：规定版本块、发版时机和变更记录。
-      - 应用映射尚无可索引的项目文件；接口要求保留在内容模型中。
-    - [治理](governance.md)：规定对象范围、政策、决策权、变更控制、验收、验证投入和审计。
-      - [维护](maintenance.md)：规定对象、指标、阈值、触发、动作、审计追踪和复审。
-  - [决定记录](decisions/)：保存已采纳决定，只追加不修改。
-    - [树按学科而非分面的决定](decisions/tree-by-discipline.md)
-    - [原样复制与本地分析分层的决定](decisions/borrow-and-analyze.md)
-    - [设计与应用分离](decisions/form-independence.md)
-    - [决策权的首批边界](decisions/decision-rights-defaults.md)
-    - [项目约定入口](decisions/project-instructions-entry.md)
-- 项目草案（未生效）
-  - [来源治理](drafts/source-governance.md)：提出来源身份、用途、引用、复核和失效处理规则。
-  - [术语治理](drafts/terminology-governance.md)：提出术语概念、多语形式、状态、委托和生成边界。
-  - [TBX 导出](drafts/tbx-export.md)：记录术语交换的后置触发条件；当前无接收方，不选择方言或实施导出。
-  - [划分特征的自定治理](drafts/division-characteristics.md)：提出划分特征的登记与复核；零自定例外尚未开放。
-  - [分面字段草案](drafts/facet-field.md)：记录分面研究、模型职责和生效条件。
-  - [概念组草案](drafts/concept-groups.md)：提出手工概念组的登记和规则。
+当前状态以[当前阶段](decisions/current-stage-scope.md)为入口。来源与术语基础已经完成到该决定限定的范围；严格来源切换、术语正式激活、草案生效和发版都没有发生。
 
-草案分支中的文件全部未生效。阅读或引用草案不等于规则生效；现行规则仍以现行设计分支和正式数据为准。
+## 现行设计
 
-## 词表一览
+- [方法登记](principles.md)：登记本库采用的方法、概念依据和导出的规则。
+  - [写作规则](writing.md)：规定全库写作规则；`AGENTS.md` 是其会话摘要。
+  - [主题词表设计](topics.md)：规定正式主题词表的范围、记录、关系、生命周期、生成路径和校验。
+    - [层级结构](hierarchy.md)：规定树的分层、结构复制、数组和结构来源。
+    - [来源名称规范表](sources-registry.md)：规定现行来源登记及未激活共享接口的职责边界。
+  - [命名实体词表设计](entities.md)：规定产品、语言、组织、标准和文献等个体的记录方式。
+  - [内容模型](content-model.md)：规定内容单元字段、受控值、标识符和应用映射接口。
+    - [词表版本](versioning.md)：规定版本块、发版时机和变更记录。
+    - 应用映射尚无可索引的项目文件；接口要求保留在内容模型中。
+  - [治理](governance.md)：规定对象效力、政策、决策权、变更控制、验收、验证投入和审计。
+    - [维护](maintenance.md)：规定现行对象、指标、阈值、触发、动作、审计追踪和复审。
 
-| 词表 | 文件 | 管什么 | 设计 |
+## 已采纳决定
+
+`design/decisions/` 只追加不修改。以下决定共同约束现行设计与当前阶段。
+
+- [树按学科而非分面的决定](decisions/tree-by-discipline.md)
+- [原样复制与本地分析分层的决定](decisions/borrow-and-analyze.md)
+- [设计与应用分离](decisions/form-independence.md)
+- [决策权的首批边界](decisions/decision-rights-defaults.md)
+- [项目约定入口](decisions/project-instructions-entry.md)
+- [来源模式](decisions/source-governance-schema.md)：批准来源机器结构与迁移规则，不批准具体来源事实。
+- [来源校验](decisions/source-validation-policy.md)：固定离线校验政策，真实状态、角色和逐值关系继续未决。
+- [来源探测](decisions/source-probe-policy.md)：固定只读信号与频率，观察不得回写正式数据。
+- [来源迁移](decisions/source-migration-policy.md)：固定迁移分类与顺序，不批准账本中的推荐值。
+- [证据阶段](decisions/evidence-stage-boundary.md)：把高成本证据限制在会改变正式结果的范围。
+- [当前阶段](decisions/current-stage-scope.md)：完成来源与术语基础和现行设计同步，把正式激活整体后置。
+- [验证投入](decisions/verification-effort.md)：按目标失败、后果和独有证据配置审查与测试。
+
+## 正式词表
+
+当前正式数据只有下列六份词表。
+
+| 词表 | 文件 | 职责 | 设计 |
 |---|---|---|---|
-| 主题词表 | `vocab/topics.yaml` | 概念；顶层概念可表示学科，概念之间构成层级树 | topics.md、hierarchy.md |
-| 命名实体词表 | `vocab/entities.yaml` | 个体：产品、语言、组织、标准、文献 | entities.md |
-| 来源名称规范表 | `vocab/sources.yaml` | 外部知识体系与词表 | sources-registry.md |
-| 文档类型词表 | `vocab/types.yaml` | 内容单元的体裁，六类 | content-model.md |
-| 体裁词表 | `vocab/genres.yaml` | 作者立场，IPTC genre 五类 | content-model.md |
-| 载体词表 | `vocab/forms.yaml` | 呈现形式与教学活动，IEEE LOM 15 项加速查表 | content-model.md |
-| 划分特征登记 | `vocab/characteristics.yaml`（未建） | 分析层数组的划分特征；草案，例外尚未开放 | drafts/division-characteristics.md |
-| 手工概念组 | `vocab/groups.yaml`（未建） | 按用途圈的视图；草案 | drafts/concept-groups.md |
+| 主题词表 | `vocab/topics.yaml` | 概念、标签、层级、相关关系和外部映射 | [主题词表设计](topics.md)、[层级结构](hierarchy.md) |
+| 命名实体词表 | `vocab/entities.yaml` | 产品、语言、组织、标准和文献等个体 | [命名实体词表设计](entities.md) |
+| 来源名称规范表 | `vocab/sources.yaml` | 外部知识体系与词表的现行登记 | [来源名称规范表](sources-registry.md) |
+| 文档类型词表 | `vocab/types.yaml` | 内容单元的文档类型 | [内容模型](content-model.md) |
+| 体裁词表 | `vocab/genres.yaml` | 内容单元的作者立场 | [内容模型](content-model.md) |
+| 载体词表 | `vocab/forms.yaml` | 内容单元的呈现形式与教学活动 | [内容模型](content-model.md) |
 
-`vocab/` 初版 2026.08 已建，见 [CHANGELOG](../vocab/CHANGELOG.md)；`vocab/build/` 是生成输入，`scripts/build-topics.py` 生成，`scripts/check-topics.py` 校验。
+版本和维护动作见 [`vocab/CHANGELOG.md`](../vocab/CHANGELOG.md)。入口不复制会随正式文件变化的记录数量。
+
+## 主题生成
+
+`vocab/topics.yaml` 既是正式主题词表，也是 `scripts/build-topics.py` 的确定性输出；人工不直接编辑。当前编辑源是生成脚本及其实际读取的下列输入。
+
+- `vocab/build/cs2023-kus.json`
+- `vocab/build/cs2023-zh.json`
+- `vocab/build/extra-arrays.json`
+- `vocab/build/gbt-13745.json`
+- `vocab/build/gbt_en.py`
+- `vocab/build/label-decisions.json`
+- `vocab/build/scope-zh.json`
+- `scripts/build-topics.py` 中的顶层、图书馆情报与文献学分支、多层级规则、版本和日期
+
+`vocab/build/label-lookup.json` 是查询清单，`vocab/build/label-review.md` 是人工复核材料，`__pycache__` 是运行生成物；生成器不读取它们。修改主题数据时先改真实输入，再重建正式输出并运行主题校验。应用只读取正式输出，不反向编辑。
+
+## 术语编辑
+
+`concepts/glossary.md` 仍是全库 designation 与中英对照的现行编辑源。术语三层 schema、状态校验、确定性生成器、正文诊断和维护接口已经实现，但仓库当前没有正式 `vocab/terms.yaml`，编辑权没有转移。
+
+`vocab/glossary-layout.yaml` 只是未来术语生成基础设施的布局配置，不是现行词表，也不是当前术语表编辑源。正文诊断输出只提供人工复核线索，不形成术语、概念、违规或阻断结论。
+
+## 未激活基础
+
+来源基础包括 schema、共享模型、离线校验、反向索引、固定夹具探测、迁移预演和复核义务接口；术语基础包括候选 schema、状态转换校验、确定性生成、正文诊断、维护索引和复核义务接口。
+
+这些能力没有接管正式数据。仓库没有正式来源 v2 数据、正式来源或术语义务、正式索引、正式术语数据、委托、消费者或切换状态；固定夹具也不证明真实来源状态。基础能力、测试夹具和 ignored 输出都不能使治理草案生效或形成发版。
+
+## 迁移审计
+
+- `vocab/migrations/source-v1/` 下的 `entities.yaml`、`uses.yaml`、`basis.yaml`、`source.yaml`、`match.yaml` 和 `origin.yaml` 是六份来源迁移审计账本。账本中的推荐值、`proposed`、处置和阻断不修改正式来源数据。
+- `vocab/migrations/term-v1/terms.tsv` 保存冻结审查身份和消费者去向。`audit-only`、`retain-owner`、`retain-pending-l3`、旧 `keep`、`defer` 和 `remove` 都不构成 designation 准入、术语候选、删除许可或正式状态。
+
+迁移账本只作审计，不是正式词表、义务、委托、消费者、决定或切换状态。
+
+## 项目草案
+
+以下六份草案全部未生效。
+
+- [来源治理](drafts/source-governance.md)：提出来源身份、用途、引用、复核和失效处理规则；部分前置机器契约已经完成。
+- [术语治理](drafts/terminology-governance.md)：提出术语概念、多语形式、状态、委托和生成边界；基础接口完成未改变 glossary 编辑权。
+- [TBX 导出](drafts/tbx-export.md)：记录术语交换的后置触发条件；当前无接收方，不选择方言或实施导出。
+- [划分特征的自定治理](drafts/division-characteristics.md)：提出划分特征的登记与复核；零自定例外尚未开放。
+- [分面字段草案](drafts/facet-field.md)：记录分面研究、模型职责和生效条件；现行主题记录没有该字段。
+- [概念组草案](drafts/concept-groups.md)：提出手工概念组的登记和规则；现行数据没有手工概念组。
+
+阅读或引用草案、实现部分 schema 或工具，都不等于规则生效。草案只有满足各自条件并取得人工决定后，才可能并入现行设计。
 
 ## 阅读顺序
 
 | 顺序 | 文章 | 读完知道 |
 |---|---|---|
-| 1 | [方法登记](principles.md) | 本库用了哪些方法，各自的依据 |
-| 2 | [主题词表设计](topics.md) | 主题词表是什么、一条记录怎么写 |
-| 3 | [层级结构](hierarchy.md) | 树怎么分层、从哪复制、借多深 |
-| 4 | [来源名称规范表](sources-registry.md) | 外部体系怎么登记、三种用法 |
-| 5 | [命名实体词表设计](entities.md) | 产品、语言、标准、文献为什么另立词表；分级 |
-| 6 | [治理](governance.md) | 谁决定、按什么政策、怎么审计 |
-| 6a | [维护](maintenance.md) | 信号、阈值、动作、周期：词表和内容怎么随时间保持可信 |
-| 7 | [写作规则](writing.md) | 写任何文件前要遵守什么 |
-| 8 | [内容模型](content-model.md) | 一条内容单元有什么、id 怎么取 |
-| 9 | [词表版本](versioning.md) | 什么时候发版、记什么 |
+| 1 | [当前阶段](decisions/current-stage-scope.md) | 哪些基础已经完成，哪些正式激活仍后置 |
+| 2 | [方法登记](principles.md) | 本库采用哪些方法，各自依据是什么 |
+| 3 | [主题词表设计](topics.md) | 正式主题词表和当前生成路径 |
+| 4 | [层级结构](hierarchy.md) | 树怎样分层、复制和组织数组 |
+| 5 | [来源名称规范表](sources-registry.md) | 现行来源登记与未激活共享接口的边界 |
+| 6 | [命名实体词表设计](entities.md) | 个体怎样记录、分档和引用 |
+| 7 | [治理](governance.md) | 对象效力、决策权、变更控制和验证投入 |
+| 8 | [维护](maintenance.md) | 指标、阈值、动作、复核和审计追踪 |
+| 9 | [写作规则](writing.md) | 写任何文件前要遵守的规则 |
+| 10 | [内容模型](content-model.md) | 内容单元字段、稳定身份和应用映射接口 |
+| 11 | [词表版本](versioning.md) | 何时发版、怎样记录变化 |
 | — | [决定记录](decisions/) | 已采纳决定及其后果 |
-| — | 项目草案：[来源治理](drafts/source-governance.md)、[术语治理](drafts/terminology-governance.md)、[TBX 导出](drafts/tbx-export.md)、[划分特征的自定治理](drafts/division-characteristics.md)、[分面字段草案](drafts/facet-field.md)、[概念组草案](drafts/concept-groups.md) | 六份均未生效；阅读草案不等于规则生效 |
+| — | [项目草案](drafts/) | 六份未生效提案及其触发条件 |

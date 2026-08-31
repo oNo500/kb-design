@@ -1,6 +1,6 @@
 # kb-design 项目约定
 
-本文是 [design/writing.md](design/writing.md) 和 [design/governance.md](design/governance.md) 的摘要，每次会话加载；冲突时以两份正文各自职责范围内的规则为准。
+本文是 [design/writing.md](design/writing.md)、[design/governance.md](design/governance.md)、[design/maintenance.md](design/maintenance.md) 和[主题生成路径](design/topics.md#生成路径)的会话摘要，每次会话加载；冲突时以各正文职责范围内的规则为准。
 
 ## 标题
 
@@ -42,6 +42,16 @@
 - 文件存在、常量回显、重复计数、包装函数透传、实现细节和已由 schema、哈希、写集或端到端检查覆盖的事实，不单独测试或独立复审
 - TDD 只用于保留的行为测试；文档、静态配置、确定性生成物和纯机械迁移使用直接校验，不为 RED／GREEN 形式另造测试
 - 全量回归只在风险阶段边界运行；机械事实由命令证明，不交给第二代理重复确认
+
+## 阶段边界
+
+- 迁移账本只作审计，候选和诊断输出只供人工复核，schema、索引、探测、生成和维护能力只证明机械能力；它们都不等于正式数据、草案生效、正式切换或发版
+- 来源与术语基础的当前范围见[当前阶段](design/decisions/current-stage-scope.md)。仓库当前没有正式来源 v2 数据、正式术语数据、正式义务、正式索引、委托、消费者或切换状态，不得因接口存在而创建或宣称存在
+
+## 编辑路径
+
+- `vocab/topics.yaml` 是正式主题词表和确定性生成物，不直接编辑；修改 `scripts/build-topics.py` 或其实际读取的 `vocab/build/` 输入，重建后运行主题校验
+- `concepts/glossary.md` 仍是 designation 与中英对照的现行编辑源；仓库当前没有正式 `vocab/terms.yaml`，生成能力不转移编辑权
 
 ## 其他约定
 
