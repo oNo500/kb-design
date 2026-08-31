@@ -1,0 +1,18 @@
+schema: urn:kb-design:data:entities
+schema_version: 2
+version: {id: "2026.08"}
+entities:
+  - id: z39-19
+    label: {en: Z39.19}
+    kind: standard
+    version: "2005"
+    urls:
+      - {role: status, url: "https://example.test/z39/status", primary: true}
+      - {role: doi, url: "https://example.test/z39/doi"}
+      - {role: landing, url: "https://example.test/z39/landing"}
+      - {role: archive, url: "https://example.test/z39/archive"}
+      - {role: mirror, url: "https://example.test/z39/mirror"}
+    watch:
+      - locator: "https://example.test/z39/status"
+        signals: [availability, redirect, version, revision, replacement, withdrawal]
+        cadence_months: {availability: 1, redirect: 1, content: 1}
