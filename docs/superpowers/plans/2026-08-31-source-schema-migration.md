@@ -106,6 +106,7 @@
 | `scripts/build-topics.py` | 原子切换时修改 | 从迁移后的输入写出新共享结构并保留确定性 |
 | `scripts/check-topics.py` | 原子切换时修改 | 调用新来源校验，不再恢复或接受旧紧缩结构 |
 | `design/decisions/source-governance-schema.md` | 门禁后创建 | 记录 `decision-source-0001` 的模式与路径决定 |
+| `design/decisions/source-validation-policy.md` | 门禁后创建 | 记录 `decision-source-0009` 的离线校验控制规则，不填写真实来源结论 |
 | `design/decisions/source-identity-boundaries.md` | 门禁后创建 | 记录 `decision-source-0002` 的身份判据与逐项结论 |
 | `design/decisions/source-role-uses.md` | 门禁后创建 | 记录 `decision-source-0003` 的 47 个逐角色结论 |
 | `design/decisions/source-governance-effective.md` | 生效时创建 | 记录 `decision-source-0004` 的草案生效边界 |
@@ -332,16 +333,16 @@ Q 到字段与 identity 域的所有权固定如下。`operation`、`disposition
 | Q07 | `@control:review` 及现行 entity 行 | `review_policy`、`new_value.review` |
 | Q08 | 现行 entity 行 | `new_value.watch` |
 | Q09 | 现行 entity 行及 `@control:unavailability` | `new_value.unavailability_policy`、`release_block_policy` |
-| Q10 | 现行 entity 行 | `new_value.status`、`new_value.replaced_by`、`operation`、`disposition`、`blocks_cutover` |
-| Q11 | 非 Q12 特殊 use-role 行 | `new_role`、`new_status`、`decision`、`operation`、`disposition`、`blocks_cutover` |
+| Q10 | `@control:external-status` 及现行 entity 行 | `status_policy`、`new_value.status`、`new_value.replaced_by`、`operation`、`disposition`、`blocks_cutover` |
+| Q11 | `@control:roles` 及非 Q12 特殊 use-role 行 | `role_policy`、`new_role`、`new_status`、`decision`、`operation`、`disposition`、`blocks_cutover` |
 | Q12 | 5 个 candidate、11 个空 mapping 与空 group 行 | `new_role`、`new_status`、`decision`、`operation`、`disposition`、`blocks_cutover` |
-| Q13 | 非 Q14／Q15／Q16／Q17 source 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
+| Q13 | `@control:source` 及非 Q14／Q15／Q16／Q17 source 行 | `source_policy`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
 | Q14 | 三个多来源 concept source 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
 | Q15 | 24 个主题 array source 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
 | Q16 | 两个 form array source 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
 | Q17 | 四个 RFC 1122 source 行与对应 match 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
-| Q18 | 非 Q17 match 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
-| Q19 | 非 Q20 basis 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
+| Q18 | `@control:match` 及非 Q17 match 行 | `match_policy`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
+| Q19 | `@control:basis` 及非 Q20 basis 行 | `basis_policy`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
 | Q20 | 630 个 none 与 13 个正式 self basis 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
 | Q21 | `@control:origin` 及 19 个 origin 行 | `origin_policy`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
 | Q22 | `@control:obligation-bridge` | `source_term_bridge` |
@@ -361,19 +362,22 @@ Q_FIELD_OWNERSHIP = {
     "Q07": frozenset(("review_policy", "new_value.review")),
     "Q08": frozenset(("new_value.watch",)),
     "Q09": frozenset(("new_value.unavailability_policy", "release_block_policy")),
-    "Q10": frozenset(("new_value.status", "new_value.replaced_by", "operation",
+    "Q10": frozenset(("status_policy", "new_value.status", "new_value.replaced_by", "operation",
                        "disposition", "blocks_cutover")),
-    "Q11": frozenset(("new_role", "new_status", "decision", "operation",
+    "Q11": frozenset(("role_policy", "new_role", "new_status", "decision", "operation",
                        "disposition", "blocks_cutover")),
     "Q12": frozenset(("new_role", "new_status", "decision", "operation",
                        "disposition", "blocks_cutover")),
-    "Q13": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
+    "Q13": frozenset(("source_policy", "operation", "disposition", "new_value",
+                       "blocks_cutover")),
     "Q14": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
     "Q15": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
     "Q16": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
     "Q17": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
-    "Q18": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
-    "Q19": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
+    "Q18": frozenset(("match_policy", "operation", "disposition", "new_value",
+                       "blocks_cutover")),
+    "Q19": frozenset(("basis_policy", "operation", "disposition", "new_value",
+                       "blocks_cutover")),
     "Q20": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
     "Q21": frozenset(("origin_policy", "operation", "disposition", "new_value",
                        "blocks_cutover")),
@@ -389,6 +393,11 @@ Q_CONTROL_IDENTITIES = {
     "Q06": frozenset(("@control:addresses",)),
     "Q07": frozenset(("@control:review",)),
     "Q09": frozenset(("@control:unavailability",)),
+    "Q10": frozenset(("@control:external-status",)),
+    "Q11": frozenset(("@control:roles",)),
+    "Q13": frozenset(("@control:source",)),
+    "Q18": frozenset(("@control:match",)),
+    "Q19": frozenset(("@control:basis",)),
     "Q21": frozenset(("@control:origin",)),
     "Q22": frozenset(("@control:obligation-bridge",)),
     "Q24": frozenset(("@control:term-admission",)),
