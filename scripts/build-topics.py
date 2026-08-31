@@ -107,6 +107,12 @@ if sem in concepts and 'management' not in concepts[sem]['broader']:
 msf = slug('Mathematical and Statistical Foundations')
 if msf in concepts: concepts[msf]['broader'].append('mathematics')
 
+# ---------- 有下位的概念按现行维护规则批准 ----------
+parent_ids = {parent for c in concepts.values() for parent in c['broader']}
+for parent_id in parent_ids:
+    if concepts[parent_id]['status'] == 'unassigned':
+        concepts[parent_id]['status'] = 'active'
+
 # ---------- 译名回查：本库自译的标签按译名阶梯处理 ----------
 # vocab/build/label-decisions.json 是 lookup-labels.py 结果经人工审核后的决定（治理“译名”第 3 级）。
 # 查到且采纳：标签改为 Wikidata 标签，basis 记 Q 号；其余：第 4 级不译，去掉自译标签，basis 记 none。
@@ -131,9 +137,11 @@ for c in concepts.values():
 
 # ---------- 输出 ----------
 def q(s): return '"' + s.replace('"', '\\"') + '"'
+active_count = sum(c['status'] == 'active' for c in concepts.values())
+unassigned_count = sum(c['status'] == 'unassigned' for c in concepts.values())
 out = ['# 主题词表。由 scripts/build-topics.py 从 vocab/build/ 生成；人工修改后不要重跑覆盖，改输入再生成。',
        '# 设计见 design/topics.md、design/hierarchy.md。', 'version:', f'  id: "{VERSION}"', f'  date: {TODAY}',
-       f'  note: 初版：{len(concepts)} 个概念，{len(arrays)} 个数组；除八个顶层外全部未标引', '', 'arrays:']
+       f'  note: 初版：{len(concepts)} 个概念，{len(arrays)} 个数组；{active_count} 个在用，{unassigned_count} 个未标引', '', 'arrays:']
 for a in arrays:
     out.append(f"  - {{ id: {a['id']}, superordinate: {a['superordinate']}, source: {a['source']} }}")
 out += ['', 'concepts:']

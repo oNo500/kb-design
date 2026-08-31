@@ -42,6 +42,22 @@ def build_topics_in_temporary_tree():
 
 
 class BuildTopicsSourceTests(unittest.TestCase):
+    def test_regeneration_leaves_no_parent_concept_unassigned(self):
+        generated = build_topics_in_temporary_tree()
+        parent_ids = {
+            broader
+            for concept in generated["concepts"]
+            for broader in concept["broader"]
+        }
+        unassigned_parent_ids = sorted(
+            concept["id"]
+            for concept in generated["concepts"]
+            if concept["id"] in parent_ids and concept["status"] == "unassigned"
+        )
+
+        self.maxDiff = None
+        self.assertEqual([], unassigned_parent_ids)
+
     def test_regeneration_preserves_all_frozen_topic_basis_values(self):
         frozen = yaml.safe_load((ROOT / "vocab" / "topics.yaml").read_text(encoding="utf-8"))
         generated = build_topics_in_temporary_tree()

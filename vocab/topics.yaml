@@ -3,7 +3,7 @@
 version:
   id: "2026.08"
   date: 2026-08-23
-  note: 初版：700 个概念，24 个数组；除八个顶层外全部未标引
+  note: 初版：700 个概念，24 个数组；66 个在用，634 个未标引
 
 arrays:
   - { id: algorithmic-foundations-cs2023, superordinate: algorithmic-foundations, source: cs2023 }
@@ -112,7 +112,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "AL", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: architecture-and-organization
     label: { en: "Architecture and Organization" }
@@ -122,7 +122,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "AR", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: artificial-intelligence
     label: { zh: "人工智能", en: "Artificial Intelligence" }
@@ -131,7 +131,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "AI", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: data-management
     label: { zh: "数据管理", en: "Data Management" }
@@ -140,7 +140,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "DM", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: foundations-of-programming-languages
     label: { en: "Foundations of Programming Languages" }
@@ -150,7 +150,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "FPL", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: graphics-and-interactive-techniques
     label: { en: "Graphics and Interactive Techniques" }
@@ -160,7 +160,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "GIT", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: human-computer-interaction
     label: { en: "Human-Computer Interaction" }
@@ -170,7 +170,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "HCI", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: mathematical-and-statistical-foundations
     label: { en: "Mathematical and Statistical Foundations" }
@@ -180,7 +180,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "MSF", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: networking-and-communication
     label: { en: "Networking and Communication" }
@@ -190,7 +190,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "NC", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: operating-systems
     label: { en: "Operating Systems" }
@@ -200,7 +200,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "OS", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: parallel-and-distributed-computing
     label: { en: "Parallel and Distributed Computing" }
@@ -210,7 +210,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "PDC", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: security
     label: { en: "Security" }
@@ -220,7 +220,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "SEC", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: society-ethics-and-the-profession
     label: { en: "Society, Ethics, and the Profession" }
@@ -230,7 +230,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "SEP", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: software-development-fundamentals
     label: { en: "Software Development Fundamentals" }
@@ -240,7 +240,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "SDF", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: software-engineering
     label: { zh: "软件工程", en: "Software Engineering" }
@@ -249,7 +249,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "SE", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: specialized-platform-development
     label: { en: "Specialized Platform Development" }
@@ -259,7 +259,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "SPD", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: systems-fundamentals
     label: { en: "Systems Fundamentals" }
@@ -269,7 +269,7 @@ concepts:
     source: cs2023
     match:
       - { source: cs2023, id: "SF", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: foundational-data-structures-and-algorithms
     label: { en: "Foundational Data Structures and Algorithms" }
@@ -2996,7 +2996,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "110.14", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: deductive-logic
     label: { zh: "演绎逻辑学" }
@@ -3068,7 +3068,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "110.17", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: elementary-number-theory
     label: { zh: "初等数论" }
@@ -3158,7 +3158,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "110.21", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: linear-algebra-algebra
     label: { zh: "线性代数", en: "linear algebra" }
@@ -3320,7 +3320,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "110.27", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: foundations-of-geometry
     label: { zh: "几何学基础" }
@@ -3428,7 +3428,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "110.31", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: point-set-topology
     label: { zh: "点集拓扑学" }
@@ -3545,7 +3545,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "110.34", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: differential-calculus
     label: { zh: "微分学", en: "differential calculus" }
@@ -3599,7 +3599,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "110.41", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: real-analysis
     label: { zh: "实变函数论", en: "real analysis" }
@@ -3680,7 +3680,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "110.44", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: qualitative-theory
     label: { zh: "定性理论" }
@@ -3725,7 +3725,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "110.47", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: elliptic-pdes
     label: { zh: "椭圆型偏微分方程", en: "elliptic differential equation" }
@@ -3779,7 +3779,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "110.51", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: differentiable-dynamical-systems
     label: { zh: "微分动力系统" }
@@ -3833,7 +3833,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "110.57", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: linear-operator-theory
     label: { zh: "线性算子理论" }
@@ -3941,7 +3941,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "110.61", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: interpolation-and-approximation
     label: { zh: "插值法与逼近论" }
@@ -4031,7 +4031,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "110.64", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: geometric-probability
     label: { zh: "几何概率" }
@@ -4121,7 +4121,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "110.67", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: sampling-theory
     label: { zh: "抽样理论" }
@@ -4238,7 +4238,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "110.71", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: statistical-quality-control
     label: { zh: "统计质量控制" }
@@ -4292,7 +4292,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "110.74", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: linear-programming
     label: { zh: "线性规划", en: "linear programming" }
@@ -4490,7 +4490,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "120.10", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: information-theory
     label: { zh: "信息论", en: "information theory" }
@@ -4535,7 +4535,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "120.20", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: chaos
     label: { zh: "混沌" }
@@ -4607,7 +4607,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "120.30", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: large-scale-systems-theory
     label: { zh: "大系统理论" }
@@ -4670,7 +4670,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "120.50", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: system-modeling
     label: { zh: "系统建模" }
@@ -4724,7 +4724,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "630.15", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: management-philosophy
     label: { zh: "管理哲学" }
@@ -4814,7 +4814,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "630.35", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: sociology-of-science
     label: { zh: "科学社会学", en: "sociology of science" }
@@ -4877,7 +4877,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "630.40", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: production-management
     label: { zh: "生产管理" }
@@ -4994,7 +4994,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "630.50", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: production-systems-management
     label: { zh: "生产系统管理" }
@@ -5111,7 +5111,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "630.55", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: human-resource-development-strategy
     label: { zh: "人力资源开发战略" }
@@ -5147,7 +5147,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "630.60", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: theoretical-forecasting
     label: { zh: "理论预测学" }
@@ -5210,7 +5210,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "740.10", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: phonetics
     label: { zh: "语音学" }
@@ -5309,7 +5309,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "740.15", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: historical-comparative-linguistics
     label: { zh: "历史比较语言学" }
@@ -5381,7 +5381,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "740.35", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: language-teaching
     label: { zh: "语言教学" }
@@ -5453,7 +5453,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "740.40", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: putonghua
     label: { zh: "普通话" }
@@ -5561,7 +5561,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "740.45", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: mongolian
     label: { zh: "蒙古语文" }
@@ -5696,7 +5696,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "740.50", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: english
     label: { zh: "英语" }
@@ -5957,7 +5957,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "860.10", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: journalism
     label: { zh: "新闻学" }
@@ -6056,7 +6056,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "860.20", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: history-of-chinese-journalism
     label: { zh: "中国新闻事业史" }
@@ -6101,7 +6101,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "860.30", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: news-interviewing
     label: { zh: "新闻采访" }
@@ -6173,7 +6173,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "860.50", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: history-of-broadcasting
     label: { zh: "广播电视史" }
@@ -6227,7 +6227,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "860.60", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: history-of-communication
     label: { zh: "传播史" }
@@ -6290,7 +6290,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "870.10", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: history-of-library-science
     label: { zh: "图书馆学史" }
@@ -6398,7 +6398,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "870.20", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: document-typology
     label: { zh: "文献类型学" }
@@ -6470,7 +6470,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "870.30", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: history-of-information-science
     label: { zh: "情报学史" }
@@ -6605,7 +6605,7 @@ concepts:
     source: gbt-13745
     match:
       - { source: gbt-13745, id: "870.40", rel: exactMatch }
-    status: unassigned
+    status: active
     added: 2026-08-23
   - id: history-of-archival-science
     label: { zh: "档案学史" }
