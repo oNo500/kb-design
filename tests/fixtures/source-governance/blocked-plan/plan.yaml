@@ -1,0 +1,13 @@
+schema: urn:kb-design:data:source-migration-plan
+schema_version: 1
+rows:
+  - identity: blocked:1
+    old_file: data.json
+    field_path: value
+    old_value: old
+    operation: keep
+    disposition: retain_legacy
+    new_value: old
+    decision_trace: []
+    blocks_cutover: true
+file_rewrites: []

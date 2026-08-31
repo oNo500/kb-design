@@ -1,0 +1,13 @@
+schema: urn:kb-design:data:source-migration-plan
+schema_version: 1
+rows:
+  - identity: candidate:1
+    old_file: data.json
+    field_path: value
+    old_value: old
+    operation: set
+    disposition: register
+    new_value: new
+    decision_trace: []
+    blocks_cutover: false
+file_rewrites: []
