@@ -137,11 +137,9 @@ for c in concepts.values():
 
 # ---------- 输出 ----------
 def q(s): return '"' + s.replace('"', '\\"') + '"'
-active_count = sum(c['status'] == 'active' for c in concepts.values())
-unassigned_count = sum(c['status'] == 'unassigned' for c in concepts.values())
 out = ['# 主题词表。由 scripts/build-topics.py 从 vocab/build/ 生成；人工修改后不要重跑覆盖，改输入再生成。',
        '# 设计见 design/topics.md、design/hierarchy.md。', 'version:', f'  id: "{VERSION}"', f'  date: {TODAY}',
-       f'  note: 初版：{len(concepts)} 个概念，{len(arrays)} 个数组；{active_count} 个在用，{unassigned_count} 个未标引', '', 'arrays:']
+       f'  note: 初版：{len(concepts)} 个概念，{len(arrays)} 个数组', '', 'arrays:']
 for a in arrays:
     out.append(f"  - {{ id: {a['id']}, superordinate: {a['superordinate']}, source: {a['source']} }}")
 out += ['', 'concepts:']

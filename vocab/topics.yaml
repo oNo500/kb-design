@@ -3,7 +3,7 @@
 version:
   id: "2026.08"
   date: 2026-08-23
-  note: 初版：700 个概念，24 个数组；66 个在用，634 个未标引
+  note: 初版：700 个概念，24 个数组
 
 arrays:
   - { id: algorithmic-foundations-cs2023, superordinate: algorithmic-foundations, source: cs2023 }
