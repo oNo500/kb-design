@@ -328,8 +328,8 @@ Q 到字段与 identity 域的所有权固定如下。`operation`、`disposition
 | Q03 | 全部 entity／use 行及 `@control:ids` | `proposed_id`、`id_policy` |
 | Q04 | 未登记 entity 行 | `identity_class` |
 | Q05 | focus entity 行 | `identity_resolution`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
-| Q06 | 现行与新 entity 行 | `new_value.urls` |
-| Q07 | 现行 entity 行 | `new_value.review` |
+| Q06 | `@control:addresses` 及现行与新 entity 行 | `url_policy`、`new_value.urls` |
+| Q07 | `@control:review` 及现行 entity 行 | `review_policy`、`new_value.review` |
 | Q08 | 现行 entity 行 | `new_value.watch` |
 | Q09 | 现行 entity 行及 `@control:unavailability` | `new_value.unavailability_policy`、`release_block_policy` |
 | Q10 | 现行 entity 行 | `new_value.status`、`new_value.replaced_by`、`operation`、`disposition`、`blocks_cutover` |
@@ -343,7 +343,7 @@ Q 到字段与 identity 域的所有权固定如下。`operation`、`disposition
 | Q18 | 非 Q17 match 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
 | Q19 | 非 Q20 basis 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
 | Q20 | 630 个 none 与 13 个正式 self basis 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
-| Q21 | 19 个 origin 行 | `operation`、`disposition`、`new_value`、`blocks_cutover` |
+| Q21 | `@control:origin` 及 19 个 origin 行 | `origin_policy`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
 | Q22 | `@control:obligation-bridge` | `source_term_bridge` |
 | Q23 | 现行 entity 行 | `tier_change` |
 | Q24 | `@control:term-admission` | `term_admissions` |
@@ -357,8 +357,8 @@ Q_FIELD_OWNERSHIP = {
     "Q04": frozenset(("identity_class",)),
     "Q05": frozenset(("identity_resolution", "operation", "disposition", "new_value",
                        "blocks_cutover")),
-    "Q06": frozenset(("new_value.urls",)),
-    "Q07": frozenset(("new_value.review",)),
+    "Q06": frozenset(("url_policy", "new_value.urls")),
+    "Q07": frozenset(("review_policy", "new_value.review")),
     "Q08": frozenset(("new_value.watch",)),
     "Q09": frozenset(("new_value.unavailability_policy", "release_block_policy")),
     "Q10": frozenset(("new_value.status", "new_value.replaced_by", "operation",
@@ -375,7 +375,8 @@ Q_FIELD_OWNERSHIP = {
     "Q18": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
     "Q19": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
     "Q20": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
-    "Q21": frozenset(("operation", "disposition", "new_value", "blocks_cutover")),
+    "Q21": frozenset(("origin_policy", "operation", "disposition", "new_value",
+                       "blocks_cutover")),
     "Q22": frozenset(("source_term_bridge",)),
     "Q23": frozenset(("tier_change",)),
     "Q24": frozenset(("term_admissions",)),
@@ -385,7 +386,10 @@ Q_CONTROL_IDENTITIES = {
     "Q01": frozenset(("@control:paths",)),
     "Q02": frozenset(("@control:schema",)),
     "Q03": frozenset(("@control:ids",)),
+    "Q06": frozenset(("@control:addresses",)),
+    "Q07": frozenset(("@control:review",)),
     "Q09": frozenset(("@control:unavailability",)),
+    "Q21": frozenset(("@control:origin",)),
     "Q22": frozenset(("@control:obligation-bridge",)),
     "Q24": frozenset(("@control:term-admission",)),
     "Q25": frozenset(("@control:cutover",)),
