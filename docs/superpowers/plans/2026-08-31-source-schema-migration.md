@@ -107,6 +107,7 @@
 | `scripts/check-topics.py` | 原子切换时修改 | 调用新来源校验，不再恢复或接受旧紧缩结构 |
 | `design/decisions/source-governance-schema.md` | 门禁后创建 | 记录 `decision-source-0001` 的模式与路径决定 |
 | `design/decisions/source-validation-policy.md` | 门禁后创建 | 记录 `decision-source-0009` 的离线校验控制规则，不填写真实来源结论 |
+| `design/decisions/source-probe-policy.md` | 门禁后创建 | 记录 `decision-source-0010` 的只读探测控制规则，不写回正式事实 |
 | `design/decisions/source-identity-boundaries.md` | 门禁后创建 | 记录 `decision-source-0002` 的身份判据与逐项结论 |
 | `design/decisions/source-role-uses.md` | 门禁后创建 | 记录 `decision-source-0003` 的 47 个逐角色结论 |
 | `design/decisions/source-governance-effective.md` | 生效时创建 | 记录 `decision-source-0004` 的草案生效边界 |
@@ -331,7 +332,7 @@ Q 到字段与 identity 域的所有权固定如下。`operation`、`disposition
 | Q05 | focus entity 行 | `identity_resolution`、`operation`、`disposition`、`new_value`、`blocks_cutover` |
 | Q06 | `@control:addresses` 及现行与新 entity 行 | `url_policy`、`new_value.urls` |
 | Q07 | `@control:review` 及现行 entity 行 | `review_policy`、`new_value.review` |
-| Q08 | 现行 entity 行 | `new_value.watch` |
+| Q08 | `@control:watch` 及现行 entity 行 | `watch_policy`、`new_value.watch` |
 | Q09 | 现行 entity 行及 `@control:unavailability` | `new_value.unavailability_policy`、`release_block_policy` |
 | Q10 | `@control:external-status` 及现行 entity 行 | `status_policy`、`new_value.status`、`new_value.replaced_by`、`operation`、`disposition`、`blocks_cutover` |
 | Q11 | `@control:roles` 及非 Q12 特殊 use-role 行 | `role_policy`、`new_role`、`new_status`、`decision`、`operation`、`disposition`、`blocks_cutover` |
@@ -360,7 +361,7 @@ Q_FIELD_OWNERSHIP = {
                        "blocks_cutover")),
     "Q06": frozenset(("url_policy", "new_value.urls")),
     "Q07": frozenset(("review_policy", "new_value.review")),
-    "Q08": frozenset(("new_value.watch",)),
+    "Q08": frozenset(("watch_policy", "new_value.watch")),
     "Q09": frozenset(("new_value.unavailability_policy", "release_block_policy")),
     "Q10": frozenset(("status_policy", "new_value.status", "new_value.replaced_by", "operation",
                        "disposition", "blocks_cutover")),
@@ -392,6 +393,7 @@ Q_CONTROL_IDENTITIES = {
     "Q03": frozenset(("@control:ids",)),
     "Q06": frozenset(("@control:addresses",)),
     "Q07": frozenset(("@control:review",)),
+    "Q08": frozenset(("@control:watch",)),
     "Q09": frozenset(("@control:unavailability",)),
     "Q10": frozenset(("@control:external-status",)),
     "Q11": frozenset(("@control:roles",)),
