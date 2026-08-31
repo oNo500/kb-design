@@ -1,0 +1,678 @@
+#!/usr/bin/env python3
+"""Build the in-memory Obsidian representation of the formal vocabularies."""
+
+from __future__ import annotations
+
+import datetime
+import json
+import pathlib
+import re
+from collections import OrderedDict
+from typing import Any, Iterable, Mapping, Sequence
+
+import yaml
+
+
+class ExportError(ValueError):
+    """Raised when formal input cannot be mapped without loss."""
+
+
+_FILES = OrderedDict(
+    (
+        ("topics", ("vocab/topics.yaml", {"version", "arrays", "concepts"})),
+        ("entities", ("vocab/entities.yaml", {"version", "entities"})),
+        ("sources", ("vocab/sources.yaml", {"version", "sources"})),
+        ("types", ("vocab/types.yaml", {"version", "types"})),
+        ("genres", ("vocab/genres.yaml", {"version", "genres"})),
+        ("forms", ("vocab/forms.yaml", {"version", "arrays", "forms"})),
+    )
+)
+_COLLECTION_FIELDS = {
+    ("topics", "arrays"): {"id", "superordinate", "source"},
+    ("topics", "concepts"): {
+        "id",
+        "label",
+        "alt",
+        "hidden",
+        "basis",
+        "broader",
+        "related",
+        "arrays",
+        "scope",
+        "source",
+        "match",
+        "status",
+        "added",
+        "history",
+        "replaced_by",
+    },
+    ("entities", "entities"): {
+        "id",
+        "label",
+        "alt",
+        "hidden",
+        "kind",
+        "subjects",
+        "vendor",
+        "creator",
+        "replaced_by",
+        "form",
+        "tier",
+        "version",
+        "url",
+        "watch",
+        "checked",
+        "basis",
+        "match",
+        "history",
+        "scope",
+        "status",
+        "added",
+    },
+    ("sources", "sources"): {"id", "entity", "role", "checked"},
+    ("types", "types"): {
+        "id",
+        "label",
+        "alt",
+        "hidden",
+        "basis",
+        "broader",
+        "related",
+        "arrays",
+        "scope",
+        "source",
+        "match",
+        "status",
+        "added",
+        "history",
+        "replaced_by",
+    },
+    ("genres", "genres"): {
+        "id",
+        "label",
+        "alt",
+        "hidden",
+        "basis",
+        "broader",
+        "related",
+        "arrays",
+        "scope",
+        "source",
+        "match",
+        "status",
+        "added",
+        "history",
+        "replaced_by",
+    },
+    ("forms", "arrays"): {"id", "superordinate", "source"},
+    ("forms", "forms"): {
+        "id",
+        "label",
+        "alt",
+        "hidden",
+        "basis",
+        "broader",
+        "related",
+        "arrays",
+        "scope",
+        "source",
+        "match",
+        "status",
+        "added",
+        "history",
+        "replaced_by",
+    },
+}
+_ID = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+_KIND_DIRECTORIES = {
+    "topic": "Topics",
+    "array": "Arrays",
+    "entity": "Entities",
+    "source": "Sources",
+    "type": "Types",
+    "genre": "Genres",
+    "form": "Forms",
+}
+
+
+def _error(relative_path: str, object_id: str, field_path: str, message: str) -> ExportError:
+    return ExportError(f"{relative_path}: object {object_id}: {field_path}: {message}")
+
+
+def _check_keys(
+    relative_path: str,
+    object_id: str,
+    field_path: str,
+    value: Any,
+    allowed: set[str],
+) -> None:
+    if not isinstance(value, Mapping):
+        raise _error(relative_path, object_id, field_path, "expected mapping")
+    unknown = sorted(set(value) - allowed)
+    if unknown:
+        raise _error(
+            relative_path,
+            object_id,
+            f"{field_path}.{unknown[0]}",
+            "unknown field",
+        )
+
+
+def _validate_nested(relative_path: str, collection: str, record: Mapping[str, Any]) -> None:
+    object_id = str(record.get("id", "<missing-id>"))
+    for field in ("label", "alt", "hidden"):
+        if field in record:
+            _check_keys(
+                relative_path,
+                object_id,
+                f"{collection}[{object_id}].{field}",
+                record[field],
+                {"zh", "en"},
+            )
+    if "basis" in record:
+        allowed_basis = {"subjects"} if collection == "entities" else {"zh", "en"}
+        _check_keys(
+            relative_path,
+            object_id,
+            f"{collection}[{object_id}].basis",
+            record["basis"],
+            allowed_basis,
+        )
+    if "match" in record:
+        if not isinstance(record["match"], list):
+            raise _error(
+                relative_path,
+                object_id,
+                f"{collection}[{object_id}].match",
+                "expected list",
+            )
+        for index, match in enumerate(record["match"]):
+            _check_keys(
+                relative_path,
+                object_id,
+                f"{collection}[{object_id}].match[{index}]",
+                match,
+                {"source", "id", "rel"},
+            )
+
+
+def load_repository(repo_root: pathlib.Path) -> dict:
+    """Load and validate the six formal vocabulary documents."""
+
+    root = pathlib.Path(repo_root)
+    documents: dict[str, dict] = {}
+    for name, (relative_path, allowed_top) in _FILES.items():
+        path = root / relative_path
+        try:
+            document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, yaml.YAMLError) as exc:
+            raise ExportError(f"{relative_path}: object <document>: document: {exc}") from exc
+        _check_keys(relative_path, "<document>", "document", document, allowed_top)
+        _check_keys(relative_path, "<version>", "version", document.get("version"), {"id", "date", "note"})
+        if not document["version"].get("id"):
+            raise _error(relative_path, "<version>", "version.id", "missing value")
+        for collection in allowed_top - {"version"}:
+            records = document.get(collection)
+            if not isinstance(records, list):
+                raise _error(relative_path, "<document>", collection, "expected list")
+            seen: set[str] = set()
+            for index, record in enumerate(records):
+                record_path = f"{collection}[{index}]"
+                if not isinstance(record, Mapping):
+                    raise _error(relative_path, "<missing-id>", record_path, "expected mapping")
+                object_id = str(record.get("id", "<missing-id>"))
+                _check_keys(
+                    relative_path,
+                    object_id,
+                    f"{collection}[{object_id}]",
+                    record,
+                    _COLLECTION_FIELDS[(name, collection)],
+                )
+                if not _ID.fullmatch(object_id):
+                    raise _error(relative_path, object_id, f"{collection}[{object_id}].id", "invalid stable ID")
+                if object_id in seen:
+                    raise _error(relative_path, object_id, f"{collection}[{object_id}].id", "duplicate stable ID")
+                seen.add(object_id)
+                _validate_nested(relative_path, collection, record)
+        documents[name] = document
+
+    _validate_references(documents)
+    return documents
+
+
+def _index(records: Iterable[Mapping[str, Any]]) -> dict[str, Mapping[str, Any]]:
+    return {str(record["id"]): record for record in records}
+
+
+def _references(value: Any) -> list[str]:
+    if value is None:
+        return []
+    if isinstance(value, list):
+        return [str(item) for item in value]
+    return [str(value)]
+
+
+def _require_targets(
+    relative_path: str,
+    collection: str,
+    record: Mapping[str, Any],
+    field: str,
+    targets: Mapping[str, Any],
+) -> None:
+    for index, target in enumerate(_references(record.get(field))):
+        if target not in targets:
+            suffix = f"[{index}]" if isinstance(record.get(field), list) else ""
+            raise _error(
+                relative_path,
+                str(record["id"]),
+                f"{collection}[{record['id']}].{field}{suffix}",
+                f"missing reference {target}",
+            )
+
+
+def _validate_references(documents: Mapping[str, dict]) -> None:
+    topics = _index(documents["topics"]["concepts"])
+    arrays = _index(documents["topics"]["arrays"])
+    entities = _index(documents["entities"]["entities"])
+    sources = _index(documents["sources"]["sources"])
+    form_arrays = _index(documents["forms"]["arrays"])
+
+    for record in topics.values():
+        for field in ("broader", "related", "replaced_by"):
+            _require_targets("vocab/topics.yaml", "concepts", record, field, topics)
+        _require_targets("vocab/topics.yaml", "concepts", record, "arrays", arrays)
+        if record.get("source") != "self":
+            _require_targets("vocab/topics.yaml", "concepts", record, "source", sources)
+    for record in arrays.values():
+        _require_targets("vocab/topics.yaml", "arrays", record, "superordinate", topics)
+        _require_targets("vocab/topics.yaml", "arrays", record, "source", sources)
+    for record in entities.values():
+        _require_targets("vocab/entities.yaml", "entities", record, "subjects", topics)
+        for field in ("vendor", "creator", "replaced_by"):
+            _require_targets("vocab/entities.yaml", "entities", record, field, entities)
+    for record in sources.values():
+        _require_targets("vocab/sources.yaml", "sources", record, "entity", entities)
+    for record in documents["forms"]["forms"]:
+        _require_targets("vocab/forms.yaml", "forms", record, "arrays", form_arrays)
+    for name, collection in (("types", "types"), ("genres", "genres"), ("forms", "forms")):
+        records = _index(documents[name][collection])
+        relative_path = _FILES[name][0]
+        for record in records.values():
+            for field in ("broader", "related", "replaced_by"):
+                _require_targets(relative_path, collection, record, field, records)
+            if record.get("source"):
+                _require_targets(relative_path, collection, record, "source", sources)
+    for name, collection in (
+        ("topics", "concepts"),
+        ("entities", "entities"),
+        ("types", "types"),
+        ("genres", "genres"),
+        ("forms", "forms"),
+    ):
+        relative_path = _FILES[name][0]
+        for record in documents[name][collection]:
+            for index, match in enumerate(record.get("match", [])):
+                if match.get("source") not in sources:
+                    raise _error(
+                        relative_path,
+                        str(record["id"]),
+                        f"{collection}[{record['id']}].match[{index}].source",
+                        f"missing reference {match.get('source')}",
+                    )
+
+
+def display_label(record: Mapping[str, Any]) -> str:
+    labels = record.get("label") or {}
+    return str(labels.get("zh") or labels.get("en") or record["id"])
+
+
+def _form_values(value: Any) -> list[str]:
+    values = value if isinstance(value, list) else [value]
+    return [str(item) for item in values if item is not None and str(item).strip()]
+
+
+def aliases(record: Mapping[str, Any]) -> list[str]:
+    main = display_label(record)
+    language_maps = [record.get(field) or {} for field in ("label", "alt", "hidden")]
+    languages = ["zh", "en"]
+    languages.extend(
+        language
+        for values in language_maps
+        for language in values
+        if language not in languages
+    )
+    result: list[str] = []
+    for language in languages:
+        for values in language_maps:
+            for value in _form_values(values.get(language)):
+                if value != main and value not in result:
+                    result.append(value)
+    return result
+
+
+def link(kind: str, object_id: str, label: str) -> str:
+    singular = kind.lower().rstrip("s")
+    try:
+        directory = _KIND_DIRECTORIES[singular]
+    except KeyError as exc:
+        raise ExportError(f"unknown link kind: {kind}") from exc
+    return f"[[KB/{directory}/{object_id}|{label}]]"
+
+
+def _yaml_scalar(value: Any) -> str:
+    if isinstance(value, datetime.datetime):
+        return value.isoformat()
+    if isinstance(value, datetime.date):
+        return value.isoformat()
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        return str(value)
+    if isinstance(value, str):
+        return json.dumps(value, ensure_ascii=False)
+    raise ExportError(f"nested or unsupported property value: {value!r}")
+
+
+def _frontmatter(properties: Mapping[str, Any]) -> str:
+    lines = ["---"]
+    for key, value in properties.items():
+        if value is None or value == "" or value == []:
+            continue
+        if isinstance(value, list):
+            lines.append(f"{key}:")
+            for item in value:
+                lines.append(f"  - {_yaml_scalar(item)}")
+        else:
+            lines.append(f"{key}: {_yaml_scalar(value)}")
+    lines.append("---")
+    return "\n".join(lines)
+
+
+def _table_cell(value: Any) -> str:
+    if isinstance(value, (dict, list)):
+        text = yaml.safe_dump(
+            value,
+            allow_unicode=True,
+            default_flow_style=True,
+            sort_keys=False,
+            width=10_000,
+        ).strip()
+    elif isinstance(value, (datetime.date, datetime.datetime)):
+        text = value.isoformat()
+    else:
+        text = str(value)
+    return text.replace("\\", "\\\\").replace("|", "\\|").replace("\r\n", "<br>").replace("\n", "<br>")
+
+
+def _table(title: str, headers: Sequence[str], rows: Iterable[Sequence[Any]]) -> str:
+    materialized = list(rows)
+    if not materialized:
+        return ""
+    lines = [f"## {title}", "", "| " + " | ".join(headers) + " |", "| " + " | ".join("---" for _ in headers) + " |"]
+    lines.extend("| " + " | ".join(_table_cell(value) for value in row) + " |" for row in materialized)
+    return "\n".join(lines)
+
+
+def _form_rows(record: Mapping[str, Any], field: str) -> list[tuple[str, str]]:
+    values = record.get(field) or {}
+    return [
+        (language, form)
+        for language in ("zh", "en")
+        for form in _form_values(values.get(language))
+    ]
+
+
+def _common_properties(record: Mapping[str, Any], object_kind: str, version: str) -> OrderedDict:
+    properties = OrderedDict()
+    properties["kb_id"] = record["id"]
+    properties["kb_object"] = object_kind
+    properties["kb_status"] = record.get("status")
+    properties["kb_version"] = version
+    properties["aliases"] = aliases(record) if "label" in record else []
+    properties["tags"] = [f"kb-design/{object_kind}"]
+    return properties
+
+
+def _common_body(record: Mapping[str, Any]) -> list[str]:
+    sections = [f"# {display_label(record)}"]
+    if record.get("scope"):
+        sections.extend(("", "## 范围", "", str(record["scope"])))
+    for field, title in (("alt", "替代形式"), ("hidden", "隐藏形式")):
+        table = _table(title, ("语言", "形式"), _form_rows(record, field))
+        if table:
+            sections.extend(("", table))
+    basis = record.get("basis") or {}
+    table = _table("形式依据", ("字段", "值"), basis.items())
+    if table:
+        sections.extend(("", table))
+    matches = record.get("match") or []
+    table = _table(
+        "外部映射",
+        ("source", "id", "rel"),
+        ((item.get("source", ""), item.get("id", ""), item.get("rel", "")) for item in matches),
+    )
+    if table:
+        sections.extend(("", table))
+    if "history" in record:
+        history = yaml.safe_dump(record["history"], allow_unicode=True, sort_keys=False).rstrip()
+        sections.extend(("", "## 历史记录", "", "```yaml", history, "```"))
+    return sections
+
+
+def _note(properties: Mapping[str, Any], body_sections: Sequence[str]) -> bytes:
+    text = _frontmatter(properties) + "\n" + "\n".join(body_sections).rstrip() + "\n"
+    return text.replace("\r\n", "\n").encode("utf-8")
+
+
+def _labels(index: Mapping[str, Mapping[str, Any]]) -> dict[str, str]:
+    return {object_id: display_label(record) for object_id, record in index.items()}
+
+
+def _render_topic(
+    record: Mapping[str, Any],
+    version: str,
+    topic_labels: Mapping[str, str],
+    array_labels: Mapping[str, str],
+    source_labels: Mapping[str, str],
+) -> bytes:
+    properties = _common_properties(record, "topic", version)
+    properties["kb_broader"] = [link("topic", item, topic_labels[item]) for item in record.get("broader", [])]
+    properties["kb_related"] = [link("topic", item, topic_labels[item]) for item in record.get("related", [])]
+    properties["kb_arrays"] = [link("array", item, array_labels[item]) for item in record.get("arrays", [])]
+    if record.get("source"):
+        source = str(record["source"])
+        properties["kb_source"] = (
+            link("source", source, source_labels[source])
+            if source in source_labels
+            else source
+        )
+    properties["kb_added"] = record.get("added")
+    replaced = _references(record.get("replaced_by"))
+    properties["kb_replaced_by"] = [link("topic", item, topic_labels[item]) for item in replaced]
+    return _note(properties, _common_body(record))
+
+
+def _render_array(
+    record: Mapping[str, Any],
+    version: str,
+    members: Sequence[str],
+    topic_labels: Mapping[str, str],
+    source_labels: Mapping[str, str],
+) -> bytes:
+    properties = _common_properties(record, "array", version)
+    parent = str(record["superordinate"])
+    source = str(record["source"])
+    properties["kb_superordinate"] = link("topic", parent, topic_labels[parent])
+    properties["kb_source"] = link("source", source, source_labels[source])
+    properties["kb_members"] = [link("topic", item, topic_labels[item]) for item in members]
+    body = [
+        f"# {record['id']}",
+        "",
+        "## 分组说明",
+        "",
+        "本记录表示主题树内的分组，不改变成员主题的概念身份。",
+    ]
+    return _note(properties, body)
+
+
+def _render_entity(
+    record: Mapping[str, Any],
+    version: str,
+    topic_labels: Mapping[str, str],
+    entity_labels: Mapping[str, str],
+) -> bytes:
+    properties = _common_properties(record, "entity", version)
+    properties["kb_kind"] = record.get("kind")
+    properties["kb_subjects"] = [link("topic", item, topic_labels[item]) for item in record.get("subjects", [])]
+    for field in ("vendor", "creator", "replaced_by"):
+        values = _references(record.get(field))
+        links = [link("entity", item, entity_labels[item]) for item in values]
+        properties[f"kb_{field}"] = links if isinstance(record.get(field), list) else (links[0] if links else None)
+    for field in ("form", "tier", "url", "watch", "checked", "added"):
+        properties[f"kb_{field}"] = record.get(field)
+    properties["kb_entity_version"] = record.get("version")
+    return _note(properties, _common_body(record))
+
+
+def _render_source(
+    record: Mapping[str, Any],
+    version: str,
+    entity_labels: Mapping[str, str],
+) -> bytes:
+    properties = _common_properties(record, "source", version)
+    entity = str(record["entity"])
+    properties["kb_entity"] = link("entity", entity, entity_labels[entity])
+    properties["kb_roles"] = list(record.get("role", []))
+    properties["kb_checked"] = record.get("checked")
+    body = [
+        f"# {record['id']}",
+        "",
+        "## 用途说明",
+        "",
+        "本记录表示来源用途，不表示来源实体身份。",
+    ]
+    return _note(properties, body)
+
+
+def _render_controlled(
+    record: Mapping[str, Any],
+    object_kind: str,
+    version: str,
+    labels: Mapping[str, str],
+) -> bytes:
+    properties = _common_properties(record, object_kind, version)
+    properties["kb_broader"] = [link(object_kind, item, labels[item]) for item in record.get("broader", [])]
+    properties["kb_related"] = [link(object_kind, item, labels[item]) for item in record.get("related", [])]
+    properties["kb_arrays"] = list(record.get("arrays", []))
+    properties["kb_source"] = record.get("source")
+    properties["kb_added"] = record.get("added")
+    replaced = _references(record.get("replaced_by"))
+    properties["kb_replaced_by"] = [link(object_kind, item, labels[item]) for item in replaced]
+    return _note(properties, _common_body(record))
+
+
+def _base(directory: str, name: str, order: Sequence[str]) -> bytes:
+    document = {
+        "filters": {
+            "and": [f'file.inFolder("KB/{directory}")', 'file.ext == "md"']
+        },
+        "views": [
+            {
+                "type": "table",
+                "name": name,
+                "order": list(order),
+            }
+        ],
+    }
+    return yaml.safe_dump(
+        document,
+        allow_unicode=True,
+        sort_keys=False,
+        default_flow_style=False,
+    ).encode("utf-8")
+
+
+def _insert(files: dict[str, bytes], path: str, content: bytes) -> None:
+    if path in files:
+        raise ExportError(f"duplicate output path: {path}")
+    files[path] = content
+
+
+def build_content_files(repo_root: pathlib.Path) -> dict[str, bytes]:
+    """Return deterministic vault-relative content without writing to disk."""
+
+    documents = load_repository(repo_root)
+    topics = _index(documents["topics"]["concepts"])
+    arrays = _index(documents["topics"]["arrays"])
+    entities = _index(documents["entities"]["entities"])
+    sources = _index(documents["sources"]["sources"])
+    types = _index(documents["types"]["types"])
+    genres = _index(documents["genres"]["genres"])
+    forms = _index(documents["forms"]["forms"])
+
+    topic_labels = _labels(topics)
+    entity_labels = _labels(entities)
+    source_labels = {source_id: entity_labels[record["entity"]] for source_id, record in sources.items()}
+    array_labels = {array_id: array_id for array_id in arrays}
+    files: dict[str, bytes] = {}
+
+    topic_version = str(documents["topics"]["version"]["id"])
+    for object_id in sorted(topics):
+        _insert(
+            files,
+            f"KB/Topics/{object_id}.md",
+            _render_topic(topics[object_id], topic_version, topic_labels, array_labels, source_labels),
+        )
+
+    members = {array_id: [] for array_id in arrays}
+    for record in documents["topics"]["concepts"]:
+        for array_id in record.get("arrays", []):
+            members[array_id].append(str(record["id"]))
+    for object_id in sorted(arrays):
+        _insert(
+            files,
+            f"KB/Arrays/{object_id}.md",
+            _render_array(arrays[object_id], topic_version, members[object_id], topic_labels, source_labels),
+        )
+
+    entity_version = str(documents["entities"]["version"]["id"])
+    for object_id in sorted(entities):
+        _insert(
+            files,
+            f"KB/Entities/{object_id}.md",
+            _render_entity(entities[object_id], entity_version, topic_labels, entity_labels),
+        )
+
+    source_version = str(documents["sources"]["version"]["id"])
+    for object_id in sorted(sources):
+        _insert(
+            files,
+            f"KB/Sources/{object_id}.md",
+            _render_source(sources[object_id], source_version, entity_labels),
+        )
+
+    for object_kind, index in (("type", types), ("genre", genres), ("form", forms)):
+        name = object_kind + "s"
+        version = str(documents[name]["version"]["id"])
+        directory = _KIND_DIRECTORIES[object_kind]
+        labels = _labels(index)
+        for object_id in sorted(index):
+            _insert(
+                files,
+                f"KB/{directory}/{object_id}.md",
+                _render_controlled(index[object_id], object_kind, version, labels),
+            )
+
+    _insert(files, "KB/Views/Topics.base", _base("Topics", "Topics", ("file.name", "kb_id", "kb_status", "kb_broader")))
+    _insert(files, "KB/Views/Entities.base", _base("Entities", "Entities", ("file.name", "kb_id", "kb_status", "kb_kind")))
+    _insert(files, "KB/Views/Sources.base", _base("Sources", "Sources", ("file.name", "kb_id", "kb_entity", "kb_roles")))
+    _insert(
+        files,
+        "README.md",
+        (
+            "# 词表参考区\n\n"
+            "本目录由 kb-design 的六份正式词表确定性生成，只提供 Obsidian 浏览与链接。\n\n"
+            "对象路径使用稳定 ID；这里的修改不会回流正式词表。\n"
+        ).encode("utf-8"),
+    )
+    return dict(sorted(files.items()))
