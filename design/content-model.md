@@ -29,7 +29,7 @@
 | `created` | created | 是 | ISO 8601 日期 |
 | `modified` | modified | 否 | ISO 8601 日期 |
 | `status` | 本库扩展 | 是 | `draft`／`active`／`deprecated` |
-| `isReplacedBy` | isReplacedBy | `deprecated` 时必填 | 替代它的内容单元 id |
+| `isReplacedBy` | isReplacedBy | 因直接替代而废弃且存在替代项时必填 | 替代它的内容单元 id |
 | `relation` | relation | 否 | 有关但不属前述关系的内容单元 id；必须互反，只在两者主题不同且常被一起阅读时添加 |
 | `language` | language | 否 | 默认 `zh`，与默认不同时填 |
 
@@ -37,7 +37,7 @@
 
 `entities` 是本库扩展。Dublin Core 没有表示内容涉及哪些具体产品的字段，最近的是 `references`，但 `references` 表示引用；内容提到 Claude Code 不等于引用其文档。`entities` 记录涉及的实体，`references` 记录引用的文献。
 
-`status` 也是本库扩展。DCMI 有 `valid` 和 `isReplacedBy`，没有表示当前是否在用的状态字段。`isReplacedBy` 只覆盖被替代这一种离开方式；草稿与定稿的区分、无替代的过时，都由状态表达。取值与词表生命周期对齐，见下文。
+`status` 也是本库扩展。DCMI 有 `valid` 和 `isReplacedBy`，没有表示当前是否在用的状态字段。`isReplacedBy` 只覆盖直接替代这一种离开方式：因直接替代而废弃且存在替代项时必填；确认过时且没有替代项时留空，并在正文首段说明原因。草稿与定稿的区分、无替代的过时，都由状态表达。取值与词表生命周期对齐，见下文。
 
 内容单元 `source`、主题旧 `origin` 和来源治理共享引用具有不同职责。
 
@@ -149,7 +149,7 @@ IPTC 词表为新闻设计，定义中的“记者”“事件”按笔记语境
 
 3 个状态是本库扩展，没有外部标准直接规定内容单元的生命周期；取值与词表生命周期对齐，依据 Z39.19 §11.3 的新增、修改和废弃。内容单元不是 ISO 15489 意义上的文件，因为它不是业务证据；该标准不直接适用。但其处置原则可以借用：每类对象的保留和销毁要有书面决定和理由（ISO 15489-1 §3.8、§8.5），见[ISO 15489 笔记](../sources/iso-15489.md)。
 
-`deprecated` 内容单元有替代项时，`isReplacedBy` 指向替代单元；确认过时且没有替代项时，`isReplacedBy` 留空，并在正文首段说明原因。
+`deprecated` 内容单元因直接替代而废弃且存在替代项时，`isReplacedBy` 必须指向替代单元；确认过时且没有替代项时，`isReplacedBy` 留空，并在正文首段说明原因。
 
 ### 处置决定
 
