@@ -1,0 +1,85 @@
+accepted_decisions:
+  - decision-term-0007
+  - decision-term-0008
+previous: &previous
+  id: term-review-20260915-001
+  targets:
+    - kind: term
+      id: tm-00000000-0000-4000-8000-000000000001
+      field_path: administrative_status
+      conclusion: retain
+      reviewed: 2026-09-16
+      decision: decision-term-0007
+  trigger:
+    kind: term
+    id: tm-00000000-0000-4000-8000-000000000001
+    previous_obligation: null
+  state: resolved
+  opened: 2026-09-15
+  closed: 2026-09-16
+  decision: decision-term-0007
+  history:
+    - &opened
+      date: 2026-09-15
+      event: opened
+      decision: null
+      reason: term changed
+      from_value: null
+      to_value: open
+      linked_terms:
+        - tm-00000000-0000-4000-8000-000000000001
+    - &resolved
+      date: 2026-09-16
+      event: resolved
+      decision: decision-term-0007
+      reason: retained
+      from_value: open
+      to_value: resolved
+      linked_terms:
+        - tm-00000000-0000-4000-8000-000000000001
+replacement:
+  id: term-review-20260917-001
+  targets:
+    - kind: term
+      id: tm-00000000-0000-4000-8000-000000000001
+      field_path: administrative_status
+      conclusion: null
+      reviewed: null
+      decision: null
+  trigger:
+    kind: decision
+    id: decision-term-0008
+    previous_obligation: term-review-20260915-001
+  state: open
+  opened: 2026-09-17
+  closed: null
+  decision: decision-term-0008
+  history:
+    - date: 2026-09-17
+      event: opened
+      decision: decision-term-0008
+      reason: replacement decision
+      from_value: null
+      to_value: open
+      linked_terms:
+        - tm-00000000-0000-4000-8000-000000000001
+same_id_rewrite:
+  id: term-review-20260915-001
+  targets:
+    - kind: term
+      id: tm-00000000-0000-4000-8000-000000000001
+      field_path: administrative_status
+      conclusion: retain
+      reviewed: 2026-09-16
+      decision: decision-term-0007
+  trigger:
+    kind: decision
+    id: decision-term-0008
+    previous_obligation: null
+  state: resolved
+  opened: 2026-09-15
+  closed: 2026-09-16
+  decision: decision-term-0008
+  history:
+    - *opened
+    - *resolved

@@ -1,0 +1,43 @@
+accepted_decisions:
+  - decision-term-0007
+previous:
+  id: term-review-20260915-001
+  targets: &targets
+    - kind: term
+      id: tm-00000000-0000-4000-8000-000000000001
+      field_path: administrative_status
+      conclusion: retain
+      reviewed: 2026-09-16
+      decision: decision-term-0007
+  trigger: &trigger
+    kind: term
+    id: tm-00000000-0000-4000-8000-000000000001
+    previous_obligation: null
+  state: resolved
+  opened: 2026-09-15
+  closed: 2026-09-16
+  decision: decision-term-0007
+  history: &history
+    - date: 2026-09-15
+      event: opened
+      decision: null
+      reason: term changed
+      from_value: null
+      to_value: open
+      linked_terms: []
+    - date: 2026-09-16
+      event: resolved
+      decision: decision-term-0007
+      reason: retained
+      from_value: open
+      to_value: resolved
+      linked_terms: []
+current:
+  id: term-review-20260915-001
+  targets: *targets
+  trigger: *trigger
+  state: open
+  opened: 2026-09-15
+  closed: null
+  decision: decision-term-0007
+  history: *history

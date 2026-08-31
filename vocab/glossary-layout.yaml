@@ -1,0 +1,50 @@
+schema: urn:kb-design:layout:glossary:1
+version: 1
+groups:
+  - id: vocabulary-types
+    title: 词表的类型
+    order: 1
+  - id: basic-unit
+    title: 基本单位
+    order: 2
+  - id: relations
+    title: 关系
+    order: 3
+  - id: structure
+    title: 结构
+    order: 4
+  - id: annotations-lifecycle
+    title: 注释与生命周期
+    order: 5
+  - id: construction-governance
+    title: 建设与治理
+    order: 6
+  - id: vocabulary-mapping
+    title: 词表间映射
+    order: 7
+  - id: body-of-knowledge
+    title: 知识体系
+    order: 8
+  - id: metadata
+    title: 元数据
+    order: 9
+  - id: writing-design-methods
+    title: 写作与设计方法
+    order: 10
+  - id: note-types
+    title: 笔记的类型
+    order: 11
+  - id: governance-maintenance
+    title: 治理与维护
+    order: 12
+  - id: knowledge-graph
+    title: 知识图谱
+    order: 13
+source_abbreviations:
+  id: source-abbreviations
+  title: 出处缩写
+  order: 0
+standards_appendix:
+  id: cited-standards
+  title: 引用的标准与文献
+  order: 14

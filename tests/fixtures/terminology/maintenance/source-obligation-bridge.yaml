@@ -1,0 +1,12 @@
+trigger:
+  kind: source_obligation
+  id: source-review-20260831-001
+targets:
+  - kind: concept
+    id: tc-00000000-0000-4000-8000-000000000001
+    field_path: basis
+    conclusion: null
+    reviewed: null
+    decision: null
+opened: 2026-09-15
+decision: null

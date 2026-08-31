@@ -1,0 +1,66 @@
+document:
+  schema: urn:kb-design:schema:terms:1
+  version: 1
+  concepts:
+    - id: tc-00000000-0000-4000-8000-000000000001
+      workflow: active
+      history:
+        - date: 2026-09-01
+          event: activated
+          decision: decision-term-0002
+          reason: approved fixture
+          from_value: candidate
+          to_value: active
+          linked_terms:
+            - tm-00000000-0000-4000-8000-000000000001
+      languages:
+        - language: en
+          terms:
+            - id: tm-00000000-0000-4000-8000-000000000001
+              text: fixture term
+              administrative_status: preferredTerm-admn-sts
+              history: []
+  delegations:
+    - id: delegation:topics:topic-fixture:en
+      file: vocab/topics.yaml
+      record: topic-fixture
+      field_path: term_concept
+      state: active
+      concept: tc-00000000-0000-4000-8000-000000000001
+      decision: decision-term-0002
+  generated_outputs:
+    - id: vocab/generated/terms-v1.json
+      state: current
+      concepts:
+        - tc-00000000-0000-4000-8000-000000000001
+obligations:
+  schema: urn:kb-design:schema:term-obligations:1
+  version: 1
+  obligations:
+    - id: term-review-20260915-001
+      targets:
+        - kind: term
+          id: tm-00000000-0000-4000-8000-000000000001
+          field_path: administrative_status
+          conclusion: null
+          reviewed: null
+          decision: null
+      trigger:
+        kind: decision
+        id: decision-term-0002
+        previous_obligation: null
+      state: open
+      opened: 2026-09-15
+      closed: null
+      decision: null
+      history:
+        - date: 2026-09-15
+          event: opened
+          decision: null
+          reason: decision changed
+          from_value: null
+          to_value: open
+          linked_terms:
+            - tm-00000000-0000-4000-8000-000000000001
+decisions:
+  decision-term-0002: design/decisions/terminology-governance-schema.md

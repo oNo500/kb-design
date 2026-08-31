@@ -15,9 +15,23 @@ class CheckTermsTest(unittest.TestCase):
     def setUp(self):
         self.temporary_directory = tempfile.TemporaryDirectory()
         self.root = pathlib.Path(self.temporary_directory.name)
-        for directory in ("concepts", "design", "scripts", "vocab"):
-            (self.root / directory).mkdir()
+        for directory in (
+            "concepts",
+            "design",
+            "schemas",
+            "scripts/governance",
+            "vocab",
+        ):
+            (self.root / directory).mkdir(parents=True)
         shutil.copy2(SCRIPT, self.root / "scripts" / "check-terms.py")
+        governance_script = (
+            REPOSITORY_ROOT / "scripts" / "governance" / "check_term_usage.py"
+        )
+        if governance_script.exists():
+            shutil.copy2(
+                governance_script,
+                self.root / "scripts" / "governance" / "check_term_usage.py",
+            )
         (self.root / "concepts" / "glossary.md").write_text(
             """# 术语表 (Glossary)
 
@@ -64,6 +78,8 @@ class CheckTermsTest(unittest.TestCase):
 """,
             encoding="utf-8",
         )
+        subprocess.run(["git", "init", "-q"], cwd=self.root, check=True)
+        subprocess.run(["git", "add", "."], cwd=self.root, check=True)
 
     def tearDown(self):
         self.temporary_directory.cleanup()
@@ -145,6 +161,30 @@ class CheckTermsTest(unittest.TestCase):
 
     def test_same_fixture_is_deterministic(self):
         self.assertEqual(self.run_script(), self.run_script())
+
+    def test_json_report_keeps_report_only_state_and_precise_location(self):
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(self.root / "scripts" / "check-terms.py"),
+                "--all",
+                "--format",
+                "json",
+            ],
+            cwd=self.root,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        report = __import__("json").loads(completed.stdout)
+        hit = next(
+            item for item in report["hits"] if item["normalized"] == "加粗候选"
+        )
+
+        self.assertEqual("report-only", report["mode"])
+        self.assertEqual(3, hit["line"])
+        self.assertEqual(8, hit["column"])
+        self.assertNotIn("verdict", hit)
 
 
 if __name__ == "__main__":

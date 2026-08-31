@@ -1,0 +1,48 @@
+{
+  "$id": "urn:kb-design:schema:term-usage-decisions:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "decisions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "column": {"minimum": 1, "type": "integer"},
+          "conclusion": {"minLength": 1, "type": "string"},
+          "decided": {"format": "date", "type": "string"},
+          "decision": {"minLength": 1, "type": "string"},
+          "file": {"minLength": 4, "pattern": "\\.md$", "type": "string"},
+          "history": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "conclusion": {"minLength": 1, "type": "string"},
+                "decided": {"format": "date", "type": "string"},
+                "decision": {"minLength": 1, "type": "string"},
+                "severity": {"enum": ["info", "review", "error"]}
+              },
+              "required": ["decided", "severity", "conclusion", "decision"],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "id": {"pattern": "^term-usage-[0-9]{4,}$", "type": "string"},
+          "identity": {"minLength": 1, "type": "string"},
+          "line": {"minimum": 1, "type": "integer"},
+          "severity": {"enum": ["info", "review", "error"]}
+        },
+        "required": [
+          "id", "identity", "file", "line", "column", "severity",
+          "conclusion", "decided", "decision", "history"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema": {"const": "urn:kb-design:data:term-usage-decisions"},
+    "version": {"const": 1}
+  },
+  "required": ["schema", "version", "decisions"],
+  "type": "object"
+}

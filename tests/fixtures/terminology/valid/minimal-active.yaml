@@ -1,0 +1,53 @@
+schema: urn:kb-design:schema:terms:1
+version: 1
+concepts:
+  - id: tc-11111111-1111-4111-8111-111111111111
+    subject_fields:
+      - topic_id: computing
+        basis:
+          - {entity: cs2023, locator: "knowledge area", checked: "2026-08-31"}
+    definitions:
+      - language: en
+        text: A fixture concept.
+        basis:
+          - {entity: cs2023, locator: "definition", checked: "2026-08-31"}
+    languages:
+      - language: en
+        terms:
+          - id: tm-11111111-1111-4111-8111-111111111111
+            text: Alpha
+            administrative_status: preferredTerm-admn-sts
+            basis:
+              - {entity: cs2023, locator: "preferred term", checked: "2026-08-31"}
+            history:
+              - date: "2026-08-31"
+                event: registered
+                decision: decision-term-0001
+                reason: Fixture registration.
+                from_value: null
+                to_value: preferredTerm-admn-sts
+                linked_terms: [tm-11111111-1111-4111-8111-111111111111]
+          - id: tm-22222222-2222-4222-8222-222222222222
+            text: Beta
+            administrative_status: admittedTerm-admn-sts
+            basis:
+              - {entity: cs2023, locator: "admitted term", checked: "2026-08-31"}
+            history:
+              - date: "2026-08-31"
+                event: registered
+                decision: decision-term-0001
+                reason: Fixture registration.
+                from_value: null
+                to_value: admittedTerm-admn-sts
+                linked_terms: [tm-22222222-2222-4222-8222-222222222222]
+    basis:
+      - {entity: cs2023, locator: "concept identity", checked: "2026-08-31"}
+    workflow: active
+    history:
+      - date: "2026-08-31"
+        event: registered
+        decision: decision-term-0001
+        reason: Fixture registration.
+        from_value: null
+        to_value: active
+        linked_terms: []

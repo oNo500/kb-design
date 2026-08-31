@@ -1,0 +1,15 @@
+schema: urn:kb-design:data:term-cutover-state
+version: 1
+state: active
+active_editor: vocab/terms.yaml
+terms_mode: active_editor
+consumers_enabled: true
+decision: decision-term-fixture-active
+history:
+  - date: "2026-08-31"
+    event: activation
+    decision: decision-term-fixture-active
+    reason: Active generation fixture.
+    from_value: null
+    to_value: active
+    linked_terms: []

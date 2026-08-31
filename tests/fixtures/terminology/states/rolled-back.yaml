@@ -1,0 +1,15 @@
+schema: urn:kb-design:data:term-cutover-state
+version: 1
+state: rolled_back
+active_editor: concepts/glossary.md
+terms_mode: audit_read_only
+consumers_enabled: false
+decision: decision-term-fixture-rollback
+history:
+  - date: "2026-08-31"
+    event: rollback
+    decision: decision-term-fixture-rollback
+    reason: Rolled-back generation fixture.
+    from_value: active
+    to_value: rolled_back
+    linked_terms: []

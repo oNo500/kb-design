@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:kb-design:schema:term-cutover-state:1",
+  "title": "Term cutover state v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "state",
+    "active_editor",
+    "terms_mode",
+    "consumers_enabled",
+    "decision",
+    "history"
+  ],
+  "properties": {
+    "schema": {
+      "const": "urn:kb-design:data:term-cutover-state"
+    },
+    "version": {
+      "const": 1
+    },
+    "state": {
+      "enum": [
+        "active",
+        "rolled_back"
+      ]
+    },
+    "active_editor": {
+      "enum": [
+        "vocab/terms.yaml",
+        "concepts/glossary.md"
+      ]
+    },
+    "terms_mode": {
+      "enum": [
+        "active_editor",
+        "audit_read_only"
+      ]
+    },
+    "consumers_enabled": {
+      "type": "boolean"
+    },
+    "decision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "history": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "date",
+          "event",
+          "decision",
+          "reason",
+          "from_value",
+          "to_value",
+          "linked_terms"
+        ],
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "event": {
+            "type": "string",
+            "minLength": 1
+          },
+          "decision": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "from_value": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "to_value": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "linked_terms": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "state": {
+          "const": "active"
+        },
+        "active_editor": {
+          "const": "vocab/terms.yaml"
+        },
+        "terms_mode": {
+          "const": "active_editor"
+        },
+        "consumers_enabled": {
+          "const": true
+        }
+      }
+    },
+    {
+      "properties": {
+        "state": {
+          "const": "rolled_back"
+        },
+        "active_editor": {
+          "const": "concepts/glossary.md"
+        },
+        "terms_mode": {
+          "const": "audit_read_only"
+        },
+        "consumers_enabled": {
+          "const": false
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

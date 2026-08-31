@@ -1,0 +1,296 @@
+{
+  "$defs": {
+    "basis": {
+      "items": {
+        "$ref": "urn:kb-design:schema:source-entities:2#/$defs/basisItem"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "concept": {
+      "additionalProperties": false,
+      "properties": {
+        "basis": {
+          "$ref": "#/$defs/basis"
+        },
+        "definitions": {
+          "items": {
+            "$ref": "#/$defs/definition"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "history": {
+          "items": {
+            "$ref": "#/$defs/history"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "id": {
+          "pattern": "^tc-[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+          "type": "string"
+        },
+        "languages": {
+          "items": {
+            "$ref": "#/$defs/language_record"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "match": {
+          "items": {
+            "$ref": "#/$defs/match_reference"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "source": {
+          "$ref": "#/$defs/source_reference"
+        },
+        "subject_fields": {
+          "items": {
+            "$ref": "#/$defs/subject_field"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "workflow": {
+          "enum": [
+            "candidate",
+            "active",
+            "deprecated"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "subject_fields",
+        "definitions",
+        "languages",
+        "basis",
+        "workflow",
+        "history"
+      ],
+      "type": "object"
+    },
+    "definition": {
+      "additionalProperties": false,
+      "properties": {
+        "basis": {
+          "$ref": "#/$defs/basis"
+        },
+        "language": {
+          "$ref": "#/$defs/language"
+        },
+        "text": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "language",
+        "text",
+        "basis"
+      ],
+      "type": "object"
+    },
+    "history": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "format": "date",
+          "type": "string"
+        },
+        "decision": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "event": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "from_value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "linked_terms": {
+          "items": {
+            "pattern": "^tm-[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "reason": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "to_value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "date",
+        "event",
+        "decision",
+        "reason",
+        "from_value",
+        "to_value",
+        "linked_terms"
+      ],
+      "type": "object"
+    },
+    "language": {
+      "enum": [
+        "en",
+        "zh-Hans",
+        "zh-Hant"
+      ]
+    },
+    "language_record": {
+      "additionalProperties": false,
+      "properties": {
+        "language": {
+          "$ref": "#/$defs/language"
+        },
+        "terms": {
+          "items": {
+            "$ref": "#/$defs/term"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "language",
+        "terms"
+      ],
+      "type": "object"
+    },
+    "match_reference": {
+      "$ref": "urn:kb-design:schema:source-migration:1#/$defs/match"
+    },
+    "source_reference": {
+      "$ref": "urn:kb-design:schema:source-migration:1#/$defs/source"
+    },
+    "subject_field": {
+      "additionalProperties": false,
+      "properties": {
+        "basis": {
+          "$ref": "#/$defs/basis"
+        },
+        "topic_id": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "topic_id",
+        "basis"
+      ],
+      "type": "object"
+    },
+    "term": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "else": {
+            "not": {
+              "required": [
+                "replaced_by"
+              ]
+            }
+          },
+          "if": {
+            "properties": {
+              "administrative_status": {
+                "const": "supersededTerm-admn-sts"
+              }
+            },
+            "required": [
+              "administrative_status"
+            ]
+          },
+          "then": {
+            "required": [
+              "replaced_by"
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "administrative_status": {
+          "enum": [
+            "preferredTerm-admn-sts",
+            "admittedTerm-admn-sts",
+            "deprecatedTerm-admn-sts",
+            "supersededTerm-admn-sts"
+          ]
+        },
+        "basis": {
+          "$ref": "#/$defs/basis"
+        },
+        "history": {
+          "items": {
+            "$ref": "#/$defs/history"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "id": {
+          "pattern": "^tm-[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+          "type": "string"
+        },
+        "replaced_by": {
+          "pattern": "^tm-[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+          "type": "string"
+        },
+        "text": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "administrative_status",
+        "basis",
+        "history"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "urn:kb-design:schema:terms:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "concepts": {
+      "items": {
+        "$ref": "#/$defs/concept"
+      },
+      "type": "array"
+    },
+    "schema": {
+      "const": "urn:kb-design:schema:terms:1"
+    },
+    "version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "schema",
+    "version",
+    "concepts"
+  ],
+  "type": "object"
+}
