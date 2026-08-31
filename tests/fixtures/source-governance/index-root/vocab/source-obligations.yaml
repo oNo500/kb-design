@@ -1,0 +1,17 @@
+schema: urn:kb-design:data:source-obligations
+schema_version: 1
+obligations:
+  - id: source-obligation-current
+    entity: source-main
+    trigger: content_change
+    targets:
+      - kind: basis
+        file: vocab/topics.yaml
+        record: concepts:concept-alpha
+        field_path: basis[0]
+    decisions: [decision-obligation]
+    previous: source-obligation-previous
+    state: open
+    opened: "2026-08-31"
+    resolved: null
+    history: [{date: "2026-08-31", action: opened}]

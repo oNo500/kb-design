@@ -1,0 +1,41 @@
+schema: fixture
+concepts:
+  - id: concept-alpha
+    basis:
+      - {entity: source-main, locator: concept-alpha}
+    source:
+      registry: use-main
+      item: alpha
+      locator: concept-alpha
+      basis: []
+    match:
+      - {registry: use-map, item: alpha, rel: exactMatch, basis: []}
+    local_analysis:
+      legacy_source_label: source-main
+      state: isolated
+      decision: decision-source-0005
+arrays:
+  - {id: group-01, external_group: {registry: use-main, item: group-01, locator: group-01, basis: []}}
+  - {id: group-02, external_group: {registry: use-main, item: group-02, locator: group-02, basis: []}}
+  - {id: group-03, external_group: {registry: use-main, item: group-03, locator: group-03, basis: []}}
+  - {id: group-04, external_group: {registry: use-main, item: group-04, locator: group-04, basis: []}}
+  - {id: group-05, external_group: {registry: use-main, item: group-05, locator: group-05, basis: []}}
+  - {id: group-06, external_group: {registry: use-main, item: group-06, locator: group-06, basis: []}}
+  - {id: group-07, external_group: {registry: use-main, item: group-07, locator: group-07, basis: []}}
+  - {id: group-08, external_group: {registry: use-main, item: group-08, locator: group-08, basis: []}}
+  - {id: group-09, external_group: {registry: use-main, item: group-09, locator: group-09, basis: []}}
+  - {id: group-10, external_group: {registry: use-main, item: group-10, locator: group-10, basis: []}}
+  - {id: group-11, external_group: {registry: use-main, item: group-11, locator: group-11, basis: []}}
+  - {id: group-12, external_group: {registry: use-main, item: group-12, locator: group-12, basis: []}}
+  - {id: group-13, external_group: {registry: use-main, item: group-13, locator: group-13, basis: []}}
+  - {id: group-14, external_group: {registry: use-main, item: group-14, locator: group-14, basis: []}}
+  - {id: group-15, external_group: {registry: use-main, item: group-15, locator: group-15, basis: []}}
+  - {id: group-16, external_group: {registry: use-main, item: group-16, locator: group-16, basis: []}}
+  - {id: group-17, external_group: {registry: use-main, item: group-17, locator: group-17, basis: []}}
+  - {id: group-18, external_group: {registry: use-main, item: group-18, locator: group-18, basis: []}}
+  - {id: group-19, external_group: {registry: use-main, item: group-19, locator: group-19, basis: []}}
+  - {id: group-20, external_group: {registry: use-main, item: group-20, locator: group-20, basis: []}}
+  - {id: group-21, external_group: {registry: use-main, item: group-21, locator: group-21, basis: []}}
+  - {id: group-22, external_group: {registry: use-main, item: group-22, locator: group-22, basis: []}}
+  - {id: group-23, external_group: {registry: use-main, item: group-23, locator: group-23, basis: []}}
+  - {id: group-24, external_group: {registry: use-main, item: group-24, locator: group-24, basis: []}}

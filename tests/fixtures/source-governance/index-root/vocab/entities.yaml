@@ -1,0 +1,7 @@
+schema: urn:kb-design:data:entities
+schema_version: 2
+version: {id: "2026.08"}
+entities:
+  - id: source-main
+  - id: source-old
+    replaced_by: source-main

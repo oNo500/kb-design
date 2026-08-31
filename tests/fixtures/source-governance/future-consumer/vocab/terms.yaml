@@ -1,0 +1,15 @@
+concepts:
+  - id: future-concept
+    basis:
+      - {entity: source-main, locator: concept}
+    source:
+      registry: use-main
+      item: future
+      locator: future
+      basis: []
+    match:
+      - {registry: use-map, item: future, rel: exactMatch, basis: []}
+    terms:
+      - label: Future
+        basis:
+          - {entity: source-main, locator: term}

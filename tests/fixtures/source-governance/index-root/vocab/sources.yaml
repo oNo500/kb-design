@@ -1,0 +1,12 @@
+schema: urn:kb-design:data:source-uses
+schema_version: 2
+version: {id: "2026.08"}
+sources:
+  - id: use-main
+    entity: source-main
+    roles:
+      - {role: structure, status: approved, decision: decision-role-structure}
+  - id: use-map
+    entity: source-main
+    roles:
+      - {role: mapping, status: approved, decision: decision-role-mapping}

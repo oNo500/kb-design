@@ -1,0 +1,8 @@
+concepts:
+  - id: legacy-concept
+    basis: {en: legacy-entity}
+    source: legacy-use
+    match: [{source: legacy-use, id: legacy-item, rel: exactMatch}]
+arrays:
+  - id: legacy-array
+    source: legacy-use

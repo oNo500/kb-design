@@ -626,40 +626,71 @@ def load_decision_patches(paths: Sequence[Path]) -> List[DecisionPatch]:
     ))
 
 
-def _collect_reference_uses(path: Path, value, record="document", parts=()):
-    result = []
+def collect_reference_uses(file: Path, document: object) -> List[ReferenceUse]:
+    return list(_walk_reference_uses(file, document))
+
+
+def _format_reference_path(parts) -> str:
+    value = ""
+    for part in parts:
+        value += (f"[{part}]" if isinstance(part, int)
+                  else (("." if value else "") + part))
+    return value
+
+
+def _has_exact_keys(value, required) -> bool:
+    return isinstance(value, dict) and required <= set(value)
+
+
+def _walk_reference_uses(file: Path, value: object, path=(),
+                         record: str = "document"):
     if isinstance(value, dict):
-        current_record = value.get("id", record)
-        for key, child in value.items():
-            child_parts = parts + (key,)
-            field_path = ".".join(str(part) for part in child_parts)
-            if key == "basis" and isinstance(child, dict):
-                for basis_key, basis_values in child.items():
-                    if isinstance(basis_values, list):
-                        for index, basis in enumerate(basis_values):
-                            result.append(ReferenceUse(
-                                "basis", str(path), str(current_record),
-                                f"{field_path}.{basis_key}[{index}]", basis,
-                            ))
-            elif key == "source" and isinstance(child, dict):
-                result.append(ReferenceUse(
-                    "source", str(path), str(current_record), field_path, child,
-                ))
-            elif key == "match" and isinstance(child, list):
-                for index, match in enumerate(child):
-                    result.append(ReferenceUse(
-                        "match", str(path), str(current_record),
-                        f"{field_path}[{index}]", match,
-                    ))
-            elif key == "external_group" and isinstance(child, dict):
-                result.append(ReferenceUse(
-                    "external_group", str(path), str(current_record), field_path, child,
-                ))
-            result.extend(_collect_reference_uses(path, child, current_record, child_parts))
+        current_record = record
+        if isinstance(value.get("id"), str):
+            collection = ".".join(str(part) for part in path[:-1]) or "root"
+            current_record = f"{collection}:{value['id']}"
+        for key, nested in value.items():
+            child = path + (key,)
+            if key == "basis" and isinstance(nested, list):
+                for index, item in enumerate(nested):
+                    if _has_exact_keys(item, {"entity", "locator"}):
+                        yield ReferenceUse(
+                            "basis", str(file), current_record,
+                            _format_reference_path(child + (index,)), item,
+                        )
+            elif key == "basis" and isinstance(nested, dict):
+                for basis_key, values in nested.items():
+                    if not isinstance(values, list):
+                        continue
+                    for index, item in enumerate(values):
+                        if _has_exact_keys(item, {"entity", "locator"}):
+                            yield ReferenceUse(
+                                "basis", str(file), current_record,
+                                _format_reference_path(child + (basis_key, index)), item,
+                            )
+            elif key == "source" and _has_exact_keys(
+                    nested, {"registry", "item", "locator", "basis"}):
+                yield ReferenceUse(
+                    "source", str(file), current_record,
+                    _format_reference_path(child), nested,
+                )
+            elif key == "match" and isinstance(nested, list):
+                for index, item in enumerate(nested):
+                    if _has_exact_keys(item, {"registry", "item", "rel", "basis"}):
+                        yield ReferenceUse(
+                            "match", str(file), current_record,
+                            _format_reference_path(child + (index,)), item,
+                        )
+            elif key == "external_group" and _has_exact_keys(
+                    nested, {"registry", "item", "locator", "basis"}):
+                yield ReferenceUse(
+                    "external_group", str(file), current_record,
+                    _format_reference_path(child), nested,
+                )
+            yield from _walk_reference_uses(file, nested, child, current_record)
     elif isinstance(value, list):
-        for index, child in enumerate(value):
-            result.extend(_collect_reference_uses(path, child, record, parts + (index,)))
-    return result
+        for index, nested in enumerate(value):
+            yield from _walk_reference_uses(file, nested, path + (index,), record)
 
 
 def _schema_issues(root: Path, relative: str, schema_name: str):
@@ -718,7 +749,7 @@ def validate_repository(root: Path, previous_root: Optional[Path] = None,
                 ))
 
     for path in sorted((root / "vocab").glob("*.yaml")):
-        references = _collect_reference_uses(
+        references = collect_reference_uses(
             Path(path.relative_to(root)), _load_yaml(path)
         )
         issues.extend(validate_references(root, references))
