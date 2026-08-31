@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import calendar
+import copy
 import json
 from datetime import date, timedelta
 from pathlib import Path
@@ -219,6 +220,143 @@ def compute_next_due(checked: date, interval_months: Optional[int]) -> Optional[
 def is_review_overdue(next_due: Optional[date], today: date,
                       grace_days: int = 30) -> bool:
     return next_due is not None and today > next_due + timedelta(days=grace_days)
+
+
+def _unique_obligation(document: Dict[str, object],
+                       obligation_id: str) -> Dict[str, object]:
+    matches = [row for row in document.get("obligations", [])
+               if row.get("id") == obligation_id]
+    if len(matches) != 1:
+        raise ValueError("obligation id is missing or not unique")
+    return matches[0]
+
+
+def _latest_resolved(document: Dict[str, object], entity: str,
+                     trigger: str) -> Optional[str]:
+    for row in reversed(document.get("obligations", [])):
+        if (row.get("entity") == entity and row.get("trigger") == trigger
+                and row.get("state") == "resolved"):
+            return row["id"]
+    return None
+
+
+def _active_same_trigger(document: Dict[str, object], entity: str,
+                         trigger: str) -> bool:
+    return any(row.get("entity") == entity and row.get("trigger") == trigger
+               and row.get("state") == "open"
+               for row in document.get("obligations", []))
+
+
+def _target_key(target: Dict[str, str]) -> str:
+    return ":".join(target[field] for field in ("file", "record", "field_path"))
+
+
+def _require_all_target_conclusions(targets: Sequence[Dict[str, str]],
+                                    conclusions: Dict[str, object]) -> None:
+    expected = {_target_key(target) for target in targets}
+    if set(conclusions) != expected:
+        raise ValueError("target conclusions must cover every target exactly")
+
+
+def _stable_union(left: Sequence[str], right: Sequence[str]) -> List[str]:
+    result = list(left)
+    result.extend(value for value in right if value not in result)
+    return result
+
+
+def _require_required_decisions(conclusions: Dict[str, object],
+                                decisions: Sequence[str]) -> None:
+    required = []
+    for conclusion in conclusions.values():
+        if not isinstance(conclusion, dict):
+            raise ValueError("target conclusions must be objects")
+        references = conclusion.get("decisions", [])
+        if not isinstance(references, list) or not all(
+                isinstance(value, str) for value in references):
+            raise ValueError("target conclusion decisions must be an array of ids")
+        required = _stable_union(required, references)
+    missing = [value for value in required if value not in decisions]
+    if missing:
+        raise ValueError(f"required decisions are missing: {','.join(missing)}")
+
+
+def open_obligation(document: Dict[str, object], entity: str, trigger: str,
+                    targets: Sequence[Dict[str, str]], decisions: Sequence[str],
+                    opened: str, obligation_id: str) -> Dict[str, object]:
+    result = copy.deepcopy(document)
+    if any(row.get("id") == obligation_id for row in result.get("obligations", [])):
+        raise ValueError("obligation id already exists")
+    if not targets:
+        raise ValueError("obligation targets are required")
+    if _active_same_trigger(result, entity, trigger):
+        raise ValueError("same entity and trigger already has an open obligation")
+    copied_targets = copy.deepcopy(list(targets))
+    result["obligations"].append({
+        "id": obligation_id,
+        "entity": entity,
+        "trigger": trigger,
+        "targets": copied_targets,
+        "decisions": list(decisions),
+        "previous": _latest_resolved(result, entity, trigger),
+        "state": "open",
+        "opened": opened,
+        "resolved": None,
+        "history": [{
+            "date": opened,
+            "action": "opened",
+            "trigger": trigger,
+            "targets": copy.deepcopy(copied_targets),
+        }],
+    })
+    return result
+
+
+def resolve_obligation(document: Dict[str, object], obligation_id: str,
+                       resolved: str, conclusions: Dict[str, object],
+                       decisions: Sequence[str]) -> Dict[str, object]:
+    result = copy.deepcopy(document)
+    row = _unique_obligation(result, obligation_id)
+    if row.get("state") != "open":
+        raise ValueError("obligation is not open")
+    _require_all_target_conclusions(row["targets"], conclusions)
+    all_decisions = _stable_union(row["decisions"], decisions)
+    _require_required_decisions(conclusions, all_decisions)
+    row["state"] = "resolved"
+    row["resolved"] = resolved
+    row["decisions"] = all_decisions
+    row["history"].append({
+        "date": resolved,
+        "action": "resolved",
+        "conclusions": copy.deepcopy(conclusions),
+        "decisions": list(decisions),
+    })
+    return result
+
+
+def retrigger_obligation(document: Dict[str, object], previous_id: str,
+                         targets: Sequence[Dict[str, str]],
+                         decisions: Sequence[str], opened: str,
+                         obligation_id: str) -> Dict[str, object]:
+    previous = _unique_obligation(document, previous_id)
+    if previous.get("state") != "resolved":
+        raise ValueError("previous obligation is not resolved")
+    if _latest_resolved(document, previous["entity"], previous["trigger"]) != previous_id:
+        raise ValueError("previous obligation is not the latest resolved obligation")
+    return open_obligation(
+        document,
+        previous["entity"],
+        previous["trigger"],
+        targets,
+        decisions,
+        opened,
+        obligation_id,
+    )
+
+
+def source_obligation_term_trigger(obligation_id: str) -> Dict[str, str]:
+    if not isinstance(obligation_id, str) or not obligation_id:
+        raise ValueError("source obligation id is required")
+    return {"kind": "source_obligation", "id": obligation_id}
 
 
 META = "https://json-schema.org/draft/2020-12/schema"

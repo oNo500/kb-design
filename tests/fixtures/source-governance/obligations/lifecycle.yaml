@@ -1,0 +1,32 @@
+document:
+  schema: urn:kb-design:data:source-obligations
+  schema_version: 1
+  obligations: []
+entity: z39-19
+trigger: new_version
+opened: "2026-08-31"
+resolved: "2026-09-01"
+retriggered: "2026-09-02"
+obligation_id: source-review-20260831-001
+retriggered_id: source-review-20260902-001
+opening_decisions: []
+resolution_decisions: [decision-source-0002]
+targets:
+  - kind: basis
+    file: vocab/topics.yaml
+    record: concept-controlled-vocabulary
+    field_path: definitions[0].basis[0]
+  - kind: match
+    file: vocab/topics.yaml
+    record: concept-thesaurus
+    field_path: mappings[0]
+second_target_key: vocab/topics.yaml:concept-thesaurus:mappings[0]
+conclusions:
+  "vocab/topics.yaml:concept-controlled-vocabulary:definitions[0].basis[0]":
+    outcome: retain
+    reviewed: "2026-09-01"
+    decisions: []
+  "vocab/topics.yaml:concept-thesaurus:mappings[0]":
+    outcome: revise
+    reviewed: "2026-09-01"
+    decisions: [decision-source-0002]

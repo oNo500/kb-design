@@ -29,7 +29,7 @@
 - Markdown 范围永不使用固定数量。每批从 `git ls-files -z -- '*.md'` 生成路径与 SHA-256 清单；与来源后置清单和本批允许写集比较，任何未解释增删改都阻断。
 - `concepts/glossary.md`、受委托标签、正文诊断、`vocab/generated/terms-v1.json`、`vocab/generated/term-reference-index.json` 与 `vocab/generated/source-reference-index.json` 必须在同一暂存根生成并验证。
 - TBX、Obsidian、应用导入、往返编辑、来源改档、生活范围、实体归属、三份旁路草案生效和发版不在本计划写集。
-- [证据阶段决定](../../../design/decisions/evidence-stage-boundary.md)允许当前阶段实现 T01–T11 的模式、校验、迁移、生成、委托诊断、维护和切换工具；T12 完整正式候选、T13 严格应用及真实术语准入留到来源证据下一阶段闭合后执行。当前工具实现不改变术语表所有权。
+- [当前阶段决定](../../../design/decisions/current-stage-scope.md)把术语正式委托、切换工具、完整候选和严格应用全部移到正式激活阶段。当前阶段只实现三层 schema、状态规则、冻结结论继承、确定性生成、正文诊断和维护索引；不改变术语表所有权，不创建正式激活数据。
 - `decision-term-0001` 与 `decision-term-0002` 分别先于其模式和真实迁移数据任务提交。`decision-term-0003`、`decision-term-0004`、`decision-term-0005` 绑定的是 T11 实现提交之后才存在的完整 candidate 与 manifest，因此只能在 T12 生成、预验并经人复核后提交；不得把这三份决定前置到 T11。
 - T11 只实现并提交 `cutover_terms.py`、两份测试和夹具；真实 candidate 与真实 manifest 必须不存在。T11 只运行不需要真实 candidate、manifest 或 cutover decision 的 69 项高风险测试，其中切换侧 8 项全部使用临时 Git 夹具。
 - T12 以干净的 T11 实现提交为 `implementation_commit`，生成完整 ignored candidate 与 ignored manifest，运行 71 项非决定绑定高风险测试及候选结构、哈希、来源严格校验、双索引、动态 Markdown 和草案预验；不得运行任何读取 `decision-term-0003`、`0004` 或 `0005` 的测试。人审通过后才提交这三份决定。
