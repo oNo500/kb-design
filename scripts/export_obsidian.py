@@ -123,6 +123,42 @@ _COLLECTION_FIELDS = {
         "replaced_by",
     },
 }
+_REQUIRED_FIELDS = {
+    ("topics", "arrays"): {"id", "superordinate", "source"},
+    ("topics", "concepts"): {
+        "id",
+        "label",
+        "basis",
+        "broader",
+        "source",
+        "match",
+        "status",
+        "added",
+    },
+    ("entities", "entities"): {
+        "id",
+        "label",
+        "kind",
+        "subjects",
+        "basis",
+        "status",
+        "added",
+    },
+    ("sources", "sources"): {"id", "entity", "role", "checked"},
+    ("types", "types"): {"id", "label", "scope", "match", "status", "added"},
+    ("genres", "genres"): {"id", "label", "scope", "match", "status", "added"},
+    ("forms", "arrays"): {"id", "superordinate", "source"},
+    ("forms", "forms"): {
+        "id",
+        "label",
+        "basis",
+        "arrays",
+        "scope",
+        "match",
+        "status",
+        "added",
+    },
+}
 _ID = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 _KIND_DIRECTORIES = {
     "topic": "Topics",
@@ -158,17 +194,102 @@ def _check_keys(
         )
 
 
-def _validate_nested(relative_path: str, collection: str, record: Mapping[str, Any]) -> None:
+def _check_required_keys(
+    relative_path: str,
+    object_id: str,
+    field_path: str,
+    value: Mapping[str, Any],
+    required: set[str],
+) -> None:
+    missing = sorted(required - set(value))
+    if missing:
+        raise _error(
+            relative_path,
+            object_id,
+            f"{field_path}.{missing[0]}",
+            "missing required field",
+        )
+
+
+def _check_string(relative_path: str, object_id: str, field_path: str, value: Any) -> None:
+    if not isinstance(value, str) or not value:
+        raise _error(relative_path, object_id, field_path, "expected non-empty string")
+
+
+def _check_string_list(relative_path: str, object_id: str, field_path: str, value: Any) -> None:
+    if not isinstance(value, list):
+        raise _error(relative_path, object_id, field_path, "expected list")
+    for index, item in enumerate(value):
+        _check_string(relative_path, object_id, f"{field_path}[{index}]", item)
+
+
+def _check_language_forms(
+    relative_path: str,
+    object_id: str,
+    field_path: str,
+    value: Any,
+    lists_allowed: bool,
+) -> None:
+    _check_keys(relative_path, object_id, field_path, value, {"zh", "en"})
+    if not value:
+        raise _error(relative_path, object_id, field_path, "expected non-empty mapping")
+    for language, forms in value.items():
+        path = f"{field_path}.{language}"
+        if lists_allowed and isinstance(forms, list):
+            _check_string_list(relative_path, object_id, path, forms)
+        else:
+            _check_string(relative_path, object_id, path, forms)
+
+
+def _validate_record(
+    name: str,
+    relative_path: str,
+    collection: str,
+    record: Mapping[str, Any],
+) -> None:
     object_id = str(record.get("id", "<missing-id>"))
-    for field in ("label", "alt", "hidden"):
+    record_path = f"{collection}[{object_id}]"
+    _check_required_keys(
+        relative_path,
+        object_id,
+        record_path,
+        record,
+        _REQUIRED_FIELDS[(name, collection)],
+    )
+
+    string_fields = {
+        "id",
+        "superordinate",
+        "source",
+        "entity",
+        "kind",
+        "vendor",
+        "replaced_by",
+        "form",
+        "tier",
+        "version",
+        "url",
+        "watch",
+        "scope",
+        "status",
+    }
+    for field in string_fields & set(record):
+        _check_string(relative_path, object_id, f"{record_path}.{field}", record[field])
+
+    list_fields = {"broader", "related", "arrays", "subjects", "creator", "role"}
+    for field in list_fields & set(record):
+        _check_string_list(relative_path, object_id, f"{record_path}.{field}", record[field])
+
+    for field in ("added", "checked"):
+        if field in record and not isinstance(record[field], datetime.date):
+            raise _error(relative_path, object_id, f"{record_path}.{field}", "expected date")
+
+    if "label" in record:
+        _check_language_forms(relative_path, object_id, f"{record_path}.label", record["label"], False)
+    for field in ("alt", "hidden"):
         if field in record:
-            _check_keys(
-                relative_path,
-                object_id,
-                f"{collection}[{object_id}].{field}",
-                record[field],
-                {"zh", "en"},
-            )
+            _check_language_forms(relative_path, object_id, f"{record_path}.{field}", record[field], True)
+
     if "basis" in record:
         allowed_basis = {"subjects"} if collection == "entities" else {"zh", "en"}
         _check_keys(
@@ -178,6 +299,15 @@ def _validate_nested(relative_path: str, collection: str, record: Mapping[str, A
             record["basis"],
             allowed_basis,
         )
+        if not record["basis"]:
+            raise _error(relative_path, object_id, f"{record_path}.basis", "expected non-empty mapping")
+        for field, basis in record["basis"].items():
+            path = f"{record_path}.basis.{field}"
+            if isinstance(basis, list):
+                _check_string_list(relative_path, object_id, path, basis)
+            else:
+                _check_string(relative_path, object_id, path, basis)
+
     if "match" in record:
         if not isinstance(record["match"], list):
             raise _error(
@@ -194,6 +324,34 @@ def _validate_nested(relative_path: str, collection: str, record: Mapping[str, A
                 match,
                 {"source", "id", "rel"},
             )
+            match_path = f"{record_path}.match[{index}]"
+            _check_required_keys(
+                relative_path,
+                object_id,
+                match_path,
+                match,
+                {"source", "id", "rel"},
+            )
+            for field in ("source", "id", "rel"):
+                _check_string(
+                    relative_path,
+                    object_id,
+                    f"{match_path}.{field}",
+                    match[field],
+                )
+
+    if "history" in record:
+        history_path = f"{record_path}.history"
+        if not isinstance(record["history"], list):
+            raise _error(relative_path, object_id, history_path, "expected list")
+        for index, event in enumerate(record["history"]):
+            if not isinstance(event, Mapping):
+                raise _error(
+                    relative_path,
+                    object_id,
+                    f"{history_path}[{index}]",
+                    "expected mapping",
+                )
 
 
 def load_repository(repo_root: pathlib.Path) -> dict:
@@ -209,8 +367,17 @@ def load_repository(repo_root: pathlib.Path) -> dict:
             raise ExportError(f"{relative_path}: object <document>: document: {exc}") from exc
         _check_keys(relative_path, "<document>", "document", document, allowed_top)
         _check_keys(relative_path, "<version>", "version", document.get("version"), {"id", "date", "note"})
-        if not document["version"].get("id"):
-            raise _error(relative_path, "<version>", "version.id", "missing value")
+        _check_required_keys(
+            relative_path,
+            "<version>",
+            "version",
+            document["version"],
+            {"id", "date", "note"},
+        )
+        _check_string(relative_path, "<version>", "version.id", document["version"]["id"])
+        if not isinstance(document["version"]["date"], datetime.date):
+            raise _error(relative_path, "<version>", "version.date", "expected date")
+        _check_string(relative_path, "<version>", "version.note", document["version"]["note"])
         for collection in allowed_top - {"version"}:
             records = document.get(collection)
             if not isinstance(records, list):
@@ -233,7 +400,7 @@ def load_repository(repo_root: pathlib.Path) -> dict:
                 if object_id in seen:
                     raise _error(relative_path, object_id, f"{collection}[{object_id}].id", "duplicate stable ID")
                 seen.add(object_id)
-                _validate_nested(relative_path, collection, record)
+                _validate_record(name, relative_path, collection, record)
         documents[name] = document
 
     _validate_references(documents)
@@ -294,6 +461,15 @@ def _validate_references(documents: Mapping[str, dict]) -> None:
         _require_targets("vocab/sources.yaml", "sources", record, "entity", entities)
     for record in documents["forms"]["forms"]:
         _require_targets("vocab/forms.yaml", "forms", record, "arrays", form_arrays)
+    for record in form_arrays.values():
+        _require_targets("vocab/forms.yaml", "arrays", record, "source", sources)
+        if record["superordinate"] != "forms":
+            raise _error(
+                "vocab/forms.yaml",
+                str(record["id"]),
+                f"arrays[{record['id']}].superordinate",
+                f"unknown controlled-value root {record['superordinate']}",
+            )
     for name, collection in (("types", "types"), ("genres", "genres"), ("forms", "forms")):
         records = _index(documents[name][collection])
         relative_path = _FILES[name][0]
@@ -426,6 +602,7 @@ def _common_properties(record: Mapping[str, Any], object_kind: str, version: str
     properties = OrderedDict()
     properties["kb_id"] = record["id"]
     properties["kb_object"] = object_kind
+    properties["kb_label"] = display_label(record)
     properties["kb_status"] = record.get("status")
     properties["kb_version"] = version
     properties["aliases"] = aliases(record) if "label" in record else []
@@ -598,6 +775,23 @@ def _insert(files: dict[str, bytes], path: str, content: bytes) -> None:
     files[path] = content
 
 
+def _readme(form_arrays: Sequence[Mapping[str, Any]]) -> bytes:
+    table = _table(
+        "载体数组",
+        ("id", "superordinate", "source"),
+        (
+            (record["id"], record["superordinate"], record["source"])
+            for record in form_arrays
+        ),
+    )
+    return (
+        "# 词表参考区\n\n"
+        "本目录由 kb-design 的六份正式词表确定性生成，只提供 Obsidian 浏览与链接。\n\n"
+        "对象路径使用稳定 ID；这里的修改不会回流正式词表。\n\n"
+        f"{table}\n"
+    ).encode("utf-8")
+
+
 def build_content_files(repo_root: pathlib.Path) -> dict[str, bytes]:
     """Return deterministic vault-relative content without writing to disk."""
 
@@ -663,16 +857,12 @@ def build_content_files(repo_root: pathlib.Path) -> dict[str, bytes]:
                 _render_controlled(index[object_id], object_kind, version, labels),
             )
 
-    _insert(files, "KB/Views/Topics.base", _base("Topics", "Topics", ("file.name", "kb_id", "kb_status", "kb_broader")))
-    _insert(files, "KB/Views/Entities.base", _base("Entities", "Entities", ("file.name", "kb_id", "kb_status", "kb_kind")))
-    _insert(files, "KB/Views/Sources.base", _base("Sources", "Sources", ("file.name", "kb_id", "kb_entity", "kb_roles")))
+    _insert(files, "KB/Views/Topics.base", _base("Topics", "Topics", ("kb_id", "kb_label", "kb_status", "kb_broader")))
+    _insert(files, "KB/Views/Entities.base", _base("Entities", "Entities", ("kb_id", "kb_label", "kb_status", "kb_kind")))
+    _insert(files, "KB/Views/Sources.base", _base("Sources", "Sources", ("kb_id", "kb_label", "kb_entity", "kb_roles")))
     _insert(
         files,
         "README.md",
-        (
-            "# 词表参考区\n\n"
-            "本目录由 kb-design 的六份正式词表确定性生成，只提供 Obsidian 浏览与链接。\n\n"
-            "对象路径使用稳定 ID；这里的修改不会回流正式词表。\n"
-        ).encode("utf-8"),
+        _readme(documents["forms"]["arrays"]),
     )
     return dict(sorted(files.items()))
