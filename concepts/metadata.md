@@ -70,9 +70,16 @@ ISO 15836-1:2017，即 DCMI 的 `/elements/1.1/` 命名空间：
 
 ## 在知识库中
 
-- 内容单元的字段按 Dublin Core 取，不自造字段名；本库没有的概念（如“状态”）用 DCMI Terms 里最近的属性或明确标为本库扩展
-- `subject` 的值只能是主题词表的概念 id；`type` 的值只能是文档类型词表的 id；引用的文献和工具通过实体 id
-- 元数据是与应用无关的：Obsidian 的 properties、DITA 的 prolog 都是它的一种落地，字段含义不随工具变
+本库把 metadata 语义、应用约束和具体表示分开。内容模型继续采用 Dublin Core 字段；Dublin Core 没有覆盖的概念使用 DCMI Metadata Terms 中语义最接近的 property，仍无对应时明确标为本库扩展。
+
+| 层次 | 规则 | 例子 |
+|---|---|---|
+| 内容模型 | 固定字段语义和对象关系，不随 target 改变 | `subject` 始终表示资源的主题 |
+| 受控值 | 受控字段只引用对应的正式词表 | `subject` 引用正式主题词表，`type` 引用正式文档类型词表 |
+| 应用约束 | [Application Profile](application-profile.md) 规定字段选择、基数、值来源和使用条件 | 某类内容必须至少关联一个正式主题概念 |
+| 具体表示 | 每个 target 规定 encoding、field binding 和路径 | Obsidian properties 与 DITA prolog 可以表示同一字段 |
+
+Obsidian properties 或 DITA prolog 只改变字段的表示位置和语法，不改变字段语义、受控值身份或应用约束。application binding 只把既定 property 绑定到一个 target field、路径或表示规则；它不是 [词表映射](vocabulary-mapping.md)，也不是两个独立 metadata standard、schema 或 profile 之间的 `metadata crosswalk`。
 
 ## 权威来源
 
@@ -80,3 +87,4 @@ ISO 15836-1:2017，即 DCMI 的 `/elements/1.1/` 命名空间：
 - [ISO 15836-1:2017 Information and documentation — The Dublin Core metadata element set — Part 1: Core elements](https://www.iso.org/standard/71339.html)
 - [ISO 15836-2:2019 — Part 2: DCMI Properties and classes](https://www.iso.org/standard/71341.html)。DCMI Usage Board 是 ISO 15836 的维护机构
 - ISO 25964-1:2011 §2.33 metadata，见 [ISO 25964 阅读笔记](../sources/iso-25964.md)
+- [DCMI Application Profiles 阅读笔记](../sources/dcmi-application-profiles.md)：Application Profile、field binding、encoding 与 metadata crosswalk 的职责边界

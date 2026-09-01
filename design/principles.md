@@ -2,7 +2,7 @@
 
 本库采用的每一种方法或范式，在这里登记来源和导出的规则。方法的第一原理写在对应的概念文里；没有概念文的方法标明。
 
-准入规则：引入新方法先登记；提出新规则先看能否从已登记方法的原理推出，推不出就不加。理由见[第一原理与设计理由](../concepts/first-principles.md)。本次同步不新增方法、来源或 designation，只更新既有方法对来源身份、用途、断言依据、实际派生、概念映射和复核的现行导出。
+准入规则：引入新方法先登记；提出新规则先看能否从已登记方法的原理推出，推不出就不加。理由见[第一原理与设计理由](../concepts/first-principles.md)。方法登记只确定推导依据与能力边界，不使草案、接口、来源数据或符合性主张生效。
 
 ## 登记表
 
@@ -19,6 +19,8 @@
 | 名称规范表 | [词表映射](../concepts/vocabulary-mapping.md)（与各类词表互操作）、[受控词表](../concepts/controlled-vocabulary.md) | ISO 25964-2 §23 | [entities.md](entities.md) 保存来源身份；[sources-registry.md](sources-registry.md) 保存来源用途；身份、用途和具体引用互不替代 |
 | 新主题的分类 | [新主题的分类](../concepts/classifying-new-subjects.md) | Ranganathan 好客准则（1957）；Hulme（1911）；Hjørland & Albrechtsen（1995）；Bowker & Star（1999、2007） | 实体表的 kind / form / subjects；本地概念 candidate；通用 `origin` 不再使用，发现观察、具体值依据、实际派生和概念映射分别处理；[maintenance.md](maintenance.md) 剩余监控 |
 | 元数据 | [元数据](../concepts/metadata.md) | Dublin Core：ISO 15836-1:2017、ISO 15836-2:2019；DCMI Metadata Terms 2020 | [content-model.md](content-model.md) |
+| Application Profile | [Application Profile](../concepts/application-profile.md) | [DCMI Application Profiles 阅读笔记](../sources/dcmi-application-profiles.md)；[Obsidian 官方帮助阅读笔记](../sources/obsidian-help.md) | 从 metadata／应用需求导出功能范围、模型引用、字段约束、使用指南和 encoding；不产生 DCAP conformance |
+| Reproducible Builds | [Reproducible Builds](../concepts/reproducible-builds.md) | [Reproducible Builds 阅读笔记](../sources/reproducible-builds.md)；[BagIt 文件包格式阅读笔记](../sources/rfc-8493.md)；[RFC 8785 阅读笔记](../sources/rfc-8785.md)；[W3C PROV 阅读笔记](../sources/w3c-prov.md)；[Python 文件系统阅读笔记](../sources/python-filesystem.md) | 从 source／environment／instructions／artifact 导出确定性与可重建证据边界；当前只使用它限制完成声明 |
 | 第一原理与设计理由 | [第一原理与设计理由](../concepts/first-principles.md) | Aristotle；Kunz & Rittel IBIS（1970）；Nygard ADR（2011） | 本文；[decisions/](decisions/) 不删旧决定；来源结构决定不代替逐项外部事实或项目决定 |
 | 写作规范 | [写作规范](../concepts/writing-conventions.md) | 原则：ISO 24495-1:2023；中文书面语：GB/T 15834、W3C clreq；技术写作：Google、Microsoft style guide；文档分类：Diátaxis | [writing.md](writing.md)；`AGENTS.md` 为其摘要；目录划分 `concepts/` 解释、`design/` 参考；[content-model.md](content-model.md) 文档类型词表取 Diátaxis 四类 |
 | 治理 | [治理](../concepts/governance.md) | ISO 37000:2021；DAMA-DMBOK 数据治理；ISO 15489-1 §6 | [governance.md](governance.md) 政策、决策权、变更控制、审计；来源 schema、索引、探测和迁移能力不取得正式修改权限 |
@@ -29,7 +31,9 @@
 
 ## 效力边界
 
-登记表中的来源和方法没有因本次同步改变。来源 schema、离线校验、反向索引、固定夹具探测、历史迁移预演和复核义务接口已经存在，但正式来源数据、严格引用和角色状态尚未迁移，来源治理草案仍未生效。既有迁移账本只作历史审计，不能证明当前 HEAD 可重放，也不能把推荐值写成现行规则或数据。
+Application Profile 与 Reproducible Builds 的登记只建立推导方法和完成声明边界，不建立正式 Application Profile，也不产生 DCAP、DCAM、DCTAP、JCS、BagIt 或 reproducible build conformance。来源笔记、现行 Obsidian 设计和代码不因方法登记而改变。
+
+来源 schema、离线校验、反向索引、固定夹具探测、历史迁移预演和复核义务接口已经存在，但正式来源数据、严格引用和角色状态尚未迁移，来源治理草案仍未生效。既有迁移账本只作历史审计，不能证明当前 HEAD 可重放，也不能把推荐值写成现行规则或数据。
 
 ## 未登记的做法
 

@@ -158,6 +158,13 @@
 | 资源 | resource | 被描述的东西：文档、图像、数据集、软件 | DCMI |
 | 内容单元 | — | 知识库里最小的可独立引用、可独立打标签的东西；参照 DITA topic | 本库，参照 DITA 1.3 §2.2.1 |
 
+## 应用与生成
+
+| 术语 | 英文 | 定义 | 出处 |
+|---|---|---|---|
+| Application Profile | Application Profile | 为特定应用规定 metadata term、约束、使用与编码语法的文档集合 | DCMI Singapore Framework；中文查无高阶正文依据 |
+| Reproducible Builds | Reproducible Builds | 使任何一方在相同 source、environment 和 instructions 下重建逐字节相同 artifacts 的实践 | Reproducible Builds definition |
+
 ## 写作与设计方法
 
 | 术语 | 英文 | 定义 | 出处 |
