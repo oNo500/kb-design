@@ -1,21 +1,21 @@
 # Obsidian 映射
 
-本文是 Obsidian target 的现行 `Application Profile` 与导出 artifact contract。它按[内容模型](../content-model.md)引用应用无关语义，规定 Obsidian 表示的语义选择，再单独规定所选表示怎样物化为文件。分层依据见 [Application Profile](../../concepts/application-profile.md)、[Reproducible Builds](../../concepts/reproducible-builds.md)和[应用约束与表示分层](../decisions/application-profile-boundary.md)。
+本文是 Obsidian target 的现行 `Application Profile` 与导出 artifact contract。它按[内容模型](../content-model.md)引用应用无关语义，规定 Obsidian 表示的语义选择，再单独规定所选表示怎样物化为文件。分层依据见 [Application Profile](../../concepts/application-profile.md)、[Reproducible Builds](../../concepts/reproducible-builds.md)、[方法登记](../principles.md)和[应用约束与表示分层](../decisions/application-profile-boundary.md)。
 
 当前实现只把六份正式词表生成成单向词表参考区。内容表示只有未来应用必须遵守的约束；仓库没有知识库内容、内容导出器、内容校验器、检索记录或回流接口。
 
 ## 功能范围
 
-当前功能范围包括：
+当前 `Application Profile` 支持用户浏览、链接和筛选正式词表表示。
 
-- 为六份正式词表中的每个正式记录生成稳定 ID 路径的 Obsidian 笔记；
-- 为主题数组生成分组笔记，并保留载体数组的正式值；
-- 用 Wikilink 表达已生成对象之间的引用；
-- 提供 Topics、Entities 和 Sources 三个 Base 浏览入口；
-- 用项目 manifest 记录输入快照、生成文件集合和 checksum；
-- 在发布前校验文件集合、字节、frontmatter、Base YAML、内部链接和 manifest 覆盖。
+- 浏览正式对象的稳定身份、显示形式、状态、关系、范围与依据表示；
+- 沿 Wikilink 查看上位、相关、数组成员、实体和来源用途之间的正式引用；
+- 通过 Base 按既定 properties 排序和筛选正式词表表示；
+- 为未来内容应用规定字段位置、target type、reference form、受控值引用、使用条件和允许的 loss。
 
-当前功能范围不包括知识库内容生成、内容检索、引用统计、未匹配检索统计、导入、回流、既有 vault 合并、来源或术语正式激活、TBX，以及任何 DCAP、DCTAP、JCS、BagIt 或 reproducible build conformance。
+未来内容 binding 只规定应用语义。当前没有内容消费者，不生成或读取知识库内容，不执行内容查询、引用统计、未匹配检索统计或回流。
+
+生成文件、确定 file set、写入项目 manifest、post-generation validation 和 publication 不属于本节的应用功能，只由“导出合同”和“发布边界”规定。导入、既有 vault 合并、来源或术语正式激活、TBX，以及 DCAP、DCTAP、JCS、BagIt 或 reproducible build conformance 也不在当前功能范围内。
 
 ## 效力边界
 
