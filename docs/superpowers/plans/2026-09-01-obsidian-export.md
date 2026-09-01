@@ -110,7 +110,7 @@ git commit -m "[L2] Obsidian:建立词表笔记映射"
 
 - [ ] **Step 2: 运行 RED**
 
-运行完整测试模块。预期新增 4 项因 manifest／write 接口不存在失败，Task 1 的 2 项继续通过。
+运行完整测试模块。预期新增 4 项因 manifest／write 接口不存在失败，Task 1 修正后的 8 项继续通过。
 
 - [ ] **Step 3: 实现 manifest**
 
@@ -140,7 +140,7 @@ python3 scripts/export_obsidian.py --repo-root . --output /absolute/new/path
 
 - [ ] **Step 6: 运行 GREEN**
 
-运行 6 项测试，预期全部通过。再对真实仓库执行两个独立 `/tmp` 导出，`diff -ru` 预期无差异；运行 `git status --short`，受跟踪写集只含代码和测试。
+运行 12 项测试，预期全部通过。再对真实仓库执行两个独立 `/tmp` 导出，`diff -ru` 预期无差异；运行 `git status --short`，受跟踪写集只含代码和测试。
 
 - [ ] **Step 7: 提交安全导出**
 
