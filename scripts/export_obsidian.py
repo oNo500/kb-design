@@ -3,10 +3,16 @@
 
 from __future__ import annotations
 
+import argparse
 import datetime
+import hashlib
 import json
+import os
 import pathlib
 import re
+import shutil
+import sys
+import tempfile
 from collections import OrderedDict
 from typing import Any, Iterable, Mapping, Sequence
 
@@ -166,6 +172,8 @@ _KIND_DIRECTORIES = {
     "genre": "Genres",
     "form": "Forms",
 }
+_DIRECTORY_KINDS = {directory: kind for kind, directory in _KIND_DIRECTORIES.items()}
+_WIKILINK = re.compile(r"\[\[([^\]|#]+)(?:\|[^\]]+)?\]\]")
 
 
 def _error(relative_path: str, object_id: str, field_path: str, message: str) -> ExportError:
@@ -869,3 +877,296 @@ def build_content_files(repo_root: pathlib.Path) -> dict[str, bytes]:
         _readme(documents["forms"]["arrays"]),
     )
     return dict(sorted(files.items()))
+
+
+def _sha256(content: bytes) -> str:
+    return hashlib.sha256(content).hexdigest()
+
+
+def _canonical_json(document: Mapping[str, Any]) -> bytes:
+    return (
+        json.dumps(document, ensure_ascii=False, indent=2, sort_keys=True)
+        + "\n"
+    ).encode("utf-8")
+
+
+def _manifest_identity(relative_path: str) -> tuple[str, str]:
+    path = pathlib.PurePosixPath(relative_path)
+    if path.is_absolute() or relative_path != path.as_posix() or ".." in path.parts:
+        raise ExportError(f"unsafe output path: {relative_path}")
+    if relative_path == "README.md":
+        return "index", path.stem
+    if path.suffix == ".base" and path.parts[:2] == ("KB", "Views"):
+        return "base", path.stem
+    if len(path.parts) == 3 and path.parts[0] == "KB" and path.suffix == ".md":
+        try:
+            object_kind = _DIRECTORY_KINDS[path.parts[1]]
+        except KeyError as exc:
+            raise ExportError(f"unknown output directory: {relative_path}") from exc
+        if not _ID.fullmatch(path.stem):
+            raise ExportError(f"invalid output ID: {relative_path}")
+        return object_kind, path.stem
+    raise ExportError(f"unknown output path: {relative_path}")
+
+
+def build_manifest(repo_root: pathlib.Path, files: Mapping[str, bytes]) -> bytes:
+    """Build the deterministic manifest for generated content files."""
+
+    root = pathlib.Path(repo_root)
+    entries = []
+    counts = {kind: 0 for kind in _KIND_DIRECTORIES}
+    digest_input = bytearray()
+    for relative_path, content in sorted(files.items()):
+        if relative_path == "manifest.json":
+            raise ExportError("manifest.json must not list itself")
+        if not isinstance(content, bytes):
+            raise ExportError(f"output content is not bytes: {relative_path}")
+        object_kind, object_id = _manifest_identity(relative_path)
+        content_sha256 = _sha256(content)
+        entries.append(
+            {
+                "id": object_id,
+                "object": object_kind,
+                "path": relative_path,
+                "sha256": content_sha256,
+            }
+        )
+        if object_kind in counts:
+            counts[object_kind] += 1
+        digest_input.extend(
+            f"{relative_path}\0{content_sha256}\n".encode("utf-8")
+        )
+
+    inputs = []
+    for relative_path, _ in _FILES.values():
+        path = root / relative_path
+        try:
+            content = path.read_bytes()
+            document = yaml.safe_load(content.decode("utf-8"))
+            version = document["version"]["id"]
+        except (OSError, UnicodeError, yaml.YAMLError, KeyError, TypeError) as exc:
+            raise ExportError(f"{relative_path}: cannot build manifest: {exc}") from exc
+        inputs.append(
+            {
+                "path": relative_path,
+                "sha256": _sha256(content),
+                "version": str(version),
+            }
+        )
+
+    try:
+        exporter_sha256 = _sha256(pathlib.Path(__file__).read_bytes())
+    except OSError as exc:
+        raise ExportError(f"cannot hash exporter: {exc}") from exc
+
+    return _canonical_json(
+        {
+            "content_files": len(entries),
+            "content_sha256": _sha256(bytes(digest_input)),
+            "exporter_sha256": exporter_sha256,
+            "files": entries,
+            "inputs": inputs,
+            "object_counts": counts,
+            "schema": "kb-design-obsidian-export",
+            "schema_version": 1,
+            "total_files": len(entries) + 1,
+        }
+    )
+
+
+def _is_within(path: pathlib.Path, directory: pathlib.Path) -> bool:
+    return path == directory or directory in path.parents
+
+
+def _validate_output_path(repo_root: pathlib.Path, output: pathlib.Path) -> pathlib.Path:
+    candidate = pathlib.Path(output).expanduser()
+    if candidate.name in {"", ".", ".."}:
+        raise ExportError(f"unsafe output path: {output}")
+    if candidate.is_symlink():
+        raise ExportError(f"output is a symbolic link: {output}")
+    try:
+        resolved = candidate.resolve(strict=False)
+        root = pathlib.Path(repo_root).resolve(strict=True)
+        home = pathlib.Path.home().resolve(strict=False)
+    except OSError as exc:
+        raise ExportError(f"cannot resolve output path: {exc}") from exc
+
+    filesystem_root = pathlib.Path(resolved.anchor)
+    if resolved in {root, home, filesystem_root}:
+        raise ExportError(f"forbidden output path: {resolved}")
+    for relative_path in ("vocab", "design", "concepts", "sources", "scripts", "tests"):
+        if _is_within(resolved, root / relative_path):
+            raise ExportError(f"output is inside protected directory: {resolved}")
+
+    parent = resolved.parent
+    if not parent.exists() or not parent.is_dir():
+        raise ExportError(f"output parent is not an existing directory: {parent}")
+    if resolved.exists():
+        if not resolved.is_dir():
+            raise ExportError(f"output exists and is not a directory: {resolved}")
+        try:
+            if next(resolved.iterdir(), None) is not None:
+                raise ExportError(f"output directory is not empty: {resolved}")
+        except OSError as exc:
+            raise ExportError(f"cannot inspect output directory: {exc}") from exc
+    return resolved
+
+
+def _parse_frontmatter(relative_path: str, content: bytes) -> Mapping[str, Any]:
+    try:
+        text = content.decode("utf-8")
+        if not text.startswith("---\n"):
+            raise ExportError(f"missing frontmatter: {relative_path}")
+        _, frontmatter, _ = text.split("---\n", 2)
+        properties = yaml.safe_load(frontmatter)
+    except (UnicodeError, ValueError, yaml.YAMLError) as exc:
+        raise ExportError(f"invalid frontmatter: {relative_path}: {exc}") from exc
+    if not isinstance(properties, Mapping):
+        raise ExportError(f"invalid frontmatter mapping: {relative_path}")
+    return properties
+
+
+def _validate_written_export(
+    directory: pathlib.Path,
+    content_files: Mapping[str, bytes],
+    manifest_bytes: bytes,
+) -> dict[str, Any]:
+    expected = dict(content_files)
+    expected["manifest.json"] = manifest_bytes
+    actual_paths = {
+        path.relative_to(directory).as_posix()
+        for path in directory.rglob("*")
+        if path.is_file()
+    }
+    if actual_paths != set(expected):
+        missing = sorted(set(expected) - actual_paths)
+        extra = sorted(actual_paths - set(expected))
+        raise ExportError(f"written file set mismatch: missing={missing}, extra={extra}")
+
+    readback = {}
+    for relative_path, expected_content in sorted(expected.items()):
+        path = directory / relative_path
+        if path.is_symlink():
+            raise ExportError(f"written file is a symbolic link: {relative_path}")
+        try:
+            actual_content = path.read_bytes()
+        except OSError as exc:
+            raise ExportError(f"cannot read written file {relative_path}: {exc}") from exc
+        if _sha256(actual_content) != _sha256(expected_content):
+            raise ExportError(f"written file hash mismatch: {relative_path}")
+        readback[relative_path] = actual_content
+
+    for relative_path, content in readback.items():
+        if relative_path.endswith(".md"):
+            if relative_path == "README.md":
+                try:
+                    content.decode("utf-8")
+                except UnicodeError as exc:
+                    raise ExportError(f"invalid Markdown: {relative_path}: {exc}") from exc
+            else:
+                _parse_frontmatter(relative_path, content)
+        elif relative_path.endswith(".base"):
+            try:
+                document = yaml.safe_load(content)
+            except yaml.YAMLError as exc:
+                raise ExportError(f"invalid Base YAML: {relative_path}: {exc}") from exc
+            if not isinstance(document, Mapping):
+                raise ExportError(f"invalid Base mapping: {relative_path}")
+
+    unresolved = []
+    for relative_path, content in readback.items():
+        if not relative_path.endswith(".md"):
+            continue
+        for target in _WIKILINK.findall(content.decode("utf-8")):
+            target_path = f"{target}.md"
+            if target_path not in content_files:
+                unresolved.append((relative_path, target))
+    if unresolved:
+        raise ExportError(f"unresolved written link: {unresolved[0][0]} -> {unresolved[0][1]}")
+
+    try:
+        manifest = json.loads(readback["manifest.json"])
+    except (UnicodeError, json.JSONDecodeError) as exc:
+        raise ExportError(f"invalid manifest JSON: {exc}") from exc
+    if not isinstance(manifest, dict):
+        raise ExportError("invalid manifest mapping")
+    if _canonical_json(manifest) != manifest_bytes:
+        raise ExportError("manifest is not canonical JSON")
+    manifest_paths = {entry.get("path") for entry in manifest.get("files", [])}
+    if manifest_paths != set(content_files):
+        raise ExportError("manifest file coverage mismatch")
+    for entry in manifest["files"]:
+        relative_path = entry["path"]
+        if entry.get("sha256") != _sha256(readback[relative_path]):
+            raise ExportError(f"manifest file hash mismatch: {relative_path}")
+    if manifest.get("content_files") != len(content_files):
+        raise ExportError("manifest content count mismatch")
+    if manifest.get("total_files") != len(readback):
+        raise ExportError("manifest total count mismatch")
+    digest_input = b"".join(
+        f"{path}\0{_sha256(readback[path])}\n".encode("utf-8")
+        for path in sorted(content_files)
+    )
+    if manifest.get("content_sha256") != _sha256(digest_input):
+        raise ExportError("manifest content hash mismatch")
+    return manifest
+
+
+def write_export(repo_root: pathlib.Path, output: pathlib.Path) -> dict:
+    """Write a validated export by replacing only a new or empty directory."""
+
+    destination = _validate_output_path(repo_root, output)
+    content_files = build_content_files(repo_root)
+    manifest_bytes = build_manifest(repo_root, content_files)
+    temporary = None
+    try:
+        temporary = pathlib.Path(
+            tempfile.mkdtemp(
+                prefix=f".{destination.name}.tmp-",
+                dir=destination.parent,
+            )
+        )
+        for relative_path, content in content_files.items():
+            path = temporary / relative_path
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(content)
+        (temporary / "manifest.json").write_bytes(manifest_bytes)
+        manifest = _validate_written_export(temporary, content_files, manifest_bytes)
+        os.replace(temporary, destination)
+        temporary = None
+    except BaseException:
+        if temporary is not None and temporary.exists():
+            shutil.rmtree(temporary)
+        raise
+
+    return {
+        "content_files": manifest["content_files"],
+        "content_sha256": manifest["content_sha256"],
+        "output": str(destination),
+        "total_files": manifest["total_files"],
+    }
+
+
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(description="Export formal vocabularies for Obsidian")
+    parser.add_argument("--repo-root", required=True, type=pathlib.Path)
+    parser.add_argument("--output", required=True, type=pathlib.Path)
+    arguments = parser.parse_args(argv)
+    try:
+        summary = write_export(arguments.repo_root, arguments.output)
+    except Exception as exc:
+        print(f"OBSIDIAN_EXPORT_ERROR {exc}", file=sys.stderr)
+        return 1
+    print(
+        json.dumps(
+            summary,
+            ensure_ascii=False,
+            separators=(",", ":"),
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

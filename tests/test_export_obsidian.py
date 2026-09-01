@@ -1,5 +1,7 @@
 import contextlib
 import datetime
+import hashlib
+import json
 import pathlib
 import re
 import shutil
@@ -8,6 +10,7 @@ import unittest
 
 import yaml
 
+import scripts.export_obsidian as export_obsidian
 from scripts.export_obsidian import ExportError, build_content_files
 
 
@@ -316,6 +319,210 @@ class ExportObsidianTests(unittest.TestCase):
             with self.subTest(path):
                 base = yaml.safe_load(files[path])
                 self.assertEqual(expected, base["views"][0]["order"])
+
+    def test_write_export_is_deterministic_and_manifest_is_complete(self):
+        content_files = build_content_files(ROOT)
+        manifest_bytes = export_obsidian.build_manifest(ROOT, content_files)
+
+        with tempfile.TemporaryDirectory() as temporary:
+            parent = pathlib.Path(temporary)
+            first = parent / "first"
+            second = parent / "second"
+            second.mkdir()
+
+            first_summary = export_obsidian.write_export(ROOT, first)
+            second_summary = export_obsidian.write_export(ROOT, second)
+
+            first_paths = sorted(
+                path.relative_to(first).as_posix()
+                for path in first.rglob("*")
+                if path.is_file()
+            )
+            second_paths = sorted(
+                path.relative_to(second).as_posix()
+                for path in second.rglob("*")
+                if path.is_file()
+            )
+            self.assertEqual(first_paths, second_paths)
+            self.assertEqual(848, len(first_paths))
+            for relative_path in first_paths:
+                self.assertEqual(
+                    (first / relative_path).read_bytes(),
+                    (second / relative_path).read_bytes(),
+                    relative_path,
+                )
+
+            self.assertEqual(manifest_bytes, (first / "manifest.json").read_bytes())
+            manifest = json.loads(manifest_bytes)
+            self.assertEqual(
+                {
+                    "content_files",
+                    "content_sha256",
+                    "exporter_sha256",
+                    "files",
+                    "inputs",
+                    "object_counts",
+                    "schema",
+                    "schema_version",
+                    "total_files",
+                },
+                set(manifest),
+            )
+            self.assertEqual("kb-design-obsidian-export", manifest["schema"])
+            self.assertEqual(1, manifest["schema_version"])
+            self.assertEqual(
+                {
+                    "array": 24,
+                    "entity": 61,
+                    "form": 16,
+                    "genre": 5,
+                    "source": 31,
+                    "topic": 700,
+                    "type": 6,
+                },
+                manifest["object_counts"],
+            )
+            self.assertEqual(847, manifest["content_files"])
+            self.assertEqual(848, manifest["total_files"])
+            self.assertEqual(847, len(manifest["files"]))
+            self.assertNotIn("manifest.json", {entry["path"] for entry in manifest["files"]})
+
+            input_paths = (
+                "vocab/topics.yaml",
+                "vocab/entities.yaml",
+                "vocab/sources.yaml",
+                "vocab/types.yaml",
+                "vocab/genres.yaml",
+                "vocab/forms.yaml",
+            )
+            self.assertEqual(
+                [
+                    {
+                        "path": path,
+                        "sha256": hashlib.sha256((ROOT / path).read_bytes()).hexdigest(),
+                        "version": "2026.08",
+                    }
+                    for path in input_paths
+                ],
+                manifest["inputs"],
+            )
+            self.assertEqual(
+                hashlib.sha256(pathlib.Path(export_obsidian.__file__).read_bytes()).hexdigest(),
+                manifest["exporter_sha256"],
+            )
+
+            directory_objects = {
+                "Arrays": "array",
+                "Entities": "entity",
+                "Forms": "form",
+                "Genres": "genre",
+                "Sources": "source",
+                "Topics": "topic",
+                "Types": "type",
+            }
+            expected_entries = []
+            content_digest_input = bytearray()
+            for path, content in sorted(content_files.items()):
+                sha256 = hashlib.sha256(content).hexdigest()
+                if path == "README.md":
+                    object_kind = "index"
+                elif path.endswith(".base"):
+                    object_kind = "base"
+                else:
+                    object_kind = directory_objects[pathlib.PurePosixPath(path).parts[1]]
+                expected_entries.append(
+                    {
+                        "id": pathlib.PurePosixPath(path).stem,
+                        "object": object_kind,
+                        "path": path,
+                        "sha256": sha256,
+                    }
+                )
+                content_digest_input.extend(f"{path}\0{sha256}\n".encode("utf-8"))
+            self.assertEqual(expected_entries, manifest["files"])
+            self.assertEqual(
+                hashlib.sha256(content_digest_input).hexdigest(),
+                manifest["content_sha256"],
+            )
+            self.assertEqual(
+                json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True).encode("utf-8")
+                + b"\n",
+                manifest_bytes,
+            )
+            expected_summary_keys = {"content_files", "content_sha256", "output", "total_files"}
+            self.assertEqual(expected_summary_keys, set(first_summary))
+            self.assertEqual(expected_summary_keys, set(second_summary))
+            self.assertEqual(str(first.resolve()), first_summary["output"])
+            self.assertEqual(str(second.resolve()), second_summary["output"])
+            self.assertEqual(manifest["content_sha256"], first_summary["content_sha256"])
+            self.assertEqual(manifest["content_sha256"], second_summary["content_sha256"])
+
+    def test_write_export_rejects_nonempty_output_without_changes(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            parent = pathlib.Path(temporary)
+            output = parent / "nonempty"
+            output.mkdir()
+            sentinel = output / "sentinel.bin"
+            sentinel.write_bytes(b"keep-nonempty")
+            before = sorted(path.name for path in parent.iterdir())
+
+            with self.assertRaises(ExportError):
+                export_obsidian.write_export(ROOT, output)
+
+            self.assertEqual(b"keep-nonempty", sentinel.read_bytes())
+            self.assertEqual(["sentinel.bin"], sorted(path.name for path in output.iterdir()))
+            self.assertEqual(before, sorted(path.name for path in parent.iterdir()))
+
+        with tempfile.TemporaryDirectory() as temporary:
+            parent = pathlib.Path(temporary)
+            linked_directory = parent / "linked"
+            linked_directory.mkdir()
+            sentinel = linked_directory / "sentinel.bin"
+            sentinel.write_bytes(b"keep-symlink")
+            output = parent / "output"
+            output.symlink_to(linked_directory, target_is_directory=True)
+            before = sorted(path.name for path in parent.iterdir())
+
+            with self.assertRaises(ExportError):
+                export_obsidian.write_export(ROOT, output)
+
+            self.assertTrue(output.is_symlink())
+            self.assertEqual(b"keep-symlink", sentinel.read_bytes())
+            self.assertEqual(before, sorted(path.name for path in parent.iterdir()))
+
+        with mutated_repository("vocab/topics.yaml", lambda document: None) as repo_root:
+            sentinel = repo_root / "vocab" / "sentinel.bin"
+            sentinel.write_bytes(b"keep-forbidden")
+            output = repo_root / "vocab" / "output"
+
+            with self.assertRaises(ExportError):
+                export_obsidian.write_export(repo_root, output)
+
+            self.assertFalse(output.exists())
+            self.assertEqual(b"keep-forbidden", sentinel.read_bytes())
+            self.assertFalse(any(path.name.startswith(".output.tmp-") for path in output.parent.iterdir()))
+
+    def test_write_export_rejects_dangling_reference_without_target(self):
+        def mutate(document):
+            find_record(document, "concepts", "security")["broader"] = ["does-not-exist"]
+
+        with mutated_repository("vocab/topics.yaml", mutate) as repo_root:
+            output = repo_root / "output"
+            with self.assertRaises(ExportError):
+                export_obsidian.write_export(repo_root, output)
+            self.assertFalse(output.exists())
+            self.assertFalse(any(path.name.startswith(".output.tmp-") for path in repo_root.iterdir()))
+
+    def test_write_export_rejects_unknown_field_without_target(self):
+        def mutate(document):
+            find_record(document, "concepts", "security")["unknown_field"] = "blocked"
+
+        with mutated_repository("vocab/topics.yaml", mutate) as repo_root:
+            output = repo_root / "output"
+            with self.assertRaises(ExportError):
+                export_obsidian.write_export(repo_root, output)
+            self.assertFalse(output.exists())
+            self.assertFalse(any(path.name.startswith(".output.tmp-") for path in repo_root.iterdir()))
 
 
 if __name__ == "__main__":
