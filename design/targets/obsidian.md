@@ -21,7 +21,7 @@
 
 - `vocab/topics.yaml`、`vocab/entities.yaml`、`vocab/sources.yaml`、`vocab/types.yaml`、`vocab/genres.yaml` 和 `vocab/forms.yaml` 是导出的正式输入。
 - `vocab/topics.yaml` 的编辑路径仍由[主题词表设计](../topics.md)规定；其他正式词表仍按各自设计维护。
-- 生成的 Markdown、Base、README 和项目 manifest 可以被文件系统工具或 Obsidian 编辑，但都不是正式词表、术语表、迁移账本或新的编辑源。
+- 生成的 Markdown、Base 和 README 可以被 Obsidian 或文件系统工具编辑；项目 manifest 只能由文件系统工具修改。它们都不是正式词表、术语表、迁移账本或新的编辑源。
 - 导出器不读取生成目录中的修改。修改不会回流本仓库，不取得 designation、概念、关系、状态或项目决定的效力；再次导出可以覆盖修改。
 - 导出器不读取来源与术语迁移账本、候选记录、未激活模式、草案、诊断报告或 Superpowers 过程文件。
 - `concepts/glossary.md` 继续承担 designation 与中英对照的现行编辑权；正式术语数据尚未激活。
@@ -36,21 +36,9 @@ target binding 不得修改字段语义、基数、值域、稳定身份、对�
 
 ## 字段约束
 
-每篇词表对象笔记使用下列公共 properties；不存在的值省略，不写空字符串、空列表或 `null`。
+“词表表示”和“内容表示”的矩阵逐个记录 source identity、必填性与基数、literal／reference、datatype 或受控值、target location／property、缺省与省略、loss 保存位置和可逆性。矩阵中的“无；未实现回流”表示生成表示没有反向写回正式 source 的接口，不能据字段看似无损就推导可逆。
 
-| Property | Obsidian type | 取值 |
-|---|---|---|
-| `kb_id` | Text | 正式稳定 ID |
-| `kb_object` | Text | `topic`、`array`、`entity`、`source`、`type`、`genre` 或 `form` |
-| `kb_label` | Text | 中文标签、英文标签、ID 的固定回退结果 |
-| `kb_status` | Text | 正式记录已有的状态 |
-| `kb_version` | Text | 所属正式词表的版本 ID |
-| `aliases` | List | 正式 `label`、`alt` 和 `hidden` 中除显示形式外的非空形式 |
-| `tags` | Tags | `kb-design/<object>` |
-
-`aliases` 只保存正式数据中已经存在的形式，不翻译、不补名、不规范化出新形式。选择 alias 建立链接时，真实目标仍是稳定 ID 对应的文件。
-
-当前词表表示使用 Text、List、Date 和 Tags。若未来选择 Checkbox，YAML 值必须是 `true` 或 `false`；Checkbox 是 Obsidian type，boolean 是其 YAML 值形态。相同 property name 在一个 vault 中必须保持同一 Obsidian type。
+词表对象只写非空 properties；`None`、空字符串和空列表省略。当前词表表示使用 Text、List、Date 和 Tags。若未来选择 Checkbox，YAML 值必须是 `true` 或 `false`；Checkbox 是 Obsidian type，boolean 是其 YAML 值形态。相同 property name 在一个 vault 中必须保持同一 Obsidian type。
 
 ## 文件布局
 
@@ -85,47 +73,144 @@ Obsidian 当前不支持 nested properties，但 YAML 本身能够保存嵌套�
 
 ## 词表表示
 
-正式对象按下列规则生成。引用单值使用 Text link，引用多值使用由 Text link 组成的 List；日期使用 Date，其他已有 scalar 使用 Text。`kb_creator`、`kb_broader`、`kb_related`、`kb_arrays`、`kb_subjects`、`kb_members` 和 `kb_roles` 是 List；`kb_added` 与 `kb_checked` 是 Date；其余专有 properties 是 Text。不存在的可选值仍省略。
+引用单值使用 Text link，引用多值使用由 Text link 组成的 List；日期使用 Date，其他 scalar 使用 Text。`kb_creator`、`kb_broader`、`kb_related`、`kb_arrays`、`kb_subjects`、`kb_members` 和 `kb_roles` 是 List；`kb_added` 与 `kb_checked` 是 Date；其余专有 properties 是 Text。下列矩阵不改变正式 YAML 的字段、值域或 requiredness。
 
-| 对象 | 路径 | 专有 properties | 正文保留 |
-|---|---|---|---|
-| 主题 | `KB/Topics/<id>.md` | `kb_broader`、`kb_related`、`kb_arrays`、`kb_source`、`kb_added`、`kb_replaced_by` | 范围、替代形式、隐藏形式、形式依据、外部映射、历史记录 |
-| 主题数组 | `KB/Arrays/<id>.md` | `kb_superordinate`、`kb_source`、`kb_members` | 数组的分组职责 |
-| 实体 | `KB/Entities/<id>.md` | `kb_kind`、`kb_subjects`、`kb_vendor`、`kb_creator`、`kb_replaced_by`、`kb_form`、`kb_tier`、`kb_url`、`kb_watch`、`kb_checked`、`kb_added`、`kb_entity_version` | 范围、归属依据、外部映射、历史记录 |
-| 来源用途 | `KB/Sources/<id>.md` | `kb_entity`、`kb_roles`、`kb_checked` | 来源用途与来源实体身份的区别 |
-| 文档类型 | `KB/Types/<id>.md` | `kb_broader`、`kb_related`、`kb_arrays`、`kb_source`、`kb_added`、`kb_replaced_by` | 范围、已有形式、依据、映射和历史 |
-| 体裁 | `KB/Genres/<id>.md` | 同文档类型 | 范围、已有形式、依据、映射和历史 |
-| 载体 | `KB/Forms/<id>.md` | 同文档类型 | 范围、已有形式、依据、映射和历史 |
+### 文档字段
 
-数组成员从正式主题记录反向构造，并保持正式主题记录顺序。主题数组只表达树内分组，不取得主题概念、分面或手工概念组的效力。
+| 源身份 | 必填与基数 | 值形态 | 类型与值域 | 目标落点 | 缺省处理 | 信息保存 | 可逆性 |
+|---|---|---|---|---|---|---|---|
+| 六份正式文件的 `version` | 每份文件必填，恰好一个 mapping | record container，不适用 literal／reference | 只允许且必须包含 `id`、`date`、`note` | 无整体 target field；三个子字段按下列行处理 | 无；缺失或多余字段阻断导出 | mapping 结构不整体复制；子字段的保存边界见下列行 | 无；未实现回流 |
+| 六份正式文件的 `version.id` | 每份文件必填，恰好一个 | literal | 非空 Text，正式词表版本 ID | 每篇对象笔记的 `kb_version`；`manifest.json` 的对应 `inputs[].version` | 无；缺失阻断导出 | 值逐字保存 | 无；未实现回流 |
+| 六份正式文件的 `version.date` | 每份文件必填，恰好一个 | literal | Date | 无独立 target field；对应正式输入 bytes 的 SHA-256 进入 `manifest.json` | 无；缺失阻断导出 | 日期不在生成内容中单独呈现；输入 hash 只能发现 bytes 变化，不能恢复日期 | 无；未实现回流 |
+| 六份正式文件的 `version.note` | 每份文件必填，恰好一个 | literal | 非空 Text | 无独立 target field；对应正式输入 bytes 的 SHA-256 进入 `manifest.json` | 无；缺失阻断导出 | 说明不在生成内容中单独呈现；输入 hash 只能发现 bytes 变化，不能恢复说明 | 无；未实现回流 |
+| `topics.yaml` 的 `arrays`／`concepts`、`entities.yaml` 的 `entities`、`sources.yaml` 的 `sources`、`types.yaml` 的 `types`、`genres.yaml` 的 `genres`、`forms.yaml` 的 `arrays`／`forms` | 顶层 collection 必填，各为一个列表，记录数为零个或多个 | record container，不适用 literal／reference | 只接受对应 collection 的现行记录结构 | 生成对象笔记的 collection 身份产生 `kb_object` 和 `tags: kb-design/<object>`；载体数组只进入 README；生成对象数进入 manifest | 无 fallback；缺少 collection 阻断导出 | 记录内容按下列逐字段规则保存；collection 顺序不改变对象路径，主题记录顺序另用于派生数组成员顺序 | 无；未实现回流 |
 
-`forms.yaml` 中的载体数组不生成另一类对象笔记。导出根 README 逐项保存其 ID、上位根和来源；每篇载体笔记保存已有数组 ID。该表示保留正式值，不制造第八种对象。
+### 公共字段
+
+| 源身份 | 必填与基数 | 值形态 | 类型与值域 | 目标落点 | 缺省处理 | 信息保存 | 可逆性 |
+|---|---|---|---|---|---|---|---|
+| `concepts`、topic `arrays`、`entities`、`sources`、`types`、`genres`、`forms` 的 collection membership | 每个生成对象恰有一个；不是独立 source field | generated literal | `topic`、`array`、`entity`、`source`、`type`、`genre` 或 `form` | `kb_object` Text；`tags` Tags 固定为 `kb-design/<object>` | 无 fallback；由 collection 唯一确定；载体数组不生成这两个 properties | 保存对象类与固定浏览 tag，不改写 source | 无；未实现回流 |
+| `topics.yaml concepts[].id`、`topics.yaml arrays[].id`、`entities.yaml entities[].id`、`sources.yaml sources[].id`、`types.yaml types[].id`、`genres.yaml genres[].id`、`forms.yaml forms[].id`、`forms.yaml arrays[].id` | 每条记录必填，恰好一个 | literal identity | 小写 ASCII 字母、数字和连字符组成的稳定 ID；collection 内唯一 | 主题、主题数组、实体、来源用途、类型、体裁和载体进入 `kb_id` Text 及文件布局规定的 `<id>.md` 路径；载体数组只进入根 README | 无 fallback；非法、重复或缺失阻断导出。主题数组和来源用途没有 `label` 时，`kb_label`、一级标题固定回退到 ID | ID 逐字保存；路径由 ID 和对象类确定 | 无；未实现回流 |
+| `concepts[].label`、`entities[].label`、`types[].label`、`genres[].label`、`forms[].label` | 各记录必填一个非空语言 mapping；`zh`、`en` 各至多一个 literal | literal | `zh`／`en` Text，不新增语言或翻译 | 显示值进入一级标题与 `kb_label`；其余非空形式进入 `aliases` | 显示值固定取 `zh`，再取 `en`，最后取 ID；前两项都无值时由 ID 回退 | 所有非空形式保存在标题、`kb_label` 或 `aliases`；非显示形式的语言键和原 mapping 结构不保留 | 无；未实现回流 |
+| `concepts[].alt`、`entities[].alt`、`types[].alt`、`genres[].alt`、`forms[].alt` | 可选，一个语言 mapping；每种语言为一个 literal 或零个以上 literal 的列表 | literal | `zh`／`en` Text 或 Text list | 非空形式进入 `aliases`，并进入正文“替代形式”表 | 无 fallback；字段或空值省略 | 正文保留语言、顺序和形式；`aliases` 去重；source 的 scalar／list 形状、空列表和重复次数不保留 | 无；未实现回流 |
+| `concepts[].hidden`、`entities[].hidden`、`types[].hidden`、`genres[].hidden`、`forms[].hidden` | 可选，一个语言 mapping；每种语言为一个 literal 或零个以上 literal 的列表 | literal | `zh`／`en` Text 或 Text list | 非空形式进入 `aliases`，并进入正文“隐藏形式”表 | 无 fallback；字段或空值省略 | 正文保留语言、顺序和形式；`aliases` 不保留 hidden 角色且去重；source 的 scalar／list 形状、空列表和重复次数不保留 | 无；未实现回流 |
+| `concepts[].basis`、`forms[].basis`；可选的 `entities[].basis`、`types[].basis`、`genres[].basis` | 主题与载体必填一个 mapping；实体、类型和体裁可选。非实体键为 `zh`、`en`，实体键为 `subjects`；每个值为一个或多个 literal | literal | 非空 Text 或 Text list；仍是现行紧凑依据，不是后置共享引用 | 主题、类型、体裁和载体进入正文“形式依据”表；实体进入“归属依据”表 | 必填对象无 fallback；可选对象缺失时整节省略 | 键和值保留在正文表；不取得结构化 reference 或 property 查询能力 | 无；未实现回流 |
+| `concepts[].scope`、`entities[].scope`、`types[].scope`、`genres[].scope`、`forms[].scope` | 类型、体裁、载体必填恰好一个；主题、实体可选零个或一个 | literal | 非空 Text | 正文“范围”节 | 无 fallback；可选缺失时整节省略 | 文本值保留；不进入 property | 无；未实现回流 |
+| `concepts[].match[]`、`entities[].match[]`、`types[].match[]`、`genres[].match[]`、`forms[].match[]` | 类型、体裁、载体必填一个列表；主题、实体可选；每项恰有 `source`、`id`、`rel` | `source` 是来源用途 reference；`id`、`rel` 是 literal | `source` 必须命中正式来源用途；`rel` 取现行五种 SKOS mapping relation；`id` 为非空 Text | 正文“外部映射”表的 `source`、`id`、`rel` 三列 | 必填列表无 fallback；可选缺失时整节省略；不自动补 `closeMatch` | 三个值及行序保留；来源 reference 在正文中只保存 ID，不转为 Wikilink | 无；未实现回流 |
+| `concepts[].status`、`entities[].status`、`types[].status`、`genres[].status`、`forms[].status` | 各记录必填，恰好一个 | controlled literal | Text；值域由相应正式词表的现行 lifecycle 规则决定，target 不重定义 | `kb_status` Text | 无；缺失阻断导出 | 值逐字保存 | 无；未实现回流 |
+| `concepts[].added`、`entities[].added`、`types[].added`、`genres[].added`、`forms[].added` | 各记录必填，恰好一个 | literal | Date | `kb_added` Date | 无；缺失阻断导出 | 日期逐值保存 | 无；未实现回流 |
+| 可选的 `concepts[].history`、`entities[].history`、`types[].history`、`genres[].history`、`forms[].history` | 零个或一个列表；每项为 mapping | literal record | YAML list of mappings；target 不增加事件 schema | 正文“历史记录”YAML 代码块 | 无 fallback；缺失时整节省略 | 值和列表顺序保存为重新序列化的 YAML；source 注释与原排版不保留 | 无；未实现回流 |
+
+`aliases` 只消费正式数据中已经存在的形式，不翻译、不补名、不规范化出新形式。选择 alias 建立链接时，真实目标仍是稳定 ID 对应的文件。
+
+### 主题字段
+
+| 源身份 | 必填与基数 | 值形态 | 类型与值域 | 目标落点 | 缺省处理 | 信息保存 | 可逆性 |
+|---|---|---|---|---|---|---|---|
+| `vocab/topics.yaml concepts[].broader` | 必填列表，零个或多个 | topic reference | 每个 ID 必须命中正式主题；空列表表示顶层 | `kb_broader` List of Text links，指向 `KB/Topics/<id>.md` | 无 fallback；空列表时 property 省略 | 全部上位和 source 顺序保留，不选择主上位 | 无；未实现回流 |
+| `vocab/topics.yaml concepts[].related` | 可选列表，零个或多个 | topic reference | 每个 ID 必须命中正式主题；互反义务仍由主题设计承担 | `kb_related` List of Text links | 无 fallback；缺失或空列表时省略 | 全部关系和顺序保留 | 无；未实现回流 |
+| `vocab/topics.yaml concepts[].arrays` | 可选列表，零个或多个 | topic-array reference | 每个 ID 必须命中同文件 `arrays[]` | `kb_arrays` List of Text links，指向 `KB/Arrays/<id>.md` | 无 fallback；缺失或空列表时省略 | 数组归属和顺序保留 | 无；未实现回流 |
+| `vocab/topics.yaml concepts[].source` | 可选，零个或一个 | 来源用途 reference；兼容值 `self` 是 literal | 非空 Text；非 `self` 值必须命中正式来源用途 | `kb_source` Text；来源 ID 转为 Sources Wikilink，`self` 原样保存 | 无 fallback；缺失时省略；不得由 target 补 `self` | source ID 或兼容值保存；`self` 不取得实际派生含义 | 无；未实现回流 |
+| `vocab/topics.yaml concepts[].replaced_by` | 可选；直接替代的 deprecated 记录按主题 lifecycle 恰好一个 | topic reference | 必须命中正式主题 | `kb_replaced_by` Text link | 无 fallback；非适用记录省略 | 替代目标保存；生命周期理由仍由 `history` 承担 | 无；未实现回流 |
+
+### 数组字段
+
+| 源身份 | 必填与基数 | 值形态 | 类型与值域 | 目标落点 | 缺省处理 | 信息保存 | 可逆性 |
+|---|---|---|---|---|---|---|---|
+| `vocab/topics.yaml arrays[].superordinate` | 必填，恰好一个 | topic reference | 必须命中正式主题 | `kb_superordinate` Text link | 无；缺失或悬空阻断导出 | 上位 ID 和显示链接保存 | 无；未实现回流 |
+| `vocab/topics.yaml arrays[].source` | 必填，恰好一个 | 来源用途 reference | 必须命中正式来源用途 | `kb_source` Text link | 无；缺失或悬空阻断导出 | 来源 ID 和显示链接保存 | 无；未实现回流 |
+| `vocab/topics.yaml concepts[].arrays` 的反向成员关系 | 对每个数组确定性派生零个或多个成员；数组记录没有 `members` source field | topic reference | 成员必须是正式主题；顺序取正式主题记录顺序 | `kb_members` List of Text links | 不适用 source fallback；无成员时 property 省略 | 全部派生成员和顺序保存；不制造数组成员 source field | 无；未实现回流 |
+
+主题数组生成 `KB/Arrays/<id>.md`。它没有 `label`、`status` 或 aliases source field：一级标题与 `kb_label` 固定使用 ID，`kb_status` 和 `aliases` 不生成。主题数组只表达树内分组，不取得主题概念、分面或手工概念组的效力。
+
+### 实体字段
+
+| 源身份 | 必填与基数 | 值形态 | 类型与值域 | 目标落点 | 缺省处理 | 信息保存 | 可逆性 |
+|---|---|---|---|---|---|---|---|
+| `vocab/entities.yaml entities[].kind` | 必填，恰好一个 | controlled literal | Text；只取实体设计登记的 Wikidata 类 slug | `kb_kind` Text | 无；缺失阻断导出 | 值逐字保存 | 无；未实现回流 |
+| `vocab/entities.yaml entities[].subjects` | 必填列表，零个或多个 | topic reference | 每个 ID 必须命中正式主题 | `kb_subjects` List of Text links | 无 fallback；空列表时 property 省略 | 全部主题和顺序保留 | 无；未实现回流 |
+| `vocab/entities.yaml entities[].vendor` | 可选，零个或一个 | entity reference | 必须命中正式实体 | `kb_vendor` Text link | 无 fallback；缺失时省略 | 目标 ID 和显示链接保存 | 无；未实现回流 |
+| `vocab/entities.yaml entities[].creator` | 可选列表，零个或多个 | entity reference | 每个 ID 必须命中正式实体 | `kb_creator` List of Text links | 无 fallback；缺失或空列表时省略 | 全部目标和顺序保留 | 无；未实现回流 |
+| `vocab/entities.yaml entities[].replaced_by` | 可选；有替代品的 deprecated 记录至多一个 | entity reference | 必须命中正式实体 | `kb_replaced_by` Text link | 无 fallback；不适用时省略 | 替代目标保存 | 无；未实现回流 |
+| `vocab/entities.yaml entities[].form` | 可选，零个或一个 | controlled literal，不是 Forms reference | Text；publication 使用 Wikidata Q 号或 slug，其他现行值仍由实体设计约束 | `kb_form` Text | 无 fallback；缺失时省略 | 值逐字保存；不改成载体词表链接 | 无；未实现回流 |
+| `vocab/entities.yaml entities[].tier` | `standard`／`publication` 必填，其他 kind 不填 | controlled literal | `de-jure`、`de-facto`、`vendor` 或 `archival` | `kb_tier` Text | 无 fallback；不适用时省略 | 值逐字保存 | 无；未实现回流 |
+| `vocab/entities.yaml entities[].version` | 可选，零个或一个 | literal | 非空 Text，来源实体所引版本 | `kb_entity_version` Text | 无 fallback；缺失时省略 | 值逐字保存 | 无；未实现回流 |
+| `vocab/entities.yaml entities[].url` | 可选，零个或一个 | literal | 非空 Text，现行标量 URL | `kb_url` Text | 无 fallback；缺失时省略 | 值逐字保存；不升级为结构化地址 | 无；未实现回流 |
+| `vocab/entities.yaml entities[].watch` | 可选标量；`de-jure` 来源按实体设计必填 | literal | 非空 Text，现行观察 URL | `kb_watch` Text | 无 fallback；不适用时省略 | 值逐字保存；不证明已经联网探测 | 无；未实现回流 |
+| `vocab/entities.yaml entities[].checked` | 可选，零个或一个 | literal | Date | `kb_checked` Date | 无 fallback；缺失时省略 | 日期逐值保存 | 无；未实现回流 |
+
+### 来源字段
+
+| 源身份 | 必填与基数 | 值形态 | 类型与值域 | 目标落点 | 缺省处理 | 信息保存 | 可逆性 |
+|---|---|---|---|---|---|---|---|
+| `vocab/sources.yaml sources[].entity` | 必填，恰好一个 | entity reference | 必须命中 `kind` 为 `standard` 或 `publication` 的正式实体 | `kb_entity` Text link，指向 `KB/Entities/<id>.md` | 无；缺失或悬空阻断导出 | 实体目标和显示链接保存 | 无；未实现回流 |
+| `vocab/sources.yaml sources[].role` | 必填列表；现行记录为一个或多个，现行导出形状允许空列表 | controlled literal | `mapping`、`structure`、`group` 或 `candidate`；互斥与组合条件由来源设计承担 | `kb_roles` List | 无 fallback；字段缺失阻断导出，空列表时 property 省略 | 全部已有角色和顺序保留 | 无；未实现回流 |
+| `vocab/sources.yaml sources[].checked` | 必填，恰好一个 | literal | Date | `kb_checked` Date | 无；缺失阻断导出 | 日期逐值保存 | 无；未实现回流 |
+
+来源用途生成 `KB/Sources/<id>.md`。它没有 `label`、`status` 或 aliases source field：一级标题与 `kb_label` 固定使用 ID，`kb_status` 和 `aliases` 不生成；正文明确来源用途不等于来源实体身份。
+
+### 类型字段
+
+| 源身份 | 必填与基数 | 值形态 | 类型与值域 | 目标落点 | 缺省处理 | 信息保存 | 可逆性 |
+|---|---|---|---|---|---|---|---|
+| `vocab/types.yaml types[].broader` | 可选列表，零个或多个 | type reference | 每个 ID 必须命中正式文档类型 | `kb_broader` List of Text links | 无 fallback；缺失或空列表时省略 | 全部上位和顺序保留 | 无；未实现回流 |
+| `vocab/types.yaml types[].related` | 可选列表，零个或多个 | type reference | 每个 ID 必须命中正式文档类型 | `kb_related` List of Text links | 无 fallback；缺失或空列表时省略 | 全部关系和顺序保留 | 无；未实现回流 |
+| `vocab/types.yaml types[].arrays` | 可选列表，零个或多个 | literal array ID；当前没有类型数组对象 | Text list | `kb_arrays` List，不生成 array link | 无 fallback；缺失或空列表时省略 | ID 和顺序保存；数组语义没有独立 target object | 无；未实现回流 |
+| `vocab/types.yaml types[].source` | 可选，零个或一个 | 来源用途 reference | 必须命中正式来源用途 | `kb_source` Text literal，不生成 Wikilink | 无 fallback；缺失时省略 | 来源 ID 保存；reference 的可点击形式不保留 | 无；未实现回流 |
+| `vocab/types.yaml types[].replaced_by` | 可选，零个或一个 | type reference | 必须命中正式文档类型 | `kb_replaced_by` Text link | 无 fallback；不适用时省略 | 替代目标保存 | 无；未实现回流 |
+
+### 体裁字段
+
+| 源身份 | 必填与基数 | 值形态 | 类型与值域 | 目标落点 | 缺省处理 | 信息保存 | 可逆性 |
+|---|---|---|---|---|---|---|---|
+| `vocab/genres.yaml genres[].broader` | 可选列表，零个或多个 | genre reference | 每个 ID 必须命中正式体裁 | `kb_broader` List of Text links | 无 fallback；缺失或空列表时省略 | 全部上位和顺序保留 | 无；未实现回流 |
+| `vocab/genres.yaml genres[].related` | 可选列表，零个或多个 | genre reference | 每个 ID 必须命中正式体裁 | `kb_related` List of Text links | 无 fallback；缺失或空列表时省略 | 全部关系和顺序保留 | 无；未实现回流 |
+| `vocab/genres.yaml genres[].arrays` | 可选列表，零个或多个 | literal array ID；当前没有体裁数组对象 | Text list | `kb_arrays` List，不生成 array link | 无 fallback；缺失或空列表时省略 | ID 和顺序保存；数组语义没有独立 target object | 无；未实现回流 |
+| `vocab/genres.yaml genres[].source` | 可选，零个或一个 | 来源用途 reference | 必须命中正式来源用途 | `kb_source` Text literal，不生成 Wikilink | 无 fallback；缺失时省略 | 来源 ID 保存；reference 的可点击形式不保留 | 无；未实现回流 |
+| `vocab/genres.yaml genres[].replaced_by` | 可选，零个或一个 | genre reference | 必须命中正式体裁 | `kb_replaced_by` Text link | 无 fallback；不适用时省略 | 替代目标保存 | 无；未实现回流 |
+
+### 载体字段
+
+| 源身份 | 必填与基数 | 值形态 | 类型与值域 | 目标落点 | 缺省处理 | 信息保存 | 可逆性 |
+|---|---|---|---|---|---|---|---|
+| `vocab/forms.yaml forms[].broader` | 可选列表，零个或多个 | form reference | 每个 ID 必须命中正式载体 | `kb_broader` List of Text links | 无 fallback；缺失或空列表时省略 | 全部上位和顺序保留 | 无；未实现回流 |
+| `vocab/forms.yaml forms[].related` | 可选列表，零个或多个 | form reference | 每个 ID 必须命中正式载体 | `kb_related` List of Text links | 无 fallback；缺失或空列表时省略 | 全部关系和顺序保留 | 无；未实现回流 |
+| `vocab/forms.yaml forms[].arrays` | 必填列表；现行记录各有一个，现行导出形状允许零个或多个 | form-array reference | 每个已有 ID 必须命中同文件 `arrays[]` | `kb_arrays` List of literal IDs；不生成 array link | 无 fallback；字段缺失阻断导出，空列表时 property 省略 | 全部已有数组 ID 和顺序保留 | 无；未实现回流 |
+| `vocab/forms.yaml forms[].source` | 可选，零个或一个 | 来源用途 reference | 必须命中正式来源用途 | `kb_source` Text literal，不生成 Wikilink | 无 fallback；缺失时省略 | 来源 ID 保存；reference 的可点击形式不保留 | 无；未实现回流 |
+| `vocab/forms.yaml forms[].replaced_by` | 可选，零个或一个 | form reference | 必须命中正式载体 | `kb_replaced_by` Text link | 无 fallback；不适用时省略 | 替代目标保存 | 无；未实现回流 |
+| `vocab/forms.yaml arrays[].id` | 必填，恰好一个 | literal identity | 稳定 ID；collection 内唯一 | 导出根 README 的“载体数组”表 | 无；缺失或重复阻断导出 | ID 逐字保存；不生成第八类对象笔记 | 无；未实现回流 |
+| `vocab/forms.yaml arrays[].superordinate` | 必填，恰好一个 | controlled literal | 固定为 `forms` | 导出根 README 的“载体数组”表 | 无；其他值阻断导出 | 值逐字保存 | 无；未实现回流 |
+| `vocab/forms.yaml arrays[].source` | 必填，恰好一个 | 来源用途 reference | 必须命中正式来源用途 | 导出根 README 的“载体数组”表，以 literal ID 保存 | 无；缺失或悬空阻断导出 | 来源 ID 保存；不生成 Wikilink | 无；未实现回流 |
+
+`forms.yaml` 的载体数组不生成另一类对象笔记。根 README 保存其 ID、上位根和来源，每篇载体笔记保存已有数组 ID；该表示保留正式值，不制造第八种对象。
 
 ## 内容表示
 
-内容单元不由当前导出器生成。真实知识库应用将来创建 Obsidian 内容笔记时，必须按下表 binding，不得用文件名、标题、alias、tag、反向链接或文件时间替代内容模型字段。
+内容单元不由当前导出器生成。下表是未来知识库应用必须遵守的逐字段 binding；每行的 target 均为“未实现”，不得用文件名、标题、alias、tag、反向链接或文件时间替代内容模型字段。
 
-| 内容字段 | Obsidian 表示 |
-|---|---|
-| `identifier` | `kb_id` Text；稳定值由知识库应用提供 |
-| `title` | 一级标题；需要查询时同时保存 `title` Text |
-| `type` | `kb_type` Text link，指向 Types |
-| `genre` | `kb_genre` Text link，指向 Genres |
-| `form` | `kb_form` Text link，指向 Forms |
-| `level` | `kb_level` Text，保持内容模型的正式值 |
-| `subject` | `kb_subjects` List，指向 Topics |
-| `entities` | `kb_entities` List，指向 Entities |
-| `source` | `kb_source` Text link，按内容模型识别内容单元或实体目标 |
-| `references` | `kb_references` List，指向作为文献或标准的 Entities |
-| `created` | `kb_created` Date |
-| `modified` | `kb_modified` Date |
-| `status` | `kb_status` Text |
-| `isReplacedBy` | `kb_is_replaced_by` Text link，指向内容笔记 |
-| `relation` | `kb_relation` List，指向内容笔记 |
-| `language` | `kb_language` Text；默认 `zh` 时可以省略 |
-| 正文 | frontmatter 后的 Markdown 正文 |
+### 内容字段
 
-应用必须校验恰好一个 `type`、恰好一个 `genre`、至少一个 `subject`、受控值目标、内容单元引用和生命周期约束。当前没有实现这些内容接口；本节不构成消费者启用或运行证据。
+| 源身份 | 必填与基数 | 值形态 | 类型与值域 | 目标落点 | 缺省处理 | 信息保存 | 可逆性 |
+|---|---|---|---|---|---|---|---|
+| [内容模型](../content-model.md)的 `identifier` | 必填，恰好一个 | literal identity | 稳定 ID，遵守内容模型的标识符规则 | `kb_id` Text；内容文件路径尚未设计 | 无；缺失无效，不从文件名、标题或 alias 回填 | 未实现；约束要求完整保存稳定 ID | 无；回流未实现 |
+| [内容模型](../content-model.md)的 `title` | 必填，恰好一个 | literal | Text | 一级标题；需要查询时同时保存 `title` Text | 无；缺失无效，不从文件名回填 | 未实现；一级标题保存显示值，可选 property 只服务查询 | 无；回流未实现 |
+| [内容模型](../content-model.md)的 `type` | 必填，恰好一个 | type reference | 必须命中正式文档类型词表 | `kb_type` Text link，指向 `KB/Types/<id>.md` | 无；缺失或悬空无效 | 未实现；约束要求保存稳定 ID 目标和显示链接 | 无；回流未实现 |
+| [内容模型](../content-model.md)的 `genre` | 必填，恰好一个 | genre reference | 必须命中正式体裁词表 | `kb_genre` Text link，指向 `KB/Genres/<id>.md` | 无；缺失或悬空无效 | 未实现；约束要求保存稳定 ID 目标和显示链接 | 无；回流未实现 |
+| [内容模型](../content-model.md)的 `form` | 可选，零个或一个；长文不填 | form reference | 必须命中正式载体词表 | `kb_form` Text link，指向 `KB/Forms/<id>.md` | 无 fallback；不适用时省略 | 未实现；有值时要求完整保存 reference | 无；回流未实现 |
+| [内容模型](../content-model.md)的 `level` | 可选，零个或一个 | controlled literal | `remember`、`understand`、`apply`、`analyze`、`evaluate` 或 `create` | `kb_level` Text | 无 fallback；缺失时省略 | 未实现；有值时要求逐字保存 | 无；回流未实现 |
+| [内容模型](../content-model.md)的 `subject` | 必填，一个或多个 | topic reference | 必须命中非 deprecated 的正式主题 | `kb_subjects` List of Text links，指向 `KB/Topics/<id>.md` | 无；空列表或悬空无效 | 未实现；约束要求保存全部目标和 source 顺序 | 无；回流未实现 |
+| [内容模型](../content-model.md)的 `entities` | 可选，零个或多个 | entity reference | 必须命中正式实体 | `kb_entities` List of Text links，指向 `KB/Entities/<id>.md` | 无 fallback；缺失或空列表时省略 | 未实现；有值时要求保存全部目标和顺序 | 无；回流未实现 |
+| [内容模型](../content-model.md)的 `source` | 可选，零个或一个 | content-unit 或 entity reference | 必须按内容模型识别目标种类并命中对应对象 | `kb_source` Text link；实体指向 `KB/Entities/<id>.md`，内容路径未实现 | 无 fallback；缺失时省略，不用 `references` 或旧 `origin` 替代 | 未实现；目标种类和内容路径尚无消费者实现，不能宣称无损运行 | 无；回流未实现 |
+| [内容模型](../content-model.md)的 `references` | 可选，零个或多个 | entity reference | 必须命中作为文献或标准的正式实体 | `kb_references` List of Text links，指向 `KB/Entities/<id>.md` | 无 fallback；缺失或空列表时省略，不从 `entities` 推导 | 未实现；有值时要求保存全部目标和顺序 | 无；回流未实现 |
+| [内容模型](../content-model.md)的 `created` | 必填，恰好一个 | literal | ISO 8601 Date | `kb_created` Date | 无；缺失无效，不从文件时间回填 | 未实现；约束要求逐值保存 | 无；回流未实现 |
+| [内容模型](../content-model.md)的 `modified` | 可选，零个或一个 | literal | ISO 8601 Date | `kb_modified` Date | 无 fallback；缺失时省略，不从文件时间回填 | 未实现；有值时要求逐值保存 | 无；回流未实现 |
+| [内容模型](../content-model.md)的 `status` | 必填，恰好一个 | controlled literal | `draft`、`active` 或 `deprecated` | `kb_status` Text | 无；缺失无效 | 未实现；约束要求逐字保存 lifecycle 值 | 无；回流未实现 |
+| [内容模型](../content-model.md)的 `isReplacedBy` | 因直接替代而 deprecated 且有替代项时必填一个；其他情况零个 | content-unit reference | 必须命中替代内容单元 | `kb_is_replaced_by` Text link；内容路径未实现 | 无 fallback；确认过时且无替代项时省略，并在正文首段说明原因 | 未实现；reference 与无替代理由分别受字段和正文约束 | 无；回流未实现 |
+| [内容模型](../content-model.md)的 `relation` | 可选，零个或多个 | content-unit reference | 必须命中内容单元并满足互反和使用条件 | `kb_relation` List of Text links；内容路径未实现 | 无 fallback；缺失或空列表时省略 | 未实现；目标、顺序和互反校验都尚无消费者实现 | 无；回流未实现 |
+| [内容模型](../content-model.md)的 `language` | 可选，零个或一个 | literal | Text；当前只规定默认值 `zh`，不另立 target 值域 | `kb_language` Text | 值为 `zh` 时可以省略；其他值原样写入；无其他 fallback | 未实现；省略只表达既定默认 `zh` | 无；回流未实现 |
+| [内容模型](../content-model.md)的正文 | 可选，零个或一个 | literal content | Markdown 正文；内容模型不把它改成 metadata property | frontmatter 后的 Markdown 正文 | 无 fallback；没有正文时省略，不从 `description` 生成 | 未实现；正文值、结构和允许的 Markdown 范围尚待真实内容应用验收 | 无；回流未实现 |
+
+未来应用必须校验恰好一个 `type`、恰好一个 `genre`、至少一个 `subject`、全部受控值目标、内容单元引用和 lifecycle 约束。当前没有内容目录、内容生成器、内容校验器或消费者；本矩阵不构成实现、启用、运行、loss 验收或回流证据。
 
 ## 引用语法
 

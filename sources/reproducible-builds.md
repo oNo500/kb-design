@@ -1,4 +1,4 @@
-# 可重现构建 (Reproducible Builds)
+# Reproducible Builds 阅读笔记
 
 ## 材料身份
 
