@@ -916,7 +916,7 @@ def _sha256(content: bytes) -> str:
     return hashlib.sha256(content).hexdigest()
 
 
-def _canonical_json(document: Mapping[str, Any]) -> bytes:
+def _deterministic_json(document: Mapping[str, Any]) -> bytes:
     return (
         json.dumps(document, ensure_ascii=False, indent=2, sort_keys=True)
         + "\n"
@@ -999,7 +999,7 @@ def build_manifest(
             raise ExportError(f"cannot hash exporter: {exc}") from exc
     exporter_sha256 = _sha256(exporter_bytes)
 
-    return _canonical_json(
+    return _deterministic_json(
         {
             "content_files": len(entries),
             "content_sha256": _sha256(bytes(digest_input)),
@@ -1130,8 +1130,10 @@ def _validate_written_export(
         raise ExportError(f"invalid manifest JSON: {exc}") from exc
     if not isinstance(manifest, dict):
         raise ExportError("invalid manifest mapping")
-    if _canonical_json(manifest) != manifest_bytes:
-        raise ExportError("manifest is not canonical JSON")
+    if _deterministic_json(manifest) != manifest_bytes:
+        raise ExportError(
+            "manifest does not use the required deterministic JSON serialization"
+        )
     manifest_paths = {entry.get("path") for entry in manifest.get("files", [])}
     if manifest_paths != set(content_files):
         raise ExportError("manifest file coverage mismatch")
