@@ -212,6 +212,7 @@ git commit -m "[L1] Obsidian:补充官方功能来源"
 - Create: `sources/reproducible-builds.md`
 - Create: `sources/rfc-8493.md`
 - Create: `sources/rfc-8785.md`
+- Create: `sources/w3c-prov.md`
 - Create: `sources/python-filesystem.md`
 
 **Interfaces:**
@@ -257,7 +258,18 @@ Python json.dumps(sort_keys=True, indent=2, ensure_ascii=False)
 
 结论固定为：当前使用参数事实描述，不使用 `canonical JSON` 或 JCS designation。
 
-- [ ] **Step 4: 写文件系统笔记**
+- [ ] **Step 4: 写 W3C PROV 笔记**
+
+`sources/w3c-prov.md` 必须分别记录 Entity、Activity、Usage、Generation 和 Derivation，并明确：输入被 activity 使用、输出由 activity 生成，不自动证明输入实际影响输出；PROV 表达生成关系，不证明记录真实性、签名、字节确定性或可重建性。
+
+已读入口：
+
+```text
+https://www.w3.org/TR/prov-dm/
+https://www.w3.org/TR/prov-o/
+```
+
+- [ ] **Step 5: 写文件系统笔记**
 
 `sources/python-filesystem.md` 必须记录：
 
@@ -265,10 +277,9 @@ Python json.dumps(sort_keys=True, indent=2, ensure_ascii=False)
 os.replace 成功时是单目录项原子替换；非空目录、权限、平台和跨文件系统可能失败。
 原子可见性 != fsync 持久性 != 多文件事务 != 内容正确性。
 当前需求只控制生成完成前不可见和失败不覆盖用户目标，不要求掉电持久性。
-W3C PROV 的 used/generated/wasDerivedFrom 只说明生成关系表达，不证明记录真实性。
 ```
 
-- [ ] **Step 5: 运行来源对账**
+- [ ] **Step 6: 运行来源对账**
 
 检索四份笔记，必须各自出现一条“不能证明”边界：
 
@@ -277,17 +288,18 @@ rg -n "不能证明|不证明|不等于" \
   sources/reproducible-builds.md \
   sources/rfc-8493.md \
   sources/rfc-8785.md \
+  sources/w3c-prov.md \
   sources/python-filesystem.md
 python3 scripts/check_link_baseline.py
 git diff --check
 ```
 
-预期：四份文件都有边界；链接基线通过；差异检查无输出。
+预期：五份文件都有边界；链接基线通过；差异检查无输出。
 
-- [ ] **Step 6: 提交生成来源**
+- [ ] **Step 7: 提交生成来源**
 
 ```bash
-git add sources/reproducible-builds.md sources/rfc-8493.md sources/rfc-8785.md sources/python-filesystem.md
+git add sources/reproducible-builds.md sources/rfc-8493.md sources/rfc-8785.md sources/w3c-prov.md sources/python-filesystem.md
 git commit -m "[L1] Obsidian:补充生成完整性来源"
 ```
 
