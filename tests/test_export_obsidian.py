@@ -234,6 +234,8 @@ class ExportObsidianTests(unittest.TestCase):
         baseline_properties, baseline_body = split_note(
             baseline_files["KB/Entities/claude-code.md"]
         )
+        self.assertIn("\n## 归属依据\n", baseline_body)
+        self.assertNotIn("\n## 形式依据\n", baseline_body)
 
         with mutated_repository(
             "vocab/entities.yaml",
@@ -243,13 +245,38 @@ class ExportObsidianTests(unittest.TestCase):
         ) as repo_root:
             files = build_content_files(repo_root)
         properties, body = split_note(files["KB/Entities/claude-code.md"])
-        before_basis, after_basis = baseline_body.split("\n## 形式依据\n", 1)
+        before_basis, after_basis = baseline_body.split("\n## 归属依据\n", 1)
         _, after_mapping = after_basis.split("\n## 外部映射\n", 1)
         expected_body = before_basis + "\n## 外部映射\n" + after_mapping
 
         self.assertEqual(847, len(files))
         self.assertEqual(baseline_properties, properties)
         self.assertEqual(expected_body, body)
+
+    def test_replacement_links_have_one_property_type_across_object_kinds(self):
+        def replace_topic(document):
+            find_record(document, "concepts", "security")["replaced_by"] = "computing"
+
+        with mutated_repository("vocab/topics.yaml", replace_topic) as repo_root:
+            properties, _ = split_note(
+                build_content_files(repo_root)["KB/Topics/security.md"]
+            )
+        self.assertEqual(
+            "[[KB/Topics/computing|计算机科学技术]]",
+            properties["kb_replaced_by"],
+        )
+
+        def replace_entity(document):
+            find_record(document, "entities", "claude-code")["replaced_by"] = "anthropic"
+
+        with mutated_repository("vocab/entities.yaml", replace_entity) as repo_root:
+            properties, _ = split_note(
+                build_content_files(repo_root)["KB/Entities/claude-code.md"]
+            )
+        self.assertEqual(
+            "[[KB/Entities/anthropic|Anthropic]]",
+            properties["kb_replaced_by"],
+        )
 
     def test_form_internal_arrays_are_preserved_and_validated(self):
         readme = build_content_files(ROOT)["README.md"].decode("utf-8")

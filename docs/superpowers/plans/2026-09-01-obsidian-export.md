@@ -140,7 +140,7 @@ python3 scripts/export_obsidian.py --repo-root . --output /absolute/new/path
 
 - [ ] **Step 6: 运行 GREEN**
 
-运行 12 项测试，预期全部通过。再对真实仓库执行两个独立 `/tmp` 导出，`diff -ru` 预期无差异；运行 `git status --short`，受跟踪写集只含代码和测试。
+运行完整测试模块，预期全部通过。复审新增的输入快照、CLI 错误、空符号链接、目录替换失败、写后回读失败、实体依据标题和共享 property 类型门禁必须保留。再对真实仓库执行两个独立 `/tmp` 导出，`diff -ru` 预期无差异；运行 `git status --short`，受跟踪写集只含代码和测试。
 
 - [ ] **Step 7: 提交安全导出**
 

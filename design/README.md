@@ -1,18 +1,19 @@
 # 设计文档索引
 
-`design/` 中的现行设计规定本库当前使用的规则；已采纳决定保存规则形成与阶段边界，未激活基础只提供机器能力，迁移账本只保存审计，项目草案全部未生效。理论在 `concepts/`，文献笔记在 `sources/`。项目执行计划和 Superpowers 报告都是过程记录，不属于项目设计，也不进入本索引的效力层次。
+`design/` 中的现行设计规定本库当前使用的规则；已采纳决定保存规则形成与阶段边界，未激活基础只提供机器能力，迁移账本只保存审计，项目草案全部未生效。理论在 `concepts/`，文献笔记在 `sources/`。项目执行计划和 Superpowers 报告是过程记录，不属于项目设计，也不进入本索引的效力层次。
 
 ## 效力层次
 
 | 层次 | 当前效力 | 不能替代 |
 |---|---|---|
 | 现行设计与正式数据 | 规定当前规则、编辑权和数据形状 | 不能被草案、迁移推荐值或测试夹具覆盖 |
+| 应用映射 | 规定应用字段、路径、导出、引用和回流边界 | 不能修改应用无关模型，也不能成为正式数据编辑源 |
 | 已采纳决定 | 约束已批准的规则、机器契约和阶段范围 | 不自动填写来源事实，不使草案或正式数据切换生效 |
 | 未激活基础 | 提供 schema、校验、索引、探测、生成、诊断和维护接口 | 不构成正式数据、义务、委托、消费者、切换或发版 |
 | 迁移审计 | 保存冻结身份、旧位置、分类、去向和阻断 | 不批准新值，不回写正式数据，不取得术语准入或删除权限 |
 | 项目草案 | 保存拟议规则、问题边界和生效条件 | 阅读、引用、推荐或部分实现不等于规则生效 |
 
-当前状态以[当前阶段](decisions/current-stage-scope.md)为入口。来源与术语基础已经完成到该决定限定的范围；严格来源切换、术语正式激活、草案生效和发版都没有发生。
+当前阶段以[当前阶段](decisions/current-stage-scope.md)为基础边界，以[项目路线](../docs/superpowers/plans/2026-08-31-project-roadmap.md)记录完成状态。来源与术语基础、现行设计同步、首轮维护、草案复核、待定设计和 Obsidian 映射均已完成各自当前范围；严格来源切换、术语正式激活、草案生效和发版都没有发生。
 
 ## 现行设计
 
@@ -22,9 +23,9 @@
     - [层级结构](hierarchy.md)：规定树的分层、结构复制、数组和结构来源。
     - [来源名称规范表](sources-registry.md)：规定现行来源登记及未激活共享接口的职责边界。
   - [命名实体词表设计](entities.md)：规定产品、语言、组织、标准和文献等个体的记录方式。
-  - [内容模型](content-model.md)：规定内容单元字段、受控值、标识符和应用映射接口。
+  - [内容模型](content-model.md)：规定内容单元字段、受控值、标识符、生命周期和应用映射接口。
+    - [Obsidian 映射](targets/obsidian.md)：规定现行词表的单向参考导出和未来内容应用契约。
     - [词表版本](versioning.md)：规定版本块、发版时机和变更记录。
-    - 应用映射尚无可索引的项目文件；接口要求保留在内容模型中。
   - [治理](governance.md)：规定对象效力、政策、决策权、变更控制、验收、验证投入和审计。
     - [维护](maintenance.md)：规定现行对象、指标、阈值、触发、动作、审计追踪和复审。
 
@@ -38,7 +39,7 @@
 - [决策权的首批边界](decisions/decision-rights-defaults.md)
 - [项目约定入口](decisions/project-instructions-entry.md)
 - [来源模式](decisions/source-governance-schema.md)：批准来源机器结构与迁移规则，不批准具体来源事实。
-- [来源校验](decisions/source-validation-policy.md)：固定离线校验政策，真实状态、角色和逐值关系继续未决。
+- [来源校验](decisions/source-validation-policy.md)：固定来源离线校验政策，真实状态、角色和逐值关系继续未决。
 - [来源探测](decisions/source-probe-policy.md)：固定只读信号与频率，观察不得回写正式数据。
 - [来源迁移](decisions/source-migration-policy.md)：固定迁移分类与顺序，不批准账本中的推荐值。
 - [证据阶段](decisions/evidence-stage-boundary.md)：把高成本证据限制在会改变正式结果的范围。
@@ -81,6 +82,12 @@
 
 `vocab/glossary-layout.yaml` 只是未来术语生成基础设施的布局配置，不是现行词表，也不是当前术语表编辑源。正文诊断输出只提供人工复核线索，不形成术语、概念、违规或阻断结论。
 
+## 应用映射
+
+[Obsidian 映射](targets/obsidian.md)是当前唯一项目原生应用映射。`scripts/export_obsidian.py` 从六份正式词表生成可浏览、可链接、可筛选的只读参考区，并用 manifest 保存输入和输出哈希。输出可以确定性重建，但不受 Git 跟踪，也不反向编辑正式词表。
+
+当前实现只导出词表对象、主题数组、三个 Bases、目录 README 和 manifest。内容单元字段已有 Obsidian 落点契约，但本仓库没有知识库内容、内容导出器或回流接口；不得把契约写成已运行消费者。TBX 仍是没有真实接收方的未生效草案。
+
 ## 未激活基础
 
 来源基础包括 schema、共享模型、离线校验、反向索引、固定夹具探测、迁移预演和复核义务接口；术语基础包括候选 schema、状态转换校验、确定性生成、正文诊断、维护索引和复核义务接口。
@@ -89,7 +96,7 @@
 
 ## 迁移审计
 
-- `vocab/migrations/source-v1/` 下的 `entities.yaml`、`uses.yaml`、`basis.yaml`、`source.yaml`、`match.yaml` 和 `origin.yaml` 是六份来源迁移审计账本。账本中的推荐值、`proposed`、处置和阻断不修改正式来源数据。
+- `vocab/migrations/source-v1/` 下的六份账本保存来源迁移审计。账本中的推荐值、`proposed`、处置和阻断不修改正式来源数据。
 - `vocab/migrations/term-v1/terms.tsv` 保存冻结审查身份和消费者去向。`audit-only`、`retain-owner`、`retain-pending-l3`、旧 `keep`、`defer` 和 `remove` 都不构成 designation 准入、术语候选、删除许可或正式状态。
 
 迁移账本只作审计，不是正式词表、义务、委托、消费者、决定或切换状态。
@@ -104,10 +111,10 @@
 - [划分特征的自定治理](drafts/division-characteristics.md)：提出划分特征的登记与复核；零自定例外尚未开放。
 - [分面字段草案](drafts/facet-field.md)：记录分面研究、模型职责和生效条件；现行主题记录没有该字段。
 - [概念组草案](drafts/concept-groups.md)：提出手工概念组的登记和规则；现行数据没有手工概念组。
-- [生活领域范围](drafts/life-scope.md)：分别保存健康相关内容、个人或家庭财务、旅行或旅游的范围问题；推荐保持现状，10 项决定仍开放。
-- [实体类别职责](drafts/entity-categories.md)：提出实体类别与相邻字段的职责方案；方案 B、15 条身份疑虑和 12 项决定均未改变正式实体数据。
-- [模型对象分层](drafts/large-language-models.md)：提出四层记录及 ML、NLP 双上位方向；10 项决定开放，不批准概念、名称、关系或记录。
-- [传播学科范围](drafts/communication-scope.md)：提出完整学科位于 `communication-studies` 下的方向；4 项决定开放，中文 designation 仍阻断实施。
+- [生活领域范围](drafts/life-scope.md)：分别保存健康相关内容、个人或家庭财务、旅行或旅游的范围问题；推荐保持现状，开放决定未改变正式范围。
+- [实体类别职责](drafts/entity-categories.md)：提出实体类别与相邻字段的职责方案；推荐方案和身份疑虑均未改变正式实体数据。
+- [模型对象分层](drafts/large-language-models.md)：提出四层记录及 ML、NLP 双上位方向；开放决定不批准概念、名称、关系或记录。
+- [传播学科范围](drafts/communication-scope.md)：提出完整学科位于 `communication-studies` 下的方向；中文 designation 仍阻断实施。
 
 阅读或引用草案、实现部分 schema 或工具，都不等于规则生效。草案只有满足各自条件并取得人工决定后，才可能并入现行设计。
 
@@ -125,6 +132,7 @@
 | 8 | [维护](maintenance.md) | 指标、阈值、动作、复核和审计追踪 |
 | 9 | [写作规则](writing.md) | 写任何文件前要遵守的规则 |
 | 10 | [内容模型](content-model.md) | 内容单元字段、稳定身份和应用映射接口 |
-| 11 | [词表版本](versioning.md) | 何时发版、怎样记录变化 |
+| 11 | [Obsidian 映射](targets/obsidian.md) | 词表怎样单向导出，内容字段以后怎样落地 |
+| 12 | [词表版本](versioning.md) | 何时发版、怎样记录变化 |
 | — | [决定记录](decisions/) | 已采纳决定及其后果 |
 | — | [项目草案](drafts/) | 十份未生效提案、开放问题及其触发条件 |

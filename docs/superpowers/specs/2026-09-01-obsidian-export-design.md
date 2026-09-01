@@ -129,7 +129,8 @@ property 名使用固定前缀，避免与用户已有属性碰撞。不存在�
 | `form` | `kb_form` text，保持当前正式字符串，不推断类别 |
 | `tier` | `kb_tier` text |
 | `version`、`url`、`watch`、`checked` | 扁平 properties；URL 保持文本 |
-| `basis`、`match`、`history` | 正文表格或列表，无损保留当前值 |
+| `basis` | 正文“归属依据”表，无损保留 `subjects` 的断言依据 |
+| `match`、`history` | 正文表格或列表，无损保留当前值 |
 
 实体类别草案、模型分层草案和传播范围草案均未生效；导出器只呈现现行实体字段，不采用草案推荐或创建模型记录。
 
@@ -155,18 +156,22 @@ property 名使用固定前缀，避免与用户已有属性碰撞。不存在�
 
 | 内容模型字段 | Obsidian 表达 |
 |---|---|
-| `id` | `kb_id`；应用必须提供稳定值，不能取文件名 |
+| `identifier` | `kb_id`；应用必须提供稳定值，不能取文件名 |
 | `title` | 一级标题和可选 `title` text |
 | `type` | `kb_type` link 到 Types |
 | `genre` | `kb_genre` link 到 Genres |
 | `form` | `kb_form` link 到 Forms |
-| `cognitive_level` | `kb_cognitive_level` text；当前无独立导出词表时保持正式值 |
-| `subjects` | `kb_subjects` list，链接 Topics |
+| `level` | `kb_level` text；当前无独立导出词表时保持正式值 |
+| `subject` | `kb_subjects` list，链接 Topics |
 | `entities` | `kb_entities` list，链接 Entities |
-| `source` | `kb_source` text 或 link，按内容模型对象类型区分，不复用主题来源语义 |
+| `source` | `kb_source` text link，按内容模型识别内容单元或实体目标，不复用主题来源语义 |
+| `references` | `kb_references` list，链接作为文献或标准的 Entities |
+| `created` | `kb_created` date |
+| `modified` | `kb_modified` date |
 | `status` | `kb_status` text |
-| `created`／`modified` | date 或 datetime |
-| `replaces`／`isReplacedBy` | 内容笔记 links |
+| `isReplacedBy` | `kb_is_replaced_by` text link；只在内容模型规定的直接替代条件下填写 |
+| `relation` | `kb_relation` list，链接内容笔记并保留互反约束 |
+| `language` | `kb_language` text；默认 `zh` 时可以省略 |
 | 正文 | frontmatter 后的 Markdown 正文 |
 
 知识库实现必须校验引用目标和稳定 ID。Obsidian 文件名、标题、alias、tag、反向链接或创建时间都不能替代内容模型字段。
@@ -178,7 +183,7 @@ property 名使用固定前缀，避免与用户已有属性碰撞。不存在�
 - 用 `file.inFolder()` 和 `file.ext == "md"` 限定对应目录；
 - table view 只显示稳定 ID、显示名称、状态及该对象最重要的扁平属性；
 - 不使用 backlink 聚合、公式、插件视图或写回动作；
-- Base 是便捷视图，不是数据源；删除 `.base` 不影响导出的 Markdown 对象。
+- Base 是便捷视图，不是数据源；删除 `.base` 不影响导出的 Markdown 对象。当前验收只做 YAML 与官方语法的静态核对，不宣称已在 Obsidian 应用内运行。
 
 ## Manifest
 
@@ -189,14 +194,14 @@ property 名使用固定前缀，避免与用户已有属性碰撞。不存在�
 - 六份正式词表的路径、版本和 SHA-256；
 - 导出器文件 SHA-256；
 - 每类对象计数；
-- 除 `manifest.json` 自身外，每个生成文件的 vault 相对路径、对象种类、稳定 ID 和 SHA-256；
+- 除 `manifest.json` 自身外，每个生成文件的 vault 相对路径、对象种类、输出标识和 SHA-256；正式对象使用稳定 ID，README 与 Base 使用文件 stem 作为 manifest 内部标识；
 - `total_files` 计入 manifest 自身，`content_files` 等于文件条目数，生成内容集合 SHA-256 只覆盖条目，避免自引用哈希。
 
-Manifest 不包含生成时间、绝对路径、系统用户名或文件 mtime，保证相同输入逐字节一致。
+内容与 manifest 元数据读取同一份输入字节快照。Manifest 不包含生成时间、绝对路径、系统用户名或文件 mtime，保证相同输入逐字节一致。
 
 ## 生成规则
 
-- 所有对象按 `id` 排序；数组成员保持正式主题记录顺序；YAML property 键按规格固定顺序；列表保持定义顺序并去重。
+- 所有对象按 `id` 排序；数组成员和其他关系列表保持正式记录顺序；YAML property 键按规格固定顺序；只有 aliases 稳定去重。
 - 文本按 YAML 安全转义；内部链接整体加双引号；正文表格转义 `|` 和换行。
 - 文件使用 LF 和 UTF-8，末尾恰有一个换行。
 - 同一输入连续导出两次，目录逐字节一致。
@@ -213,8 +218,8 @@ Manifest 不包含生成时间、绝对路径、系统用户名或文件 mtime�
 
 - 输入文件缺失、YAML 解析失败、正式引用悬空、ID 重复或输出冲突：退出非零，不创建目标。
 - 输出目录非空、是符号链接或位于禁止路径：退出非零，不修改目录。
-- 某字段无法映射：在对象正文的“未映射值”区完整保存路径和值，并在 manifest 记录 warning；不能静默丢失。
-- 遇到当前规格未知的新字段：默认阻断。只有明确列为可保留未知字段的对象才允许写“未映射值”。
+- 某字段无法按本规格无损映射：阻断整个导出；不能静默丢失，也不生成 warning 后继续。
+- 遇到当前规格未知的新字段：默认阻断。当前没有允许保留未知字段的对象。
 - 用户中断或写入失败：删除本次临时目录，不触碰目标或其他 vault 文件。
 
 ## 验收条件

@@ -642,7 +642,11 @@ def _common_properties(record: Mapping[str, Any], object_kind: str, version: str
     return properties
 
 
-def _common_body(record: Mapping[str, Any]) -> list[str]:
+def _common_body(
+    record: Mapping[str, Any],
+    *,
+    basis_title: str = "形式依据",
+) -> list[str]:
     sections = [f"# {display_label(record)}"]
     if record.get("scope"):
         sections.extend(("", "## 范围", "", str(record["scope"])))
@@ -651,7 +655,7 @@ def _common_body(record: Mapping[str, Any]) -> list[str]:
         if table:
             sections.extend(("", table))
     basis = record.get("basis") or {}
-    table = _table("形式依据", ("字段", "值"), basis.items())
+    table = _table(basis_title, ("字段", "值"), basis.items())
     if table:
         sections.extend(("", table))
     matches = record.get("match") or []
@@ -697,7 +701,9 @@ def _render_topic(
         )
     properties["kb_added"] = record.get("added")
     replaced = _references(record.get("replaced_by"))
-    properties["kb_replaced_by"] = [link("topic", item, topic_labels[item]) for item in replaced]
+    properties["kb_replaced_by"] = (
+        link("topic", replaced[0], topic_labels[replaced[0]]) if replaced else None
+    )
     return _note(properties, _common_body(record))
 
 
@@ -740,7 +746,7 @@ def _render_entity(
     for field in ("form", "tier", "url", "watch", "checked", "added"):
         properties[f"kb_{field}"] = record.get(field)
     properties["kb_entity_version"] = record.get("version")
-    return _note(properties, _common_body(record))
+    return _note(properties, _common_body(record, basis_title="归属依据"))
 
 
 def _render_source(
@@ -776,7 +782,9 @@ def _render_controlled(
     properties["kb_source"] = record.get("source")
     properties["kb_added"] = record.get("added")
     replaced = _references(record.get("replaced_by"))
-    properties["kb_replaced_by"] = [link(object_kind, item, labels[item]) for item in replaced]
+    properties["kb_replaced_by"] = (
+        link(object_kind, replaced[0], labels[replaced[0]]) if replaced else None
+    )
     return _note(properties, _common_body(record))
 
 
