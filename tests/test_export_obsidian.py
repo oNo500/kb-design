@@ -2,11 +2,15 @@ import contextlib
 import datetime
 import hashlib
 import json
+import os
 import pathlib
 import re
 import shutil
+import subprocess
+import sys
 import tempfile
 import unittest
+from unittest import mock
 
 import yaml
 
@@ -477,16 +481,17 @@ class ExportObsidianTests(unittest.TestCase):
             parent = pathlib.Path(temporary)
             linked_directory = parent / "linked"
             linked_directory.mkdir()
-            sentinel = linked_directory / "sentinel.bin"
+            sentinel = parent / "sentinel.bin"
             sentinel.write_bytes(b"keep-symlink")
             output = parent / "output"
             output.symlink_to(linked_directory, target_is_directory=True)
             before = sorted(path.name for path in parent.iterdir())
 
-            with self.assertRaises(ExportError):
+            with self.assertRaisesRegex(ExportError, "symbolic link"):
                 export_obsidian.write_export(ROOT, output)
 
             self.assertTrue(output.is_symlink())
+            self.assertEqual([], list(linked_directory.iterdir()))
             self.assertEqual(b"keep-symlink", sentinel.read_bytes())
             self.assertEqual(before, sorted(path.name for path in parent.iterdir()))
 
@@ -501,6 +506,109 @@ class ExportObsidianTests(unittest.TestCase):
             self.assertFalse(output.exists())
             self.assertEqual(b"keep-forbidden", sentinel.read_bytes())
             self.assertFalse(any(path.name.startswith(".output.tmp-") for path in output.parent.iterdir()))
+
+    def test_write_export_uses_one_input_snapshot_for_content_and_manifest(self):
+        with mutated_repository("vocab/topics.yaml", lambda document: None) as repo_root:
+            input_path = repo_root / "vocab/topics.yaml"
+            original_input = input_path.read_bytes()
+            original_builder = export_obsidian.build_content_files
+
+            def mutate_after_build(root, **kwargs):
+                files = original_builder(root, **kwargs)
+                document = yaml.safe_load(input_path.read_text(encoding="utf-8"))
+                find_record(document, "concepts", "security")["label"]["en"] = (
+                    "Security Changed During Export"
+                )
+                input_path.write_text(
+                    yaml.safe_dump(document, allow_unicode=True, sort_keys=False),
+                    encoding="utf-8",
+                )
+                return files
+
+            output = repo_root / "output"
+            with mock.patch.object(
+                export_obsidian,
+                "build_content_files",
+                side_effect=mutate_after_build,
+            ):
+                export_obsidian.write_export(repo_root, output)
+
+            manifest = json.loads((output / "manifest.json").read_bytes())
+            topics_input = next(
+                item for item in manifest["inputs"] if item["path"] == "vocab/topics.yaml"
+            )
+            self.assertEqual(hashlib.sha256(original_input).hexdigest(), topics_input["sha256"])
+            properties, _ = split_note((output / "KB/Topics/security.md").read_bytes())
+            self.assertEqual("Security", properties["kb_label"])
+            self.assertIn(b"Security Changed During Export", input_path.read_bytes())
+
+    def test_cli_argument_errors_use_export_error_contract(self):
+        missing_output = subprocess.run(
+            [
+                sys.executable,
+                str(ROOT / "scripts/export_obsidian.py"),
+                "--repo-root",
+                str(ROOT),
+            ],
+            cwd=ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(1, missing_output.returncode)
+        self.assertEqual("", missing_output.stdout)
+        self.assertTrue(missing_output.stderr.startswith("OBSIDIAN_EXPORT_ERROR "))
+
+        help_result = subprocess.run(
+            [sys.executable, str(ROOT / "scripts/export_obsidian.py"), "--help"],
+            cwd=ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(0, help_result.returncode)
+        self.assertIn("usage:", help_result.stdout)
+        self.assertEqual("", help_result.stderr)
+
+    def test_write_export_cleans_temp_when_directory_replace_fails(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            parent = pathlib.Path(temporary)
+            output = parent / "output"
+            output.mkdir()
+            sentinel = parent / "sentinel.bin"
+            sentinel.write_bytes(b"keep-sibling")
+
+            with mock.patch.object(os, "replace", side_effect=OSError("replace blocked")):
+                with self.assertRaisesRegex(OSError, "replace blocked"):
+                    export_obsidian.write_export(ROOT, output)
+
+            self.assertTrue(output.is_dir())
+            self.assertEqual([], list(output.iterdir()))
+            self.assertEqual(b"keep-sibling", sentinel.read_bytes())
+            self.assertFalse(any(path.name.startswith(".output.tmp-") for path in parent.iterdir()))
+
+    def test_write_export_cleans_temp_when_written_file_cannot_be_read(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            parent = pathlib.Path(temporary)
+            output = parent / "output"
+            sentinel = parent / "sentinel.bin"
+            sentinel.write_bytes(b"keep-sibling")
+            original_read_bytes = pathlib.Path.read_bytes
+
+            def fail_export_readback(path):
+                if path.name == "security.md" and any(
+                    part.startswith(".output.tmp-") for part in path.parts
+                ):
+                    raise OSError("readback blocked")
+                return original_read_bytes(path)
+
+            with mock.patch.object(pathlib.Path, "read_bytes", fail_export_readback):
+                with self.assertRaisesRegex(ExportError, "readback blocked"):
+                    export_obsidian.write_export(ROOT, output)
+
+            self.assertFalse(output.exists())
+            self.assertEqual(b"keep-sibling", sentinel.read_bytes())
+            self.assertFalse(any(path.name.startswith(".output.tmp-") for path in parent.iterdir()))
 
     def test_write_export_rejects_dangling_reference_without_target(self):
         def mutate(document):

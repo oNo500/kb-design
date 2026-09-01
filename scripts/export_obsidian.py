@@ -23,6 +23,11 @@ class ExportError(ValueError):
     """Raised when formal input cannot be mapped without loss."""
 
 
+class _ArgumentParser(argparse.ArgumentParser):
+    def error(self, message: str) -> None:
+        raise ExportError(message)
+
+
 _FILES = OrderedDict(
     (
         ("topics", ("vocab/topics.yaml", {"version", "arrays", "concepts"})),
@@ -365,16 +370,32 @@ def _validate_record(
                 )
 
 
-def load_repository(repo_root: pathlib.Path) -> dict:
+def _read_repository_inputs(repo_root: pathlib.Path) -> dict[str, bytes]:
+    root = pathlib.Path(repo_root)
+    inputs: dict[str, bytes] = {}
+    for name, (relative_path, _) in _FILES.items():
+        try:
+            inputs[name] = (root / relative_path).read_bytes()
+        except OSError as exc:
+            raise ExportError(
+                f"{relative_path}: object <document>: document: {exc}"
+            ) from exc
+    return inputs
+
+
+def load_repository(
+    repo_root: pathlib.Path,
+    *,
+    input_bytes: Mapping[str, bytes] | None = None,
+) -> dict:
     """Load and validate the six formal vocabulary documents."""
 
-    root = pathlib.Path(repo_root)
+    snapshot = input_bytes if input_bytes is not None else _read_repository_inputs(repo_root)
     documents: dict[str, dict] = {}
     for name, (relative_path, allowed_top) in _FILES.items():
-        path = root / relative_path
         try:
-            document = yaml.safe_load(path.read_text(encoding="utf-8"))
-        except (OSError, UnicodeError, yaml.YAMLError) as exc:
+            document = yaml.safe_load(snapshot[name].decode("utf-8"))
+        except (KeyError, UnicodeError, yaml.YAMLError) as exc:
             raise ExportError(f"{relative_path}: object <document>: document: {exc}") from exc
         _check_keys(relative_path, "<document>", "document", document, allowed_top)
         _check_keys(relative_path, "<version>", "version", document.get("version"), {"id", "date", "note"})
@@ -803,10 +824,14 @@ def _readme(form_arrays: Sequence[Mapping[str, Any]]) -> bytes:
     ).encode("utf-8")
 
 
-def build_content_files(repo_root: pathlib.Path) -> dict[str, bytes]:
+def build_content_files(
+    repo_root: pathlib.Path,
+    *,
+    input_bytes: Mapping[str, bytes] | None = None,
+) -> dict[str, bytes]:
     """Return deterministic vault-relative content without writing to disk."""
 
-    documents = load_repository(repo_root)
+    documents = load_repository(repo_root, input_bytes=input_bytes)
     topics = _index(documents["topics"]["concepts"])
     arrays = _index(documents["topics"]["arrays"])
     entities = _index(documents["entities"]["entities"])
@@ -909,10 +934,16 @@ def _manifest_identity(relative_path: str) -> tuple[str, str]:
     raise ExportError(f"unknown output path: {relative_path}")
 
 
-def build_manifest(repo_root: pathlib.Path, files: Mapping[str, bytes]) -> bytes:
+def build_manifest(
+    repo_root: pathlib.Path,
+    files: Mapping[str, bytes],
+    *,
+    input_bytes: Mapping[str, bytes] | None = None,
+    exporter_bytes: bytes | None = None,
+) -> bytes:
     """Build the deterministic manifest for generated content files."""
 
-    root = pathlib.Path(repo_root)
+    snapshot = input_bytes if input_bytes is not None else _read_repository_inputs(repo_root)
     entries = []
     counts = {kind: 0 for kind in _KIND_DIRECTORIES}
     digest_input = bytearray()
@@ -938,13 +969,12 @@ def build_manifest(repo_root: pathlib.Path, files: Mapping[str, bytes]) -> bytes
         )
 
     inputs = []
-    for relative_path, _ in _FILES.values():
-        path = root / relative_path
+    for name, (relative_path, _) in _FILES.items():
         try:
-            content = path.read_bytes()
+            content = snapshot[name]
             document = yaml.safe_load(content.decode("utf-8"))
             version = document["version"]["id"]
-        except (OSError, UnicodeError, yaml.YAMLError, KeyError, TypeError) as exc:
+        except (UnicodeError, yaml.YAMLError, KeyError, TypeError) as exc:
             raise ExportError(f"{relative_path}: cannot build manifest: {exc}") from exc
         inputs.append(
             {
@@ -954,10 +984,12 @@ def build_manifest(repo_root: pathlib.Path, files: Mapping[str, bytes]) -> bytes
             }
         )
 
-    try:
-        exporter_sha256 = _sha256(pathlib.Path(__file__).read_bytes())
-    except OSError as exc:
-        raise ExportError(f"cannot hash exporter: {exc}") from exc
+    if exporter_bytes is None:
+        try:
+            exporter_bytes = pathlib.Path(__file__).read_bytes()
+        except OSError as exc:
+            raise ExportError(f"cannot hash exporter: {exc}") from exc
+    exporter_sha256 = _sha256(exporter_bytes)
 
     return _canonical_json(
         {
@@ -1116,8 +1148,18 @@ def write_export(repo_root: pathlib.Path, output: pathlib.Path) -> dict:
     """Write a validated export by replacing only a new or empty directory."""
 
     destination = _validate_output_path(repo_root, output)
-    content_files = build_content_files(repo_root)
-    manifest_bytes = build_manifest(repo_root, content_files)
+    input_bytes = _read_repository_inputs(repo_root)
+    try:
+        exporter_bytes = pathlib.Path(__file__).read_bytes()
+    except OSError as exc:
+        raise ExportError(f"cannot hash exporter: {exc}") from exc
+    content_files = build_content_files(repo_root, input_bytes=input_bytes)
+    manifest_bytes = build_manifest(
+        repo_root,
+        content_files,
+        input_bytes=input_bytes,
+        exporter_bytes=exporter_bytes,
+    )
     temporary = None
     try:
         temporary = pathlib.Path(
@@ -1148,11 +1190,11 @@ def write_export(repo_root: pathlib.Path, output: pathlib.Path) -> dict:
 
 
 def main(argv=None) -> int:
-    parser = argparse.ArgumentParser(description="Export formal vocabularies for Obsidian")
+    parser = _ArgumentParser(description="Export formal vocabularies for Obsidian")
     parser.add_argument("--repo-root", required=True, type=pathlib.Path)
     parser.add_argument("--output", required=True, type=pathlib.Path)
-    arguments = parser.parse_args(argv)
     try:
+        arguments = parser.parse_args(argv)
         summary = write_export(arguments.repo_root, arguments.output)
     except Exception as exc:
         print(f"OBSIDIAN_EXPORT_ERROR {exc}", file=sys.stderr)
