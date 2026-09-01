@@ -8,7 +8,7 @@
 
 **Tech Stack:** Markdown、YAML、JSON Schema、Python、Git。
 
-**Spec:** [项目治理草案](2026-08-28-terminology-project-design.md)、[当前阶段](../../../design/decisions/current-stage-scope.md)、[证据阶段](../../../design/decisions/evidence-stage-boundary.md)
+**Spec:** [项目治理草案](2026-08-28-terminology-project-design.md)、[当前阶段](../../../design/decisions/current-stage-scope.md)、[证据阶段](../../../design/decisions/evidence-stage-boundary.md)、[Obsidian 概念纠偏](2026-09-01-obsidian-concept-correction.md)
 
 ## 路线职责
 
@@ -42,9 +42,9 @@ Obsidian 应用映射与导出是七项完成后的后置要求，不抢占治�
 | 首轮维护 | 维护候选、`unassigned`、`self`、来源指标和阈值校准 | 当前范围完成 | 只处理会改变现行质量或后续决定的对象；维护候选不等于迁移切换候选 |
 | 草案复核 | 三份既有草案的独立依据和生效审查 | 当前范围完成 | 三份均已整篇重写并分别得出继续草案且无 L3 请求的结论，不合并批准 |
 | 待定设计 | 四项独立项目设计与共享同步 | 当前范围完成 | 四份项目原生草案均保存问题、方案、影响、不采用后果和生效条件；开放决定保留，草案均未生效 |
-| 应用映射 | Obsidian 应用映射与导出 | 当前范围完成 | 六份正式词表能够安全确定地生成只读参考区，项目原生映射回答内容模型五问；内容导出和回流未实现，不提前执行严格激活 |
+| 应用映射 | Obsidian `Application Profile` 与导出 artifact contract | 概念纠偏完成，词表导出保留 | 应用无关模型、语义选择和字节物化分开；六份正式词表继续生成单向参考区，内容消费者、回流和外部符合性声明继续后置 |
 
-当前连续执行路线已经完成。应用映射只消费六份正式词表，生成 Obsidian 只读参考区，并保存未来内容应用契约；它没有创建正式术语消费者、内容导出或回流接口。后续不自动进入新阶段，只在下列门禁的真实触发条件出现后另写实施计划。
+当前连续执行路线已经完成。Obsidian 概念纠偏没有改变实现或正式输入；现行 target 只消费六份正式词表，生成单向参考区，并保存未来内容表示约束。它没有创建正式术语消费者、内容消费者、内容导出、引用统计或回流接口。后续不自动进入新阶段，只在下列门禁的真实触发条件出现后另写实施计划。
 
 ## 后置门禁
 
@@ -82,6 +82,7 @@ TBX 已下放为[未生效草案](../../../design/drafts/tbx-export.md)。只有
 | [来源迁移](2026-08-31-source-schema-migration.md) | 来源基础与未来严格激活 | 当前范围完成；激活部分冻结 |
 | [术语实施](2026-08-31-terminology-schema-generation.md) | 术语基础与未来正式编辑源切换 | 当前范围完成；激活部分冻结 |
 | [Obsidian 导出](2026-09-01-obsidian-export.md) | 词表参考导出与项目原生应用映射 | 当前范围完成；内容导出与回流后置 |
+| [Obsidian 概念纠偏](2026-09-01-obsidian-concept-correction.md) | Application Profile、生成证据、已采纳决定和现行设计同步 | 当前范围完成；内容消费者、回流、正式激活与符合性主张后置 |
 
 后续只能有一个阶段处于执行状态。新子计划必须引用本文，并说明它交付哪个阶段、不会提前执行哪个后置门禁。
 
@@ -92,5 +93,6 @@ TBX 已下放为[未生效草案](../../../design/drafts/tbx-export.md)。只有
 - 七项原始治理目标都有项目产物或明确的人类决定；
 - 现行设计、正式数据、生成物和已批准记录语义一致；
 - 高成本证据只服务实际正式结果，没有恢复低价值全量审计；
-- Obsidian 映射与导出建立在稳定内部模型上；
+- Obsidian `Application Profile` 建立在稳定内部模型上，导出 artifact contract 与语义选择分开，词表导出继续保留；
+- 内容消费者、回流、正式激活和外部符合性主张均未因 target 文件或导出能力存在而提前成立；
 - TBX 只有在真实交换需求触发后才另立实施计划。

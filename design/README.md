@@ -7,24 +7,27 @@
 | 层次 | 当前效力 | 不能替代 |
 |---|---|---|
 | 现行设计与正式数据 | 规定当前规则、编辑权和数据形状 | 不能被草案、迁移推荐值或测试夹具覆盖 |
-| 应用映射 | 规定应用字段、路径、导出、引用和回流边界 | 不能修改应用无关模型，也不能成为正式数据编辑源 |
+| `Application Profile` | 规定 target 的功能范围、模型引用、字段约束、使用和具体表示 | 不能修改应用无关模型，也不能成为正式数据编辑源或消费者运行记录 |
+| 导出 artifact contract | 规定已选表示的输入快照、字节物化、文件集合、清单、校验和发布 | 不能修改 `Application Profile` 的语义选择，也不能扩大确定性或完整性证据 |
 | 已采纳决定 | 约束已批准的规则、机器契约和阶段范围 | 不自动填写来源事实，不使草案或正式数据切换生效 |
 | 未激活基础 | 提供 schema、校验、索引、探测、生成、诊断和维护接口 | 不构成正式数据、义务、委托、消费者、切换或发版 |
 | 迁移审计 | 保存冻结身份、旧位置、分类、去向和阻断 | 不批准新值，不回写正式数据，不取得术语准入或删除权限 |
 | 项目草案 | 保存拟议规则、问题边界和生效条件 | 阅读、引用、推荐或部分实现不等于规则生效 |
 
-当前阶段以[当前阶段](decisions/current-stage-scope.md)为基础边界，以[项目路线](../docs/superpowers/plans/2026-08-31-project-roadmap.md)记录完成状态。来源与术语基础、现行设计同步、首轮维护、草案复核、待定设计和 Obsidian 映射均已完成各自当前范围；严格来源切换、术语正式激活、草案生效和发版都没有发生。
+当前阶段以[当前阶段](decisions/current-stage-scope.md)为基础边界，以[项目路线](../docs/superpowers/plans/2026-08-31-project-roadmap.md)记录完成状态。来源与术语基础、现行设计同步、首轮维护、草案复核和待定设计均已完成各自当前范围；Obsidian 概念纠偏完成，词表导出保留。内容消费者、回流、严格来源切换、术语正式激活、草案生效和发版都没有发生。
 
 ## 现行设计
 
 - [方法登记](principles.md)：登记本库采用的方法、概念依据和导出的规则。
+  - [Application Profile](../concepts/application-profile.md)：解释功能范围、模型、字段约束、使用与具体表示的职责分层；项目保留 English designation。
+  - [Reproducible Builds](../concepts/reproducible-builds.md)：区分确定性、独立重建、manifest、provenance、原子可见性与 durability 的证据。
   - [写作规则](writing.md)：规定全库写作规则；`AGENTS.md` 是其会话摘要。
   - [主题词表设计](topics.md)：规定正式主题词表的范围、记录、关系、生命周期、生成路径和校验。
     - [层级结构](hierarchy.md)：规定树的分层、结构复制、数组和结构来源。
     - [来源名称规范表](sources-registry.md)：规定现行来源登记及未激活共享接口的职责边界。
   - [命名实体词表设计](entities.md)：规定产品、语言、组织、标准和文献等个体的记录方式。
   - [内容模型](content-model.md)：规定内容单元字段、受控值、标识符、生命周期和应用映射接口。
-    - [Obsidian 映射](targets/obsidian.md)：规定现行词表的单向参考导出和未来内容应用契约。
+    - [Obsidian 映射](targets/obsidian.md)：按 `Application Profile` 规定现行词表的单向参考导出和未来内容表示，并分开导出 artifact contract。
     - [词表版本](versioning.md)：规定版本块、发版时机和变更记录。
   - [治理](governance.md)：规定对象效力、政策、决策权、变更控制、验收、验证投入和审计。
     - [维护](maintenance.md)：规定现行对象、指标、阈值、触发、动作、审计追踪和复审。
@@ -36,6 +39,7 @@
 - [树按学科而非分面的决定](decisions/tree-by-discipline.md)
 - [原样复制与本地分析分层的决定](decisions/borrow-and-analyze.md)
 - [设计与应用分离](decisions/form-independence.md)
+- [应用约束与表示分层](decisions/application-profile-boundary.md)：固定 `Application Profile`、target binding、导出 artifact contract、消费者和编辑效力边界；不修改前一决定。
 - [决策权的首批边界](decisions/decision-rights-defaults.md)
 - [项目约定入口](decisions/project-instructions-entry.md)
 - [来源模式](decisions/source-governance-schema.md)：批准来源机器结构与迁移规则，不批准具体来源事实。
@@ -84,9 +88,11 @@
 
 ## 应用映射
 
-[Obsidian 映射](targets/obsidian.md)是当前唯一项目原生应用映射。`scripts/export_obsidian.py` 从六份正式词表生成可浏览、可链接、可筛选的只读参考区，并用 manifest 保存输入和输出哈希。输出可以确定性重建，但不受 Git 跟踪，也不反向编辑正式词表。
+[Obsidian 映射](targets/obsidian.md)是当前唯一项目原生 target 文件。它引用 [Application Profile](../concepts/application-profile.md)和 [Reproducible Builds](../concepts/reproducible-builds.md)两种已登记方法，并受[应用约束与表示分层](decisions/application-profile-boundary.md)约束。应用无关模型、`Application Profile` 的语义选择和导出 artifact contract 分开；field／property／path binding 不是 `metadata crosswalk`，也不改变词表层 `crosswalk`。
 
-当前实现只导出词表对象、主题数组、三个 Bases、目录 README 和 manifest。内容单元字段已有 Obsidian 落点契约，但本仓库没有知识库内容、内容导出器或回流接口；不得把契约写成已运行消费者。TBX 仍是没有真实接收方的未生效草案。
+`scripts/export_obsidian.py` 从六份正式词表生成可浏览、可链接、可筛选的单向参考区，包括词表对象、主题数组、Base 浏览入口、目录 README 和项目 manifest。Obsidian 与 Base 可以编辑生成文件，但修改不回流、不取得项目效力。普通 `.json` 不是 Obsidian 内容格式；项目 manifest 不是 BagIt。现行同环境双跑只证明确定性，目录项替换只证明成功时的原子可见性；项目不宣称 JCS、BagIt、reproducible build 或 durability。
+
+内容单元字段已有 Obsidian 表示约束，但本仓库没有知识库内容、内容导出器、内容消费者、检索记录或回流接口；target 文件和生成目录不能冒充运行证据。TBX 仍是没有真实接收方的未生效草案。
 
 ## 未激活基础
 
@@ -132,7 +138,7 @@
 | 8 | [维护](maintenance.md) | 指标、阈值、动作、复核和审计追踪 |
 | 9 | [写作规则](writing.md) | 写任何文件前要遵守的规则 |
 | 10 | [内容模型](content-model.md) | 内容单元字段、稳定身份和应用映射接口 |
-| 11 | [Obsidian 映射](targets/obsidian.md) | 词表怎样单向导出，内容字段以后怎样落地 |
+| 11 | [Obsidian 映射](targets/obsidian.md) | `Application Profile` 怎样选择语义表示，导出合同怎样物化，以及哪些消费者仍不存在 |
 | 12 | [词表版本](versioning.md) | 何时发版、怎样记录变化 |
 | — | [决定记录](decisions/) | 已采纳决定及其后果 |
 | — | [项目草案](drafts/) | 十份未生效提案、开放问题及其触发条件 |

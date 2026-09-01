@@ -8,7 +8,7 @@
 
 ## 设计原则
 
-设计阶段保留充分探索空间，但定稿以已有规范、事实标准、项目现行设计和已采纳决定为依据。未经准入依据的 designation 不进入项目定稿；具体规则见[治理](design/governance.md)与[写作规则](design/writing.md)。
+设计阶段保留充分探索空间，但定稿以已有规范、事实标准、项目现行设计和已采纳决定为依据。未经准入依据的 designation 不进入项目定稿；应用设计另按 [Application Profile](concepts/application-profile.md)与 [Reproducible Builds](concepts/reproducible-builds.md)两种已登记方法限制语义和完成声明。具体规则见[方法登记](design/principles.md)、[治理](design/governance.md)与[写作规则](design/writing.md)。
 
 ## 项目边界
 
@@ -17,9 +17,10 @@
 | 层 | 内容 | 位置 |
 |---|---|---|
 | 与应用无关 | 概念、词表、内容模型、治理和维护规则 | `concepts/`、`design/`、`vocab/` |
-| 应用相关 | 每种应用的字段、导出、引用、回流和表达缺口 | `design/targets/` |
+| 应用约束 | 每个 target 的功能范围、模型引用、字段约束、使用和允许的 loss | `design/targets/` |
+| 具体表示 | target location、type、reference form 和 encoding syntax | `design/targets/` |
 
-与应用无关层不使用具体工具的字段名和文件格式定义自身；应用相关层不改动与应用无关层的定义。六份正式词表是应用消费的源，各应用从正式词表导出，不反向编辑。主题词表虽是生成物，应用仍只读取正式输出；它的编辑路径见[主题词表设计](design/topics.md)。
+与应用无关层不使用具体工具的字段名和文件格式定义自身；应用约束和具体表示不改动应用无关层的定义。导出 artifact contract 另负责把已选表示物化为稳定 bytes、文件集合、项目 manifest 和发布物，不取得修改语义选择的权力。六份正式词表是应用消费的源，各应用从正式词表导出，不反向编辑。主题词表虽是生成物，应用仍只读取正式输出；它的编辑路径见[主题词表设计](design/topics.md)。分层与消费者门禁见[应用约束与表示分层](design/decisions/application-profile-boundary.md)。
 
 ## 项目目录
 
@@ -41,7 +42,9 @@
 
 ## Obsidian 导出
 
-[Obsidian 映射](design/targets/obsidian.md)已经建立。当前导出器把六份正式词表生成到一个新的只读参考目录，其中包含对象笔记、主题数组、三个 Bases、目录 README 和 manifest。它不生成知识库内容单元，也不读取或回写既有 vault。
+[Obsidian 映射](design/targets/obsidian.md)已经完成概念纠偏。当前 `Application Profile` 引用应用无关模型，选择 Obsidian properties、Markdown、Wikilink 和 Base 的语义表示；导出 artifact contract 另把六份正式词表物化到新的单向参考目录，其中包含对象笔记、主题数组、Base 浏览入口、目录 README 和项目 manifest。
+
+生成文件和 Base 可以在 Obsidian 中编辑，但本项目不读取这些修改，修改不取得项目效力。导出器不生成知识库内容单元，也不读取或回写既有 vault。项目 manifest 不是 Obsidian 内容格式或 BagIt；同环境双跑和目录项替换也不产生 reproducible build 或 durability 主张。
 
 从仓库根运行：
 
@@ -57,7 +60,7 @@ python3 scripts/export_obsidian.py --repo-root . --output /absolute/new/path
 - 来源与术语基础已经实现，但没有正式来源 v2 数据、正式术语数据、正式义务、委托、消费者或切换状态。
 - 首轮维护已经完成本轮可执行动作；开放的 designation、归属、候选接受和发版决定没有被自动应用。
 - 三份既有草案与四份待定设计均已形成项目草案并保持未生效。
-- Obsidian 词表映射与单向导出已经完成；内容单元导出和回流只保留应用契约，尚未实现。
+- Obsidian 概念纠偏完成，词表导出保留；内容消费者、内容单元导出、引用统计和回流继续后置。
 - TBX 没有真实接收方，继续保留为触发式草案；严格来源或术语激活只在真实切换需求出现后另立计划。
 
 项目执行计划记录过程与顺序，不属于项目设计组成；现行规则仍以 `design/` 正文、已采纳决定、应用映射和正式数据为准。

@@ -6,7 +6,7 @@
 
 ## 对象范围
 
-治理对象按效力分开。正式数据、已经实现但未激活的基础、迁移审计和草案不能互相替代。
+治理对象按效力分开。正式数据、现行设计、`Application Profile`、导出 artifact contract、已经实现但未激活的基础、迁移审计和草案不能互相替代；target 文件或生成目录存在也不证明真实内容消费者已经启用。
 
 ### 现行记录
 
@@ -19,7 +19,7 @@
 | 来源 | `vocab/entities.yaml` 中 `kind` 为 standard／publication 的实体 | 现行 `tier` 与复核见[维护](maintenance.md) |
 | 设计文档 | `design/*.md` | 本文“质量与验收” |
 | 决定记录 | `design/decisions/` | 只追加；推翻时新建记录并标明替代关系 |
-| 应用映射 | `design/targets/` | [内容模型](content-model.md)的五个问题 |
+| `Application Profile` 与导出 artifact contract | `design/targets/` | [内容模型](content-model.md)的上层职责和五个操作问题；[应用约束与表示分层](decisions/application-profile-boundary.md) |
 | 概念文 | `concepts/` | [CONVENTIONS](../concepts/CONVENTIONS.md) 的硬规则 |
 | designation 登记 | `concepts/glossary.md` | 现行可编辑登记；准入规则见本文“准入对象” |
 | 文献笔记 | `sources/` | 来源已经核对；阅读范围写明 |
@@ -30,6 +30,8 @@
 
 正式 `vocab/entities.yaml`、`vocab/sources.yaml` 和 `vocab/topics.yaml` 继续决定当前数据形状。同步设计不会把旧引用机械改成后置结构，也不会改变任何现行 designation、译名、id、状态、`tier`、用途或关系。
 
+现行 [Obsidian 映射](targets/obsidian.md)按应用无关模型、`Application Profile` 语义选择和导出 artifact contract 分工。生成文件可以在 Obsidian 中编辑，但修改不回流、不取得项目效力。该 target 当前只消费六份正式词表；仓库没有知识库内容消费者、内容引用统计、检索统计或回流接口。
+
 ### 能力边界
 
 以下基础已经实现，但没有接管正式数据。
@@ -38,6 +40,7 @@
 |---|---|---|
 | 来源 | 六份 schema、共享来源模型、离线校验、反向索引、固定夹具探测、迁移预演和复核义务接口 | 没有正式来源 v2 数据、正式义务、正式索引、真实联网观察、具体角色批准或正式切换 |
 | 术语 | 三层候选模式、状态转换校验、确定性生成器、正文诊断、维护索引和复核义务接口 | 没有正式术语数据、义务、委托、消费者、切换状态或编辑权转移 |
+| Obsidian | 六份正式词表的单向参考导出、项目 manifest、发布前校验和目标目录项替换 | 没有内容消费者、回流、JCS、BagIt、reproducible build 或 durability 符合性与保证 |
 
 来源探测的 `--live` 明确禁用，实际 JSONL 输出与探测 schema 尚未闭合。固定夹具只能证明只读行为和信号逻辑，不能确认真实来源状态。术语生成器和维护接口没有正式输入；测试夹具中的状态与消费者也不是仓库现状。
 
@@ -112,7 +115,10 @@
 | 词表结构变更 | 提案 → 人定 → 修改 `vocab/build/` 输入并重新生成，或直接改数据 → 校验通过 | CHANGELOG |
 | 来源改档 | 人定 → 修改实体 `tier` → 复核受影响断言 | 实体 `history` |
 | 词表发版 | 维护触发 → 人定 → 新建版本块与 CHANGELOG 版节 | [词表版本](versioning.md) |
-| 新建应用映射 | 按内容模型的五个问题写 → 人定 | `design/targets/` |
+| 新建 target | 核对概念文 → 核对[方法登记](principles.md) → 引用适用的已采纳决定 → 写 `Application Profile` 上层职责与五个操作问题 → 分开导出 artifact contract → 人定 | `design/targets/` 与决定记录 |
+| target 语义变更 | 核对应用无关模型和决定 → 提案语义选择、约束或 loss 的变化 → 人定 → 同步 artifact contract 和入口 | target 文件与提交说明；结构性变更记决定 |
+| 导出物化变更 | 在既定语义选择内修改 bytes、顺序、quoting、newlines、file set、manifest、校验或 publication → 定向验证 | target 文件、实现和提交说明；越过语义边界时转 target 语义变更 |
+| 消费者启用 | 具名消费者、内容字段或检索输入、运行契约与验收证据齐备 → 人定 | 决定记录；静态 target 文件和生成目录不能代替 |
 | 推翻决定记录 | 新建决定 → 旧决定标为被替代 | 决定记录 |
 | 摘要同步 | 被摘要文档改动后同步 `AGENTS.md`、README | 同一提交 |
 
@@ -167,6 +173,8 @@ AI 在第 4 级只能给解释，不能给名称。“有译名但不达意”�
 |---|---|
 | 概念文 | CONVENTIONS 的五条硬规则；权威来源链接均已核对；项目采用的 designation 有依据；索引已登记 |
 | 设计文档 | 每节规则有依据或标明“本库”；已实现能力不写成待建；真实未决事项集中在文末；链接检查通过；项目采用的 designation 有依据 |
+| `Application Profile` | 引用概念文、方法登记和适用决定；功能范围、模型引用、field constraints、`Usage Guidelines`、`Encoding Syntax Guidelines` 与五个操作问题完整；target binding 不改写应用无关语义 |
+| 导出 artifact contract | 与语义选择交接清楚；输入快照、byte serialization、order、quoting、newlines、file set、manifest、post-generation validation 和 publication 与实现一致；确定性、完整性、原子可见性、durability 和外部符合性分别陈述 |
 | 词表条目 | 现行校验脚本零问题；复制项有现行 `match` 回到源头；人工赋值字段有现行 `basis`；`self` 不为 `active` |
 | 脚本 | 幂等；文本替换带断言；批量改动前后复核 Git 差异；现行阈值常量与阈值表一致；输出可读 |
 | 决定记录 | 有状态与日期、背景、决定和后果；推翻时不改旧记录 |
@@ -174,6 +182,8 @@ AI 在第 4 级只能给解释，不能给名称。“有译名但不达意”�
 | 提交说明 | 写清改动并标注决策权级别 |
 
 基础接口完成与正式激活完成采用不同证据。schema 生成一致、转换校验、确定性输出、索引覆盖、夹具只读、报告位置和迁移身份对账，可以验收基础能力；它们不能验收正式数据、具体来源或术语事实、委托、消费者、周期运行或切换。正式激活还需要相应人工决定、完整候选、消费者契约、应用后验证，以及风险所需的回滚证据；当前阶段没有这些证据不构成基础接口失败。
+
+target 文件验收与消费者验收也分开。前者证明语义选择、表示和物化合同自洽；后者必须由具名消费者实际读取内容字段或检索记录并提供运行证据。生成文件可以编辑、Base 可以编辑 properties，但这些产品能力和本地修改都不构成回流、消费者启用或项目效力。
 
 来源探测目前只能验收固定夹具行为。`--live` 禁用且输出契约未闭合，不能写成真实探测、模式通过或正式运行完成。
 
