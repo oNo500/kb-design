@@ -17,9 +17,6 @@ from .render import render_frontmatter
 from .validation import _LEVELS, _REFERENCE_KINDS, _entries, validate_content
 
 
-_LANGUAGES = frozenset({"zh", "en"})
-
-
 def _vault_content_root(vault: Path) -> Path:
     candidate = Path(vault)
     if candidate.is_symlink():
@@ -112,6 +109,7 @@ def _readback(snapshot: DesignSnapshot, temporary: Path, destination: Path, iden
 
 
 def _write_temporary(content_root: Path, identifier: str, rendered: bytes) -> Path:
+    temporary: Path | None = None
     try:
         with tempfile.NamedTemporaryFile(
             mode="wb",
@@ -120,11 +118,19 @@ def _write_temporary(content_root: Path, identifier: str, rendered: bytes) -> Pa
             dir=content_root,
             delete=False,
         ) as handle:
+            temporary = Path(handle.name)
             handle.write(rendered)
             handle.flush()
             os.fsync(handle.fileno())
-            return Path(handle.name)
+            return temporary
     except OSError as exc:
+        if temporary is not None:
+            try:
+                temporary.unlink()
+            except FileNotFoundError:
+                pass
+            except OSError as cleanup_error:
+                raise ApplicationError(f"cannot clean staged content: {cleanup_error}") from cleanup_error
         raise ApplicationError(f"cannot stage content: {exc}") from exc
 
 
@@ -135,17 +141,6 @@ def _publish_without_overwrite(temporary: Path, destination: Path) -> bool:
         return False
     except OSError as exc:
         raise ApplicationError(f"cannot publish content: {exc}") from exc
-    try:
-        os.replace(temporary, destination)
-    except OSError as exc:
-        try:
-            if os.path.samestat(temporary.stat(), destination.stat()):
-                destination.unlink()
-        except FileNotFoundError:
-            pass
-        except OSError as cleanup_error:
-            raise ApplicationError(f"cannot clean failed content publication: {cleanup_error}") from cleanup_error
-        raise ApplicationError(f"cannot finalize content publication: {exc}") from exc
     return True
 
 
@@ -167,10 +162,16 @@ def create_content(
 ) -> Path:
     """Create one canonical UUIDv4 draft after validating all controlled inputs."""
     content_root = _vault_content_root(vault)
-    if not isinstance(title, str) or not title.strip() or "\r" in title or "\n" in title:
+    if (
+        not isinstance(title, str)
+        or not title
+        or title != title.strip()
+        or "\r" in title
+        or "\n" in title
+    ):
         raise ApplicationError("title must be nonempty single-line text")
-    if language not in _LANGUAGES:
-        raise ApplicationError(f"unsupported content language: {language!r}")
+    if not isinstance(language, str) or not language or "\r" in language or "\n" in language:
+        raise ApplicationError("language must be nonempty single-line text")
     if not callable(uuid_factory) or not callable(today):
         raise ApplicationError("uuid_factory and today must be callable")
 
