@@ -26,19 +26,29 @@ _TEMPLATES = {
     "App/Templates/reference.md": render_frontmatter({"aliases": [], "tags": ["reference"]}) + "# 参考\n",
 }
 
+
+def _base(name: str, *filters: str, order: tuple[str, ...] = ()) -> dict[str, object]:
+    return {
+        "filters": {"and": list(filters)},
+        "views": [{"type": "table", "name": name, "order": list(order)}],
+    }
+
+
+_CONTENT_FILTERS = ('file.inFolder("Content")', 'file.ext == "md"')
 _VIEWS = {
-    "App/Views/content.base": {
-        "views": [{"type": "table", "name": "内容", "filters": [{"file.folder": "Content"}]}]
-    },
-    "App/Views/drafts.base": {
-        "views": [{"type": "table", "name": "草案", "filters": [{"status": "draft"}]}]
-    },
-    "App/Views/formal-topics.base": {
-        "views": [{"type": "table", "name": "正式主题", "filters": [{"file.folder": "KB/Topics"}]}]
-    },
-    "App/Views/unassigned-topics.base": {
-        "views": [{"type": "table", "name": "未分配主题", "filters": [{"subjects": ""}]}]
-    },
+    "App/Views/inbox.base": _base("Inbox", 'file.inFolder("Inbox")', 'file.ext == "md"'),
+    "App/Views/sources.base": _base("外部资料", 'file.inFolder("Sources")', 'file.ext == "md"'),
+    "App/Views/content.base": _base("全部内容", *_CONTENT_FILTERS),
+    "App/Views/drafts.base": _base("草稿", *_CONTENT_FILTERS, 'kb_status == "draft"'),
+    "App/Views/recently-modified.base": _base("最近修改", *_CONTENT_FILTERS, order=("kb_modified",)),
+    "App/Views/indexes.base": _base("人工索引", 'file.inFolder("Indexes")', 'file.ext == "md"'),
+    "App/Views/formal-topics.base": _base("正式主题", 'file.inFolder("KB/Topics")', 'file.ext == "md"'),
+    "App/Views/unassigned-topics.base": _base(
+        "未分配主题",
+        'file.inFolder("KB/Topics")',
+        'file.ext == "md"',
+        'kb_status == "unassigned"',
+    ),
 }
 
 _RULES = {

@@ -7,6 +7,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
+import yaml
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
@@ -121,6 +123,95 @@ class VaultInitializationTests(unittest.TestCase):
             content = (self.target / relative_path).read_bytes()
             self.assertEqual(hashlib.sha256(content).hexdigest(), entry["sha256"])
             self.assertIn(entry["kind"], {"reference", "template", "view", "rule"})
+
+    def test_writes_official_bases_filter_shapes(self) -> None:
+        """Each application Base must use the official expression or Boolean-group filter schema."""
+        from kb_obsidian.vault import initialize_vault
+
+        initialize_vault(self.design.resolve(), self.target)
+        bases = sorted((self.target / "App" / "Views").glob("*.base"))
+        self.assertGreaterEqual(len(bases), 8)
+        for path in bases:
+            document = yaml.safe_load(path.read_text(encoding="utf-8"))
+            expressions = self._filter_expressions(document["filters"])
+            self.assertTrue(any(expression.startswith('file.inFolder("') for expression in expressions), path)
+            self.assertIn('file.ext == "md"', expressions, path)
+        drafts = yaml.safe_load((self.target / "App" / "Views" / "drafts.base").read_text(encoding="utf-8"))
+        self.assertIn('kb_status == "draft"', self._filter_expressions(drafts["filters"]))
+
+    def test_registers_only_actual_content_and_formal_property_bindings(self) -> None:
+        """Property types must name only the content contract and Task 2 formal export bindings."""
+        from kb_obsidian.vault import initialize_vault
+
+        initialize_vault(self.design.resolve(), self.target)
+        types = json.loads((self.target / ".obsidian" / "types.json").read_text(encoding="utf-8"))["types"]
+        expected = {
+            "aliases": "aliases",
+            "title": "text",
+            "kb_id": "text",
+            "kb_type": "text",
+            "kb_genre": "text",
+            "kb_form": "text",
+            "kb_level": "text",
+            "kb_source": "text",
+            "kb_status": "text",
+            "kb_is_replaced_by": "text",
+            "kb_language": "text",
+            "kb_object": "text",
+            "kb_label": "text",
+            "kb_version": "text",
+            "kb_replaced_by": "text",
+            "kb_superordinate": "text",
+            "kb_kind": "text",
+            "kb_vendor": "text",
+            "kb_tier": "text",
+            "kb_entity_version": "text",
+            "kb_url": "text",
+            "kb_watch": "text",
+            "kb_entity": "text",
+            "kb_subjects": "multitext",
+            "kb_entities": "multitext",
+            "kb_references": "multitext",
+            "kb_relation": "multitext",
+            "kb_creator": "multitext",
+            "kb_broader": "multitext",
+            "kb_related": "multitext",
+            "kb_arrays": "multitext",
+            "kb_members": "multitext",
+            "kb_roles": "multitext",
+            "kb_created": "date",
+            "kb_modified": "date",
+            "kb_added": "date",
+            "kb_checked": "date",
+            "tags": "tags",
+        }
+        self.assertEqual(expected, types)
+
+    def test_links_every_home_entry_to_an_existing_internal_file(self) -> None:
+        """Every Home entry must resolve to a generated Base, formal view, or report file."""
+        from kb_obsidian.vault import initialize_vault
+
+        initialize_vault(self.design.resolve(), self.target)
+        home = (self.target / "Home.md").read_text(encoding="utf-8")
+        targets = [
+            link.split("]]", 1)[0].split("|", 1)[0].split("#", 1)[0]
+            for link in home.split("[[")[1:]
+        ]
+        self.assertGreaterEqual(len(targets), 10)
+        for target in targets:
+            self.assertTrue((self.target / target).is_file(), target)
+        self.assertTrue((self.target / "App" / "Reports" / "README.md").is_file())
+
+    @staticmethod
+    def _filter_expressions(value: object) -> list[str]:
+        if isinstance(value, str):
+            return [value]
+        if not isinstance(value, dict) or len(value) != 1:
+            raise AssertionError(f"invalid filter shape: {value!r}")
+        operator, children = next(iter(value.items()))
+        if operator not in {"and", "or", "not"} or not isinstance(children, list):
+            raise AssertionError(f"invalid filter group: {value!r}")
+        return [expression for child in children for expression in VaultInitializationTests._filter_expressions(child)]
 
 
 if __name__ == "__main__":

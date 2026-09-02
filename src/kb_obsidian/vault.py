@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 import shutil
 import tempfile
 from collections.abc import Mapping
@@ -59,22 +60,45 @@ _TYPES_CONFIG = {
     "types": {
         "aliases": "aliases",
         "tags": "tags",
-        "created": "date",
-        "updated": "date",
         "kb_id": "text",
         "title": "text",
-        "status": "text",
-        "type": "text",
-        "genre": "text",
-        "form": "text",
-        "level": "text",
-        "language": "text",
-        "subjects": "multitext",
-        "entities": "multitext",
-        "references": "multitext",
-        "relations": "multitext",
+        "kb_type": "text",
+        "kb_genre": "text",
+        "kb_form": "text",
+        "kb_level": "text",
+        "kb_source": "text",
+        "kb_status": "text",
+        "kb_is_replaced_by": "text",
+        "kb_language": "text",
+        "kb_object": "text",
+        "kb_label": "text",
+        "kb_version": "text",
+        "kb_replaced_by": "text",
+        "kb_superordinate": "text",
+        "kb_kind": "text",
+        "kb_vendor": "text",
+        "kb_tier": "text",
+        "kb_entity_version": "text",
+        "kb_url": "text",
+        "kb_watch": "text",
+        "kb_entity": "text",
+        "kb_subjects": "multitext",
+        "kb_entities": "multitext",
+        "kb_references": "multitext",
+        "kb_relation": "multitext",
+        "kb_creator": "multitext",
+        "kb_broader": "multitext",
+        "kb_related": "multitext",
+        "kb_arrays": "multitext",
+        "kb_members": "multitext",
+        "kb_roles": "multitext",
+        "kb_created": "date",
+        "kb_modified": "date",
+        "kb_added": "date",
+        "kb_checked": "date",
     }
 }
+_WIKILINK = re.compile(r"\[\[([^|#\]]+)(?:#[^|\]]+)?(?:\|[^\]]+)?\]\]")
 
 
 def _sha256(content: bytes) -> str:
@@ -168,18 +192,23 @@ def _home_bytes() -> bytes:
         render_frontmatter({"aliases": ["主页"], "tags": ["home"]})
         + "# 主页\n\n"
         + "## 资料与内容\n\n"
-        + "- Inbox：`Inbox/`\n"
-        + "- 外部资料：`Sources/`\n"
-        + "- [[App/Views/content.base|全部内容与最近修改]]\n"
+        + "- [[App/Views/inbox.base|Inbox]]\n"
+        + "- [[App/Views/sources.base|外部资料]]\n"
+        + "- [[App/Views/content.base|全部内容]]\n"
         + "- [[App/Views/drafts.base|草稿内容]]\n"
-        + "- 人工索引：`Indexes/`\n\n"
+        + "- [[App/Views/recently-modified.base|最近修改]]\n"
+        + "- [[App/Views/indexes.base|人工索引]]\n\n"
         + "## 受管理入口\n\n"
-        + "- [[KB/README|正式主题、实体和来源用途]]\n"
-        + "- [[App/Views/formal-topics.base|正式主题视图]]\n"
-        + "- [[App/Views/unassigned-topics.base|未分配主题视图]]\n"
-        + "- 维护报告：`App/Reports/`\n"
-        + "- [[App/Rules/README|应用规则]]\n"
+        + "- [[KB/Views/Topics.base|正式主题]]\n"
+        + "- [[KB/Views/Entities.base|实体]]\n"
+        + "- [[KB/Views/Sources.base|来源用途]]\n"
+        + "- [[App/Reports/README.md|维护报告]]\n"
+        + "- [[App/Rules/README.md|应用规则]]\n"
     ).encode("utf-8")
+
+
+def _reports_readme_bytes() -> bytes:
+    return "# 维护报告\n\n此目录保存从内容读取后生成的派生诊断结果。\n".encode("utf-8")
 
 
 def _read_json(path: Path) -> Any:
@@ -222,31 +251,52 @@ def _managed_files_on_disk(root: Path) -> dict[str, bytes]:
     return files
 
 
+def _filter_expressions(value: object) -> list[str]:
+    if isinstance(value, str):
+        return [value]
+    if not isinstance(value, Mapping) or len(value) != 1:
+        raise ApplicationError("generated Base has an invalid filter shape")
+    operator, children = next(iter(value.items()))
+    if operator not in {"and", "or", "not"} or not isinstance(children, list):
+        raise ApplicationError("generated Base has an invalid filter group")
+    return [expression for child in children for expression in _filter_expressions(child)]
+
+
+def _verify_home_links(root: Path, home_text: str) -> None:
+    targets = _WIKILINK.findall(home_text)
+    if not targets:
+        raise ApplicationError("Home has no internal entry links")
+    for target in targets:
+        path = PurePosixPath(target)
+        if path.is_absolute() or ".." in path.parts:
+            raise ApplicationError(f"Home has an unsafe internal link: {target}")
+        destination = root.joinpath(*path.parts)
+        if not destination.is_file() or destination.is_symlink():
+            raise ApplicationError(f"Home link target is missing: {target}")
+
+
 def _verify_staged_vault(root: Path, snapshot: DesignSnapshot, expected_manifest: Mapping[str, object]) -> None:
     for relative_path in _USER_DIRECTORIES:
         if not (root / relative_path).is_dir():
             raise ApplicationError(f"user directory is missing: {relative_path}")
     home = root / "Home.md"
-    required_home_links = {
-        "[[App/Views/content.base|全部内容与最近修改]]",
-        "[[App/Views/drafts.base|草稿内容]]",
-        "[[KB/README|正式主题、实体和来源用途]]",
-        "[[App/Views/formal-topics.base|正式主题视图]]",
-        "[[App/Views/unassigned-topics.base|未分配主题视图]]",
-        "[[App/Rules/README|应用规则]]",
-    }
     if not home.is_file():
         raise ApplicationError("Home is missing a required entry link")
     home_text = home.read_text(encoding="utf-8")
-    if any(link not in home_text for link in required_home_links):
-        raise ApplicationError("Home is missing a required entry link")
+    _verify_home_links(root, home_text)
     _read_frontmatter(home)
     for template in (root / "App" / "Templates").glob("*.md"):
         _read_frontmatter(template)
     for view in (root / "App" / "Views").glob("*.base"):
         try:
-            if not isinstance(yaml.safe_load(view.read_text(encoding="utf-8")), Mapping):
+            document = yaml.safe_load(view.read_text(encoding="utf-8"))
+            if not isinstance(document, Mapping):
                 raise ApplicationError(f"generated Base is not a mapping: {view}")
+            expressions = _filter_expressions(document.get("filters"))
+            if not any(expression.startswith('file.inFolder("') for expression in expressions):
+                raise ApplicationError(f"generated Base has no folder filter: {view}")
+            if 'file.ext == "md"' not in expressions:
+                raise ApplicationError(f"generated Base has no Markdown filter: {view}")
         except (OSError, UnicodeError, yaml.YAMLError) as exc:
             raise ApplicationError(f"cannot parse generated Base {view}: {exc}") from exc
     if _read_json(root / ".obsidian" / "app.json") != _APP_CONFIG:
@@ -305,6 +355,7 @@ def initialize_vault(design_root: Path, target: Path) -> Mapping[str, object]:
         for relative_path in _USER_DIRECTORIES:
             (staged_vault / relative_path).mkdir(parents=True, exist_ok=True)
         (staged_vault / "Home.md").write_bytes(_home_bytes())
+        (staged_vault / "App" / "Reports" / "README.md").write_bytes(_reports_readme_bytes())
         _write_configuration(staged_vault)
         manifest = _manifest(snapshot, managed_files)
         _write_files(staged_vault, {"App/manifest.json": _json_bytes(manifest)})
