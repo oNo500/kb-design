@@ -21,9 +21,32 @@ from .vault import initialize_vault
 
 
 _ERROR_PREFIX = "KB_OBSIDIAN_ERROR: "
+_SEEN_SINGLE_OPTIONS = "_kb_obsidian_seen_single_options"
+
+
+class _StoreOnce(argparse.Action):
+    def __call__(
+        self,
+        parser: argparse.ArgumentParser,
+        namespace: argparse.Namespace,
+        values: object,
+        option_string: Optional[str] = None,
+    ) -> None:
+        seen = getattr(namespace, _SEEN_SINGLE_OPTIONS, None)
+        if seen is None:
+            seen = set()
+            setattr(namespace, _SEEN_SINGLE_OPTIONS, seen)
+        if self.dest in seen:
+            parser.error(f"argument {option_string or self.dest}: may not be repeated")
+        seen.add(self.dest)
+        setattr(namespace, self.dest, values)
 
 
 class _ArgumentParser(argparse.ArgumentParser):
+    def add_argument(self, *args: object, **kwargs: object) -> argparse.Action:
+        kwargs.setdefault("action", _StoreOnce)
+        return super().add_argument(*args, **kwargs)
+
     def error(self, message: str) -> None:
         raise ApplicationError(f"argument error: {message}")
 

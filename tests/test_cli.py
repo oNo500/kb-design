@@ -93,8 +93,12 @@ class CliTests(unittest.TestCase):
                 "security",
                 "--entity",
                 "openai",
+                "--entity",
+                "anthropic",
                 "--reference",
                 "gbt-13745",
+                "--reference",
+                "cs2023",
                 "--form",
                 "narrative-text",
                 "--level",
@@ -201,6 +205,75 @@ class CliTests(unittest.TestCase):
         self.assertTrue(error.startswith("KB_OBSIDIAN_ERROR: "))
         self.assertIn("--vault", error)
 
+    def test_rejects_every_repeated_single_value_option_before_domain_work(self) -> None:
+        """Silently keeping the last single-value option would accept conflicting command input."""
+        cases = (
+            (
+                "init",
+                ["init", "--design-root", "/design", "--output", "/vault"],
+                ("--design-root", "--output"),
+            ),
+            (
+                "new-content",
+                [
+                    "new-content",
+                    "--design-root",
+                    "/design",
+                    "--vault",
+                    "/vault",
+                    "--title",
+                    "title",
+                    "--type",
+                    "explanation",
+                    "--genre",
+                    "analysis",
+                    "--subject",
+                    "security",
+                    "--form",
+                    "narrative-text",
+                    "--level",
+                    "understand",
+                    "--language",
+                    "en",
+                ],
+                (
+                    "--design-root",
+                    "--vault",
+                    "--title",
+                    "--type",
+                    "--genre",
+                    "--form",
+                    "--level",
+                    "--language",
+                ),
+            ),
+            (
+                "validate",
+                ["validate", "--design-root", "/design", "--vault", "/vault"],
+                ("--design-root", "--vault"),
+            ),
+            (
+                "report",
+                ["report", "--design-root", "/design", "--vault", "/vault"],
+                ("--design-root", "--vault"),
+            ),
+        )
+
+        for command, arguments, options in cases:
+            for option in options:
+                with self.subTest(command=command, option=option):
+                    index = arguments.index(option)
+                    repeated = arguments[: index + 2] + arguments[index : index + 2] + arguments[index + 2 :]
+                    code, output, error = self._invoke(*repeated)
+
+                    self.assertEqual(1, code)
+                    self.assertEqual("", output)
+                    self.assertEqual(1, len(error.splitlines()))
+                    self.assertEqual(
+                        f"KB_OBSIDIAN_ERROR: argument error: argument {option}: may not be repeated\n",
+                        error,
+                    )
+
     def test_expected_file_errors_are_one_line_without_a_traceback(self) -> None:
         """An expected filesystem failure must remain a user-facing error rather than escape main."""
         missing = FileNotFoundError(2, "No such file or directory", "/missing/design")
@@ -219,6 +292,37 @@ class CliTests(unittest.TestCase):
         self.assertTrue(error.startswith("KB_OBSIDIAN_ERROR: "))
         self.assertIn("/missing/design", error)
         self.assertNotIn("Traceback", error)
+
+    def test_module_entrypoint_propagates_an_application_failure_exit_code(self) -> None:
+        """Ignoring main's return value would make a real Python module process report false success."""
+        environment = os.environ.copy()
+        environment["PYTHONPATH"] = "src"
+
+        completed = subprocess.run(
+            [
+                sys.executable,
+                "-m",
+                "kb_obsidian",
+                "validate",
+                "--design-root",
+                "/definitely/missing/design",
+                "--vault",
+                "/definitely/missing/vault",
+            ],
+            cwd=PROJECT_ROOT,
+            env=environment,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+
+        self.assertEqual(1, completed.returncode)
+        self.assertEqual("", completed.stdout)
+        self.assertEqual(1, len(completed.stderr.splitlines()))
+        self.assertEqual(
+            "KB_OBSIDIAN_ERROR: design root does not exist: /definitely/missing/design\n",
+            completed.stderr,
+        )
 
     def test_help_exits_zero_without_using_the_error_channel(self) -> None:
         """Treating help as an application failure would make command discovery unreliable."""
