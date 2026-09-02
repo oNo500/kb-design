@@ -47,15 +47,16 @@
 
 - 迁移账本只作审计，候选和诊断输出只供人工复核，schema、索引、探测、生成和维护能力只证明机械能力；它们都不等于正式数据、草案生效、正式切换或发版
 - 来源与术语基础的当前范围见[当前阶段](design/decisions/current-stage-scope.md)。仓库当前没有正式来源 v2 数据、正式术语数据、正式义务、正式索引、委托、消费者或切换状态，不得因接口存在而创建或宣称存在
-- Obsidian 概念纠偏已完成，现行词表导出保留；[Obsidian 映射](design/targets/obsidian.md)仍是单向参考区与未来内容 binding，不生成知识库内容
-- 内容消费者与回流未启用，来源和术语正式激活均未发生；TBX 继续后置为无真实接收方的未生效草案
+- Obsidian 是应用层，也是首个完整应用 target 的设计；当前唯一实现仍是现行正式词表的单向参考导出。完整内容应用设计不等于消费者激活
+- 仓库没有由本项目建立的真实 vault、内容数据、内容建立器、内容校验器、运行消费者、报告、查询日志或回流接口；内容标识符发放尚未决定
+- 来源和术语正式激活均未发生；TBX 继续后置为无真实接收方的未生效草案
 
 ## 应用分层
 
 - [Application Profile](concepts/application-profile.md)与 [Reproducible Builds](concepts/reproducible-builds.md)是已登记方法；项目保留 English `Application Profile`，不采用未经核实的中文 designation
 - 应用无关模型、`Application Profile` 的 target location／type／reference form／loss 语义选择、导出 artifact contract 的 byte serialization／file set／manifest／validation／publication 分开；后两者不得反向修改前者
 - field／property／path binding 不是 `metadata crosswalk`，不改变词表层 `crosswalk`；新 target 必须引用概念文、[方法登记](design/principles.md)和适用的已采纳决定
-- 生成文件与 Base 可以在 Obsidian 中编辑，但修改不回流、不取得项目效力；target 文件存在不等于内容消费者启用
+- 生成文件与 Base 可以在 Obsidian 中编辑，但修改不回流、不取得项目效力；完整应用设计、target 文件或参考导出存在都不等于内容消费者启用
 - 当前只宣称同环境确定性、项目 manifest 完整性与成功目录替换的 atomic visibility；不宣称 DCAP、DCTAP、JCS、BagIt、reproducible build conformance 或 durability
 - 上述边界由[应用约束与表示分层](design/decisions/application-profile-boundary.md)固定；旧[设计与应用分离](design/decisions/form-independence.md)决定继续有效且不修改
 
