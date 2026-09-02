@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 
+import ctypes
 import json
 import os
 import re
 import shutil
+import sys
 import tempfile
 from collections.abc import Mapping, Sequence
 from pathlib import Path
@@ -28,6 +30,8 @@ _REPORT_NAMES = frozenset(
 )
 _SUBJECT_LINK = re.compile(r"^\[\[KB/Topics/([^/|\]#^\r\n]+)(?:\|[^\[\]\r\n]+)?\]\]$")
 _OVERUSE_THRESHOLD = 0.1
+_AT_FDCWD = -2
+_RENAME_SWAP = 0x00000002
 
 
 def _json_bytes(value: object) -> bytes:
@@ -353,11 +357,35 @@ def _verify_report_tree(root: Path, reports: Mapping[str, bytes]) -> None:
             raise ApplicationError(f"generated report bytes differ: {relative_path}")
 
 
-def _restore_reports(reports_root: Path, backup: Path, failed: Path) -> None:
-    if reports_root.exists():
-        os.replace(reports_root, failed)
-    if backup.exists():
-        os.replace(backup, reports_root)
+def _rename_swap(first: Path, second: Path) -> None:
+    """Atomically exchange two existing paths on the current Darwin platform."""
+    if sys.platform != "darwin":
+        raise ApplicationError(
+            f"atomic report directory exchange is unavailable on platform: {sys.platform}"
+        )
+    try:
+        renameatx_np = ctypes.CDLL(None, use_errno=True).renameatx_np
+    except (AttributeError, OSError) as exc:
+        raise ApplicationError("atomic report directory exchange is unavailable") from exc
+    renameatx_np.argtypes = [
+        ctypes.c_int,
+        ctypes.c_char_p,
+        ctypes.c_int,
+        ctypes.c_char_p,
+        ctypes.c_uint,
+    ]
+    renameatx_np.restype = ctypes.c_int
+    ctypes.set_errno(0)
+    result = renameatx_np(
+        _AT_FDCWD,
+        os.fsencode(first),
+        _AT_FDCWD,
+        os.fsencode(second),
+        _RENAME_SWAP,
+    )
+    if result != 0:
+        error = ctypes.get_errno()
+        raise OSError(error, os.strerror(error), f"{first} <-> {second}")
 
 
 def write_reports(
@@ -382,11 +410,8 @@ def write_reports(
     except OSError as exc:
         raise ApplicationError(f"cannot create report staging directory: {exc}") from exc
     staged = temporary / "new"
-    backup = temporary / "old"
-    failed = temporary / "failed"
     had_old = reports_root.exists()
-    old_moved = False
-    published = False
+    cleanup_temporary = True
     try:
         staged.mkdir()
         for relative_path, content in generated.items():
@@ -397,35 +422,43 @@ def write_reports(
         _verify_report_tree(staged, generated)
 
         if had_old:
-            os.replace(reports_root, backup)
-            old_moved = True
-        try:
-            os.replace(staged, reports_root)
-            published = True
-            _verify_report_tree(reports_root, generated)
-        except (ApplicationError, OSError) as exc:
             try:
-                _restore_reports(reports_root, backup, failed)
-                published = False
-                old_moved = False
-            except OSError as restore_exc:
-                raise ApplicationError(
-                    f"cannot restore old reports after publication failure: {restore_exc}"
-                ) from exc
-            raise ApplicationError(f"cannot publish reports: {exc}") from exc
+                _rename_swap(staged, reports_root)
+            except (ApplicationError, OSError) as exc:
+                raise ApplicationError(f"cannot publish reports: {exc}") from exc
+            try:
+                _verify_report_tree(reports_root, generated)
+            except (ApplicationError, OSError) as exc:
+                try:
+                    _rename_swap(staged, reports_root)
+                except (ApplicationError, OSError) as restore_exc:
+                    cleanup_temporary = False
+                    raise ApplicationError(
+                        "cannot restore old reports after publication failure: "
+                        f"{restore_exc}; old reports preserved at {staged.resolve()}"
+                    ) from exc
+                raise ApplicationError(f"cannot publish reports: {exc}") from exc
+        else:
+            os.replace(staged, reports_root)
+            try:
+                _verify_report_tree(reports_root, generated)
+            except (ApplicationError, OSError) as exc:
+                try:
+                    os.replace(reports_root, staged)
+                except OSError as restore_exc:
+                    cleanup_temporary = False
+                    raise ApplicationError(
+                        "cannot retract new reports after publication failure: "
+                        f"{restore_exc}; generated reports remain at {reports_root.resolve()}"
+                    ) from exc
+                raise ApplicationError(f"cannot publish reports: {exc}") from exc
     except ApplicationError:
         raise
     except OSError as exc:
-        if old_moved or published:
-            try:
-                _restore_reports(reports_root, backup, failed)
-            except OSError as restore_exc:
-                raise ApplicationError(
-                    f"cannot restore old reports after publication failure: {restore_exc}"
-                ) from exc
         raise ApplicationError(f"cannot publish reports: {exc}") from exc
     finally:
-        shutil.rmtree(temporary, ignore_errors=True)
+        if cleanup_temporary:
+            shutil.rmtree(temporary, ignore_errors=True)
 
     return {
         "design_commit": snapshot.commit,

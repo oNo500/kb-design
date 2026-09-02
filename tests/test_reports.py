@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-import os
 import sys
 import tempfile
 import unittest
@@ -249,8 +248,42 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(5, len(list((self.vault / "App" / "Reports").iterdir())))
         self.assertEqual([], list((self.vault / "App").glob(".reports-tmp-*")))
 
-    def test_failed_publication_restores_old_reports_and_cleans_only_own_temp(self) -> None:
-        """A failed final directory switch must retain every pre-existing boundary and report byte."""
+    def test_existing_reports_are_atomically_swapped_as_complete_directories(self) -> None:
+        """Moving the old directory away before publish would expose a missing or partial report set."""
+        from kb_obsidian import reports as report_module
+
+        old_report = self.vault / "App" / "Reports" / "old.md"
+        old_report.write_bytes(b"complete old report set\n")
+        observed: list[tuple[bool, tuple[str, ...]]] = []
+        real_swap = report_module._rename_swap
+
+        def observe_swap(staged: Path, published: Path) -> None:
+            observed.append(self._visible_reports(published))
+            real_swap(staged, published)
+            observed.append(self._visible_reports(published))
+
+        with patch("kb_obsidian.reports._rename_swap", side_effect=observe_swap):
+            report_module.write_reports(self.snapshot, self.validation, self.vault)
+
+        self.assertEqual(
+            [
+                (True, ("old.md",)),
+                (
+                    True,
+                    (
+                        "README.md",
+                        "topic-coverage.md",
+                        "topic-usage.json",
+                        "unassigned-topics.md",
+                        "validation.json",
+                    ),
+                ),
+            ],
+            observed,
+        )
+
+    def test_failed_atomic_exchange_preserves_old_reports_and_cleans_only_own_temp(self) -> None:
+        """An exchange failure must leave the old report path intact and remove only this attempt's staging."""
         from kb_obsidian.errors import ApplicationError
         from kb_obsidian.reports import write_reports
 
@@ -260,19 +293,11 @@ class ReportTests(unittest.TestCase):
         unrelated_temp.mkdir()
         (unrelated_temp / "keep").write_bytes(b"not ours\n")
         before = self._protected_hashes(include_reports=True)
-        real_replace = os.replace
-        failed = False
 
-        def fail_new_report_publish(source: object, destination: object) -> None:
-            nonlocal failed
-            source_path = Path(source)
-            destination_path = Path(destination)
-            if not failed and source_path.name == "new" and destination_path.name == "Reports":
-                failed = True
-                raise OSError("injected report publication failure")
-            real_replace(source, destination)
-
-        with patch("kb_obsidian.reports.os.replace", side_effect=fail_new_report_publish):
+        with patch(
+            "kb_obsidian.reports._rename_swap",
+            side_effect=OSError("injected atomic exchange failure"),
+        ):
             with self.assertRaisesRegex(ApplicationError, "publish reports"):
                 write_reports(self.snapshot, self.validation, self.vault)
 
@@ -280,6 +305,62 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(b"old report must survive\n", old_report.read_bytes())
         self.assertEqual(b"not ours\n", (unrelated_temp / "keep").read_bytes())
         self.assertEqual([unrelated_temp], list((self.vault / "App").glob(".reports-tmp-*")))
+
+    def test_failed_post_publish_readback_and_rollback_preserve_old_report_backup(self) -> None:
+        """Deleting staging after a failed rollback would destroy the only recoverable old report set."""
+        from kb_obsidian import reports as report_module
+        from kb_obsidian.errors import ApplicationError
+
+        old_report = self.vault / "App" / "Reports" / "old.md"
+        old_report.write_bytes(b"recoverable old report\n")
+        real_swap = report_module._rename_swap
+        real_verify = report_module._verify_report_tree
+        swap_calls = 0
+        verify_calls = 0
+
+        def publish_then_fail_rollback(staged: Path, published: Path) -> None:
+            nonlocal swap_calls
+            swap_calls += 1
+            if swap_calls == 2:
+                raise OSError("injected rollback exchange failure")
+            real_swap(staged, published)
+
+        def fail_published_readback(root: Path, reports: object) -> None:
+            nonlocal verify_calls
+            verify_calls += 1
+            if verify_calls == 2:
+                raise ApplicationError("injected published readback failure")
+            real_verify(root, reports)
+
+        with patch("kb_obsidian.reports._rename_swap", side_effect=publish_then_fail_rollback):
+            with patch("kb_obsidian.reports._verify_report_tree", side_effect=fail_published_readback):
+                with self.assertRaisesRegex(
+                    ApplicationError,
+                    "old reports preserved at ",
+                ) as caught:
+                    report_module.write_reports(self.snapshot, self.validation, self.vault)
+
+        recovery = Path(str(caught.exception).split("old reports preserved at ", 1)[1])
+        self.assertEqual(b"recoverable old report\n", (recovery / "old.md").read_bytes())
+        self.assertEqual(("old.md",), tuple(sorted(path.name for path in recovery.iterdir())))
+        self.assertTrue(recovery.parent.name.startswith(".reports-tmp-"))
+        self.assertEqual(
+            [recovery.parent],
+            [path.resolve() for path in (self.vault / "App").glob(".reports-tmp-*")],
+        )
+        self.assertEqual(
+            (
+                True,
+                (
+                    "README.md",
+                    "topic-coverage.md",
+                    "topic-usage.json",
+                    "unassigned-topics.md",
+                    "validation.json",
+                ),
+            ),
+            self._visible_reports(self.vault / "App" / "Reports"),
+        )
 
     def _write_boundaries(self) -> None:
         for relative, content in {
@@ -316,6 +397,10 @@ class ReportTests(unittest.TestCase):
         if include_reports:
             roots["Reports"] = self.vault / "App" / "Reports"
         return {name: self._tree_hashes(root) for name, root in roots.items()}
+
+    @staticmethod
+    def _visible_reports(root: Path) -> tuple[bool, tuple[str, ...]]:
+        return root.is_dir(), tuple(sorted(path.name for path in root.iterdir())) if root.is_dir() else ()
 
 
 if __name__ == "__main__":
