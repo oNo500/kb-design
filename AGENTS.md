@@ -6,7 +6,7 @@
 
 ## 写集边界
 
-用户文件、受管理文件和派生报告使用分离的写集。用户写集包含用户内容与收件目录；管理写集包含应用生成的模板、视图、规则和 manifest；报告写集只包含 `App/Reports/`。应用不得修改其他写集，也不得把报告或管理文件当作用户内容。
+用户写集包含 `Home.md`、`Inbox/`、`Sources/`、`Content/`、`Indexes/` 和 `Attachments/`。受管理写集包含 `KB/`、`App/Templates/`、`App/Views/`、`App/Rules/` 和 `App/manifest.json`。报告写集只包含 `App/Reports/`。`.obsidian/` 是配置边界。应用必须保持这些写集和边界分离，不得把管理文件、报告或配置当作用户内容。
 
 ## 内容契约
 
