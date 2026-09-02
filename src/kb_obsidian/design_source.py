@@ -7,7 +7,7 @@ import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 from types import MappingProxyType
-from typing import Mapping
+from typing import Any, Mapping
 
 import yaml
 
@@ -32,6 +32,14 @@ class DesignSnapshot:
     commit: str
     documents: Mapping[str, object]
     input_hashes: Mapping[str, str]
+
+
+def _freeze(value: Any) -> Any:
+    if isinstance(value, Mapping):
+        return MappingProxyType({key: _freeze(item) for key, item in value.items()})
+    if isinstance(value, list):
+        return tuple(_freeze(item) for item in value)
+    return value
 
 
 def _git(root: Path, *arguments: str) -> str:
@@ -88,7 +96,7 @@ def load_design(root: Path) -> DesignSnapshot:
             raise ApplicationError(f"cannot read formal design document {relative_path}: {exc}") from exc
         input_hashes[relative_path] = hashlib.sha256(content).hexdigest()
         try:
-            documents[name] = yaml.safe_load(content)
+            documents[name] = _freeze(yaml.safe_load(content))
         except yaml.YAMLError as exc:
             raise ApplicationError(f"cannot parse formal design document {relative_path}: {exc}") from exc
 
