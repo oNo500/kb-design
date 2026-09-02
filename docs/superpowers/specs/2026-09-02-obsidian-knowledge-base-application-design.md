@@ -1,6 +1,6 @@
 # Obsidian 知识库应用设计
 
-状态：已批准总体架构与内容流程，等待用户审阅完整规格。本文是 Superpowers 规格，不属于项目现行设计；项目规则仍以 `concepts/`、`design/`、已采纳决定和正式数据为准。
+状态：完整规格已批准；内容 identifier 的 UUIDv4 决定于 2026-09-03 并入现行设计。本文是 Superpowers 规格，不属于项目现行设计；项目规则仍以 `concepts/`、`design/`、已采纳决定和正式数据为准。
 
 ## 问题边界
 
@@ -114,7 +114,7 @@ App/
 
 `Home.md` 在初始化时给出起始内容，初始化后归使用者所有，不再由更新器覆盖。它链接到 Inbox、最近内容、常用人工索引、受管理对象入口和维护报告。
 
-`Content/` 不按主题、实体、类型、体裁、状态或知识层级建立子目录。内容文件路径固定为 `Content/<identifier>.md`。未来只有出现实际文件系统或 Obsidian 性能问题，并有测量证据时，才可按稳定 ID 前缀机械分片；分片不得表达语义，也不得改变 identifier。
+`Content/` 不按主题、实体、类型、体裁、状态或知识层级建立子目录。内容文件路径固定为 `Content/<UUIDv4>.md`，文件 stem 与 `kb_id` 相同。未来只有出现实际文件系统或 Obsidian 性能问题，并有测量证据时，才可按稳定 ID 前缀机械分片；分片不得表达语义，也不得改变 identifier。
 
 `Sources/` 保存实际外部材料。它与 `KB/Sources/` 的正式来源用途表示完全不同。目录和页面必须在入口说明中明确这种差异。
 
@@ -142,7 +142,7 @@ App/
 
 ### 内容单元
 
-`Content/` 中每个 Markdown 文件恰好表示一个现行内容单元。路径由 `identifier` 决定，一级标题保存 `title`，frontmatter 保存 Obsidian binding。文件名、标题、alias 和显示文本不能反推 identifier。
+`Content/` 中每个 Markdown 文件恰好表示一个现行内容单元。路径由 UUIDv4 identifier 决定；一级标题和 `title` property 保存标题，`aliases` 中恰好一个由应用派生的当前标题供 Quick Switcher 查找，frontmatter 保存其余 Obsidian binding。标题、alias 和显示文本不能反推 identifier。
 
 建立内容单元时必须取得以下值：
 
@@ -242,35 +242,35 @@ Web Clipper 默认只写 `Sources/Clippings/`。它可以创建或追加资料�
 
 ## 字段表示
 
-内容 binding 沿用现行 target 已核对的字段矩阵：`kb_id`、`kb_type`、`kb_genre`、`kb_form`、`kb_level`、`kb_subjects`、`kb_entities`、`kb_source`、`kb_references`、`kb_created`、`kb_modified`、`kb_status`、`kb_is_replaced_by`、`kb_relation` 和 `kb_language`。
+内容 binding 沿用现行 target 已核对的字段矩阵：`kb_id`、`kb_type`、`kb_genre`、`kb_form`、`kb_level`、`kb_subjects`、`kb_entities`、`kb_source`、`kb_references`、`kb_created`、`kb_modified`、`kb_status`、`kb_is_replaced_by`、`kb_relation` 和 `kb_language`。Obsidian `aliases` 是从现行 `title` 派生的查找表示，不是内容模型新字段。
 
 本次重写不得改变应用无关字段语义、基数和值域。实现必须把“尚未实现”的内容矩阵转为实际内容合同，并为每个字段补齐：创建条件、编辑条件、解析目标、显示、查询、错误和 loss 验收。
 
-同名 property 在一个 vault 中保持同一 Obsidian type。Obsidian 不支持 nested properties，官方建议在 Source mode 中查看它们；完整应用仍只选择 flat properties。引用单值使用 Text link，引用多值使用 List of Text links；日期使用 Date；受控 literal 使用 Text。`title` 保存在一级标题，需要 Base 查询时可同时保存 Text property，但一级标题和 property 不一致必须报告。
+同名 property 在一个 vault 中保持同一 Obsidian type。Obsidian 不支持 nested properties，官方建议在 Source mode 中查看它们；完整应用仍只选择 flat properties。引用单值使用 Text link，引用多值使用 List of Text links；日期使用 Date；受控 literal 使用 Text。`title` 同时保存在一级标题、Text property 和一个由应用派生的 alias；三处不一致必须报告。
 
 tag 不承担主题、实体、文档类型、体裁或生命周期语义。固定应用 tag 只能用于区分系统对象或视图范围，不可替代受控字段。
 
 ## 身份路径
 
-内容文件使用 `Content/<identifier>.md`。引用以稳定 ID 计算路径，以当前标题或正式 label 计算显示文本。
+内容文件使用 `Content/<UUIDv4>.md`。引用以稳定 ID 计算路径，以当前标题或正式 label 计算显示文本。
 
 ```md
-[[Content/<identifier>|内容标题]]
+[[Content/<UUIDv4>|内容标题]]
 [[KB/Topics/security|安全]]
 [[KB/Entities/obsidian|Obsidian]]
 ```
 
-显示文本不参与解析。内容标题修改不改 identifier 和路径。若内容 identifier 已被其他内容引用，不能修改；错误名称通过 title 和正文修正。
+显示文本不参与解析。内容标题修改时同步更新一级标题、`title` 和派生 alias，不改 identifier 和路径。若内容 identifier 已被其他内容引用，不能修改；错误名称通过 title 和正文修正。基线不自动保留旧标题或增加其他内容 alias。
 
 正文中的普通内部链接可以表达阅读关系，但只有 `kb_relation` 承担现行内容模型的互反 relation。反向链接、共同出现和图中邻近都不能自动建立 `kb_relation`。
 
-## 模型缺口
+## 身份决定
 
-现行内容模型把内容单元纳入与词表概念共用的 identifier 规则：优先从已有且有依据的英文 label 取得，没有时使用来源代码或编号，不使用拼音或自造英文。该规则适合正式词表对象，却没有完整回答一篇任意中文内容在没有获准英文 label、来源代码或编号时怎样取得 identifier。
+新内容单元使用符合 RFC 9562 的无前缀、小写 UUIDv4 标准文本表示。唯一语境是一个知识库中的全部内容单元；建立时检查现有 identifier 与目标路径，重复时重新生成；一经写入且被引用后永久不变。
 
-Obsidian target 无权自行补出一种正式 ID。内容建立器不得默认把标题机翻成 slug，也不得把 Unique note creator 的时间名称、随机 UUID、文件名或语言模型输出静默升级为现行 identifier。
+UUIDv4 不从标题、alias、文件名、Unique note creator 的时间名称、机翻、拼音或语言模型输出派生，也不充当密码、权限、真实性或完整性证明。UUID 文件名承担稳定 target path；title、派生 alias、正文和元数据承担人的查找。
 
-因此实施前必须先在应用无关内容模型中完成内容 identifier 发放规则的概念研究和决定。候选方案可以包括与显示名称无关的不透明身份，但本规格不预先选择形式。该规则未批准前，可以实现 Inbox、Sources、词表表示和只读内容校验，不能宣称正式内容建立流程已经完成。
+该选择已经由[内容单元标识符](../../../design/decisions/content-unit-identifiers.md)批准。决定存在仍不等于内容建立器、真实 vault 或消费者已经实现和启用。
 
 ## 导航结构
 
@@ -400,6 +400,7 @@ App/Reports 带上下文线索
 | Backlinks | 查看 linked／unlinked mentions 和人工上下文 | 正式引用计数、relation 或概念判断 |
 | Bases | 查看、排序、筛选和编辑文件及 properties | 权限只读、正式审批、数据源或回流 |
 | Search | 全文、路径、tag 和 property 查询 | 可审计的未匹配查询日志 |
+| Quick Switcher | 按文件名或 alias 打开笔记；内容 title 作为派生 alias | 完整元数据检索、identifier 发放或正式关系 |
 | Bookmarks | 固定个人常用入口 | 项目导航真值 |
 | Graph | 探索现有文件链接 | 正式主题树、关系证明或盲区计量 |
 | Canvas | 临时整理和讨论 | 正式结构、内容模型或编辑源 |
@@ -410,7 +411,7 @@ App/Reports 带上下文线索
 
 初始化器只设置应用运行所需的最低配置：
 
-- 使用 Properties 保存内容 binding 和可查询事实，并启用 Properties view、Templates、Bases、Search、Backlinks、Bookmarks 和适用的 core plugin；
+- 使用 Properties 保存内容 binding 和可查询事实，并启用 Properties view、Templates、Bases、Search、Quick Switcher、Backlinks、Bookmarks 和适用的 core plugin；
 - 指定 `App/Templates/` 为模板目录；
 - 指定 `Attachments/` 为附件目录；
 - 启用内部链接随 Obsidian 内移动和改名更新；
@@ -513,7 +514,7 @@ Markdown 中的 HTML、脚本、data URI、嵌入和附件路径需要在实现�
 - Obsidian 明确成为 `kb-design` 的落地应用层，而不是词表预览器；
 - 用户内容、受管理表示和派生结果权属分开；
 - 临时捕获、外部资料和内容单元不混淆；
-- 内容建立、生命周期、字段、身份、引用和失败处理完整；
+- 内容建立、生命周期、字段、UUIDv4 身份、元数据检索、引用和失败处理完整；
 - 正式主题树、人工索引和自动视图职责分开；
 - 结构盲区、使用盲区、使用计数和维护反馈有可执行数据流；
 - Obsidian 核心能力的用途和不能承担的职责明确；
@@ -540,6 +541,7 @@ Markdown 中的 HTML、脚本、data URI、嵌入和附件路径需要在实现�
 - [Obsidian Properties](https://obsidian.md/help/properties)：property 类型、全 vault 同名类型、YAML、internal link 和 nested properties 限制。
 - [Obsidian Bases](https://obsidian.md/help/bases)：本地 Markdown 与 properties 上的可编辑、排序和筛选视图。
 - [Obsidian Search](https://obsidian.md/help/plugins/search)：全文、路径、tag、property 查询和近期查询的 UI 边界。
+- [Obsidian Quick Switcher](https://obsidian.md/help/plugins/quick-switcher)：按笔记名称或 alias 查找和打开笔记。
 - [Obsidian Backlinks](https://obsidian.md/help/plugins/backlinks)：linked 与 unlinked mentions。
 - [Obsidian Graph](https://obsidian.md/help/plugins/graph)：文件链接图、筛选、orphans 和 local graph。
 - [Obsidian Bookmarks](https://obsidian.md/help/plugins/bookmarks)：文件、目录、搜索、图、标题、块和链接快捷入口。

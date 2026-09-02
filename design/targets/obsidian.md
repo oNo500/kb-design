@@ -98,7 +98,7 @@ Inbox 文件可以丢弃、合并、移入 `Sources/`，或经人工判断建立
 
 外部资料必须区分原文摘录和使用者批注。Web Clipper 与人工复制保存的标题、作者、发布日期、捕获日期、URL 和正文只描述捕获事实，不构成 designation、概念对应、来源资格或引用批准。能独立复用的理解另建内容单元；需要进入内容字段的文献或标准，必须先取得现行正式实体身份。
 
-`Content/` 中每个 Markdown 文件恰好表示一个内容单元。一级标题保存 `title`，frontmatter 保存 Obsidian binding，正文保存内容。内容文件、标题、alias 和显示文本都不能反推身份。
+`Content/` 中每个 Markdown 文件恰好表示一个内容单元。文件 stem 与 `kb_id` 使用同一个无前缀、小写 UUIDv4；一级标题和 `title` property 保存内容标题，`aliases` 保存由应用从当前标题派生的一个查找形式，正文保存内容。标题、alias 和显示文本都不能反推身份。
 
 `Indexes/` 只保存入口说明、阅读顺序、普通链接和嵌入视图。若索引包含可独立引用并需要受控标引的实质说明，正文必须建立为 `Content/` 内容单元并使用适用的 `form: index`；`Indexes/` 只链接该内容单元或嵌入其视图，不保存第二份正文。
 
@@ -124,9 +124,9 @@ Obsidian URI、Unique note creator 和普通新建命令只能作为 Inbox 捕�
 
 ### 内容建立
 
-内容建立必须通过受管理模板配合建立器，或具备同等约束的工具完成。Templates 只能插入片段和日期，不能分配合法 identifier、校验受控值或保证必填性。建立器在写文件前必须取得或验证 identifier，确认目标路径不存在，让使用者选择恰好一个 `type`、恰好一个 `genre` 和至少一个非 deprecated `subject`，写入 `title`、`created` 与 `status: draft`，再回读并运行单文件校验。无法判断必填值时，材料继续留在 Inbox。
+内容建立必须通过受管理模板配合建立器，或具备同等约束的工具完成。Templates 只能插入片段和日期，不能生成并检查合法 identifier、校验受控值或保证必填性。建立器生成无前缀、小写 UUIDv4，检查现有 identifier 和目标路径没有重复，让使用者选择恰好一个 `type`、恰好一个 `genre` 和至少一个非 deprecated `subject`，写入一级标题、`title`、由标题派生的 `aliases`、`created` 与 `status: draft`，再回读并运行单文件校验。无法判断必填值时，材料继续留在 Inbox。
 
-identifier 发放规则尚未决定，因此正式内容建立当前不能实施，也不能宣称已完成。该门禁不妨碍 Inbox、外部资料、词表表示和只读内容校验的后续实现。
+identifier 规则已经由[内容单元标识符](../decisions/content-unit-identifiers.md)决定，但内容建立器尚未实现。规则获得批准不等于正式内容建立或消费者已经启用。
 
 ### 内容状态
 
@@ -136,11 +136,11 @@ identifier 发放规则尚未决定，因此正式内容建立当前不能实施
 
 唯一删除例外是误建且没有任何引用的内容单元。删除须按[内容模型](../content-model.md)的现行处置决定和[治理](../governance.md)的决策权执行；报告和校验器不能自动删除。
 
-## 身份门禁
+## 身份规则
 
-内容路径设计为 `Content/<identifier>.md`，引用按稳定 identifier 计算目标，标题变化不改 identifier 或路径。但是现行内容模型尚未回答任意内容在没有获准英文 label、来源代码或编号时怎样发放 identifier。
+内容路径是 `Content/<UUIDv4>.md`。`identifier` 和文件 stem 使用同一个符合 RFC 9562 标准文本表示的 UUIDv4：小写、保留连字符、不加对象前缀。唯一语境是一个知识库中的全部内容单元；建立时检查现有 identifier 和路径，重复时重新生成。一经写入且被引用后，identifier 和路径不随标题变化。
 
-[标识符](../../concepts/content-identifiers.md)已经区分身份、名称、标题、路径、排序信息和时间信息；具体采用规则仍等待项目决定。本 target 不选择名称翻译、拼音、时间戳、UUID、对象前缀或其他现行形式，也不从 Unique note creator、文件名、标题或语言模型输出静默取得身份。决定批准前，内容建立流程保持未实现。
+[标识符](../../concepts/content-identifiers.md)区分身份、名称、标题、路径、排序信息和时间信息。UUIDv4 不从 Unique note creator、文件名、标题、名称翻译、拼音、时间戳或语言模型输出派生，也不充当密码、权限、真实性或完整性证明。路径包含 UUID 是 Obsidian 的确定性 binding，不把 path 与 identifier 重新定义为同一概念。
 
 ## 字段约束
 
@@ -277,8 +277,8 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 
 | 源字段 | 必填与基数 | 值形态与值域 | 目标落点 | 创建条件 | 编辑条件 | 查询用途 | 无效表现与 loss |
 |---|---|---|---|---|---|---|---|
-| `identifier` | 必填，恰好一个 | literal identity；稳定 ID，具体发放规则待决定 | `kb_id` Text；`Content/<identifier>.md` | 只有发放决定批准且值在内容语境唯一时才能建立 | 一经引用不修改；标题变化不改值或路径 | 精确定位内容与解析 content-unit reference | 缺失、重复或路径冲突阻断建立；不从标题、文件名、alias 或时间回填；回流未实现 |
-| `title` | 必填，恰好一个 | Text | 一级标题；需要 Base 查询时同时保存 `title` Text | 建立时由使用者给出 | 可修正显示标题，不改 identifier | 显示、全文检索和可选 Base 排序 | 缺失无效；一级标题与 property 不一致时报告；不从文件名回填；回流未实现 |
+| `identifier` | 必填，恰好一个 | literal identity；无前缀、小写、保留标准连字符的 UUIDv4；在一个知识库的内容单元中唯一 | `kb_id` Text；`Content/<UUIDv4>.md`，文件 stem 与值相同 | 建立器生成后检查现有 identifier 和路径；重复时重新生成 | 一经写入且被引用后不修改；标题变化不改值或路径 | 精确定位内容与解析 content-unit reference | 缺失、格式错误、前缀、大小写错误、重复、stem 不同或路径冲突使内容无效；不从标题、alias 或时间回填；回流未实现 |
+| `title` | 必填，恰好一个 | Text | 一级标题与 `title` Text；Obsidian `aliases` List 中恰好包含一个由应用派生的当前标题 | 建立时由使用者给出，并同步写入三个位置 | 修改标题时同时更新一级标题、`title` 和派生 alias，不改 identifier | 显示、全文与 property 检索、Base 排序，并通过 alias 供 Quick Switcher 和链接补全 | 任一位置缺失、三者不一致、alias 多值或重复时无效；不从文件名回填；回流未实现 |
 | `type` | 必填，恰好一个 | type reference；命中正式文档类型词表 | `kb_type` Text link，指向 `KB/Types/<id>.md` | 建立前由使用者选择一个 | 改值须重新校验引用与内容用途 | 按文档类型筛选与统计 | 缺失、多值、悬空或对象种类错误时无效；完整 reference 尚未实现 |
 | `genre` | 必填，恰好一个 | genre reference；命中正式体裁词表 | `kb_genre` Text link，指向 `KB/Genres/<id>.md` | 建立前由使用者选择一个 | 改值须重新校验作者立场 | 按体裁筛选与统计 | 缺失、多值、悬空或对象种类错误时无效；完整 reference 尚未实现 |
 | `form` | 可选，零个或一个；长文不填 | form reference；命中正式载体词表 | `kb_form` Text link，指向 `KB/Forms/<id>.md` | 只有内容采用该载体时填写 | 载体改变时可修改或省略 | 按载体筛选 | 多值、悬空或对象种类错误时无效；省略不产生替代值；回流未实现 |
@@ -301,12 +301,14 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 所有引用都以目标稳定 ID 计算路径，以当前标题或正式 label 计算显示文本。
 
 ```md
-[[Content/<identifier>|内容标题]]
+[[Content/<UUIDv4>|内容标题]]
 [[KB/Topics/security|安全]]
 [[KB/Entities/obsidian|Obsidian]]
 ```
 
 显示文本缺少中文时使用英文，两者都缺少时使用 ID。显示文本不参与目标解析。property 中的链接整体按 YAML 字符串保存，Text 和 List property 中的内部链接加引号。正式对象引用必须解析到正确种类的生成目标；内容引用必须解析到内容单元。本 target 不使用标题引用或块引用承担身份。
+
+内容 `aliases` 是从当前 `title` 派生的 Obsidian 查找表示，不是内容模型新字段、术语形式或同义关系。基线不自动保存旧标题或增加其他 alias。Quick Switcher 按 alias 查找 UUID 文件；Search 检索标题、正文和 properties；Bases 按内容字段筛选。人的查找不依赖 UUID。
 
 ## 导航分工
 
@@ -316,6 +318,7 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 | 用户索引 | 使用者怎样理解、选择和进入一组内容 | `broader`、`related`、数组、分面或概念组效力 |
 | Bases | 哪些文件满足已声明的 property 条件，怎样排序与浏览 | 只读权限、正式审批、编辑源或回流 |
 | Search | 正文、路径、tag 或 property 当前匹配什么 | 可审计的查询事件和未匹配查询统计 |
+| Quick Switcher | 按内容 title 派生的 alias 查找并打开 UUID 文件 | identifier 发放、正式分类或完整字段检索 |
 | Backlinks | 哪些文件链接或提及当前文件 | 正式引用计数、relation 或概念判断 |
 | Graph | 现有内部链接形成什么文件网络 | 正式主题结构、关系证明或盲区计量 |
 
@@ -396,6 +399,7 @@ App/Reports/ 带上下文线索
 | Backlinks | 查看 linked／unlinked mentions 和人工上下文 | 正式引用计数、relation 或概念判断 |
 | Bases | 查看、排序、筛选和编辑文件及 properties | 权限只读、正式审批、数据源或回流 |
 | Search | 查询正文、路径、tag 和 properties | 可审计的未匹配查询日志 |
+| Quick Switcher | 按文件名或 alias 快速打开笔记；内容 title 作为派生 alias | 完整元数据检索、identifier 发放或正式关系 |
 | Bookmarks | 固定个人常用入口 | 项目导航真值、正式分类或关系 |
 | Graph | 探索现有文件链接 | 正式主题树、关系证明或盲区计量 |
 | Canvas | 临时整理和讨论 | 正式结构、内容模型、统计输入或编辑源 |
@@ -406,7 +410,7 @@ Web Clipper 基线只使用 preset variables；Interpreter 和 prompt variables 
 
 ## 配置边界
 
-未来初始化器只给出应用运行所需的最低 `.obsidian/` 配置：使用 Properties 保存内容 binding 和可查询事实，并启用 Properties view、Templates、Bases、Search、Backlinks、Bookmarks 和适用的 core plugin；把 `App/Templates/` 设为模板目录，把 `Attachments/` 设为附件目录；启用内部链接随 Obsidian 内移动和改名更新；登记项目 property types；提供 excluded files 与 Bookmarks 建议，但不强制覆盖用户选择。
+未来初始化器只给出应用运行所需的最低 `.obsidian/` 配置：使用 Properties 保存内容 binding 和可查询事实，并启用 Properties view、Templates、Bases、Search、Quick Switcher、Backlinks、Bookmarks 和适用的 core plugin；把 `App/Templates/` 设为模板目录，把 `Attachments/` 设为附件目录；启用内部链接随 Obsidian 内移动和改名更新；登记项目 property types；提供 excluded files 与 Bookmarks 建议，但不强制覆盖用户选择。
 
 主题、字体、窗口布局、快捷键、移动端布局、Sync、Publish 和个人插件归使用者。`App/manifest.json` 不把这些用户配置变化报告为受管理表示漂移。
 
@@ -534,7 +538,7 @@ python3 scripts/export_obsidian.py --repo-root . --output /absolute/new/path
 - 完整应用的用户文件、受管理表示、派生报告和配置权属分开，受管理写集不覆盖用户内容。
 - 每个正式对象恰有一条稳定路径，全部正式引用都有生成目标，全部 `broader` 均被保留。
 - properties 可由安全 YAML 解析且只有 scalar 或 scalar list；正文完整保存未进入 properties 的嵌套数据。
-- aliases 只来自正式已有形式并去重；`alt` 和 `hidden` 正文仍保留重复行，`basis` 空列表仍可保存。
+- 正式对象 aliases 只来自正式已有形式并去重；内容 aliases 恰好包含由当前 title 派生的一个查找形式，不形成术语或同义关系；`alt` 和 `hidden` 正文仍保留重复行，`basis` 空列表仍可保存。
 - 内容矩阵保持 16 个现行字段的字段名、基数和值域；无效 active 与 draft 内容均报告而不改写。
 - 正式计数只读取通过校验的 `Content/` 受控字段；普通链接与 Obsidian 探索能力不进入计数。
 - 报告写集不能修改用户内容、正式表示、正式编辑源、状态、关系、designation、来源或决定。
@@ -547,7 +551,6 @@ python3 scripts/export_obsidian.py --repo-root . --output /absolute/new/path
 
 ## 待定事项
 
-- 内容 identifier 的发放方式、唯一语境、形式和碰撞处理等待项目决定；本文不选名称翻译、拼音、时间戳、UUID 或对象前缀。
 - 完整新 vault 的初始化、内容建立、内容校验、使用统计、报告和 `App/manifest.json` 尚未实现。
 - 可审计查询日志等待真实查询消费者或明确接口；Search UI 不满足该条件。
 - 非空 vault 更新、自动回流、自动修复和社区插件增强继续后置。
@@ -560,12 +563,13 @@ python3 scripts/export_obsidian.py --repo-root . --output /absolute/new/path
 - [内容模型](../content-model.md)：内容单元、16 个字段、基数、值域、生命周期和处置决定。
 - [维护](../maintenance.md)：指标、阈值、单向触发、人工动作和消费者门禁。
 - [Application Profile](../../concepts/application-profile.md)：功能范围、模型引用、字段约束、使用指南、encoding 和 target binding 的分层。
-- [标识符](../../concepts/content-identifiers.md)：身份、名称、标题、路径、排序和时间的边界，以及现行选择未决。
+- [标识符](../../concepts/content-identifiers.md)：身份、名称、标题、路径、排序和时间的边界。
+- [内容单元标识符](../decisions/content-unit-identifiers.md)：无前缀 UUIDv4、唯一语境、碰撞处理、稳定路径和元数据检索决定。
 - [Reproducible Builds](../../concepts/reproducible-builds.md)：确定性、独立重建、manifest、JCS、BagIt、atomic visibility 和 durability 的边界。
 - [应用约束与表示分层](../decisions/application-profile-boundary.md)：本 target 的已采纳职责、消费者、编辑效力和符合性边界。
 - [设计与应用分离](../decisions/form-independence.md)：应用无关模型与 target 分离、正式词表单向导出的现行决定。
 - [当前阶段](../decisions/current-stage-scope.md)：设计同步与正式激活的阶段边界。
-- [Obsidian 官方帮助阅读笔记](../../sources/obsidian-help.md)：vault、properties、links、aliases、accepted formats、Bases、Search、Backlinks、Graph、Bookmarks、Templates、Unique note creator 和 Web Clipper 的行为。
+- [Obsidian 官方帮助阅读笔记](../../sources/obsidian-help.md)：vault、properties、links、aliases、accepted formats、Bases、Search、Quick Switcher、Backlinks、Graph、Bookmarks、Templates、Unique note creator 和 Web Clipper 的行为。
 - [DCMI Application Profiles 阅读笔记](../../sources/dcmi-application-profiles.md)：Application Profile 组件、`metadata crosswalk`、历史材料状态与项目边界。
 - [Reproducible Builds 阅读笔记](../../sources/reproducible-builds.md)：确定性与 reproducible build 的证据边界。
 - [BagIt 文件包格式阅读笔记](../../sources/rfc-8493.md)：项目 manifest 与 BagIt 的边界。

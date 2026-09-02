@@ -40,6 +40,7 @@
 - [原样复制与本地分析分层的决定](decisions/borrow-and-analyze.md)
 - [设计与应用分离](decisions/form-independence.md)
 - [应用约束与表示分层](decisions/application-profile-boundary.md)：固定 `Application Profile`、target binding、导出 artifact contract、消费者和编辑效力边界；不修改前一决定。
+- [内容单元标识符](decisions/content-unit-identifiers.md)：规定新内容单元使用无前缀、小写 UUIDv4，并把稳定身份与元数据检索分开。
 - [决策权的首批边界](decisions/decision-rights-defaults.md)
 - [项目约定入口](decisions/project-instructions-entry.md)
 - [来源模式](decisions/source-governance-schema.md)：批准来源机器结构与迁移规则，不批准具体来源事实。
@@ -92,7 +93,7 @@
 
 完整设计规定内容捕获、外部资料、内容单元、正式受控引用、用户索引、导航和维护线索的应用边界；它不是内容消费者运行记录。当前实现只有 `scripts/export_obsidian.py`：从现行正式词表生成可浏览、可链接、可筛选的单向参考区，包括词表对象、主题数组、Base 浏览入口、目录 README 和项目 manifest。Obsidian 与 Base 可以编辑生成文件，但修改不回流、不取得项目效力。
 
-本仓库没有由本项目建立的真实 vault、内容数据、内容建立器、内容校验器、运行消费者、报告、查询日志或回流接口；内容标识符发放尚未决定。target 文件、字段合同和生成目录都不能冒充这些能力的运行证据。普通 `.json` 不是 Obsidian 内容格式；项目 manifest 不是 BagIt。现行同环境双跑只证明确定性，目录项替换只证明成功时的原子可见性；项目不宣称 JCS、BagIt、reproducible build 或 durability。TBX 仍是没有真实接收方的未生效草案。
+本仓库没有由本项目建立的真实 vault、内容数据、内容建立器、内容校验器、运行消费者、报告、查询日志或回流接口。内容标识符已经决定为无前缀、小写 UUIDv4，title、派生 alias、正文和其他元数据承担人的检索；规则存在不等于内容建立已经实施。target 文件、字段合同和生成目录都不能冒充这些能力的运行证据。普通 `.json` 不是 Obsidian 内容格式；项目 manifest 不是 BagIt。现行同环境双跑只证明确定性，目录项替换只证明成功时的原子可见性；项目不宣称 JCS、BagIt、reproducible build 或 durability。TBX 仍是没有真实接收方的未生效草案。
 
 ## 未激活基础
 

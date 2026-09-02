@@ -2,7 +2,7 @@
 
 ## 材料身份
 
-本文只记录 [Obsidian Help](https://obsidian.md/help/) 的产品帮助页面。下表材料均在 2026-09-02 核对；英文产品名称和页面小节名只转录来源，不登记为项目术语。它们可以说明 Obsidian 的产品行为和限制，不能决定本项目的数据效力、字段约束、稳定身份或治理结论。
+本文只记录 [Obsidian Help](https://obsidian.md/help/) 的产品帮助页面。下表材料在 2026-09-02 至 2026-09-03 核对；英文产品名称和页面小节名只转录来源，不登记为项目术语。它们可以说明 Obsidian 的产品行为和限制，不能决定本项目的数据效力、字段约束、稳定身份或治理结论。
 
 ## 阅读范围
 
@@ -17,6 +17,7 @@
 | 支持格式 | [Accepted file formats](https://obsidian.md/help/Files%2Band%2Bfolders/Accepted%2Bfile%2Bformats)：Supported file types、Embed files | 官方列出 Markdown `.md`、Bases `.base`、JSON Canvas `.canvas`、图像、音频、视频和 PDF；可嵌入多种媒体与 PDF。 | 其他格式要靠 community plugins；音视频等支持取决于设备 codec。普通 `.json` 不在内容格式清单中。 | 区分可被 Obsidian 作为内容处理的格式与同目录的项目文件；property 的 JSON frontmatter 规则不使普通 `.json` 成为内容格式，项目 manifest 也只是同目录项目清单。 |
 | Bases | [Introduction to Bases](https://obsidian.md/help/bases)：Introduction、How to use bases、View types；[Bases syntax](https://obsidian.md/help/bases/syntax)：Introduction、Filters、Properties、Views 和 Note properties；[Table view](https://obsidian.md/help/bases/views/table)：Introduction、Summaries 和 Shortcuts | Bases 是 core plugin，可基于本地 Markdown 与 properties 建立多种 view，并可查看、编辑、排序和筛选文件及其 properties；`.base` 保存 view、filter 和 formula 配置。默认数据集包含 vault 内全部文件，filters 可收窄范围；表格支持粘贴、撤销、重做、清除单元格和切换 checkbox。 | Base 的 note properties 只适用于 Markdown 文件；`file.backlinks` 与 `file.properties` 不会在 vault 变化时自动刷新。Base 的可编辑性不使它成为技术上的只读表格。 | 说明未来浏览、筛选和诊断界面可以读取及编辑本地表示；这种编辑不证明其数据有效或已回流。 |
 | Search | [Search](https://obsidian.md/help/Plugins/Search)：Search terms、Search operators、Search properties、Change result sort order、Copy search results、Use regular expressions、Configure search settings 和 Embed search results in a note | Search 可搜索笔记和 Canvas 的正文，并以 `file:`、`path:`、`content:` 等操作符搜索文件名、路径或内容；方括号语法可搜索 properties。 | excluded files 不出现在结果中；默认不搜索任意附件的路径或文件名。所读官方页面只说明查询、结果和复制操作，未给出可供本项目留存和复核的 search-event interface。 | 说明内容、路径和 property 的交互查询能力；查询结果或嵌入结果不能充当可审计的项目搜索记录。 |
+| Quick Switcher | [Quick switcher](https://obsidian.md/help/plugins/quick-switcher)：Open Quick switcher、Open a note with Quick switcher | Quick Switcher 按笔记名称或 alias 搜索并打开笔记；没有匹配时可以按输入名称创建笔记。 | vault 达到 10,000 个项目后，自动补全改用较简单的结果算法；excluded files 只降低结果优先级。 | 说明 UUID 文件可以通过由 title 派生的 alias 被人查找；它不提供完整 property 检索，也不发放 identifier。 |
 | Backlinks | [Backlinks](https://obsidian.md/help/Plugins/Backlinks)：Introduction、Show backlinks、View backlinks for a note 和 Show backlinks in a note | Backlinks 显示指向活动笔记的 linked mentions，以及按笔记名称匹配的 unlinked mentions；可筛选、排序并显示上下文。 | excluded files 不出现在 unlinked mentions；unlinked mention 只是未链接的名称出现。 | 说明进入相关笔记和探索提及的能力，不能把反向链接或名称共现视为正式关系证明。 |
 | Graph | [Graph view](https://obsidian.md/help/Plugins/Graph%2Bview)：Introduction、Settings、Filters、Groups、Display、Forces 和 Local Graph | Graph 以节点显示笔记、以边显示内部链接；可按搜索条件、tag、附件、孤立节点等过滤，也可查看活动笔记的局部图。 | 图中的边来自内部链接，显示布局可由设置改变；excluded files 不出现。 | 说明链接网络的探索和导航能力，不能由邻近、节点大小或图形边直接证明正式关系。 |
 | Bookmarks | [Bookmarks](https://obsidian.md/help/Plugins/Bookmarks)：Introduction、Add a bookmark、Add a bookmark group、Remove a bookmark group 和 Bookmark multiple files | Bookmarks 是常用项目的快捷入口，可收藏文件、文件夹、搜索、图、标题、块和链接，并用 bookmark groups 组织和排序。 | local graph 不能被收藏；bookmark group 可连同其中 bookmarks 一起删除。 | 说明个人导航入口与组织能力，不能把收藏或分组视为正式关系、分类或证明。 |
@@ -30,7 +31,7 @@
 
 上述页面共同说明 Obsidian 能存放和编辑本地 Markdown、properties、内部链接与 Base，也能以模板、时间命名或网页剪藏创建或追加文件。它们不提供本项目的受控值校验、内容 identifier、正式关系证明、可审计搜索事件或项目效力判断。
 
-Backlinks、Graph 和 Bookmarks 分别提供入链查看、链接网络可视化和快捷入口。它们是导航或探索能力；内部链接、名称共现、图形邻近、节点大小、收藏和分组都不能单独证明正式关系。
+Quick Switcher、Backlinks、Graph 和 Bookmarks 分别提供名称或 alias 打开、入链查看、链接网络可视化和快捷入口。它们是查找、导航或探索能力；alias 命中、内部链接、名称共现、图形邻近、节点大小、收藏和分组都不能单独证明正式关系。
 
 ## 适用边界
 
