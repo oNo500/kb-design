@@ -17,6 +17,7 @@
 ├─ 词表映射                  多份词表中的概念怎样对应
 ├─ 知识体系                  各类体系怎样提供结构、核对或映射材料
 ├─ 元数据                    字段从哪里来，受控词表怎样为字段提供值
+│  ├─ 标识符                 怎样把身份与名称、标题、路径、排序和时间分开
 │  └─ Application Profile   应用需求怎样约束 metadata 并与具体表示分层
 ├─ 笔记的类型                体裁、作者立场、成熟度、载体和认知层级怎样分开描述
 └─ 知识图谱                  词表怎样扩展为带类型的实体关系
@@ -107,9 +108,10 @@
 | 9 | [词表映射](vocabulary-mapping.md) | 本地概念怎样指向外部条目，外部体系可以怎样复用 |
 | 10 | [知识体系](body-of-knowledge.md) | 不同资料怎样提供结构、核对或映射材料 |
 | 11 | [元数据](metadata.md) | Dublin Core 与受控词表怎样分工 |
-| 12 | [Application Profile](application-profile.md) | metadata 应用约束怎样与模型和具体表示分层 |
-| 13 | [笔记的类型](note-types.md) | 一条笔记怎样分别表达体裁、作者立场、成熟度、载体和认知层级 |
-| 14 | [知识图谱](knowledge-graph.md) | 受控词表与知识图谱有什么关系，何时需要扩展关系类型 |
+| 12 | [标识符](content-identifiers.md) | 身份怎样与名称、标题、路径、排序和时间分开 |
+| 13 | [Application Profile](application-profile.md) | metadata 应用约束怎样与模型和具体表示分层 |
+| 14 | [笔记的类型](note-types.md) | 一条笔记怎样分别表达体裁、作者立场、成熟度、载体和认知层级 |
+| 15 | [知识图谱](knowledge-graph.md) | 受控词表与知识图谱有什么关系，何时需要扩展关系类型 |
 | — | [第一原理与设计理由](first-principles.md) | 本库怎样检验方法的起点并保存决定理由 |
 | — | [写作规范](writing-conventions.md) | 本库的写作规则怎样从面向读者的原则推出 |
 | — | [治理](governance.md) | 治理与维护有什么区别，单人加 AI 怎样分配角色 |

@@ -79,7 +79,7 @@ Obsidian 在本项目中的职责不是词表预览。它是 `kb-design` 的首�
 | 派生结果 | `App/Reports/` | 内容校验器和报告生成器 | 只作诊断与复核线索，可以删除和重建 |
 | 应用配置 | `.obsidian/` | 最低基线由初始化器给出，其余由使用者维护 | 不修改模型和正式数据 |
 
-受管理表示可以在 Obsidian 中被编辑，但编辑不取得项目效力，并会造成 manifest 漂移。首轮实现只初始化新的空 vault，不实现对既有受管理表示的覆盖更新，因此不需要在当前阶段补完整 handoff、payload、原子应用和补偿回滚。
+受管理表示和派生结果中的所有文件都可以由文件系统工具修改；只有 Obsidian 支持的 Markdown 和 Base 文件可以在 Obsidian 中编辑，普通 JSON manifest 不是 Obsidian 内容格式。对这些文件的编辑不取得项目效力；受管理文件的变化会造成 manifest 漂移，派生结果不作为下一次结论的输入。首轮实现只初始化新的空 vault，不实现对既有受管理表示的覆盖更新，因此不需要在当前阶段补完整 handoff、payload、原子应用和补偿回滚。
 
 ## 文件布局
 
@@ -246,7 +246,7 @@ Web Clipper 默认只写 `Sources/Clippings/`。它可以创建或追加资料�
 
 本次重写不得改变应用无关字段语义、基数和值域。实现必须把“尚未实现”的内容矩阵转为实际内容合同，并为每个字段补齐：创建条件、编辑条件、解析目标、显示、查询、错误和 loss 验收。
 
-同名 property 在一个 vault 中保持同一 Obsidian type。引用单值使用 Text link，引用多值使用 List of Text links；日期使用 Date；受控 literal 使用 Text。`title` 保存在一级标题，需要 Base 查询时可同时保存 Text property，但一级标题和 property 不一致必须报告。
+同名 property 在一个 vault 中保持同一 Obsidian type。Obsidian 不支持 nested properties，官方建议在 Source mode 中查看它们；完整应用仍只选择 flat properties。引用单值使用 Text link，引用多值使用 List of Text links；日期使用 Date；受控 literal 使用 Text。`title` 保存在一级标题，需要 Base 查询时可同时保存 Text property，但一级标题和 property 不一致必须报告。
 
 tag 不承担主题、实体、文档类型、体裁或生命周期语义。固定应用 tag 只能用于区分系统对象或视图范围，不可替代受控字段。
 
@@ -392,7 +392,7 @@ App/Reports 带上下文线索
 |---|---|---|
 | File Explorer | 浏览稳定职责目录和文件 | 主题树、多上位、状态和正式关系 |
 | Properties | 保存内容 binding 和可查询事实 | nested formal structures、自动语义判断 |
-| Properties view | 维护同名 property type 一致性 | 正式 schema 与完整校验 |
+| Properties view | 已启用的 core plugin，用于维护同名 property type 一致性 | 正式 schema 与完整校验 |
 | Templates | 插入合法结构片段和日期 | 分配有依据的 ID、选择受控值、保证完整性 |
 | Unique note creator | 快速建立 Inbox 临时文件 | 正式内容 identifier |
 | Web Clipper | 本地保存网页内容、URL 和页面变量 | 直接建立内容单元、正式实体、术语或来源资格 |
@@ -410,7 +410,7 @@ App/Reports 带上下文线索
 
 初始化器只设置应用运行所需的最低配置：
 
-- 启用 Properties、Templates、Bases、Search、Backlinks、Bookmarks 和适用的核心能力；
+- 使用 Properties 保存内容 binding 和可查询事实，并启用 Properties view、Templates、Bases、Search、Backlinks、Bookmarks 和适用的 core plugin；
 - 指定 `App/Templates/` 为模板目录；
 - 指定 `Attachments/` 为附件目录；
 - 启用内部链接随 Obsidian 内移动和改名更新；

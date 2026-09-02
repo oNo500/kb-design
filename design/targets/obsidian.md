@@ -42,7 +42,7 @@ Obsidian 不能直接表达的约束由校验器保留，不能用自由 tag、�
 | 派生报告 | `App/Reports/` | 未来的内容校验器和报告生成器 | 只保存可重算事实与复核线索，可以删除和重建 |
 | 应用配置 | `.obsidian/` | 初始化器给出最低基线，其余由使用者维护 | 不修改模型、正式数据或项目决定 |
 
-受管理表示和派生报告在文件系统与 Obsidian 中可以编辑。对它们的修改不回流、不取得项目效力；受管理文件的变化只形成 manifest 漂移，派生报告不作为下一次结论的输入。用户文件不属于受管理写集，生成器不得覆盖、移动或删除。
+受管理表示和派生报告中的所有文件都可以由文件系统工具修改；只有 Obsidian 支持的 Markdown 和 Base 文件可以在 Obsidian 中编辑，普通 JSON manifest 不是 Obsidian 内容格式。对这些文件的修改不回流、不取得项目效力；受管理文件的变化只形成 manifest 漂移，派生报告不作为下一次结论的输入。用户文件不属于受管理写集，生成器不得覆盖、移动或删除。
 
 ## 文件布局
 
@@ -152,7 +152,7 @@ identifier 发放规则尚未决定，因此正式内容建立当前不能实施
 
 对象文件使用 UTF-8 Markdown。一级标题保存显示标签或标题；YAML frontmatter 保存可平坦表达并用于查询的 properties；范围、形式依据、归属依据、外部映射和历史记录进入正文。property 中的 Wikilink 整体按 YAML 字符串保存。
 
-Obsidian 当前不支持在应用内查看和编辑 nested properties。本 target 不为正式对象选择 nested properties，列表元素也只使用 scalar；不能平坦表达的结构进入正文表格或 YAML 代码块。`.base` 文件使用 YAML 保存 filters 和 views。项目 manifest 的 `.json` 只服务项目校验，不是 Obsidian 内容对象。
+Obsidian 当前不支持 nested properties，官方建议在 Source mode 中查看它们。本 target 不为正式对象选择 nested properties，列表元素也只使用 scalar；不能平坦表达的结构进入正文表格或 YAML 代码块。`.base` 文件使用 YAML 保存 filters 和 views。项目 manifest 的 `.json` 只服务项目校验，不是 Obsidian 内容对象。
 
 tag 不承担主题、实体、文档类型、体裁、生命周期或正式关系。固定应用 tag 只能区分系统对象或视图范围，不能替代受控字段。
 
@@ -388,7 +388,7 @@ App/Reports/ 带上下文线索
 |---|---|---|
 | File Explorer | 浏览稳定职责目录和文件 | 主题树、多上位、状态或正式关系 |
 | Properties | 保存内容 binding 和可查询的平坦事实 | nested formal structures、自动语义判断或完整校验 |
-| Properties view | 观察并维护同名 property type 一致性 | 正式 schema、基数、引用种类和生命周期校验 |
+| Properties view | 已启用的 core plugin，用于观察并维护同名 property type 一致性 | 正式 schema、基数、引用种类和生命周期校验 |
 | Templates | 插入合法结构片段、标题和日期 | 分配有依据的 ID、选择受控值或保证完整性 |
 | Unique note creator | 快速建立 Inbox 临时文件 | 正式内容 identifier 或内容建立 |
 | Web Clipper | 把网页正文、URL 和页面变量保存到 `Sources/Clippings/` | 直接建立内容单元、正式实体、术语或来源资格 |
@@ -406,7 +406,7 @@ Web Clipper 基线只使用 preset variables；Interpreter 和 prompt variables 
 
 ## 配置边界
 
-未来初始化器只给出应用运行所需的最低 `.obsidian/` 配置：启用 Properties、Templates、Bases、Search、Backlinks、Bookmarks 和适用的核心能力；把 `App/Templates/` 设为模板目录，把 `Attachments/` 设为附件目录；启用内部链接随 Obsidian 内移动和改名更新；登记项目 property types；提供 excluded files 与 Bookmarks 建议，但不强制覆盖用户选择。
+未来初始化器只给出应用运行所需的最低 `.obsidian/` 配置：使用 Properties 保存内容 binding 和可查询事实，并启用 Properties view、Templates、Bases、Search、Backlinks、Bookmarks 和适用的 core plugin；把 `App/Templates/` 设为模板目录，把 `Attachments/` 设为附件目录；启用内部链接随 Obsidian 内移动和改名更新；登记项目 property types；提供 excluded files 与 Bookmarks 建议，但不强制覆盖用户选择。
 
 主题、字体、窗口布局、快捷键、移动端布局、Sync、Publish 和个人插件归使用者。`App/manifest.json` 不把这些用户配置变化报告为受管理表示漂移。
 
