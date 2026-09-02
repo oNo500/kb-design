@@ -28,6 +28,11 @@ class ReportTests(unittest.TestCase):
         self.root = Path(self.temporary.name)
         self.design = self.root / "design"
         self.vault = self.root / "vault"
+        self.vault_gate = patch(
+            "kb_obsidian.reports.verify_vault",
+            return_value=self.vault.resolve(),
+        )
+        self.vault_gate.start()
         self.design.mkdir()
         for relative in (
             "Content",
@@ -118,6 +123,7 @@ class ReportTests(unittest.TestCase):
         self._write_boundaries()
 
     def tearDown(self) -> None:
+        self.vault_gate.stop()
         self.temporary.cleanup()
 
     def test_counts_only_valid_controlled_subjects_and_aggregates_descendants(self) -> None:

@@ -16,6 +16,7 @@ from typing import Any
 from .design_source import DesignSnapshot
 from .errors import ApplicationError
 from .validation import ValidationResult
+from .vault import verify_vault
 
 
 _REPORT_PREFIX = "App/Reports/"
@@ -394,8 +395,8 @@ def write_reports(
     vault: Path,
 ) -> Mapping[str, object]:
     """Replace ``App/Reports`` only after a same-parent staged tree verifies."""
+    root = verify_vault(snapshot, vault)
     generated = build_reports(snapshot, validation, vault)
-    root = Path(vault)
     app = root / "App"
     reports_root = app / "Reports"
     if root.is_symlink() or not root.is_dir():

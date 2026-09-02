@@ -6,6 +6,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import yaml
 
@@ -28,6 +29,11 @@ class ContentValidationTests(unittest.TestCase):
         self.temporary = tempfile.TemporaryDirectory()
         self.vault = Path(self.temporary.name) / "vault"
         (self.vault / "Content").mkdir(parents=True)
+        self.vault_gate = patch(
+            "kb_obsidian.validation.verify_vault",
+            return_value=self.vault.resolve(),
+        )
+        self.vault_gate.start()
         self.snapshot = DesignSnapshot(
             root=Path("/design"),
             commit="design-commit",
@@ -54,6 +60,7 @@ class ContentValidationTests(unittest.TestCase):
         )
 
     def tearDown(self) -> None:
+        self.vault_gate.stop()
         self.temporary.cleanup()
 
     def test_valid_content_parses_all_sixteen_fields_as_immutable_data(self) -> None:

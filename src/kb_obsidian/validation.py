@@ -14,6 +14,7 @@ from typing import Optional, Tuple
 from .content import ContentRecord, _ParsedContent, _parse_content
 from .design_source import DesignSnapshot
 from .errors import ApplicationError
+from .vault import verify_vault
 
 
 _LEVELS = frozenset({"remember", "understand", "apply", "analyze", "evaluate", "create"})
@@ -365,10 +366,8 @@ def _validate_content_targets(
                     )
 
 
-def validate_content(snapshot: DesignSnapshot, vault: Path) -> ValidationResult:
-    """Read and validate only direct ``Content/*.md`` children of a vault."""
-    root = Path(vault)
-    content_root = root / "Content"
+def _validate_content_tree(snapshot: DesignSnapshot, content_root: Path) -> ValidationResult:
+    """Validate one Content directory without asserting that its parent is a complete vault."""
     if content_root.is_symlink() or not content_root.is_dir():
         raise ApplicationError(f"vault Content directory is missing or unsafe: {content_root}")
 
@@ -486,3 +485,9 @@ def validate_content(snapshot: DesignSnapshot, vault: Path) -> ValidationResult:
         )
     )
     return ValidationResult(ordered_records, ordered_issues)
+
+
+def validate_content(snapshot: DesignSnapshot, vault: Path) -> ValidationResult:
+    """Verify a vault binding, then read and validate direct ``Content/*.md`` children."""
+    root = verify_vault(snapshot, vault)
+    return _validate_content_tree(snapshot, root / "Content")

@@ -29,6 +29,11 @@ class CreateContentTests(unittest.TestCase):
         self.temporary = tempfile.TemporaryDirectory()
         self.vault = Path(self.temporary.name) / "vault"
         (self.vault / "Content").mkdir(parents=True)
+        self.vault_gate = patch(
+            "kb_obsidian.create_content.verify_vault",
+            return_value=self.vault.resolve(),
+        )
+        self.vault_gate.start()
         self.snapshot = DesignSnapshot(
             root=Path("/design"),
             commit="design-commit",
@@ -54,6 +59,7 @@ class CreateContentTests(unittest.TestCase):
         )
 
     def tearDown(self) -> None:
+        self.vault_gate.stop()
         self.temporary.cleanup()
 
     def test_creates_uuid_path_title_alias_and_controlled_links(self) -> None:
@@ -181,16 +187,20 @@ class CreateContentTests(unittest.TestCase):
 
         non_vault = Path(self.temporary.name) / "not-a-vault"
         non_vault.mkdir()
-        with self.assertRaises(ApplicationError):
-            create_content(
-                self.snapshot,
-                non_vault,
-                title="主题目录",
-                type_id="explanation",
-                genre_id="analysis",
-                subjects=["controlled-vocabulary"],
-                uuid_factory=lambda: UUID(FIRST_UUID),
-            )
+        with patch(
+            "kb_obsidian.create_content.verify_vault",
+            side_effect=ApplicationError(f"vault manifest is missing: {non_vault}"),
+        ):
+            with self.assertRaises(ApplicationError):
+                create_content(
+                    self.snapshot,
+                    non_vault,
+                    title="主题目录",
+                    type_id="explanation",
+                    genre_id="analysis",
+                    subjects=["controlled-vocabulary"],
+                    uuid_factory=lambda: UUID(FIRST_UUID),
+                )
         self.assertEqual([], list(non_vault.iterdir()))
 
     def test_rejects_whitespace_padded_titles_before_creating_a_temporary_file(self) -> None:
@@ -288,7 +298,10 @@ class CreateContentTests(unittest.TestCase):
         from kb_obsidian.errors import ApplicationError
         from kb_obsidian.validation import ValidationResult
 
-        with patch("kb_obsidian.create_content.validate_content", return_value=ValidationResult((), ())) as readback:
+        with patch(
+            "kb_obsidian.create_content._validate_content_tree",
+            return_value=ValidationResult((), ()),
+        ) as readback:
             with self.assertRaisesRegex(ApplicationError, "readback"):
                 create_content(
                     self.snapshot,

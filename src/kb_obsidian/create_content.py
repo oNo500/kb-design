@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import datetime as dt
 import os
-import shutil
 import tempfile
 import uuid
 from collections.abc import Mapping, Sequence
@@ -14,23 +13,8 @@ from typing import Callable
 from .design_source import DesignSnapshot
 from .errors import ApplicationError
 from .render import render_frontmatter
-from .validation import _LEVELS, _REFERENCE_KINDS, _entries, validate_content
-
-
-def _vault_content_root(vault: Path) -> Path:
-    candidate = Path(vault)
-    if candidate.is_symlink():
-        raise ApplicationError(f"vault must not be a symbolic link: {candidate}")
-    try:
-        root = candidate.resolve(strict=True)
-    except OSError as exc:
-        raise ApplicationError(f"vault does not exist: {candidate}") from exc
-    if not root.is_dir():
-        raise ApplicationError(f"vault is not a directory: {root}")
-    content_root = root / "Content"
-    if content_root.is_symlink() or not content_root.is_dir():
-        raise ApplicationError(f"vault Content directory is missing or unsafe: {content_root}")
-    return content_root
+from .validation import _LEVELS, _REFERENCE_KINDS, _entries, _validate_content_tree
+from .vault import verify_vault
 
 
 def _identifier(value: object, *, name: str) -> str:
@@ -91,12 +75,11 @@ def _canonical_uuid4(value: object) -> str:
 def _readback(snapshot: DesignSnapshot, temporary: Path, destination: Path, identifier: str) -> None:
     try:
         with tempfile.TemporaryDirectory(prefix=".kb-obsidian-create-check-", dir=destination.parent) as directory:
-            check_root = Path(directory)
-            check_content = check_root / "Content"
+            check_content = Path(directory) / "Content"
             check_content.mkdir()
             check_note = check_content / destination.name
-            shutil.copyfile(temporary, check_note)
-            result = validate_content(snapshot, check_root)
+            check_note.write_bytes(temporary.read_bytes())
+            result = _validate_content_tree(snapshot, check_content)
     except OSError as exc:
         raise ApplicationError(f"cannot read back staged content: {exc}") from exc
     relative_path = Path("Content") / destination.name
@@ -161,7 +144,7 @@ def create_content(
     today: Callable[[], dt.date] = dt.date.today,
 ) -> Path:
     """Create one canonical UUIDv4 draft after validating all controlled inputs."""
-    content_root = _vault_content_root(vault)
+    content_root = verify_vault(snapshot, vault) / "Content"
     if (
         not isinstance(title, str)
         or not title

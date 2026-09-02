@@ -8,7 +8,7 @@ import os
 import re
 import shutil
 import tempfile
-from collections.abc import Mapping
+from collections.abc import Mapping, Sequence
 from pathlib import Path, PurePosixPath
 from typing import Any
 
@@ -99,6 +99,17 @@ _TYPES_CONFIG = {
     }
 }
 _WIKILINK = re.compile(r"\[\[([^|#\]]+)(?:#[^|\]]+)?(?:\|[^\]]+)?\]\]")
+_SHA256 = re.compile(r"^[0-9a-f]{64}$")
+_MANIFEST_KEYS = {"schema", "schema_version", "app_version", "design_commit", "inputs", "files"}
+_FORMAL_TARGETS = (
+    ("topics", "concepts", "KB/Topics"),
+    ("topics", "arrays", "KB/Arrays"),
+    ("entities", "entities", "KB/Entities"),
+    ("sources", "sources", "KB/Sources"),
+    ("types", "types", "KB/Types"),
+    ("genres", "genres", "KB/Genres"),
+    ("forms", "forms", "KB/Forms"),
+)
 
 
 def _sha256(content: bytes) -> str:
@@ -158,6 +169,109 @@ def _kind(relative_path: str) -> str:
         if relative_path.startswith(prefix):
             return kind
     raise ApplicationError(f"unknown managed file path: {relative_path}")
+
+
+def _vault_root(snapshot: DesignSnapshot, vault: Path) -> Path:
+    candidate = Path(vault).expanduser()
+    if not candidate.is_absolute():
+        candidate = Path.cwd() / candidate
+    if candidate.is_symlink():
+        raise ApplicationError(f"vault is a symbolic link: {candidate}")
+    try:
+        root = candidate.resolve(strict=True)
+    except OSError as exc:
+        raise ApplicationError(f"vault does not exist: {candidate}") from exc
+    if not root.is_dir():
+        raise ApplicationError(f"vault is not a directory: {root}")
+    try:
+        design_root = Path(snapshot.root).resolve(strict=True)
+    except OSError as exc:
+        raise ApplicationError(f"cannot resolve design root: {snapshot.root}") from exc
+    protected = {
+        Path("/").resolve(),
+        Path.home().resolve(),
+        Path(__file__).resolve().parents[2],
+        design_root,
+    }
+    if root in protected:
+        raise ApplicationError(f"protected vault root: {root}")
+    return root
+
+
+def _relative_path(value: object, *, context: str) -> str:
+    if not isinstance(value, str) or not value or "\\" in value:
+        raise ApplicationError(f"unsafe path in {context}: {value!r}")
+    relative = PurePosixPath(value)
+    if (
+        relative.is_absolute()
+        or "." in relative.parts
+        or ".." in relative.parts
+        or relative.as_posix() != value
+    ):
+        raise ApplicationError(f"unsafe path in {context}: {value!r}")
+    return value
+
+
+def _manifest_inputs(manifest_path: Path, value: object) -> dict[str, str]:
+    if not isinstance(value, list):
+        raise ApplicationError(f"vault manifest inputs must be a list: {manifest_path}")
+    inputs: dict[str, str] = {}
+    for index, entry in enumerate(value):
+        context = f"{manifest_path} inputs[{index}]"
+        if not isinstance(entry, Mapping) or set(entry) != {"path", "sha256"}:
+            raise ApplicationError(f"vault manifest has an invalid input entry: {context}")
+        path = _relative_path(entry["path"], context=context)
+        digest = entry["sha256"]
+        if not isinstance(digest, str) or _SHA256.fullmatch(digest) is None:
+            raise ApplicationError(f"vault manifest has an invalid input hash: {path} in {manifest_path}")
+        if path in inputs:
+            raise ApplicationError(f"vault manifest has a duplicate input path: {path} in {manifest_path}")
+        inputs[path] = digest
+    return inputs
+
+
+def _manifest_files(manifest_path: Path, value: object) -> dict[str, Mapping[str, object]]:
+    if not isinstance(value, list):
+        raise ApplicationError(f"vault manifest files must be a list: {manifest_path}")
+    files: dict[str, Mapping[str, object]] = {}
+    for index, entry in enumerate(value):
+        context = f"{manifest_path} files[{index}]"
+        if not isinstance(entry, Mapping) or set(entry) != {"path", "kind", "sha256"}:
+            raise ApplicationError(f"vault manifest has an invalid file entry: {context}")
+        path = _relative_path(entry["path"], context=context)
+        try:
+            expected_kind = _kind(path)
+        except ApplicationError as exc:
+            raise ApplicationError(f"vault manifest has an invalid managed path: {path} in {manifest_path}") from exc
+        if entry["kind"] != expected_kind:
+            raise ApplicationError(f"vault manifest has an invalid kind for {path}: {manifest_path}")
+        digest = entry["sha256"]
+        if not isinstance(digest, str) or _SHA256.fullmatch(digest) is None:
+            raise ApplicationError(f"vault manifest has an invalid file hash for {path}: {manifest_path}")
+        if path in files:
+            raise ApplicationError(f"vault manifest has a duplicate file path: {path} in {manifest_path}")
+        files[path] = entry
+    return files
+
+
+def _required_kb_targets(snapshot: DesignSnapshot) -> set[str]:
+    targets: set[str] = set()
+    for document_name, collection_name, directory in _FORMAL_TARGETS:
+        document = snapshot.documents.get(document_name)
+        if not isinstance(document, Mapping):
+            raise ApplicationError(f"design document {document_name} must be a mapping")
+        records = document.get(collection_name)
+        if not isinstance(records, Sequence) or isinstance(records, (str, bytes)):
+            raise ApplicationError(f"design collection {document_name}.{collection_name} must be a list")
+        for record in records:
+            if not isinstance(record, Mapping) or not isinstance(record.get("id"), str):
+                raise ApplicationError(
+                    f"design collection {document_name}.{collection_name} has an invalid record"
+                )
+            target = f"{directory}/{record['id']}.md"
+            _relative_path(target, context=f"design collection {document_name}.{collection_name}")
+            targets.add(target)
+    return targets
 
 
 def _manifest(snapshot: DesignSnapshot, managed_files: Mapping[str, bytes]) -> dict[str, object]:
@@ -242,13 +356,80 @@ def _managed_files_on_disk(root: Path) -> dict[str, bytes]:
     for prefix in _MANAGED_PREFIXES:
         directory = root / prefix.rstrip("/")
         if not directory.is_dir() or directory.is_symlink():
-            raise ApplicationError(f"managed directory is missing: {prefix}")
-        for path in directory.rglob("*"):
+            raise ApplicationError(f"managed directory is missing or unsafe: {directory}")
+        try:
+            candidates = list(directory.rglob("*"))
+        except OSError as exc:
+            raise ApplicationError(f"cannot inspect managed directory {directory}: {exc}") from exc
+        for path in candidates:
             if path.is_symlink():
-                raise ApplicationError(f"generated vault contains a symbolic link: {path}")
+                raise ApplicationError(f"vault contains a symbolic link: {path}")
             if path.is_file():
-                files[path.relative_to(root).as_posix()] = path.read_bytes()
+                relative_path = path.relative_to(root).as_posix()
+                try:
+                    files[relative_path] = path.read_bytes()
+                except OSError as exc:
+                    raise ApplicationError(f"cannot read managed file {path}: {exc}") from exc
     return files
+
+
+def verify_vault(snapshot: DesignSnapshot, vault: Path) -> Path:
+    """Verify that an initialized vault is bound to ``snapshot`` without changing bytes."""
+    root = _vault_root(snapshot, vault)
+    app_root = root / "App"
+    if app_root.is_symlink():
+        raise ApplicationError(f"vault managed directory is unsafe: {app_root}")
+    content_root = root / "Content"
+    if content_root.is_symlink() or not content_root.is_dir():
+        raise ApplicationError(f"vault Content directory is missing or unsafe: {content_root}")
+
+    manifest_path = root / "App" / "manifest.json"
+    if manifest_path.is_symlink():
+        raise ApplicationError(f"vault manifest is a symbolic link: {manifest_path}")
+    manifest = _read_json(manifest_path)
+    if not isinstance(manifest, Mapping) or set(manifest) != _MANIFEST_KEYS:
+        raise ApplicationError(f"vault manifest has an invalid schema: {manifest_path}")
+    if manifest["schema"] != "kb-obsidian-vault":
+        raise ApplicationError(f"vault manifest schema mismatch: {manifest_path}")
+    if type(manifest["schema_version"]) is not int or manifest["schema_version"] != 1:
+        raise ApplicationError(f"vault manifest schema_version mismatch: {manifest_path}")
+    if manifest["app_version"] != __version__:
+        raise ApplicationError(f"vault manifest app_version mismatch: {manifest_path}")
+    if manifest["design_commit"] != snapshot.commit:
+        raise ApplicationError(f"vault manifest design_commit mismatch: {manifest_path}")
+
+    inputs = _manifest_inputs(manifest_path, manifest["inputs"])
+    expected_inputs = dict(snapshot.input_hashes)
+    if inputs != expected_inputs:
+        differing = sorted(set(inputs) ^ set(expected_inputs))
+        if not differing:
+            differing = sorted(path for path in inputs if inputs[path] != expected_inputs[path])
+        detail = differing[0] if differing else "inputs"
+        raise ApplicationError(f"vault manifest input mismatch: {detail} in {manifest_path}")
+
+    entries = _manifest_files(manifest_path, manifest["files"])
+    actual_files = _managed_files_on_disk(root)
+    missing = sorted(set(entries) - set(actual_files))
+    if missing:
+        raise ApplicationError(f"managed file listed by manifest is missing: {missing[0]}")
+    unlisted = sorted(set(actual_files) - set(entries))
+    if unlisted:
+        raise ApplicationError(f"managed file is not listed by manifest: {unlisted[0]}")
+    for path in sorted(entries):
+        actual_hash = _sha256(actual_files[path])
+        expected_hash = entries[path]["sha256"]
+        if actual_hash != expected_hash:
+            raise ApplicationError(
+                f"managed file hash mismatch: {path}; expected {expected_hash}, actual {actual_hash}"
+            )
+
+    required_targets = _required_kb_targets(snapshot)
+    for path in sorted(required_targets):
+        entry = entries.get(path)
+        target = root.joinpath(*PurePosixPath(path).parts)
+        if entry is None or entry["kind"] != "reference" or target.is_symlink() or not target.is_file():
+            raise ApplicationError(f"required controlled target is missing or unlisted: {path}")
+    return root
 
 
 def _filter_expressions(value: object) -> list[str]:
@@ -311,19 +492,7 @@ def _verify_staged_vault(root: Path, snapshot: DesignSnapshot, expected_manifest
     actual_manifest = _read_json(root / "App" / "manifest.json")
     if actual_manifest != expected_manifest:
         raise ApplicationError("generated manifest differs from its expected contents")
-    if not isinstance(actual_manifest, Mapping) or not isinstance(actual_manifest.get("files"), list):
-        raise ApplicationError("generated manifest has no file list")
-    actual_files = _managed_files_on_disk(root)
-    entries = actual_manifest["files"]
-    paths = [entry.get("path") for entry in entries if isinstance(entry, Mapping)]
-    if len(paths) != len(entries) or set(paths) != set(actual_files):
-        raise ApplicationError("generated manifest file set mismatch")
-    for entry in entries:
-        if not isinstance(entry, Mapping) or set(entry) != {"path", "kind", "sha256"}:
-            raise ApplicationError("generated manifest has an invalid file entry")
-        path = entry["path"]
-        if not isinstance(path, str) or entry["kind"] != _kind(path) or entry["sha256"] != _sha256(actual_files[path]):
-            raise ApplicationError(f"generated manifest file hash mismatch: {path}")
+    verify_vault(snapshot, root)
 
 
 def _write_configuration(root: Path) -> None:

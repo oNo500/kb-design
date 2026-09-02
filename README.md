@@ -4,11 +4,18 @@
 
 ## 安装
 
-本项目需要 Python 3.9+ 和 Git。在仓库根目录安装可编辑版本：
+本项目需要 Python 3.9+ 和 Git。在仓库根目录默认使用普通安装：
 
 ```bash
-python3 -m pip install -e .
+python3 -m pip install .
 kb-obsidian --help
+```
+
+开发时如需可编辑安装，先升级 pip，再安装 editable 版本：
+
+```bash
+python3 -m pip install --upgrade pip
+python3 -m pip install -e .
 ```
 
 ## 设计来源
