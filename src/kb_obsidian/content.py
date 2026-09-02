@@ -35,15 +35,27 @@ CONTENT_PROPERTIES = frozenset(
     }
 )
 
-_HEADING = re.compile(r"^#[ \t]+(.+?)[ \t]*$")
+_HEADING = re.compile(r"^[ ]{0,3}#[ \t]+(.+?)[ \t]*$")
 
 
-def _freeze(value: Any) -> Any:
-    if isinstance(value, Mapping):
-        return MappingProxyType({key: _freeze(item) for key, item in value.items()})
-    if isinstance(value, (list, tuple)):
-        return tuple(_freeze(item) for item in value)
-    return value
+class _CyclicProperty(ValueError):
+    pass
+
+
+def _freeze(value: Any, active: Optional[set[int]] = None) -> Any:
+    if not isinstance(value, (Mapping, list, tuple)):
+        return value
+    active = set() if active is None else active
+    marker = id(value)
+    if marker in active:
+        raise _CyclicProperty("cyclic property value")
+    active.add(marker)
+    try:
+        if isinstance(value, Mapping):
+            return MappingProxyType({key: _freeze(item, active) for key, item in value.items()})
+        return tuple(_freeze(item, active) for item in value)
+    finally:
+        active.remove(marker)
 
 
 @dataclass(frozen=True)
@@ -108,6 +120,29 @@ def _is_scalar(value: object) -> bool:
     return value is None or isinstance(value, (str, int, float, bool, dt.date))
 
 
+def _has_cycle(
+    value: object,
+    active: Optional[set[int]] = None,
+    complete: Optional[set[int]] = None,
+) -> bool:
+    if not isinstance(value, (Mapping, list, tuple)):
+        return False
+    active = set() if active is None else active
+    complete = set() if complete is None else complete
+    marker = id(value)
+    if marker in active:
+        return True
+    if marker in complete:
+        return False
+    active.add(marker)
+    children = value.values() if isinstance(value, Mapping) else value
+    try:
+        return any(_has_cycle(item, active, complete) for item in children)
+    finally:
+        active.remove(marker)
+        complete.add(marker)
+
+
 def _property_shape_issues(properties: Mapping[object, object]) -> list[_ParseIssue]:
     issues: list[_ParseIssue] = []
     for key, value in properties.items():
@@ -117,6 +152,9 @@ def _property_shape_issues(properties: Mapping[object, object]) -> list[_ParseIs
             continue
         if key.startswith("kb_") and key not in CONTENT_PROPERTIES:
             issues.append(_ParseIssue("content.unknown_property", key, f"unknown content property: {key}"))
+        if _has_cycle(value):
+            issues.append(_ParseIssue("content.property_cycle", key, "frontmatter property contains a cycle"))
+            continue
         if _is_scalar(value):
             continue
         if isinstance(value, list) and all(_is_scalar(item) for item in value):
@@ -129,6 +167,47 @@ def _property_shape_issues(properties: Mapping[object, object]) -> list[_ParseIs
             )
         )
     return issues
+
+
+def _fence_marker(line: str) -> Optional[tuple[str, int, str]]:
+    text = line.rstrip("\r\n")
+    indentation = len(text) - len(text.lstrip(" "))
+    if indentation > 3:
+        return None
+    content = text[indentation:]
+    if not content or content[0] not in {"`", "~"}:
+        return None
+    marker = content[0]
+    length = len(content) - len(content.lstrip(marker))
+    if length < 3:
+        return None
+    remainder = content[length:]
+    if marker == "`" and "`" in remainder:
+        return None
+    return marker, length, remainder
+
+
+def _first_level_headings(lines: list[str]) -> list[tuple[int, str]]:
+    headings: list[tuple[int, str]] = []
+    active_fence: Optional[tuple[str, int]] = None
+    for index, line in enumerate(lines):
+        fence = _fence_marker(line)
+        if active_fence is not None:
+            if (
+                fence is not None
+                and fence[0] == active_fence[0]
+                and fence[1] >= active_fence[1]
+                and not fence[2].strip()
+            ):
+                active_fence = None
+            continue
+        if fence is not None:
+            active_fence = (fence[0], fence[1])
+            continue
+        match = _HEADING.fullmatch(line.rstrip("\r\n"))
+        if match is not None:
+            headings.append((index, match.group(1)))
+    return headings
 
 
 def _parse_content(path: Path, relative_path: Path) -> _ParsedContent:
@@ -195,11 +274,7 @@ def _parse_content(path: Path, relative_path: Path) -> _ParsedContent:
                 "content must have exactly one leading YAML frontmatter block",
             )
         )
-    headings = [
-        (index, match.group(1))
-        for index, line in enumerate(markdown_lines)
-        if (match := _HEADING.fullmatch(line.rstrip("\r\n")))
-    ]
+    headings = _first_level_headings(markdown_lines)
     heading: Optional[str] = None
     body = "".join(markdown_lines)
     if len(headings) != 1 or first_nonblank is None or headings[0][0] != first_nonblank:
@@ -216,6 +291,8 @@ def _parse_content(path: Path, relative_path: Path) -> _ParsedContent:
 
     identifier = loaded.get("kb_id")
     title = loaded.get("title")
+    if any(issue.code == "content.property_cycle" for issue in issues):
+        return _ParsedContent(None, heading, tuple(issues))
     record = ContentRecord(
         identifier=identifier if isinstance(identifier, str) else "",
         title=title if isinstance(title, str) else "",

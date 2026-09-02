@@ -216,16 +216,24 @@ def _date_value(record: ContentRecord, field: str, issues: list[Issue], *, requi
         _add(issues, record, "content.invalid_date", field, f"property must be an ISO 8601 date: {field}")
 
 
+def _is_canonical_uuid4(value: object) -> bool:
+    if not isinstance(value, str):
+        return False
+    try:
+        parsed = uuid.UUID(value)
+    except (ValueError, AttributeError):
+        return False
+    return parsed.version == 4 and str(parsed) == value
+
+
+def _has_valid_content_identity(record: ContentRecord) -> bool:
+    return _is_canonical_uuid4(record.identifier) and record.path.stem == record.identifier
+
+
 def _validate_identity(record: ContentRecord, heading: Optional[str], issues: list[Issue]) -> None:
     identifier = _required_text(record, "kb_id", issues)
-    canonical = False
     if identifier is not None:
-        try:
-            parsed = uuid.UUID(identifier)
-            canonical = parsed.version == 4 and str(parsed) == identifier
-        except (ValueError, AttributeError):
-            canonical = False
-        if not canonical:
+        if not _is_canonical_uuid4(identifier):
             _add(issues, record, "content.invalid_id", "kb_id", "kb_id must be canonical lowercase UUIDv4")
         if record.path.stem != identifier:
             _add(issues, record, "content.path_mismatch", "kb_id", "Content filename stem must equal kb_id")
@@ -252,6 +260,7 @@ def _validate_identity(record: ContentRecord, heading: Optional[str], issues: li
 def _validate_content_targets(
     records: Tuple[ContentRecord, ...],
     issues: list[Issue],
+    duplicate_identifiers: set[str],
 ) -> None:
     by_path = {record.path.as_posix(): record for record in records}
     relation_targets: dict[Path, set[Path]] = defaultdict(set)
@@ -267,10 +276,32 @@ def _validate_content_targets(
                 "property must use an exact Content/<UUIDv4> Wikilink",
             )
             return None
+        if not _is_canonical_uuid4(parsed[1]):
+            _add(
+                issues,
+                record,
+                "content.reference_invalid_identity",
+                field,
+                f"content target is not a canonical UUIDv4: {parsed[1]}",
+            )
+            return None
         target_path = f"Content/{parsed[1]}.md"
         target = by_path.get(target_path)
-        if target is None or target.identifier != parsed[1]:
+        if target is None:
             _add(issues, record, "content.reference_missing", field, f"content target does not exist: {parsed[1]}")
+            return None
+        if (
+            target.identifier != parsed[1]
+            or not _has_valid_content_identity(target)
+            or parsed[1] in duplicate_identifiers
+        ):
+            _add(
+                issues,
+                record,
+                "content.reference_invalid_identity",
+                field,
+                f"content target does not have one unique path-consistent identity: {parsed[1]}",
+            )
             return None
         if target.path == record.path:
             _add(issues, record, "content.self_reference", field, f"property must not reference itself: {field}")
@@ -317,7 +348,7 @@ def _validate_content_targets(
 
     checked_pairs: set[tuple[str, str]] = set()
     for source_path, targets in relation_targets.items():
-        for target_path in targets:
+        for target_path in sorted(targets, key=lambda path: path.as_posix()):
             pair = tuple(sorted((source_path.as_posix(), target_path.as_posix())))
             if pair in checked_pairs:
                 continue
@@ -440,12 +471,18 @@ def validate_content(snapshot: DesignSnapshot, vault: Path) -> ValidationResult:
     for record in records:
         if record.identifier:
             owners[record.identifier].append(record)
+    duplicate_identifiers = {identifier for identifier, owner_records in owners.items() if len(owner_records) > 1}
     for identifier, duplicate_records in owners.items():
         if len(duplicate_records) > 1:
             for record in duplicate_records:
                 _add(issues, record, "content.duplicate_id", "kb_id", f"duplicate content identifier: {identifier}")
 
-    _validate_content_targets(records, issues)
+    _validate_content_targets(records, issues, duplicate_identifiers)
     ordered_records = tuple(sorted(records, key=lambda record: record.path.as_posix()))
-    ordered_issues = tuple(sorted(issues, key=lambda issue: (issue.path.as_posix(), issue.field, issue.code)))
+    ordered_issues = tuple(
+        sorted(
+            issues,
+            key=lambda issue: (issue.path.as_posix(), issue.field, issue.code, issue.message),
+        )
+    )
     return ValidationResult(ordered_records, ordered_issues)

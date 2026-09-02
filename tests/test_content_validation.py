@@ -16,6 +16,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 UUID_A = "123e4567-e89b-42d3-a456-426614174000"
 UUID_B = "223e4567-e89b-42d3-a456-426614174001"
 UUID_C = "323e4567-e89b-42d3-a456-426614174002"
+UUID_V1 = "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
 
 
 class ContentValidationTests(unittest.TestCase):
@@ -185,6 +186,51 @@ class ContentValidationTests(unittest.TestCase):
         self.assertIn("content.frontmatter", {issue.code for issue in result.issues})
         self.assertEqual((), result.valid_records)
 
+    def test_parser_reports_a_cyclic_yaml_alias_and_continues_with_other_files(self) -> None:
+        """Recursive YAML data must become one file issue instead of aborting the vault scan."""
+        from kb_obsidian.validation import validate_content
+
+        cyclic = self._write_note(UUID_A)
+        text = cyclic.read_text(encoding="utf-8")
+        cyclic.write_text(
+            text.replace("---\n# 内容\n", "custom: &cycle\n  - *cycle\n---\n# 内容\n", 1),
+            encoding="utf-8",
+        )
+        self._write_note(UUID_B, title="仍可解析")
+
+        result = validate_content(self.snapshot, self.vault)
+
+        self.assertEqual(
+            [(Path(f"Content/{UUID_A}.md"), "content.property_cycle")],
+            [(issue.path, issue.code) for issue in result.issues],
+        )
+        self.assertEqual((UUID_B,), tuple(record.identifier for record in result.records))
+        self.assertEqual((UUID_B,), tuple(record.identifier for record in result.valid_records))
+
+    def test_heading_scan_ignores_hash_lines_inside_both_markdown_fence_kinds(self) -> None:
+        """A hash line inside backtick or tilde code fences must not count as another H1."""
+        from kb_obsidian.validation import validate_content
+
+        body = (
+            "正文。\n\n"
+            "````markdown\n"
+            "# 反引号代码中的伪标题\n"
+            "```\n"
+            "仍在反引号代码块内。\n"
+            "````\n\n"
+            "~~~~text\n"
+            "# 波浪号代码中的伪标题\n"
+            "~~~\n"
+            "仍在波浪号代码块内。\n"
+            "~~~~\n"
+        )
+        self._write_note(UUID_A, body=body)
+
+        result = validate_content(self.snapshot, self.vault)
+
+        self.assertTrue(result.is_valid, result.issues)
+        self.assertEqual(body, result.records[0].body)
+
     def test_controlled_cardinality_value_and_object_kind_failures_are_all_reported(self) -> None:
         """Removing a field-specific resolver must expose the wrong cardinality, value, or object kind."""
         from kb_obsidian.validation import validate_content
@@ -221,6 +267,42 @@ class ContentValidationTests(unittest.TestCase):
         self.assertEqual([f"Content/{UUID_C}.md"], [issue.path.as_posix() for issue in result.issues])
         self.assertEqual("kb_source", result.issues[0].field)
         self.assertEqual((UUID_A, UUID_B), tuple(record.identifier for record in result.valid_records))
+
+    def test_content_reference_rejects_a_noncanonical_target_identity(self) -> None:
+        """A path-resolvable target that is not canonical UUIDv4 must invalidate its referrer too."""
+        from kb_obsidian.validation import validate_content
+
+        self._write_note(UUID_A, kb_source=f"[[Content/{UUID_V1}|旧身份]]")
+        self._write_note(UUID_V1)
+
+        result = validate_content(self.snapshot, self.vault)
+
+        source_issues = [issue for issue in result.issues if issue.path == Path(f"Content/{UUID_A}.md")]
+        self.assertEqual(["kb_source"], [issue.field for issue in source_issues])
+        self.assertNotIn(UUID_A, {record.identifier for record in result.valid_records})
+
+    def test_all_content_reference_fields_reject_a_duplicate_identity_target(self) -> None:
+        """A duplicate target identity must invalidate source, replacement, and relation referrers."""
+        from kb_obsidian.validation import validate_content
+
+        self._write_note(
+            UUID_A,
+            kb_source=f"[[Content/{UUID_B}|来源]]",
+            kb_status="deprecated",
+            kb_is_replaced_by=f"[[Content/{UUID_B}|替代]]",
+            kb_relation=[f"[[Content/{UUID_B}|相关]]"],
+        )
+        self._write_note(UUID_B, kb_relation=[f"[[Content/{UUID_A}|相关]]"])
+        self._write_note(UUID_C, identifier=UUID_B)
+
+        result = validate_content(self.snapshot, self.vault)
+
+        referrer_issues = [issue for issue in result.issues if issue.path == Path(f"Content/{UUID_A}.md")]
+        self.assertEqual(
+            {"kb_source", "kb_is_replaced_by", "kb_relation"},
+            {issue.field for issue in referrer_issues},
+        )
+        self.assertNotIn(UUID_A, {record.identifier for record in result.valid_records})
 
     def test_body_alias_and_index_links_never_satisfy_missing_controlled_fields(self) -> None:
         """Scanning ordinary links as metadata would wrongly make an unclassified note valid."""
@@ -293,9 +375,33 @@ class ContentValidationTests(unittest.TestCase):
         self.assertEqual([f"Content/{UUID_A}.md", f"Content/{UUID_B}.md"], duplicate_paths)
         self.assertEqual(
             list(result.issues),
-            sorted(result.issues, key=lambda issue: (issue.path.as_posix(), issue.field, issue.code)),
+            sorted(result.issues, key=lambda issue: (issue.path.as_posix(), issue.field, issue.code, issue.message)),
         )
         self.assertEqual((UUID_C,), tuple(record.identifier for record in result.valid_records))
+
+    def test_issue_order_uses_message_to_break_equal_path_field_and_code_ties(self) -> None:
+        """Reversing same-code inputs must not leak insertion or hash order into issue output."""
+        from kb_obsidian.validation import validate_content
+
+        self._write_note(
+            UUID_A,
+            kb_entities=[
+                "[[KB/Entities/z-missing|Z]]",
+                "[[KB/Entities/a-missing|A]]",
+            ],
+        )
+
+        result = validate_content(self.snapshot, self.vault)
+
+        messages = [issue.message for issue in result.issues]
+        self.assertEqual(sorted(messages), messages)
+        self.assertEqual(
+            list(result.issues),
+            sorted(
+                result.issues,
+                key=lambda issue: (issue.path.as_posix(), issue.field, issue.code, issue.message),
+            ),
+        )
 
     def test_validation_reads_only_top_level_content_markdown_and_changes_no_bytes(self) -> None:
         """Broad traversal or repair writes would cross the user-content read-only boundary."""
