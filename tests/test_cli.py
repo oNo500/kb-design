@@ -149,7 +149,7 @@ class CliTests(unittest.TestCase):
 
         issue = Issue(
             code="content.title_mismatch",
-            path=Path("Content/123e4567-e89b-42d3-a456-426614174000.md"),
+            path=Path("content/123e4567-e89b-42d3-a456-426614174000.md"),
             field="title",
             message="title metadata differs",
         )
@@ -180,7 +180,7 @@ class CliTests(unittest.TestCase):
                         "code": "content.title_mismatch",
                         "field": "title",
                         "message": "title metadata differs",
-                        "path": "Content/123e4567-e89b-42d3-a456-426614174000.md",
+                        "path": "content/123e4567-e89b-42d3-a456-426614174000.md",
                     }
                 ],
                 "record_count": 0,
