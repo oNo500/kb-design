@@ -11,6 +11,14 @@ from unittest import mock
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
+TEST_DESIGN_COMMIT = os.environ.get("KB_OBSIDIAN_TEST_DESIGN_COMMIT", "356f02bc0a61d28c045139b2dc5f41bf40291a78")
+
+if TEST_DESIGN_COMMIT != "356f02bc0a61d28c045139b2dc5f41bf40291a78":
+    import kb_obsidian.design_source as design_source
+    import kb_obsidian.reference_export as reference_export
+
+    design_source.SUPPORTED_DESIGN_COMMIT = TEST_DESIGN_COMMIT
+    reference_export.SUPPORTED_DESIGN_COMMIT = TEST_DESIGN_COMMIT
 
 
 class DesignSourceTests(unittest.TestCase):
@@ -21,6 +29,12 @@ class DesignSourceTests(unittest.TestCase):
     def clone_design(self, destination: Path) -> Path:
         subprocess.run(
             ["git", "clone", "--quiet", "--shared", str(self.design_root), str(destination)],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        subprocess.run(
+            ["git", "-C", str(destination), "checkout", "--quiet", TEST_DESIGN_COMMIT],
             check=True,
             capture_output=True,
             text=True,
@@ -84,7 +98,7 @@ class DesignSourceTests(unittest.TestCase):
                 snapshot.documents["topics"]["concepts"].append({"id": "changed"})
 
     def test_exports_the_current_design_as_only_a_verified_kb_tree(self) -> None:
-        """A valid snapshot must publish KB without leaking upstream artifacts."""
+        """A valid snapshot must publish kb without leaking upstream artifacts."""
         from kb_obsidian.design_source import SUPPORTED_DESIGN_COMMIT, load_design
         from kb_obsidian.reference_export import export_reference
 
@@ -99,8 +113,8 @@ class DesignSourceTests(unittest.TestCase):
             self.assertEqual(SUPPORTED_DESIGN_COMMIT, manifest["design_commit"])
             self.assertEqual({"topics", "entities", "sources", "types", "genres", "forms"}, set(snapshot.documents))
             self.assertEqual(6, len(snapshot.input_hashes))
-            self.assertTrue((output / "KB").is_dir())
-            self.assertEqual(["KB"], sorted(path.name for path in output.iterdir()))
+            self.assertTrue((output / "kb").is_dir())
+            self.assertEqual(["kb"], sorted(path.name for path in output.iterdir()))
 
     def test_rejects_export_when_manifest_inputs_differ_from_the_snapshot(self) -> None:
         """A post-snapshot source edit must not be exported under old hashes."""
@@ -145,7 +159,7 @@ class DesignSourceTests(unittest.TestCase):
                 export_reference(load_design(root.resolve()), output)
 
     def test_rejects_a_manifest_with_an_unsupported_schema(self) -> None:
-        """A manifest with the wrong schema must not publish its KB tree."""
+        """A manifest with the wrong schema must not publish its kb tree."""
         from kb_obsidian.design_source import load_design
         from kb_obsidian.errors import ApplicationError
         from kb_obsidian.reference_export import export_reference
@@ -243,7 +257,7 @@ class DesignSourceTests(unittest.TestCase):
             output.mkdir()
 
             with mock.patch("kb_obsidian.reference_export.shutil.copytree", side_effect=OSError("copy blocked")):
-                with self.assertRaisesRegex(ApplicationError, "cannot publish verified KB tree"):
+                with self.assertRaisesRegex(ApplicationError, "cannot publish verified kb tree"):
                     export_reference(load_design(root.resolve()), output)
 
             self.assertEqual([], list(output.iterdir()))
@@ -261,7 +275,7 @@ class DesignSourceTests(unittest.TestCase):
             output.mkdir()
 
             with mock.patch("os.replace", side_effect=OSError("replace blocked")):
-                with self.assertRaisesRegex(ApplicationError, "cannot publish verified KB tree"):
+                with self.assertRaisesRegex(ApplicationError, "cannot publish verified kb tree"):
                     export_reference(load_design(root.resolve()), output)
 
             self.assertEqual([], list(output.iterdir()))

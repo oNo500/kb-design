@@ -75,14 +75,14 @@ def _canonical_uuid4(value: object) -> str:
 def _readback(snapshot: DesignSnapshot, temporary: Path, destination: Path, identifier: str) -> None:
     try:
         with tempfile.TemporaryDirectory(prefix=".kb-obsidian-create-check-", dir=destination.parent) as directory:
-            check_content = Path(directory) / "Content"
+            check_content = Path(directory) / "content"
             check_content.mkdir()
             check_note = check_content / destination.name
             check_note.write_bytes(temporary.read_bytes())
             result = _validate_content_tree(snapshot, check_content)
     except OSError as exc:
         raise ApplicationError(f"cannot read back staged content: {exc}") from exc
-    relative_path = Path("Content") / destination.name
+    relative_path = Path("content") / destination.name
     record = next(
         (item for item in result.valid_records if item.path == relative_path and item.identifier == identifier),
         None,
@@ -144,7 +144,7 @@ def create_content(
     today: Callable[[], dt.date] = dt.date.today,
 ) -> Path:
     """Create one canonical UUIDv4 draft after validating all controlled inputs."""
-    content_root = verify_vault(snapshot, vault) / "Content"
+    content_root = verify_vault(snapshot, vault) / "content"
     if (
         not isinstance(title, str)
         or not title
@@ -174,21 +174,21 @@ def create_content(
     properties: dict[str, object] = {
         "title": title,
         "aliases": [title],
-        "kb_type": _target(type_id, types, "KB/Types/", language, name="type"),
-        "kb_genre": _target(genre_id, genres, "KB/Genres/", language, name="genre"),
+        "kb_type": _target(type_id, types, "kb/types/", language, name="type"),
+        "kb_genre": _target(genre_id, genres, "kb/genres/", language, name="genre"),
         "kb_subjects": [
-            _target(subject, topics, "KB/Topics/", language, name="subject") for subject in subject_ids
+            _target(subject, topics, "kb/topics/", language, name="subject") for subject in subject_ids
         ],
     }
     if form is not None:
-        properties["kb_form"] = _target(form, forms, "KB/Forms/", language, name="form")
+        properties["kb_form"] = _target(form, forms, "kb/forms/", language, name="form")
     if level is not None:
         if not isinstance(level, str) or level not in _LEVELS:
             raise ApplicationError(f"unknown cognitive level: {level!r}")
         properties["kb_level"] = level
     if entity_ids:
         properties["kb_entities"] = [
-            _target(entity, entities_by_id, "KB/Entities/", language, name="entity") for entity in entity_ids
+            _target(entity, entities_by_id, "kb/entities/", language, name="entity") for entity in entity_ids
         ]
     if reference_ids:
         for reference in reference_ids:
@@ -198,7 +198,7 @@ def create_content(
             if record.get("kind") not in _REFERENCE_KINDS:
                 raise ApplicationError(f"reference must target a standard or publication: {reference}")
         properties["kb_references"] = [
-            _target(reference, entities_by_id, "KB/Entities/", language, name="reference")
+            _target(reference, entities_by_id, "kb/entities/", language, name="reference")
             for reference in reference_ids
         ]
     try:

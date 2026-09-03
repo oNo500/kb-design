@@ -28,7 +28,7 @@ class CreateContentTests(unittest.TestCase):
 
         self.temporary = tempfile.TemporaryDirectory()
         self.vault = Path(self.temporary.name) / "vault"
-        (self.vault / "Content").mkdir(parents=True)
+        (self.vault / "content").mkdir(parents=True)
         self.vault_gate = patch(
             "kb_obsidian.create_content.verify_vault",
             return_value=self.vault.resolve(),
@@ -81,17 +81,17 @@ class CreateContentTests(unittest.TestCase):
             uuid_factory=lambda: UUID(FIRST_UUID),
         )
 
-        self.assertEqual(self.vault.resolve() / "Content" / f"{FIRST_UUID}.md", path)
+        self.assertEqual(self.vault.resolve() / "content" / f"{FIRST_UUID}.md", path)
         properties, heading = self._read_note(path)
         self.assertEqual(FIRST_UUID, properties["kb_id"])
         self.assertEqual("主题目录", properties["title"])
         self.assertEqual(["主题目录"], properties["aliases"])
-        self.assertEqual("[[KB/Types/explanation|解释]]", properties["kb_type"])
-        self.assertEqual("[[KB/Genres/analysis|分析]]", properties["kb_genre"])
-        self.assertEqual(["[[KB/Topics/controlled-vocabulary|受控词表]]"], properties["kb_subjects"])
-        self.assertEqual("[[KB/Forms/diagram|图示]]", properties["kb_form"])
-        self.assertEqual(["[[KB/Entities/obsidian|Obsidian]]"], properties["kb_entities"])
-        self.assertEqual(["[[KB/Entities/rfc-9562|RFC 9562]]"], properties["kb_references"])
+        self.assertEqual("[[kb/types/explanation|解释]]", properties["kb_type"])
+        self.assertEqual("[[kb/genres/analysis|分析]]", properties["kb_genre"])
+        self.assertEqual(["[[kb/topics/controlled-vocabulary|受控词表]]"], properties["kb_subjects"])
+        self.assertEqual("[[kb/forms/diagram|图示]]", properties["kb_form"])
+        self.assertEqual(["[[kb/entities/obsidian|Obsidian]]"], properties["kb_entities"])
+        self.assertEqual(["[[kb/entities/rfc-9562|RFC 9562]]"], properties["kb_references"])
         self.assertEqual("2026-09-03", properties["kb_created"])
         self.assertEqual("draft", properties["kb_status"])
         self.assertEqual("zh", properties["kb_language"])
@@ -101,7 +101,7 @@ class CreateContentTests(unittest.TestCase):
         """Publishing over an existing identity would destroy a user-owned content unit."""
         from kb_obsidian.create_content import create_content
 
-        existing = self.vault / "Content" / f"{FIRST_UUID}.md"
+        existing = self.vault / "content" / f"{FIRST_UUID}.md"
         existing.write_bytes(b"do not replace\n")
         identifiers = iter((UUID(FIRST_UUID), UUID(SECOND_UUID)))
 
@@ -115,14 +115,14 @@ class CreateContentTests(unittest.TestCase):
             uuid_factory=lambda: next(identifiers),
         )
 
-        self.assertEqual(self.vault.resolve() / "Content" / f"{SECOND_UUID}.md", path)
+        self.assertEqual(self.vault.resolve() / "content" / f"{SECOND_UUID}.md", path)
         self.assertEqual(b"do not replace\n", existing.read_bytes())
 
     def test_retries_when_hard_link_detects_a_new_collision(self) -> None:
         """A collision discovered at publish time must select a new UUID without replacement."""
         from kb_obsidian.create_content import create_content
 
-        first_destination = self.vault / "Content" / f"{FIRST_UUID}.md"
+        first_destination = self.vault / "content" / f"{FIRST_UUID}.md"
         user_bytes = b"new concurrent user file\n"
         identifiers = iter((UUID(FIRST_UUID), UUID(SECOND_UUID)))
         real_link = os.link
@@ -146,7 +146,7 @@ class CreateContentTests(unittest.TestCase):
                 uuid_factory=lambda: next(identifiers),
             )
 
-        self.assertEqual(self.vault.resolve() / "Content" / f"{SECOND_UUID}.md", path)
+        self.assertEqual(self.vault.resolve() / "content" / f"{SECOND_UUID}.md", path)
         self.assertEqual(user_bytes, first_destination.read_bytes())
 
     def test_rejects_invalid_arguments_and_unsafe_vault_before_writing(self) -> None:
@@ -232,7 +232,7 @@ class CreateContentTests(unittest.TestCase):
 
         for operation in ("write", "flush", "fsync"):
             with self.subTest(operation=operation):
-                staged = self.vault / "Content" / f".{operation}.md"
+                staged = self.vault / "content" / f".{operation}.md"
                 staged.write_bytes(b"partial draft\n")
 
                 class FailingTemporary:
@@ -290,7 +290,7 @@ class CreateContentTests(unittest.TestCase):
 
         properties, _ = self._read_note(path)
         self.assertEqual("ja", properties["kb_language"])
-        self.assertEqual("[[KB/Types/explanation|Explanation]]", properties["kb_type"])
+        self.assertEqual("[[kb/types/explanation|Explanation]]", properties["kb_type"])
 
     def test_removes_its_temporary_file_when_task_four_readback_fails(self) -> None:
         """A readback failure must not leave a final or temporary content file behind."""
@@ -320,7 +320,7 @@ class CreateContentTests(unittest.TestCase):
         """A post-link user write must never be replaced during publication cleanup."""
         from kb_obsidian.create_content import create_content
 
-        destination = self.vault.resolve() / "Content" / f"{FIRST_UUID}.md"
+        destination = self.vault.resolve() / "content" / f"{FIRST_UUID}.md"
         user_bytes = b"concurrent user file\n"
         real_link = os.link
 
@@ -352,7 +352,7 @@ class CreateContentTests(unittest.TestCase):
     def _content_bytes(self) -> dict[str, bytes]:
         return {
             path.name: path.read_bytes()
-            for path in (self.vault / "Content").iterdir()
+            for path in (self.vault / "content").iterdir()
             if path.is_file()
         }
 

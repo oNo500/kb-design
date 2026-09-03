@@ -28,7 +28,7 @@ class ContentValidationTests(unittest.TestCase):
 
         self.temporary = tempfile.TemporaryDirectory()
         self.vault = Path(self.temporary.name) / "vault"
-        (self.vault / "Content").mkdir(parents=True)
+        (self.vault / "content").mkdir(parents=True)
         self.vault_gate = patch(
             "kb_obsidian.validation.verify_vault",
             return_value=self.vault.resolve(),
@@ -70,18 +70,18 @@ class ContentValidationTests(unittest.TestCase):
         self._write_note(
             UUID_A,
             title="旧内容",
-            kb_form="[[KB/Forms/diagram|Diagram]]",
+            kb_form="[[kb/forms/diagram|Diagram]]",
             kb_level="analyze",
-            kb_entities=["[[KB/Entities/obsidian|Obsidian]]"],
-            kb_source=f"[[Content/{UUID_B}|来源内容]]",
-            kb_references=["[[KB/Entities/rfc-9562|RFC 9562]]"],
+            kb_entities=["[[kb/entities/obsidian|Obsidian]]"],
+            kb_source=f"[[content/{UUID_B}|来源内容]]",
+            kb_references=["[[kb/entities/rfc-9562|RFC 9562]]"],
             kb_modified="2026-09-03",
             kb_status="deprecated",
-            kb_is_replaced_by=f"[[Content/{UUID_C}|新内容]]",
-            kb_relation=[f"[[Content/{UUID_B}|相关内容]]"],
+            kb_is_replaced_by=f"[[content/{UUID_C}|新内容]]",
+            kb_relation=[f"[[content/{UUID_B}|相关内容]]"],
             kb_language="en",
         )
-        self._write_note(UUID_B, title="来源内容", kb_relation=[f"[[Content/{UUID_A}|旧内容]]"])
+        self._write_note(UUID_B, title="来源内容", kb_relation=[f"[[content/{UUID_A}|旧内容]]"])
         self._write_note(UUID_C, title="新内容")
 
         result = validate_content(self.snapshot, self.vault)
@@ -151,16 +151,16 @@ class ContentValidationTests(unittest.TestCase):
         """Weak YAML or Markdown parsing must not accept ambiguous content records."""
         from kb_obsidian.validation import validate_content
 
-        duplicate = self.vault / "Content" / f"{UUID_A}.md"
+        duplicate = self.vault / "content" / f"{UUID_A}.md"
         duplicate.write_text(
             "---\n"
             f"kb_id: {UUID_A}\n"
             "title: 重复\n"
             "title: 覆盖\n"
             "aliases: [重复]\n"
-            "kb_type: '[[KB/Types/tutorial]]'\n"
-            "kb_genre: '[[KB/Genres/analysis]]'\n"
-            "kb_subjects: ['[[KB/Topics/security]]']\n"
+            "kb_type: '[[kb/types/tutorial]]'\n"
+            "kb_genre: '[[kb/genres/analysis]]'\n"
+            "kb_subjects: ['[[kb/topics/security]]']\n"
             "kb_created: 2026-09-03\n"
             "kb_status: draft\n"
             "---\n# 重复\n",
@@ -208,7 +208,7 @@ class ContentValidationTests(unittest.TestCase):
         result = validate_content(self.snapshot, self.vault)
 
         self.assertEqual(
-            [(Path(f"Content/{UUID_A}.md"), "content.property_cycle")],
+            [(Path(f"content/{UUID_A}.md"), "content.property_cycle")],
             [(issue.path, issue.code) for issue in result.issues],
         )
         self.assertEqual((UUID_B,), tuple(record.identifier for record in result.records))
@@ -244,13 +244,13 @@ class ContentValidationTests(unittest.TestCase):
 
         self._write_note(
             UUID_A,
-            kb_type=["[[KB/Types/tutorial]]"],
-            kb_genre="[[KB/Types/tutorial]]",
-            kb_form="[[KB/Genres/analysis]]",
+            kb_type=["[[kb/types/tutorial]]"],
+            kb_genre="[[kb/types/tutorial]]",
+            kb_form="[[kb/genres/analysis]]",
             kb_level="invent",
-            kb_subjects=["[[KB/Topics/old-topic]]"],
-            kb_entities=["[[KB/Topics/security]]"],
-            kb_references=["[[KB/Entities/obsidian]]"],
+            kb_subjects=["[[kb/topics/old-topic]]"],
+            kb_entities=["[[kb/topics/security]]"],
+            kb_references=["[[kb/entities/obsidian]]"],
         )
 
         result = validate_content(self.snapshot, self.vault)
@@ -265,13 +265,13 @@ class ContentValidationTests(unittest.TestCase):
         """Treating source as an untyped ID or accepting noncanonical links must fail this test."""
         from kb_obsidian.validation import validate_content
 
-        self._write_note(UUID_A, kb_source=f"[[Content/{UUID_B}|来源]]")
-        self._write_note(UUID_B, kb_source="[[KB/Entities/obsidian|Obsidian]]")
-        self._write_note(UUID_C, kb_source="[[KB/Topics/security|安全]]")
+        self._write_note(UUID_A, kb_source=f"[[content/{UUID_B}|来源]]")
+        self._write_note(UUID_B, kb_source="[[kb/entities/obsidian|Obsidian]]")
+        self._write_note(UUID_C, kb_source="[[kb/topics/security|安全]]")
 
         result = validate_content(self.snapshot, self.vault)
 
-        self.assertEqual([f"Content/{UUID_C}.md"], [issue.path.as_posix() for issue in result.issues])
+        self.assertEqual([f"content/{UUID_C}.md"], [issue.path.as_posix() for issue in result.issues])
         self.assertEqual("kb_source", result.issues[0].field)
         self.assertEqual((UUID_A, UUID_B), tuple(record.identifier for record in result.valid_records))
 
@@ -279,12 +279,12 @@ class ContentValidationTests(unittest.TestCase):
         """A path-resolvable target that is not canonical UUIDv4 must invalidate its referrer too."""
         from kb_obsidian.validation import validate_content
 
-        self._write_note(UUID_A, kb_source=f"[[Content/{UUID_V1}|旧身份]]")
+        self._write_note(UUID_A, kb_source=f"[[content/{UUID_V1}|旧身份]]")
         self._write_note(UUID_V1)
 
         result = validate_content(self.snapshot, self.vault)
 
-        source_issues = [issue for issue in result.issues if issue.path == Path(f"Content/{UUID_A}.md")]
+        source_issues = [issue for issue in result.issues if issue.path == Path(f"content/{UUID_A}.md")]
         self.assertEqual(["kb_source"], [issue.field for issue in source_issues])
         self.assertNotIn(UUID_A, {record.identifier for record in result.valid_records})
 
@@ -294,17 +294,17 @@ class ContentValidationTests(unittest.TestCase):
 
         self._write_note(
             UUID_A,
-            kb_source=f"[[Content/{UUID_B}|来源]]",
+            kb_source=f"[[content/{UUID_B}|来源]]",
             kb_status="deprecated",
-            kb_is_replaced_by=f"[[Content/{UUID_B}|替代]]",
-            kb_relation=[f"[[Content/{UUID_B}|相关]]"],
+            kb_is_replaced_by=f"[[content/{UUID_B}|替代]]",
+            kb_relation=[f"[[content/{UUID_B}|相关]]"],
         )
-        self._write_note(UUID_B, kb_relation=[f"[[Content/{UUID_A}|相关]]"])
+        self._write_note(UUID_B, kb_relation=[f"[[content/{UUID_A}|相关]]"])
         self._write_note(UUID_C, identifier=UUID_B)
 
         result = validate_content(self.snapshot, self.vault)
 
-        referrer_issues = [issue for issue in result.issues if issue.path == Path(f"Content/{UUID_A}.md")]
+        referrer_issues = [issue for issue in result.issues if issue.path == Path(f"content/{UUID_A}.md")]
         self.assertEqual(
             {"kb_source", "kb_is_replaced_by", "kb_relation"},
             {issue.field for issue in referrer_issues},
@@ -315,16 +315,16 @@ class ContentValidationTests(unittest.TestCase):
         """Scanning ordinary links as metadata would wrongly make an unclassified note valid."""
         from kb_obsidian.validation import validate_content
 
-        link_title = "[[KB/Topics/security]]"
+        link_title = "[[kb/topics/security]]"
         self._write_note(
             UUID_A,
             title=link_title,
             aliases=[link_title],
             omit={"kb_subjects"},
-            body="[[KB/Topics/security]]\n",
+            body="[[kb/topics/security]]\n",
         )
-        (self.vault / "Indexes").mkdir()
-        (self.vault / "Indexes" / "security.md").write_text("[[KB/Topics/security]]\n", encoding="utf-8")
+        (self.vault / "indexes").mkdir()
+        (self.vault / "indexes" / "security.md").write_text("[[kb/topics/security]]\n", encoding="utf-8")
 
         result = validate_content(self.snapshot, self.vault)
 
@@ -340,7 +340,7 @@ class ContentValidationTests(unittest.TestCase):
             kb_created="2026-02-30",
             kb_modified=["2026-09-03"],
             kb_status="active",
-            kb_is_replaced_by=f"[[Content/{UUID_B}]]",
+            kb_is_replaced_by=f"[[content/{UUID_B}]]",
         )
         self._write_note(UUID_B, kb_status="deprecated", body="")
 
@@ -356,14 +356,14 @@ class ContentValidationTests(unittest.TestCase):
         """A one-way controlled relation must report both affected records without auto-repair."""
         from kb_obsidian.validation import validate_content
 
-        self._write_note(UUID_A, kb_relation=[f"[[Content/{UUID_B}|B]]"])
+        self._write_note(UUID_A, kb_relation=[f"[[content/{UUID_B}|B]]"])
         self._write_note(UUID_B)
 
         result = validate_content(self.snapshot, self.vault)
 
         reciprocal = [issue for issue in result.issues if issue.code == "content.relation_not_reciprocal"]
         self.assertEqual(
-            [f"Content/{UUID_A}.md", f"Content/{UUID_B}.md"],
+            [f"content/{UUID_A}.md", f"content/{UUID_B}.md"],
             [issue.path.as_posix() for issue in reciprocal],
         )
         self.assertEqual((), result.valid_records)
@@ -379,7 +379,7 @@ class ContentValidationTests(unittest.TestCase):
         result = validate_content(self.snapshot, self.vault)
 
         duplicate_paths = [issue.path.as_posix() for issue in result.issues if issue.code == "content.duplicate_id"]
-        self.assertEqual([f"Content/{UUID_A}.md", f"Content/{UUID_B}.md"], duplicate_paths)
+        self.assertEqual([f"content/{UUID_A}.md", f"content/{UUID_B}.md"], duplicate_paths)
         self.assertEqual(
             list(result.issues),
             sorted(result.issues, key=lambda issue: (issue.path.as_posix(), issue.field, issue.code, issue.message)),
@@ -393,8 +393,8 @@ class ContentValidationTests(unittest.TestCase):
         self._write_note(
             UUID_A,
             kb_entities=[
-                "[[KB/Entities/z-missing|Z]]",
-                "[[KB/Entities/a-missing|A]]",
+                "[[kb/entities/z-missing|Z]]",
+                "[[kb/entities/a-missing|A]]",
             ],
         )
 
@@ -415,11 +415,11 @@ class ContentValidationTests(unittest.TestCase):
         from kb_obsidian.validation import validate_content
 
         self._write_note(UUID_A)
-        nested = self.vault / "Content" / "nested"
+        nested = self.vault / "content" / "nested"
         nested.mkdir()
         (nested / "not-content.md").write_text("not a content unit\n", encoding="utf-8")
-        (self.vault / "Content" / "ignored.txt").write_text("not markdown\n", encoding="utf-8")
-        (self.vault / "Home.md").write_text("# Home\n", encoding="utf-8")
+        (self.vault / "content" / "ignored.txt").write_text("not markdown\n", encoding="utf-8")
+        (self.vault / "home.md").write_text("# Home\n", encoding="utf-8")
         before = self._all_file_bytes()
 
         result = validate_content(self.snapshot, self.vault)
@@ -444,9 +444,9 @@ class ContentValidationTests(unittest.TestCase):
             "kb_id": identifier or filename,
             "title": title,
             "aliases": [title] if aliases is None else aliases,
-            "kb_type": "[[KB/Types/tutorial|教程]]",
-            "kb_genre": "[[KB/Genres/analysis|分析]]",
-            "kb_subjects": ["[[KB/Topics/security|安全]]"],
+            "kb_type": "[[kb/types/tutorial|教程]]",
+            "kb_genre": "[[kb/genres/analysis|分析]]",
+            "kb_subjects": ["[[kb/topics/security|安全]]"],
             "kb_created": "2026-09-03",
             "kb_status": "draft",
         }
@@ -456,7 +456,7 @@ class ContentValidationTests(unittest.TestCase):
         frontmatter = yaml.safe_dump(properties, allow_unicode=True, sort_keys=False)
         rendered_heading = title if heading is None else heading
         heading_text = f"# {rendered_heading}\n" if rendered_heading else ""
-        path = self.vault / "Content" / f"{filename}.md"
+        path = self.vault / "content" / f"{filename}.md"
         path.write_text(f"---\n{frontmatter}---\n{heading_text}{body}", encoding="utf-8")
         return path
 

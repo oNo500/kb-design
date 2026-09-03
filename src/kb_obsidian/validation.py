@@ -22,12 +22,12 @@ _STATUSES = frozenset({"draft", "active", "deprecated"})
 _REFERENCE_KINDS = frozenset({"standard", "publication"})
 _LINK = re.compile(r"^\[\[([^\[\]|#^\r\n]+)(?:\|([^\[\]\r\n]+))?\]\]$")
 _TARGET_PREFIXES = {
-    "type": "KB/Types/",
-    "genre": "KB/Genres/",
-    "form": "KB/Forms/",
-    "topic": "KB/Topics/",
-    "entity": "KB/Entities/",
-    "content": "Content/",
+    "type": "kb/types/",
+    "genre": "kb/genres/",
+    "form": "kb/forms/",
+    "topic": "kb/topics/",
+    "entity": "kb/entities/",
+    "content": "content/",
 }
 
 
@@ -237,7 +237,7 @@ def _validate_identity(record: ContentRecord, heading: Optional[str], issues: li
         if not _is_canonical_uuid4(identifier):
             _add(issues, record, "content.invalid_id", "kb_id", "kb_id must be canonical lowercase UUIDv4")
         if record.path.stem != identifier:
-            _add(issues, record, "content.path_mismatch", "kb_id", "Content filename stem must equal kb_id")
+            _add(issues, record, "content.path_mismatch", "kb_id", "content filename stem must equal kb_id")
 
     title = record.properties.get("title")
     aliases = record.properties.get("aliases")
@@ -274,7 +274,7 @@ def _validate_content_targets(
                 record,
                 "content.reference_kind",
                 field,
-                "property must use an exact Content/<UUIDv4> Wikilink",
+                "property must use an exact content/<UUIDv4> Wikilink",
             )
             return None
         if not _is_canonical_uuid4(parsed[1]):
@@ -286,7 +286,7 @@ def _validate_content_targets(
                 f"content target is not a canonical UUIDv4: {parsed[1]}",
             )
             return None
-        target_path = f"Content/{parsed[1]}.md"
+        target_path = f"content/{parsed[1]}.md"
         target = by_path.get(target_path)
         if target is None:
             _add(issues, record, "content.reference_missing", field, f"content target does not exist: {parsed[1]}")
@@ -367,9 +367,9 @@ def _validate_content_targets(
 
 
 def _validate_content_tree(snapshot: DesignSnapshot, content_root: Path) -> ValidationResult:
-    """Validate one Content directory without asserting that its parent is a complete vault."""
+    """Validate one content directory without asserting that its parent is a complete vault."""
     if content_root.is_symlink() or not content_root.is_dir():
-        raise ApplicationError(f"vault Content directory is missing or unsafe: {content_root}")
+        raise ApplicationError(f"vault content directory is missing or unsafe: {content_root}")
 
     topics = _entries(snapshot, "topics", "concepts")
     entities = _entries(snapshot, "entities", "entities")
@@ -384,7 +384,7 @@ def _validate_content_tree(snapshot: DesignSnapshot, content_root: Path) -> Vali
     except OSError as exc:
         raise ApplicationError(f"cannot inspect vault content: {exc}") from exc
     for path in paths:
-        relative_path = Path("Content") / path.name
+        relative_path = Path("content") / path.name
         parsed = _parse_content(path, relative_path)
         parsed_files.append(parsed)
         issues.extend(Issue(issue.code, relative_path, issue.field, issue.message) for issue in parsed.issues)
@@ -426,7 +426,7 @@ def _validate_content_tree(snapshot: DesignSnapshot, content_root: Path) -> Vali
                     record,
                     "content.reference_kind",
                     "kb_source",
-                    "kb_source must be an exact Content or KB/Entities Wikilink",
+                    "kb_source must be an exact content or kb/entities Wikilink",
                 )
             elif parsed_source[0] == "entity" and parsed_source[1] not in entities:
                 _add(
@@ -488,6 +488,6 @@ def _validate_content_tree(snapshot: DesignSnapshot, content_root: Path) -> Vali
 
 
 def validate_content(snapshot: DesignSnapshot, vault: Path) -> ValidationResult:
-    """Verify a vault binding, then read and validate direct ``Content/*.md`` children."""
+    """Verify a vault binding, then read and validate direct ``content/*.md`` children."""
     root = verify_vault(snapshot, vault)
-    return _validate_content_tree(snapshot, root / "Content")
+    return _validate_content_tree(snapshot, root / "content")

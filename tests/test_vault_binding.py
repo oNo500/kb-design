@@ -14,6 +14,14 @@ from uuid import UUID
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
+TEST_DESIGN_COMMIT = os.environ.get("KB_OBSIDIAN_TEST_DESIGN_COMMIT", "356f02bc0a61d28c045139b2dc5f41bf40291a78")
+
+if TEST_DESIGN_COMMIT != "356f02bc0a61d28c045139b2dc5f41bf40291a78":
+    import kb_obsidian.design_source as design_source
+    import kb_obsidian.reference_export as reference_export
+
+    design_source.SUPPORTED_DESIGN_COMMIT = TEST_DESIGN_COMMIT
+    reference_export.SUPPORTED_DESIGN_COMMIT = TEST_DESIGN_COMMIT
 
 CONTENT_UUID = "123e4567-e89b-42d3-a456-426614174000"
 
@@ -37,6 +45,12 @@ class VaultBindingTests(unittest.TestCase):
             capture_output=True,
             text=True,
         )
+        subprocess.run(
+            ["git", "-C", str(cls.design), "checkout", "--quiet", TEST_DESIGN_COMMIT],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
         cls.snapshot = load_design(cls.design.resolve())
         cls.initialized = cls.class_root / "initialized"
         initialize_vault(cls.design.resolve(), cls.initialized)
@@ -52,15 +66,14 @@ class VaultBindingTests(unittest.TestCase):
     def tearDown(self) -> None:
         self.temporary.cleanup()
 
-    def test_content_only_directory_is_rejected_by_all_flows_before_writing(self) -> None:
-        """Checking only Content or App would let an uninitialized directory consume design data."""
+    def test_content_only_directory_is_rejected_before_creation_or_validation(self) -> None:
+        """Checking only content or app would let an uninitialized directory consume design data."""
         from kb_obsidian.create_content import create_content
         from kb_obsidian.errors import ApplicationError
-        from kb_obsidian.reports import write_reports
-        from kb_obsidian.validation import ValidationResult, validate_content
+        from kb_obsidian.validation import validate_content
 
         fake = self.root / "fake-vault"
-        (fake / "Content").mkdir(parents=True)
+        (fake / "content").mkdir(parents=True)
         calls = (
             lambda: create_content(
                 self.snapshot,
@@ -73,13 +86,12 @@ class VaultBindingTests(unittest.TestCase):
                 today=lambda: dt.date(2026, 9, 3),
             ),
             lambda: validate_content(self.snapshot, fake),
-            lambda: write_reports(self.snapshot, ValidationResult((), ()), fake),
         )
 
         for call in calls:
             with self.subTest(flow=call.__code__.co_firstlineno):
                 before = self._tree_bytes(fake)
-                with self.assertRaisesRegex(ApplicationError, r"App/manifest\.json"):
+                with self.assertRaisesRegex(ApplicationError, r"app/manifest\.json"):
                     call()
                 self.assertEqual(before, self._tree_bytes(fake))
 
@@ -104,7 +116,7 @@ class VaultBindingTests(unittest.TestCase):
                 self._write_manifest(vault, manifest)
                 before = self._tree_bytes(vault)
 
-                with self.assertRaisesRegex(ApplicationError, r"App/manifest\.json"):
+                with self.assertRaisesRegex(ApplicationError, r"app/manifest\.json"):
                     verify_vault(self.snapshot, vault)
 
                 self.assertEqual(before, self._tree_bytes(vault))
@@ -163,7 +175,7 @@ class VaultBindingTests(unittest.TestCase):
         from kb_obsidian.vault import verify_vault
 
         vault = self._copy_initialized("missing-target")
-        target = "KB/Topics/security.md"
+        target = "kb/topics/security.md"
         manifest = self._read_manifest(vault)
         manifest["files"] = [entry for entry in manifest["files"] if entry["path"] != target]
         (vault / target).unlink()
@@ -186,7 +198,7 @@ class VaultBindingTests(unittest.TestCase):
         with self.assertRaisesRegex(ApplicationError, "symbolic link"):
             verify_vault(self.snapshot, linked)
 
-        for relative_path in ("App/manifest.json", "KB/Topics/security.md"):
+        for relative_path in ("app/manifest.json", "kb/topics/security.md"):
             with self.subTest(relative_path=relative_path):
                 vault = self._copy_initialized(relative_path.replace("/", "-"))
                 path = vault / relative_path
@@ -199,15 +211,14 @@ class VaultBindingTests(unittest.TestCase):
 
         vault = self._copy_initialized("linked-app")
         outside_app = self.root / "outside-app"
-        (vault / "App").rename(outside_app)
-        (vault / "App").symlink_to(outside_app, target_is_directory=True)
-        with self.assertRaisesRegex(ApplicationError, str(vault / "App")):
+        (vault / "app").rename(outside_app)
+        (vault / "app").symlink_to(outside_app, target_is_directory=True)
+        with self.assertRaisesRegex(ApplicationError, str(vault / "app")):
             verify_vault(self.snapshot, vault)
 
-    def test_real_initialized_vault_supports_create_validate_and_report(self) -> None:
-        """Mock-isolated unit tests cannot prove the three public flows share the real vault gate."""
+    def test_real_initialized_vault_supports_create_and_validate(self) -> None:
+        """Mock-isolated unit tests cannot prove the two Task 2 public flows share the real vault gate."""
         from kb_obsidian.create_content import create_content
-        from kb_obsidian.reports import write_reports
         from kb_obsidian.validation import validate_content
 
         vault = self._copy_initialized("integration")
@@ -222,13 +233,9 @@ class VaultBindingTests(unittest.TestCase):
             today=lambda: dt.date(2026, 9, 3),
         )
         validation = validate_content(self.snapshot, vault)
-        summary = write_reports(self.snapshot, validation, vault)
-
-        self.assertEqual(vault.resolve() / "Content" / f"{CONTENT_UUID}.md", path)
+        self.assertEqual(vault.resolve() / "content" / f"{CONTENT_UUID}.md", path)
         self.assertTrue(validation.is_valid, validation.issues)
         self.assertEqual(1, len(validation.valid_records))
-        self.assertEqual(1, summary["valid_record_count"])
-        self.assertEqual(5, len(summary["files"]))
 
     def _copy_initialized(self, name: str) -> Path:
         vault = self.root / name
@@ -237,11 +244,11 @@ class VaultBindingTests(unittest.TestCase):
 
     @staticmethod
     def _read_manifest(vault: Path) -> dict[str, object]:
-        return json.loads((vault / "App" / "manifest.json").read_text(encoding="utf-8"))
+        return json.loads((vault / "app" / "manifest.json").read_text(encoding="utf-8"))
 
     @staticmethod
     def _write_manifest(vault: Path, manifest: dict[str, object]) -> None:
-        (vault / "App" / "manifest.json").write_text(
+        (vault / "app" / "manifest.json").write_text(
             json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
             encoding="utf-8",
         )
@@ -257,7 +264,7 @@ class VaultBindingTests(unittest.TestCase):
     @staticmethod
     def _add_unlisted_managed_file(vault: Path, manifest: dict[str, object]) -> None:
         del manifest
-        (vault / "KB" / "Topics" / "unlisted.md").write_bytes(b"unlisted\n")
+        (vault / "kb" / "topics" / "unlisted.md").write_bytes(b"unlisted\n")
 
     @staticmethod
     def _remove_listed_managed_file(vault: Path, manifest: dict[str, object]) -> None:

@@ -12,6 +12,14 @@ import yaml
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
+TEST_DESIGN_COMMIT = os.environ.get("KB_OBSIDIAN_TEST_DESIGN_COMMIT", "356f02bc0a61d28c045139b2dc5f41bf40291a78")
+
+if TEST_DESIGN_COMMIT != "356f02bc0a61d28c045139b2dc5f41bf40291a78":
+    import kb_obsidian.design_source as design_source
+    import kb_obsidian.reference_export as reference_export
+
+    design_source.SUPPORTED_DESIGN_COMMIT = TEST_DESIGN_COMMIT
+    reference_export.SUPPORTED_DESIGN_COMMIT = TEST_DESIGN_COMMIT
 
 
 class VaultInitializationTests(unittest.TestCase):
@@ -25,6 +33,12 @@ class VaultInitializationTests(unittest.TestCase):
         cls.design = Path(cls.design_temporary.name) / "design"
         subprocess.run(
             ["git", "clone", "--quiet", "--shared", str(cls.design_root), str(cls.design)],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        subprocess.run(
+            ["git", "-C", str(cls.design), "checkout", "--quiet", TEST_DESIGN_COMMIT],
             check=True,
             capture_output=True,
             text=True,
@@ -90,34 +104,42 @@ class VaultInitializationTests(unittest.TestCase):
 
         summary = initialize_vault(self.design.resolve(), self.target)
 
-        self.assertEqual("356f02bc0a61d28c045139b2dc5f41bf40291a78", summary["design_commit"])
+        self.assertEqual(TEST_DESIGN_COMMIT, summary["design_commit"])
         self.assertEqual(6, len(summary["input_hashes"]))
-        self.assertTrue((self.target / "Home.md").is_file())
+        self.assertEqual(
+            {
+                "home.md", "inbox", "sources", "content", "indexes",
+                "attachments", "kb", "app", ".obsidian",
+            },
+            {path.name for path in self.target.iterdir()},
+        )
+        self.assertTrue((self.target / "home.md").is_file())
         for relative_path in (
-            "Inbox",
-            "Sources/Clippings",
-            "Sources/References",
-            "Sources/Files",
-            "Content",
-            "Indexes",
-            "Attachments",
-            "App/Reports",
+            "inbox",
+            "sources/clippings",
+            "sources/references",
+            "sources/files",
+            "content",
+            "indexes",
+            "attachments",
+            "app/reports",
         ):
             self.assertTrue((self.target / relative_path).is_dir(), relative_path)
 
-        manifest_path = self.target / "App" / "manifest.json"
+        manifest_path = self.target / "app" / "manifest.json"
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         entries = {entry["path"]: entry for entry in manifest["files"]}
         managed_files = {
             path.relative_to(self.target).as_posix()
-            for root in (self.target / "KB", self.target / "App" / "Templates", self.target / "App" / "Views", self.target / "App" / "Rules")
+            for root in (self.target / "kb", self.target / "app" / "templates", self.target / "app" / "views", self.target / "app" / "rules")
             for path in root.rglob("*")
             if path.is_file()
         }
         self.assertEqual(managed_files, set(entries))
-        self.assertNotIn("Home.md", entries)
-        self.assertFalse(any(path.startswith("App/Reports/") for path in entries))
+        self.assertNotIn("home.md", entries)
+        self.assertFalse(any(path.startswith("app/reports/") for path in entries))
         self.assertFalse(any(path.startswith(".obsidian/") for path in entries))
+        self.assertFalse(any(path.startswith(("KB/", "App/")) for path in entries))
         self.assertEqual(set(summary["managed_files"]), set(entries))
         for relative_path, entry in entries.items():
             content = (self.target / relative_path).read_bytes()
@@ -129,14 +151,14 @@ class VaultInitializationTests(unittest.TestCase):
         from kb_obsidian.vault import initialize_vault
 
         initialize_vault(self.design.resolve(), self.target)
-        bases = sorted((self.target / "App" / "Views").glob("*.base"))
+        bases = sorted((self.target / "app" / "views").glob("*.base"))
         self.assertGreaterEqual(len(bases), 8)
         for path in bases:
             document = yaml.safe_load(path.read_text(encoding="utf-8"))
             expressions = self._filter_expressions(document["filters"])
             self.assertTrue(any(expression.startswith('file.inFolder("') for expression in expressions), path)
             self.assertIn('file.ext == "md"', expressions, path)
-        drafts = yaml.safe_load((self.target / "App" / "Views" / "drafts.base").read_text(encoding="utf-8"))
+        drafts = yaml.safe_load((self.target / "app" / "views" / "drafts.base").read_text(encoding="utf-8"))
         self.assertIn('kb_status == "draft"', self._filter_expressions(drafts["filters"]))
 
     def test_registers_only_actual_content_and_formal_property_bindings(self) -> None:
@@ -192,15 +214,22 @@ class VaultInitializationTests(unittest.TestCase):
         from kb_obsidian.vault import initialize_vault
 
         initialize_vault(self.design.resolve(), self.target)
-        home = (self.target / "Home.md").read_text(encoding="utf-8")
+        home = (self.target / "home.md").read_text(encoding="utf-8")
         targets = [
             link.split("]]", 1)[0].split("|", 1)[0].split("#", 1)[0]
             for link in home.split("[[")[1:]
         ]
         self.assertGreaterEqual(len(targets), 10)
         for target in targets:
-            self.assertTrue((self.target / target).is_file(), target)
-        self.assertTrue((self.target / "App" / "Reports" / "README.md").is_file())
+            target_path = self.target / target
+            self.assertTrue(
+                target_path.is_file() or target_path.with_suffix(".md").is_file(),
+                target,
+            )
+        self.assertTrue((self.target / "app" / "reports" / "index.md").is_file())
+        self.assertTrue(all(target.startswith(("app/", "kb/")) for target in targets))
+        self.assertEqual({"attachmentFolderPath": "attachments", "alwaysUpdateLinks": True}, json.loads((self.target / ".obsidian" / "app.json").read_text(encoding="utf-8")))
+        self.assertEqual({"folder": "app/templates"}, json.loads((self.target / ".obsidian" / "templates.json").read_text(encoding="utf-8")))
 
     @staticmethod
     def _filter_expressions(value: object) -> list[str]:

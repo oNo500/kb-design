@@ -21,13 +21,8 @@ from .errors import ApplicationError
 _SHA256 = re.compile(r"^[0-9a-f]{64}$")
 _IDENTIFIER = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 _DIRECTORY_KINDS = {
-    "Topics": "topic",
-    "Arrays": "array",
-    "Entities": "entity",
-    "Sources": "source",
-    "Types": "type",
-    "Genres": "genre",
-    "Forms": "form",
+    "topics": "topic", "arrays": "array", "entities": "entity", "sources": "source",
+    "types": "type", "genres": "genre", "forms": "form",
 }
 
 
@@ -106,11 +101,11 @@ def _manifest_identity(relative_path: str) -> tuple[str, str]:
         or ".." in path.parts
     ):
         raise ApplicationError(f"unsafe manifest file path: {relative_path}")
-    if relative_path == "README.md":
+    if relative_path == "index.md":
         return "index", path.stem
-    if path.suffix == ".base" and path.parts[:2] == ("KB", "Views") and len(path.parts) == 3:
+    if path.suffix == ".base" and path.parts[:2] == ("kb", "views") and len(path.parts) == 3:
         return "base", path.stem
-    if len(path.parts) == 3 and path.parts[0] == "KB" and path.suffix == ".md":
+    if len(path.parts) == 3 and path.parts[0] == "kb" and path.suffix == ".md":
         kind = _DIRECTORY_KINDS.get(path.parts[1])
         if kind is not None and _IDENTIFIER.fullmatch(path.stem):
             return kind, path.stem
@@ -242,7 +237,7 @@ def _run_exporter(exporter: Path, root: Path, output: Path) -> None:
 
 
 def export_reference(snapshot: DesignSnapshot, output: Path) -> Mapping[str, object]:
-    """Run, verify, and atomically publish only the upstream ``KB/`` tree."""
+    """Run, verify, and atomically publish only the upstream ``kb/`` tree."""
     destination = _output_destination(output)
     _require_publishable_output(destination)
     exporter, exporter_hash = _verify_snapshot_source(snapshot)
@@ -259,21 +254,21 @@ def export_reference(snapshot: DesignSnapshot, output: Path) -> Mapping[str, obj
 
         manifest = _read_manifest(upstream_output)
         _verify_manifest(manifest, upstream_output, snapshot, exporter_hash)
-        source_tree = upstream_output / "KB"
+        source_tree = upstream_output / "kb"
         if not source_tree.is_dir() or source_tree.is_symlink():
-            raise ApplicationError("reference export does not contain a KB tree")
+            raise ApplicationError("reference export does not contain a kb tree")
         published = temporary / "published"
         published.mkdir()
         try:
-            shutil.copytree(source_tree, published / "KB")
+            shutil.copytree(source_tree, published / "kb")
         except OSError as exc:
-            raise ApplicationError(f"cannot publish verified KB tree: {exc}") from exc
+            raise ApplicationError(f"cannot publish verified kb tree: {exc}") from exc
 
         _require_publishable_output(destination)
         try:
             os.replace(published, destination)
         except OSError as exc:
-            raise ApplicationError(f"cannot publish verified KB tree: {exc}") from exc
+            raise ApplicationError(f"cannot publish verified kb tree: {exc}") from exc
     finally:
         shutil.rmtree(temporary, ignore_errors=True)
 

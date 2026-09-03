@@ -6,11 +6,11 @@
 
 ## 写集边界
 
-用户写集包含 `Home.md`、`Inbox/`、`Sources/`、`Content/`、`Indexes/` 和 `Attachments/`。受管理写集包含 `KB/`、`App/Templates/`、`App/Views/`、`App/Rules/` 和 `App/manifest.json`。报告写集只包含 `App/Reports/`。`.obsidian/` 是配置边界。应用必须保持这些写集和边界分离，不得把管理文件、报告或配置当作用户内容。
+用户写集包含 `home.md`、`inbox/`、`sources/`、`content/`、`indexes/` 和 `attachments/`。受管理写集包含 `kb/`、`app/templates/`、`app/views/`、`app/rules/` 和 `app/manifest.json`。报告写集只包含 `app/reports/`。`.obsidian/` 是配置边界。应用必须保持这些写集和边界分离，不得把管理文件、报告或配置当作用户内容。
 
 ## 内容契约
 
-新内容使用无前缀、小写、标准连字符的 UUIDv4 作为稳定标识，并写入 `Content/<UUIDv4>.md`。`title` 同时进入一级标题、`title` Text property 和 `aliases` 中恰好一个派生值。人的检索依赖 title 与 alias 等元数据，不依赖 UUID 文件名。
+新内容使用无前缀、小写、标准连字符的 UUIDv4 作为稳定标识，并写入 `content/<UUIDv4>.md`。`title` 同时进入一级标题、`title` Text property 和 `aliases` 中恰好一个派生值。人的检索依赖 title 与 alias 等元数据，不依赖 UUID 文件名。
 
 ## 回流边界
 

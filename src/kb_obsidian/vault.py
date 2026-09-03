@@ -23,20 +23,20 @@ from .render import render_frontmatter
 
 
 _USER_DIRECTORIES = (
-    "Inbox",
-    "Sources/Clippings",
-    "Sources/References",
-    "Sources/Files",
-    "Content",
-    "Indexes",
-    "Attachments",
-    "App/Reports",
+    "inbox",
+    "sources/clippings",
+    "sources/references",
+    "sources/files",
+    "content",
+    "indexes",
+    "attachments",
+    "app/reports",
 )
 _MANAGED_PREFIXES = {
-    "KB/": "reference",
-    "App/Templates/": "template",
-    "App/Views/": "view",
-    "App/Rules/": "rule",
+    "kb/": "reference",
+    "app/templates/": "template",
+    "app/views/": "view",
+    "app/rules/": "rule",
 }
 _CORE_PLUGINS = {
     "file-explorer": True,
@@ -54,8 +54,8 @@ _CORE_PLUGINS = {
     "bookmarks": True,
     "bases": True,
 }
-_APP_CONFIG = {"attachmentFolderPath": "Attachments", "alwaysUpdateLinks": True}
-_TEMPLATES_CONFIG = {"folder": "App/Templates"}
+_APP_CONFIG = {"attachmentFolderPath": "attachments", "alwaysUpdateLinks": True}
+_TEMPLATES_CONFIG = {"folder": "app/templates"}
 _TYPES_CONFIG = {
     "types": {
         "aliases": "aliases",
@@ -102,13 +102,13 @@ _WIKILINK = re.compile(r"\[\[([^|#\]]+)(?:#[^|\]]+)?(?:\|[^\]]+)?\]\]")
 _SHA256 = re.compile(r"^[0-9a-f]{64}$")
 _MANIFEST_KEYS = {"schema", "schema_version", "app_version", "design_commit", "inputs", "files"}
 _FORMAL_TARGETS = (
-    ("topics", "concepts", "KB/Topics"),
-    ("topics", "arrays", "KB/Arrays"),
-    ("entities", "entities", "KB/Entities"),
-    ("sources", "sources", "KB/Sources"),
-    ("types", "types", "KB/Types"),
-    ("genres", "genres", "KB/Genres"),
-    ("forms", "forms", "KB/Forms"),
+    ("topics", "concepts", "kb/topics"),
+    ("topics", "arrays", "kb/arrays"),
+    ("entities", "entities", "kb/entities"),
+    ("sources", "sources", "kb/sources"),
+    ("types", "types", "kb/types"),
+    ("genres", "genres", "kb/genres"),
+    ("forms", "forms", "kb/forms"),
 )
 
 
@@ -306,22 +306,22 @@ def _home_bytes() -> bytes:
         render_frontmatter({"aliases": ["主页"], "tags": ["home"]})
         + "# 主页\n\n"
         + "## 资料与内容\n\n"
-        + "- [[App/Views/inbox.base|Inbox]]\n"
-        + "- [[App/Views/sources.base|外部资料]]\n"
-        + "- [[App/Views/content.base|全部内容]]\n"
-        + "- [[App/Views/drafts.base|草稿内容]]\n"
-        + "- [[App/Views/recently-modified.base|最近修改]]\n"
-        + "- [[App/Views/indexes.base|人工索引]]\n\n"
+        + "- [[app/views/inbox.base|Inbox]]\n"
+        + "- [[app/views/sources.base|外部资料]]\n"
+        + "- [[app/views/content.base|全部内容]]\n"
+        + "- [[app/views/drafts.base|草稿内容]]\n"
+        + "- [[app/views/recently-modified.base|最近修改]]\n"
+        + "- [[app/views/indexes.base|人工索引]]\n\n"
         + "## 受管理入口\n\n"
-        + "- [[KB/Views/Topics.base|正式主题]]\n"
-        + "- [[KB/Views/Entities.base|实体]]\n"
-        + "- [[KB/Views/Sources.base|来源用途]]\n"
-        + "- [[App/Reports/README.md|维护报告]]\n"
-        + "- [[App/Rules/README.md|应用规则]]\n"
+        + "- [[kb/views/topics.base|正式主题]]\n"
+        + "- [[kb/views/entities.base|实体]]\n"
+        + "- [[kb/views/sources.base|来源用途]]\n"
+        + "- [[app/reports/index|维护报告]]\n"
+        + "- [[app/rules/index|应用规则]]\n"
     ).encode("utf-8")
 
 
-def _reports_readme_bytes() -> bytes:
+def _reports_index_bytes() -> bytes:
     return "# 维护报告\n\n此目录保存从内容读取后生成的派生诊断结果。\n".encode("utf-8")
 
 
@@ -376,14 +376,14 @@ def _managed_files_on_disk(root: Path) -> dict[str, bytes]:
 def verify_vault(snapshot: DesignSnapshot, vault: Path) -> Path:
     """Verify that an initialized vault is bound to ``snapshot`` without changing bytes."""
     root = _vault_root(snapshot, vault)
-    app_root = root / "App"
+    app_root = root / "app"
     if app_root.is_symlink():
         raise ApplicationError(f"vault managed directory is unsafe: {app_root}")
-    content_root = root / "Content"
+    content_root = root / "content"
     if content_root.is_symlink() or not content_root.is_dir():
-        raise ApplicationError(f"vault Content directory is missing or unsafe: {content_root}")
+        raise ApplicationError(f"vault content directory is missing or unsafe: {content_root}")
 
-    manifest_path = root / "App" / "manifest.json"
+    manifest_path = root / "app" / "manifest.json"
     if manifest_path.is_symlink():
         raise ApplicationError(f"vault manifest is a symbolic link: {manifest_path}")
     manifest = _read_json(manifest_path)
@@ -452,6 +452,8 @@ def _verify_home_links(root: Path, home_text: str) -> None:
         if path.is_absolute() or ".." in path.parts:
             raise ApplicationError(f"Home has an unsafe internal link: {target}")
         destination = root.joinpath(*path.parts)
+        if not path.suffix:
+            destination = destination.with_suffix(".md")
         if not destination.is_file() or destination.is_symlink():
             raise ApplicationError(f"Home link target is missing: {target}")
 
@@ -460,15 +462,15 @@ def _verify_staged_vault(root: Path, snapshot: DesignSnapshot, expected_manifest
     for relative_path in _USER_DIRECTORIES:
         if not (root / relative_path).is_dir():
             raise ApplicationError(f"user directory is missing: {relative_path}")
-    home = root / "Home.md"
+    home = root / "home.md"
     if not home.is_file():
         raise ApplicationError("Home is missing a required entry link")
     home_text = home.read_text(encoding="utf-8")
     _verify_home_links(root, home_text)
     _read_frontmatter(home)
-    for template in (root / "App" / "Templates").glob("*.md"):
+    for template in (root / "app" / "templates").glob("*.md"):
         _read_frontmatter(template)
-    for view in (root / "App" / "Views").glob("*.base"):
+    for view in (root / "app" / "views").glob("*.base"):
         try:
             document = yaml.safe_load(view.read_text(encoding="utf-8"))
             if not isinstance(document, Mapping):
@@ -489,7 +491,7 @@ def _verify_staged_vault(root: Path, snapshot: DesignSnapshot, expected_manifest
     if _read_json(root / ".obsidian" / "core-plugins.json") != _CORE_PLUGINS:
         raise ApplicationError("generated core plugin configuration differs from the required configuration")
 
-    actual_manifest = _read_json(root / "App" / "manifest.json")
+    actual_manifest = _read_json(root / "app" / "manifest.json")
     if actual_manifest != expected_manifest:
         raise ApplicationError("generated manifest differs from its expected contents")
     verify_vault(snapshot, root)
@@ -523,11 +525,11 @@ def initialize_vault(design_root: Path, target: Path) -> Mapping[str, object]:
         _write_files(staged_vault, managed_files)
         for relative_path in _USER_DIRECTORIES:
             (staged_vault / relative_path).mkdir(parents=True, exist_ok=True)
-        (staged_vault / "Home.md").write_bytes(_home_bytes())
-        (staged_vault / "App" / "Reports" / "README.md").write_bytes(_reports_readme_bytes())
+        (staged_vault / "home.md").write_bytes(_home_bytes())
+        (staged_vault / "app" / "reports" / "index.md").write_bytes(_reports_index_bytes())
         _write_configuration(staged_vault)
         manifest = _manifest(snapshot, managed_files)
-        _write_files(staged_vault, {"App/manifest.json": _json_bytes(manifest)})
+        _write_files(staged_vault, {"app/manifest.json": _json_bytes(manifest)})
         _verify_staged_vault(staged_vault, snapshot, manifest)
         _require_empty_target(destination)
         try:
