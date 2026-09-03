@@ -4,11 +4,13 @@
 
 本规格记录 Obsidian 原生命令行接口作为终端中 AI 的应用入口。它是待人审阅的实施规格，不修改现行正式设计，不使新的消费者、回流、自动分类或写入权限生效。
 
+文件合同已将项目控制路径统一为小写 kebab-case。终端访问只消费这一合同；历史 vault 的旧路径不能作为新生成物的兼容输入。持久 vault 的切换、根 `AGENTS.md` 的建立与终端规格的正式生效仍各自需要书面审阅，不因本规格同步而自动发生。
+
 ## 问题范围
 
-`kb-vault` 已经包含正式词表表示、用户内容区、应用视图和报告，但现行设计没有规定终端中的 AI 怎样快速查找正式主题、读取概念上下文并管理用户内容。若每次直接扫描全部 Markdown，AI 会消耗不必要的上下文；若直接使用文件系统写入，又可能绕过 UUID、必填字段、受控引用、manifest 和决策权。
+`kb-vault` 包含正式词表表示、用户内容区、应用视图和报告。终端中的 AI 需要快速查找正式主题、读取概念上下文并管理授权的用户内容；直接扫描全部 Markdown 会消耗不必要的上下文，直接以文件系统写入又会绕过 UUID、必填字段、受控引用、manifest 和决策权。
 
-目标是复用 Obsidian 已提供并在本机运行的 CLI，不建立第二套检索引擎、索引格式或远程接口。
+目标是复用 Obsidian 已提供并在本机运行的 CLI，不建立第二套检索引擎、索引格式或远程接口。项目路径、内部链接和报告表示以 [文件合同修正](2026-09-03-obsidian-file-contract-repair-design.md) 为准。
 
 ## 依据边界
 
@@ -18,10 +20,12 @@
 
 - `obsidian version` 返回 `1.13.7 (installer 1.13.7)`；
 - `obsidian vaults verbose` 正确登记 `kb-vault` 及其绝对路径；
-- `files folder=KB/Topics total` 返回 700；
-- `search:context query="向量" path=KB/Topics limit=5 format=json` 同时命中文件名、property 和正文范围；
+- 主题目录的 `files` 返回 700；
+- `search:context` 同时命中文件名、property 和正文范围；
 - `read`、`property:read`、`backlinks` 与 `base:query` 返回可解析结果；
 - 100 次上下文搜索的中位数为 6.6 ms、P95 为 8.8 ms；100 次单文件读取的中位数为 4.5 ms、P95 为 5.3 ms；五次 700 行 Base 查询的中位数为 15.7 ms，但一次输出约 167 KB。
+
+这些观察证明已运行 Obsidian 的 CLI 协议和本机热路径；它们不证明历史 vault 已符合本次小写文件合同。候选 vault 必须以 `kb/topics/`、`content/`、`app/` 和报告分层重新验收。
 
 一次无超时的长混合基准出现单次 `read` 挂起，后续 200 次带 2 秒超时的搜索和读取没有复现。因此上述数字只证明应用已运行且 vault 已加载时的本机热路径，不证明冷启动、其他平台、并发或无限等待安全。
 
@@ -42,7 +46,7 @@ Obsidian CLI 是终端 AI 的首选读取、搜索和 Obsidian 状态接口。`k
 | 普通用户材料 | Obsidian CLI | 只在授权的用户写集建立或追加，不取得正式内容身份 |
 | 正式内容建立 | `kb-obsidian new-content` | 生成 UUIDv4，校验必填字段和受控引用后发布 |
 | 内容与 vault 校验 | `kb-obsidian validate` | 只读报告，不自动修复或改状态 |
-| 使用报告 | `kb-obsidian report` | 只写 `App/Reports/`，只作人工复核线索 |
+| 使用报告 | `kb-obsidian report` | 原子替换 `app/reports/`；人读 Markdown 只作人工复核线索，JSON 只供终端和程序读取 |
 | 正式词表变更 | `kb-design` | 服从现行治理、维护、来源和发版规则 |
 
 ## 查找流程
@@ -51,7 +55,7 @@ AI 每次显式指定 `vault=kb-vault`，不依赖当前终端目录或活动 va
 
 主题查找依次执行：
 
-1. 使用 `search:context` 在 `KB/Topics` 搜索使用者原词，JSON 结果上限为 10；
+1. 使用 `search:context` 在 `kb/topics` 搜索使用者原词，JSON 结果上限为 10；
 2. 无充分结果时，从原文提取已有中文、英文或来源中的 designation 再检索，不形成新 designation；
 3. 读取不超过三个候选文件；
 4. 读取候选的 `kb_id`、`kb_label`、`kb_status`、`kb_broader`、`kb_arrays`、`kb_source` 与“范围”；
@@ -62,17 +66,17 @@ AI 每次显式指定 `vault=kb-vault`，不依赖当前终端目录或活动 va
 
 ```bash
 obsidian vault=kb-vault search:context \
-  query="向量数据库" path=KB/Topics limit=10 format=json
+  query="向量数据库" path=kb/topics limit=10 format=json
 
 obsidian vault=kb-vault read \
-  path=KB/Topics/semi-structured-and-unstructured-databases.md
+  path=kb/topics/semi-structured-and-unstructured-databases.md
 
 obsidian vault=kb-vault property:read \
   name=kb_broader \
-  path=KB/Topics/semi-structured-and-unstructured-databases.md
+  path=kb/topics/semi-structured-and-unstructured-databases.md
 ```
 
-文件名是检索信号之一，不是唯一入口。`Content/<UUIDv4>.md` 依靠 H1、`title`、`aliases`、正文和受控 properties 被发现；`KB/<collection>/<id>.md` 的文件名继续承担正式对象稳定 ID。
+文件名是检索信号之一，不是唯一入口。`content/<uuidv4>.md` 依靠 H1、`title`、`aliases`、正文和受控 properties 被发现；`kb/<collection>/<stable-id>.md` 的文件名继续承担正式对象稳定 ID。
 
 ## 输出合同
 
@@ -88,27 +92,29 @@ AI 的主题候选至少包括：
 
 搜索分数、文件名相似、正文共词、Backlinks 数量和 AI 判断都不能证明两个 designation 表示同一概念，也不能自动产生 `subject`、候选、关系或状态变化。
 
+人读报告只从 `app/reports/index.md` 导航到 `validation.md`、`topic-usage.md`、`topic-coverage.md` 和 `unassigned-topics.md`。终端 AI 与程序可以读取 `app/reports/data/validation.json` 和 `app/reports/data/topic-usage.json`，但 JSON 不是 Obsidian UI 的人读入口；终端读取 JSON 也不替代读取对应 Markdown 的派生边界和人工复核说明。
+
 ## 写入边界
 
-AI 默认只读取 `Home.md`、`Inbox/`、`Sources/`、`Content/`、`Indexes/`、`KB/`、`App/Rules/` 和 `App/Reports/`。`.obsidian/`、附件 bytes、受管理模板、受管理视图和 manifest 只在相应诊断明确需要时读取，不能作为普通检索范围。默认写入只限 `Inbox/`、`Sources/`、`Content/` 和 `Indexes/`，且仍服从具体操作的决策权。
+AI 默认只读取 `home.md`、`inbox/`、`sources/`、`content/`、`indexes/`、`kb/`、`app/rules/` 和人读 `app/reports/`。`.obsidian/`、附件 bytes、受管理模板、受管理视图和 manifest 只在相应诊断明确需要时读取，不能作为普通检索范围。默认写入只限 `inbox/`、`sources/`、`content/` 和 `indexes/`，且仍服从具体操作的决策权。
 
 | 对象 | 允许接口 | 禁止事项 |
 |---|---|---|
-| `Inbox/` | `create`、`append`、`read` | 不得把临时材料声明为正式内容或概念依据 |
-| `Sources/` | `create`、`append`、`read` | 不得因保存来源而批准来源资格、designation 或概念对应 |
-| `Indexes/` | `create`、`append`、`read` | 不得把人工索引反写为正式主题关系 |
-| `Content/` 新对象 | `kb-obsidian new-content` | 不得用 `obsidian create` 绕过 UUID 和必填字段 |
-| `Content/` 正文 | 经明确任务授权后使用 `append` 或整文件编辑，再运行校验 | 不得用 `prepend` 把内容放到 H1 之前；不得覆盖未知 bytes |
-| `Content/` properties | 当前只读 | 不得直接修改 `kb_*`、`title` 或 `aliases`；受治理更新接口尚未设计 |
-| `KB/` | 只读 | 不得创建、修改、移动或删除；变更回到 `kb-design` |
-| 受管理 `App/` | 只读 | 只有对应生成器可写；报告命令只写 Reports |
+| `inbox/` | `create`、`append`、`read` | 不得把临时材料声明为正式内容或概念依据 |
+| `sources/` | `create`、`append`、`read` | 不得因保存来源而批准来源资格、designation 或概念对应 |
+| `indexes/` | `create`、`append`、`read` | 不得把人工索引反写为正式主题关系 |
+| `content/` 新对象 | `kb-obsidian new-content` | 不得用 `obsidian create` 绕过 UUID 和必填字段 |
+| `content/` 正文 | 经明确任务授权后使用 `append` 或整文件编辑，再运行校验 | 不得用 `prepend` 把内容放到 H1 之前；不得覆盖未知 bytes |
+| `content/` properties | 当前只读 | 不得直接修改 `kb_*`、`title` 或 `aliases`；受治理更新接口尚未设计 |
+| `kb/` | 只读 | 不得创建、修改、移动或删除；变更回到 `kb-design` |
+| 受管理 `app/` | 只读 | 只有对应生成器可写；报告命令只写 `app/reports/` |
 | `.obsidian/` | 只读，除非人明确要求配置变更 | 不得把个人配置作为正式模型或项目决定 |
 
 `obsidian create overwrite`、`delete permanent`、`move`、`rename` 和 `property:remove` 默认禁止。删除、稳定路径变化、状态变化和受控字段变化必须取得现行决策权要求的批准，不能因 CLI 提供命令而降级权限。
 
 ## 代理入口
 
-实施时在 vault 根建立应用管理的 `AGENTS.md`，使 Codex 自动读取 vault 角色、命令顺序、写集、禁止操作和校验义务。它只摘要现行正式设计，不建立新政策；冲突时以 `kb-design` 正文和 `App/Rules/README.md` 为准。
+终端访问规格另行获批并实施时，才在 vault 根建立应用管理的 `AGENTS.md`，使 Codex 自动读取 vault 角色、命令顺序、写集、禁止操作和校验义务。它只摘要现行正式设计，不建立新政策；冲突时以 `kb-design` 正文和 `app/rules/index.md` 为准。
 
 根 `AGENTS.md` 进入应用受管理 manifest。使用者内容、搜索结果和报告不能自动修改它。当前不复制 `CLAUDE.md`；其他 AI 若不能读取 `AGENTS.md`，由调用方显式提供同一规则入口，不复制多份可能漂移的正文。
 
@@ -132,7 +138,7 @@ AI 默认只读取 `Home.md`、`Inbox/`、`Sources/`、`Content/`、`Indexes/`�
 | Obsidian 未运行 | 允许首条命令启动应用，等待独立冷启动期限后重试一次 |
 | 查询超时 | 终止本次命令，串行重试一次；再次超时则报告，不无限等待 |
 | JSON 不可解析 | 保存命令、退出码和 stderr，不把部分输出当作候选 |
-| 无充分候选 | 材料保留在 Inbox，报告搜索词和检查过的候选 |
+| 无充分候选 | 材料保留在 `inbox/`，报告搜索词和检查过的候选 |
 | 写后校验失败 | 不继续追加修改；保留失败证据并请求人工处置，不自动修复 |
 | managed 漂移 | `kb-obsidian` 门禁阻断后续流程；回到正式生成路径，不在 vault 修补 |
 
@@ -144,11 +150,12 @@ AI 默认只读取 `Home.md`、`Inbox/`、`Sources/`、`Content/`、`Indexes/`�
 - UUID 文件名不含查询词时，搜索仍能通过 H1、property 或正文找到内容；
 - `search:context` 能从主题 scope 找到文件名不含原查询的候选；
 - AI 从候选读取 ID、label、scope、上位、数组和来源，不把搜索命中当作概念结论；
-- 根 `AGENTS.md` 被初始化器纳入受管理 manifest；
-- `Content` 新建仍只能经过 `kb-obsidian new-content`；
+- 根 `AGENTS.md` 获批建立后，被初始化器纳入受管理 manifest；
+- `content/` 新建仍只能经过 `kb-obsidian new-content`；
 - native CLI 对 disposable vault 的允许写入后，`kb-obsidian validate` 仍能发现结构漂移；
 - 超时、非零退出、截断或不可解析输出不会触发后续写入；
-- `KB/`、受管理 `App/`、manifest 和 `kb-design` hashes 在 AI 用户内容操作前后不变。
+- `kb/`、受管理 `app/`、manifest 和 `kb-design` hashes 在 AI 用户内容操作前后不变；
+- 人读导航不打开 JSON，终端 JSON 读取只限 `app/reports/data/`，且与对应 Markdown 同属一次报告发布。
 
 不为 CLI 帮助中的固定命令、常量回显、文件存在或已经由 manifest 覆盖的机械事实另造测试。首次实施不验证社区插件、MCP、语义向量、自动分类、正式词表回流或内容删除。
 
