@@ -169,13 +169,13 @@ _REQUIRED_FIELDS = {
 }
 _ID = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 _KIND_DIRECTORIES = {
-    "topic": "Topics",
-    "array": "Arrays",
-    "entity": "Entities",
-    "source": "Sources",
-    "type": "Types",
-    "genre": "Genres",
-    "form": "Forms",
+    "topic": "topics",
+    "array": "arrays",
+    "entity": "entities",
+    "source": "sources",
+    "type": "types",
+    "genre": "genres",
+    "form": "forms",
 }
 _DIRECTORY_KINDS = {directory: kind for kind, directory in _KIND_DIRECTORIES.items()}
 _WIKILINK = re.compile(r"\[\[([^\]|#]+)(?:\|[^\]]+)?\]\]")
@@ -564,7 +564,7 @@ def link(kind: str, object_id: str, label: str) -> str:
         directory = _KIND_DIRECTORIES[singular]
     except KeyError as exc:
         raise ExportError(f"unknown link kind: {kind}") from exc
-    return f"[[KB/{directory}/{object_id}|{label}]]"
+    return f"[[kb/{directory}/{object_id}|{label}]]"
 
 
 def _yaml_scalar(value: Any) -> str:
@@ -791,7 +791,7 @@ def _render_controlled(
 def _base(directory: str, name: str, order: Sequence[str]) -> bytes:
     document = {
         "filters": {
-            "and": [f'file.inFolder("KB/{directory}")', 'file.ext == "md"']
+            "and": [f'file.inFolder("kb/{directory}")', 'file.ext == "md"']
         },
         "views": [
             {
@@ -815,7 +815,7 @@ def _insert(files: dict[str, bytes], path: str, content: bytes) -> None:
     files[path] = content
 
 
-def _readme(form_arrays: Sequence[Mapping[str, Any]]) -> bytes:
+def _root_index(form_arrays: Sequence[Mapping[str, Any]]) -> bytes:
     table = _table(
         "载体数组",
         ("id", "superordinate", "source"),
@@ -858,7 +858,7 @@ def build_content_files(
     for object_id in sorted(topics):
         _insert(
             files,
-            f"KB/Topics/{object_id}.md",
+            f"kb/topics/{object_id}.md",
             _render_topic(topics[object_id], topic_version, topic_labels, array_labels, source_labels),
         )
 
@@ -869,7 +869,7 @@ def build_content_files(
     for object_id in sorted(arrays):
         _insert(
             files,
-            f"KB/Arrays/{object_id}.md",
+            f"kb/arrays/{object_id}.md",
             _render_array(arrays[object_id], topic_version, members[object_id], topic_labels, source_labels),
         )
 
@@ -877,7 +877,7 @@ def build_content_files(
     for object_id in sorted(entities):
         _insert(
             files,
-            f"KB/Entities/{object_id}.md",
+            f"kb/entities/{object_id}.md",
             _render_entity(entities[object_id], entity_version, topic_labels, entity_labels),
         )
 
@@ -885,7 +885,7 @@ def build_content_files(
     for object_id in sorted(sources):
         _insert(
             files,
-            f"KB/Sources/{object_id}.md",
+            f"kb/sources/{object_id}.md",
             _render_source(sources[object_id], source_version, entity_labels),
         )
 
@@ -897,17 +897,17 @@ def build_content_files(
         for object_id in sorted(index):
             _insert(
                 files,
-                f"KB/{directory}/{object_id}.md",
+                f"kb/{directory}/{object_id}.md",
                 _render_controlled(index[object_id], object_kind, version, labels),
             )
 
-    _insert(files, "KB/Views/Topics.base", _base("Topics", "Topics", ("kb_id", "kb_label", "kb_status", "kb_broader")))
-    _insert(files, "KB/Views/Entities.base", _base("Entities", "Entities", ("kb_id", "kb_label", "kb_status", "kb_kind")))
-    _insert(files, "KB/Views/Sources.base", _base("Sources", "Sources", ("kb_id", "kb_label", "kb_entity", "kb_roles")))
+    _insert(files, "kb/views/topics.base", _base("topics", "topics", ("kb_id", "kb_label", "kb_status", "kb_broader")))
+    _insert(files, "kb/views/entities.base", _base("entities", "entities", ("kb_id", "kb_label", "kb_status", "kb_kind")))
+    _insert(files, "kb/views/sources.base", _base("sources", "sources", ("kb_id", "kb_label", "kb_entity", "kb_roles")))
     _insert(
         files,
-        "README.md",
-        _readme(documents["forms"]["arrays"]),
+        "index.md",
+        _root_index(documents["forms"]["arrays"]),
     )
     return dict(sorted(files.items()))
 
@@ -927,11 +927,19 @@ def _manifest_identity(relative_path: str) -> tuple[str, str]:
     path = pathlib.PurePosixPath(relative_path)
     if path.is_absolute() or relative_path != path.as_posix() or ".." in path.parts:
         raise ExportError(f"unsafe output path: {relative_path}")
-    if relative_path == "README.md":
+    if (
+        relative_path != relative_path.lower()
+        or any(character in relative_path for character in (" ", "_"))
+        or "--" in relative_path
+    ):
+        raise ExportError(f"invalid output path casing: {relative_path}")
+    if path.suffix not in {".md", ".base"}:
+        raise ExportError(f"invalid output extension: {relative_path}")
+    if relative_path == "index.md":
         return "index", path.stem
-    if path.suffix == ".base" and path.parts[:2] == ("KB", "Views"):
+    if path.suffix == ".base" and path.parts[:2] == ("kb", "views"):
         return "base", path.stem
-    if len(path.parts) == 3 and path.parts[0] == "KB" and path.suffix == ".md":
+    if len(path.parts) == 3 and path.parts[0] == "kb" and path.suffix == ".md":
         try:
             object_kind = _DIRECTORY_KINDS[path.parts[1]]
         except KeyError as exc:
@@ -1098,7 +1106,7 @@ def _validate_written_export(
 
     for relative_path, content in readback.items():
         if relative_path.endswith(".md"):
-            if relative_path == "README.md":
+            if relative_path == "index.md":
                 try:
                     content.decode("utf-8")
                 except UnicodeError as exc:
@@ -1118,7 +1126,11 @@ def _validate_written_export(
         if not relative_path.endswith(".md"):
             continue
         for target in _WIKILINK.findall(content.decode("utf-8")):
-            target_path = f"{target}.md"
+            if not target.startswith("kb/"):
+                raise ExportError(
+                    f"written link is not vault-root kb path: {relative_path} -> {target}"
+                )
+            target_path = target if target.endswith(".base") else f"{target}.md"
             if target_path not in content_files:
                 unresolved.append((relative_path, target))
     if unresolved:

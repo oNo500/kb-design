@@ -37,9 +37,9 @@ Obsidian 不能直接表达的约束由校验器保留，不能用自由 tag、�
 
 | 层 | 内容 | 修改者 | 项目效力 |
 |---|---|---|---|
-| 用户文件 | `Home.md`、`Inbox/`、`Sources/`、`Content/`、`Indexes/`、`Attachments/` | 使用者和经授权的内容工具 | 对该知识库中的实际内容有效，不直接修改 `kb-design` |
-| 受管理表示 | `KB/`、`App/Templates/`、`App/Views/`、`App/Rules/`、`App/manifest.json` | 未来的 `kb-design` 生成器 | 是正式设计与数据的应用表示，不是正式编辑源 |
-| 派生报告 | `App/Reports/` | 未来的内容校验器和报告生成器 | 只保存可重算事实与复核线索，可以删除和重建 |
+| 用户文件 | `home.md`、`inbox/`、`sources/`、`content/`、`indexes/`、`attachments/` | 使用者和经授权的内容工具 | 对该知识库中的实际内容有效，不直接修改 `kb-design` |
+| 受管理表示 | `kb/`、`app/templates/`、`app/views/`、`app/rules/`、`app/manifest.json` | 未来的 `kb-design` 生成器 | 是正式设计与数据的应用表示，不是正式编辑源 |
+| 派生报告 | `app/reports/` | 未来的内容校验器和报告生成器 | 只保存可重算事实与复核线索，可以删除和重建 |
 | 应用配置 | `.obsidian/` | 初始化器给出最低基线，其余由使用者维护 | 不修改模型、正式数据或项目决定 |
 
 受管理表示和派生报告中的所有文件都可以由文件系统工具修改；只有 Obsidian 支持的 Markdown 和 Base 文件可以在 Obsidian 中编辑，普通 JSON manifest 不是 Obsidian 内容格式。对这些文件的修改不回流、不取得项目效力；受管理文件的变化只形成 manifest 漂移，派生报告不作为下一次结论的输入。用户文件不属于受管理写集，生成器不得覆盖、移动或删除。
@@ -49,58 +49,62 @@ Obsidian 不能直接表达的约束由校验器保留，不能用自由 tag、�
 完整应用使用一个不嵌套的 vault，目录只区分稳定职责，不复制主题分类树。
 
 ```text
-Home.md
-Inbox/
-Sources/
-  Clippings/
-  References/
-  Files/
-Content/
-Indexes/
-Attachments/
-KB/
-  Topics/
-  Arrays/
-  Entities/
-  Sources/
-  Types/
-  Genres/
-  Forms/
-App/
-  Templates/
-  Views/
-  Reports/
-  Rules/
+home.md
+inbox/
+sources/
+  clippings/
+  references/
+  files/
+content/
+indexes/
+attachments/
+kb/
+  topics/
+  arrays/
+  entities/
+  sources/
+  types/
+  genres/
+  forms/
+  views/
+    topics.base
+    entities.base
+    sources.base
+app/
+  templates/
+  views/
+  reports/
+  rules/
   manifest.json
 .obsidian/
 ```
 
-`Home.md` 由初始化器提供起始内容，链接到 Inbox、外部资料、全部内容、草稿入口、最近修改、常用用户索引、正式主题、正式实体、正式来源用途和维护报告；初始化后归使用者所有，不再由更新器覆盖。
+`home.md` 由初始化器提供起始内容，链接到 `inbox/`、外部资料、全部内容、草稿入口、最近修改、常用用户索引、正式主题、正式实体、正式来源用途和维护报告；初始化后归使用者所有，不再由更新器覆盖。
 
-`Inbox/` 保存尚未完成对象判断的临时文件。`Sources/Clippings/` 保存网页剪藏，`Sources/References/` 保存使用者对外部资料的阅读说明，`Sources/Files/` 保存 PDF 等原始文件。`Content/` 保存内容单元，默认不按主题、实体、类型、体裁、状态或层级建立子目录。`Indexes/` 保存个人导航壳。`Attachments/` 是用户文件引用的附件位置，不赋予附件内容单元或正式实体身份。
+`inbox/` 保存尚未完成对象判断的临时文件。`sources/clippings/` 保存网页剪藏，`sources/references/` 保存使用者对外部资料的阅读说明，`sources/files/` 保存 PDF 等原始文件。`content/` 保存内容单元，默认不按主题、实体、类型、体裁、状态或层级建立子目录。`indexes/` 保存个人导航壳。`attachments/` 是用户文件引用的附件位置，不赋予附件内容单元或正式实体身份。
 
-`KB/` 保存六份正式词表的受管理表示。`App/Templates/` 保存受管理结构片段。`App/Views/` 保存 Base 与固定查询入口，至少提供全部内容、draft 内容、active 内容、deprecated 内容、按主题、按实体、按类型与体裁、最近修改、全部正式主题、unassigned 主题、正式实体、正式来源用途和维护报告入口。`App/Reports/` 保存诊断和统计，`App/Rules/` 保存面向使用者的应用规则说明，`App/manifest.json` 保存完整应用受管理写集的项目清单。`.obsidian/` 只保存最低运行配置和用户后续配置。
+`kb/` 保存六份正式词表的受管理表示；其中 `kb/views/` 保存三个参考 Base。`app/templates/` 保存受管理结构片段。`app/views/` 保存完整应用的 Base 与固定查询入口，至少提供全部内容、draft 内容、active 内容、deprecated 内容、按主题、按实体、按类型与体裁、最近修改、全部正式主题、unassigned 主题、正式实体、正式来源用途和维护报告入口。`app/reports/` 保存诊断和统计，`app/rules/` 保存面向使用者的应用规则说明，`app/manifest.json` 保存完整应用受管理写集的项目清单。`.obsidian/` 只保存最低运行配置和用户后续配置。
 
-完整应用布局尚未实现。现行参考导出仍保持本文后部规定的独立输出布局、根 `manifest.json` 和 `KB/Views/`；在新 vault 初始化器完成前，不把两种布局混称为已经集成。
+完整应用布局尚未实现。现行参考导出只生成本文后部规定的独立输出布局：根 `index.md`、`kb/` 和根 `manifest.json`；在新 vault 初始化器完成前，不把两种布局混称为已经集成。
 
 ## 对象边界
 
 | 对象 | 所在位置 | 取得身份的条件 | 不取得的效力 |
 |---|---|---|---|
-| 临时文件 | `Inbox/` | 无；只要能保存捕获上下文 | 不属于内容模型，不参与正式计数 |
-| 外部资料 | `Sources/` | 保存实际材料或阅读说明 | 不是内容单元、正式来源用途或正式实体 |
-| 内容单元 | `Content/` | 用户执行建立动作，取得 identifier 并满足必填字段 | 不因文件存在自动成为 `active` |
-| 用户索引 | `Indexes/` | 用户选择、排列和解释链接 | 不是主题、数组、概念组或正式关系 |
-| 正式表示 | `KB/` 与受管理应用文件 | 从正式编辑源生成并通过 manifest 校验 | 不是正式编辑源，编辑不回流 |
-| 派生报告 | `App/Reports/` | 从本次通过校验的输入重算 | 不是正式数据、决定或自动动作 |
+| 临时文件 | `inbox/` | 无；只要能保存捕获上下文 | 不属于内容模型，不参与正式计数 |
+| 外部资料 | `sources/` | 保存实际材料或阅读说明 | 不是内容单元、正式来源用途或正式实体 |
+| 内容单元 | `content/` | 用户执行建立动作，取得 identifier 并满足必填字段 | 不因文件存在自动成为 `active` |
+| 用户索引 | `indexes/` | 用户选择、排列和解释链接 | 不是主题、数组、概念组或正式关系 |
+| 正式表示 | `kb/` 与受管理应用文件 | 从正式编辑源生成并通过 manifest 校验 | 不是正式编辑源，编辑不回流 |
+| 派生报告 | `app/reports/` | 从本次通过校验的输入重算 | 不是正式数据、决定或自动动作 |
 
-Inbox 文件可以丢弃、合并、移入 `Sources/`，或经人工判断建立为内容单元。Inbox 中的字符串、Wikilink、tag 和语言模型输出只作上下文；它们不建立项目对象。
+`inbox/` 文件可以丢弃、合并、移入 `sources/`，或经人工判断建立为内容单元。`inbox/` 中的字符串、Wikilink、tag 和语言模型输出只作上下文；它们不建立项目对象。
 
 外部资料必须区分原文摘录和使用者批注。Web Clipper 与人工复制保存的标题、作者、发布日期、捕获日期、URL 和正文只描述捕获事实，不构成 designation、概念对应、来源资格或引用批准。能独立复用的理解另建内容单元；需要进入内容字段的文献或标准，必须先取得现行正式实体身份。
 
-`Content/` 中每个 Markdown 文件恰好表示一个内容单元。文件 stem 与 `kb_id` 使用同一个无前缀、小写 UUIDv4；一级标题和 `title` property 保存内容标题，`aliases` 保存由应用从当前标题派生的一个查找形式，正文保存内容。标题、alias 和显示文本都不能反推身份。
+`content/` 中每个 Markdown 文件恰好表示一个内容单元。文件 stem 与 `kb_id` 使用同一个无前缀、小写 UUIDv4；一级标题和 `title` property 保存内容标题，`aliases` 保存由应用从当前标题派生的一个查找形式，正文保存内容。标题、alias 和显示文本都不能反推身份。
 
-`Indexes/` 只保存入口说明、阅读顺序、普通链接和嵌入视图。若索引包含可独立引用并需要受控标引的实质说明，正文必须建立为 `Content/` 内容单元并使用适用的 `form: index`；`Indexes/` 只链接该内容单元或嵌入其视图，不保存第二份正文。
+`indexes/` 只保存入口说明、阅读顺序、普通链接和嵌入视图。若索引包含可独立引用并需要受控标引的实质说明，正文必须建立为 `content/` 内容单元并使用适用的 `form: index`；`indexes/` 只链接该内容单元或嵌入其视图，不保存第二份正文。
 
 ## 内容流程
 
@@ -110,17 +114,17 @@ Inbox 文件可以丢弃、合并、移入 `Sources/`，或经人工判断建立
 想法、链接、网页、书籍、PDF
               |
               v
-           Inbox/
+           inbox/
               |
          人工判断去向
        /       |       \
-    丢弃    Sources/   Content/
+    丢弃    sources/   content/
                |          ^
                +----------+
                 理解与转述
 ```
 
-Obsidian URI、Unique note creator 和普通新建命令只能作为 Inbox 捕获入口。Web Clipper 默认只写 `Sources/Clippings/`，可以创建或追加资料文件，但不能直接创建内容单元、正式实体、正式来源用途或词表记录。
+Obsidian URI、Unique note creator 和普通新建命令只能作为 `inbox/` 捕获入口。Web Clipper 默认只写 `sources/clippings/`，可以创建或追加资料文件，但不能直接创建内容单元、正式实体、正式来源用途或词表记录。
 
 ### 内容建立
 
@@ -138,7 +142,7 @@ identifier 规则已经由[内容单元标识符](../decisions/content-unit-iden
 
 ## 身份规则
 
-内容路径是 `Content/<UUIDv4>.md`。`identifier` 和文件 stem 使用同一个符合 RFC 9562 标准文本表示的 UUIDv4：小写、保留连字符、不加对象前缀。唯一语境是一个知识库中的全部内容单元；建立时检查现有 identifier 和路径，重复时重新生成。一经写入且被引用后，identifier 和路径不随标题变化。
+内容路径是 `content/<uuidv4>.md`。`identifier` 和文件 stem 使用同一个符合 RFC 9562 标准文本表示的 UUIDv4：小写、保留连字符、不加对象前缀。唯一语境是一个知识库中的全部内容单元；建立时检查现有 identifier 和路径，重复时重新生成。一经写入且被引用后，identifier 和路径不随标题变化。
 
 [标识符](../../concepts/content-identifiers.md)区分身份、名称、标题、路径、排序信息和时间信息。UUIDv4 不从 Unique note creator、文件名、标题、名称翻译、拼音、时间戳或语言模型输出派生，也不充当密码、权限、真实性或完整性证明。路径包含 UUID 是 Obsidian 的确定性 binding，不把 path 与 identifier 重新定义为同一概念。
 
@@ -192,9 +196,9 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 
 | 源身份 | 必填与基数 | 值形态 | 类型与值域 | 目标落点 | 缺省处理 | 信息保存 | 可逆性 |
 |---|---|---|---|---|---|---|---|
-| `vocab/topics.yaml concepts[].broader` | 必填列表，零个或多个 | topic reference | 每个 ID 必须命中正式主题；空列表表示顶层 | `kb_broader` List of Text links，指向 `KB/Topics/<id>.md` | 无 fallback；空列表时 property 省略 | 全部上位和 source 顺序保留，不选择主上位 | 无；未实现回流 |
+| `vocab/topics.yaml concepts[].broader` | 必填列表，零个或多个 | topic reference | 每个 ID 必须命中正式主题；空列表表示顶层 | `kb_broader` List of Text links，指向 `kb/topics/<id>.md` | 无 fallback；空列表时 property 省略 | 全部上位和 source 顺序保留，不选择主上位 | 无；未实现回流 |
 | `vocab/topics.yaml concepts[].related` | 可选列表，零个或多个 | topic reference | 每个 ID 必须命中正式主题；互反义务仍由主题设计承担 | `kb_related` List of Text links | 无 fallback；缺失或空列表时省略 | 全部关系和顺序保留 | 无；未实现回流 |
-| `vocab/topics.yaml concepts[].arrays` | 可选列表，零个或多个 | topic-array reference | 每个 ID 必须命中同文件 `arrays[]` | `kb_arrays` List of Text links，指向 `KB/Arrays/<id>.md` | 无 fallback；缺失或空列表时省略 | 数组归属和顺序保留 | 无；未实现回流 |
+| `vocab/topics.yaml concepts[].arrays` | 可选列表，零个或多个 | topic-array reference | 每个 ID 必须命中同文件 `arrays[]` | `kb_arrays` List of Text links，指向 `kb/arrays/<id>.md` | 无 fallback；缺失或空列表时省略 | 数组归属和顺序保留 | 无；未实现回流 |
 | `vocab/topics.yaml concepts[].source` | 可选，零个或一个 | 来源用途 reference；兼容值 `self` 是 literal | 非空 Text；非 `self` 值必须命中正式来源用途 | `kb_source` Text；来源 ID 转为 Sources Wikilink，`self` 原样保存 | 无 fallback；缺失时省略；不得由 target 补 `self` | source ID 或兼容值保存；`self` 不取得实际派生含义 | 无；未实现回流 |
 | `vocab/topics.yaml concepts[].replaced_by` | 可选；直接替代的 deprecated 记录按主题 lifecycle 恰好一个 | topic reference | 必须命中正式主题 | `kb_replaced_by` Text link | 无 fallback；非适用记录省略 | 替代目标保存；生命周期理由仍由 `history` 承担 | 无；未实现回流 |
 
@@ -206,7 +210,7 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 | `vocab/topics.yaml arrays[].source` | 必填，恰好一个 | 来源用途 reference | 必须命中正式来源用途 | `kb_source` Text link | 无；缺失或悬空阻断导出 | 来源 ID 和显示链接保存 | 无；未实现回流 |
 | `vocab/topics.yaml concepts[].arrays` 的反向成员关系 | 对每个数组确定性派生零个或多个成员；数组记录没有 `members` source field | topic reference | 成员必须是正式主题；顺序取正式主题记录顺序 | `kb_members` List of Text links | 不适用 source fallback；无成员时 property 省略 | 全部派生成员和顺序保存；不制造数组成员 source field | 无；未实现回流 |
 
-主题数组生成 `KB/Arrays/<id>.md`。它没有 `label`、`status` 或 aliases source field：一级标题与 `kb_label` 固定使用 ID，`kb_status` 和 `aliases` 不生成。主题数组只表达树内分组，不取得主题概念、分面或手工概念组的效力。
+主题数组生成 `kb/arrays/<id>.md`。它没有 `label`、`status` 或 aliases source field：一级标题与 `kb_label` 固定使用 ID，`kb_status` 和 `aliases` 不生成。主题数组只表达树内分组，不取得主题概念、分面或手工概念组的效力。
 
 ### 实体字段
 
@@ -228,11 +232,11 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 
 | 源身份 | 必填与基数 | 值形态 | 类型与值域 | 目标落点 | 缺省处理 | 信息保存 | 可逆性 |
 |---|---|---|---|---|---|---|---|
-| `vocab/sources.yaml sources[].entity` | 必填，恰好一个 | entity reference | 必须命中 `kind` 为 `standard` 或 `publication` 的正式实体 | `kb_entity` Text link，指向 `KB/Entities/<id>.md` | 无；缺失或悬空阻断导出 | 实体目标和显示链接保存 | 无；未实现回流 |
+| `vocab/sources.yaml sources[].entity` | 必填，恰好一个 | entity reference | 必须命中 `kind` 为 `standard` 或 `publication` 的正式实体 | `kb_entity` Text link，指向 `kb/entities/<id>.md` | 无；缺失或悬空阻断导出 | 实体目标和显示链接保存 | 无；未实现回流 |
 | `vocab/sources.yaml sources[].role` | 必填列表；现行记录为一个或多个，现行导出形状允许空列表 | controlled literal | `mapping`、`structure`、`group` 或 `candidate`；互斥与组合条件由来源设计承担 | `kb_roles` List | 无 fallback；字段缺失阻断导出，空列表时 property 省略 | 全部已有角色和顺序保留 | 无；未实现回流 |
 | `vocab/sources.yaml sources[].checked` | 必填，恰好一个 | literal | Date | `kb_checked` Date | 无；缺失阻断导出 | 日期逐值保存 | 无；未实现回流 |
 
-来源用途生成 `KB/Sources/<id>.md`。它没有 `label`、`status` 或 aliases source field：一级标题与 `kb_label` 固定使用 ID，`kb_status` 和 `aliases` 不生成；正文明确来源用途不等于来源实体身份。
+来源用途生成 `kb/sources/<id>.md`。它没有 `label`、`status` 或 aliases source field：一级标题与 `kb_label` 固定使用 ID，`kb_status` 和 `aliases` 不生成；正文明确来源用途不等于来源实体身份。
 
 ### 类型字段
 
@@ -277,14 +281,14 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 
 | 源字段 | 必填与基数 | 值形态与值域 | 目标落点 | 创建条件 | 编辑条件 | 查询用途 | 无效表现与 loss |
 |---|---|---|---|---|---|---|---|
-| `identifier` | 必填，恰好一个 | literal identity；无前缀、小写、保留标准连字符的 UUIDv4；在一个知识库的内容单元中唯一 | `kb_id` Text；`Content/<UUIDv4>.md`，文件 stem 与值相同 | 建立器生成后检查现有 identifier 和路径；重复时重新生成 | 一经写入且被引用后不修改；标题变化不改值或路径 | 精确定位内容与解析 content-unit reference | 缺失、格式错误、前缀、大小写错误、重复、stem 不同或路径冲突使内容无效；不从标题、alias 或时间回填；回流未实现 |
+| `identifier` | 必填，恰好一个 | literal identity；无前缀、小写、保留标准连字符的 UUIDv4；在一个知识库的内容单元中唯一 | `kb_id` Text；`content/<uuidv4>.md`，文件 stem 与值相同 | 建立器生成后检查现有 identifier 和路径；重复时重新生成 | 一经写入且被引用后不修改；标题变化不改值或路径 | 精确定位内容与解析 content-unit reference | 缺失、格式错误、前缀、大小写错误、重复、stem 不同或路径冲突使内容无效；不从标题、alias 或时间回填；回流未实现 |
 | `title` | 必填，恰好一个 | Text | 一级标题与 `title` Text；Obsidian `aliases` List 中恰好包含一个由应用派生的当前标题 | 建立时由使用者给出，并同步写入三个位置 | 修改标题时同时更新一级标题、`title` 和派生 alias，不改 identifier | 显示、全文与 property 检索、Base 排序，并通过 alias 供 Quick Switcher 和链接补全 | 任一位置缺失、三者不一致、alias 多值或重复时无效；不从文件名回填；回流未实现 |
-| `type` | 必填，恰好一个 | type reference；命中正式文档类型词表 | `kb_type` Text link，指向 `KB/Types/<id>.md` | 建立前由使用者选择一个 | 改值须重新校验引用与内容用途 | 按文档类型筛选与统计 | 缺失、多值、悬空或对象种类错误时无效；完整 reference 尚未实现 |
-| `genre` | 必填，恰好一个 | genre reference；命中正式体裁词表 | `kb_genre` Text link，指向 `KB/Genres/<id>.md` | 建立前由使用者选择一个 | 改值须重新校验作者立场 | 按体裁筛选与统计 | 缺失、多值、悬空或对象种类错误时无效；完整 reference 尚未实现 |
-| `form` | 可选，零个或一个；长文不填 | form reference；命中正式载体词表 | `kb_form` Text link，指向 `KB/Forms/<id>.md` | 只有内容采用该载体时填写 | 载体改变时可修改或省略 | 按载体筛选 | 多值、悬空或对象种类错误时无效；省略不产生替代值；回流未实现 |
+| `type` | 必填，恰好一个 | type reference；命中正式文档类型词表 | `kb_type` Text link，指向 `kb/types/<id>.md` | 建立前由使用者选择一个 | 改值须重新校验引用与内容用途 | 按文档类型筛选与统计 | 缺失、多值、悬空或对象种类错误时无效；完整 reference 尚未实现 |
+| `genre` | 必填，恰好一个 | genre reference；命中正式体裁词表 | `kb_genre` Text link，指向 `kb/genres/<id>.md` | 建立前由使用者选择一个 | 改值须重新校验作者立场 | 按体裁筛选与统计 | 缺失、多值、悬空或对象种类错误时无效；完整 reference 尚未实现 |
+| `form` | 可选，零个或一个；长文不填 | form reference；命中正式载体词表 | `kb_form` Text link，指向 `kb/forms/<id>.md` | 只有内容采用该载体时填写 | 载体改变时可修改或省略 | 按载体筛选 | 多值、悬空或对象种类错误时无效；省略不产生替代值；回流未实现 |
 | `level` | 可选，零个或一个 | controlled literal；`remember`、`understand`、`apply`、`analyze`、`evaluate` 或 `create` | `kb_level` Text | 建立时可由作者评估 | 理解深度改变时可修改 | 按认知层级筛选 | 多值或域外值无效；缺失时省略；回流未实现 |
-| `subject` | 必填，一个或多个 | topic reference；命中非 deprecated 正式主题 | `kb_subjects` List of Text links，指向 `KB/Topics/<id>.md` | 建立前至少选择一个 | 内容主题改变时人工修改并重新校验 | 正式主题直接计数、主题入口和 Base 筛选 | 空列表、悬空、对象种类错误或 deprecated 目标使内容无效；顺序与全部目标须保存；回流未实现 |
-| `entities` | 可选，零个或多个 | entity reference；命中正式实体 | `kb_entities` List of Text links，指向 `KB/Entities/<id>.md` | 内容涉及正式实体时填写 | 涉及对象改变时人工修改 | 实体涉及计数与实体入口 | 悬空或对象种类错误时无效；缺失或空列表省略；全部目标与顺序须保存；回流未实现 |
+| `subject` | 必填，一个或多个 | topic reference；命中非 deprecated 正式主题 | `kb_subjects` List of Text links，指向 `kb/topics/<id>.md` | 建立前至少选择一个 | 内容主题改变时人工修改并重新校验 | 正式主题直接计数、主题入口和 Base 筛选 | 空列表、悬空、对象种类错误或 deprecated 目标使内容无效；顺序与全部目标须保存；回流未实现 |
+| `entities` | 可选，零个或多个 | entity reference；命中正式实体 | `kb_entities` List of Text links，指向 `kb/entities/<id>.md` | 内容涉及正式实体时填写 | 涉及对象改变时人工修改 | 实体涉及计数与实体入口 | 悬空或对象种类错误时无效；缺失或空列表省略；全部目标与顺序须保存；回流未实现 |
 | `source` | 可选，零个或一个 | content-unit 或 entity reference；必须识别目标种类 | `kb_source` Text link；内容指向 `Content/<id>.md`，实体指向 `KB/Entities/<id>.md` | 内容实际派生自一个内容单元或实体时填写 | 派生判断改变时人工修改，不用 `references` 或旧 `origin` 替代 | 分开查询内容派生与实体派生 | 多值、悬空或对象种类错误时无效；目标种类必须保留；回流未实现 |
 | `references` | 可选，零个或多个 | entity reference；命中作为文献或标准的正式实体 | `kb_references` List of Text links，指向 `KB/Entities/<id>.md` | 内容引用已取得正式实体身份的文献或标准时填写 | 引用变化时人工修改，不从 `entities` 推导 | 正式引用计数与参考资料入口 | 悬空、对象种类或实体 kind 错误时无效；缺失或空列表省略；回流未实现 |
 | `created` | 必填，恰好一个 | ISO 8601 Date | `kb_created` Date | 建立内容单元时写入 | 不随普通编辑改变 | 按建立日期排序和筛选 | 缺失、格式错误或多值无效；不从文件时间回填；回流未实现 |
@@ -434,34 +438,34 @@ Web Clipper 基线只使用 preset variables；Interpreter 和 prompt variables 
 
 ## 现行导出
 
-`scripts/export_obsidian.py` 是完整应用中唯一已经实现的部分。它仍只读取六份正式词表，生成单向参考区；不读取或生成 `Home.md`、`Inbox/`、`Sources/`、`Content/`、`Indexes/`、`Attachments/`、`App/` 或 `.obsidian/`，也不提供内容建立、校验、统计或回流。
+`scripts/export_obsidian.py` 是完整应用中唯一已经实现的部分。它只读取六份正式词表，生成单向参考区：根 `index.md`、`kb/` 和根 `manifest.json`。它不读取或生成 `home.md`、`inbox/`、`sources/`、`content/`、`indexes/`、`attachments/`、`app/` 或 `.obsidian/`，也不提供内容建立、校验、统计或回流。
 
 ### 现行布局
 
-现行独立输出布局保持不变。
+现行独立输出是完整、独立的参考 artifact；旧的大写布局不是有效输出，也不保留别名或兼容目录。
 
 ```text
-README.md
+index.md
 manifest.json
-KB/
-  Topics/
-  Arrays/
-  Entities/
-  Sources/
-  Types/
-  Genres/
-  Forms/
-  Views/
-    Topics.base
-    Entities.base
-    Sources.base
+kb/
+  topics/
+  arrays/
+  entities/
+  sources/
+  types/
+  genres/
+  forms/
+  views/
+    topics.base
+    entities.base
+    sources.base
 ```
 
-对象文件名为 `<id>.md`。标签、别名和译名变化不改路径。内部链接从输出根开始并使用正斜线。普通 `.json` 不在 Obsidian accepted content formats 中；根 `manifest.json` 是现行导出的项目清单，不是内容对象，也不是未来完整 vault 的 `App/manifest.json` 已实现证据。
+对象文件名为 `<id>.md`。标签、别名和译名变化不改路径。除根 `index.md` 和根 `manifest.json` 外，项目控制文件都位于 `kb/`，路径、目录、Base 文件名和扩展名均为小写 kebab-case；不得包含大写 ASCII、空格、下划线或重复连字符。内部链接一律为以 `kb/` 开始的 vault 根路径 Wikilink；普通 Markdown link 只用于外部 URL。普通 `.json` 不在 Obsidian accepted content formats 中；根 `manifest.json` 是现行导出的项目清单，不是内容对象，也不是未来完整 vault 的 `app/manifest.json` 已实现证据。
 
 ### 浏览入口
 
-现行导出生成 Topics、Entities 和 Sources 三个 `.base` 文件。每个 Base 用 `file.inFolder()` 和 Markdown 扩展名收窄默认数据集，并提供 table view；不使用 formulas、Backlinks 聚合、插件视图或自动写回动作。
+现行导出生成 `topics.base`、`entities.base` 和 `sources.base` 三个 `.base` 文件。每个 Base 用 `file.inFolder()` 和 Markdown 扩展名收窄默认数据集，并提供 table view；不使用 formulas、Backlinks 聚合、插件视图或自动写回动作。
 
 Base 是可编辑界面。经 Base 修改对象笔记与直接编辑 Markdown 一样，不回流、不取得项目效力，并可能在再次导出时被覆盖。当前验收只证明 `.base` 按现行规则产生并可解析为 YAML，没有 Obsidian 应用内交互证据。
 
@@ -502,7 +506,7 @@ artifact contract 从 `Application Profile` 完成正式词表表示选择后开
 - 除 manifest 自身外，每个生成文件的相对路径、对象种类、输出标识和 SHA-256；
 - 内容文件数、包含 manifest 的总文件数和内容集合 SHA-256。
 
-正式对象的输出标识是稳定 ID；README 与 Base 使用文件 stem 作为 manifest 内部标识。manifest 不保存生成时间、绝对路径、用户名、输出目录或 mtime，也不把自身列入文件条目和内容集合 hash。
+正式对象的输出标识是稳定 ID；`index.md` 与 Base 使用文件 stem 作为 manifest 内部标识。manifest 只接受根 `index.md`、`kb/<collection>/<id>.md` 和 `kb/views/<name>.base` 的小写路径；它不保存生成时间、绝对路径、用户名、输出目录或 mtime，也不把自身列入文件条目和内容集合 hash。
 
 项目 manifest 的双向文件覆盖和 checksum 只证明当前目录中的已列 bytes 与记录一致。输出没有 `bagit.txt`、`data/`、payload manifest 或 tag manifest，不是 BagIt bag，也不宣称 BagIt conformance。checksum 不证明 provenance、真实性、审批、语义正确性、消费者存在、正式激活或可重建性。
 
@@ -516,7 +520,7 @@ python3 scripts/export_obsidian.py --repo-root . --output /absolute/new/path
 
 输出目录必须不存在或为空。导出器拒绝符号链接、仓库根、文件系统根、用户主目录和仓库中的正式数据、设计、概念、来源、脚本与测试目录；它不提供覆盖非空目录、合并现有 vault 或删除旧目录的参数。
 
-全部文件先写入目标同级的新临时目录，再回读并校验文件集合、逐文件 hash、Markdown frontmatter、Base YAML、内部链接和 manifest 双向覆盖。校验通过后，导出器以 `os.replace()` 尝试把临时目录放到目标目录项；失败时只删除本次创建的临时目录，不递归删除用户目标。
+全部文件先写入目标同级的新临时目录，再回读并校验文件集合、逐文件 hash、Markdown frontmatter、Base YAML、项目控制路径、`kb/` 根路径 Wikilink 及其 Markdown 或 Base 目标和 manifest 双向覆盖。校验通过后，导出器以 `os.replace()` 尝试把临时目录放到目标目录项；失败时只删除本次创建的临时目录，不递归删除用户目标。
 
 `os.replace()` 成功只提供目标目录项的 atomic visibility。它可能因平台、权限、非空目标或跨文件系统等条件失败；当前实现没有 file 或 directory `fsync`，不提供 durability、掉电恢复、多文件事务、并发协调或内容正确性保证。
 

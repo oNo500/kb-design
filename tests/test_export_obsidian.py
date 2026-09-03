@@ -63,13 +63,13 @@ class ExportObsidianTests(unittest.TestCase):
         self.assertEqual(847, len(files))
         self.assertEqual(
             {
-                "KB/Topics": 700,
-                "KB/Arrays": 24,
-                "KB/Entities": 61,
-                "KB/Sources": 31,
-                "KB/Types": 6,
-                "KB/Genres": 5,
-                "KB/Forms": 16,
+                "kb/topics": 700,
+                "kb/arrays": 24,
+                "kb/entities": 61,
+                "kb/sources": 31,
+                "kb/types": 6,
+                "kb/genres": 5,
+                "kb/forms": 16,
             },
             {
                 directory: sum(
@@ -77,33 +77,57 @@ class ExportObsidianTests(unittest.TestCase):
                     for path in files
                 )
                 for directory in (
-                    "KB/Topics",
-                    "KB/Arrays",
-                    "KB/Entities",
-                    "KB/Sources",
-                    "KB/Types",
-                    "KB/Genres",
-                    "KB/Forms",
+                    "kb/topics",
+                    "kb/arrays",
+                    "kb/entities",
+                    "kb/sources",
+                    "kb/types",
+                    "kb/genres",
+                    "kb/forms",
                 )
             },
         )
         self.assertEqual(
             {
-                "README.md",
-                "KB/Views/Topics.base",
-                "KB/Views/Entities.base",
-                "KB/Views/Sources.base",
+                "index.md",
+                "kb/views/topics.base",
+                "kb/views/entities.base",
+                "kb/views/sources.base",
             },
-            set(files) - {path for path in files if path.endswith(".md") and path != "README.md"},
+            set(files) - {path for path in files if path.endswith(".md") and path != "index.md"},
         )
+
+    def test_standalone_export_uses_lowercase_paths_and_vault_root_wikilinks(self):
+        files = build_content_files(ROOT)
+
+        self.assertIn("index.md", files)
+        self.assertIn("kb/topics/machine-learning.md", files)
+        self.assertIn("kb/views/topics.base", files)
+        self.assertNotIn("README.md", files)
+        self.assertFalse(any(path == "KB" or path.startswith("KB/") for path in files))
+
+        for path in files:
+            relative = pathlib.PurePosixPath(path)
+            self.assertTrue(path == "index.md" or relative.parts[0] == "kb", path)
+            self.assertEqual(path, path.lower(), path)
+            self.assertNotRegex(path, r"[ _]|--|(^|/)-|-(?:/|$)", path)
+            self.assertIn(relative.suffix, {".md", ".base"}, path)
+
+        for source_path, content in files.items():
+            if not source_path.endswith(".md"):
+                continue
+            for target in WIKILINK.findall(content.decode("utf-8")):
+                self.assertTrue(target.startswith("kb/"), (source_path, target))
+                target_path = target if target.endswith(".base") else f"{target}.md"
+                self.assertIn(target_path, files, (source_path, target))
 
     def test_topic_note_uses_flat_properties_and_resolvable_links(self):
         files = build_content_files(ROOT)
-        properties, body = split_note(files["KB/Topics/security.md"])
+        properties, body = split_note(files["kb/topics/security.md"])
 
         scalar_types = (str, int, float, bool, datetime.date, datetime.datetime)
         for path, content in files.items():
-            if not path.startswith("KB/") or not path.endswith(".md"):
+            if not path.startswith("kb/") or not path.endswith(".md"):
                 continue
             note_properties, _ = split_note(content)
             for key, value in note_properties.items():
@@ -117,7 +141,7 @@ class ExportObsidianTests(unittest.TestCase):
         self.assertEqual("topic", properties["kb_object"])
         self.assertEqual("active", properties["kb_status"])
         self.assertEqual(
-            ["[[KB/Topics/computing|计算机科学技术]]"],
+            ["[[kb/topics/computing|计算机科学技术]]"],
             properties["kb_broader"],
         )
         self.assertEqual([], properties.get("kb_arrays", []))
@@ -131,7 +155,8 @@ class ExportObsidianTests(unittest.TestCase):
             if not source_path.endswith(".md"):
                 continue
             for target in WIKILINK.findall(content.decode("utf-8")):
-                if f"{target}.md" not in files:
+                target_path = target if target.endswith(".base") else f"{target}.md"
+                if target_path not in files:
                     unresolved.append((source_path, target))
         self.assertEqual([], unresolved)
 
@@ -196,7 +221,7 @@ class ExportObsidianTests(unittest.TestCase):
     def test_topic_source_and_match_are_optional(self):
         baseline_files = build_content_files(ROOT)
         baseline_properties, baseline_body = split_note(
-            baseline_files["KB/Topics/mathematics.md"]
+            baseline_files["kb/topics/mathematics.md"]
         )
 
         cases = (
@@ -214,7 +239,7 @@ class ExportObsidianTests(unittest.TestCase):
                 "vocab/topics.yaml", mutate
             ) as repo_root:
                 files = build_content_files(repo_root)
-                properties, body = split_note(files["KB/Topics/mathematics.md"])
+                properties, body = split_note(files["kb/topics/mathematics.md"])
                 self.assertEqual(847, len(files))
                 if field == "source":
                     expected_properties = dict(baseline_properties)
@@ -232,7 +257,7 @@ class ExportObsidianTests(unittest.TestCase):
     def test_entity_basis_is_optional(self):
         baseline_files = build_content_files(ROOT)
         baseline_properties, baseline_body = split_note(
-            baseline_files["KB/Entities/claude-code.md"]
+            baseline_files["kb/entities/claude-code.md"]
         )
         self.assertIn("\n## 归属依据\n", baseline_body)
         self.assertNotIn("\n## 形式依据\n", baseline_body)
@@ -244,7 +269,7 @@ class ExportObsidianTests(unittest.TestCase):
             ).pop("basis"),
         ) as repo_root:
             files = build_content_files(repo_root)
-        properties, body = split_note(files["KB/Entities/claude-code.md"])
+        properties, body = split_note(files["kb/entities/claude-code.md"])
         before_basis, after_basis = baseline_body.split("\n## 归属依据\n", 1)
         _, after_mapping = after_basis.split("\n## 外部映射\n", 1)
         expected_body = before_basis + "\n## 外部映射\n" + after_mapping
@@ -259,10 +284,10 @@ class ExportObsidianTests(unittest.TestCase):
 
         with mutated_repository("vocab/topics.yaml", replace_topic) as repo_root:
             properties, _ = split_note(
-                build_content_files(repo_root)["KB/Topics/security.md"]
+                build_content_files(repo_root)["kb/topics/security.md"]
             )
         self.assertEqual(
-            "[[KB/Topics/computing|计算机科学技术]]",
+            "[[kb/topics/computing|计算机科学技术]]",
             properties["kb_replaced_by"],
         )
 
@@ -271,20 +296,20 @@ class ExportObsidianTests(unittest.TestCase):
 
         with mutated_repository("vocab/entities.yaml", replace_entity) as repo_root:
             properties, _ = split_note(
-                build_content_files(repo_root)["KB/Entities/claude-code.md"]
+                build_content_files(repo_root)["kb/entities/claude-code.md"]
             )
         self.assertEqual(
-            "[[KB/Entities/anthropic|Anthropic]]",
+            "[[kb/entities/anthropic|Anthropic]]",
             properties["kb_replaced_by"],
         )
 
     def test_form_internal_arrays_are_preserved_and_validated(self):
-        readme = build_content_files(ROOT)["README.md"].decode("utf-8")
-        with self.subTest("README table"):
-            self.assertIn("## 载体数组", readme)
-            self.assertIn("| id | superordinate | source |", readme)
-            self.assertIn("| forms-presentation | forms | lom |", readme)
-            self.assertIn("| forms-activity | forms | lom |", readme)
+        index = build_content_files(ROOT)["index.md"].decode("utf-8")
+        with self.subTest("index table"):
+            self.assertIn("## 载体数组", index)
+            self.assertIn("| id | superordinate | source |", index)
+            self.assertIn("| forms-presentation | forms | lom |", index)
+            self.assertIn("| forms-activity | forms | lom |", index)
 
         cases = (
             (
@@ -312,7 +337,7 @@ class ExportObsidianTests(unittest.TestCase):
         object_paths = sorted(
             path
             for path in files
-            if path.startswith("KB/") and path.endswith(".md")
+            if path.startswith("kb/") and path.endswith(".md")
         )
 
         with self.subTest("all object notes"):
@@ -329,12 +354,12 @@ class ExportObsidianTests(unittest.TestCase):
             self.assertEqual([], non_scalar)
 
         expected_labels = {
-            "KB/Topics/security.md": "Security",
-            "KB/Arrays/security-cs2023.md": "security-cs2023",
-            "KB/Entities/cs2023.md": "计算机科学课程 2023",
-            "KB/Sources/cs2023.md": "cs2023",
-            "KB/Types/tutorial.md": "教程",
-            "KB/Forms/diagram.md": "Diagram",
+            "kb/topics/security.md": "Security",
+            "kb/arrays/security-cs2023.md": "security-cs2023",
+            "kb/entities/cs2023.md": "计算机科学课程 2023",
+            "kb/sources/cs2023.md": "cs2023",
+            "kb/types/tutorial.md": "教程",
+            "kb/forms/diagram.md": "Diagram",
         }
         for path, expected in expected_labels.items():
             with self.subTest(path):
@@ -342,9 +367,9 @@ class ExportObsidianTests(unittest.TestCase):
                 self.assertEqual(expected, properties["kb_label"])
 
         expected_orders = {
-            "KB/Views/Topics.base": ["kb_id", "kb_label", "kb_status", "kb_broader"],
-            "KB/Views/Entities.base": ["kb_id", "kb_label", "kb_status", "kb_kind"],
-            "KB/Views/Sources.base": ["kb_id", "kb_label", "kb_entity", "kb_roles"],
+            "kb/views/topics.base": ["kb_id", "kb_label", "kb_status", "kb_broader"],
+            "kb/views/entities.base": ["kb_id", "kb_label", "kb_status", "kb_kind"],
+            "kb/views/sources.base": ["kb_id", "kb_label", "kb_entity", "kb_roles"],
         }
         for path, expected in expected_orders.items():
             with self.subTest(path):
@@ -443,19 +468,19 @@ class ExportObsidianTests(unittest.TestCase):
             )
 
             directory_objects = {
-                "Arrays": "array",
-                "Entities": "entity",
-                "Forms": "form",
-                "Genres": "genre",
-                "Sources": "source",
-                "Topics": "topic",
-                "Types": "type",
+                "arrays": "array",
+                "entities": "entity",
+                "forms": "form",
+                "genres": "genre",
+                "sources": "source",
+                "topics": "topic",
+                "types": "type",
             }
             expected_entries = []
             content_digest_input = bytearray()
             for path, content in sorted(content_files.items()):
                 sha256 = hashlib.sha256(content).hexdigest()
-                if path == "README.md":
+                if path == "index.md":
                     object_kind = "index"
                 elif path.endswith(".base"):
                     object_kind = "base"
@@ -565,7 +590,7 @@ class ExportObsidianTests(unittest.TestCase):
                 item for item in manifest["inputs"] if item["path"] == "vocab/topics.yaml"
             )
             self.assertEqual(hashlib.sha256(original_input).hexdigest(), topics_input["sha256"])
-            properties, _ = split_note((output / "KB/Topics/security.md").read_bytes())
+            properties, _ = split_note((output / "kb/topics/security.md").read_bytes())
             self.assertEqual("Security", properties["kb_label"])
             self.assertIn(b"Security Changed During Export", input_path.read_bytes())
 
