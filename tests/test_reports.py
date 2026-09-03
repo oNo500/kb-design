@@ -35,13 +35,13 @@ class ReportTests(unittest.TestCase):
         self.vault_gate.start()
         self.design.mkdir()
         for relative in (
-            "Content",
-            "Indexes",
-            "KB/Topics",
-            "App/Templates",
-            "App/Views",
-            "App/Rules",
-            "App/Reports",
+            "content",
+            "indexes",
+            "kb/topics",
+            "app/templates",
+            "app/views",
+            "app/rules",
+            "app/reports",
         ):
             (self.vault / relative).mkdir(parents=True, exist_ok=True)
 
@@ -89,20 +89,20 @@ class ReportTests(unittest.TestCase):
         valid = ContentRecord(
             identifier=UUID_A,
             title="有效内容",
-            path=Path(f"Content/{UUID_A}.md"),
+            path=Path(f"content/{UUID_A}.md"),
             properties={
-                "aliases": ("[[KB/Topics/artificial-intelligence|人工智能]]",),
-                "kb_subjects": ("[[KB/Topics/application-security|应用安全]]",),
+                "aliases": ("[[kb/topics/artificial-intelligence|人工智能]]",),
+                "kb_subjects": ("[[kb/topics/application-security|应用安全]]",),
             },
-            body="正文链接 [[KB/Topics/artificial-intelligence|人工智能]]。\n",
+            body="正文链接 [[kb/topics/artificial-intelligence|人工智能]]。\n",
         )
         invalid = ContentRecord(
             identifier=UUID_B,
             title="无效内容",
-            path=Path(f"Content/{UUID_B}.md"),
+            path=Path(f"content/{UUID_B}.md"),
             properties={
                 "aliases": ("无效内容",),
-                "kb_subjects": ("[[KB/Topics/artificial-intelligence|人工智能]]",),
+                "kb_subjects": ("[[kb/topics/artificial-intelligence|人工智能]]",),
             },
             body="",
         )
@@ -114,10 +114,10 @@ class ReportTests(unittest.TestCase):
         )
         self.validation = ValidationResult((invalid, valid), (invalid_issue,))
 
-        (self.vault / "Content" / f"{UUID_A}.md").write_text(valid.body, encoding="utf-8")
-        (self.vault / "Content" / f"{UUID_B}.md").write_text(invalid.body, encoding="utf-8")
-        (self.vault / "Indexes" / "ai.md").write_text(
-            "[[KB/Topics/artificial-intelligence|人工智能]]\n",
+        (self.vault / "content" / f"{UUID_A}.md").write_text(valid.body, encoding="utf-8")
+        (self.vault / "content" / f"{UUID_B}.md").write_text(invalid.body, encoding="utf-8")
+        (self.vault / "indexes" / "ai.md").write_text(
+            "[[kb/topics/artificial-intelligence|人工智能]]\n",
             encoding="utf-8",
         )
         self._write_boundaries()
@@ -130,9 +130,9 @@ class ReportTests(unittest.TestCase):
         """Scanning non-controlled links or promoting ancestors to direct use would corrupt usage facts."""
         from kb_obsidian.reports import build_reports
 
-        before_content = self._tree_hashes(self.vault / "Content")
+        before_content = self._tree_hashes(self.vault / "content")
         reports = build_reports(self.snapshot, self.validation, self.vault)
-        usage = json.loads(reports["App/Reports/topic-usage.json"])
+        usage = json.loads(reports["app/reports/data/topic-usage.json"])
 
         self.assertEqual(1, usage["direct"]["application-security"])
         self.assertEqual(0, usage["direct"]["security"])
@@ -142,9 +142,9 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(1, usage["aggregate"]["security"])
         self.assertEqual(1, usage["aggregate"]["computing"])
         self.assertEqual(0, usage["aggregate"]["artificial-intelligence"])
-        self.assertEqual(before_content, self._tree_hashes(self.vault / "Content"))
+        self.assertEqual(before_content, self._tree_hashes(self.vault / "content"))
         self.assertEqual(
-            ("[[KB/Topics/application-security|应用安全]]",),
+            ("[[kb/topics/application-security|应用安全]]",),
             self.validation.valid_records[0].properties["kb_subjects"],
         )
 
@@ -152,7 +152,8 @@ class ReportTests(unittest.TestCase):
         """Dropping empty formal branches or treating threshold matches as actions would hide review evidence."""
         from kb_obsidian.reports import build_reports
 
-        usage = json.loads(build_reports(self.snapshot, self.validation, self.vault)["App/Reports/topic-usage.json"])
+        reports = build_reports(self.snapshot, self.validation, self.vault)
+        usage = json.loads(reports["app/reports/data/topic-usage.json"])
 
         self.assertEqual(
             [
@@ -180,6 +181,41 @@ class ReportTests(unittest.TestCase):
         self.assertIn("artificial-intelligence", usage["signals"]["zero_reference"])
         self.assertEqual(["application-security"], usage["signals"]["overuse"])
         self.assertEqual(0.1, usage["overuse_threshold"])
+        self.assertIn(
+            "| application-security | active | self | security | 1 | 1 |",
+            reports["app/reports/topic-usage.md"].decode("utf-8"),
+        )
+
+    def test_index_links_only_to_human_reports_and_human_reports_match_machine_facts(self) -> None:
+        """Publishing JSON navigation or mismatched human facts would make reports unusable or misleading."""
+        from kb_obsidian.reports import build_reports
+
+        reports = build_reports(self.snapshot, self.validation, self.vault)
+        index = reports["app/reports/index.md"].decode("utf-8")
+        validation = json.loads(reports["app/reports/data/validation.json"])
+        usage = json.loads(reports["app/reports/data/topic-usage.json"])
+
+        self.assertEqual(
+            [
+                "- [[app/reports/validation|内容校验]]",
+                "- [[app/reports/topic-usage|主题使用]]",
+                "- [[app/reports/topic-coverage|主题覆盖]]",
+                "- [[app/reports/unassigned-topics|主题复核]]",
+            ],
+            [line for line in index.splitlines() if line.startswith("- ")],
+        )
+        self.assertNotIn("](", index)
+        self.assertNotIn(".json", index)
+        validation_markdown = reports["app/reports/validation.md"].decode("utf-8")
+        self.assertIn(validation["issues"][0]["code"], validation_markdown)
+        self.assertIn(validation["issues"][0]["path"], validation_markdown)
+        self.assertIn(str(validation["valid_record_count"]), validation_markdown)
+        usage_markdown = reports["app/reports/topic-usage.md"].decode("utf-8")
+        topic = next(item for item in usage["topics"] if item["id"] == "application-security")
+        self.assertIn(
+            f"| {topic['id']} | {topic['status']} | {topic['source']} | security | {topic['direct']} | {topic['aggregate']} |",
+            usage_markdown,
+        )
 
     def test_output_is_deterministic_canonical_and_explicitly_report_only(self) -> None:
         """Input iteration order and platform newlines must not alter the published report set."""
@@ -203,11 +239,13 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(first, second)
         self.assertEqual(
             {
-                "App/Reports/README.md",
-                "App/Reports/topic-coverage.md",
-                "App/Reports/topic-usage.json",
-                "App/Reports/unassigned-topics.md",
-                "App/Reports/validation.json",
+                "app/reports/index.md",
+                "app/reports/validation.md",
+                "app/reports/topic-usage.md",
+                "app/reports/topic-coverage.md",
+                "app/reports/unassigned-topics.md",
+                "app/reports/data/validation.json",
+                "app/reports/data/topic-usage.json",
             },
             set(first),
         )
@@ -224,17 +262,17 @@ class ReportTests(unittest.TestCase):
                 self.assertIn("人工复核", text)
                 self.assertIn("不会自动", text)
 
-        validation = json.loads(first["App/Reports/validation.json"])
+        validation = json.loads(first["app/reports/data/validation.json"])
         self.assertEqual(2, validation["record_count"])
         self.assertEqual(1, validation["valid_record_count"])
         self.assertEqual(1, validation["issue_count"])
-        self.assertEqual(f"Content/{UUID_B}.md", validation["issues"][0]["path"])
+        self.assertEqual(f"content/{UUID_B}.md", validation["issues"][0]["path"])
 
     def test_successful_publication_changes_only_reports(self) -> None:
         """A successful report refresh must not write user, KB, managed App, or design-source bytes."""
         from kb_obsidian.reports import write_reports
 
-        (self.vault / "App" / "Reports" / "old.md").write_bytes(b"old report\n")
+        (self.vault / "app" / "reports" / "old.md").write_bytes(b"old report\n")
         before = self._protected_hashes()
 
         summary = write_reports(self.snapshot, self.validation, self.vault)
@@ -242,23 +280,25 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(before, self._protected_hashes())
         self.assertEqual(
             [
-                "App/Reports/README.md",
-                "App/Reports/topic-coverage.md",
-                "App/Reports/topic-usage.json",
-                "App/Reports/unassigned-topics.md",
-                "App/Reports/validation.json",
+                "app/reports/data/topic-usage.json",
+                "app/reports/data/validation.json",
+                "app/reports/index.md",
+                "app/reports/topic-coverage.md",
+                "app/reports/topic-usage.md",
+                "app/reports/unassigned-topics.md",
+                "app/reports/validation.md",
             ],
             summary["files"],
         )
-        self.assertFalse((self.vault / "App" / "Reports" / "old.md").exists())
-        self.assertEqual(5, len(list((self.vault / "App" / "Reports").iterdir())))
-        self.assertEqual([], list((self.vault / "App").glob(".reports-tmp-*")))
+        self.assertFalse((self.vault / "app" / "reports" / "old.md").exists())
+        self.assertEqual(8, len(list((self.vault / "app" / "reports").rglob("*"))))
+        self.assertEqual([], list((self.vault / "app").glob(".reports-tmp-*")))
 
     def test_existing_reports_are_atomically_swapped_as_complete_directories(self) -> None:
         """Moving the old directory away before publish would expose a missing or partial report set."""
         from kb_obsidian import reports as report_module
 
-        old_report = self.vault / "App" / "Reports" / "old.md"
+        old_report = self.vault / "app" / "reports" / "old.md"
         old_report.write_bytes(b"complete old report set\n")
         observed: list[tuple[bool, tuple[str, ...]]] = []
         real_swap = report_module._rename_swap
@@ -277,11 +317,12 @@ class ReportTests(unittest.TestCase):
                 (
                     True,
                     (
-                        "README.md",
+                        "data",
+                        "index.md",
                         "topic-coverage.md",
-                        "topic-usage.json",
+                        "topic-usage.md",
                         "unassigned-topics.md",
-                        "validation.json",
+                        "validation.md",
                     ),
                 ),
             ],
@@ -293,9 +334,9 @@ class ReportTests(unittest.TestCase):
         from kb_obsidian.errors import ApplicationError
         from kb_obsidian.reports import write_reports
 
-        old_report = self.vault / "App" / "Reports" / "old.md"
+        old_report = self.vault / "app" / "reports" / "old.md"
         old_report.write_bytes(b"old report must survive\n")
-        unrelated_temp = self.vault / "App" / ".reports-tmp-unrelated"
+        unrelated_temp = self.vault / "app" / ".reports-tmp-unrelated"
         unrelated_temp.mkdir()
         (unrelated_temp / "keep").write_bytes(b"not ours\n")
         before = self._protected_hashes(include_reports=True)
@@ -310,14 +351,14 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(before, self._protected_hashes(include_reports=True))
         self.assertEqual(b"old report must survive\n", old_report.read_bytes())
         self.assertEqual(b"not ours\n", (unrelated_temp / "keep").read_bytes())
-        self.assertEqual([unrelated_temp], list((self.vault / "App").glob(".reports-tmp-*")))
+        self.assertEqual([unrelated_temp], list((self.vault / "app").glob(".reports-tmp-*")))
 
     def test_failed_post_publish_readback_and_rollback_preserve_old_report_backup(self) -> None:
         """Deleting staging after a failed rollback would destroy the only recoverable old report set."""
         from kb_obsidian import reports as report_module
         from kb_obsidian.errors import ApplicationError
 
-        old_report = self.vault / "App" / "Reports" / "old.md"
+        old_report = self.vault / "app" / "reports" / "old.md"
         old_report.write_bytes(b"recoverable old report\n")
         real_swap = report_module._rename_swap
         real_verify = report_module._verify_report_tree
@@ -352,30 +393,31 @@ class ReportTests(unittest.TestCase):
         self.assertTrue(recovery.parent.name.startswith(".reports-tmp-"))
         self.assertEqual(
             [recovery.parent],
-            [path.resolve() for path in (self.vault / "App").glob(".reports-tmp-*")],
+            [path.resolve() for path in (self.vault / "app").glob(".reports-tmp-*")],
         )
         self.assertEqual(
             (
                 True,
                 (
-                    "README.md",
-                    "topic-coverage.md",
-                    "topic-usage.json",
-                    "unassigned-topics.md",
-                    "validation.json",
+                        "data",
+                        "index.md",
+                        "topic-coverage.md",
+                        "topic-usage.md",
+                        "unassigned-topics.md",
+                        "validation.md",
                 ),
             ),
-            self._visible_reports(self.vault / "App" / "Reports"),
+            self._visible_reports(self.vault / "app" / "reports"),
         )
 
     def _write_boundaries(self) -> None:
         for relative, content in {
-            "Home.md": b"user home\n",
-            "KB/Topics/security.md": b"formal topic\n",
-            "App/Templates/content.md": b"managed template\n",
-            "App/Views/content.base": b"managed view\n",
-            "App/Rules/README.md": b"managed rules\n",
-            "App/manifest.json": b"managed manifest\n",
+            "home.md": b"user home\n",
+            "kb/topics/security.md": b"formal topic\n",
+            "app/templates/content.md": b"managed template\n",
+            "app/views/content.base": b"managed view\n",
+            "app/rules/index.md": b"managed rules\n",
+            "app/manifest.json": b"managed manifest\n",
             "design/topics.yaml": b"formal design source\n",
         }.items():
             path = self.root / relative if relative.startswith("design/") else self.vault / relative
@@ -392,16 +434,16 @@ class ReportTests(unittest.TestCase):
 
     def _protected_hashes(self, *, include_reports: bool = False) -> dict[str, dict[str, str]]:
         roots = {
-            "Content": self.vault / "Content",
-            "Indexes": self.vault / "Indexes",
-            "KB": self.vault / "KB",
-            "Templates": self.vault / "App" / "Templates",
-            "Views": self.vault / "App" / "Views",
-            "Rules": self.vault / "App" / "Rules",
+            "Content": self.vault / "content",
+            "Indexes": self.vault / "indexes",
+            "KB": self.vault / "kb",
+            "Templates": self.vault / "app" / "templates",
+            "Views": self.vault / "app" / "views",
+            "Rules": self.vault / "app" / "rules",
             "Design": self.design,
         }
         if include_reports:
-            roots["Reports"] = self.vault / "App" / "Reports"
+            roots["Reports"] = self.vault / "app" / "reports"
         return {name: self._tree_hashes(root) for name, root in roots.items()}
 
     @staticmethod

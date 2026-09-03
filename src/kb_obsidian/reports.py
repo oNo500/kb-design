@@ -19,17 +19,20 @@ from .validation import ValidationResult
 from .vault import verify_vault
 
 
-_REPORT_PREFIX = "App/Reports/"
-_REPORT_NAMES = frozenset(
+_REPORT_PREFIX = "app/reports/"
+_REPORT_FILES = frozenset(
     {
-        "README.md",
+        "index.md",
+        "validation.md",
+        "topic-usage.md",
         "topic-coverage.md",
-        "topic-usage.json",
         "unassigned-topics.md",
-        "validation.json",
+        "data/topic-usage.json",
+        "data/validation.json",
     }
 )
-_SUBJECT_LINK = re.compile(r"^\[\[KB/Topics/([^/|\]#^\r\n]+)(?:\|[^\[\]\r\n]+)?\]\]$")
+_REPORT_DIRECTORIES = frozenset({"data"})
+_SUBJECT_LINK = re.compile(r"^\[\[kb/topics/([^/|\]#^\r\n]+)(?:\|[^\[\]\r\n]+)?\]\]$")
 _OVERUSE_THRESHOLD = 0.1
 _AT_FDCWD = -2
 _RENAME_SWAP = 0x00000002
@@ -230,6 +233,27 @@ def _coverage_markdown(usage: Mapping[str, Any]) -> bytes:
     return ("\n".join(lines) + "\n").encode("utf-8")
 
 
+def _topic_usage_markdown(usage: Mapping[str, Any]) -> bytes:
+    lines = [
+        "# 主题使用",
+        "",
+        "本报告是从通过校验的受控内容字段重算的派生结果，仅供人工复核；它不会自动修改内容或正式主题。",
+        "",
+        "| 主题 ID | 状态 | 来源 | 上位 | 直接计数 | 分支聚合 |",
+        "|---|---|---|---|---:|---:|",
+    ]
+    for topic in usage["topics"]:
+        lines.append(
+            "| "
+            + " | ".join(
+                _markdown_value(topic[key])
+                for key in ("id", "status", "source", "broader", "direct", "aggregate")
+            )
+            + " |"
+        )
+    return ("\n".join(lines) + "\n").encode("utf-8")
+
+
 def _signal_section(
     title: str,
     identifiers: Sequence[str],
@@ -311,14 +335,49 @@ def _signals_markdown(usage: Mapping[str, Any]) -> bytes:
     return ("\n".join(lines).rstrip() + "\n").encode("utf-8")
 
 
-def _readme_markdown() -> bytes:
+def _validation_markdown(report: Mapping[str, Any]) -> bytes:
+    lines = [
+        "# 内容校验",
+        "",
+        "本报告是从本次校验结果重算的派生结果，仅供人工复核；它不会自动修改内容、正式数据、状态或决定。",
+        "",
+        "| 内容记录 | 通过记录 | 校验问题 |",
+        "|---:|---:|---:|",
+        f"| {report['record_count']} | {report['valid_record_count']} | {report['issue_count']} |",
+        "",
+        "## 校验问题",
+        "",
+    ]
+    issues = report["issues"]
+    if not issues:
+        lines.extend(("无。", ""))
+    else:
+        lines.extend(
+            (
+                "| 编号 | 路径 | 字段 | 说明 |",
+                "|---|---|---|---|",
+            )
+        )
+        for issue in issues:
+            lines.append(
+                "| "
+                + " | ".join(
+                    _markdown_value(issue[key]) for key in ("code", "path", "field", "message")
+                )
+                + " |"
+            )
+        lines.append("")
+    return ("\n".join(lines) + "\n").encode("utf-8")
+
+
+def _index_markdown() -> bytes:
     return (
         "# 维护报告\n\n"
         "此目录只保存从本次输入重算的派生报告，仅供人工复核；报告不会自动修改内容、正式数据、状态或决定。\n\n"
-        "- [内容校验](validation.json)\n"
-        "- [主题使用](topic-usage.json)\n"
-        "- [主题覆盖](topic-coverage.md)\n"
-        "- [主题复核](unassigned-topics.md)\n"
+        "- [[app/reports/validation|内容校验]]\n"
+        "- [[app/reports/topic-usage|主题使用]]\n"
+        "- [[app/reports/topic-coverage|主题覆盖]]\n"
+        "- [[app/reports/unassigned-topics|主题复核]]\n"
     ).encode("utf-8")
 
 
@@ -330,26 +389,36 @@ def build_reports(
     """Build reports without reading vault links, indexes, aliases, or prior reports."""
     del vault
     usage = _usage(snapshot, validation)
+    validation_report = _validation_report(snapshot, validation)
     return {
-        "App/Reports/README.md": _readme_markdown(),
-        "App/Reports/topic-coverage.md": _coverage_markdown(usage),
-        "App/Reports/topic-usage.json": _json_bytes(usage),
-        "App/Reports/unassigned-topics.md": _signals_markdown(usage),
-        "App/Reports/validation.json": _json_bytes(_validation_report(snapshot, validation)),
+        "app/reports/index.md": _index_markdown(),
+        "app/reports/validation.md": _validation_markdown(validation_report),
+        "app/reports/topic-usage.md": _topic_usage_markdown(usage),
+        "app/reports/topic-coverage.md": _coverage_markdown(usage),
+        "app/reports/unassigned-topics.md": _signals_markdown(usage),
+        "app/reports/data/validation.json": _json_bytes(validation_report),
+        "app/reports/data/topic-usage.json": _json_bytes(usage),
     }
 
 
 def _verify_report_tree(root: Path, reports: Mapping[str, bytes]) -> None:
     try:
-        children = list(root.iterdir())
+        entries = list(root.rglob("*"))
     except OSError as exc:
         raise ApplicationError(f"cannot inspect staged reports: {exc}") from exc
-    actual_names = {path.name for path in children if path.is_file() and not path.is_symlink()}
-    if len(children) != len(_REPORT_NAMES) or actual_names != _REPORT_NAMES:
+    if any(path.is_symlink() for path in entries):
+        raise ApplicationError("generated report tree contains a symlink")
+    actual_files = {
+        path.relative_to(root).as_posix() for path in entries if path.is_file()
+    }
+    actual_directories = {
+        path.relative_to(root).as_posix() for path in entries if path.is_dir()
+    }
+    if actual_files != _REPORT_FILES or actual_directories != _REPORT_DIRECTORIES:
         raise ApplicationError("generated report file set mismatch")
     for relative_path, expected in reports.items():
-        name = relative_path.removeprefix(_REPORT_PREFIX)
-        path = root / name
+        report_path = relative_path.removeprefix(_REPORT_PREFIX)
+        path = root / report_path
         try:
             actual = path.read_bytes()
         except OSError as exc:
@@ -394,11 +463,11 @@ def write_reports(
     validation: ValidationResult,
     vault: Path,
 ) -> Mapping[str, object]:
-    """Replace ``App/Reports`` only after a same-parent staged tree verifies."""
+    """Replace ``app/reports`` only after a same-parent staged tree verifies."""
     root = verify_vault(snapshot, vault)
     generated = build_reports(snapshot, validation, vault)
-    app = root / "App"
-    reports_root = app / "Reports"
+    app = root / "app"
+    reports_root = app / "reports"
     if root.is_symlink() or not root.is_dir():
         raise ApplicationError(f"vault is missing or unsafe: {root}")
     if app.is_symlink() or not app.is_dir():
@@ -416,10 +485,12 @@ def write_reports(
     try:
         staged.mkdir()
         for relative_path, content in generated.items():
-            name = relative_path.removeprefix(_REPORT_PREFIX)
-            if name not in _REPORT_NAMES or "/" in name:
+            report_path = relative_path.removeprefix(_REPORT_PREFIX)
+            if report_path not in _REPORT_FILES:
                 raise ApplicationError(f"unsafe generated report path: {relative_path}")
-            (staged / name).write_bytes(content)
+            destination = staged / report_path
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_bytes(content)
         _verify_report_tree(staged, generated)
 
         if had_old:
