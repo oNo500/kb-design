@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import datetime as dt
 import json
-import os
 import shutil
 import subprocess
 import sys
@@ -14,14 +13,7 @@ from uuid import UUID
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
-TEST_DESIGN_COMMIT = os.environ.get("KB_OBSIDIAN_TEST_DESIGN_COMMIT", "356f02bc0a61d28c045139b2dc5f41bf40291a78")
-
-if TEST_DESIGN_COMMIT != "356f02bc0a61d28c045139b2dc5f41bf40291a78":
-    import kb_obsidian.design_source as design_source
-    import kb_obsidian.reference_export as reference_export
-
-    design_source.SUPPORTED_DESIGN_COMMIT = TEST_DESIGN_COMMIT
-    reference_export.SUPPORTED_DESIGN_COMMIT = TEST_DESIGN_COMMIT
+TEST_DESIGN_COMMIT = "1452cb5856fb873b21ba7a4d79651cb8cc853381"
 
 CONTENT_UUID = "123e4567-e89b-42d3-a456-426614174000"
 
@@ -29,7 +21,7 @@ CONTENT_UUID = "123e4567-e89b-42d3-a456-426614174000"
 class VaultBindingTests(unittest.TestCase):
     """Every mutating or consuming flow must use the initialized vault snapshot."""
 
-    design_root = Path(os.environ.get("KB_DESIGN_ROOT", "/Users/xiu/code/kb-design"))
+    design_root = Path("/Users/xiu/code/kb-design")
 
     @classmethod
     def setUpClass(cls) -> None:

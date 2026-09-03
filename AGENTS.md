@@ -8,6 +8,8 @@
 
 用户写集包含 `home.md`、`inbox/`、`sources/`、`content/`、`indexes/` 和 `attachments/`。受管理写集包含 `kb/`、`app/templates/`、`app/views/`、`app/rules/` 和 `app/manifest.json`。报告写集只包含 `app/reports/`。`.obsidian/` 是配置边界。应用必须保持这些写集和边界分离，不得把管理文件、报告或配置当作用户内容。
 
+`app/reports/index.md` 只导航人读 Markdown 报告；`app/reports/data/` 下的 JSON 是终端和程序读取的机器表示，不是 Obsidian 的人读入口。报告发布时必须原子替换整棵 `app/reports/`，不得让 Markdown 与 JSON 分属不同版本。
+
 ## 内容契约
 
 新内容使用无前缀、小写、标准连字符的 UUIDv4 作为稳定标识，并写入 `content/<UUIDv4>.md`。`title` 同时进入一级标题、`title` Text property 和 `aliases` 中恰好一个派生值。人的检索依赖 title 与 alias 等元数据，不依赖 UUID 文件名。

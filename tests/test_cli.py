@@ -19,7 +19,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 class CliTests(unittest.TestCase):
     """The CLI must compose the public application flows into a stable process contract."""
 
-    design_root = Path(os.environ.get("KB_DESIGN_ROOT", "/Users/xiu/code/kb-design"))
+    design_root = Path("/Users/xiu/code/kb-design")
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -73,7 +73,7 @@ class CliTests(unittest.TestCase):
             self.assertEqual(0, code, error)
             self.assertEqual("", error)
             initialized = self._assert_json_line(output)
-            self.assertEqual("356f02bc0a61d28c045139b2dc5f41bf40291a78", initialized["design_commit"])
+            self.assertEqual("1452cb5856fb873b21ba7a4d79651cb8cc853381", initialized["design_commit"])
 
             code, output, error = self._invoke(
                 "new-content",
@@ -111,7 +111,7 @@ class CliTests(unittest.TestCase):
             created = self._assert_json_line(output)
             created_path = Path(created["path"])
             self.assertTrue(created_path.is_absolute())
-            self.assertEqual(vault.resolve() / "Content", created_path.parent)
+            self.assertEqual(vault.resolve() / "content", created_path.parent)
             self.assertTrue(created_path.is_file())
 
             code, output, error = self._invoke(
@@ -141,7 +141,7 @@ class CliTests(unittest.TestCase):
             reported = self._assert_json_line(output)
             self.assertEqual(1, reported["valid_record_count"])
             self.assertEqual(0, reported["issue_count"])
-            self.assertEqual(5, len(reported["files"]))
+            self.assertEqual(7, len(reported["files"]))
 
     def test_validate_issues_are_one_prefixed_json_error_line_and_exit_one(self) -> None:
         """Sending semantic issues to success output or hiding their context breaks automation."""
