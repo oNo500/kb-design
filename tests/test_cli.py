@@ -73,7 +73,7 @@ class CliTests(unittest.TestCase):
             self.assertEqual(0, code, error)
             self.assertEqual("", error)
             initialized = self._assert_json_line(output)
-            self.assertEqual("1452cb5856fb873b21ba7a4d79651cb8cc853381", initialized["design_commit"])
+            self.assertEqual("1e7aef8a5d9dc927c1c69138e61dfbabddd84253", initialized["design_commit"])
 
             code, output, error = self._invoke(
                 "new-content",

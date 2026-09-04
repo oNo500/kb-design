@@ -23,7 +23,7 @@ python3 -m pip install -e .
 所有命令都要求通过 `--design-root` 传入 `kb-design` 仓库根目录。当前唯一支持的设计提交是：
 
 ```text
-1452cb5856fb873b21ba7a4d79651cb8cc853381
+1e7aef8a5d9dc927c1c69138e61dfbabddd84253
 ```
 
 该目录必须是这个提交的干净 Git checkout；tracked 文件有修改、HEAD 不匹配或传入的不是仓库根目录时，命令会失败。运行时路径由参数传入，应用不把本机目录写入生成内容。
