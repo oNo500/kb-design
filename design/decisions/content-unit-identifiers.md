@@ -22,7 +22,7 @@ Obsidian 的 Quick Switcher 按文件名或 alias 查找笔记，Search 可以�
 - 一经写入且被引用后永久不变；
 - 不从 title、alias、文件名、语言、时间、排序位置或语言模型输出派生。
 
-Obsidian 内容路径使用 `Content/<UUIDv4>.md`。路径是该 target 的确定性表示，不改变 identifier 与 path 的概念边界。
+Obsidian 内容路径使用 `content/<UUIDv4>.md`。路径是该 target 的确定性表示，不改变 identifier 与 path 的概念边界。
 
 人的检索使用元数据和正文：`title` 同时进入一级标题与 Text property，并作为 Obsidian `aliases` 中恰好一个由应用派生的当前标题。Quick Switcher 通过 alias 查找，Search 检索标题、正文和 properties，Bases 按受控字段筛选。标题修改时同时更新一级标题、`title` 和派生 alias，不修改 UUID 或路径。
 
