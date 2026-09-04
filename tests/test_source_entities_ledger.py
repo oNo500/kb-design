@@ -7,22 +7,11 @@ import yaml
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-PARALLEL = (
-    ROOT
-    / ".superpowers"
-    / "sdd"
-    / "2026-08-31-source-schema-migration"
-    / "parallel"
-    / "entities"
+FROZEN_FIXTURE_ROOT = (
+    ROOT / "tests" / "fixtures" / "governance-frozen-2026-08-31"
 )
-PREVIEW = (
-    ROOT
-    / ".superpowers"
-    / "sdd"
-    / "2026-08-31-source-schema-migration"
-    / "plan"
-    / "entities.yaml"
-)
+PARALLEL = FROZEN_FIXTURE_ROOT / "parallel" / "entities"
+PREVIEW = FROZEN_FIXTURE_ROOT / "plan" / "entities.yaml"
 LEDGER = ROOT / "vocab" / "migrations" / "source-v1" / "entities.yaml"
 EXISTING = PARALLEL / "existing-proposals.yaml"
 UNREGISTERED = PARALLEL / "unregistered-proposals.yaml"

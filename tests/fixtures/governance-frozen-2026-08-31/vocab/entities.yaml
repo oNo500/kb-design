@@ -1,0 +1,699 @@
+# 命名实体词表。设计见 design/entities.md。首批为作为词表来源的标准、知识体系与参考资料。
+version:
+  id: "2026.08"
+  date: 2026-08-23
+  note: 初版：27 个来源实体；第二批 30 个工具、语言、组织
+
+entities:
+  - id: gbt-13745
+    label: { zh: "GB/T 13745-2009 学科分类与代码", en: "GB/T 13745-2009 Classification and code of disciplines" }
+    kind: standard
+    tier: de-jure
+    version: "2009"
+    checked: 2026-08-23
+    url: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
+    watch: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
+    subjects: [library-and-information-science]
+    basis:
+      subjects: self
+    status: candidate
+    added: 2026-08-23
+  - id: cs2023
+    label: { zh: "计算机科学课程 2023", en: "Computer Science Curricula 2023" }
+    kind: standard
+    tier: de-facto
+    version: "2024-01"
+    checked: 2026-08-23
+    url: https://csed.acm.org/cs2023/
+    watch: https://csed.acm.org/cs2023/
+    subjects: [computing]
+    basis:
+      subjects: cs2023:scope
+    status: active
+    added: 2026-08-23
+  - id: swebok
+    label: { zh: "软件工程知识体系指南 v4.0", en: "Guide to the Software Engineering Body of Knowledge v4.0" }
+    kind: standard
+    tier: de-facto
+    version: "4.0"
+    checked: 2026-08-23
+    url: https://www.computer.org/education/bodies-of-knowledge/software-engineering
+    watch: https://www.computer.org/education/bodies-of-knowledge/software-engineering
+    subjects: [software-engineering]
+    basis:
+      subjects: swebok:scope
+    status: active
+    added: 2026-08-23
+  - id: acm-ccs
+    label: { zh: "ACM 计算分类系统 2012", en: "ACM Computing Classification System 2012" }
+    kind: standard
+    tier: de-facto
+    version: "2012"
+    checked: 2026-08-23
+    url: https://dl.acm.org/ccs
+    subjects: [computing]
+    basis:
+      subjects: acm-ccs:scope
+    status: active
+    added: 2026-08-23
+  - id: asvs
+    label: { zh: "OWASP 应用安全验证标准 5.0", en: "OWASP Application Security Verification Standard 5.0" }
+    kind: standard
+    tier: de-facto
+    version: "5.0"
+    checked: 2026-08-23
+    url: https://owasp.org/www-project-application-security-verification-standard/
+    watch: https://github.com/OWASP/ASVS/releases
+    subjects: [security]
+    basis:
+      subjects: asvs:scope
+    status: active
+    added: 2026-08-23
+  - id: cwe
+    label: { zh: "MITRE 通用缺陷枚举", en: "MITRE Common Weakness Enumeration" }
+    kind: standard
+    tier: de-facto
+    version: "4.20"
+    checked: 2026-08-23
+    url: https://cwe.mitre.org/
+    watch: https://cwe.mitre.org/data/index.html
+    subjects: [security]
+    basis:
+      subjects: cwe:scope
+    status: active
+    added: 2026-08-23
+  - id: attack
+    label: { zh: "MITRE ATT&CK Enterprise", en: "MITRE ATT&CK Enterprise" }
+    kind: standard
+    tier: de-facto
+    version: "19.2"
+    checked: 2026-08-23
+    url: https://attack.mitre.org/
+    watch: https://attack.mitre.org/resources/versions/
+    subjects: [security]
+    basis:
+      subjects: attack:scope
+    status: active
+    added: 2026-08-23
+  - id: owasp-top10
+    label: { zh: "OWASP Top 10", en: "OWASP Top 10" }
+    kind: standard
+    tier: de-facto
+    version: "2021"
+    checked: 2026-08-23
+    url: https://owasp.org/www-project-top-ten/
+    watch: https://owasp.org/www-project-top-ten/
+    subjects: [security]
+    basis:
+      subjects: owasp-top10:scope
+    status: active
+    added: 2026-08-23
+  - id: owasp-llm-top10
+    label: { zh: "OWASP LLM 应用 Top 10", en: "OWASP Top 10 for LLM Applications" }
+    kind: standard
+    tier: de-facto
+    version: "2025"
+    checked: 2026-08-23
+    url: https://genai.owasp.org/llm-top-10/
+    watch: https://github.com/OWASP/www-project-top-10-for-large-language-model-applications
+    subjects: [artificial-intelligence, security]
+    basis:
+      subjects: owasp-llm-top10:scope
+    status: active
+    added: 2026-08-23
+  - id: atlas
+    label: { zh: "MITRE ATLAS", en: "MITRE ATLAS" }
+    kind: standard
+    tier: de-facto
+    version: "2026.07"
+    checked: 2026-08-23
+    url: https://atlas.mitre.org/
+    watch: https://github.com/mitre-atlas/atlas-data/tree/main/dist
+    subjects: [artificial-intelligence, security]
+    basis:
+      subjects: atlas:scope
+    status: active
+    added: 2026-08-23
+  - id: nist-ai-rmf
+    label: { zh: "NIST 人工智能风险管理框架 1.0", en: "NIST AI Risk Management Framework 1.0" }
+    kind: standard
+    tier: de-jure
+    version: "1.0"
+    checked: 2026-08-23
+    url: https://www.nist.gov/itl/ai-risk-management-framework
+    watch: https://www.nist.gov/itl/ai-risk-management-framework
+    subjects: [artificial-intelligence]
+    basis:
+      subjects: nist-ai-rmf:scope
+    status: active
+    added: 2026-08-23
+  - id: anthropic-docs
+    label: { zh: "Anthropic 文档", en: "Anthropic Documentation" }
+    kind: standard
+    tier: vendor
+    version: "2026-08"
+    checked: 2026-08-23
+    url: https://docs.anthropic.com/
+    subjects: [artificial-intelligence]
+    basis:
+      subjects: anthropic-docs:scope
+    status: active
+    added: 2026-08-23
+  - id: rfc-1122
+    label: { zh: "RFC 1122 互联网主机要求：通信层", en: "RFC 1122 Requirements for Internet Hosts — Communication Layers" }
+    kind: standard
+    tier: de-jure
+    version: "1989"
+    checked: 2026-08-23
+    url: https://www.rfc-editor.org/info/rfc1122
+    watch: https://www.rfc-editor.org/info/rfc1122
+    subjects: [networking-and-communication]
+    basis:
+      subjects: rfc-1122:scope
+    status: active
+    added: 2026-08-23
+  - id: rfc-9110
+    label: { zh: "RFC 9110 HTTP 语义", en: "RFC 9110 HTTP Semantics" }
+    kind: standard
+    tier: de-jure
+    version: "2022"
+    checked: 2026-08-23
+    url: https://www.rfc-editor.org/info/rfc9110
+    watch: https://www.rfc-editor.org/info/rfc9110
+    subjects: [networking-and-communication]
+    basis:
+      subjects: rfc-9110:scope
+    status: active
+    added: 2026-08-23
+  - id: osi
+    label: { zh: "ISO/IEC 7498-1 OSI 参考模型", en: "ISO/IEC 7498-1 OSI Basic Reference Model" }
+    kind: standard
+    tier: de-jure
+    version: "1994"
+    checked: 2026-08-23
+    url: https://www.iso.org/standard/20269.html
+    watch: https://www.iso.org/standard/20269.html
+    subjects: [networking-and-communication]
+    basis:
+      subjects: osi:scope
+    status: active
+    added: 2026-08-23
+  - id: mdn
+    label: { zh: "MDN Web 技术参考", en: "MDN Web technology references" }
+    kind: standard
+    tier: de-facto
+    version: "2026-08-20"
+    checked: 2026-08-23
+    url: https://developer.mozilla.org/en-US/docs/Web
+    subjects: [specialized-platform-development]
+    basis:
+      subjects: mdn:scope
+    status: active
+    added: 2026-08-23
+  - id: mdn-curriculum
+    label: { zh: "MDN 课程", en: "MDN Curriculum" }
+    kind: standard
+    tier: de-facto
+    version: "2025-10"
+    checked: 2026-08-23
+    url: https://developer.mozilla.org/en-US/curriculum/
+    subjects: [specialized-platform-development]
+    basis:
+      subjects: mdn-curriculum:scope
+    status: active
+    added: 2026-08-23
+  - id: iso-25964-1
+    label: { zh: "ISO 25964-1:2011 叙词表", en: "ISO 25964-1:2011 Thesauri for information retrieval" }
+    kind: standard
+    tier: de-jure
+    version: "2011"
+    checked: 2026-08-23
+    url: https://www.iso.org/standard/53657.html
+    watch: https://www.iso.org/standard/53657.html
+    subjects: [information-science]
+    basis:
+      subjects: iso-25964-1:scope
+    status: active
+    added: 2026-08-23
+  - id: iso-25964-2
+    label: { zh: "ISO 25964-2:2013 与其他词表的互操作", en: "ISO 25964-2:2013 Interoperability with other vocabularies" }
+    kind: standard
+    tier: de-jure
+    version: "2013"
+    checked: 2026-08-23
+    url: https://www.iso.org/standard/53658.html
+    watch: https://www.iso.org/standard/53658.html
+    subjects: [information-science]
+    basis:
+      subjects: iso-25964-2:scope
+    status: active
+    added: 2026-08-23
+  - id: z39-19
+    label: { zh: "ANSI/NISO Z39.19-2005 (R2010)", en: "ANSI/NISO Z39.19-2005 (R2010) Guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies" }
+    kind: standard
+    tier: de-jure
+    version: "2005 (R2010)"
+    checked: 2026-08-23
+    url: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
+    watch: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
+    subjects: [information-science]
+    basis:
+      subjects: z39-19:scope
+    status: active
+    added: 2026-08-23
+  - id: skos
+    label: { zh: "W3C SKOS 参考", en: "W3C SKOS Simple Knowledge Organization System Reference" }
+    kind: standard
+    tier: de-jure
+    version: "2009-08-18"
+    checked: 2026-08-23
+    url: https://www.w3.org/TR/skos-reference/
+    watch: https://www.w3.org/TR/skos-reference/
+    subjects: [information-science]
+    basis:
+      subjects: skos:scope
+    status: active
+    added: 2026-08-23
+  - id: diataxis
+    label: { zh: "Diátaxis", en: "Diátaxis" }
+    kind: standard
+    tier: de-facto
+    version: "2026-08"
+    checked: 2026-08-23
+    url: https://diataxis.fr/
+    subjects: [software-engineering]
+    basis:
+      subjects: self
+    status: candidate
+    added: 2026-08-23
+  - id: wikidata
+    label: { zh: "Wikidata", en: "Wikidata" }
+    kind: standard
+    tier: de-facto
+    version: "rolling"
+    checked: 2026-08-23
+    url: https://www.wikidata.org/
+    subjects: [library-and-information-science]
+    basis:
+      subjects: self
+    status: candidate
+    added: 2026-08-23
+  - id: roadmap-sh
+    label: { zh: "roadmap.sh", en: "roadmap.sh" }
+    kind: standard
+    tier: de-facto
+    version: "rolling"
+    checked: 2026-08-23
+    url: https://roadmap.sh/
+    subjects: [computing]
+    basis:
+      subjects: self
+    status: candidate
+    added: 2026-08-23
+  - id: teachyourselfcs
+    label: { zh: "Teach Yourself Computer Science", en: "Teach Yourself Computer Science" }
+    kind: publication
+    tier: archival
+    version: "2020"
+    checked: 2026-08-23
+    url: https://teachyourselfcs.com/
+    subjects: [computing]
+    basis:
+      subjects: self
+    status: candidate
+    added: 2026-08-23
+  - id: cmu-15-445
+    label: { zh: "CMU 15-445 数据库系统", en: "CMU 15-445 Database Systems" }
+    kind: publication
+    tier: archival
+    version: "Fall 2025"
+    checked: 2026-08-23
+    url: https://15445.courses.cs.cmu.edu/
+    subjects: [data-management]
+    basis:
+      subjects: cmu-15-445:scope
+    status: active
+    added: 2026-08-23
+  - id: db-engines
+    label: { zh: "DB-Engines 排名", en: "DB-Engines Ranking" }
+    kind: standard
+    tier: de-facto
+    version: "rolling"
+    checked: 2026-08-23
+    url: https://db-engines.com/en/ranking
+    subjects: [data-management]
+    basis:
+      subjects: db-engines:scope
+    status: active
+    added: 2026-08-23
+
+  - id: dita
+    label: { zh: "DITA 1.3", en: "Darwin Information Typing Architecture 1.3" }
+    kind: standard
+    tier: de-jure
+    version: "1.3"
+    checked: 2026-08-23
+    url: https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/dita-v1.3-os-part1-base.html
+    watch: https://www.oasis-open.org/committees/dita/
+    subjects: [journalism-and-communication]
+    basis:
+      subjects: dita:scope
+    status: active
+    added: 2026-08-23
+  - id: iptc-genre
+    label: { zh: "IPTC NewsCodes 体裁词表", en: "IPTC NewsCodes Genre" }
+    kind: standard
+    tier: de-facto
+    version: "2024-02-13"
+    checked: 2026-08-23
+    url: https://cv.iptc.org/newscodes/genre/
+    subjects: [journalism-and-communication]
+    basis:
+      subjects: iptc-genre:scope
+    status: active
+    added: 2026-08-23
+
+  - id: lom
+    label: { zh: "IEEE 1484.12.1-2002 学习对象元数据", en: "IEEE 1484.12.1-2002 Learning Object Metadata" }
+    kind: standard
+    tier: de-jure
+    version: "2002（2020 版已取代，取值变动未核）"
+    checked: 2026-08-23
+    url: https://github.com/LICEF/lompad/blob/master/documentation/LOM_1484_12_1_v1_Final_Draft.pdf
+    watch: https://standards.ieee.org/ieee/1484.12.1/7699/
+    subjects: [education]
+    basis:
+      subjects: lom:scope
+    status: active
+    added: 2026-08-23
+  - id: schema-org
+    label: { zh: "schema.org", en: "schema.org" }
+    kind: standard
+    tier: de-facto
+    version: "30.0"
+    checked: 2026-08-23
+    url: https://schema.org/
+    watch: https://schema.org/docs/releases.html
+    subjects: [information-science]
+    basis:
+      subjects: self
+    status: candidate
+    added: 2026-08-23
+
+  # 第二批：常用工具、语言、组织（2026-08-23）
+  - id: anthropic
+    label: { zh: "Anthropic", en: "Anthropic" }
+    kind: organization
+    subjects: [artificial-intelligence]
+    basis:
+      subjects: self
+    match: [{ source: wikidata, id: Q116758847, rel: exactMatch }]
+    status: candidate
+    added: 2026-08-23
+  - id: openai
+    label: { zh: "OpenAI", en: "OpenAI" }
+    kind: organization
+    subjects: [artificial-intelligence]
+    basis:
+      subjects: self
+    match: [{ source: wikidata, id: Q21708200, rel: exactMatch }]
+    status: candidate
+    added: 2026-08-23
+  - id: moonshot-ai
+    label: { zh: "月之暗面", en: "Moonshot AI" }
+    kind: organization
+    subjects: [artificial-intelligence]
+    basis:
+      subjects: self
+    match: [{ source: wikidata, id: Q130270266, rel: exactMatch }]
+    status: candidate
+    added: 2026-08-23
+  - id: astral
+    label: { zh: "Astral", en: "Astral" }
+    kind: organization
+    subjects: [software-engineering]
+    basis:
+      subjects: self
+    scope: "uv、ruff、ty 的开发公司；Wikidata 条目未能确认"
+    status: candidate
+    added: 2026-08-23
+  - id: claude-code
+    label: { zh: "Claude Code", en: "Claude Code" }
+    kind: software
+    form: "command-line interface"   # Wikidata instance of
+    vendor: anthropic
+    subjects: [artificial-intelligence, tools-and-environments]
+    basis:
+      subjects: cs2023:SE-Tools#7
+    scope: "Anthropic 的命令行编程智能体；不含 Claude 模型本身"
+    match: [{ source: wikidata, id: Q138457287, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: codex
+    label: { zh: "Codex", en: "Codex" }
+    kind: software
+    form: "command-line interface"   # Wikidata instance of
+    vendor: openai
+    subjects: [artificial-intelligence, tools-and-environments]
+    basis:
+      subjects: cs2023:SE-Tools#7
+    scope: "OpenAI 的编程智能体（2025 年起的 CLI 与云端产品）；Wikidata 的 Q108582200 是 2021 年的同名模型，不映射"
+    status: candidate
+    added: 2026-08-23
+  - id: antigravity
+    label: { zh: "Antigravity", en: "Google Antigravity" }
+    kind: software
+    form: "integrated development environment"   # Wikidata instance of
+    subjects: [artificial-intelligence, tools-and-environments]
+    basis:
+      subjects: cs2023:SE-Tools#7
+    scope: "Google 的 AI 编程工具"
+    match: [{ source: wikidata, id: Q136827654, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: kimi-code
+    label: { zh: "Kimi Code", en: "Kimi Code" }
+    kind: software
+    vendor: moonshot-ai
+    subjects: [artificial-intelligence, tools-and-environments]
+    basis:
+      subjects: cs2023:SE-Tools#7
+    scope: "月之暗面的编程智能体；Wikidata 无条目"
+    status: candidate
+    added: 2026-08-23
+  - id: openclaw
+    label: { zh: "OpenClaw", en: "OpenClaw" }
+    kind: software
+    form: "autonomous agent"   # Wikidata instance of
+    subjects: [artificial-intelligence, tools-and-environments]
+    basis:
+      subjects: cs2023:SE-Tools#7
+    scope: "开源自主 AI 助手"
+    match: [{ source: wikidata, id: Q137916205, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: opencode
+    label: { zh: "OpenCode", en: "OpenCode" }
+    kind: software
+    subjects: [artificial-intelligence, tools-and-environments]
+    basis:
+      subjects: cs2023:SE-Tools#7
+    scope: "开源终端编程智能体；Wikidata 的 Q133055048 是德国的开源交换平台，不映射"
+    status: candidate
+    added: 2026-08-23
+  - id: typescript
+    label: { zh: "TypeScript", en: "TypeScript" }
+    kind: programming-language
+    subjects: [foundations-of-programming-languages]
+    basis:
+      subjects: cs2023:FPL
+    match: [{ source: wikidata, id: Q978185, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: javascript
+    label: { zh: "JavaScript", en: "JavaScript" }
+    kind: programming-language
+    subjects: [foundations-of-programming-languages]
+    basis:
+      subjects: cs2023:FPL
+    match: [{ source: wikidata, id: Q2005, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: python
+    label: { zh: "Python", en: "Python" }
+    kind: programming-language
+    subjects: [foundations-of-programming-languages]
+    basis:
+      subjects: cs2023:FPL
+    match: [{ source: wikidata, id: Q28865, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: go
+    label: { zh: "Go", en: "Go" }
+    kind: programming-language
+    subjects: [foundations-of-programming-languages]
+    basis:
+      subjects: cs2023:FPL
+    match: [{ source: wikidata, id: Q37227, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: rust
+    label: { zh: "Rust", en: "Rust" }
+    kind: programming-language
+    subjects: [foundations-of-programming-languages]
+    basis:
+      subjects: cs2023:FPL
+    match: [{ source: wikidata, id: Q575650, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: vite
+    label: { zh: "Vite", en: "Vite" }
+    kind: software
+    form: "JavaScript bundler"   # Wikidata instance of
+    subjects: [tools-and-environments, web-platforms]
+    basis:
+      subjects: cs2023:SE-Tools#4
+    match: [{ source: wikidata, id: Q111590996, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: oxc
+    label: { zh: "oxc", en: "oxc" }
+    kind: software
+    subjects: [tools-and-environments, web-platforms]
+    basis:
+      subjects: self
+    scope: "JavaScript 工具链（解析器、linter 等），Rust 实现；Wikidata 无条目"
+    status: candidate
+    added: 2026-08-23
+  - id: webpack
+    label: { zh: "webpack", en: "webpack" }
+    kind: software
+    form: "JavaScript bundler"   # Wikidata instance of
+    subjects: [tools-and-environments, web-platforms]
+    basis:
+      subjects: cs2023:SE-Tools#4
+    match: [{ source: wikidata, id: Q22909730, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: eslint
+    label: { zh: "ESLint", en: "ESLint" }
+    kind: software
+    form: "linter"   # Wikidata instance of
+    subjects: [tools-and-environments, web-platforms]
+    basis:
+      subjects: cs2023:SE-Tools#3
+    match: [{ source: wikidata, id: Q55452824, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: nextjs
+    label: { zh: "Next.js", en: "Next.js" }
+    kind: software
+    form: "JavaScript framework"   # Wikidata instance of
+    subjects: [web-platforms]
+    basis:
+      subjects: cs2023:SPD-Web#2
+    match: [{ source: wikidata, id: Q56062435, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: react
+    label: { zh: "React", en: "React" }
+    kind: software
+    form: "web framework"   # Wikidata instance of
+    subjects: [web-platforms]
+    basis:
+      subjects: cs2023:SPD-Web#2
+    match: [{ source: wikidata, id: Q19399674, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: vuejs
+    label: { zh: "Vue.js", en: "Vue.js" }
+    kind: software
+    form: "JavaScript framework"   # Wikidata instance of
+    subjects: [web-platforms]
+    basis:
+      subjects: cs2023:SPD-Web#2
+    match: [{ source: wikidata, id: Q24589705, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: nestjs
+    label: { zh: "NestJS", en: "NestJS" }
+    kind: software
+    form: "JavaScript framework"   # Wikidata instance of
+    subjects: [web-platforms]
+    basis:
+      subjects: cs2023:SPD-Web#2
+    match: [{ source: wikidata, id: Q107015664, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: uv
+    label: { zh: "uv", en: "uv" }
+    kind: software
+    vendor: astral
+    subjects: [tools-and-environments]
+    basis:
+      subjects: self
+    scope: "Python 包与项目管理器，Rust 实现；Wikidata 无条目"
+    status: candidate
+    added: 2026-08-23
+  - id: ruff
+    label: { zh: "Ruff", en: "Ruff" }
+    kind: software
+    form: "linter"   # Wikidata instance of
+    vendor: astral
+    subjects: [tools-and-environments]
+    basis:
+      subjects: cs2023:SE-Tools#3
+    match: [{ source: wikidata, id: Q115911873, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: ty
+    label: { zh: "ty", en: "ty" }
+    kind: software
+    vendor: astral
+    subjects: [tools-and-environments, type-systems]
+    basis:
+      subjects: [cs2023:SE-Tools#3, cs2023:FPL-Types#5]
+    scope: "Python 类型检查器；Wikidata 无条目"
+    status: candidate
+    added: 2026-08-23
+  - id: pytest
+    label: { zh: "pytest", en: "pytest" }
+    kind: software
+    form: "software testing tool"   # Wikidata instance of
+    subjects: [tools-and-environments, software-verification-and-validation]
+    basis:
+      subjects: [cs2023:SE-Tools#3, cs2023:SE-Validation#4]
+    match: [{ source: wikidata, id: Q28975377, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: pyright
+    label: { zh: "Pyright", en: "Pyright" }
+    kind: software
+    form: "static type checker"   # Wikidata instance of
+    subjects: [tools-and-environments, type-systems]
+    basis:
+      subjects: [cs2023:SE-Tools#3, cs2023:FPL-Types#5]
+    match: [{ source: wikidata, id: Q102522262, rel: exactMatch }]
+    status: active
+    added: 2026-08-23
+  - id: pydantic
+    label: { zh: "Pydantic", en: "Pydantic" }
+    kind: software
+    form: "Python package"   # Wikidata instance of
+    subjects: [web-platforms, foundations-of-programming-languages]
+    basis:
+      subjects: self
+    scope: "数据解析与校验库；本库指 v2"
+    match: [{ source: wikidata, id: Q107381687, rel: exactMatch }]
+    status: candidate
+    added: 2026-08-23
+  - id: fastapi
+    label: { zh: "FastAPI", en: "FastAPI" }
+    kind: software
+    form: "web framework"   # Wikidata instance of
+    subjects: [web-platforms]
+    basis:
+      subjects: cs2023:SPD-Web#2
+    match: [{ source: wikidata, id: Q101119404, rel: exactMatch }]
+    status: active
+    added: 2026-08-23

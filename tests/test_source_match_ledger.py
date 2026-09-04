@@ -7,14 +7,10 @@ import yaml
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-PARALLEL = (
-    ROOT
-    / ".superpowers"
-    / "sdd"
-    / "2026-08-31-source-schema-migration"
-    / "parallel"
-    / "match"
+FROZEN_FIXTURE_ROOT = (
+    ROOT / "tests" / "fixtures" / "governance-frozen-2026-08-31"
 )
+PARALLEL = FROZEN_FIXTURE_ROOT / "parallel" / "match"
 LEDGER = ROOT / "vocab" / "migrations" / "source-v1" / "match.yaml"
 PROPOSALS = PARALLEL / "match-proposals.yaml"
 BLOCKED = PARALLEL / "blocked.tsv"

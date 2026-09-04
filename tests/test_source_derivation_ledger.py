@@ -7,11 +7,11 @@ import yaml
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+FROZEN_FIXTURE_ROOT = (
+    ROOT / "tests" / "fixtures" / "governance-frozen-2026-08-31"
+)
 PARALLEL = (
-    ROOT
-    / ".superpowers"
-    / "sdd"
-    / "2026-08-31-source-schema-migration"
+    FROZEN_FIXTURE_ROOT
     / "parallel"
     / "source"
     / "source-proposals.yaml"

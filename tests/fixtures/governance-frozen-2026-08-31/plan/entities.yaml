@@ -1,0 +1,3179 @@
+schema: urn:kb-design:data:source-migration
+schema_version: 1
+rows:
+- identity: source-entities.tsv:2
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: gbt-13745
+  field_path: '8'
+  old_value: kind=standard；version=2009；url=https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E；tier=de-jure
+  frozen_row_sha256: aa0363c752444c88e70ab919b6a43f524e47ad3ef9aad2b9fe07880a0e76b8bf
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2009；url=https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E；tier=de-jure
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:3
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: cs2023
+  field_path: '21'
+  old_value: kind=standard；version=2024-01；url=https://csed.acm.org/cs2023/；tier=de-facto
+  frozen_row_sha256: c2fa6e8fbdf3965df98d33e448e04fdc315e5f236a3cc60c2ec4a6a22fe0cd92
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2024-01；url=https://csed.acm.org/cs2023/；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:4
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: swebok
+  field_path: '34'
+  old_value: kind=standard；version=4.0；url=https://www.computer.org/education/bodies-of-knowledge/software-engineering；tier=de-facto
+  frozen_row_sha256: 07e242da1497285529156fd941f4c334dd3a1e73f9365d0be65f643e0cc8d1cb
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=4.0；url=https://www.computer.org/education/bodies-of-knowledge/software-engineering；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:5
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: acm-ccs
+  field_path: '47'
+  old_value: kind=standard；version=2012；url=https://dl.acm.org/ccs；tier=de-facto
+  frozen_row_sha256: 7b434b6b64e1c73b4c9eb4994c3a76d4315d2a838d1fe00ef6da70cb4fec93b8
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2012；url=https://dl.acm.org/ccs；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:6
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: asvs
+  field_path: '59'
+  old_value: kind=standard；version=5.0；url=https://owasp.org/www-project-application-security-verification-standard/；tier=de-facto
+  frozen_row_sha256: 2771e4f48122a17e983966e8c5f1131de89f43a0692f3c8d497de6a41cc0cc7c
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=5.0；url=https://owasp.org/www-project-application-security-verification-standard/；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:7
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: cwe
+  field_path: '72'
+  old_value: kind=standard；version=4.20；url=https://cwe.mitre.org/；tier=de-facto
+  frozen_row_sha256: bfec3beef50ab43eac6412be3275d89915a20f1d65ad35a52599da84abeb2584
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=4.20；url=https://cwe.mitre.org/；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:8
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: attack
+  field_path: '85'
+  old_value: kind=standard；version=19.2；url=https://attack.mitre.org/；tier=de-facto
+  frozen_row_sha256: 2fce61434620792c12eb0f512500d22525a2ead643e86c2f041b7c7535caef70
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=19.2；url=https://attack.mitre.org/；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:9
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: owasp-top10
+  field_path: '98'
+  old_value: kind=standard；version=2021；url=https://owasp.org/www-project-top-ten/；tier=de-facto
+  frozen_row_sha256: 5fe6c704329652ce775fc5b521326e9c3671ab352b45958438eba5a2d235c580
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2021；url=https://owasp.org/www-project-top-ten/；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:10
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: owasp-llm-top10
+  field_path: '111'
+  old_value: kind=standard；version=2025；url=https://genai.owasp.org/llm-top-10/；tier=de-facto
+  frozen_row_sha256: 65d1f702c3a73445d9beafe1a82d3dddf04af650fe7663a629145159e086b5d7
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2025；url=https://genai.owasp.org/llm-top-10/；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:11
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: atlas
+  field_path: '124'
+  old_value: kind=standard；version=2026.07；url=https://atlas.mitre.org/；tier=de-facto
+  frozen_row_sha256: bece98e7429e5056f196f1b6924a14331cf9d7bf9e67bc6e8fe5c7bb0258874a
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2026.07；url=https://atlas.mitre.org/；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:12
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: nist-ai-rmf
+  field_path: '137'
+  old_value: kind=standard；version=1.0；url=https://www.nist.gov/itl/ai-risk-management-framework；tier=de-jure
+  frozen_row_sha256: b042b9666d8a19d58f27f2f056f5daec4ba170e96f4d126defe91af46d7f73c9
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=1.0；url=https://www.nist.gov/itl/ai-risk-management-framework；tier=de-jure
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:13
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: anthropic-docs
+  field_path: '150'
+  old_value: kind=standard；version=2026-08；url=https://docs.anthropic.com/；tier=vendor
+  frozen_row_sha256: 8fde99ba347606269642778c791d6de09e03a12f7f00e8b6597d9b4cc5003c68
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2026-08；url=https://docs.anthropic.com/；tier=vendor
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:14
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: rfc-1122
+  field_path: '162'
+  old_value: kind=standard；version=1989；url=https://www.rfc-editor.org/info/rfc1122；tier=de-jure
+  frozen_row_sha256: bb931f3ad6071992285dd1e8044aa2732188d5e366c984b9927573c18b5e5a66
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=1989；url=https://www.rfc-editor.org/info/rfc1122；tier=de-jure
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:15
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: rfc-9110
+  field_path: '175'
+  old_value: kind=standard；version=2022；url=https://www.rfc-editor.org/info/rfc9110；tier=de-jure
+  frozen_row_sha256: 54b473cb0b3c2e30a69eee72c9e85163b5077dc6166599a27e32a4ae6e09aebb
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2022；url=https://www.rfc-editor.org/info/rfc9110；tier=de-jure
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:16
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: osi
+  field_path: '188'
+  old_value: kind=standard；version=1994；url=https://www.iso.org/standard/20269.html；tier=de-jure
+  frozen_row_sha256: bfd6ea9805c26d8bd17947148c6bb35b0d6bb0082ea45b1c091962a92e107eb2
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=1994；url=https://www.iso.org/standard/20269.html；tier=de-jure
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:17
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: mdn
+  field_path: '201'
+  old_value: kind=standard；version=2026-08-20；url=https://developer.mozilla.org/en-US/docs/Web；tier=de-facto
+  frozen_row_sha256: e5ddfa58f4ab13e7073a752205a5f66fe4c84218ea6553d61a21a15eba0ad624
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2026-08-20；url=https://developer.mozilla.org/en-US/docs/Web；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:18
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: mdn-curriculum
+  field_path: '213'
+  old_value: kind=standard；version=2025-10；url=https://developer.mozilla.org/en-US/curriculum/；tier=de-facto
+  frozen_row_sha256: 787c24b16c9513f82a004e6d2fa42aefd5f4cac790334f8f0b161aabd0fc6aff
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2025-10；url=https://developer.mozilla.org/en-US/curriculum/；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:19
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: iso-25964-1
+  field_path: '225'
+  old_value: kind=standard；version=2011；url=https://www.iso.org/standard/53657.html；tier=de-jure
+  frozen_row_sha256: 0734c23d4178597b04b97697b4eff8e2a8a41cce459c463f099707e6b4ffe43d
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2011；url=https://www.iso.org/standard/53657.html；tier=de-jure
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:20
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: iso-25964-2
+  field_path: '238'
+  old_value: kind=standard；version=2013；url=https://www.iso.org/standard/53658.html；tier=de-jure
+  frozen_row_sha256: 0f5eb10427fbfe77c837d28fb1c709251315a2cbddb96da3a71fc848223171f4
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2013；url=https://www.iso.org/standard/53658.html；tier=de-jure
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:21
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: z39-19
+  field_path: '251'
+  old_value: kind=standard；version=2005 (R2010)；url=https://www.niso.org/publications/ansiniso-z3919-2005-r2010；tier=de-jure
+  frozen_row_sha256: e30462fb02eca22870d61ea0cb5417bb13877710a4ce111cdba8df317fe85584
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2005 (R2010)；url=https://www.niso.org/publications/ansiniso-z3919-2005-r2010；tier=de-jure
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:22
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: skos
+  field_path: '264'
+  old_value: kind=standard；version=2009-08-18；url=https://www.w3.org/TR/skos-reference/；tier=de-jure
+  frozen_row_sha256: 39cf612ebf7b7735654c634d9f0a4f216f1e0720817b149e7b1c5a74fc158746
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2009-08-18；url=https://www.w3.org/TR/skos-reference/；tier=de-jure
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:23
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: diataxis
+  field_path: '277'
+  old_value: kind=standard；version=2026-08；url=https://diataxis.fr/；tier=de-facto
+  frozen_row_sha256: 45481fb8c2eff0906acfef6d0f6b5002f17a1e2be89bb390f7c374da0e824659
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2026-08；url=https://diataxis.fr/；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:24
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: wikidata
+  field_path: '289'
+  old_value: kind=standard；version=rolling；url=https://www.wikidata.org/；tier=de-facto
+  frozen_row_sha256: 6a6f2365b0149bfc4ab736070afac31a5f6881bc77e33f38e5bf4d84e4dc6b05
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=rolling；url=https://www.wikidata.org/；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:25
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: roadmap-sh
+  field_path: '301'
+  old_value: kind=standard；version=rolling；url=https://roadmap.sh/；tier=de-facto
+  frozen_row_sha256: 7b2b34967791e52408b0096082461b26fde98ba8859f7a8aab3016998671a66c
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=rolling；url=https://roadmap.sh/；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:26
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: teachyourselfcs
+  field_path: '313'
+  old_value: kind=publication；version=2020；url=https://teachyourselfcs.com/；tier=archival
+  frozen_row_sha256: 0fc2c6e17c2b610af4cbaf66856c2b8974a23679a1d784f13c048ec26875574c
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=publication；version=2020；url=https://teachyourselfcs.com/；tier=archival
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:27
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: cmu-15-445
+  field_path: '325'
+  old_value: kind=publication；version=Fall 2025；url=https://15445.courses.cs.cmu.edu/；tier=archival
+  frozen_row_sha256: fca7a7f57bb87a87fa93bf0a03179b79a9362bcb799e511312360bb89683ed91
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=publication；version=Fall 2025；url=https://15445.courses.cs.cmu.edu/；tier=archival
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:28
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: db-engines
+  field_path: '337'
+  old_value: kind=standard；version=rolling；url=https://db-engines.com/en/ranking；tier=de-facto
+  frozen_row_sha256: ed35cc803c220ee163e29eb49b60de49a033b0de786563f98bdede948f44c806
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=rolling；url=https://db-engines.com/en/ranking；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:29
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: dita
+  field_path: '350'
+  old_value: kind=standard；version=1.3；url=https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/dita-v1.3-os-part1-base.html；tier=de-jure
+  frozen_row_sha256: 72e6521cea78d0df9e3d07eb873984ed2a12f89bb9e4916ed90c4ff4769a3141
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=1.3；url=https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/dita-v1.3-os-part1-base.html；tier=de-jure
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:30
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: iptc-genre
+  field_path: '363'
+  old_value: kind=standard；version=2024-02-13；url=https://cv.iptc.org/newscodes/genre/；tier=de-facto
+  frozen_row_sha256: 2a31af7b9df317ecb87dc936be148440981c9dd86b8087c2ab5384c436b07714
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2024-02-13；url=https://cv.iptc.org/newscodes/genre/；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:31
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: lom
+  field_path: '376'
+  old_value: kind=standard；version=2002（2020 版已取代，取值变动未核）；url=https://github.com/LICEF/lompad/blob/master/documentation/LOM_1484_12_1_v1_Final_Draft.pdf；tier=de-jure
+  frozen_row_sha256: d093eafd93bd93d8d3b5c2d47c19fee5fdc71a4391115179bbd49f89ceebbe01
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=2002（2020 版已取代，取值变动未核）；url=https://github.com/LICEF/lompad/blob/master/documentation/LOM_1484_12_1_v1_Final_Draft.pdf；tier=de-jure
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:32
+  ledger: entities
+  class: 来源实体
+  old_file: vocab/entities.yaml
+  old_record: schema-org
+  field_path: '389'
+  old_value: kind=standard；version=30.0；url=https://schema.org/；tier=de-facto
+  frozen_row_sha256: f7228a54a10d53711f54ae7fe6078663a2729bab5f1008b1eea1726eb3243565
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=standard；version=30.0；url=https://schema.org/；tier=de-facto
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:33
+  ledger: entities
+  class: 来源实体
+  old_file: design/content-model.md
+  old_record: ISO 15836-1:2017
+  field_path: '154'
+  old_value: kind=未登记；version=2017；url=https://www.iso.org/standard/71339.html；tier=未登记
+  frozen_row_sha256: b545ff06a13ac178beee9f6e01063e4432669b3f852ed0f95166376567aa6d2d
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2017；url=https://www.iso.org/standard/71339.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:34
+  ledger: entities
+  class: 来源实体
+  old_file: design/content-model.md
+  old_record: ISO 15836-2:2019
+  field_path: '154'
+  old_value: kind=未登记；version=2019；url=https://www.iso.org/standard/71341.html；tier=未登记
+  frozen_row_sha256: f89692900e3e33e6e5be91436facf769e8bb3862178906e55be2e11254af8110
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2019；url=https://www.iso.org/standard/71341.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:35
+  ledger: entities
+  class: 来源实体
+  old_file: design/content-model.md
+  old_record: DCMI Metadata Terms
+  field_path: '154'
+  old_value: kind=未登记；version=2020-01-20；url=https://www.dublincore.org/specifications/dublin-core/dcmi-terms/；tier=未登记
+  frozen_row_sha256: 53cfea2eb123d5942c1539fd27c7d69cb56ba564a6550dc521879794efda2764
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2020-01-20；url=https://www.dublincore.org/specifications/dublin-core/dcmi-terms/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:36
+  ledger: entities
+  class: 来源实体
+  old_file: design/content-model.md
+  old_record: IEEE 1484.12.1-2020
+  field_path: '158'
+  old_value: kind=未登记；version=2020；url=https://standards.ieee.org/ieee/1484.12.1/7699/；tier=未登记
+  frozen_row_sha256: e2b382d3461b6db6c47b2e260dce8d7b7af97bd2e990edf08c9d45236af3d19f
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2020；url=https://standards.ieee.org/ieee/1484.12.1/7699/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:37
+  ledger: entities
+  class: 来源实体
+  old_file: design/content-model.md
+  old_record: DITA 2.0 移除 Learning and Training 的决议
+  field_path: '160'
+  old_value: kind=未登记；version=2018；url=https://github.com/oasis-tcs/dita/pull/111；tier=未登记
+  frozen_row_sha256: f6d54ffe7cdb9cc6db265870b726f6aed96541ea3522e54b6222cbb78e703b11
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2018；url=https://github.com/oasis-tcs/dita/pull/111；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:38
+  ledger: entities
+  class: 来源实体
+  old_file: design/content-model.md
+  old_record: 'A Revision of Bloom''s Taxonomy: An Overview'
+  field_path: '161'
+  old_value: kind=未登记；version=2002；url=https://cmapspublic2.ihmc.us/rid=1Q2PTM7HL-26LTFBX-9YN8/Krathwohl%202002.pdf；tier=未登记
+  frozen_row_sha256: 4eb254850b8935041bb77bfed6fed49add576a22d223a3e63683de38ba264cf1
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2002；url=https://cmapspublic2.ihmc.us/rid=1Q2PTM7HL-26LTFBX-9YN8/Krathwohl%202002.pdf；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:39
+  ledger: entities
+  class: 来源实体
+  old_file: design/content-model.md
+  old_record: ISO 15489-1:2016
+  field_path: '163'
+  old_value: kind=未登记；version=2016；url=https://www.iso.org/standard/62542.html；tier=未登记
+  frozen_row_sha256: 397fb1c2c0b369c91872b7b9436fcec748be0ac395d4c7507a9257ab81d08b62
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2016；url=https://www.iso.org/standard/62542.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:40
+  ledger: entities
+  class: 来源实体
+  old_file: design/decisions/project-instructions-entry.md
+  old_record: AGENTS.md 官方说明
+  field_path: '9'
+  old_value: kind=未登记；version=未记录；url=https://learn.chatgpt.com/docs/agent-configuration/agents-md；tier=未登记
+  frozen_row_sha256: 51b40de0e6a3e3f4695aaa43931c6cd5f659820327049b8c7265e993b145b045
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://learn.chatgpt.com/docs/agent-configuration/agents-md；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:41
+  ledger: entities
+  class: 待人决定
+  old_file: design/drafts/terminology-governance.md
+  old_record: BCP 47
+  field_path: '58'
+  old_value: kind=未登记；version=未记录；url=https://www.rfc-editor.org/info/bcp47/；tier=未登记
+  frozen_row_sha256: 974b272d5007b322054f5b0914245b3550fd5e3862db14a69baf19c0c51d0dea
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://www.rfc-editor.org/info/bcp47/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:42
+  ledger: entities
+  class: 来源实体
+  old_file: sources/metadata-standards.md
+  old_record: 'RFC 5646: Tags for Identifying Languages'
+  field_path: '12'
+  old_value: kind=未登记；version=2009-09；url=https://www.rfc-editor.org/rfc/rfc5646.html；tier=未登记
+  frozen_row_sha256: b3b24dc0915ff087f27d5e315a793a3d48bcfdc19d3f9d3f8d01981a46039bed
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2009-09；url=https://www.rfc-editor.org/rfc/rfc5646.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:43
+  ledger: entities
+  class: 来源实体
+  old_file: sources/metadata-standards.md
+  old_record: 'RFC 4647: Matching of Language Tags'
+  field_path: '12'
+  old_value: kind=未登记；version=2009-09；url=https://www.rfc-editor.org/rfc/rfc4647.html；tier=未登记
+  frozen_row_sha256: 26d64a51f7d1e05752b379fd6730fbbca17c14cd92ef9ad082b5e66fd861ccb2
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2009-09；url=https://www.rfc-editor.org/rfc/rfc4647.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:44
+  ledger: entities
+  class: 来源实体
+  old_file: design/governance.md
+  old_record: ISO 37000:2021
+  field_path: '181'
+  old_value: kind=未登记；version=2021；url=https://www.iso.org/standard/65036.html；tier=未登记
+  frozen_row_sha256: 9db5f4f50660cfd7689a8489cf7a3cbceed89367c08df2d4bef3cc232d9f8b17
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2021；url=https://www.iso.org/standard/65036.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:45
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/governance.md
+  old_record: ISO 37000 新闻稿
+  field_path: '51'
+  old_value: kind=未登记；version=未记录；url=https://www.iso.org/news/ref2717.html；tier=未登记
+  frozen_row_sha256: d45e99db4bff1738c4121078ed07902897073d183c9813e348620b9a9bfdc042
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://www.iso.org/news/ref2717.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:46
+  ledger: entities
+  class: 来源实体
+  old_file: design/maintenance.md
+  old_record: 'PROV-O: The PROV Ontology'
+  field_path: '224'
+  old_value: kind=未登记；version=2013-04-30；url=https://www.w3.org/TR/prov-o/；tier=未登记
+  frozen_row_sha256: fb2bb2242d0efbafb5c2f5b8067c448884ada6bb51a45f6d8ed82f5b6d658be5
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2013-04-30；url=https://www.w3.org/TR/prov-o/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:47
+  ledger: entities
+  class: 来源实体
+  old_file: design/maintenance.md
+  old_record: 'Enacting silence: Residual categories as a challenge for ethics, information
+    systems, and communication'
+  field_path: '225'
+  old_value: kind=未登记；version=2007；url=https://link.springer.com/article/10.1007/s10676-007-9141-7；tier=未登记
+  frozen_row_sha256: edbd63356cd349f5238ff6396fcbd84dbca5a4e3b3f6d5c8a137621057f56a30
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2007；url=https://link.springer.com/article/10.1007/s10676-007-9141-7；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:48
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/governance.md
+  old_record: Applying Data Governance using DAMA-DMBOK 2 Framework
+  field_path: '52'
+  old_value: kind=未登记；version=2022；url=https://dl.acm.org/doi/fullHtml/10.1145/3568834.3568866；tier=未登记
+  frozen_row_sha256: cd67121f620cecf1859e96f4ab724560ed085fd665458502fa1ae95fce5205a6
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2022；url=https://dl.acm.org/doi/fullHtml/10.1145/3568834.3568866；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:49
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/governance.md
+  old_record: DAMA-DMBOK 2
+  field_path: '52'
+  old_value: kind=未登记；version=第 2 版；url=https://dama.org/learning-resources/dama-data-management-body-of-knowledge-dmbok/；tier=未登记
+  frozen_row_sha256: 33eb41768d2a2326d2abecbed55a79eedb85e0bb1174a815c70b07cf6f07bf7a
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=第 2 版；url=https://dama.org/learning-resources/dama-data-management-body-of-knowledge-dmbok/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:50
+  ledger: entities
+  class: 来源实体
+  old_file: sources/iso-15489.md
+  old_record: ISO 23081-1:2017
+  field_path: '46'
+  old_value: kind=未登记；version=2017；url=https://www.iso.org/standard/73172.html；tier=未登记
+  frozen_row_sha256: 6944e95a971517fb5a6dc738e173d9c4466d67aa8f15d05642cb33d7527c227b
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2017；url=https://www.iso.org/standard/73172.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:51
+  ledger: entities
+  class: 来源实体
+  old_file: sources/iso-15489.md
+  old_record: DCC briefing paper on ISO 15489
+  field_path: '45'
+  old_value: kind=未登记；version=未记录；url=https://www.dcc.ac.uk/guidance/briefing-papers/standards-watch-papers/iso-15489；tier=未登记
+  frozen_row_sha256: e0b79fdfdf4a1c88abd9060b2cb2c7a4dd4ea31eb7f72ea466c27f2a02a68e8d
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://www.dcc.ac.uk/guidance/briefing-papers/standards-watch-papers/iso-15489；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:52
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/body-of-knowledge.md
+  old_record: BABOK Guide v3
+  field_path: '42'
+  old_value: kind=未登记；version=第 3 版；url=https://www.iiba.org/knowledgehub/business-analysis-body-of-knowledge-babok-guide/；tier=未登记
+  frozen_row_sha256: e8ae82cc6b937095a2829cf72e11bc550c8b569dbd21f5a1858dda3a69614ffd
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=第 3 版；url=https://www.iiba.org/knowledgehub/business-analysis-body-of-knowledge-babok-guide/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:53
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/body-of-knowledge.md
+  old_record: CISSP Certification Exam Outline
+  field_path: '44'
+  old_value: kind=未登记；version=当前考试大纲；url=https://www.isc2.org/certifications/cissp/cissp-certification-exam-outline；tier=未登记
+  frozen_row_sha256: ebb4a28d258dba9f116583572d7ad807edaa9c74c907c148dcd34be16dd5296f
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=当前考试大纲；url=https://www.isc2.org/certifications/cissp/cissp-certification-exam-outline；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:54
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/body-of-knowledge.md
+  old_record: PMBOK Guide
+  field_path: '45'
+  old_value: kind=未登记；version=第 8 版（现行文本线索）；url=https://www.pmi.org/standards/pmbok；tier=未登记
+  frozen_row_sha256: cc809849ae4f57b51f68eda78749030705a2c3b88314ce86e01f689af4045615
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=第 8 版（现行文本线索）；url=https://www.pmi.org/standards/pmbok；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:55
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/body-of-knowledge.md
+  old_record: 2022 Update to ALA's Core Competences of Librarianship
+  field_path: '47'
+  old_value: kind=未登记；version=2022；url=https://www.ala.org/educationcareers/2022-update-alas-core-competences-librarianship；tier=未登记
+  frozen_row_sha256: 0a96deca8cfe914a6a892930f1bf8740b22c042bd8de187c3818549fdd106a98
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2022；url=https://www.ala.org/educationcareers/2022-update-alas-core-competences-librarianship；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:56
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/body-of-knowledge.md
+  old_record: ISO/IEC TR 19759:2015
+  field_path: '78'
+  old_value: kind=未登记；version=2015；url=https://www.iso.org/standard/67604.html；tier=未登记
+  frozen_row_sha256: 44cf6eeafe66628ba409a40659244f4589a65c12c81ee157b433158289c2a3a4
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2015；url=https://www.iso.org/standard/67604.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:57
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/classifying-new-subjects.md
+  old_record: Prolegomena to Library Classification
+  field_path: '53'
+  old_value: kind=未登记；version=第 2 版，1957；url=未记录；tier=未登记
+  frozen_row_sha256: 8210330f20969ac80a5c2c228b0bc8cc97c6039faaedbfb76af7563a56ec0b35
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=第 2 版，1957；url=未记录；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:58
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/classifying-new-subjects.md
+  old_record: Denton 对 Prolegomena 的摘要
+  field_path: '53'
+  old_value: kind=未登记；version=未记录；url=https://www.miskatonic.org/library/prolegomena.html；tier=未登记
+  frozen_row_sha256: 1a5a2148c566be6ee1d0b6c6d2b46d385287db04280d831a71ad660881b94f56
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://www.miskatonic.org/library/prolegomena.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:59
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/classifying-new-subjects.md
+  old_record: Colon Classification
+  field_path: '53'
+  old_value: kind=未登记；version=未记录；url=未记录；tier=未登记
+  frozen_row_sha256: 32ccd646dfd303d161e57346da588e7d00b7b3ef90702b63d5f448b5f77c514c
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=未记录；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:60
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/classifying-new-subjects.md
+  old_record: Principles of Book Classification
+  field_path: '54'
+  old_value: kind=未登记；version=1911–1912；url=未记录；tier=未登记
+  frozen_row_sha256: 151429b203ab2614f714bbd0bb0fd021085dbf95856b572639250eff44541b37
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=1911–1912；url=未记录；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:61
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/classifying-new-subjects.md
+  old_record: 'Toward a new horizon in information science: domain-analysis'
+  field_path: '55'
+  old_value: kind=未登记；version=1995；url=https://asistdl.onlinelibrary.wiley.com/doi/abs/10.1002/(SICI)1097-4571(199507)46:6%3C400::AID-ASI2%3E3.0.CO;2-Y；tier=未登记
+  frozen_row_sha256: e66a007d2196c66077623994022eadd8d95b9ea72f828ee164c9c17aecfe5a91
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=1995；url=https://asistdl.onlinelibrary.wiley.com/doi/abs/10.1002/(SICI)1097-4571(199507)46:6%3C400::AID-ASI2%3E3.0.CO;2-Y；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:62
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/classifying-new-subjects.md
+  old_record: 'Sorting Things Out: Classification and Its Consequences'
+  field_path: '56'
+  old_value: kind=未登记；version=1999；url=https://mitpress.mit.edu/9780262522953/sorting-things-out/；tier=未登记
+  frozen_row_sha256: f187986c7ff59a460f5d2ac4f964c8a59d8ead68593e83b0ba505fdd435d2c7c
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=1999；url=https://mitpress.mit.edu/9780262522953/sorting-things-out/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:63
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/controlled-vocabulary.md
+  old_record: GB/T 13190.1-2015
+  field_path: '106'
+  old_value: kind=未登记；version=2015；url=https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D7A385D3A7E05397BE0A0AB82A；tier=未登记
+  frozen_row_sha256: 26e2fea0aee1e046fa8bf392c06c9f160831e9519b929f6753057bc18cb8b90b
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2015；url=https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D7A385D3A7E05397BE0A0AB82A；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:64
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/controlled-vocabulary.md
+  old_record: GB/T 13190.2-2018
+  field_path: '107'
+  old_value: kind=未登记；version=2018；url=https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D82DD2D3A7E05397BE0A0AB82A；tier=未登记
+  frozen_row_sha256: d876f89ba68d54f492f3fd70ac80e867e18e2f84c5f31f1be39334d9d47f680e
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2018；url=https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D82DD2D3A7E05397BE0A0AB82A；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:65
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/controlled-vocabulary.md
+  old_record: 'Introduction to Controlled Vocabularies: Terminology for Art, Architecture,
+    and Other Cultural Works'
+  field_path: '112'
+  old_value: kind=未登记；version=在线版 2023 修订；url=https://www.getty.edu/research/publications/electronic_publications/intro_controlled_vocab/；tier=未登记
+  frozen_row_sha256: 289d1a3a18536c6b581f61a391ac53f10fa7c5bd54c14f594b4e5b701ed45133
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=在线版 2023 修订；url=https://www.getty.edu/research/publications/electronic_publications/intro_controlled_vocab/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:66
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/controlled-vocabulary.md
+  old_record: Vocabulary Control for Information Retrieval
+  field_path: '113'
+  old_value: kind=未登记；version=第 2 版，1986；url=未记录；tier=未登记
+  frozen_row_sha256: 5db904d4590c5a39dec1c49430188b3c204e33f6c9a3cec96338fd060b581ced
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=第 2 版，1986；url=未记录；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:67
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/controlled-vocabulary.md
+  old_record: 'Thesaurus Construction and Use: A Practical Manual'
+  field_path: '114'
+  old_value: kind=未登记；version=第 4 版，2000；url=未记录；tier=未登记
+  frozen_row_sha256: 29089d02b094630172d6cce76a9c256d598ed987d83db35f54c89412a926d90a
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=第 4 版，2000；url=未记录；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:68
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/controlled-vocabulary.md
+  old_record: MeSH (Medical Subject Headings)
+  field_path: '118'
+  old_value: kind=未登记；version=未记录；url=https://www.nlm.nih.gov/mesh/；tier=未登记
+  frozen_row_sha256: 8e65b5a863600d331d4be55551ef85a9a33071e52b7ab43b2e550780fc963f22
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://www.nlm.nih.gov/mesh/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:69
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/controlled-vocabulary.md
+  old_record: LCSH (Library of Congress Subject Headings)
+  field_path: '119'
+  old_value: kind=未登记；version=未记录；url=https://id.loc.gov/authorities/subjects.html；tier=未登记
+  frozen_row_sha256: 78d79e7a8465dd2fc5757ffd8703269c5f3e7b0cd536ec8f97925f0222c1c812
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://id.loc.gov/authorities/subjects.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:70
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/controlled-vocabulary.md
+  old_record: AAT (Getty Art & Architecture Thesaurus)
+  field_path: '120'
+  old_value: kind=未登记；version=未记录；url=https://www.getty.edu/research/tools/vocabularies/aat/；tier=未登记
+  frozen_row_sha256: 24bffc5da65617124a06e7043c98bc871ec1e13d22afc5b62bd1ade90989100b
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://www.getty.edu/research/tools/vocabularies/aat/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:71
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/controlled-vocabulary.md
+  old_record: 《汉语主题词表》
+  field_path: '121'
+  old_value: kind=未登记；version=未记录；url=https://ct.istic.ac.cn/；tier=未登记
+  frozen_row_sha256: 625193bdce7f77afd1bf80f425cef0bc4c669d1b4842d091d63dbb990c543032
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://ct.istic.ac.cn/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:72
+  ledger: entities
+  class: 来源实体
+  old_file: sources/iso-25964.md
+  old_record: NISO ISO 25964 汇总页
+  field_path: '24'
+  old_value: kind=未登记；version=未公开；url=https://www.niso.org/schemas/iso25964；tier=未登记
+  frozen_row_sha256: 8313e5fe08e47154bb0f25ad9a905e2885eecaba7727b5cefc3bdd0fc174f928
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未公开；url=https://www.niso.org/schemas/iso25964；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:73
+  ledger: entities
+  class: 来源实体
+  old_file: sources/iso-25964.md
+  old_record: ISO 25964 数据模型 UML
+  field_path: '25'
+  old_value: kind=未登记；version=文件名日期 2011-06-02；url=https://www.niso.org/schemas/iso25964/Model_2011-06-02.jpg；tier=未登记
+  frozen_row_sha256: ad27af3c0d10003b703f3284787f8764e0c160dfa922928c85df26d7deaeb2e0
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=文件名日期 2011-06-02；url=https://www.niso.org/schemas/iso25964/Model_2011-06-02.jpg；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:74
+  ledger: entities
+  class: 来源实体
+  old_file: sources/iso-25964.md
+  old_record: ISO 25964 XML Schema 1.4
+  field_path: '26'
+  old_value: kind=未登记；version=1.4，2011-09-26；url=https://www.niso.org/schemas/iso25964/iso25964-1_v1.4.xsd；tier=未登记
+  frozen_row_sha256: fef97df16c2d0af6d8b372bee7038a83b0747ff1442aa9fbe38e3c792b44c958
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=1.4，2011-09-26；url=https://www.niso.org/schemas/iso25964/iso25964-1_v1.4.xsd；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:75
+  ledger: entities
+  class: 来源实体
+  old_file: sources/iso-25964.md
+  old_record: Correspondence ISO25964-SKOSXL-MADS
+  field_path: '27'
+  old_value: kind=未登记；version=文件名日期 2013-12-11；url=https://groups.niso.org/higherlogic/ws/public/download/12351/Correspondence%20ISO25964-SKOSXL-MADS-2013-12-11.pdf；tier=未登记
+  frozen_row_sha256: 42396476bdc362d17ce4aa93f06c06fb696df4187585e75336d982fb50b6f655
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=文件名日期 2013-12-11；url=https://groups.niso.org/higherlogic/ws/public/download/12351/Correspondence%20ISO25964-SKOSXL-MADS-2013-12-11.pdf；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:76
+  ledger: entities
+  class: 来源实体
+  old_file: sources/iso-25964.md
+  old_record: SKOS-THES 工件
+  field_path: '28'
+  old_value: kind=未登记；version=2015-03-17；url=https://www.dublincore.org/specifications/skos-thes/ns/skos-thes.ttl；tier=未登记
+  frozen_row_sha256: 07ac922540f9c3e74940e07a0cc2717d704daaa8ec514c9859d522625cdd0a67
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2015-03-17；url=https://www.dublincore.org/specifications/skos-thes/ns/skos-thes.ttl；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:77
+  ledger: entities
+  class: 待人决定
+  old_file: sources/iso-25964.md
+  old_record: ISO/FDIS 25964-1 第 2 版修订项目
+  field_path: '102'
+  old_value: kind=未登记；version=第 2 版项目；url=https://www.iso.org/standard/86713.html；tier=未登记
+  frozen_row_sha256: 4db6c0cfbae5adadaab37ca0ee2b5306bf66d84258e4222721cdad42b5c0f0e4
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=第 2 版项目；url=https://www.iso.org/standard/86713.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:78
+  ledger: entities
+  class: 待人决定
+  old_file: sources/iso-25964.md
+  old_record: ISO/AWI 25964-2 第 2 版修订项目
+  field_path: '103'
+  old_value: kind=未登记；version=第 2 版项目；url=https://www.iso.org/standard/92117.html；tier=未登记
+  frozen_row_sha256: 6615b1b72edd8b7048055a084f09a57dadca27d9746e6112517413cdeb8eb189
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=第 2 版项目；url=https://www.iso.org/standard/92117.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:79
+  ledger: entities
+  class: 待人决定
+  old_file: sources/iso-25964.md
+  old_record: ISO 25964-1 第三方免费样本
+  field_path: '22'
+  old_value: kind=未登记；version=标示 ISO 25964-1:2011，15 页；url=https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf；tier=未登记
+  frozen_row_sha256: c0d53426e9f09e7c5f45410abe1d27fdb652f56ed304059f06bb10bde3a76e90
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=标示 ISO 25964-1:2011，15 页；url=https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:80
+  ledger: entities
+  class: 待人决定
+  old_file: sources/iso-25964.md
+  old_record: ISO 25964-2 第三方免费样本
+  field_path: '23'
+  old_value: kind=未登记；version=标示 ISO 25964-2:2013，15 页；url=https://cdn.standards.iteh.ai/samples/53658/9d9f9da6097147e68f418edf4f8350f0/ISO-25964-2-2013.pdf；tier=未登记
+  frozen_row_sha256: cc41f98c2564bc6a02e2ea651b0ea52e6084188bcc327dde76c5bc4e7ff4f288
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=标示 ISO 25964-2:2013，15 页；url=https://cdn.standards.iteh.ai/samples/53658/9d9f9da6097147e68f418edf4f8350f0/ISO-25964-2-2013.pdf；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:81
+  ledger: entities
+  class: 待人决定
+  old_file: sources/iso-15489.md
+  old_record: ISO 15489-1:2016 第三方样章
+  field_path: '3'
+  old_value: kind=未登记；version=标示 ISO 15489-1:2016；url=https://cdn.standards.iteh.ai/samples/62542/fe383f4fe10448d5b22ce628b1542ed6/ISO-15489-1-2016.pdf；tier=未登记
+  frozen_row_sha256: 54a9708dc6c432bbb435ac71951cad65caf883dad692d12719f2a68bb8b51ec7
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=标示 ISO 15489-1:2016；url=https://cdn.standards.iteh.ai/samples/62542/fe383f4fe10448d5b22ce628b1542ed6/ISO-15489-1-2016.pdf；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:82
+  ledger: entities
+  class: 待人决定
+  old_file: concepts/note-types.md
+  old_record: ISO 5127:2017 第三方样章
+  field_path: '110'
+  old_value: kind=未登记；version=标示 ISO 5127:2017；url=https://cdn.standards.iteh.ai/samples/59743/ea09c719daed4a0cb6a0fa6df352ddfb/ISO-5127-2017.pdf；tier=未登记
+  frozen_row_sha256: c745d11b55632bf24ab2a56070d0bf1f1e73f32c2677ff1e535f3e33d547d128
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=标示 ISO 5127:2017；url=https://cdn.standards.iteh.ai/samples/59743/ea09c719daed4a0cb6a0fa6df352ddfb/ISO-5127-2017.pdf；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:83
+  ledger: entities
+  class: 待人决定
+  old_file: design/content-model.md
+  old_record: IEEE 1484.12.1-2002 LOM final draft 镜像
+  field_path: '158'
+  old_value: kind=未登记；version=2002 final draft；url=https://github.com/LICEF/lompad/blob/master/documentation/LOM_1484_12_1_v1_Final_Draft.pdf；tier=未登记
+  frozen_row_sha256: d982860818b71191f2dbab5bb0536394f6b711a4b1bb8bb9943527f71f472bf5
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2002 final draft；url=https://github.com/LICEF/lompad/blob/master/documentation/LOM_1484_12_1_v1_Final_Draft.pdf；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:84
+  ledger: entities
+  class: 来源实体
+  old_file: sources/gbt-13745.md
+  old_record: 学科分类与代码查询站
+  field_path: '3'
+  old_value: kind=未登记；version=抓取日 2026-08-23；url=https://xkfl.xhma.com/；tier=未登记
+  frozen_row_sha256: ef0ba5786c690c1082829ffcab5ade193c1d12a278c80af1ef114fa8d78d807a
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=抓取日 2026-08-23；url=https://xkfl.xhma.com/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:85
+  ledger: entities
+  class: 待人决定
+  old_file: sources/z39-19.md
+  old_record: NISO Z39.19 项目出版页
+  field_path: '8'
+  old_value: kind=未登记；version=未记录；url=https://groups.niso.org/higherlogic/ws/public/projects/46/publications；tier=未登记
+  frozen_row_sha256: 018b69f564ba83822b06d998f6f91e5d93eddaf2c60c6dcad4825fc717c85317
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://groups.niso.org/higherlogic/ws/public/projects/46/publications；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:86
+  ledger: entities
+  class: 来源实体
+  old_file: sources/z39-19.md
+  old_record: NISO Information Creation & Curation 页面
+  field_path: '9'
+  old_value: kind=未登记；version=未记录；url=https://www.niso.org/topic-committees/information-creation-curation；tier=未登记
+  frozen_row_sha256: 5ca14d592ca5e946aa3c95f7232941c36cdf00b894c077a6c24a865b9d0097e5
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://www.niso.org/topic-committees/information-creation-curation；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:87
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/first-principles.md
+  old_record: Posterior Analytics
+  field_path: '79'
+  old_value: kind=未登记；version=古典著作，具体版次未记录；url=https://classics.mit.edu/Aristotle/posterior.1.i.html；tier=未登记
+  frozen_row_sha256: eb6ec21d32ba4a46d6b6ddc450d239eb3ef84fe56db8469ec56a81186f6971dc
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=古典著作，具体版次未记录；url=https://classics.mit.edu/Aristotle/posterior.1.i.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:88
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/first-principles.md
+  old_record: Aristotle and Mathematics
+  field_path: '81'
+  old_value: kind=未登记；version=未记录；url=https://plato.stanford.edu/entries/aristotle-mathematics/；tier=未登记
+  frozen_row_sha256: 91c71b2cb90678ff76ec178c48bdec2b5d2934d42996d793f4e60691e44f9664
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://plato.stanford.edu/entries/aristotle-mathematics/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:89
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/first-principles.md
+  old_record: Aristotle's Logic
+  field_path: '82'
+  old_value: kind=未登记；version=未记录；url=https://seop.illc.uva.nl/entries/aristotle-logic/；tier=未登记
+  frozen_row_sha256: b18cc034f05f1d779181aa8e41b1887334319c8ab8568ade6b7c5ff4b3e4212e
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://seop.illc.uva.nl/entries/aristotle-logic/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:90
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/first-principles.md
+  old_record: Issues as Elements of Information Systems
+  field_path: '83'
+  old_value: kind=未登记；version=Working Paper 131，1970；url=原文 URL 未能访问；tier=未登记
+  frozen_row_sha256: 066f74c2cef3816c2b73e984cce46aef464837fb634b2ba49c1456e8e10aa3e8
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=Working Paper 131，1970；url=原文 URL 未能访问；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:91
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/first-principles.md
+  old_record: IBIS-A Tool for All Reasons
+  field_path: '83'
+  old_value: kind=未登记；version=未记录；url=https://cognexus.org/IBIS-A_Tool_for_All_Reasons.pdf；tier=未登记
+  frozen_row_sha256: f6f4607b6a104869421a6b41d267b77c2e0062d950f56af63df4ae4162ecff08
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://cognexus.org/IBIS-A_Tool_for_All_Reasons.pdf；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:92
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/first-principles.md
+  old_record: Documenting Architecture Decisions
+  field_path: '84'
+  old_value: kind=未登记；version=2011-11-15；url=https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions；tier=未登记
+  frozen_row_sha256: fad89bfda247bee6b7170a12f85987c51103461f340afc4d130cac58c18d0165
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2011-11-15；url=https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:93
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/first-principles.md
+  old_record: adr.github.io
+  field_path: '85'
+  old_value: kind=未登记；version=未记录；url=https://adr.github.io/；tier=未登记
+  frozen_row_sha256: 011a3eb6e144cdee6bfe4ee84d5dc63d555e052b0461abf49002021a3d770be0
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://adr.github.io/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:94
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/glossary.md
+  old_record: Gertz v. Robert Welch, Inc. (1974)
+  field_path: '171'
+  old_value: kind=未登记；version=1974；url=未记录；tier=未登记
+  frozen_row_sha256: 7085c13f14fd450534c72ba25f1e3f6b09e4f0e643717ddb82295fddbb01121b
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=1974；url=未记录；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:95
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/glossary.md
+  old_record: Cornell LII public figure
+  field_path: '171'
+  old_value: kind=未登记；version=未记录；url=https://www.law.cornell.edu/wex/public_figure；tier=未登记
+  frozen_row_sha256: f7fd65e7935b81725787a9c8495f917638359ecb424f5d3f9c0ec5b6ad8afe1b
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://www.law.cornell.edu/wex/public_figure；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:96
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/knowledge-graph.md
+  old_record: Knowledge Graphs
+  field_path: '84'
+  old_value: kind=未登记；version=2021；url=https://arxiv.org/abs/2003.02320；tier=未登记
+  frozen_row_sha256: f6a0932cc586573e5d43d5f5f0f874d7a1b3a6d654f10ad052ebfa841f3d74e5
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2021；url=https://arxiv.org/abs/2003.02320；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:97
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/knowledge-graph.md
+  old_record: Towards a Definition of Knowledge Graphs
+  field_path: '85'
+  old_value: kind=未登记；version=2016；url=https://ceur-ws.org/Vol-1695/paper4.pdf；tier=未登记
+  frozen_row_sha256: b532cfb1bbfe8b7273b3f401eaedea2daef2e49f0922fa210864feb33fd8ceb5
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2016；url=https://ceur-ws.org/Vol-1695/paper4.pdf；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:98
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/knowledge-graph.md
+  old_record: 'Introducing the Knowledge Graph: things, not strings'
+  field_path: '83'
+  old_value: kind=未登记；version=2012-05-16；url=https://blog.google/products-and-platforms/products/search/introducing-knowledge-graph-things-not/；tier=未登记
+  frozen_row_sha256: 7ad87417f1b595e6c8453a935eb1b08fc5575903952f2a73b10c7aa7a7f1a5df
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2012-05-16；url=https://blog.google/products-and-platforms/products/search/introducing-knowledge-graph-things-not/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:99
+  ledger: entities
+  class: 待人决定
+  old_file: concepts/glossary.md
+  old_record: Cutter (1876) 字典式目录规则
+  field_path: '232'
+  old_value: kind=未登记；version=1876；url=未记录；tier=未登记
+  frozen_row_sha256: 50355ed7b966fe0b8e39ab1964fdc3e274f69929dc97cbd94cfc6a273f1985a0
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=1876；url=未记录；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:100
+  ledger: entities
+  class: 待人决定
+  old_file: concepts/glossary.md
+  old_record: Dewey (1876) 十进分类法
+  field_path: '234'
+  old_value: kind=未登记；version=1876；url=未记录；tier=未登记
+  frozen_row_sha256: 45fab3f59b0907ba4c20777575ca7696188869a74cbd137b3a612ff2e72f0a5f
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=1876；url=未记录；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:101
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/glossary.md
+  old_record: Internationale Sprachnormung in der Technik
+  field_path: '236'
+  old_value: kind=未登记；version=1931；url=未记录；tier=未登记
+  frozen_row_sha256: 1be6e9db6325ca69e87596f9cc93aeb7a6adfd8fdca3c270bd45876bf2e540b5
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=1931；url=未记录；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:102
+  ledger: entities
+  class: 待人决定
+  old_file: concepts/glossary.md
+  old_record: Gruber (1993) 本体定义文献
+  field_path: '237'
+  old_value: kind=未登记；version=1993；url=未记录；tier=未登记
+  frozen_row_sha256: 88711b4d029ccbaa0369446b06abc59ba3cd13903e5e8a6c99274b9e9588188a
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=1993；url=未记录；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:103
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/knowledge-graph.md
+  old_record: W3C RDF 1.1 Concepts and Abstract Syntax
+  field_path: '89'
+  old_value: kind=未登记；version=2014；url=https://www.w3.org/TR/rdf11-concepts/；tier=未登记
+  frozen_row_sha256: 766ea755ee83a665af1dbd7a323b0093825ff56d8b67925285be3cb3e0321a8a
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2014；url=https://www.w3.org/TR/rdf11-concepts/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:104
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/knowledge-graph.md
+  old_record: W3C RDF 1.2 Concepts and Abstract Syntax
+  field_path: '89'
+  old_value: kind=未登记；version=2026-04 Candidate Recommendation（现行文本线索）；url=https://www.w3.org/TR/rdf12-concepts/；tier=未登记
+  frozen_row_sha256: 317e27542bf69213606eaf3cd8fac2a6fc2355ebae0f4e19492024a3b971c68c
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2026-04 Candidate Recommendation（现行文本线索）；url=https://www.w3.org/TR/rdf12-concepts/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:105
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/knowledge-graph.md
+  old_record: W3C OWL 2 Web Ontology Language Overview
+  field_path: '90'
+  old_value: kind=未登记；version=2012，2nd ed.；url=https://www.w3.org/TR/owl2-overview/；tier=未登记
+  frozen_row_sha256: 8a24c7f6d92321822d08d7d5a86866b4f78e37d98c2524873a7cbbc925c815aa
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2012，2nd ed.；url=https://www.w3.org/TR/owl2-overview/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:106
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/knowledge-graph.md
+  old_record: W3C SPARQL 1.1 Query Language
+  field_path: '91'
+  old_value: kind=未登记；version=2013；url=https://www.w3.org/TR/sparql11-query/；tier=未登记
+  frozen_row_sha256: 7c51c242b6b2d0164976772028f992dd1defcdf0df64b5095bff493ef75b3960
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2013；url=https://www.w3.org/TR/sparql11-query/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:107
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/knowledge-graph.md
+  old_record: ISO/IEC 39075:2024
+  field_path: '92'
+  old_value: kind=未登记；version=2024；url=https://www.iso.org/standard/76120.html；tier=未登记
+  frozen_row_sha256: ae5bfa4b9796d7f295215a88f071ee74164fe7f0e32f758b046ac5248735246f
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2024；url=https://www.iso.org/standard/76120.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:108
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/note-types.md
+  old_record: The Knowledge-Creating Company
+  field_path: '104'
+  old_value: kind=未登记；version=1991，2007 重印；url=https://hbr.org/2007/07/the-knowledge-creating-company；tier=未登记
+  frozen_row_sha256: 25ffb2d56d58977b60d0fca328d486eee8cdf82b1ab28130bedf56a142868138
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=1991，2007 重印；url=https://hbr.org/2007/07/the-knowledge-creating-company；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:109
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/note-types.md
+  old_record: How to Take Smart Notes
+  field_path: '105'
+  old_value: kind=未登记；version=2017，ISBN 9781542866507；url=未记录；tier=未登记
+  frozen_row_sha256: b178a70fe1942ecb7dd84d82da6251cd7028f2aa30a825468dcbae30adb28bca
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2017，ISBN 9781542866507；url=未记录；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:110
+  ledger: entities
+  class: 待人决定
+  old_file: concepts/note-types.md
+  old_record: Zettelkasten 论坛转引
+  field_path: '105'
+  old_value: kind=未登记；version=未记录；url=https://forum.zettelkasten.de/；tier=未登记
+  frozen_row_sha256: 479ab0fb8093922adc34886d1efbae6b9ff64bf8a03777701fe6a821d58defde
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://forum.zettelkasten.de/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:111
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/note-types.md
+  old_record: Kommunikation mit Zettelkästen
+  field_path: '106'
+  old_value: kind=未登记；version=1981；url=https://luhmann.surge.sh/communicating-with-slip-boxes；tier=未登记
+  frozen_row_sha256: 5f20d517b3ebacf3572e894667b0277c155a916989b85104e2aa83946817a5ff
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=1981；url=https://luhmann.surge.sh/communicating-with-slip-boxes；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:112
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/note-types.md
+  old_record: Evergreen notes
+  field_path: '107'
+  old_value: kind=未登记；version=未记录；url=https://notes.andymatuschak.org/Evergreen_notes；tier=未登记
+  frozen_row_sha256: 17cb2c9aab1e31a70b86a1e82dbec07e662e00b63bf0895665e30dbe9eb9c497
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://notes.andymatuschak.org/Evergreen_notes；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:113
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/note-types.md
+  old_record: ISO 5127:2017
+  field_path: '110'
+  old_value: kind=未登记；version=2017；url=https://www.iso.org/standard/59743.html；tier=未登记
+  frozen_row_sha256: 4fd4a18f69bc16f16682236ad548f41c2b2a176cee5b4f55d952d4940a6e50e7
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2017；url=https://www.iso.org/standard/59743.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:114
+  ledger: entities
+  class: 待人决定
+  old_file: concepts/note-types.md
+  old_record: Harvard Library Commonplace Books
+  field_path: '113'
+  old_value: kind=未登记；version=2015 Wayback 存档线索；url=https://web.archive.org/web/2015/http://ocp.hul.harvard.edu/reading/commonplace.html；tier=未登记
+  frozen_row_sha256: e5ac2e2e5cbbe4f392fe0adcc29ee4a5ba9f901a0e999592838d011acd78a6aa
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2015 Wayback 存档线索；url=https://web.archive.org/web/2015/http://ocp.hul.harvard.edu/reading/commonplace.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:115
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/note-types.md
+  old_record: The Cornell Note Taking System
+  field_path: '114'
+  old_value: kind=未登记；version=未记录；url=https://lsc.cornell.edu/how-to-study/taking-notes/cornell-note-taking-system/；tier=未登记
+  frozen_row_sha256: 97dead328bb5caa808a7b31200f08b27816388091e462d39204336d80f07589d
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://lsc.cornell.edu/how-to-study/taking-notes/cornell-note-taking-system/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:116
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/note-types.md
+  old_record: UNE Cornell Note-Taking System 材料
+  field_path: '114'
+  old_value: kind=未登记；version=文件名 041311；url=https://www.une.edu/sites/default/files/Cornell-Note-Taking-System-041311-PDF-4.pdf；tier=未登记
+  frozen_row_sha256: 6c43eac0517a3ea4c4450e18ffbf71168c67754e7acbba15fa9f5f7ec59798cb
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=文件名 041311；url=https://www.une.edu/sites/default/files/Cornell-Note-Taking-System-041311-PDF-4.pdf；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:117
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/note-types.md
+  old_record: 'Evaluating the Quality of Learning: The SOLO Taxonomy'
+  field_path: '116'
+  old_value: kind=未登记；version=1982；url=未记录；tier=未登记
+  frozen_row_sha256: 92707aa0a7b3dbcef89385c64ef8337c61c416249c5bae3d3034746d5817a9f4
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=1982；url=未记录；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:118
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/note-types.md
+  old_record: Springer SOLO taxonomy 百科条目
+  field_path: '116'
+  old_value: kind=未登记；version=未记录；url=https://link.springer.com/rwe/10.1007/978-3-319-77487-9_182-4；tier=未登记
+  frozen_row_sha256: 57c8eee5bae6fe24e8eb01959c83e2125628a253862d62c4ac3f3560e6398f56
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://link.springer.com/rwe/10.1007/978-3-319-77487-9_182-4；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:119
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/note-types.md
+  old_record: The Non-Pareto Principle; Mea Culpa
+  field_path: '117'
+  old_value: kind=未登记；version=1974；url=https://www.juran.com/wp-content/uploads/2021/03/The-Non-Pareto-Principle-1974.pdf；tier=未登记
+  frozen_row_sha256: aebfe6ed84595d12a4b2c32de3559d5f736f74b290b0731fedd301140b9ce5af
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=1974；url=https://www.juran.com/wp-content/uploads/2021/03/The-Non-Pareto-Principle-1974.pdf；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:120
+  ledger: entities
+  class: 来源实体
+  old_file: sources/writing-guides.md
+  old_record: ISO 24495-1:2023
+  field_path: '11'
+  old_value: kind=未登记；version=2023；url=https://www.iso.org/standard/78907.html；tier=de-jure（现行笔记值）
+  frozen_row_sha256: e314bdc89d3b495c97b3a53698a19aaae73dcbc41db6e18ec059271d81a2abf2
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2023；url=https://www.iso.org/standard/78907.html；tier=de-jure（现行笔记值）
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:121
+  ledger: entities
+  class: 来源实体
+  old_file: sources/writing-guides.md
+  old_record: IPLF 对 ISO 24495-1 的摘要
+  field_path: '11'
+  old_value: kind=未登记；version=未记录；url=https://www.iplfederation.org/iso-standard/；tier=未登记
+  frozen_row_sha256: 677c0cb6702882698a6dbb34072c3401b8153decdaeee40d08eae58c20399c4b
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://www.iplfederation.org/iso-standard/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:122
+  ledger: entities
+  class: 来源实体
+  old_file: sources/writing-guides.md
+  old_record: GB/T 15834-2011
+  field_path: '12'
+  old_value: kind=未登记；version=2011；url=https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=22EA6D162E4110E752259661E1A0D0A8；tier=de-jure（现行笔记值）
+  frozen_row_sha256: 2ed02e89c8b56c626216c8c6509d2acbc5b5af2ae79f159317dd6eb626c68ec2
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2011；url=https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=22EA6D162E4110E752259661E1A0D0A8；tier=de-jure（现行笔记值）
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:123
+  ledger: entities
+  class: 来源实体
+  old_file: sources/writing-guides.md
+  old_record: W3C Requirements for Chinese Text Layout
+  field_path: '13'
+  old_value: kind=未登记；version=Group Note Draft 2026-08-04（现行笔记值）；url=https://www.w3.org/TR/clreq/；tier=de-facto（现行笔记值）
+  frozen_row_sha256: d6851e2dbe30050107cd62a1db0251a9b926f2ab13b3f110a108c222e29ddcd1
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=Group Note Draft 2026-08-04（现行笔记值）；url=https://www.w3.org/TR/clreq/；tier=de-facto（现行笔记值）
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:124
+  ledger: entities
+  class: 来源实体
+  old_file: sources/writing-guides.md
+  old_record: Google developer documentation style guide
+  field_path: '14'
+  old_value: kind=未登记；version=未记录；url=https://developers.google.com/style；tier=de-facto（现行笔记值）
+  frozen_row_sha256: 0592663d78ea00e7845ce50ce790e0df6a00b6bbdedccda12ab3c601d8d3f66e
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://developers.google.com/style；tier=de-facto（现行笔记值）
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:125
+  ledger: entities
+  class: 来源实体
+  old_file: sources/writing-guides.md
+  old_record: Microsoft Writing Style Guide
+  field_path: '15'
+  old_value: kind=未登记；version=未记录；url=https://learn.microsoft.com/en-us/style-guide/top-10-tips-style-voice；tier=de-facto（现行笔记值）
+  frozen_row_sha256: a5d1d5fa3744278faa9e35d07b457aa00e8c7566aff97bed9f98f5f1cd497294
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://learn.microsoft.com/en-us/style-guide/top-10-tips-style-voice；tier=de-facto（现行笔记值）
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:126
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/writing-conventions.md
+  old_record: ISO 12616-1:2021
+  field_path: '96'
+  old_value: kind=未登记；version=2021；url=https://www.iso.org/obp/ui?_escaped_fragment_=iso%3Astd%3Aiso%3A12616%3A-1%3Aed-1%3Av1%3Aen；tier=未登记
+  frozen_row_sha256: edaf4520458ac79a8d9d5efdb94d719b37a5a4da37e78cbc4326cf46da42a8d5
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2021；url=https://www.iso.org/obp/ui?_escaped_fragment_=iso%3Astd%3Aiso%3A12616%3A-1%3Aed-1%3Av1%3Aen；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:127
+  ledger: entities
+  class: 来源实体
+  old_file: concepts/writing-conventions.md
+  old_record: Plain Writing Act of 2010
+  field_path: '102'
+  old_value: kind=未登记；version=2010；url=https://www.govinfo.gov/app/details/PLAW-111publ274；tier=未登记
+  frozen_row_sha256: 8f731dd0c7e1d7d10560446f508e664f4922a055cad6d5078183c5b7d9a03891
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2010；url=https://www.govinfo.gov/app/details/PLAW-111publ274；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:128
+  ledger: entities
+  class: 待人决定
+  old_file: concepts/writing-conventions.md
+  old_record: Plain English Campaign
+  field_path: '102'
+  old_value: kind=未登记；version=未记录；url=https://www.plainenglish.co.uk/；tier=未登记
+  frozen_row_sha256: 300d0a45faad88bf7009ab0a28d67b5a1528185391395bb1f370c2b74549cf47
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=未记录；url=https://www.plainenglish.co.uk/；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:129
+  ledger: entities
+  class: 来源实体
+  old_file: sources/terminology-standards.md
+  old_record: ISO 704:2022
+  field_path: '9'
+  old_value: kind=未登记；version=第 4 版，2022-07；url=https://www.iso.org/standard/79077.html；tier=未登记
+  frozen_row_sha256: d1c05500af1f05c031e4881939307cbedc0e6978b230d8ba0abd92c37e43a95a
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=第 4 版，2022-07；url=https://www.iso.org/standard/79077.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:130
+  ledger: entities
+  class: 来源实体
+  old_file: sources/terminology-standards.md
+  old_record: ISO 1087:2019
+  field_path: '10'
+  old_value: kind=未登记；version=第 2 版，2019-09；url=https://www.iso.org/standard/62330.html；tier=未登记
+  frozen_row_sha256: 129917c3cfb5bc436f8bddcf1af0e9a143c07ae52bcf33850e4bf6b88a16621c
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=第 2 版，2019-09；url=https://www.iso.org/standard/62330.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:131
+  ledger: entities
+  class: 来源实体
+  old_file: sources/terminology-standards.md
+  old_record: GB/T 15237-2025
+  field_path: '11'
+  old_value: kind=未登记；version=2025；url=https://std.samr.gov.cn/gb/search/gbDetailed?id=33D40F1160ED5D92E06397BE0A0A5B93；tier=未登记
+  frozen_row_sha256: 9bc0d4dba90af105f35d2fb08e49168d4128ca4ef173285dd02e37da79d15274
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2025；url=https://std.samr.gov.cn/gb/search/gbDetailed?id=33D40F1160ED5D92E06397BE0A0A5B93；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:132
+  ledger: entities
+  class: 来源实体
+  old_file: sources/terminology-standards.md
+  old_record: ISO 10241-1:2011
+  field_path: '12'
+  old_value: kind=未登记；version=第 1 版，2011-04；url=https://www.iso.org/standard/40362.html；tier=未登记
+  frozen_row_sha256: 756433470097b748b6637b765d33db8a6905d298183926c660e1bf9c00b0e593
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=第 1 版，2011-04；url=https://www.iso.org/standard/40362.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:133
+  ledger: entities
+  class: 来源实体
+  old_file: sources/terminology-standards.md
+  old_record: GB/T 20001.1-2024
+  field_path: '13'
+  old_value: kind=未登记；version=2024；url=https://std.samr.gov.cn/gb/search/gbDetailed?id=14156507D1FC0337E06397BE0A0AE656；tier=未登记
+  frozen_row_sha256: c04d58ebdf41ddd42ef99ddebb2031d4f734d3cf51ec8b137df93805f7bc15cd
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2024；url=https://std.samr.gov.cn/gb/search/gbDetailed?id=14156507D1FC0337E06397BE0A0AE656；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:134
+  ledger: entities
+  class: 来源实体
+  old_file: sources/terminology-standards.md
+  old_record: ISO 26162-1:2019
+  field_path: '14'
+  old_value: kind=未登记；version=第 1 版，2019-11；url=https://www.iso.org/standard/71941.html；tier=未登记
+  frozen_row_sha256: 4de59c9b73d39c416bf7d96ee243fce649e1c5fb16695758baad856a049f10a0
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=第 1 版，2019-11；url=https://www.iso.org/standard/71941.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:135
+  ledger: entities
+  class: 来源实体
+  old_file: sources/terminology-standards.md
+  old_record: ISO 26162-3:2023
+  field_path: '15'
+  old_value: kind=未登记；version=第 1 版，2023-01；url=https://www.iso.org/standard/80464.html；tier=未登记
+  frozen_row_sha256: 8585da753b7dd664efb252cd4ddefd958ab8901e1e287a86f11a9c6d3d3fab6e
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=第 1 版，2023-01；url=https://www.iso.org/standard/80464.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:136
+  ledger: entities
+  class: 来源实体
+  old_file: sources/terminology-standards.md
+  old_record: ISO 30042:2019
+  field_path: '16'
+  old_value: kind=未登记；version=第 2 版，2019-04；url=https://www.iso.org/standard/62510.html；tier=未登记
+  frozen_row_sha256: 79c916e65ea4ecd3301589482feb3b88ec4a1a5b5e83e26b191cd076b01870db
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=第 2 版，2019-04；url=https://www.iso.org/standard/62510.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:137
+  ledger: entities
+  class: 来源实体
+  old_file: sources/terminology-standards.md
+  old_record: GB/T 44227-2024
+  field_path: '17'
+  old_value: kind=未登记；version=2024；url=https://std.samr.gov.cn/gb/search/gbDetailed?id=1E5A13A77F9BBC8DE06397BE0A0A87E8；tier=未登记
+  frozen_row_sha256: fa15cd5fa97d5f0a4f719708cc9be155848f86ea06a5fc4487c12ea17299c962
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=2024；url=https://std.samr.gov.cn/gb/search/gbDetailed?id=1E5A13A77F9BBC8DE06397BE0A0A87E8；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:138
+  ledger: entities
+  class: 来源实体
+  old_file: sources/terminology-standards.md
+  old_record: TBX-Basic Namespace
+  field_path: '18'
+  old_value: kind=未登记；version=页面未显示；url=https://www.tbxinfo.net/ns/dct/basic；tier=未登记
+  frozen_row_sha256: 29ac5637336c8697318e428f898a2871964164c9ff5d302a049d597342f2d371
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=页面未显示；url=https://www.tbxinfo.net/ns/dct/basic；tier=未登记
+  blocks_cutover: true
+  decision_trace: []
+- identity: source-entities.tsv:139
+  ledger: entities
+  class: 待人决定
+  old_file: sources/terminology-standards.md
+  old_record: ISO/CD 30042 第 3 版项目
+  field_path: '71'
+  old_value: kind=未登记；version=第 3 版项目；url=https://www.iso.org/standard/90295.html；tier=未登记
+  frozen_row_sha256: 1d5b86ff98eeb6b3908d7af845041e9f63757730ccc9b7e0938562ff4d65b474
+  decision_domains:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  - Q23
+  operation: keep
+  disposition: retain_legacy
+  new_value: kind=未登记；version=第 3 版项目；url=https://www.iso.org/standard/90295.html；tier=未登记
+  blocks_cutover: true
+  decision_trace: []

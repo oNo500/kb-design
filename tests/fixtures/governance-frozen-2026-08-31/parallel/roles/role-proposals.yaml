@@ -1,0 +1,78 @@
+batch: source-role-proposals
+date: 2026-08-31
+formal_write: false
+inputs:
+  inventory:
+    path: .superpowers/sdd/2026-08-31-governance-implementation-prep/source-roles.tsv
+    sha256: f291027de735d21aa21fd953a7301db9d7fcc34a6ec9d266e12ceab07e030cb9
+  plan:
+    path: docs/superpowers/plans/2026-08-31-source-schema-migration.md
+    sha256: 2c5f21a100d3f6bdc6579b62535f272e1d967ecba66504fffbe78ce7ceb1e55f
+  decisions:
+    - id: decision-source-0009
+      question: Q11
+      path: design/decisions/source-validation-policy.md
+      sha256: 8d3ec01e7def0778e0f11b175a073e0869e566f4fae6d285d4d946831ab10418
+    - id: decision-source-0011
+      question: Q12
+      path: design/decisions/source-migration-policy.md
+      sha256: 425702a87960ca1d24705537fe36e48af149901463cc195ceef204f8b6d58c6c
+category_rules:
+  Q11:
+    inherited_default: proposed
+    proposed_decision: null
+    approved_requires_decision: true
+    retired_requires_decision: true
+    consumers_do_not_approve_role: true
+  Q12:
+    candidate: proposed-discovery
+    unused-mapping: proposed
+    empty-group: proposed
+proposals:
+  - {inventory_identity: "source-roles.tsv:2", use_id: gbt-13745, entity: gbt-13745, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:3", use_id: gbt-13745, entity: gbt-13745, old_role: structure, new_role: structure, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:4", use_id: cs2023, entity: cs2023, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:5", use_id: cs2023, entity: cs2023, old_role: structure, new_role: structure, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:6", use_id: swebok, entity: swebok, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:7", use_id: swebok, entity: swebok, old_role: structure, new_role: structure, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:8", use_id: acm-ccs, entity: acm-ccs, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: unused-mapping, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:9", use_id: asvs, entity: asvs, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:10", use_id: asvs, entity: asvs, old_role: structure, new_role: structure, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:11", use_id: cwe, entity: cwe, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:12", use_id: cwe, entity: cwe, old_role: structure, new_role: structure, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:13", use_id: cwe, entity: cwe, old_role: group, new_role: group, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:14", use_id: attack, entity: attack, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:15", use_id: attack, entity: attack, old_role: structure, new_role: structure, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:16", use_id: owasp-top10, entity: owasp-top10, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: unused-mapping, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:17", use_id: owasp-top10, entity: owasp-top10, old_role: group, new_role: group, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: empty-group, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:18", use_id: owasp-llm-top10, entity: owasp-llm-top10, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:19", use_id: owasp-llm-top10, entity: owasp-llm-top10, old_role: structure, new_role: structure, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:20", use_id: owasp-llm-top10, entity: owasp-llm-top10, old_role: group, new_role: group, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:21", use_id: atlas, entity: atlas, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:22", use_id: atlas, entity: atlas, old_role: structure, new_role: structure, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:23", use_id: nist-ai-rmf, entity: nist-ai-rmf, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: unused-mapping, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:24", use_id: anthropic-docs, entity: anthropic-docs, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: unused-mapping, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:25", use_id: rfc-1122, entity: rfc-1122, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:26", use_id: rfc-1122, entity: rfc-1122, old_role: structure, new_role: structure, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:27", use_id: rfc-9110, entity: rfc-9110, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: unused-mapping, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:28", use_id: osi, entity: osi, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: unused-mapping, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:29", use_id: mdn, entity: mdn, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: unused-mapping, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:30", use_id: mdn-curriculum, entity: mdn-curriculum, old_role: candidate, new_role: discovery, new_status: proposed, decision: null, operation: set, disposition: proposed_role, classification: candidate, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:31", use_id: iso-25964-1, entity: iso-25964-1, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: unused-mapping, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:32", use_id: iso-25964-2, entity: iso-25964-2, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: unused-mapping, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:33", use_id: z39-19, entity: z39-19, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: unused-mapping, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:34", use_id: skos, entity: skos, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: unused-mapping, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:35", use_id: diataxis, entity: diataxis, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:36", use_id: diataxis, entity: diataxis, old_role: structure, new_role: structure, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:37", use_id: wikidata, entity: wikidata, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:38", use_id: roadmap-sh, entity: roadmap-sh, old_role: candidate, new_role: discovery, new_status: proposed, decision: null, operation: set, disposition: proposed_role, classification: candidate, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:39", use_id: teachyourselfcs, entity: teachyourselfcs, old_role: candidate, new_role: discovery, new_status: proposed, decision: null, operation: set, disposition: proposed_role, classification: candidate, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:40", use_id: cmu-15-445, entity: cmu-15-445, old_role: candidate, new_role: discovery, new_status: proposed, decision: null, operation: set, disposition: proposed_role, classification: candidate, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:41", use_id: db-engines, entity: db-engines, old_role: candidate, new_role: discovery, new_status: proposed, decision: null, operation: set, disposition: proposed_role, classification: candidate, rule_refs: [Q11, Q12]}
+  - {inventory_identity: "source-roles.tsv:42", use_id: dita, entity: dita, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:43", use_id: dita, entity: dita, old_role: structure, new_role: structure, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:44", use_id: iptc-genre, entity: iptc-genre, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:45", use_id: iptc-genre, entity: iptc-genre, old_role: structure, new_role: structure, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:46", use_id: lom, entity: lom, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:47", use_id: lom, entity: lom, old_role: structure, new_role: structure, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}
+  - {inventory_identity: "source-roles.tsv:48", use_id: schema-org, entity: schema-org, old_role: mapping, new_role: mapping, new_status: proposed, decision: null, operation: keep, disposition: proposed_role, classification: inherited-default, rule_refs: [Q11]}

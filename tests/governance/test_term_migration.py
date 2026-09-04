@@ -17,13 +17,10 @@ from scripts.governance.migrate_terms import (
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-INVENTORY = (
-    ROOT
-    / ".superpowers"
-    / "sdd"
-    / "2026-08-31-governance-implementation-prep"
-    / "term-glossary.tsv"
+FROZEN_FIXTURE_ROOT = (
+    ROOT / "tests" / "fixtures" / "governance-frozen-2026-08-31"
 )
+INVENTORY = FROZEN_FIXTURE_ROOT / "term-glossary.tsv"
 INHERITED = ROOT / "tests" / "fixtures" / "terminology" / "decisions" / "inherited.tsv"
 TERMS = ROOT / "vocab" / "migrations" / "term-v1" / "terms.tsv"
 

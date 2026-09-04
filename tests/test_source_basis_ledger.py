@@ -9,22 +9,12 @@ import yaml
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-INVENTORY = (
-    ROOT
-    / ".superpowers"
-    / "sdd"
-    / "2026-08-31-governance-implementation-prep"
-    / "basis-inventory.tsv"
+FROZEN_FIXTURE_ROOT = (
+    ROOT / "tests" / "fixtures" / "governance-frozen-2026-08-31"
 )
+INVENTORY = FROZEN_FIXTURE_ROOT / "basis-inventory.tsv"
 LEDGER = ROOT / "vocab" / "migrations" / "source-v1" / "basis.yaml"
-PARALLEL_BASIS = (
-    ROOT
-    / ".superpowers"
-    / "sdd"
-    / "2026-08-31-source-schema-migration"
-    / "parallel"
-    / "basis"
-)
+PARALLEL_BASIS = FROZEN_FIXTURE_ROOT / "parallel" / "basis"
 INVENTORY_SHA256 = (
     "3da438227ee676f0d2c5e31ac16c73a3bb4a5d10716b15f175fd81257642c43c"
 )
@@ -191,7 +181,9 @@ class SourceBasisLedgerTests(unittest.TestCase):
         expected = inventory_rows()
         rows = load_ledger()["rows"]
         file_hashes = {
-            relative: hashlib.sha256((ROOT / relative).read_bytes()).hexdigest()
+            relative: hashlib.sha256(
+                (FROZEN_FIXTURE_ROOT / relative).read_bytes()
+            ).hexdigest()
             for relative in {row["file"] for row in rows}
         }
 

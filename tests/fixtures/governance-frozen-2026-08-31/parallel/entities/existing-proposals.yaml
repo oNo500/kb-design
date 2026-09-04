@@ -1,0 +1,1783 @@
+meta:
+  prepared_at: '2026-08-31'
+  formal_write: false
+  inventory: .superpowers/sdd/2026-08-31-governance-implementation-prep/source-entities.tsv
+  inventory_sha256: 843d3606407264e8d6ccca9ae8b9f03590aa403f98101c4a53a780bab5dc37f4
+  inventory_report: .superpowers/sdd/2026-08-31-governance-implementation-prep/source-entities.md
+  source_plan: docs/superpowers/plans/2026-08-31-source-schema-migration.md
+  source_plan_questions:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  decisions:
+  - path: design/decisions/source-governance-schema.md
+    sha256: 0bdf6dba6ada385ad48fdcd561e4f492142528fc5aa9aed661b33cf47d444b12
+  - path: design/decisions/source-migration-policy.md
+    sha256: 425702a87960ca1d24705537fe36e48af149901463cc195ceef204f8b6d58c6c
+  - path: design/decisions/source-probe-policy.md
+    sha256: aac97017d398cd87db33c3e1443c22508e7c1772cc66e2e2cec6924e861dd800
+  - path: design/decisions/source-validation-policy.md
+    sha256: 8d3ec01e7def0778e0f11b175a073e0869e566f4fae6d285d4d946831ab10418
+  inventory_counts:
+    total: 138
+    existing: 31
+    unregistered: 107
+    identity_ambiguous: 16
+  constraints:
+  - Only repository evidence and accepted decisions are used.
+  - No external status, address role, review date, replacement, external state, or new ID is inferred.
+  - unresolved is retained whenever row-specific evidence or approval is absent.
+proposals:
+- identity: source-entities.tsv:2
+  source_file: vocab/entities.yaml
+  source_location: '8'
+  object: gbt-13745
+  current_value: kind=standard；version=2009；url=https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E；tier=de-jure
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=candidate；entity.checked=2026-08-23；watch=同 url；source.checked=2026-08-23；role=mapping,structure；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用 id/label/kind/version/url/status/basis/review/watch/replaced_by/history；tier 原值仅作兼容；外部
+    status、review 与身份判据待复核，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: gbt-13745
+  proposed_id: gbt-13745
+  old_record_sha256: e90028f90c50a50802611bb49dd2503e34ee0859de66f9838b4592a4b6b1a076
+  legacy_record:
+    id: gbt-13745
+    label:
+      zh: GB/T 13745-2009 学科分类与代码
+      en: GB/T 13745-2009 Classification and code of disciplines
+    kind: standard
+    tier: de-jure
+    version: '2009'
+    checked: 2026-08-23
+    url: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
+    watch: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
+    subjects:
+    - library-and-information-science
+    basis:
+      subjects: self
+    status: candidate
+    added: 2026-08-23
+  legacy_use_record:
+    id: gbt-13745
+    entity: gbt-13745
+    role:
+    - mapping
+    - structure
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:3
+  source_file: vocab/entities.yaml
+  source_location: '21'
+  object: cs2023
+  current_value: kind=standard；version=2024-01；url=https://csed.acm.org/cs2023/；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity.checked=2026-08-23；watch=同 url；source.checked=2026-08-23；role=mapping,structure；concepts/body-of-knowledge.md:79
+    另引 https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；重复身份=entity 与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；报告地址与规范地址的关系、外部 status、review 与身份判据待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: cs2023
+  proposed_id: cs2023
+  old_record_sha256: 24e99b4943abe4e902a2497beace107ca9b48f6b510e5666ebc623307398b070
+  legacy_record:
+    id: cs2023
+    label:
+      zh: 计算机科学课程 2023
+      en: Computer Science Curricula 2023
+    kind: standard
+    tier: de-facto
+    version: 2024-01
+    checked: 2026-08-23
+    url: https://csed.acm.org/cs2023/
+    watch: https://csed.acm.org/cs2023/
+    subjects:
+    - computing
+    basis:
+      subjects: cs2023:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: cs2023
+    entity: cs2023
+    role:
+    - mapping
+    - structure
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:4
+  source_file: vocab/entities.yaml
+  source_location: '34'
+  object: swebok
+  current_value: kind=standard；version=4.0；url=https://www.computer.org/education/bodies-of-knowledge/software-engineering；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity.checked=2026-08-23；watch=同 url；source.checked=2026-08-23；role=mapping,structure；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；外部 status、review 与身份判据待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: swebok
+  proposed_id: swebok
+  old_record_sha256: 597acfbadaf929e74365b5a94004608da43c3b7203ce915ded29beef6483becc
+  legacy_record:
+    id: swebok
+    label:
+      zh: 软件工程知识体系指南 v4.0
+      en: Guide to the Software Engineering Body of Knowledge v4.0
+    kind: standard
+    tier: de-facto
+    version: '4.0'
+    checked: 2026-08-23
+    url: https://www.computer.org/education/bodies-of-knowledge/software-engineering
+    watch: https://www.computer.org/education/bodies-of-knowledge/software-engineering
+    subjects:
+    - software-engineering
+    basis:
+      subjects: swebok:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: swebok
+    entity: swebok
+    role:
+    - mapping
+    - structure
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:5
+  source_file: vocab/entities.yaml
+  source_location: '47'
+  object: acm-ccs
+  current_value: kind=standard；version=2012；url=https://dl.acm.org/ccs；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity.checked=2026-08-23；watch 未记录；source.checked=2026-08-23；role=mapping；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；外部 status、review、watch 与身份判据待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: acm-ccs
+  proposed_id: acm-ccs
+  old_record_sha256: 25f7c7e282c1433b9d852497060b99f2e2a98272cb2cf30aa98928a08d39366d
+  legacy_record:
+    id: acm-ccs
+    label:
+      zh: ACM 计算分类系统 2012
+      en: ACM Computing Classification System 2012
+    kind: standard
+    tier: de-facto
+    version: '2012'
+    checked: 2026-08-23
+    url: https://dl.acm.org/ccs
+    subjects:
+    - computing
+    basis:
+      subjects: acm-ccs:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: acm-ccs
+    entity: acm-ccs
+    role:
+    - mapping
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:6
+  source_file: vocab/entities.yaml
+  source_location: '59'
+  object: asvs
+  current_value: kind=standard；version=5.0；url=https://owasp.org/www-project-application-security-verification-standard/；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity.checked=2026-08-23；watch=https://github.com/OWASP/ASVS/releases；source.checked=2026-08-23；role=mapping,structure；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；外部 status、review 与身份判据待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: asvs
+  proposed_id: asvs
+  old_record_sha256: 83bb9fedc5b81b46d382d0316f4fa3f1bd99544c4c7e12bec4d166302b77e908
+  legacy_record:
+    id: asvs
+    label:
+      zh: OWASP 应用安全验证标准 5.0
+      en: OWASP Application Security Verification Standard 5.0
+    kind: standard
+    tier: de-facto
+    version: '5.0'
+    checked: 2026-08-23
+    url: https://owasp.org/www-project-application-security-verification-standard/
+    watch: https://github.com/OWASP/ASVS/releases
+    subjects:
+    - security
+    basis:
+      subjects: asvs:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: asvs
+    entity: asvs
+    role:
+    - mapping
+    - structure
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:7
+  source_file: vocab/entities.yaml
+  source_location: '72'
+  object: cwe
+  current_value: kind=standard；version=4.20；url=https://cwe.mitre.org/；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity.checked=2026-08-23；watch=https://cwe.mitre.org/data/index.html；source.checked=2026-08-23；role=mapping,structure,group；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；外部 status、review 与身份判据待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: cwe
+  proposed_id: cwe
+  old_record_sha256: 43730a2d3f19ddb41d57dfb2ec85b28f27f490e447c6786cc2811d8f317bfe91
+  legacy_record:
+    id: cwe
+    label:
+      zh: MITRE 通用缺陷枚举
+      en: MITRE Common Weakness Enumeration
+    kind: standard
+    tier: de-facto
+    version: '4.20'
+    checked: 2026-08-23
+    url: https://cwe.mitre.org/
+    watch: https://cwe.mitre.org/data/index.html
+    subjects:
+    - security
+    basis:
+      subjects: cwe:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: cwe
+    entity: cwe
+    role:
+    - mapping
+    - structure
+    - group
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:8
+  source_file: vocab/entities.yaml
+  source_location: '85'
+  object: attack
+  current_value: kind=standard；version=19.2；url=https://attack.mitre.org/；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity.checked=2026-08-23；watch=https://attack.mitre.org/resources/versions/；source.checked=2026-08-23；role=mapping,structure；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；外部 status、review 与身份判据待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: attack
+  proposed_id: attack
+  old_record_sha256: fec2af728a5f845087eb452eaab208a7fe0c640dad83d15c50e37412894272f1
+  legacy_record:
+    id: attack
+    label:
+      zh: MITRE ATT&CK Enterprise
+      en: MITRE ATT&CK Enterprise
+    kind: standard
+    tier: de-facto
+    version: '19.2'
+    checked: 2026-08-23
+    url: https://attack.mitre.org/
+    watch: https://attack.mitre.org/resources/versions/
+    subjects:
+    - security
+    basis:
+      subjects: attack:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: attack
+    entity: attack
+    role:
+    - mapping
+    - structure
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:9
+  source_file: vocab/entities.yaml
+  source_location: '98'
+  object: owasp-top10
+  current_value: kind=standard；version=2021；url=https://owasp.org/www-project-top-ten/；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity.checked=2026-08-23；watch=同 url；source.checked=2026-08-23；role=mapping,group；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；外部 status、review 与身份判据待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: owasp-top10
+  proposed_id: owasp-top10
+  old_record_sha256: 822414f3285015d424e1fc9baea7f615a79f9c594b3291d729bf4397e46cd69e
+  legacy_record:
+    id: owasp-top10
+    label:
+      zh: OWASP Top 10
+      en: OWASP Top 10
+    kind: standard
+    tier: de-facto
+    version: '2021'
+    checked: 2026-08-23
+    url: https://owasp.org/www-project-top-ten/
+    watch: https://owasp.org/www-project-top-ten/
+    subjects:
+    - security
+    basis:
+      subjects: owasp-top10:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: owasp-top10
+    entity: owasp-top10
+    role:
+    - mapping
+    - group
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:10
+  source_file: vocab/entities.yaml
+  source_location: '111'
+  object: owasp-llm-top10
+  current_value: kind=standard；version=2025；url=https://genai.owasp.org/llm-top-10/；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity.checked=2026-08-23；watch=https://github.com/OWASP/www-project-top-10-for-large-language-model-applications；source.checked=2026-08-23；role=mapping,structure,group；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；外部 status、review 与身份判据待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: owasp-llm-top10
+  proposed_id: owasp-llm-top10
+  old_record_sha256: 09ea4c169a08be1c3c9998710ea3d841e0864d96b880488e97cf769c29a67142
+  legacy_record:
+    id: owasp-llm-top10
+    label:
+      zh: OWASP LLM 应用 Top 10
+      en: OWASP Top 10 for LLM Applications
+    kind: standard
+    tier: de-facto
+    version: '2025'
+    checked: 2026-08-23
+    url: https://genai.owasp.org/llm-top-10/
+    watch: https://github.com/OWASP/www-project-top-10-for-large-language-model-applications
+    subjects:
+    - artificial-intelligence
+    - security
+    basis:
+      subjects: owasp-llm-top10:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: owasp-llm-top10
+    entity: owasp-llm-top10
+    role:
+    - mapping
+    - structure
+    - group
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:11
+  source_file: vocab/entities.yaml
+  source_location: '124'
+  object: atlas
+  current_value: kind=standard；version=2026.07；url=https://atlas.mitre.org/；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity.checked=2026-08-23；watch=https://github.com/mitre-atlas/atlas-data/tree/main/dist；source.checked=2026-08-23；role=mapping,structure；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；外部 status、review 与身份判据待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: atlas
+  proposed_id: atlas
+  old_record_sha256: 64a01ffee58061db63067a87ef6fa366c993ed1b762bc99b0a16b1496b7aea92
+  legacy_record:
+    id: atlas
+    label:
+      zh: MITRE ATLAS
+      en: MITRE ATLAS
+    kind: standard
+    tier: de-facto
+    version: '2026.07'
+    checked: 2026-08-23
+    url: https://atlas.mitre.org/
+    watch: https://github.com/mitre-atlas/atlas-data/tree/main/dist
+    subjects:
+    - artificial-intelligence
+    - security
+    basis:
+      subjects: atlas:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: atlas
+    entity: atlas
+    role:
+    - mapping
+    - structure
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:12
+  source_file: vocab/entities.yaml
+  source_location: '137'
+  object: nist-ai-rmf
+  current_value: kind=standard；version=1.0；url=https://www.nist.gov/itl/ai-risk-management-framework；tier=de-jure
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity.checked=2026-08-23；watch=同 url；source.checked=2026-08-23；role=mapping；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；外部 status、review 与身份判据待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: nist-ai-rmf
+  proposed_id: nist-ai-rmf
+  old_record_sha256: 1fbc9921de96c6343811dbe104e16487e69ff77a9aad63f3bd53ed69ef6530e9
+  legacy_record:
+    id: nist-ai-rmf
+    label:
+      zh: NIST 人工智能风险管理框架 1.0
+      en: NIST AI Risk Management Framework 1.0
+    kind: standard
+    tier: de-jure
+    version: '1.0'
+    checked: 2026-08-23
+    url: https://www.nist.gov/itl/ai-risk-management-framework
+    watch: https://www.nist.gov/itl/ai-risk-management-framework
+    subjects:
+    - artificial-intelligence
+    basis:
+      subjects: nist-ai-rmf:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: nist-ai-rmf
+    entity: nist-ai-rmf
+    role:
+    - mapping
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:13
+  source_file: vocab/entities.yaml
+  source_location: '150'
+  object: anthropic-docs
+  current_value: kind=standard；version=2026-08；url=https://docs.anthropic.com/；tier=vendor
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity.checked=2026-08-23；watch 未记录；source.checked=2026-08-23；role=mapping；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；kind、公开版本、外部 status、review 与 watch 待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: anthropic-docs
+  proposed_id: anthropic-docs
+  old_record_sha256: 0cd999168418193e6120e31f7ec667c230d23085a2de1e7b3f37cea568e1b801
+  legacy_record:
+    id: anthropic-docs
+    label:
+      zh: Anthropic 文档
+      en: Anthropic Documentation
+    kind: standard
+    tier: vendor
+    version: 2026-08
+    checked: 2026-08-23
+    url: https://docs.anthropic.com/
+    subjects:
+    - artificial-intelligence
+    basis:
+      subjects: anthropic-docs:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: anthropic-docs
+    entity: anthropic-docs
+    role:
+    - mapping
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:14
+  source_file: vocab/entities.yaml
+  source_location: '162'
+  object: rfc-1122
+  current_value: kind=standard；version=1989；url=https://www.rfc-editor.org/info/rfc1122；tier=de-jure
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity.checked=2026-08-23；watch=同 url；source.checked=2026-08-23；role=mapping,structure；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；外部 status、review 与身份判据待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: rfc-1122
+  proposed_id: rfc-1122
+  old_record_sha256: 2ec32a97361c83dda3332616a7159f78f09c2e430e62f5a9df2892c2b447c4dd
+  legacy_record:
+    id: rfc-1122
+    label:
+      zh: RFC 1122 互联网主机要求：通信层
+      en: RFC 1122 Requirements for Internet Hosts — Communication Layers
+    kind: standard
+    tier: de-jure
+    version: '1989'
+    checked: 2026-08-23
+    url: https://www.rfc-editor.org/info/rfc1122
+    watch: https://www.rfc-editor.org/info/rfc1122
+    subjects:
+    - networking-and-communication
+    basis:
+      subjects: rfc-1122:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: rfc-1122
+    entity: rfc-1122
+    role:
+    - mapping
+    - structure
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:15
+  source_file: vocab/entities.yaml
+  source_location: '175'
+  object: rfc-9110
+  current_value: kind=standard；version=2022；url=https://www.rfc-editor.org/info/rfc9110；tier=de-jure
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity.checked=2026-08-23；watch=同 url；source.checked=2026-08-23；role=mapping；design/sources-registry.md
+    首批表写 RFC 9110–9114，现行实体只指 RFC 9110；重复身份=entity 与 source id 同名一对一但集合边界不一致
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；RFC 9110 与 9110–9114 集合身份、外部 status 和 review 待人决定；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 待人决定
+  class: existing
+  old_id: rfc-9110
+  proposed_id: rfc-9110
+  old_record_sha256: beed6784a14ae32f564608bc02491bf101d7724cebc0fb8b918a42ecadd53564
+  legacy_record:
+    id: rfc-9110
+    label:
+      zh: RFC 9110 HTTP 语义
+      en: RFC 9110 HTTP Semantics
+    kind: standard
+    tier: de-jure
+    version: '2022'
+    checked: 2026-08-23
+    url: https://www.rfc-editor.org/info/rfc9110
+    watch: https://www.rfc-editor.org/info/rfc9110
+    subjects:
+    - networking-and-communication
+    basis:
+      subjects: rfc-9110:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: rfc-9110
+    entity: rfc-9110
+    role:
+    - mapping
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:16
+  source_file: vocab/entities.yaml
+  source_location: '188'
+  object: osi
+  current_value: kind=standard；version=1994；url=https://www.iso.org/standard/20269.html；tier=de-jure
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity.checked=2026-08-23；watch=同 url；source.checked=2026-08-23；role=mapping；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；外部 status、review 与身份判据待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: osi
+  proposed_id: osi
+  old_record_sha256: 6b2cc5af1cd61c2c80baef46c36ac957f0b8c4d5465cb942a77ae909c67238d6
+  legacy_record:
+    id: osi
+    label:
+      zh: ISO/IEC 7498-1 OSI 参考模型
+      en: ISO/IEC 7498-1 OSI Basic Reference Model
+    kind: standard
+    tier: de-jure
+    version: '1994'
+    checked: 2026-08-23
+    url: https://www.iso.org/standard/20269.html
+    watch: https://www.iso.org/standard/20269.html
+    subjects:
+    - networking-and-communication
+    basis:
+      subjects: osi:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: osi
+    entity: osi
+    role:
+    - mapping
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:17
+  source_file: vocab/entities.yaml
+  source_location: '201'
+  object: mdn
+  current_value: kind=standard；version=2026-08-20；url=https://developer.mozilla.org/en-US/docs/Web；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity.checked=2026-08-23；watch 未记录；source.checked=2026-08-23；role=mapping；design/sources-registry.md
+    待定版本口径；重复身份=entity 与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；version 是否只是抓取日期、外部 status、review 与 watch 待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 待人决定
+  class: existing
+  old_id: mdn
+  proposed_id: mdn
+  old_record_sha256: 944767db4da1241d90e7db7268185b1fcd666d2e66f7e4ad850ad2c9dfcf1e35
+  legacy_record:
+    id: mdn
+    label:
+      zh: MDN Web 技术参考
+      en: MDN Web technology references
+    kind: standard
+    tier: de-facto
+    version: '2026-08-20'
+    checked: 2026-08-23
+    url: https://developer.mozilla.org/en-US/docs/Web
+    subjects:
+    - specialized-platform-development
+    basis:
+      subjects: mdn:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: mdn
+    entity: mdn
+    role:
+    - mapping
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:18
+  source_file: vocab/entities.yaml
+  source_location: '213'
+  object: mdn-curriculum
+  current_value: kind=standard；version=2025-10；url=https://developer.mozilla.org/en-US/curriculum/；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity.checked=2026-08-23；watch 未记录；source.checked=2026-08-23；role=candidate；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；version、外部 status、review 与 watch 待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: mdn-curriculum
+  proposed_id: mdn-curriculum
+  old_record_sha256: be9dd387d43d6cbe2871e55b286275075ed4f7e446698a627988dc182e4e6adb
+  legacy_record:
+    id: mdn-curriculum
+    label:
+      zh: MDN 课程
+      en: MDN Curriculum
+    kind: standard
+    tier: de-facto
+    version: 2025-10
+    checked: 2026-08-23
+    url: https://developer.mozilla.org/en-US/curriculum/
+    subjects:
+    - specialized-platform-development
+    basis:
+      subjects: mdn-curriculum:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: mdn-curriculum
+    entity: mdn-curriculum
+    role:
+    - candidate
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:19
+  source_file: vocab/entities.yaml
+  source_location: '225'
+  object: iso-25964-1
+  current_value: kind=standard；version=2011；url=https://www.iso.org/standard/53657.html；tier=de-jure
+  inventory_classification: 来源实体
+  evidence_or_context: sources/iso-25964.md:11,22,102 于 2026-08-29 区分已发布标准、第三方样章和第 2 版修订项目；现行 status=active；entity/source.checked=2026-08-23；role=mapping；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；现行标准、样章和修订项目的身份边界、外部 status、review 与 replaced_by 待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: iso-25964-1
+  proposed_id: iso-25964-1
+  old_record_sha256: 4c3956b087db7b2e188f3560cfebc55a719dcf2f8ed34f8140141dc27fa8a914
+  legacy_record:
+    id: iso-25964-1
+    label:
+      zh: ISO 25964-1:2011 叙词表
+      en: ISO 25964-1:2011 Thesauri for information retrieval
+    kind: standard
+    tier: de-jure
+    version: '2011'
+    checked: 2026-08-23
+    url: https://www.iso.org/standard/53657.html
+    watch: https://www.iso.org/standard/53657.html
+    subjects:
+    - information-science
+    basis:
+      subjects: iso-25964-1:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: iso-25964-1
+    entity: iso-25964-1
+    role:
+    - mapping
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:20
+  source_file: vocab/entities.yaml
+  source_location: '238'
+  object: iso-25964-2
+  current_value: kind=standard；version=2013；url=https://www.iso.org/standard/53658.html；tier=de-jure
+  inventory_classification: 来源实体
+  evidence_or_context: sources/iso-25964.md:12,23,103 于 2026-08-29 区分已发布标准、第三方样章和第 2 版修订项目；现行 status=active；entity/source.checked=2026-08-23；role=mapping；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；现行标准、样章和修订项目的身份边界、外部 status、review 与 replaced_by 待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: iso-25964-2
+  proposed_id: iso-25964-2
+  old_record_sha256: 340772d3c5b240e36f825bcc1d25487a08e2bc33b4a5134afe1d69e0ea11e219
+  legacy_record:
+    id: iso-25964-2
+    label:
+      zh: ISO 25964-2:2013 与其他词表的互操作
+      en: ISO 25964-2:2013 Interoperability with other vocabularies
+    kind: standard
+    tier: de-jure
+    version: '2013'
+    checked: 2026-08-23
+    url: https://www.iso.org/standard/53658.html
+    watch: https://www.iso.org/standard/53658.html
+    subjects:
+    - information-science
+    basis:
+      subjects: iso-25964-2:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: iso-25964-2
+    entity: iso-25964-2
+    role:
+    - mapping
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:21
+  source_file: vocab/entities.yaml
+  source_location: '251'
+  object: z39-19
+  current_value: kind=standard；version=2005 (R2010)；url=https://www.niso.org/publications/ansiniso-z3919-2005-r2010；tier=de-jure
+  inventory_classification: 来源实体
+  evidence_or_context: sources/z39-19.md:7-9 于 2026-08-29 核到 DOI https://doi.org/10.3789/ansi.niso.z39.19-2005R2010、version
+    of record、PDF http://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf 与独立修订状态页；现行 status=active；entity/source.checked=2026-08-23；role=mapping；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；出版物、version of record、DOI 和修订项目的身份边界、外部 status 与 review 待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: z39-19
+  proposed_id: z39-19
+  old_record_sha256: 362bdf9c72aae9f92a61a34efeb3576ff641302cdf0890fb0d1cc5c414e3d68a
+  legacy_record:
+    id: z39-19
+    label:
+      zh: ANSI/NISO Z39.19-2005 (R2010)
+      en: ANSI/NISO Z39.19-2005 (R2010) Guidelines for the Construction, Format, and Management of Monolingual Controlled
+        Vocabularies
+    kind: standard
+    tier: de-jure
+    version: 2005 (R2010)
+    checked: 2026-08-23
+    url: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
+    watch: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
+    subjects:
+    - information-science
+    basis:
+      subjects: z39-19:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: z39-19
+    entity: z39-19
+    role:
+    - mapping
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:22
+  source_file: vocab/entities.yaml
+  source_location: '264'
+  object: skos
+  current_value: kind=standard；version=2009-08-18；url=https://www.w3.org/TR/skos-reference/；tier=de-jure
+  inventory_classification: 来源实体
+  evidence_or_context: sources/metadata-standards.md:11 于 2026-08-29 记录 W3C Recommendation 与未读边界；concepts/vocabulary-mapping.md:112
+    使用 https://www.w3.org/TR/skos-reference/#mapping 作定位；现行 status=active；entity/source.checked=2026-08-23；role=mapping；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；外部 status、review 与身份判据待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: skos
+  proposed_id: skos
+  old_record_sha256: 72dd13570501f500c1401ec8c8539a820a39cdd314f0cf51c78591ea3c36c7e8
+  legacy_record:
+    id: skos
+    label:
+      zh: W3C SKOS 参考
+      en: W3C SKOS Simple Knowledge Organization System Reference
+    kind: standard
+    tier: de-jure
+    version: '2009-08-18'
+    checked: 2026-08-23
+    url: https://www.w3.org/TR/skos-reference/
+    watch: https://www.w3.org/TR/skos-reference/
+    subjects:
+    - information-science
+    basis:
+      subjects: skos:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: skos
+    entity: skos
+    role:
+    - mapping
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:23
+  source_file: vocab/entities.yaml
+  source_location: '277'
+  object: diataxis
+  current_value: kind=standard；version=2026-08；url=https://diataxis.fr/；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=candidate；entity/source.checked=2026-08-23；watch 未记录；role=mapping,structure；sources/writing-guides.md:16
+    记录已读范围；重复身份=entity 与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；kind、公开版本、外部 status、review 与 watch 待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: diataxis
+  proposed_id: diataxis
+  old_record_sha256: 9f4f710a72d8ddd632e28fcbe6651ff914d4f12b1a474588ea54068d94a78ab8
+  legacy_record:
+    id: diataxis
+    label:
+      zh: Diátaxis
+      en: Diátaxis
+    kind: standard
+    tier: de-facto
+    version: 2026-08
+    checked: 2026-08-23
+    url: https://diataxis.fr/
+    subjects:
+    - software-engineering
+    basis:
+      subjects: self
+    status: candidate
+    added: 2026-08-23
+  legacy_use_record:
+    id: diataxis
+    entity: diataxis
+    role:
+    - mapping
+    - structure
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:24
+  source_file: vocab/entities.yaml
+  source_location: '289'
+  object: wikidata
+  current_value: kind=standard；version=rolling；url=https://www.wikidata.org/；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=candidate；entity/source.checked=2026-08-23；watch 未记录；role=mapping；正式引用含 https://www.wikidata.org/wiki/Wikidata:Introduction、https://www.wikidata.org/wiki/Q2309859
+    与 https://www.wikidata.org/wiki/Q2689826；重复身份=entity 与 source id 同名一对一，Q 条目是外部 item 而非另造来源实体
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；kind、version、外部 status、review 与 watch 待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: wikidata
+  proposed_id: wikidata
+  old_record_sha256: d207aa1b60a6325454f8a6d398bd7a51baaa3f9d6b93777c0a5149c8524cf2d1
+  legacy_record:
+    id: wikidata
+    label:
+      zh: Wikidata
+      en: Wikidata
+    kind: standard
+    tier: de-facto
+    version: rolling
+    checked: 2026-08-23
+    url: https://www.wikidata.org/
+    subjects:
+    - library-and-information-science
+    basis:
+      subjects: self
+    status: candidate
+    added: 2026-08-23
+  legacy_use_record:
+    id: wikidata
+    entity: wikidata
+    role:
+    - mapping
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:25
+  source_file: vocab/entities.yaml
+  source_location: '301'
+  object: roadmap-sh
+  current_value: kind=standard；version=rolling；url=https://roadmap.sh/；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=candidate；entity/source.checked=2026-08-23；watch 未记录；role=candidate；重复身份=entity 与 source
+    id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；kind、version、外部 status、review 与 watch 待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: roadmap-sh
+  proposed_id: roadmap-sh
+  old_record_sha256: 489822e6026288d3d78b9572cd8d68cc53e639a18d4d1fc34a2ded511ed2d5ad
+  legacy_record:
+    id: roadmap-sh
+    label:
+      zh: roadmap.sh
+      en: roadmap.sh
+    kind: standard
+    tier: de-facto
+    version: rolling
+    checked: 2026-08-23
+    url: https://roadmap.sh/
+    subjects:
+    - computing
+    basis:
+      subjects: self
+    status: candidate
+    added: 2026-08-23
+  legacy_use_record:
+    id: roadmap-sh
+    entity: roadmap-sh
+    role:
+    - candidate
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:26
+  source_file: vocab/entities.yaml
+  source_location: '313'
+  object: teachyourselfcs
+  current_value: kind=publication；version=2020；url=https://teachyourselfcs.com/；tier=archival
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=candidate；entity/source.checked=2026-08-23；watch 未记录；role=candidate；站点内容与 archival 身份边界未见现行依据；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；version、外部 status、review 与身份判据待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: teachyourselfcs
+  proposed_id: teachyourselfcs
+  old_record_sha256: fe829b554f9b703b730d39afad98ef73647d8ec9cfd568d1d253e39f238ca77a
+  legacy_record:
+    id: teachyourselfcs
+    label:
+      zh: Teach Yourself Computer Science
+      en: Teach Yourself Computer Science
+    kind: publication
+    tier: archival
+    version: '2020'
+    checked: 2026-08-23
+    url: https://teachyourselfcs.com/
+    subjects:
+    - computing
+    basis:
+      subjects: self
+    status: candidate
+    added: 2026-08-23
+  legacy_use_record:
+    id: teachyourselfcs
+    entity: teachyourselfcs
+    role:
+    - candidate
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:27
+  source_file: vocab/entities.yaml
+  source_location: '325'
+  object: cmu-15-445
+  current_value: kind=publication；version=Fall 2025；url=https://15445.courses.cs.cmu.edu/；tier=archival
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity/source.checked=2026-08-23；watch 未记录；role=candidate；课程站点与具体学期出版物身份需区分；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；具体学期身份、外部 status、review 与 watch 待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: cmu-15-445
+  proposed_id: cmu-15-445
+  old_record_sha256: eb8fdc00874edce82e6146bbb9c75cc33e458298e8e549cd758b7ee1a0ab3811
+  legacy_record:
+    id: cmu-15-445
+    label:
+      zh: CMU 15-445 数据库系统
+      en: CMU 15-445 Database Systems
+    kind: publication
+    tier: archival
+    version: Fall 2025
+    checked: 2026-08-23
+    url: https://15445.courses.cs.cmu.edu/
+    subjects:
+    - data-management
+    basis:
+      subjects: cmu-15-445:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: cmu-15-445
+    entity: cmu-15-445
+    role:
+    - candidate
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:28
+  source_file: vocab/entities.yaml
+  source_location: '337'
+  object: db-engines
+  current_value: kind=standard；version=rolling；url=https://db-engines.com/en/ranking；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity/source.checked=2026-08-23；watch 未记录；role=candidate；重复身份=entity 与 source id
+    同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；kind、version、外部 status、review 与 watch 待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: db-engines
+  proposed_id: db-engines
+  old_record_sha256: 3a8cae666930f0a3d101cb6df72a91c62d664a90fa1db84f2e544f58c3332b82
+  legacy_record:
+    id: db-engines
+    label:
+      zh: DB-Engines 排名
+      en: DB-Engines Ranking
+    kind: standard
+    tier: de-facto
+    version: rolling
+    checked: 2026-08-23
+    url: https://db-engines.com/en/ranking
+    subjects:
+    - data-management
+    basis:
+      subjects: db-engines:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: db-engines
+    entity: db-engines
+    role:
+    - candidate
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:29
+  source_file: vocab/entities.yaml
+  source_location: '350'
+  object: dita
+  current_value: kind=standard；version=1.3；url=https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/dita-v1.3-os-part1-base.html；tier=de-jure
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity/source.checked=2026-08-23；watch=https://www.oasis-open.org/committees/dita/；role=mapping,structure；正式
+    locator=https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/archSpec/base/topicover.html、https://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/technicalContent/dita-technicalContent-InformationTypes.html、https://docs.oasis-open.org/dita/dita/v1.3/os/part3-all-inclusive/archSpec/learningTraining/learning-and-training-specializations.html；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；各 Part 是否同一实体的 locator 或独立实体、外部 status 与 review 待人决定；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 待人决定
+  class: existing
+  old_id: dita
+  proposed_id: dita
+  old_record_sha256: a03f332ce164c64a5c63b8d28eaf1c55ec827a0b3f5610df8fc9b37dbdda7c61
+  legacy_record:
+    id: dita
+    label:
+      zh: DITA 1.3
+      en: Darwin Information Typing Architecture 1.3
+    kind: standard
+    tier: de-jure
+    version: '1.3'
+    checked: 2026-08-23
+    url: https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/dita-v1.3-os-part1-base.html
+    watch: https://www.oasis-open.org/committees/dita/
+    subjects:
+    - journalism-and-communication
+    basis:
+      subjects: dita:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: dita
+    entity: dita
+    role:
+    - mapping
+    - structure
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:30
+  source_file: vocab/entities.yaml
+  source_location: '363'
+  object: iptc-genre
+  current_value: kind=standard；version=2024-02-13；url=https://cv.iptc.org/newscodes/genre/；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity/source.checked=2026-08-23；watch 未记录；role=mapping,structure；重复身份=entity 与 source
+    id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；version、外部 status、review 与 watch 待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: iptc-genre
+  proposed_id: iptc-genre
+  old_record_sha256: b4c24aa86e6423754ace7dcc5f0372ce822adb7d4a86e04d772bf574981e73e0
+  legacy_record:
+    id: iptc-genre
+    label:
+      zh: IPTC NewsCodes 体裁词表
+      en: IPTC NewsCodes Genre
+    kind: standard
+    tier: de-facto
+    version: '2024-02-13'
+    checked: 2026-08-23
+    url: https://cv.iptc.org/newscodes/genre/
+    subjects:
+    - journalism-and-communication
+    basis:
+      subjects: iptc-genre:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: iptc-genre
+    entity: iptc-genre
+    role:
+    - mapping
+    - structure
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:31
+  source_file: vocab/entities.yaml
+  source_location: '376'
+  object: lom
+  current_value: kind=standard；version=2002（2020 版已取代，取值变动未核）；url=https://github.com/LICEF/lompad/blob/master/documentation/LOM_1484_12_1_v1_Final_Draft.pdf；tier=de-jure
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=active；entity/source.checked=2026-08-23；watch=https://standards.ieee.org/ieee/1484.12.1/7699/；role=mapping,structure；当前
+    url 是第三方 final draft，watch 指 2020 版；重复身份=2002 标准、draft 表示和 2020 标准混在一条记录
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；三者身份、规范 url、外部 status、replaced_by 与 review 待人决定；不得据“已取代”自动改正式 status 或版本；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 待人决定
+  class: existing
+  old_id: lom
+  proposed_id: lom
+  old_record_sha256: e94f38775fd41fe19cb7398e6221bb547449cece2e834d562bb98b6f8959bc22
+  legacy_record:
+    id: lom
+    label:
+      zh: IEEE 1484.12.1-2002 学习对象元数据
+      en: IEEE 1484.12.1-2002 Learning Object Metadata
+    kind: standard
+    tier: de-jure
+    version: 2002（2020 版已取代，取值变动未核）
+    checked: 2026-08-23
+    url: https://github.com/LICEF/lompad/blob/master/documentation/LOM_1484_12_1_v1_Final_Draft.pdf
+    watch: https://standards.ieee.org/ieee/1484.12.1/7699/
+    subjects:
+    - education
+    basis:
+      subjects: lom:scope
+    status: active
+    added: 2026-08-23
+  legacy_use_record:
+    id: lom
+    entity: lom
+    role:
+    - mapping
+    - structure
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.
+- identity: source-entities.tsv:32
+  source_file: vocab/entities.yaml
+  source_location: '389'
+  object: schema-org
+  current_value: kind=standard；version=30.0；url=https://schema.org/；tier=de-facto
+  inventory_classification: 来源实体
+  evidence_or_context: 现行 status=candidate；entity/source.checked=2026-08-23；watch=https://schema.org/docs/releases.html；role=mapping；重复身份=entity
+    与 source id 同名一对一
+  inventory_destination: 迁入来源实体；仅使用草案实体字段；外部 status、review 与身份判据待复核；tier 原值仅作兼容，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: existing
+  old_id: schema-org
+  proposed_id: schema-org
+  old_record_sha256: c3f04a49d22b81544b1c439d5caea82b92114984f971e3bea43766de1c164a3c
+  legacy_record:
+    id: schema-org
+    label:
+      zh: schema.org
+      en: schema.org
+    kind: standard
+    tier: de-facto
+    version: '30.0'
+    checked: 2026-08-23
+    url: https://schema.org/
+    watch: https://schema.org/docs/releases.html
+    subjects:
+    - information-science
+    basis:
+      subjects: self
+    status: candidate
+    added: 2026-08-23
+  legacy_use_record:
+    id: schema-org
+    entity: schema-org
+    role:
+    - mapping
+    checked: 2026-08-23
+  conclusion:
+    operation: keep
+    id: frozen
+    tier_change: none
+    external_status: unresolved
+    replaced_by: unresolved
+    urls: unresolved
+    review_checked: unresolved
+    watch: unresolved
+    disposition: unresolved_external_status
+    blocks_cutover: true
+  evidence:
+    Q03: decision-source-0001 freezes all 31 existing IDs.
+    Q06: decision-source-0001 defines URL roles but does not assign per-entity roles.
+    Q07: decision-source-0001 requires human-confirmed review.checked and makes no tier changes.
+    Q08: decision-source-0010 defines probe policy but does not create per-entity watch values.
+    Q09: decision-source-0009 forbids deriving status from a single or temporary access failure.
+    Q10: decision-source-0009 requires publisher evidence; all 31 statuses and replacements remain unresolved.

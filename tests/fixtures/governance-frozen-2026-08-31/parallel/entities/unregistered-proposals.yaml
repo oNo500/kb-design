@@ -1,0 +1,2614 @@
+meta:
+  prepared_at: '2026-08-31'
+  formal_write: false
+  inventory: .superpowers/sdd/2026-08-31-governance-implementation-prep/source-entities.tsv
+  inventory_sha256: 843d3606407264e8d6ccca9ae8b9f03590aa403f98101c4a53a780bab5dc37f4
+  inventory_report: .superpowers/sdd/2026-08-31-governance-implementation-prep/source-entities.md
+  source_plan: docs/superpowers/plans/2026-08-31-source-schema-migration.md
+  source_plan_questions:
+  - Q03
+  - Q04
+  - Q05
+  - Q06
+  - Q07
+  - Q08
+  - Q09
+  - Q10
+  decisions:
+  - path: design/decisions/source-governance-schema.md
+    sha256: 0bdf6dba6ada385ad48fdcd561e4f492142528fc5aa9aed661b33cf47d444b12
+  - path: design/decisions/source-migration-policy.md
+    sha256: 425702a87960ca1d24705537fe36e48af149901463cc195ceef204f8b6d58c6c
+  - path: design/decisions/source-probe-policy.md
+    sha256: aac97017d398cd87db33c3e1443c22508e7c1772cc66e2e2cec6924e861dd800
+  - path: design/decisions/source-validation-policy.md
+    sha256: 8d3ec01e7def0778e0f11b175a073e0869e566f4fae6d285d4d946831ab10418
+  inventory_counts:
+    total: 138
+    existing: 31
+    unregistered: 107
+    identity_ambiguous: 16
+  constraints:
+  - Only repository evidence and accepted decisions are used.
+  - No external status, address role, review date, replacement, external state, or new ID is inferred.
+  - unresolved is retained whenever row-specific evidence or approval is absent.
+proposals:
+- identity: source-entities.tsv:33
+  source_file: design/content-model.md
+  source_location: '154'
+  object: ISO 15836-1:2017
+  current_value: kind=未登记；version=2017；url=https://www.iso.org/standard/71339.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 权威来源引用；concepts/metadata.md:80 重复引用；现行状态线索和复核字段未登记；重复身份=DCMI Metadata Terms 与 ISO 15836 系列不能按标题自动合并
+  inventory_destination: 若确认独立实体，迁入 id/label/kind/version/url/status/basis/review/watch/replaced_by/history；字段值待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:34
+  source_file: design/content-model.md
+  source_location: '154'
+  object: ISO 15836-2:2019
+  current_value: kind=未登记；version=2019；url=https://www.iso.org/standard/71341.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 权威来源引用；concepts/metadata.md:81 重复引用；现行状态线索和复核字段未登记；重复身份=Part 1、Part 2 与 DCMI 页面保持分列
+  inventory_destination: 若确认独立实体，迁入草案实体字段；字段值、Part 身份边界和用途待复核，不自动改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:35
+  source_file: design/content-model.md
+  source_location: '154'
+  object: DCMI Metadata Terms
+  current_value: kind=未登记；version=2020-01-20；url=https://www.dublincore.org/specifications/dublin-core/dcmi-terms/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: sources/metadata-standards.md:9 于 2026-08-29 记录 DCMI Recommendation、已读范围与未读边界；design/drafts/source-governance.md
+    以其说明来源边界；重复身份=与 ISO 15836 系列相关但未证明同一实体
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status、review、watch 与身份边界待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:36
+  source_file: design/content-model.md
+  source_location: '158'
+  object: IEEE 1484.12.1-2020
+  current_value: kind=未登记；version=2020；url=https://standards.ieee.org/ieee/1484.12.1/7699/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行文写“已发布”且“取值变动未核”；concepts/note-types.md:108 重复引用；复核字段未登记；重复身份=现行 lom 行混有 2002 标准、final draft 与本页
+  inventory_destination: 若确认独立实体，迁入草案实体字段；与 lom 的同实体或新实体判据、status、replaced_by、review 待人决定，不改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:37
+  source_file: design/content-model.md
+  source_location: '160'
+  object: DITA 2.0 移除 Learning and Training 的决议
+  current_value: kind=未登记；version=2018；url=https://github.com/oasis-tcs/dita/pull/111；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 权威来源引用；concepts/note-types.md:109 重复；现行状态线索和复核字段未登记；重复身份=与 dita 标准实体有关但材料是独立决议还是状态证据未定
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；kind、version、status、review 与同 dita 的关系待人决定，不自动作 replaced_by
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:38
+  source_file: design/content-model.md
+  source_location: '161'
+  object: 'A Revision of Bloom''s Taxonomy: An Overview'
+  current_value: kind=未登记；version=2002；url=https://cmapspublic2.ihmc.us/rid=1Q2PTM7HL-26LTFBX-9YN8/Krathwohl%202002.pdf；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Krathwohl 论文；concepts/note-types.md:115 重复；现行状态线索和复核字段未登记；重复身份=同一 URL 与题名可归一，发布者页面未登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；规范 url、status、review 与 basis 待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:39
+  source_file: design/content-model.md
+  source_location: '163'
+  object: ISO 15489-1:2016
+  current_value: kind=未登记；version=2016；url=https://www.iso.org/standard/62542.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: sources/iso-15489.md:7 区分官方标准、iTeh 样章与 DCC 导读；design/governance.md 和 maintenance.md 重复；现行状态线索与 review
+    未正式登记
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status、review、watch 与辅助材料身份待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:40
+  source_file: design/decisions/project-instructions-entry.md
+  source_location: '9'
+  object: AGENTS.md 官方说明
+  current_value: kind=未登记；version=未记录；url=https://learn.chatgpt.com/docs/agent-configuration/agents-md；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行决定记录把该页作为事实依据；没有版本、状态、复核或规范地址判据；重复身份=站点页面与产品文档集合关系未登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；label/kind/version/status/review/watch 待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:41
+  source_file: design/drafts/terminology-governance.md
+  source_location: '58'
+  object: BCP 47
+  current_value: kind=未登记；version=未记录；url=https://www.rfc-editor.org/info/bcp47/；tier=未登记
+  inventory_classification: 待人决定
+  evidence_or_context: sources/metadata-standards.md:12,70 于 2026-08-29 说明该信息页同时列 RFC 4647 与 RFC 5646；BCP 汇总身份是否独立来源实体未定；review
+    未登记
+  inventory_destination: 待人决定是作为来源实体还是 RFC 实体的地址或定位；仅可使用草案既有字段，不创建集合 schema 或新 ID
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: true
+  inventory_entity_candidate: false
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory explicitly leaves the identity boundary for human decision.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:42
+  source_file: sources/metadata-standards.md
+  source_location: '12'
+  object: 'RFC 5646: Tags for Identifying Languages'
+  current_value: kind=未登记；version=2009-09；url=https://www.rfc-editor.org/rfc/rfc5646.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-29 已读范围与未读边界逐项记录；页面线索为 Best Current Practice；正式实体、status、review、watch 未登记；重复身份=BCP 47 的组成材料之一
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status、review、watch 与 BCP 汇总关系待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:43
+  source_file: sources/metadata-standards.md
+  source_location: '12'
+  object: 'RFC 4647: Matching of Language Tags'
+  current_value: kind=未登记；version=2009-09；url=https://www.rfc-editor.org/rfc/rfc4647.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-29 已读范围与未读边界逐项记录；页面线索为 Best Current Practice；正式实体、status、review、watch 未登记；重复身份=BCP 47 的组成材料之一
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status、review、watch 与 BCP 汇总关系待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:44
+  source_file: design/governance.md
+  source_location: '181'
+  object: ISO 37000:2021
+  current_value: kind=未登记；version=2021；url=https://www.iso.org/standard/65036.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行文明确“正文未读，定义据 ISO 公开说明”；concepts/governance.md:51 重复；复核字段未登记；重复身份=标准与 ISO 新闻稿分列
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status、review、watch 与 basis 待复核，保留正文未读边界，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:45
+  source_file: concepts/governance.md
+  source_location: '51'
+  object: ISO 37000 新闻稿
+  current_value: kind=未登记；version=未记录；url=https://www.iso.org/news/ref2717.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 用于补充 ISO 37000 公开说明；未记录标题日期、status 或 review；重复身份=不能与 ISO 37000 标准正文合并
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；label/version/status/review 与同标准关系待复核，不自动替代标准正文
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:46
+  source_file: design/maintenance.md
+  source_location: '224'
+  object: 'PROV-O: The PROV Ontology'
+  current_value: kind=未登记；version=2013-04-30；url=https://www.w3.org/TR/prov-o/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: sources/metadata-standards.md:10 于 2026-08-29 记录 W3C Recommendation、已读范围与未读边界；现行实体和 review 未登记
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status、review、watch 与 basis 待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:47
+  source_file: design/maintenance.md
+  source_location: '225'
+  object: 'Enacting silence: Residual categories as a challenge for ethics, information systems, and communication'
+  current_value: kind=未登记；version=2007；url=https://link.springer.com/article/10.1007/s10676-007-9141-7；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Star 与 Bowker 论文；concepts/classifying-new-subjects.md:57 重复；现行状态线索和 review 未登记；重复身份=maintenance 使用短题名但
+    URL 一致
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；规范 label/version/status/review 与 basis 待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:48
+  source_file: concepts/governance.md
+  source_location: '52'
+  object: Applying Data Governance using DAMA-DMBOK 2 Framework
+  current_value: kind=未登记；version=2022；url=https://dl.acm.org/doi/fullHtml/10.1145/3568834.3568866；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 用于转述 DAMA 数据治理定义；现行状态线索和 review 未登记；重复身份=论文与 DAMA-DMBOK 2 是两个实体
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；status、review 与 basis 待复核，不把转述当作 DAMA 原文
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:49
+  source_file: concepts/governance.md
+  source_location: '52'
+  object: DAMA-DMBOK 2
+  current_value: kind=未登记；version=第 2 版；url=https://dama.org/learning-resources/dama-data-management-body-of-knowledge-dmbok/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: design/governance.md:183 无链接引用；concepts/body-of-knowledge.md:43,83 提供官方入口和版本线索；现行实体、status、review 未登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；具体版次、规范 url、status、review 与 basis 待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:50
+  source_file: sources/iso-15489.md
+  source_location: '46'
+  object: ISO 23081-1:2017
+  current_value: kind=未登记；version=2017；url=https://www.iso.org/standard/73172.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 来源笔记明确“未读”；现行状态线索和 review 未登记；重复身份=与 ISO 15489 配套但不是同一实体
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status、review、watch 与未读边界待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:51
+  source_file: sources/iso-15489.md
+  source_location: '45'
+  object: DCC briefing paper on ISO 15489
+  current_value: kind=未登记；version=未记录；url=https://www.dcc.ac.uk/guidance/briefing-papers/standards-watch-papers/iso-15489；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 用作 2001 版导读；现行状态线索和 review 未登记；重复身份=与 ISO 15489 标准正文和 iTeh 样章分列
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；label/version/status/review 与 basis 待复核，不替代标准正文
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:52
+  source_file: concepts/body-of-knowledge.md
+  source_location: '42'
+  object: BABOK Guide v3
+  current_value: kind=未登记；version=第 3 版；url=https://www.iiba.org/knowledgehub/business-analysis-body-of-knowledge-babok-guide/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行概念文记录对象、用途、结构与版本线索，且在权威来源重复；正式 status、review 未登记；重复身份=页面与书名按题名暂视同一线索
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；规范 label/version/status/review 与 basis 待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:53
+  source_file: concepts/body-of-knowledge.md
+  source_location: '44'
+  object: CISSP Certification Exam Outline
+  current_value: kind=未登记；version=当前考试大纲；url=https://www.isc2.org/certifications/cissp/cissp-certification-exam-outline；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行概念文记录对象、用途与“当前”线索，未固定版本或核对日；正式 status、review 未登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；version、status、review、watch 与 basis 待复核，不把“当前”当版本
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:54
+  source_file: concepts/body-of-knowledge.md
+  source_location: '45'
+  object: PMBOK Guide
+  current_value: kind=未登记；version=第 8 版（现行文本线索）；url=https://www.pmi.org/standards/pmbok；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行概念文写“第 8 版，2025 年发布”并在权威来源重复；正式 status、review 未登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；具体版本、status、review 与 basis 待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:55
+  source_file: concepts/body-of-knowledge.md
+  source_location: '47'
+  object: 2022 Update to ALA's Core Competences of Librarianship
+  current_value: kind=未登记；version=2022；url=https://www.ala.org/educationcareers/2022-update-alas-core-competences-librarianship；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行概念文称职业能力清单并在权威来源重复；正式 status、review 未登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；status、review 与 basis 待复核，不自动赋予来源角色或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:56
+  source_file: concepts/body-of-knowledge.md
+  source_location: '78'
+  object: ISO/IEC TR 19759:2015
+  current_value: kind=未登记；version=2015；url=https://www.iso.org/standard/67604.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 权威来源写“对应 SWEBOK v3”；现行 status、review 未登记；重复身份=与 swebok v4 不是同一版本或同一材料
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status、review、watch 与同 swebok 的关系待复核，不自动合并或替代
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:57
+  source_file: concepts/classifying-new-subjects.md
+  source_location: '53'
+  object: Prolegomena to Library Classification
+  current_value: kind=未登记；version=第 2 版，1957；url=未记录；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Ranganathan 著作；现行文明确好客准则据 Denton 摘要、未核原版；正式 status、review 未登记；重复身份=著作与摘要分列
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；规范 url、status、review 与未读边界待复核，不把摘要当原文
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:58
+  source_file: concepts/classifying-new-subjects.md
+  source_location: '53'
+  object: Denton 对 Prolegomena 的摘要
+  current_value: kind=未登记；version=未记录；url=https://www.miskatonic.org/library/prolegomena.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行文实际据此使用好客准则；页面题名、日期、status、review 未登记；重复身份=不能与 Ranganathan 原著合并
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；label/version/status/review 与 basis 待复核，保留二手转述边界
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:59
+  source_file: concepts/classifying-new-subjects.md
+  source_location: '53'
+  object: Colon Classification
+  current_value: kind=未登记；version=未记录；url=未记录；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行文写 PMEST 出自该著作但“未核原版”；concepts/glossary.md:235 以 Ranganathan 1933 指称；具体版次和身份未归一
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；label/version/url/status/review 与 1933 引用的对应待人决定，保留未读边界
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:60
+  source_file: concepts/classifying-new-subjects.md
+  source_location: '54'
+  object: Principles of Book Classification
+  current_value: kind=未登记；version=1911–1912；url=未记录；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Hulme 在 Library Association Record 连载；concepts/glossary.md:233 重复；正式卷期、url、status、review 未登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；完整书目信息、url、status、review 与 basis 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:61
+  source_file: concepts/classifying-new-subjects.md
+  source_location: '55'
+  object: 'Toward a new horizon in information science: domain-analysis'
+  current_value: kind=未登记；version=1995；url=https://asistdl.onlinelibrary.wiley.com/doi/abs/10.1002/(SICI)1097-4571(199507)46:6%3C400::AID-ASI2%3E3.0.CO;2-Y；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Hjørland 与 Albrechtsen 论文；现行状态线索和 review 未登记；重复身份=无
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；规范 url、status、review 与 basis 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:62
+  source_file: concepts/classifying-new-subjects.md
+  source_location: '56'
+  object: 'Sorting Things Out: Classification and Its Consequences'
+  current_value: kind=未登记；version=1999；url=https://mitpress.mit.edu/9780262522953/sorting-things-out/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Bowker 与 Star 著作；现行状态线索和 review 未登记；重复身份=无
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；版次、status、review 与 basis 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:63
+  source_file: concepts/controlled-vocabulary.md
+  source_location: '106'
+  object: GB/T 13190.1-2015
+  current_value: kind=未登记；version=2015；url=https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D7A385D3A7E05397BE0A0AB82A；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行文写等同采用 ISO 25964-1；concepts/glossary.md:227 重复；正式 status、review 未登记；重复身份=不得据采用关系与 iso-25964-1 合并
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status、review、watch 与采用关系的依据待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:64
+  source_file: concepts/controlled-vocabulary.md
+  source_location: '107'
+  object: GB/T 13190.2-2018
+  current_value: kind=未登记；version=2018；url=https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D82DD2D3A7E05397BE0A0AB82A；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行权威来源引用；concepts/glossary.md:227 重复；正式 status、review 未登记；重复身份=不得与 iso-25964-2 自动合并
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status、review、watch 与采用关系待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:65
+  source_file: concepts/controlled-vocabulary.md
+  source_location: '112'
+  object: 'Introduction to Controlled Vocabularies: Terminology for Art, Architecture, and Other Cultural Works'
+  current_value: kind=未登记；version=在线版 2023 修订；url=https://www.getty.edu/research/publications/electronic_publications/intro_controlled_vocab/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Harpring 教材；现行状态线索和 review 未登记；重复身份=在线版与可能的印刷版关系未登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；版次身份、status、review 与 basis 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:66
+  source_file: concepts/controlled-vocabulary.md
+  source_location: '113'
+  object: Vocabulary Control for Information Retrieval
+  current_value: kind=未登记；version=第 2 版，1986；url=未记录；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Lancaster 教材；正式 url、status、review 未登记；重复身份=无
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；规范 url、status、review 与 basis 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:67
+  source_file: concepts/controlled-vocabulary.md
+  source_location: '114'
+  object: 'Thesaurus Construction and Use: A Practical Manual'
+  current_value: kind=未登记；version=第 4 版，2000；url=未记录；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Aitchison、Gilchrist 与 Bawden 教材；正式 url、status、review 未登记；重复身份=无
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；规范 url、status、review 与 basis 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:68
+  source_file: concepts/controlled-vocabulary.md
+  source_location: '118'
+  object: MeSH (Medical Subject Headings)
+  current_value: kind=未登记；version=未记录；url=https://www.nlm.nih.gov/mesh/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 词表实例；正式版本、status、review 未登记；重复身份=入口页与具体发布版身份未定
+  inventory_destination: 若确认独立实体，迁入草案实体字段；version、status、review、watch 与身份边界待复核，不自动准入用途
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:69
+  source_file: concepts/controlled-vocabulary.md
+  source_location: '119'
+  object: LCSH (Library of Congress Subject Headings)
+  current_value: kind=未登记；version=未记录；url=https://id.loc.gov/authorities/subjects.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 词表实例；正式版本、status、review 未登记；重复身份=服务入口与数据发布身份未定
+  inventory_destination: 若确认独立实体，迁入草案实体字段；version、status、review、watch 与身份边界待复核，不自动准入用途
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:70
+  source_file: concepts/controlled-vocabulary.md
+  source_location: '120'
+  object: AAT (Getty Art & Architecture Thesaurus)
+  current_value: kind=未登记；version=未记录；url=https://www.getty.edu/research/tools/vocabularies/aat/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 词表实例；正式版本、status、review 未登记；重复身份=入口页与具体数据发布身份未定
+  inventory_destination: 若确认独立实体，迁入草案实体字段；version、status、review、watch 与身份边界待复核，不自动准入用途
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:71
+  source_file: concepts/controlled-vocabulary.md
+  source_location: '121'
+  object: 《汉语主题词表》
+  current_value: kind=未登记；version=未记录；url=https://ct.istic.ac.cn/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 词表实例；正式版本、status、review 未登记；重复身份=站点与具体出版物身份未定
+  inventory_destination: 若确认独立实体，迁入草案实体字段；label/version/status/review/watch 与身份边界待复核，不自动准入用途
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:72
+  source_file: sources/iso-25964.md
+  source_location: '24'
+  object: NISO ISO 25964 汇总页
+  current_value: kind=未登记；version=未公开；url=https://www.niso.org/schemas/iso25964；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-29 已读材料身份、范围、目录和工件入口；笔记明确它不是 ISO 标准正文；重复身份=汇总页与其下 UML、XSD、对应表、SKOS-THES 不能互换
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；version/status/review/watch 与下属工件关系待复核，不并入 iso-25964 标准实体
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:73
+  source_file: sources/iso-25964.md
+  source_location: '25'
+  object: ISO 25964 数据模型 UML
+  current_value: kind=未登记；version=文件名日期 2011-06-02；url=https://www.niso.org/schemas/iso25964/Model_2011-06-02.jpg；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-29 已读全图；笔记明确工件不代替第 15 章正文；status 和 review 未登记；重复身份=独立工件还是标准的表示待定
+  inventory_destination: 待人决定是独立来源实体还是其他实体的 locator；仅使用草案字段，保留不等同标准正文的边界
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:74
+  source_file: sources/iso-25964.md
+  source_location: '26'
+  object: ISO 25964 XML Schema 1.4
+  current_value: kind=未登记；version=1.4，2011-09-26；url=https://www.niso.org/schemas/iso25964/iso25964-1_v1.4.xsd；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-29 已读指定结构；笔记明确交换工件不等于 ISO 正文；status 和 review 未登记；重复身份=独立工件还是标准的表示待定
+  inventory_destination: 待人决定是独立来源实体还是其他实体的 locator；仅使用草案字段，保留工件边界，不发明 schema 关系
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:75
+  source_file: sources/iso-25964.md
+  source_location: '27'
+  object: Correspondence ISO25964-SKOSXL-MADS
+  current_value: kind=未登记；version=文件名日期 2013-12-11；url=https://groups.niso.org/higherlogic/ws/public/download/12351/Correspondence%20ISO25964-SKOSXL-MADS-2013-12-11.pdf；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-29 已读 14 页范围；concepts/concept-group.md 与 vocabulary-mapping.md 经汇总页引用；笔记明确这是 correspondence
+    和 extension proposal，不是 ISO 正文
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；label/status/review 与汇总页关系待复核，不并入 iso-25964 标准实体
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:76
+  source_file: sources/iso-25964.md
+  source_location: '28'
+  object: SKOS-THES 工件
+  current_value: kind=未登记；version=2015-03-17；url=https://www.dublincore.org/specifications/skos-thes/ns/skos-thes.ttl；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-29 已读 ontology 元数据、待办与相关类属性；笔记明确工件有 proposed 和未建模内容；status 和 review 未登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；status/review 与汇总页关系待复核，不并入 skos 或 iso-25964 实体
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:77
+  source_file: sources/iso-25964.md
+  source_location: '102'
+  object: ISO/FDIS 25964-1 第 2 版修订项目
+  current_value: kind=未登记；version=第 2 版项目；url=https://www.iso.org/standard/86713.html；tier=未登记
+  inventory_classification: 待人决定
+  evidence_or_context: 2026-08-29 仅核官方项目元数据和状态，正文未取得；重复身份=与 iso-25964-1 已发布标准明确分开，但新版属同实体还是新实体的判据待定
+  inventory_destination: 待人决定是否建立来源实体、是否作为 replaced_by 目标及何时登记；只使用草案字段，不预测正文、发布日期或状态转换
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: true
+  inventory_entity_candidate: false
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory explicitly leaves the identity boundary for human decision.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:78
+  source_file: sources/iso-25964.md
+  source_location: '103'
+  object: ISO/AWI 25964-2 第 2 版修订项目
+  current_value: kind=未登记；version=第 2 版项目；url=https://www.iso.org/standard/92117.html；tier=未登记
+  inventory_classification: 待人决定
+  evidence_or_context: 2026-08-29 仅核官方项目元数据和状态，正文未取得；重复身份=与 iso-25964-2 已发布标准明确分开，但新版属同实体还是新实体的判据待定
+  inventory_destination: 待人决定是否建立来源实体、是否作为 replaced_by 目标及何时登记；只使用草案字段，不预测正文、发布日期或状态转换
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: true
+  inventory_entity_candidate: false
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory explicitly leaves the identity boundary for human decision.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:79
+  source_file: sources/iso-25964.md
+  source_location: '22'
+  object: ISO 25964-1 第三方免费样本
+  current_value: kind=未登记；version=标示 ISO 25964-1:2011，15 页；url=https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf；tier=未登记
+  inventory_classification: 待人决定
+  evidence_or_context: 2026-08-29 已读前言、目录、引言、范围与 2.1–2.47；笔记明确第三方样本不是官方完整正文；重复身份=与 iso-25964-1 内容相关但材料身份不可互换
+  inventory_destination: 待人决定是独立 publication、url 角色还是 locator；保留第三方样本和未读边界，不替换规范地址或标准身份
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: true
+  inventory_entity_candidate: false
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory explicitly leaves the identity boundary for human decision.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:80
+  source_file: sources/iso-25964.md
+  source_location: '23'
+  object: ISO 25964-2 第三方免费样本
+  current_value: kind=未登记；version=标示 ISO 25964-2:2013，15 页；url=https://cdn.standards.iteh.ai/samples/53658/9d9f9da6097147e68f418edf4f8350f0/ISO-25964-2-2013.pdf；tier=未登记
+  inventory_classification: 待人决定
+  evidence_or_context: 2026-08-29 已读前言、目录、引言、范围、规范性引用与 3.1–3.54；笔记明确第三方样本不是官方完整正文；重复身份=与 iso-25964-2 相关但材料身份不可互换
+  inventory_destination: 待人决定是独立 publication、url 角色还是 locator；保留第三方样本和未读边界，不替换规范地址或标准身份
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: true
+  inventory_entity_candidate: false
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory explicitly leaves the identity boundary for human decision.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:81
+  source_file: sources/iso-15489.md
+  source_location: '3'
+  object: ISO 15489-1:2016 第三方样章
+  current_value: kind=未登记；version=标示 ISO 15489-1:2016；url=https://cdn.standards.iteh.ai/samples/62542/fe383f4fe10448d5b22ce628b1542ed6/ISO-15489-1-2016.pdf；tier=未登记
+  inventory_classification: 待人决定
+  evidence_or_context: 已读范围是范围、定义 3.1–3.19 和第 4 章；笔记明确正文收费；重复身份=与 ISO 15489-1 标准相关但不是规范官方页
+  inventory_destination: 待人决定是独立 publication、url 角色还是 locator；保留第三方样章和未读边界，不替换标准身份
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: true
+  inventory_entity_candidate: false
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory explicitly leaves the identity boundary for human decision.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:82
+  source_file: concepts/note-types.md
+  source_location: '110'
+  object: ISO 5127:2017 第三方样章
+  current_value: kind=未登记；version=标示 ISO 5127:2017；url=https://cdn.standards.iteh.ai/samples/59743/ea09c719daed4a0cb6a0fa6df352ddfb/ISO-5127-2017.pdf；tier=未登记
+  inventory_classification: 待人决定
+  evidence_or_context: 与 ISO 5127 官方页同时引用；读取边界未在独立来源笔记登记；重复身份=标准与样章材料身份不可自动合并
+  inventory_destination: 待人决定是独立 publication、url 角色还是 locator；先补未读边界，不替换标准规范地址或身份
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: true
+  inventory_entity_candidate: false
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory explicitly leaves the identity boundary for human decision.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:83
+  source_file: design/content-model.md
+  source_location: '158'
+  object: IEEE 1484.12.1-2002 LOM final draft 镜像
+  current_value: kind=未登记；version=2002 final draft；url=https://github.com/LICEF/lompad/blob/master/documentation/LOM_1484_12_1_v1_Final_Draft.pdf；tier=未登记
+  inventory_classification: 待人决定
+  evidence_or_context: 现行 lom 实体直接把该镜像当 url；concepts/note-types.md:108 重复；材料是 LICEF GitHub 镜像而非 IEEE 官方页面；review 未登记
+  inventory_destination: 待人决定是独立 publication、url 角色还是 locator；不得用镜像替代 2002 标准身份或自动确认与 2020 版关系
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: true
+  inventory_entity_candidate: false
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory explicitly leaves the identity boundary for human decision.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:84
+  source_file: sources/gbt-13745.md
+  source_location: '3'
+  object: 学科分类与代码查询站
+  current_value: kind=未登记；version=抓取日 2026-08-23；url=https://xkfl.xhma.com/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 正式数据实际从该转载站抓取；同段另引国家标准官方页；现行文明确该站转载原文；status 和 review 未登记；重复身份=转载页面不能与 GB/T 13745 合并
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；身份、版本、status、review 与作为实际派生来源的资格待复核，不把转载站伪装成标准实体
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:85
+  source_file: sources/z39-19.md
+  source_location: '8'
+  object: NISO Z39.19 项目出版页
+  current_value: kind=未登记；version=未记录；url=https://groups.niso.org/higherlogic/ws/public/projects/46/publications；tier=未登记
+  inventory_classification: 待人决定
+  evidence_or_context: 2026-08-29 用于定位 version of record；重复身份=是 z39-19 的官方出版入口、独立 publication 还是 locator 未定；review 未登记
+  inventory_destination: 待人决定是独立来源实体还是 z39-19 的地址或定位；保留 version of record 线索，不复制标准身份
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: true
+  inventory_entity_candidate: false
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory explicitly leaves the identity boundary for human decision.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:86
+  source_file: sources/z39-19.md
+  source_location: '9'
+  object: NISO Information Creation & Curation 页面
+  current_value: kind=未登记；version=未记录；url=https://www.niso.org/topic-committees/information-creation-curation；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-29 仅用 Active Groups 中的修订项目名称作状态线索，非新标准正文；重复身份=与 z39-19 出版标准和修订项目分列
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；status/review 与触发义务关系待复核，不自动改 z39-19 status 或 replaced_by
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:87
+  source_file: concepts/first-principles.md
+  source_location: '79'
+  object: Posterior Analytics
+  current_value: kind=未登记；version=古典著作，具体版次未记录；url=https://classics.mit.edu/Aristotle/posterior.1.i.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 同文 80 行另引 https://classics.mit.edu/Aristotle/posterior.2.ii.html；现行文记录已读 I.2–3、I.6–7 与 II.19；译本、版本、status、review
+    未登记；重复身份=两 URL 是同一著作不同定位
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；具体版本、规范 url、status、review 与 locator 待复核，不把两章拆成实体
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:88
+  source_file: concepts/first-principles.md
+  source_location: '81'
+  object: Aristotle and Mathematics
+  current_value: kind=未登记；version=未记录；url=https://plato.stanford.edu/entries/aristotle-mathematics/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Mendell 的 Stanford Encyclopedia of Philosophy 条目，已读 §2；status 和 review 未登记；重复身份=无
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；version/status/review 与 basis 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:89
+  source_file: concepts/first-principles.md
+  source_location: '82'
+  object: Aristotle's Logic
+  current_value: kind=未登记；version=未记录；url=https://seop.illc.uva.nl/entries/aristotle-logic/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Smith 的 SEP 条目官方镜像，已读 §6.1–6.4；主站同文但未给 URL；status 和 review 未登记；重复身份=镜像与主站同文身份待核
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；规范 url、version/status/review 与镜像关系待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:90
+  source_file: concepts/first-principles.md
+  source_location: '83'
+  object: Issues as Elements of Information Systems
+  current_value: kind=未登记；version=Working Paper 131，1970；url=原文 URL 未能访问；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行引文指 Kunz 与 Rittel 原作，但链接实际是 Conklin 对 IBIS 的综述；原文身份与实际读取材料不一致；review 未登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；原文规范 url、status、review 与实际 basis 待复核，不用综述 URL 冒充原文
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:91
+  source_file: concepts/first-principles.md
+  source_location: '83'
+  object: IBIS-A Tool for All Reasons
+  current_value: kind=未登记；version=未记录；url=https://cognexus.org/IBIS-A_Tool_for_All_Reasons.pdf；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行文明确链接是 Conklin 综述且含原文引用；完整题名、日期、status、review 未登记；重复身份=不能与 Kunz/Rittel 原作合并
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；完整身份、version/status/review 与 locator 待复核，保持二手材料边界
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:92
+  source_file: concepts/first-principles.md
+  source_location: '84'
+  object: Documenting Architecture Decisions
+  current_value: kind=未登记；version=2011-11-15；url=https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Nygard 博文；现行状态线索和 review 未登记；重复身份=无
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；status/review 与 basis 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:93
+  source_file: concepts/first-principles.md
+  source_location: '85'
+  object: adr.github.io
+  current_value: kind=未登记；version=未记录；url=https://adr.github.io/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 用于 ADR 模板与工具汇总；页面版本、status、review 未登记；重复身份=站点集合与具体资料身份未定
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；label/version/status/review/watch 与身份边界待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:94
+  source_file: concepts/glossary.md
+  source_location: '171'
+  object: Gertz v. Robert Welch, Inc. (1974)
+  current_value: kind=未登记；version=1974；url=未记录；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行表把判例法作为“公众人物”依据，但链接目标是 Cornell Wex 解释页；判决正文未读边界未记录；重复身份=判例与解释页分列
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；正式引证、url、status、review 与 basis 待复核，不把解释页当判决正文
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:95
+  source_file: concepts/glossary.md
+  source_location: '171'
+  object: Cornell LII public figure
+  current_value: kind=未登记；version=未记录；url=https://www.law.cornell.edu/wex/public_figure；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行表实际链接的解释页；页面版本、status、review 未登记；重复身份=不能与 Gertz 判决合并
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；label/version/status/review 与 basis 待复核，保持解释材料边界
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:96
+  source_file: concepts/knowledge-graph.md
+  source_location: '84'
+  object: Knowledge Graphs
+  current_value: kind=未登记；version=2021；url=https://arxiv.org/abs/2003.02320；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Hogan 等综述；同条另有 DOI https://dl.acm.org/doi/10.1145/3447772，concepts/glossary.md:238 重复；status 和 review
+    未登记；重复身份=arXiv 与正式发表版应归一为同一文献还是不同版本待核
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；version、规范 url、status、review 与多版本关系待复核，不重复建身份
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:97
+  source_file: concepts/knowledge-graph.md
+  source_location: '85'
+  object: Towards a Definition of Knowledge Graphs
+  current_value: kind=未登记；version=2016；url=https://ceur-ws.org/Vol-1695/paper4.pdf；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Ehrlinger 与 Wöß 论文；concepts/glossary.md:239 重复；status 和 review 未登记；重复身份=无
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；status/review 与 basis 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:98
+  source_file: concepts/knowledge-graph.md
+  source_location: '83'
+  object: 'Introducing the Knowledge Graph: things, not strings'
+  current_value: kind=未登记；version=2012-05-16；url=https://blog.google/products-and-platforms/products/search/introducing-knowledge-graph-things-not/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Singhal 的 Google Blog 文章；status 和 review 未登记；重复身份=无
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；status/review 与 basis 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:99
+  source_file: concepts/glossary.md
+  source_location: '232'
+  object: Cutter (1876) 字典式目录规则
+  current_value: kind=未登记；version=1876；url=未记录；tier=未登记
+  inventory_classification: 待人决定
+  evidence_or_context: 现行表仅给作者、年份和概述并标“未核对”；具体题名、版次、身份、status、review 均未知
+  inventory_destination: 待人决定具体出版物身份；确认前不分配 ID、不补题名或 url；若确认再使用草案实体字段
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: true
+  inventory_entity_candidate: false
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory explicitly leaves the identity boundary for human decision.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:100
+  source_file: concepts/glossary.md
+  source_location: '234'
+  object: Dewey (1876) 十进分类法
+  current_value: kind=未登记；version=1876；url=未记录；tier=未登记
+  inventory_classification: 待人决定
+  evidence_or_context: 现行表仅给作者、年份和概述并标“未核对”；具体题名、版次、身份、status、review 均未知
+  inventory_destination: 待人决定具体出版物身份；确认前不分配 ID、不补题名或 url；若确认再使用草案实体字段
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: true
+  inventory_entity_candidate: false
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory explicitly leaves the identity boundary for human decision.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:101
+  source_file: concepts/glossary.md
+  source_location: '236'
+  object: Internationale Sprachnormung in der Technik
+  current_value: kind=未登记；version=1931；url=未记录；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行表称 Wüster 的斯图加特博士论文，并连带 ISO/TC 37 断言；未核边界、status、review 未登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；完整书目、url、status、review 与连带断言 basis 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:102
+  source_file: concepts/glossary.md
+  source_location: '237'
+  object: Gruber (1993) 本体定义文献
+  current_value: kind=未登记；version=1993；url=未记录；tier=未登记
+  inventory_classification: 待人决定
+  evidence_or_context: 现行表仅给作者、年份和概述并标“未核对”；具体题名、出版身份、status、review 未知
+  inventory_destination: 待人决定具体出版物身份；确认前不分配 ID、不补题名或 url；若确认再使用草案实体字段
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: true
+  inventory_entity_candidate: false
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory explicitly leaves the identity boundary for human decision.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:103
+  source_file: concepts/knowledge-graph.md
+  source_location: '89'
+  object: W3C RDF 1.1 Concepts and Abstract Syntax
+  current_value: kind=未登记；version=2014；url=https://www.w3.org/TR/rdf11-concepts/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行文标 W3C Recommendation；正式 status、review 未登记；重复身份=与 RDF 1.2 Candidate Recommendation 分列
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status/review/watch 与版本关系待复核，不自动建立 replaced_by
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:104
+  source_file: concepts/knowledge-graph.md
+  source_location: '89'
+  object: W3C RDF 1.2 Concepts and Abstract Syntax
+  current_value: kind=未登记；version=2026-04 Candidate Recommendation（现行文本线索）；url=https://www.w3.org/TR/rdf12-concepts/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行概念文记录候选推荐与变化概述；正式 status、review 未登记；重复身份=与 RDF 1.1 分列，状态可能变化
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status/review/watch、与 RDF 1.1 的关系和内容变化待复核，不自动替代
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:105
+  source_file: concepts/knowledge-graph.md
+  source_location: '90'
+  object: W3C OWL 2 Web Ontology Language Overview
+  current_value: kind=未登记；version=2012，2nd ed.；url=https://www.w3.org/TR/owl2-overview/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行文标 W3C Recommendation；正式 status、review 未登记
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status/review/watch 与 basis 待复核
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:106
+  source_file: concepts/knowledge-graph.md
+  source_location: '91'
+  object: W3C SPARQL 1.1 Query Language
+  current_value: kind=未登记；version=2013；url=https://www.w3.org/TR/sparql11-query/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行文标 W3C Recommendation；正式 status、review 未登记
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status/review/watch 与 basis 待复核
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:107
+  source_file: concepts/knowledge-graph.md
+  source_location: '92'
+  object: ISO/IEC 39075:2024
+  current_value: kind=未登记；version=2024；url=https://www.iso.org/standard/76120.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行文给 GQL 标准和发布线索；concepts/glossary.md:231 重复；正式 status、review 未登记
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status/review/watch 与 basis 待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:108
+  source_file: concepts/note-types.md
+  source_location: '104'
+  object: The Knowledge-Creating Company
+  current_value: kind=未登记；version=1991，2007 重印；url=https://hbr.org/2007/07/the-knowledge-creating-company；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Nonaka 文章；现行 status、review 未登记；重复身份=1991 原文与 2007 重印版本关系未正式登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；version、规范 url、status、review 与版本关系待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:109
+  source_file: concepts/note-types.md
+  source_location: '105'
+  object: How to Take Smart Notes
+  current_value: kind=未登记；version=2017，ISBN 9781542866507；url=未记录；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Ahrens 著作；三种笔记定义实际据 Zettelkasten 论坛转引，且一项为转述；status 和 review 未登记；重复身份=书与论坛材料分列
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；规范 url、status、review 与实际 locator 待复核，不把论坛转引伪装成原书正文
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:110
+  source_file: concepts/note-types.md
+  source_location: '105'
+  object: Zettelkasten 论坛转引
+  current_value: kind=未登记；version=未记录；url=https://forum.zettelkasten.de/；tier=未登记
+  inventory_classification: 待人决定
+  evidence_or_context: 现行链接只到论坛首页，未标具体帖子、作者、日期或 locator；一项定义被标为转述；status 和 review 未登记
+  inventory_destination: 待人决定具体出版物身份和定位；确认前不分配 ID、不补字段；若确认再迁入草案实体字段
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: true
+  inventory_entity_candidate: false
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory explicitly leaves the identity boundary for human decision.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:111
+  source_file: concepts/note-types.md
+  source_location: '106'
+  object: Kommunikation mit Zettelkästen
+  current_value: kind=未登记；version=1981；url=https://luhmann.surge.sh/communicating-with-slip-boxes；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Luhmann 原作与英文译文页面一起引用；原文与翻译是否同一实体或两个版本未登记；status 和 review 未登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；原文/译文身份、version、status、review 与 basis 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:112
+  source_file: concepts/note-types.md
+  source_location: '107'
+  object: Evergreen notes
+  current_value: kind=未登记；version=未记录；url=https://notes.andymatuschak.org/Evergreen_notes；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Matuschak 页面；版本、status、review 未登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；version/status/review/watch 与 basis 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:113
+  source_file: concepts/note-types.md
+  source_location: '110'
+  object: ISO 5127:2017
+  current_value: kind=未登记；version=2017；url=https://www.iso.org/standard/59743.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 与第三方样章同时引用；design/content-model.md:165 把相关条款列为待核；正式 status、review 未登记
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status/review/watch、样章关系与未读边界待复核，不自动采用条款
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:114
+  source_file: concepts/note-types.md
+  source_location: '113'
+  object: Harvard Library Commonplace Books
+  current_value: kind=未登记；version=2015 Wayback 存档线索；url=https://web.archive.org/web/2015/http://ocp.hul.harvard.edu/reading/commonplace.html；tier=未登记
+  inventory_classification: 待人决定
+  evidence_or_context: 只保存存档入口，原页面日期、版本、status、review 未登记；重复身份=原页面与 Wayback 快照身份未区分
+  inventory_destination: 待人决定原出版物与存档快照的实体或 url 角色；确认前不发明版本、状态或 schema
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: true
+  inventory_entity_candidate: false
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory explicitly leaves the identity boundary for human decision.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:115
+  source_file: concepts/note-types.md
+  source_location: '114'
+  object: The Cornell Note Taking System
+  current_value: kind=未登记；version=未记录；url=https://lsc.cornell.edu/how-to-study/taking-notes/cornell-note-taking-system/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Cornell Learning Strategies Center 页面；五步另据 UNE 材料；status 和 review 未登记；重复身份=两材料分列
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；version/status/review 与 basis 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:116
+  source_file: concepts/note-types.md
+  source_location: '114'
+  object: UNE Cornell Note-Taking System 材料
+  current_value: kind=未登记；version=文件名 041311；url=https://www.une.edu/sites/default/files/Cornell-Note-Taking-System-041311-PDF-4.pdf；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行文只用其“五步”；完整题名、发布日期、status、review 未登记；重复身份=不能与 Cornell 页面合并
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；完整身份、version/status/review 与 locator 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:117
+  source_file: concepts/note-types.md
+  source_location: '116'
+  object: 'Evaluating the Quality of Learning: The SOLO Taxonomy'
+  current_value: kind=未登记；version=1982；url=未记录；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Biggs 与 Collis 著作；五级名称另据 Springer 百科条目；status 和 review 未登记；重复身份=书与百科条目分列
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；规范 url、status、review 与 basis 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:118
+  source_file: concepts/note-types.md
+  source_location: '116'
+  object: Springer SOLO taxonomy 百科条目
+  current_value: kind=未登记；version=未记录；url=https://link.springer.com/rwe/10.1007/978-3-319-77487-9_182-4；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行文据其五级名称；完整题名、作者、日期、status、review 未登记；重复身份=不能与 Biggs/Collis 原著合并
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；完整身份、version/status/review 与 locator 待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:119
+  source_file: concepts/note-types.md
+  source_location: '117'
+  object: The Non-Pareto Principle; Mea Culpa
+  current_value: kind=未登记；version=1974；url=https://www.juran.com/wp-content/uploads/2021/03/The-Non-Pareto-Principle-1974.pdf；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: Juran 文章；URL 路径含 2021 镜像日期但现行文引用 1974；status 和 review 未登记；重复身份=原文与网站副本关系未登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；version、规范 url、status、review 与副本关系待复核
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:120
+  source_file: sources/writing-guides.md
+  source_location: '11'
+  object: ISO 24495-1:2023
+  current_value: kind=未登记；version=2023；url=https://www.iso.org/standard/78907.html；tier=de-jure（现行笔记值）
+  inventory_classification: 来源实体
+  evidence_or_context: 现行笔记写正文未读，四原则据 IPLF 摘要；concepts/writing-conventions.md:95 重复；正式 status 和 review 未登记；重复身份=标准与 IPLF 摘要分列
+  inventory_destination: 若确认独立实体，迁入草案实体字段；tier 只保留现行兼容线索，不改档；status/review/watch 与 basis 待复核，保留正文未读边界
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:121
+  source_file: sources/writing-guides.md
+  source_location: '11'
+  object: IPLF 对 ISO 24495-1 的摘要
+  current_value: kind=未登记；version=未记录；url=https://www.iplfederation.org/iso-standard/；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行写作规则实际据此取得四原则；页面版本、status、review 未登记；重复身份=不能与 ISO 标准正文合并
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；version/status/review 与 basis 待复核，保持二手摘要边界
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:122
+  source_file: sources/writing-guides.md
+  source_location: '12'
+  object: GB/T 15834-2011
+  current_value: kind=未登记；version=2011；url=https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=22EA6D162E4110E752259661E1A0D0A8；tier=de-jure（现行笔记值）
+  inventory_classification: 来源实体
+  evidence_or_context: 现行笔记记录已读 §4.8–4.14；concepts/writing-conventions.md:97 重复；正式 status 和 review 未登记
+  inventory_destination: 若确认独立实体，迁入草案实体字段；tier 只作兼容线索；status/review/watch 与 basis 待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:123
+  source_file: sources/writing-guides.md
+  source_location: '13'
+  object: W3C Requirements for Chinese Text Layout
+  current_value: kind=未登记；version=Group Note Draft 2026-08-04（现行笔记值）；url=https://www.w3.org/TR/clreq/；tier=de-facto（现行笔记值）
+  inventory_classification: 来源实体
+  evidence_or_context: 现行笔记记录已读 §6.3.3；concepts/writing-conventions.md:98 重复；正式 status 和 review 未登记
+  inventory_destination: 若确认独立实体，迁入草案实体字段；tier 只作兼容线索；status/review/watch 与版本身份待复核，不自动改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:124
+  source_file: sources/writing-guides.md
+  source_location: '14'
+  object: Google developer documentation style guide
+  current_value: kind=未登记；version=未记录；url=https://developers.google.com/style；tier=de-facto（现行笔记值）
+  inventory_classification: 来源实体
+  evidence_or_context: 现行笔记记录已读 highlights、headings、tables；concepts/writing-conventions.md:99 重复；正式 status 和 review 未登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；tier 只作兼容线索；version/status/review/watch 待复核，不自动改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:125
+  source_file: sources/writing-guides.md
+  source_location: '15'
+  object: Microsoft Writing Style Guide
+  current_value: kind=未登记；version=未记录；url=https://learn.microsoft.com/en-us/style-guide/top-10-tips-style-voice；tier=de-facto（现行笔记值）
+  inventory_classification: 来源实体
+  evidence_or_context: 现行笔记记录已读 top 10；concepts/writing-conventions.md:100 重复；正式 status 和 review 未登记
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；tier 只作兼容线索；version/status/review/watch 待复核，不自动改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:126
+  source_file: concepts/writing-conventions.md
+  source_location: '96'
+  object: ISO 12616-1:2021
+  current_value: kind=未登记；version=2021；url=https://www.iso.org/obp/ui?_escaped_fragment_=iso%3Astd%3Aiso%3A12616%3A-1%3Aed-1%3Av1%3Aen；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行权威来源引用；正文已读范围、status、review 未登记；重复身份=无
+  inventory_destination: 若确认独立实体，迁入草案实体字段；规范 url、status、review、watch 与未读边界待复核
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:127
+  source_file: concepts/writing-conventions.md
+  source_location: '102'
+  object: Plain Writing Act of 2010
+  current_value: kind=未登记；version=2010；url=https://www.govinfo.gov/app/details/PLAW-111publ274；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 现行文作为写作规范实例；具体 locator、status、review 未登记；重复身份=法律文本与 plain-language 指南分列
+  inventory_destination: 若确认独立实体，迁入草案实体字段；kind/status/review 与 basis 待复核，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:128
+  source_file: concepts/writing-conventions.md
+  source_location: '102'
+  object: Plain English Campaign
+  current_value: kind=未登记；version=未记录；url=https://www.plainenglish.co.uk/；tier=未登记
+  inventory_classification: 待人决定
+  evidence_or_context: 现行文作为行业实例，只给站点入口；具体材料、版本、status、review 未登记
+  inventory_destination: 待人决定是站点集合还是具体 publication；确认前不分配 ID、不补字段或用途
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: true
+  inventory_entity_candidate: false
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory explicitly leaves the identity boundary for human decision.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:129
+  source_file: sources/terminology-standards.md
+  source_location: '9'
+  object: ISO 704:2022
+  current_value: kind=未登记；version=第 4 版，2022-07；url=https://www.iso.org/standard/79077.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-28 核官方页面；现行状态线索=Published，60.60；80 页正文未取得；concepts/glossary.md:229 重复但标“未核对”；正式 review 未登记
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status/review/watch 与 basis 待复核，保留正文未读边界，不自动准入用途或改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:130
+  source_file: sources/terminology-standards.md
+  source_location: '10'
+  object: ISO 1087:2019
+  current_value: kind=未登记；version=第 2 版，2019-09；url=https://www.iso.org/standard/62330.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-28 核官方页面；现行状态线索=Published，2025 确认，90.93；38 页正文未取得；重复身份=与 GB/T 15237-2025 不因等同采用自动合并
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status/review/watch 与 basis 待复核，保留正文未读边界，不自动改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:131
+  source_file: sources/terminology-standards.md
+  source_location: '11'
+  object: GB/T 15237-2025
+  current_value: kind=未登记；version=2025；url=https://std.samr.gov.cn/gb/search/gbDetailed?id=33D40F1160ED5D92E06397BE0A0A5B93；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-28 核官方元数据；现行状态线索=现行，等同采用 ISO 1087:2019；另有 https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=557282D738A199755FEB858386A3067A
+    且明确不提供文本阅读；正文未取得；正式 review 未登记
+  inventory_destination: 若确认独立实体，迁入草案实体字段；两个官方地址的角色、status/review/watch 与 basis 待复核，不从采用关系推断正文或合并身份
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:132
+  source_file: sources/terminology-standards.md
+  source_location: '12'
+  object: ISO 10241-1:2011
+  current_value: kind=未登记；version=第 1 版，2011-04；url=https://www.iso.org/standard/40362.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-28 核官方页面；现行状态线索=Published，2022 确认，90.93；57 页正文未取得；重复身份=与 GB/T 20001.1-2024 不自动合并
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status/review/watch 与 basis 待复核，保留正文未读边界，不自动改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:133
+  source_file: sources/terminology-standards.md
+  source_location: '13'
+  object: GB/T 20001.1-2024
+  current_value: kind=未登记；version=2024；url=https://std.samr.gov.cn/gb/search/gbDetailed?id=14156507D1FC0337E06397BE0A0AE656；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-28 核官方元数据；现行状态线索=现行，非等效采用 ISO 10241-1:2011；另有 https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=BABF1331531E15721A17C5B30BC3D5C2
+    且明确不提供文本阅读；正文未取得
+  inventory_destination: 若确认独立实体，迁入草案实体字段；两个官方地址的角色、status/review/watch 与 basis 待复核，不从采用关系推断正文或合并身份
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:134
+  source_file: sources/terminology-standards.md
+  source_location: '14'
+  object: ISO 26162-1:2019
+  current_value: kind=未登记；version=第 1 版，2019-11；url=https://www.iso.org/standard/71941.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-28 核官方页面；现行状态线索=Published，2025 确认，90.93；19 页正文未取得；concepts/terminology-database.md:77 重复
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status/review/watch 与 basis 待复核，保留模式、关系、基数未读边界，不自动改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:135
+  source_file: sources/terminology-standards.md
+  source_location: '15'
+  object: ISO 26162-3:2023
+  current_value: kind=未登记；version=第 1 版，2023-01；url=https://www.iso.org/standard/80464.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-28 核官方页面；现行状态线索=Published，60.60；21 页正文未取得；concepts/terminology-database.md:78 重复
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status/review/watch 与 basis 待复核，保留程序、指标、阈值未读边界，不自动改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:136
+  source_file: sources/terminology-standards.md
+  source_location: '16'
+  object: ISO 30042:2019
+  current_value: kind=未登记；version=第 2 版，2019-04；url=https://www.iso.org/standard/62510.html；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-28 核官方页面；现行状态线索=Published、待修订、90.92；43 页正文未取得；concepts/terminology-database.md:79 重复；重复身份=与第
+    3 版项目分列
+  inventory_destination: 若确认独立实体，迁入草案实体字段；status/review/watch、replaced_by 与 basis 待复核，保留正文未读边界，不自动改档
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:137
+  source_file: sources/terminology-standards.md
+  source_location: '17'
+  object: GB/T 44227-2024
+  current_value: kind=未登记；version=2024；url=https://std.samr.gov.cn/gb/search/gbDetailed?id=1E5A13A77F9BBC8DE06397BE0A0A87E8；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-28 核官方元数据；现行状态线索=现行，修改采用 ISO 30042:2019；另有 https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=149AD94EA1C6DAB4CF478C5799C67B67
+    且明确不提供文本阅读；正文未取得
+  inventory_destination: 若确认独立实体，迁入草案实体字段；两个官方地址的角色、status/review/watch 与 basis 待复核，不从采用关系推断正文或合并身份
+  decision_level: L2；tier 改档或草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:138
+  source_file: sources/terminology-standards.md
+  source_location: '18'
+  object: TBX-Basic Namespace
+  current_value: kind=未登记；version=页面未显示；url=https://www.tbxinfo.net/ns/dct/basic；tier=未登记
+  inventory_classification: 来源实体
+  evidence_or_context: 2026-08-28 已读公开页面全文；页面未显示版本、发布日期或状态；命名空间包、示例和校验文件未读；concepts/terminology-database.md:80 重复
+  inventory_destination: 若确认独立出版物，迁入草案实体字段；version/status/review/watch 与下属包身份待复核，保留未读边界，不发明交换 schema
+  decision_level: L2；草案生效为 L3
+  inventory_status: 需要复核
+  class: unregistered
+  identity_ambiguous: false
+  inventory_entity_candidate: true
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory supports a source-entity candidate, but no row-specific identity decision or approved ID exists.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.
+- identity: source-entities.tsv:139
+  source_file: sources/terminology-standards.md
+  source_location: '71'
+  object: ISO/CD 30042 第 3 版项目
+  current_value: kind=未登记；version=第 3 版项目；url=https://www.iso.org/standard/90295.html；tier=未登记
+  inventory_classification: 待人决定
+  evidence_or_context: 2026-08-28 只核官方项目元数据；草案正文未取得；现行状态线索=Under development，30.60；重复身份=与 ISO 30042:2019 已发布标准分列
+  inventory_destination: 待人决定是否建立来源实体、是否作为 replaced_by 目标及何时登记；不预测后继文本或自动转换现行标准状态
+  decision_level: L2；草案生效为 L3
+  inventory_status: 待人决定
+  class: unregistered
+  identity_ambiguous: true
+  inventory_entity_candidate: false
+  conclusion:
+    disposition: unresolved
+    proposed_id: null
+    target_entity: null
+    target_url_role: null
+    blocks_cutover: true
+    reason: The inventory explicitly leaves the identity boundary for human decision.
+  evidence:
+    Q03: A new ID is allowed only after a row is approved as an independent entity; no ID is guessed.
+    Q04_Q05: decision-source-0011 defines control policies but explicitly leaves real identities to row-specific decisions.
+    Q06: No address role or merge target is assigned without row-specific evidence.

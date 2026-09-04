@@ -10,7 +10,10 @@ from scripts.source_model import load_decision_patches
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-INPUT = ROOT / ".superpowers" / "sdd" / "2026-08-31-governance-implementation-prep"
+FROZEN_FIXTURE_ROOT = (
+    ROOT / "tests" / "fixtures" / "governance-frozen-2026-08-31"
+)
+INPUT = FROZEN_FIXTURE_ROOT
 FIXTURES = ROOT / "tests" / "fixtures" / "source-governance"
 DECISIONS = FIXTURES / "decisions"
 BLOCKED_PLAN = FIXTURES / "blocked-plan"
@@ -57,7 +60,7 @@ def actual_patch_signatures(plan):
 
 class SourceMigrationTests(unittest.TestCase):
     def plan(self):
-        return build_migration_plan(ROOT, INPUT, DECISIONS)
+        return build_migration_plan(FROZEN_FIXTURE_ROOT, INPUT, DECISIONS)
 
     def test_all_eighteen_input_hashes_are_verified(self):
         self.assertEqual(18, self.plan()["verified_hash_count"])
@@ -98,7 +101,10 @@ class SourceMigrationTests(unittest.TestCase):
                 ValueError, "SOURCE_DECISION_DELIVERY_MISSING"
             ):
                 build_migration_plan(
-                    ROOT, INPUT, FIXTURES / "missing-decisions", output
+                    FROZEN_FIXTURE_ROOT,
+                    INPUT,
+                    FIXTURES / "missing-decisions",
+                    output,
                 )
             self.assertFalse(output.exists())
 
@@ -109,7 +115,7 @@ class SourceMigrationTests(unittest.TestCase):
         )
 
     def test_replacement_patches_rebuild_fields_without_duplicate_rows(self):
-        plan = build_migration_plan(ROOT, INPUT, REPLACEMENT)
+        plan = build_migration_plan(FROZEN_FIXTURE_ROOT, INPUT, REPLACEMENT)
         self.assertEqual(
             expected_patch_signatures(REPLACEMENT), actual_patch_signatures(plan)
         )
@@ -121,16 +127,26 @@ class SourceMigrationTests(unittest.TestCase):
     def test_duplicate_identity_field_patch_is_rejected(self):
         with self.assertRaisesRegex(ValueError, "SOURCE_DECISION_PATCH_CONFLICT"):
             build_migration_plan(
-                ROOT, INPUT, FIXTURES / "duplicate-field-decisions"
+                FROZEN_FIXTURE_ROOT,
+                INPUT,
+                FIXTURES / "duplicate-field-decisions",
             )
 
     def test_q_field_ownership_violation_is_rejected(self):
         with self.assertRaisesRegex(ValueError, "SOURCE_DECISION_PATCH_CONFLICT"):
-            build_migration_plan(ROOT, INPUT, FIXTURES / "wrong-field-decisions")
+            build_migration_plan(
+                FROZEN_FIXTURE_ROOT,
+                INPUT,
+                FIXTURES / "wrong-field-decisions",
+            )
 
     def test_q_identity_domain_violation_is_rejected(self):
         with self.assertRaisesRegex(ValueError, "SOURCE_DECISION_PATCH_CONFLICT"):
-            build_migration_plan(ROOT, INPUT, FIXTURES / "wrong-domain-decisions")
+            build_migration_plan(
+                FROZEN_FIXTURE_ROOT,
+                INPUT,
+                FIXTURES / "wrong-domain-decisions",
+            )
 
     def test_all_qids_are_covered_by_patches(self):
         qids = {signature[0] for signature in actual_patch_signatures(self.plan())}

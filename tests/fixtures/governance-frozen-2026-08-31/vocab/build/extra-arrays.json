@@ -1,0 +1,497 @@
+{
+ "security": {
+  "asvs": {
+   "label": "ASVS 5.0 章",
+   "items": [
+    [
+     "V1",
+     "Encoding and Sanitization",
+     "编码与净化"
+    ],
+    [
+     "V2",
+     "Validation and Business Logic",
+     "验证与业务逻辑"
+    ],
+    [
+     "V3",
+     "Web Frontend Security",
+     "Web 前端安全"
+    ],
+    [
+     "V4",
+     "API and Web Service",
+     "API 与 Web 服务"
+    ],
+    [
+     "V5",
+     "File Handling",
+     "文件处理"
+    ],
+    [
+     "V6",
+     "Authentication",
+     "认证"
+    ],
+    [
+     "V7",
+     "Session Management",
+     "会话管理"
+    ],
+    [
+     "V8",
+     "Authorization",
+     "授权"
+    ],
+    [
+     "V9",
+     "Self-contained Tokens",
+     "自包含令牌"
+    ],
+    [
+     "V10",
+     "OAuth and OIDC",
+     "OAuth 与 OIDC"
+    ],
+    [
+     "V11",
+     "Cryptography",
+     "密码学"
+    ],
+    [
+     "V12",
+     "Secure Communication",
+     "安全通信"
+    ],
+    [
+     "V13",
+     "Configuration",
+     "配置"
+    ],
+    [
+     "V14",
+     "Data Protection",
+     "数据保护"
+    ],
+    [
+     "V15",
+     "Secure Coding and Architecture",
+     "安全编码与架构"
+    ],
+    [
+     "V16",
+     "Security Logging and Error Handling",
+     "安全日志与错误处理"
+    ],
+    [
+     "V17",
+     "WebRTC",
+     "WebRTC"
+    ]
+   ]
+  },
+  "cwe": {
+   "label": "CWE-1000 Research Concepts 的 pillar",
+   "items": [
+    [
+     "CWE-284",
+     "Improper Access Control",
+     "访问控制不当"
+    ],
+    [
+     "CWE-435",
+     "Improper Interaction Between Multiple Correctly-Behaving Entities",
+     "多个正确实体间的不当交互"
+    ],
+    [
+     "CWE-664",
+     "Improper Control of a Resource Through its Lifetime",
+     "资源生命周期控制不当"
+    ],
+    [
+     "CWE-682",
+     "Incorrect Calculation",
+     "计算错误"
+    ],
+    [
+     "CWE-691",
+     "Insufficient Control Flow Management",
+     "控制流管理不足"
+    ],
+    [
+     "CWE-693",
+     "Protection Mechanism Failure",
+     "保护机制失效"
+    ],
+    [
+     "CWE-697",
+     "Incorrect Comparison",
+     "比较错误"
+    ],
+    [
+     "CWE-703",
+     "Improper Check or Handling of Exceptional Conditions",
+     "异常条件检查或处理不当"
+    ],
+    [
+     "CWE-707",
+     "Improper Neutralization",
+     "中和不当"
+    ],
+    [
+     "CWE-710",
+     "Improper Adherence to Coding Standards",
+     "未遵循编码标准"
+    ]
+   ]
+  },
+  "attack": {
+   "label": "ATT&CK Enterprise 战术",
+   "items": [
+    [
+     "TA0043",
+     "Reconnaissance",
+     "侦察"
+    ],
+    [
+     "TA0042",
+     "Resource Development",
+     "资源开发"
+    ],
+    [
+     "TA0001",
+     "Initial Access",
+     "初始访问"
+    ],
+    [
+     "TA0002",
+     "Execution",
+     "执行"
+    ],
+    [
+     "TA0003",
+     "Persistence",
+     "持久化"
+    ],
+    [
+     "TA0004",
+     "Privilege Escalation",
+     "权限提升"
+    ],
+    [
+     "TA0005",
+     "Stealth",
+     "隐匿"
+    ],
+    [
+     "TA0112",
+     "Defense Impairment",
+     "防御削弱"
+    ],
+    [
+     "TA0006",
+     "Credential Access",
+     "凭据访问"
+    ],
+    [
+     "TA0007",
+     "Discovery",
+     "发现"
+    ],
+    [
+     "TA0008",
+     "Lateral Movement",
+     "横向移动"
+    ],
+    [
+     "TA0009",
+     "Collection",
+     "收集"
+    ],
+    [
+     "TA0011",
+     "Command and Control",
+     "命令与控制"
+    ],
+    [
+     "TA0010",
+     "Exfiltration",
+     "数据渗出"
+    ],
+    [
+     "TA0040",
+     "Impact",
+     "影响"
+    ]
+   ]
+  }
+ },
+ "artificial-intelligence": {
+  "atlas": {
+   "label": "ATLAS 战术",
+   "items": [
+    [
+     "AML.TA0002",
+     "Reconnaissance",
+     "侦察"
+    ],
+    [
+     "AML.TA0003",
+     "Resource Development",
+     "资源开发"
+    ],
+    [
+     "AML.TA0004",
+     "Initial Access",
+     "初始访问"
+    ],
+    [
+     "AML.TA0000",
+     "AI Model Access",
+     "AI 模型访问"
+    ],
+    [
+     "AML.TA0005",
+     "Execution",
+     "执行"
+    ],
+    [
+     "AML.TA0006",
+     "Persistence",
+     "持久化"
+    ],
+    [
+     "AML.TA0012",
+     "Privilege Escalation",
+     "权限提升"
+    ],
+    [
+     "AML.TA0007",
+     "Defense Evasion",
+     "防御规避"
+    ],
+    [
+     "AML.TA0013",
+     "Credential Access",
+     "凭据访问"
+    ],
+    [
+     "AML.TA0008",
+     "Discovery",
+     "发现"
+    ],
+    [
+     "AML.TA0015",
+     "Lateral Movement",
+     "横向移动"
+    ],
+    [
+     "AML.TA0009",
+     "Collection",
+     "收集"
+    ],
+    [
+     "AML.TA0001",
+     "AI Attack Staging",
+     "AI 攻击准备"
+    ],
+    [
+     "AML.TA0014",
+     "Command and Control",
+     "命令与控制"
+    ],
+    [
+     "AML.TA0010",
+     "Exfiltration",
+     "数据渗出"
+    ],
+    [
+     "AML.TA0011",
+     "Impact",
+     "影响"
+    ]
+   ]
+  },
+  "owasp-llm-top10": {
+   "label": "OWASP LLM Top 10 2025",
+   "items": [
+    [
+     "LLM01:2025",
+     "Prompt Injection",
+     "提示词注入"
+    ],
+    [
+     "LLM02:2025",
+     "Sensitive Information Disclosure",
+     "敏感信息泄露"
+    ],
+    [
+     "LLM03:2025",
+     "Supply Chain",
+     "供应链"
+    ],
+    [
+     "LLM04:2025",
+     "Data and Model Poisoning",
+     "数据与模型投毒"
+    ],
+    [
+     "LLM05:2025",
+     "Improper Output Handling",
+     "不当输出处理"
+    ],
+    [
+     "LLM06:2025",
+     "Excessive Agency",
+     "过度授权"
+    ],
+    [
+     "LLM07:2025",
+     "System Prompt Leakage",
+     "系统提示泄露"
+    ],
+    [
+     "LLM08:2025",
+     "Vector and Embedding Weaknesses",
+     "向量与嵌入漏洞"
+    ],
+    [
+     "LLM09:2025",
+     "Misinformation",
+     "信息误导"
+    ],
+    [
+     "LLM10:2025",
+     "Unbounded Consumption",
+     "无限资源消耗"
+    ]
+   ],
+   "zh_basis": "source",
+   "zh_note": "中文取自项目官方 zh-CN 译文（2_0_vulns/translations/zh-CN），2026-08-23 核对"
+  }
+ },
+ "software-engineering": {
+  "swebok": {
+   "label": "SWEBOK v4 章",
+   "items": [
+    [
+     "1",
+     "Software Requirements",
+     "软件需求"
+    ],
+    [
+     "2",
+     "Software Architecture",
+     "软件架构"
+    ],
+    [
+     "3",
+     "Software Design",
+     "软件设计"
+    ],
+    [
+     "4",
+     "Software Construction",
+     "软件构造"
+    ],
+    [
+     "5",
+     "Software Testing",
+     "软件测试"
+    ],
+    [
+     "6",
+     "Software Engineering Operations",
+     "软件工程运维"
+    ],
+    [
+     "7",
+     "Software Maintenance",
+     "软件维护"
+    ],
+    [
+     "8",
+     "Software Configuration Management",
+     "软件配置管理"
+    ],
+    [
+     "9",
+     "Software Engineering Management",
+     "软件工程管理"
+    ],
+    [
+     "10",
+     "Software Engineering Process",
+     "软件工程过程"
+    ],
+    [
+     "11",
+     "Software Engineering Models and Methods",
+     "软件工程模型与方法"
+    ],
+    [
+     "12",
+     "Software Quality",
+     "软件质量"
+    ],
+    [
+     "13",
+     "Software Security",
+     "软件安全"
+    ],
+    [
+     "14",
+     "Software Engineering Professional Practice",
+     "软件工程职业实践"
+    ],
+    [
+     "15",
+     "Software Engineering Economics",
+     "软件工程经济学"
+    ],
+    [
+     "16",
+     "Computing Foundations",
+     "计算基础"
+    ],
+    [
+     "17",
+     "Mathematical Foundations",
+     "数学基础"
+    ],
+    [
+     "18",
+     "Engineering Foundations",
+     "工程基础"
+    ]
+   ]
+  }
+ },
+ "networking-and-communication": {
+  "rfc-1122": {
+   "label": "RFC 1122 协议层",
+   "items": [
+    [
+     "1.1.3",
+     "Application Layer",
+     "应用层"
+    ],
+    [
+     "1.1.3",
+     "Transport Layer",
+     "传输层"
+    ],
+    [
+     "1.1.3",
+     "Internet Layer",
+     "互联网层"
+    ],
+    [
+     "1.1.3",
+     "Link Layer",
+     "链路层"
+    ]
+   ]
+  }
+ }
+}

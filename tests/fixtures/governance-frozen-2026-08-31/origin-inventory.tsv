@@ -1,0 +1,20 @@
+文件	位置	对象	当前值	草案分类	证据或上下文	拟议去向	决策级别	状态
+concepts/classifying-new-subjects.md	47	新主题分类步骤中的 origin	指向提出新主题的文献	发现线索	位置把文献放在本地候选概念的发现过程中；未说明具体值取自文献，也无外部条目和定位	`discovery` 候选；若文献另外支持具体值，应对该值单独建立 `basis`	L2	需要复核
+design/content-model.md	138	内容单元处置规则中的 origin 反向引用	概念的 origin 可引用内容单元，删除会断链	待人决定	这里假定引用目标是内容单元，与 design/topics.md:114、190 的 publication 或 standard 实体目标冲突；当前正式数据没有该引用	待人决定；若只保存首次出现的上下文则候选 `discovery`，若实际派生则候选 `source`	L2	待人决定
+design/drafts/terminology-governance.md	270	术语迁移边界中的旧 origin	禁止机械改写，要求逐项分类、补证或保持未获准	待人决定	这是未生效草案的迁移门禁，本身不提供任何现存 origin 值的语义	无需迁移该文档位置；继续作为逐项分流门禁	L2	无需迁移
+design/entities.md	78	前沿概念与源头文献的关系	本地概念通过 origin 指向 publication 且以 archival 说明来源	待人决定	段落用“来自”和“源头文献”表述，但没有可迁移的概念记录、外部条目或定位；当前数据只有 2 个 publication 实体且均未被 origin 引用	若概念记录实际由文献派生则候选 `source`；支持具体值的材料另列逐值 `basis`	L2	需要复核
+design/entities.md	100	主题概念对实体表的 origin 引用	本地概念的源头文献通过 origin 指向实体表	待人决定	位置只确定目标表，不能回答是发现、逐值依据还是实际派生；没有定位和现存引用	待人决定；必须回到每条真实记录才能选 `discovery`、`basis` 或 `source`	L2	需要复核
+design/maintenance.md	132	候选产生流程中的 origin	指向经核验表示形式首次出现的内容单元	发现线索	该位置明确位于从未解析字符串到候选概念的提名流程，且只说明“首次出现”；不证明具体值或派生关系	`discovery` 候选；正式记录形状仍待后续获准方案	L2	需要复核
+design/principles.md	20	新主题分类方法摘要中的 origin	本地概念 candidate 加 origin	发现线索	该行是 concepts/classifying-new-subjects.md 和 design/maintenance.md 流程的方法摘要，没有独立断言或派生证据	随上游规则候选 `discovery`；不单独建立 `basis` 或 `source`	L2	需要复核
+design/topics.md	114	主题概念记录示例中的 origin 字段	空列表；注释为本地概念的源头文献，值是 publication 或 standard 实体 id	待人决定	位置同时承担记录形状和源头说明，但没有 locator、外部 item 或被支持的字段路径，不足以区分三种语义	待人决定；不得将列表值机械改成 `basis` 或 `source`	L2	需要复核
+design/topics.md	127	主题概念 origin 的文本定义	记录本地概念最早被提出或定型的文献	待人决定	“最早提出”可能只是发现上下文，“定型”可能支持概念身份或派生；位置没有记录目标值、条目和定位	逐记录决定 `discovery`、逐值 `basis` 或实际派生 `source`	L2	需要复核
+design/topics.md	132	六边形架构的 origin 示例	[cockburn-2005-hexagonal]	实际派生	示例把本地概念与一篇源头 publication 直接连接，表达的是记录来源候选；但当前 vocab/topics.yaml 无该概念，vocab/entities.yaml 也无该 id	`source` 候选；只在未来真实记录能证明实际派生并补齐外部条目、定位和 `source.basis` 时成立	L2	需要复核
+design/topics.md	136	主题概念 origin 与 match 的分工	指向源头文献，用于区分概念来自标准、论文或博文	待人决定	该位置只排除了概念映射，但“来自”仍可以是发现、依据或派生；反查文献类型不能决定关系	逐记录决定 `discovery`、`basis` 或 `source`；不保留通用 origin 字段	L2	需要复核
+design/topics.md	138	主题概念 origin 的标准对应声明	取 Z39.19 § 11.1.4 的 source 信息作为依据	逐值依据	sources/z39-19.md:34、68 记录的已读边界只表明外部 term record 可包含所咨询的 source(s)，不自动定义本项目字段；该位置也没有与具体值相邻的 locator	`basis` 候选；必须拆到被支持的具体值并补可重复定位的依据	L2	需要复核
+design/topics.md	190	主题概念 origin 的校验规则	目标须是实体表中 kind 为 publication 或 standard 的实体	待人决定	规则只校验目标类型，不校验发现、依据或派生语义；当前 scripts/check-topics.py 没有实现这条规则	随获准的逐项分流删除通用校验，分别交给 `discovery`、`basis` 或 `source` 的对应校验	L2	需要复核
+design/topics.md	213	大语言模型术语的 origin 待定项	术语的 origin 未定	待人决定	位置与概念归属共同列为待定，没有具体形式、概念身份、外部条目或定位	待人决定；不以标签、目录或出现次数预选 `discovery`、`basis` 或 `source`	L2	待人决定
+docs/superpowers/specs/2026-08-27-terminology-governance-design.md	170	断言边界中的旧 origin	现有设计中含义不一致，暂不新增使用	待人决定	已批准规格已明确禁止继续把 origin 作为通用来源字段，本位置是边界而不是数据值	无需迁移该规格位置；用于约束后续逐项分流	L2	无需迁移
+docs/superpowers/specs/2026-08-27-terminology-governance-design.md	178	旧 origin 的迁移要求	按实际语义分别迁往候选发现记录、逐值 basis 或派生 source	待人决定	该位置只规定分流集合，不能替任何具体记录选择去向；字段变更仍是结构提案	无需迁移该规格位置；作为本库存的分类上界	L2	无需迁移
+vocab/topics.yaml	1-6825（全文件）	700 条主题概念记录	0 条含 origin；8 条 source:self 均为 active 顶层，692 条为外部结构的 unassigned	待人决定	对完整 YAML 树遍历后 origin 键与标量均为 0；也没有 candidate 主题概念，因此没有真实 origin 值可逐条分流	当前无数据迁移；不因 source:self、顶层目录或状态自动生成 `discovery`、`basis` 或 `source`	L1	无需迁移
+scripts/build-topics.py	132-156	主题词表生成器的输出形状	输出 id、label、basis、broader、arrays、scope、source、match、status、added，不输出 origin	待人决定	生成器从创建概念到写出文件都没有 origin 参数、键或分支；这证明当前生成路径没有真实使用	当前无值可迁移；后续实施计划只能按获准模式分别处理 `discovery`、`basis` 或 `source`	L2	无需迁移
+scripts/check-topics.py	34-58	主题概念校验器的字段消费	校验 source、match、arrays、related、status，不读取或校验 origin	待人决定	当前校验器在 700 条记录无 origin 时报告 0 处问题；这与 design/topics.md:190 声称的校验规则不一致	当前无值可迁移；后续实施计划需使校验器与获准的 `discovery`、`basis`、`source` 结构对齐	L2	无需迁移
