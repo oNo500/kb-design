@@ -30,7 +30,7 @@
 
 正式 `vocab/entities.yaml`、`vocab/sources.yaml` 和 `vocab/topics.yaml` 继续决定当前数据形状。同步设计不会把旧引用机械改成后置结构，也不会改变任何现行 designation、译名、id、状态、`tier`、用途或关系。
 
-现行 [Obsidian 映射](targets/obsidian.md)按应用无关模型、`Application Profile` 语义选择和导出 artifact contract 分工。生成文件可以在 Obsidian 中编辑，但修改不回流、不取得项目效力。该 target 当前只消费六份正式词表；仓库没有知识库内容消费者、内容引用统计、检索统计或回流接口。
+现行 [Obsidian 映射](targets/obsidian.md)按应用无关模型、`Application Profile` 语义选择和导出 artifact contract 分工。`kb-design` 单向导出六份正式词表，独立 `kb-obsidian` 应用已实现新 vault 初始化、内容建立、只读校验和派生报告。生成文件可以在 Obsidian 中编辑，但修改不回流、不取得项目效力；本地持久 vault 当前没有实际用户内容，消费者没有正式激活，也没有可审计查询日志或回流接口。
 
 ### 能力边界
 
@@ -40,7 +40,7 @@
 |---|---|---|
 | 来源 | 六份 schema、共享来源模型、离线校验、反向索引、固定夹具探测、迁移预演和复核义务接口 | 没有正式来源 v2 数据、正式义务、正式索引、真实联网观察、具体角色批准或正式切换 |
 | 术语 | 三层候选模式、状态转换校验、确定性生成器、正文诊断、维护索引和复核义务接口 | 没有正式术语数据、义务、委托、消费者、切换状态或编辑权转移 |
-| Obsidian | 六份正式词表的单向参考导出、项目 manifest、发布前校验和目标目录项替换 | 没有内容消费者、回流、JCS、BagIt、reproducible build 或 durability 符合性与保证 |
+| Obsidian | 六份正式词表的单向参考导出、新 vault 初始化、UUIDv4 `draft` 建立、只读内容校验、派生报告、项目 manifest 和安全发布 | 没有实际用户内容、正式消费者、查询日志、回流、JCS、BagIt、reproducible build 或 durability 符合性与保证 |
 
 来源探测的 `--live` 明确禁用，实际 JSONL 输出与探测 schema 尚未闭合。固定夹具只能证明只读行为和信号逻辑，不能确认真实来源状态。术语生成器和维护接口没有正式输入；测试夹具中的状态与消费者也不是仓库现状。
 

@@ -42,13 +42,15 @@
 
 ## Obsidian 应用
 
-[Obsidian 映射](design/targets/obsidian.md)是本库首个完整应用 target，完整应用设计已经建立。它以应用无关内容模型为基础，规定 Obsidian 的功能范围、内容和词表的表示、使用边界与维护接口；现行词表参考导出的 artifact contract 仍与这些语义选择分开。
+[Obsidian 映射](design/targets/obsidian.md)是本库首个完整应用 target。它以应用无关内容模型为基础，规定 Obsidian 的功能范围、内容和词表的表示、使用边界与维护接口；导出 artifact contract 仍与这些语义选择分开。
 
-当前代码只实现 `scripts/export_obsidian.py`，把现行正式词表物化为单向参考区，其中包含对象笔记、主题数组、Base 浏览入口、目录 README 和项目 manifest。它不建立或读取真实 vault、用户内容、内容建立器、内容校验器、运行消费者、使用报告、查询日志或回流接口；完整应用设计不等于这些能力已经实现或启用。内容标识符已经决定为无前缀、小写 UUIDv4，人的检索使用 title、派生 alias、正文和其他元数据；内容建立仍未实施。
+实现分为两个仓库。`kb-design` 的 `scripts/export_obsidian.py` 把现行六份正式词表物化为单向参考区；独立的 `kb-obsidian` 从固定且干净的 `kb-design` 提交初始化新 vault，建立 UUIDv4 `draft` 内容，校验内容字段和正式引用，并生成只读使用报告。初始化器已用于建立和验证本地持久 vault 实例，实例包含正式参考表示、模板、Base、规则、报告入口、manifest 和最低 Obsidian 配置。
 
-生成文件和 Base 可以在 Obsidian 中编辑，但本项目不读取这些修改，修改不取得项目效力。项目 manifest 不是 Obsidian 内容格式或 BagIt；同环境双跑和目录项替换也不产生 reproducible build 或 durability 主张。
+应用能力和运行效力继续分开。当前持久实例尚无实际用户内容，内容消费者没有正式激活，也没有可审计查询日志或回流接口；空库报告只证明报告路径可运行，不证明发生过内容使用。内容标识符使用无前缀、小写 UUIDv4，人的检索使用 title、派生 alias、正文和其他元数据。
 
-从仓库根运行：
+生成文件和 Base 可以在 Obsidian 中编辑，但修改不回流、不取得 `kb-design` 项目效力。项目 manifest 不是 Obsidian 内容格式或 BagIt；同环境双跑和目录项替换也不产生 reproducible build 或 durability 主张。
+
+完整 vault 的 `init`、`new-content`、`validate` 和 `report` 命令由独立 `kb-obsidian` 仓库提供。本仓库只直接提供词表参考导出，从仓库根运行：
 
 ```bash
 python3 scripts/export_obsidian.py --repo-root . --output /absolute/new/path
@@ -62,7 +64,7 @@ python3 scripts/export_obsidian.py --repo-root . --output /absolute/new/path
 - 来源与术语基础已经实现，但没有正式来源 v2 数据、正式术语数据、正式义务、委托、消费者或切换状态。
 - 首轮维护已经完成本轮可执行动作；开放的 designation、归属、候选接受和发版决定没有被自动应用。
 - 三份既有草案与四份待定设计均已形成项目草案并保持未生效。
-- Obsidian 作为首个完整应用 target 的设计已经建立，内容标识符决定已经采纳；现有实现仍只保留词表参考导出。代码实现、新 vault、内容数据、内容消费者、报告、查询日志、回流和正式激活均未完成。
+- Obsidian 完整应用 target、词表参考导出和独立应用实现已经建立，并已初始化本地持久 vault；实际用户内容、正式消费者、查询日志、回流和正式激活尚未发生。
 - TBX 没有真实接收方，继续保留为触发式草案；严格来源或术语激活只在真实切换需求出现后另立计划。
 
 项目执行计划记录过程与顺序，不属于项目设计组成；现行规则仍以 `design/` 正文、已采纳决定、应用映射和正式数据为准。

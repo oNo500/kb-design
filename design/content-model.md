@@ -189,9 +189,9 @@ target binding 只能选择字段使用的 location、type 和 reference form，
 
 导出 artifact contract 与 `Application Profile` 分开。前者只在语义选择完成后规定输入快照、byte serialization、order、quoting、newlines、file set、manifest、post-generation validation 和 publication，不得反向修改 target binding 或本文字段。
 
-回流得到的未解析字符串只交人工判断，不自动建立概念、关系或状态记录。target 文件、字段契约、生成目录或浏览入口存在都不等于内容消费者已经实现并启用；只有消费者实际读取内容字段或检索记录并提供可审计输入后，内容引用统计和回流才成立。
+回流得到的未解析字符串只交人工判断，不自动建立概念、关系或状态记录。target 文件、字段契约、应用代码、生成目录或浏览入口存在都不等于内容消费者已经启用；只有消费者实际读取真实内容字段或检索记录并提供可审计输入后，内容引用统计和回流才成立。
 
-[Obsidian 映射](targets/obsidian.md)是当前唯一现行 target 文件。完整内容应用已经设计，但尚未实现；现有实现仍只生成六份正式词表的单向参考表示，不建立或读取内容单元，也不提供内容引用统计、检索记录或回流。
+[Obsidian 映射](targets/obsidian.md)是当前唯一现行 target 文件。独立 `kb-obsidian` 应用已经实现新 vault 初始化、内容建立、只读校验和派生报告，并已建立本地持久 vault；当前实例没有实际用户内容，消费者没有正式激活，也不提供可审计检索记录或回流。六份正式词表仍由 `kb-design` 单向导出，应用不反向编辑。
 
 仓库 Markdown 正文诊断不是外部知识库回流。未来术语快照和术语表生成器也不是 Obsidian 导出的正式输入；正式术语数据、委托、消费者和切换状态未激活。任何应用要消费这些后置对象，仍须另行取得相应正式激活决定。
 

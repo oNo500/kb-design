@@ -14,7 +14,7 @@
 | 迁移审计 | 保存冻结身份、旧位置、分类、去向和阻断 | 不批准新值，不回写正式数据，不取得术语准入或删除权限 |
 | 项目草案 | 保存拟议规则、问题边界和生效条件 | 阅读、引用、推荐或部分实现不等于规则生效 |
 
-当前阶段以[当前阶段](decisions/current-stage-scope.md)为基础边界，以[项目路线](../docs/superpowers/plans/2026-08-31-project-roadmap.md)记录完成状态。来源与术语基础、现行设计同步、首轮维护、草案复核和待定设计均已完成各自当前范围；Obsidian 作为首个完整应用 target 的设计已经建立，现有代码只保留词表参考导出。内容应用实现、真实 vault、内容数据、内容消费者、报告、回流、严格来源切换、术语正式激活、草案生效和发版都没有发生。
+当前阶段以[当前阶段](decisions/current-stage-scope.md)为基础边界，以[项目路线](../docs/superpowers/plans/2026-08-31-project-roadmap.md)记录完成状态。来源与术语基础、现行设计同步、首轮维护、草案复核和待定设计均已完成各自当前范围；Obsidian 完整应用 target、词表参考导出和独立应用实现已经建立，并已初始化本地持久 vault。实际用户内容、正式消费者、查询日志、回流、严格来源切换、术语正式激活、草案生效和发版都没有发生。
 
 ## 现行设计
 
@@ -91,9 +91,9 @@
 
 [Obsidian 映射](targets/obsidian.md)是当前唯一项目原生 target 文件，也是首个完整应用 target 的设计。它引用 [Application Profile](../concepts/application-profile.md)和 [Reproducible Builds](../concepts/reproducible-builds.md)两种已登记方法，并受[应用约束与表示分层](decisions/application-profile-boundary.md)约束。应用无关模型、`Application Profile` 的语义选择和导出 artifact contract 分开；field／property／path binding 不是 `metadata crosswalk`，也不改变词表层 `crosswalk`。
 
-完整设计规定内容捕获、外部资料、内容单元、正式受控引用、用户索引、导航和维护线索的应用边界；它不是内容消费者运行记录。当前实现只有 `scripts/export_obsidian.py`：从现行正式词表生成可浏览、可链接、可筛选的单向参考区，包括词表对象、主题数组、Base 浏览入口、目录 README 和项目 manifest。Obsidian 与 Base 可以编辑生成文件，但修改不回流、不取得项目效力。
+完整设计规定内容捕获、外部资料、内容单元、正式受控引用、用户索引、导航和维护线索的应用边界；它不是内容消费者运行记录。实现分为 `kb-design` 中的 `scripts/export_obsidian.py` 和独立 `kb-obsidian` 应用：前者从现行正式词表生成单向参考区，后者从固定设计提交初始化新 vault、建立 `draft` 内容、校验内容与正式引用并重算派生报告。实施验收已经建立本地持久 vault，证明完整布局和应用命令能够作用于实际目录。
 
-本仓库没有由本项目建立的真实 vault、内容数据、内容建立器、内容校验器、运行消费者、报告、查询日志或回流接口。内容标识符已经决定为无前缀、小写 UUIDv4，title、派生 alias、正文和其他元数据承担人的检索；规则存在不等于内容建立已经实施。target 文件、字段合同和生成目录都不能冒充这些能力的运行证据。普通 `.json` 不是 Obsidian 内容格式；项目 manifest 不是 BagIt。现行同环境双跑只证明确定性，目录项替换只证明成功时的原子可见性；项目不宣称 JCS、BagIt、reproducible build 或 durability。TBX 仍是没有真实接收方的未生效草案。
+持久 vault 当前没有实际用户内容，内容消费者没有正式激活，也没有查询日志或回流接口；空库报告不能充当内容使用观察。内容标识符使用无前缀、小写 UUIDv4，title、派生 alias、正文和其他元数据承担人的检索。Obsidian 与 Base 可以编辑生成文件，但修改不回流、不取得项目效力。普通 `.json` 不是 Obsidian 内容格式，项目 manifest 不是 BagIt；同环境双跑只证明确定性，目录项替换只证明成功时的原子可见性，项目不宣称 JCS、BagIt、reproducible build 或 durability。TBX 仍是没有真实接收方的未生效草案。
 
 ## 未激活基础
 
@@ -139,7 +139,7 @@
 | 8 | [维护](maintenance.md) | 指标、阈值、动作、复核和审计追踪 |
 | 9 | [写作规则](writing.md) | 写任何文件前要遵守的规则 |
 | 10 | [内容模型](content-model.md) | 内容单元字段、稳定身份和应用映射接口 |
-| 11 | [Obsidian 映射](targets/obsidian.md) | 首个完整应用 target 的语义表示、现有词表参考导出，以及哪些能力仍未实现 |
+| 11 | [Obsidian 映射](targets/obsidian.md) | 首个完整应用 target 的语义表示、应用实现，以及尚未激活的运行边界 |
 | 12 | [词表版本](versioning.md) | 何时发版、怎样记录变化 |
 | — | [决定记录](decisions/) | 已采纳决定及其后果 |
 | — | [项目草案](drafts/) | 十份未生效提案、开放问题及其触发条件 |

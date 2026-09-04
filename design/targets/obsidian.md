@@ -1,12 +1,12 @@
 # Obsidian 映射
 
-本文规定 Obsidian 作为 `kb-design` 首个完整落地应用层的 `Application Profile`，并把现行词表参考导出的 artifact contract 保留为其中一个尚未集成的已实现子系统。本文按[内容模型](../content-model.md)引用应用无关语义，再规定 Obsidian 的功能范围、对象职责、field binding、使用方式与具体表示；artifact contract 只负责把已经选定的正式词表表示物化为文件。分层依据见 [Application Profile](../../concepts/application-profile.md)、[Reproducible Builds](../../concepts/reproducible-builds.md)、[方法登记](../principles.md)、[设计与应用分离](../decisions/form-independence.md)和[应用约束与表示分层](../decisions/application-profile-boundary.md)。
+本文规定 Obsidian 作为 `kb-design` 首个完整落地应用层的 `Application Profile`。现行词表参考导出的 artifact contract 是上游物化子系统，独立 `kb-obsidian` 应用在固定设计提交上消费其结果并建立完整 vault。本文按[内容模型](../content-model.md)引用应用无关语义，再规定 Obsidian 的功能范围、对象职责、field binding、使用方式与具体表示；artifact contract 只负责把已经选定的正式词表表示物化为文件。分层依据见 [Application Profile](../../concepts/application-profile.md)、[Reproducible Builds](../../concepts/reproducible-builds.md)、[方法登记](../principles.md)、[设计与应用分离](../decisions/form-independence.md)和[应用约束与表示分层](../decisions/application-profile-boundary.md)。
 
 ## 当前状态
 
-完整应用设计已经建立，但没有激活。当前唯一实现是 `scripts/export_obsidian.py`：它把六份正式词表生成成单向词表参考区。仓库和外部都没有由本项目建立的真实 vault、用户内容、内容建立器、内容校验器、使用报告、查询日志或回流接口；因此内容引用计数、内容使用观察和维护反馈都没有运行证据。
+完整应用设计和应用实现已经建立，但没有作为正式内容消费者激活。`kb-design` 的 `scripts/export_obsidian.py` 生成六份正式词表的单向参考表示；独立 `kb-obsidian` 应用从固定且干净的设计提交初始化新 vault，建立 UUIDv4 `draft` 内容，校验内容字段与正式引用，并生成派生报告。实施验收已经建立本地持久 vault，证明完整目录、受管理写集、命令路径和空库报告能够落入实际目录。
 
-target 文件、字段合同、目录设计、Base 设计、项目 manifest 或现行词表导出存在，都不能证明内容消费者已经实现、启用或读取过真实内容。完整设计也不使来源、术语、内容、消费者或正式切换自动激活。
+当前持久实例没有实际用户内容，也没有可审计查询日志或回流接口。空库报告只证明报告生成能力可运行，不构成内容引用计数、内容使用观察或维护反馈。target 文件、应用代码、持久实例和机械验收都不使来源、术语、内容消费者或正式切换自动激活。
 
 ## 功能范围
 
@@ -38,8 +38,8 @@ Obsidian 不能直接表达的约束由校验器保留，不能用自由 tag、�
 | 层 | 内容 | 修改者 | 项目效力 |
 |---|---|---|---|
 | 用户文件 | `home.md`、`inbox/`、`sources/`、`content/`、`indexes/`、`attachments/` | 使用者和经授权的内容工具 | 对该知识库中的实际内容有效，不直接修改 `kb-design` |
-| 受管理表示 | `kb/`、`app/templates/`、`app/views/`、`app/rules/`、`app/manifest.json` | 未来的 `kb-design` 生成器 | 是正式设计与数据的应用表示，不是正式编辑源 |
-| 派生报告 | `app/reports/` | 未来的内容校验器和报告生成器 | 只保存可重算事实与复核线索，可以删除和重建 |
+| 受管理表示 | `kb/`、`app/templates/`、`app/views/`、`app/rules/`、`app/manifest.json` | `kb-obsidian` 初始化器；词表表示来自 `kb-design` 导出器 | 是正式设计与数据的应用表示，不是正式编辑源 |
+| 派生报告 | `app/reports/` | `kb-obsidian` 校验和报告命令 | 只保存可重算事实与复核线索，可以删除和重建 |
 | 应用配置 | `.obsidian/` | 初始化器给出最低基线，其余由使用者维护 | 不修改模型、正式数据或项目决定 |
 
 受管理表示和派生报告中的所有文件都可以由文件系统工具修改；只有 Obsidian 支持的 Markdown 和 Base 文件可以在 Obsidian 中编辑，普通 JSON manifest 不是 Obsidian 内容格式。对这些文件的修改不回流、不取得项目效力；受管理文件的变化只形成 manifest 漂移，派生报告不作为下一次结论的输入。用户文件不属于受管理写集，生成器不得覆盖、移动或删除。
@@ -85,7 +85,7 @@ app/
 
 `kb/` 保存六份正式词表的受管理表示；其中 `kb/views/` 保存三个参考 Base。`app/templates/` 保存受管理结构片段。`app/views/` 保存完整应用的 Base 与固定查询入口，至少提供全部内容、draft 内容、active 内容、deprecated 内容、按主题、按实体、按类型与体裁、最近修改、全部正式主题、unassigned 主题、正式实体、正式来源用途和维护报告入口。`app/reports/` 保存诊断和统计，`app/rules/` 保存面向使用者的应用规则说明，`app/manifest.json` 保存完整应用受管理写集的项目清单。`.obsidian/` 只保存最低运行配置和用户后续配置。
 
-完整应用布局尚未实现。现行参考导出只生成本文后部规定的独立输出布局：根 `index.md`、`kb/` 和根 `manifest.json`；在新 vault 初始化器完成前，不把两种布局混称为已经集成。
+完整应用布局由 `kb-obsidian` 初始化器建立，词表参考表示、应用文件、用户目录和最低 Obsidian 配置在发布前共同回读校验。`kb-design` 的独立参考导出仍只生成本文后部规定的根 `index.md`、`kb/` 和根 `manifest.json`；它是初始化器的上游输入，不单独冒充完整 vault。
 
 ## 对象边界
 
@@ -130,7 +130,7 @@ Obsidian URI、Unique note creator 和普通新建命令只能作为 `inbox/` �
 
 内容建立必须通过受管理模板配合建立器，或具备同等约束的工具完成。Templates 只能插入片段和日期，不能生成并检查合法 identifier、校验受控值或保证必填性。建立器生成无前缀、小写 UUIDv4，检查现有 identifier 和目标路径没有重复，让使用者选择恰好一个 `type`、恰好一个 `genre` 和至少一个非 deprecated `subject`，写入一级标题、`title`、由标题派生的 `aliases`、`created` 与 `status: draft`，再回读并运行单文件校验。无法判断必填值时，材料继续留在 `inbox/`。
 
-identifier 规则已经由[内容单元标识符](../decisions/content-unit-identifiers.md)决定，但内容建立器尚未实现。规则获得批准不等于正式内容建立或消费者已经启用。
+identifier 规则已经由[内容单元标识符](../decisions/content-unit-identifiers.md)决定，`kb-obsidian new-content` 已实现上述受约束的 `draft` 建立路径。建立器可用只证明应用行为存在；新文件仍须由使用者提供内容和受控选择，建立动作也不批准 `active` 状态或激活正式消费者。
 
 ### 内容状态
 
@@ -275,7 +275,7 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 
 ## 内容表示
 
-内容字段已经设计但尚未实现。下表保留[内容模型](../content-model.md)的 16 个字段、基数和值域，并规定未来内容应用的创建、编辑、查询和失败行为。表中路径与 properties 是 target binding，不是 identifier 发放规则，也不是运行证据。
+内容字段已经由 `kb-obsidian` 的建立器和只读校验器实现。建立器只负责新建时可安全取得的字段；其余字段可以由使用者编辑，并在校验时按下表检查。下表保留[内容模型](../content-model.md)的 16 个字段、基数和值域，并规定创建、编辑、查询和失败行为。表中路径与 properties 是 target binding，不改变 identifier 发放规则，也不证明消费者已经读取真实内容。
 
 ### 内容字段
 
@@ -283,8 +283,8 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 |---|---|---|---|---|---|---|---|
 | `identifier` | 必填，恰好一个 | literal identity；无前缀、小写、保留标准连字符的 UUIDv4；在一个知识库的内容单元中唯一 | `kb_id` Text；`content/<uuidv4>.md`，文件 stem 与值相同 | 建立器生成后检查现有 identifier 和路径；重复时重新生成 | 一经写入且被引用后不修改；标题变化不改值或路径 | 精确定位内容与解析 content-unit reference | 缺失、格式错误、前缀、大小写错误、重复、stem 不同或路径冲突使内容无效；不从标题、alias 或时间回填；回流未实现 |
 | `title` | 必填，恰好一个 | Text | 一级标题与 `title` Text；Obsidian `aliases` List 中恰好包含一个由应用派生的当前标题 | 建立时由使用者给出，并同步写入三个位置 | 修改标题时同时更新一级标题、`title` 和派生 alias，不改 identifier | 显示、全文与 property 检索、Base 排序，并通过 alias 供 Quick Switcher 和链接补全 | 任一位置缺失、三者不一致、alias 多值或重复时无效；不从文件名回填；回流未实现 |
-| `type` | 必填，恰好一个 | type reference；命中正式文档类型词表 | `kb_type` Text link，指向 `kb/types/<id>.md` | 建立前由使用者选择一个 | 改值须重新校验引用与内容用途 | 按文档类型筛选与统计 | 缺失、多值、悬空或对象种类错误时无效；完整 reference 尚未实现 |
-| `genre` | 必填，恰好一个 | genre reference；命中正式体裁词表 | `kb_genre` Text link，指向 `kb/genres/<id>.md` | 建立前由使用者选择一个 | 改值须重新校验作者立场 | 按体裁筛选与统计 | 缺失、多值、悬空或对象种类错误时无效；完整 reference 尚未实现 |
+| `type` | 必填，恰好一个 | type reference；命中正式文档类型词表 | `kb_type` Text link，指向 `kb/types/<id>.md` | 建立前由使用者选择一个 | 改值须重新校验引用与内容用途 | 按文档类型筛选与统计 | 缺失、多值、悬空或对象种类错误时无效；回流未实现 |
+| `genre` | 必填，恰好一个 | genre reference；命中正式体裁词表 | `kb_genre` Text link，指向 `kb/genres/<id>.md` | 建立前由使用者选择一个 | 改值须重新校验作者立场 | 按体裁筛选与统计 | 缺失、多值、悬空或对象种类错误时无效；回流未实现 |
 | `form` | 可选，零个或一个；长文不填 | form reference；命中正式载体词表 | `kb_form` Text link，指向 `kb/forms/<id>.md` | 只有内容采用该载体时填写 | 载体改变时可修改或省略 | 按载体筛选 | 多值、悬空或对象种类错误时无效；省略不产生替代值；回流未实现 |
 | `level` | 可选，零个或一个 | controlled literal；`remember`、`understand`、`apply`、`analyze`、`evaluate` 或 `create` | `kb_level` Text | 建立时可由作者评估 | 理解深度改变时可修改 | 按认知层级筛选 | 多值或域外值无效；缺失时省略；回流未实现 |
 | `subject` | 必填，一个或多个 | topic reference；命中非 deprecated 正式主题 | `kb_subjects` List of Text links，指向 `kb/topics/<id>.md` | 建立前至少选择一个 | 内容主题改变时人工修改并重新校验 | 正式主题直接计数、主题入口和 Base 筛选 | 空列表、悬空、对象种类错误或 deprecated 目标使内容无效；顺序与全部目标须保存；回流未实现 |
@@ -298,7 +298,7 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 | `relation` | 可选，零个或多个 | content-unit reference；满足内容模型的使用条件并互反 | `kb_relation` List of Text links，指向 `content/<uuidv4>.md` | 仅在主题不同且常被一起阅读时填写 | 任一端改变时同时复核两端 | 查询正式内容间 relation | 悬空、对象种类错误或不互反时报告无效；不从正文链接或 Backlinks 推导；回流未实现 |
 | `language` | 可选，零个或一个 | Text；默认 `zh` | `kb_language` Text | 默认语言为 `zh` 时可省略，其他值填写 | 主要语言改变时修改 | 按语言筛选 | 多值无效；省略只表示既定默认 `zh`；不另立 target 值域；回流未实现 |
 
-正文位于 frontmatter 后，使用 Markdown，可为空；它不是 metadata property，也不从 `description` 生成。正文允许范围和安全校验尚待内容实现，但正文中的 Wikilink、tag、字符串和 unlinked mention 都不替代上述字段。
+正文位于 frontmatter 和唯一一级标题后，使用 Markdown，可为空；它不是 metadata property，也不从 `description` 生成。校验器检查 frontmatter、一级标题和受控字段边界，不从正文推导正式字段；正文中的 Wikilink、tag、字符串和 unlinked mention 都不替代上述字段。
 
 ## 引用语法
 
@@ -414,7 +414,7 @@ Web Clipper 基线只使用 preset variables；Interpreter 和 prompt variables 
 
 ## 配置边界
 
-未来初始化器只给出应用运行所需的最低 `.obsidian/` 配置：使用 Properties 保存内容 binding 和可查询事实，并启用 Properties view、Templates、Bases、Search、Quick Switcher、Backlinks、Bookmarks 和适用的 core plugin；把 `app/templates/` 设为模板目录，把 `attachments/` 设为附件目录；启用内部链接随 Obsidian 内移动和改名更新；登记项目 property types；提供 excluded files 与 Bookmarks 建议，但不强制覆盖用户选择。
+初始化器只给出应用运行所需的最低 `.obsidian/` 配置：使用 Properties 保存内容 binding 和可查询事实，并启用 Properties view、Templates、Bases、Search、Quick Switcher、Backlinks、Bookmarks 和适用的 core plugin；把 `app/templates/` 设为模板目录，把 `attachments/` 设为附件目录；启用内部链接随 Obsidian 内移动和改名更新；登记项目 property types。初始化只接受不存在或为空的目标，不更新非空 vault，也不覆盖后续用户选择。
 
 主题、字体、窗口布局、快捷键、移动端布局、Sync、Publish 和个人插件归使用者。`app/manifest.json` 不把这些用户配置变化报告为受管理表示漂移。
 
@@ -461,7 +461,7 @@ kb/
     sources.base
 ```
 
-对象文件名为 `<id>.md`。标签、别名和译名变化不改路径。除根 `index.md` 和根 `manifest.json` 外，项目控制文件都位于 `kb/`，路径、目录、Base 文件名和扩展名均为小写 kebab-case；不得包含大写 ASCII、空格、下划线或重复连字符。内部链接一律为以 `kb/` 开始的 vault 根路径 Wikilink；普通 Markdown link 只用于外部 URL。普通 `.json` 不在 Obsidian accepted content formats 中；根 `manifest.json` 是现行导出的项目清单，不是内容对象，也不是未来完整 vault 的 `app/manifest.json` 已实现证据。
+对象文件名为 `<id>.md`。标签、别名和译名变化不改路径。除根 `index.md` 和根 `manifest.json` 外，项目控制文件都位于 `kb/`，路径、目录、Base 文件名和扩展名均为小写 kebab-case；不得包含大写 ASCII、空格、下划线或重复连字符。内部链接一律为以 `kb/` 开始的 vault 根路径 Wikilink；普通 Markdown link 只用于外部 URL。普通 `.json` 不在 Obsidian accepted content formats 中；根 `manifest.json` 是独立参考导出的项目清单，不是内容对象，也不能替代完整 vault 的 `app/manifest.json`。
 
 ### 浏览入口
 
@@ -551,11 +551,11 @@ python3 scripts/export_obsidian.py --repo-root . --output /absolute/new/path
 - 非空目标、符号链接、目录替换失败和写后回读失败不损坏用户目标；成功替换只宣称 atomic visibility。
 - 能力说明不宣称 DCAP、DCTAP、JCS、BagIt、reproducible build、durability、真实消费者或正式激活。
 
-机械计数和 hash 由导出器、测试及端到端导出证明，不另作低价值重复检查。内容设计只有在真实 vault、内容建立器、内容校验器和消费者实现后，才能验收内容创建、使用统计和报告；回流仍须另立决定。
+机械计数和 hash 由导出器、应用测试及端到端初始化证明，不另作低价值重复检查。应用实现和本地持久 vault 已经证明内容建立、校验与报告路径存在；实际内容使用、正式消费者和维护反馈仍须由真实运行证据证明，回流仍须另立决定。
 
 ## 待定事项
 
-- 完整新 vault 的初始化、内容建立、内容校验、使用统计、报告和 `app/manifest.json` 尚未实现。
+- 实际用户内容、正式消费者和由真实内容形成的使用观察尚未出现；空库报告不满足这些条件。
 - 可审计查询日志等待真实查询消费者或明确接口；Search UI 不满足该条件。
 - 非空 vault 更新、自动回流、自动修复和社区插件增强继续后置。
 - 若未来需要 reproducible build 主张，另行界定 specified artifacts、source、environment 和 instructions，并取得 independent rebuild 证据。
