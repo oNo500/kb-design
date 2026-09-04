@@ -10,7 +10,7 @@ from unittest import mock
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
-TEST_DESIGN_COMMIT = "1e7aef8a5d9dc927c1c69138e61dfbabddd84253"
+TEST_DESIGN_COMMIT = "59e033d64b230fe658aa09955e1a66ec38aa5c6f"
 
 
 class DesignSourceTests(unittest.TestCase):

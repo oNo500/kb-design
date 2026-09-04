@@ -14,7 +14,7 @@ import yaml
 from .errors import ApplicationError
 
 
-SUPPORTED_DESIGN_COMMIT = "1e7aef8a5d9dc927c1c69138e61dfbabddd84253"
+SUPPORTED_DESIGN_COMMIT = "59e033d64b230fe658aa09955e1a66ec38aa5c6f"
 
 _FORMAL_DOCUMENTS = {
     "topics": "vocab/topics.yaml",
