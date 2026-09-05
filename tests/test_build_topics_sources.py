@@ -24,10 +24,9 @@ def build_topics_in_temporary_tree():
         temporary_root = pathlib.Path(tmp)
         (temporary_root / "scripts").mkdir()
         (temporary_root / "vocab").mkdir()
-        shutil.copy2(
-            ROOT / "scripts" / "build-topics.py",
-            temporary_root / "scripts" / "build-topics.py",
-        )
+        for name in ("build-topics.py", "label_basis.py", "label_adoptions.py"):
+            shutil.copy2(ROOT / "scripts" / name, temporary_root / "scripts" / name)
+        shutil.copy2(ROOT / "vocab/sources.yaml", temporary_root / "vocab/sources.yaml")
         shutil.copytree(ROOT / "vocab" / "build", temporary_root / "vocab" / "build")
         subprocess.run(
             [sys.executable, temporary_root / "scripts" / "build-topics.py"],

@@ -1,139 +1,429 @@
-# 载体词表。设计见 design/content-model.md「载体词表」。取值来自 IEEE 1484.12.1-2002 LOM §5.2 Learning Resource Type，拆为两个数组；速查表据 Wikidata。
+# 载体词表。设计见 design/content-model.md。
 version:
-  id: "2026.08"
+  id: '2026.08'
   date: 2026-08-23
   note: 初版：LOM 的 15 个取值分两组，加速查表。中文标签按译名阶梯第 4 级不译（2026-08-23），解释在 scope
-
 arrays:
-  - { id: forms-presentation, superordinate: forms, source: lom }
-  - { id: forms-activity, superordinate: forms, source: lom }
-
+- id: forms-presentation
+  superordinate: forms
+  source: lom
+- id: forms-activity
+  superordinate: forms
+  source: lom
 forms:
-  - id: diagram
-    label: { en: "Diagram" }
-    basis: { zh: none, en: lom }
-    arrays: [forms-presentation]
-    match: [{ source: lom, id: "diagram", rel: exactMatch }]
-    scope: "示意图：用线条和符号表示结构或过程"
-    status: unassigned
-    added: 2026-08-23
-  - id: figure
-    label: { en: "Figure" }
-    basis: { zh: none, en: lom }
-    arrays: [forms-presentation]
-    match: [{ source: lom, id: "figure", rel: exactMatch }]
-    scope: "图像：照片、插图等非示意性的图"
-    status: unassigned
-    added: 2026-08-23
-  - id: graph
-    label: { en: "Graph" }
-    basis: { zh: none, en: lom }
-    arrays: [forms-presentation]
-    match: [{ source: lom, id: "graph", rel: exactMatch }]
-    scope: "图表：数据的图形化呈现"
-    status: unassigned
-    added: 2026-08-23
-  - id: index
-    label: { en: "Index" }
-    basis: { zh: none, en: lom }
-    arrays: [forms-presentation]
-    match: [{ source: lom, id: "index", rel: exactMatch }]
-    scope: "索引：按条目指向位置的查找表"
-    status: unassigned
-    added: 2026-08-23
-  - id: slide
-    label: { en: "Slide" }
-    basis: { zh: none, en: lom }
-    arrays: [forms-presentation]
-    match: [{ source: lom, id: "slide", rel: exactMatch }]
-    scope: "幻灯片式的分页呈现"
-    status: unassigned
-    added: 2026-08-23
-  - id: table
-    label: { en: "Table" }
-    basis: { zh: none, en: lom }
-    arrays: [forms-presentation]
-    match: [{ source: lom, id: "table", rel: exactMatch }]
-    scope: "表：按行列组织的数据"
-    status: unassigned
-    added: 2026-08-23
-  - id: narrative-text
-    label: { en: "Narrative text" }
-    basis: { zh: none, en: lom }
-    arrays: [forms-presentation]
-    match: [{ source: lom, id: "narrative text", rel: exactMatch }]
-    scope: "连续的叙述性正文"
-    status: unassigned
-    added: 2026-08-23
-  - id: exercise
-    label: { en: "Exercise" }
-    basis: { zh: none, en: lom }
-    arrays: [forms-activity]
-    match: [{ source: lom, id: "exercise", rel: exactMatch }]
-    scope: "练习：供读者动手完成的题"
-    status: unassigned
-    added: 2026-08-23
-  - id: simulation
-    label: { en: "Simulation" }
-    basis: { zh: none, en: lom }
-    arrays: [forms-activity]
-    match: [{ source: lom, id: "simulation", rel: exactMatch }]
-    scope: "模拟：可操作的仿真环境"
-    status: unassigned
-    added: 2026-08-23
-  - id: questionnaire
-    label: { en: "Questionnaire" }
-    basis: { zh: none, en: lom }
-    arrays: [forms-activity]
-    match: [{ source: lom, id: "questionnaire", rel: exactMatch }]
-    scope: "问卷：一组供填答的问题"
-    status: unassigned
-    added: 2026-08-23
-  - id: exam
-    label: { en: "Exam" }
-    basis: { zh: none, en: lom }
-    arrays: [forms-activity]
-    match: [{ source: lom, id: "exam", rel: exactMatch }]
-    scope: "考试：有评分的测验"
-    status: unassigned
-    added: 2026-08-23
-  - id: experiment
-    label: { en: "Experiment" }
-    basis: { zh: none, en: lom }
-    arrays: [forms-activity]
-    match: [{ source: lom, id: "experiment", rel: exactMatch }]
-    scope: "实验：按步骤操作并观察结果"
-    status: unassigned
-    added: 2026-08-23
-  - id: problem-statement
-    label: { en: "Problem statement" }
-    basis: { zh: none, en: lom }
-    arrays: [forms-activity]
-    match: [{ source: lom, id: "problem statement", rel: exactMatch }]
-    scope: "问题陈述：只给出问题、不给解法"
-    status: unassigned
-    added: 2026-08-23
-  - id: self-assessment
-    label: { en: "Self assessment" }
-    basis: { zh: none, en: lom }
-    arrays: [forms-activity]
-    match: [{ source: lom, id: "self assessment", rel: exactMatch }]
-    scope: "自测：读者自行评估掌握程度的题"
-    status: unassigned
-    added: 2026-08-23
-  - id: lecture
-    label: { en: "Lecture" }
-    basis: { zh: none, en: lom }
-    arrays: [forms-activity]
-    match: [{ source: lom, id: "lecture", rel: exactMatch }]
-    scope: "讲授：面向听众的讲解"
-    status: unassigned
-    added: 2026-08-23
-  - id: cheat-sheet
-    label: { en: "Cheat sheet" }
-    basis: { zh: none, en: wikidata:Q2309859 }
-    arrays: [forms-presentation]
-    match: [{ source: wikidata, id: "Q2309859", rel: exactMatch }]
-    scope: "速查表：供快速参考的简明笔记集；LOM 无此项，据 Wikidata"
-    status: unassigned
-    added: 2026-08-23
+- id: diagram
+  label:
+    en: Diagram
+    zh: 示意图
+  basis:
+    zh:
+      level: 5
+      model:
+        name: gpt-6-astra
+        date: '2026-09-05'
+        rationale: 指用线条与符号表达结构或过程的图，区别于照片插图类图像及数据关系图表。
+        approval: design/decisions/structured-label-basis.md#批次授权
+    en:
+      level: 1
+      references:
+      - source: lom
+        locator: diagram
+  arrays:
+  - forms-presentation
+  match:
+  - source: lom
+    id: diagram
+    rel: exactMatch
+  scope: 示意图：用线条和符号表示结构或过程
+  status: unassigned
+  added: 2026-08-23
+- id: figure
+  label:
+    en: Figure
+    zh: 图像
+  basis:
+    zh:
+      level: 5
+      model:
+        name: gpt-6-astra
+        date: '2026-09-05'
+        rationale: 按现有范围指照片、插图等非示意性图像；不取数字、人物或笼统的所有附图义，也不并入示意图。
+        approval: design/decisions/structured-label-basis.md#批次授权
+    en:
+      level: 1
+      references:
+      - source: lom
+        locator: figure
+  arrays:
+  - forms-presentation
+  match:
+  - source: lom
+    id: figure
+    rel: exactMatch
+  scope: 图像：照片、插图等非示意性的图
+  status: unassigned
+  added: 2026-08-23
+- id: graph
+  label:
+    en: Graph
+    zh: 图表
+  basis:
+    zh:
+      level: 5
+      model:
+        name: gpt-6-astra
+        date: '2026-09-05'
+        rationale: 按现有范围指数据的图形化表达，区别于行列表格、结构示意图及图论中的图。
+        approval: design/decisions/structured-label-basis.md#批次授权
+    en:
+      level: 1
+      references:
+      - source: lom
+        locator: graph
+  arrays:
+  - forms-presentation
+  match:
+  - source: lom
+    id: graph
+    rel: exactMatch
+  scope: 图表：数据的图形化呈现
+  status: unassigned
+  added: 2026-08-23
+- id: index
+  label:
+    en: Index
+    zh: 索引
+  basis:
+    zh:
+      level: 5
+      model:
+        name: gpt-6-astra
+        date: '2026-09-05'
+        rationale: 指以条目导向内容位置的检索形式，不取指标或数据库索引技术的专门义。
+        approval: design/decisions/structured-label-basis.md#批次授权
+    en:
+      level: 1
+      references:
+      - source: lom
+        locator: index
+  arrays:
+  - forms-presentation
+  match:
+  - source: lom
+    id: index
+    rel: exactMatch
+  scope: 索引：按条目指向位置的查找表
+  status: unassigned
+  added: 2026-08-23
+- id: slide
+  label:
+    en: Slide
+    zh: 幻灯片
+  basis:
+    zh:
+      level: 5
+      model:
+        name: gpt-6-astra
+        date: '2026-09-05'
+        rationale: 指分页展示的演示材料单元，不取滑动动作或显微镜载玻片义。
+        approval: design/decisions/structured-label-basis.md#批次授权
+    en:
+      level: 1
+      references:
+      - source: lom
+        locator: slide
+  arrays:
+  - forms-presentation
+  match:
+  - source: lom
+    id: slide
+    rel: exactMatch
+  scope: 幻灯片式的分页呈现
+  status: unassigned
+  added: 2026-08-23
+- id: table
+  label:
+    en: Table
+    zh: 表格
+  basis:
+    zh:
+      level: 5
+      model:
+        name: gpt-6-astra
+        date: '2026-09-05'
+        rationale: 指按行列组织数据的呈现形式，与图形化数据图表区分。
+        approval: design/decisions/structured-label-basis.md#批次授权
+    en:
+      level: 1
+      references:
+      - source: lom
+        locator: table
+  arrays:
+  - forms-presentation
+  match:
+  - source: lom
+    id: table
+    rel: exactMatch
+  scope: 表：按行列组织的数据
+  status: unassigned
+  added: 2026-08-23
+- id: narrative-text
+  label:
+    en: Narrative text
+    zh: 叙述性文本
+  basis:
+    zh:
+      level: 5
+      model:
+        name: gpt-6-astra
+        date: '2026-09-05'
+        rationale: 指连续展开的叙述正文，不限于文学故事，保留与表格及索引等形式的区别。
+        approval: design/decisions/structured-label-basis.md#批次授权
+    en:
+      level: 1
+      references:
+      - source: lom
+        locator: narrative text
+  arrays:
+  - forms-presentation
+  match:
+  - source: lom
+    id: narrative text
+    rel: exactMatch
+  scope: 连续的叙述性正文
+  status: unassigned
+  added: 2026-08-23
+- id: exercise
+  label:
+    en: Exercise
+    zh: 练习
+  basis:
+    zh:
+      level: 5
+      model:
+        name: gpt-6-astra
+        date: '2026-09-05'
+        rationale: 指供学习者完成的任务或题目，不隐含考试评分或身体锻炼义。
+        approval: design/decisions/structured-label-basis.md#批次授权
+    en:
+      level: 1
+      references:
+      - source: lom
+        locator: exercise
+  arrays:
+  - forms-activity
+  match:
+  - source: lom
+    id: exercise
+    rel: exactMatch
+  scope: 练习：供读者动手完成的题
+  status: unassigned
+  added: 2026-08-23
+- id: simulation
+  label:
+    en: Simulation
+    zh: 仿真
+  basis:
+    zh:
+      level: 5
+      model:
+        name: gpt-6-astra
+        date: '2026-09-05'
+        rationale: 指可操作的模型环境及模拟活动，保留与按步骤实际操作观察的实验形式的区别。
+        approval: design/decisions/structured-label-basis.md#批次授权
+    en:
+      level: 1
+      references:
+      - source: lom
+        locator: simulation
+  arrays:
+  - forms-activity
+  match:
+  - source: lom
+    id: simulation
+    rel: exactMatch
+  scope: 模拟：可操作的仿真环境
+  status: unassigned
+  added: 2026-08-23
+- id: questionnaire
+  label:
+    en: Questionnaire
+    zh: 问卷
+  basis:
+    zh:
+      level: 5
+      model:
+        name: gpt-6-astra
+        date: '2026-09-05'
+        rationale: 指供填答的一组问题，主要用于收集回答，不自动等同于评分考试。
+        approval: design/decisions/structured-label-basis.md#批次授权
+    en:
+      level: 1
+      references:
+      - source: lom
+        locator: questionnaire
+  arrays:
+  - forms-activity
+  match:
+  - source: lom
+    id: questionnaire
+    rel: exactMatch
+  scope: 问卷：一组供填答的问题
+  status: unassigned
+  added: 2026-08-23
+- id: exam
+  label:
+    en: Exam
+    zh: 考试
+  basis:
+    zh:
+      level: 5
+      model:
+        name: gpt-6-astra
+        date: '2026-09-05'
+        rationale: 指有评分的测验活动，与一般练习或收集信息的问卷区分。
+        approval: design/decisions/structured-label-basis.md#批次授权
+    en:
+      level: 1
+      references:
+      - source: lom
+        locator: exam
+  arrays:
+  - forms-activity
+  match:
+  - source: lom
+    id: exam
+    rel: exactMatch
+  scope: 考试：有评分的测验
+  status: unassigned
+  added: 2026-08-23
+- id: experiment
+  label:
+    en: Experiment
+    zh: 实验
+  basis:
+    zh:
+      level: 5
+      model:
+        name: gpt-6-astra
+        date: '2026-09-05'
+        rationale: 指按步骤操作并观察结果的活动，不将所有可操作仿真都合并为实验。
+        approval: design/decisions/structured-label-basis.md#批次授权
+    en:
+      level: 1
+      references:
+      - source: lom
+        locator: experiment
+  arrays:
+  - forms-activity
+  match:
+  - source: lom
+    id: experiment
+    rel: exactMatch
+  scope: 实验：按步骤操作并观察结果
+  status: unassigned
+  added: 2026-08-23
+- id: problem-statement
+  label:
+    en: Problem statement
+    zh: 问题陈述
+  basis:
+    zh:
+      level: 5
+      model:
+        name: gpt-6-astra
+        date: '2026-09-05'
+        rationale: 指给出待解决问题的表述，形式本身不提供解法，也不强加评分要求。
+        approval: design/decisions/structured-label-basis.md#批次授权
+    en:
+      level: 1
+      references:
+      - source: lom
+        locator: problem statement
+  arrays:
+  - forms-activity
+  match:
+  - source: lom
+    id: problem statement
+    rel: exactMatch
+  scope: 问题陈述：只给出问题、不给解法
+  status: unassigned
+  added: 2026-08-23
+- id: self-assessment
+  label:
+    en: Self assessment
+    zh: 自我评估
+  basis:
+    zh:
+      level: 5
+      model:
+        name: gpt-6-astra
+        date: '2026-09-05'
+        rationale: 指学习者自行评价掌握程度的活动，保留自我判断主体，而非由外部组织的考试。
+        approval: design/decisions/structured-label-basis.md#批次授权
+    en:
+      level: 1
+      references:
+      - source: lom
+        locator: self assessment
+  arrays:
+  - forms-activity
+  match:
+  - source: lom
+    id: self assessment
+    rel: exactMatch
+  scope: 自测：读者自行评估掌握程度的题
+  status: unassigned
+  added: 2026-08-23
+- id: lecture
+  label:
+    en: Lecture
+    zh: 讲授
+  basis:
+    zh:
+      level: 5
+      model:
+        name: gpt-6-astra
+        date: '2026-09-05'
+        rationale: 指面向听众讲解的教学活动，形式可承载讲授内容，不限定必须是书面讲义。
+        approval: design/decisions/structured-label-basis.md#批次授权
+    en:
+      level: 1
+      references:
+      - source: lom
+        locator: lecture
+  arrays:
+  - forms-activity
+  match:
+  - source: lom
+    id: lecture
+    rel: exactMatch
+  scope: 讲授：面向听众的讲解
+  status: unassigned
+  added: 2026-08-23
+- id: cheat-sheet
+  label:
+    en: Cheat sheet
+    zh: 速查表
+  basis:
+    zh:
+      level: 5
+      model:
+        name: gpt-6-astra
+        date: '2026-09-05'
+        rationale: 指供快速参考的简明笔记集，按现有范围不取作弊用小抄义，也不要求一定按行列排版。
+        approval: design/decisions/structured-label-basis.md#批次授权
+    en:
+      level: 3
+      references:
+      - source: wikidata
+        locator: Q2309859
+  arrays:
+  - forms-presentation
+  match:
+  - source: wikidata
+    id: Q2309859
+    rel: exactMatch
+  scope: 速查表：供快速参考的简明笔记集；LOM 无此项，据 Wikidata
+  status: unassigned
+  added: 2026-08-23

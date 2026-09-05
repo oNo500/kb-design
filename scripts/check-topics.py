@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """校验 vocab/ 五份词表。规则见 design/topics.md「校验规则」、design/content-model.md。"""
 import yaml, pathlib, sys, re, collections
+from label_basis import validate_basis
+from label_adoptions import load_adoptions
 ROOT = pathlib.Path(__file__).resolve().parent.parent / 'vocab'
 T = yaml.safe_load(open(ROOT/'topics.yaml'))
 E = yaml.safe_load(open(ROOT/'entities.yaml'))
@@ -87,6 +89,7 @@ for e in entities.values():
 
 # basis
 selfcount = collections.Counter(); judged = collections.Counter()
+adoptions = load_adoptions(ROOT.parent)
 for name, coll in [('entities', entities), ('topics', concepts)]:
     for x in coll.values():
         b = x.get('basis') or {}
@@ -94,12 +97,11 @@ for name, coll in [('entities', entities), ('topics', concepts)]:
         for field, val in b.items():
             if field in ('zh','en') and name=='topics':
                 judged[(name,'label.'+field)] += 1
-                if val == 'self':
+                if val == 'self' or isinstance(val, dict) and val.get('legacy') == 'self':
                     selfcount[(name,'label.'+field)] += 1
                     if x.get('status') == 'active': bad.append(f"topics: {x['id']} label.{field} 为自译却 active")
-                has = bool(x['label'].get(field))
-                if val == 'none' and has: bad.append(f"topics: {x['id']} label.{field} basis 为 none 却有标签")
-                if val != 'none' and not has: bad.append(f"topics: {x['id']} label.{field} 无标签但 basis 不是 none")
+                bad.extend(f"topics: {x['id']} basis.{field}: {message}" for message in
+                           validate_basis(val, x['label'].get(field), x, field, sources, adoptions))
                 continue
             vals = val if isinstance(val, list) else [val]
             judged[(name, field)] += 1
@@ -109,6 +111,14 @@ for name, coll in [('entities', entities), ('topics', concepts)]:
                     src = v.split(':')[0]
                     if src not in sources: bad.append(f"{name}: {x['id']} basis 来源未登记 {src}")
             if 'self' in vals and x.get('status') == 'active': bad.append(f"{name}: {x['id']} {field} basis 为 self 却 active")
+
+for name, document in [('forms', F), ('types', Y), ('genres', G)]:
+    for record in document[name]:
+        for language, value in record.get('basis', {}).items():
+            if language in ('zh', 'en'):
+                bad.extend(f"{name}: {record['id']} basis.{language}: {message}" for message in
+                           validate_basis(value, record['label'].get(language), record, language,
+                                          sources, adoptions, collection=name))
 
 # ---------- 指标表（design/maintenance.md）----------
 import datetime

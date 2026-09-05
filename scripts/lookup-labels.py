@@ -23,8 +23,10 @@ T = yaml.safe_load(open(ROOT / 'vocab' / 'topics.yaml'))
 todo = []
 for c in T['concepts']:
     b = c.get('basis', {})
-    if b.get('zh') == 'self' and c['label'].get('en'): todo.append((c['id'], 'zh', c['label']['en'], 'en'))
-    if b.get('en') == 'self' and c['label'].get('zh'): todo.append((c['id'], 'en', c['label']['zh'], 'zh'))
+    def legacy_self(value):
+        return value == 'self' or isinstance(value, dict) and value.get('legacy') == 'self'
+    if legacy_self(b.get('zh')) and c['label'].get('en'): todo.append((c['id'], 'zh', c['label']['en'], 'en'))
+    if legacy_self(b.get('en')) and c['label'].get('zh'): todo.append((c['id'], 'en', c['label']['zh'], 'zh'))
 print(len(todo), '个待查', file=sys.stderr)
 for n, (cid, want, name, have) in enumerate(todo):
     key = f'{cid}.{want}'

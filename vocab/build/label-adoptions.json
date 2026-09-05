@@ -1,0 +1,4618 @@
+{
+  "authorization": "design/decisions/structured-label-basis.md#批次授权",
+  "scope": "仅补全本批缺失中文；保留已有标签、概念身份、状态和关系。",
+  "baseline_sha256": {
+    "topics": "01f17f53cc86529e04e1f25e8d25695500e2ecb936329d28c4c0cb213c5968b3",
+    "forms": "8343b951a7bdf6cf231aa1bac326e92be4ece7d4af3846b9a8acba11a88ac78f"
+  },
+  "records": {
+    "forms/cheat-sheet/zh": {
+      "accept": true,
+      "label": "速查表",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指供快速参考的简明笔记集，按现有范围不取作弊用小抄义，也不要求一定按行列排版。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Cheat sheet",
+        "scope": "速查表：供快速参考的简明笔记集；LOM 无此项，据 Wikidata"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "forms/diagram/zh": {
+      "accept": true,
+      "label": "示意图",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指用线条与符号表达结构或过程的图，区别于照片插图类图像及数据关系图表。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Diagram",
+        "scope": "示意图：用线条和符号表示结构或过程"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "forms/exam/zh": {
+      "accept": true,
+      "label": "考试",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指有评分的测验活动，与一般练习或收集信息的问卷区分。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Exam",
+        "scope": "考试：有评分的测验"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "forms/exercise/zh": {
+      "accept": true,
+      "label": "练习",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指供学习者完成的任务或题目，不隐含考试评分或身体锻炼义。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Exercise",
+        "scope": "练习：供读者动手完成的题"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "forms/experiment/zh": {
+      "accept": true,
+      "label": "实验",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指按步骤操作并观察结果的活动，不将所有可操作仿真都合并为实验。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Experiment",
+        "scope": "实验：按步骤操作并观察结果"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "forms/figure/zh": {
+      "accept": true,
+      "label": "图像",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按现有范围指照片、插图等非示意性图像；不取数字、人物或笼统的所有附图义，也不并入示意图。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Figure",
+        "scope": "图像：照片、插图等非示意性的图"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "forms/graph/zh": {
+      "accept": true,
+      "label": "图表",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按现有范围指数据的图形化表达，区别于行列表格、结构示意图及图论中的图。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Graph",
+        "scope": "图表：数据的图形化呈现"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "forms/index/zh": {
+      "accept": true,
+      "label": "索引",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指以条目导向内容位置的检索形式，不取指标或数据库索引技术的专门义。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Index",
+        "scope": "索引：按条目指向位置的查找表"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "forms/lecture/zh": {
+      "accept": true,
+      "label": "讲授",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指面向听众讲解的教学活动，形式可承载讲授内容，不限定必须是书面讲义。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Lecture",
+        "scope": "讲授：面向听众的讲解"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "forms/narrative-text/zh": {
+      "accept": true,
+      "label": "叙述性文本",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指连续展开的叙述正文，不限于文学故事，保留与表格及索引等形式的区别。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Narrative text",
+        "scope": "连续的叙述性正文"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "forms/problem-statement/zh": {
+      "accept": true,
+      "label": "问题陈述",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指给出待解决问题的表述，形式本身不提供解法，也不强加评分要求。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Problem statement",
+        "scope": "问题陈述：只给出问题、不给解法"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "forms/questionnaire/zh": {
+      "accept": true,
+      "label": "问卷",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指供填答的一组问题，主要用于收集回答，不自动等同于评分考试。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Questionnaire",
+        "scope": "问卷：一组供填答的问题"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "forms/self-assessment/zh": {
+      "accept": true,
+      "label": "自我评估",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指学习者自行评价掌握程度的活动，保留自我判断主体，而非由外部组织的考试。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Self assessment",
+        "scope": "自测：读者自行评估掌握程度的题"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "forms/simulation/zh": {
+      "accept": true,
+      "label": "仿真",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指可操作的模型环境及模拟活动，保留与按步骤实际操作观察的实验形式的区别。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Simulation",
+        "scope": "模拟：可操作的仿真环境"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "forms/slide/zh": {
+      "accept": true,
+      "label": "幻灯片",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指分页展示的演示材料单元，不取滑动动作或显微镜载玻片义。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Slide",
+        "scope": "幻灯片式的分页呈现"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "forms/table/zh": {
+      "accept": true,
+      "label": "表格",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指按行列组织数据的呈现形式，与图形化数据图表区分。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Table",
+        "scope": "表：按行列组织的数据"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/accessibility-and-inclusive-design/zh": {
+      "accept": true,
+      "label": "可访问性与包容性设计",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "可访问性关注不同能力用户能否使用，包容性设计关注更广泛用户差异，保持并列关系。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Accessibility and Inclusive Design",
+        "scope": "可访问性与包容性设计：背景、技术与工具，包容性设计框架，通用设计，包容的投资回报。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/accountability-and-responsibility-in-design/zh": {
+      "accept": true,
+      "label": "设计中的问责与责任",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "问责对应对设计结果作出解释并接受追究，责任对应应承担的义务，保留两者区别。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Accountability and Responsibility in Design",
+        "scope": "设计中的问责与责任：设计的影响，设计方法与方案中的伦理，设计中的需求，价值敏感设计，通过设计说服。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/advanced-file-systems/zh": {
+      "accept": true,
+      "label": "高级文件系统",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "对应深入的文件系统结构与实现，包括日志、分布式和加密文件系统，高级表示内容层次。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Advanced File systems",
+        "scope": "高级文件系统：分区、挂载与虚拟文件系统，深入实现技术，内存映射文件，专用文件系统，命名、查找、访问与备份，日志与日志结构文件系统，分布式与加密文件系统。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/advanced-programming-constructs/zh": {
+      "accept": true,
+      "label": "高级程序设计构造",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指封装、求值与控制抽象等语言构造，不将高级理解为高性能或高级职级。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Advanced Programming Constructs",
+        "scope": "高级程序设计构造：封装机制，延迟求值与无限流，延迟与及早求值的对比，合一、断言与表达式求值，异常处理、continuation、monad 等控制抽象。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/agents-and-cognitive-systems/zh": {
+      "accept": true,
+      "label": "智能体与认知系统",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "智能体对应可感知、行动或作决策的人工智能实体，涵盖软件及多智能体，不指人类代理商。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Agents and Cognitive Systems",
+        "scope": "agent 与认知系统：agent 体系结构与理论，理性与博弈论，软件 agent，学习 agent，多 agent 系统，人与 agent 的交互。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/ai-attack-staging/zh": {
+      "accept": true,
+      "label": "AI 攻击准备",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指利用已掌握的目标知识和访问定制攻击，如构造对抗样本，区别于通用资源准备。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "AI Attack Staging",
+        "scope": "ATLAS 战术。对手利用对目标系统的了解与访问来定制攻击，例如构造对抗样本。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/ai-model-access/zh": {
+      "accept": true,
+      "label": "AI 模型访问",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指对模型取得可供后续技术使用的某种访问能力，不等同于访问模型所在主机。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "AI Model Access",
+        "scope": "ATLAS 战术。对手取得对 AI 模型某种程度的访问，为后续技术所用。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/algorithmic-foundations/zh": {
+      "accept": true,
+      "label": "算法基础",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "涵盖数据结构、算法策略、复杂度与计算模型，基础限定整个算法知识领域。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Algorithmic Foundations",
+        "scope": "CS2023 知识领域。算法基础：数据结构与算法、算法策略、复杂度、计算模型与形式语言。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/algorithmic-strategies/zh": {
+      "accept": true,
+      "label": "算法策略",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指分治、动态规划、贪心和回溯等求解策略，保持其高于具体算法实现的范围。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Algorithmic Strategies",
+        "scope": "算法策略：分治、动态规划、贪心等范式，指数增长的处理（启发式、分支限界、回溯），迭代与递归，量子计算初步。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/algorithms-software-development-fundamentals/zh": {
+      "accept": true,
+      "label": "算法",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按软件开发基础归属理解常见算法及效率入门，保留原名并由范围区分并行与分布式算法。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Algorithms",
+        "scope": "算法入门：算法与效率的概念，排序、查找、树与图遍历等常见算法，算法对程序时空效率的影响。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/algorithms/zh": {
+      "accept": true,
+      "label": "并行与分布式算法",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "依据归属补足泛称，覆盖多核、集群、云等环境中的算法表达与实现。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Algorithms",
+        "scope": "并行与分布式算法：在给定语言与框架中表达和实现算法；概览算法在多核、响应式、数据并行、集群、云和开放式分布系统等系统或执行环境中的应用；典型类别包括线性代数、数据处理、图与搜索、建模与仿真。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/api-and-web-service/zh": {
+      "accept": true,
+      "label": "API 与 Web 服务",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留 API 的通行缩写，并保留 Web 服务这一并列对象，范围为接口暴露涉及的安全要求。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "API and Web Service",
+        "scope": "ASVS 5.0 第 4 章。面向浏览器或其他消费者暴露 API（JSON、XML、GraphQL）的应用所需的安全配置与机制。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/application-layer/zh": {
+      "accept": true,
+      "label": "应用层",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "对应互联网协议族最高层及其用户和支持协议，保留其与 OSI 分层的范围差异。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Application Layer",
+        "scope": "RFC 1122 §1.1.3。互联网协议族的最高层，合并了 OSI 表示层与应用层的功能；分用户协议（Telnet、FTP、SMTP）与支持协议（SNMP、BOOTP、DNS）。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/applications-and-societal-impact/zh": {
+      "accept": true,
+      "label": "应用与社会影响",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "同时保留人工智能应用案例和部署后的社会影响，不将后者缩为技术性能。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Applications and Societal Impact",
+        "scope": "人工智能的应用与社会影响：至少选择一个针对具体问题、用于某一具体情境的人工智能应用案例，将该应用表述为人工智能问题并加以评价；另包括已部署的深度生成模型，以及公平、信任、可解释性、人的监督与法规。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/applied-rendering-and-techniques/zh": {
+      "accept": true,
+      "label": "渲染应用与技术",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "对应渲染的应用和相关技术，范围包括场景、相机、投影与光照，不将 applied 解释成独立应用软件。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Applied Rendering and Techniques",
+        "scope": "应用渲染与技术：物体与场景建模，相机与投影建模，辐射度量与光照模型，渲染。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/architecture-and-organization/zh": {
+      "accept": true,
+      "label": "体系结构与组织",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "同时保留计算机体系结构与机器组织两个方面，范围涵盖指令、存储和硬件实现。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Architecture and Organization",
+        "scope": "CS2023 知识领域。体系结构与组织：数字逻辑、数据表示、汇编级组织、存储层次、I/O、流水线与并行、性能与能效、异构、安全与量子体系结构。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/aspect-oriented-programming/zh": {
+      "accept": true,
+      "label": "面向切面程序设计",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "切面对应横切关注点及连接点、切点、通知和织入机制，不指一般几何方面。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Aspect-Oriented Programming",
+        "scope": "面向方面程序设计：方面、连接点、通知、切点，静态与动态织入，注解等替代方案。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/assembly-level-machine-organization/zh": {
+      "accept": true,
+      "label": "汇编级机器组织",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "以汇编可见的指令与执行结构理解机器组织，涵盖控制单元、指令周期和指令集。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Assembly Level Machine Organization",
+        "scope": "汇编级机器组织：冯·诺伊曼结构，控制单元与指令周期，SIMD 与 MIMD，共享内存多处理器与多核，指令集体系结构。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/authentication/zh": {
+      "accept": true,
+      "label": "身份认证",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指确认个人或设备的身份真实性，与决定其访问权限的授权区分。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Authentication",
+        "scope": "ASVS 5.0 第 6 章。认证：确认个人或设备的真实性，抵抗冒充，防止口令被恢复或截获；多数要求基于 NIST SP 800-63B。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/authorization/zh": {
+      "accept": true,
+      "label": "授权",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "对应向获准主体授予访问及最小特权控制，与身份认证区分。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Authorization",
+        "scope": "ASVS 5.0 第 8 章。授权：只向获准的消费者授予访问，落实最小特权原则，记录授权规则。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/basic-concepts/zh": {
+      "accept": true,
+      "label": "基本概念",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按系统基础归属理解数字与模拟、状态、时序及逻辑门等概念，保留泛称的原有范围。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Basic Concepts",
+        "scope": "系统基础的基本概念：数字与模拟、离散与连续系统，逻辑门与布尔化简，时钟、状态与时序，状态转移，有限状态机，组合逻辑。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/code-generation/zh": {
+      "accept": true,
+      "label": "代码生成",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "在编译语境中指由程序表示生成目标代码，涵盖指令选择、调度及寄存器分配。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Code Generation",
+        "scope": "代码生成：指令集，控制流，内存管理，过程调用与方法分派，分别编译与链接，指令选择与调度，寄存器分配，作为程序分析的代码优化。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/collection-artificial-intelligence/zh": {
+      "accept": true,
+      "label": "收集",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指汇集 AI 制品与目标相关信息，区别于将其窃取传出环境。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Collection",
+        "scope": "ATLAS 战术。对手收集 AI 制品及与其目标相关的信息。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/collection/zh": {
+      "accept": true,
+      "label": "收集",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指汇集与攻击目标相关的数据；数据尚未必传出受害环境。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Collection",
+        "scope": "ATT&CK 战术。对手收集与其目标相关的数据。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/command-and-control-artificial-intelligence/zh": {
+      "accept": true,
+      "label": "命令与控制",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指对手与受控 AI 系统通信并控制系统，不将正常提示交互自动归为攻击。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Command and Control",
+        "scope": "ATLAS 战术。对手与受控 AI 系统通信以控制它们。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/command-and-control/zh": {
+      "accept": true,
+      "label": "命令与控制",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指攻击者与受控系统通信并下达控制指令，不指组织指挥管理。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Command and Control",
+        "scope": "ATT&CK 战术。对手与受控系统通信以控制它们。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/common-aspects-shared-concerns/zh": {
+      "accept": true,
+      "label": "共同方面与共同关注点",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指各专用平台共有的约束、语言和开发问题，保留原名斜线两侧的近义表达。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Common Aspects/Shared Concerns",
+        "scope": "专用平台开发的共同方面：Web、移动、游戏、机器人、嵌入式与交互平台概览，基于平台 API 的程序设计与传统程序设计的对比，平台语言概览，平台约束下的程序设计。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/communication-society-ethics-and-the-profession/zh": {
+      "accept": true,
+      "label": "沟通",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指团队、客户和公众之间的口头、书面及技术沟通，与机器间通信区分。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Communication",
+        "scope": "沟通：团队与群体的口头、书面与电子沟通，源代码、文档、教程、参考资料等技术沟通材料，与客户、领导层、公众等利益相关方沟通，团队协作工具。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/communication/zh": {
+      "accept": true,
+      "label": "通信",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指并行和分布式执行实体之间的信息传递，与职业领域的人际沟通区分。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Communication",
+        "scope": "并行与分布式通信：介质，信道，内存，数据存储，相关性质与扩展。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/compiler-semantic-analysis/zh": {
+      "accept": true,
+      "label": "编译器语义分析",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指编译器对作用域、绑定和静态语义等的分析，与语法结构分析区分。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Compiler Semantic Analysis",
+        "scope": "编译器语义分析：抽象语法树与具体语法的对比，高层程序表示的定义、遍历与修改，作用域与绑定，静态语义，左值与右值，调用与参数传递语义。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/complexity/zh": {
+      "accept": true,
+      "label": "复杂度",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "在算法分析语境中指时间、空间及可解性问题，不指一般事物的复杂程度。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Complexity",
+        "scope": "复杂度：渐近分析，经验性能测量，可解与不可解，时空权衡，小 o 等记号，递归分析。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/computational-models-and-formal-languages/zh": {
+      "accept": true,
+      "label": "计算模型与形式语言",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "对应自动机、文法、可判定性和计算能力的形式研究，不指自然语言文体。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Computational Models and Formal Languages",
+        "scope": "计算模型与形式语言：自动机，形式语言与文法，乔姆斯基层次，可判定性与停机问题，丘奇–图灵论题，算法正确性。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/computer-animation/zh": {
+      "accept": true,
+      "label": "计算机动画",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指用计算机生成随时间变化的运动表现，涵盖关键帧、运动学和动作捕捉。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Computer Animation",
+        "scope": "计算机动画：动画原则，动画类型，关键帧动画，正向与逆向运动学，蒙皮算法，动作捕捉。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/computing-foundations/zh": {
+      "accept": true,
+      "label": "计算基础",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指软件工程所需的计算机科学基础，不取基础算术或日常计算机操作之义。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Computing Foundations",
+        "scope": "SWEBOK v4 第 16 章。计算基础：软件工程师区别于程序员所需掌握的计算机科学基础。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/computing-history/zh": {
+      "accept": true,
+      "label": "计算史",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "涵盖计算硬件、软件、人和组织的发展，也包含前数字时代，不限于现代计算机产品史。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Computing History",
+        "scope": "计算史：硬件、软件与人和组织的历史，历史在当下的作用，前数字时代的模拟计算到各个时代的发展。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/concurrency/zh": {
+      "accept": true,
+      "label": "并发",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指线程和进程执行的交错及同步问题，不把并发等同于必须同时执行的并行。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Concurrency",
+        "scope": "并发：线程抽象，竞态条件与临界区，死锁与饥饿，自旋锁与可重入等多处理器问题，多进程并发与多线程的对比，线程的创建、状态与 API。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/configuration/zh": {
+      "accept": true,
+      "label": "配置",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指应用开发、构建和部署中的配置安全要求，不扩大为组织配置管理过程。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Configuration",
+        "scope": "ASVS 5.0 第 13 章。配置：默认配置在互联网上即安全，覆盖开发、构建与部署，防数据泄漏、组件间安全通信、保护机密。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/coordination/zh": {
+      "accept": true,
+      "label": "协调",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指并行和分布式活动间的依赖、控制和原子性协调，不指团队行政协调。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Coordination",
+        "scope": "并行与分布式协调：依赖，控制构造与设计模式，原子性，相关性质与扩展。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/core-database-system-concepts/zh": {
+      "accept": true,
+      "label": "数据库系统核心概念",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指数据库系统目的、组成、核心功能与数据独立性等概念，保留系统层范围。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Core Database System Concepts",
+        "scope": "数据库系统核心概念：数据库系统的目的与组成，DBMS 核心功能设计，体系结构与数据独立性，事务管理，规范化。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/credential-access-artificial-intelligence/zh": {
+      "accept": true,
+      "label": "凭据访问",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指窃取可用于 AI 环境的账户名、口令等凭据，不是模型训练数据访问。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Credential Access",
+        "scope": "ATLAS 战术。对手窃取账户名和口令等凭据。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/credential-access/zh": {
+      "accept": true,
+      "label": "凭据访问",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按攻击战术理解为取得账户名、口令等凭据，不表示合法用户读取自己的凭据。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Credential Access",
+        "scope": "ATT&CK 战术。对手窃取账户名和口令等凭据。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/data-analytics/zh": {
+      "accept": true,
+      "label": "数据分析",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指探索性分析及分类、聚类等数据分析过程，与数据存储管理区分。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Data Analytics",
+        "scope": "数据分析：探索性数据技术，数据科学生命周期，数据挖掘与机器学习算法（分类、聚类、关联等）。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/data-modeling/zh": {
+      "accept": true,
+      "label": "数据建模",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指以关系、概念和半结构化等模型描述数据及其关系，不限于物理存储设计。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Data Modeling",
+        "scope": "数据建模：关系模型，概念模型（实体–关系、UML），半结构化模型（DTD、XML、JSON Schema），电子表格与面向对象模型。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/data-protection/zh": {
+      "accept": true,
+      "label": "数据保护",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "包含需保护数据的界定和访问保护，不限于个人信息或静态加密。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Data Protection",
+        "scope": "ASVS 5.0 第 14 章。数据保护：界定需保护的数据、如何保护，以及客户端设备上限制未授权访问敏感数据的控制。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/data-security-and-privacy/zh": {
+      "accept": true,
+      "label": "数据安全与隐私",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "分别保留攻击防护和个人信息使用保护，二者相关但不是同一属性。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Data Security and Privacy",
+        "scope": "数据安全与隐私：安全与隐私的区别，防注入等攻击，个人可识别信息的保护，伦理考量。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/dbms-internals/zh": {
+      "accept": true,
+      "label": "数据库管理系统内部机制",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "内部机制对应缓冲、事务、并发控制与恢复，展开 DBMS 但不扩充概念范围。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "DBMS Internals",
+        "scope": "DBMS 内部：缓冲区管理，事务管理，并发控制，恢复管理。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/defense-evasion/zh": {
+      "accept": true,
+      "label": "防御规避",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指避开 AI 赋能安全软件的检测，不等同于破坏防御机制或一般模型性能退化。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Defense Evasion",
+        "scope": "ATLAS 战术。对手避开 AI 赋能的安全软件的检测。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/defense-impairment/zh": {
+      "accept": true,
+      "label": "防御削弱",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指削弱、禁用或破坏防御机制及其可信性，区别于仅隐藏攻击活动。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Defense Impairment",
+        "scope": "ATT&CK 战术。对手削弱、禁用或破坏安全机制、流水线与工具，使防守方看不到或无法信任所发生的事。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/design-principles-of-programming-languages/zh": {
+      "accept": true,
+      "label": "程序设计语言的设计原则",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指语言自身的设计准则及互操作、可移植性等要求，与用语言设计应用区分。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Design Principles of Programming Languages",
+        "scope": "程序设计语言的设计原则：语言设计原则，面向特定领域或问题的语言设计，语言间互操作，可移植性，语言的形式描述，绿色计算原则。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/device-management/zh": {
+      "accept": true,
+      "label": "设备管理",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指操作系统对输入输出设备、接口与驱动的管理，不指办公设备台账。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Device management",
+        "scope": "设备管理：缓冲策略，DMA、轮询与内存映射 I/O，持久存储设备管理，设备接口抽象与硬件抽象层，设备驱动。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/digital-logic-and-digital-systems/zh": {
+      "accept": true,
+      "label": "数字逻辑与数字系统",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "数字对应离散逻辑电路，涵盖组合与时序逻辑及数字硬件系统。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Digital Logic and Digital Systems",
+        "scope": "数字逻辑与数字系统：组合与时序逻辑，FPGA，硬件描述的计算机辅助设计工具，高层综合，片上系统设计流程，物理约束。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/discovery-artificial-intelligence/zh": {
+      "accept": true,
+      "label": "发现",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指了解目标 AI 环境内部情况，与行动规划阶段的侦察区分。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Discovery",
+        "scope": "ATLAS 战术。对手了解目标 AI 环境的情况。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/discovery/zh": {
+      "accept": true,
+      "label": "发现",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指攻击者探知目标系统和内部网络环境，区别于为行动规划开展的侦察。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Discovery",
+        "scope": "ATT&CK 战术。对手了解目标系统与内部网络的情况。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/distributed-databases-cloud-computing/zh": {
+      "accept": true,
+      "label": "分布式数据库与云计算",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留原名并列的数据库与云计算两部分，既有范围以分布式和并行数据库为主。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Distributed Databases/Cloud Computing",
+        "scope": "分布式数据库与云计算：分布式 DBMS，并行 DBMS。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/diversity-equity-inclusion-and-accessibility/zh": {
+      "accept": true,
+      "label": "多样性、公平、包容与可访问性",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "逐项保留差异、公平条件、参与包容和可使用性，不将 equity 误作财务股权。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Diversity, Equity, Inclusion, and Accessibility",
+        "scope": "多样性、公平、包容与可访问性：身份与计算技术和环境的相互影响，多样化开发团队的益处，包容性语言与带有倾向的术语，包容性设计。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/economies-of-computing/zh": {
+      "accept": true,
+      "label": "计算经济",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指计算领域的市场、定价、资源获取和劳动力等经济形态，不指节约运算量或仅算法效率。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Economies of Computing",
+        "scope": "计算经济：受管制与不受管制、垄断、网络效应、开放市场等经济模型，计划报废、订阅、免费增值等定价与部署策略，计算资源获取差异与技能劳动力供给的影响。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/embedded-platforms/zh": {
+      "accept": true,
+      "label": "嵌入式平台",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指面向嵌入式设备的开发环境及实时、资源和安全约束，不仅是硬件板卡。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Embedded Platforms",
+        "scope": "嵌入式平台：嵌入式系统的独特特征，定制体系结构的 API，嵌入式程序设计，硬实时与软实时，实时资源管理，内存管理，安全性考量与分析。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/emerging-topics/zh": {
+      "accept": true,
+      "label": "新兴主题",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按网络领域理解新出现或发展的主题，保留开放主题集合的原名而不固化其成员。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Emerging Topics",
+        "scope": "网络的新兴主题：中间盒，网络虚拟化（SDN、数据中心网络），量子网络，卫星、毫米波与可见光通信。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/encoding-and-sanitization/zh": {
+      "accept": true,
+      "label": "编码与净化",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "编码指面向输出上下文的安全编码；净化指处理不可信数据中的危险内容，保留两类措施的区别。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Encoding and Sanitization",
+        "scope": "ASVS 5.0 第 1 章。不可信数据处理不当导致的弱点：输出编码、转义与净化，优先用参数化查询、自动转义等更安全的 API。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/engineering-foundations/zh": {
+      "accept": true,
+      "label": "工程基础",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指软件工程适用的一般工程原理、统计度量与根因分析等，不限于软件实现技巧。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Engineering Foundations",
+        "scope": "SWEBOK v4 第 18 章。工程基础：适用于软件工程的一般工程原理、统计与度量、根因分析等。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/evaluating-the-design/zh": {
+      "accept": true,
+      "label": "设计评估",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指对设计开展用户研究、定量分析与影响评价，不仅指评定视觉美观。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Evaluating the Design",
+        "scope": "设计的评估：有用户参与的评估方法，研究规划，设计对环境、材料、社会与安全的影响，定量分析的技术与工具，数据管理。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/evaluation/zh": {
+      "accept": true,
+      "label": "评估",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按并行与分布式领域理解正确性要求和性能的评估，不限于运行速度。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Evaluation",
+        "scope": "并行与分布式的评估：用时序逻辑表达安全性与活性要求，违规的识别、测试与修复，吞吐、响应、延迟、可用性等性能度量。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/event-driven-and-reactive-programming/zh": {
+      "accept": true,
+      "label": "事件驱动与响应式程序设计",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "分别对应事件触发处理与随输入变化作出响应的程序设计方式，不把两个范式合并成单一名称。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Event-Driven and Reactive Programming",
+        "scope": "事件驱动与响应式程序设计：过程式与响应式的对比，事件源、信号、监听器与分发器，无状态与状态转移模型。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/execution-artificial-intelligence/zh": {
+      "accept": true,
+      "label": "执行",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指运行嵌入 AI 制品或软件中的恶意代码，不将正常模型推理本身视为此战术。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Execution",
+        "scope": "ATLAS 战术。对手运行嵌在 AI 制品或软件中的恶意代码。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/execution/zh": {
+      "accept": true,
+      "label": "执行",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "限定对手在本地或远程系统运行受其控制的恶意代码，不指计划执行。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Execution",
+        "scope": "ATT&CK 战术。对手在本地或远程系统上运行受其控制的恶意代码。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/exfiltration-artificial-intelligence/zh": {
+      "accept": true,
+      "label": "数据外传",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指窃取传出 AI 制品或系统信息，范围不局限于训练数据。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Exfiltration",
+        "scope": "ATLAS 战术。对手窃取 AI 制品或关于 AI 系统的其他信息。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/exfiltration/zh": {
+      "accept": true,
+      "label": "数据外传",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指攻击者将目标数据从受害网络窃取传出，与环境内的数据收集区分。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Exfiltration",
+        "scope": "ATT&CK 战术。对手从网络中窃取数据。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/fault-tolerance/zh": {
+      "accept": true,
+      "label": "容错",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指系统在故障条件下保持可用或正确服务的能力及冗余、检测和纠错机制。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Fault tolerance",
+        "scope": "容错：可靠与可用系统，软硬件容错途径（RAID），空间与时间冗余，容错的实现方法，错误识别与纠正机制，文件系统的一致性。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/file-handling/zh": {
+      "accept": true,
+      "label": "文件处理",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "涵盖文件接收、访问、存储和使用中的处理活动，不缩小为文件上传。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "File Handling",
+        "scope": "ASVS 5.0 第 5 章。文件使用带来的拒绝服务、未授权访问、存储耗尽等风险及其应对要求。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/file-systems-api-and-implementation/zh": {
+      "accept": true,
+      "label": "文件系统接口与实现",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "API 对应程序调用接口，保留接口及内部文件组织实现两部分，不仅指文件格式。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "File Systems API and Implementation",
+        "scope": "文件系统的 API 与实现：文件的概念（数据、元数据、操作、访问模式），挂载，访问控制，文件共享，文件分配方法与文件系统结构。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/formal-development-methodologies/zh": {
+      "accept": true,
+      "label": "形式化开发方法",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指使用形式规约、证明和验证进行开发的方法，形式化不表示仅遵循文档格式。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Formal Development Methodologies",
+        "scope": "形式开发方法：形式规约语言与方法，定理证明器、证明助手与逻辑，约束检查器，依赖类型，完全验证的规约与证明。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/formal-semantics/zh": {
+      "accept": true,
+      "label": "形式语义",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指用数学或逻辑形式规定程序含义，涵盖操作、指称和公理等方法。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Formal Semantics",
+        "scope": "形式语义：语法与语义的区别，公理、操作、指称、基于类型的语义途径，用前后条件给赋值、选择、迭代等抽象构造的公理语义与操作语义。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/foundational-data-structures-and-algorithms/zh": {
+      "accept": true,
+      "label": "基础数据结构与算法",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "基础同时修饰数据结构和算法，包含常用结构、查找与排序。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Foundational Data Structures and Algorithms",
+        "scope": "基础数据结构与算法：抽象数据类型，数组、链表、栈、队列、散列表、图、树、集合，查找与排序算法。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/foundational-security/zh": {
+      "accept": true,
+      "label": "安全基础",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指贯穿计算安全的基本属性、概念与思维，和安全总领域的完整范围区分。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Foundational Security",
+        "scope": "安全基础：保密性、完整性、可用性等贯穿概念与安全思维，认证与授权的基本概念，脆弱性、威胁、攻击面与攻击向量，拒绝服务。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/foundations-of-programming-languages/zh": {
+      "accept": true,
+      "label": "程序设计语言基础",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "涵盖语言范式、类型、语义与实现的共同基础，不限于某门语言的入门语法。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Foundations of Programming Languages",
+        "scope": "CS2023 知识领域。程序设计语言基础：各范式（面向对象、函数式、逻辑、脚本、事件驱动、并行）、类型系统、语言翻译与执行、语法与语义分析、程序分析、形式语义与语言设计。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/functional-organization/zh": {
+      "accept": true,
+      "label": "功能组织",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指数据通路、控制单元和流水线如何组织以实现处理器功能，不是机构职能划分。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Functional Organization",
+        "scope": "功能组织：数据通路实现，控制单元，指令流水线与冒险检测，指令级并行初步。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/functional-programming/zh": {
+      "accept": true,
+      "label": "函数式程序设计",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "对应函数、不可变或无副作用计算、高阶函数与闭包的程序设计范式。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Functional Programming",
+        "scope": "函数式程序设计：λ 表达式与求值，无副作用程序设计，按数据变体分情形处理结构化数据，高阶函数，元程序设计与反射，闭包。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/fundamental-concepts/zh": {
+      "accept": true,
+      "label": "基本概念",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按图形学与互动技术归属理解，涵盖视觉、颜色和图形输出；领域限定仍由归属与范围承担。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Fundamental Concepts",
+        "scope": "图形学与交互技术的基本概念：用途与潜在风险，图形输出，人的视觉系统，标准图像格式，模拟数据的数字化，RGB、CMYK、HSV 颜色模型。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/fundamental-data-structures/zh": {
+      "accept": true,
+      "label": "基础数据结构",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指列表、栈、队列、集合等常用结构及其选择，不合并为数据结构与算法知识单元。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Fundamental Data Structures",
+        "scope": "基础数据结构：列表、栈、队列、集合、映射等标准抽象数据类型，数据结构的选择与性能影响，字符串处理。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/fundamental-issues/zh": {
+      "accept": true,
+      "label": "基本问题",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "在人工智能领域指智能行为、智能体与问题特征等根本问题，不等同于所有基础技术。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Fundamental Issues",
+        "scope": "人工智能的基本问题：什么是智能行为、agent 的定义与种类、问题的特征、AI 应用的概况与影响。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/fundamental-knowledge-representation-and-reasoning/zh": {
+      "accept": true,
+      "label": "知识表示与推理基础",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "基础覆盖知识表示及推理两方面，范围含贝叶斯推理、概率与决策。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Fundamental Knowledge Representation and Reasoning",
+        "scope": "知识表示与推理的基础：表示的种类，贝叶斯推理，随机变量与分布，独立与条件独立，马尔可夫链，效用与决策。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/fundamental-programming-concepts-and-practices/zh": {
+      "accept": true,
+      "label": "程序设计基本概念与实践",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "基本同时限定概念与实践，涵盖变量、状态、表达式与基本控制构造。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Fundamental Programming Concepts and Practices",
+        "scope": "程序设计的基本概念与实践：变量、基本数据类型、表达式与求值，命令式程序的状态与状态转移，赋值、条件与迭代等基本构造。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/fundamentals/zh": {
+      "accept": true,
+      "label": "网络基础",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "以网络归属补足泛称，涵盖互联网组织、交换与分层等基础内容。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Fundamentals",
+        "scope": "网络基础：网络在当代计算中的重要性，互联网的组织（用户、ISP、自治系统、内容提供者），电路与分组交换，分层及各层的作用。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/game-platforms/zh": {
+      "accept": true,
+      "label": "游戏平台",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指游戏开发运行环境、引擎与工具，按既有范围不只理解为游戏分发商店。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Game Platforms",
+        "scope": "游戏平台：游戏平台的历史与现状，实时仿真与渲染系统，游戏开发工具与技术，游戏引擎，游戏设计。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/geometric-modeling/zh": {
+      "accept": true,
+      "label": "几何建模",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指以几何表示构造、处理和重建形状，涵盖曲面、体与多分辨率表示。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Geometric Modeling",
+        "scope": "几何建模：二维物体的相交计算与邻近测试等基本几何运算，曲面、体、过程式表示，多分辨率建模，三维扫描与摄影测量等重建。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/graphics-and-interactive-techniques/zh": {
+      "accept": true,
+      "label": "图形学与互动技术",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "图形学对应建模与渲染，互动技术对应交互、沉浸与物理计算，复用同 ID 试译形式。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Graphics and Interactive Techniques",
+        "scope": "CS2023 知识领域。图形学与交互技术：可视化、渲染、几何建模、着色、动画、仿真、沉浸、交互、图像处理、物理计算。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/heterogeneous-architectures/zh": {
+      "accept": true,
+      "label": "异构体系结构",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指不同计算与存储部件组合的体系结构，涵盖 GPU、专用加速器与异构存储。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Heterogeneous Architectures",
+        "scope": "异构体系结构：SIMD 与 MIMD（GPGPU、TPU、NPU），异构存储，Domain-Specific Architectures (DSAs) 及其代表性实现（机器学习加速器、网络内计算、面向新兴应用的嵌入式系统、神经形态计算和边缘计算设备），3DIC 与 chiplet 封装，机器学习在体系结构设计中的应用。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/human-computer-interaction/zh": {
+      "accept": true,
+      "label": "人机交互",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指用户与计算系统的交互及其设计和评估，保留人的需求与系统两侧。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Human-Computer Interaction",
+        "scope": "CS2023 知识领域。人机交互：理解用户、设计中的责任、可访问性与包容性设计、设计评估、系统设计。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/image-processing/zh": {
+      "accept": true,
+      "label": "图像处理",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指对图像进行增强、复原、编码和形态学等处理，不等同于完整计算机视觉任务。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Image Processing",
+        "scope": "图像处理：形态学运算，颜色直方图，图像增强与复原，图像编码，与卷积神经网络等深度学习的联系。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/immersion/zh": {
+      "accept": true,
+      "label": "沉浸",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指虚拟、增强和混合现实等技术提供的沉浸程度，与主观临场感保持区别。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Immersion",
+        "scope": "沉浸：VR、AR、MR 等沉浸级别，沉浸与临场感的区别，360 视频，立体显示，观察者追踪，面向动作到光子延迟的时间关键渲染。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/impact-artificial-intelligence/zh": {
+      "accept": true,
+      "label": "影响",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按攻击战术理解为操纵、中断、破坏或削弱对 AI 系统和数据的信任。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Impact",
+        "scope": "ATLAS 战术。对手操纵、中断、削弱对 AI 系统与数据的信任或将其破坏。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/impact/zh": {
+      "accept": true,
+      "label": "影响",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按战术语境指操纵、中断或破坏系统与数据的攻击目标，不是一般影响力或风险度量。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Impact",
+        "scope": "ATT&CK 战术。对手操纵、中断或破坏系统与数据，损害可用性或完整性。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/improper-access-control/zh": {
+      "accept": true,
+      "label": "访问控制不当",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "包含未实施和错误实施访问限制两种情况，不仅指权限设置过宽。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Improper Access Control",
+        "scope": "CWE pillar。产品未限制或错误限制未授权主体对资源的访问。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/improper-adherence-to-coding-standards/zh": {
+      "accept": true,
+      "label": "编码规范遵循不当",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指未按适用编码规则开发而引入或加重弱点，不是对规范本身质量的判断。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Improper Adherence to Coding Standards",
+        "scope": "CWE pillar。产品未遵循特定的开发编码规则，导致衍生弱点或加重相关漏洞。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/improper-check-or-handling-of-exceptional-conditions/zh": {
+      "accept": true,
+      "label": "异常状况检查或处理不当",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留检查与处理两方面；异常状况不限于编程语言抛出的异常对象。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Improper Check or Handling of Exceptional Conditions",
+        "scope": "CWE pillar。产品未正确预见或处理正常运行中罕见的异常状况。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/improper-control-of-a-resource-through-its-lifetime/zh": {
+      "accept": true,
+      "label": "资源生命周期控制不当",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "涵盖资源创建、使用和释放全过程的控制缺失或错误，不缩小为资源泄漏。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Improper Control of a Resource Through its Lifetime",
+        "scope": "CWE pillar。产品在资源创建、使用、释放的整个生命周期内未保持或错误保持对资源的控制。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/improper-interaction-between-multiple-correctly-behaving-entities/zh": {
+      "accept": true,
+      "label": "多个行为正确实体间的交互不当",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留实体各自行为正确这一条件，弱点产生于实体集成后的交互而非单个实体内部。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Improper Interaction Between Multiple Correctly-Behaving Entities",
+        "scope": "CWE pillar。两个各自行为正确的实体集成到更大系统或过程后产生错误行为的交互错误。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/improper-neutralization/zh": {
+      "accept": true,
+      "label": "中和处理不当",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "中和指使结构化数据中的危险内容不再产生非预期解释，包含相关编码、转义等处理而不限于删除。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Improper Neutralization",
+        "scope": "CWE pillar。产品在从上游读取或向下游发送结构化消息或数据前，未确保其格式良好且满足特定安全性质。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/incorrect-calculation/zh": {
+      "accept": true,
+      "label": "计算错误",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指运算结果错误或非预期，并可能影响安全决策和资源管理。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Incorrect Calculation",
+        "scope": "CWE pillar。产品的计算产生错误或非预期结果，后续用于安全关键决策或资源管理。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/incorrect-comparison/zh": {
+      "accept": true,
+      "label": "比较错误",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指安全相关语境中对实体的比较不正确，与一般数值计算错误区分。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Incorrect Comparison",
+        "scope": "CWE pillar。产品在安全相关语境下比较两个实体，但比较不正确。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/initial-access-artificial-intelligence/zh": {
+      "accept": true,
+      "label": "初始访问",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指取得 AI 系统所在环境的初始访问，与直接取得模型访问能力区分。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Initial Access",
+        "scope": "ATLAS 战术。对手取得对 AI 系统（网络、移动设备、边缘设备等）的访问。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/initial-access/zh": {
+      "accept": true,
+      "label": "初始访问",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指通过入口向量首次取得目标网络立足点，不表示已提升权限。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Initial Access",
+        "scope": "ATT&CK 战术。对手利用各种入口向量在网络中取得初始立足点。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/insufficient-control-flow-management/zh": {
+      "accept": true,
+      "label": "控制流管理不足",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指代码执行路径缺乏充分约束而可被非预期改变，不指业务流程管理。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Insufficient Control Flow Management",
+        "scope": "CWE pillar。代码在执行中未充分管理控制流，使控制流可被以非预期方式改变。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/intellectual-property/zh": {
+      "accept": true,
+      "label": "知识产权",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指智力成果相关权利与许可、作者身份等议题，不将其缩成版权一种权利。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Intellectual Property",
+        "scope": "知识产权：知识产权权利，无形数字知识产权，保护的法律基础，MIT、GPL、Apache、Mozilla、Creative Commons 等常见许可证，抄袭与作者身份。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/interaction/zh": {
+      "accept": true,
+      "label": "交互",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指人与图形或计算界面的输入响应关系，涵盖手势、触觉与多模态界面。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Interaction",
+        "scope": "交互：事件驱动程序设计，图形用户界面，可访问性，手势、触觉、多模态、头戴式与自然语言界面。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/interactive-computing-platforms/zh": {
+      "accept": true,
+      "label": "交互式计算平台",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指通过交互方式开展计算的开发平台，既有范围含数据分析、提示词编程和量子平台。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Interactive Computing Platforms",
+        "scope": "交互式计算平台：数据分析平台，提示词程序设计，量子平台。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/interfacing-and-communication/zh": {
+      "accept": true,
+      "label": "接口与通信",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "在体系结构语境中指设备接口、输入输出、中断与总线通信，不是人际沟通。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Interfacing and Communication",
+        "scope": "接口与通信：I/O 基础，中断结构，I/O 设备，外部存储，总线。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/internet-layer/zh": {
+      "accept": true,
+      "label": "网际层",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "对应以 IP 实现跨网络主机间数据传递的层，不将其改为 OSI 网络层概念。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Internet Layer",
+        "scope": "RFC 1122 §1.1.3。IP 把数据从源主机送到目的主机，无连接、不保证交付；含 ICMP 与 IGMP。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/language-pragmatics/zh": {
+      "accept": true,
+      "label": "语言语用",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "在程序设计语言语境中指语言使用及设计选择的实际影响，非自然语言会话语用学。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Language Pragmatics",
+        "scope": "语言语用：技术需求与软件需求对语言发展的影响，问题域与范式，好的语言设计的准则，求值顺序、优先级与结合性，及早与延迟求值。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/language-translation-and-execution/zh": {
+      "accept": true,
+      "label": "语言翻译与执行",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "翻译指编译、解释和转译等程序语言处理，执行指运行模型，不是自然语言翻译。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Language Translation and Execution",
+        "scope": "语言翻译与执行：JIT、编译器与解释器的执行模型，中间代码与字节码，各自的利弊，交叉编译与转译，BNF 与扩展 BNF。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/lateral-movement-artificial-intelligence/zh": {
+      "accept": true,
+      "label": "横向移动",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指在 AI 环境中访问并控制其他系统，不指模型跨任务迁移。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Lateral Movement",
+        "scope": "ATLAS 战术。对手在 AI 环境中移动，访问并控制其他系统。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/lateral-movement/zh": {
+      "accept": true,
+      "label": "横向移动",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指进入并控制同一网络环境中的其他系统，不等同于在当前系统提升权限。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Lateral Movement",
+        "scope": "ATT&CK 战术。对手进入并控制网络中的远程系统，在环境中移动。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/link-layer/zh": {
+      "accept": true,
+      "label": "链路层",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指与直接相连网络通信且依赖具体网络技术的层，不擅自改为 OSI 数据链路层。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Link Layer",
+        "scope": "RFC 1122 §1.1.3。与直接相连网络通信的协议层，依赖具体的网络技术。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/logic-programming/zh": {
+      "accept": true,
+      "label": "逻辑程序设计",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "对应以事实、规则和目标表达计算并通过推理求解的范式，不是泛指程序逻辑。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Logic Programming",
+        "scope": "逻辑程序设计：量词，一阶与高阶逻辑，用逻辑联结词表达复杂关系，Horn 子句、事实、目标与子目标，合一算法。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/logical-representation-and-reasoning/zh": {
+      "accept": true,
+      "label": "逻辑表示与推理",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指以命题、谓词等逻辑表示知识并推导结论，与概率方法区分。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Logical Representation and Reasoning",
+        "scope": "逻辑表示与推理：命题与谓词逻辑，归结与定理证明，语义网，非单调推理，论辩，关于行动的推理。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/machine-level-data-representation/zh": {
+      "accept": true,
+      "label": "机器级数据表示",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指位、字节、机器字和数据编码，保留机器级限定，不等同于数据库建模。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Machine-Level Data Representation",
+        "scope": "机器级数据表示：体系结构概况与历史，位、字节、字，有符号与补码表示，数值与非数值数据，记录、数组与 UTF 数据的表示。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/mathematical-and-statistical-foundations/zh": {
+      "accept": true,
+      "label": "数学和统计基础",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "涵盖计算所需的离散数学、概率统计、线性代数与微积分，不指专门研究数学根基的领域。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Mathematical and Statistical Foundations",
+        "scope": "CS2023 知识领域。数学与统计基础：离散数学、概率、统计、线性代数、微积分。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/mathematical-foundations/zh": {
+      "accept": true,
+      "label": "数学基础",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指支撑软件工程推理与实现的数学知识，不限定为数学哲学中的基础问题。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Mathematical Foundations",
+        "scope": "SWEBOK v4 第 17 章。数学基础：帮助软件工程师理解并转化为代码的明确无歧义的逻辑。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/memory-hierarchy/zh": {
+      "accept": true,
+      "label": "存储层次",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "涵盖缓存、主存与持久存储的层次及局部性，存储比仅指主存的内存更符合范围。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Memory Hierarchy",
+        "scope": "存储层次：时间与空间局部性，主存组织，持久存储，延迟、周期、带宽与交错，高速缓存，多处理器缓存一致性。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/memory-management/zh": {
+      "accept": true,
+      "label": "内存管理",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指地址空间、地址转换和分页等内存资源管理，区别于包含持久介质的广义存储管理。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Memory Management",
+        "scope": "内存管理：物理内存、地址转换与内存管理硬件，存储层次与缓存的影响，逻辑与物理寻址、地址空间虚拟化，分页。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/methods-for-ethical-analysis/zh": {
+      "accept": true,
+      "label": "伦理分析方法",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指伦理理论、论证和决策框架等分析方法，不将伦理判断缩为法律合规。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Methods for Ethical Analysis",
+        "scope": "伦理分析方法：避免论证中的谬误与误述，伦理理论与决策框架，文化在计算的理解、采用、设计与使用中的作用，伦理为何重要。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/mobile-platforms/zh": {
+      "accept": true,
+      "label": "移动平台",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指移动设备应用开发环境及其约束和异步计算，不指移动网络本身。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Mobile Platforms",
+        "scope": "移动平台：移动平台的约束与可供性，移动开发，规约与测试，异步计算。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/mobility/zh": {
+      "accept": true,
+      "label": "移动性",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "在网络语境中指移动设备与无线网络通信的相关能力，不指社会流动或软件移植。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Mobility",
+        "scope": "移动性：蜂窝通信原理（4G、5G），无线局域网原理（802.11），设备间通信，自组织、机会与容迟等多跳无线网络。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/network-security/zh": {
+      "accept": true,
+      "label": "网络安全",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指网络特有的威胁、攻击和防护机制，保持网络层面的范围。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Network Security",
+        "scope": "网络安全：威胁、脆弱性与对策的总论，拒绝服务、欺骗、嗅探等网络特有的威胁与攻击，对策。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/networked-applications/zh": {
+      "accept": true,
+      "label": "网络应用",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指依赖网络通信的应用及其分布式范式，不限于浏览器内的 Web 应用。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Networked Applications",
+        "scope": "网络应用：命名与地址方案（DNS、URI），客户端/服务器、对等、云、边缘等分布式应用范式，应用需求的差异（延迟、带宽、丢包容忍）。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/networking-and-communication/zh": {
+      "accept": true,
+      "label": "网络与通信",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "同时涵盖计算机网络组织与数据通信，包括应用、路由、单跳通信与移动性。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Networking and Communication",
+        "scope": "CS2023 知识领域。网络与通信：网络基础、网络应用、可靠性、路由与转发、单跳通信、网络安全、移动性、新兴主题。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/nosql-systems/zh": {
+      "accept": true,
+      "label": "NoSQL 系统",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留 NoSQL 技术类别名称，涵盖键值、文档与图等系统，不将其误解为完全不能使用 SQL。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "NoSQL Systems",
+        "scope": "NoSQL 系统：为何需要 NoSQL，键值与文档模型，存储系统，分片与复制，图数据库，一致性模型。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/oauth-and-oidc/zh": {
+      "accept": true,
+      "label": "OAuth 与 OIDC",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留协议名称与缩写，区分 OAuth 的委托授权框架和 OIDC 的身份层。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "OAuth and OIDC",
+        "scope": "ASVS 5.0 第 10 章。OAuth 2 委托授权框架与在其上加身份层的 OpenID Connect 的安全要求。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/operating-systems/zh": {
+      "accept": true,
+      "label": "操作系统",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指管理计算机资源并提供程序运行服务的系统软件及其原理。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Operating Systems",
+        "scope": "CS2023 知识领域。操作系统：作用与原理、并发、保护、调度、进程、内存、设备、文件系统、虚拟化、实时与嵌入式、容错。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/overview-of-computer-systems/zh": {
+      "accept": true,
+      "label": "计算机系统概览",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指从基本硬件构件到软件抽象的总体介绍，概览表达原有内容层次。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Overview of Computer Systems",
+        "scope": "计算机系统概览：门、触发器、寄存器等基本构件，作为计算范式的硬件与逻辑构件，程序设计抽象、接口与库，软硬件的区分与交互。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/parallel-and-distributed-computing-foundations-of-programming-languages/zh": {
+      "accept": true,
+      "label": "并行与分布式计算",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留原名，与同名领域使用一致译名；本记录由范围和归属限定语言支持、执行与内存语义。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Parallel and Distributed Computing",
+        "scope": "并行与分布式计算的语言支持：安全性与活性，程序设计模型，执行控制，通信与协调，future，数据并行的语言支持，内存一致性模型对语言语义的影响。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/parallel-and-distributed-computing/zh": {
+      "accept": true,
+      "label": "并行与分布式计算",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留同时计算与跨系统分布两个方面，涵盖程序、通信、协调和算法。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Parallel and Distributed Computing",
+        "scope": "CS2023 知识领域。并行与分布式计算：程序、通信、协调、评估、算法。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/perception-and-computer-vision/zh": {
+      "accept": true,
+      "label": "感知与计算机视觉",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "感知保留视觉之外的语音与触觉等模态，计算机视觉对应其中的视觉分析。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Perception and Computer Vision",
+        "scope": "感知与计算机视觉：视觉、语音、触觉等模态的识别，模式识别的途径。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/performance-and-energy-efficiency/zh": {
+      "accept": true,
+      "label": "性能与能效",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "分别对应执行性能和能源使用效率，涵盖性能与功耗评估及硬件优化。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Performance and Energy Efficiency",
+        "scope": "性能与能效：性能与功耗评估，分支预测、推测与乱序执行，向量处理器与 GPU，多线程的硬件支持。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/performance-evaluation/zh": {
+      "accept": true,
+      "label": "性能评估",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指通过指标、工作负载、基准和模型测量分析性能，与性能本身区分。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Performance Evaluation",
+        "scope": "性能评估：性能指标，工作负载与代表性基准，性能数据的采集与分析，CPI 方程，Amdahl 定律。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/persistence-artificial-intelligence/zh": {
+      "accept": true,
+      "label": "持久化",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指借助 AI 制品或软件保持攻击立足点，不是模型参数的常规保存。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Persistence",
+        "scope": "ATLAS 战术。对手通过 AI 制品或软件保持立足点。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/persistence/zh": {
+      "accept": true,
+      "label": "持久化",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指攻击者跨重启或凭据变化保持系统访问，不是数据库持久存储。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Persistence",
+        "scope": "ATT&CK 战术。对手跨重启、凭据更换等中断保持对系统的访问。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/planning/zh": {
+      "accept": true,
+      "label": "规划",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指人工智能中的行动序列与状态空间规划，不是项目管理的工作计划。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Planning",
+        "scope": "规划：规划算子与状态表示，全序与偏序规划，规划图与 GraphPlan，层次规划，多 agent 规划，基于 MDP 的规划。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/principles-of-operating-system/zh": {
+      "accept": true,
+      "label": "操作系统原理",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指操作系统的设计组织、抽象与接口原则，不限于某一具体系统的使用方法。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Principles of Operating System",
+        "scope": "操作系统原理：单体、分层、模块化、微内核等设计途径，抽象、进程与资源，系统调用与应用程序接口（Win32、Java、POSIX）。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/privacy-and-civil-liberties/zh": {
+      "accept": true,
+      "label": "隐私与公民自由",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "同时保留个人信息与隐私保护及公民自由两方面，不把权利议题缩为加密技术。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Privacy and Civil Liberties",
+        "scope": "隐私与公民自由：大规模数据收集的隐私影响，匿名、化名与身份的概念，端到端加密与差分隐私等技术手段，公民自由与隐私权。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/privilege-escalation-artificial-intelligence/zh": {
+      "accept": true,
+      "label": "权限提升",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指在 AI 环境取得更高级别权限，不等同于增加模型能力。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Privilege Escalation",
+        "scope": "ATLAS 战术。对手获取更高级别的权限。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/privilege-escalation/zh": {
+      "accept": true,
+      "label": "权限提升",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指从现有访问能力取得更高级别权限，不等同于初始访问。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Privilege Escalation",
+        "scope": "ATT&CK 战术。对手在系统或网络上获取更高级别的权限。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/probabilistic-representation-and-reasoning/zh": {
+      "accept": true,
+      "label": "概率表示与推理",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指概率式知识表示和基于概率的推理与决策，保留不确定性处理的含义。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Probabilistic Representation and Reasoning",
+        "scope": "概率表示与推理：条件独立，概率式知识表示，决策论。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/process-model/zh": {
+      "accept": true,
+      "label": "进程模型",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指进程的抽象、内存布局、加载与切换，process 在此不是软件开发过程。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Process Model",
+        "scope": "进程模型：进程与线程与虚拟化的关系，内存布局与分段，可执行文件的创建与加载、共享库与动态链接，分派与上下文切换，进程间通信。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/product-requirements/zh": {
+      "accept": true,
+      "label": "产品需求",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指产品应具备的功能与质量要求，兼有获取与一致性等要求管理问题。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Product Requirements",
+        "scope": "产品需求：用用例或用户故事描述功能需求，需求的一致性、有效性、完整性与可行性，需求获取，安全、可用性、性能等非功能需求。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/professional-ethics/zh": {
+      "accept": true,
+      "label": "职业伦理",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指计算专业人士的责任、规范与职业行为，不是个人偏好或一般社会伦理的全部。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Professional Ethics",
+        "scope": "职业伦理：社群价值与法律，作为专业人士的谨慎、纪律与受托责任，作为计算专业人士保持更新，职业认证。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/program-abstraction-and-representation/zh": {
+      "accept": true,
+      "label": "程序抽象与表示",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指语言构成、程序抽象以及 BNF 等表示方式，保留抽象和表示两个层面。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Program Abstraction and Representation",
+        "scope": "程序抽象与表示：BNF 与正则表达式，以程序为输入的程序（解释器、编译器、类型检查器），语言的组成，基本程序设计抽象。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/program-analysis-and-analyzers/zh": {
+      "accept": true,
+      "label": "程序分析与分析器",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "同时保留分析方法和执行分析的工具，涵盖控制流与数据流等程序性质。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Program Analysis and Analyzers",
+        "scope": "程序分析与分析器：基本块、控制流图、定义–使用链等程序表示，不可判定性对程序分析的影响，流不敏感与流敏感分析。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/programs/zh": {
+      "accept": true,
+      "label": "并行与分布式程序",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "用既有领域语境补足泛称，指并行与分布式活动的表达、启动及执行映射。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Programs",
+        "scope": "并行与分布式程序：并行性，分布性，活动的启动，执行性质，跨分层系统的映射与机制。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/protection-and-safety/zh": {
+      "accept": true,
+      "label": "保护与安全",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留原名的保护和安全两部分；现有范围涉及访问保护、攻击和缓解，不额外推定 safety 的工程边界。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Protection and Safety",
+        "scope": "保护与安全：操作系统安全机制概况，攻击与对抗，真实操作系统的主要脆弱性，备份等缓解策略，策略与机制分离，安全方法与设备。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/protection-mechanism-failure/zh": {
+      "accept": true,
+      "label": "保护机制失效",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "覆盖保护机制缺失和使用错误导致的防护失败，不仅指机制运行后崩溃。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Protection Mechanism Failure",
+        "scope": "CWE pillar。产品未使用或错误使用能充分防御针对性攻击的保护机制。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/quantum-architectures/zh": {
+      "accept": true,
+      "label": "量子体系结构",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按体系结构领域中的量子计算知识单元理解，涵盖量子门与量子信息操作。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Quantum Architectures",
+        "scope": "量子体系结构：量子力学公理，单比特与双比特门，张量积，不可克隆定理，量子隐形传态。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/query-construction/zh": {
+      "accept": true,
+      "label": "查询构造",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指用 SQL 等语言表达和编写查询，与数据库内部执行查询的查询处理区分。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Query Construction",
+        "scope": "查询构造：SQL，关系代数与关系演算，QBE，从常规语言调用查询，XPath、SPARQL 等其他查询语言，存储过程。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/query-processing/zh": {
+      "accept": true,
+      "label": "查询处理",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指数据库执行、优化和调优查询的机制，与用户构造查询语句区分。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Query Processing",
+        "scope": "查询处理：页、索引与文件结构，查询算子的算法，查询变换与优化，并行查询处理，数据库调优。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/real-time-and-embedded-systems/zh": {
+      "accept": true,
+      "label": "实时与嵌入式系统",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "分别保留时间约束和嵌入设备的系统特性，二者有交集但不互相等同。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Real-time and Embedded Systems",
+        "scope": "实时与嵌入式系统：进程与任务调度，截止期与实时问题，低延迟、软实时与硬实时，实时环境的内存与磁盘管理要求，故障、风险与恢复，安全性。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/reconnaissance-artificial-intelligence/zh": {
+      "accept": true,
+      "label": "侦察",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指为攻击规划收集 AI 系统信息，AI 语境由既有概念范围限定。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Reconnaissance",
+        "scope": "ATLAS 战术。对手收集关于 AI 系统的信息以规划后续行动。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/reconnaissance/zh": {
+      "accept": true,
+      "label": "侦察",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指为后续攻击规划收集目标信息，与进入环境后了解内部系统的发现战术区分。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Reconnaissance",
+        "scope": "ATT&CK 战术。对手收集可用于规划后续行动的信息。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/refactoring-and-code-evolution/zh": {
+      "accept": true,
+      "label": "重构与代码演化",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留行为保持的结构调整与代码持续变化两个方面，涵盖兼容和版本化问题。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Refactoring and Code Evolution",
+        "scope": "重构与代码演化：Hyrum 定律，向后兼容，重构，版本化，无法安全一次提交时的大规模重构技术。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/relational-databases/zh": {
+      "accept": true,
+      "label": "关系数据库",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "关系对应关系数据模型，范围涵盖完整性、模式映射与规范化。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Relational Databases",
+        "scope": "关系数据库：实体与引用完整性，关系数据库设计，概念模式到关系模式的映射，物理设计，函数依赖与规范化理论。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/reliability-support/zh": {
+      "accept": true,
+      "label": "可靠性支持",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指为可靠传递提供的差错、流量和拥塞控制机制，不是一般设备可靠性评估。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Reliability Support",
+        "scope": "可靠性支持：不可靠传递（UDP），不丢、不重、不乱序的可靠性原则，差错控制，流量控制，拥塞控制。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/resource-development-artificial-intelligence/zh": {
+      "accept": true,
+      "label": "资源开发",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指建立支持针对 AI 系统行动的资源，不将其理解为正常模型开发。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Resource Development",
+        "scope": "ATLAS 战术。对手建立可用于支持行动的资源。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/resource-development/zh": {
+      "accept": true,
+      "label": "资源开发",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指创建、购买或窃取支持攻击行动的资源，不限于开发软件或编写攻击代码。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Resource Development",
+        "scope": "ATT&CK 战术。对手建立可用于支持行动的资源：创建、购买或窃取。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/resource-management/zh": {
+      "accept": true,
+      "label": "资源管理",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指处理器、内存、磁盘和带宽等系统资源的分配与调度，不指项目人力资源。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Resource Management",
+        "scope": "资源管理：处理器份额、内存、磁盘、网络带宽等资源类型，先来先服务、优先级等分配与调度算法及其利弊。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/robot-platforms/zh": {
+      "accept": true,
+      "label": "机器人平台",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指机器人设备及其软件环境、接口与库，区别于机器人学总领域。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Robot Platforms",
+        "scope": "机器人平台：机器人平台与设备的类型，传感器、嵌入式计算与执行器，机器人专用语言与库，基于 ROS 的软件体系结构，平台约束与设计考量。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/robotics/zh": {
+      "accept": true,
+      "label": "机器人学",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指机器人感知、定位、运动与控制的研究领域，不只是机器人设备。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Robotics",
+        "scope": "机器人学：传感器与执行器，坐标系与变换，构形空间与环境地图，定位与建图，导航与控制，运动学。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/role-and-purpose-of-operating-systems/zh": {
+      "accept": true,
+      "label": "操作系统的作用与目的",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "同时保留操作系统的中介作用及提供通用、专门服务的目的。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Role and Purpose of Operating Systems",
+        "scope": "操作系统的作用与目的：在通用硬件与专用软件之间的中介地位，进程、用户与设备接口、持久化等通用功能，嵌入式等扩展或专门功能。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/routing-and-forwarding/zh": {
+      "accept": true,
+      "label": "路由与转发",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "路由对应确定路径，转发对应按表处理数据包，保留控制与实际传递的区别。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Routing and Forwarding",
+        "scope": "路由与转发：域内与域间、集中与分散等路由范式，转发表与匹配算法，IP 的可扩展性问题（NAT、CIDR、BGP、IP 版本）。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/run-time-behavior-and-systems/zh": {
+      "accept": true,
+      "label": "运行时行为与系统",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "运行时同时限定程序行为和支撑系统，涵盖活动记录、方法查找与对象分配。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Run-time Behavior and Systems",
+        "scope": "运行时行为与系统：用栈和堆分配活动记录的进程模型，面向对象实现中的方法查找，对象与活动记录的数据布局，堆上的对象分配。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/scheduling/zh": {
+      "accept": true,
+      "label": "调度",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指操作系统向进程或线程分配执行机会的策略，非一般项目排期。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Scheduling",
+        "scope": "调度：抢占与非抢占调度，先来先服务、最短作业优先、优先级、轮转等策略，对称多处理调度与缓存一致性，定时器。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/search/zh": {
+      "accept": true,
+      "label": "搜索",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按人工智能状态空间与博弈搜索理解，包含启发式搜索，不限于网页检索。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Search",
+        "scope": "搜索：状态空间表示，无信息与启发式图搜索，双向与束搜索，双人对抗博弈，A* 的实现，时空复杂度。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/secure-coding-and-architecture/zh": {
+      "accept": true,
+      "label": "安全编码与体系结构",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留编码实践和体系结构设计两个方面，安全限定整个并列范围。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Secure Coding and Architecture",
+        "scope": "ASVS 5.0 第 15 章。安全编码与体系结构：设计与开发应用时的一般性安全要求，含体系结构与编码实践。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/secure-coding/zh": {
+      "accept": true,
+      "label": "安全编码",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指通过编程实践防止注入、越界等漏洞，编码在此不是数据加密或字符编码。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Secure Coding",
+        "scope": "安全编码：常见脆弱性与弱点，SQL 注入等注入攻击，跨站脚本及其缓解，输入验证与数据净化，类型安全与类型安全的语言，缓冲区溢出。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/secure-communication/zh": {
+      "accept": true,
+      "label": "安全通信",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "对应传输中数据与通信通道的保护，不缩小为某种加密协议。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Secure Communication",
+        "scope": "ASVS 5.0 第 12 章。传输中数据的保护：客户端与后端、内部服务之间的通信加密，按最新指南配置算法与密码套件。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/secure-processor-architectures/zh": {
+      "accept": true,
+      "label": "安全处理器体系结构",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指支持安全目标的处理器硬件结构，涵盖信任根、内存保护和可信执行。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Secure Processor Architectures",
+        "scope": "安全处理器体系结构：安全硬件原理，硬件信任根与 PUF，硬件随机数，内存保护扩展，可信执行环境，同态加密。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/security-analysis-design-and-engineering/zh": {
+      "accept": true,
+      "label": "安全分析、设计与工程",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留问题分析、方案设计及工程实现三个方面，安全贯穿整体而不只修饰分析。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Security Analysis, Design, and Engineering",
+        "scope": "安全分析、设计与工程：安全工程的目标，隐私工程的目标，面向系统安全的问题分析与态势分析。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/security-governance/zh": {
+      "accept": true,
+      "label": "安全治理",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指组织目标、风险与策略层面的安全安排，不等同于单项技术防护。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Security Governance",
+        "scope": "安全治理：保护关键资产，组织目标与风险评估，达到并保持适当保密性、完整性与可用性的安全管理，组织级与专项安全策略。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/security-logging-and-error-handling/zh": {
+      "accept": true,
+      "label": "安全日志记录与错误处理",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "日志记录是安全相关事件的记录活动，错误处理还要求安全失败，保留两个并列方面。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Security Logging and Error Handling",
+        "scope": "ASVS 5.0 第 16 章。安全日志与错误处理：记录认证、访问控制等安全相关事件以支持检测、响应与调查，日志不含敏感个人数据，应用安全失败。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/security-policies-laws-and-computer-crimes/zh": {
+      "accept": true,
+      "label": "安全政策、法律与计算机犯罪",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留政策、法律和犯罪三个方面，涵盖计算犯罪行为及相应救济。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Security Policies, Laws and Computer Crimes",
+        "scope": "安全政策、法律与计算机犯罪：计算机犯罪与法律救济，社会工程、欺诈与身份盗用，网络恐怖主义、犯罪黑客与黑客行动主义，恶意软件。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/security/zh": {
+      "accept": true,
+      "label": "安全",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按计算领域的安全总称理解，涵盖安全编码、工程、密码学与治理，不指金融证券。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Security",
+        "scope": "CS2023 知识领域。安全：安全基础、安全编码、密码学、安全工程、数字取证、安全治理。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/self-contained-tokens/zh": {
+      "accept": true,
+      "label": "自包含令牌",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "令牌自身携带供接收方判断的声明，仍需验证完整性和适用上下文。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Self-contained Tokens",
+        "scope": "ASVS 5.0 第 9 章。自包含令牌（如 JWT、SAML 断言）：接收方依赖其中的声明做安全决策，须验证完整性并确认令牌适用于特定上下文。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/semi-structured-and-unstructured-databases/zh": {
+      "accept": true,
+      "label": "半结构化与非结构化数据库",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "分别保留半结构化及非结构化数据的数据库处理范围，包括 JSON 与向量存储。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Semi-structured and Unstructured Databases",
+        "scope": "半结构化与非结构化数据库：文本、视频、音频的向量化与向量存储，JSON 等半结构化数据库。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/session-management/zh": {
+      "accept": true,
+      "label": "会话管理",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "对应身份会话的唯一性、不可预测性、失效和超时控制，不指会议组织。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Session Management",
+        "scope": "ASVS 5.0 第 7 章。会话管理：会话对每个人唯一、不可猜测或共享，不再需要时失效、闲置时超时。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/shading-and-advanced-rendering/zh": {
+      "accept": true,
+      "label": "着色与高级渲染",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "着色对应表面光照等计算，渲染对应更广的成像过程，保留两者范围差别。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Shading and Advanced Rendering",
+        "scope": "着色与高级渲染：渲染方程的解与近似，运动模糊、景深与连续频率，阴影贴图，遮挡剔除，BSDF 理论。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/shell-scripting/zh": {
+      "accept": true,
+      "label": "Shell 脚本编程",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指运用 Shell 脚本组合命令、管道和环境变量等完成计算任务，保留 scripting 的编写活动含义。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Shell Scripting",
+        "scope": "Shell 脚本：错误处理，管道，系统命令，环境变量，文件抽象，数组与列表，正则表达式，程序与进程，工作流。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/simulation/zh": {
+      "accept": true,
+      "label": "仿真",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "在图形学中指按模型模拟物理或规则系统的动态行为，包含碰撞、粒子和流体。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Simulation",
+        "scope": "仿真：碰撞检测与响应，基于噪声的过程式动画，粒子系统，基于网格的流体，高度场，L 系统与生命游戏等基于规则的系统。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/single-hop-communication/zh": {
+      "accept": true,
+      "label": "单跳通信",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指相邻节点之间的一跳传递，涵盖介质、成帧和介质访问，不扩为多跳路由。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Single Hop Communication",
+        "scope": "单跳通信：调制、带宽与通信介质，编码与成帧，介质访问控制，以太网与 WiFi，生成树与 VLAN 等交换，局域网拓扑。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/social-context/zh": {
+      "accept": true,
+      "label": "社会情境",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指计算技术所处及影响的社会环境与关系，包含对个人和群体的作用。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Social Context",
+        "scope": "社会情境：超网络化世界中的社会影响，社交媒体与 AI 等计算应用对个人与社会的影响，引入计算技术的后果。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/society-ethics-and-the-profession-algorithmic-foundations/zh": {
+      "accept": true,
+      "label": "社会、伦理与职业",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "复用相同英文的统一译名；本记录以算法公平、隐私、透明与经济环境影响为范围，领域差别由归属与范围保留。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Society, Ethics, and the Profession",
+        "scope": "算法的社会、伦理与职业议题：算法公平，匿名与差分隐私，问责与透明，低效算法的经济影响，可持续性。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/society-ethics-and-the-profession-data-management/zh": {
+      "accept": true,
+      "label": "社会、伦理与职业",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "复用相同英文的统一译名；本记录以数据隐私、归属、托管、用途与溯源为范围，领域差别由归属与范围保留。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Society, Ethics, and the Profession",
+        "scope": "数据管理的社会、伦理与职业议题：规模，数据隐私与匿名，数据归属与托管，存储数据的预期与非预期用途，数据可靠性，溯源、血缘与元数据管理。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/society-ethics-and-the-profession-foundations-of-programming-languages/zh": {
+      "accept": true,
+      "label": "社会、伦理与职业",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "复用相同英文的统一译名；本记录以语言设计的人因、语言中心倾向、可访问性与包容性为范围，领域差别由归属与范围保留。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Society, Ethics, and the Profession",
+        "scope": "程序设计语言的社会、伦理与职业议题：以英语为中心的语言的影响，面向残障人士的可访问性与包容性，语言的人因与可用性，术语的词源。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/society-ethics-and-the-profession-graphics-and-interactive-techniques/zh": {
+      "accept": true,
+      "label": "社会、伦理与职业",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "复用相同英文的统一译名；本记录以图形与互动应用的可访问性、隐私及知识产权为范围，领域差别由归属与范围保留。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Society, Ethics, and the Profession",
+        "scope": "图形学与交互技术的社会、伦理与职业议题：沉浸式、交互式与物理计算应用的可访问性，图形应用中的伦理与隐私，相关知识产权法。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/society-ethics-and-the-profession-human-computer-interaction/zh": {
+      "accept": true,
+      "label": "社会、伦理与职业",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "复用相同英文的统一译名；本记录以设计问责、用户参与、可访问性与设计影响为范围，领域差别由归属与范围保留。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Society, Ethics, and the Profession",
+        "scope": "人机交互的社会、伦理与职业议题：通用与以用户为中心的设计，问责，可访问性与包容性设计，参与式设计过程，设计的影响评估。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/society-ethics-and-the-profession-operating-systems/zh": {
+      "accept": true,
+      "label": "社会、伦理与职业",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "复用相同英文的统一译名；本记录以开源及操作系统维护终止的影响为范围，领域差别由归属与范围保留。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Society, Ethics, and the Profession",
+        "scope": "操作系统的社会、伦理与职业议题：操作系统中的开源，操作系统停止维护的生命周期终止问题。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/society-ethics-and-the-profession-security/zh": {
+      "accept": true,
+      "label": "社会、伦理与职业",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "复用相同英文的统一译名；本记录以隐私实践、安全失效的社会影响与职业责任为范围，领域差别由归属与范围保留。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Society, Ethics, and the Profession",
+        "scope": "安全的社会、伦理与职业议题：隐私的原则与实践，安全与隐私失效的社会影响，法律法规的适用，设计安全系统时的职业伦理。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/society-ethics-and-the-profession-software-development-fundamentals/zh": {
+      "accept": true,
+      "label": "社会、伦理与职业",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "复用相同英文的统一译名；本记录以程序知识产权、学术诚信与代码责任为范围，领域差别由归属与范围保留。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Society, Ethics, and the Profession",
+        "scope": "软件开发基础的社会、伦理与职业议题：程序员对所写程序的知识产权，抄袭与学术诚信，对代码的责任与义务，基本职业道德。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/society-ethics-and-the-profession-systems-fundamentals/zh": {
+      "accept": true,
+      "label": "社会、伦理与职业",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "复用相同英文的统一译名；本记录以计算机系统的知识产权、软件许可与计算机犯罪为范围，领域差别由归属与范围保留。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Society, Ethics, and the Profession",
+        "scope": "系统基础的社会、伦理与职业议题：计算机系统的知识产权，常见软件许可证，计算机犯罪。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/society-ethics-and-the-profession/zh": {
+      "accept": true,
+      "label": "社会、伦理与职业",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "职业指计算专业群体及其规范与责任，保留社会、伦理和职业三个方面。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Society, Ethics, and the Profession",
+        "scope": "CS2023 知识领域。社会、伦理与职业：社会情境、伦理分析、职业伦理、知识产权、隐私、沟通、可持续性、计算史、计算经济、安全法律、多样性与包容。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-architecture/zh": {
+      "accept": true,
+      "label": "软件体系结构",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "对应软件结构、相关表示与工作产品及其分析评估，不指硬件体系结构。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Architecture",
+        "scope": "SWEBOK v4 第 2 章。软件体系结构：概念，表示与工作产品，语境、过程与方法，分析与评估。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-configuration-management/zh": {
+      "accept": true,
+      "label": "软件配置管理",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "对应全生命周期配置项及其完整性和正确性控制，不限于编辑配置文件。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Configuration Management",
+        "scope": "SWEBOK v4 第 8 章。软件配置管理：在整个软件生命周期中应用配置管理，保证配置项的完整与正确。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-design/zh": {
+      "accept": true,
+      "label": "软件设计",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指软件结构、组件和接口等设计，涵盖架构及程序层次，不等同于界面视觉设计。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Design",
+        "scope": "软件设计：系统设计原则，软件体系结构，大规模与小规模程序设计，代码异味等质量征兆，API 设计原则，数据不变量与时间不变量。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-development-fundamentals/zh": {
+      "accept": true,
+      "label": "软件开发基础",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "涵盖编程概念、基础数据结构、算法和开发实践，不仅是编程语法。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Development Fundamentals",
+        "scope": "CS2023 知识领域。软件开发基础：程序设计基本概念、基础数据结构、算法入门、开发实践。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-development-practices/zh": {
+      "accept": true,
+      "label": "软件开发实践",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指测试、调试、可读性和文档等开发活动，不限于编写功能代码。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Development Practices",
+        "scope": "软件开发实践：基本测试与测试用例设计，通用 IDE 及其调试器，提高可读性的编程风格，用自然语言描述模块功能。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-engineering-economics/zh": {
+      "accept": true,
+      "label": "软件工程经济学",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指软件相关成本、价值及业务战略目标下的经济决策，不限于项目预算管理。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Engineering Economics",
+        "scope": "SWEBOK v4 第 15 章。软件工程经济学：软件作为达成组织业务与战略目标的手段，相关的成本、价值与决策。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-engineering-management/zh": {
+      "accept": true,
+      "label": "软件工程管理",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "对应软件项目规划、估算、控制、协调和风险管理，区别于系统技术运维。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Engineering Management",
+        "scope": "SWEBOK v4 第 9 章。软件工程管理：软件项目的规划、估算、度量、控制、协调、领导与风险管理。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-engineering-models-and-methods/zh": {
+      "accept": true,
+      "label": "软件工程模型与方法",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留模型和方法两个方面，着重软件工程活动的系统性与可重复性。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Engineering Models and Methods",
+        "scope": "SWEBOK v4 第 11 章。软件工程模型与方法：为软件工程施加结构，使之系统、可重复。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-engineering-operations/zh": {
+      "accept": true,
+      "label": "软件工程运维",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "对应软件部署、运行与支持及稳定性维护，区别于项目规划和组织管理。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Engineering Operations",
+        "scope": "SWEBOK v4 第 6 章。软件工程运维：部署、运行与支持软件应用或系统并保持其完整性与稳定性的活动与任务。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-engineering-process/zh": {
+      "accept": true,
+      "label": "软件工程过程",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指组织软件工程活动的过程、生命周期和评估，不缩小为具体操作步骤。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Engineering Process",
+        "scope": "SWEBOK v4 第 10 章。软件工程过程：概念，生命周期，过程评估。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-engineering-professional-practice/zh": {
+      "accept": true,
+      "label": "软件工程职业实践",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "对应以专业、负责方式从业所需的知识、技能和态度，不限于技术实操训练。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Engineering Professional Practice",
+        "scope": "SWEBOK v4 第 14 章。软件工程职业实践：以专业、负责的方式从业所需的知识、技能与态度。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-maintenance/zh": {
+      "accept": true,
+      "label": "软件维护",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指交付后因需求等变化开展的软件演化活动，不与运行支持完全等同。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Maintenance",
+        "scope": "SWEBOK v4 第 7 章。软件维护：软件交付后随需求与其他因素变化而演化的活动。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-quality/zh": {
+      "accept": true,
+      "label": "软件质量",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "包含质量概念及质量管理、保证和控制，不等同于测试通过率。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Quality",
+        "scope": "SWEBOK v4 第 12 章。软件质量：质量的多重含义，质量管理、保证与控制。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-reliability/zh": {
+      "accept": true,
+      "label": "软件可靠性",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指软件在规定条件下避免失效的程度及其度量，与安全和可用性保持区别。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Reliability",
+        "scope": "软件可靠性：以失效概率或平均故障间隔定义可靠性，不同软件的可靠性需求，缺陷导致的失效与高可靠性目标。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-requirements/zh": {
+      "accept": true,
+      "label": "软件需求",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "涵盖需要和约束的表达以及获取、分析、规约、确认与管理，不限于需求文档。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Requirements",
+        "scope": "SWEBOK v4 第 1 章。软件需求：对现实问题的需要与约束的表达，及其获取、分析、规约、确认与管理。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-security/zh": {
+      "accept": true,
+      "label": "软件安全",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "在软件语境中指抵御误用和恶意活动的安全，不将其等同于可靠性或一般故障安全。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Security",
+        "scope": "SWEBOK v4 第 13 章。软件安全：在正确性与可靠性之外，应对误用与针对计算机系统的恶意活动。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-testing/zh": {
+      "accept": true,
+      "label": "软件测试",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指通过选定测试用例动态确认行为，区别于仅靠静态审查的确认活动。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Testing",
+        "scope": "SWEBOK v4 第 5 章。软件测试：在从通常无限的执行域中适当选出的有限测试用例上，动态确认被测系统提供预期行为。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/software-verification-and-validation/zh": {
+      "accept": true,
+      "label": "软件验证与确认",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "验证关注满足规定要求，确认关注满足预期用途，保留两种判断而不统称测试。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Software Verification and Validation",
+        "scope": "软件验证与确认：验证与确认的概念，测试的意义，测试目标与种类，测试代码与生产代码的风格差异（DAMP 与 DRY），测试计划。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/specialized-platform-development/zh": {
+      "accept": true,
+      "label": "专用平台开发",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指面向 Web、移动、机器人等特定平台约束的开发，专用不表示私有或封闭。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Specialized Platform Development",
+        "scope": "CS2023 知识领域。专用平台开发：Web、移动、机器人、嵌入式、游戏、交互式计算平台。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/stealth/zh": {
+      "accept": true,
+      "label": "隐蔽",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指隐藏行为或混入正常活动以降低检测概率，区别于主动削弱安全机制。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Stealth",
+        "scope": "ATT&CK 战术。对手隐藏其行为、混入正常活动以降低被检测的可能。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/sustainability-issues/zh": {
+      "accept": true,
+      "label": "可持续性议题",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指体系结构实现决策的环境影响，保留议题含义，不扩成一般可持续发展领域。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Sustainability Issues",
+        "scope": "体系结构的可持续性议题：实现决策的环境影响。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/sustainability/zh": {
+      "accept": true,
+      "label": "可持续性",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "涵盖计算实现的环境、社会和文化影响，范围比单独能耗或绿色硬件更广。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Sustainability",
+        "scope": "可持续性：实现决策的环境、社会与文化影响，计算系统在本地、区域与全球的社会与环境影响，可持续设计标准的指南，复杂计算系统的系统性效应。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/syntax-analysis/zh": {
+      "accept": true,
+      "label": "语法分析",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按编译领域理解程序文本的词法与语法结构分析，不涉及自然语言句法教学。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Syntax Analysis",
+        "scope": "语法分析：正则文法与上下文无关文法，基于语言规范的扫描与分析，用正则表达式做词法分析，记号，自顶向下与自底向上分析策略。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/system-design-systems-fundamentals/zh": {
+      "accept": true,
+      "label": "系统设计",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按系统基础归属指活性、健壮性、扩展性与安全等设计准则，与人机交互同名项由范围区分。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "System Design",
+        "scope": "系统设计：活性、安全性、健壮性、可扩展性与安全等常见设计准则，Apache、Spark、Linux 等代表性系统的设计。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/system-design/zh": {
+      "accept": true,
+      "label": "系统设计",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "在人机交互归属下指原型、界面和交互等系统设计，领域限定由既有范围承担。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "System Design",
+        "scope": "系统设计：原型技术与工具，设计模式、约束、指南与过程，交互技术，视觉 UI 设计，沉浸式环境，3D 打印与制造，异步交互模型，创造力支持。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/system-performance/zh": {
+      "accept": true,
+      "label": "系统性能",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指计算机系统的延迟、缓存与存储层次等性能因素，与性能的测量评估方法区分。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "System Performance",
+        "scope": "系统性能：计算机系统中的延迟，缓存与局部性对性能的影响，数据库、操作系统、分布式系统中的缓存与一致性，处理器存储层次。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/system-reliability/zh": {
+      "accept": true,
+      "label": "系统可靠性",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指系统避免失效的能力及冗余等实现途径，保留系统整体范围而非只软件故障。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "System Reliability",
+        "scope": "系统可靠性：bug、故障与失效的区分，可靠性与可用性，通过冗余实现可靠性，日志等其他途径。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/system-security/zh": {
+      "accept": true,
+      "label": "系统安全",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指计算机系统面临的攻击与防护，包括拒绝服务和窃听，不等同于可靠性。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "System Security",
+        "scope": "系统安全：病毒、拒绝服务、窃听等常见系统安全问题，对策，代表性对策系统。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/systems-execution-and-memory-model/zh": {
+      "accept": true,
+      "label": "系统执行与内存模型",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留执行和内存模型两部分，涵盖栈堆、寻址及运行时表示。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Systems Execution and Memory Model",
+        "scope": "系统执行与内存模型：翻译与执行用的数据结构（栈、堆等），直接、间接与变址寻址，数据抽象的运行时表示，抽象低级机器。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/systems-fundamentals/zh": {
+      "accept": true,
+      "label": "系统基础",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指计算机系统的共同原理，包括资源、性能、可靠性、安全和设计。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Systems Fundamentals",
+        "scope": "CS2023 知识领域。系统基础：计算机系统概览、基本概念、资源管理、性能与评估、可靠性、安全、系统设计。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/tangible-physical-computing/zh": {
+      "accept": true,
+      "label": "实体与物理计算",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "实体对应可交互的物理制品，物理计算指计算与物理世界的感知及作用，不是研究物理的数值计算。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Tangible/Physical Computing",
+        "scope": "有形与物理计算：与物理世界的交互，与实体制品的连接，物联网。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/teamwork/zh": {
+      "accept": true,
+      "label": "团队协作",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指软件团队角色、沟通和协同工作过程，不仅是多人同时编程。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Teamwork",
+        "scope": "团队协作：口头、书面与正式的沟通，团队冲突的原因与解决，协作编程，软件团队的角色与职责，团队过程。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/the-role-of-data-and-the-data-life-cycle/zh": {
+      "accept": true,
+      "label": "数据的作用与生命周期",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留数据的作用及创建至销毁的阶段过程，生命周期不只指存储时长。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "The Role of Data and the Data Life Cycle",
+        "scope": "数据的作用与生命周期：创建、处理、审阅、留存与检索、销毁。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/tools-and-environments/zh": {
+      "accept": true,
+      "label": "工具与环境",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按软件工程语境保留开发工具与配套环境，包括版本、发布、测试和文档工具。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Tools and Environments",
+        "scope": "工具与环境：配置管理与版本控制，发布管理，静态与动态分析等测试工具，过程自动化，文档、图示与 UML 等设计与沟通工具，工具集成。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/transport-layer/zh": {
+      "accept": true,
+      "label": "传输层",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "对应为应用提供端到端通信服务的协议层，同时涵盖 TCP 和 UDP。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Transport Layer",
+        "scope": "RFC 1122 §1.1.3。为应用提供端到端通信服务：TCP 提供可靠、面向连接的服务，UDP 提供无连接的数据报服务。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/type-systems/zh": {
+      "accept": true,
+      "label": "类型系统",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指语言中类型规则及其对值、变量和运算的约束，不是普通对象分类体系。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Type Systems",
+        "scope": "类型系统：类型作为值集与运算集，类型与变量、参数、结果、字段的关联，类型安全与程序正确性，类型系统的目标与局限。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/understanding-the-user-individual-goals-and-interactions-with-others/zh": {
+      "accept": true,
+      "label": "用户理解及个体目标与人际交互",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "保留原名的用户理解、个体目标及与他人交互三层信息，范围涵盖用户特征与协作。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Understanding the User: Individual goals and interactions with others",
+        "scope": "理解用户：以用户为中心的设计与评估方法，用户的生理与认知特征，面向多样用户群体的设计，协作。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/validation-and-business-logic/zh": {
+      "accept": true,
+      "label": "验证与业务逻辑",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "验证指检查输入是否符合业务和功能约束；业务逻辑还覆盖流程顺序、绕过与自动化滥用。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Validation and Business Logic",
+        "scope": "ASVS 5.0 第 2 章。输入符合业务与功能预期，业务逻辑流程按序、不可绕过，并有限制与控制以发现和阻止自动化攻击。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/virtualization/zh": {
+      "accept": true,
+      "label": "虚拟化",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指以抽象和隔离提供虚拟资源或执行环境，涵盖容器、虚拟机和虚拟设备。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Virtualization",
+        "scope": "虚拟化：用虚拟化与隔离实现保护与可预期性能，高级分页与虚拟内存，虚拟文件系统与虚拟设备，容器与虚拟机的对比，抖动。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/visualization/zh": {
+      "accept": true,
+      "label": "可视化",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指把科学或信息数据转成可理解视觉表达的过程，包含感知和认知因素。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Visualization",
+        "scope": "可视化：科学数据可视化与信息可视化，可视化技术与流水线，常见数据格式，高维数据处理，感知与认知因素。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/web-frontend-security/zh": {
+      "accept": true,
+      "label": "Web 前端安全",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "限定浏览器侧 Web 前端及其攻击面，不扩展为所有应用接口安全。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Web Frontend Security",
+        "scope": "ASVS 5.0 第 3 章。防范经由 Web 前端发起的攻击的要求；不适用于机器对机器方案。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/web-platforms/zh": {
+      "accept": true,
+      "label": "Web 平台",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "指 Web 语言、框架、标准及应用环境，保留 Web 限定，不泛化为所有网络平台。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "Web Platforms",
+        "scope": "Web 平台：HTML5、JavaScript、PHP、CSS 等 Web 语言，Web 平台与框架，SaaS，DOM 与可访问性等 Web 标准，安全与隐私考量，Web 应用的需求分析。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    },
+    "topics/webrtc/zh": {
+      "accept": true,
+      "label": "Web 实时通信",
+      "basis": {
+        "level": 5,
+        "model": {
+          "name": "gpt-6-astra",
+          "date": "2026-09-05",
+          "rationale": "按 WebRTC 的通行展开理解为实时语音、视频和数据通信技术，范围仍限定于 WebRTC。模型知识判断，外部用法未核实。",
+          "approval": "design/decisions/structured-label-basis.md#批次授权"
+        }
+      },
+      "original": {
+        "en": "WebRTC",
+        "scope": "ASVS 5.0 第 17 章。WebRTC：实时语音、视频与数据交换基础设施的安全要求，面向开发、托管或集成 WebRTC 的各方。"
+      },
+      "evidence_note": "模型既有知识，外部用法未核实；原试查材料仅作辅助，不冒充已登记的多来源依据。"
+    }
+  }
+}

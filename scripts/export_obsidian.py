@@ -18,6 +18,11 @@ from typing import Any, Iterable, Mapping, Sequence
 
 import yaml
 
+try:
+    from .label_basis import basis_rows, validate_basis
+except ImportError:
+    from label_basis import basis_rows, validate_basis
+
 
 class ExportError(ValueError):
     """Raised when formal input cannot be mapped without loss."""
@@ -319,7 +324,14 @@ def _validate_record(
         )
         for field, basis in record["basis"].items():
             path = f"{record_path}.basis.{field}"
-            if isinstance(basis, list):
+            if basis == "model" or isinstance(basis, list) and "model" in basis:
+                raise _error(relative_path, object_id, path, "model requires structured language evidence")
+            if collection != "entities" and field in ("zh", "en") and isinstance(basis, dict):
+                errors = validate_basis(basis, record.get("label", {}).get(field), record,
+                                        field, None, collection=name)
+                if errors:
+                    raise _error(relative_path, object_id, path, "; ".join(errors))
+            elif isinstance(basis, list):
                 _check_string_list(relative_path, object_id, path, basis)
             else:
                 _check_string(relative_path, object_id, path, basis)
@@ -519,6 +531,14 @@ def _validate_references(documents: Mapping[str, dict]) -> None:
     ):
         relative_path = _FILES[name][0]
         for record in documents[name][collection]:
+            if collection != "entities":
+                for language, basis in record.get("basis", {}).items():
+                    if language in ("zh", "en") and isinstance(basis, dict):
+                        errors = validate_basis(basis, record["label"].get(language), record,
+                                                language, sources, collection=name)
+                        if errors:
+                            raise _error(relative_path, str(record["id"]),
+                                         f"{collection}[{record['id']}].basis.{language}", "; ".join(errors))
             for index, match in enumerate(record.get("match", [])):
                 if match.get("source") not in sources:
                     raise _error(
@@ -648,6 +668,9 @@ def _common_body(
     basis_title: str = "形式依据",
 ) -> list[str]:
     sections = [f"# {display_label(record)}"]
+    if any(isinstance(value, dict) and value.get("level") == 5
+           for language, value in (record.get("basis") or {}).items() if language in ("zh", "en")):
+        sections.extend(("", "模型知识 · 第 5 级；外部用法未核实。"))
     if record.get("scope"):
         sections.extend(("", "## 范围", "", str(record["scope"])))
     for field, title in (("alt", "替代形式"), ("hidden", "隐藏形式")):
@@ -655,7 +678,13 @@ def _common_body(
         if table:
             sections.extend(("", table))
     basis = record.get("basis") or {}
-    table = _table(basis_title, ("字段", "值"), basis.items())
+    evidence_rows = []
+    for language, value in basis.items():
+        if language in ("zh", "en") and isinstance(value, dict):
+            evidence_rows.extend((f"{language} · {title}", detail) for title, detail in basis_rows(value))
+        else:
+            evidence_rows.append((language, value))
+    table = _table(basis_title, ("字段", "值"), evidence_rows)
     if table:
         sections.extend(("", table))
     matches = record.get("match") or []

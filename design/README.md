@@ -50,6 +50,11 @@
 - [证据阶段](decisions/evidence-stage-boundary.md)：把高成本证据限制在会改变正式结果的范围。
 - [当前阶段](decisions/current-stage-scope.md)：完成来源与术语基础和现行设计同步，把正式激活整体后置。
 - [验证投入](decisions/verification-effort.md)：按目标失败、后果和独有证据配置审查与测试。
+- [译名依据扩展](decisions/industry-translation-basis.md)：在不译之前纳入有证据的业界用法，区分名称变更与概念变更；不批量采纳既有标签。
+- [译名检索来源](decisions/translation-reference-resources.md)：优先成批查固定术语库，按条目判断证据等级，复用查询结果并区分实际命中与采纳建议。
+- [模型知识译名](decisions/model-knowledge-translation.md)：已有离线资料不足时，允许按新增译名第 5 级使用模型既有行业知识；与已核实外部来源分开，不改变概念身份。
+- [模型译名标记](decisions/model-translation-marker.md)：保留早期字符串标记决定，其表示与输入位置已由后续决定替代。
+- [语言依据结构](decisions/structured-label-basis.md)：采纳外部、模型、未采用与历史依据的结构化合同及当前中文补全批次；生成、校验与人读导出共同保留依据性质。
 
 ## 正式词表
 
@@ -76,10 +81,12 @@
 - `vocab/build/gbt-13745.json`
 - `vocab/build/gbt_en.py`
 - `vocab/build/label-decisions.json`
+- `vocab/build/label-adoptions.json`
+- `vocab/sources.yaml`（语言依据的来源登记校验）
 - `vocab/build/scope-zh.json`
 - `scripts/build-topics.py` 中的顶层、图书馆情报与文献学分支、多层级规则、版本和日期
 
-`vocab/build/label-lookup.json` 是查询清单，`vocab/build/label-review.md` 是人工复核材料，`__pycache__` 是运行生成物；生成器不读取它们。修改主题数据时先改真实输入，再重建正式输出并运行主题校验。应用只读取正式输出，不反向编辑。
+`vocab/build/label-lookup.json` 是查询清单，`vocab/build/label-review.md` 是人工复核材料，`__pycache__` 是运行生成物；生成器不读取它们。结构化采纳由独立的 `label-adoptions.json` 保存，旧 `label-decisions.json` 的 Wikidata 采纳与否决保留。来源登记只供新增依据校验，不改变树结构输入。修改主题数据时先改真实输入，再重建正式输出并运行主题校验。应用只读取正式输出，不反向编辑。
 
 ## 术语编辑
 
@@ -115,7 +122,7 @@
 - [来源治理](drafts/source-governance.md)：提出来源身份、用途、引用、复核和失效处理规则；部分前置机器契约已经完成。
 - [术语治理](drafts/terminology-governance.md)：提出术语概念、多语形式、状态、委托和生成边界；基础接口完成未改变 glossary 编辑权。
 - [TBX 导出](drafts/tbx-export.md)：记录术语交换的后置触发条件；当前无接收方，不选择方言或实施导出。
-- [划分特征的自定治理](drafts/division-characteristics.md)：提出划分特征的登记与复核；零自定例外尚未开放。
+- [划分特征的自定治理](drafts/division-characteristics.md)：提出划分特征的登记与复核；该草案的自定例外尚未开放，已开放的模型知识译名不扩及划分特征。
 - [分面字段草案](drafts/facet-field.md)：记录分面研究、模型职责和生效条件；现行主题记录没有该字段。
 - [概念组草案](drafts/concept-groups.md)：提出手工概念组的登记和规则；现行数据没有手工概念组。
 - [生活领域范围](drafts/life-scope.md)：分别保存健康相关内容、个人或家庭财务、旅行或旅游的范围问题；推荐保持现状，开放决定未改变正式范围。

@@ -6,6 +6,8 @@
 
 完整应用设计和应用实现已经建立，但没有作为正式内容消费者激活。`kb-design` 的 `scripts/export_obsidian.py` 生成六份正式词表的单向参考表示；独立 `kb-obsidian` 应用从固定且干净的设计提交初始化新 vault，建立 UUIDv4 `draft` 内容，校验内容字段与正式引用，并生成派生报告。实施验收已经建立本地持久 vault，证明完整目录、受管理写集、命令路径和空库报告能够落入实际目录。
 
+本仓库参考导出按[语言依据结构](../decisions/structured-label-basis.md)支持结构化语言依据的人读表示。独立 `kb-obsidian` 仍使用原固定设计提交；本次没有升级该依赖或刷新持久 vault。
+
 当前持久实例没有实际用户内容，也没有可审计查询日志或回流接口。空库报告只证明报告生成能力可运行，不构成内容引用计数、内容使用观察或维护反馈。target 文件、应用代码、持久实例和机械验收都不使来源、术语、内容消费者或正式切换自动激活。
 
 ## 功能范围
@@ -183,7 +185,7 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 | `concepts[].label`、`entities[].label`、`types[].label`、`genres[].label`、`forms[].label` | 各记录必填一个非空语言 mapping；`zh`、`en` 各至多一个 literal | literal | `zh`／`en` Text，不新增语言或翻译 | 显示值进入一级标题与 `kb_label`；其余非空形式进入 `aliases` | 显示值固定取 `zh`，再取 `en`，最后取 ID；前两项都无值时由 ID 回退 | 所有非空形式保存在标题、`kb_label` 或 `aliases`；非显示形式的语言键和原 mapping 结构不保留 | 无；未实现回流 |
 | `concepts[].alt`、`entities[].alt`、`types[].alt`、`genres[].alt`、`forms[].alt` | 可选，一个语言 mapping；每种语言为一个 literal 或零个以上 literal 的列表 | literal | `zh`／`en` Text 或 Text list | 非空形式进入 `aliases`，并进入正文“替代形式”表 | 无 fallback；字段或空值省略 | 正文逐项保留语言、顺序、形式和重复次数；`aliases` 去重；source 的 scalar／list 形状和空列表不保留 | 无；未实现回流 |
 | `concepts[].hidden`、`entities[].hidden`、`types[].hidden`、`genres[].hidden`、`forms[].hidden` | 可选，一个语言 mapping；每种语言为一个 literal 或零个以上 literal 的列表 | literal | `zh`／`en` Text 或 Text list | 非空形式进入 `aliases`，并进入正文“隐藏形式”表 | 无 fallback；字段或空值省略 | 正文逐项保留语言、顺序、形式和重复次数；`aliases` 不保留 hidden 角色且去重；source 的 scalar／list 形状和空列表不保留 | 无；未实现回流 |
-| `concepts[].basis`、`forms[].basis`；可选的 `entities[].basis`、`types[].basis`、`genres[].basis` | 主题与载体必填一个 mapping；实体、类型和体裁可选。非实体键为 `zh`、`en`，实体键为 `subjects`；每个值为一个 literal 或零个以上 literal 的列表 | literal | Text 或 Text list；列表可以为空；仍是现行紧凑依据，不是后置共享引用 | 主题、类型、体裁和载体进入正文“形式依据”表；实体进入“归属依据”表 | 必填对象无 fallback；可选对象缺失时整节省略 | 键和值包括空列表都保留在正文表；不取得结构化 reference 或 property 查询能力 | 无；未实现回流 |
+| `concepts[].basis`、`forms[].basis`；可选的 `entities[].basis`、`types[].basis`、`genres[].basis` | 主题与载体必填一个 mapping；实体、类型和体裁可选。语言键为 `zh`、`en`，实体键为 `subjects` | 语言项为结构化依据或兼容旧值；其他项保持 literal | 语言结构按[语言依据](../topics.md#语言依据)；其他项为 Text 或 Text list，允许空列表 | 主题、类型、体裁和载体进入正文“形式依据”表；实体进入“归属依据”表 | 必填对象无 fallback；可选对象缺失时整节省略；非法语言结构阻断导出 | 正文保留等级、外部来源与定位，或模型、日期、判断、授权与未核实声明；历史值和旧空列表保留；不进入 nested properties | 无；未实现回流 |
 | `concepts[].scope`、`entities[].scope`、`types[].scope`、`genres[].scope`、`forms[].scope` | 类型、体裁、载体必填恰好一个；主题、实体可选零个或一个 | literal | 非空 Text | 正文“范围”节 | 无 fallback；可选缺失时整节省略 | 文本值保留；不进入 property | 无；未实现回流 |
 | `concepts[].match[]`、`entities[].match[]`、`types[].match[]`、`genres[].match[]`、`forms[].match[]` | 类型、体裁、载体必填一个列表；主题、实体可选；每项恰有 `source`、`id`、`rel` | `source` 是来源用途 reference；`id`、`rel` 是 literal | `source` 必须命中正式来源用途；`rel` 取现行五种 SKOS mapping relation；`id` 为非空 Text | 正文“外部映射”表的 `source`、`id`、`rel` 三列 | 必填列表无 fallback；可选缺失时整节省略；不自动补 `closeMatch` | 三个值及行序保留；来源 reference 在正文中只保存 ID，不转为 Wikilink | 无；未实现回流 |
 | `concepts[].status`、`entities[].status`、`types[].status`、`genres[].status`、`forms[].status` | 各记录必填，恰好一个 | controlled literal | Text；值域由相应正式词表的现行 lifecycle 规则决定，target 不重定义 | `kb_status` Text | 无；缺失阻断导出 | 值逐字保存 | 无；未实现回流 |
@@ -473,7 +475,7 @@ Base 是可编辑界面。经 Base 修改对象笔记与直接编辑 Markdown �
 
 正式记录中的 `basis`、`match` 和 `history` 含嵌套结构，因此进入正文表格或 YAML 代码块；`scope`、替代形式和隐藏形式也进入正文。该 loss 只发生在可查询 property 结构上，信息本身仍写入生成笔记。
 
-`basis` 的 list 值允许为空，空列表仍保存在正文依据表。`alt` 和 `hidden` 的正文表逐行保留语言、顺序、形式与重复次数；`aliases` 汇集非显示形式并去重，因此不保留重复次数，且不保留 hidden 角色。source 的 scalar／list 形状和空列表也不能从 aliases 恢复。
+语言依据按新结构生成可读正文，外部来源与定位逐项显示；第 5 级明确显示“模型知识 · 第 5 级，外部用法未核实”及模型、日期、判断和授权。第 6 级显示未采用原因，`legacy` 显示历史未重新分级；模型及历史标记不成为来源链接。兼容旧 `basis` 的 list 值允许为空，空列表仍保存在正文依据表。`alt` 和 `hidden` 的正文表逐行保留语言、顺序、形式与重复次数；`aliases` 汇集非显示形式并去重，因此不保留重复次数，且不保留 hidden 角色。source 的 scalar／list 形状和空列表也不能从 aliases 恢复。
 
 导出器对每类正式记录使用显式允许字段表。未知字段、非法或重复 ID、无法解析的引用、重复输出路径和不能安全序列化的值都会阻断导出；导出器不把未知值放入兜底字段，也不丢弃后继续生成。
 

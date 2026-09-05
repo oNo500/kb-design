@@ -145,9 +145,9 @@ class ExportObsidianTests(unittest.TestCase):
             properties["kb_broader"],
         )
         self.assertEqual([], properties.get("kb_arrays", []))
-        self.assertNotIn("aliases", properties)
-        self.assertIn("| zh | none |", body)
-        self.assertIn("| en | source |", body)
+        self.assertEqual(["Security"], properties["aliases"])
+        self.assertIn("外部用法未核实", body)
+        self.assertIn("| en · 外部依据 | cs2023 · SEC |", body)
         self.assertIn("| cs2023 | SEC | exactMatch |", body)
 
         unresolved = []
@@ -354,12 +354,12 @@ class ExportObsidianTests(unittest.TestCase):
             self.assertEqual([], non_scalar)
 
         expected_labels = {
-            "kb/topics/security.md": "Security",
+            "kb/topics/security.md": "安全",
             "kb/arrays/security-cs2023.md": "security-cs2023",
             "kb/entities/cs2023.md": "计算机科学课程 2023",
             "kb/sources/cs2023.md": "cs2023",
             "kb/types/tutorial.md": "教程",
-            "kb/forms/diagram.md": "Diagram",
+            "kb/forms/diagram.md": "示意图",
         }
         for path, expected in expected_labels.items():
             with self.subTest(path):
@@ -591,7 +591,8 @@ class ExportObsidianTests(unittest.TestCase):
             )
             self.assertEqual(hashlib.sha256(original_input).hexdigest(), topics_input["sha256"])
             properties, _ = split_note((output / "kb/topics/security.md").read_bytes())
-            self.assertEqual("Security", properties["kb_label"])
+            self.assertEqual("安全", properties["kb_label"])
+            self.assertEqual(["Security"], properties["aliases"])
             self.assertIn(b"Security Changed During Export", input_path.read_bytes())
 
     def test_cli_argument_errors_use_export_error_contract(self):

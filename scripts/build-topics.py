@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """从 vocab/build/ 的输入生成 vocab/topics.yaml。设计见 design/topics.md、design/hierarchy.md。"""
-import json, re, sys, pathlib
+import json, re, sys, pathlib, yaml
+from label_adoptions import apply_adoptions, load_adoptions
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 B = ROOT / 'vocab' / 'build'
 sys.path.insert(0, str(B))
@@ -115,7 +116,8 @@ for parent_id in parent_ids:
 
 # ---------- 译名回查：本库自译的标签按译名阶梯处理 ----------
 # vocab/build/label-decisions.json 是 lookup-labels.py 结果经人工审核后的决定（治理“译名”第 3 级）。
-# 查到且采纳：标签改为 Wikidata 标签，basis 记 Q 号；其余：第 4 级不译，去掉自译标签，basis 记 none。
+# 本段保留原有 Wikidata 采纳结果与否决；其余先记 none，不证明新阶梯已穷尽。
+# 结构化译名采纳在 scope 生成后独立应用，不覆盖历史 Q 号记录。
 decisions = json.load(open(B/'label-decisions.json'))
 for c in concepts.values():
     for lang in ('zh','en'):
@@ -127,13 +129,19 @@ for c in concepts.values():
             c['label'][lang] = ''; c['basis'][lang] = 'none'
 
 # ---------- 不译概念的范围注释 ----------
-# 译名阶梯第 4 级：不译，给解释。解释按来源原文写，键为 来源:条目编号。
+# 当前无已消费译名时给解释；不等于已穷尽扩展后的译名阶梯。键为 来源:条目编号。
 scopes = json.load(open(B/'scope-zh.json'))
 for c in concepts.values():
     if c.get('scope') or c['label'].get('zh'): continue
     for m in c['match']:
         sc = scopes.get(f"{m['source']}:{m['id']}:{c['label']['en']}") or scopes.get(f"{m['source']}:{m['id']}")
         if sc: c['scope'] = sc; break
+
+# ---------- 已授权译名与语言依据 ----------
+# 在范围说明生成后应用，避免补上中文时丢失原有 scope。
+sources_document = yaml.safe_load((ROOT/'vocab'/'sources.yaml').read_text(encoding='utf-8'))
+source_index = {record['id']: record for record in sources_document['sources']}
+apply_adoptions(list(concepts.values()), 'topics', load_adoptions(ROOT), source_index)
 
 # ---------- 输出 ----------
 def q(s): return '"' + s.replace('"', '\\"') + '"'
@@ -148,7 +156,9 @@ for c in concepts.values():
     labs = ', '.join(f"{l}: {q(c['label'][l])}" for l in ('zh','en') if c['label'][l])
     assert labs, c['id']
     out.append(f"    label: {{ {labs} }}")
-    out.append(f"    basis: {{ zh: {c['basis']['zh']}, en: {c['basis']['en']} }}")
+    basis_yaml = yaml.safe_dump(c['basis'], allow_unicode=True, sort_keys=False, width=10000).rstrip()
+    out.append('    basis:')
+    out.extend('      ' + line for line in basis_yaml.splitlines())
     out.append(f"    broader: [{', '.join(c['broader'])}]")
     if c['arrays']: out.append(f"    arrays: [{', '.join(c['arrays'])}]")
     if c.get('scope'): out.append(f"    scope: {q(c['scope'])}")

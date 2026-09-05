@@ -4,7 +4,7 @@
 
 人工不直接编辑 `vocab/topics.yaml`。当前编辑源是生成脚本及其实际读取的 `vocab/build/` 输入；修改输出而不修改编辑源，会在下次生成时丢失。本文规定词表范围、记录、关系、映射、生命周期、建设流程和校验。树的结构见[层级结构](hierarchy.md)，外部来源登记见[来源名称规范表](sources-registry.md)。理论依据见[受控词表](../concepts/controlled-vocabulary.md)和[词表的建设与维护](../concepts/vocabulary-construction.md)。
 
-正式词表当前保持 700 个概念、24 个数组和 8 个顶层。来源与术语的新接口已经实现，但尚未接管正式数据：现行紧凑 `basis`、标量 `source` 和 `match.source` 继续由当前生成链消费；共享引用结构、术语三层记录、委托和生成消费者均未激活。通用 `origin` 不再是主题目标字段，本次同步不以其他字段自动填补它。
+正式词表当前保持 700 个概念、24 个数组和 8 个顶层。来源与术语的新接口已经实现，但尚未接管正式数据：语言依据采用本文的结构化合同，其他现行紧凑 `basis`、标量 `source` 和 `match.source` 继续由当前生成链消费；共享引用结构、术语三层记录、委托和生成消费者均未激活。通用 `origin` 不再是主题目标字段，本次同步不以其他字段自动填补它。
 
 ## 词表总览
 
@@ -108,21 +108,27 @@
 - `vocab/build/gbt-13745.json`
 - `vocab/build/gbt_en.py`
 - `vocab/build/label-decisions.json`
+- `vocab/build/label-adoptions.json`
+- `vocab/sources.yaml`（语言依据的来源登记校验）
 - `vocab/build/scope-zh.json`
 - `scripts/build-topics.py` 中的顶层、图书馆情报与文献学分支、多层级规则、版本和日期
 
-`vocab/build/label-lookup.json` 是查询清单，`vocab/build/label-review.md` 是人工复核材料；生成器不读取两者。只有人工审定后写入 `label-decisions.json` 的决定才进入生成链。`__pycache__` 也不是编辑源。
+`vocab/build/label-lookup.json` 是查询清单，`vocab/build/label-review.md` 是人工复核材料；生成器不读取两者。旧 Wikidata 决定保存在 `label-decisions.json`，本次结构化采纳保存在 `label-adoptions.json`；两者按各自合同进入生成链。后者不覆盖前者的否决记录。`__pycache__` 也不是编辑源。
+
+`scripts/label_basis.py` 统一语言依据的兼容读取、校验与人读字段；`scripts/label_adoptions.py` 处理采纳记录。新增输入只参与标签采纳及依据校验，树结构仍由原有输入决定。
 
 修改主题数据时，先修改生成脚本或上述实际输入，再重建正式输出并检查差异。应用只读取正式输出，不反向编辑它。
 
 ## 概念记录
 
-概念记录使用以下现行结构；本批不增加、删除或改名字段。
+概念记录使用以下现行结构；语言依据的内部形状按下文合同保存。
 
 ```yaml
 - id: sql-injection                      # 稳定、小写、连字符；一经引用不改
   label: { zh: SQL 注入, en: SQL injection }
-  basis: { zh: wikidata:Q506059, en: cwe:CWE-89 }   # 标签的形式依据
+  basis:                                # 标签的形式依据
+    zh: { level: 3, references: [{ source: wikidata, locator: Q506059 }] }
+    en: { level: 2, references: [{ source: cwe, locator: CWE-89 }] }
   alt: [SQLi]                            # 替代标签；可检索、可显示
   hidden: []                             # 隐藏标签；可检索、不显示
   broader: [input-validation, data]      # 空列表表示顶层概念
@@ -140,11 +146,11 @@
   history: []                            # 日期、变更内容和理由
 ```
 
-必填字段是 `id`、`label.zh`、`broader`、`status`、`added`、`basis.zh` 和 `basis.en`。`label.en` 按[治理](governance.md)中的译名阶梯取得；没有依据时不填，并写 `basis.en: none`。其余字段按需使用。本地概念强烈建议填写 `scope`，以明确适用和不适用的边界。
+必填字段是 `id`、`label.zh`、`broader`、`status`、`added`、`basis.zh` 和 `basis.en`。`label.en` 按[治理](governance.md)中的译名阶梯取得；完成当前判断仍未采用时不填，并写 `basis.en: { level: 6, reason: 未采用原因 }`；未重新分级的旧 `none` 保留为 `legacy: none`。其余字段按需使用。本地概念强烈建议填写 `scope`，以明确适用和不适用的边界。
 
-`basis` 中的语言项记录标签的形式依据。它只回答该表示形式能否被项目采用，不能代替概念对应依据，也不能代替其他字段值或关系的断言依据。人工赋值的具体断言按[维护](maintenance.md)的断言规则记录依据。
+`basis` 中的语言项记录标签的准入根据。外部依据、第 5 级模型判断、第 6 级未采用和未重新分级的历史值分别保存，见下文“语言依据”。语言依据不能代替概念对应判断，也不能代替其他字段值或关系的断言依据。人工赋值的具体断言按[维护](maintenance.md)的断言规则记录依据。
 
-正式数据继续使用现行紧凑 `basis`、标量 `source` 和 `match.source`。复制记录的现行 `source` 填写真实来源，并用 `match` 指回相应外部条目；本地建立、综合判断或只受材料支持的记录没有实际派生来源时不填 `source`。正式库存中的 `source: self` 只是待迁移兼容值，不作为实际派生解释，也不得用于新增记录。后置共享 `basis`、`source` 和 `match` 只有在正式迁移、角色批准和消费者切换后才接管相应记录。
+语言项使用结构化 `basis.zh`／`basis.en`；其他断言仍使用现行紧凑 `basis`，派生与映射仍使用标量 `source` 和 `match.source`。复制记录的现行 `source` 填写真实来源，并用 `match` 指回相应外部条目；本地建立、综合判断或只受材料支持的记录没有实际派生来源时不填 `source`。正式库存中的 `source: self` 只是待迁移兼容值，不作为实际派生解释，也不得用于新增记录。后置共享 `basis`、`source` 和 `match` 只有在正式迁移、角色批准和消费者切换后才接管相应记录。
 
 当前 `scripts/build-topics.py` 要求每条记录都提供 `source`，并总是输出该字段，尚不能表达本地记录省略 `source`。这是现行生成路径的待迁移缺口；缺口关闭前，不能用 `source: self` 绕过，也不能通过这条路径把没有实际派生来源的新建本地记录写入正式输出。
 
@@ -165,6 +171,41 @@ arrays:
 ```
 
 一个概念的下位只有一个来源且未做分析时，不登记数组。规则见[层级结构](hierarchy.md)。分面字段暂不设置，见[分面字段草案](drafts/facet-field.md)；草案仍未生效。
+
+## 语言依据
+
+[语言依据结构](decisions/structured-label-basis.md)规定 `basis.zh`／`basis.en` 的现行合同，替代旧字符串模型标记。语言依据与来源 v2 的共享引用是两个合同；本次不改变其他 `basis` 项、`source` 或 `match`。
+
+| 依据性质 | 结构 | 条件 |
+|---|---|---|
+| 外部依据 | `{level: 1..4, references: [{source, locator}]}` | 标签非空；每个来源命中现行 `sources.yaml`，定位非空；第 4 级至少有两个不同来源 |
+| 模型知识 | `{level: 5, model: {name, date, rationale, approval}}` | 标签非空，模型、日期、逐条判断及实际采纳授权齐备；外部用法未核实 |
+| 明确未采用 | `{level: 6, reason}` | 对应语言标签为空，原因非空；原名在另一语言保留 |
+| 历史依据 | `{legacy: 旧值}` | 保存未重新分级的 `none`、`self` 或旧外部引用，不推定新等级 |
+
+等级的译名含义见[治理](governance.md#译名)。来源原名可以继续沿用；本批按已登记类别将既有来源依据明确归级，并保留其来源和原定位：`gbt-13745`、`lom`、`rfc-1122` 为第 1 级，`wikidata` 为第 3 级，`cs2023`、`asvs`、`cwe`、`attack`、`atlas`、`swebok`、`owasp-llm-top10` 为第 2 级。这是既有记录的结构迁移，不表示新做了外部核验，也不能将网站整体类别作为新增译名的准入证明。未知历史引用保持未分级。旧 `source` 按记录原来源及已有映射定位展开；已映射来源缺少定位时由校验报错，不编造定位；映射表外的旧引用保持历史值。
+
+旧字符串仍可读取，新生成的语言依据使用上述结构。历史 `none` 只说明当时没有采用，不证明前四级已查尽，也不自动变为第 6 级。旧 `self` 不自动变为模型知识，其不得为 `active` 的规则继续适用。第 5 级既不使概念转正，也不要求概念退出 `active`。
+
+外部 `references` 只保存已登记来源；多个不同来源 ID 只能由校验器证明引用不同，不能证明真实独立性、用法一致或概念对应。第 4 级仍须按治理规则作实质判断。模型标识不是来源 ID，不创建同名实体或来源用途，也不用于派生、映射、关系或其他断言。
+
+### 模型标记
+
+第 5 级使用完整的 `model` 对象，保留模型、日期、判断与授权，不再写单独的 `basis.zh: model` 字符串。这个历史章节锚点继续保留；当前依据形状以上表为准，模型信息不作为来源实体或来源用途。
+
+### 采纳记录
+
+结构化采纳独立保存在 `vocab/build/label-adoptions.json` 的 `records` 下，键为 `topics/<id>/<语言>` 或 `forms/<id>/<语言>`。每条记录保存 `accept`、准确的 `label`、完整 `basis`，以及 `original: {en, scope}`。本批模型记录的 `approval` 固定指向 `design/decisions/structured-label-basis.md#批次授权`；`date` 使用真实的 `YYYY-MM-DD` 日期，`name` 使用实际可得模型标识，`rationale` 说明所选表达与原概念的对应。模型输出不能给自己授权。
+
+主题生成器先完成原有生成，再应用采纳并标准化语言依据；载体按现行人工编辑路径应用同一合同。加载器只接受已明确支持的本批授权，并校验输入声明与每条模型授权一致，不能凭一个形似决定文件的路径取得权限。已存在标签只允许名称和依据均相同的幂等应用，不能借同名译法覆盖外部依据。已采纳模型输出必须与对应输入中的标签和依据一致，原英文与范围也必须仍与快照相符；缺失、未采纳或过期记录阻断生成及校验。旧 Wikidata 的 Q 号、采纳和否决仍保存在 `label-decisions.json`，不被新记录覆盖。旧报告中的建议与辅助材料保留作复核上下文，不冒充已登记的多来源依据。
+
+该文件保存已授权形式的生成采纳，不替代 `concepts/glossary.md` 的现行中英对照编辑权。输出中的模型判断自包含，离线表示不依赖私人报告；完整原名及范围快照由采纳输入承担。以后获得并采纳外部依据时，保留原模型判断与采纳历史，再更新当前依据。
+
+### 人读表示
+
+HTML 在名称旁直接显示“模型知识 · 第 5 级”，并注明“外部用法未核实”；详情保留模型、日期、判断与授权。Obsidian 把语言依据作为可读正文，显示等级、外部来源和定位，或模型声明及记录字段，不写嵌套 frontmatter。历史值明确显示未重新分级，不能冒充第 6 级结论。
+
+关系图只从外部 `references` 建立来源关联，模型和历史标记不生成外部证据连线。不能解析新结构的使用方不得静默丢弃依据后继续发布。名称覆盖、外部依据覆盖和模型采纳分别统计；表示支持不等于正式消费者激活，也不证明既有 vault 已更新。
 
 ## 生命周期
 
@@ -201,7 +242,8 @@ arrays:
 每次修改主题生成脚本或实际输入并重建 `vocab/topics.yaml` 后，运行 `scripts/check-topics.py`。现行校验继续检查以下规则。
 
 - 所有 `broader` 指向存在的 id，且不存在环。
-- 现行 `source` 和 `match.source` 在 `sources.yaml` 中。
+- 现行 `source`、`match.source` 和语言依据的外部 `references[].source` 在 `sources.yaml` 中。
+- 主题与载体的语言依据满足等级、标签、来源定位及模型授权条件；模型输出与采纳记录、原英文和范围一致。历史 `none` 不误判为第 6 级，旧 `self` 仍不能支持 `active`。
 - `deprecated` 必有 `replaced_by`。
 - `arrays` 指向存在的数组，且数组的 `superordinate` 位于本概念的 `broader` 中。
 - 数组至少有 `source` 或 `characteristic`；`characteristic` 在 `characteristics.yaml` 中。分析层数组的成员位于上位概念的下位集合内，同一划分特征下每个下位概念至多属于一组。

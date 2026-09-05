@@ -23,8 +23,10 @@
 
 ## 术语
 
-- **当前阶段零自定**：规则对象是未经准入依据、被用来命名概念的 designation。项目拟采用的 designation 必须按 [design/governance.md](design/governance.md) 的准入阶梯取得依据并登记；AI 不得主动形成或选定无准入依据的 designation 作为可复用的项目概念名称
+- **当前阶段零自定**：通常禁止 AI 主动形成或选定无准入依据的 designation；现已由人开放[模型知识译名](design/decisions/model-knowledge-translation.md)例外，仅允许为既有概念按译名第 5 级使用模型既有知识中的行业表达，并登记为模型判断、外部用法未核实。该例外不授权新建概念、类别或划分特征
 - 拟作项目术语而未登记的 designation 不得进入定稿。普通叙述、来源转录、文件路径、代码和值中的任意字符串不因出现而自动成为术语；候选、`defer`、草案、占位和示例不能替代形式依据与概念对应依据，也不能取得试用资格
+- 本阶段只用当前已有离线资料和模型既有知识，不联网或新增下载。译名第 4 级保留多个独立来源与概念对应要求；可用离线资料不足时可进入第 5 级，不要求补造外部出处。已有合格前级依据不被模型判断覆盖，实质含义冲突未解决时保留原名。名称变化不自动改变概念 id 或状态；生成与校验支持结构化语言依据及已授权模型采纳；多个不同来源引用不证明真实独立性，规则扩展不等于其他标签已获采纳
+- `basis.zh`／`basis.en` 使用[语言依据](design/topics.md#语言依据)：外部等级与 `references`、第 5 级 `model`、第 6 级未采用原因、未重新分级的 `legacy` 分开。旧 `none` 不自动变第 6 级，旧 `self` 不自动变模型判断。模型输出关联 `vocab/build/label-adoptions.json` 的采纳记录并显示“模型知识 · 第 5 级，外部用法未核实”；[本次批次授权](design/decisions/structured-label-basis.md#批次授权)只覆盖原有缺失中文及语言依据结构迁移，不改变身份、关系或状态
 
 ## 标点与间距
 
@@ -70,4 +72,4 @@
 
 - `concepts/` 下的文章另按 [concepts/CONVENTIONS.md](concepts/CONVENTIONS.md)
 - 全部政策见 [design/governance.md](design/governance.md)；来源分级见 [design/entities.md](design/entities.md)，复核按 [design/maintenance.md](design/maintenance.md)
-- 凭记忆写的内容联网核对后才提交；链接用 `[标题](url)`
+- 外部事实须核对原文后才提交；本阶段未取得的外部事实如实标为未核实。译名第 5 级按模型知识例外登记，不冒充已核外部事实；链接用 `[标题](url)`
