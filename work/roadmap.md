@@ -6,7 +6,7 @@
 
 | 工作 | 状态 | 完成口径 |
 |---|---|---|
-| [来源迁移准备](reviews/2026-09-05-source-v2-preparation.md) | 首批盘点与离线工具完成 | 已核对正文材料、四份来源及账本差异；[离线工具](reviews/2026-09-05-offline-source-evidence.md)先处理 explanation 与 GB/T 520，证据采纳和正式切换仍未发生 |
+| [来源迁移准备](reviews/2026-09-05-source-v2-preparation.md) | 首批离线审阅完成 | [两个对象的结论](reviews/2026-09-05-source-evidence-conclusions.md)已列明支持范围与具体补件；[离线工具](reviews/2026-09-05-offline-source-evidence.md)可复用，正式 v2 依据未采纳、切换未发生 |
 | [终端访问](../docs/decisions/obsidian-agent-entry.md) | 当前子阶段完成 | 新库代理入口与 CLI 规则已实现，97 项应用测试通过；见[验收记录](reviews/2026-09-05-obsidian-agent-entry.md)。既有库安装与多份真实材料验收仍待推进 |
 | [实时词表预览](plans/2026-09-05-vocab-preview.md) | 当前范围完成 | uv 启动与浏览器自动更新已验证，7 项测试通过，见[预览验收](reviews/2026-09-05-vocab-preview.md) |
 | [monorepo 迁移](plans/2026-09-05-monorepo-layout.md) | 当前范围完成 | 文件去向与受保护字节对账通过；uv workspace、命令与输出路径已验证；294 项测试通过，独立审查已关闭；见[迁移验收](reviews/2026-09-05-monorepo-layout.md) |
