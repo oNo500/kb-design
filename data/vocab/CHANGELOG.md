@@ -27,6 +27,8 @@
 - 第二批 30 个：4 个组织、6 个 AI 编程工具、5 种语言、15 个 JS/TS 与 Python 生态的框架和工具；`form` 记 Wikidata 的 instance of
 - 全部实体的 `subjects` 加 `basis`：第一批以标准自身的范围声明为依据（`<id>:scope`），第二批 23 个核到 CS2023 知识单元的主题条目，7 个为 `self`；`basis` 含 `self` 的实体一律 `candidate`（第一批 5 个、第二批 7 个）
 
+- 2026-09-05：经人工确认新增 Obsidian 软件实体 `obsidian`；名称与范围核对[官网](https://obsidian.md/)，身份映射核对 [Wikidata Q103994532](https://www.wikidata.org/wiki/Q103994532)。主题暂归 `computing`，归属判断保留 `basis.subjects: self`，状态为 `candidate`；不新增来源用途，不宣告发版。
+
 ### sources.yaml
 
 - 新增 27 个来源，`role` 按 [sources-registry.md](../design/sources-registry.md)

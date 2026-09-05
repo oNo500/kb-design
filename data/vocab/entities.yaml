@@ -697,3 +697,16 @@ entities:
     match: [{ source: wikidata, id: Q101119404, rel: exactMatch }]
     status: active
     added: 2026-08-23
+
+  - id: obsidian
+    label: { zh: "Obsidian", en: "Obsidian" }
+    kind: software
+    url: https://obsidian.md/
+    subjects: [computing]
+    basis:
+      subjects: self
+    scope: "本地笔记与知识管理软件；本记录指应用本身，不单独表示配套服务或社区插件。"
+    match:
+      - { source: wikidata, id: Q103994532, rel: exactMatch }
+    status: candidate
+    added: 2026-09-05
