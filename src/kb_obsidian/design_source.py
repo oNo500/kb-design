@@ -15,6 +15,10 @@ from .errors import ApplicationError
 
 
 SUPPORTED_DESIGN_COMMIT = "59e033d64b230fe658aa09955e1a66ec38aa5c6f"
+SUPPORTED_DESIGN_COMMITS = frozenset({
+    SUPPORTED_DESIGN_COMMIT,
+    "37a78c775d867eb9d1f7610ced23aee43ce345ec",
+})
 
 _FORMAL_DOCUMENTS = {
     "topics": "vocab/topics.yaml",
@@ -82,7 +86,7 @@ def load_design(root: Path) -> DesignSnapshot:
     """Load the six formal documents from the supported clean design revision."""
     design_root = _resolve_git_root(root)
     commit = _git(design_root, "rev-parse", "HEAD")
-    if commit != SUPPORTED_DESIGN_COMMIT:
+    if commit not in SUPPORTED_DESIGN_COMMITS:
         raise ApplicationError(f"unsupported design commit: {commit}")
     if _git(design_root, "status", "--porcelain", "--untracked-files=no"):
         raise ApplicationError("design repository has tracked changes")

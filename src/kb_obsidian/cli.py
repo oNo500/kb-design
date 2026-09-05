@@ -59,6 +59,11 @@ def _parser() -> argparse.ArgumentParser:
     initialize.add_argument("--design-root", required=True, type=Path)
     initialize.add_argument("--output", required=True, type=Path)
 
+    refresh = commands.add_parser("refresh", help="refresh vocabulary references in an existing vault")
+    refresh.add_argument("--design-root", required=True, type=Path)
+    refresh.add_argument("--vault", required=True, type=Path)
+    refresh.add_argument("--dry-run", action="store_true", help="validate and show changes without modifying the vault")
+
     new_content = commands.add_parser("new-content", help="create one validated draft")
     new_content.add_argument("--design-root", required=True, type=Path)
     new_content.add_argument("--vault", required=True, type=Path)
@@ -113,6 +118,9 @@ def _error(message: str) -> None:
 def _run(arguments: argparse.Namespace) -> tuple[Mapping[str, object], bool]:
     if arguments.command == "init":
         return initialize_vault(arguments.design_root, arguments.output), False
+    if arguments.command == "refresh":
+        from .refresh import refresh_vocabulary
+        return refresh_vocabulary(arguments.design_root, arguments.vault, dry_run=arguments.dry_run), False
 
     snapshot = load_design(arguments.design_root)
     if arguments.command == "new-content":

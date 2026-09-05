@@ -14,7 +14,7 @@ from collections.abc import Mapping
 from pathlib import Path, PurePosixPath
 from typing import Any
 
-from .design_source import DesignSnapshot, SUPPORTED_DESIGN_COMMIT, _git, _resolve_git_root
+from .design_source import DesignSnapshot, SUPPORTED_DESIGN_COMMITS, _git, _resolve_git_root
 from .errors import ApplicationError
 
 
@@ -61,7 +61,7 @@ def _require_publishable_output(destination: Path) -> None:
 
 def _verify_snapshot_source(snapshot: DesignSnapshot) -> tuple[Path, str]:
     root = _resolve_git_root(snapshot.root)
-    if root != snapshot.root or snapshot.commit != SUPPORTED_DESIGN_COMMIT:
+    if root != snapshot.root or snapshot.commit not in SUPPORTED_DESIGN_COMMITS:
         raise ApplicationError("design source changed since snapshot")
     if _git(root, "rev-parse", "HEAD") != snapshot.commit:
         raise ApplicationError("design source changed since snapshot")

@@ -31,6 +31,12 @@ class CliTests(unittest.TestCase):
             capture_output=True,
             text=True,
         )
+        subprocess.run(
+            ["git", "-C", str(cls.design), "checkout", "--quiet", "59e033d64b230fe658aa09955e1a66ec38aa5c6f"],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
 
     @classmethod
     def tearDownClass(cls) -> None:
@@ -329,7 +335,7 @@ class CliTests(unittest.TestCase):
         code, output, error = self._invoke("--help")
 
         self.assertEqual(0, code)
-        self.assertIn("{init,new-content,validate,report}", output)
+        self.assertIn("{init,refresh,new-content,validate,report}", output)
         self.assertEqual("", error)
 
 
