@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kb-obsidian"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = ["kb-core", "PyYAML>=6,<7"]
+
+[tool.uv.sources]
+kb-core = { workspace = true }
+
+[project.scripts]
+kb-obsidian = "kb_obsidian.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

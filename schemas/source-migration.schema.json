@@ -34,7 +34,7 @@
                 "type": "string"
               },
               "path": {
-                "const": "vocab/topics.yaml"
+                "const": "data/vocab/topics.yaml"
               }
             },
             "required": [
@@ -66,8 +66,8 @@
                   {
                     "not": {
                       "enum": [
-                        "vocab/generated/source-cutover-payload.json",
-                        "vocab/generated/source-cutover-handoff.json"
+                        "build/source-cutover-payload.json",
+                        "build/source-cutover-handoff.json"
                       ]
                     }
                   }
@@ -396,7 +396,7 @@
               "uniqueItems": true
             },
             "module": {
-              "const": "scripts/source_model.py"
+              "const": "packages/kb-core/src/kb_core/source_model.py"
             },
             "reference_kinds": {
               "items": {

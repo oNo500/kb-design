@@ -1,9 +1,24 @@
 #!/usr/bin/env python3
 """检查仓库内 Markdown 的相对链接与锚点是否存在。外部 URL 不查。"""
-import re, sys, pathlib, unicodedata
+import json, os, re, sys, pathlib, unicodedata
 
 root = pathlib.Path(__file__).resolve().parent.parent
-files = [p for p in root.rglob('*.md') if '.git' not in p.parts]
+# Historical decisions and the frozen README retain their original path context.
+migration = json.loads((root / 'work/plans/2026-09-05-monorepo-files.json').read_text())
+historical = {'README.md'} | {
+    row['new'] for row in migration['files']
+    if row['new'] and (row['old'].startswith('design/decisions/')
+                       or row['old'] == 'vocab/CHANGELOG.md')
+}
+excluded_dirs = {'.git', '.venv', '.superpowers', '__pycache__', 'output', 'build'}
+files = []
+for directory, children, names in os.walk(root):
+    children[:] = [name for name in children if name not in excluded_dirs]
+    relative = pathlib.Path(directory).relative_to(root).as_posix()
+    if relative.startswith(('tests/fixtures', 'work/archive', 'data/audit')):
+        children[:] = []
+        continue
+    files.extend(pathlib.Path(directory) / name for name in names if name.endswith('.md'))
 
 def slug(h):
     h = h.strip().lower()
@@ -24,6 +39,8 @@ for p in files:
 bad = 0
 link = re.compile(r'\[[^\]]*\]\(([^)\s]+)\)')
 for p in files:
+    if p.relative_to(root).as_posix() in historical:
+        continue
     in_code = False
     for n, line in enumerate(p.read_text(encoding='utf-8').split('\n'), 1):
         if line.strip().startswith('```'): in_code = not in_code; continue

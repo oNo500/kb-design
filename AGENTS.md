@@ -1,6 +1,6 @@
 # kb-design 项目约定
 
-本文是 [design/writing.md](design/writing.md)、[design/governance.md](design/governance.md)、[design/maintenance.md](design/maintenance.md) 和[主题生成路径](design/topics.md#生成路径)的会话摘要，每次会话加载；冲突时以各正文职责范围内的规则为准。
+本文是 [docs/design/governance/writing.md](docs/design/governance/writing.md)、[docs/design/governance/governance.md](docs/design/governance/governance.md)、[docs/design/governance/maintenance.md](docs/design/governance/maintenance.md) 和[主题生成路径](docs/design/model/topics.md#生成路径)的会话摘要，每次会话加载；冲突时以各正文职责范围内的规则为准。
 
 ## 标题
 
@@ -23,10 +23,10 @@
 
 ## 术语
 
-- **当前阶段零自定**：通常禁止 AI 主动形成或选定无准入依据的 designation；现已由人开放[模型知识译名](design/decisions/model-knowledge-translation.md)例外，仅允许为既有概念按译名第 5 级使用模型既有知识中的行业表达，并登记为模型判断、外部用法未核实。该例外不授权新建概念、类别或划分特征
+- **当前阶段零自定**：通常禁止 AI 主动形成或选定无准入依据的 designation；现已由人开放[模型知识译名](docs/decisions/model-knowledge-translation.md)例外，仅允许为既有概念按译名第 5 级使用模型既有知识中的行业表达，并登记为模型判断、外部用法未核实。该例外不授权新建概念、类别或划分特征
 - 拟作项目术语而未登记的 designation 不得进入定稿。普通叙述、来源转录、文件路径、代码和值中的任意字符串不因出现而自动成为术语；候选、`defer`、草案、占位和示例不能替代形式依据与概念对应依据，也不能取得试用资格
 - 本阶段只用当前已有离线资料和模型既有知识，不联网或新增下载。译名第 4 级保留多个独立来源与概念对应要求；可用离线资料不足时可进入第 5 级，不要求补造外部出处。已有合格前级依据不被模型判断覆盖，实质含义冲突未解决时保留原名。名称变化不自动改变概念 id 或状态；生成与校验支持结构化语言依据及已授权模型采纳；多个不同来源引用不证明真实独立性，规则扩展不等于其他标签已获采纳
-- `basis.zh`／`basis.en` 使用[语言依据](design/topics.md#语言依据)：外部等级与 `references`、第 5 级 `model`、第 6 级未采用原因、未重新分级的 `legacy` 分开。旧 `none` 不自动变第 6 级，旧 `self` 不自动变模型判断。模型输出关联 `vocab/build/label-adoptions.json` 的采纳记录并显示“模型知识 · 第 5 级，外部用法未核实”；[本次批次授权](design/decisions/structured-label-basis.md#批次授权)只覆盖原有缺失中文及语言依据结构迁移，不改变身份、关系或状态
+- `basis.zh`／`basis.en` 使用[语言依据](docs/design/model/topics.md#语言依据)：外部等级与 `references`、第 5 级 `model`、第 6 级未采用原因、未重新分级的 `legacy` 分开。旧 `none` 不自动变第 6 级，旧 `self` 不自动变模型判断。模型输出关联 `data/inputs/topics/label-adoptions.json` 的采纳记录并显示“模型知识 · 第 5 级，外部用法未核实”；[本次批次授权](docs/decisions/structured-label-basis.md#批次授权)只覆盖原有缺失中文及语言依据结构迁移，不改变身份、关系或状态
 
 ## 标点与间距
 
@@ -35,7 +35,7 @@
 
 ## 决策权
 
-按 [design/governance.md](design/governance.md) 的三级：不改规则且可逆的直接做；改规则、改结构、改文件布局、术语准入、归属判断、候选删除的先提案；范围、零自定例外的开放、决定的采纳与推翻、删除非候选对象、发版、草案生效、来源改档只有人能定。提案先给小节清单或改动说明，人回复后再动文件。提交说明标注级别 `[L1]` `[L2]` `[L3]`。
+按 [docs/design/governance/governance.md](docs/design/governance/governance.md) 的三级：不改规则且可逆的直接做；改规则、改结构、改文件布局、术语准入、归属判断、候选删除的先提案；范围、零自定例外的开放、决定的采纳与推翻、删除非候选对象、发版、草案生效、来源改档只有人能定。提案先给小节清单或改动说明，人回复后再动文件。提交说明标注级别 `[L1]` `[L2]` `[L3]`。
 
 ## 审查与测试
 
@@ -48,30 +48,37 @@
 ## 阶段边界
 
 - 迁移账本只作审计，候选和诊断输出只供人工复核，schema、索引、探测、生成和维护能力只证明机械能力；它们都不等于正式数据、草案生效、正式切换或发版
-- 来源与术语基础的当前范围见[当前阶段](design/decisions/current-stage-scope.md)。仓库当前没有正式来源 v2 数据、正式术语数据、正式义务、正式索引、委托、消费者或切换状态，不得因接口存在而创建或宣称存在
-- Obsidian 是应用层，也是首个完整应用 target；`kb-design` 的词表参考导出与 `tools/obsidian/` 中的 `kb-obsidian` 工具共同实现该 target，工具默认读取所在设计仓库的干净 Git 快照，保留显式 `--design-root`，不使用提交白名单，见[工具归属](design/decisions/obsidian-tool-location.md)。实际 vault 在仓库外维护，应用实现存在仍不等于消费者激活
-- `kb-obsidian` 已实现新 vault 初始化、显式词表参考刷新、内容建立、内容校验和派生报告；刷新只更新 `kb/` 与 `app/manifest.json`，保留用户内容与配置，见[词表参考刷新](design/decisions/obsidian-reference-refresh.md)。当前没有实际内容数据、运行中的正式消费者、查询日志或回流接口，空库报告也不构成内容使用证据
+- 来源与术语基础的当前范围见[当前阶段](docs/decisions/current-stage-scope.md)。仓库当前没有正式来源 v2 数据、正式术语数据、正式义务、正式索引、委托、消费者或切换状态，不得因接口存在而创建或宣称存在
+- Obsidian 是应用层，也是首个完整应用 target；`apps/obsidian/` 中的 `kb-obsidian` 工具读取所在设计仓库的干净 Git 快照，保留显式 `--design-root`，不使用提交白名单，见[工具归属](docs/decisions/obsidian-tool-location.md)。默认持久 vault 位于 Git 忽略的 `output/obsidian/`，也支持显式外部 vault；应用实现和输出目录存在仍不等于消费者激活
+- `kb-obsidian` 已实现新 vault 初始化、显式词表参考刷新、内容建立、内容校验和派生报告；刷新只更新 `kb/` 与 `app/manifest.json`，保留用户内容与配置，见[词表参考刷新](docs/decisions/obsidian-reference-refresh.md)。当前没有实际内容数据、运行中的正式消费者、查询日志或回流接口，空库报告也不构成内容使用证据
 - 新内容单元使用无前缀、小写 UUIDv4，UUID 文件名承担稳定路径，title 与派生 alias 等元数据承担人的检索；建立器只创建通过当前约束校验的 `draft`，不批准内容状态或正式分类
 - 来源和术语正式激活均未发生；TBX 继续后置为无真实接收方的未生效草案
 
 ## 应用分层
 
-- [Application Profile](concepts/application-profile.md)与 [Reproducible Builds](concepts/reproducible-builds.md)是已登记方法；项目保留 English `Application Profile`，不采用未经核实的中文 designation
+- [Application Profile](docs/concepts/application-profile.md)与 [Reproducible Builds](docs/concepts/reproducible-builds.md)是已登记方法；项目保留 English `Application Profile`，不采用未经核实的中文 designation
 - 应用无关模型、`Application Profile` 的 target location／type／reference form／loss 语义选择、导出 artifact contract 的 byte serialization／file set／manifest／validation／publication 分开；后两者不得反向修改前者
-- field／property／path binding 不是 `metadata crosswalk`，不改变词表层 `crosswalk`；新 target 必须引用概念文、[方法登记](design/principles.md)和适用的已采纳决定
+- field／property／path binding 不是 `metadata crosswalk`，不改变词表层 `crosswalk`；新 target 必须引用概念文、[方法登记](docs/design/governance/principles.md)和适用的已采纳决定
 - 生成文件与 Base 可以在 Obsidian 中编辑，但修改不回流、不取得项目效力；完整应用设计、target 文件或参考导出存在都不等于内容消费者启用
 - 当前只宣称同环境确定性、项目 manifest 完整性与成功目录替换的 atomic visibility；不宣称 DCAP、DCTAP、JCS、BagIt、reproducible build conformance 或 durability
-- 上述边界由[应用约束与表示分层](design/decisions/application-profile-boundary.md)固定；旧[设计与应用分离](design/decisions/form-independence.md)决定继续有效且不修改
+- 上述边界由[应用约束与表示分层](docs/decisions/application-profile-boundary.md)固定；旧[设计与应用分离](docs/decisions/form-independence.md)决定继续有效且不修改
+
+## 工程路径
+
+- 根目录是 uv workspace，使用统一 `uv.lock`；`.python-version` 固定当前开发环境为 Python 3.13.5，成员包最低支持 Python 3.11
+- `apps/obsidian/` 通过 workspace 依赖使用 `packages/kb-core/`，核心包不依赖具体应用；核心入口是 `uv run kb-core <命令>`，应用入口是 `uv run kb-obsidian <命令>`
+- `output/` 保存 Git 忽略的持久应用数据，不属于构建清理对象；`build/` 保存 Git 忽略的可清理临时产物
+- 迁移前决定与 `work/archive/` 的旧路径按原 Git 基线解释，不重写历史正文；当前位置见[仓库布局](docs/decisions/monorepo-layout.md)
 
 ## 编辑路径
 
-- `vocab/topics.yaml` 是正式主题词表和确定性生成物，不直接编辑；修改 `scripts/build-topics.py` 或其实际读取的 `vocab/build/` 输入，重建后运行主题校验
-- `concepts/glossary.md` 仍是 designation 与中英对照的现行编辑源；仓库当前没有正式 `vocab/terms.yaml`，生成能力不转移编辑权
+- `data/vocab/topics.yaml` 是正式主题词表和确定性生成物，不直接编辑；修改 `data/inputs/topics/` 或核心生成实现，以 `uv run kb-core build-topics` 重建，再运行 `uv run kb-core check-topics`
+- `docs/glossary.md` 仍是 designation 与中英对照的现行编辑源；仓库当前没有正式 `data/vocab/terms.yaml`，生成能力不转移编辑权
 
 ## 其他约定
 
-- `concepts/` 下的文章另按 [concepts/CONVENTIONS.md](concepts/CONVENTIONS.md)
-- 全部政策见 [design/governance.md](design/governance.md)；来源分级见 [design/entities.md](design/entities.md)，复核按 [design/maintenance.md](design/maintenance.md)
+- `docs/concepts/` 下的文章另按 [docs/concepts/CONVENTIONS.md](docs/concepts/CONVENTIONS.md)
+- 全部政策见 [docs/design/governance/governance.md](docs/design/governance/governance.md)；来源分级见 [docs/design/model/entities.md](docs/design/model/entities.md)，复核按 [docs/design/governance/maintenance.md](docs/design/governance/maintenance.md)
 - 外部事实须核对原文后才提交；本阶段未取得的外部事实如实标为未核实。译名第 5 级按模型知识例外登记，不冒充已核外部事实；链接用 `[标题](url)`
 
 

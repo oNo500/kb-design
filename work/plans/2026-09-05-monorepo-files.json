@@ -1,0 +1,2022 @@
+{
+  "baseline": "564bfbf",
+  "files": [
+    {
+      "old": ".gitattributes",
+      "new": ".gitattributes",
+      "sha256": "76ee3d9dda3a3791b4fac8a62283becb71c4bb767991bb46e4f111e394813711",
+      "action": "保留"
+    },
+    {
+      "old": "AGENTS.md",
+      "new": "AGENTS.md",
+      "sha256": "cfbb5874d4d8c3e059cddfe11894c154fb4ff0299ebfd0f8955f393b24d4cf05",
+      "action": "保留"
+    },
+    {
+      "old": "ARCHITECTURE.md",
+      "new": "ARCHITECTURE.md",
+      "sha256": "3806397dedb27b5da018f1c9871a256b1332262561db11ef7ce4860aaca6fde1",
+      "action": "保留"
+    },
+    {
+      "old": "README.md",
+      "new": "README.md",
+      "sha256": "8e6309b128f064c291da176500f3e26d0aacc7ebfe51d774183c3b4e02202a10",
+      "action": "保留"
+    },
+    {
+      "old": "concepts/CONVENTIONS.md",
+      "new": "docs/concepts/CONVENTIONS.md",
+      "sha256": "cca0ee897cb3254ed56b0a76fec52ec5b7c9f5fb6eb2c3e6b686229851b0f60c",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/README.md",
+      "new": "docs/concepts/README.md",
+      "sha256": "49bc47e11e7063759a0fb5d2fa9005c2f260e22aa6d25b1149d149eba86fa40e",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/application-profile.md",
+      "new": "docs/concepts/application-profile.md",
+      "sha256": "b27c7c610e1186a4f1dcf5bf78aae6c2bbcf790d1e05b681f1d9ab3fb5cd3153",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/body-of-knowledge.md",
+      "new": "docs/concepts/body-of-knowledge.md",
+      "sha256": "ff5d2e6dd9eb0763d9f0901edab5aece088beddb7ac116ee87c7372a61d9259a",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/classifying-new-subjects.md",
+      "new": "docs/concepts/classifying-new-subjects.md",
+      "sha256": "6632cd060dc22139b6de67f8573c68dfe3e7d81a26517a5c2ae72a7887c689ab",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/concept-group.md",
+      "new": "docs/concepts/concept-group.md",
+      "sha256": "431060ce4c5d3f0f61c3f95f0e245e10e5e7cbcbdf9952b6383eb733ac17f581",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/content-identifiers.md",
+      "new": "docs/concepts/content-identifiers.md",
+      "sha256": "34d5701aaf4bf2e8b4dc460a90cc61bee0d2cc13ae34307c32b4d219ab643b74",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/controlled-vocabulary.md",
+      "new": "docs/concepts/controlled-vocabulary.md",
+      "sha256": "b90225fecdb766c317f70d94ae74fde0d7abbcb8c46bddd20c350a63981e474b",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/facet.md",
+      "new": "docs/concepts/facet.md",
+      "sha256": "d75b805e524fb9fe993e905376a18529374c676d2a6fe90029ffe9acd7d0731f",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/first-principles.md",
+      "new": "docs/concepts/first-principles.md",
+      "sha256": "56504abd02043ae7462719235812e1f0ea98b341a5e3727e07f4d71856559e3c",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/glossary.md",
+      "new": "docs/glossary.md",
+      "sha256": "342d8f5490c760a1b63bd70b3ad889fff05d8d53ad9dd451382a2107866a5625",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/governance.md",
+      "new": "docs/concepts/governance.md",
+      "sha256": "cc469bec7fe94af42038e27b67bb4b848857142867ca40aeb4c98e96dcf4b47a",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/knowledge-graph.md",
+      "new": "docs/concepts/knowledge-graph.md",
+      "sha256": "1b784505652387f3cc8e442da07bfe229827f0dc8007a5e55dc1e1f953dbcde6",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/metadata.md",
+      "new": "docs/concepts/metadata.md",
+      "sha256": "92556c3f27c71cb7cddb0dce63a51d56e6ce2ba245071d4fddd5f9386a83ab09",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/note-types.md",
+      "new": "docs/concepts/note-types.md",
+      "sha256": "bfb1a0d823acb85e267be37572134dab70213109fea7510c4ddd5cc6c7282702",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/reproducible-builds.md",
+      "new": "docs/concepts/reproducible-builds.md",
+      "sha256": "9e727f9632325274f0956925cac5406b116b97c11f2b1abc28d104dcc3278813",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/terminology-database.md",
+      "new": "docs/concepts/terminology-database.md",
+      "sha256": "8579b086c6fc705c9f774a09e958ef81c776172fd1ceecd41707b0463cb526b9",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/vocabulary-construction.md",
+      "new": "docs/concepts/vocabulary-construction.md",
+      "sha256": "3ff93bd8bd5dad15fff9acb5dfc1755ac408431909b78f60bf314120d13918dd",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/vocabulary-hierarchy.md",
+      "new": "docs/concepts/vocabulary-hierarchy.md",
+      "sha256": "6adbb1883798fed3646d850e296016ca4efd69ae6dcb30dfc9f619229a619f31",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/vocabulary-mapping.md",
+      "new": "docs/concepts/vocabulary-mapping.md",
+      "sha256": "c30a20da25de2059fcd5f561f9e36bbbb1ec98cb36ea308ccf027be9fe6e864b",
+      "action": "迁移"
+    },
+    {
+      "old": "concepts/writing-conventions.md",
+      "new": "docs/concepts/writing-conventions.md",
+      "sha256": "2e82298bde8e498e071533df64d3b5b43750a7283702ebbfd126981ff2a7cc80",
+      "action": "迁移"
+    },
+    {
+      "old": "design/README.md",
+      "new": "docs/README.md",
+      "sha256": "1321993427ff282ce7a085504f749b4efee5663d8161047b871fd5c06d469622",
+      "action": "迁移"
+    },
+    {
+      "old": "design/content-model.md",
+      "new": "docs/design/model/content-model.md",
+      "sha256": "7a87e3cd8ab9e6bd3fe037632ea34f333a09d063713ff26ce88c70ee7b9c2255",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/application-profile-boundary.md",
+      "new": "docs/decisions/application-profile-boundary.md",
+      "sha256": "aa36db6a705977f2787c9e44de78c7635b1a48b149800d288060504eee08625c",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/borrow-and-analyze.md",
+      "new": "docs/decisions/borrow-and-analyze.md",
+      "sha256": "3984f7ad4d2b1c5637daf5224dacd7e4d741d16236beefcb275771e977ed4550",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/content-unit-identifiers.md",
+      "new": "docs/decisions/content-unit-identifiers.md",
+      "sha256": "bf25d0d137572697c373912432f57634ecda36ff888cbc16eb9cd49daabd0125",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/current-stage-scope.md",
+      "new": "docs/decisions/current-stage-scope.md",
+      "sha256": "4d0f2e43434cd5f7f76d20d55c6c6435f4c44b3e81942c5dc77b36b008885258",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/decision-rights-defaults.md",
+      "new": "docs/decisions/decision-rights-defaults.md",
+      "sha256": "796ed978dec6846424d308004b425ba2b78c0ac3874ca7e5aa3c6a8a9576d3ac",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/evidence-stage-boundary.md",
+      "new": "docs/decisions/evidence-stage-boundary.md",
+      "sha256": "4aaf802d171ec23b6a048545b50cc03fe3a49305e1ee27b5dafe87f1dd47ee98",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/form-independence.md",
+      "new": "docs/decisions/form-independence.md",
+      "sha256": "8c26c782071b2ad981e61bee22b41f7c308f330e9e206e00a19827c6fc6b7427",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/industry-translation-basis.md",
+      "new": "docs/decisions/industry-translation-basis.md",
+      "sha256": "5311a4b356e22020d88368dfe7edb3328348903a373fe6d8e3a0ca40fcb500ac",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/model-knowledge-translation.md",
+      "new": "docs/decisions/model-knowledge-translation.md",
+      "sha256": "d04ed154a1000bb2fb40de812cdbd4a37795fd587cdec5f13d117ca24f516b6a",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/model-translation-marker.md",
+      "new": "docs/decisions/model-translation-marker.md",
+      "sha256": "37c181173f2ce15d619f17456e604ca08facb1a7466ae3dd2a5f204452b23daf",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/obsidian-reference-refresh.md",
+      "new": "docs/decisions/obsidian-reference-refresh.md",
+      "sha256": "91b4beb0dd789633d09f60a6fb11d3540727719d8938e4fe7ef0ef4b3fed6849",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/obsidian-tool-location.md",
+      "new": "docs/decisions/obsidian-tool-location.md",
+      "sha256": "0392a25f09505753ef8a9db0508f8ed292d359c3c0a7bea3051ba2b1678a35a0",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/project-instructions-entry.md",
+      "new": "docs/decisions/project-instructions-entry.md",
+      "sha256": "23f4c11af2460cade062f4c761899bf4945a7bd16d1c081e4be1a2adb5fc20f8",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/source-governance-schema.md",
+      "new": "docs/decisions/source-governance-schema.md",
+      "sha256": "0bdf6dba6ada385ad48fdcd561e4f492142528fc5aa9aed661b33cf47d444b12",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/source-migration-policy.md",
+      "new": "docs/decisions/source-migration-policy.md",
+      "sha256": "425702a87960ca1d24705537fe36e48af149901463cc195ceef204f8b6d58c6c",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/source-probe-policy.md",
+      "new": "docs/decisions/source-probe-policy.md",
+      "sha256": "aac97017d398cd87db33c3e1443c22508e7c1772cc66e2e2cec6924e861dd800",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/source-validation-policy.md",
+      "new": "docs/decisions/source-validation-policy.md",
+      "sha256": "8d3ec01e7def0778e0f11b175a073e0869e566f4fae6d285d4d946831ab10418",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/structured-label-basis.md",
+      "new": "docs/decisions/structured-label-basis.md",
+      "sha256": "b83ac1009b227ba80588bb580bd2efd6bc8d36d9bb395006f3d8f6c2d7e3165f",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/translation-reference-resources.md",
+      "new": "docs/decisions/translation-reference-resources.md",
+      "sha256": "7699bb544d412d65ba5d1aea5a0108194e989efce3bc47ddbaf82ea09e03ebb3",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/tree-by-discipline.md",
+      "new": "docs/decisions/tree-by-discipline.md",
+      "sha256": "8dc7e3ee305bd38be612521c19f4c9517ac8da159ca1c84d844fba3fb9d176b5",
+      "action": "迁移"
+    },
+    {
+      "old": "design/decisions/verification-effort.md",
+      "new": "docs/decisions/verification-effort.md",
+      "sha256": "40e7656aa93e29e2022ca040836bbe0c4e5ae00bc6145828d25809af89d35430",
+      "action": "迁移"
+    },
+    {
+      "old": "design/drafts/communication-scope.md",
+      "new": "docs/drafts/communication-scope.md",
+      "sha256": "8a0ec137107ce7d4ad0d191f4ec003212c0b08a69ec6506224299ac09722c411",
+      "action": "迁移"
+    },
+    {
+      "old": "design/drafts/concept-groups.md",
+      "new": "docs/drafts/concept-groups.md",
+      "sha256": "6593f94f55102b21de74596b6d43d90132c8a23e28eed96187dcaebc59dd5ea8",
+      "action": "迁移"
+    },
+    {
+      "old": "design/drafts/division-characteristics.md",
+      "new": "docs/drafts/division-characteristics.md",
+      "sha256": "847e1350137d968f17de953b12a751f9bda331d9dc94ed05b0b2bb0ff733f8ad",
+      "action": "迁移"
+    },
+    {
+      "old": "design/drafts/entity-categories.md",
+      "new": "docs/drafts/entity-categories.md",
+      "sha256": "6045647665138f1b66a296f21c4605103e3b7843cb06ff57a848d56cad7087cc",
+      "action": "迁移"
+    },
+    {
+      "old": "design/drafts/facet-field.md",
+      "new": "docs/drafts/facet-field.md",
+      "sha256": "1a219d9b9fa8483fb20b8268ce7f98f94be53c98b41145117a341f7481702842",
+      "action": "迁移"
+    },
+    {
+      "old": "design/drafts/large-language-models.md",
+      "new": "docs/drafts/large-language-models.md",
+      "sha256": "b4561f323ff5a2c5f14fcaf1697cd5799222f90d4f7126cffa86afd15610283e",
+      "action": "迁移"
+    },
+    {
+      "old": "design/drafts/life-scope.md",
+      "new": "docs/drafts/life-scope.md",
+      "sha256": "3cffea01d8cade4f6c28baed1cea834006fc4410190c53552e5a48ccb9797558",
+      "action": "迁移"
+    },
+    {
+      "old": "design/drafts/source-governance.md",
+      "new": "docs/drafts/source-governance.md",
+      "sha256": "ef8b4bc672ff5c8d5eba3d2f13b29ac237bdf74a180284acebb567542a193c20",
+      "action": "迁移"
+    },
+    {
+      "old": "design/drafts/tbx-export.md",
+      "new": "docs/drafts/tbx-export.md",
+      "sha256": "7984450218a84a0ed2a3ba72406eb6924dbf71a99bd3d4054de07fbb3d8ab5a0",
+      "action": "迁移"
+    },
+    {
+      "old": "design/drafts/terminology-governance.md",
+      "new": "docs/drafts/terminology-governance.md",
+      "sha256": "00fd744f7c08d528e5fa66ea02754c8ce22a5c2b94d03d4188e8aa8acc5d4681",
+      "action": "迁移"
+    },
+    {
+      "old": "design/entities.md",
+      "new": "docs/design/model/entities.md",
+      "sha256": "bfe8552224d7aa66e5be992ce38f032d59c2de0cf7c4034e838c06f7613180ae",
+      "action": "迁移"
+    },
+    {
+      "old": "design/governance.md",
+      "new": "docs/design/governance/governance.md",
+      "sha256": "d92096215cd383fc51cec03427f5250aec529e675d75cf5a2aac856a45d0d876",
+      "action": "迁移"
+    },
+    {
+      "old": "design/hierarchy.md",
+      "new": "docs/design/model/hierarchy.md",
+      "sha256": "a2f224914424c808c4b8a990d76f3aac1c755bb8778a97a9f0ad5e60c78d44a2",
+      "action": "迁移"
+    },
+    {
+      "old": "design/maintenance.md",
+      "new": "docs/design/governance/maintenance.md",
+      "sha256": "2235a79b568d6b552cf4e3aa6512e0ee175c2e6f81b0abfa18f4bd7cb140d75b",
+      "action": "迁移"
+    },
+    {
+      "old": "design/principles.md",
+      "new": "docs/design/governance/principles.md",
+      "sha256": "9531627fb2084b2c75e43ed3b7f99fefb119d9a0e12088f73b668710f3c821ed",
+      "action": "迁移"
+    },
+    {
+      "old": "design/sources-registry.md",
+      "new": "docs/design/model/sources-registry.md",
+      "sha256": "663c14e9cec11b362b847e9c4ee6447ff5ffc88302ad9f08798f86586be3f4e6",
+      "action": "迁移"
+    },
+    {
+      "old": "design/targets/obsidian.md",
+      "new": "docs/design/targets/obsidian.md",
+      "sha256": "c6af2fb31ba23d13788bfceeb992cc525cfc86901fc2e9fde34204eb549645c9",
+      "action": "迁移"
+    },
+    {
+      "old": "design/topics.md",
+      "new": "docs/design/model/topics.md",
+      "sha256": "beb9de8ecb8290396dddb1d320bfdca94bb15f30393d8948a0cbec8e8f40ac79",
+      "action": "迁移"
+    },
+    {
+      "old": "design/versioning.md",
+      "new": "docs/design/model/versioning.md",
+      "sha256": "8545d9e56628162ef9e6bd9078889e4c674d360cbb27e2c658af1eb1ec234e77",
+      "action": "迁移"
+    },
+    {
+      "old": "design/writing.md",
+      "new": "docs/design/governance/writing.md",
+      "sha256": "d1d8dfdc03bfede9d4899bc7a3e985ec2539d97daad391636ec6721c69542802",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-08-28-terminology-concept-foundations.md",
+      "new": "work/archive/plans/2026-08-28-terminology-concept-foundations.md",
+      "sha256": "ab51f47ef3bbabf6851d1944b475294ac310e8277bf50bc25beff88952e9b1e5",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-08-28-terminology-project-design.md",
+      "new": "work/archive/plans/2026-08-28-terminology-project-design.md",
+      "sha256": "793ec1aa3bfa9e77716d3c9c171ff1f81bd8702e6b54a609d6a0d16f6e3797fa",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-08-29-e2-evidence-review-validator.md",
+      "new": "work/archive/plans/2026-08-29-e2-evidence-review-validator.md",
+      "sha256": "0a4d417cccdeabad3fcdd67ad425c5dfd25509ea63ba176e06d12b136c846045",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-08-30-basic-unit-consumer-classification.md",
+      "new": "work/archive/plans/2026-08-30-basic-unit-consumer-classification.md",
+      "sha256": "7d3c90501d75427b8ba2f42d205abba438cbc91c7acd9cc07893f5a394b52880",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-08-30-consumer-semantic-migration.md",
+      "new": "work/archive/plans/2026-08-30-consumer-semantic-migration.md",
+      "sha256": "5ca74443b51d1e10518f7f5bbcd6292aeeb17ded80920a272b8e5dded43e8b37",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-08-30-governance-drafts.md",
+      "new": "work/archive/plans/2026-08-30-governance-drafts.md",
+      "sha256": "17e79a729f5e21bc30d5bcc51cc225d798c04a464aff801e64c83e180f3cb4d2",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-08-31-governance-implementation-prep.md",
+      "new": "work/archive/plans/2026-08-31-governance-implementation-prep.md",
+      "sha256": "65b846be1e53202f49d54c9d5bae74e9c6da799849f0bd467b4200489710f1be",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-08-31-project-roadmap.md",
+      "new": "work/roadmap.md",
+      "sha256": "00a68567f0bb9d10bd049bedd11a2286d456ab43a3ece7bfcc038da14687d758",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-08-31-source-schema-migration.md",
+      "new": "work/archive/plans/2026-08-31-source-schema-migration.md",
+      "sha256": "67f6e500655c0bad6529cee98be34b20316fc3133d16a1a6020fa9ef932c4a29",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-08-31-terminology-schema-generation.md",
+      "new": "work/archive/plans/2026-08-31-terminology-schema-generation.md",
+      "sha256": "1b88b1cce6aac7f5bb26a2e6c4e27cc6f0b61f55691baf13562f9fa47dd225ff",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-09-01-current-design-sync.md",
+      "new": "work/archive/plans/2026-09-01-current-design-sync.md",
+      "sha256": "c5fedb187d4badd10871d5b246d54cecbcf65364f62065e1ec45958fa3f1d6cc",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-09-01-existing-drafts-review.md",
+      "new": "work/archive/plans/2026-09-01-existing-drafts-review.md",
+      "sha256": "4812c26e02628f93e8f2252c56761b58c47d27658d41e44d46d5b80d501f27b7",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-09-01-first-maintenance.md",
+      "new": "work/archive/plans/2026-09-01-first-maintenance.md",
+      "sha256": "a0da2b2947ccae120e0f0b3cb76b07d94ff3b4cd103448dc9daa655d48508ec7",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-09-01-obsidian-concept-correction.md",
+      "new": "work/archive/plans/2026-09-01-obsidian-concept-correction.md",
+      "sha256": "23ace8e95fdf4b0129890690bf38aeab425462702a59169ac22d7ebdaf0f2ebb",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-09-01-obsidian-export.md",
+      "new": "work/archive/plans/2026-09-01-obsidian-export.md",
+      "sha256": "9530cff9572e92063ea2a08d0e610f93a7ebce235197d0fce663898d7c1e8aeb",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-09-01-pending-designs.md",
+      "new": "work/archive/plans/2026-09-01-pending-designs.md",
+      "sha256": "a308b0a39bcd0a93394aefbbaf5270aa5bca4110353f93ed81ce9971025c9e77",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-09-02-obsidian-application-design-sync.md",
+      "new": "work/archive/plans/2026-09-02-obsidian-application-design-sync.md",
+      "sha256": "1ea49a8cfdb146f57c88213a06afed20f8ece7fd2c1fa86b19e1702089d05ceb",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-09-03-obsidian-file-contract-repair.md",
+      "new": "work/archive/plans/2026-09-03-obsidian-file-contract-repair.md",
+      "sha256": "9fb562133eff0f9564b48e085a4214027b282dddca3ddabe22b573c182501bbf",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-09-04-hermetic-governance-tests.md",
+      "new": "work/archive/plans/2026-09-04-hermetic-governance-tests.md",
+      "sha256": "0dba66a268e308081cf1338f479cfa266b03320ae8b2edb3050f2dadf3538d27",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-09-05-obsidian-tool-location.md",
+      "new": "work/archive/plans/2026-09-05-obsidian-tool-location.md",
+      "sha256": "edbd6fe8a2ac91a294b5ae48d5e45aa7e375635854f2ca8cff33d8b0de10d016",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/plans/2026-09-05-structured-label-basis.md",
+      "new": "work/archive/plans/2026-09-05-structured-label-basis.md",
+      "sha256": "0d9ca10b34128a7b5b577cbe8dde9f45e29ca053381a519b262c04dc4080b23e",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/specs/2026-08-27-terminology-governance-design.md",
+      "new": "work/archive/specs/2026-08-27-terminology-governance-design.md",
+      "sha256": "95c519061e90870b584bc394a72898ad0b74965e39b24ecd78382ba56b1cb46f",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/specs/2026-08-29-e2-evidence-review-validator-design.md",
+      "new": "work/archive/specs/2026-08-29-e2-evidence-review-validator-design.md",
+      "sha256": "dfebb632244252607d0cfb7e6fe8081c9da774d4e2a591174821d385e68aa060",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/specs/2026-08-30-basic-unit-consumer-classification-design.md",
+      "new": "work/archive/specs/2026-08-30-basic-unit-consumer-classification-design.md",
+      "sha256": "bdb5cb5e16bcd3c26edb488b3865c5a8caaba16465b985d35dd74359fa480495",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/specs/2026-09-01-obsidian-concept-correction-design.md",
+      "new": "work/archive/specs/2026-09-01-obsidian-concept-correction-design.md",
+      "sha256": "d24cd2c0a60777c3f954402d41c7000b50c453f54e90daf1eaaa53200e6dcedb",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/specs/2026-09-01-obsidian-export-design.md",
+      "new": "work/archive/specs/2026-09-01-obsidian-export-design.md",
+      "sha256": "903b35e46df22701a362c316cf83e7b61338fa7297588251d44256707581d52e",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/specs/2026-09-02-obsidian-knowledge-base-application-design.md",
+      "new": "work/archive/specs/2026-09-02-obsidian-knowledge-base-application-design.md",
+      "sha256": "fdd126ed34957ce1f1f939f84ab2c5a2f58a498690155a335b9e0fc6a820fac1",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/specs/2026-09-03-obsidian-cli-agent-design.md",
+      "new": "work/archive/specs/2026-09-03-obsidian-cli-agent-design.md",
+      "sha256": "93f495897fe61e867e73f21b91c87f7729a4c0ef38de9d0c97057198c9a13662",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/specs/2026-09-03-obsidian-file-contract-repair-design.md",
+      "new": "work/archive/specs/2026-09-03-obsidian-file-contract-repair-design.md",
+      "sha256": "1cf675cf3b0ea23958252b1eae4abafaa5e5a2e3734c4a258ea143a0985460ba",
+      "action": "迁移"
+    },
+    {
+      "old": "docs/superpowers/specs/2026-09-04-hermetic-governance-tests-design.md",
+      "new": "work/archive/specs/2026-09-04-hermetic-governance-tests-design.md",
+      "sha256": "3002af10288ec8bc625e033e2800ce884b384190ed21f9fdad7c5b967f632853",
+      "action": "迁移"
+    },
+    {
+      "old": "requirements-dev.txt",
+      "new": null,
+      "sha256": "12d22d4731adf4f397a583b3506c1deaa83206b87bb2edb60a028d1f7453ca0b",
+      "action": "依赖已统一归入 uv workspace"
+    },
+    {
+      "old": "schemas/decision.schema.json",
+      "new": "schemas/decision.schema.json",
+      "sha256": "e353e3506503d54f468c5731dd60b39dbaf89ae328ac316575b163375645749f",
+      "action": "保留"
+    },
+    {
+      "old": "schemas/source-entities.schema.json",
+      "new": "schemas/source-entities.schema.json",
+      "sha256": "686a91cde6fb8fb3b95c4ffe52af36ebbdaadb0f62338655f476c1abd52ffb86",
+      "action": "保留"
+    },
+    {
+      "old": "schemas/source-migration.schema.json",
+      "new": "schemas/source-migration.schema.json",
+      "sha256": "2e8c577bed372dad760a3f5c5a046bcd379a223307d25446ab7dc9d7317093bb",
+      "action": "保留"
+    },
+    {
+      "old": "schemas/source-obligations.schema.json",
+      "new": "schemas/source-obligations.schema.json",
+      "sha256": "0919f12dfea921a97c177dbfeefb2e8b4a62454e235fdb8971672aed3be841ff",
+      "action": "保留"
+    },
+    {
+      "old": "schemas/source-probe.schema.json",
+      "new": "schemas/source-probe.schema.json",
+      "sha256": "b1e28004203715c9263e8ad8a30315f6f8b3eebaa390b58441f88715cfd55bba",
+      "action": "保留"
+    },
+    {
+      "old": "schemas/source-reference-index.schema.json",
+      "new": "schemas/source-reference-index.schema.json",
+      "sha256": "9d5dee7570b8f6dceeca3a43f8f6687f114719ac231e96deb10d20afcd515d3e",
+      "action": "保留"
+    },
+    {
+      "old": "schemas/source-uses.schema.json",
+      "new": "schemas/source-uses.schema.json",
+      "sha256": "408fe4134517e1dfbf72ea50752a97451c1a7302a9fe0fffb8b3de149eb05406",
+      "action": "保留"
+    },
+    {
+      "old": "schemas/term-cutover-state-v1.schema.json",
+      "new": "schemas/term-cutover-state-v1.schema.json",
+      "sha256": "6ca2a2f9b2880a9f128b1f3e1403b8ae6cde79992d45ae61deb2e74f39f1cb6f",
+      "action": "保留"
+    },
+    {
+      "old": "schemas/term-obligations-v1.schema.json",
+      "new": "schemas/term-obligations-v1.schema.json",
+      "sha256": "699823d3266cb1b940e337fd73727a0543e02672a8d2abf36ba53eec726a1d27",
+      "action": "保留"
+    },
+    {
+      "old": "schemas/term-usage-decisions-v1.schema.json",
+      "new": "schemas/term-usage-decisions-v1.schema.json",
+      "sha256": "49f6f6d247e8c1f116b8a2b9d7ac900372db20a16caa52c3b0e9df794a1f2954",
+      "action": "保留"
+    },
+    {
+      "old": "schemas/terms-v1.schema.json",
+      "new": "schemas/terms-v1.schema.json",
+      "sha256": "eba9d30f2e2ad150bbddcfe6eef7ad48f01711d58a18fee65e3e19f233c2995f",
+      "action": "保留"
+    },
+    {
+      "old": "scripts/apply_source_migration.py",
+      "new": "packages/kb-core/src/kb_core/apply_source_migration.py",
+      "sha256": "6c6152b805f8a1bd9b9e33aa77e0b389f926e70eae2218f72752472540c51370",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/build-topics.py",
+      "new": "packages/kb-core/src/kb_core/build_topics.py",
+      "sha256": "ab886d46d0c429731d6a28d239a414d86af29b41d9c80f1972c9b788387c881d",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/build_source_index.py",
+      "new": "packages/kb-core/src/kb_core/build_source_index.py",
+      "sha256": "bf487010f336d65cda7f22179007a7d0591cbbb2f57edc00d67d2c74476a5913",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/check-links.py",
+      "new": "scripts/check-links.py",
+      "sha256": "136215f94f718744b3feb07c47899347887ddf2f64d8c4635fe6322bb1a9dcb2",
+      "action": "保留"
+    },
+    {
+      "old": "scripts/check-terms.py",
+      "new": "packages/kb-core/src/kb_core/check_terms.py",
+      "sha256": "d1da052e96ef681fb648de8441e89c9a79ee03f33e23c7caad6e25ad43a1c509",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/check-topics.py",
+      "new": "packages/kb-core/src/kb_core/check_topics.py",
+      "sha256": "1fe6e487e53a4f9a3413a52ece2b31b9602503c6cda8d5e9950322ca344a3b1b",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/check_link_baseline.py",
+      "new": null,
+      "sha256": "22da3248f71feb342dfccca59cce6479b2dabfe171e6d39537f0e9fba8095ca3",
+      "action": "本机历史链接计数基线由现行文档链接校验替代"
+    },
+    {
+      "old": "scripts/check_sources.py",
+      "new": "packages/kb-core/src/kb_core/check_sources.py",
+      "sha256": "2680716ff7884bf04e775fab52a53952d528df29d778b361ca64bf7b643e90c4",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/export_obsidian.py",
+      "new": "apps/obsidian/src/kb_obsidian/exporter.py",
+      "sha256": "e71b9609191ca992517ddb3f22c6d22c45b99fe97b289a629721599f4dd8412f",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/fullwidth.py",
+      "new": "scripts/fullwidth.py",
+      "sha256": "55b37a906da048172f13dc88b9be0392e6276da17e1cc1520deaf47674a908ff",
+      "action": "保留"
+    },
+    {
+      "old": "scripts/governance/build_terms.py",
+      "new": "packages/kb-core/src/kb_core/governance/build_terms.py",
+      "sha256": "753e0a1d293bb200b10905aaf89aab0b6970432afd15de2cd29f8fa8d3ecee44",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/governance/check_term_usage.py",
+      "new": "packages/kb-core/src/kb_core/governance/check_term_usage.py",
+      "sha256": "dd771ba5e1c7f78724a4eeb9af97bcd4fa0977f83622fd44f8774a40209ad06b",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/governance/migrate_terms.py",
+      "new": "packages/kb-core/src/kb_core/governance/migrate_terms.py",
+      "sha256": "ee5acb74e87c39dbb8b87aa0c64997c728ed0fc60bfb81ca90a1e6a3e9fd0f2f",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/governance/term_maintenance.py",
+      "new": "packages/kb-core/src/kb_core/governance/term_maintenance.py",
+      "sha256": "b48054497f788dc6b4a00935fbed4b069871862f06e5dd40c8e95abca86571c3",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/governance/term_model.py",
+      "new": "packages/kb-core/src/kb_core/governance/term_model.py",
+      "sha256": "66a05bfdf3e759f7bc739cfc8c83919a2513d692adb101fc986bf4fe86014976",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/governance/term_transitions.py",
+      "new": "packages/kb-core/src/kb_core/governance/term_transitions.py",
+      "sha256": "2d96989899dc179dc7750d8f47907b4554312fe5d5a1a0e56de81b7dd8a4fc32",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/label_adoptions.py",
+      "new": "packages/kb-core/src/kb_core/label_adoptions.py",
+      "sha256": "4cdd2390d2320d4435be58f1e1f2938ac68678d1ffc762ac72c505b61d431823",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/label_basis.py",
+      "new": "packages/kb-core/src/kb_core/label_basis.py",
+      "sha256": "a50dc9f8f2a3262b08139f0b31fe8f171d0ea9b7f2e6ab5759c9fbcb0f92f8d8",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/lookup-labels.py",
+      "new": "packages/kb-core/src/kb_core/lookup_labels.py",
+      "sha256": "bb22a2b731b75eb5fc97e9d89f24e22d1a37b1b8fe3b19e4d9a48fb8ef44ee75",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/plan_source_migration.py",
+      "new": "packages/kb-core/src/kb_core/plan_source_migration.py",
+      "sha256": "2fda6597d646fdb8411a375be8d264b78d9fff07d96391ff70d87145c2dc3579",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/probe_sources.py",
+      "new": "packages/kb-core/src/kb_core/probe_sources.py",
+      "sha256": "d28eb1c82b4f65c3a5cad9b62e187d306195205b1ad2084a4d475e875b40a63b",
+      "action": "迁移"
+    },
+    {
+      "old": "scripts/source_model.py",
+      "new": "packages/kb-core/src/kb_core/source_model.py",
+      "sha256": "6c92d5d22961bca4b8e6ac56afe8199b81510419a536ab4972f4db072ae62aa6",
+      "action": "迁移"
+    },
+    {
+      "old": "sources/dcmi-application-profiles.md",
+      "new": "docs/references/dcmi-application-profiles.md",
+      "sha256": "1102b22af7a2608f26cd809ea05e86efdbb29f3c073d5d462e6e8f3c794bf3b9",
+      "action": "迁移"
+    },
+    {
+      "old": "sources/gbt-13745.md",
+      "new": "docs/references/gbt-13745.md",
+      "sha256": "1b4e06bcbb28af2ee0e4bd2ac167189981e8311a12a2889ec6f49ba9a829b201",
+      "action": "迁移"
+    },
+    {
+      "old": "sources/iso-15489.md",
+      "new": "docs/references/iso-15489.md",
+      "sha256": "886f2ef36bedb050b16f3daf4a1c90efbdbf8d7ee2a2453db656e28a116f0a7a",
+      "action": "迁移"
+    },
+    {
+      "old": "sources/iso-25964.md",
+      "new": "docs/references/iso-25964.md",
+      "sha256": "bb73f712124a7af934f6e97148cf538268017da01dc7fbc7d2cc49e5b4672fb0",
+      "action": "迁移"
+    },
+    {
+      "old": "sources/metadata-standards.md",
+      "new": "docs/references/metadata-standards.md",
+      "sha256": "d56542d28d763c439c8e70a29387d30089b66db5d1e35e9ac7e2c93f6768c935",
+      "action": "迁移"
+    },
+    {
+      "old": "sources/obsidian-help.md",
+      "new": "docs/references/obsidian-help.md",
+      "sha256": "1860c795033667a8bcf718f9fe79568c3f58e0518e3e984224f58cf9e303bbb3",
+      "action": "迁移"
+    },
+    {
+      "old": "sources/python-filesystem.md",
+      "new": "docs/references/python-filesystem.md",
+      "sha256": "b53abcce746e951b38e021665b6b04d5b34b7d3e5ba04193c34a463082fca01e",
+      "action": "迁移"
+    },
+    {
+      "old": "sources/reproducible-builds.md",
+      "new": "docs/references/reproducible-builds.md",
+      "sha256": "e3aee81e43f91895ab0b7895fda44a6c8dee77190d6f7e883448336a3b18d94e",
+      "action": "迁移"
+    },
+    {
+      "old": "sources/rfc-8493.md",
+      "new": "docs/references/rfc-8493.md",
+      "sha256": "79ea034109f0fe671aaaa0dcc265cd3c021b9b79073c1b797a6fae2cb13ac7ed",
+      "action": "迁移"
+    },
+    {
+      "old": "sources/rfc-8785.md",
+      "new": "docs/references/rfc-8785.md",
+      "sha256": "b65640cb27577a42ffe204a139a50fe01a062be03b3ceaada4de8ca5cb3cd317",
+      "action": "迁移"
+    },
+    {
+      "old": "sources/rfc-9562.md",
+      "new": "docs/references/rfc-9562.md",
+      "sha256": "b5b29972f695a110822f03d9009e411d0e543ea6b3a39b6fbf445bc6d978fe5a",
+      "action": "迁移"
+    },
+    {
+      "old": "sources/terminology-standards.md",
+      "new": "docs/references/terminology-standards.md",
+      "sha256": "9689601a6a1c8260b7b42e2247de2253f2e9b7076d75387ac977beb6c69f0dcc",
+      "action": "迁移"
+    },
+    {
+      "old": "sources/w3c-prov.md",
+      "new": "docs/references/w3c-prov.md",
+      "sha256": "c0cba160a32d1ba241cd4435ab0c367cc913c61d63d4551343209f97ad4a9c93",
+      "action": "迁移"
+    },
+    {
+      "old": "sources/writing-guides.md",
+      "new": "docs/references/writing-guides.md",
+      "sha256": "18d4adca7a88fc4fffca275cd3f55fa0a209cb68e40563422310ee0a8be1e52e",
+      "action": "迁移"
+    },
+    {
+      "old": "sources/z39-19.md",
+      "new": "docs/references/z39-19.md",
+      "sha256": "e02ac9dcc3795cb92973c6e83082e0b3d4aed3d7bbfb25b41a55001a3b87e7ba",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/basis-inventory.md",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/basis-inventory.md",
+      "sha256": "ed8c041a2b180a7a94fd73d68e2e847c175f2b5cb91af4aaf9e788fcd7ef8efb",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/basis-inventory.tsv",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/basis-inventory.tsv",
+      "sha256": "3da438227ee676f0d2c5e31ac16c73a3bb4a5d10716b15f175fd81257642c43c",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/design/drafts/source-governance.md",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/design/drafts/source-governance.md",
+      "sha256": "0bc61207215f35065652bb66f043ef2d11a807bbe0bc44465814e469b5671526",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/design/drafts/terminology-governance.md",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/design/drafts/terminology-governance.md",
+      "sha256": "2d48c869b8a2119346739303accaaff0cbe40418d7074f29a4a18599950767d7",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/design/maintenance.md",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/design/maintenance.md",
+      "sha256": "d2c6addd7c55a034a5c554c32b63bf6cff0ccc4e741d6ed06d3e66d820f88aa5",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/design/topics.md",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/design/topics.md",
+      "sha256": "2a2e5cc17dbc2b310c9705722f8137de4623078afb0e0bd9db042583c52b59b4",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/docs/superpowers/plans/2026-08-31-governance-implementation-prep.md",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/docs/superpowers/plans/2026-08-31-governance-implementation-prep.md",
+      "sha256": "28b936359d49f5c8618d2dff63740497a766da43931fa4f47b7ad6dd9c232ecd",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/generation-baseline.md",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/generation-baseline.md",
+      "sha256": "70388f7a105e69de2397a030d2d1dfb41d6e8ef6a59a43f502fd69126b97ed2e",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/maintenance-baseline.md",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/maintenance-baseline.md",
+      "sha256": "494bb0e3d85700cc1860537eea8bb2e8c376619041b1277958a1544351f3383b",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/match-inventory.md",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/match-inventory.md",
+      "sha256": "0d634286ffa5e4b6885b21b8ad9d68c39a33723fd8be6a4d55385f629d19b1ce",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/match-inventory.tsv",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/match-inventory.tsv",
+      "sha256": "3f9701f6c2ef64a5d3c5a18144fc052f91e80d11384bb4023c85c74381d5d988",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/origin-inventory.md",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/origin-inventory.md",
+      "sha256": "5407ac17ed5f61a08bf4b957f4dc4d9ef5fb135a789e1e73444fb577a69a604a",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/origin-inventory.tsv",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/origin-inventory.tsv",
+      "sha256": "06d0df76aa5ac7bd63cfe107ac52a5e712223f251e362b3bb9a0f4d95cbd1e3d",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/parallel/basis/basis-proposals.yaml",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/parallel/basis/basis-proposals.yaml",
+      "sha256": "889bebce7724d124c121e2bcfc35807e4a23de862f1ce2d25d3c2e649d82e9c8",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/parallel/basis/exceptions.tsv",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/parallel/basis/exceptions.tsv",
+      "sha256": "77f6ae17436e4660d9fa1188efea55e6bda5681679ab4c49106ad47d7031d3f6",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/parallel/entities/existing-proposals.yaml",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/parallel/entities/existing-proposals.yaml",
+      "sha256": "c9954fc215c2432ae103182a2636e700d004c634f09d9f4c7507ff6b0821bc56",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/parallel/entities/unregistered-proposals.yaml",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/parallel/entities/unregistered-proposals.yaml",
+      "sha256": "74314bfb21f759407abb8deec70d7964d5ffabc50d6f8627a847c5552a9998e8",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/parallel/match/blocked.tsv",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/parallel/match/blocked.tsv",
+      "sha256": "cea8740ee1338adae20e3e8265f0b2d158557928ac6e331c52ef7c592a690048",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/parallel/match/match-proposals.yaml",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/parallel/match/match-proposals.yaml",
+      "sha256": "bea03dc55d4d59b92f1ddb2aeef32d0b4fee1610e63ebfc770b56639170ff0d3",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/parallel/roles/role-proposals.yaml",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/parallel/roles/role-proposals.yaml",
+      "sha256": "c8e1fefa3f8598df87aad56d050796e96fe7201d6074656e27ac7bba97f39f37",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/parallel/source/source-proposals.yaml",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/parallel/source/source-proposals.yaml",
+      "sha256": "145a5f377359f3c9979e17f3ef53fc2355171a097b1eb773a7aa0cd2c22e22ab",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/plan/entities.yaml",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/plan/entities.yaml",
+      "sha256": "b6ea58589040e6f8c1ef43842bfd3bee9f408b850b6951a73c891a9a3e17cb12",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/quality-debt.md",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/quality-debt.md",
+      "sha256": "9a0bcbf0aca72283761c97750b2afbaa598fd97277e11373f151e3a18a5e2660",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/source-entities.md",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/source-entities.md",
+      "sha256": "10b76c321c28d611c33e1f1a41e27cb61005cfd7f5c226b74854119e749d9f06",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/source-entities.tsv",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/source-entities.tsv",
+      "sha256": "843d3606407264e8d6ccca9ae8b9f03590aa403f98101c4a53a780bab5dc37f4",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/source-inventory.md",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/source-inventory.md",
+      "sha256": "57e5266910356d811a906a0b4b8cec7110ec05dcf8e9ebf650bed090461bd310",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/source-inventory.tsv",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/source-inventory.tsv",
+      "sha256": "0cb9b6df2f218629eb0dedb05ac5c83030b89e4d8dbca7580a8ccfee4b323c1f",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/source-roles.md",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/source-roles.md",
+      "sha256": "82fe12c4685ce2cd50900110a74234b3c1a3ad37a85eb4f6d1d6393ae6fc7601",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/source-roles.tsv",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/source-roles.tsv",
+      "sha256": "f291027de735d21aa21fd953a7301db9d7fcc34a6ec9d266e12ceab07e030cb9",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/term-glossary.tsv",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/term-glossary.tsv",
+      "sha256": "f5eeac6b83174ff7a76effd64a72861446aaf8d185b9ac4ecc69d95d45209423",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/vocab/build/extra-arrays.json",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/vocab/build/extra-arrays.json",
+      "sha256": "bd58a7fa71a248fd17d2f6032dae6db5461df0f374f9c015d9a9c45f9c2bca10",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/vocab/entities.yaml",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/vocab/entities.yaml",
+      "sha256": "63020dd3edbb3a25339846943fa67d774335b866e687a7b70f8a110a3ac50ff7",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/vocab/forms.yaml",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/vocab/forms.yaml",
+      "sha256": "8343b951a7bdf6cf231aa1bac326e92be4ece7d4af3846b9a8acba11a88ac78f",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/governance-frozen-2026-08-31/vocab/topics.yaml",
+      "new": "tests/fixtures/governance-frozen-2026-08-31/vocab/topics.yaml",
+      "sha256": "4c746ac51b9ad585445037ee57abd34d5542a48e04f3667e3ea32866d8171993",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/blocked-plan/plan.yaml",
+      "new": "tests/fixtures/source-governance/blocked-plan/plan.yaml",
+      "sha256": "f51e6c999e2b8777ccb2aaf8d9c42ebf62adc77d83a5596a27d740daf358239f",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/candidate-input/data.json",
+      "new": "tests/fixtures/source-governance/candidate-input/data.json",
+      "sha256": "05bb38658ae37147867fbc67ae4e0308b1968ef4cbbf5bc74dd6fb010ae94ace",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/candidate-plan/plan.yaml",
+      "new": "tests/fixtures/source-governance/candidate-plan/plan.yaml",
+      "sha256": "91e71b2e6a35af5df4942b725602ade21eeadc1ebb82f4d183b89112844a4ba1",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/current/design/decisions/source-current.md",
+      "new": "tests/fixtures/source-governance/current/design/decisions/source-current.md",
+      "sha256": "a9e373a73fc57322966d43246a96bbf804ffd10c64cece93affbe029cd198830",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/current/vocab/entities.yaml",
+      "new": "tests/fixtures/source-governance/current/vocab/entities.yaml",
+      "sha256": "ca84e21830542238dc63c0b527381f5cd82170750cb12cfcf2206b250b706916",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/current/vocab/source-obligations.yaml",
+      "new": "tests/fixtures/source-governance/current/vocab/source-obligations.yaml",
+      "sha256": "8bdaeb9a014abcb321e47a6dbf30082650d88261ed82db503de70d4fb3c375bc",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/current/vocab/sources.yaml",
+      "new": "tests/fixtures/source-governance/current/vocab/sources.yaml",
+      "sha256": "264002e047b5f30f569dcc22d56934d5358904f14e5cf33ce6f2e819142ff796",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/current/vocab/topics.yaml",
+      "new": "tests/fixtures/source-governance/current/vocab/topics.yaml",
+      "sha256": "8a4dc176735563f427080b5b2d4a9a88bcac110657a53f5101026ae4ac754f11",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/decisions/source-controls.md",
+      "new": "tests/fixtures/source-governance/decisions/source-controls.md",
+      "sha256": "e32dfa61a400f269c666ba89301c4ed72f201a1448f6a5ec491379b39368665c",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/duplicate-field-decisions/source-controls.md",
+      "new": "tests/fixtures/source-governance/duplicate-field-decisions/source-controls.md",
+      "sha256": "d7b6feb029319bf632b598cdf6d10949f8968f0403e51e53fdb42358bb50f7ee",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/future-consumer/vocab/terms.yaml",
+      "new": "tests/fixtures/source-governance/future-consumer/vocab/terms.yaml",
+      "sha256": "c396ce669a4d25472629fa18e882e055c7c2804bdeb873b18500ef674847f40c",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/index-expected.json",
+      "new": "tests/fixtures/source-governance/index-expected.json",
+      "sha256": "f969cbe9690393c3cd979ca5afd5b5ff57b19bbf1fb37cee4e9eda39feac722d",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/index-root/design/decisions/source-index.md",
+      "new": "tests/fixtures/source-governance/index-root/design/decisions/source-index.md",
+      "sha256": "415a39171cf2de9879458dd17c02c2104c45986a92ba301dfb3c802d03357a11",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/index-root/vocab/entities.yaml",
+      "new": "tests/fixtures/source-governance/index-root/vocab/entities.yaml",
+      "sha256": "5d206f69e528937123fa742f2389fbfadeef564ef4dec6902e2ba39620ccabd4",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/index-root/vocab/legacy.yaml",
+      "new": "tests/fixtures/source-governance/index-root/vocab/legacy.yaml",
+      "sha256": "8aeca6d1f5de32e27da29d0df1b928f7d7be3ae80b4c0e01286fee46a58a18c8",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/index-root/vocab/source-obligations.yaml",
+      "new": "tests/fixtures/source-governance/index-root/vocab/source-obligations.yaml",
+      "sha256": "3b315bb9eaf0eab56c634f345a8a3f6ebc47f2e26a07e2f73276a5e849833046",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/index-root/vocab/sources.yaml",
+      "new": "tests/fixtures/source-governance/index-root/vocab/sources.yaml",
+      "sha256": "dad1bd88fbf9f92e6dfa2cf7fc5861453a04b25dc19349542ebf784342285631",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/index-root/vocab/topics.yaml",
+      "new": "tests/fixtures/source-governance/index-root/vocab/topics.yaml",
+      "sha256": "3fbaba31b47e02263f4ef0d44b73492a7d7e1a8f895d595997aeea96b5012b75",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/invalid/basis-missing-locator.yaml",
+      "new": "tests/fixtures/source-governance/invalid/basis-missing-locator.yaml",
+      "sha256": "e4d34fa5b2570da37c8aef9ed85b94c6b24988bcbeae638cfc5917cf546cd78e",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/invalid/cutover-manifest-missing-topics-hash.yaml",
+      "new": "tests/fixtures/source-governance/invalid/cutover-manifest-missing-topics-hash.yaml",
+      "sha256": "e2bf5d84c06f934276d1155be659223c1b484d51d829cc927ee5e4b6dc247eb6",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/invalid/cutover-manifest-self-entry.yaml",
+      "new": "tests/fixtures/source-governance/invalid/cutover-manifest-self-entry.yaml",
+      "sha256": "86818d8fb1266ff05ab7bd586f3bf432096852035d372b5d02ebbf0db5911f6f",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/invalid/decision-missing-id.yaml",
+      "new": "tests/fixtures/source-governance/invalid/decision-missing-id.yaml",
+      "sha256": "73a7dc3d59349747149dfca6308e24b2b420af2a241b076e7beebb8cb51848cb",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/invalid/entity-scalar-url.yaml",
+      "new": "tests/fixtures/source-governance/invalid/entity-scalar-url.yaml",
+      "sha256": "becdc02f0ba084f209a6a8cd002c2f62e8a7769f101a7c5b6e5f8a7e867e95b9",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/invalid/match-invalid-rel.yaml",
+      "new": "tests/fixtures/source-governance/invalid/match-invalid-rel.yaml",
+      "sha256": "5ed9320e67f077bdc655c5ea8605bfc254d5bdf781141612268e26ed90ca3d6a",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/invalid/migration-unknown-disposition.yaml",
+      "new": "tests/fixtures/source-governance/invalid/migration-unknown-disposition.yaml",
+      "sha256": "8cdcee4360bae3ae5394f08c95aa18d8a14ebcca534d136d0fc453a2d8c42701",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/invalid/obligation-reopened.yaml",
+      "new": "tests/fixtures/source-governance/invalid/obligation-reopened.yaml",
+      "sha256": "1656df379f6cb857ae28e7baecf22bca82d6d3d12722d249be71fea7e2a2bf60",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/invalid/role-missing-decision.yaml",
+      "new": "tests/fixtures/source-governance/invalid/role-missing-decision.yaml",
+      "sha256": "deaca894c1e5227edbb54291ad191b9846f6759e2f193df6df28725391023227",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/invalid/source-handoff-missing-schemas.yaml",
+      "new": "tests/fixtures/source-governance/invalid/source-handoff-missing-schemas.yaml",
+      "sha256": "42956eee3fc25ac187043c150c4db9e44bf4f11793447e4ead2ba1db642254d2",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/invalid/source-missing-basis.yaml",
+      "new": "tests/fixtures/source-governance/invalid/source-missing-basis.yaml",
+      "sha256": "e509d3621d112752f188d0023dbf4e154407646f56f9b5f3000f724c3864c70e",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/missing-decisions/source-controls.md",
+      "new": "tests/fixtures/source-governance/missing-decisions/source-controls.md",
+      "sha256": "6e596083ad13165bf7750d7ee4861737fe91bd39f90c44018738b411ecd6aa34",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/obligations/lifecycle.yaml",
+      "new": "tests/fixtures/source-governance/obligations/lifecycle.yaml",
+      "sha256": "5c931d7a759a6a47ea0076d26d7e0763022bde5e3c6959eba7135d65f843a335",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/previous/design/decisions/source-old.md",
+      "new": "tests/fixtures/source-governance/previous/design/decisions/source-old.md",
+      "sha256": "76a0067dedf4cc6116046005047193f4a1670d4931c307e1af76b7b0358473c7",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/previous/vocab/entities.yaml",
+      "new": "tests/fixtures/source-governance/previous/vocab/entities.yaml",
+      "sha256": "29040b6ddb9d2ba33a93240c8ef7e4d0e7dd88754c234079f34b11658a8dd24e",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/previous/vocab/source-obligations.yaml",
+      "new": "tests/fixtures/source-governance/previous/vocab/source-obligations.yaml",
+      "sha256": "9d5de8bb95d63e8965770beaff5802a3852359ea2284b402b19bd83016fc2bc4",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/previous/vocab/sources.yaml",
+      "new": "tests/fixtures/source-governance/previous/vocab/sources.yaml",
+      "sha256": "d294db092d832ff11464040118168634e98e1ff7488a31102c628ace829fd7e9",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/probe/address-change.json",
+      "new": "tests/fixtures/source-governance/probe/address-change.json",
+      "sha256": "ab04b2fa01b1fe5971c72c7a725b74df6d2e6a00d206ecd2781c3d9b6ac9c373",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/probe/content-change.json",
+      "new": "tests/fixtures/source-governance/probe/content-change.json",
+      "sha256": "6a26d322ffeec26439c886fa92c2e081777f8f47a8f6e8a5f1ef95bba9a3bc4d",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/probe/human-reproducible.json",
+      "new": "tests/fixtures/source-governance/probe/human-reproducible.json",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/probe/new-version.json",
+      "new": "tests/fixtures/source-governance/probe/new-version.json",
+      "sha256": "00b6c119a98c259de7bf1331e304141f247f6cc6a9764410477ca152d55cfd0a",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/probe/replacement.json",
+      "new": "tests/fixtures/source-governance/probe/replacement.json",
+      "sha256": "3f7e0e55f13015861ce09f89f173fbc61ce973bb838f7bd0c60ac13b7555566e",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/probe/root/vocab/entities.yaml",
+      "new": "tests/fixtures/source-governance/probe/root/vocab/entities.yaml",
+      "sha256": "498bee515512b4272e887c857d06e12df3fc2c89c50e9b7439c8188c6636fa55",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/probe/temporarily-unavailable.json",
+      "new": "tests/fixtures/source-governance/probe/temporarily-unavailable.json",
+      "sha256": "03ef1a4eb7df41199ee1718b52e5d02d81f60bdc7d6249d957433b507278421c",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/probe/withdrawal.json",
+      "new": "tests/fixtures/source-governance/probe/withdrawal.json",
+      "sha256": "dcae9fe159c1f180c393197da3735045ca2b2cae1ff3402227db21b3025f028a",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/reference-contract/design/decisions/source-mapping.md",
+      "new": "tests/fixtures/source-governance/reference-contract/design/decisions/source-mapping.md",
+      "sha256": "704f4f19360cc4fa6d133b413d66e985996fa1d617089726a8c78fb6d4ce1d92",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/reference-contract/replacement-decision.md",
+      "new": "tests/fixtures/source-governance/reference-contract/replacement-decision.md",
+      "sha256": "0e710006b540b9b89de33db8206bb3e362b8ec9adde3e1d6b65a00375f941b81",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/reference-contract/replacement-patches.yaml",
+      "new": "tests/fixtures/source-governance/reference-contract/replacement-patches.yaml",
+      "sha256": "85e83cbbcbdb9644aba0b2f93a9660faddc41a74bd62fbd2c942eec1583088f3",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/reference-contract/vocab/entities.yaml",
+      "new": "tests/fixtures/source-governance/reference-contract/vocab/entities.yaml",
+      "sha256": "a1bc8a9716c8e936a98bbea3e9f0f9b21386e79878a22b9a8cba3f51ef078261",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/reference-contract/vocab/sources.yaml",
+      "new": "tests/fixtures/source-governance/reference-contract/vocab/sources.yaml",
+      "sha256": "55d4c1440729936abbf5ed350d2bc53045862f8aa6a4d10ca3706e28c5e092a5",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/replacement-decisions/source-controls.md",
+      "new": "tests/fixtures/source-governance/replacement-decisions/source-controls.md",
+      "sha256": "6c76ca2584735adacf97727eb22527b5b17ac035e0ff51f7cfd2dfc31729b088",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/valid/decision.yaml",
+      "new": "tests/fixtures/source-governance/valid/decision.yaml",
+      "sha256": "756265a76f3209e5b28fc509bbd6340c341495cec67300b4207e84583b0789f0",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/valid/design/decisions/source-valid.md",
+      "new": "tests/fixtures/source-governance/valid/design/decisions/source-valid.md",
+      "sha256": "6ca79c30af6c47ee8f1593d1d482b8041080f799ac4be8ccae9c5a6e9cfbb4ab",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/valid/entities.yaml",
+      "new": "tests/fixtures/source-governance/valid/entities.yaml",
+      "sha256": "096afcba7638ee408a1bdbdba215bb0b880176ca0b478db45be6cd96a8cc2f6e",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/valid/obligations.yaml",
+      "new": "tests/fixtures/source-governance/valid/obligations.yaml",
+      "sha256": "2b8414b844a9fa3a7944d2ef4bc85c017814e0c191a2a0b34fabd2330d5a9015",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/valid/source-cutover-handoff.yaml",
+      "new": "tests/fixtures/source-governance/valid/source-cutover-handoff.yaml",
+      "sha256": "d1c7815a652e278662e4c1d795ca25f5b1ddd67574571913173b6d6b2f0cbf0e",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/valid/sources.yaml",
+      "new": "tests/fixtures/source-governance/valid/sources.yaml",
+      "sha256": "79aa64c1a1744df127c1e1a23fb11a2b869f8c8d1561058e72db6c2e1b272d9a",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/valid/vocab/entities.yaml",
+      "new": "tests/fixtures/source-governance/valid/vocab/entities.yaml",
+      "sha256": "b4049f3e0c73a9d424f3e1d9b441e7a4675c58827138052c8622b5ff003a214a",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/valid/vocab/source-obligations.yaml",
+      "new": "tests/fixtures/source-governance/valid/vocab/source-obligations.yaml",
+      "sha256": "e6b3ad7c8c543d05b0056d265795bb79439d844d2ee86af9a2abdfbbe8c2cc2a",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/valid/vocab/sources.yaml",
+      "new": "tests/fixtures/source-governance/valid/vocab/sources.yaml",
+      "sha256": "57d396a9a918121cbd0895b9d3ddcb49756c98732911c85708466e92b4efb0eb",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/wrong-domain-decisions/source-controls.md",
+      "new": "tests/fixtures/source-governance/wrong-domain-decisions/source-controls.md",
+      "sha256": "d0c68c7cfaebebcdf0f873b7b0ea1cc3b7566048d98e3caf67fe56b9a405c144",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/source-governance/wrong-field-decisions/source-controls.md",
+      "new": "tests/fixtures/source-governance/wrong-field-decisions/source-controls.md",
+      "sha256": "a439f5b67170af2d62ff0a1d5c6e8fb941850a2af53622263a8a7e74560048e0",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/terminology/decisions/inherited.tsv",
+      "new": "tests/fixtures/terminology/decisions/inherited.tsv",
+      "sha256": "cd0d0dce526c4a4733527aa4f1cb300ebbc491ff432f5db05e64988da335f5c3",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/terminology/invalid/legacy-reference-values.yaml",
+      "new": "tests/fixtures/terminology/invalid/legacy-reference-values.yaml",
+      "sha256": "2f4a21de84b9cbf74a8c5cb668a2d4eae3db38b4a62e3ecac93346360697b748",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/terminology/invalid/status-and-replacement.yaml",
+      "new": "tests/fixtures/terminology/invalid/status-and-replacement.yaml",
+      "sha256": "b1dc4560e94078677193c1b0cbdcbb126ec9746cb7f1c29f33fbceb07bb42ca6",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/terminology/maintenance/decision-change.yaml",
+      "new": "tests/fixtures/terminology/maintenance/decision-change.yaml",
+      "sha256": "2e2cc10ade7b2194b31d36ac575764de976f9f162a78cbc1f15470ff6a2b67f9",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/terminology/maintenance/history-rewrite.yaml",
+      "new": "tests/fixtures/terminology/maintenance/history-rewrite.yaml",
+      "sha256": "e36ae1fcd126f838a7773bdd9caa1260c7fd555e084cc590cdbf3d746526c8d6",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/terminology/maintenance/index-input.yaml",
+      "new": "tests/fixtures/terminology/maintenance/index-input.yaml",
+      "sha256": "fa1640bbe1ed604cdc032a0784abb033fa4be23c139845224f7d51d042f4f161",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/terminology/maintenance/periodic-policy.yaml",
+      "new": "tests/fixtures/terminology/maintenance/periodic-policy.yaml",
+      "sha256": "230763364132682b110452dfacdf8fe34c516322d7ba742a6dc630a17b26caa7",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/terminology/maintenance/resolved-reopened.yaml",
+      "new": "tests/fixtures/terminology/maintenance/resolved-reopened.yaml",
+      "sha256": "45cf5f841089e2705b812ec91511696757c0370e0a9587058e457e245d25df76",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/terminology/maintenance/source-obligation-bridge.yaml",
+      "new": "tests/fixtures/terminology/maintenance/source-obligation-bridge.yaml",
+      "sha256": "5abc712916e696f256049de95bb1fe1a0f496d9268b4e2bf84f9426a3945ef93",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/terminology/states/active.yaml",
+      "new": "tests/fixtures/terminology/states/active.yaml",
+      "sha256": "7ae192a8323a55beabcd99402e560f6d90c71ae5145508335fb60d769f931d8f",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/terminology/states/rolled-back.yaml",
+      "new": "tests/fixtures/terminology/states/rolled-back.yaml",
+      "sha256": "c77b786f92babc834262b76cd818ee9895c0fea6ee2d16abc1a75311bc4a1d39",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/terminology/valid/minimal-active.yaml",
+      "new": "tests/fixtures/terminology/valid/minimal-active.yaml",
+      "sha256": "1c1d15e304df7bed073c30beb415751a733a909fcb025b6203c8fdeef70d8804",
+      "action": "保留"
+    },
+    {
+      "old": "tests/fixtures/terminology/valid/two-language.yaml",
+      "new": "tests/fixtures/terminology/valid/two-language.yaml",
+      "sha256": "abd017840585df1ababab20d522e9efdffe539dbc1ab94d06fe665c2355ae6ae",
+      "action": "保留"
+    },
+    {
+      "old": "tests/governance/test_term_generation.py",
+      "new": "packages/kb-core/tests/governance/test_term_generation.py",
+      "sha256": "a3e654f3a67690e117d2733dde980e6c8eeb059da590188d303a663088180eac",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/governance/test_term_maintenance.py",
+      "new": "packages/kb-core/tests/governance/test_term_maintenance.py",
+      "sha256": "7426f9c02bffe3660deb1679a8e3cea3cb97530c4f0e6bf56d507008f041ffbb",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/governance/test_term_migration.py",
+      "new": "packages/kb-core/tests/governance/test_term_migration.py",
+      "sha256": "d2da0394a75cfe03af18c7aeea272d5c4902505ace410164aea19bfa087ed6f5",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/governance/test_term_model.py",
+      "new": "packages/kb-core/tests/governance/test_term_model.py",
+      "sha256": "8522451ef4b051271d923c44f551046303a34094fa67aaa4c555801a780a2cd2",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/governance/test_term_transitions.py",
+      "new": "packages/kb-core/tests/governance/test_term_transitions.py",
+      "sha256": "08b7ac48375d10cf8cd2796ef0ff21d6104f8d9730fce1a011403a789020f171",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/governance/test_term_usage.py",
+      "new": "packages/kb-core/tests/governance/test_term_usage.py",
+      "sha256": "4170355dc265b56cd406eba14a27c4aa3683658ef554cbff03eaba564dbc5926",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/source_governance_helpers.py",
+      "new": "packages/kb-core/tests/source_governance_helpers.py",
+      "sha256": "a1dfd96001ae98eb3fd7c4ca25b530695a7ec77eb40c638051e4462a0466ddb9",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_build_topics_sources.py",
+      "new": "packages/kb-core/tests/test_build_topics_sources.py",
+      "sha256": "e9c4975dfcb5755ebb50c7e150b0d1858cb4a1033cdc5d4566437f402e702061",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_check_sources.py",
+      "new": "packages/kb-core/tests/test_check_sources.py",
+      "sha256": "574ebedfa8b8244b1e9c1773aacc1ff47cd05f2ed2a4a20c89f5c69d2ee0443f",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_check_terms.py",
+      "new": "packages/kb-core/tests/test_check_terms.py",
+      "sha256": "253bae8306b48cc3977caf484861949ce0ed03196bf50a30c3c5266731821f32",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_export_obsidian.py",
+      "new": "tests/integration/test_export_obsidian.py",
+      "sha256": "fc64f0f9268559053b215ee6a8aa977222b9df2fb735f532e1b1740bcfb5f34d",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_label_adoptions.py",
+      "new": "packages/kb-core/tests/test_label_adoptions.py",
+      "sha256": "7587a3040ab6916b8d2e5f25d90c99e511f23c0537fdb25eaf278fc42759c86f",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_label_basis.py",
+      "new": "packages/kb-core/tests/test_label_basis.py",
+      "sha256": "fd2d7c6d9d36465fa81779fbc323c22404e4bf62abf14d5d08867d272898d6b9",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_label_basis_export.py",
+      "new": "tests/integration/test_label_basis_export.py",
+      "sha256": "ddacbca5fd3a1b9a71afea05e2ab6ce377bda58aac654499df686b568a3d2c85",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_probe_sources.py",
+      "new": "packages/kb-core/tests/test_probe_sources.py",
+      "sha256": "83fa9b793246b75c65c5dc3ec4aa3ebbf3e9bb5fc25c90c636f32cdae33b6d54",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_source_basis_ledger.py",
+      "new": "packages/kb-core/tests/test_source_basis_ledger.py",
+      "sha256": "480d078c20f62923dfef276188c0a25452c4350261c7d301b73980df8a3b6928",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_source_contract.py",
+      "new": "packages/kb-core/tests/test_source_contract.py",
+      "sha256": "658c48e1e2a23bc6db7346fd51fd3c504cca09c0ca7684a8e7eb54286d7b7e61",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_source_derivation_ledger.py",
+      "new": "packages/kb-core/tests/test_source_derivation_ledger.py",
+      "sha256": "caba84dfdc8c4a4149758eb9d16f0665cfcedaad09c233c13e812d4213b2604c",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_source_docs.py",
+      "new": "packages/kb-core/tests/test_source_docs.py",
+      "sha256": "3215fbce46ea27110c07cad50783458ddd35efccf8f5067361de01cb3c997345",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_source_entities_ledger.py",
+      "new": "packages/kb-core/tests/test_source_entities_ledger.py",
+      "sha256": "37923e3677b42a445ab10adcd53edbe0c76f9781e72a5f542e07d5b332e52a0d",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_source_index.py",
+      "new": "packages/kb-core/tests/test_source_index.py",
+      "sha256": "001599fc24de881ec102e23aefa5d59dbb59c739e2c5e5e8310c4e50c2addd22",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_source_match_ledger.py",
+      "new": "packages/kb-core/tests/test_source_match_ledger.py",
+      "sha256": "f18b64cf5eebed79227b19d08a98d567a26c8e0eeab3e2132a71cbc72fbc75bd",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_source_migration.py",
+      "new": "packages/kb-core/tests/test_source_migration.py",
+      "sha256": "a3eceb3c39291a6b0bd81d398851dc0fd31104c9d7f8f31210e3ea1cd94de613",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_source_obligations.py",
+      "new": "packages/kb-core/tests/test_source_obligations.py",
+      "sha256": "ad0be31c92965345948e082ea101cbe749d040c974ae2b7499b5c1a326c44acf",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_source_roles_ledger.py",
+      "new": "packages/kb-core/tests/test_source_roles_ledger.py",
+      "sha256": "809b94f5b3a3bd3280110e72ca56ddec7320bed82fbb72f2cecda1c4d59b9b15",
+      "action": "迁移"
+    },
+    {
+      "old": "tests/test_source_schema.py",
+      "new": "packages/kb-core/tests/test_source_schema.py",
+      "sha256": "1362ffa4b3ef60d9ce5640c45121aed8479f6298c9664e4a4ee9043dff639f07",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/.gitignore",
+      "new": "apps/obsidian/.gitignore",
+      "sha256": "111af57e597aa46e79d15d11eb0a477e4099cc972db4fad69940ce2ac5e45392",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/AGENTS.md",
+      "new": "apps/obsidian/AGENTS.md",
+      "sha256": "009adff371141ce89ef6613f3c2407a49260e1d0d27d2d82feaf4493872eef89",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/README.md",
+      "new": "apps/obsidian/README.md",
+      "sha256": "b66e999ebcd4cf6c84cfc7a54e60a7f15c37eace873f7b4db6fb74e7dd6ec3e1",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/docs/plans/2026-09-05-vocabulary-refresh.md",
+      "new": "work/archive/obsidian/plans/2026-09-05-vocabulary-refresh.md",
+      "sha256": "65f4aa02f1b7cfc86bd7de12f9a8dc217a762bd58479925c594863cf1fd15212",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/docs/superpowers/plans/2026-09-03-obsidian-application.md",
+      "new": "work/archive/obsidian/superpowers/plans/2026-09-03-obsidian-application.md",
+      "sha256": "47f8b53487284c8756c758a330fcefca7e83b9c7fad9b033829d321781081a98",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/pyproject.toml",
+      "new": "apps/obsidian/pyproject.toml",
+      "sha256": "e38b7bccac2bae7906640fc3830de1d1e6f31ce4fad593c9560819fff7032d1a",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/src/kb_obsidian/__init__.py",
+      "new": "apps/obsidian/src/kb_obsidian/__init__.py",
+      "sha256": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/src/kb_obsidian/__main__.py",
+      "new": "apps/obsidian/src/kb_obsidian/__main__.py",
+      "sha256": "be480c381810ae2abdb2d7a17dd6578c065a7fa5aea2ea07af551bc2b3141020",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/src/kb_obsidian/cli.py",
+      "new": "apps/obsidian/src/kb_obsidian/cli.py",
+      "sha256": "6cc30b136f0ac7bb187e9fa08b8bf7f96036436611b463da1547ad0042f1ac8f",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/src/kb_obsidian/content.py",
+      "new": "apps/obsidian/src/kb_obsidian/content.py",
+      "sha256": "9994b2357f3ac9361d31bc86c946541dda098bfca13d9c74ede96b178bcde069",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/src/kb_obsidian/create_content.py",
+      "new": "apps/obsidian/src/kb_obsidian/create_content.py",
+      "sha256": "421a317519a539b98721b7a82e297007edfa502a558e42285e1b0714508e72b6",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/src/kb_obsidian/design_source.py",
+      "new": "apps/obsidian/src/kb_obsidian/design_source.py",
+      "sha256": "a5dd5022ba61de5c6adcebddc568c41fec3c5284256ea8ebb38abce3b2e0c759",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/src/kb_obsidian/errors.py",
+      "new": "apps/obsidian/src/kb_obsidian/errors.py",
+      "sha256": "3dcbf341ec082786e8880ca72d75b0444875400b639e50bf51517e4e2976890f",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/src/kb_obsidian/managed.py",
+      "new": "apps/obsidian/src/kb_obsidian/managed.py",
+      "sha256": "fbea57031b1b0dd536e93fa255cee8b0ada869e4c724181fe632068c26c8fd45",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/src/kb_obsidian/reference_export.py",
+      "new": "apps/obsidian/src/kb_obsidian/reference_export.py",
+      "sha256": "e09e1ae6579bd78744c9f6ab85fab400416330800e2be102a1c91f5beb55fb56",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/src/kb_obsidian/refresh.py",
+      "new": "apps/obsidian/src/kb_obsidian/refresh.py",
+      "sha256": "578844a228a16f305100e0f00f96bb5433ae7acbf49773f5a541a429100283d6",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/src/kb_obsidian/render.py",
+      "new": "apps/obsidian/src/kb_obsidian/render.py",
+      "sha256": "b895d782863ae58bd2088cb4a79e2b1db79b525f28f10bc0f6d586ae5163af9c",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/src/kb_obsidian/reports.py",
+      "new": "apps/obsidian/src/kb_obsidian/reports.py",
+      "sha256": "76a6e1b806ab077c4a22bca32ae06b8c279ce9ffe3a8eff256b63c71dd23971c",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/src/kb_obsidian/validation.py",
+      "new": "apps/obsidian/src/kb_obsidian/validation.py",
+      "sha256": "340af10c4eefad1513e9aee99cc85c75cee7608c76d735f512562afe6a295f1d",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/src/kb_obsidian/vault.py",
+      "new": "apps/obsidian/src/kb_obsidian/vault.py",
+      "sha256": "1b0cb92a0938aef2763b5ed5524ab26b3c8f8573b567689d4c494d9231af2d3e",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/tests/__init__.py",
+      "new": "apps/obsidian/tests/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/tests/test_cli.py",
+      "new": "apps/obsidian/tests/test_cli.py",
+      "sha256": "df694c60a1c94717523c4671e9b7394d6b655aaead8ccbd875c60bd178aa1022",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/tests/test_content_validation.py",
+      "new": "apps/obsidian/tests/test_content_validation.py",
+      "sha256": "09357e1afd008c1e9d4155282d2e3776c7aa2b4aede716f3a3555797e796e377",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/tests/test_create_content.py",
+      "new": "apps/obsidian/tests/test_create_content.py",
+      "sha256": "e9f6219f789255a250ea770234e4fe578ac23967143b082e2387317d30ef1e8d",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/tests/test_design_source.py",
+      "new": "apps/obsidian/tests/test_design_source.py",
+      "sha256": "a0c6fdc21500f8653a730d3c352d02941597ff85bca5bd2d7e1a41a6447de79b",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/tests/test_refresh.py",
+      "new": "apps/obsidian/tests/test_refresh.py",
+      "sha256": "2432b8456bc0357d5707281b84882d7e22227d77fa2ddbf34418c31a4fc3d3c5",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/tests/test_reports.py",
+      "new": "apps/obsidian/tests/test_reports.py",
+      "sha256": "81a34dca82a8268441f7332213d78b51a970b5f8d1482eaf5f6ba59dd1078b58",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/tests/test_vault_binding.py",
+      "new": "apps/obsidian/tests/test_vault_binding.py",
+      "sha256": "1115545fe51af6bda9adddb982efbf4bedfda0c9bd20327dd56ae326d773422e",
+      "action": "迁移"
+    },
+    {
+      "old": "tools/obsidian/tests/test_vault_init.py",
+      "new": "apps/obsidian/tests/test_vault_init.py",
+      "sha256": "d13bf31598262f649d9e47f71c20ff1fb34a5a8da6bb5daa0f193c6c3c804ff3",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/CHANGELOG.md",
+      "new": "data/vocab/CHANGELOG.md",
+      "sha256": "a7a45c92bb112b23baf5f2d0f524f860a90aca39c28f485175063a6f0f0dedb9",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/build/__pycache__/gbt_en.cpython-314.pyc",
+      "new": null,
+      "sha256": "fbdd82d2bde28595603a645c25036ae3705ba7b3376053bba910cd1075a12718",
+      "action": "删除已跟踪的派生缓存"
+    },
+    {
+      "old": "vocab/build/cs2023-kus.json",
+      "new": "data/inputs/topics/cs2023-kus.json",
+      "sha256": "a59470e2405c323b63b87c7f49c435a3fb056b4b01e5adb11a214107767112d3",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/build/cs2023-zh.json",
+      "new": "data/inputs/topics/cs2023-zh.json",
+      "sha256": "c83351956b8587c8e74f441909499fa82b301e77d2f6a7776c40de85744d69d9",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/build/extra-arrays.json",
+      "new": "data/inputs/topics/extra-arrays.json",
+      "sha256": "bd58a7fa71a248fd17d2f6032dae6db5461df0f374f9c015d9a9c45f9c2bca10",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/build/gbt-13745.json",
+      "new": "data/inputs/topics/gbt-13745.json",
+      "sha256": "1e42c14d8159fd45b1260388cc70908058bb76aad7166ebdd09d10d1c569da18",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/build/gbt_en.py",
+      "new": "packages/kb-core/src/kb_core/gbt_en.py",
+      "sha256": "727eef56242b83fcfe70dd487f0dffc9a09765014ad2740e608dd6d59528dc51",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/build/label-adoptions.json",
+      "new": "data/inputs/topics/label-adoptions.json",
+      "sha256": "385f7c58bbc19233676c7d71ec275415f2d91dfc090e8db2b1faa1e13de66516",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/build/label-decisions.json",
+      "new": "data/inputs/topics/label-decisions.json",
+      "sha256": "e9996ec1e6beec003cb73b4a57d270ba925ae711e3ec40b646e3c38d54b6b271",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/build/label-lookup.json",
+      "new": "data/audit/labels/label-lookup.json",
+      "sha256": "70e8b0d7ef2028882da034fa543d45f75acb51918e23cc8c358552114eab7398",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/build/label-review.md",
+      "new": "data/audit/labels/label-review.md",
+      "sha256": "8e1032439694890e2c2589c0e7d70dea73740641d03e60315af63938b79e34c0",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/build/scope-zh.json",
+      "new": "data/inputs/topics/scope-zh.json",
+      "sha256": "8266dc0f38a68b1169e53ad7b0ad5961cc7ec77b0d66e62a2596580f73844ee4",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/entities.yaml",
+      "new": "data/vocab/entities.yaml",
+      "sha256": "63020dd3edbb3a25339846943fa67d774335b866e687a7b70f8a110a3ac50ff7",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/forms.yaml",
+      "new": "data/vocab/forms.yaml",
+      "sha256": "c5c10ea2da5139c5a1ab6d5efd1f338d84a18ee2e996504fb1b14ee346765633",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/genres.yaml",
+      "new": "data/vocab/genres.yaml",
+      "sha256": "7ec8fdc737d20f1d0034168e3abc16dd111c52673af3f0d48a0042ef036310f6",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/glossary-layout.yaml",
+      "new": "data/inputs/terminology/glossary-layout.yaml",
+      "sha256": "c1d59570f52d9be95648ba234d00b8cacbf861b222ec1088ff260c0762089888",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/migrations/source-v1/basis.yaml",
+      "new": "data/audit/migrations/source-v1/basis.yaml",
+      "sha256": "0487059ac03c8f2da46062d0493be27ae5c0e21aea9f91a6c1926f1c2a7e3f02",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/migrations/source-v1/entities.yaml",
+      "new": "data/audit/migrations/source-v1/entities.yaml",
+      "sha256": "c8462622ade18dddd3346f2686a7b6b1f722163d186d0f4466ce8ff7e8e7f31d",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/migrations/source-v1/match.yaml",
+      "new": "data/audit/migrations/source-v1/match.yaml",
+      "sha256": "bea03dc55d4d59b92f1ddb2aeef32d0b4fee1610e63ebfc770b56639170ff0d3",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/migrations/source-v1/origin.yaml",
+      "new": "data/audit/migrations/source-v1/origin.yaml",
+      "sha256": "7d7cc4577d46914259f010f94432f345c9f7461f6cf7b099ee0c58afac90827c",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/migrations/source-v1/source.yaml",
+      "new": "data/audit/migrations/source-v1/source.yaml",
+      "sha256": "bd48cdf35a165819bca4680b1f11336e1f57ce728092d812e4d845a890826809",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/migrations/source-v1/uses.yaml",
+      "new": "data/audit/migrations/source-v1/uses.yaml",
+      "sha256": "41a63407260731402fc7f079ce6df717d367017cedb28f6102bebba96b759486",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/migrations/term-v1/terms.tsv",
+      "new": "data/audit/migrations/term-v1/terms.tsv",
+      "sha256": "611af51a37700000c6fadb92f723ead86d07465bc1bc0928348857595ca48d83",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/signals.yaml",
+      "new": "data/audit/maintenance/signals.yaml",
+      "sha256": "dbc94fd5f827d4cb01dd5430b2788e7d4bc459392ad48a619b1fd6b065f318f4",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/sources.yaml",
+      "new": "data/vocab/sources.yaml",
+      "sha256": "1f550993984e2ba4329828b01fcf08ddee97d7433027265207c98277173c50ff",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/topics.yaml",
+      "new": "data/vocab/topics.yaml",
+      "sha256": "d8736f5f918ab2d7a3f8c3c666e9e5b2bf9c1d00e18de44f03678a1c4d8dcdae",
+      "action": "迁移"
+    },
+    {
+      "old": "vocab/types.yaml",
+      "new": "data/vocab/types.yaml",
+      "sha256": "4013f6b08a05fa0e464c8332c4037728f54b7c7372abe05e142dbc4e4f520947",
+      "action": "迁移"
+    }
+  ],
+  "interpretation": "action 表示文件去向，sha256 为迁移前原始字节；内容改动以提交差异和验收记录为准。历史身份与授权路径不按文件去向批量替换。"
+}

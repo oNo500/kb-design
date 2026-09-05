@@ -1,0 +1,11 @@
+# Persistent application data is not part of project source history.
+/output/
+# Disposable build and diagnostic output.
+/build/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+.DS_Store
+.superpowers/
