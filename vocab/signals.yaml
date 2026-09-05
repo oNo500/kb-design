@@ -1,3 +1,5 @@
+# 词表维护指标的只追加快照，不是正式词表数据。
+# 运行 python3 scripts/check-topics.py --record 时追加。
 governance_reviewed: null
 last_candidate_review: '2026-09-01'
 snapshots:

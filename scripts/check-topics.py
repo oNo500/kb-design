@@ -187,6 +187,9 @@ if '--record' in sys.argv:
     snaps.append(snap)
     hist['snapshots'] = snaps
     hist.setdefault('last_candidate_review', None); hist.setdefault('governance_reviewed', None)
-    yaml.safe_dump(hist, open(lp, 'w'), allow_unicode=True)
+    with open(lp, 'w') as stream:
+        stream.write('# 词表维护指标的只追加快照，不是正式词表数据。\n')
+        stream.write('# 运行 python3 scripts/check-topics.py --record 时追加。\n')
+        yaml.safe_dump(hist, stream, allow_unicode=True)
     print('已追加快照到 vocab/signals.yaml')
 sys.exit(1 if bad else 0)
