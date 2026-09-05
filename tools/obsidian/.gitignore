@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+
+build/
+dist/
+*.egg-info/
+
+.superpowers/sdd/*
+!.superpowers/sdd/.gitignore
