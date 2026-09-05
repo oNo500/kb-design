@@ -13,6 +13,7 @@ COMMANDS = {
     "build-source-index": "build_source_index",
     "plan-source-migration": "plan_source_migration",
     "probe-sources": "probe_sources",
+    "prepare-source-evidence": "prepare_source_evidence",
     "source-model": "source_model",
     "build-terms": "governance.build_terms",
     "migrate-terms": "governance.migrate_terms",

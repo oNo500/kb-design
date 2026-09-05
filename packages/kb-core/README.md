@@ -31,6 +31,7 @@ uv run kb-core --help
 | `build-source-index` | 生成来源反向索引 |
 | `plan-source-migration` | 生成来源迁移预演 |
 | `probe-sources` | 对固定夹具执行只读来源探测 |
+| `prepare-source-evidence` | 整理首批离线来源证据与变化项，只供人工审阅 |
 | `source-model` | 维护来源模式相关产物 |
 | `build-terms` | 构建或核对未激活术语视图 |
 | `migrate-terms` | 物化或校验术语迁移结果 |
@@ -38,6 +39,22 @@ uv run kb-core --help
 使用 `uv run kb-core <命令> --help` 查看参数。命令使用显式仓库根定位资源，不要求调用者先进入包目录。
 
 `check-sources` 要求显式传入 `--root`，完整 schema 校验面向候选数据或固定测试夹具根目录。正式来源 v2 数据尚未激活，不能把该命令可运行写成现行正式数据已经就绪。
+
+## 离线证据
+
+```bash
+uv run kb-core prepare-source-evidence
+```
+
+当前只处理 `computing ↔ gbt-13745:520` 和 `explanation ↔ diataxis:explanation`，读取现行记录、来源与角色、旧账本，以及已保存的 GB/T 转载清单和 Diátaxis 阅读记录。不联网、不下载，不把阅读笔记升级为原始材料或正式依据。
+
+默认输出到 `build/source-evidence/`。`evidence.md` 展示当前映射、旧结论、材料性质、哈希、章节、行号、原样片段和待核条件；`evidence.json` 保留完整字段。`changes.md` 只展开本次输入变化的对象，`cache.json` 是可丢弃的派生缓存，不能存放人工采纳决定。
+
+第二次运行时，未变化对象复用片段。选定记录、来源、角色、旧账本、材料文件、适用政策或程序实现变化会使相应结果失效；材料缺失会报告缺口，不使用旧片段。缓存不会免除读取和哈希计算，节省的是重复片段处理及人工重新阅读。
+
+`--root /absolute/checkout` 显式选择输入仓库；`--output build/other-evidence` 可选择该仓库 `build/` 下的子目录。正式目录、vault 输出区和符号链接目标不能作为输出；目标若有不属于本工具的文件，会拒绝覆盖。串行运行本命令，不与另一个调用并发替换同一输出。
+
+待核条件来自已批准的首批审查范围。字段存在可以改变“缺失”的提示，但不会自动关闭关系判断、角色批准或其他语义门禁。当前不支持任意材料导入、PDF 解析或正式候选生成；更换检索对象或新增原始材料需要明确其路径、材料性质和定位规则。试用结果见[离线证据验收](../../work/reviews/2026-09-05-offline-source-evidence.md)。
 
 ## 数据边界
 
