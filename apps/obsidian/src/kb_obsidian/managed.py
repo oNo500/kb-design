@@ -27,7 +27,10 @@ _TEMPLATES = {
 }
 
 
-def _base(name: str, *filters: str, order: tuple[str, ...] = ()) -> dict[str, object]:
+def _base(
+    name: str, *filters: str,
+    order: tuple[str, ...] = ("file.link", "file.mtime"),
+) -> dict[str, object]:
     return {
         "filters": {"and": list(filters)},
         "views": [{"type": "table", "name": name, "order": list(order)}],
@@ -35,19 +38,26 @@ def _base(name: str, *filters: str, order: tuple[str, ...] = ()) -> dict[str, ob
 
 
 _CONTENT_FILTERS = ('file.inFolder("content")', 'file.ext == "md"')
+_CONTENT_COLUMNS = ("file.link", "title", "kb_type", "kb_subjects", "kb_status")
+_TOPIC_COLUMNS = ("file.link", "kb_label", "kb_status", "kb_broader")
 _VIEWS = {
     "app/views/inbox.base": _base("Inbox", 'file.inFolder("inbox")', 'file.ext == "md"'),
     "app/views/sources.base": _base("外部资料", 'file.inFolder("sources")', 'file.ext == "md"'),
-    "app/views/content.base": _base("全部内容", *_CONTENT_FILTERS),
-    "app/views/drafts.base": _base("草稿", *_CONTENT_FILTERS, 'kb_status == "draft"'),
-    "app/views/recently-modified.base": _base("最近修改", *_CONTENT_FILTERS, order=("kb_modified",)),
+    "app/views/content.base": _base("全部内容", *_CONTENT_FILTERS, order=_CONTENT_COLUMNS),
+    "app/views/drafts.base": _base("草稿", *_CONTENT_FILTERS, 'kb_status == "draft"', order=_CONTENT_COLUMNS),
+    "app/views/recently-modified.base": _base(
+        "最近修改", *_CONTENT_FILTERS, order=(*_CONTENT_COLUMNS, "file.mtime", "kb_modified"),
+    ),
     "app/views/indexes.base": _base("人工索引", 'file.inFolder("indexes")', 'file.ext == "md"'),
-    "app/views/formal-topics.base": _base("正式主题", 'file.inFolder("kb/topics")', 'file.ext == "md"'),
+    "app/views/formal-topics.base": _base(
+        "正式主题", 'file.inFolder("kb/topics")', 'file.ext == "md"', order=_TOPIC_COLUMNS,
+    ),
     "app/views/unassigned-topics.base": _base(
         "未分配主题",
         'file.inFolder("kb/topics")',
         'file.ext == "md"',
         'kb_status == "unassigned"',
+        order=_TOPIC_COLUMNS,
     ),
 }
 
