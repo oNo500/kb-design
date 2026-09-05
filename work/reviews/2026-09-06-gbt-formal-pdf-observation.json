@@ -1,0 +1,12 @@
+{
+  "checked": "2026-09-06",
+  "url": "https://lib.aust.edu.cn/images/xkdm.pdf",
+  "local_path": "build/source-verification/gbt-13745-2009-aust.pdf",
+  "bytes": 1870620,
+  "sha256": "c2f00d1255fda329c7a830bc5edb78b04f86f1a1fa02fb0e17d506469c132482",
+  "material": "university-hosted formal standard facsimile",
+  "pages": {"cover":1,"870":[88,89],"19070":30,"880_see_19070":90,"change_table_A9":99},
+  "matched_870_count": 43,
+  "method": "embedded PDF text plus direct visual reading of cover and p89; no OCR",
+  "first_endpoint": "Fudan only exposed watermark text; not used as evidence"
+}

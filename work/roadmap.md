@@ -6,7 +6,7 @@
 
 | 工作 | 状态 | 完成口径 |
 |---|---|---|
-| [来源迁移执行](../docs/decisions/source-execution-boundary.md) | 执行中 | P1–P4 已采纳并在独立 Git 分支形成[候选与兼容结果](reviews/2026-09-05-source-candidate-validation.md)；完整 schema 与 Obsidian 读取仍不通过，候选数据不合并，按[价值排序](reviews/2026-09-05-source-verification-priority.md)继续补核重要事实，低价值项才后置，恢复使用 Git |
+| [来源迁移执行](../docs/decisions/source-execution-boundary.md) | 执行中 | 已采纳严格 v2 合同及[本批字段与用途](../docs/decisions/source-data-batch.md)，工程和诊断候选见[整合记录](reviews/2026-09-06-source-v2-integration.md)；完整关系依据、维护字段与正式切换仍未完成，继续整批离线核对，完成前不合并 master |
 | [来源首批准备](reviews/2026-09-05-source-evidence-conclusions.md) | 历史盘点与审阅完成 | 四份来源、四个关系、七个角色及正文材料已有处置；这不等于必要证据补齐或来源 v2 迁移完成 |
 | [终端访问](../docs/decisions/obsidian-agent-entry.md) | 工具子阶段完成 | 新库代理入口与 CLI 规则已实现；见[验收记录](reviews/2026-09-05-obsidian-agent-entry.md)。该记录不跟踪后续实例操作 |
 | [实时词表预览](plans/2026-09-05-vocab-preview.md) | 当前范围完成 | uv 启动与浏览器自动更新已验证，见[预览验收](reviews/2026-09-05-vocab-preview.md) |
