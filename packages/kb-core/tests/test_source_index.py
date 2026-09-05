@@ -89,6 +89,27 @@ class SourceIndexTests(unittest.TestCase):
             },
         )
 
+    def test_structured_language_evidence_tracks_uses_without_model_sources(self):
+        """Missing label evidence would understate a source change's actual impact."""
+        with materialized_current_layout(FIXTURE) as root:
+            path = root / "data/vocab/label-evidence.yaml"
+            path.write_text(
+                "concepts:\n"
+                "  - id: reading-topic\n"
+                "    basis:\n"
+                "      zh: {level: 1, references: [{source: source-main, locator: '520'}]}\n"
+                "      en: {level: 5, model: {name: model, rationale: existing knowledge}}\n"
+                "  - id: untranslated\n"
+                "    basis: {en: {legacy: none}}\n", encoding="utf-8",
+            )
+            entries = [row for row in build_reference_index(root)["entries"]
+                       if row["file"] == "data/vocab/label-evidence.yaml"]
+        self.assertEqual([{
+            "target_kind": "source_use", "target_id": "source-main",
+            "reference_kind": "label_basis.source", "file": "data/vocab/label-evidence.yaml",
+            "record": "concepts:reading-topic", "field_path": "concepts[0].basis.zh.references[0].source",
+        }], entries)
+
     def test_two_runs_are_byte_identical(self):
         self.assertEqual(self.entries(), self.entries())
 

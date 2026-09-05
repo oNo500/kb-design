@@ -247,6 +247,37 @@ def visit_legacy_references(root: Path) -> List[Dict[str, str]]:
     return rows
 
 
+def visit_language_basis(relative: Path, document: object) -> List[Dict[str, str]]:
+    """Index source-use references in the current structured language evidence."""
+    rows = []
+    if not isinstance(document, dict):
+        return rows
+    for collection, records in document.items():
+        if not isinstance(records, list):
+            continue
+        for index, record in enumerate(records):
+            if not isinstance(record, dict) or not isinstance(record.get("basis"), dict):
+                continue
+            for language in ("zh", "en"):
+                basis = record["basis"].get(language)
+                if not isinstance(basis, dict) or type(basis.get("level")) is not int:
+                    continue
+                if not 1 <= basis["level"] <= 4:
+                    continue
+                references = basis.get("references", [])
+                if not isinstance(references, list):
+                    continue
+                for ref_index, reference in enumerate(references):
+                    if not isinstance(reference, dict) or not isinstance(reference.get("source"), str):
+                        continue
+                    rows.append(index_row(
+                        "source_use", reference["source"], "label_basis.source", relative,
+                        f"{collection}:{record.get('id', index)}",
+                        f"{collection}[{index}].basis.{language}.references[{ref_index}].source",
+                    ))
+    return rows
+
+
 def unique_entries(entries):
     by_key = {tuple(row[key] for key in INDEX_KEYS): row for row in entries}
     return list(by_key.values())
@@ -257,6 +288,7 @@ def build_reference_index(root: Path, include_legacy: bool = False) -> Dict[str,
     for path in discover_formal_documents(root):
         document = load_yaml_or_json(path)
         relative = path.relative_to(root)
+        entries.extend(visit_language_basis(relative, document))
         entries.extend(
             visit_reference_use(use)
             for use in collect_reference_uses(relative, document)

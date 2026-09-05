@@ -13,7 +13,7 @@
 | 审计材料 | `data/audit/` | 保存迁移账本、维护记录和复核材料，不批准正式值 |
 | 执行记录 | `work/` | 保存路线、计划、复核与历史过程材料，不属于项目设计 |
 
-当前基础边界见[当前阶段](decisions/current-stage-scope.md)，本次来源迁移的开放范围、取证取舍与 Git 恢复方式见[来源执行](decisions/source-execution-boundary.md)。monorepo 的目录、包和输出边界见[仓库布局](decisions/monorepo-layout.md)。
+当前基础边界见[当前阶段](decisions/current-stage-scope.md)，本次来源迁移的开放范围与 Git 恢复方式见[来源执行](decisions/source-execution-boundary.md)，最新取证顺序见[来源核对取舍](decisions/source-evidence-priority.md)。monorepo 的目录、包和输出边界见[仓库布局](decisions/monorepo-layout.md)。
 
 ## 设计入口
 

@@ -28,7 +28,7 @@ uv run kb-core --help
 | `check-topics` | 校验正式主题词表及其关系 |
 | `check-terms` | 生成 Markdown designation 人工复核报告 |
 | `check-sources` | 校验来源与引用结构 |
-| `build-source-index` | 生成来源反向索引 |
+| `build-source-index` | 生成来源反向索引，包含结构化语言依据的来源用途引用 |
 | `plan-source-migration` | 生成来源迁移预演 |
 | `probe-sources` | 对固定夹具执行只读来源探测 |
 | `prepare-source-evidence` | 整理首批离线来源证据与变化项，只供人工审阅 |
