@@ -1,49 +1,103 @@
 # 项目架构 (Project Architecture)
 
-本仓库同时保存应用无关的知识设计、正式词表、共享 Python 能力和 Obsidian 应用。monorepo 只统一工程组织与依赖管理，不改变既有业务规则、数据身份、对象状态或决策权。
+本项目维护知识体系的设计、词表和配套程序，并通过 Obsidian 应用建立可使用的知识库。这些内容放在同一个 Git 仓库中，按 monorepo 组织；Python 工程使用 uv 管理。
 
-## 职责分层
+## 文件组织
 
-| 层次 | 职责 | 位置 |
-|---|---|---|
-| 知识设计 | 概念、现行模型、治理规则、决定、草案与来源笔记 | `docs/` |
-| 正式数据 | 六份正式词表 | `data/vocab/` |
-| 生成输入 | 主题生成输入与未启用术语配置 | `data/inputs/` |
-| 审计材料 | 迁移账本、维护记录与标签复核材料 | `data/audit/` |
-| 共享契约 | 跨工程使用的 JSON Schema | `schemas/` |
-| 核心工程 | 生成、校验、来源与术语维护能力 | `packages/kb-core/` |
-| 应用工程 | Obsidian 初始化、导出、刷新、内容校验与报告 | `apps/obsidian/` |
-| 整仓辅助 | 链接、格式等仓库级检查 | `scripts/` |
-| 执行记录 | 当前路线、实施计划、复核与历史过程材料 | `work/` |
-| 应用数据 | 默认持久 vault 与其他本地产物 | `output/` |
-| 临时产物 | 可重新生成并清理的中间文件 | `build/` |
+下面列出主要目录和文件。`output/` 与 `build/` 是运行时按需创建的目录，不进入 Git。
 
-知识设计与应用表示继续分层。[内容模型](docs/design/model/content-model.md)和正式词表不依赖 Obsidian；[Obsidian 映射](docs/design/targets/obsidian.md)选择具体表示；应用代码物化并维护该表示。生成文件中的修改不回流，也不取得项目效力。
+```text
+kb-design/
+├── README.md                  # 保留的项目原始说明，禁止 AI 修改
+├── ARCHITECTURE.md            # 项目组织、文件树与工程关系
+├── AGENTS.md                  # AI 的工作规则
+├── pyproject.toml            # uv 工作区与共用开发配置
+├── uv.lock                   # Python 依赖锁定
+├── .python-version           # 开发使用的 Python 版本
+├── .gitignore                # 不进入 Git 的文件与目录
+│
+├── docs/                     # 知识体系的说明与设计
+│   ├── README.md             # 文档导航
+│   ├── glossary.md           # 现行术语登记与中英对照
+│   ├── concepts/             # 概念与方法的解释
+│   ├── design/
+│   │   ├── model/            # 内容模型、词表结构、关系与版本
+│   │   ├── governance/       # 治理、写作与维护规则
+│   │   └── targets/          # 各应用怎样表示和使用这些知识
+│   ├── decisions/            # 已采纳的决定
+│   ├── drafts/               # 尚未生效的设计
+│   ├── references/           # 标准与文献的阅读记录
+│   └── guides/               # 开发和操作指南
+│
+├── data/
+│   ├── vocab/                # 正式词表与变更记录
+│   ├── inputs/
+│   │   ├── topics/           # 生成主题词表所需的输入
+│   │   └── terminology/      # 尚未启用的术语生成配置
+│   └── audit/
+│       ├── labels/           # 译名回查与复核记录
+│       ├── migrations/       # 数据迁移账本
+│       └── maintenance/      # 维护记录与指标
+│
+├── schemas/                  # 供程序校验数据结构的规则
+│
+├── packages/
+│   └── kb-core/              # 应用无关的数据处理程序
+│       ├── README.md         # 核心程序的使用说明
+│       ├── pyproject.toml    # 包依赖与命令入口
+│       ├── src/kb_core/      # 生成、校验和维护代码
+│       └── tests/            # 核心程序的测试
+│
+├── apps/
+│   └── obsidian/             # Obsidian 应用程序
+│       ├── README.md         # 应用的使用说明
+│       ├── AGENTS.md         # 应用开发的补充规则
+│       ├── pyproject.toml    # 应用依赖与命令入口
+│       ├── src/kb_obsidian/  # 导出、初始化、刷新及内容操作
+│       └── tests/            # 应用测试
+│
+├── tests/
+│   ├── integration/          # 核心程序与应用的联合测试
+│   └── fixtures/             # 共用测试数据与冻结证据
+│
+├── scripts/                  # 整仓辅助脚本
+├── work/
+│   ├── roadmap.md            # 当前进度与后续工作
+│   ├── plans/                # 实施计划
+│   ├── reviews/              # 审查与验收记录
+│   └── archive/              # 历史过程材料
+│
+├── output/                   # 持久应用产物，Git 忽略
+│   └── obsidian/             # 默认的实际 Obsidian vault
+└── build/                    # 可清理的临时产物，Git 忽略
+```
 
 ## 工程关系
 
-根目录是 uv workspace，使用统一的 `uv.lock` 和 `.python-version`。当前开发环境固定为 Python 3.13.5，成员包声明的最低版本为 Python 3.11。
+`packages/kb-core/` 和 `apps/obsidian/` 是两个 Python 工程，各自保存源码、依赖声明和测试，共用根目录的 uv 工作区与锁文件。
 
-```text
-kb-design
-├── packages/kb-core
-└── apps/obsidian ──depends on──> packages/kb-core
-```
+核心包负责词表生成、数据校验和来源、术语维护。Obsidian 应用依赖核心包，复用语言依据处理和仓库定位能力，自己负责 Markdown、Properties、Base 等具体表示，以及 vault 的初始化、刷新和内容操作。核心包不依赖 Obsidian 应用。
 
-`kb-core` 不依赖具体应用。`kb-obsidian` 通过 workspace 依赖使用核心包。源码、输入和 schema 都从显式仓库根定位，不依赖调用命令时的工作目录。
+[内容模型](docs/design/model/content-model.md)规定应用无关的内容结构；[Obsidian 映射](docs/design/targets/obsidian.md)规定这些内容和词表怎样在 Obsidian 中表示；应用程序按该设计生成文件。具体命令与环境配置见[开发指南](docs/guides/development.md)。
 
-## 数据权威
+## 数据与输出
 
-正式词表只有 `data/vocab/` 中的六份 YAML。`data/vocab/topics.yaml` 同时是正式主题词表和确定性生成物；人工修改 `data/inputs/topics/` 及核心实现后，以 `uv run kb-core build-topics` 重建，再运行 `uv run kb-core check-topics`。
+正式词表位于 `data/vocab/`。其中，`topics.yaml` 由主题生成输入和核心程序共同生成；修改其输入或生成实现后，需要重建并校验。其他正式词表按各自规则直接维护。[术语表](docs/glossary.md)仍是术语登记与中英对照的现行编辑源，`data/inputs/terminology/` 中的配置尚未启用。
 
-[术语表](docs/glossary.md)继续承担 designation 与中英对照的现行编辑权。`data/inputs/terminology/glossary-layout.yaml` 仍未启用，仓库仍没有正式 `data/vocab/terms.yaml`。`data/audit/` 只保存审计与复核材料，不批准正式值，也不反向修改正式数据。
+Obsidian 应用读取选定仓库的干净 Git 快照，把正式词表生成到 vault 的参考区，并提供笔记建立、内容校验与报告功能。默认 vault 位于该仓库的 `output/obsidian/`；初始化可用 `--output` 指定其他位置，后续操作可用 `--vault` 指定既有实例，也支持仓库外路径。`--design-root` 用于选择设计来源。
 
-## 应用输出
+vault 中的笔记是用户内容；生成的词表参考区是项目数据的应用表示。刷新只更新参考区 `kb/` 与 `app/manifest.json`，保留用户内容与配置。对生成文件的修改不回流到正式词表，也不取得项目效力。
 
-Obsidian 应用默认使用仓库内被 Git 忽略的 `output/obsidian/` 作为持久 vault。`init` 可用 `--output` 指向其他目录，后续命令可用 `--vault` 指向仓库内或外部 vault；`--design-root` 继续用于显式指定设计来源。
+`output/` 保存持久应用数据，不参与构建清理；`build/` 保存可以重新生成和清理的临时文件。
 
-`output/` 不属于构建清理对象。`build/` 只保存可丢弃的临时产物。刷新写集仍限于 vault 的 `kb/` 与 `app/manifest.json`，用户内容、附件、配置、模板、视图和规则按既有边界保留。
+## 维护入口
 
-## 效力边界
+| 工作 | 入口 |
+|---|---|
+| 阅读概念与设计 | [文档导航](docs/README.md) |
+| 修改主题词表 | [主题生成与校验规则](docs/design/model/topics.md) |
+| 开发核心程序 | [核心工程说明](packages/kb-core/README.md) |
+| 使用或开发 Obsidian 应用 | [应用说明](apps/obsidian/README.md) |
+| 查看当前工作与后续安排 | [项目路线](work/roadmap.md) |
 
-目录、包、schema、命令、应用实现和输出位置只提供结构与机械能力。它们不使审计材料成为正式数据，不使草案生效，也不自动建立正式来源、术语、消费者、查询日志、回流、切换或发版状态。完整效力边界见[当前阶段](docs/decisions/current-stage-scope.md)，布局变化见[仓库布局](docs/decisions/monorepo-layout.md)。
+审计记录和历史计划保留追溯用途；草案、schema、程序或产物的存在不代表正式生效、消费者激活或发版。具体边界由[当前阶段](docs/decisions/current-stage-scope.md)和[仓库布局](docs/decisions/monorepo-layout.md)规定。
