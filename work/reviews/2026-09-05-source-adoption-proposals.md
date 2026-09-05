@@ -1,6 +1,6 @@
 # 来源采纳提案
 
-状态：待人采纳。基线为 `cf80d1d`，执行范围按已确认的[来源执行](../../docs/decisions/source-execution-boundary.md)。本文只给出字段级提案；没有执行正式数据转换，不把已读笔记误称为新核对的外部原文。
+状态：P1–P4 已由用户采纳为候选字段依据，见[来源字段采纳](../../docs/decisions/source-field-adoptions.md)；本提案保留形成时的范围与材料说明。基线为 `cf80d1d`，执行范围按已确认的[来源执行](../../docs/decisions/source-execution-boundary.md)。本文只给出字段级提案；没有执行正式数据转换，不把已读笔记误称为新核对的外部原文。
 
 ## 材料选择
 
