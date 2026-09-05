@@ -73,3 +73,8 @@
 - `concepts/` 下的文章另按 [concepts/CONVENTIONS.md](concepts/CONVENTIONS.md)
 - 全部政策见 [design/governance.md](design/governance.md)；来源分级见 [design/entities.md](design/entities.md)，复核按 [design/maintenance.md](design/maintenance.md)
 - 外部事实须核对原文后才提交；本阶段未取得的外部事实如实标为未核实。译名第 5 级按模型知识例外登记，不冒充已核外部事实；链接用 `[标题](url)`
+
+
+## 规则
+
+每次执行我需要执行概要和时间，在我批准后才可以执行
