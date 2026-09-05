@@ -19,7 +19,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 class CliTests(unittest.TestCase):
     """The CLI must compose the public application flows into a stable process contract."""
 
-    design_root = Path("/Users/xiu/code/kb-design")
+    design_root = Path(__file__).resolve().parents[3]
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -64,6 +64,22 @@ class CliTests(unittest.TestCase):
             output,
         )
         return value
+
+    def test_omitted_design_root_initializes_from_the_default_checkout(self) -> None:
+        """An omitted root must use the owning checkout through the real init flow."""
+        with tempfile.TemporaryDirectory() as temporary:
+            with patch("kb_obsidian.cli.default_design_root", return_value=self.design.resolve(), create=True):
+                code, output, error = self._invoke("init", "--output", str(Path(temporary) / "vault"))
+            self.assertEqual(0, code, error)
+            self.assertTrue(self._assert_json_line(output))
+
+    def test_help_does_not_require_a_default_checkout(self) -> None:
+        """Help must work even when the package has no discoverable repository."""
+        with patch("kb_obsidian.cli.default_design_root", side_effect=AssertionError("resolved too early"), create=True):
+            for command in ((), ("init",), ("refresh",), ("new-content",), ("validate",), ("report",)):
+                code, output, error = self._invoke(*command, "--help")
+                self.assertEqual(0, code, error)
+                self.assertIn("usage:", output)
 
     def test_composes_init_new_content_validate_and_report_with_one_json_line_each(self) -> None:
         """A command wired to the wrong public flow or a noisy dependency must break the CLI contract."""

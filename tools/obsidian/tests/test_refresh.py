@@ -91,7 +91,7 @@ class RefreshTests(unittest.TestCase):
             _write_files(target, self.references)
         with patch("kb_obsidian.refresh.load_design", return_value=self.new), patch(
             "kb_obsidian.refresh.export_reference", side_effect=export
-        ), patch.object(design_source, "SUPPORTED_DESIGN_COMMITS", {self.old.commit, self.new.commit}, create=True):
+        ):
             return refresh_vocabulary(self.design, self.vault, **kwargs)
 
     def test_refresh_changes_only_reference_and_manifest_and_keeps_backup(self):
@@ -127,6 +127,52 @@ class RefreshTests(unittest.TestCase):
         self.assertEqual(data, (self.vault / path).read_bytes())
         self.assertEqual([path], result["normalized_base_formats"])
         verify_vault(self.new, self.vault)
+
+    def reference_view(self):
+        path = "kb/views/topics.base"
+        view = {"filters": {"and": ['file.inFolder("kb/topics")']},
+                "views": [{"type": "table", "name": "topics", "order": ["kb_id", "kb_label"]}]}
+        self.references[path] = _yaml_bytes(view)
+        self.original[path] = self.references[path]
+        _write_files(self.vault, {path: self.original[path],
+                                "app/manifest.json": _json_bytes(_manifest(self.old, self.original))})
+        return path, view
+
+    def test_preserves_proven_reference_base_formatting_during_refresh(self):
+        path, view = self.reference_view()
+        actual = json.dumps(view).encode()
+        (self.vault / path).write_bytes(actual)
+        result = self.refresh()
+        self.assertEqual(actual, (self.vault / path).read_bytes())
+        self.assertEqual([path], result["normalized_base_formats"])
+        verify_vault(self.new, self.vault)
+
+    def test_rejects_reference_base_semantic_change_or_unproven_baseline(self):
+        path, view = self.reference_view()
+        for forged_baseline in (False, True):
+            with self.subTest(forged_baseline=forged_baseline):
+                value = json.loads(json.dumps(view))
+                manifest = _manifest(self.old, self.original)
+                if forged_baseline:
+                    for entry in manifest["files"]:
+                        if entry["path"] == path:
+                            entry["sha256"] = "0" * 64
+                else:
+                    value["views"][0]["order"] = ["kb_label"]
+                _write_files(self.vault, {path: json.dumps(value).encode(),
+                                         "app/manifest.json": _json_bytes(manifest)})
+                before = self.tree()
+                with self.assertRaisesRegex(ApplicationError, "hash"):
+                    self.refresh()
+                self.assertEqual(before, self.tree())
+
+    def test_rejects_old_commit_outside_current_history(self):
+        self.git("checkout", "--orphan", "unrelated")
+        self.new = self.snapshot("unrelated")
+        before = self.tree()
+        with self.assertRaisesRegex(ApplicationError, "old design provenance"):
+            self.refresh()
+        self.assertEqual(before, self.tree())
 
     def test_rejects_forged_old_input_provenance(self):
         path = self.vault / "app/manifest.json"

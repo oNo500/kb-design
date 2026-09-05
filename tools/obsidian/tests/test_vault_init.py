@@ -17,7 +17,7 @@ TEST_DESIGN_COMMIT = "59e033d64b230fe658aa09955e1a66ec38aa5c6f"
 class VaultInitializationTests(unittest.TestCase):
     """Initialization must publish only a complete, ownership-separated vault."""
 
-    design_root = Path("/Users/xiu/code/kb-design")
+    design_root = Path(__file__).resolve().parents[3]
 
     @classmethod
     def setUpClass(cls) -> None:

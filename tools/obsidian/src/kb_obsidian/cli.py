@@ -13,7 +13,7 @@ from typing import Mapping, Optional, Sequence
 import yaml
 
 from .create_content import create_content
-from .design_source import load_design
+from .design_source import default_design_root, load_design
 from .errors import ApplicationError
 from .reports import write_reports
 from .validation import ValidationResult, validate_content
@@ -56,16 +56,16 @@ def _parser() -> argparse.ArgumentParser:
     commands = parser.add_subparsers(dest="command", required=True)
 
     initialize = commands.add_parser("init", help="initialize a new empty vault")
-    initialize.add_argument("--design-root", required=True, type=Path)
+    initialize.add_argument("--design-root", type=Path, help="design checkout (default: owning repository)")
     initialize.add_argument("--output", required=True, type=Path)
 
     refresh = commands.add_parser("refresh", help="refresh vocabulary references in an existing vault")
-    refresh.add_argument("--design-root", required=True, type=Path)
+    refresh.add_argument("--design-root", type=Path, help="design checkout (default: owning repository)")
     refresh.add_argument("--vault", required=True, type=Path)
     refresh.add_argument("--dry-run", action="store_true", help="validate and show changes without modifying the vault")
 
     new_content = commands.add_parser("new-content", help="create one validated draft")
-    new_content.add_argument("--design-root", required=True, type=Path)
+    new_content.add_argument("--design-root", type=Path, help="design checkout (default: owning repository)")
     new_content.add_argument("--vault", required=True, type=Path)
     new_content.add_argument("--title", required=True)
     new_content.add_argument("--type", required=True, dest="type_id")
@@ -78,11 +78,11 @@ def _parser() -> argparse.ArgumentParser:
     new_content.add_argument("--language", default="zh")
 
     validate = commands.add_parser("validate", help="validate content metadata and references")
-    validate.add_argument("--design-root", required=True, type=Path)
+    validate.add_argument("--design-root", type=Path, help="design checkout (default: owning repository)")
     validate.add_argument("--vault", required=True, type=Path)
 
     report = commands.add_parser("report", help="refresh derived usage reports")
-    report.add_argument("--design-root", required=True, type=Path)
+    report.add_argument("--design-root", type=Path, help="design checkout (default: owning repository)")
     report.add_argument("--vault", required=True, type=Path)
 
     return parser
@@ -116,6 +116,8 @@ def _error(message: str) -> None:
 
 
 def _run(arguments: argparse.Namespace) -> tuple[Mapping[str, object], bool]:
+    if arguments.design_root is None:
+        arguments.design_root = default_design_root()
     if arguments.command == "init":
         return initialize_vault(arguments.design_root, arguments.output), False
     if arguments.command == "refresh":

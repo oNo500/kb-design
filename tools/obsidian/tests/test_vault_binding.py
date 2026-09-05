@@ -21,7 +21,7 @@ CONTENT_UUID = "123e4567-e89b-42d3-a456-426614174000"
 class VaultBindingTests(unittest.TestCase):
     """Every mutating or consuming flow must use the initialized vault snapshot."""
 
-    design_root = Path("/Users/xiu/code/kb-design")
+    design_root = Path(__file__).resolve().parents[3]
 
     @classmethod
     def setUpClass(cls) -> None:

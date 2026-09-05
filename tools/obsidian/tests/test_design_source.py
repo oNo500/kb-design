@@ -16,7 +16,7 @@ TEST_DESIGN_COMMIT = "59e033d64b230fe658aa09955e1a66ec38aa5c6f"
 class DesignSourceTests(unittest.TestCase):
     """The adapter must only publish exports from its exact frozen inputs."""
 
-    design_root = Path("/Users/xiu/code/kb-design")
+    design_root = Path(__file__).resolve().parents[3]
 
     def clone_design(self, destination: Path) -> Path:
         subprocess.run(
@@ -33,34 +33,38 @@ class DesignSourceTests(unittest.TestCase):
         )
         return destination
 
-    def test_rejects_an_unsupported_design_head(self) -> None:
-        """A different Git HEAD must not be treated as the frozen design."""
+    def test_accepts_a_new_clean_design_commit(self) -> None:
+        """New commits must remain usable without an application whitelist update."""
+        from kb_obsidian.design_source import load_design
+        from kb_obsidian.reference_export import export_reference
+        with tempfile.TemporaryDirectory() as temporary:
+            root = self.clone_design(Path(temporary) / "design")
+            subprocess.run(["git", "-C", str(root), "-c", "user.name=Test",
+                            "-c", "user.email=test@example.invalid", "commit",
+                            "--quiet", "--allow-empty", "-m", "new design"], check=True)
+            snapshot = load_design(root.resolve())
+            self.assertNotEqual(TEST_DESIGN_COMMIT, snapshot.commit)
+            manifest = export_reference(snapshot, Path(temporary) / "output")
+            self.assertEqual(snapshot.commit, manifest["design_commit"])
+
+    def test_default_root_uses_tool_location_independent_of_cwd(self) -> None:
+        """Running elsewhere must not silently select another design checkout."""
+        from kb_obsidian.design_source import default_design_root
+        with mock.patch("pathlib.Path.cwd", return_value=Path("/unrelated")):
+            self.assertEqual(self.design_root, default_design_root())
+
+    def test_rejects_committed_invalid_formal_input(self) -> None:
+        """Removing the whitelist must not turn malformed formal data into a snapshot."""
         from kb_obsidian.design_source import load_design
         from kb_obsidian.errors import ApplicationError
-
         with tempfile.TemporaryDirectory() as temporary:
-            root = Path(temporary) / "design"
-            subprocess.run(["git", "init", "--quiet", str(root)], check=True)
-            (root / "marker").write_text("unsupported\n", encoding="utf-8")
-            subprocess.run(["git", "-C", str(root), "add", "marker"], check=True)
-            subprocess.run(
-                [
-                    "git",
-                    "-C",
-                    str(root),
-                    "-c",
-                    "user.name=Test",
-                    "-c",
-                    "user.email=test@example.invalid",
-                    "commit",
-                    "--quiet",
-                    "-m",
-                    "fixture",
-                ],
-                check=True,
-            )
-
-            with self.assertRaisesRegex(ApplicationError, "unsupported design commit"):
+            root = self.clone_design(Path(temporary) / "design")
+            (root / "vocab/topics.yaml").write_text("[]\n")
+            subprocess.run(["git", "-C", str(root), "add", "vocab/topics.yaml"], check=True)
+            subprocess.run(["git", "-C", str(root), "-c", "user.name=Test",
+                            "-c", "user.email=test@example.invalid", "commit",
+                            "--quiet", "-m", "invalid fixture"], check=True)
+            with self.assertRaisesRegex(ApplicationError, "invalid formal design"):
                 load_design(root.resolve())
 
     def test_rejects_tracked_changes_in_a_supported_design(self) -> None:
@@ -91,7 +95,7 @@ class DesignSourceTests(unittest.TestCase):
 
     def test_exports_the_current_design_as_only_a_verified_kb_tree(self) -> None:
         """A valid snapshot must publish kb without leaking upstream artifacts."""
-        from kb_obsidian.design_source import SUPPORTED_DESIGN_COMMIT, load_design
+        from kb_obsidian.design_source import load_design
         from kb_obsidian.reference_export import export_reference
 
         with tempfile.TemporaryDirectory() as temporary:
@@ -102,7 +106,7 @@ class DesignSourceTests(unittest.TestCase):
             snapshot = load_design(root.resolve())
             manifest = export_reference(snapshot, output)
 
-            self.assertEqual(SUPPORTED_DESIGN_COMMIT, manifest["design_commit"])
+            self.assertEqual(TEST_DESIGN_COMMIT, manifest["design_commit"])
             self.assertEqual({"topics", "entities", "sources", "types", "genres", "forms"}, set(snapshot.documents))
             self.assertEqual(6, len(snapshot.input_hashes))
             self.assertTrue((output / "kb").is_dir())

@@ -1,41 +1,38 @@
 # Obsidian 应用 (Obsidian Application)
 
-`kb-obsidian` 从固定版本的 `kb-design` 初始化一个新的 Obsidian vault，并提供内容建立、只读校验和派生报告命令。`kb-design` 仍是概念、正式词表、内容模型和治理规则的唯一权威；实际知识内容保存在用户 vault，不进入本仓库。
+`kb-obsidian` 是 `kb-design` 的 Obsidian 配套工具，位于 `tools/obsidian/`，提供新 vault 初始化、词表参考刷新、内容建立、只读校验和派生报告。概念、正式词表、内容模型和治理规则仍以设计仓库的正式编辑源为唯一权威；实际知识内容保存在仓库外的用户 vault。
 
-## 安装
+## 运行方式
 
-本项目需要 Python 3.9+ 和 Git。在仓库根目录默认使用普通安装：
+本工具需要 Python 3.9+、Git 和 PyYAML。以下源码命令均从本目录 `tools/obsidian/` 运行：
+
+```bash
+PYTHONPATH=src python3 -m kb_obsidian --help
+```
+
+也可从本目录安装，再使用 `kb-obsidian` 命令：
 
 ```bash
 python3 -m pip install .
 kb-obsidian --help
 ```
 
-开发时如需可编辑安装，先升级 pip，再安装 editable 版本：
-
-```bash
-python3 -m pip install --upgrade pip
-python3 -m pip install -e .
-```
+开发时如需可编辑安装，使用 `python3 -m pip install -e .`。普通安装把包放到设计仓库之外时，运行命令需显式传入 `--design-root /path/to/kb-design`。
 
 ## 设计来源
 
-所有命令都要求通过 `--design-root` 传入干净的 `kb-design` 仓库根目录。当前支持两个已验证的设计提交：
+工具默认定位自身所在的设计仓库，各命令都保留可选的 `--design-root`。来源目录必须是干净的 Git checkout 根目录；tracked 文件有修改、传入的不是仓库根目录或正式输入校验失败时，命令会失败。运行时路径不写入生成内容。
 
-```text
-59e033d64b230fe658aa09955e1a66ec38aa5c6f
-37a78c775d867eb9d1f7610ced23aee43ce345ec
-```
+按[工具归属](../../design/decisions/obsidian-tool-location.md)，设计提交不再使用白名单。每次运行读取实际提交，manifest 记录该提交与输入哈希，不把未提交工作目录当作已提交快照。旧 vault 刷新验证原提交属于当前 Git 历史，并核对清单输入哈希与该提交中的字节；取消白名单不免除来源验证。
 
-前者是原 vault 基线，后者包含结构化语言依据及中文补全。该目录必须是受支持提交的干净 Git checkout；tracked 文件有修改、HEAD 不匹配或传入的不是仓库根目录时，命令会失败。运行时路径由参数传入，应用不把本机目录写入生成内容。后续新设计提交须完成兼容性验证后纳入支持集合，不把未提交工作目录当作发布快照。
+Python 包名和命令保持不变，工具版本仍为 `0.1.0`，清单 schema 仍为 `1`。原独立应用仓库保留作迁移备份，实际 vault 不迁入设计仓库；本次迁入不构成发版或正式消费者激活。
 
 ## 新库初始化
 
 目标目录必须不存在或为空。初始化不会更新非空 vault，也不会合并或覆盖其中的用户文件。
 
 ```bash
-kb-obsidian init \
-  --design-root /path/to/kb-design \
+PYTHONPATH=src python3 -m kb_obsidian init \
   --output /path/to/new-vault
 ```
 
@@ -48,8 +45,7 @@ kb-obsidian init \
 以下命令创建一条 `draft` 内容。`--subject` 至少出现一次；`--subject`、`--entity` 和 `--reference` 都可以重复。`--form`、`--level` 和 `--language` 是可选参数，语言默认是 `zh`。
 
 ```bash
-kb-obsidian new-content \
-  --design-root /path/to/kb-design \
+PYTHONPATH=src python3 -m kb_obsidian new-content \
   --vault /path/to/new-vault \
   --title '内容标题' \
   --type explanation \
@@ -70,8 +66,7 @@ kb-obsidian new-content \
 校验只读取 `content/*.md`，不改写或修复内容：
 
 ```bash
-kb-obsidian validate \
-  --design-root /path/to/kb-design \
+PYTHONPATH=src python3 -m kb_obsidian validate \
   --vault /path/to/new-vault
 ```
 
@@ -82,8 +77,7 @@ kb-obsidian validate \
 报告命令先执行同一内容校验，再用有效内容刷新派生报告：
 
 ```bash
-kb-obsidian report \
-  --design-root /path/to/kb-design \
+PYTHONPATH=src python3 -m kb_obsidian report \
   --vault /path/to/new-vault
 ```
 
@@ -94,14 +88,12 @@ kb-obsidian report \
 `refresh` 显式更新既有 vault 的词表参考区及清单：
 
 ```bash
-kb-obsidian refresh --design-root /path/to/clean-design --vault /path/to/existing-vault
+PYTHONPATH=src python3 -m kb_obsidian refresh --vault /path/to/existing-vault
 ```
 
-加 `--dry-run` 可只检查和预览变化。命令先验证旧 manifest、旧版输入与受管理写集，再生成并校验新 `kb/`，检查内容引用和指向参考区的链接。只替换 `kb/` 与 `app/manifest.json`；用户内容、附件、配置及应用模板、视图和规则保持不变，派生报告另由 `report` 更新。
+加 `--dry-run` 可只检查和预览变化。命令先验证旧 manifest、祖先提交中的旧版输入与受管理写集，再生成并校验新 `kb/`，检查内容引用和指向参考区的链接。只替换 `kb/` 与 `app/manifest.json`；用户内容、附件、配置及应用模板、视图和规则保持不变，派生报告另由 `report` 更新。
 
 受管理文件有语义修改时拒绝覆盖。Base 仅有 YAML 排版变化、且旧哈希能与原生成模板核实时，保留实际文件并在清单中记录其哈希。发生发布异常时回滚参考区和清单，成功后保留 vault 外备份。两个路径的替换不构成断电或进程被强制终止时的事务保证。
-
-源码直接运行时，可在本仓库使用 `PYTHONPATH=src python3 -m kb_obsidian refresh ...`，无需重新安装命令。
 
 ## 命令输出
 

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import shutil
 import subprocess
 import tempfile
@@ -51,8 +52,8 @@ def _old_snapshot(snapshot: DesignSnapshot, manifest_path: Path, raw: bytes) -> 
     ):
         raise ApplicationError(f"unsupported vault manifest schema or app version: {manifest_path}")
     commit = manifest["design_commit"]
-    if not isinstance(commit, str) or commit not in design_source.SUPPORTED_DESIGN_COMMITS:
-        raise ApplicationError(f"unsupported old design commit in {manifest_path}: {commit!r}")
+    if not isinstance(commit, str) or re.fullmatch(r"[0-9a-f]{40}", commit) is None:
+        raise ApplicationError(f"invalid old design commit in {manifest_path}: {commit!r}")
     _git_bytes(snapshot.root, "merge-base", "--is-ancestor", commit, snapshot.commit)
     inputs = _manifest_inputs(manifest_path, manifest["inputs"])
     if set(inputs) != set(design_source._FORMAL_DOCUMENTS.values()):
@@ -69,10 +70,11 @@ def _old_snapshot(snapshot: DesignSnapshot, manifest_path: Path, raw: bytes) -> 
     return DesignSnapshot(snapshot.root, commit, documents, inputs)
 
 
-def _check_managed(root: Path, raw: bytes) -> tuple[dict[str, bytes], list[str]]:
+def _check_managed(
+    root: Path, raw: bytes, actual: dict[str, bytes], references: Mapping[str, bytes],
+) -> list[str]:
     path = root / "app/manifest.json"
     entries = _manifest_files(path, json.loads(raw)["files"])
-    actual = _managed_files_on_disk(root)
     if set(entries) != set(actual):
         differing = sorted(set(entries) ^ set(actual))
         raise ApplicationError(f"managed file set mismatch: {differing[0]}")
@@ -83,15 +85,18 @@ def _check_managed(root: Path, raw: bytes) -> tuple[dict[str, bytes], list[str]]
             continue
         view = _VIEWS.get(relative)
         equivalent = False
-        if view is not None and _sha256(_yaml_bytes(view)) == expected:
+        baseline = _yaml_bytes(view) if view is not None else None
+        if relative.startswith("kb/views/") and relative.endswith(".base"):
+            baseline = references.get(relative)
+        if baseline is not None and _sha256(baseline) == expected:
             try:
-                equivalent = yaml.safe_load(data) == view
+                equivalent = yaml.safe_load(data) == yaml.safe_load(baseline)
             except (ValueError, UnicodeError, yaml.YAMLError):
                 pass
         if not equivalent:
             raise ApplicationError(f"managed file hash mismatch: {relative}")
         formats.append(relative)
-    return actual, formats
+    return formats
 
 
 def _markdown_bytes(root: Path) -> dict[str, bytes]:
@@ -190,9 +195,16 @@ def refresh_vocabulary(design_root: Path, vault: Path, *, dry_run: bool = False)
     try:
         raw = manifest_path.read_bytes()
         old = _old_snapshot(snapshot, manifest_path, raw)
-        actual, formats = _check_managed(root, raw)
+        actual = _managed_files_on_disk(root)
         markdown = _markdown_bytes(root)
         temporary = Path(tempfile.mkdtemp(prefix=f".{root.name}.refresh-stage-", dir=root.parent))
+        reference_root = temporary / "reference"
+        export_reference(snapshot, reference_root)
+        references = _reference_files(reference_root)
+        formats = _check_managed(root, raw, actual, references)
+        for relative in formats:
+            if relative in references:
+                references[relative] = actual[relative]
         staged = temporary / "vault"
         (staged / "content").mkdir(parents=True)
         _write_files(staged, actual)
@@ -204,9 +216,6 @@ def refresh_vocabulary(design_root: Path, vault: Path, *, dry_run: bool = False)
         _write_files(staged, {"app/manifest.json": _json_bytes(old_manifest)})
         verify_vault(old, staged)
 
-        reference_root = temporary / "reference"
-        export_reference(snapshot, reference_root)
-        references = _reference_files(reference_root)
         _check_content(snapshot, root, references, markdown)
         managed = {path: data for path, data in actual.items() if not path.startswith("kb/")}
         managed.update(references)
