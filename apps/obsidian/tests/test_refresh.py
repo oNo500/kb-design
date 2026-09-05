@@ -94,6 +94,33 @@ class RefreshTests(unittest.TestCase):
         ):
             return refresh_vocabulary(self.design, self.vault, **kwargs)
 
+    def test_refresh_preserves_managed_agent_rules(self):
+        """Reference refresh must retain the registered agent rules and their ownership."""
+        self.original["AGENTS.md"] = b"Approved agent instructions\n"
+        _write_files(self.vault, {"AGENTS.md": self.original["AGENTS.md"]})
+        manifest_path = self.vault / "app/manifest.json"
+        manifest = json.loads(manifest_path.read_bytes())
+        manifest["files"].append({"path": "AGENTS.md", "kind": "rule",
+                                  "sha256": _sha256(self.original["AGENTS.md"])})
+        manifest_path.write_bytes(_json_bytes(manifest))
+        self.refresh()
+        self.assertEqual(self.original["AGENTS.md"], (self.vault / "AGENTS.md").read_bytes())
+        verify_vault(self.new, self.vault)
+        (self.vault / "AGENTS.md").write_bytes(b"Changed instructions\n")
+        before = self.tree()
+        with self.assertRaisesRegex(ApplicationError, "AGENTS.md"):
+            self.refresh()
+        self.assertEqual(before, self.tree())
+
+    def test_refresh_does_not_adopt_legacy_user_agent_file(self):
+        """An unregistered legacy instruction file must stay outside managed ownership."""
+        (self.vault / "AGENTS.md").write_bytes(b"User instructions\n")
+        self.refresh()
+        self.assertEqual(b"User instructions\n", (self.vault / "AGENTS.md").read_bytes())
+        manifest = json.loads((self.vault / "app/manifest.json").read_bytes())
+        self.assertNotIn("AGENTS.md", {entry["path"] for entry in manifest["files"]})
+        verify_vault(self.new, self.vault)
+
     def test_refresh_changes_only_reference_and_manifest_and_keeps_backup(self):
         before = self.tree()
         result = self.refresh()

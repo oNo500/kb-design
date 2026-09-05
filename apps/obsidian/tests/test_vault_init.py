@@ -143,7 +143,7 @@ class VaultInitializationTests(unittest.TestCase):
         self.assertEqual(
             {
                 "home.md", "inbox", "sources", "content", "indexes",
-                "attachments", "kb", "app", ".obsidian",
+                "attachments", "kb", "app", ".obsidian", "AGENTS.md",
             },
             {path.name for path in self.target.iterdir()},
         )
@@ -169,6 +169,7 @@ class VaultInitializationTests(unittest.TestCase):
             for path in root.rglob("*")
             if path.is_file()
         }
+        managed_files.add("AGENTS.md")
         self.assertEqual(managed_files, set(entries))
         self.assertNotIn("home.md", entries)
         self.assertFalse(any(path.startswith("app/reports/") for path in entries))

@@ -199,6 +199,8 @@ def _require_empty_target(destination: Path) -> None:
 
 
 def _kind(relative_path: str) -> str:
+    if relative_path == "AGENTS.md":
+        return "rule"
     for prefix, kind in _MANAGED_PREFIXES.items():
         if relative_path.startswith(prefix):
             return kind
@@ -385,8 +387,20 @@ def _read_frontmatter(path: Path) -> Mapping[str, object]:
     return properties
 
 
-def _managed_files_on_disk(root: Path) -> dict[str, bytes]:
+def _managed_files_on_disk(
+    root: Path, entries: Mapping[str, object] | None = None,
+) -> dict[str, bytes]:
     files: dict[str, bytes] = {}
+    # Legacy vaults can contain user-owned instructions. Only an explicit
+    # manifest entry enrolls the root file in application ownership.
+    if entries is not None and "AGENTS.md" in entries:
+        path = root / "AGENTS.md"
+        if path.is_symlink() or not path.is_file():
+            raise ApplicationError(f"managed file is missing or unsafe: {path}")
+        try:
+            files["AGENTS.md"] = path.read_bytes()
+        except OSError as exc:
+            raise ApplicationError(f"cannot read managed file {path}: {exc}") from exc
     for prefix in _MANAGED_PREFIXES:
         directory = root / prefix.rstrip("/")
         if not directory.is_dir() or directory.is_symlink():
@@ -442,7 +456,7 @@ def verify_vault(snapshot: DesignSnapshot, vault: Path) -> Path:
         raise ApplicationError(f"vault manifest input mismatch: {detail} in {manifest_path}")
 
     entries = _manifest_files(manifest_path, manifest["files"])
-    actual_files = _managed_files_on_disk(root)
+    actual_files = _managed_files_on_disk(root, entries)
     missing = sorted(set(entries) - set(actual_files))
     if missing:
         raise ApplicationError(f"managed file listed by manifest is missing: {missing[0]}")

@@ -45,6 +45,19 @@ class VaultBindingTests(unittest.TestCase):
     def tearDown(self) -> None:
         self.temporary.cleanup()
 
+    def test_agent_rules_drift_blocks_content_creation(self) -> None:
+        """An edited managed instruction file must block writes before content appears."""
+        from kb_obsidian.create_content import create_content
+        from kb_obsidian.errors import ApplicationError
+
+        vault = self._copy_initialized("agent-drift")
+        (vault / "AGENTS.md").write_text("Unapproved replacement rules\n", encoding="utf-8")
+        before = self._tree_bytes(vault)
+        with self.assertRaisesRegex(ApplicationError, "AGENTS.md"):
+            create_content(self.snapshot, vault, title="规则漂移", type_id="explanation",
+                           genre_id="analysis", subjects=["security"])
+        self.assertEqual(before, self._tree_bytes(vault))
+
     def test_content_only_directory_is_rejected_before_creation_or_validation(self) -> None:
         """Checking only content or app would let an uninitialized directory consume design data."""
         from kb_obsidian.create_content import create_content

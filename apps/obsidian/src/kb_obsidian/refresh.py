@@ -195,7 +195,8 @@ def refresh_vocabulary(design_root: Path, vault: Path, *, dry_run: bool = False)
     try:
         raw = manifest_path.read_bytes()
         old = _old_snapshot(snapshot, manifest_path, raw)
-        actual = _managed_files_on_disk(root)
+        entries = _manifest_files(manifest_path, json.loads(raw)["files"])
+        actual = _managed_files_on_disk(root, entries)
         markdown = _markdown_bytes(root)
         temporary = Path(tempfile.mkdtemp(prefix=f".{root.name}.refresh-stage-", dir=root.parent))
         reference_root = temporary / "reference"
@@ -229,7 +230,7 @@ def refresh_vocabulary(design_root: Path, vault: Path, *, dry_run: bool = False)
             or (root / "app").is_symlink()
             or manifest_path.is_symlink()
             or manifest_path.read_bytes() != raw
-            or _managed_files_on_disk(root) != actual
+            or _managed_files_on_disk(root, entries) != actual
             or _markdown_bytes(root) != markdown
         ):
             raise ApplicationError("vault changed during refresh preparation; no publication performed")

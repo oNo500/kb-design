@@ -10,7 +10,7 @@
 
 ## 写集边界
 
-用户写集包含 `home.md`、`inbox/`、`sources/`、`content/`、`indexes/` 和 `attachments/`。受管理写集包含 `kb/`、`app/templates/`、`app/views/`、`app/rules/` 和 `app/manifest.json`。报告写集只包含 `app/reports/`，`.obsidian/` 是配置边界。应用必须保持这些写集分离。
+用户写集包含 `home.md`、`inbox/`、`sources/`、`content/`、`indexes/` 和 `attachments/`。新库根 `AGENTS.md` 以 `rule` 类型登记在 manifest；旧库没有条目时不接管同名文件。受管理写集包含已登记的根 `AGENTS.md`、`kb/`、`app/templates/`、`app/views/`、`app/rules/` 和 `app/manifest.json`。报告写集只包含 `app/reports/`，`.obsidian/` 是配置边界。应用必须保持这些写集分离。
 
 `app/reports/index.md` 只导航人读 Markdown 报告；`app/reports/data/` 下的 JSON 供终端和程序读取。报告发布时必须原子替换整棵 `app/reports/`，不得让 Markdown 与 JSON 分属不同版本。
 

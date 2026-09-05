@@ -4,11 +4,13 @@
 
 ## 当前状态
 
-完整应用设计和应用实现已经建立，但没有作为正式内容消费者激活。应用包中的参考导出器生成六份正式词表的单向表示；`kb-obsidian` 从干净的设计提交初始化新 vault，建立 UUIDv4 `draft` 内容，校验内容字段与正式引用，并生成派生报告。实施验收已经建立本地持久 vault，证明完整目录、受管理写集、命令路径和空库报告能够落入实际目录。
+完整应用设计和实现已经建立：参考导出器生成六份正式词表的单向表示；`kb-obsidian` 从干净设计快照初始化完整 vault，建立 UUIDv4 `draft` 内容，校验内容字段与引用，并生成派生报告。语言依据按[语言依据结构](../../decisions/structured-label-basis.md)显示等级和真实依据性质。
 
-参考导出按[语言依据结构](../../decisions/structured-label-basis.md)支持结构化语言依据的人读表示。按[工具归属](../../decisions/obsidian-tool-location.md)和[仓库布局](../../decisions/monorepo-layout.md)，应用工具与设计同仓维护，默认读取所在设计仓库的干净 Git 快照，也接受显式 `--design-root`；清单记录实际提交与输入哈希，不再使用设计提交白名单。默认持久 vault 位于 Git 忽略的 `output/obsidian/`，显式外部 vault 继续支持；现有外部实例未因本次迁移搬迁或刷新。
+工具按[工具归属](../../decisions/obsidian-tool-location.md)和[仓库布局](../../decisions/monorepo-layout.md)同仓维护，默认读取所在仓库，也接受显式 `--design-root`；manifest 记录实际提交与输入哈希，不使用提交白名单。命令默认输出仍为 `output/obsidian/`，正式知识库为仓库外的 `~/Documents/kb-vault/`，操作正式库时必须显式指定。
 
-当前持久实例没有实际用户内容，也没有可审计查询日志或回流接口。空库报告只证明报告生成能力可运行，不构成内容引用计数、内容使用观察或维护反馈。target 文件、应用代码、持久实例和机械验收都不使来源、术语、内容消费者或正式切换自动激活。
+2026-09-05 的只读核查确认正式库已有《了解 Obsidian》一条 draft 内容，标题与正文搜索、Base 查询和内容校验通过。该观察替代“没有实际用户内容”的旧实例状态，不表示正式消费者、来源或术语切换已激活，也不证明正文外部事实或完整界面验收。
+
+按[终端访问](../../decisions/obsidian-agent-entry.md)，新库生成受管理的根 `AGENTS.md`。现有正式库未安装该入口；本次只提供差异，不更新其规则、清单或用户内容。当前没有可审计查询日志和自动回流接口。
 
 ## 功能范围
 
@@ -40,17 +42,21 @@ Obsidian 不能直接表达的约束由校验器保留，不能用自由 tag、�
 | 层 | 内容 | 修改者 | 项目效力 |
 |---|---|---|---|
 | 用户文件 | `home.md`、`inbox/`、`sources/`、`content/`、`indexes/`、`attachments/` | 使用者和经授权的内容工具 | 对该知识库中的实际内容有效，不直接修改 `kb-design` |
-| 受管理表示 | `kb/`、`app/templates/`、`app/views/`、`app/rules/`、`app/manifest.json` | `kb-obsidian` 初始化器；词表表示来自 `kb-design` 导出器 | 是正式设计与数据的应用表示，不是正式编辑源 |
+| 受管理表示 | 新库根 `AGENTS.md`、`kb/`、`app/templates/`、`app/views/`、`app/rules/`、`app/manifest.json` | `kb-obsidian` 初始化器；词表表示来自 `kb-design` 导出器 | 是正式设计与数据的应用表示，不是正式编辑源 |
 | 派生报告 | `app/reports/` | `kb-obsidian` 校验和报告命令 | 只保存可重算事实与复核线索，可以删除和重建 |
 | 应用配置 | `.obsidian/` | 初始化器给出最低基线，其余由使用者维护 | 不修改模型、正式数据或项目决定 |
 
 受管理表示和派生报告中的所有文件都可以由文件系统工具修改；只有 Obsidian 支持的 Markdown 和 Base 文件可以在 Obsidian 中编辑，普通 JSON manifest 不是 Obsidian 内容格式。对这些文件的修改不回流、不取得项目效力；受管理文件的变化只形成 manifest 漂移，派生报告不作为下一次结论的输入。用户文件不属于受管理写集，生成器不得覆盖、移动或删除。
 
+
+根规则只在 manifest 明确登记时属于受管理写集。旧库中未登记的同名文件保持原权属；校验和刷新均不自动接管。已登记规则的缺失、符号链接或字节漂移必须阻断后续内容与刷新操作。
+
 ## 文件布局
 
-完整应用使用一个不嵌套的 vault，目录只区分稳定职责，不复制主题分类树。
+完整应用使用一个不嵌套的 vault，目录只区分稳定职责，不复制主题分类树。新库根 `AGENTS.md` 是固定代理入口，以 `rule` 类型纳入 manifest，是应用小写命名约定的精确例外。旧库不会因运行校验或词表刷新自动获得该文件。
 
 ```text
+AGENTS.md
 home.md
 inbox/
 sources/
@@ -88,6 +94,14 @@ app/
 `kb/` 保存六份正式词表的受管理表示；其中 `kb/views/` 保存三个参考 Base。`app/templates/` 保存受管理结构片段。`app/views/` 保存完整应用的 Base 与固定查询入口，至少提供全部内容、draft 内容、active 内容、deprecated 内容、按主题、按实体、按类型与体裁、最近修改、全部正式主题、unassigned 主题、正式实体、正式来源用途和维护报告入口。`app/reports/` 保存诊断和统计，`app/rules/` 保存面向使用者的应用规则说明，`app/manifest.json` 保存完整应用受管理写集的项目清单。`.obsidian/` 只保存最低运行配置和用户后续配置。
 
 完整应用布局由 `kb-obsidian` 初始化器建立，词表参考表示、应用文件、用户目录和最低 Obsidian 配置在发布前共同回读校验。`kb-design` 的独立参考导出仍只生成本文后部规定的根 `index.md`、`kb/` 和根 `manifest.json`；它是初始化器的上游输入，不单独冒充完整 vault。
+
+## 终端访问
+
+AI 优先使用原生 CLI，流程为确认目标绝对路径、显式选库、有限搜索、读取上下文，再按授权处理。使用 `obsidian vault=<目标ID> vault info=path` 确认实际路径；名称重复时按本机注册信息取得 ID，不使用默认活动库。ID 在命令之前，不能移到命令之后。完整示例见[应用说明](../../../apps/obsidian/README.md#终端访问)。
+
+搜索初始上限为 10，初次读取最多三个候选；核对 ID、label、scope、上位、数组和来源。正文、文件名、alias、命中次数或 Base 行都不能直接批准 subject 或概念关系。UUID 内容使用标题、alias 和正文检索。
+
+调用方检查超时、退出码、错误文本、JSON 结构和路径匹配。退出码 0 不等于成功；失败、截断或超时不得触发后续写入。热路径设 2 秒期限，仅串行重试一次，冷启动期限单独处理。AI 写入边界以[终端访问决定](../../decisions/obsidian-agent-entry.md)和生成的根规则为准；本阶段没有新的 CLI 包装器、自动分类或属性更新接口。
 
 ## 对象边界
 
@@ -359,7 +373,7 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 
 主题直接引用计数只计字段中明确出现的该主题。分支聚合计数沿正式下位关系汇总，只服务覆盖观察；它不把上位主题写入内容，也不改变直接计数。
 
-正文 Wikilink、Backlinks、用户索引成员、aliases、unlinked mentions 和 Graph edges 都不进入正式计数。它们可以提供人工探索线索，不能替代受控字段语义。当前没有真实 `content/` 或消费者，所有内容计数都未启用。
+正文 Wikilink、Backlinks、用户索引成员、aliases、unlinked mentions 和 Graph edges 都不进入正式计数。它们可以提供人工探索线索，不能替代受控字段语义。正式库已观察到一条 draft；实际报告须按当次有效内容计算。内容存在不自动启用正式消费者，也不能把历史空库报告当作当前计数。
 
 ## 维护反馈
 
@@ -567,7 +581,7 @@ uv run python -m kb_obsidian.exporter \
 
 ## 待定事项
 
-- 实际用户内容、正式消费者和由真实内容形成的使用观察尚未出现；空库报告不满足这些条件。
+- 正式库已有一条 draft；多份真实材料的完整使用验收、正式消费者及维护反馈仍未闭合。
 - 可审计查询日志等待真实查询消费者或明确接口；Search UI 不满足该条件。
 - 参考区以外的非空 vault 更新、自动回流、自动修复和社区插件增强继续后置。
 - 若未来需要 reproducible build 主张，另行界定 specified artifacts、source、environment 和 instructions，并取得 independent rebuild 证据。

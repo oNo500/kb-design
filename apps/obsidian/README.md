@@ -37,19 +37,30 @@ uv run python -m kb_obsidian.exporter \
 
 ## 新库初始化
 
-默认初始化仓库内 vault：
+`uv run kb-obsidian init` 初始化默认位置；外部新库使用 `uv run kb-obsidian init --output /absolute/path/to/new-vault`。目标必须不存在或为空，不能用初始化器覆盖既有库。
+
+初始化生成根 `AGENTS.md`、`home.md`、用户目录、正式参考区、应用文件和最低 Obsidian 配置。根规则以 `rule` 类型登记在 manifest，内容、附件、报告与配置不因此成为受管理文件。规则缺失、符号链接或漂移会使内容建立、校验及刷新失败。
+
+旧库未登记根规则时保持原写集；同名用户文件不会自动被接管。refresh 只更新词表参考区和清单，既不新增根规则，也不更新已有规则。旧库需要该入口时，先审阅文件与 manifest 的具体迁移方案，不能直接复制后宣称已完成集成。
+
+## 终端访问
+
+AI 优先用原生 Obsidian CLI 读取和搜索；界面显示与交互才使用 Computer Use。首次先运行 `obsidian vaults verbose`，按批准的绝对路径确认实例。同名 vault 不能只按名称定位；必要时只读核对本机注册信息取得 ID。macOS 本机注册信息位于 `~/Library/Application Support/obsidian/obsidian.json` 的 `vaults` 对象，按 `path` 精确选择其键；不得修改注册信息或根据列表顺序猜测 ID。
+
+以下命令中的 `实际ID` 必须换成本机核实值，不能直接照抄。选库参数放在命令之前，每批操作前确认返回路径：
 
 ```bash
-uv run kb-obsidian init
+obsidian vault=实际ID vault info=path
+obsidian vault=实际ID search:context query="原词" path=content limit=10 format=json
+obsidian vault=实际ID read path=content/实际UUID.md
+obsidian vault=实际ID base:query path=app/views/content.base format=json
 ```
 
-显式初始化外部 vault：
+首次最多读取三个候选；主题搜索使用 `path=kb/topics`，核对 ID、label、scope、上位、数组和来源。UUID 文件通过标题、alias、properties 和正文被找到，命中结果不自动决定正式分类。全量 Base 查询先筛选再进入上下文。
 
-```bash
-uv run kb-obsidian init --output /absolute/path/to/new-vault
-```
+调用方为热路径设 2 秒期限，超时仅串行重试一次；冷启动用独立期限。必须同时检查退出码、stderr、错误文本及预期输出，JSON 完整解析后才能消费，实际路径必须与批准目录相同。本机已观察到错误文本伴随退出码 0，不能只凭退出码继续。失败时停止后续写入，不切换到默认库。
 
-目标目录必须不存在或为空。命令创建 `home.md`，用户写集 `inbox/`、`sources/`、`content/`、`indexes/` 和 `attachments/`，正式参考表示 `kb/`，应用文件 `app/`，以及最低限度的 `.obsidian/` 配置。受管理 manifest 不把用户内容、报告或 Obsidian 配置声明为受管理知识文件。
+本项目没有新增原生 CLI 包装器，上述检查由调用方执行。新内容仍经过 `kb-obsidian new-content`；普通材料及正文修改服从任务授权，写后校验。AI 不直接更改内容 properties、稳定身份、状态或路径。详见[终端访问决定](../../docs/decisions/obsidian-agent-entry.md)。
 
 ## 内容建立
 
