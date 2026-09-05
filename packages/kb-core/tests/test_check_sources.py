@@ -24,7 +24,7 @@ class CheckSourcesTests(unittest.TestCase):
             self.fail(f"offline source validator is missing: {name}")
         return value
 
-    def issues(self, name, previous=None, allow_legacy=False):
+    def issues(self, name, previous=None):
         with ExitStack() as stack:
             current = stack.enter_context(materialized_current_layout(FIXTURES / name))
             old = (
@@ -32,11 +32,28 @@ class CheckSourcesTests(unittest.TestCase):
                 if previous
                 else None
             )
-            return self.require("validate_repository")(current, old, allow_legacy)
+            return self.require("validate_repository")(current, old)
 
     def reference_issues(self, references):
         with materialized_current_layout(FIXTURES / "reference-contract") as root:
             return self.require("validate_references")(root, references)
+
+    def test_malformed_structured_references_cannot_disappear_before_validation(self):
+        cases = (
+            ({"source": {"registry": ["src"], "item": "item", "locator": "section", "basis": [{"entity": "src", "locator": "section"}]}}, "SOURCE_REFERENCE_VALUE_INVALID"),
+            ({"basis": [{"entity": "src", "locator": ["section"]}]}, "SOURCE_REFERENCE_VALUE_INVALID"),
+            ({"source": {"registry": "src", "locator": "section", "basis": [{"entity": "src", "locator": "section"}]}}, "SOURCE_SOURCE_ITEM_MISSING"),
+            ({"match": [{"registry": "src", "item": "item", "rel": "exactMatch"}]}, "SOURCE_MATCH_BASIS_MISSING"),
+            ({"basis": [{"entity": "src"}]}, "SOURCE_BASIS_LOCATOR_MISSING"),
+            ({"basis": [{"entity": "src", "locator": "section", "unexpected": True}]}, "SOURCE_REFERENCE_VALUE_INVALID"),
+        )
+        for fields, expected in cases:
+            with self.subTest(fields=fields), materialized_current_layout(FIXTURES / "valid") as root:
+                (root / "data/vocab/incomplete.yaml").write_text(
+                    yaml.safe_dump({"concepts": [{"id": "incomplete", **fields}]}), encoding="utf-8",
+                )
+                codes = {issue.code for issue in model.validate_repository(root)}
+                self.assertIn(expected, codes)
 
     def test_valid_repository_has_no_issues(self):
         self.assertEqual([], self.issues("valid"))
@@ -46,8 +63,13 @@ class CheckSourcesTests(unittest.TestCase):
                       {issue.code for issue in self.issues("current", "previous")})
 
     def test_history_deletion_and_reordering_are_rejected(self):
-        self.assertIn("SOURCE_HISTORY_NOT_APPEND_ONLY",
-                      {issue.code for issue in self.issues("current", "previous")})
+        with materialized_current_layout(FIXTURES / "previous") as previous, materialized_current_layout(FIXTURES / "previous") as current:
+            path = current / "data/vocab/entities.yaml"
+            document = yaml.safe_load(path.read_text())
+            document["entities"][0]["history"].reverse()
+            path.write_text(yaml.safe_dump(document))
+            self.assertIn("SOURCE_HISTORY_NOT_APPEND_ONLY",
+                          {issue.code for issue in model.validate_repository(current, previous)})
 
     def test_role_decision_and_registry_role_are_checked(self):
         codes = {issue.code for issue in self.issues("current")}

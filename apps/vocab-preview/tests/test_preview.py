@@ -25,7 +25,15 @@ class PreviewTests(unittest.TestCase):
         self.vocab = self.root / "data/vocab"
         self.vocab.mkdir(parents=True)
         for name, key in COLLECTIONS.items():
-            document = {"version": {"id": "fixture"}, key: []}
+            document = {"schema_version": 2, "version": {"id": "fixture"}, key: []}
+            if name == "entities":
+                document.update(schema="urn:kb-design:data:entities", schema_version=2)
+                document[key] = [{"id": "organization", "label": {"en": "Organization"}, "kind": "organization",
+                                  "subjects": [], "status": "candidate", "added": "2026-09-05"}]
+            if name == "sources":
+                document.update(schema="urn:kb-design:data:source-uses", schema_version=2)
+                document[key] = [{"id": "discovery", "entity": "organization", "history": [],
+                                  "roles": [{"role": "discovery", "status": "proposed", "decision": None}]}]
             if name == "topics":
                 document[key] = [{"id": "example", "label": {"zh": "原始名称"}}]
             (self.vocab / f"{name}.yaml").write_text(
@@ -62,21 +70,32 @@ class PreviewTests(unittest.TestCase):
         store = SnapshotStore(self.root)
         good = store.status()
         self.assertIsNone(good["error"])
-        self.topic.write_text("concepts: [\n", encoding="utf-8")
+        self.topic.write_text("schema_version: 2\nconcepts: [\n", encoding="utf-8")
         failed = store.status()
         self.assertIn("topics.yaml", failed["error"])
         self.assertEqual(good["revision"], failed["revision"])
         self.assertEqual(good["snapshot"], failed["snapshot"])
-        self.topic.write_text("concepts:\n  - id: recovered\n    label: 已恢复\n", encoding="utf-8")
+        self.topic.write_text("schema_version: 2\nconcepts:\n  - id: recovered\n    label: 已恢复\n", encoding="utf-8")
         recovered = store.status()
         self.assertIsNone(recovered["error"])
         self.assertNotEqual(good["revision"], recovered["revision"])
 
+    def test_legacy_source_reference_does_not_replace_current_snapshot(self):
+        store = SnapshotStore(self.root)
+        good = store.status()
+        document = yaml.safe_load(self.topic.read_text())
+        document["concepts"][0]["source"] = "discovery"
+        self.topic.write_text(yaml.safe_dump(document))
+        failed = store.status()
+        self.assertIsNotNone(failed["error"])
+        self.assertEqual(good["snapshot"], failed["snapshot"])
+        self.assertEqual(good["revision"], failed["revision"])
+
     def test_invalid_record_shape_is_reported_instead_of_published(self):
         store = SnapshotStore(self.root)
         self.assertIsNone(store.status()["error"])
-        for content in ("concepts: wrong\n", "concepts: [{id: a}, {id: a}]\n",
-                        "concepts: [{id: a, broader: {wrong: shape}}]\n"):
+        for content in ("schema_version: 2\nconcepts: wrong\n", "schema_version: 2\nconcepts: [{id: a}, {id: a}]\n",
+                        "schema_version: 2\nconcepts: [{id: a, broader: {wrong: shape}}]\n"):
             self.topic.write_text(content, encoding="utf-8")
             self.assertIsNotNone(store.status()["error"])
 
@@ -85,7 +104,7 @@ class PreviewTests(unittest.TestCase):
         good = store.status()
         for basis in ({"level": 1, "references": {"source": "x"}},
                       {"level": 5, "model": None}):
-            document = {"concepts": [{"id": "a", "label": {"zh": "错误依据"},
+            document = {"schema_version": 2, "concepts": [{"id": "a", "label": {"zh": "错误依据"},
                                       "basis": {"zh": basis}}]}
             self.topic.write_text(yaml.safe_dump(document, allow_unicode=True), encoding="utf-8")
             failed = store.status()
@@ -95,11 +114,11 @@ class PreviewTests(unittest.TestCase):
     def test_duplicate_collection_keys_are_reported_and_recover(self):
         store = SnapshotStore(self.root)
         good = store.status()
-        self.topic.write_text("concepts: [{id: a}, {id: b}]\nconcepts: [{id: c}]\n", encoding="utf-8")
+        self.topic.write_text("schema_version: 2\nconcepts: [{id: a}, {id: b}]\nconcepts: [{id: c}]\n", encoding="utf-8")
         failed = store.status()
         self.assertIn("重复", failed["error"])
         self.assertEqual(good["snapshot"], failed["snapshot"])
-        self.topic.write_text("concepts: [{id: recovered}]\n", encoding="utf-8")
+        self.topic.write_text("schema_version: 2\nconcepts: [{id: recovered}]\n", encoding="utf-8")
         self.assertIsNone(store.status()["error"])
 
     def start_server(self):

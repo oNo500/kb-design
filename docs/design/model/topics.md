@@ -1,10 +1,10 @@
-# 主题词表设计
+# 主题词表
 
 `data/vocab/topics.yaml` 是本库的正式主题叙词表，也是由 `uv run kb-core build-topics` 确定生成的输出。它由概念记录、记录中的标签、概念之间的层级与相关关系，以及概念到外部词表的映射构成，用于给内容单元标引主题、检索和生成导航。知识图谱和导航是它的用法或升级方向，不是词表本身。
 
 人工不直接编辑 `data/vocab/topics.yaml`。当前编辑源是生成脚本及其实际读取的 `data/inputs/topics/` 输入；修改输出而不修改编辑源，会在下次生成时丢失。本文规定词表范围、记录、关系、映射、生命周期、建设流程和校验。树的结构见[层级结构](hierarchy.md)，外部来源登记见[来源名称规范表](sources-registry.md)。理论依据见[受控词表](../../concepts/controlled-vocabulary.md)和[词表的建设与维护](../../concepts/vocabulary-construction.md)。
 
-正式词表当前保持 700 个概念、24 个数组和 8 个顶层。来源与术语的新接口已经实现，但尚未接管正式数据：语言依据采用本文的结构化合同，其他现行紧凑 `basis`、标量 `source` 和 `match.source` 继续由当前生成链消费；共享引用结构、术语三层记录、委托和生成消费者均未激活。通用 `origin` 不再是主题目标字段，本次同步不以其他字段自动填补它。
+正式词表尚未完成来源 v2 迁移。下文按已采纳的[来源字段合同](../../decisions/source-v2-field-contract.md)说明目标记录和严格生成要求；工具只输出并校验新格式，缺少逐字段采纳输入时失败，不退回旧 source 或 match。主题身份、结构、语言采纳和术语未激活边界保持不变。
 
 ## 词表总览
 
@@ -33,7 +33,7 @@
  │  外部映射                                                        │
  │     sql-injection ──exactMatch──▶ CWE-89                         │
  │     sql-injection ──broadMatch──▶ A03:2021                       │
- │                 现行 source 必须在 data/vocab/sources.yaml 中登记     │
+ │                 registry 必须在 data/vocab/sources.yaml 中登记     │
  └──────────────────────────────────────────────────────────────────┘
 
  叙词表 ──渲染成目录──▶ 导航       概念和关系不变，只改变呈现
@@ -45,7 +45,7 @@
 
 主题标签的当前编辑权仍在主题生成输入。`docs/glossary.md` 是全库 designation 与中英对照的现行登记；两处须使用已经登记的同一写法。候选术语三层模式和未来委托接口虽已实现，但正式 `data/vocab/terms.yaml`、委托、消费者和切换状态均不存在，不能把标签移到第二个正式编辑位置。
 
-正式映射继续使用 `match: { source, id, rel }`。后置共享 `match` 已实现 `registry`、`item`、`rel` 和相邻 `basis`，但具体角色和逐条关系依据尚未批准，正式数据也未迁移。两种结构不得混写在同一现行示例中。
+映射使用 registry、item、rel 和相邻 basis；角色批准与逐条关系依据分别满足条件。旧数据仍可作为迁移输入的审计来源，不能作为严格读取的兼容格式。
 
 ## 范围与用途
 
@@ -110,71 +110,43 @@
 - `data/inputs/topics/label-decisions.json`
 - `data/inputs/topics/label-adoptions.json`
 - `data/vocab/sources.yaml`（语言依据的来源登记校验）
+- `data/inputs/topics/source-references-v2.json`（逐字段来源引用采纳；也可由 `--references` 显式指定）
 - `data/inputs/topics/scope-zh.json`
 - `packages/kb-core/src/kb_core/build_topics.py` 中的顶层、图书馆情报与文献学分支、多层级规则、版本和日期
 
 `data/audit/labels/label-lookup.json` 是查询清单，`data/audit/labels/label-review.md` 是人工复核材料；生成器不读取两者。旧 Wikidata 决定保存在 `label-decisions.json`，本次结构化采纳保存在 `label-adoptions.json`；两者按各自合同进入生成链。后者不覆盖前者的否决记录。`__pycache__` 也不是编辑源。
 
-核心包中的 `label_basis` 模块统一语言依据的兼容读取、校验与人读字段，`label_adoptions` 模块处理采纳记录。新增输入只参与标签采纳及依据校验，树结构仍由原有输入决定。
+核心包中的 `label_basis` 模块统一语言依据的标准化、校验与人读字段，`label_adoptions` 模块处理采纳记录。新增输入只参与标签采纳及依据校验，树结构仍由原有输入决定。
 
-修改主题数据时，先修改生成脚本或上述实际输入，再重建正式输出并检查差异。应用只读取正式输出，不反向编辑它。
+来源引用输入记录准确旧值、目标新值和对应采纳决定；缺失输入或未覆盖的引用阻断生成，不能原样输出旧字段。`--output` 可以将候选写到 build 下或外部临时目录；不把临时生成当作正式切换。修改主题数据时先改生成脚本或实际输入，再重建并检查差异；应用只读取输出，不反向编辑。
 
 ## 概念记录
 
-概念记录使用以下现行结构；语言依据的内部形状按下文合同保存。
+概念记录必填 id、label.zh、broader、status、added、basis.zh 和 basis.en。label、alt、hidden 附着于同一稳定概念；broader 和 related 连接概念，arrays 指向数组，scope 说明适用范围，history 保留真实变更。label.en 按[译名规则](../governance/governance.md)取得；未采用时按语言依据记录原因，不造新名称。
 
-```yaml
-- id: sql-injection                      # 稳定、小写、连字符；一经引用不改
-  label: { zh: SQL 注入, en: SQL injection }
-  basis:                                # 标签的形式依据
-    zh: { level: 3, references: [{ source: wikidata, locator: Q506059 }] }
-    en: { level: 2, references: [{ source: cwe, locator: CWE-89 }] }
-  alt: [SQLi]                            # 替代标签；可检索、可显示
-  hidden: []                             # 隐藏标签；可检索、不显示
-  broader: [input-validation, data]      # 空列表表示顶层概念
-  arrays: [security-asvs]                # 所属数组；上位只有一个来源时可省略
-  related: []                            # 必须互反；仅在不同上位且内容常同时涉及两概念时添加
-  scope: >                               # 范围注释：用于……不用于……
-    指通过拼接用户输入改变 SQL 语义的攻击及对应缺陷；
-    参数化查询等防御手段不在此。
-  # 本地建立且没有实际派生来源时不填 source
-  match:                                 # 现行外部概念映射
-    - { source: cwe, id: CWE-89, rel: exactMatch }
-    - { source: owasp-top10, id: "A03:2021", rel: broadMatch }
-  status: active                         # 概念记录的生命周期状态
-  added: 2026-08-20
-  history: []                            # 日期、变更内容和理由
-```
+| 字段 | 合同 |
+|---|---|
+| basis.zh／en | 独立语言依据结构；外部等级、模型判断、未采用和历史值分开 |
+| source | registry、item、locator、basis；只表达实际派生，要求获准 structure 角色 |
+| match | registry、item、rel、basis 列表；每条关系要求获准 mapping 角色及相邻依据 |
+| assertions.source | disposition: project_assertion、original: self、migration；保留原本地建立判断，不形成外部派生 |
+| status | 项目概念状态，不表示来源外部状态或单个标签状态 |
 
-必填字段是 `id`、`label.zh`、`broader`、`status`、`added`、`basis.zh` 和 `basis.en`。`label.en` 按[治理](../governance/governance.md)中的译名阶梯取得；完成当前判断仍未采用时不填，并写 `basis.en: { level: 6, reason: 未采用原因 }`；未重新分级的旧 `none` 保留为 `legacy: none`。其余字段按需使用。本地概念强烈建议填写 `scope`，以明确适用和不适用的边界。
+[来源数据批次](../../decisions/source-data-batch.md)允许来源 source_status 省略，含义为外部状态未核实；来源 version 必有但可为 null，含义为未登记可核实版本。这两项不影响主题 status，也不自动批准派生或映射。实际引用仍须逐条材料、定位、真实核对日期、角色资格与精确采纳；无版本 de-facto 不能取得 structure，依赖外部现行状态的操作在缺状态时继续阻断。
 
-`basis` 中的语言项记录标签的准入根据。外部依据、第 5 级模型判断、第 6 级未采用和未重新分级的历史值分别保存，见下文“语言依据”。语言依据不能代替概念对应判断，也不能代替其他字段值或关系的断言依据。人工赋值的具体断言按[维护](../governance/maintenance.md)的断言规则记录依据。
+source 与 assertions.source 互斥。本地建立且没有实际派生时不填 source；旧 self 仅在明确迁移审计定位下转入项目判断，不作为新增记录的外部依据。语言依据不能代替概念对应、派生或映射证明；人工赋值断言仍按[维护](../governance/maintenance.md)处理。
 
-语言项使用结构化 `basis.zh`／`basis.en`；其他断言仍使用现行紧凑 `basis`，派生与映射仍使用标量 `source` 和 `match.source`。复制记录的现行 `source` 填写真实来源，并用 `match` 指回相应外部条目；本地建立、综合判断或只受材料支持的记录没有实际派生来源时不填 `source`。正式库存中的 `source: self` 只是待迁移兼容值，不作为实际派生解释，也不得用于新增记录。后置共享 `basis`、`source` 和 `match` 只有在正式迁移、角色批准和消费者切换后才接管相应记录。
+通用 origin 不是目标字段；旧库存按原基线审计，不自动变成 basis、source 或 match。alt／hidden、broader、related 与 scope 的既有标准对应不变，来源字段结构变更不改变概念或层级。
 
-当前 `uv run kb-core build-topics` 要求每条记录都提供 `source`，并总是输出该字段，尚不能表达本地记录省略 `source`。这是现行生成路径的待迁移缺口；缺口关闭前，不能用 `source: self` 绕过，也不能通过这条路径把没有实际派生来源的新建本地记录写入正式输出。
+数组在文件顶部单独登记，保留 id 与 superordinate。外部数组使用 external_group，结构为 registry、item、locator、basis，要求获准 structure 角色；这只证明分组本身，成员的实际派生另以 source 核对。已批准的分析数组可以使用已登记 characteristic，不能通过迁移新建划分特征。
 
-通用 `origin` 不是目标字段。旧 `origin` 的库存和逐项去向保存在来源迁移账本中；删除旧设计定义不批准任何新的 `basis`、`source` 或 `match`，也不把发现观察、具体值依据、实际派生和概念映射合并。
+载体数组按 Q16 使用 local_analysis 保存 legacy_source_label、state: isolated、decision，保留原父项与成员，不改为外部来源引用。该对象与 assertions.source 的原 self 判断不同；两者都不产生外部证据边。具体规则见[来源用途登记](sources-registry.md#本地结构)。
 
-字段与标准的现行对应关系保持不变：`alt`／`hidden` 对应 SKOS `altLabel`／`hiddenLabel`；`broader`、`related` 对应 SKOS 同名属性；`arrays` 对应 ISO 25964-1 数据模型的 ThesaurusArray；`scope` 对应范围注释；`history` 对应历史注释；`status` 对应数据模型的 `status`；`match` 保存跨词表概念映射。
-
-数组在文件顶部单独登记，对应 ISO 25964-1 数据模型的 ThesaurusArray 与 NodeLabel。数组至少使用 `source` 或 `characteristic` 之一作为标识；`characteristic` 还须在 `characteristics.yaml` 登记。
-
-```yaml
-arrays:
-  - id: security-asvs
-    superordinate: security             # 数组所属的上位概念
-    source: asvs                        # 以来源为标识
-  - id: pl-by-paradigm                  # 分析层示例，当前没有
-    superordinate: programming-languages
-    characteristic: paradigm            # 以划分特征为标识，显示为节点标签（按范式）
-```
-
-一个概念的下位只有一个来源且未做分析时，不登记数组。规则见[层级结构](hierarchy.md)。分面字段暂不设置，见[分面字段草案](../../drafts/facet-field.md)；草案仍未生效。
+一个概念的下位只有一个来源且未做分析时，不登记数组。层级规则见[层级结构](hierarchy.md)；[分面字段草案](../../drafts/facet-field.md)未生效。
 
 ## 语言依据
 
-[语言依据结构](../../decisions/structured-label-basis.md)规定 `basis.zh`／`basis.en` 的现行合同，替代旧字符串模型标记。语言依据与来源 v2 的共享引用是两个合同；本次不改变其他 `basis` 项、`source` 或 `match`。
+[语言依据结构](../../decisions/structured-label-basis.md)规定 `basis.zh`／`basis.en` 的现行合同，替代旧字符串模型标记。语言依据与来源 v2 的共享引用是两个合同；来源迁移不改变既有语言等级、模型授权或采纳记录。
 
 | 依据性质 | 结构 | 条件 |
 |---|---|---|
@@ -185,7 +157,7 @@ arrays:
 
 等级的译名含义见[治理](../governance/governance.md#译名)。来源原名可以继续沿用；本批按已登记类别将既有来源依据明确归级，并保留其来源和原定位：`gbt-13745`、`lom`、`rfc-1122` 为第 1 级，`wikidata` 为第 3 级，`cs2023`、`asvs`、`cwe`、`attack`、`atlas`、`swebok`、`owasp-llm-top10` 为第 2 级。这是既有记录的结构迁移，不表示新做了外部核验，也不能将网站整体类别作为新增译名的准入证明。未知历史引用保持未分级。旧 `source` 按记录原来源及已有映射定位展开；已映射来源缺少定位时由校验报错，不编造定位；映射表外的旧引用保持历史值。
 
-旧字符串仍可读取，新生成的语言依据使用上述结构。历史 `none` 只说明当时没有采用，不证明前四级已查尽，也不自动变为第 6 级。旧 `self` 不自动变为模型知识，其不得为 `active` 的规则继续适用。第 5 级既不使概念转正，也不要求概念退出 `active`。
+生成输入中的旧语言值按已采纳规则标准化，新格式输出使用上述结构；正式严格输出不保留裸字符串语言依据。历史 `none` 只说明当时没有采用，不证明前四级已查尽，也不自动变为第 6 级。旧 `self` 不自动变为模型知识，其不得为 `active` 的规则继续适用。第 5 级既不使概念转正，也不要求概念退出 `active`。
 
 外部 `references` 只保存已登记来源；多个不同来源 ID 只能由校验器证明引用不同，不能证明真实独立性、用法一致或概念对应。第 4 级仍须按治理规则作实质判断。模型标识不是来源 ID，不创建同名实体或来源用途，也不用于派生、映射、关系或其他断言。
 
@@ -228,37 +200,36 @@ HTML 在名称旁直接显示“模型知识 · 第 5 级”，并注明“外�
 
 1. 写明“范围与用途”的排除项。
 2. 逐个核对各数组来源的当前版本和条目，并登记到 `sources.yaml`。
-3. 按[层级结构](hierarchy.md)的来源表复制第 3 层，记录全部使用 `unassigned`，填写现行 `source`，并用现行 `match` 指回来源条目。
-4. 把现有约 90 个概念挂到树上：来源已有的第 3 层概念并入复制结构；本地概念先建立 `candidate` 记录，没有实际派生来源时不填 `source`。当前生成器不能省略该字段，因此在缺口关闭前不得用 `source: self` 新增这类记录。
+3. 按[层级结构](hierarchy.md)的来源表复制第 3 层，记录全部使用 `unassigned`，填写严格 `source`，并用具有独立依据的 `match` 指回来源条目。
+4. 把现有约 90 个概念挂到树上：来源已有的第 3 层概念并入复制结构；本地概念先建立 `candidate` 记录，没有实际派生来源时不填 `source`。生成器按已采纳引用输入表示本地建立事实，不以 `source: self` 回退。
 5. 自下而上校正时，从现有内容、书签和文献识别带来源上下文的字符串或名词短语，先与已登记的 `label`、`alt` 和 `hidden` 匹配。匹配后按概念 id 与树比较；未解析项只交人工判断，不自动建立概念或关系。
 6. 分批补充 `scope` 和 `match`，逐个第 2 层概念处理，不要求一次完成。
 
-第 3 步由当前生成链产生确定输出，结果须经人工审核。来源迁移账本和反向索引可以定位旧引用，后置严格校验可以检查新结构；这些能力均不批准实际派生或映射，也不能在正式迁移前改写当前数据。
+第 3 步由当前生成链产生确定输出，结果须经人工审核。来源迁移账本定位旧引用，严格校验检查新结构，反向索引定位正式引用；这些能力均不批准实际派生或映射，也不能在正式迁移前改写当前数据。
 
 `uv run kb-core check-terms` 的正文诊断已经实现。它从 Git 取得动态 Markdown 清单，检查标题、加粗内容和中文引号，排除代码围栏、行内代码、链接目标和路径；默认与现行 `docs/glossary.md`、`data/vocab/topics.yaml`、`data/vocab/entities.yaml` 和 `data/vocab/types.yaml` 中的已登记写法比较。输出保留精确位置和上下文，模式为 `report-only`。命中只供人工判断，不形成 designation、概念、关系、违规、阻断或候选记录。
 
 ## 校验规则
 
-每次修改主题生成脚本或实际输入并重建 `data/vocab/topics.yaml` 后，运行 `uv run kb-core check-topics`。现行校验继续检查以下规则。
+修改生成器或实际输入后，用 `uv run kb-core build-topics` 生成，再由 `uv run kb-core check-topics` 校验。缺少来源逐字段采纳材料时应保留失败，不改正式输出消除错误。
 
-- 所有 `broader` 指向存在的 id，且不存在环。
-- 现行 `source`、`match.source` 和语言依据的外部 `references[].source` 在 `sources.yaml` 中。
-- 主题与载体的语言依据满足等级、标签、来源定位及模型授权条件；模型输出与采纳记录、原英文和范围一致。历史 `none` 不误判为第 6 级，旧 `self` 仍不能支持 `active`。
-- `deprecated` 必有 `replaced_by`。
-- `arrays` 指向存在的数组，且数组的 `superordinate` 位于本概念的 `broader` 中。
-- 数组至少有 `source` 或 `characteristic`；`characteristic` 在 `characteristics.yaml` 中。分析层数组的成员位于上位概念的下位集合内，同一划分特征下每个下位概念至多属于一组。
-- `source` 不是 `self` 的概念记录有一条 `match` 指向同一来源。
-- `label.en` 和 `alt` 在全表内不重复；重复可能表示同一概念被建立两次。
-- 统计每个第 2 层概念下 `unassigned` 的比例，以及 `candidate` 概念记录的引用次数。
+- broader 指向现有 id 且无环；related 的既有对称与范围规则保持。
+- source、match、external_group 使用严格形状与获准用途；角色决定须对应实际对象和作用范围，旧字段或畸形值不能被跳过。
+- 实际派生的概念记录须有一条 match 指回同一来源；派生依据与映射依据仍独立，本地判断不伪装成派生。
+- 语言依据满足等级、定位与模型授权合同；历史 none 不冒充第 6 级，legacy: self 不得支持 active。
+- deprecated 保留 replaced_by；身份、关系与历史不得因序列化改变。
+- arrays 指向存在的数组，superordinate 与概念 broader 对应；外部分组、本地判断和 Q16 本地分析分别检查，不临时创造 characteristic。
+- label.en 和 alt 的现有全表唯一性规则保留；统计每个第 2 层概念下 unassigned 比例，候选引用计数依赖正式消费者的可审计输入。
+- 分析数组的成员位于上位下位集合内，同一已登记 characteristic 下每个下位概念至多属于一组；自定断言指标不因字段形状变化取消。
 
-现行 `check-topics` 命令不消费通用 `origin`，也不读取迁移账本。共享引用校验只检查已经进入后置严格形状的数据；正式主题数据尚未切换，因此它不替代当前校验链。候选识别报告与主题结构校验分开，报告数量非零不构成主题错误。
+正式数据未迁移时，严格命令失败说明尚有迁移缺口，不意味着允许恢复旧格式。候选识别仍为 report-only，不形成新概念或关系。
 
 ## 设计分工
 
 | 事项 | 文档 | 关系 |
 |---|---|---|
 | 树的分层、划分和复制来源 | [层级结构](hierarchy.md) | 本文的 `broader`、`arrays`、现行 `source` 按其规则填写 |
-| 外部体系登记、复制、映射和派生组 | [来源名称规范表](sources-registry.md) | 现行兼容层与后置共享接口的唯一职责说明；本文不自行批准角色或关系 |
+| 外部体系登记、复制、映射和派生组 | [来源名称规范表](sources-registry.md) | 用途资格与严格共享引用的职责说明；本文不自行批准角色或关系 |
 | 主题标签 | 本文与生成输入 | `label`、`alt`、`hidden` 继续附着于现行主题概念；写法须已在现行 glossary 登记 |
 | designation 登记 | [治理](../governance/governance.md)与 `docs/glossary.md` | glossary 仍是现行登记和中英对照的编辑源；正文诊断只供人工判断 |
 | 术语基础 | [术语治理草案](../../drafts/terminology-governance.md) | 三层模式、状态、生成、诊断和维护接口已实现；草案、正式数据、委托和消费者未激活 |

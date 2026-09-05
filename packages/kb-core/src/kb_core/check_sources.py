@@ -14,9 +14,10 @@ def main(argv=None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, required=True)
     parser.add_argument("--previous", type=Path)
-    parser.add_argument("--allow-legacy", action="store_true")
     args = parser.parse_args(argv)
-    issues = validate_repository(args.root, args.previous, args.allow_legacy)
+    issues = validate_repository(args.root, args.previous)
+    if not (args.root / "data/vocab/source-obligations.yaml").exists():
+        print("source obligations: not activated (no formal obligations document)")
     if not issues:
         print("0 source governance issues")
         return 0

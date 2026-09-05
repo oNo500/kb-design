@@ -25,13 +25,11 @@ def main() -> None:
     parser.add_argument("command", choices=COMMANDS)
     parser.add_argument("arguments", nargs=argparse.REMAINDER)
     args = parser.parse_args()
-    if args.command in {"build-topics", "check-topics"}:
-        # These existing scripts execute at module load; validate intent before
-        # importing them so help or a typo cannot trigger a data write.
-        command_parser = argparse.ArgumentParser(prog=f"kb-core {args.command}")
-        if args.command == "check-topics":
-            command_parser.add_argument("--record", action="store_true",
-                                        help="append a maintenance snapshot")
+    if args.command == "check-topics":
+        # check-topics still executes at module load; validate before import.
+        command_parser = argparse.ArgumentParser(prog="kb-core check-topics")
+        command_parser.add_argument("--record", action="store_true",
+                                    help="append a maintenance snapshot")
         command_parser.parse_args(args.arguments)
     sys.argv = [f"kb-core {args.command}", *args.arguments]
     runpy.run_module(f"kb_core.{COMMANDS[args.command]}", run_name="__main__")

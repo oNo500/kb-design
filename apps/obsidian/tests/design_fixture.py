@@ -18,13 +18,19 @@ IMPLEMENTATION_PATHS = (
     "apps/obsidian/src/kb_obsidian/exporter.py",
     "packages/kb-core/src/kb_core/__init__.py",
     "packages/kb-core/src/kb_core/label_basis.py",
+    "packages/kb-core/src/kb_core/source_model.py",
+    "packages/kb-core/src/kb_core/label_adoptions.py",
     "packages/kb-core/src/kb_core/repository.py",
 )
 
 
 def create_clean_design(destination: Path) -> tuple[Path, str]:
     """Copy current formal inputs and their reader into a clean temporary repository."""
-    for relative_path in (*FORMAL_PATHS, *IMPLEMENTATION_PATHS):
+    decisions = tuple(path.relative_to(REPOSITORY_ROOT).as_posix()
+                      for path in (REPOSITORY_ROOT / "docs/decisions").glob("source-*.md"))
+    support = tuple(path for path in ("data/inputs/topics/label-adoptions.json", "data/vocab/source-obligations.yaml")
+                    if (REPOSITORY_ROOT / path).exists())
+    for relative_path in (*FORMAL_PATHS, *IMPLEMENTATION_PATHS, *decisions, *support):
         source = REPOSITORY_ROOT / relative_path
         target = destination / relative_path
         target.parent.mkdir(parents=True, exist_ok=True)

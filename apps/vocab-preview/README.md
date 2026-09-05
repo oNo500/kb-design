@@ -21,6 +21,10 @@ uv run kb-vocab-preview --repo-root /path/to/kb-design --port 8766
 
 默认数据目录取应用所在仓库，不依赖启动时的工作目录；只监听 `127.0.0.1`。
 
+## 来源表示
+
+实体与来源用途只读取带 schema 及版本的新格式；旧字段和紧凑来源引用会报错。项目状态与外部状态分别显示，完整保留多地址、复核、观察、用途资格、外部依据、项目判断与历史记录。角色名不代表已获准，决定 ID 不伪装成不存在的笔记链接。语言依据沿用其独立合同。
+
 ## 更新方式
 
 服务读取 `data/vocab/` 下的 `topics.yaml`、`entities.yaml`、`sources.yaml`、`types.yaml`、`genres.yaml` 和 `forms.yaml`。页面约每秒查询一次变化，以文件内容判定是否更新，不依赖 Git 提交或文件修改时间。

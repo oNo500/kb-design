@@ -8,9 +8,20 @@ level: L2
 scope: fixture
 supersedes: []
 answers:
-  - question: Q11
-    resolution: replacement
-    patches:
-      - {identity: role-1, field: new_status, value: approved}
+- question: Q11
+  resolution: replacement
+  patches:
+  - identity: role-1
+    field: new_status
+    value: approved
+  - identity: sources/cs2023/roles/structure
+    field: status
+    value: approved
+  - identity: sources/cs2023
+    field: entity
+    value: cs2023
+  - identity: sources/cs2023/roles/mapping
+    field: status
+    value: approved
 ---
-# 有效决定
+# 合成决定

@@ -1,104 +1,88 @@
-# 来源名称规范表
+# 来源用途登记
 
-`data/vocab/sources.yaml` 登记本库当前使用的外部知识体系和词表，并以稳定 `id` 指向[命名实体词表](entities.md)中的同一来源实体。它保存来源的现行用途，不重复保存名称、类别、档级、版本和地址。理论见[词表映射](../../concepts/vocabulary-mapping.md)和[知识体系](../../concepts/body-of-knowledge.md)。
+`data/vocab/sources.yaml` 以稳定 id 登记来源用途，entity 指向[命名实体词表](entities.md)中的来源实体。名称、类别、档级、版本、地址与外部状态留在实体表，不重复保存。理论见[词表映射](../../concepts/vocabulary-mapping.md)与[知识体系](../../concepts/body-of-knowledge.md)。
 
-正式 `data/vocab/sources.yaml` 仍是旧形状；正式来源数据尚未迁移，来源治理草案也未生效。已经实现的模式、校验、索引、固定夹具探测、迁移预演和复核义务接口，只规定后置迁移必须满足的结构与行为，不能替代正式记录或人工决定。
+本文采用已采纳的[来源字段合同](../../decisions/source-v2-field-contract.md)。正式来源数据及其引用尚未完成迁移；新合同、工具与字段采纳不等于完整记录、角色、关系或正式切换获准。严格入口只接受 v2，旧格式仅由 Git 和迁移审计保留。
 
 ## 对象分工
 
-来源身份、来源用途和具体关系分别保存，互不替代。
-
-| 对象 | 当前职责 | 不产生的效力 |
+| 对象 | 职责 | 效力边界 |
 |---|---|---|
-| 来源实体 | 在 `data/vocab/entities.yaml` 保存现行名称、类别、档级、版本和地址 | 不批准来源用途，不证明具体断言、派生或映射 |
-| 用途记录 | 在 `data/vocab/sources.yaml` 保存来源的现行用途，并以 `entity` 指向来源实体 | 不改变来源实体，不自动产生具体 `source` 或 `match` |
-| `basis` | 说明具体值的依据 | 不表示实际派生、概念映射或项目批准 |
-| `source` | 说明记录或结构的实际派生来源 | 不表示普通参考材料、人工判断依据或概念等同 |
-| `match` | 说明本地概念与外部概念的关系 | 不表示标签、译名、层级或范围依据 |
+| 来源实体 | 身份、名称、版本、地址、档级及外部状态 | 不批准用途或具体关系 |
+| 用途记录 | id、entity、roles、history | 不改变来源身份，不自动产生派生或映射 |
+| basis | 支持具体字段值的外部依据 | 不表示实际派生、映射或项目批准 |
+| source | 记录或结构的实际派生 | 不表示普通参考、项目判断或概念等同 |
+| match | 本地与外部对象的具体映射 | 不替代标签、范围或层级依据 |
+| external_group | 外部数组分组的身份与依据 | 不证明每个成员由该来源派生 |
+| assertions | 明确保留既有项目判断 | 不取得外部依据效力 |
 
-项目决定另行保存。结构和校验决定可以批准接口，不能据此推出某一来源的用途、某一条实际派生或某一条概念映射。
+项目决定独立保存。批准结构只回答可以怎样表示，不能推出具体来源状态、用途资格或关系结论。
 
-## 现行记录
+## 用途记录
 
-正式用途记录当前使用 `id`、`entity`、`role` 和 `checked`。例如，正式数据中的 CWE 记录如下。
+id 与 entity 保持现有一对一关系，entity 必须指向 kind 为 standard 或 publication 的实体。roles 是非空的逐角色记录列表，每项包含 role、status、decision。history 只追加真实动作、日期、字段与决定；旧用途 checked 保留在迁移前值中，不成为角色批准日期或实体复核日期。
 
-```yaml
-- id: cwe
-  entity: cwe
-  role: [mapping, structure, group]
-  checked: 2026-08-23
-```
-
-`entity` 必须指向现行命名实体词表中 `kind` 为 `standard` 或 `publication` 的记录。现行 `role` 可以多选，值和含义保持不变。
-
-| role | 现行用途 | 现行条件 |
+| role | 资格用途 | 对应引用 |
 |---|---|---|
-| `mapping` | 作为现行 `match.source` 的目标 | 外部条目有编号或永久地址 |
-| `structure` | 作为结构或记录的现行 `source` | 同时有 `mapping`；体系有分层；借入层有编号或稳定名称 |
-| `group` | 从现行映射确定性计算概念组 | 同时有 `mapping`；只使用本库已有映射 |
-| `candidate` | 发现待审字符串、表达或材料线索 | 不赋予形式依据、概念身份、候选记录或项目准入 |
+| mapping | 具体外部映射 | match.registry |
+| structure | 实际结构、记录派生与外部数组分组 | source.registry、external_group.registry |
+| group | 从现有映射确定性计算派生概念组 | 不作为 external_group 的资格 |
+| discovery | 发现材料与待审线索 | 不取得前三种资格 |
 
-`candidate` 与其余现行角色互斥。来源的 `tier` 继续承担现行分级和复核周期含义，但不单独增加用途；现行用途只取正式 `role` 已保存的值。结构来源还须遵守[层级结构](hierarchy.md)已经收紧的来源选择、复制深度和同一视角规则。
+role 的 status 只取 proposed、approved、retired。proposed 的 decision 为 null；approved 或 retired 必须指向确实批准该对象、角色与状态的已采纳决定。旧 mapping、structure、group 不自动升级；旧 candidate 转为 proposed discovery，不产生概念、名称或试用资格。
 
-现行 `role` 含 `structure` 时，来源实体的 `tier` 必须是 `de-jure`，或为有版本号的 `de-facto`。没有版本号的 `de-facto` 当前只作映射；`vendor` 当前只作映射；`archival` 当前不作来源。这些条件限制已有用途，不能据此为其他来源增加 `role`。
+现有用途的适用限制继续保留：structure 同时要求 mapping，并受[层级结构](hierarchy.md)的来源选择、复制深度与同一视角规则约束；来源为 de-jure 或有版本号的 de-facto。无版本 de-facto 和 vendor 不因格式迁移取得结构用途，archival 也不因此取得用途。group 继续要求 mapping，只使用本库已有映射；它不由一条映射或消费者使用自动批准。任何适用范围扩展均须另行决定。
 
-当前来源清单和用途以正式 [`data/vocab/sources.yaml`](../../../data/vocab/sources.yaml) 为唯一数据来源，不在本文复制第二份清单。现有来源 `id` 保持稳定，本次同步不改变任何 `role`、`checked`、`tier`、版本、地址或数据。
+当前来源清单以[正式数据](../../../data/vocab/sources.yaml)为准；该文件的旧角色并不是新合同中的 approved。tier 决定档级与复核周期，不决定外部状态或角色批准。按[来源数据批次](../../decisions/source-data-batch.md)，source_status 可省略，version 必有但可为 null；前者表示外部状态未核实，后者表示未登记可核实版本。它们不批准任何用途，无版本 de-facto 的 structure 限制保持。
 
-## 现行用法
+## 严格引用
 
-一个外部体系可以承担复制、映射和派生概念组三种现行用法。
+| 对象 | 字段 | 条件 |
+|---|---|---|
+| basis 项 | entity、locator、按可变性要求的 checked | 指向来源实体；不要求用途角色；定位可重复核对 |
+| source | registry、item、locator、basis | structure 已获准；locator 保存逐行最终定位，不只保存模板 |
+| match 项 | registry、item、rel、basis | mapping 已获准；每条关系有相邻非空依据 |
+| external_group | registry、item、locator、basis | structure 已获准；只表达分组依据 |
 
-| 用法 | 当前形式 | 所需现行 role | 记录位置 |
-|---|---|---|---|
-| 复制 | 某概念下的来源数组，成员为本地概念 | `structure` | `arrays` 与概念的 `source` |
-| 映射 | 概念的一条 `match` | `mapping` | 概念的 `match` |
-| 派生概念组 | 映射到该体系的全部本地概念 | `group` | 不登记，自动计算 |
+可变内容的 basis 必须有真实 checked。固定版本与真实内容哈希共同确定引用内容时才可省略；版本字符串本身不足以证明内容固定，version: null 更不能触发该例外。entity 指来源实体，registry 指用途登记，两者不能互换。
 
-正式词表当前继续使用旧引用形状：`source` 是来源 `id`；`match` 含 `source`、`id` 和 `rel`。现行工具在正式迁移前继续消费该形状。
+source_status 缺省不自动否定具体历史或固定材料，也不批准其关系。引用仍须核对所选材料、定位、真实日期、用途资格和逐条采纳；确实依赖外部现行状态的操作在缺值时阻断。已填写状态保持发布者依据与精确字段采纳，不以可省略为由覆盖合格结论。
 
-`source` 的语义已经收紧为实际派生。复制的记录填写实际来源，并用 `match` 指回相应外部条目；来历与概念对应不能互相替代。本地建立、综合判断或只受材料支持的记录没有实际派生来源，不用 `source` 表示。正式旧数据中保留的 `source: self` 是待后置迁移处理的兼容值，不作为实际派生解释，也不得用于新增记录。
+收集器先识别受约束字段，再检查内容；缺字段、多余键、旧字符串或旧 match.source 都须报错，不能被静默漏掉。语言依据 references 的 source 是其[独立合同](topics.md#语言依据)，不等于旧派生字段，也不由这次迁移改变译名等级。
 
-派生概念组只是现有映射的确定性视图。它不能显示尚未建立或映射的缺口，不能创建概念或映射，也不能替代结构复制。
+## 本地结构
+
+本地建立、综合判断或只受材料支持的记录不填外部 source。原 source: self 的事实通过 assertions.source 保存 disposition: project_assertion、original: self 与 migration 审计定位；它不表示外部派生，与 source 互斥。
+
+载体数组按[来源迁移](../../decisions/source-migration-policy.md) Q16 保存 local_analysis，字段为 legacy_source_label、state: isolated、decision。decision 指向批准本地分析隔离的决定；原标签、父项与成员保留，不转换为 external_group，不新建来源或划分特征。该记录只保存既有本地分析，不进入外部来源索引。
+
+外部数组的 external_group 与成员的 source 分别核对。CS2023 主派生与补充来源、match 按 Q14 分开；RFC 层次按 Q17 逐层保存依据。派生概念组仍是已有映射的确定性视图，不能显示尚未建立的缺口、创建概念或替代结构复制。
 
 ## 映射关系
 
-映射落在概念层，不在数组或第 2 层级别建立。现行 `rel` 继续使用 SKOS 的五种关系。
+映射不建立在数组本身或层级位置上。item 保存外部条目标识，无编号时保存永久地址；rel 使用以下五种关系。
 
 | rel | 含义 |
 |---|---|
-| `exactMatch` | 同一概念，可以互换；传递 |
-| `closeMatch` | 基本同一；不传递。不能确认完全一致时使用 |
-| `broadMatch` | 外部概念更宽 |
-| `narrowMatch` | 外部概念更窄 |
-| `relatedMatch` | 相关 |
+| exactMatch | 同一概念，可以互换；传递 |
+| closeMatch | 基本同一；不传递 |
+| broadMatch | 外部概念更宽 |
+| narrowMatch | 外部概念更窄 |
+| relatedMatch | 相关 |
 
-现行 `match.id` 保存外部条目标识；没有编号时保存永久地址。来源已登记、具有 `mapping` 用途、标签相同或迁移账本已有分类，都不能自动产生 `match` 或决定 `rel`。每条关系仍须经过概念范围判断。
+不能确认完全一致时使用 closeMatch 的现有规则不免除范围判断与关系证据。相同标签、旧 rel、来源登记、角色批准或迁移账本分类都不能自动成立一条映射。实体映射还须核对是否同一个体，不能用概念等同规则混淆身份。
 
-不能确认完全一致时，现行默认使用 `closeMatch`；这项默认不免除概念范围判断，也不把相似标签升级为映射。
+## 实施边界
 
-## 后置接口
+schema、严格校验、反向索引、迁移准备和应用表示按同一合同实施。旧紧凑依据、旧 source、旧 match、role 字符串数组和标量 watch 不进入正式新快照；未核对必需事实阻断对应转换，不通过丢字段、补空证明或改状态解除。
 
-来源用途 v2 模式和共享引用结构已经实现，但尚未应用到正式数据。正式迁移后，用途记录改由 `roles` 保存各角色的 `role`、`status` 和 `decision`，并保存只追加 `history`；角色状态只取 `proposed`、`approved` 和 `retired`。`approved` 或 `retired` 必须引用已采纳决定。迁移账本中的角色分类全部仍是历史预演，不是正式 `roles` 值，也不批准任何角色。
+反向索引只提供影响位置，不作修改结论。项目判断、本地分析与历史 before／after 不产生正式外部引用边。历史来源账本保留原基线与哈希，当前变化另行记录，不重写旧账本为已批准。
 
-后置共享引用的结构如下。
+来源探测的固定 HEAD／GET 夹具只提供信号，live 与正式周期运行没有因本合同开放；观察不回写状态、日期或依据。来源复核义务接口不能凭空创建正式义务、目标或解决结论。术语正式激活与来源迁移分开。
 
-| 对象 | 字段 | 后置资格 |
-|---|---|---|
-| `basis` 项 | `entity`、`locator`、按内容可变性要求的 `checked` | `entity` 指向来源实体；定位必须可重复核对 |
-| `source` | `registry`、`item`、`locator`、`basis` | `registry` 指向具有已批准 `structure` 角色的用途记录；只表示实际派生 |
-| `match` 项 | `registry`、`item`、`rel`、`basis` | `registry` 指向具有已批准 `mapping` 角色的用途记录；依据与关系相邻 |
-
-这些结构已经有 schema 和离线校验实现。由于正式来源仍是旧形状、具体角色尚未逐项批准、正式引用尚未迁移，现行 `source` 和 `match` 不能直接改写成该结构。来源草案中的完整状态转换、角色转换和复核流程也没有因接口实现而生效。
-
-## 能力边界
-
-- 六份来源 schema、共享来源模型和离线校验已经存在。校验可以检查共享引用结构、角色状态、已采纳决定、稳定身份和部分历史规则；它尚未接管正式旧数据，也没有实现来源草案列出的全部转换和阻断规则。
-- 反向索引生成能力已经存在，可以定位共享引用、用途实体、角色决定、替代、决定和复核义务。正式索引尚未生成；索引只给出影响范围，不给出复核结论。
-- 来源探测只支持固定 `HEAD`／`GET` transport 夹具，`--live` 明确禁用。夹具输出只形成复核信号，不确认真实来源状态，不回写正式字段。探测器当前的 JSONL 输出与 `source-probe` schema 要求的文档结构尚未闭合，因此不能宣称探测输出已经通过该模式。
-- 六份来源迁移账本保存历史库存、分类和切换阻断。账本中的推荐值、`proposed`、操作和已关闭分类不修改正式数据。既有预演受冻结输入保护；当前 HEAD 已不能按原冻结哈希重新物化该结果，所以账本只能作为已保存的历史审计。
-- 复核义务的模式和操作接口已经存在，正式 `data/vocab/source-obligations.yaml` 尚未建立。观察、义务、人工结论和正式修改仍是分开的步骤。
+恢复只使用明确提交范围的 Git revert。全部数据和消费者验收完成前不得合并 master；正式切换、发版与正式 vault 刷新分别处理。
 
 ## 待定事项
 
-- MDN 技术参考没有稳定版本号时，版本应怎样记录；抓取日期不能直接冒充版本。
-- MDN Web 内容是否取得结构用途，以及 `mdn-curriculum` 是否取得 `group` 用途，仍须分别决定；现行值在决定前不变。
+- 尚未核实的具体来源版本与外部状态如何取得材料；缺省表示已由[来源数据批次](../../decisions/source-data-batch.md)确定，不增加 unknown，不用抓取日期冒充版本。
+- MDN Web 的结构用途与 mdn-curriculum 的 group 用途仍须分别决定，格式迁移不改变其资格。

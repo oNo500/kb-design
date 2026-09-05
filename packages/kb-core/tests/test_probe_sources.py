@@ -115,7 +115,9 @@ class ProbeSourcesTests(unittest.TestCase):
         )
 
     def test_withdrawal_signal_does_not_set_formal_status(self):
-        self.assertNotIn("status", self.run_case("withdrawal.json"))
+        result = self.run_case("withdrawal.json")
+        self.assertNotIn("status", result)
+        self.assertNotIn("source_status", result)
 
     def test_temporary_unavailability_does_not_block_release(self):
         self.assertFalse(

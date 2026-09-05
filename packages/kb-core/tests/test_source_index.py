@@ -43,9 +43,9 @@ def reference_use_index_key(use):
 
 
 class SourceIndexTests(unittest.TestCase):
-    def entries(self, legacy=False):
+    def entries(self):
         with materialized_current_layout(FIXTURE) as root:
-            return build_reference_index(root, include_legacy=legacy)["entries"]
+            return build_reference_index(root)["entries"]
 
     def test_index_covers_all_required_reference_kinds(self):
         kinds = {row["reference_kind"] for row in self.entries()}
@@ -59,35 +59,6 @@ class SourceIndexTests(unittest.TestCase):
 
     def test_index_and_formal_references_are_bidirectionally_equal(self):
         self.assertEqual(formal_reference_set(FIXTURE), index_reference_set(self.entries()))
-
-    def test_legacy_mode_includes_generator_and_array_inputs(self):
-        legacy_kinds = {
-            "legacy.basis", "legacy.source", "legacy.match", "legacy.array_source"
-        }
-        with materialized_current_layout(FIXTURE) as root:
-            input_directory = root / "data" / "inputs" / "topics"
-            input_directory.mkdir(parents=True)
-            (root / "data/vocab/legacy.yaml").replace(
-                input_directory / "legacy.yaml"
-            )
-
-            default_entries = build_reference_index(root)["entries"]
-            legacy_entries = build_reference_index(root, include_legacy=True)["entries"]
-
-        self.assertTrue(legacy_kinds.isdisjoint(
-            {row["reference_kind"] for row in default_entries}
-        ))
-        self.assertTrue(legacy_kinds <= {
-            row["reference_kind"] for row in legacy_entries
-        })
-        self.assertEqual(
-            {"data/inputs/topics/legacy.yaml"},
-            {
-                row["file"]
-                for row in legacy_entries
-                if row["reference_kind"] in legacy_kinds
-            },
-        )
 
     def test_structured_language_evidence_tracks_uses_without_model_sources(self):
         """Missing label evidence would understate a source change's actual impact."""

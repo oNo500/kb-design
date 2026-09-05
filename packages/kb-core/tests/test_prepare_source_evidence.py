@@ -16,19 +16,19 @@ class SourceEvidenceTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.output = self.root / 'build/evidence'
         self.write('data/vocab/topics.yaml', {'concepts': [{
-            'id': 'computing', 'label': {'zh': '计算机科学技术'}, 'source': 'self',
+            'id': 'computing', 'label': {'zh': '计算机科学技术'}, 'assertions': {'source': {'disposition': 'project_assertion', 'original': 'self', 'migration': 'fixture'}},
             'basis': {'zh': {'level': 1, 'references': [{'source': 'gbt-13745', 'locator': '520'}]}},
-            'match': [{'source': 'gbt-13745', 'id': '520', 'rel': 'exactMatch'}],
+            'match': [{'registry': 'gbt-13745', 'item': '520', 'rel': 'exactMatch', 'basis': []}],
         }]})
         self.write('data/vocab/types.yaml', {'types': [{
             'id': 'explanation', 'scope': '理解原因',
-            'match': [{'source': 'diataxis', 'id': 'explanation', 'rel': 'exactMatch'}],
+            'match': [{'registry': 'diataxis', 'item': 'explanation', 'rel': 'exactMatch', 'basis': []}],
         }]})
         self.write('data/vocab/entities.yaml', {'entities': [
             {'id': 'gbt-13745', 'version': '2009'}, {'id': 'diataxis', 'version': '2026-08'},
         ]})
         self.write('data/vocab/sources.yaml', {'sources': [
-            {'id': key, 'entity': key, 'role': ['mapping']} for key in ['gbt-13745', 'diataxis']
+            {'id': key, 'entity': key, 'roles': [{'role': 'mapping', 'status': 'proposed', 'decision': None}]} for key in ['gbt-13745', 'diataxis']
         ]})
         self.write('data/audit/migrations/source-v1/match.yaml', {'rows': [
             {'identity': key, 'disposition': 'blocked_unread_material', 'blocks_cutover': True}
@@ -79,6 +79,25 @@ class SourceEvidenceTests(unittest.TestCase):
         self.assertTrue(item['missing_conditions'])
         for path, content in before.items():
             self.assertEqual(content, (self.root / path).read_bytes(), path)
+
+    def test_source_entity_is_resolved_through_registry(self):
+        data = yaml.safe_load((self.root / 'data/vocab/entities.yaml').read_text())
+        data['entities'][1]['id'] = 'diataxis-publication'
+        self.write('data/vocab/entities.yaml', data)
+        data = yaml.safe_load((self.root / 'data/vocab/sources.yaml').read_text())
+        data['sources'][1]['entity'] = 'diataxis-publication'
+        self.write('data/vocab/sources.yaml', data)
+        self.run_prepare()
+        self.assertEqual('diataxis-publication', self.report()['items'][1]['source_entity']['id'])
+        self.assertIn('diataxis:explanation', (self.output / 'evidence.md').read_text())
+
+    def test_current_legacy_mapping_is_rejected_without_publishing(self):
+        data = yaml.safe_load((self.root / 'data/vocab/types.yaml').read_text())
+        data['types'][0]['match'] = [{'source': 'diataxis', 'id': 'explanation', 'rel': 'exactMatch'}]
+        self.write('data/vocab/types.yaml', data)
+        with self.assertRaisesRegex(ValueError, 'explanation-diataxis match'):
+            self.run_prepare()
+        self.assertFalse(self.output.exists())
 
     def test_unchanged_inputs_reuse_extraction_but_do_not_approve(self):
         """Repeated work should reuse derived excerpts while leaving the decision unresolved."""

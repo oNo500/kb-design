@@ -4,6 +4,7 @@ import argparse
 import calendar
 import copy
 import json
+import re
 from datetime import date, timedelta
 from pathlib import Path
 from typing import Dict, List, Literal, NamedTuple, Optional, Sequence
@@ -85,11 +86,25 @@ class DecisionPatch(NamedTuple):
 
 def validate_references(root: Path,
                         references: Sequence[ReferenceUse]) -> List[Issue]:
-    entities = _load_source_entities(root / "data/vocab/entities.yaml")
-    uses = _load_source_uses(root / "data/vocab/sources.yaml")
-    accepted = _load_accepted_decision_ids(root / "docs/decisions")
+    return validate_reference_documents(
+        _load_yaml(root / "data/vocab/entities.yaml"),
+        _load_yaml(root / "data/vocab/sources.yaml"), references,
+        _load_accepted_decisions(root / "docs/decisions"),
+    )
+
+
+def validate_reference_documents(entities_document, uses_document, references,
+                                 accepted_decisions):
+    """Validate references against an already captured, normalized snapshot."""
+    entities = {row["id"]: row for row in entities_document.get("entities", [])
+                if isinstance(row, dict) and isinstance(row.get("id"), str)
+                and row.get("kind") in {"standard", "publication"}}
+    uses = {row["id"]: row for row in uses_document.get("sources", [])
+            if isinstance(row, dict) and isinstance(row.get("id"), str)}
+    accepted = accepted_decisions
     issues = []
-    for reference in references:
+    pending = list(references)
+    for reference in pending:
         if reference.kind not in ROLE_QUALIFICATIONS:
             issues.append(_issue(reference, "SOURCE_REFERENCE_KIND_INVALID"))
             continue
@@ -112,56 +127,115 @@ def validate_references(root: Path,
             continue
         role_name = ROLE_QUALIFICATIONS[reference.kind]
         role = next((row for row in source_use.get("roles", [])
-                     if row.get("role") == role_name), None)
+                     if isinstance(row, dict) and row.get("role") == role_name), None)
         role_code = ("SOURCE_EXTERNAL_GROUP_ROLE_NOT_APPROVED"
                      if reference.kind == "external_group" else "SOURCE_ROLE_NOT_APPROVED")
         if role is None or role.get("status") != "approved":
             issues.append(_issue(reference, role_code))
-        elif role.get("decision") not in accepted:
+        elif not role_is_authorized(accepted, source_use, role):
             issues.append(_issue(reference, "SOURCE_ROLE_DECISION_MISSING"))
+        entity = entities.get(source_use.get("entity"), {})
+        if entity.get("tier") == "archival":
+            issues.append(_issue(reference, role_code, "archival source cannot be registered for source uses"))
+        elif role_name == "structure" and role is not None and role.get("status") == "approved":
+            qualification = dependent_role_qualification_error(entity, source_use, accepted, "structure")
+            if qualification:
+                issues.append(_issue(reference, role_code, qualification))
         for index, basis in enumerate(reference.value["basis"]):
             nested = ReferenceUse(
                 "basis", reference.file, reference.record,
                 f"{reference.field_path}.basis[{index}]", basis,
             )
-            issues.extend(validate_references(root, [nested]))
-    return _sort_issues(issues)
+            pending.append(nested)
+    return _sort_issues(set(issues))
+
+
+def normalize_yaml_dates(value):
+    if isinstance(value, date):
+        return value.isoformat()
+    if isinstance(value, dict):
+        return {key: normalize_yaml_dates(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [normalize_yaml_dates(item) for item in value]
+    return value
 
 
 def _load_yaml(path: Path):
     if not path.exists():
         return {}
-    return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    return normalize_yaml_dates(yaml.safe_load(path.read_text(encoding="utf-8")) or {})
 
 
 def _load_source_entities(path: Path):
     document = _load_yaml(path)
     return {
         row["id"]: row for row in document.get("entities", [])
-        if row.get("kind") in {"standard", "publication"}
+        if isinstance(row, dict) and isinstance(row.get("id"), str) and row.get("kind") in {"standard", "publication"}
     }
 
 
 def _load_source_uses(path: Path):
-    return {row["id"]: row for row in _load_yaml(path).get("sources", [])}
+    return {row["id"]: row for row in _load_yaml(path).get("sources", [])
+            if isinstance(row, dict) and isinstance(row.get("id"), str)}
 
 
 def _front_matter(path: Path):
     text = path.read_text(encoding="utf-8")
     if not text.startswith("---\n") or "\n---\n" not in text[4:]:
         return None
-    return yaml.safe_load(text.split("---\n", 2)[1])
+    return normalize_yaml_dates(yaml.safe_load(text.split("---\n", 2)[1]))
+
+
+def _load_accepted_decisions(directory: Path):
+    return accepted_decisions_from_documents(
+        [_front_matter(path) for path in sorted(directory.glob("source-*.md"))]
+    )
+
+
+def accepted_decisions_from_documents(frontmatters):
+    """Select schema-valid, unique, effective decisions from captured metadata."""
+    from jsonschema import Draft202012Validator, FormatChecker
+    validator = Draft202012Validator(build_schema_documents()["decision.schema.json"],
+                                     format_checker=FormatChecker())
+    documents = {}
+    for value in frontmatters:
+        front = normalize_yaml_dates(value)
+        if isinstance(front, dict) and front.get("status") == "accepted" and validator.is_valid(front):
+            documents.setdefault(front["id"], []).append(front)
+    accepted = {key: values[0] for key, values in documents.items() if len(values) == 1}
+    superseded = {key for front in accepted.values() for key in front.get("supersedes", [])}
+    return {key: value for key, value in accepted.items() if key not in superseded}
 
 
 def _load_accepted_decision_ids(directory: Path):
-    result = set()
-    if not directory.exists():
-        return result
-    for path in directory.glob("source-*.md"):
-        front = _front_matter(path)
-        if front and front.get("status") == "accepted" and front.get("id"):
-            result.add(front["id"])
-    return result
+    return set(_load_accepted_decisions(directory))
+
+
+def decision_authorizes(decisions, decision_id, identity, field, value):
+    front = decisions.get(decision_id, {})
+    return any(patch.get("identity") == identity and patch.get("field") == field
+               and patch.get("value") == value
+               for answer in front.get("answers", []) for patch in answer.get("patches", []))
+
+
+def role_is_authorized(decisions, source_use, role):
+    return decision_authorizes(decisions, role.get("decision"),
+                               f"sources/{source_use['id']}", "entity", source_use.get("entity")) and decision_authorizes(decisions, role.get("decision"),
+                               f"sources/{source_use['id']}/roles/{role['role']}",
+                               "status", role.get("status"))
+
+
+def dependent_role_qualification_error(entity, source_use, accepted, role_name):
+    mapping = next((role for role in source_use.get("roles", [])
+                    if isinstance(role, dict) and role.get("role") == "mapping"), None)
+    if not mapping or mapping.get("status") != "approved" or not role_is_authorized(accepted, source_use, mapping):
+        return f"approved {role_name} requires an independently authorized approved mapping role"
+    if role_name == "group":
+        return None
+    tier = entity.get("tier")
+    if tier != "de-jure" and not (tier == "de-facto" and isinstance(entity.get("version"), str) and entity["version"].strip()):
+        return "structure requires de-jure or versioned de-facto source"
+    return None
 
 
 def _issue(reference: ReferenceUse, code: str, message: str = ""):
@@ -177,6 +251,22 @@ def _sort_issues(issues):
 def _validate_reference_value(kind, value):
     if not isinstance(value, dict):
         return ["SOURCE_REFERENCE_VALUE_INVALID"]
+    allowed = {"entity", "locator", "checked"} if kind == "basis" else (
+        {"registry", "item", "rel", "basis"} if kind == "match"
+        else {"registry", "item", "locator", "basis"}
+    )
+    if set(value) - allowed:
+        return ["SOURCE_REFERENCE_VALUE_INVALID"]
+    if any(key in value and not isinstance(value[key], str)
+           for key in ("entity", "registry", "item", "locator", "rel")):
+        return ["SOURCE_REFERENCE_VALUE_INVALID"]
+    if "basis" in value and not isinstance(value["basis"], list):
+        return ["SOURCE_REFERENCE_VALUE_INVALID"]
+    if "checked" in value:
+        try:
+            date.fromisoformat(value["checked"])
+        except (TypeError, ValueError):
+            return ["SOURCE_REFERENCE_VALUE_INVALID"]
     if kind == "basis":
         if not value.get("locator"):
             return ["SOURCE_BASIS_LOCATOR_MISSING"]
@@ -201,7 +291,9 @@ def _validate_reference_value(kind, value):
 
 
 def _content_is_mutable(entity):
-    return not (entity.get("fixed_sha256") and entity.get("version"))
+    return not (isinstance(entity.get("fixed_sha256"), str)
+                and re.fullmatch(r"[0-9a-f]{64}", entity["fixed_sha256"])
+                and isinstance(entity.get("version"), str) and entity["version"].strip())
 
 
 def add_calendar_months(value: date, months: int) -> date:
@@ -405,6 +497,34 @@ MATCH = _closed(
 )
 
 
+SUBJECT_BASIS = _closed(("values", "references"), {
+    "values": {**_array(ID, 1), "uniqueItems": True}, "references": _array(BASIS_ITEM, 1),
+})
+PROJECT_ASSERTION = _closed(("disposition", "original", "migration"), {
+    "disposition": {"const": "project_assertion"}, "original": {"const": "self"},
+    "migration": NONEMPTY,
+})
+SUBJECT_ASSERTION = copy.deepcopy(PROJECT_ASSERTION)
+SUBJECT_ASSERTION["required"].append("values")
+SUBJECT_ASSERTION["properties"]["values"] = {**_array(ID, 1), "uniqueItems": True}
+ASSERTIONS = _closed((), {"subjects": _array(SUBJECT_ASSERTION, 1), "source": PROJECT_ASSERTION})
+ASSERTIONS["minProperties"] = 1
+LOCAL_ANALYSIS = _closed(("legacy_source_label", "state", "decision"), {
+    "legacy_source_label": NONEMPTY, "state": {"const": "isolated"}, "decision": ID,
+})
+LOCAL_ANALYSIS_POLICY = {"form_arrays": "isolated-local-analysis", "source_reference": False,
+                         "members_unchanged": True}
+LANGUAGE_BASIS = {"oneOf": [
+    _closed(("legacy",), {"legacy": NONEMPTY}),
+    _closed(("level", "references"), {"level": {"enum": [1, 2, 3, 4]},
+        "references": _array(_closed(("source", "locator"), {"source": ID, "locator": NONEMPTY}), 1)}),
+    _closed(("level", "model"), {"level": {"const": 5}, "model": _closed(
+        ("name", "date", "rationale", "approval"),
+        {"name": NONEMPTY, "date": DATE, "rationale": NONEMPTY, "approval": NONEMPTY})}),
+    _closed(("level", "reason"), {"level": {"const": 6}, "reason": NONEMPTY}),
+]}
+
+
 def _base_schema(name, definitions=None):
     value = {"$schema": META, "$id": SCHEMA_IDS[name]}
     if definitions:
@@ -446,19 +566,42 @@ def build_schema_documents() -> Dict[str, object]:
         },
     )
     entity = _closed(
-        ("id", "label", "kind"),
+        ("id", "label", "kind", "subjects", "status", "added"),
         {
             "id": ID,
             "label": {"type": "object", "minProperties": 1,
                       "additionalProperties": {"type": "string"}},
-            "kind": NONEMPTY,
+            "kind": {"enum": ["software", "programming-language", "organization", "standard", "publication", "person", "large-language-model"]},
             "version": {"oneOf": [NONEMPTY, {"type": "null"}]},
             "urls": _array(url, 1),
-            "status": {"enum": ["current", "superseded", "withdrawn"]},
-            "basis": {"type": "object", "minProperties": 1,
-                      "additionalProperties": _array(BASIS_ITEM, 1)},
+            "status": {"enum": ["candidate", "active", "deprecated"]},
+            "source_status": {"enum": ["current", "superseded", "withdrawn"]},
+            "subjects": {**_array(ID), "uniqueItems": True},
+            "added": DATE,
+            "tier": {"enum": ["de-jure", "de-facto", "vendor", "archival"]},
+            "scope": NONEMPTY, "form": NONEMPTY, "vendor": ID,
+            "creator": {**_array(ID), "uniqueItems": True},
+            "alt": {"type": "object", "additionalProperties": _array(NONEMPTY)},
+            "hidden": {"type": "object", "additionalProperties": _array(NONEMPTY)},
+            "fixed_sha256": HASH,
+            "match": _array(MATCH),
+            "assertions": ASSERTIONS,
+            "basis": _closed((), {
+                **{field: _array(BASIS_ITEM, 1) for field in (
+                    "label", "kind", "version", "urls", "tier", "scope", "form",
+                    "vendor", "creator", "source_status", "replaced_by", "fixed_sha256", "watch")},
+                "subjects": _array(SUBJECT_BASIS, 1),
+                "zh": LANGUAGE_BASIS, "en": LANGUAGE_BASIS,
+            }),
             "review": review,
-            "watch": _array({"type": "object"}),
+            "watch": _array(_closed(("locator", "signals", "cadence_months"), {
+                "locator": {"type": "string", "format": "uri"},
+                "signals": {**_array({"enum": ["availability", "redirect", "version", "revision", "replacement", "withdrawal"]}, 1), "uniqueItems": True},
+                "cadence_months": _closed(("availability", "redirect", "content"), {
+                    "availability": {"const": 1}, "redirect": {"const": 1},
+                    "content": {"enum": [1, 3, 6, 12]},
+                }),
+            })),
             "replaced_by": {"oneOf": [ID, {"type": "null"}]},
             "history": _array(history, 1),
         },
@@ -467,7 +610,7 @@ def build_schema_documents() -> Dict[str, object]:
         "if": {"properties": {"kind": {"enum": ["standard", "publication"]}},
                "required": ["kind"]},
         "then": {"required": [
-            "version", "urls", "status", "basis", "review", "watch", "replaced_by", "history",
+            "version", "urls", "tier", "basis", "review", "watch", "replaced_by", "history",
         ]},
     }]
     entities = _base_schema("source-entities.schema.json", {"basisItem": BASIS_ITEM})
@@ -781,55 +924,58 @@ def _has_exact_keys(value, required) -> bool:
     return isinstance(value, dict) and required <= set(value)
 
 
-def _walk_reference_uses(file: Path, value: object, path=(),
-                         record: str = "document"):
-    if isinstance(value, dict):
-        current_record = record
+def _walk_reference_uses(file: Path, value: object, path=(), record: str = "document"):
+    """Discover constrained positions first; malformed values must not disappear.
+
+    Historical before/after payloads and project assertions are audit data.
+    Language evidence has its separately adopted validator and index visitor.
+    """
+    if isinstance(value, list):
+        for index, child in enumerate(value):
+            yield from _walk_reference_uses(file, child, path + (index,), record)
+    elif isinstance(value, dict):
         if isinstance(value.get("id"), str):
             collection = ".".join(str(part) for part in path[:-1]) or "root"
-            current_record = f"{collection}:{value['id']}"
+            record = f"{collection}:{value['id']}"
+        def ref(kind, child_path, item):
+            return ReferenceUse(kind, str(file), record, _format_reference_path(child_path), item)
         for key, nested in value.items():
             child = path + (key,)
-            if key == "basis" and isinstance(nested, list):
-                for index, item in enumerate(nested):
-                    if _has_exact_keys(item, {"entity", "locator"}):
-                        yield ReferenceUse(
-                            "basis", str(file), current_record,
-                            _format_reference_path(child + (index,)), item,
-                        )
-            elif key == "basis" and isinstance(nested, dict):
-                for basis_key, values in nested.items():
-                    if not isinstance(values, list):
+            if key in {"assertions", "local_analysis", "before", "after"}:
+                continue
+            if key in {"source", "external_group"}:
+                yield ref(key, child, nested)
+                if isinstance(nested, dict) and "basis" in nested:
+                    yield from _walk_reference_uses(file, {"basis": nested["basis"]}, child, record)
+            elif key == "match":
+                if not isinstance(nested, list):
+                    yield ref("match", child, nested)
+                else:
+                    for index, item in enumerate(nested):
+                        yield ref("match", child + (index,), item)
+                        if isinstance(item, dict) and "basis" in item:
+                            yield from _walk_reference_uses(file, {"basis": item["basis"]}, child + (index,), record)
+            elif key == "basis":
+                fields = nested.items() if isinstance(nested, dict) else [(None, nested)]
+                for field, items in fields:
+                    base = child if field is None else child + (field,)
+                    if field in {"zh", "en"}:
                         continue
-                    for index, item in enumerate(values):
-                        if _has_exact_keys(item, {"entity", "locator"}):
-                            yield ReferenceUse(
-                                "basis", str(file), current_record,
-                                _format_reference_path(child + (basis_key, index)), item,
-                            )
-            elif key == "source" and _has_exact_keys(
-                    nested, {"registry", "item", "locator", "basis"}):
-                yield ReferenceUse(
-                    "source", str(file), current_record,
-                    _format_reference_path(child), nested,
-                )
-            elif key == "match" and isinstance(nested, list):
-                for index, item in enumerate(nested):
-                    if _has_exact_keys(item, {"registry", "item", "rel", "basis"}):
-                        yield ReferenceUse(
-                            "match", str(file), current_record,
-                            _format_reference_path(child + (index,)), item,
-                        )
-            elif key == "external_group" and _has_exact_keys(
-                    nested, {"registry", "item", "locator", "basis"}):
-                yield ReferenceUse(
-                    "external_group", str(file), current_record,
-                    _format_reference_path(child), nested,
-                )
-            yield from _walk_reference_uses(file, nested, child, current_record)
-    elif isinstance(value, list):
-        for index, nested in enumerate(value):
-            yield from _walk_reference_uses(file, nested, path + (index,), record)
+                    if field == "subjects" and isinstance(items, list):
+                        for index, group in enumerate(items):
+                            group_path = base + (index,)
+                            if not isinstance(group, dict) or set(group) != {"values", "references"} or not isinstance(group.get("references"), list) or not group["references"]:
+                                yield ref("basis", group_path, group)
+                            else:
+                                for ri, reference in enumerate(group["references"]):
+                                    yield ref("basis", group_path + ("references", ri), reference)
+                    elif isinstance(items, list):
+                        for index, item in enumerate(items):
+                            yield ref("basis", base + (index,), item)
+                    else:
+                        yield ref("basis", base, items)
+            else:
+                yield from _walk_reference_uses(file, nested, child, record)
 
 
 def _schema_issues(root: Path, relative: str, schema_name: str):
@@ -851,69 +997,328 @@ def _history_prefix(previous, current):
     return current[:len(previous)] == previous
 
 
-def validate_repository(root: Path, previous_root: Optional[Path] = None,
-                        allow_legacy: bool = False) -> List[Issue]:
+def _entity_semantic_issues(topics_doc, entities_doc, uses_doc, obligations_doc, accepted):
     issues = []
-    for relative, schema_name in (
-        ("data/vocab/entities.yaml", "source-entities.schema.json"),
-        ("data/vocab/sources.yaml", "source-uses.schema.json"),
-        ("data/vocab/source-obligations.yaml", "source-obligations.schema.json"),
-    ):
-        issues.extend(_schema_issues(root, relative, schema_name))
+    records = entities_doc.get("entities", [])
+    if not isinstance(records, list):
+        return issues
+    records = [row for row in records if isinstance(row, dict)]
+    entities = {row.get("id"): row for row in records if isinstance(row.get("id"), str)}
+    topics = {row.get("id") for row in topics_doc.get("concepts", []) if isinstance(row, dict)}
+    obligations = {row.get("id") for row in obligations_doc.get("obligations", []) if isinstance(row, dict)}
+    def issue(row, field, message, code="SOURCE_SCHEMA_INVALID"):
+        issues.append(Issue(code, "data/vocab/entities.yaml", str(row.get("id", "")), field, message))
+    if len(entities) != len(records):
+        issues.append(Issue("SOURCE_STABLE_ID_CHANGED", "data/vocab/entities.yaml", "document", "entities", "entity IDs must be unique"))
+    for row in records:
+        basis = row.get("basis") if isinstance(row.get("basis"), dict) else {}
+        assertions = row.get("assertions") if isinstance(row.get("assertions"), dict) else {}
+        subjects = row.get("subjects", [])
+        subjects = subjects if isinstance(subjects, list) and all(isinstance(v, str) for v in subjects) else []
+        covered = set()
+        for field, groups in (("basis.subjects", basis.get("subjects", [])),
+                              ("assertions.subjects", assertions.get("subjects", []))):
+            if not isinstance(groups, list):
+                continue
+            for group in groups:
+                if not isinstance(group, dict) or not isinstance(group.get("values"), list):
+                    continue
+                values = group["values"]
+                if not all(isinstance(value, str) for value in values):
+                    continue
+                covered.update(values)
+                if not set(values) <= set(subjects):
+                    issue(row, field, "evidence values must be a subset of subjects")
+        if set(subjects) != covered:
+            issue(row, "basis.subjects", "evidence and assertions must cover every subject value")
+        for subject in subjects:
+            if subject not in topics:
+                issue(row, "subjects", f"unknown topic {subject}")
+        if assertions.get("subjects") and row.get("status") == "active":
+            issue(row, "assertions.subjects", "project self judgment cannot have active status")
+        for field in ("vendor", "replaced_by"):
+            target = row.get(field)
+            if isinstance(target, str) and target not in entities:
+                issue(row, field, f"unknown entity {target}", "SOURCE_ENTITY_MISSING")
+        for target in row.get("creator", []) if isinstance(row.get("creator", []), list) else []:
+            if isinstance(target, str) and target not in entities:
+                issue(row, "creator", f"unknown entity {target}", "SOURCE_ENTITY_MISSING")
+        urls = row.get("urls")
+        if isinstance(urls, list) and sum(isinstance(url, dict) and url.get("primary") is True for url in urls) != 1:
+            issue(row, "urls", "exactly one primary URL is required")
+        if row.get("fixed_sha256") and not row.get("version"):
+            issue(row, "fixed_sha256", "fixed content requires an identified version")
+        if row.get("kind") not in {"standard", "publication"}:
+            if "source_status" in row:
+                issue(row, "source_status", "external source status applies only to source entities")
+            continue
+        for field in ("version", "source_status", "replaced_by"):
+            if row.get(field) is None:
+                continue
+            if not basis.get(field):
+                issue(row, "basis." + field, f"publisher evidence is required for {field}")
+            decisions = [decision for event in row.get("history", []) if isinstance(event, dict)
+                         for decision in event.get("decisions", [])]
+            if not any(decision_authorizes(accepted, decision, f"entities/{row['id']}", field, row[field]) for decision in decisions):
+                issue(row, field, "accepted decision must adopt this exact entity field and value", "SOURCE_DECISION_MISSING")
+        target = row.get("replaced_by")
+        if target in entities and entities[target].get("kind") not in {"standard", "publication"}:
+            issue(row, "replaced_by", "source replacement must target a source entity")
+        review = row.get("review")
+        if isinstance(review, dict):
+            expected = {"de-jure": 24, "de-facto": 12, "vendor": 6, "archival": None}.get(row.get("tier"))
+            if review.get("interval_months") != expected:
+                issue(row, "review.interval_months", "review interval must follow tier policy")
+            checked = review.get("checked")
+            try:
+                due = compute_next_due(date.fromisoformat(checked), expected) if checked else None
+                if review.get("next_due") != (due.isoformat() if due else None):
+                    issue(row, "review.next_due", "next_due must follow checked and calendar interval")
+            except (TypeError, ValueError):
+                pass  # Shape/date validation reports this independently.
+            for obligation in review.get("obligations", []):
+                if obligation not in obligations:
+                    issue(row, "review.obligations", "referenced obligation is missing; no lifecycle is implied")
+        for watch in row.get("watch", []) if isinstance(row.get("watch", []), list) else []:
+            if isinstance(watch, dict) and isinstance(watch.get("cadence_months"), dict):
+                content = {"de-jure": 1, "de-facto": 3, "vendor": 6, "archival": 12}.get(row.get("tier"))
+                if watch["cadence_months"].get("content") != content:
+                    issue(row, "watch", "watch content cadence must follow tier policy")
+    for start in entities:
+        seen = set()
+        current = start
+        while isinstance(current, str) and current in entities:
+            if current in seen:
+                issue(entities[start], "replaced_by", "replacement cycle")
+                break
+            seen.add(current)
+            current = entities[current].get("replaced_by")
+    uses = uses_doc.get("sources", [])
+    seen_ids, seen_entities = set(), set()
+    for use in uses if isinstance(uses, list) else []:
+        if not isinstance(use, dict):
+            continue
+        uid, entity = use.get("id"), use.get("entity")
+        if not isinstance(uid, str) or not isinstance(entity, str):
+            continue
+        if uid in seen_ids or entity in seen_entities:
+            issues.append(Issue("SOURCE_SCHEMA_INVALID", "data/vocab/sources.yaml", uid, "id", "use IDs and entity registrations must be unique"))
+        seen_ids.add(uid); seen_entities.add(entity)
+        if entity not in entities or entities[entity].get("kind") not in {"standard", "publication"}:
+            issues.append(Issue("SOURCE_ENTITY_MISSING", "data/vocab/sources.yaml", uid, "entity", "use must reference a source entity"))
+        source_entity = entities.get(entity, {})
+        if source_entity.get("tier") == "archival":
+            issues.append(Issue("SOURCE_SCHEMA_INVALID", "data/vocab/sources.yaml", uid, "entity",
+                                "archival source cannot be registered for source uses"))
+        for role in use.get("roles", []):
+            if isinstance(role, dict) and role.get("role") in {"structure", "group"} and role.get("status") == "approved":
+                qualification = dependent_role_qualification_error(source_entity, use, accepted, role["role"])
+                if qualification:
+                    issues.append(Issue("SOURCE_ROLE_NOT_APPROVED", "data/vocab/sources.yaml", uid, "roles", qualification))
+        names = [role.get("role") for role in use.get("roles", []) if isinstance(role, dict)]
+        if len(names) != len(set(names)):
+            issues.append(Issue("SOURCE_SCHEMA_INVALID", "data/vocab/sources.yaml", uid, "roles", "roles must be unique"))
+    return issues
 
-    entities_doc = _load_yaml(root / "data/vocab/entities.yaml")
-    uses_doc = _load_yaml(root / "data/vocab/sources.yaml")
-    obligations_doc = _load_yaml(root / "data/vocab/source-obligations.yaml")
-    accepted = _load_accepted_decision_ids(root / "docs/decisions")
+
+def _record_evidence_issues(relative, document, sources, adoptions, accepted):
+    from jsonschema import Draft202012Validator, FormatChecker
+    from kb_core.label_basis import validate_basis
+    assertion_validator = Draft202012Validator(ASSERTIONS, format_checker=FormatChecker())
+    issues = []
+    if not isinstance(document, dict):
+        return issues
+    for collection, records in document.items():
+        if not isinstance(records, list):
+            continue
+        for record in records:
+            if not isinstance(record, dict):
+                continue
+            identity = str(record.get("id", "document"))
+            if "local_analysis" in record:
+                local = record["local_analysis"]
+                validator = Draft202012Validator(LOCAL_ANALYSIS)
+                messages = [error.message for error in validator.iter_errors(local)]
+                if str(relative) != "data/vocab/forms.yaml" or collection != "arrays":
+                    messages.append("Q16 isolation applies only to forms arrays")
+                if "source" in record or "external_group" in record:
+                    messages.append("isolated display metadata must not retain an external source or group")
+                if isinstance(local, dict) and not decision_authorizes(
+                        accepted, local.get("decision"), "@control:local-analysis",
+                        "local_analysis_policy", LOCAL_ANALYSIS_POLICY):
+                    messages.append("effective Q16 isolation policy decision required")
+                issues.extend(Issue("SOURCE_SCHEMA_INVALID", str(relative), identity,
+                                    "local_analysis", message) for message in messages)
+            assertions = record.get("assertions")
+            if assertions is not None:
+                for error in assertion_validator.iter_errors(assertions):
+                    issues.append(Issue("SOURCE_SCHEMA_INVALID", str(relative), identity,
+                                        "assertions", error.message))
+                if "source" in record and isinstance(assertions, dict) and "source" in assertions:
+                    issues.append(Issue("SOURCE_SCHEMA_INVALID", str(relative), identity,
+                                        "assertions.source", "external derivation and local source assertion are mutually exclusive"))
+            basis = record.get("basis")
+            if not isinstance(basis, dict):
+                continue
+            for language in ("zh", "en"):
+                if language not in basis:
+                    continue
+                value = basis[language]
+                if not isinstance(value, dict):
+                    messages = ["language evidence must use the adopted structured contract"]
+                else:
+                    messages = validate_basis(value, (record.get("label") or {}).get(language),
+                                              record, language, sources, adoptions,
+                                              collection="topics" if collection == "concepts" else collection)
+                issues.extend(Issue("SOURCE_SCHEMA_INVALID", str(relative), identity,
+                                    "basis." + language, message) for message in messages)
+    return issues
+
+
+def validate_source_documents(documents, accepted_decisions, obligations_document=None,
+                              adoptions=None) -> List[Issue]:
+    """Validate a captured vocabulary snapshot without reading its backing files.
+
+    ``documents`` maps vocabulary names (entities, sources, topics, types,
+    genres, forms; additional consumers are allowed) to parsed root documents.
+    Decisions must already be schema-validated and effective. Missing obligations
+    do not activate a lifecycle; actual unresolved references are still errors.
+    """
+    from jsonschema import Draft202012Validator, FormatChecker
+    documents = normalize_yaml_dates(documents)
+    accepted = normalize_yaml_dates(accepted_decisions)
+    entities_doc = documents.get("entities", {})
+    uses_doc = documents.get("sources", {})
+    obligations_doc = normalize_yaml_dates(obligations_document) if obligations_document is not None else {}
+    issues = []
+    schemas = build_schema_documents()
+    for name in ("topics", "types", "genres", "forms"):
+        if name in documents and (not isinstance(documents[name], dict)
+                                  or type(documents[name].get("schema_version")) is not int
+                                  or documents[name]["schema_version"] != 2):
+            issues.append(Issue("SOURCE_SCHEMA_INVALID", f"data/vocab/{name}.yaml", "document",
+                                "schema_version", "present vocabulary must declare schema_version: 2"))
+    cases = [("entities", entities_doc, "source-entities.schema.json"),
+             ("sources", uses_doc, "source-uses.schema.json")]
+    if obligations_document is not None:
+        cases.append(("source-obligations", obligations_doc, "source-obligations.schema.json"))
+    for name, document, schema_name in cases:
+        validator = Draft202012Validator(schemas[schema_name], format_checker=FormatChecker())
+        issues.extend(Issue("SOURCE_SCHEMA_INVALID", f"data/vocab/{name}.yaml", "document",
+                            ".".join(str(part) for part in error.path), error.message)
+                      for error in validator.iter_errors(document))
+    # Schema has already rejected these shapes; semantic passes only consume
+    # records whose containers can be traversed safely.
+    for document, key in ((entities_doc, "entities"), (uses_doc, "sources"),
+                          (obligations_doc, "obligations")):
+        if not isinstance(document, dict) or not isinstance(document.get(key, []), list):
+            return _sort_issues(issues)
+        for row in document.get(key, []):
+            if not isinstance(row, dict):
+                return _sort_issues(issues)
+            for field in ("roles", "watch", "history", "creator"):
+                if field in row and not isinstance(row[field], list):
+                    return _sort_issues(issues)
+            for field in ("basis", "review", "assertions"):
+                if field in row and not isinstance(row[field], dict):
+                    return _sort_issues(issues)
 
     for row in entities_doc.get("entities", []):
-        if row.get("temporary_unavailable") and row.get("status") == "withdrawn":
+        if row.get("temporary_unavailable") and row.get("source_status") == "withdrawn":
             issues.append(Issue(
                 "SOURCE_SCHEMA_INVALID", "data/vocab/entities.yaml", row.get("id", ""),
                 "status", "temporary unavailability cannot set withdrawn",
             ))
         for field in ("origin", "url"):
-            if field in row and not allow_legacy:
+            if field in row:
                 issues.append(Issue(
                     "SOURCE_LEGACY_FIELD", "data/vocab/entities.yaml", row.get("id", ""),
                     field, f"legacy field {field}",
                 ))
 
+    issues.extend(_entity_semantic_issues(documents.get("topics", {}), entities_doc, uses_doc, obligations_doc, accepted))
+
     for use in uses_doc.get("sources", []):
         for index, role in enumerate(use.get("roles", [])):
-            if role.get("status") in {"approved", "retired"} and role.get("decision") not in accepted:
+            if not isinstance(role, dict):
+                continue
+            if role.get("status") in {"approved", "retired"} and not role_is_authorized(accepted, use, role):
                 issues.append(Issue(
                     "SOURCE_ROLE_DECISION_MISSING", "data/vocab/sources.yaml", use.get("id", ""),
                     f"roles[{index}].decision", "accepted role decision required",
                 ))
 
-    for path in sorted((root / "data/vocab").glob("*.yaml")):
-        references = collect_reference_uses(
-            Path(path.relative_to(root)), _load_yaml(path)
-        )
-        issues.extend(validate_references(root, references))
+    uses = {row["id"]: row for row in uses_doc.get("sources", []) if isinstance(row.get("id"), str)}
+    for name, document in documents.items():
+        relative = Path(f"data/vocab/{name}.yaml")
+        issues.extend(_record_evidence_issues(relative, document, uses, adoptions, accepted))
+        references = collect_reference_uses(relative, document)
+        issues.extend(validate_reference_documents(entities_doc, uses_doc, references, accepted))
+    if obligations_document is not None:
+        references = collect_reference_uses(Path("data/vocab/source-obligations.yaml"), obligations_doc)
+        issues.extend(validate_reference_documents(entities_doc, uses_doc, references, accepted))
+    return _sort_issues(set(issues))
 
+
+def validate_repository(root: Path, previous_root: Optional[Path] = None) -> List[Issue]:
+    from kb_core.label_adoptions import load_adoptions
+    documents = {path.stem: _load_yaml(path) for path in sorted((root / "data/vocab").glob("*.yaml"))
+                 if path.stem != "source-obligations"}
+    obligation_path = root / "data/vocab/source-obligations.yaml"
+    obligations_doc = _load_yaml(obligation_path) if obligation_path.exists() else None
+    issues = validate_source_documents(documents, _load_accepted_decisions(root / "docs/decisions"),
+                                       obligations_doc, load_adoptions(root))
+    entities_doc = documents.get("entities", {})
+    uses_doc = documents.get("sources", {})
+    obligations_doc = obligations_doc or {}
+    if not isinstance(entities_doc, dict) or not isinstance(entities_doc.get("entities", []), list):
+        return issues
+    if any(not isinstance(row, dict) for row in entities_doc.get("entities", [])):
+        return issues
     if previous_root is not None:
+        old_forms = _load_yaml(previous_root / "data/vocab/forms.yaml")
+        current_forms = documents.get("forms", {})
+        old_arrays = {row["id"]: row for row in old_forms.get("arrays", [])}
+        for row in current_forms.get("arrays", []):
+            if "local_analysis" not in row:
+                continue
+            old = old_arrays.get(row.get("id"))
+            old_members = [form["id"] for form in old_forms.get("forms", []) if row["id"] in form.get("arrays", [])]
+            current_members = [form["id"] for form in current_forms.get("forms", []) if row["id"] in form.get("arrays", [])]
+            original = old.get("source") if old else None
+            if old and "local_analysis" in old:
+                original = old["local_analysis"].get("legacy_source_label")
+            if (not old or old.get("superordinate") != row.get("superordinate")
+                    or old.get("members") != row.get("members") or old_members != current_members
+                    or original != row["local_analysis"].get("legacy_source_label")):
+                issues.append(Issue("SOURCE_SCHEMA_INVALID", "data/vocab/forms.yaml", row.get("id", ""),
+                                    "local_analysis", "Q16 must preserve the original display string, parent and ordered members"))
         previous_entities = _load_yaml(previous_root / "data/vocab/entities.yaml").get("entities", [])
         current_entities = entities_doc.get("entities", [])
-        current_by_label = {
-            json.dumps(row.get("label"), ensure_ascii=False, sort_keys=True): row
-            for row in current_entities
-        }
+        current_by_id = {row["id"]: row for row in current_entities}
         for old in previous_entities:
-            current = current_by_label.get(json.dumps(
-                old.get("label"), ensure_ascii=False, sort_keys=True
-            ))
-            if current and current.get("id") != old.get("id"):
+            current = current_by_id.get(old.get("id"))
+            if current is None:
                 issues.append(Issue(
                     "SOURCE_STABLE_ID_CHANGED", "data/vocab/entities.yaml", old.get("id", ""),
-                    "id", f"changed to {current.get('id')}",
+                    "id", "previous stable ID is missing",
                 ))
             if current and not _history_prefix(old.get("history", []), current.get("history", [])):
                 issues.append(Issue(
                     "SOURCE_HISTORY_NOT_APPEND_ONLY", "data/vocab/entities.yaml", old.get("id", ""),
                     "history", "history must retain the previous prefix",
                 ))
+
+        previous_uses = _load_source_uses(previous_root / "data/vocab/sources.yaml")
+        current_uses = _load_source_uses(root / "data/vocab/sources.yaml")
+        for uid, old in previous_uses.items():
+            current = current_uses.get(uid)
+            if current is None or current.get("entity") != old.get("entity"):
+                issues.append(Issue("SOURCE_STABLE_ID_CHANGED", "data/vocab/sources.yaml", uid,
+                                    "entity", "previous registry identity or its source entity changed"))
+            if current and not _history_prefix(old.get("history", []), current.get("history", [])):
+                issues.append(Issue("SOURCE_HISTORY_NOT_APPEND_ONLY", "data/vocab/sources.yaml", uid,
+                                    "history", "history must retain the previous prefix"))
 
         previous_obligations = {
             row["id"]: row for row in _load_yaml(

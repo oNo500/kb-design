@@ -21,7 +21,11 @@ def load_adoptions(root: Path) -> dict:
     path = root / "data/inputs/topics/label-adoptions.json"
     if not path.exists():
         return {}
-    document = json.loads(path.read_text(encoding="utf-8"))
+    return validate_adoptions(json.loads(path.read_text(encoding="utf-8")))
+
+
+def validate_adoptions(document: dict) -> dict:
+    """Validate an already captured adoption document without filesystem reads."""
     if not isinstance(document, dict) or not isinstance(document.get("records"), dict):
         raise ValueError("label adoptions must contain a records mapping")
     if document.get("authorization") != SUPPORTED_AUTHORIZATION:

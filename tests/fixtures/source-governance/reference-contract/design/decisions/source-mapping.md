@@ -8,9 +8,17 @@ level: L2
 scope: fixture
 supersedes: []
 answers:
-  - question: Q11
-    resolution: replacement
-    patches:
-      - {identity: mapping-only, field: new_status, value: approved}
+- question: Q11
+  resolution: replacement
+  patches:
+  - identity: mapping-only
+    field: new_status
+    value: approved
+  - identity: sources/mapping-only/roles/mapping
+    field: status
+    value: approved
+  - identity: sources/mapping-only
+    field: entity
+    value: cs2023
 ---
-# 映射决定
+# 合成决定

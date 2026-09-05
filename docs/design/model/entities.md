@@ -1,10 +1,10 @@
-# 命名实体词表设计
+# 命名实体词表
 
 `data/vocab/entities.yaml` 是本库的名称规范表（name authority list），收软件产品、编程语言、组织、标准和文献等个体。主题词表管理概念，例如“AI 编程助手”和“关系型数据库”；命名实体词表管理个体，例如 Claude Code、PostgreSQL、Anthropic、ISO 25964-1:2011 和 Cockburn 2005 年的博文。
 
 ISO 25964-2 §23 把名称规范表定义为为一致命名特定实体而建立的受控词表；实体是唯一的个体，不与主题概念建立等价映射。理论见[受控词表](../../concepts/controlled-vocabulary.md)和[词表映射](../../concepts/vocabulary-mapping.md)。
 
-正式 `data/vocab/entities.yaml` 仍是现行旧形状。来源实体的新模式和维护接口已经实现，但尚未应用到正式数据；来源治理草案仍未生效。
+本文采用已采纳的[来源字段合同](../../decisions/source-v2-field-contract.md)。正式 `data/vocab/entities.yaml` 尚未完成来源 v2 迁移；下文的新格式合同不表示具体事实、用途角色或正式切换已经获准。严格工具只接受新格式，旧数据由 Git 与迁移审计保留，不提供兼容读取。
 
 ## 对象分工
 
@@ -20,28 +20,28 @@ ISO 25964-2 §23 把名称规范表定义为为一致命名特定实体而建立
 
 概念与个体混在一棵树中，会让稳定结构随易变对象移动。一个产品还可能关联多个主题；`subjects` 的多值关系表达这种挂接。
 
-## 现行记录
+## 实体记录
 
-一般实体记录当前以 `id`、`label`、`kind`、`subjects`、`status` 和 `added` 为共同字段，并按对象需要保存 `alt`、`vendor`、`creator`、`form`、`scope`、`basis`、`match` 或 `replaced_by`。现行数据形状由正式 YAML 和现行校验链决定，本次同步不增加、删除或改名字段。
+实体共同字段为 `id`、`label`、`kind`、`subjects`、`status` 和 `added`。`status` 继续表示项目记录状态，不能被来源外部状态覆盖。`id` 保持稳定；名称变化不改变身份。一般实体与来源实体共用同一实体文档，schema 对两者的字段均显式约束。
 
-正式数据中的 Claude Code 记录如下。
+| 字段 | 表示与条件 |
+|---|---|
+| `label`、`alt`、`hidden` | 按语言保存名称与可选别名；不因迁移取得新的 designation 准入 |
+| `subjects` | 无重复的主题 ID 列表，每个值均有归属依据或明确项目判断 |
+| `scope`、`form` | 保留范围与已登记形式，不从缺失证据推导新类别 |
+| `vendor`、`creator` | 分别为实体 ID 和实体 ID 列表；目标可以是一般实体，不限于来源 |
+| `urls` | role、url、primary 条目；一般实体官网不因登记地址取得来源身份 |
+| `match` | registry、item、rel、basis；具体映射与用途资格分别核对 |
+| `replaced_by`、`history` | 保留替代指向和只追加历史；删除或改身份仍受决定约束 |
+| `added` | 原项目添加日期，不改为迁移日期 |
 
-```yaml
-- id: claude-code
-  label: { zh: Claude Code, en: Claude Code }
-  kind: software
-  form: command-line interface
-  vendor: anthropic
-  subjects: [artificial-intelligence, tools-and-environments]
-  basis:
-    subjects: cs2023:SE-Tools#7
-  scope: Anthropic 的命令行编程智能体；不含 Claude 模型本身
-  match: [{ source: wikidata, id: Q138457287, rel: exactMatch }]
-  status: active
-  added: 2026-08-23
-```
+### 归属依据
 
-人工赋值字段继续按[维护](../governance/maintenance.md)的现行断言规则记录依据。designation 的形式依据、概念对应依据和具体断言依据互不替代；本次同步不改变这三道门禁。
+外部 `basis.subjects` 是条目列表，每项为 `values` 与 `references`。values 明确列出受到支持的 subjects；references 是非空的严格依据列表，每项包含 entity、locator，以及按可变性要求的 checked。同一材料支持多个值时可以共用一组 values，但不得从记录级旧字符串自动推导逐值支持范围。
+
+原 `self` 判断保存在 `assertions.subjects`，每项包含 values、`disposition: project_assertion`、`original: self` 和 migration 审计定位。它保存项目判断，不能充当外部依据；具有这类归属判断的实体不得为 active。basis 与 assertions 的 values 合集必须覆盖 subjects，且不能包含不属于该记录的主题。
+
+紧凑引用只在核对材料、定位和支持范围后转为严格依据。未核对原值保留在迁移审计，不能装入 assertions 冒充已处置的项目判断，也不能清空依据使正式切换通过。人工判断、designation 的形式依据和概念对应依据分别按[维护](../governance/maintenance.md)与[治理](../governance/governance.md)处理。
 
 ### 类别
 
@@ -63,11 +63,17 @@ ISO 25964-2 §23 把名称规范表定义为为一致命名特定实体而建立
 
 ### 来源记录
 
-`standard` 和 `publication` 同时承担来源实体身份。正式记录当前仍保存 `id`、名称、类别、`tier`、版本、单个 `url`、核对日期、可选的标量 `watch`、主题关系、现行 `status` 和添加日期。来源在实体表只登记一次；[来源名称规范表](sources-registry.md)以 `entity` 指向它，只保存现行用途。
+`standard` 和 `publication` 承担来源实体身份，来源用途以[用途记录](sources-registry.md)的 entity 指向它。来源实体还必须有 tier、version、urls、basis、review、watch、replaced_by 和 history。source_status 可省略；[来源数据批次](../../decisions/source-data-batch.md)取代原字段合同的外部状态必填条件。必填结构不授权填写默认事实。
 
-来源身份、用途资格和具体关系彼此独立。实体记录存在，不表示它具有任何未登记用途；用途记录存在，也不表示某个具体断言、实际派生或概念映射成立。
+source_status 已填写时只取 current、superseded、withdrawn，表示发布方体系中的外部状态，必须有发布者依据与精确字段采纳；原项目 status 保留。省略只表示“外部状态未核实”，不是 current、不是“不适用”，不新增 unknown。不能删除已有合格结论逃避核验；确实依赖外部现行状态的操作在缺值时仍阻断。暂时不可访问不等于 withdrawn，一般实体不能填写 source_status。
 
-`publication` 另以 `creator` 指向一个或多个 `person` 或 `organization` 实体。`standard` 的 `version` 保存所引版本，`checked` 保存上次核对日期；`watch` 对 `de-jure` 必填，现行值是新版探测页面。单个 `url` 和标量 `watch` 都是正式旧形状，不等于后置结构化地址或真实联网探测已经可用。
+version 必须有该键，可以为非空版本字符串或 null。null 只表示“未登记可核实版本”，不声称发布者没有版本。未经核实的旧 rolling、月份或其他版本值留在 history.before；不得用抓取日期制造版本。填写的版本值仍须对应材料与采纳范围，非空替代关系另有依据。缺外部状态不自动否定已核具体材料，但逐条引用、用途资格和关系采纳均不能省略。无版本的 de-facto 仍不能取得 structure 资格。
+
+urls 使用 canonical、landing、doi、full_text、status、mirror、archive 七种地址角色，恰好一个 primary。旧 url 的角色须明确判断。publication 的 creator 指向作者或组织；版本与真实固定内容哈希 fixed_sha256 共同确定内容时，引用依据才可按规则省略 checked。
+
+review 保存 checked、next_due、interval_months、grace_days、obligations。旧顶层 checked 保存在迁移 history.before，只有核对对象与范围得到确认后才能成为 review.checked；逐字段依据的 checked 独立保留。history 记录真实迁移动作、日期、字段、决定与前后值，不制造历史复核。
+
+watch 每项包含 locator、signals、cadence_months。locator 是观察地址；signals 为 availability、redirect、version、revision、replacement、withdrawal 的非空无重复列表；cadence_months 明确 availability、redirect、content 三种周期。地址及重定向按月，内容按 de-jure／de-facto／vendor／archival 分别为 1／3／6／12 个月。旧标量 watch 不自动证明观察条目已核准；没有旧入口也不等于已批准无需观察。
 
 ### 来源分级
 
@@ -82,21 +88,19 @@ ISO 25964-2 §23 把名称规范表定义为为一致命名特定实体而建立
 
 同一发布方可以跨档：W3C Recommendation 是 `de-jure`，Working Draft 是 `de-facto`；Wikidata 数据是 `de-facto`，引用它的论文是 `archival`。全部现行 `tier` 值保持不变。
 
-`tier` 当前继续承担分级和复核周期含义，但不等于来源的外部状态，也不能单独推出 `mapping`、`structure`、`group` 或发现用途。正式迁移后的用途资格由用途记录的角色决定；这项后置规则不回写当前 `tier`。
+`tier` 当前继续承担分级和复核周期含义，但不等于来源的外部状态，也不能单独推出 `mapping`、`structure`、`group` 或发现用途。正式迁移后的用途资格由用途记录的角色决定；字段合同不改变现有 `tier`。
 
 ### 生命周期
 
-一般实体记录继续使用 `candidate`、`active` 和 `deprecated`，规则见[主题词表设计](topics.md)。本表没有 `unassigned`：它不复制结构，每条记录都按实际使用或阅读依据建立。
+全部实体的 status 使用 candidate、active、deprecated，规则见[主题词表](topics.md)。实体不使用 unassigned，因为它不为补全复制结构建立。
 
-产品停止维护或被替代时转为 `deprecated`，`replaced_by` 在有替代品时指向替代实体；记录不删。来源实体正式数据当前也继续使用这套旧 `status` 形状；后置接口中的外部状态不能提前写入正式记录。
+产品停止维护或被替代时，项目是否废弃记录按现行决定权限处理；有替代对象时记录 replaced_by，历史记录不删。来源实体的 source_status 与这套项目状态独立。外部 superseded 不自动把项目记录转为 deprecated，也不自动批准替代来源。
 
 ## 映射关系
 
-实体的主要映射目标是 Wikidata：它为软件、语言、组织、标准和出版物提供稳定 Q 号，并记录厂商、发布日期、官网和 DOI 等属性，本表不重复保存。厂商文档只作为地址或断言依据，不因此成为映射目标。
+实体的主要映射目标是 Wikidata；厂商文档可作为地址或具体事实依据，不因此成为映射目标。严格 match 使用 registry、item、rel、basis，registry 指向获准 mapping 角色的用途记录，item 保存外部标识或永久地址，basis 与每条关系相邻。
 
-正式记录当前继续使用 `match: [{ source, id, rel }]`，其中 `source` 必须是正式来源名称规范表中具有现行 `mapping` 用途的 id。没有可核映射时不伪造条目，`match` 留空并按现行生命周期处理。
-
-共享 `match` 的严格结构已经实现，后置字段为 `registry`、`item`、`rel` 和相邻 `basis`，并要求对应用途记录具有经决定批准的 `mapping` 角色。正式数据尚未迁移，具体角色和逐条映射依据也尚未批准；因此严格结构不能当作当前正式记录示例。
+旧 match.source／id 不在严格读取中保留。旧关系名称、相同标签和用途存在均不能代替具体身份或概念对应证据。不能核实的关系保留在迁移审计并阻断相应正式转换，不擅自删除现有关系或制造新依据。
 
 ## 主题职责
 
@@ -106,13 +110,13 @@ ISO 25964-2 §23 把名称规范表定义为为一致命名特定实体而建立
 - 全库标准或全库文献由本表按 `kind` 查询，不需要主题词表的分面字段。
 - 通用 `origin` 不再是主题目标字段。来源实体只提供可解析身份；发现观察、具体值依据、实际派生和概念映射各自记录，互不替代。
 
-## 后置接口
+## 实施边界
 
-来源实体 v2 模式已经区分结构化地址、外部状态、字段级 `basis`、`review`、结构化 `watch`、`replaced_by` 和只追加 `history`。外部状态只描述发布方体系中的 `current`、`superseded` 或 `withdrawn`，不描述项目是否批准使用；暂时不可访问也不等于撤回。
+来源字段合同已经采纳，schema、共享校验、索引及应用适配按同一 v2 合同实施。工具发现旧字段、未知键、错误形状或未获准引用时必须报错，不能因为引用形状不完整而跳过。
 
-该模式、离线校验和反向索引已经存在，但尚未应用到正式 `data/vocab/entities.yaml`。真实地址、外部状态、复核日期、观察入口、替代关系和逐字段依据仍须逐项决定。`source-entities` schema 对一般实体已有的 `alt`、`subjects`、`vendor`、`scope`、`creator`、`form` 和 `added` 等字段尚未形成覆盖整个正式实体文件的闭合契约；在该边界解决前，不能把它写成全表已经可以严格切换。
+完整实体文件、用途登记、逐条引用和消费者尚未完成正式迁移。P1–P4 只采纳列明字段，不能作为完整来源合格的证明。正式义务、索引、消费者和来源切换状态不能由接口存在推导。
 
-固定夹具探测只能读取后置 `watch` 和地址结构，生成复核信号，不修改正式字段。`--live` 禁用，探测输出与探测 schema 尚未闭合；没有真实来源状态因此得到确认。
+固定夹具探测提供观察证据，不确认真实外部状态；live 探测与正式周期运行不由字段合同开放。恢复使用 Git，不设置补偿回滚或长期兼容层。
 
 ## 建设流程
 
@@ -123,11 +127,13 @@ ISO 25964-2 §23 把名称规范表定义为为一致命名特定实体而建立
 
 ## 校验规则
 
-- 现行主题链继续检查 `subjects` 指向正式主题概念，`vendor` 和 `replaced_by` 指向本表实体，`kind` 属于已登记类别，标签与别名不重复，以及废弃记录保留历史。
-- 现行 `match.source` 必须指向正式用途记录；无法确认外部概念时不建立映射。
-- 来源 schema、共享引用校验和反向索引只验证已经进入严格形状的结构与引用，不修改来源事实，也不替代人工判断。
-- `check_sources.py` 尚未成为当前正式旧数据的通过门禁；不能把模式能力写成正式实体文件已经切换。
-- 迁移账本只保存历史库存、分类和阻断，不把推荐值应用到正式实体；当前 HEAD 也不能重放原冻结快照的预演结果。
+- subjects 指向现有主题，其每个值被严格依据或项目判断覆盖；vendor、creator、replaced_by 指向本表实体。
+- id 按稳定身份比较，不能以 label 代替身份；历史只追加，禁止复用 ID。
+- kind 使用已登记类别；status 与 source_status 分开；一般实体不要求来源字段，也不接受外部状态。
+- 地址有且仅有一个主项；依据定位、核对日期、字段支持范围和角色决定分别检查。外部状态缺省与 version: null 分别保留明确的未核实含义；已填写状态和版本继续核对依据及精确采纳。
+- 严格 match 指向获准 mapping 用途，角色决定必须对应实际对象、角色与状态，不能只检查决定 ID 存在。
+- 全表新格式校验通过不等于外部事实或归属判断已获采纳；未知字段和旧结构不得放宽。
+- 正式数据迁移与消费者验收完成前不得合并主分支；历史账本只作审计。
 
 ## 待定事项
 

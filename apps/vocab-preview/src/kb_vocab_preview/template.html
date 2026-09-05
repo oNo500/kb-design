@@ -22,7 +22,7 @@
 const D=JSON.parse(document.getElementById('data').textContent);
 const META={topics:['主题','#3974e9','concepts'],entities:['实体','#9b59cf','entities'],sources:['来源用途','#e28c35','sources'],types:['文档类型','#17a294','types'],genres:['体裁','#da5f8e','genres'],forms:['载体','#7b8c30','forms']};
 const STATUS={active:'active',candidate:'candidate',unassigned:'unassigned',deprecated:'deprecated',draft:'draft'};
-const FIELDS={id:'标识符',label:'名称',scope:'范围说明',status:'状态',kind:'实体类别',tier:'来源级别',version:'版本',checked:'复核日期',added:'加入日期',url:'链接',watch:'跟踪链接',basis:'依据',source:'来源',subjects:'关联主题',role:'用途',entity:'对应实体',form:'载体',vendor:'提供方',arrays:'分组',superordinate:'上位对象',broader:'上位主题',related:'相关主题',match:'外部映射',zh:'中文',en:'英文',rel:'映射关系'};
+const FIELDS={id:'标识符',label:'名称',scope:'范围说明',status:'项目状态',source_status:'外部状态',local_analysis:'隔离记录',legacy_source_label:'旧显示字符串',state:'状态',urls:'地址',primary:'主地址',review:'复核安排',roles:'用途资格',decision:'决定',assertions:'项目判断',external_group:'外部分组',registry:'来源用途',item:'外部条目',locator:'定位',references:'外部依据',values:'适用值',migration:'迁移审计',disposition:'处置',original:'原值',signals:'观察信号',cadence_months:'观察周期',kind:'实体类别',tier:'来源级别',version:'版本',checked:'复核日期',added:'加入日期',url:'链接',watch:'跟踪链接',basis:'依据',source:'来源',subjects:'关联主题',role:'用途',entity:'对应实体',form:'载体',vendor:'提供方',arrays:'分组',superordinate:'上位对象',broader:'上位主题',related:'相关主题',match:'外部映射',zh:'中文',en:'英文',rel:'映射关系'};
 const $=id=>document.getElementById(id), esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const listify=x=>x==null?[]:Array.isArray(x)?x:[x];
 const records=[],byKey=new Map(),edges=[],edgeSet=new Set();
@@ -31,18 +31,19 @@ const resolve=(cat,id,group=META[cat][2])=>byKey.get(`${cat}/${group}/${id}`);
 function title(n){if(!n)return '';const l=n.r.label;if(l)return typeof l==='string'?l:l.zh||l.en||n.r.id;if(n.cat==='sources'){const e=resolve('entities',n.r.entity);return e?title(e):n.r.id}return n.r.id}
 function addEdge(a,b,type){if(!a||!b)return;const k=`${a.key}|${b.key}|${type}`;if(!edgeSet.has(k)){edges.push({a:a.key,b:b.key,type});edgeSet.add(k)}}
 const EDGE={hierarchy:['上下位','#6086bc'],related:['相关','#bd66ab'],group:['分组','#8f94a7'],source:['来源引用','#d6a264'],mapping:['映射来源','#b2a067'],subject:['实体主题','#a38cc3'],entity:['用途实体','#d28b53'],basis:['依据引用','#a4adba'],form:['载体引用','#6d9f93']};
-function basisLinks(n){const links=[];const visit=(v,path)=>{if(typeof v==='string'){if(!['none','self','model'].includes(v)){const value=v==='source'?n.r.source:v;if(value&&!['self','none','model'].includes(value))links.push({source:value.split(':')[0],path,value})}}else if(Array.isArray(v))v.forEach((x,i)=>visit(x,path+'.'+i))};for(const [field,value]of Object.entries(n.r.basis||{})){const path='basis.'+field;if(['zh','en'].includes(field)&&value&&typeof value==='object'&&!Array.isArray(value)){if(Number.isInteger(value.level)&&value.level>=1&&value.level<=4)for(const r of value.references||[])links.push({source:r.source,path,value:r.source+':'+r.locator});}else visit(value,path)}return links}
+function basisLinks(n){const links=[];const visit=(v,path)=>{if(Array.isArray(v)){v.forEach((x,i)=>visit(x,path+'.'+i));return}if(!v||typeof v!=='object')return;if(v.entity)links.push({entity:v.entity,path,value:v.locator});for(const [k,x]of Object.entries(v))if(k!=='assertions')visit(x,path+'.'+k)};for(const [field,value]of Object.entries(n.r.basis||{})){const path='basis.'+field;if(['zh','en'].includes(field)&&value&&typeof value==='object'){if(value.level>=1&&value.level<=4)for(const r of value.references||[])links.push({source:r.source,path,value:r.locator})}else visit(value,path)}for(const field of ['source','match','external_group'])visit(n.r[field],field);return links}
 for(const n of records){const r=n.r;
  for(const id of listify(r.broader))addEdge(n,resolve('topics',id),'hierarchy');
  for(const id of listify(r.related))addEdge(n,resolve('topics',id),'related');
  for(const id of listify(r.arrays))addEdge(n,resolve(n.cat,id,'arrays'),'group');
  if(n.group==='arrays')addEdge(n,resolve(n.cat,r.superordinate),'group');
- if(r.source)addEdge(n,resolve('sources',r.source),'source');
+ if(r.external_group)addEdge(n,resolve('sources',r.external_group.registry),'source');
+ if(r.source)addEdge(n,resolve('sources',r.source?.registry),'source');
  if(r.entity)addEdge(n,resolve('entities',r.entity),'entity');
  for(const id of listify(r.subjects))addEdge(n,resolve('topics',id),'subject');
- for(const m of listify(r.match))addEdge(n,resolve('sources',m.source),'mapping');
+ for(const m of listify(r.match))addEdge(n,resolve('sources',m.registry),'mapping');
  if(r.form)addEdge(n,resolve('forms',r.form),'form');
- for(const b of basisLinks(n))addEdge(n,resolve('sources',b.source),'basis');
+ for(const b of basisLinks(n))addEdge(n,(b.entity?resolve('entities',b.entity):resolve('sources',b.source)),'basis');
 }
 const incoming=new Map(),outgoing=new Map();for(const e of edges){if(!incoming.has(e.b))incoming.set(e.b,[]);incoming.get(e.b).push(e);if(!outgoing.has(e.a))outgoing.set(e.a,[]);outgoing.get(e.a).push(e)}
 const children=new Map();for(const n of records.filter(n=>n.cat==='topics'&&n.group==='concepts'))for(const p of listify(n.r.broader)){if(!children.has(p))children.set(p,[]);children.get(p).push(n)}
@@ -53,7 +54,10 @@ function rawValue(v,k=''){
  if(v==null)return '<span class="muted">—</span>';
  if(Array.isArray(v))return v.length?`<ul>${v.map(x=>`<li>${rawValue(x,k)}</li>`).join('')}</ul>`:'<span class="muted">无</span>';
  if(typeof v==='object')return Object.entries(v).map(([key,val])=>`<div class="field"><span>${esc(FIELDS[key]||key)}</span><div class="value">${rawValue(val,key)}</div></div>`).join('');
- if(['url','watch'].includes(k)&&/^https?:\/\//.test(String(v)))return `<a href="${esc(v)}" target="_blank" rel="noopener noreferrer">${esc(v)}</a>`;
+ if(['url','locator'].includes(k)&&/^https?:\/\//.test(String(v)))return `<a href="${esc(v)}" target="_blank" rel="noopener noreferrer">${esc(v)}</a>`;
+ if(k==='entity')return refValue('entities',v);
+ if(k==='registry')return refValue('sources',v);
+ if(k==='values')return refValue('topics',v);
  return esc(v);
 }
 function section(name,items){return items.length?`<div class="section"><h3>${esc(name)}<span>${items.length}</span></h3><div class="links">${items.join('')}</div></div>`:''}
@@ -63,21 +67,25 @@ const ROLES={mapping:'映射',structure:'结构',group:'分组',candidate:'发�
 function sourceUses(n){
  const uses=new Map();
  const get=id=>{const use=resolve('sources',id);if(!use)return null;if(!uses.has(id))uses.set(id,{use,entity:resolve('entities',use.r.entity),derived:false,matches:[],basis:[]});return uses.get(id)};
- const derived=get(n.r.source);if(derived)derived.derived=true;
- for(const m of listify(n.r.match)){const u=get(m.source);if(u)u.matches.push(m)}
+ const derived=get(n.r.source?.registry);if(derived)derived.derived=true;
+ for(const m of listify(n.r.match)){const u=get(m.registry);if(u)u.matches.push(m)}
  for(const b of basisLinks(n)){const u=get(b.source);if(u)u.basis.push({path:b.path,value:b.value})}return [...uses.values()];
 }
 function externalItem(id){return /^https?:\/\//.test(String(id))?`<a href="${esc(id)}" target="_blank" rel="noopener noreferrer">${esc(id)}</a>`:`<code>${esc(id)}</code>`}
+function sourceDetails(r){
+ if(!r||!['standard','publication'].includes(r.kind))return '';
+ return `<div class="field"><span>外部状态</span><div class="value">${esc(r.source_status??'外部状态未核实')}</div></div><div class="field"><span>来源版本</span><div class="value">${esc(r.version??'未登记可核实版本')}</div></div>`;
+}
 function sourceCards(n){
  const uses=sourceUses(n);if(!uses.length)return '';
  return `<div class="section"><h3>来源与实体<span>${uses.length}</span></h3><p class="provenance-note">名称、版本与官网读取实体记录；派生、映射和字段依据保留在当前主题记录中。</p>${uses.map(u=>{
   const e=u.entity;return `<article class="sourcecard"><h4>${esc(e?title(e):u.use.r.id)}</h4><div class="origin">${e?`名称来自实体表 · <code>${esc(e.r.id)}</code> ${ref(e,'查看实体')}`:'对应实体未找到'}</div>
-  <div class="field"><span>来源版本</span><div class="value">${esc(e?.r.version||'实体未登记版本')}</div></div>
+  ${sourceDetails(e?.r)}
   ${u.derived?'<div class="field"><span>本条派生</span><div class="value">主题记录的 source 指向此来源</div></div>':''}
-  ${u.matches.map(m=>`<div class="field"><span>本条映射</span><div class="value">外部条目 ${externalItem(m.id)} <span class="pill">${esc(m.rel)}</span></div></div>`).join('')}
+  ${u.matches.map(m=>`<div class="field"><span>本条映射</span><div class="value">外部条目 ${externalItem(m.item)} <span class="pill">${esc(m.rel)}</span></div></div>`).join('')}
   ${u.basis.map(b=>`<div class="field"><span>字段依据</span><div class="value"><code>${esc(b.path)}</code>：<code>${esc(b.value)}</code></div></div>`).join('')}
-  <div class="field"><span>登记用途</span><div class="value">${listify(u.use.r.role).map(role=>`<span class="pill">${esc(ROLES[role]||role)} · ${esc(role)}</span>`).join('')}</div></div>
-  <div class="source-links">${ref(u.use,'查看来源用途')}${e?.r.url&&/^https?:\/\//.test(e.r.url)?`<a href="${esc(e.r.url)}" target="_blank" rel="noopener noreferrer">打开官网 ↗</a>`:'<span class="muted">实体未登记官网链接</span>'}</div></article>`;
+  <div class="field"><span>登记用途</span><div class="value">${listify(u.use.r.roles).map(role=>`<span class="pill">${esc(ROLES[role.role]||role.role)} · ${esc(role.status)} · ${esc(role.decision||'—')}</span>`).join('')}</div></div>
+  <div class="source-links">${ref(u.use,'查看来源用途')}${e?.r.urls?.find(x=>x.primary)?.url&&/^https?:\/\//.test(e.r.urls.find(x=>x.primary).url)?`<a href="${esc(e.r.urls.find(x=>x.primary).url)}" target="_blank" rel="noopener noreferrer">打开官网 ↗</a>`:'<span class="muted">实体未登记官网链接</span>'}</div></article>`;
  }).join('')}</div>`;
 }
 function topicUsage(entity){
@@ -85,7 +93,7 @@ function topicUsage(entity){
 }
 function entityUsage(entity){
  const rows=topicUsage(entity);
- return `<div class="section"><h3>引用此来源的主题<span>${rows.length}</span></h3><p class="provenance-note">通过来源用途记录追溯到此实体；与“关联主题”分开列出。</p>${rows.length?rows.map(({n,uses})=>`<div class="usage">${ref(n)}${uses.map(u=>`<div class="muted">经由来源用途 <code>${esc(u.use.r.id)}</code>${u.derived?'<br>实际派生：source 引用':''}${u.matches.map(m=>`<br>外部映射：${externalItem(m.id)} · ${esc(m.rel)}`).join('')}${u.basis.map(b=>`<br>字段依据：<code>${esc(b.path)}</code> · <code>${esc(b.value)}</code>`).join('')}</div>`).join('')}</div>`).join(''):'<div class="muted">当前快照没有主题通过来源用途引用此实体。</div>'}</div>`;
+ return `<div class="section"><h3>引用此来源的主题<span>${rows.length}</span></h3><p class="provenance-note">通过来源用途记录追溯到此实体；与“关联主题”分开列出。</p>${rows.length?rows.map(({n,uses})=>`<div class="usage">${ref(n)}${uses.map(u=>`<div class="muted">经由来源用途 <code>${esc(u.use.r.id)}</code>${u.derived?'<br>实际派生：source 引用':''}${u.matches.map(m=>`<br>外部映射：${externalItem(m.item)} · ${esc(m.rel)}`).join('')}${u.basis.map(b=>`<br>字段依据：<code>${esc(b.path)}</code> · <code>${esc(b.value)}</code>`).join('')}</div>`).join('')}</div>`).join(''):'<div class="muted">当前快照没有主题通过来源用途引用此实体。</div>'}</div>`;
 }
 function navigate(key,push=true){const n=byKey.get(key);if(!n)return;if(push&&selected&&selected!==n)history.push(selected.key);selected=n;
  if(!graphMode&&cat!==n.cat){cat=n.cat;query='';filter='';$('search').value='';initStatus()}
@@ -113,6 +121,7 @@ function renderDetail(){
  const expandedSources=n.cat==='topics'&&n.group==='concepts';
  if(expandedSources)h+=sourceCards(n);
  if(n.cat==='entities'){
+  h+=sourceDetails(r);
   h+=section('关联主题',listify(r.subjects).map(id=>refValue('topics',id)));
   h+=entityUsage(n);
  }
@@ -126,14 +135,14 @@ function renderDetail(){
  }else h+=section('下属分组',ins.filter(e=>e.type==='group'&&byKey.get(e.a).group==='arrays').map(e=>ref(byKey.get(e.a))));
  if(n.cat!=='entities')h+=section('关联主题',listify(r.subjects).map(id=>refValue('topics',id)));
  if(r.entity)h+=section('对应实体',[refValue('entities',r.entity)]);
- if(r.source&&(!expandedSources||!resolve('sources',r.source)))h+=section('来源',[refValue('sources',r.source)]);
+ for(const [field,title]of [['source','派生来源'],['match','外部映射'],['external_group','外部分组'],['assertions','项目判断'],['local_analysis','隔离记录']])if(r[field])h+=`<div class="section"><h3>${title}</h3>${rawValue(r[field],field)}</div>`;
  if(r.form)h+=section('载体',[refValue('forms',r.form)]);
- const remainingMatches=listify(r.match).filter(m=>!expandedSources||!resolve('sources',m.source));
- if(remainingMatches.length)h+=`<div class="section"><h3>外部映射<span>${remainingMatches.length}</span></h3>${remainingMatches.map(m=>`<div class="match">${refValue('sources',m.source)} <span class="pill">${esc(m.rel)}</span><div style="margin-top:8px">外部编号：${externalItem(m.id)}</div></div>`).join('')}</div>`;
+ if(r.local_analysis)h+='<p class="muted">仅保留旧显示字符串和隔离状态，不表示来源依据、用途或有效的本地分析。</p>';
  const basis=outs.filter(e=>e.type==='basis');if(!expandedSources)h+=section('依据来源',basis.map(e=>ref(byKey.get(e.b))));
  const reverse=ins.filter(e=>!['hierarchy','group'].includes(e.type));
  if(reverse.length)h+=`<details><summary>被引用 ${reverse.length} 次</summary>${Object.keys(EDGE).map(t=>section(EDGE[t][0],reverse.filter(e=>e.type===t).map(e=>ref(byKey.get(e.a))))).join('')}</details>`;
- const omit=new Set(['id','label','scope','broader','related','arrays','subjects','entity','source','match','superordinate','form','status','basis']);
+ const omit=new Set(['id','label','scope','broader','related','arrays','subjects','entity','source','match','superordinate','form','status','basis','assertions','external_group','local_analysis']);
+ if(n.cat==='entities'&&['standard','publication'].includes(r.kind)){omit.add('source_status');omit.add('version')}
  h+='<div class="section"><h3>其他字段</h3>'+Object.entries(r).filter(([k])=>!omit.has(k)).map(([k,v])=>`<div class="field"><span>${esc(FIELDS[k]||k)}</span><div class="value">${rawValue(v,k)}</div></div>`).join('')+'</div>';
  h+=`<details><summary>原始 YAML</summary><pre>${esc(D.collections[n.cat].raw[n.group+':'+r.id])}</pre></details><details class="version"><summary>文件版本与快照</summary><div class="muted">${rawValue(D.collections[n.cat].data.version)}<br>快照：${esc(D.generated)}<br>SHA-256：<code style="overflow-wrap:anywhere">${esc(D.hashes[n.cat])}</code></div></details>`;
  $('detail').innerHTML=h;$('detail').scrollTop=0;if($('back'))$('back').onclick=()=>navigate(history.pop(),false);

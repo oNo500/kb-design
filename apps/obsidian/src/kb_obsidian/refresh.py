@@ -128,7 +128,7 @@ def _check_content(snapshot: DesignSnapshot, root: Path, references: Mapping[str
             text = data.decode("utf-8")
         except UnicodeError as exc:
             raise ApplicationError(f"cannot validate Markdown references: {path}") from exc
-        for target in _WIKILINK.findall(text):
+        for target in _WIKILINK.findall(text.replace("\\|", "|")):
             if not target.startswith("kb/"):
                 continue
             relative = PurePosixPath(target)

@@ -4,6 +4,7 @@ from kb_core.repository import project_root
 import yaml, pathlib, sys, re, collections
 from kb_core.label_basis import validate_basis
 from kb_core.label_adoptions import load_adoptions
+from kb_core.source_model import validate_repository, is_review_overdue, normalize_yaml_dates
 ROOT = project_root() / 'data/vocab'
 T = yaml.safe_load(open(ROOT/'topics.yaml'))
 E = yaml.safe_load(open(ROOT/'entities.yaml'))
@@ -24,27 +25,18 @@ for name, coll in [('topics', concepts), ('entities', entities), ('sources', sou
     for i in coll:
         if not ID.match(i): bad.append(f'{name}: id 不合规 {i}')
 
-# sources -> entities
-for s in sources.values():
-    if s['entity'] not in entities: bad.append(f"sources: entity 不存在 {s['entity']}")
-    if 'structure' in s['role'] and 'mapping' not in s['role']: bad.append(f"sources: {s['id']} structure 需含 mapping")
-
-for coll in (Y['types'], G['genres'], F['forms']):
-    for x in coll:
-        for m in x.get('match', []):
-            if m['source'] not in sources: bad.append(f"types/genres: {x['id']} match.source 未登记 {m['source']}")
+# The source-v2 validator owns shapes, source identities and role authorization.
+bad.extend(f"{issue.code}: {issue.file} {issue.record} {issue.field_path}: {issue.message}"
+           for issue in validate_repository(ROOT.parent.parent))
 
 # topics
 for c in concepts.values():
     for b in c['broader']:
         if b not in concepts: bad.append(f"topics: {c['id']} broader 不存在 {b}")
-    if c['source'] != 'self':
-        if c['source'] not in sources: bad.append(f"topics: {c['id']} source 未登记 {c['source']}")
-        if not any(m['source'] == c['source'] for m in c.get('match', [])):
-            bad.append(f"topics: {c['id']} 借入但无 match 回 {c['source']}")
-    for m in c.get('match', []):
-        if m['source'] not in sources: bad.append(f"topics: {c['id']} match.source 未登记 {m['source']}")
-        if m['rel'] not in ('exactMatch','closeMatch','broadMatch','narrowMatch','relatedMatch'): bad.append(f"topics: {c['id']} rel 非法")
+    source = c.get('source')
+    if isinstance(source, dict) and isinstance(source.get('registry'), str):
+        if not any(isinstance(m, dict) and m.get('registry') == source['registry'] for m in c.get('match', [])):
+            bad.append(f"topics: {c['id']} 借入但无 match 回 {source['registry']}")
     for a in c.get('arrays', []):
         if a not in arrays: bad.append(f"topics: {c['id']} arrays 不存在 {a}")
         elif arrays[a]['superordinate'] not in c['broader']: bad.append(f"topics: {c['id']} 数组 {a} 的上位不在 broader 里")
@@ -56,8 +48,7 @@ for c in concepts.values():
     if c['status'] not in ('unassigned','candidate','active','deprecated'): bad.append(f"topics: {c['id']} status 非法")
 for a in arrays.values():
     if a['superordinate'] not in concepts: bad.append(f"arrays: {a['id']} 上位不存在")
-    if not (a.get('source') or a.get('characteristic')): bad.append(f"arrays: {a['id']} 无 source 也无 characteristic")
-    if a.get('source') and a['source'] not in sources: bad.append(f"arrays: {a['id']} source 未登记")
+    if not (a.get('external_group') or a.get('characteristic') or a.get('assertions', {}).get('source')): bad.append(f"arrays: {a['id']} 缺外部分组依据或本地判断")
 
 # cycles
 def has_cycle():
@@ -67,7 +58,7 @@ def has_cycle():
         if state.get(n): return False
         stack.add(n)
         for b in concepts[n]['broader']:
-            if visit(b, stack): return True
+            if b in concepts and visit(b, stack): return True
         stack.discard(n); state[n] = True; return False
     return any(visit(n, set()) for n in concepts)
 if has_cycle(): bad.append('topics: broader 有环')
@@ -85,8 +76,6 @@ for e in entities.values():
     for cr in (e.get('creator') or []):
         if cr not in entities: bad.append(f"entities: {e['id']} creator 不存在 {cr}")
     if e.get('vendor') and e['vendor'] not in entities: bad.append(f"entities: {e['id']} vendor 不存在 {e['vendor']}")
-    for m in e.get('match', []):
-        if m['source'] not in sources: bad.append(f"entities: {e['id']} match.source 未登记")
 
 # basis
 selfcount = collections.Counter(); judged = collections.Counter()
@@ -94,24 +83,23 @@ adoptions = load_adoptions(ROOT.parent.parent)
 for name, coll in [('entities', entities), ('topics', concepts)]:
     for x in coll.values():
         b = x.get('basis') or {}
-        if name == 'entities' and x.get('subjects') and 'subjects' not in b: bad.append(f"entities: {x['id']} subjects 无 basis")
         for field, val in b.items():
-            if field in ('zh','en') and name=='topics':
+            if field in ('zh','en'):
                 judged[(name,'label.'+field)] += 1
-                if val == 'self' or isinstance(val, dict) and val.get('legacy') == 'self':
+                if isinstance(val, dict) and val.get('legacy') == 'self':
                     selfcount[(name,'label.'+field)] += 1
-                    if x.get('status') == 'active': bad.append(f"topics: {x['id']} label.{field} 为自译却 active")
-                bad.extend(f"topics: {x['id']} basis.{field}: {message}" for message in
-                           validate_basis(val, x['label'].get(field), x, field, sources, adoptions))
-                continue
-            vals = val if isinstance(val, list) else [val]
-            judged[(name, field)] += 1
-            for v in vals:
-                if v == 'self': selfcount[(name, field)] += 1
-                else:
-                    src = v.split(':')[0]
-                    if src not in sources: bad.append(f"{name}: {x['id']} basis 来源未登记 {src}")
-            if 'self' in vals and x.get('status') == 'active': bad.append(f"{name}: {x['id']} {field} basis 为 self 却 active")
+                bad.extend(f"{name}: {x['id']} basis.{field}: {message}" for message in
+                           validate_basis(val, x['label'].get(field), x, field, sources, adoptions,
+                                          collection=name))
+            else:
+                judged[(name, field)] += 1
+        for field, assertion in x.get('assertions', {}).items():
+            # A preserved self judgment remains one judgment, not one per subject.
+            if field not in b:
+                judged[(name, field)] += 1
+            selfcount[(name, field)] += 1
+            if field == 'subjects' and x.get('status') == 'active':
+                bad.append(f"{name}: {x['id']} subjects 为项目 self 判断却 active")
 
 for name, document in [('forms', F), ('types', Y), ('genres', G)]:
     for record in document[name]:
@@ -120,6 +108,12 @@ for name, document in [('forms', F), ('types', Y), ('genres', G)]:
                 bad.extend(f"{name}: {record['id']} basis.{language}: {message}" for message in
                            validate_basis(value, record['label'].get(language), record, language,
                                           sources, adoptions, collection=name))
+
+if E.get('schema_version') != 2 or S.get('schema_version') != 2:
+    for message in bad:
+        print(message)
+    print(f"{len(bad)} 处问题；来源根文档未满足 v2，维护指标未计算")
+    sys.exit(1)
 
 # ---------- 指标表（design/maintenance.md）----------
 import datetime
@@ -144,20 +138,24 @@ for c in concepts.values():
     if c['status'] == 'candidate':
         for b in c['broader']: cand_per_parent[b] += 1
 for e in entities.values():
-    if (e.get('basis') or {}).get('subjects') == 'self':
+    if (e.get('assertions') or {}).get('subjects'):
         for sj in e.get('subjects', []): self_per_parent[sj] += 1
 others = [c['id'] for c in concepts.values() if c['label'].get('zh','').endswith('其他学科')]
 other_kids = collections.Counter()
 for c in concepts.values():
     for b in c['broader']:
         if b in others: other_kids[b] += 1
-TIER_MONTHS = {'de-jure': 24, 'de-facto': 12, 'vendor': 6}   # 与 maintenance.md 阈值表一致
 due = []
 for e in entities.values():
-    if e.get('checked') and e.get('tier') in TIER_MONTHS:
-        d = e['checked'] if isinstance(e['checked'], datetime.date) else datetime.date.fromisoformat(str(e['checked']))
-        months = (today.year - d.year) * 12 + today.month - d.month
-        if months >= TIER_MONTHS[e['tier']]: due.append(e['id'])
+    review = e.get('review')
+    if not isinstance(review, dict) or not review.get('next_due'):
+        continue
+    try:
+        next_due = datetime.date.fromisoformat(str(review['next_due']))
+        if is_review_overdue(next_due, today, review.get('grace_days', 30)):
+            due.append(e['id'])
+    except (ValueError, TypeError):
+        pass  # Strict validation above reports the invalid date.
 
 lp = project_root() / 'data/audit/maintenance/signals.yaml'
 hist = (yaml.safe_load(open(lp)) or {}) if lp.exists() else {}

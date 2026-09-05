@@ -17,7 +17,8 @@ from kb_core.source_model import add_calendar_months
 
 ALLOWED_METHODS = frozenset(("HEAD", "GET"))
 FORMAL_FIELDS = frozenset(
-    ("url", "urls", "version", "status", "review", "roles", "basis", "source", "match")
+    ("url", "urls", "version", "status", "source_status", "review", "roles",
+     "basis", "assertions", "source", "match", "external_group", "local_analysis")
 )
 EVIDENCE_PRIORITY = {"status": 0, "doi": 1, "landing": 1, "archive": 2, "mirror": 3}
 EVIDENCE_ROLES = frozenset(EVIDENCE_PRIORITY)

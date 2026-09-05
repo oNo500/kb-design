@@ -1,0 +1,140 @@
+{
+  "schema_version": 2,
+  "records": {
+    "types/types/explanation": {
+      "before": {
+        "match": [
+          {
+            "source": "diataxis",
+            "id": "explanation",
+            "rel": "exactMatch"
+          }
+        ]
+      },
+      "after": {
+        "match": [
+          {
+            "registry": "diataxis",
+            "item": "explanation",
+            "rel": "exactMatch",
+            "basis": [
+              {
+                "entity": "diataxis",
+                "locator": "https://diataxis.fr/explanation/#admit-opinion-and-perspective；开篇、boundaries 与观点范围",
+                "checked": "2026-09-05"
+              }
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "match": {
+          "decision": "decision-source-data-batch",
+          "reviewed": true
+        }
+      }
+    },
+    "genres/genres/analysis": {
+      "before": {
+        "match": [
+          {
+            "source": "iptc-genre",
+            "id": "http://cv.iptc.org/newscodes/genre/Analysis",
+            "rel": "closeMatch"
+          }
+        ]
+      },
+      "after": {
+        "match": [
+          {
+            "registry": "iptc-genre",
+            "item": "http://cv.iptc.org/newscodes/genre/Analysis",
+            "rel": "closeMatch",
+            "basis": [
+              {
+                "entity": "iptc-genre",
+                "locator": "https://cv.iptc.org/newscodes/genre/Analysis；Concept ID 与 Definition，保留新闻语境和本地个人理解范围之差",
+                "checked": "2026-09-05"
+              }
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "match": {
+          "decision": "decision-source-data-batch",
+          "reviewed": true
+        }
+      }
+    },
+    "entities/entities/obsidian": {
+      "before": {
+        "match": [
+          {
+            "source": "wikidata",
+            "id": "Q103994532",
+            "rel": "exactMatch"
+          }
+        ]
+      },
+      "after": {
+        "match": [
+          {
+            "registry": "wikidata",
+            "item": "Q103994532",
+            "rel": "exactMatch",
+            "basis": [
+              {
+                "entity": "wikidata",
+                "locator": "https://www.wikidata.org/w/index.php?title=Q103994532&oldid=2530661391；软件身份、P31、P856；与 https://obsidian.md/ 产品身份交叉核对",
+                "checked": "2026-09-05"
+              }
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "match": {
+          "decision": "decision-source-data-batch",
+          "reviewed": true
+        }
+      }
+    },
+    "forms/arrays/forms-presentation": {
+      "before": {
+        "source": "lom"
+      },
+      "after": {
+        "local_analysis": {
+          "legacy_source_label": "lom",
+          "state": "isolated",
+          "decision": "decision-source-0011"
+        }
+      },
+      "evidence": {
+        "local_analysis": {
+          "decision": "decision-source-data-batch",
+          "reviewed": true
+        }
+      }
+    },
+    "forms/arrays/forms-activity": {
+      "before": {
+        "source": "lom"
+      },
+      "after": {
+        "local_analysis": {
+          "legacy_source_label": "lom",
+          "state": "isolated",
+          "decision": "decision-source-0011"
+        }
+      },
+      "evidence": {
+        "local_analysis": {
+          "decision": "decision-source-data-batch",
+          "reviewed": true
+        }
+      }
+    }
+  }
+}

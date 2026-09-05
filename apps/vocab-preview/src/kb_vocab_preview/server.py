@@ -13,6 +13,8 @@ from urllib.parse import urlsplit
 
 import yaml
 from kb_core.repository import project_root
+from kb_core import source_model
+from jsonschema import Draft202012Validator, FormatChecker
 
 COLLECTIONS = {
     "topics": "concepts", "entities": "entities", "sources": "sources",
@@ -37,11 +39,11 @@ def _validate_record(record, location):
     if label is not None and not (isinstance(label, str) or isinstance(label, dict)
                                   and all(isinstance(v, str) for v in label.values())):
         raise ValueError(f"{location}：label 必须是名称文本或语言名称对象")
-    for field in ("broader", "related", "arrays", "subjects", "role"):
+    for field in ("broader", "related", "arrays", "subjects"):
         value = record.get(field)
         if value is not None and not (isinstance(value, list) and all(isinstance(v, str) for v in value)):
             raise ValueError(f"{location}：{field} 必须是字符串列表")
-    for field in ("source", "entity", "form", "superordinate", "scope", "status"):
+    for field in ("entity", "form", "superordinate", "scope", "status"):
         if record.get(field) is not None and not isinstance(record[field], str):
             raise ValueError(f"{location}：{field} 必须是字符串")
     if record.get("basis") is not None and not isinstance(record["basis"], dict):
@@ -64,9 +66,24 @@ def _validate_record(record, location):
                 raise ValueError(f"{location}：basis.{language}.references 必须是来源对象列表")
         elif level == 5 and not isinstance(basis.get("model"), dict):
             raise ValueError(f"{location}：basis.{language}.model 必须是对象")
-    matches = record.get("match", [])
-    if not isinstance(matches, list) or any(not isinstance(m, dict) or not isinstance(m.get("source"), str) for m in matches):
-        raise ValueError(f"{location}：match 必须是包含 source 的对象列表")
+    if "local_analysis" in record:
+        if location != "forms.yaml/arrays":
+            raise ValueError(f"{location}：隔离记录只适用于载体数组")
+        _schema_validate(record["local_analysis"], source_model.LOCAL_ANALYSIS, location + "/local_analysis")
+    if "assertions" in record:
+        _schema_validate(record["assertions"], source_model.ASSERTIONS, location + "/assertions")
+    for field, schema in (("source", source_model.SOURCE), ("external_group", source_model.SOURCE),
+                          ("match", {"type": "array", "items": source_model.MATCH})):
+        if field in record:
+            _schema_validate(record[field], {**schema, "$defs": {"basisItem": source_model.BASIS_ITEM}}, location + "/" + field)
+
+
+def _schema_validate(value, schema, location):
+    normalized = json.loads(_json(value))
+    errors = list(Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(normalized))
+    if errors:
+        error = errors[0]
+        raise ValueError(f"{location}/{'.'.join(map(str, error.path))}：{error.message}")
 
 
 def _collection(name, content):
@@ -81,6 +98,11 @@ def _collection(name, content):
         raise ValueError(f"{location}{line}：YAML 格式错误，{getattr(error, 'problem', '请检查文件')}") from error
     if not isinstance(document, dict) or not isinstance(document.get(COLLECTIONS[name]), list):
         raise ValueError(f"{location}：缺少 {COLLECTIONS[name]} 条目列表")
+    if type(document.get("schema_version")) is not int or document["schema_version"] != 2:
+        raise ValueError(f"{location}：schema_version 必须为 2")
+    if name in {"entities", "sources"}:
+        schema_name = "source-entities.schema.json" if name == "entities" else "source-uses.schema.json"
+        _schema_validate(document, source_model.build_schema_documents()[schema_name], location)
     keys = set()
     for key, _ in tree.value:
         if key.value in keys:

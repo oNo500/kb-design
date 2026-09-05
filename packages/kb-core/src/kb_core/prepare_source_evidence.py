@@ -141,7 +141,7 @@ def render(items: list[dict], root: Path, changed_only=False) -> str:
         old = item['previous']
         lines.extend([f"## {item['title']}", '', f"对象：`{item['id']}`；状态：待审。", '',
                       f"当前位置：`{current['file']}` 的 `{current['field']}`。", '',
-                      f"当前映射：`{record['id']}` → `{match['source']}:{match['id']}`，关系 `{match['rel']}`。", '',
+                      f"当前映射：`{record['id']}` → `{match['registry']}:{match['item']}`，关系 `{match['rel']}`。", '',
                       f"本地范围：{record.get('scope') or '记录未填写 scope'}。", '',
                       f"旧账本：`{old['match']['identity']}`；结论 `{old['match'].get('disposition')}`；"
                       f"切换阻断 `{old['match'].get('blocks_cutover')}`。", ''])
@@ -235,10 +235,10 @@ def prepare(root: Path, output: Path | None = None) -> dict:
         record = unique(document(recipe['file'])[recipe['collection']],
                         lambda row: row['id'] == recipe['record'], recipe['record'])
         match = unique(record.get('match', []),
-                       lambda row: row.get('source') == recipe['source'] and row.get('id') == recipe['item'],
+                       lambda row: isinstance(row, dict) and row.get('registry') == recipe['source'] and row.get('item') == recipe['item'],
                        recipe['id'] + ' match')
-        entity = unique(entities, lambda row: row['id'] == recipe['source'], recipe['source'])
         use = unique(sources, lambda row: row['id'] == recipe['source'], recipe['source'] + ' use')
+        entity = unique(entities, lambda row: row['id'] == use['entity'], use['entity'])
         previous = {
             'match': unique(matches, lambda row: row['identity'] == recipe['ledger'], recipe['ledger']),
             'basis': [row for row in bases if recipe['basis_field'] and row.get('field_path') == recipe['basis_field']],

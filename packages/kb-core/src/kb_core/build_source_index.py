@@ -183,70 +183,6 @@ def visit_obligations(root: Path) -> List[Dict[str, str]]:
     return rows
 
 
-def _legacy_record_rows(relative, collection, record_path, record):
-    record_id = record.get("id", record_path)
-    stable_record = f"{collection}:{record_id}"
-    rows = []
-    source = record.get("source")
-    if isinstance(source, str):
-        kind = "legacy.array_source" if collection == "arrays" else "legacy.source"
-        rows.append(index_row(
-            "source_entity", source, kind, relative, stable_record,
-            f"{record_path}.source",
-        ))
-    basis = record.get("basis")
-    if isinstance(basis, dict):
-        for basis_key, basis_value in basis.items():
-            values = basis_value if isinstance(basis_value, list) else [basis_value]
-            for index, value in enumerate(values):
-                if not isinstance(value, str) or value in {"none", "self"}:
-                    continue
-                target = source if value == "source" and isinstance(source, str) else value.split(":", 1)[0]
-                suffix = f"[{index}]" if isinstance(basis_value, list) else ""
-                rows.append(index_row(
-                    "source_entity", target, "legacy.basis", relative, stable_record,
-                    f"{record_path}.basis.{basis_key}{suffix}",
-                ))
-    match = record.get("match")
-    if isinstance(match, list):
-        for index, item in enumerate(match):
-            if isinstance(item, dict) and isinstance(item.get("source"), str):
-                rows.append(index_row(
-                    "source_entity", item["source"], "legacy.match", relative,
-                    stable_record, f"{record_path}.match[{index}].source",
-                ))
-    return rows
-
-
-def visit_legacy_references(root: Path) -> List[Dict[str, str]]:
-    rows = []
-    # Explicit legacy inspection includes generation inputs without treating
-    # them as formal documents or scanning application output and audit files.
-    input_paths = sorted(
-        path for path in (root / "data/inputs/topics").rglob("*")
-        if path.is_file() and path.suffix in FORMAL_SUFFIXES
-    )
-    for path in (*discover_formal_documents(root), *input_paths):
-        relative = str(path.relative_to(root))
-        document = load_yaml_or_json(path)
-        if not isinstance(document, dict):
-            continue
-        for collection, records in document.items():
-            if isinstance(records, list):
-                for index, record in enumerate(records):
-                    if isinstance(record, dict):
-                        rows.extend(_legacy_record_rows(
-                            relative, collection, f"{collection}[{index}]", record,
-                        ))
-            elif isinstance(records, dict):
-                for key, record in records.items():
-                    if isinstance(record, dict):
-                        rows.extend(_legacy_record_rows(
-                            relative, collection, f"{collection}.{key}", record,
-                        ))
-    return rows
-
-
 def visit_language_basis(relative: Path, document: object) -> List[Dict[str, str]]:
     """Index source-use references in the current structured language evidence."""
     rows = []
@@ -283,7 +219,7 @@ def unique_entries(entries):
     return list(by_key.values())
 
 
-def build_reference_index(root: Path, include_legacy: bool = False) -> Dict[str, object]:
+def build_reference_index(root: Path) -> Dict[str, object]:
     entries = []
     for path in discover_formal_documents(root):
         document = load_yaml_or_json(path)
@@ -292,13 +228,13 @@ def build_reference_index(root: Path, include_legacy: bool = False) -> Dict[str,
         entries.extend(
             visit_reference_use(use)
             for use in collect_reference_uses(relative, document)
+            if isinstance(use.value, dict) and isinstance(use.value.get("entity" if use.kind == "basis" else "registry"), str)
+            and use.value.get("entity" if use.kind == "basis" else "registry")
         )
     entries.extend(visit_uses(root))
     entries.extend(visit_replacements(root))
     entries.extend(visit_decisions(root))
     entries.extend(visit_obligations(root))
-    if include_legacy:
-        entries.extend(visit_legacy_references(root))
     entries = unique_entries(entries)
     entries.sort(key=lambda row: tuple(row[key] for key in INDEX_KEYS))
     return {
@@ -311,10 +247,15 @@ def build_reference_index(root: Path, include_legacy: bool = False) -> Dict[str,
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, required=True)
-    parser.add_argument("--include-legacy", action="store_true")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
-    document = build_reference_index(args.root, args.include_legacy)
+    from kb_core.source_model import validate_repository
+    issues = validate_repository(args.root)
+    if issues:
+        for issue in issues:
+            print(f"{issue.code}\t{issue.file}\t{issue.field_path}\t{issue.message}", file=sys.stderr)
+        return 1
+    document = build_reference_index(args.root)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
         json.dumps(document, ensure_ascii=False, sort_keys=True, indent=2) + "\n",

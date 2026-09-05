@@ -29,6 +29,8 @@ _IMPLEMENTATION_FILES = (
     "apps/obsidian/src/kb_obsidian/exporter.py",
     "packages/kb-core/src/kb_core/__init__.py",
     "packages/kb-core/src/kb_core/label_basis.py",
+    "packages/kb-core/src/kb_core/source_model.py",
+    "packages/kb-core/src/kb_core/label_adoptions.py",
     "packages/kb-core/src/kb_core/repository.py",
 )
 
@@ -96,7 +98,20 @@ def default_design_root() -> Path:
 def _verify_snapshot_implementation(root: Path, commit: str) -> Mapping[str, bytes]:
     """Return selected implementation bytes only when Git and the worktree agree."""
     verified: dict[str, bytes] = {}
-    for relative_path in _IMPLEMENTATION_FILES:
+    decision_paths = tuple(path for path in _git(root, "ls-tree", "-r", "--name-only", commit, "--", "docs/decisions").splitlines()
+                           if Path(path).parent.as_posix() == "docs/decisions"
+                           and Path(path).match("source-*.md"))
+    actual_decisions = {path.relative_to(root).as_posix() for path in (root / "docs/decisions").glob("source-*.md")}
+    if actual_decisions != set(decision_paths):
+        raise ApplicationError("source decision file set differs from commit")
+    optional_paths = tuple(path for path in (
+        "data/inputs/topics/label-adoptions.json", "data/vocab/source-obligations.yaml")
+        if path in _git(root, "ls-tree", "-r", "--name-only", commit, "--", path).splitlines())
+    actual_optional = {path for path in ("data/inputs/topics/label-adoptions.json", "data/vocab/source-obligations.yaml")
+                       if (root / path).exists()}
+    if actual_optional != set(optional_paths):
+        raise ApplicationError("source support file set differs from commit")
+    for relative_path in (*_IMPLEMENTATION_FILES, *decision_paths, *optional_paths):
         try:
             current = (root / relative_path).read_bytes()
             committed = subprocess.run(
@@ -162,8 +177,15 @@ def load_design(root: Path) -> DesignSnapshot:
             raise ApplicationError(f"cannot read formal design document {relative_path}: {exc}") from exc
         captured[name] = content
         input_hashes[relative_path] = hashlib.sha256(content).hexdigest()
+    # Capture decision, obligation and language-adoption bytes from the same
+    # verified commit. The reader consumes these bytes, never a later disk read.
+    support = _verify_snapshot_implementation(design_root, commit)
+    captured.update({"_support:" + path: content for path, content in support.items()
+                     if path.startswith("docs/decisions/") or path.startswith("data/")})
     _validate_formal_inputs(design_root, captured)
     for name, content in captured.items():
+        if name.startswith("_support:"):
+            continue
         try:
             documents[name] = _freeze(yaml.safe_load(content))
         except (UnicodeError, yaml.YAMLError) as exc:

@@ -20,6 +20,8 @@ import yaml
 
 from kb_core.label_basis import basis_rows, validate_basis
 from kb_core.repository import project_root
+from kb_core import source_model
+from jsonschema import Draft202012Validator, FormatChecker
 
 
 class ExportError(ValueError):
@@ -34,8 +36,8 @@ class _ArgumentParser(argparse.ArgumentParser):
 _FILES = OrderedDict(
     (
         ("topics", ("data/vocab/topics.yaml", {"version", "arrays", "concepts"})),
-        ("entities", ("data/vocab/entities.yaml", {"version", "entities"})),
-        ("sources", ("data/vocab/sources.yaml", {"version", "sources"})),
+        ("entities", ("data/vocab/entities.yaml", {"schema", "schema_version", "version", "entities"})),
+        ("sources", ("data/vocab/sources.yaml", {"schema", "schema_version", "version", "sources"})),
         ("types", ("data/vocab/types.yaml", {"version", "types"})),
         ("genres", ("data/vocab/genres.yaml", {"version", "genres"})),
         ("forms", ("data/vocab/forms.yaml", {"version", "arrays", "forms"})),
@@ -170,6 +172,31 @@ _REQUIRED_FIELDS = {
         "added",
     },
 }
+# The application shares the closed source contract with the core model.
+for _file_name, (_file_path, _root_fields) in _FILES.items():
+    _root_fields.add("schema_version")
+
+for _key in _COLLECTION_FIELDS:
+    _COLLECTION_FIELDS[_key].add("assertions")
+    if _key[1] == "arrays":
+        _COLLECTION_FIELDS[_key].discard("source")
+        _COLLECTION_FIELDS[_key].add("external_group")
+        _REQUIRED_FIELDS[_key].discard("source")
+_COLLECTION_FIELDS[("entities", "entities")].difference_update({"url", "checked"})
+_COLLECTION_FIELDS[("entities", "entities")].update({"urls", "review", "source_status", "fixed_sha256"})
+_COLLECTION_FIELDS[("forms", "arrays")].add("local_analysis")
+_COLLECTION_FIELDS[("sources", "sources")] = {"id", "entity", "roles", "history"}
+_REQUIRED_FIELDS[("sources", "sources")] = {"id", "entity", "roles"}
+
+
+def _schema_check(value, schema, location):
+    normalized = json.loads(json.dumps(value, default=lambda item: item.isoformat()))
+    errors = list(Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(normalized))
+    if errors:
+        error = errors[0]
+        raise ExportError(f"{location}: {'.'.join(map(str, error.path))}: {error.message}")
+
+
 _ID = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 _KIND_DIRECTORIES = {
     "topic": "topics",
@@ -273,7 +300,6 @@ def _validate_record(
     string_fields = {
         "id",
         "superordinate",
-        "source",
         "entity",
         "kind",
         "vendor",
@@ -282,11 +308,12 @@ def _validate_record(
         "tier",
         "version",
         "url",
-        "watch",
         "scope",
         "status",
     }
     for field in string_fields & set(record):
+        if collection == "entities" and field in {"version", "replaced_by"} and record[field] is None:
+            continue
         _check_string(relative_path, object_id, f"{record_path}.{field}", record[field])
 
     list_fields = {"broader", "related", "arrays", "subjects", "creator", "role"}
@@ -304,7 +331,7 @@ def _validate_record(
         if field in record:
             _check_language_forms(relative_path, object_id, f"{record_path}.{field}", record[field], True)
 
-    if "basis" in record:
+    if "basis" in record and collection != "entities":
         allowed_basis = {"subjects"} if collection == "entities" else {"zh", "en"}
         _check_keys(
             relative_path,
@@ -334,37 +361,14 @@ def _validate_record(
             else:
                 _check_string(relative_path, object_id, path, basis)
 
+    for field, schema in (("source", source_model.SOURCE), ("external_group", source_model.SOURCE)):
+        if field in record:
+            _schema_check(record[field], {**schema, "$defs": {"basisItem": source_model.BASIS_ITEM}}, record_path + "." + field)
     if "match" in record:
-        if not isinstance(record["match"], list):
-            raise _error(
-                relative_path,
-                object_id,
-                f"{collection}[{object_id}].match",
-                "expected list",
-            )
-        for index, match in enumerate(record["match"]):
-            _check_keys(
-                relative_path,
-                object_id,
-                f"{collection}[{object_id}].match[{index}]",
-                match,
-                {"source", "id", "rel"},
-            )
-            match_path = f"{record_path}.match[{index}]"
-            _check_required_keys(
-                relative_path,
-                object_id,
-                match_path,
-                match,
-                {"source", "id", "rel"},
-            )
-            for field in ("source", "id", "rel"):
-                _check_string(
-                    relative_path,
-                    object_id,
-                    f"{match_path}.{field}",
-                    match[field],
-                )
+        _schema_check(record["match"], {"type": "array", "items": source_model.MATCH,
+                      "$defs": {"basisItem": source_model.BASIS_ITEM}}, record_path + ".match")
+    if "assertions" in record:
+        _schema_check(record["assertions"], source_model.ASSERTIONS, record_path + ".assertions")
 
     if "history" in record:
         history_path = f"{record_path}.history"
@@ -380,6 +384,38 @@ def _validate_record(
                 )
 
 
+def _support_paths(root):
+    paths = list((pathlib.Path(root) / "docs/decisions").glob("source-*.md"))
+    paths.extend(pathlib.Path(root) / relative for relative in (
+        "data/inputs/topics/label-adoptions.json", "data/vocab/source-obligations.yaml")
+        if (pathlib.Path(root) / relative).exists())
+    return sorted(paths)
+
+
+def _read_support_inputs(root):
+    return {"_support:" + path.relative_to(root).as_posix(): path.read_bytes()
+            for path in _support_paths(root)}
+
+
+def _parse_support_inputs(snapshot):
+    decisions = []
+    obligations = None
+    adoptions = None
+    for key, content in snapshot.items():
+        if not key.startswith("_support:"):
+            continue
+        text = content.decode("utf-8")
+        if key.endswith(".md"):
+            if text.startswith("---\n") and "\n---\n" in text[4:]:
+                decisions.append(yaml.safe_load(text.split("---\n", 2)[1]))
+        elif key.endswith("source-obligations.yaml"):
+            obligations = yaml.safe_load(text)
+        elif key.endswith("label-adoptions.json"):
+            from kb_core.label_adoptions import validate_adoptions
+            adoptions = validate_adoptions(json.loads(text))
+    return source_model.accepted_decisions_from_documents(decisions), obligations, adoptions
+
+
 def _read_repository_inputs(repo_root: pathlib.Path) -> dict[str, bytes]:
     root = pathlib.Path(repo_root)
     inputs: dict[str, bytes] = {}
@@ -390,6 +426,7 @@ def _read_repository_inputs(repo_root: pathlib.Path) -> dict[str, bytes]:
             raise ExportError(
                 f"{relative_path}: object <document>: document: {exc}"
             ) from exc
+    inputs.update(_read_support_inputs(root))
     return inputs
 
 
@@ -408,6 +445,11 @@ def load_repository(
         except (KeyError, UnicodeError, yaml.YAMLError) as exc:
             raise ExportError(f"{relative_path}: object <document>: document: {exc}") from exc
         _check_keys(relative_path, "<document>", "document", document, allowed_top)
+        if type(document.get("schema_version")) is not int or document["schema_version"] != 2:
+            raise ExportError(f"{relative_path}: schema_version must be 2")
+        if name in {"entities", "sources"}:
+            schema_name = "source-entities.schema.json" if name == "entities" else "source-uses.schema.json"
+            _schema_check(document, source_model.build_schema_documents()[schema_name], relative_path)
         _check_keys(relative_path, "<version>", "version", document.get("version"), {"id", "date", "note"})
         _check_required_keys(
             relative_path,
@@ -420,7 +462,7 @@ def load_repository(
         if not isinstance(document["version"]["date"], datetime.date):
             raise _error(relative_path, "<version>", "version.date", "expected date")
         _check_string(relative_path, "<version>", "version.note", document["version"]["note"])
-        for collection in allowed_top - {"version"}:
+        for collection in allowed_top - {"version", "schema", "schema_version"}:
             records = document.get(collection)
             if not isinstance(records, list):
                 raise _error(relative_path, "<document>", collection, "expected list")
@@ -446,6 +488,14 @@ def load_repository(
         documents[name] = document
 
     _validate_references(documents)
+    try:
+        decisions, obligations, adoptions = _parse_support_inputs(snapshot)
+    except (ValueError, UnicodeError, yaml.YAMLError) as exc:
+        raise ExportError(f"invalid source support document: {exc}") from exc
+    issues = source_model.validate_source_documents(documents, decisions, obligations, adoptions)
+    if issues:
+        issue = issues[0]
+        raise ExportError(f"{issue.file}: {issue.record}: {issue.field_path}: {issue.code}: {issue.message}")
     return documents
 
 
@@ -490,11 +540,8 @@ def _validate_references(documents: Mapping[str, dict]) -> None:
         for field in ("broader", "related", "replaced_by"):
             _require_targets("data/vocab/topics.yaml", "concepts", record, field, topics)
         _require_targets("data/vocab/topics.yaml", "concepts", record, "arrays", arrays)
-        if record.get("source") != "self":
-            _require_targets("data/vocab/topics.yaml", "concepts", record, "source", sources)
     for record in arrays.values():
         _require_targets("data/vocab/topics.yaml", "arrays", record, "superordinate", topics)
-        _require_targets("data/vocab/topics.yaml", "arrays", record, "source", sources)
     for record in entities.values():
         _require_targets("data/vocab/entities.yaml", "entities", record, "subjects", topics)
         for field in ("vendor", "creator", "replaced_by"):
@@ -504,7 +551,6 @@ def _validate_references(documents: Mapping[str, dict]) -> None:
     for record in documents["forms"]["forms"]:
         _require_targets("data/vocab/forms.yaml", "forms", record, "arrays", form_arrays)
     for record in form_arrays.values():
-        _require_targets("data/vocab/forms.yaml", "arrays", record, "source", sources)
         if record["superordinate"] != "forms":
             raise _error(
                 "data/vocab/forms.yaml",
@@ -518,8 +564,6 @@ def _validate_references(documents: Mapping[str, dict]) -> None:
         for record in records.values():
             for field in ("broader", "related", "replaced_by"):
                 _require_targets(relative_path, collection, record, field, records)
-            if record.get("source"):
-                _require_targets(relative_path, collection, record, "source", sources)
     for name, collection in (
         ("topics", "concepts"),
         ("entities", "entities"),
@@ -537,14 +581,16 @@ def _validate_references(documents: Mapping[str, dict]) -> None:
                         if errors:
                             raise _error(relative_path, str(record["id"]),
                                          f"{collection}[{record['id']}].basis.{language}", "; ".join(errors))
-            for index, match in enumerate(record.get("match", [])):
-                if match.get("source") not in sources:
-                    raise _error(
-                        relative_path,
-                        str(record["id"]),
-                        f"{collection}[{record['id']}].match[{index}].source",
-                        f"missing reference {match.get('source')}",
-                    )
+    for record in entities.values():
+        for field, groups in (("basis.subjects", record.get("basis", {}).get("subjects", [])),
+                              ("assertions.subjects", record.get("assertions", {}).get("subjects", []))):
+            for group in groups:
+                for target in group["values"]:
+                    if target not in topics or target not in record["subjects"]:
+                        raise ExportError(f"entities[{record['id']}].{field}: unsupported subject {target}")
+    for record in sources.values():
+        if entities[record["entity"]].get("kind") not in {"standard", "publication"}:
+            raise ExportError(f"sources[{record['id']}].entity: expected source entity")
 
 
 def display_label(record: Mapping[str, Any]) -> str:
@@ -660,6 +706,16 @@ def _common_properties(record: Mapping[str, Any], object_kind: str, version: str
     return properties
 
 
+def _evidence_rows(field, targets, references):
+    return [(field, targets, link("entity", item["entity"], item["entity"]),
+             item["locator"], item.get("checked", "")) for item in references]
+
+
+def _source_property(record):
+    source = record.get("source") or record.get("external_group")
+    return link("source", source["registry"], source["registry"]) if source else None
+
+
 def _common_body(
     record: Mapping[str, Any],
     *,
@@ -676,23 +732,50 @@ def _common_body(
         if table:
             sections.extend(("", table))
     basis = record.get("basis") or {}
-    evidence_rows = []
-    for language, value in basis.items():
-        if language in ("zh", "en") and isinstance(value, dict):
-            evidence_rows.extend((f"{language} · {title}", detail) for title, detail in basis_rows(value))
+    language_rows = []
+    external_rows = []
+    for field, value in basis.items():
+        if field in ("zh", "en"):
+            if isinstance(value, dict):
+                language_rows.extend((f"{field} · {title}", detail) for title, detail in basis_rows(value))
+            else:
+                language_rows.append((field, value))
+        elif field == "subjects":
+            for group in value:
+                targets = ", ".join(link("topic", item, item) for item in group["values"])
+                external_rows.extend(_evidence_rows(field, targets, group["references"]))
         else:
-            evidence_rows.append((language, value))
-    table = _table(basis_title, ("字段", "值"), evidence_rows)
+            external_rows.extend(_evidence_rows(field, "", value))
+    for table in (_table(basis_title, ("字段", "值"), language_rows),
+                  _table("外部依据", ("字段", "适用值", "来源实体", "定位", "核对日期"), external_rows)):
+        if table:
+            sections.extend(("", table))
+    assertion_rows = []
+    for field, value in record.get("assertions", {}).items():
+        for item in value if isinstance(value, list) else [value]:
+            assertion_rows.append((field, ", ".join(link("topic", v, v) for v in item.get("values", [])),
+                                   item["disposition"], item["original"], item["migration"]))
+    table = _table("项目判断", ("字段", "适用值", "处置", "原值", "迁移审计"), assertion_rows)
     if table:
         sections.extend(("", table))
-    matches = record.get("match") or []
-    table = _table(
-        "外部映射",
-        ("source", "id", "rel"),
-        ((item.get("source", ""), item.get("id", ""), item.get("rel", "")) for item in matches),
-    )
-    if table:
-        sections.extend(("", table))
+    for field, title in (("source", "派生来源"), ("match", "外部映射"), ("external_group", "外部分组")):
+        values = record.get(field, [])
+        values = values if isinstance(values, list) else [values]
+        rows = []
+        for item in values:
+            for evidence in item["basis"]:
+                rows.append((link("source", item["registry"], item["registry"]), item["item"],
+                             item.get("rel", ""), item.get("locator", ""),
+                             link("entity", evidence["entity"], evidence["entity"]),
+                             evidence["locator"], evidence.get("checked", "")))
+        table = _table(title, ("来源用途", "外部条目", "关系", "定位", "依据实体", "依据定位", "核对日期"), rows)
+        if table:
+            sections.extend(("", table))
+    if "local_analysis" in record:
+        isolated = record["local_analysis"]
+        sections.extend(("", _table("隔离记录", ("旧显示字符串", "状态", "决定"), [
+            (isolated["legacy_source_label"], isolated["state"], isolated["decision"])]), "",
+            "仅保留旧显示字符串和隔离状态；不表示来源依据、用途或有效的本地分析。"))
     if "history" in record:
         history = yaml.safe_dump(record["history"], allow_unicode=True, sort_keys=False).rstrip()
         sections.extend(("", "## 历史记录", "", "```yaml", history, "```"))
@@ -719,13 +802,7 @@ def _render_topic(
     properties["kb_broader"] = [link("topic", item, topic_labels[item]) for item in record.get("broader", [])]
     properties["kb_related"] = [link("topic", item, topic_labels[item]) for item in record.get("related", [])]
     properties["kb_arrays"] = [link("array", item, array_labels[item]) for item in record.get("arrays", [])]
-    if record.get("source"):
-        source = str(record["source"])
-        properties["kb_source"] = (
-            link("source", source, source_labels[source])
-            if source in source_labels
-            else source
-        )
+    properties["kb_source"] = _source_property(record)
     properties["kb_added"] = record.get("added")
     replaced = _references(record.get("replaced_by"))
     properties["kb_replaced_by"] = (
@@ -743,9 +820,8 @@ def _render_array(
 ) -> bytes:
     properties = _common_properties(record, "array", version)
     parent = str(record["superordinate"])
-    source = str(record["source"])
     properties["kb_superordinate"] = link("topic", parent, topic_labels[parent])
-    properties["kb_source"] = link("source", source, source_labels[source])
+    properties["kb_source"] = _source_property(record)
     properties["kb_members"] = [link("topic", item, topic_labels[item]) for item in members]
     body = [
         f"# {record['id']}",
@@ -754,7 +830,7 @@ def _render_array(
         "",
         "本记录表示主题树内的分组，不改变成员主题的概念身份。",
     ]
-    return _note(properties, body)
+    return _note(properties, body + _common_body(record)[1:])
 
 
 def _render_entity(
@@ -770,10 +846,29 @@ def _render_entity(
         values = _references(record.get(field))
         links = [link("entity", item, entity_labels[item]) for item in values]
         properties[f"kb_{field}"] = links if isinstance(record.get(field), list) else (links[0] if links else None)
-    for field in ("form", "tier", "url", "watch", "checked", "added"):
+    for field in ("form", "tier", "added", "source_status", "fixed_sha256"):
         properties[f"kb_{field}"] = record.get(field)
     properties["kb_entity_version"] = record.get("version")
-    return _note(properties, _common_body(record, basis_title="归属依据"))
+    properties["kb_url"] = next((item["url"] for item in record.get("urls", []) if item["primary"]), None)
+    review = record.get("review", {})
+    for field in ("checked", "next_due", "interval_months", "grace_days"):
+        properties["kb_" + field] = review.get(field)
+    properties["kb_watch"] = [item["locator"] for item in record.get("watch", [])]
+    body = _common_body(record)
+    if record.get("kind") in {"standard", "publication"}:
+        body.extend(("", _table("外部状态", ("字段", "值"),
+                                [("source_status", record.get("source_status", "外部状态未核实"))])))
+        if record.get("version") is None:
+            body.extend(("", "## 来源版本", "", "未登记可核实版本。"))
+    body.extend(("", _table("来源地址", ("角色", "地址", "主地址"),
+                            [(item["role"], item["url"], item["primary"]) for item in record.get("urls", [])])))
+    body.extend(("", _table("复核安排", ("字段", "值"),
+                            [(field, value) for field, value in review.items()])))
+    body.extend(("", _table("观察对象", ("地址", "信号", "可用性周期", "重定向周期", "内容周期"),
+                            [(item["locator"], ", ".join(item["signals"]),
+                              *[item["cadence_months"].get(key, "") for key in ("availability", "redirect", "content")])
+                             for item in record.get("watch", [])])))
+    return _note(properties, body)
 
 
 def _render_source(
@@ -784,8 +879,8 @@ def _render_source(
     properties = _common_properties(record, "source", version)
     entity = str(record["entity"])
     properties["kb_entity"] = link("entity", entity, entity_labels[entity])
-    properties["kb_roles"] = list(record.get("role", []))
-    properties["kb_checked"] = record.get("checked")
+    properties["kb_roles"] = [item["role"] for item in record["roles"]]
+    properties["kb_approved_roles"] = [item["role"] for item in record["roles"] if item["status"] == "approved"]
     body = [
         f"# {record['id']}",
         "",
@@ -793,7 +888,9 @@ def _render_source(
         "",
         "本记录表示来源用途，不表示来源实体身份。",
     ]
-    return _note(properties, body)
+    body.extend(("", _table("用途资格", ("角色", "状态", "决定"),
+                            [(item["role"], item["status"], item["decision"]) for item in record["roles"]])))
+    return _note(properties, body + _common_body(record)[1:])
 
 
 def _render_controlled(
@@ -806,7 +903,7 @@ def _render_controlled(
     properties["kb_broader"] = [link(object_kind, item, labels[item]) for item in record.get("broader", [])]
     properties["kb_related"] = [link(object_kind, item, labels[item]) for item in record.get("related", [])]
     properties["kb_arrays"] = list(record.get("arrays", []))
-    properties["kb_source"] = record.get("source")
+    properties["kb_source"] = _source_property(record)
     properties["kb_added"] = record.get("added")
     replaced = _references(record.get("replaced_by"))
     properties["kb_replaced_by"] = (
@@ -847,7 +944,7 @@ def _root_index(form_arrays: Sequence[Mapping[str, Any]]) -> bytes:
         "载体数组",
         ("id", "superordinate", "source"),
         (
-            (record["id"], record["superordinate"], record["source"])
+            (record["id"], record["superordinate"], _source_property(record) or ("隔离记录" if "local_analysis" in record else "项目判断"))
             for record in form_arrays
         ),
     )
@@ -855,7 +952,7 @@ def _root_index(form_arrays: Sequence[Mapping[str, Any]]) -> bytes:
         "# 词表参考区\n\n"
         "本目录由 kb-design 的六份正式词表确定性生成，只提供 Obsidian 浏览与链接。\n\n"
         "对象路径使用稳定 ID；这里的修改不会回流正式词表。\n\n"
-        f"{table}\n"
+        f"{table}\n" + "\n".join("\n".join(_common_body(record)) for record in form_arrays)
     ).encode("utf-8")
 
 
@@ -1160,7 +1257,7 @@ def _validate_written_export(
     for relative_path, content in readback.items():
         if not relative_path.endswith(".md"):
             continue
-        for target in _WIKILINK.findall(content.decode("utf-8")):
+        for target in _WIKILINK.findall(content.decode("utf-8").replace("\\|", "|")):
             if not target.startswith("kb/"):
                 raise ExportError(
                     f"written link is not vault-root kb path: {relative_path} -> {target}"
