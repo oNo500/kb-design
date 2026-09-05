@@ -55,7 +55,7 @@
 
 ## 决定入口
 
-已采纳决定只追加不重写。阅读新布局时先看[仓库布局](decisions/monorepo-layout.md)，再看[预览归属](decisions/vocab-preview-location.md)，按主题查看[终端访问](decisions/obsidian-agent-entry.md)、[应用约束](decisions/application-profile-boundary.md)、[工具归属](decisions/obsidian-tool-location.md)、[词表刷新](decisions/obsidian-reference-refresh.md)、[当前阶段](decisions/current-stage-scope.md)和[验证投入](decisions/verification-effort.md)。
+已采纳决定只追加不重写。阅读新布局时先看[仓库布局](decisions/monorepo-layout.md)，再看[预览归属](decisions/vocab-preview-location.md)，按主题查看[来源字段采纳](decisions/source-field-adoptions.md)、[终端访问](decisions/obsidian-agent-entry.md)、[应用约束](decisions/application-profile-boundary.md)、[工具归属](decisions/obsidian-tool-location.md)、[词表刷新](decisions/obsidian-reference-refresh.md)、[当前阶段](decisions/current-stage-scope.md)和[验证投入](decisions/verification-effort.md)。
 
 迁移前决定中的旧路径按该决定形成时的 Git 基线解释；目录变化不修改原决定正文，也不改变其语义效力。当前位置由本索引与仓库布局决定提供。
 
