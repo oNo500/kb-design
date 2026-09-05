@@ -29,6 +29,7 @@
 | 治理 | [治理规则](design/governance/governance.md) | 对象效力、决策权、变更与验收 |
 | 维护 | [维护规则](design/governance/maintenance.md) | 指标、触发、动作、复核与审计 |
 | 写作 | [写作规则](design/governance/writing.md) | 全库文档与 designation 规则 |
+| 预览 | [词表预览](design/targets/vocab-preview.md) | 工作区只读表示与自动更新 |
 | 应用 | [Obsidian 映射](design/targets/obsidian.md) | 首个完整应用 target 的语义与表示 |
 | 版本 | [词表版本](design/model/versioning.md) | 发版时机和变更记录 |
 
@@ -46,6 +47,7 @@
 |---|---|---|
 | 核心包 | [kb-core](../packages/kb-core/README.md) | `uv run kb-core --help` |
 | Obsidian 应用 | [kb-obsidian](../apps/obsidian/README.md) | `uv run kb-obsidian --help` |
+| 词表预览 | [kb-vocab-preview](../apps/vocab-preview/README.md) | `uv run kb-vocab-preview` |
 | 开发说明 | [开发指南](guides/development.md) | uv workspace、常用命令与目录边界 |
 | 整仓检查 | `scripts/` | `uv run python scripts/check-links.py` |
 
@@ -53,7 +55,7 @@
 
 ## 决定入口
 
-已采纳决定只追加不重写。阅读新布局时先看[仓库布局](decisions/monorepo-layout.md)，再按主题查看[应用约束](decisions/application-profile-boundary.md)、[工具归属](decisions/obsidian-tool-location.md)、[词表刷新](decisions/obsidian-reference-refresh.md)、[当前阶段](decisions/current-stage-scope.md)和[验证投入](decisions/verification-effort.md)。
+已采纳决定只追加不重写。阅读新布局时先看[仓库布局](decisions/monorepo-layout.md)，再看[预览归属](decisions/vocab-preview-location.md)，按主题查看[应用约束](decisions/application-profile-boundary.md)、[工具归属](decisions/obsidian-tool-location.md)、[词表刷新](decisions/obsidian-reference-refresh.md)、[当前阶段](decisions/current-stage-scope.md)和[验证投入](decisions/verification-effort.md)。
 
 迁移前决定中的旧路径按该决定形成时的 Git 基线解释；目录变化不修改原决定正文，也不改变其语义效力。当前位置由本索引与仓库布局决定提供。
 

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kb-vocab-preview"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = ["kb-core", "PyYAML>=6,<7"]
+
+[tool.uv.sources]
+kb-core = { workspace = true }
+
+[project.scripts]
+kb-vocab-preview = "kb_vocab_preview.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+kb_vocab_preview = ["template.html"]

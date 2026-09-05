@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>词表浏览 · kb-design</title>
+<style>
+:root{font-family:system-ui,-apple-system,"PingFang SC",sans-serif;color:#1e293b;background:#f5f7fb;font-size:16px;--blue:#245de7;--line:#e3e8f1;--muted:#68778c}
+*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #91b6ff;outline-offset:2px}button{border:0;background:none;color:inherit}header{height:78px;background:white;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;gap:16px}h1{font-size:21px;margin:0;font-weight:720;letter-spacing:.02em}.brand{display:flex;align-items:center;gap:12px}.logo{background:var(--blue);color:white;width:35px;height:35px;border-radius:9px;display:grid;place-items:center;font-weight:800}.subtitle{font-size:12px;color:var(--muted);margin-top:3px}.pill{font-size:12px;background:#f0f4fa;color:#586981;padding:5px 9px;border-radius:20px}.head-right{display:flex;gap:14px;align-items:center}.switch{display:flex;padding:4px;background:#edf1f7;border-radius:9px;gap:3px}.switch button{padding:7px 13px;border-radius:6px;font-size:14px}.switch .on{background:white;box-shadow:0 1px 4px #17273b15;color:var(--blue)}
+.workspace{display:grid;grid-template-columns:185px 355px minmax(0,1fr);height:calc(100dvh - 78px)}.workspace.graph-mode{grid-template-columns:185px minmax(300px,1fr) 370px}aside{padding:23px 13px;background:#f6f8fc;border-right:1px solid var(--line);overflow:auto}.eyebrow{font-size:12px;color:var(--muted);padding:0 12px;margin-bottom:14px;letter-spacing:.09em}.navbtn{width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left;padding:12px;border-radius:8px;margin-bottom:5px;font-size:15px}.navbtn.on{background:#e5edff;color:#174dc9;font-weight:650}.navbtn:hover{background:#eaf0fa}.count{font-size:12px;opacity:.7;font-weight:400}.side-note{font-size:12px;color:var(--muted);line-height:1.8;padding:20px 12px;border-top:1px solid var(--line);margin-top:22px}.mainpane{background:#fff;border-right:1px solid var(--line);display:flex;flex-direction:column;min-width:0;min-height:0}.toolbar{padding:21px 19px 14px;border-bottom:1px solid var(--line)}.toolbar h2{font-size:18px;margin:0 0 15px;display:flex;justify-content:space-between;align-items:center}.search{width:100%;border:1px solid #dce3ee;padding:10px 12px;border-radius:8px;background:#f8faff;font-size:14px}.toolsrow{display:flex;gap:7px;margin-top:11px;align-items:center}.toolsrow select{min-width:0;border:1px solid var(--line);border-radius:6px;padding:6px;background:white;font-size:13px;flex:1}.smallbtn{border:1px solid var(--line);border-radius:6px;padding:6px 9px;font-size:13px}.smallbtn.on{background:#edf3ff;color:var(--blue);border-color:#c9d9ff}.listmeta{padding:11px 20px;font-size:12px;color:var(--muted);border-bottom:1px solid #f0f3f8;display:flex;justify-content:space-between;gap:10px}.list{overflow:auto;flex:1}.record{display:flex;align-items:center;border-bottom:1px solid #f0f3f8;min-height:69px}.record.selected{background:#edf3ff;box-shadow:inset 3px 0 var(--blue)}.record:hover{background:#f4f7fd}.recordbutton{text-align:left;width:100%;min-width:0;padding:12px 17px;display:block}.recordtitle{font-size:14px;line-height:1.5;font-weight:570;overflow-wrap:anywhere}.recordsub{font-size:12px;color:var(--muted);margin-top:4px;overflow-wrap:anywhere}.toggle{width:25px;flex-shrink:0;padding:10px 0;font-size:12px;color:var(--muted)}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px}.detail{overflow:auto;padding:28px 34px 50px;background:white;min-width:0}.detail h2{font-size:27px;line-height:1.4;margin:13px 0 5px;overflow-wrap:anywhere}.en{color:var(--muted);font-size:15px;overflow-wrap:anywhere}.idline{font:12px ui-monospace,monospace;color:#75849a;overflow-wrap:anywhere;margin:11px 0 20px}.badges{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.scope{font-size:16px;line-height:1.85;margin:22px 0;color:#384961}.section{margin-top:25px}.section h3{font-size:14px;margin:0 0 10px;font-weight:650}.section h3 span{color:#8a96a7;font-weight:400;margin-left:6px}.links{display:flex;gap:7px;flex-wrap:wrap}.ref{display:inline-block;text-align:left;border:1px solid #dce6fb;background:#f5f8ff;border-radius:6px;padding:7px 10px;color:#2657bb;font-size:14px;line-height:1.4;overflow-wrap:anywhere}.ref:hover{background:#e8efff}.muted{color:var(--muted);font-size:13px;line-height:1.7}.field{display:grid;grid-template-columns:95px minmax(0,1fr);gap:12px;border-bottom:1px solid #eff2f7;padding:10px 0;font-size:14px;line-height:1.65}.field>span:first-child{color:var(--muted)}.value{overflow-wrap:anywhere}.value ul{padding-left:20px;margin:0}.value .field{grid-template-columns:85px minmax(0,1fr)}a{color:#245de7}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f7fb;border:1px solid var(--line);border-radius:8px;padding:15px;font:12px/1.8 ui-monospace,monospace}details{margin-top:24px}summary{cursor:pointer;font-size:14px;color:#5c6d83}details details{margin-top:8px}.empty{padding:40px 24px;color:var(--muted);text-align:center;font-size:14px;line-height:1.8}.graphpane{display:none;position:relative;min-width:0;min-height:0;overflow:hidden;background:#f9fbff}.graph-mode .mainpane{display:none}.graph-mode .graphpane{display:block}.graph-mode .detail{padding:24px}.graph-top{position:absolute;top:18px;left:18px;right:18px;z-index:2;background:#fffffff2;box-shadow:0 3px 18px #2336560c;border:1px solid var(--line);border-radius:10px;padding:12px}.graph-top .search{background:white}.checks{display:flex;gap:8px 12px;flex-wrap:wrap;margin-top:10px;font-size:12px;color:#536780}.checks label{display:flex;gap:3px;align-items:center}.graph-bottom{position:absolute;bottom:18px;left:18px;right:18px;display:flex;justify-content:space-between;align-items:end;gap:10px;pointer-events:none}.graph-bottom>*{pointer-events:auto}.legend{font-size:12px;line-height:1.9;background:#fffffff0;border-radius:8px;padding:10px 13px;border:1px solid var(--line)}.zoom{background:white;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:8px;overflow:hidden}.zoom button{padding:9px 13px;border-bottom:1px solid var(--line);font-size:14px}canvas{width:100%;height:100%;display:block;touch-action:none}.tip{position:absolute;pointer-events:none;display:none;background:#20334b;color:white;font-size:13px;padding:7px 10px;border-radius:5px;max-width:260px;z-index:4}.graph-note{font-size:12px;color:var(--muted);margin-top:8px}.back{font-size:13px;color:var(--muted);padding:0 0 13px}.match{border:1px solid var(--line);border-radius:8px;padding:11px;margin:7px 0;font-size:13px;line-height:1.8;overflow-wrap:anywhere}.match code{font-size:12px}.version{margin-top:24px}.graph-mode aside .navbtn.on{background:#e5edff}
+@media(min-width:1550px){.workspace{grid-template-columns:205px 410px minmax(0,1fr)}.detail{padding:34px 50px}.workspace.graph-mode{grid-template-columns:205px minmax(300px,1fr) 430px}}
+@media(max-width:1000px){.workspace,.workspace.graph-mode{grid-template-columns:155px 310px minmax(0,1fr)}.workspace.graph-mode{grid-template-columns:140px minmax(250px,1fr) 300px}.detail{padding:22px}.detail h2{font-size:22px}header{padding:0 18px}.pill.snapshot{display:none}}
+@media(max-width:760px){header{height:auto;min-height:78px;flex-wrap:wrap;padding:15px;gap:12px}.workspace,.workspace.graph-mode{display:flex;flex-direction:column;height:auto}aside{padding:10px;display:flex;gap:5px;overflow:auto;flex-shrink:0}.eyebrow,.side-note{display:none}.navbtn{white-space:nowrap;gap:10px;margin:0;width:auto;padding:9px}.mainpane{height:430px;flex-shrink:0}.detail{border-top:1px solid var(--line);min-height:400px}.graphpane{height:570px;flex-shrink:0}.toolbar{padding:15px}.head-right{gap:8px}.subtitle{font-size:11px}.detail h2{font-size:24px}}
+.sourcecard{margin:12px 0;padding:17px 19px;border:1px solid #cbdaf6;border-left:3px solid #3974e9;border-radius:9px;background:#f8faff}.sourcecard h4{font-size:17px;line-height:1.6;margin:0 0 7px;overflow-wrap:anywhere}.sourcecard .origin{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;color:#65758c;margin-bottom:13px}.sourcecard .origin .ref{font-size:12px;padding:4px 7px}.sourcecard .field{grid-template-columns:85px minmax(0,1fr);border-color:#e5ecf8}.sourcecard .field:last-child{border-bottom:0}.sourcecard .ref{background:white}.usage{margin-top:10px;border:1px solid var(--line);border-radius:8px;padding:12px 14px}.usage .muted{margin-top:7px}.provenance-note{font-size:13px;color:#65758c;line-height:1.75;margin:0 0 12px}.sourcecard code,.usage code{font-size:12px;overflow-wrap:anywhere}.sourcecard .field .pill{display:inline-block;margin:2px 3px 2px 0}.source-links{display:flex;gap:13px;flex-wrap:wrap;align-items:center;margin-top:12px;font-size:13px}
+</style>
+<header><div class="brand"><div class="logo">词</div><div><h1>词表浏览</h1><div class="subtitle">kb-design / data/vocab</div></div></div><div class="head-right"><span class="pill snapshot" id="snapshot"></span><div class="switch"><button id="browseMode" class="on">条目浏览</button><button id="graphMode">全库关系</button></div><span class="pill">只读</span></div></header>
+<div class="workspace" id="workspace"><aside id="nav"></aside>
+<section class="mainpane"><div class="toolbar"><h2><span id="collectionTitle">主题</span><span class="pill" id="total"></span></h2><input id="search" class="search" type="search" aria-label="搜索当前词表" placeholder="搜索名称、标识符、说明…"><div class="toolsrow"><select id="status" aria-label="按状态筛选"><option value="">全部状态</option></select><button id="flat" class="smallbtn on">列表</button><button id="tree" class="smallbtn">层级</button></div></div><div class="listmeta"><span id="listCount"></span><span id="listHint"></span></div><div class="list" id="list"></div></section>
+<section class="graphpane" id="graphpane"><canvas id="canvas" aria-label="全库关系图，可缩放和拖动；全部条目与关系也可在条目浏览中访问"></canvas><div class="graph-top"><input id="graphSearch" class="search" type="search" aria-label="搜索图中条目" placeholder="搜索并高亮图中条目…"><div class="checks" id="edgeChecks"></div><div class="graph-note" id="graphNote"></div></div><div class="graph-bottom"><div class="legend" id="legend"></div><div class="zoom"><button id="zoomIn" aria-label="放大">＋</button><button id="zoomOut" aria-label="缩小">−</button><button id="fit">全图</button><button id="local">选中关系</button></div></div><div class="tip" id="tip"></div></section>
+<section class="detail" id="detail" aria-live="polite"></section></div>
+<script id="data" type="application/json">__SNAPSHOT__</script>
+<script>
+'use strict';
+const D=JSON.parse(document.getElementById('data').textContent);
+const META={topics:['主题','#3974e9','concepts'],entities:['实体','#9b59cf','entities'],sources:['来源用途','#e28c35','sources'],types:['文档类型','#17a294','types'],genres:['体裁','#da5f8e','genres'],forms:['载体','#7b8c30','forms']};
+const STATUS={active:'active',candidate:'candidate',unassigned:'unassigned',deprecated:'deprecated',draft:'draft'};
+const FIELDS={id:'标识符',label:'名称',scope:'范围说明',status:'状态',kind:'实体类别',tier:'来源级别',version:'版本',checked:'复核日期',added:'加入日期',url:'链接',watch:'跟踪链接',basis:'依据',source:'来源',subjects:'关联主题',role:'用途',entity:'对应实体',form:'载体',vendor:'提供方',arrays:'分组',superordinate:'上位对象',broader:'上位主题',related:'相关主题',match:'外部映射',zh:'中文',en:'英文',rel:'映射关系'};
+const $=id=>document.getElementById(id), esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const listify=x=>x==null?[]:Array.isArray(x)?x:[x];
+const records=[],byKey=new Map(),edges=[],edgeSet=new Set();
+for(const [cat,m] of Object.entries(META))for(const group of [m[2],'arrays'])for(const r of D.collections[cat].data[group]||[]){const n={key:`${cat}/${group}/${r.id}`,cat,group,r};records.push(n);byKey.set(n.key,n)}
+const resolve=(cat,id,group=META[cat][2])=>byKey.get(`${cat}/${group}/${id}`);
+function title(n){if(!n)return '';const l=n.r.label;if(l)return typeof l==='string'?l:l.zh||l.en||n.r.id;if(n.cat==='sources'){const e=resolve('entities',n.r.entity);return e?title(e):n.r.id}return n.r.id}
+function addEdge(a,b,type){if(!a||!b)return;const k=`${a.key}|${b.key}|${type}`;if(!edgeSet.has(k)){edges.push({a:a.key,b:b.key,type});edgeSet.add(k)}}
+const EDGE={hierarchy:['上下位','#6086bc'],related:['相关','#bd66ab'],group:['分组','#8f94a7'],source:['来源引用','#d6a264'],mapping:['映射来源','#b2a067'],subject:['实体主题','#a38cc3'],entity:['用途实体','#d28b53'],basis:['依据引用','#a4adba'],form:['载体引用','#6d9f93']};
+function basisLinks(n){const links=[];const visit=(v,path)=>{if(typeof v==='string'){if(!['none','self','model'].includes(v)){const value=v==='source'?n.r.source:v;if(value&&!['self','none','model'].includes(value))links.push({source:value.split(':')[0],path,value})}}else if(Array.isArray(v))v.forEach((x,i)=>visit(x,path+'.'+i))};for(const [field,value]of Object.entries(n.r.basis||{})){const path='basis.'+field;if(['zh','en'].includes(field)&&value&&typeof value==='object'&&!Array.isArray(value)){if(Number.isInteger(value.level)&&value.level>=1&&value.level<=4)for(const r of value.references||[])links.push({source:r.source,path,value:r.source+':'+r.locator});}else visit(value,path)}return links}
+for(const n of records){const r=n.r;
+ for(const id of listify(r.broader))addEdge(n,resolve('topics',id),'hierarchy');
+ for(const id of listify(r.related))addEdge(n,resolve('topics',id),'related');
+ for(const id of listify(r.arrays))addEdge(n,resolve(n.cat,id,'arrays'),'group');
+ if(n.group==='arrays')addEdge(n,resolve(n.cat,r.superordinate),'group');
+ if(r.source)addEdge(n,resolve('sources',r.source),'source');
+ if(r.entity)addEdge(n,resolve('entities',r.entity),'entity');
+ for(const id of listify(r.subjects))addEdge(n,resolve('topics',id),'subject');
+ for(const m of listify(r.match))addEdge(n,resolve('sources',m.source),'mapping');
+ if(r.form)addEdge(n,resolve('forms',r.form),'form');
+ for(const b of basisLinks(n))addEdge(n,resolve('sources',b.source),'basis');
+}
+const incoming=new Map(),outgoing=new Map();for(const e of edges){if(!incoming.has(e.b))incoming.set(e.b,[]);incoming.get(e.b).push(e);if(!outgoing.has(e.a))outgoing.set(e.a,[]);outgoing.get(e.a).push(e)}
+const children=new Map();for(const n of records.filter(n=>n.cat==='topics'&&n.group==='concepts'))for(const p of listify(n.r.broader)){if(!children.has(p))children.set(p,[]);children.get(p).push(n)}
+let cat='topics',selected=resolve('topics','mathematical-and-statistical-foundations')||records[0],treeMode=false,graphMode=false,history=[],expanded=new Set(),query='',filter='';
+function ref(n,label){return n?`<button class="ref" data-key="${esc(n.key)}">${esc(label||title(n))}</button>`:''}
+function refValue(c,id,g){const n=resolve(c,id,g);return n?ref(n):`<span class="muted">${esc(id)}</span>`}
+function rawValue(v,k=''){
+ if(v==null)return '<span class="muted">—</span>';
+ if(Array.isArray(v))return v.length?`<ul>${v.map(x=>`<li>${rawValue(x,k)}</li>`).join('')}</ul>`:'<span class="muted">无</span>';
+ if(typeof v==='object')return Object.entries(v).map(([key,val])=>`<div class="field"><span>${esc(FIELDS[key]||key)}</span><div class="value">${rawValue(val,key)}</div></div>`).join('');
+ if(['url','watch'].includes(k)&&/^https?:\/\//.test(String(v)))return `<a href="${esc(v)}" target="_blank" rel="noopener noreferrer">${esc(v)}</a>`;
+ return esc(v);
+}
+function section(name,items){return items.length?`<div class="section"><h3>${esc(name)}<span>${items.length}</span></h3><div class="links">${items.join('')}</div></div>`:''}
+function basisBadge(n){const v=n.r.basis?.zh;if(!v||typeof v!=='object')return '';if(v.level===5)return '<span class="pill" style="background:#fff0d7;color:#805113">中文 · 模型知识 · 第 5 级</span>';return v.level?`<span class="pill">中文依据 · 第 ${v.level} 级</span>`:''}
+function basisDetails(n){let h='';for(const [language,v]of Object.entries(n.r.basis||{})){if(!['zh','en'].includes(language)||!v||typeof v!=='object'||Array.isArray(v)){h+=`<div class="field"><span>${esc(FIELDS[language]||language)}</span><div class="value">${rawValue(v,language)}</div></div>`;continue}const name=language==='zh'?'中文':'英文';let body='';if(v.level===5){body=`<div class="muted">模型既有知识，外部用法未核实</div><div class="field"><span>模型与日期</span><div>${esc(v.model.name)} · ${esc(v.model.date)}</div></div><div class="field"><span>对应判断</span><div>${esc(v.model.rationale)}</div></div><div class="field"><span>采纳记录</span><div class="value">${esc(v.model.approval)}</div></div>`}else if(v.level>=1&&v.level<=4){body=(v.references||[]).map(r=>`<div class="match">${refValue('sources',r.source)}<div class="muted">定位：${esc(r.locator)}</div></div>`).join('')}else if(v.level===6){body=`<div class="muted">未采用：${esc(v.reason)}</div>`}else {body=`<div class="muted">${v.legacy==='none'?'没有采用该语言标签':'历史依据'}；尚未按新阶梯重新分级。历史值：${esc(v.legacy)}</div>`}h+=`<article class="sourcecard"><h4>${name} · ${v.level?'第 '+v.level+' 级':'历史记录'}</h4>${body}</article>`}return h?`<div class="section"><h3>名称与依据</h3>${h}</div>`:''}
+const ROLES={mapping:'映射',structure:'结构',group:'分组',candidate:'发现候选'};
+function sourceUses(n){
+ const uses=new Map();
+ const get=id=>{const use=resolve('sources',id);if(!use)return null;if(!uses.has(id))uses.set(id,{use,entity:resolve('entities',use.r.entity),derived:false,matches:[],basis:[]});return uses.get(id)};
+ const derived=get(n.r.source);if(derived)derived.derived=true;
+ for(const m of listify(n.r.match)){const u=get(m.source);if(u)u.matches.push(m)}
+ for(const b of basisLinks(n)){const u=get(b.source);if(u)u.basis.push({path:b.path,value:b.value})}return [...uses.values()];
+}
+function externalItem(id){return /^https?:\/\//.test(String(id))?`<a href="${esc(id)}" target="_blank" rel="noopener noreferrer">${esc(id)}</a>`:`<code>${esc(id)}</code>`}
+function sourceCards(n){
+ const uses=sourceUses(n);if(!uses.length)return '';
+ return `<div class="section"><h3>来源与实体<span>${uses.length}</span></h3><p class="provenance-note">名称、版本与官网读取实体记录；派生、映射和字段依据保留在当前主题记录中。</p>${uses.map(u=>{
+  const e=u.entity;return `<article class="sourcecard"><h4>${esc(e?title(e):u.use.r.id)}</h4><div class="origin">${e?`名称来自实体表 · <code>${esc(e.r.id)}</code> ${ref(e,'查看实体')}`:'对应实体未找到'}</div>
+  <div class="field"><span>来源版本</span><div class="value">${esc(e?.r.version||'实体未登记版本')}</div></div>
+  ${u.derived?'<div class="field"><span>本条派生</span><div class="value">主题记录的 source 指向此来源</div></div>':''}
+  ${u.matches.map(m=>`<div class="field"><span>本条映射</span><div class="value">外部条目 ${externalItem(m.id)} <span class="pill">${esc(m.rel)}</span></div></div>`).join('')}
+  ${u.basis.map(b=>`<div class="field"><span>字段依据</span><div class="value"><code>${esc(b.path)}</code>：<code>${esc(b.value)}</code></div></div>`).join('')}
+  <div class="field"><span>登记用途</span><div class="value">${listify(u.use.r.role).map(role=>`<span class="pill">${esc(ROLES[role]||role)} · ${esc(role)}</span>`).join('')}</div></div>
+  <div class="source-links">${ref(u.use,'查看来源用途')}${e?.r.url&&/^https?:\/\//.test(e.r.url)?`<a href="${esc(e.r.url)}" target="_blank" rel="noopener noreferrer">打开官网 ↗</a>`:'<span class="muted">实体未登记官网链接</span>'}</div></article>`;
+ }).join('')}</div>`;
+}
+function topicUsage(entity){
+ return records.filter(n=>n.cat==='topics'&&n.group==='concepts').map(n=>({n,uses:sourceUses(n).filter(u=>u.entity?.key===entity.key)})).filter(x=>x.uses.length);
+}
+function entityUsage(entity){
+ const rows=topicUsage(entity);
+ return `<div class="section"><h3>引用此来源的主题<span>${rows.length}</span></h3><p class="provenance-note">通过来源用途记录追溯到此实体；与“关联主题”分开列出。</p>${rows.length?rows.map(({n,uses})=>`<div class="usage">${ref(n)}${uses.map(u=>`<div class="muted">经由来源用途 <code>${esc(u.use.r.id)}</code>${u.derived?'<br>实际派生：source 引用':''}${u.matches.map(m=>`<br>外部映射：${externalItem(m.id)} · ${esc(m.rel)}`).join('')}${u.basis.map(b=>`<br>字段依据：<code>${esc(b.path)}</code> · <code>${esc(b.value)}</code>`).join('')}</div>`).join('')}</div>`).join(''):'<div class="muted">当前快照没有主题通过来源用途引用此实体。</div>'}</div>`;
+}
+function navigate(key,push=true){const n=byKey.get(key);if(!n)return;if(push&&selected&&selected!==n)history.push(selected.key);selected=n;
+ if(!graphMode&&cat!==n.cat){cat=n.cat;query='';filter='';$('search').value='';initStatus()}
+ renderNav();renderList();renderDetail();draw();
+}
+function renderNav(){
+ $('nav').innerHTML='<div class="eyebrow">词表目录</div>'+Object.entries(META).map(([c,m])=>`<button class="navbtn ${c===cat?'on':''}" data-cat="${c}"><span><span class="dot" style="background:${m[1]}"></span>${m[0]}</span><span class="count">${D.collections[c].data[m[2]].length}</span></button>`).join('')+`<div class="side-note">${records.length} 个对象 · ${edges.length} 条库内关系<br>含 ${records.filter(n=>n.group==='arrays').length} 个分组对象<br><br>只读工作区预览<br>保存 YAML 后自动更新</div>`;
+ $('nav').querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{cat=b.dataset.cat;query='';filter='';$('search').value='';initStatus();if(graphMode){graphCat=cat;renderNav();draw()}else {selected=records.find(n=>n.cat===cat);renderNav();renderList();renderDetail()}});
+}
+function initStatus(){const vals=[...new Set(records.filter(n=>n.cat===cat).map(n=>n.r.status).filter(Boolean))];$('status').innerHTML='<option value="">全部状态</option>'+vals.map(s=>`<option value="${esc(s)}">${esc(STATUS[s]||s)}</option>`).join('');$('status').value=filter}
+function row(n,depth=0,branch=false){const has=children.has(n.r.id),sub=n.r.label?.en||n.r.id;return `<div class="record ${selected===n?'selected':''}" style="padding-left:${Math.min(depth,12)*15}px">${branch?`<button class="toggle" data-expand="${esc(n.r.id)}" aria-label="${expanded.has(n.r.id)?'收起':'展开'} ${esc(title(n))}" ${has?'':'disabled'}>${has?(expanded.has(n.r.id)?'▾':'▸'):'·'}</button>`:''}<button class="recordbutton" data-key="${esc(n.key)}"><div class="recordtitle">${esc(title(n))}</div><div class="recordsub">${esc(sub)}${n.group==='arrays'?' · 分组':n.r.status?' · '+esc(n.r.status):''}</div>${query&&n.r.broader?.length?`<div class="recordsub">上位：${esc(n.r.broader.map(id=>title(resolve('topics',id))||id).join(' / '))}</div>`:''}</button></div>`}
+function renderList(){
+ $('collectionTitle').textContent=META[cat][0];$('total').textContent=D.collections[cat].data[META[cat][2]].length+' 条';$('tree').hidden=cat!=='topics';$('tree').classList.toggle('on',treeMode);$('flat').classList.toggle('on',!treeMode);$('listHint').textContent='点击查看详情';
+ const ns=records.filter(n=>n.cat===cat&&(!filter||n.r.status===filter)&&(!query||(title(n)+' '+JSON.stringify(n.r)).toLowerCase().includes(query.toLowerCase())));
+ if(treeMode&&cat==='topics'&&!query&&!filter){const walk=(n,depth,path)=>{if(path.has(n.key))return '';const next=new Set(path);next.add(n.key);return row(n,depth,true)+(expanded.has(n.r.id)?(children.get(n.r.id)||[]).map(ch=>walk(ch,depth+1,next)).join(''):'')};const roots=ns.filter(n=>n.group==='concepts'&&!n.r.broader?.length);$('list').innerHTML=roots.map(n=>walk(n,0,new Set())).join('');$('listCount').textContent=`${roots.length} 个顶层主题`;$('listHint').textContent='多上位条目可在多处分支出现'}
+ else {$('list').innerHTML=ns.map(n=>row(n)).join('')||'<div class="empty">没有匹配条目<br>试试其他关键词或清除状态筛选。</div>';$('listCount').textContent=`${ns.length} 个对象${cat==='topics'||cat==='forms'?'（含分组）':''}`}
+ $('list').querySelectorAll('[data-expand]').forEach(b=>b.onclick=()=>{const id=b.dataset.expand;expanded.has(id)?expanded.delete(id):expanded.add(id);renderList()});
+}
+function renderDetail(){
+ if(!selected){$('detail').innerHTML='<div class="empty">当前词表没有条目</div>';return}
+ const n=selected,r=n.r,ins=incoming.get(n.key)||[],outs=outgoing.get(n.key)||[];
+ let h=`${history.length?'<button class="back" id="back">← 返回上一条</button>':''}<div class="badges"><span class="pill" style="color:${META[n.cat][1]}">${META[n.cat][0]}${n.group==='arrays'?' · 分组':''}</span>${r.status?`<span class="pill">${esc(r.status)}</span>`:''}<span class="muted">${n.cat}.yaml</span></div><h2>${esc(title(n))}</h2>${r.label?.en&&r.label?.zh?`<div class="en">${esc(r.label.en)}</div>`:''}<div class="badges" style="margin-top:12px">${basisBadge(n)}</div>${r.basis?.zh?.level===5?'<div class="muted" style="margin-top:6px">外部用法未核实</div>':''}<div class="idline">${esc(r.id)}</div>${r.scope?`<div class="scope">${esc(r.scope)}</div>`:''}`;
+ h+=basisDetails(n);
+ if(n.group==='arrays')h+='<div class="muted">分组用于组织成员，不等同于上下位关系。</div>';
+ const expandedSources=n.cat==='topics'&&n.group==='concepts';
+ if(expandedSources)h+=sourceCards(n);
+ if(n.cat==='entities'){
+  h+=section('关联主题',listify(r.subjects).map(id=>refValue('topics',id)));
+  h+=entityUsage(n);
+ }
+ h+=section('上位主题',listify(r.broader).map(id=>refValue('topics',id)));
+ h+=section('直接下位',ins.filter(e=>e.type==='hierarchy').map(e=>ref(byKey.get(e.a))));
+ h+=section('相关主题',listify(r.related).map(id=>refValue('topics',id)));
+ h+=section('所属分组',listify(r.arrays).map(id=>refValue(n.cat,id,'arrays')));
+ if(n.group==='arrays'){
+  h+=section('上位对象',[refValue(n.cat,r.superordinate)]);
+  h+=section('分组成员',ins.filter(e=>e.type==='group').map(e=>ref(byKey.get(e.a))));
+ }else h+=section('下属分组',ins.filter(e=>e.type==='group'&&byKey.get(e.a).group==='arrays').map(e=>ref(byKey.get(e.a))));
+ if(n.cat!=='entities')h+=section('关联主题',listify(r.subjects).map(id=>refValue('topics',id)));
+ if(r.entity)h+=section('对应实体',[refValue('entities',r.entity)]);
+ if(r.source&&(!expandedSources||!resolve('sources',r.source)))h+=section('来源',[refValue('sources',r.source)]);
+ if(r.form)h+=section('载体',[refValue('forms',r.form)]);
+ const remainingMatches=listify(r.match).filter(m=>!expandedSources||!resolve('sources',m.source));
+ if(remainingMatches.length)h+=`<div class="section"><h3>外部映射<span>${remainingMatches.length}</span></h3>${remainingMatches.map(m=>`<div class="match">${refValue('sources',m.source)} <span class="pill">${esc(m.rel)}</span><div style="margin-top:8px">外部编号：${externalItem(m.id)}</div></div>`).join('')}</div>`;
+ const basis=outs.filter(e=>e.type==='basis');if(!expandedSources)h+=section('依据来源',basis.map(e=>ref(byKey.get(e.b))));
+ const reverse=ins.filter(e=>!['hierarchy','group'].includes(e.type));
+ if(reverse.length)h+=`<details><summary>被引用 ${reverse.length} 次</summary>${Object.keys(EDGE).map(t=>section(EDGE[t][0],reverse.filter(e=>e.type===t).map(e=>ref(byKey.get(e.a))))).join('')}</details>`;
+ const omit=new Set(['id','label','scope','broader','related','arrays','subjects','entity','source','match','superordinate','form','status','basis']);
+ h+='<div class="section"><h3>其他字段</h3>'+Object.entries(r).filter(([k])=>!omit.has(k)).map(([k,v])=>`<div class="field"><span>${esc(FIELDS[k]||k)}</span><div class="value">${rawValue(v,k)}</div></div>`).join('')+'</div>';
+ h+=`<details><summary>原始 YAML</summary><pre>${esc(D.collections[n.cat].raw[n.group+':'+r.id])}</pre></details><details class="version"><summary>文件版本与快照</summary><div class="muted">${rawValue(D.collections[n.cat].data.version)}<br>快照：${esc(D.generated)}<br>SHA-256：<code style="overflow-wrap:anywhere">${esc(D.hashes[n.cat])}</code></div></details>`;
+ $('detail').innerHTML=h;$('detail').scrollTop=0;if($('back'))$('back').onclick=()=>navigate(history.pop(),false);
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-key]');if(b)navigate(b.dataset.key)});
+$('search').oninput=e=>{query=e.target.value;renderList()};$('status').onchange=e=>{filter=e.target.value;renderList()};$('flat').onclick=()=>{treeMode=false;renderList()};$('tree').onclick=()=>{treeMode=true;renderList()};
+// The graph contains only references resolved to real objects in this snapshot.
+let graphCat='',localOnly=false,graphQuery='',scale=1,panX=0,panY=0,W=800,H=800;
+const enabled=new Set(Object.keys(EDGE));const positions=new Map();
+const topicNodes=records.filter(n=>n.cat==='topics'&&n.group==='concepts'),roots=topicNodes.filter(n=>!n.r.broader?.length);
+function primaryRoot(n,seen=new Set()){if(seen.has(n.key))return roots[0];seen.add(n.key);const p=resolve('topics',n.r.broader?.[0]);return p?primaryRoot(p,seen):n}
+const clusters=new Map(roots.map(n=>[n.key,[]]));topicNodes.forEach(n=>{const key=primaryRoot(n).key;if(!clusters.has(key))clusters.set(key,[]);clusters.get(key).push(n)});
+let offset=0;for(const [key,ns] of clusters){const span=ns.length/topicNodes.length*Math.PI*2,ang=offset+span/2;offset+=span;const radius=470,cx=Math.cos(ang)*radius,cy=Math.sin(ang)*radius;
+ ns.forEach((n,i)=>{const a=i*2.39996323,d=i===0?0:Math.sqrt(i)*10;positions.set(n.key,{x:cx+Math.cos(a)*d,y:cy+Math.sin(a)*d})});}
+const rest=records.filter(n=>!positions.has(n.key));rest.forEach((n,i)=>{const a=i/rest.length*Math.PI*2;positions.set(n.key,{x:Math.cos(a)*820,y:Math.sin(a)*820})});
+// Relax connected nodes within the stable initial clusters; no external library or request.
+for(let step=0;step<60;step++)for(const e of edges.filter(e=>e.type==='hierarchy')){const a=positions.get(e.a),b=positions.get(e.b),dx=b.x-a.x,dy=b.y-a.y,dist=Math.hypot(dx,dy)||1,f=(dist-26)*.008;a.x+=dx/dist*f;a.y+=dy/dist*f;b.x-=dx/dist*f;b.y-=dy/dist*f}
+const canvas=$('canvas'),ctx=canvas.getContext('2d');let rendered=[];
+function graphModel(){let es=edges.filter(e=>enabled.has(e.type)),keys=new Set(records.filter(n=>!graphCat||n.cat===graphCat).map(n=>n.key));
+ if(localOnly&&selected){keys=new Set([selected.key]);es=es.filter(e=>e.a===selected.key||e.b===selected.key);es.forEach(e=>{keys.add(e.a);keys.add(e.b)})}
+ else if(graphCat){es=es.filter(e=>keys.has(e.a)||keys.has(e.b));es.forEach(e=>{keys.add(e.a);keys.add(e.b)})}
+ return {ns:records.filter(n=>keys.has(n.key)),es:es.filter(e=>keys.has(e.a)&&keys.has(e.b))};
+}
+function fitGraph(){const {ns}=graphModel(),ps=ns.map(n=>positions.get(n.key));if(!ps.length)return;const minX=Math.min(...ps.map(p=>p.x)),maxX=Math.max(...ps.map(p=>p.x)),minY=Math.min(...ps.map(p=>p.y)),maxY=Math.max(...ps.map(p=>p.y));scale=Math.min((W-100)/Math.max(100,maxX-minX),(H-250)/Math.max(100,maxY-minY));scale=Math.max(.05,scale);panX=W/2-(minX+maxX)/2*scale;panY=(H+55)/2-(minY+maxY)/2*scale;draw()}
+function resize(){if(!graphMode)return;W=$('graphpane').clientWidth;H=$('graphpane').clientHeight;const dpr=window.devicePixelRatio||1;canvas.width=W*dpr;canvas.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);fitGraph()}
+function draw(){if(!graphMode)return;ctx.clearRect(0,0,W,H);if(!selected)return;const {ns,es}=graphModel(),adj=new Set([selected.key]);es.forEach(e=>{if(e.a===selected.key)adj.add(e.b);if(e.b===selected.key)adj.add(e.a)});const matches=new Set(ns.filter(n=>graphQuery&&(title(n)+' '+n.r.id).toLowerCase().includes(graphQuery.toLowerCase())).map(n=>n.key));
+ const p=k=>{const v=positions.get(k);return {x:v.x*scale+panX,y:v.y*scale+panY}};
+ for(const e of es){const a=p(e.a),b=p(e.b),focus=e.a===selected.key||e.b===selected.key;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=EDGE[e.type][1];ctx.globalAlpha=focus?.85:graphQuery?.04:.16;ctx.lineWidth=focus?1.5:.65;ctx.stroke();if(focus&&Math.hypot(a.x-b.x,a.y-b.y)>20){const ang=Math.atan2(b.y-a.y,b.x-a.x),x=b.x-Math.cos(ang)*7,y=b.y-Math.sin(ang)*7;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x-Math.cos(ang-.45)*6,y-Math.sin(ang-.45)*6);ctx.lineTo(x-Math.cos(ang+.45)*6,y-Math.sin(ang+.45)*6);ctx.closePath();ctx.fillStyle=EDGE[e.type][1];ctx.fill()}}
+ rendered=[];for(const n of ns){const v=p(n.key),sel=n===selected,match=matches.has(n.key),near=adj.has(n.key),r=sel?6:match?5:n.group==='arrays'?2.8:3.3;ctx.globalAlpha=graphQuery?(match||sel?1:.14):1;ctx.fillStyle=META[n.cat][1];ctx.beginPath();ctx.arc(v.x,v.y,r,0,Math.PI*2);ctx.fill();if(sel||match){ctx.strokeStyle=sel?'#163c84':'#182b42';ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(v.x,v.y,r+3,0,Math.PI*2);ctx.stroke()}rendered.push({n,x:v.x,y:v.y});if(sel||match||localOnly||(near&&scale>.6)||(scale>1.7)){ctx.globalAlpha=1;ctx.font=(sel?'600 ':'')+'12px system-ui';ctx.fillStyle='#263b58';const t=title(n);ctx.fillText(t.length>24?t.slice(0,24)+'…':t,v.x+9,v.y+4)}}ctx.globalAlpha=1;
+ $('graphNote').textContent=`${ns.length} 个对象 · ${es.length} 条关系${graphQuery?' · 匹配 '+matches.size+' 个':''} · 拖动平移，滚轮缩放`;$('local').classList.toggle('on',localOnly);
+}
+$('edgeChecks').innerHTML=Object.entries(EDGE).filter(([k])=>edges.some(e=>e.type===k)).map(([k,v])=>`<label><input type="checkbox" checked data-edge="${k}">${v[0]}</label>`).join('');$('edgeChecks').querySelectorAll('input').forEach(i=>i.onchange=()=>{i.checked?enabled.add(i.dataset.edge):enabled.delete(i.dataset.edge);draw()});
+$('legend').innerHTML=Object.values(META).map(m=>`<span style="white-space:nowrap;margin-right:10px"><span class="dot" style="background:${m[1]}"></span>${m[0]}</span>`).join('')+'<br><span class="muted">箭头：引用对象 → 被引用对象<br>点的位置只为排布，不代表语义距离</span>';
+$('graphSearch').oninput=e=>{graphQuery=e.target.value;draw()};$('graphSearch').onkeydown=e=>{if(e.key==='Enter'){const m=graphModel().ns.find(n=>(title(n)+' '+n.r.id).toLowerCase().includes(graphQuery.toLowerCase()));if(m)navigate(m.key)}};
+function setMode(on){graphMode=on;$('workspace').classList.toggle('graph-mode',on);$('browseMode').classList.toggle('on',!on);$('graphMode').classList.toggle('on',on);if(on){graphCat='';requestAnimationFrame(resize)}else {cat=selected?.cat||'topics';initStatus();renderNav();renderList()}}
+$('browseMode').onclick=()=>setMode(false);$('graphMode').onclick=()=>setMode(true);$('fit').onclick=()=>{graphCat='';localOnly=false;fitGraph()};$('local').onclick=()=>{localOnly=!localOnly;fitGraph()};
+function zoom(f,x=W/2,y=H/2){const ns=Math.min(6,Math.max(.04,scale*f)),ratio=ns/scale;panX=x-(x-panX)*ratio;panY=y-(y-panY)*ratio;scale=ns;draw()}
+$('zoomIn').onclick=()=>zoom(1.3);$('zoomOut').onclick=()=>zoom(1/1.3);canvas.addEventListener('wheel',e=>{e.preventDefault();const b=canvas.getBoundingClientRect();zoom(Math.exp(-e.deltaY*.001),e.clientX-b.left,e.clientY-b.top)},{passive:false});
+let drag=null;canvas.onpointerdown=e=>{drag={x:e.clientX,y:e.clientY,px:panX,py:panY,moved:false};canvas.setPointerCapture(e.pointerId)};
+function hit(x,y){let best=null,dist=12;for(const p of rendered){const d=Math.hypot(p.x-x,p.y-y);if(d<dist){best=p;dist=d}}return best}
+canvas.onpointermove=e=>{const b=canvas.getBoundingClientRect(),x=e.clientX-b.left,y=e.clientY-b.top;if(drag){if(Math.hypot(e.clientX-drag.x,e.clientY-drag.y)>3)drag.moved=true;panX=drag.px+e.clientX-drag.x;panY=drag.py+e.clientY-drag.y;draw();$('tip').style.display='none';return}const p=hit(x,y);canvas.style.cursor=p?'pointer':'grab';$('tip').style.display=p?'block':'none';if(p){$('tip').textContent=title(p.n)+' · '+META[p.n.cat][0];$('tip').style.left=Math.min(x+13,W-265)+'px';$('tip').style.top=Math.max(0,y-35)+'px'}};
+canvas.onpointerup=e=>{const d=drag;drag=null;if(d&&!d.moved){const b=canvas.getBoundingClientRect(),p=hit(e.clientX-b.left,e.clientY-b.top);if(p)navigate(p.n.key)}};canvas.onpointercancel=()=>drag=null;canvas.onpointerleave=()=>{$('tip').style.display='none'};window.addEventListener('resize',resize);
+$('snapshot').textContent='工作区 '+D.generated.replace('T',' ').slice(0,19);initStatus();renderNav();renderList();renderDetail();
+</script>
+</html>

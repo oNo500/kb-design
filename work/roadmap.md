@@ -6,6 +6,7 @@
 
 | 工作 | 状态 | 完成口径 |
 |---|---|---|
+| [实时词表预览](plans/2026-09-05-vocab-preview.md) | 当前范围完成 | uv 启动与浏览器自动更新已验证，7 项测试通过，见[预览验收](reviews/2026-09-05-vocab-preview.md) |
 | [monorepo 迁移](plans/2026-09-05-monorepo-layout.md) | 当前范围完成 | 文件去向与受保护字节对账通过；uv workspace、命令与输出路径已验证；294 项测试通过，独立审查已关闭；见[迁移验收](reviews/2026-09-05-monorepo-layout.md) |
 
 本次迁移只调整目录、包、命令入口和默认输出位置。根 `README.md` 保持不变，现有外部 `kb-vault` 不搬迁、不刷新，仓库内默认 vault 不在迁移中创建。

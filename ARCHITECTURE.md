@@ -1,6 +1,6 @@
 # 项目架构 (Project Architecture)
 
-本项目维护知识体系的设计、词表和配套程序，并通过 Obsidian 应用建立可使用的知识库。这些内容放在同一个 Git 仓库中，按 monorepo 组织；Python 工程使用 uv 管理。
+本项目维护知识体系的设计、词表和配套程序，提供工作区词表的实时预览，并通过 Obsidian 应用建立可使用的知识库。这些内容放在同一个 Git 仓库中，按 monorepo 组织；Python 工程使用 uv 管理。
 
 ## 文件组织
 
@@ -49,12 +49,17 @@ kb-design/
 │       └── tests/            # 核心程序的测试
 │
 ├── apps/
-│   └── obsidian/             # Obsidian 应用程序
-│       ├── README.md         # 应用的使用说明
-│       ├── AGENTS.md         # 应用开发的补充规则
+│   ├── obsidian/             # Obsidian 应用程序
+│   │   ├── README.md         # 应用的使用说明
+│   │   ├── AGENTS.md         # 应用开发的补充规则
+│   │   ├── pyproject.toml    # 应用依赖与命令入口
+│   │   ├── src/kb_obsidian/  # 导出、初始化、刷新及内容操作
+│   │   └── tests/            # 应用测试
+│   └── vocab-preview/        # 只读实时词表预览
+│       ├── README.md         # 启动和维护说明
 │       ├── pyproject.toml    # 应用依赖与命令入口
-│       ├── src/kb_obsidian/  # 导出、初始化、刷新及内容操作
-│       └── tests/            # 应用测试
+│       ├── src/kb_vocab_preview/ # 本地服务与页面模板
+│       └── tests/            # 更新、恢复和只读边界测试
 │
 ├── tests/
 │   ├── integration/          # 核心程序与应用的联合测试
@@ -74,9 +79,9 @@ kb-design/
 
 ## 工程关系
 
-`packages/kb-core/` 和 `apps/obsidian/` 是两个 Python 工程，各自保存源码、依赖声明和测试，共用根目录的 uv 工作区与锁文件。
+工作区包括核心包、Obsidian 应用和词表预览应用。各工程分别保存源码、依赖声明和测试，共用根目录的 uv 工作区与锁文件。
 
-核心包负责词表生成、数据校验和来源、术语维护。Obsidian 应用依赖核心包，复用语言依据处理和仓库定位能力，自己负责 Markdown、Properties、Base 等具体表示，以及 vault 的初始化、刷新和内容操作。核心包不依赖 Obsidian 应用。
+核心包负责词表生成、数据校验和来源、术语维护。Obsidian 应用依赖核心包，复用语言依据处理和仓库定位能力，自己负责 Markdown、Properties、Base 等具体表示，以及 vault 的初始化、刷新和内容操作。词表预览应用读取当前工作区，负责浏览、搜索与关系展示。两个应用均依赖核心包，核心包不依赖具体应用。
 
 [内容模型](docs/design/model/content-model.md)规定应用无关的内容结构；[Obsidian 映射](docs/design/targets/obsidian.md)规定这些内容和词表怎样在 Obsidian 中表示；应用程序按该设计生成文件。具体命令与环境配置见[开发指南](docs/guides/development.md)。
 
@@ -90,12 +95,15 @@ vault 中的笔记是用户内容；生成的词表参考区是项目数据的�
 
 `output/` 保存持久应用数据，不参与构建清理；`build/` 保存可以重新生成和清理的临时文件。
 
+词表预览通过本地 HTTP 服务读取工作区，包括尚未提交的修改。保存后页面自动重载，错误时保留上一次有效表示并提示；它不修改词表，也不生成需要人工刷新的静态文件。该用途与 Obsidian 的已提交快照导出分开，见[预览设计](docs/design/targets/vocab-preview.md)。
+
 ## 维护入口
 
 | 工作 | 入口 |
 |---|---|
 | 阅读概念与设计 | [文档导航](docs/README.md) |
 | 修改主题词表 | [主题生成与校验规则](docs/design/model/topics.md) |
+| 实时预览词表 | [预览说明](apps/vocab-preview/README.md) |
 | 开发核心程序 | [核心工程说明](packages/kb-core/README.md) |
 | 使用或开发 Obsidian 应用 | [应用说明](apps/obsidian/README.md) |
 | 查看当前工作与后续安排 | [项目路线](work/roadmap.md) |

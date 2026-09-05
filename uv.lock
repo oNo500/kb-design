@@ -7,6 +7,7 @@ members = [
     "kb-core",
     "kb-design",
     "kb-obsidian",
+    "kb-vocab-preview",
 ]
 
 [[package]]
@@ -69,6 +70,7 @@ source = { virtual = "." }
 dev = [
     { name = "kb-core" },
     { name = "kb-obsidian" },
+    { name = "kb-vocab-preview" },
 ]
 
 [package.metadata]
@@ -77,12 +79,28 @@ dev = [
 dev = [
     { name = "kb-core", editable = "packages/kb-core" },
     { name = "kb-obsidian", editable = "apps/obsidian" },
+    { name = "kb-vocab-preview", editable = "apps/vocab-preview" },
 ]
 
 [[package]]
 name = "kb-obsidian"
 version = "0.1.0"
 source = { editable = "apps/obsidian" }
+dependencies = [
+    { name = "kb-core" },
+    { name = "pyyaml" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "kb-core", editable = "packages/kb-core" },
+    { name = "pyyaml", specifier = ">=6,<7" },
+]
+
+[[package]]
+name = "kb-vocab-preview"
+version = "0.1.0"
+source = { editable = "apps/vocab-preview" }
 dependencies = [
     { name = "kb-core" },
     { name = "pyyaml" },
