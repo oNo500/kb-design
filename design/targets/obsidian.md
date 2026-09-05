@@ -1,12 +1,12 @@
 # Obsidian 映射
 
-本文规定 Obsidian 作为 `kb-design` 首个完整落地应用层的 `Application Profile`。现行词表参考导出的 artifact contract 是上游物化子系统，独立 `kb-obsidian` 应用在固定设计提交上消费其结果并建立完整 vault。本文按[内容模型](../content-model.md)引用应用无关语义，再规定 Obsidian 的功能范围、对象职责、field binding、使用方式与具体表示；artifact contract 只负责把已经选定的正式词表表示物化为文件。分层依据见 [Application Profile](../../concepts/application-profile.md)、[Reproducible Builds](../../concepts/reproducible-builds.md)、[方法登记](../principles.md)、[设计与应用分离](../decisions/form-independence.md)和[应用约束与表示分层](../decisions/application-profile-boundary.md)。
+本文规定 Obsidian 作为 `kb-design` 首个完整落地应用层的 `Application Profile`。现行词表参考导出的 artifact contract 是上游物化子系统，`tools/obsidian/` 中的 `kb-obsidian` 工具从干净的设计提交消费其结果并建立完整 vault。本文按[内容模型](../content-model.md)引用应用无关语义，再规定 Obsidian 的功能范围、对象职责、field binding、使用方式与具体表示；artifact contract 只负责把已经选定的正式词表表示物化为文件。分层依据见 [Application Profile](../../concepts/application-profile.md)、[Reproducible Builds](../../concepts/reproducible-builds.md)、[方法登记](../principles.md)、[设计与应用分离](../decisions/form-independence.md)和[应用约束与表示分层](../decisions/application-profile-boundary.md)。
 
 ## 当前状态
 
-完整应用设计和应用实现已经建立，但没有作为正式内容消费者激活。`kb-design` 的 `scripts/export_obsidian.py` 生成六份正式词表的单向参考表示；独立 `kb-obsidian` 应用从固定且干净的设计提交初始化新 vault，建立 UUIDv4 `draft` 内容，校验内容字段与正式引用，并生成派生报告。实施验收已经建立本地持久 vault，证明完整目录、受管理写集、命令路径和空库报告能够落入实际目录。
+完整应用设计和应用实现已经建立，但没有作为正式内容消费者激活。`kb-design` 的 `scripts/export_obsidian.py` 生成六份正式词表的单向参考表示；`tools/obsidian/` 中的 `kb-obsidian` 工具从干净的设计提交初始化新 vault，建立 UUIDv4 `draft` 内容，校验内容字段与正式引用，并生成派生报告。实施验收已经建立本地持久 vault，证明完整目录、受管理写集、命令路径和空库报告能够落入实际目录。
 
-本仓库参考导出按[语言依据结构](../decisions/structured-label-basis.md)支持结构化语言依据的人读表示。独立 `kb-obsidian` 仍使用原固定设计提交；本次没有升级该依赖或刷新持久 vault。
+参考导出按[语言依据结构](../decisions/structured-label-basis.md)支持结构化语言依据的人读表示。按[工具归属](../decisions/obsidian-tool-location.md)，应用工具与设计同仓维护，默认读取所在设计仓库的干净 Git 快照，也接受显式 `--design-root`；清单记录实际提交与输入哈希，不再使用设计提交白名单。实际 vault 在仓库外维护。
 
 当前持久实例没有实际用户内容，也没有可审计查询日志或回流接口。空库报告只证明报告生成能力可运行，不构成内容引用计数、内容使用观察或维护反馈。target 文件、应用代码、持久实例和机械验收都不使来源、术语、内容消费者或正式切换自动激活。
 
@@ -440,7 +440,7 @@ Web Clipper 基线只使用 preset variables；Interpreter 和 prompt variables 
 
 ## 现行导出
 
-`scripts/export_obsidian.py` 是完整应用的上游参考导出器。它只读取六份正式词表，生成单向参考区：根 `index.md`、`kb/` 和根 `manifest.json`。它不读取或生成 `home.md`、`inbox/`、`sources/`、`content/`、`indexes/`、`attachments/`、`app/` 或 `.obsidian/`；完整 vault 的建立、参考刷新、内容校验与报告由独立应用负责，回流仍未实现。
+`scripts/export_obsidian.py` 是完整应用的上游参考导出器。它只读取六份正式词表，生成单向参考区：根 `index.md`、`kb/` 和根 `manifest.json`。它不读取或生成 `home.md`、`inbox/`、`sources/`、`content/`、`indexes/`、`attachments/`、`app/` 或 `.obsidian/`；完整 vault 的建立、参考刷新、内容校验与报告由 `tools/obsidian/` 中的工具负责，回流仍未实现。
 
 ### 现行布局
 
@@ -557,9 +557,11 @@ python3 scripts/export_obsidian.py --repo-root . --output /absolute/new/path
 
 ## 词表刷新
 
-独立应用已实现显式 `refresh`，按[词表参考刷新](../decisions/obsidian-reference-refresh.md)更新既有 vault 的词表参考区与清单。初始化和独立导出仍只接受空目标；刷新不改变它们的覆盖边界，也不自动修改用户内容或配置。
+`tools/obsidian/` 中的工具提供显式 `refresh`，按[词表参考刷新](../decisions/obsidian-reference-refresh.md)及[工具归属](../decisions/obsidian-tool-location.md)更新既有 vault 的 `kb/` 与 `app/manifest.json`。初始化和独立导出仍只接受空目标；用户内容、配置、应用模板、视图和规则保持不变，派生报告另由 `report` 更新。
 
-刷新核对旧设计 Git 输入、清单和受管理写集，检查新词表对内容受控引用及显式 `kb/` Wikilink 的影响，在 vault 外生成并校验新参考区；发布前再次核对文件，普通发布异常回滚并保留备份。它不实现完整 Obsidian 短链接解析，也不宣称多文件崩溃一致性或断电持久性。
+刷新验证旧清单版本、旧设计提交属于当前 Git 历史、旧输入哈希与该提交的字节一致，再核对受管理写集，检查新词表对内容受控引用及显式 `kb/` Wikilink 的影响。Base 仅有 YAML 排版差异、原清单哈希能由生成模板证明且内容语义相同时，保留实际字节并记录其哈希；实质变化仍拒绝覆盖。
+
+新参考区在 vault 外生成并校验，发布前再次核对文件，普通发布异常回滚并保留备份。刷新不实现完整 Obsidian 短链接解析，也不宣称多文件崩溃一致性或断电持久性。工具版本仍为 `0.1.0`，清单 schema 仍为 `1`；迁入不构成发版或正式激活。
 
 ## 待定事项
 

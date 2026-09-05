@@ -49,7 +49,7 @@
 
 - 迁移账本只作审计，候选和诊断输出只供人工复核，schema、索引、探测、生成和维护能力只证明机械能力；它们都不等于正式数据、草案生效、正式切换或发版
 - 来源与术语基础的当前范围见[当前阶段](design/decisions/current-stage-scope.md)。仓库当前没有正式来源 v2 数据、正式术语数据、正式义务、正式索引、委托、消费者或切换状态，不得因接口存在而创建或宣称存在
-- Obsidian 是应用层，也是首个完整应用 target；`kb-design` 的词表参考导出与独立 `kb-obsidian` 应用共同实现该 target，应用实现存在仍不等于消费者激活
+- Obsidian 是应用层，也是首个完整应用 target；`kb-design` 的词表参考导出与 `tools/obsidian/` 中的 `kb-obsidian` 工具共同实现该 target，工具默认读取所在设计仓库的干净 Git 快照，保留显式 `--design-root`，不使用提交白名单，见[工具归属](design/decisions/obsidian-tool-location.md)。实际 vault 在仓库外维护，应用实现存在仍不等于消费者激活
 - `kb-obsidian` 已实现新 vault 初始化、显式词表参考刷新、内容建立、内容校验和派生报告；刷新只更新 `kb/` 与 `app/manifest.json`，保留用户内容与配置，见[词表参考刷新](design/decisions/obsidian-reference-refresh.md)。当前没有实际内容数据、运行中的正式消费者、查询日志或回流接口，空库报告也不构成内容使用证据
 - 新内容单元使用无前缀、小写 UUIDv4，UUID 文件名承担稳定路径，title 与派生 alias 等元数据承担人的检索；建立器只创建通过当前约束校验的 `draft`，不批准内容状态或正式分类
 - 来源和术语正式激活均未发生；TBX 继续后置为无真实接收方的未生效草案

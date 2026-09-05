@@ -30,7 +30,7 @@
 
 正式 `vocab/entities.yaml`、`vocab/sources.yaml` 和 `vocab/topics.yaml` 继续决定当前数据形状。语言依据按[已采纳决定](decisions/structured-label-basis.md)结构化并补齐本批缺失中文；其他旧引用不因此切换为后置共享结构，既有标签、id、状态、`tier`、用途和关系不变。
 
-现行 [Obsidian 映射](targets/obsidian.md)按应用无关模型、`Application Profile` 语义选择和导出 artifact contract 分工。`kb-design` 单向导出六份正式词表，独立 `kb-obsidian` 应用已实现新 vault 初始化、内容建立、只读校验和派生报告。生成文件可以在 Obsidian 中编辑，但修改不回流、不取得项目效力；本地持久 vault 当前没有实际用户内容，消费者没有正式激活，也没有可审计查询日志或回流接口。
+现行 [Obsidian 映射](targets/obsidian.md)按应用无关模型、`Application Profile` 语义选择和导出 artifact contract 分工。`kb-design` 单向导出六份正式词表，`tools/obsidian/` 中的 `kb-obsidian` 工具已实现新 vault 初始化、内容建立、只读校验和派生报告。生成文件可以在 Obsidian 中编辑，但修改不回流、不取得项目效力；本地持久 vault 当前没有实际用户内容，消费者没有正式激活，也没有可审计查询日志或回流接口。
 
 ### 能力边界
 

@@ -101,7 +101,7 @@
 
 正文 Wikilink、Backlinks、用户索引、aliases、unlinked mentions 和 Graph edges 都不是正式计数输入。它们可以提供人工探索线索，不能替代受控字段的语义或校验结果。检索次数也只来自可审计的检索记录；现有检索界面或近期查询显示不构成查询日志。
 
-[Obsidian 映射](targets/obsidian.md)和独立 `kb-obsidian` 应用已经实现内容建立、只读校验与派生报告，但当前持久 vault 没有实际用户内容，消费者也没有正式激活。空库报告不提供现行引用次数；应用没有可审计检索记录，因此仍不提供未匹配检索次数或相应触发，见[决定记录](decisions/form-independence.md)。
+[Obsidian 映射](targets/obsidian.md)和 `tools/obsidian/` 中的 `kb-obsidian` 工具已经实现内容建立、只读校验与派生报告，但当前持久 vault 没有实际用户内容，消费者也没有正式激活。空库报告不提供现行引用次数；应用没有可审计检索记录，因此仍不提供未匹配检索次数或相应触发，见[决定记录](decisions/form-independence.md)。
 
 已经实现的辅助材料不自动成为现行指标。
 
