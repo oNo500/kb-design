@@ -440,7 +440,7 @@ Web Clipper 基线只使用 preset variables；Interpreter 和 prompt variables 
 
 ## 现行导出
 
-`scripts/export_obsidian.py` 是完整应用中唯一已经实现的部分。它只读取六份正式词表，生成单向参考区：根 `index.md`、`kb/` 和根 `manifest.json`。它不读取或生成 `home.md`、`inbox/`、`sources/`、`content/`、`indexes/`、`attachments/`、`app/` 或 `.obsidian/`，也不提供内容建立、校验、统计或回流。
+`scripts/export_obsidian.py` 是完整应用的上游参考导出器。它只读取六份正式词表，生成单向参考区：根 `index.md`、`kb/` 和根 `manifest.json`。它不读取或生成 `home.md`、`inbox/`、`sources/`、`content/`、`indexes/`、`attachments/`、`app/` 或 `.obsidian/`；完整 vault 的建立、参考刷新、内容校验与报告由独立应用负责，回流仍未实现。
 
 ### 现行布局
 
@@ -528,7 +528,7 @@ python3 scripts/export_obsidian.py --repo-root . --output /absolute/new/path
 
 成功时标准输出是一行排序 JSON，只含 `output`、`content_files`、`total_files` 和 `content_sha256`。参数错误、输入错误或写入错误时，标准错误以 `OBSIDIAN_EXPORT_ERROR` 开头并退出 `1`；`--help` 正常退出 `0`。
 
-导出目录可以作为独立参考 vault，也可以在人工核对项目 manifest 后复制到现有 vault 的管理位置。更新已有参考区时应导出到另一个新目录、核对项目 manifest，再由人决定替换旧目录。该人工路径不是完整应用的非空 vault 自动更新合同。
+导出目录可以作为独立参考 vault。独立参考区的人工替换仍须先导出到新目录、核对项目 manifest 并由人决定；完整应用的既有 vault 使用下文“词表刷新”，同步 `kb/` 与应用清单，不能只复制文件后宣称应用版本已经更新。
 
 ## 回流边界
 
@@ -555,11 +555,17 @@ python3 scripts/export_obsidian.py --repo-root . --output /absolute/new/path
 
 机械计数和 hash 由导出器、应用测试及端到端初始化证明，不另作低价值重复检查。应用实现和本地持久 vault 已经证明内容建立、校验与报告路径存在；实际内容使用、正式消费者和维护反馈仍须由真实运行证据证明，回流仍须另立决定。
 
+## 词表刷新
+
+独立应用已实现显式 `refresh`，按[词表参考刷新](../decisions/obsidian-reference-refresh.md)更新既有 vault 的词表参考区与清单。初始化和独立导出仍只接受空目标；刷新不改变它们的覆盖边界，也不自动修改用户内容或配置。
+
+刷新核对旧设计 Git 输入、清单和受管理写集，检查新词表对内容受控引用及显式 `kb/` Wikilink 的影响，在 vault 外生成并校验新参考区；发布前再次核对文件，普通发布异常回滚并保留备份。它不实现完整 Obsidian 短链接解析，也不宣称多文件崩溃一致性或断电持久性。
+
 ## 待定事项
 
 - 实际用户内容、正式消费者和由真实内容形成的使用观察尚未出现；空库报告不满足这些条件。
 - 可审计查询日志等待真实查询消费者或明确接口；Search UI 不满足该条件。
-- 非空 vault 更新、自动回流、自动修复和社区插件增强继续后置。
+- 参考区以外的非空 vault 更新、自动回流、自动修复和社区插件增强继续后置。
 - 若未来需要 reproducible build 主张，另行界定 specified artifacts、source、environment 和 instructions，并取得 independent rebuild 证据。
 - 若未来需要 durability，另行设计 file 与 directory `fsync`、故障模型和恢复验证；不从当前 atomic visibility 推导。
 - TBX 只按[未生效草案](../drafts/tbx-export.md)中的真实接收方条件重新进入设计。

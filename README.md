@@ -50,13 +50,13 @@
 
 生成文件和 Base 可以在 Obsidian 中编辑，但修改不回流、不取得 `kb-design` 项目效力。项目 manifest 不是 Obsidian 内容格式或 BagIt；同环境双跑和目录项替换也不产生 reproducible build 或 durability 主张。
 
-完整 vault 的 `init`、`new-content`、`validate` 和 `report` 命令由独立 `kb-obsidian` 仓库提供。本仓库只直接提供词表参考导出，从仓库根运行：
+完整 vault 的 `init`、`refresh`、`new-content`、`validate` 和 `report` 命令由独立 `kb-obsidian` 仓库提供。`refresh` 按[词表参考刷新](design/decisions/obsidian-reference-refresh.md)显式更新既有 vault 的 `kb/` 与清单，保留用户文件和配置。本仓库只直接提供词表参考导出，从仓库根运行：
 
 ```bash
 python3 scripts/export_obsidian.py --repo-root . --output /absolute/new/path
 ```
 
-输出目标必须不存在或为空；非空目录、符号链接和受保护的仓库目录会被拒绝。更新已有参考区时，先导出到新目录并核对 manifest，再由人决定是否替换旧目录。
+独立导出的输出目标必须不存在或为空；非空目录、符号链接和受保护的仓库目录会被拒绝。完整应用的既有 vault 使用 `kb-obsidian refresh`，仍须传入已验证的干净设计快照；不直接复制文件绕过应用清单。
 
 ## 当前状态
 
