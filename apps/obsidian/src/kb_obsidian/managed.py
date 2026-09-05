@@ -29,7 +29,7 @@ _TEMPLATES = {
 
 def _base(
     name: str, *filters: str,
-    order: tuple[str, ...] = ("file.link", "file.mtime"),
+    order: tuple[str, ...] = ("file.name", "file.mtime"),
 ) -> dict[str, object]:
     return {
         "filters": {"and": list(filters)},
@@ -38,8 +38,8 @@ def _base(
 
 
 _CONTENT_FILTERS = ('file.inFolder("content")', 'file.ext == "md"')
-_CONTENT_COLUMNS = ("file.link", "title", "kb_type", "kb_subjects", "kb_status")
-_TOPIC_COLUMNS = ("file.link", "kb_label", "kb_status", "kb_broader")
+_CONTENT_COLUMNS = ("file.name", "title", "kb_type", "kb_subjects", "kb_status")
+_TOPIC_COLUMNS = ("file.name", "kb_label", "kb_status", "kb_broader")
 _VIEWS = {
     "app/views/inbox.base": _base("Inbox", 'file.inFolder("inbox")', 'file.ext == "md"'),
     "app/views/sources.base": _base("外部资料", 'file.inFolder("sources")', 'file.ext == "md"'),
