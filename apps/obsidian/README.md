@@ -45,7 +45,7 @@ uv run python -m kb_obsidian.exporter \
 
 ## 终端访问
 
-AI 优先用原生 Obsidian CLI 读取和搜索；界面显示与交互才使用 Computer Use。首次先运行 `obsidian vaults verbose`，按批准的绝对路径确认实例。同名 vault 不能只按名称定位；必要时只读核对本机注册信息取得 ID。macOS 本机注册信息位于 `~/Library/Application Support/obsidian/obsidian.json` 的 `vaults` 对象，按 `path` 精确选择其键；不得修改注册信息或根据列表顺序猜测 ID。
+AI 优先用原生 Obsidian CLI 与本地命令读取和搜索；工具无法完成时直接说明并交由用户处理，只有用户明确要求界面检查或操作时才使用 Computer Use。首次先运行 `obsidian vaults verbose`，按批准的绝对路径确认实例。同名 vault 不能只按名称定位；必要时只读核对本机注册信息取得 ID。macOS 本机注册信息位于 `~/Library/Application Support/obsidian/obsidian.json` 的 `vaults` 对象，按 `path` 精确选择其键；不得修改注册信息或根据列表顺序猜测 ID。
 
 以下命令中的 `实际ID` 必须换成本机核实值，不能直接照抄。选库参数放在命令之前，每批操作前确认返回路径：
 

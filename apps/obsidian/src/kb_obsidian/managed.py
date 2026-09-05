@@ -73,7 +73,7 @@ _AGENT_RULES = """# 知识库约定 (Vault Instructions)
 
 ## 目标定位
 
-优先使用 Obsidian CLI 读取、搜索和检查知识库；仅检查界面显示或交互时使用 Computer Use。先运行 `obsidian vaults verbose`，按本目录的绝对路径确认目标。名称重复时不能只用名称；可只读核对本机 Obsidian 注册信息取得该路径的 vault ID。
+优先使用 Obsidian CLI 与本地命令读取、搜索和检查知识库。工具无法完成时直接说明并交由用户处理；只有用户明确要求界面检查或操作时才使用 Computer Use。先运行 `obsidian vaults verbose`，按本目录的绝对路径确认目标。名称重复时不能只用名称；可只读核对本机 Obsidian 注册信息取得该路径的 vault ID。
 
 每次明确使用 `obsidian vault=<目标ID> <命令>`，参数顺序不得交换。先运行 `obsidian vault=<目标ID> vault info=path`，输出必须与获准目录一致，否则停止。示例中的 ID 是占位，不得照抄，也不得使用默认活动库代替目标库。
 
