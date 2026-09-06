@@ -1,0 +1,2447 @@
+{
+  "summary": {
+    "rows": 231,
+    "targets": 256,
+    "missing": [],
+    "extra": [],
+    "value_mismatches": [],
+    "duplicate_targets": []
+  },
+  "records": [
+    {
+      "id": "glossary-L0254",
+      "targets": [
+        {
+          "record": "topics/accessibility-and-inclusive-design",
+          "adoption": "topics/accessibility-and-inclusive-design/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0255",
+      "targets": [
+        {
+          "record": "topics/accountability-and-responsibility-in-design",
+          "adoption": "topics/accountability-and-responsibility-in-design/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0256",
+      "targets": [
+        {
+          "record": "topics/advanced-file-systems",
+          "adoption": "topics/advanced-file-systems/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0257",
+      "targets": [
+        {
+          "record": "topics/advanced-programming-constructs",
+          "adoption": "topics/advanced-programming-constructs/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0258",
+      "targets": [
+        {
+          "record": "topics/agents-and-cognitive-systems",
+          "adoption": "topics/agents-and-cognitive-systems/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0259",
+      "targets": [
+        {
+          "record": "topics/ai-attack-staging",
+          "adoption": "topics/ai-attack-staging/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0260",
+      "targets": [
+        {
+          "record": "topics/ai-model-access",
+          "adoption": "topics/ai-model-access/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0261",
+      "targets": [
+        {
+          "record": "topics/algorithmic-foundations",
+          "adoption": "topics/algorithmic-foundations/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0262",
+      "targets": [
+        {
+          "record": "topics/algorithmic-strategies",
+          "adoption": "topics/algorithmic-strategies/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0263",
+      "targets": [
+        {
+          "record": "topics/algorithms-software-development-fundamentals",
+          "adoption": "topics/algorithms-software-development-fundamentals/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0264",
+      "targets": [
+        {
+          "record": "topics/algorithms",
+          "adoption": "topics/algorithms/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0265",
+      "targets": [
+        {
+          "record": "topics/api-and-web-service",
+          "adoption": "topics/api-and-web-service/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0266",
+      "targets": [
+        {
+          "record": "topics/application-layer",
+          "adoption": "topics/application-layer/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0267",
+      "targets": [
+        {
+          "record": "topics/applications-and-societal-impact",
+          "adoption": "topics/applications-and-societal-impact/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0268",
+      "targets": [
+        {
+          "record": "topics/applied-rendering-and-techniques",
+          "adoption": "topics/applied-rendering-and-techniques/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0269",
+      "targets": [
+        {
+          "record": "topics/architecture-and-organization",
+          "adoption": "topics/architecture-and-organization/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0270",
+      "targets": [
+        {
+          "record": "topics/aspect-oriented-programming",
+          "adoption": "topics/aspect-oriented-programming/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0271",
+      "targets": [
+        {
+          "record": "topics/assembly-level-machine-organization",
+          "adoption": "topics/assembly-level-machine-organization/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0272",
+      "targets": [
+        {
+          "record": "topics/authentication",
+          "adoption": "topics/authentication/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0273",
+      "targets": [
+        {
+          "record": "topics/authorization",
+          "adoption": "topics/authorization/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0274",
+      "targets": [
+        {
+          "record": "topics/basic-concepts",
+          "adoption": "topics/basic-concepts/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0275",
+      "targets": [
+        {
+          "record": "forms/cheat-sheet",
+          "adoption": "forms/cheat-sheet/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0276",
+      "targets": [
+        {
+          "record": "topics/code-generation",
+          "adoption": "topics/code-generation/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0277",
+      "targets": [
+        {
+          "record": "topics/collection-artificial-intelligence",
+          "adoption": "topics/collection-artificial-intelligence/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/collection",
+          "adoption": "topics/collection/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0278",
+      "targets": [
+        {
+          "record": "topics/command-and-control-artificial-intelligence",
+          "adoption": "topics/command-and-control-artificial-intelligence/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/command-and-control",
+          "adoption": "topics/command-and-control/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0279",
+      "targets": [
+        {
+          "record": "topics/common-aspects-shared-concerns",
+          "adoption": "topics/common-aspects-shared-concerns/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0280",
+      "targets": [
+        {
+          "record": "topics/communication-society-ethics-and-the-profession",
+          "adoption": "topics/communication-society-ethics-and-the-profession/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0281",
+      "targets": [
+        {
+          "record": "topics/communication",
+          "adoption": "topics/communication/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0282",
+      "targets": [
+        {
+          "record": "topics/compiler-semantic-analysis",
+          "adoption": "topics/compiler-semantic-analysis/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0283",
+      "targets": [
+        {
+          "record": "topics/complexity",
+          "adoption": "topics/complexity/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0284",
+      "targets": [
+        {
+          "record": "topics/computational-models-and-formal-languages",
+          "adoption": "topics/computational-models-and-formal-languages/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0285",
+      "targets": [
+        {
+          "record": "topics/computer-animation",
+          "adoption": "topics/computer-animation/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0286",
+      "targets": [
+        {
+          "record": "topics/computing-foundations",
+          "adoption": "topics/computing-foundations/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0287",
+      "targets": [
+        {
+          "record": "topics/computing-history",
+          "adoption": "topics/computing-history/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0288",
+      "targets": [
+        {
+          "record": "topics/concurrency",
+          "adoption": "topics/concurrency/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0289",
+      "targets": [
+        {
+          "record": "topics/configuration",
+          "adoption": "topics/configuration/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0290",
+      "targets": [
+        {
+          "record": "topics/coordination",
+          "adoption": "topics/coordination/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0291",
+      "targets": [
+        {
+          "record": "topics/core-database-system-concepts",
+          "adoption": "topics/core-database-system-concepts/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0292",
+      "targets": [
+        {
+          "record": "topics/credential-access-artificial-intelligence",
+          "adoption": "topics/credential-access-artificial-intelligence/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/credential-access",
+          "adoption": "topics/credential-access/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0293",
+      "targets": [
+        {
+          "record": "topics/data-analytics",
+          "adoption": "topics/data-analytics/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0294",
+      "targets": [
+        {
+          "record": "topics/data-modeling",
+          "adoption": "topics/data-modeling/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0295",
+      "targets": [
+        {
+          "record": "topics/data-protection",
+          "adoption": "topics/data-protection/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0296",
+      "targets": [
+        {
+          "record": "topics/data-security-and-privacy",
+          "adoption": "topics/data-security-and-privacy/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0297",
+      "targets": [
+        {
+          "record": "topics/dbms-internals",
+          "adoption": "topics/dbms-internals/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0298",
+      "targets": [
+        {
+          "record": "topics/defense-evasion",
+          "adoption": "topics/defense-evasion/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0299",
+      "targets": [
+        {
+          "record": "topics/defense-impairment",
+          "adoption": "topics/defense-impairment/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0300",
+      "targets": [
+        {
+          "record": "topics/design-principles-of-programming-languages",
+          "adoption": "topics/design-principles-of-programming-languages/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0301",
+      "targets": [
+        {
+          "record": "topics/device-management",
+          "adoption": "topics/device-management/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0302",
+      "targets": [
+        {
+          "record": "forms/diagram",
+          "adoption": "forms/diagram/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0303",
+      "targets": [
+        {
+          "record": "topics/digital-logic-and-digital-systems",
+          "adoption": "topics/digital-logic-and-digital-systems/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0304",
+      "targets": [
+        {
+          "record": "topics/discovery-artificial-intelligence",
+          "adoption": "topics/discovery-artificial-intelligence/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/discovery",
+          "adoption": "topics/discovery/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0305",
+      "targets": [
+        {
+          "record": "topics/distributed-databases-cloud-computing",
+          "adoption": "topics/distributed-databases-cloud-computing/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0306",
+      "targets": [
+        {
+          "record": "topics/diversity-equity-inclusion-and-accessibility",
+          "adoption": "topics/diversity-equity-inclusion-and-accessibility/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0307",
+      "targets": [
+        {
+          "record": "topics/economies-of-computing",
+          "adoption": "topics/economies-of-computing/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0308",
+      "targets": [
+        {
+          "record": "topics/embedded-platforms",
+          "adoption": "topics/embedded-platforms/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0309",
+      "targets": [
+        {
+          "record": "topics/emerging-topics",
+          "adoption": "topics/emerging-topics/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0310",
+      "targets": [
+        {
+          "record": "topics/encoding-and-sanitization",
+          "adoption": "topics/encoding-and-sanitization/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0311",
+      "targets": [
+        {
+          "record": "topics/engineering-foundations",
+          "adoption": "topics/engineering-foundations/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0312",
+      "targets": [
+        {
+          "record": "topics/evaluating-the-design",
+          "adoption": "topics/evaluating-the-design/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0313",
+      "targets": [
+        {
+          "record": "topics/evaluation",
+          "adoption": "topics/evaluation/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0314",
+      "targets": [
+        {
+          "record": "topics/event-driven-and-reactive-programming",
+          "adoption": "topics/event-driven-and-reactive-programming/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0315",
+      "targets": [
+        {
+          "record": "forms/exam",
+          "adoption": "forms/exam/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0316",
+      "targets": [
+        {
+          "record": "topics/execution-artificial-intelligence",
+          "adoption": "topics/execution-artificial-intelligence/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/execution",
+          "adoption": "topics/execution/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0317",
+      "targets": [
+        {
+          "record": "forms/exercise",
+          "adoption": "forms/exercise/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0318",
+      "targets": [
+        {
+          "record": "topics/exfiltration-artificial-intelligence",
+          "adoption": "topics/exfiltration-artificial-intelligence/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/exfiltration",
+          "adoption": "topics/exfiltration/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0319",
+      "targets": [
+        {
+          "record": "forms/experiment",
+          "adoption": "forms/experiment/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0320",
+      "targets": [
+        {
+          "record": "topics/fault-tolerance",
+          "adoption": "topics/fault-tolerance/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0321",
+      "targets": [
+        {
+          "record": "forms/figure",
+          "adoption": "forms/figure/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0322",
+      "targets": [
+        {
+          "record": "topics/file-handling",
+          "adoption": "topics/file-handling/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0323",
+      "targets": [
+        {
+          "record": "topics/file-systems-api-and-implementation",
+          "adoption": "topics/file-systems-api-and-implementation/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0324",
+      "targets": [
+        {
+          "record": "topics/formal-development-methodologies",
+          "adoption": "topics/formal-development-methodologies/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0325",
+      "targets": [
+        {
+          "record": "topics/formal-semantics",
+          "adoption": "topics/formal-semantics/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0326",
+      "targets": [
+        {
+          "record": "topics/foundational-data-structures-and-algorithms",
+          "adoption": "topics/foundational-data-structures-and-algorithms/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0327",
+      "targets": [
+        {
+          "record": "topics/foundational-security",
+          "adoption": "topics/foundational-security/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0328",
+      "targets": [
+        {
+          "record": "topics/foundations-of-programming-languages",
+          "adoption": "topics/foundations-of-programming-languages/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0329",
+      "targets": [
+        {
+          "record": "topics/functional-organization",
+          "adoption": "topics/functional-organization/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0330",
+      "targets": [
+        {
+          "record": "topics/functional-programming",
+          "adoption": "topics/functional-programming/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0331",
+      "targets": [
+        {
+          "record": "topics/fundamental-concepts",
+          "adoption": "topics/fundamental-concepts/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0332",
+      "targets": [
+        {
+          "record": "topics/fundamental-data-structures",
+          "adoption": "topics/fundamental-data-structures/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0333",
+      "targets": [
+        {
+          "record": "topics/fundamental-issues",
+          "adoption": "topics/fundamental-issues/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0334",
+      "targets": [
+        {
+          "record": "topics/fundamental-knowledge-representation-and-reasoning",
+          "adoption": "topics/fundamental-knowledge-representation-and-reasoning/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0335",
+      "targets": [
+        {
+          "record": "topics/fundamental-programming-concepts-and-practices",
+          "adoption": "topics/fundamental-programming-concepts-and-practices/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0336",
+      "targets": [
+        {
+          "record": "topics/fundamentals",
+          "adoption": "topics/fundamentals/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0337",
+      "targets": [
+        {
+          "record": "topics/game-platforms",
+          "adoption": "topics/game-platforms/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0338",
+      "targets": [
+        {
+          "record": "topics/geometric-modeling",
+          "adoption": "topics/geometric-modeling/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0339",
+      "targets": [
+        {
+          "record": "forms/graph",
+          "adoption": "forms/graph/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0340",
+      "targets": [
+        {
+          "record": "topics/graphics-and-interactive-techniques",
+          "adoption": "topics/graphics-and-interactive-techniques/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0341",
+      "targets": [
+        {
+          "record": "topics/heterogeneous-architectures",
+          "adoption": "topics/heterogeneous-architectures/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0342",
+      "targets": [
+        {
+          "record": "topics/human-computer-interaction",
+          "adoption": "topics/human-computer-interaction/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0343",
+      "targets": [
+        {
+          "record": "topics/image-processing",
+          "adoption": "topics/image-processing/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0344",
+      "targets": [
+        {
+          "record": "topics/immersion",
+          "adoption": "topics/immersion/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0345",
+      "targets": [
+        {
+          "record": "topics/impact-artificial-intelligence",
+          "adoption": "topics/impact-artificial-intelligence/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/impact",
+          "adoption": "topics/impact/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0346",
+      "targets": [
+        {
+          "record": "topics/improper-access-control",
+          "adoption": "topics/improper-access-control/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0347",
+      "targets": [
+        {
+          "record": "topics/improper-adherence-to-coding-standards",
+          "adoption": "topics/improper-adherence-to-coding-standards/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0348",
+      "targets": [
+        {
+          "record": "topics/improper-check-or-handling-of-exceptional-conditions",
+          "adoption": "topics/improper-check-or-handling-of-exceptional-conditions/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0349",
+      "targets": [
+        {
+          "record": "topics/improper-control-of-a-resource-through-its-lifetime",
+          "adoption": "topics/improper-control-of-a-resource-through-its-lifetime/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0350",
+      "targets": [
+        {
+          "record": "topics/improper-interaction-between-multiple-correctly-behaving-entities",
+          "adoption": "topics/improper-interaction-between-multiple-correctly-behaving-entities/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0351",
+      "targets": [
+        {
+          "record": "topics/improper-neutralization",
+          "adoption": "topics/improper-neutralization/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0352",
+      "targets": [
+        {
+          "record": "topics/incorrect-calculation",
+          "adoption": "topics/incorrect-calculation/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0353",
+      "targets": [
+        {
+          "record": "topics/incorrect-comparison",
+          "adoption": "topics/incorrect-comparison/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0354",
+      "targets": [
+        {
+          "record": "forms/index",
+          "adoption": "forms/index/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0355",
+      "targets": [
+        {
+          "record": "topics/initial-access-artificial-intelligence",
+          "adoption": "topics/initial-access-artificial-intelligence/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/initial-access",
+          "adoption": "topics/initial-access/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0356",
+      "targets": [
+        {
+          "record": "topics/insufficient-control-flow-management",
+          "adoption": "topics/insufficient-control-flow-management/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0357",
+      "targets": [
+        {
+          "record": "topics/intellectual-property",
+          "adoption": "topics/intellectual-property/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0358",
+      "targets": [
+        {
+          "record": "topics/interaction",
+          "adoption": "topics/interaction/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0359",
+      "targets": [
+        {
+          "record": "topics/interactive-computing-platforms",
+          "adoption": "topics/interactive-computing-platforms/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0360",
+      "targets": [
+        {
+          "record": "topics/interfacing-and-communication",
+          "adoption": "topics/interfacing-and-communication/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0361",
+      "targets": [
+        {
+          "record": "topics/internet-layer",
+          "adoption": "topics/internet-layer/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0362",
+      "targets": [
+        {
+          "record": "topics/language-pragmatics",
+          "adoption": "topics/language-pragmatics/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0363",
+      "targets": [
+        {
+          "record": "topics/language-translation-and-execution",
+          "adoption": "topics/language-translation-and-execution/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0364",
+      "targets": [
+        {
+          "record": "topics/lateral-movement-artificial-intelligence",
+          "adoption": "topics/lateral-movement-artificial-intelligence/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/lateral-movement",
+          "adoption": "topics/lateral-movement/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0365",
+      "targets": [
+        {
+          "record": "forms/lecture",
+          "adoption": "forms/lecture/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0366",
+      "targets": [
+        {
+          "record": "topics/link-layer",
+          "adoption": "topics/link-layer/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0367",
+      "targets": [
+        {
+          "record": "topics/logic-programming",
+          "adoption": "topics/logic-programming/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0368",
+      "targets": [
+        {
+          "record": "topics/logical-representation-and-reasoning",
+          "adoption": "topics/logical-representation-and-reasoning/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0369",
+      "targets": [
+        {
+          "record": "topics/machine-level-data-representation",
+          "adoption": "topics/machine-level-data-representation/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0370",
+      "targets": [
+        {
+          "record": "topics/mathematical-and-statistical-foundations",
+          "adoption": "topics/mathematical-and-statistical-foundations/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0371",
+      "targets": [
+        {
+          "record": "topics/mathematical-foundations",
+          "adoption": "topics/mathematical-foundations/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0372",
+      "targets": [
+        {
+          "record": "topics/memory-hierarchy",
+          "adoption": "topics/memory-hierarchy/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0373",
+      "targets": [
+        {
+          "record": "topics/memory-management",
+          "adoption": "topics/memory-management/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0374",
+      "targets": [
+        {
+          "record": "topics/methods-for-ethical-analysis",
+          "adoption": "topics/methods-for-ethical-analysis/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0375",
+      "targets": [
+        {
+          "record": "topics/mobile-platforms",
+          "adoption": "topics/mobile-platforms/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0376",
+      "targets": [
+        {
+          "record": "topics/mobility",
+          "adoption": "topics/mobility/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0377",
+      "targets": [
+        {
+          "record": "forms/narrative-text",
+          "adoption": "forms/narrative-text/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0378",
+      "targets": [
+        {
+          "record": "topics/network-security",
+          "adoption": "topics/network-security/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0379",
+      "targets": [
+        {
+          "record": "topics/networked-applications",
+          "adoption": "topics/networked-applications/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0380",
+      "targets": [
+        {
+          "record": "topics/networking-and-communication",
+          "adoption": "topics/networking-and-communication/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0381",
+      "targets": [
+        {
+          "record": "topics/nosql-systems",
+          "adoption": "topics/nosql-systems/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0382",
+      "targets": [
+        {
+          "record": "topics/oauth-and-oidc",
+          "adoption": "topics/oauth-and-oidc/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0383",
+      "targets": [
+        {
+          "record": "topics/operating-systems",
+          "adoption": "topics/operating-systems/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0384",
+      "targets": [
+        {
+          "record": "topics/overview-of-computer-systems",
+          "adoption": "topics/overview-of-computer-systems/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0385",
+      "targets": [
+        {
+          "record": "topics/parallel-and-distributed-computing-foundations-of-programming-languages",
+          "adoption": "topics/parallel-and-distributed-computing-foundations-of-programming-languages/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/parallel-and-distributed-computing",
+          "adoption": "topics/parallel-and-distributed-computing/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0386",
+      "targets": [
+        {
+          "record": "topics/perception-and-computer-vision",
+          "adoption": "topics/perception-and-computer-vision/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0387",
+      "targets": [
+        {
+          "record": "topics/performance-and-energy-efficiency",
+          "adoption": "topics/performance-and-energy-efficiency/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0388",
+      "targets": [
+        {
+          "record": "topics/performance-evaluation",
+          "adoption": "topics/performance-evaluation/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0389",
+      "targets": [
+        {
+          "record": "topics/persistence-artificial-intelligence",
+          "adoption": "topics/persistence-artificial-intelligence/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/persistence",
+          "adoption": "topics/persistence/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0390",
+      "targets": [
+        {
+          "record": "topics/planning",
+          "adoption": "topics/planning/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0391",
+      "targets": [
+        {
+          "record": "topics/principles-of-operating-system",
+          "adoption": "topics/principles-of-operating-system/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0392",
+      "targets": [
+        {
+          "record": "topics/privacy-and-civil-liberties",
+          "adoption": "topics/privacy-and-civil-liberties/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0393",
+      "targets": [
+        {
+          "record": "topics/privilege-escalation-artificial-intelligence",
+          "adoption": "topics/privilege-escalation-artificial-intelligence/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/privilege-escalation",
+          "adoption": "topics/privilege-escalation/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0394",
+      "targets": [
+        {
+          "record": "topics/probabilistic-representation-and-reasoning",
+          "adoption": "topics/probabilistic-representation-and-reasoning/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0395",
+      "targets": [
+        {
+          "record": "forms/problem-statement",
+          "adoption": "forms/problem-statement/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0396",
+      "targets": [
+        {
+          "record": "topics/process-model",
+          "adoption": "topics/process-model/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0397",
+      "targets": [
+        {
+          "record": "topics/product-requirements",
+          "adoption": "topics/product-requirements/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0398",
+      "targets": [
+        {
+          "record": "topics/professional-ethics",
+          "adoption": "topics/professional-ethics/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0399",
+      "targets": [
+        {
+          "record": "topics/program-abstraction-and-representation",
+          "adoption": "topics/program-abstraction-and-representation/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0400",
+      "targets": [
+        {
+          "record": "topics/program-analysis-and-analyzers",
+          "adoption": "topics/program-analysis-and-analyzers/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0401",
+      "targets": [
+        {
+          "record": "topics/programs",
+          "adoption": "topics/programs/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0402",
+      "targets": [
+        {
+          "record": "topics/protection-and-safety",
+          "adoption": "topics/protection-and-safety/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0403",
+      "targets": [
+        {
+          "record": "topics/protection-mechanism-failure",
+          "adoption": "topics/protection-mechanism-failure/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0404",
+      "targets": [
+        {
+          "record": "topics/quantum-architectures",
+          "adoption": "topics/quantum-architectures/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0405",
+      "targets": [
+        {
+          "record": "topics/query-construction",
+          "adoption": "topics/query-construction/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0406",
+      "targets": [
+        {
+          "record": "topics/query-processing",
+          "adoption": "topics/query-processing/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0407",
+      "targets": [
+        {
+          "record": "forms/questionnaire",
+          "adoption": "forms/questionnaire/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0408",
+      "targets": [
+        {
+          "record": "topics/real-time-and-embedded-systems",
+          "adoption": "topics/real-time-and-embedded-systems/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0409",
+      "targets": [
+        {
+          "record": "topics/reconnaissance-artificial-intelligence",
+          "adoption": "topics/reconnaissance-artificial-intelligence/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/reconnaissance",
+          "adoption": "topics/reconnaissance/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0410",
+      "targets": [
+        {
+          "record": "topics/refactoring-and-code-evolution",
+          "adoption": "topics/refactoring-and-code-evolution/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0411",
+      "targets": [
+        {
+          "record": "topics/relational-databases",
+          "adoption": "topics/relational-databases/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0412",
+      "targets": [
+        {
+          "record": "topics/reliability-support",
+          "adoption": "topics/reliability-support/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0413",
+      "targets": [
+        {
+          "record": "topics/resource-development-artificial-intelligence",
+          "adoption": "topics/resource-development-artificial-intelligence/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/resource-development",
+          "adoption": "topics/resource-development/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0414",
+      "targets": [
+        {
+          "record": "topics/resource-management",
+          "adoption": "topics/resource-management/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0415",
+      "targets": [
+        {
+          "record": "topics/robot-platforms",
+          "adoption": "topics/robot-platforms/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0416",
+      "targets": [
+        {
+          "record": "topics/robotics",
+          "adoption": "topics/robotics/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0417",
+      "targets": [
+        {
+          "record": "topics/role-and-purpose-of-operating-systems",
+          "adoption": "topics/role-and-purpose-of-operating-systems/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0418",
+      "targets": [
+        {
+          "record": "topics/routing-and-forwarding",
+          "adoption": "topics/routing-and-forwarding/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0419",
+      "targets": [
+        {
+          "record": "topics/run-time-behavior-and-systems",
+          "adoption": "topics/run-time-behavior-and-systems/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0420",
+      "targets": [
+        {
+          "record": "topics/scheduling",
+          "adoption": "topics/scheduling/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0421",
+      "targets": [
+        {
+          "record": "topics/search",
+          "adoption": "topics/search/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0422",
+      "targets": [
+        {
+          "record": "topics/secure-coding",
+          "adoption": "topics/secure-coding/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0423",
+      "targets": [
+        {
+          "record": "topics/secure-coding-and-architecture",
+          "adoption": "topics/secure-coding-and-architecture/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0424",
+      "targets": [
+        {
+          "record": "topics/secure-communication",
+          "adoption": "topics/secure-communication/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0425",
+      "targets": [
+        {
+          "record": "topics/secure-processor-architectures",
+          "adoption": "topics/secure-processor-architectures/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0426",
+      "targets": [
+        {
+          "record": "topics/security",
+          "adoption": "topics/security/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0427",
+      "targets": [
+        {
+          "record": "topics/security-analysis-design-and-engineering",
+          "adoption": "topics/security-analysis-design-and-engineering/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0428",
+      "targets": [
+        {
+          "record": "topics/security-governance",
+          "adoption": "topics/security-governance/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0429",
+      "targets": [
+        {
+          "record": "topics/security-logging-and-error-handling",
+          "adoption": "topics/security-logging-and-error-handling/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0430",
+      "targets": [
+        {
+          "record": "topics/security-policies-laws-and-computer-crimes",
+          "adoption": "topics/security-policies-laws-and-computer-crimes/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0431",
+      "targets": [
+        {
+          "record": "forms/self-assessment",
+          "adoption": "forms/self-assessment/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0432",
+      "targets": [
+        {
+          "record": "topics/self-contained-tokens",
+          "adoption": "topics/self-contained-tokens/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0433",
+      "targets": [
+        {
+          "record": "topics/semi-structured-and-unstructured-databases",
+          "adoption": "topics/semi-structured-and-unstructured-databases/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0434",
+      "targets": [
+        {
+          "record": "topics/session-management",
+          "adoption": "topics/session-management/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0435",
+      "targets": [
+        {
+          "record": "topics/shading-and-advanced-rendering",
+          "adoption": "topics/shading-and-advanced-rendering/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0436",
+      "targets": [
+        {
+          "record": "topics/shell-scripting",
+          "adoption": "topics/shell-scripting/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0437",
+      "targets": [
+        {
+          "record": "forms/simulation",
+          "adoption": "forms/simulation/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/simulation",
+          "adoption": "topics/simulation/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0438",
+      "targets": [
+        {
+          "record": "topics/single-hop-communication",
+          "adoption": "topics/single-hop-communication/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0439",
+      "targets": [
+        {
+          "record": "forms/slide",
+          "adoption": "forms/slide/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0440",
+      "targets": [
+        {
+          "record": "topics/social-context",
+          "adoption": "topics/social-context/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0441",
+      "targets": [
+        {
+          "record": "topics/society-ethics-and-the-profession-algorithmic-foundations",
+          "adoption": "topics/society-ethics-and-the-profession-algorithmic-foundations/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/society-ethics-and-the-profession-data-management",
+          "adoption": "topics/society-ethics-and-the-profession-data-management/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/society-ethics-and-the-profession-foundations-of-programming-languages",
+          "adoption": "topics/society-ethics-and-the-profession-foundations-of-programming-languages/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/society-ethics-and-the-profession-graphics-and-interactive-techniques",
+          "adoption": "topics/society-ethics-and-the-profession-graphics-and-interactive-techniques/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/society-ethics-and-the-profession-human-computer-interaction",
+          "adoption": "topics/society-ethics-and-the-profession-human-computer-interaction/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/society-ethics-and-the-profession-operating-systems",
+          "adoption": "topics/society-ethics-and-the-profession-operating-systems/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/society-ethics-and-the-profession-security",
+          "adoption": "topics/society-ethics-and-the-profession-security/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/society-ethics-and-the-profession-software-development-fundamentals",
+          "adoption": "topics/society-ethics-and-the-profession-software-development-fundamentals/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/society-ethics-and-the-profession-systems-fundamentals",
+          "adoption": "topics/society-ethics-and-the-profession-systems-fundamentals/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/society-ethics-and-the-profession",
+          "adoption": "topics/society-ethics-and-the-profession/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0442",
+      "targets": [
+        {
+          "record": "topics/software-architecture",
+          "adoption": "topics/software-architecture/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0443",
+      "targets": [
+        {
+          "record": "topics/software-configuration-management",
+          "adoption": "topics/software-configuration-management/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0444",
+      "targets": [
+        {
+          "record": "topics/software-design",
+          "adoption": "topics/software-design/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0445",
+      "targets": [
+        {
+          "record": "topics/software-development-fundamentals",
+          "adoption": "topics/software-development-fundamentals/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0446",
+      "targets": [
+        {
+          "record": "topics/software-development-practices",
+          "adoption": "topics/software-development-practices/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0447",
+      "targets": [
+        {
+          "record": "topics/software-engineering-economics",
+          "adoption": "topics/software-engineering-economics/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0448",
+      "targets": [
+        {
+          "record": "topics/software-engineering-management",
+          "adoption": "topics/software-engineering-management/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0449",
+      "targets": [
+        {
+          "record": "topics/software-engineering-models-and-methods",
+          "adoption": "topics/software-engineering-models-and-methods/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0450",
+      "targets": [
+        {
+          "record": "topics/software-engineering-operations",
+          "adoption": "topics/software-engineering-operations/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0451",
+      "targets": [
+        {
+          "record": "topics/software-engineering-process",
+          "adoption": "topics/software-engineering-process/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0452",
+      "targets": [
+        {
+          "record": "topics/software-engineering-professional-practice",
+          "adoption": "topics/software-engineering-professional-practice/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0453",
+      "targets": [
+        {
+          "record": "topics/software-maintenance",
+          "adoption": "topics/software-maintenance/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0454",
+      "targets": [
+        {
+          "record": "topics/software-quality",
+          "adoption": "topics/software-quality/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0455",
+      "targets": [
+        {
+          "record": "topics/software-reliability",
+          "adoption": "topics/software-reliability/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0456",
+      "targets": [
+        {
+          "record": "topics/software-requirements",
+          "adoption": "topics/software-requirements/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0457",
+      "targets": [
+        {
+          "record": "topics/software-security",
+          "adoption": "topics/software-security/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0458",
+      "targets": [
+        {
+          "record": "topics/software-testing",
+          "adoption": "topics/software-testing/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0459",
+      "targets": [
+        {
+          "record": "topics/software-verification-and-validation",
+          "adoption": "topics/software-verification-and-validation/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0460",
+      "targets": [
+        {
+          "record": "topics/specialized-platform-development",
+          "adoption": "topics/specialized-platform-development/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0461",
+      "targets": [
+        {
+          "record": "topics/stealth",
+          "adoption": "topics/stealth/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0462",
+      "targets": [
+        {
+          "record": "topics/sustainability",
+          "adoption": "topics/sustainability/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0463",
+      "targets": [
+        {
+          "record": "topics/sustainability-issues",
+          "adoption": "topics/sustainability-issues/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0464",
+      "targets": [
+        {
+          "record": "topics/syntax-analysis",
+          "adoption": "topics/syntax-analysis/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0465",
+      "targets": [
+        {
+          "record": "topics/system-design-systems-fundamentals",
+          "adoption": "topics/system-design-systems-fundamentals/zh",
+          "exact_values_match": true
+        },
+        {
+          "record": "topics/system-design",
+          "adoption": "topics/system-design/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0466",
+      "targets": [
+        {
+          "record": "topics/system-performance",
+          "adoption": "topics/system-performance/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0467",
+      "targets": [
+        {
+          "record": "topics/system-reliability",
+          "adoption": "topics/system-reliability/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0468",
+      "targets": [
+        {
+          "record": "topics/system-security",
+          "adoption": "topics/system-security/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0469",
+      "targets": [
+        {
+          "record": "topics/systems-execution-and-memory-model",
+          "adoption": "topics/systems-execution-and-memory-model/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0470",
+      "targets": [
+        {
+          "record": "topics/systems-fundamentals",
+          "adoption": "topics/systems-fundamentals/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0471",
+      "targets": [
+        {
+          "record": "forms/table",
+          "adoption": "forms/table/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0472",
+      "targets": [
+        {
+          "record": "topics/tangible-physical-computing",
+          "adoption": "topics/tangible-physical-computing/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0473",
+      "targets": [
+        {
+          "record": "topics/teamwork",
+          "adoption": "topics/teamwork/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0474",
+      "targets": [
+        {
+          "record": "topics/the-role-of-data-and-the-data-life-cycle",
+          "adoption": "topics/the-role-of-data-and-the-data-life-cycle/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0475",
+      "targets": [
+        {
+          "record": "topics/tools-and-environments",
+          "adoption": "topics/tools-and-environments/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0476",
+      "targets": [
+        {
+          "record": "topics/transport-layer",
+          "adoption": "topics/transport-layer/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0477",
+      "targets": [
+        {
+          "record": "topics/type-systems",
+          "adoption": "topics/type-systems/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0478",
+      "targets": [
+        {
+          "record": "topics/understanding-the-user-individual-goals-and-interactions-with-others",
+          "adoption": "topics/understanding-the-user-individual-goals-and-interactions-with-others/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0479",
+      "targets": [
+        {
+          "record": "topics/validation-and-business-logic",
+          "adoption": "topics/validation-and-business-logic/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0480",
+      "targets": [
+        {
+          "record": "topics/virtualization",
+          "adoption": "topics/virtualization/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0481",
+      "targets": [
+        {
+          "record": "topics/visualization",
+          "adoption": "topics/visualization/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0482",
+      "targets": [
+        {
+          "record": "topics/web-frontend-security",
+          "adoption": "topics/web-frontend-security/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0483",
+      "targets": [
+        {
+          "record": "topics/web-platforms",
+          "adoption": "topics/web-platforms/zh",
+          "exact_values_match": true
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0484",
+      "targets": [
+        {
+          "record": "topics/webrtc",
+          "adoption": "topics/webrtc/zh",
+          "exact_values_match": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,478 @@
+{
+  "status": "proposal_not_adopted",
+  "baseline_commit": "7778e6ed5be637a57ec56bdaf90bff3f566c4e14",
+  "groups": [
+    {
+      "id": "glossary-L0110",
+      "before": [
+        "自上而下 / 自下而上",
+        "top down / bottom up",
+        "委员会法的两个方向；新建词表优先前者",
+        "Z 11.1.3.1"
+      ],
+      "proposed_operation": "split_after_component_adoption",
+      "components": [
+        {
+          "proposed_forms": {
+            "zh-Hans": "自上而下",
+            "en": "top down"
+          },
+          "proposed_definition": "先确定范围较宽的概念，再逐层选择下位概念到所需粒度",
+          "evidence": [
+            {
+              "file": "docs/concepts/vocabulary-construction.md",
+              "line": 50,
+              "quote": "| 自上而下 top down | 先确定范围较宽的概念，再逐层选择下位概念到所需粒度 | 新建词表时优先考虑 |",
+              "kind": "existing_project_text",
+              "external_original_rechecked": false
+            }
+          ],
+          "definition_material": "existing_project_text_not_new_external_verification",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        },
+        {
+          "proposed_forms": {
+            "zh-Hans": "自下而上",
+            "en": "bottom up"
+          },
+          "proposed_definition": "从材料中识别出的字符串和上下文开始，判断概念后向上组织",
+          "evidence": [
+            {
+              "file": "docs/concepts/vocabulary-construction.md",
+              "line": 51,
+              "quote": "| 自下而上 bottom up | 从材料中识别出的字符串和上下文开始，判断概念后向上组织 | 为既有词表补充内容时常用 |",
+              "kind": "existing_project_text",
+              "external_original_rechecked": false
+            }
+          ],
+          "definition_material": "existing_project_text_not_new_external_verification",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        }
+      ],
+      "blockers": [
+        "独立形式、概念对应和定义依据尚需按本条材料性质确认；不能把本表当作正式术语数据。"
+      ]
+    },
+    {
+      "id": "glossary-L0111",
+      "before": [
+        "演绎法 / 归纳法",
+        "deductive / inductive",
+        "经验法的两种：先收集后控制 / 从头控制",
+        "Z 11.1.3.2"
+      ],
+      "proposed_operation": "split_after_component_adoption",
+      "components": [
+        {
+          "proposed_forms": {
+            "zh-Hans": "演绎法",
+            "en": "deductive"
+          },
+          "proposed_definition": "先广泛收集字符串和上下文，积累到一定规模后统一判断概念并建立结构",
+          "evidence": [
+            {
+              "file": "docs/concepts/vocabulary-construction.md",
+              "line": 61,
+              "quote": "| 演绎法 deductive | 先广泛收集字符串和上下文，积累到一定规模后统一判断概念并建立结构 | 集中形成较宽到较窄的层级 |",
+              "kind": "existing_project_text",
+              "external_original_rechecked": false
+            }
+          ],
+          "definition_material": "existing_project_text_not_new_external_verification",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        },
+        {
+          "proposed_forms": {
+            "zh-Hans": "归纳法",
+            "en": "inductive"
+          },
+          "proposed_definition": "每次遇到输入就立即核对、判断并纳入临时结构",
+          "evidence": [
+            {
+              "file": "docs/concepts/vocabulary-construction.md",
+              "line": 62,
+              "quote": "| 归纳法 inductive | 每次遇到输入就立即核对、判断并纳入临时结构 | 从具体输入持续向上组织 |",
+              "kind": "existing_project_text",
+              "external_original_rechecked": false
+            }
+          ],
+          "definition_material": "existing_project_text_not_new_external_verification",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        }
+      ],
+      "blockers": [
+        "独立形式、概念对应和定义依据尚需按本条材料性质确认；不能把本表当作正式术语数据。"
+      ]
+    },
+    {
+      "id": "glossary-L0119",
+      "before": [
+        "查全率 / 查准率",
+        "recall / precision",
+        "检索效果的两个指标；词表对两者都有正面影响",
+        "Z 5.3.6"
+      ],
+      "proposed_operation": "split_after_component_adoption",
+      "components": [
+        {
+          "proposed_forms": {
+            "zh-Hans": "查全率",
+            "en": "recall"
+          },
+          "proposed_definition": null,
+          "evidence": [],
+          "definition_material": "missing",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        },
+        {
+          "proposed_forms": {
+            "zh-Hans": "查准率",
+            "en": "precision"
+          },
+          "proposed_definition": null,
+          "evidence": [],
+          "definition_material": "missing",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        }
+      ],
+      "blockers": [
+        "独立形式、概念对应和定义依据尚需按本条材料性质确认；不能把本表当作正式术语数据。"
+      ]
+    },
+    {
+      "id": "glossary-L0131",
+      "before": [
+        "源词表 / 目标词表",
+        "source / target vocabulary",
+        "映射的起点 / 终点",
+        "ISO-2 §3（条款号在样章之外）"
+      ],
+      "proposed_operation": "split_after_component_adoption",
+      "components": [
+        {
+          "proposed_forms": {
+            "zh-Hans": "源词表",
+            "en": "source vocabulary"
+          },
+          "proposed_definition": "映射的起点",
+          "evidence": [
+            {
+              "file": "docs/glossary.md",
+              "line": 131,
+              "quote": "| 源词表 / 目标词表 | source / target vocabulary | 映射的起点 / 终点 | ISO-2 §3（条款号在样章之外） |",
+              "kind": "existing_project_text",
+              "external_original_rechecked": false
+            }
+          ],
+          "definition_material": "existing_project_text_not_new_external_verification",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        },
+        {
+          "proposed_forms": {
+            "zh-Hans": "目标词表",
+            "en": "target vocabulary"
+          },
+          "proposed_definition": "映射的终点",
+          "evidence": [
+            {
+              "file": "docs/glossary.md",
+              "line": 131,
+              "quote": "| 源词表 / 目标词表 | source / target vocabulary | 映射的起点 / 终点 | ISO-2 §3（条款号在样章之外） |",
+              "kind": "existing_project_text",
+              "external_original_rechecked": false
+            }
+          ],
+          "definition_material": "existing_project_text_not_new_external_verification",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        }
+      ],
+      "blockers": [
+        "独立形式、概念对应和定义依据尚需按本条材料性质确认；不能把本表当作正式术语数据。"
+      ]
+    },
+    {
+      "id": "glossary-L0133",
+      "before": [
+        "精确 / 不精确 / 部分等价",
+        "exact / inexact / partial equivalence",
+        "等价的三个程度",
+        "ISO-2 §11"
+      ],
+      "proposed_operation": "split_after_component_adoption",
+      "components": [
+        {
+          "proposed_forms": {
+            "zh-Hans": "精确等价",
+            "en": "exact equivalence"
+          },
+          "proposed_definition": "范围完全一致，任何检索场景可互换",
+          "evidence": [
+            {
+              "file": "docs/concepts/vocabulary-mapping.md",
+              "line": 36,
+              "quote": "| 精确等价 | 范围完全一致，任何检索场景可互换 | `exactMatch` |",
+              "kind": "existing_project_text",
+              "external_original_rechecked": false
+            }
+          ],
+          "definition_material": "existing_project_text_not_new_external_verification",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        },
+        {
+          "proposed_forms": {
+            "zh-Hans": "不精确等价",
+            "en": "inexact equivalence"
+          },
+          "proposed_definition": "范围大致一致，多数场景可互换",
+          "evidence": [
+            {
+              "file": "docs/concepts/vocabulary-mapping.md",
+              "line": 37,
+              "quote": "| 不精确等价 | 范围大致一致，多数场景可互换 | `closeMatch` |",
+              "kind": "existing_project_text",
+              "external_original_rechecked": false
+            }
+          ],
+          "definition_material": "existing_project_text_not_new_external_verification",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        },
+        {
+          "proposed_forms": {
+            "zh-Hans": "部分等价",
+            "en": "partial equivalence"
+          },
+          "proposed_definition": "一边的范围只覆盖另一边的一部分",
+          "evidence": [
+            {
+              "file": "docs/concepts/vocabulary-mapping.md",
+              "line": 38,
+              "quote": "| 部分等价 | 一边的范围只覆盖另一边的一部分 | 用 `broadMatch` / `narrowMatch` |",
+              "kind": "existing_project_text",
+              "external_original_rechecked": false
+            }
+          ],
+          "definition_material": "existing_project_text_not_new_external_verification",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        }
+      ],
+      "blockers": [
+        "独立形式、概念对应和定义依据尚需按本条材料性质确认；不能把本表当作正式术语数据。"
+      ]
+    },
+    {
+      "id": "glossary-L0172",
+      "before": [
+        "相关 / 可找到 / 可理解 / 可使用",
+        "relevant / findable / understandable / usable",
+        "plain language 的四条原则",
+        "ISO 24495-1:2023"
+      ],
+      "proposed_operation": "split_after_component_adoption",
+      "components": [
+        {
+          "proposed_forms": {
+            "zh-Hans": "相关",
+            "en": "relevant"
+          },
+          "proposed_definition": null,
+          "evidence": [],
+          "definition_material": "missing",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        },
+        {
+          "proposed_forms": {
+            "zh-Hans": "可找到",
+            "en": "findable"
+          },
+          "proposed_definition": null,
+          "evidence": [],
+          "definition_material": "missing",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        },
+        {
+          "proposed_forms": {
+            "zh-Hans": "可理解",
+            "en": "understandable"
+          },
+          "proposed_definition": null,
+          "evidence": [],
+          "definition_material": "missing",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        },
+        {
+          "proposed_forms": {
+            "zh-Hans": "可使用",
+            "en": "usable"
+          },
+          "proposed_definition": null,
+          "evidence": [],
+          "definition_material": "missing",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        }
+      ],
+      "blockers": [
+        "独立形式、概念对应和定义依据尚需按本条材料性质确认；不能把本表当作正式术语数据。"
+      ]
+    },
+    {
+      "id": "glossary-L0188",
+      "before": [
+        "闪念笔记 / 文献笔记 / 永久笔记",
+        "fleeting / literature / permanent note",
+        "按工作流阶段分的三种笔记",
+        "Ahrens 2017"
+      ],
+      "proposed_operation": "split_after_component_adoption",
+      "components": [
+        {
+          "proposed_forms": {
+            "zh-Hans": "闪念笔记",
+            "en": "fleeting note"
+          },
+          "proposed_definition": "在忙别的事时快速捕捉想法",
+          "evidence": [
+            {
+              "file": "docs/concepts/note-types.md",
+              "line": 48,
+              "quote": "| fleeting note 闪念笔记 | 在忙别的事时快速捕捉想法 |",
+              "kind": "existing_project_text",
+              "external_original_rechecked": false
+            }
+          ],
+          "definition_material": "existing_project_text_not_new_external_verification",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        },
+        {
+          "proposed_forms": {
+            "zh-Hans": "文献笔记",
+            "en": "literature note"
+          },
+          "proposed_definition": "读文献时用自己的话记要点并注明出处，存在参考系统里",
+          "evidence": [
+            {
+              "file": "docs/concepts/note-types.md",
+              "line": 49,
+              "quote": "| literature note 文献笔记 | 读文献时用自己的话记要点并注明出处，存在参考系统里 |",
+              "kind": "existing_project_text",
+              "external_original_rechecked": false
+            }
+          ],
+          "definition_material": "existing_project_text_not_new_external_verification",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        },
+        {
+          "proposed_forms": {
+            "zh-Hans": "永久笔记",
+            "en": "permanent note"
+          },
+          "proposed_definition": "永不丢弃，自身包含必要信息，以永久可理解的方式写成，像为出版而写",
+          "evidence": [
+            {
+              "file": "docs/concepts/note-types.md",
+              "line": 50,
+              "quote": "| permanent note 永久笔记 | 永不丢弃，自身包含必要信息，以永久可理解的方式写成，像为出版而写 |",
+              "kind": "existing_project_text",
+              "external_original_rechecked": false
+            }
+          ],
+          "definition_material": "existing_project_text_not_new_external_verification",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        }
+      ],
+      "blockers": [
+        "独立形式、概念对应和定义依据尚需按本条材料性质确认；不能把本表当作正式术语数据。"
+      ]
+    },
+    {
+      "id": "glossary-L0189",
+      "before": [
+        "隐性知识 / 显性知识",
+        "tacit / explicit knowledge",
+        "难以形式化的个人知识 / 正式而系统、易于交流的知识",
+        "Nonaka 1991"
+      ],
+      "proposed_operation": "split_after_component_adoption",
+      "components": [
+        {
+          "proposed_forms": {
+            "zh-Hans": "隐性知识",
+            "en": "tacit knowledge"
+          },
+          "proposed_definition": "难以形式化的个人知识",
+          "evidence": [
+            {
+              "file": "docs/glossary.md",
+              "line": 189,
+              "quote": "| 隐性知识 / 显性知识 | tacit / explicit knowledge | 难以形式化的个人知识 / 正式而系统、易于交流的知识 | Nonaka 1991 |",
+              "kind": "existing_project_text",
+              "external_original_rechecked": false
+            }
+          ],
+          "definition_material": "existing_project_text_not_new_external_verification",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        },
+        {
+          "proposed_forms": {
+            "zh-Hans": "显性知识",
+            "en": "explicit knowledge"
+          },
+          "proposed_definition": "正式而系统、易于交流的知识",
+          "evidence": [
+            {
+              "file": "docs/glossary.md",
+              "line": 189,
+              "quote": "| 隐性知识 / 显性知识 | tacit / explicit knowledge | 难以形式化的个人知识 / 正式而系统、易于交流的知识 | Nonaka 1991 |",
+              "kind": "existing_project_text",
+              "external_original_rechecked": false
+            }
+          ],
+          "definition_material": "existing_project_text_not_new_external_verification",
+          "adopted": false,
+          "administrative_status": null,
+          "subject_fields": null
+        }
+      ],
+      "blockers": [
+        "独立形式、概念对应和定义依据尚需按本条材料性质确认；不能把本表当作正式术语数据。"
+      ]
+    }
+  ]
+}

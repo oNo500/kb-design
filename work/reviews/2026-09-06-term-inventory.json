@@ -1,0 +1,5661 @@
+{
+  "baseline_commit": "7778e6ed5be637a57ec56bdaf90bff3f566c4e14",
+  "inputs": {
+    "docs/glossary.md": "32aaf25751cba829d9e66405b2b24941a847ab0371eabdb0d5feb9fcf820da53",
+    "data/inputs/topics/label-adoptions.json": "385f7c58bbc19233676c7d71ec275415f2d91dfc090e8db2b1faa1e13de66516",
+    "data/audit/migrations/term-v1/terms.tsv": "611af51a37700000c6fadb92f723ead86d07465bc1bc0928348857595ca48d83",
+    "data/vocab/entities.yaml": "1f3476b26f409d2095886a52ac2f2769d47e8e94d5ac4ccdc4f4ba36a4dbd8e5",
+    "data/vocab/forms.yaml": "92a8c0ede76d6f5ab527600278b2d5c5f3a6dea1638887b0c0946b31386e570c",
+    "data/vocab/genres.yaml": "f6cda0c78cc1e151c60614f97d62a3ce654242e35a882f057634ed9f98d4c32e",
+    "data/vocab/sources.yaml": "bfae17695d05f4b4b241351c664f87e422a95c0bd6537bb4fd6d79dc56159d32",
+    "data/vocab/topics.yaml": "f8dea3c18e6df61e46db176acfdba99c956dac3ccbb36f828de1cbc27fb2bd12",
+    "data/vocab/types.yaml": "cb1823e2204db0d1d04c7b9b16d1c2cdf2c7ba2b3de7ad8796a10cfe065dcff9"
+  },
+  "counts": {
+    "source_abbreviation": 6,
+    "definition": 143,
+    "literature": 14,
+    "model_label": 231
+  },
+  "records": [
+    {
+      "id": "glossary-L0009",
+      "file": "docs/glossary.md",
+      "line": 9,
+      "section": "",
+      "kind": "source_abbreviation",
+      "raw": "| ISO | ISO 25964-1:2011，后接条款号 |",
+      "cells": [
+        "ISO",
+        "ISO 25964-1:2011，后接条款号"
+      ],
+      "sha256": "1a7c9c0d4edc24dc60c2b8e381c73308adde06349ec1d49c3e0a25017166487f"
+    },
+    {
+      "id": "glossary-L0010",
+      "file": "docs/glossary.md",
+      "line": 10,
+      "section": "",
+      "kind": "source_abbreviation",
+      "raw": "| ISO-2 | ISO 25964-2:2013，后接条款号 |",
+      "cells": [
+        "ISO-2",
+        "ISO 25964-2:2013，后接条款号"
+      ],
+      "sha256": "7ef9d3bc44c21fd0c4b350d17a05f2350cbae4168e2958269e52b68c5782178a"
+    },
+    {
+      "id": "glossary-L0011",
+      "file": "docs/glossary.md",
+      "line": 11,
+      "section": "",
+      "kind": "source_abbreviation",
+      "raw": "| Z | ANSI/NISO Z39.19-2005 (R2010)，后接条款号 |",
+      "cells": [
+        "Z",
+        "ANSI/NISO Z39.19-2005 (R2010)，后接条款号"
+      ],
+      "sha256": "91522ccb8cb08a5fe64e15e5118de3b7b9dc5a9b3fcdd819de2290513e4df3fa"
+    },
+    {
+      "id": "glossary-L0012",
+      "file": "docs/glossary.md",
+      "line": 12,
+      "section": "",
+      "kind": "source_abbreviation",
+      "raw": "| SKOS | W3C SKOS Reference,2009 |",
+      "cells": [
+        "SKOS",
+        "W3C SKOS Reference,2009"
+      ],
+      "sha256": "a0dbe2fb5a98f1b79351a06e7d17098cb07ec63603e585a8601ffa7542423280"
+    },
+    {
+      "id": "glossary-L0013",
+      "file": "docs/glossary.md",
+      "line": 13,
+      "section": "",
+      "kind": "source_abbreviation",
+      "raw": "| KG | Hogan et al., *Knowledge Graphs*, 2021 |",
+      "cells": [
+        "KG",
+        "Hogan et al., *Knowledge Graphs*, 2021"
+      ],
+      "sha256": "7fb95ac2c879548fb1e1ddac625305a404eab34613fcdd8490ff1b72b95c0358"
+    },
+    {
+      "id": "glossary-L0014",
+      "file": "docs/glossary.md",
+      "line": 14,
+      "section": "",
+      "kind": "source_abbreviation",
+      "raw": "| 自定 | 本库自定，无外部来源 |",
+      "cells": [
+        "自定",
+        "本库自定，无外部来源"
+      ],
+      "sha256": "b40477b33156a898e4bb7fc2a47de03aed4003eb31a449464dcf5cd70ce05287"
+    },
+    {
+      "id": "glossary-L0020",
+      "file": "docs/glossary.md",
+      "line": 20,
+      "section": "词表的类型",
+      "kind": "definition",
+      "raw": "| 受控词表 | controlled vocabulary | 规定好的词、标题或代码列表，每项代表一个概念 | ISO 2.12;Z 4.1 |",
+      "cells": [
+        "受控词表",
+        "controlled vocabulary",
+        "规定好的词、标题或代码列表，每项代表一个概念",
+        "ISO 2.12;Z 4.1"
+      ],
+      "sha256": "5b522a515c4e344d872286f22d22f32645deb0e58e1ea51b412fa66b88921a06"
+    },
+    {
+      "id": "glossary-L0021",
+      "file": "docs/glossary.md",
+      "line": 21,
+      "section": "词表的类型",
+      "kind": "definition",
+      "raw": "| 术语表 / 代码表 | list, pick list | 有限的一组词，按字母或其他明显逻辑排列，无关系 | Z 5.4.1 |",
+      "cells": [
+        "术语表 / 代码表",
+        "list, pick list",
+        "有限的一组词，按字母或其他明显逻辑排列，无关系",
+        "Z 5.4.1"
+      ],
+      "sha256": "98285a3006d9262136fadadbf46b1f5d907d54f4fb451c976db662c1c858a279"
+    },
+    {
+      "id": "glossary-L0022",
+      "file": "docs/glossary.md",
+      "line": 22,
+      "section": "词表的类型",
+      "kind": "definition",
+      "raw": "| 同义词环 | synonym ring | 一组检索时视为等价的词；只用于检索，不用于标引 | Z 5.4.2 |",
+      "cells": [
+        "同义词环",
+        "synonym ring",
+        "一组检索时视为等价的词；只用于检索，不用于标引",
+        "Z 5.4.2"
+      ],
+      "sha256": "ffdb4ef2b09e9d01715da089fba2188e305694b6ff1c6c0385b369dd8ff236df"
+    },
+    {
+      "id": "glossary-L0023",
+      "file": "docs/glossary.md",
+      "line": 23,
+      "section": "词表的类型",
+      "kind": "definition",
+      "raw": "| 分类法 | taxonomy | 全部由首选词构成、以层级或多层级连接的受控词表 | Z 5.4.3 |",
+      "cells": [
+        "分类法",
+        "taxonomy",
+        "全部由首选词构成、以层级或多层级连接的受控词表",
+        "Z 5.4.3"
+      ],
+      "sha256": "9a60e9e1ddc6587930d45cea9d7cc6f4bb6f35f47ca7ca46d18682cb7d238450"
+    },
+    {
+      "id": "glossary-L0024",
+      "file": "docs/glossary.md",
+      "line": 24,
+      "section": "词表的类型",
+      "kind": "definition",
+      "raw": "| 分类表 | classification scheme | 按分类排列的概念及先组组合的表 | ISO 2.6 |",
+      "cells": [
+        "分类表",
+        "classification scheme",
+        "按分类排列的概念及先组组合的表",
+        "ISO 2.6"
+      ],
+      "sha256": "e2d4be31e9646c70cb4ed270b96952e2a52cb48fe304d559fee00344c87b781b"
+    },
+    {
+      "id": "glossary-L0025",
+      "file": "docs/glossary.md",
+      "line": 25,
+      "section": "词表的类型",
+      "kind": "definition",
+      "raw": "| 叙词表 | thesaurus | 按已知顺序排列、用标准化关系指示符清楚显示词间关系的受控词表 | Z 5.4.4 |",
+      "cells": [
+        "叙词表",
+        "thesaurus",
+        "按已知顺序排列、用标准化关系指示符清楚显示词间关系的受控词表",
+        "Z 5.4.4"
+      ],
+      "sha256": "4c94dba1efec23290b04292f811b89fbcbbf56b0f8472eaefa9c327da3a017bf"
+    },
+    {
+      "id": "glossary-L0026",
+      "file": "docs/glossary.md",
+      "line": 26,
+      "section": "词表的类型",
+      "kind": "definition",
+      "raw": "| 本体 | ontology | 对概念化的明确规范：领域里有哪些类型的实体、允许哪些关系 | Gruber 1993 |",
+      "cells": [
+        "本体",
+        "ontology",
+        "对概念化的明确规范：领域里有哪些类型的实体、允许哪些关系",
+        "Gruber 1993"
+      ],
+      "sha256": "8b7644442e4e9e9d3b567e92ef03185a1eb38d0b544a04ce236c705096734fb4"
+    },
+    {
+      "id": "glossary-L0027",
+      "file": "docs/glossary.md",
+      "line": 27,
+      "section": "词表的类型",
+      "kind": "definition",
+      "raw": "| 知识图谱 | knowledge graph | 以图为载体积累和传达现实世界知识的数据结构，节点为实体，边为关系 | KG |",
+      "cells": [
+        "知识图谱",
+        "knowledge graph",
+        "以图为载体积累和传达现实世界知识的数据结构，节点为实体，边为关系",
+        "KG"
+      ],
+      "sha256": "d18a7e8b723be6b443aadfc9fe7ac44b114f43e54ace80bea4df3ce42e39b549"
+    },
+    {
+      "id": "glossary-L0033",
+      "file": "docs/glossary.md",
+      "line": 33,
+      "section": "基本单位",
+      "kind": "definition",
+      "raw": "| 概念 | concept | 思维单元；独立于表达它的词而存在 | ISO 2.11 |",
+      "cells": [
+        "概念",
+        "concept",
+        "思维单元；独立于表达它的词而存在",
+        "ISO 2.11"
+      ],
+      "sha256": "997b0c8633df7b10391cd194432a688d82f219e179723843f16701ece0f7a92b"
+    },
+    {
+      "id": "glossary-L0034",
+      "file": "docs/glossary.md",
+      "line": 34,
+      "section": "基本单位",
+      "kind": "definition",
+      "raw": "| 词 | term | 表达概念的词或短语 | ISO 2.61 |",
+      "cells": [
+        "词",
+        "term",
+        "表达概念的词或短语",
+        "ISO 2.61"
+      ],
+      "sha256": "6a87cb3ec8fbfd68deda2069d675f3b02c091d92cbc60c4a27e46888b74e0c94"
+    },
+    {
+      "id": "glossary-L0035",
+      "file": "docs/glossary.md",
+      "line": 35,
+      "section": "基本单位",
+      "kind": "definition",
+      "raw": "| 首选词 / 叙词 | preferred term, descriptor | 标引时用来代表概念的词 | ISO 2.45 |",
+      "cells": [
+        "首选词 / 叙词",
+        "preferred term, descriptor",
+        "标引时用来代表概念的词",
+        "ISO 2.45"
+      ],
+      "sha256": "fa121267f4653334a798bce784908d74557d7d5efa2416a056b4ad12f1bdd8ef"
+    },
+    {
+      "id": "glossary-L0036",
+      "file": "docs/glossary.md",
+      "line": 36,
+      "section": "基本单位",
+      "kind": "definition",
+      "raw": "| 非首选词 / 非叙词 | non-preferred term | 不用于标引、只作入口的词 | ISO 2.39 |",
+      "cells": [
+        "非首选词 / 非叙词",
+        "non-preferred term",
+        "不用于标引、只作入口的词",
+        "ISO 2.39"
+      ],
+      "sha256": "7d213b5d73067369eaee2cab2ba8baff3ebd0b5abbe42f9a427061d017a19448"
+    },
+    {
+      "id": "glossary-L0037",
+      "file": "docs/glossary.md",
+      "line": 37,
+      "section": "基本单位",
+      "kind": "definition",
+      "raw": "| 入口词 | entry term, lead-in term | 引导用户找到可用词的词；叙词表里即非首选词 | ISO 2.16 |",
+      "cells": [
+        "入口词",
+        "entry term, lead-in term",
+        "引导用户找到可用词的词；叙词表里即非首选词",
+        "ISO 2.16"
+      ],
+      "sha256": "96c8dbab72c01261fb394b32c231dd85e5b9244f4be5811015a4e011b756b47d"
+    },
+    {
+      "id": "glossary-L0038",
+      "file": "docs/glossary.md",
+      "line": 38,
+      "section": "基本单位",
+      "kind": "definition",
+      "raw": "| 隐藏标签 | hidden label | 不显示但可检索的非首选词，如拼写错误 | ISO 数据模型 `hidden`;SKOS `hiddenLabel` |",
+      "cells": [
+        "隐藏标签",
+        "hidden label",
+        "不显示但可检索的非首选词，如拼写错误",
+        "ISO 数据模型 `hidden`;SKOS `hiddenLabel`"
+      ],
+      "sha256": "7c4e36fe58ee0d95232b19e75b3ea2e7474a5f341246b6ef7bac99b1408e555d"
+    },
+    {
+      "id": "glossary-L0039",
+      "file": "docs/glossary.md",
+      "line": 39,
+      "section": "基本单位",
+      "kind": "definition",
+      "raw": "| 标识符 | identifier | 概念、词或其他实体的唯一标识 | ISO 2.25 |",
+      "cells": [
+        "标识符",
+        "identifier",
+        "概念、词或其他实体的唯一标识",
+        "ISO 2.25"
+      ],
+      "sha256": "3230314958db1f96ddd34dabfba337ef255622b7cc604a8fc8a91738afa19a42"
+    },
+    {
+      "id": "glossary-L0040",
+      "file": "docs/glossary.md",
+      "line": 40,
+      "section": "基本单位",
+      "kind": "definition",
+      "raw": "| 限定词 | qualifier | 加在词后区分同形异义的定义性词，如 `Apple (company)` | Z 4.1 |",
+      "cells": [
+        "限定词",
+        "qualifier",
+        "加在词后区分同形异义的定义性词，如 `Apple (company)`",
+        "Z 4.1"
+      ],
+      "sha256": "85c32c8da5f31f79ac4055c9e13521e7d10417683f255076eb3b884d93a8546c"
+    },
+    {
+      "id": "glossary-L0041",
+      "file": "docs/glossary.md",
+      "line": 41,
+      "section": "基本单位",
+      "kind": "definition",
+      "raw": "| 同形异义词 | homograph | 写法相同、意义不同的词 | ISO 2.24 |",
+      "cells": [
+        "同形异义词",
+        "homograph",
+        "写法相同、意义不同的词",
+        "ISO 2.24"
+      ],
+      "sha256": "341ec8f2ede9d12f899d3fe5f656345244da9667acd508909725f1ef43b4093f"
+    },
+    {
+      "id": "glossary-L0042",
+      "file": "docs/glossary.md",
+      "line": 42,
+      "section": "基本单位",
+      "kind": "definition",
+      "raw": "| 准同义词 | quasi-synonym | 日常意义不同但词表中视为同一概念的词 | ISO 2.47 |",
+      "cells": [
+        "准同义词",
+        "quasi-synonym",
+        "日常意义不同但词表中视为同一概念的词",
+        "ISO 2.47"
+      ],
+      "sha256": "ed6b463be2a5fa3052990a89dd7b8dddf67dd6663ec535c46f5502f5068b297d"
+    },
+    {
+      "id": "glossary-L0043",
+      "file": "docs/glossary.md",
+      "line": 43,
+      "section": "基本单位",
+      "kind": "definition",
+      "raw": "| 复合词 | compound term | 可拆成多个成分的词 | ISO 2.9 |",
+      "cells": [
+        "复合词",
+        "compound term",
+        "可拆成多个成分的词",
+        "ISO 2.9"
+      ],
+      "sha256": "8249087f5f36510947e910c7bad4ade44e4c6ad7a32e682c3c7b8d27fe2f4266"
+    },
+    {
+      "id": "glossary-L0044",
+      "file": "docs/glossary.md",
+      "line": 44,
+      "section": "基本单位",
+      "kind": "definition",
+      "raw": "| 复合概念 | complex concept | 由多个简单概念组成的概念；是否拆分见 ISO §7 | ISO §7 |",
+      "cells": [
+        "复合概念",
+        "complex concept",
+        "由多个简单概念组成的概念；是否拆分见 ISO §7",
+        "ISO §7"
+      ],
+      "sha256": "13439d88c2dc7fa1806b798e3b994650cca0a674bbd8aab45217cf11477488ff"
+    },
+    {
+      "id": "glossary-L0045",
+      "file": "docs/glossary.md",
+      "line": 45,
+      "section": "基本单位",
+      "kind": "definition",
+      "raw": "| 领域 | domain | 词表覆盖的主题范围 | — |",
+      "cells": [
+        "领域",
+        "domain",
+        "词表覆盖的主题范围",
+        "—"
+      ],
+      "sha256": "9fe3ead2fb716a440b1b139aad618b027a7e9df0a467c3fa0f9e84204752af30"
+    },
+    {
+      "id": "glossary-L0046",
+      "file": "docs/glossary.md",
+      "line": 46,
+      "section": "基本单位",
+      "kind": "definition",
+      "raw": "| 元数据 | metadata | 标识文档属性的数据；首选词常作为元数据值 | ISO 2.33 |",
+      "cells": [
+        "元数据",
+        "metadata",
+        "标识文档属性的数据；首选词常作为元数据值",
+        "ISO 2.33"
+      ],
+      "sha256": "0db8a1850f5194d45e0b0ce0689b1d65bc62370089bb8e49ce649a3c584fa7c7"
+    },
+    {
+      "id": "glossary-L0047",
+      "file": "docs/glossary.md",
+      "line": 47,
+      "section": "基本单位",
+      "kind": "definition",
+      "raw": "| 内容对象 | content object | 被标引的东西：文档、图像、人、组织、实物 | Z 4.1;ISO 2.15 document |",
+      "cells": [
+        "内容对象",
+        "content object",
+        "被标引的东西：文档、图像、人、组织、实物",
+        "Z 4.1;ISO 2.15 document"
+      ],
+      "sha256": "67be63e5cfb8ac1e6d7d0c02547e334cec013965a4f4ba69b3ecf98d418fb8c7"
+    },
+    {
+      "id": "glossary-L0053",
+      "file": "docs/glossary.md",
+      "line": 53,
+      "section": "关系",
+      "kind": "definition",
+      "raw": "| 等价关系 | USE / UF | 两个词代表同一概念；一个定为首选，其余非首选 | ISO 2.18 |",
+      "cells": [
+        "等价关系",
+        "USE / UF",
+        "两个词代表同一概念；一个定为首选，其余非首选",
+        "ISO 2.18"
+      ],
+      "sha256": "166eaf5d0da0f66142f74ba8a1350e353f25c0ab56b7f2bee0cf6e4d48941979"
+    },
+    {
+      "id": "glossary-L0054",
+      "file": "docs/glossary.md",
+      "line": 54,
+      "section": "关系",
+      "kind": "definition",
+      "raw": "| 复合等价 | USE+ / UF+ | 一个词由另一语境中两个以上词表示 | ISO 2.8 |",
+      "cells": [
+        "复合等价",
+        "USE+ / UF+",
+        "一个词由另一语境中两个以上词表示",
+        "ISO 2.8"
+      ],
+      "sha256": "a98942288ec43da156842af7b35ab4da6c9ec992f1437104dafdf5f8c1d43967"
+    },
+    {
+      "id": "glossary-L0055",
+      "file": "docs/glossary.md",
+      "line": 55,
+      "section": "关系",
+      "kind": "definition",
+      "raw": "| 层级关系 | BT / NT | 一个概念的范围完全落在另一个之内 | ISO 2.23 |",
+      "cells": [
+        "层级关系",
+        "BT / NT",
+        "一个概念的范围完全落在另一个之内",
+        "ISO 2.23"
+      ],
+      "sha256": "2d2627f404c3dda492bda016c969d15e1f2e344ee606d90b002d2f9f718a87d8"
+    },
+    {
+      "id": "glossary-L0056",
+      "file": "docs/glossary.md",
+      "line": 56,
+      "section": "关系",
+      "kind": "definition",
+      "raw": "| 属种关系 | BTG / NTG | 层级的一种：是一种 (is-a) | ISO §10.2 |",
+      "cells": [
+        "属种关系",
+        "BTG / NTG",
+        "层级的一种：是一种 (is-a)",
+        "ISO §10.2"
+      ],
+      "sha256": "64ea1fd79770bf1b8fb53b6dcb6805735c74ebb90f8bbb45ea284150ca95acbd"
+    },
+    {
+      "id": "glossary-L0057",
+      "file": "docs/glossary.md",
+      "line": 57,
+      "section": "关系",
+      "kind": "definition",
+      "raw": "| 整部关系 | BTP / NTP | 层级的一种：是一部分 (part-of) | ISO §10.2 |",
+      "cells": [
+        "整部关系",
+        "BTP / NTP",
+        "层级的一种：是一部分 (part-of)",
+        "ISO §10.2"
+      ],
+      "sha256": "8872c8c6185876c4da299e9c896fac1f006b2a68df84e4c20e02e34703575fe7"
+    },
+    {
+      "id": "glossary-L0058",
+      "file": "docs/glossary.md",
+      "line": 58,
+      "section": "关系",
+      "kind": "definition",
+      "raw": "| 实例关系 | BTI / NTI | 层级的一种：是实例 (instance-of) | ISO §10.2 |",
+      "cells": [
+        "实例关系",
+        "BTI / NTI",
+        "层级的一种：是实例 (instance-of)",
+        "ISO §10.2"
+      ],
+      "sha256": "5eabfbbc9e2ff6d04d15b3e32440ddfcc93c468cad21afd2d0cc7528de422077"
+    },
+    {
+      "id": "glossary-L0059",
+      "file": "docs/glossary.md",
+      "line": 59,
+      "section": "关系",
+      "kind": "definition",
+      "raw": "| 相关关系 | RT | 非层级但语义联系强 | ISO 2.2 |",
+      "cells": [
+        "相关关系",
+        "RT",
+        "非层级但语义联系强",
+        "ISO 2.2"
+      ],
+      "sha256": "0cf9253f2bf70d9f17cd3ec5d4045b0298620229c439854235eeafa8cbd3f3d1"
+    },
+    {
+      "id": "glossary-L0060",
+      "file": "docs/glossary.md",
+      "line": 60,
+      "section": "关系",
+      "kind": "definition",
+      "raw": "| 自定义关系 | — | 词表自行定义的关系类型 | ISO §10.4 |",
+      "cells": [
+        "自定义关系",
+        "—",
+        "词表自行定义的关系类型",
+        "ISO §10.4"
+      ],
+      "sha256": "885c347854ca20ca75b7c6ff4ad438f40b4e1838bb3e2c234a723e086069d378"
+    },
+    {
+      "id": "glossary-L0061",
+      "file": "docs/glossary.md",
+      "line": 61,
+      "section": "关系",
+      "kind": "definition",
+      "raw": "| 聚合关系 | paradigmatic | 概念固有的关系，与具体文档无关；叙词表只收这类 | ISO 2.41 |",
+      "cells": [
+        "聚合关系",
+        "paradigmatic",
+        "概念固有的关系，与具体文档无关；叙词表只收这类",
+        "ISO 2.41"
+      ],
+      "sha256": "9e90b915bc4171db9a5e03fe87e6a18907a552e58fcaaf47268d89657cfc5ef8"
+    },
+    {
+      "id": "glossary-L0062",
+      "file": "docs/glossary.md",
+      "line": 62,
+      "section": "关系",
+      "kind": "definition",
+      "raw": "| 组合关系 | syntagmatic | 因在某文档中同时出现而产生的关系；不进叙词表 | ISO §4.3 |",
+      "cells": [
+        "组合关系",
+        "syntagmatic",
+        "因在某文档中同时出现而产生的关系；不进叙词表",
+        "ISO §4.3"
+      ],
+      "sha256": "d8e21df79811a6c26b685c13c5969faaf4d537d711ade6f629c26b6268525984"
+    },
+    {
+      "id": "glossary-L0063",
+      "file": "docs/glossary.md",
+      "line": 63,
+      "section": "关系",
+      "kind": "definition",
+      "raw": "| 单层级 | monohierarchy | 每个概念只有一个直接上位 | ISO 2.34 |",
+      "cells": [
+        "单层级",
+        "monohierarchy",
+        "每个概念只有一个直接上位",
+        "ISO 2.34"
+      ],
+      "sha256": "11734890ca0169a6be6bc8881d7766fe88f1c4f6e068220eeea2f81c2f8142e4"
+    },
+    {
+      "id": "glossary-L0064",
+      "file": "docs/glossary.md",
+      "line": 64,
+      "section": "关系",
+      "kind": "definition",
+      "raw": "| 多层级 | polyhierarchy | 一个概念可有多个直接上位 | ISO 2.42 |",
+      "cells": [
+        "多层级",
+        "polyhierarchy",
+        "一个概念可有多个直接上位",
+        "ISO 2.42"
+      ],
+      "sha256": "51addcdf8bc03c40854deebae0a35f1cc28d58f33adc414f95c5bb5df978fe44"
+    },
+    {
+      "id": "glossary-L0065",
+      "file": "docs/glossary.md",
+      "line": 65,
+      "section": "关系",
+      "kind": "definition",
+      "raw": "| 互反 | reciprocal | 关系必须双向登记：A BT B 则 B NT A | Z 5.4.4 |",
+      "cells": [
+        "互反",
+        "reciprocal",
+        "关系必须双向登记：A BT B 则 B NT A",
+        "Z 5.4.4"
+      ],
+      "sha256": "55672edef34687939d66800d85db87426b53d85d7cdc50a8d2b49e9e5f40ad77"
+    },
+    {
+      "id": "glossary-L0071",
+      "file": "docs/glossary.md",
+      "line": 71,
+      "section": "结构",
+      "kind": "definition",
+      "raw": "| 分面 | facet | 同一内在类别的概念分组：对象、材料、动作、地点、时间 | ISO 2.20 |",
+      "cells": [
+        "分面",
+        "facet",
+        "同一内在类别的概念分组：对象、材料、动作、地点、时间",
+        "ISO 2.20"
+      ],
+      "sha256": "c2d031eefe47bb57e3d9dfdccdb7aa855efa70d1bd919d850c6045df993f4871"
+    },
+    {
+      "id": "glossary-L0072",
+      "file": "docs/glossary.md",
+      "line": 72,
+      "section": "结构",
+      "kind": "definition",
+      "raw": "| 分面分析 | facet analysis | 把领域分解成概念、按分面分组、按划分特征细分 | ISO 2.21;Z 5.3.4 |",
+      "cells": [
+        "分面分析",
+        "facet analysis",
+        "把领域分解成概念、按分面分组、按划分特征细分",
+        "ISO 2.21;Z 5.3.4"
+      ],
+      "sha256": "9581ecf1e2a41e3a78d588cf4308675847e0575eac641c9f281cfd65a8df61a5"
+    },
+    {
+      "id": "glossary-L0073",
+      "file": "docs/glossary.md",
+      "line": 73,
+      "section": "结构",
+      "kind": "definition",
+      "raw": "| 划分特征 | characteristic of division | 把一个概念细分成一组下位概念所依据的属性 | ISO 2.4 |",
+      "cells": [
+        "划分特征",
+        "characteristic of division",
+        "把一个概念细分成一组下位概念所依据的属性",
+        "ISO 2.4"
+      ],
+      "sha256": "ac898a13ceab1f24968b966e2367d66db05de961f44de9250409391d81383076"
+    },
+    {
+      "id": "glossary-L0074",
+      "file": "docs/glossary.md",
+      "line": 74,
+      "section": "结构",
+      "kind": "definition",
+      "raw": "| 树 / 层级 | hierarchy | 按 BT/NT 排出的上下位结构 | ISO §10.2 |",
+      "cells": [
+        "树 / 层级",
+        "hierarchy",
+        "按 BT/NT 排出的上下位结构",
+        "ISO §10.2"
+      ],
+      "sha256": "4acae61b05501d3ad02e45935dbff12fbdba107cc67ba12b0a17eb84f398f3bf"
+    },
+    {
+      "id": "glossary-L0075",
+      "file": "docs/glossary.md",
+      "line": 75,
+      "section": "结构",
+      "kind": "definition",
+      "raw": "| 节点 | node | 树上的一个位置 | — |",
+      "cells": [
+        "节点",
+        "node",
+        "树上的一个位置",
+        "—"
+      ],
+      "sha256": "48e26e1ca8412d7b52a09a3f764655b0c78b4466f075884fd9b6d483e1515286"
+    },
+    {
+      "id": "glossary-L0076",
+      "file": "docs/glossary.md",
+      "line": 76,
+      "section": "结构",
+      "kind": "definition",
+      "raw": "| 顶层概念 | top concept | 树的根 | ISO 数据模型 |",
+      "cells": [
+        "顶层概念",
+        "top concept",
+        "树的根",
+        "ISO 数据模型"
+      ],
+      "sha256": "df7dfa26e9586e405a8d3d42a592f994527ec4a68f21751d8422502fe2ae320d"
+    },
+    {
+      "id": "glossary-L0077",
+      "file": "docs/glossary.md",
+      "line": 77,
+      "section": "结构",
+      "kind": "definition",
+      "raw": "| 节点标签 | node label | 树里说明一组兄弟按什么分的标签；内容只能是划分特征或分面名；非词，不能标引 | ISO 2.38;Z 8.3.5 |",
+      "cells": [
+        "节点标签",
+        "node label",
+        "树里说明一组兄弟按什么分的标签；内容只能是划分特征或分面名；非词，不能标引",
+        "ISO 2.38;Z 8.3.5"
+      ],
+      "sha256": "09bc89507e38ca6ab32e3cddb8f79b5027224976538c32d47b0c832328b8dfc8"
+    },
+    {
+      "id": "glossary-L0078",
+      "file": "docs/glossary.md",
+      "line": 78,
+      "section": "结构",
+      "kind": "definition",
+      "raw": "| 数组 | array | 一组同级概念 | ISO 2.1 |",
+      "cells": [
+        "数组",
+        "array",
+        "一组同级概念",
+        "ISO 2.1"
+      ],
+      "sha256": "ee59fedd0cd865204cf47a95c1b683547d529e3e862d06bee02335a7368f0225"
+    },
+    {
+      "id": "glossary-L0079",
+      "file": "docs/glossary.md",
+      "line": 79,
+      "section": "结构",
+      "kind": "definition",
+      "raw": "| 概念组 / 分组 | concept group | 按用途圈出的一批概念，可跨树、可嵌套 | ISO 数据模型 |",
+      "cells": [
+        "概念组 / 分组",
+        "concept group",
+        "按用途圈出的一批概念，可跨树、可嵌套",
+        "ISO 数据模型"
+      ],
+      "sha256": "1e879f20be2a82758bec1d4c15f7d5f6ac8f75f77933a63694f71284bc334bfd"
+    },
+    {
+      "id": "glossary-L0080",
+      "file": "docs/glossary.md",
+      "line": 80,
+      "section": "结构",
+      "kind": "definition",
+      "raw": "| 微词表 | micro-thesaurus | 叙词表的指定子集，可独立作为完整叙词表使用 | ISO-2 3.46;ISO 数据模型 |",
+      "cells": [
+        "微词表",
+        "micro-thesaurus",
+        "叙词表的指定子集，可独立作为完整叙词表使用",
+        "ISO-2 3.46;ISO 数据模型"
+      ],
+      "sha256": "fe24dd8116df6129b898f711a0acbfb770d54e9456063dbc7b82b162b36c22b5"
+    },
+    {
+      "id": "glossary-L0081",
+      "file": "docs/glossary.md",
+      "line": 81,
+      "section": "结构",
+      "kind": "definition",
+      "raw": "| 辅助表 / 复分表 | auxiliary table | 分类法中单独列出的通用维度表（地区、时间、形式），拼接到主表号后 | 分类法实践，未核原文 |",
+      "cells": [
+        "辅助表 / 复分表",
+        "auxiliary table",
+        "分类法中单独列出的通用维度表（地区、时间、形式），拼接到主表号后",
+        "分类法实践，未核原文"
+      ],
+      "sha256": "7e5ff6fa6e0df295aeaef2dae6ebb0cde23cd1a48f4a63611dc63278ed1e88aa"
+    },
+    {
+      "id": "glossary-L0082",
+      "file": "docs/glossary.md",
+      "line": 82,
+      "section": "结构",
+      "kind": "definition",
+      "raw": "| 组配号 | synthesized notation | 主表号与辅助表号拼接而成的号码 | ISO 2.22 facet indicator |",
+      "cells": [
+        "组配号",
+        "synthesized notation",
+        "主表号与辅助表号拼接而成的号码",
+        "ISO 2.22 facet indicator"
+      ],
+      "sha256": "f9787c0be8ad081dd6436c84b36204ff01e3ea3a9328f73ca119359961c2eabf"
+    },
+    {
+      "id": "glossary-L0083",
+      "file": "docs/glossary.md",
+      "line": 83,
+      "section": "结构",
+      "kind": "definition",
+      "raw": "| 先组 | pre-coordination | 建表或标引时就组合概念 | ISO 2.44 |",
+      "cells": [
+        "先组",
+        "pre-coordination",
+        "建表或标引时就组合概念",
+        "ISO 2.44"
+      ],
+      "sha256": "103e2cd7510ba2779b7b51eb9e09821fd4d164aa27ef3b770ee3f4764a1b8792"
+    },
+    {
+      "id": "glossary-L0084",
+      "file": "docs/glossary.md",
+      "line": 84,
+      "section": "结构",
+      "kind": "definition",
+      "raw": "| 后组 | post-coordination | 检索时才组合首选词 | ISO 2.43 |",
+      "cells": [
+        "后组",
+        "post-coordination",
+        "检索时才组合首选词",
+        "ISO 2.43"
+      ],
+      "sha256": "6729a6551e2e6a5161361b51f84831c84a1d784835dd1c790e05d929b9f6e436"
+    },
+    {
+      "id": "glossary-L0085",
+      "file": "docs/glossary.md",
+      "line": 85,
+      "section": "结构",
+      "kind": "definition",
+      "raw": "| 属性 / 维度 | attribute, dimension | 元数据层：文档的一个字段。不是词表结构，但 Z39.19 图 4 也把它叫 facet | Z 5.3.4 |",
+      "cells": [
+        "属性 / 维度",
+        "attribute, dimension",
+        "元数据层：文档的一个字段。不是词表结构，但 Z39.19 图 4 也把它叫 facet",
+        "Z 5.3.4"
+      ],
+      "sha256": "005f4035c1f6c898befabe42f43507cb9f12b883240a2d71a10f0223b2f03c92"
+    },
+    {
+      "id": "glossary-L0091",
+      "file": "docs/glossary.md",
+      "line": 91,
+      "section": "注释与生命周期",
+      "kind": "definition",
+      "raw": "| 范围注释 | scope note | 说明词的覆盖范围和用法限制的注释 | ISO 5.2;Z 4.1 |",
+      "cells": [
+        "范围注释",
+        "scope note",
+        "说明词的覆盖范围和用法限制的注释",
+        "ISO 5.2;Z 4.1"
+      ],
+      "sha256": "1d765b96ecb016e828a55cd75ec33219497bba08abc78912e3a0921532dd5f86"
+    },
+    {
+      "id": "glossary-L0092",
+      "file": "docs/glossary.md",
+      "line": 92,
+      "section": "注释与生命周期",
+      "kind": "definition",
+      "raw": "| 定义 | definition | 词的定义，ISO 中挂在词上 | ISO 数据模型 |",
+      "cells": [
+        "定义",
+        "definition",
+        "词的定义，ISO 中挂在词上",
+        "ISO 数据模型"
+      ],
+      "sha256": "7dc44caf7b48964196b8f8bb4d9600082a9b769047779d72778d3f22b8a9db08"
+    },
+    {
+      "id": "glossary-L0093",
+      "file": "docs/glossary.md",
+      "line": 93,
+      "section": "注释与生命周期",
+      "kind": "definition",
+      "raw": "| 历史注释 | history note | 入表日期、变更记录、旧形式及有效期 | Z 11.3.2.2 |",
+      "cells": [
+        "历史注释",
+        "history note",
+        "入表日期、变更记录、旧形式及有效期",
+        "Z 11.3.2.2"
+      ],
+      "sha256": "26133efa9c2c3085728e1cf95a2eaea3232b1c0d102607b4afcd94d9a27c6a45"
+    },
+    {
+      "id": "glossary-L0094",
+      "file": "docs/glossary.md",
+      "line": 94,
+      "section": "注释与生命周期",
+      "kind": "definition",
+      "raw": "| 编辑注释 | editorial note | 给编辑看的内部注释 | ISO 数据模型 |",
+      "cells": [
+        "编辑注释",
+        "editorial note",
+        "给编辑看的内部注释",
+        "ISO 数据模型"
+      ],
+      "sha256": "e19d3f8fa6572edd1fc539e43e9f162db31e81eacdcf07b9f15ed07ba0590a8b"
+    },
+    {
+      "id": "glossary-L0095",
+      "file": "docs/glossary.md",
+      "line": 95,
+      "section": "注释与生命周期",
+      "kind": "definition",
+      "raw": "| 候选词 | candidate term, provisional term | 提出但未走完审批的词 | Z 11.1.6 |",
+      "cells": [
+        "候选词",
+        "candidate term, provisional term",
+        "提出但未走完审批的词",
+        "Z 11.1.6"
+      ],
+      "sha256": "31766ef52b21e2c112a785b559cfddc81c3318367ccea1fab7f0e31aa5035ddb"
+    },
+    {
+      "id": "glossary-L0096",
+      "file": "docs/glossary.md",
+      "line": 96,
+      "section": "注释与生命周期",
+      "kind": "definition",
+      "raw": "| 未标引词 | unassigned term | 为补全层级而收、尚未用于标引的词 | Z 11.1.8 |",
+      "cells": [
+        "未标引词",
+        "unassigned term",
+        "为补全层级而收、尚未用于标引的词",
+        "Z 11.1.8"
+      ],
+      "sha256": "37107a639cacc349e91ed694570b6c8a8c96fc039ac3f2d07edb0dcc351aa156"
+    },
+    {
+      "id": "glossary-L0097",
+      "file": "docs/glossary.md",
+      "line": 97,
+      "section": "注释与生命周期",
+      "kind": "definition",
+      "raw": "| 废弃词 | deprecated term | 不再用于标引、保留供检索并指向替代词的词 | Z 11.3.2.1 |",
+      "cells": [
+        "废弃词",
+        "deprecated term",
+        "不再用于标引、保留供检索并指向替代词的词",
+        "Z 11.3.2.1"
+      ],
+      "sha256": "8724e21da434ff6fd4977d1549bc4025192ac03a2da9ca6ba57a3101a6992f72"
+    },
+    {
+      "id": "glossary-L0098",
+      "file": "docs/glossary.md",
+      "line": 98,
+      "section": "注释与生命周期",
+      "kind": "definition",
+      "raw": "| 孤儿词 | orphan term | 没有任何层级或相关关系的词 | Z 11.4.4 |",
+      "cells": [
+        "孤儿词",
+        "orphan term",
+        "没有任何层级或相关关系的词",
+        "Z 11.4.4"
+      ],
+      "sha256": "b1df4a5764a8d8901a11066e2d13f9ce058bde8d6461c50a08f4b6cf02868216"
+    },
+    {
+      "id": "glossary-L0099",
+      "file": "docs/glossary.md",
+      "line": 99,
+      "section": "注释与生命周期",
+      "kind": "definition",
+      "raw": "| 状态 | status | 词或概念的生命周期状态 | ISO 数据模型 |",
+      "cells": [
+        "状态",
+        "status",
+        "词或概念的生命周期状态",
+        "ISO 数据模型"
+      ],
+      "sha256": "9b3d52dd8575a6591cad8973839ed40fff8d223b53be45a8a3c5e9ccbd136e7a"
+    },
+    {
+      "id": "glossary-L0100",
+      "file": "docs/glossary.md",
+      "line": 100,
+      "section": "注释与生命周期",
+      "kind": "definition",
+      "raw": "| 版本历史 | version history | 词表整体的版本记录 | ISO 数据模型 |",
+      "cells": [
+        "版本历史",
+        "version history",
+        "词表整体的版本记录",
+        "ISO 数据模型"
+      ],
+      "sha256": "a5225b14b7015eec8a04ba3c4b85447aa7c50338af0f0584f0a729dbdeb0f133"
+    },
+    {
+      "id": "glossary-L0106",
+      "file": "docs/glossary.md",
+      "line": 106,
+      "section": "建设与治理",
+      "kind": "definition",
+      "raw": "| 依据 | warrant | 一个词有资格进词表的理由 | Z 5.3.5 |",
+      "cells": [
+        "依据",
+        "warrant",
+        "一个词有资格进词表的理由",
+        "Z 5.3.5"
+      ],
+      "sha256": "b4d03e37c96c98154d545ca554ff0f1b999d7265f77472bb699184445aed3c2a"
+    },
+    {
+      "id": "glossary-L0107",
+      "file": "docs/glossary.md",
+      "line": 107,
+      "section": "建设与治理",
+      "kind": "definition",
+      "raw": "| 文献依据 | literary warrant | 词是领域文献里实际通行的说法 | Z 5.3.5.1 |",
+      "cells": [
+        "文献依据",
+        "literary warrant",
+        "词是领域文献里实际通行的说法",
+        "Z 5.3.5.1"
+      ],
+      "sha256": "3988d5c4421e8963e09f3727411f65b4396a1d5d361b53a2812404d82e7a3461"
+    },
+    {
+      "id": "glossary-L0108",
+      "file": "docs/glossary.md",
+      "line": 108,
+      "section": "建设与治理",
+      "kind": "definition",
+      "raw": "| 组织依据 | organizational warrant | 词是使用组织偏好的形式 | Z 5.3.5.2 |",
+      "cells": [
+        "组织依据",
+        "organizational warrant",
+        "词是使用组织偏好的形式",
+        "Z 5.3.5.2"
+      ],
+      "sha256": "2924ea1ecde0b49f2a963c0e5e031e45a2edc52f6d07d12e57c581cc49e9cdc0"
+    },
+    {
+      "id": "glossary-L0109",
+      "file": "docs/glossary.md",
+      "line": 109,
+      "section": "建设与治理",
+      "kind": "definition",
+      "raw": "| 用户依据 | user warrant | 词是用户检索时实际用的说法 | Z 5.3.5.3 |",
+      "cells": [
+        "用户依据",
+        "user warrant",
+        "词是用户检索时实际用的说法",
+        "Z 5.3.5.3"
+      ],
+      "sha256": "a2fa56a577d81cfd408dac25a419fc29d990ba12bd69e7d11c17338f4adc08f8"
+    },
+    {
+      "id": "glossary-L0110",
+      "file": "docs/glossary.md",
+      "line": 110,
+      "section": "建设与治理",
+      "kind": "definition",
+      "raw": "| 自上而下 / 自下而上 | top down / bottom up | 委员会法的两个方向；新建词表优先前者 | Z 11.1.3.1 |",
+      "cells": [
+        "自上而下 / 自下而上",
+        "top down / bottom up",
+        "委员会法的两个方向；新建词表优先前者",
+        "Z 11.1.3.1"
+      ],
+      "sha256": "e3e1d89a7abf9855b0cb91f37f7f2c5b0826ba1c6745846a04233245f356f633"
+    },
+    {
+      "id": "glossary-L0111",
+      "file": "docs/glossary.md",
+      "line": 111,
+      "section": "建设与治理",
+      "kind": "definition",
+      "raw": "| 演绎法 / 归纳法 | deductive / inductive | 经验法的两种：先收集后控制 / 从头控制 | Z 11.1.3.2 |",
+      "cells": [
+        "演绎法 / 归纳法",
+        "deductive / inductive",
+        "经验法的两种：先收集后控制 / 从头控制",
+        "Z 11.1.3.2"
+      ],
+      "sha256": "4b0d7f41ba46ed0f3de940e384e619d89ec9865171aecabe3749189eb69031a6"
+    },
+    {
+      "id": "glossary-L0112",
+      "file": "docs/glossary.md",
+      "line": 112,
+      "section": "建设与治理",
+      "kind": "definition",
+      "raw": "| 分析综合式分类 | analytico-synthetic classification | 先把主题分析成基本范畴，再综合类号；新主题是旧面的新组合 | Ranganathan 1957 |",
+      "cells": [
+        "分析综合式分类",
+        "analytico-synthetic classification",
+        "先把主题分析成基本范畴，再综合类号；新主题是旧面的新组合",
+        "Ranganathan 1957"
+      ],
+      "sha256": "fd9a21317e4e75773f331377d86b5fcf7f0d3be5980f3245041bab0f004d82c7"
+    },
+    {
+      "id": "glossary-L0113",
+      "file": "docs/glossary.md",
+      "line": 113,
+      "section": "建设与治理",
+      "kind": "definition",
+      "raw": "| 好客准则 | canon of hospitality | 分类法容纳新类目而不扰动已有类号 | Ranganathan 1957 |",
+      "cells": [
+        "好客准则",
+        "canon of hospitality",
+        "分类法容纳新类目而不扰动已有类号",
+        "Ranganathan 1957"
+      ],
+      "sha256": "0770c61e8c901f43e3744a6803a79e034526be60d294cf793eee2c6d6d047cf5"
+    },
+    {
+      "id": "glossary-L0114",
+      "file": "docs/glossary.md",
+      "line": 114,
+      "section": "建设与治理",
+      "kind": "definition",
+      "raw": "| 领域分析 | domain analysis | 分类反映话语共同体的目的与立场，无唯一正确分类 | Hjørland & Albrechtsen 1995 |",
+      "cells": [
+        "领域分析",
+        "domain analysis",
+        "分类反映话语共同体的目的与立场，无唯一正确分类",
+        "Hjørland & Albrechtsen 1995"
+      ],
+      "sha256": "858431190f3f2f4c7a3f101496d8d58baa9c2536f610a85170851797413d78e8"
+    },
+    {
+      "id": "glossary-L0115",
+      "file": "docs/glossary.md",
+      "line": 115,
+      "section": "建设与治理",
+      "kind": "definition",
+      "raw": "| 剩余类目 | residual category | “其他”“杂项”；其大小是分类失效的信号 | Star & Bowker 2007 |",
+      "cells": [
+        "剩余类目",
+        "residual category",
+        "“其他”“杂项”；其大小是分类失效的信号",
+        "Star & Bowker 2007"
+      ],
+      "sha256": "f5426c2ce2cd9eeb43057cf23cddb3ced393013320c01fcc6dcfb8425c681bf4"
+    },
+    {
+      "id": "glossary-L0116",
+      "file": "docs/glossary.md",
+      "line": 116,
+      "section": "建设与治理",
+      "kind": "definition",
+      "raw": "| 词汇控制 | vocabulary control | 让标引者和检索者对同一概念用同一个词 | ISO §4.2;Z 1.1 |",
+      "cells": [
+        "词汇控制",
+        "vocabulary control",
+        "让标引者和检索者对同一概念用同一个词",
+        "ISO §4.2;Z 1.1"
+      ],
+      "sha256": "192ab8caa7b0f82236abb489d9b660214df036c5c6854f3206f156d38f4dc296"
+    },
+    {
+      "id": "glossary-L0117",
+      "file": "docs/glossary.md",
+      "line": 117,
+      "section": "建设与治理",
+      "kind": "definition",
+      "raw": "| 标引 | indexing | 分析文档主题、识别概念、分配标引词 | ISO 2.27 |",
+      "cells": [
+        "标引",
+        "indexing",
+        "分析文档主题、识别概念、分配标引词",
+        "ISO 2.27"
+      ],
+      "sha256": "b32d0df34f21c2fc2bdbe35b8ee9af88fb8d97a81d6a6cb6906222c08cb45e0c"
+    },
+    {
+      "id": "glossary-L0118",
+      "file": "docs/glossary.md",
+      "line": 118,
+      "section": "建设与治理",
+      "kind": "definition",
+      "raw": "| 标引词 | index term | 分配给文档的词；keyword、tag 含义更宽 | ISO 2.26 |",
+      "cells": [
+        "标引词",
+        "index term",
+        "分配给文档的词；keyword、tag 含义更宽",
+        "ISO 2.26"
+      ],
+      "sha256": "ea51dcae506347496851a8f54442f0ee3c4192d26b888af847c5649846330e1d"
+    },
+    {
+      "id": "glossary-L0119",
+      "file": "docs/glossary.md",
+      "line": 119,
+      "section": "建设与治理",
+      "kind": "definition",
+      "raw": "| 查全率 / 查准率 | recall / precision | 检索效果的两个指标；词表对两者都有正面影响 | Z 5.3.6 |",
+      "cells": [
+        "查全率 / 查准率",
+        "recall / precision",
+        "检索效果的两个指标；词表对两者都有正面影响",
+        "Z 5.3.6"
+      ],
+      "sha256": "5a73d17c6f7f48dc11abec77f0d97f2edfc55ed5690c1737a53e5b4bfe69441c"
+    },
+    {
+      "id": "glossary-L0120",
+      "file": "docs/glossary.md",
+      "line": 120,
+      "section": "建设与治理",
+      "kind": "definition",
+      "raw": "| 互操作性 | interoperability | 系统间交换并使用信息的能力 | ISO 2.29 |",
+      "cells": [
+        "互操作性",
+        "interoperability",
+        "系统间交换并使用信息的能力",
+        "ISO 2.29"
+      ],
+      "sha256": "298d2a70e4b1f11a9c61af17bcf2367c148330190b4a93bd3b4d74ddc3cc77c8"
+    },
+    {
+      "id": "glossary-L0121",
+      "file": "docs/glossary.md",
+      "line": 121,
+      "section": "建设与治理",
+      "kind": "definition",
+      "raw": "| 来源分级 | de-jure / de-facto / vendor / archival | 引证来源按变更方式分档；依据为组织依据 | Z 5.3.5.2；[命名实体设计](design/model/entities.md) |",
+      "cells": [
+        "来源分级",
+        "de-jure / de-facto / vendor / archival",
+        "引证来源按变更方式分档；依据为组织依据",
+        "Z 5.3.5.2；[命名实体设计](design/model/entities.md)"
+      ],
+      "sha256": "398dd060f2df7c234e085abcd1a682aaafd5dde54147c71043653ebe434388f5"
+    },
+    {
+      "id": "glossary-L0127",
+      "file": "docs/glossary.md",
+      "line": 127,
+      "section": "词表间映射",
+      "kind": "definition",
+      "raw": "| 映射 | mapping | 一个词表中的概念与另一个词表中一个或多个概念之间的关系；通常有方向 | ISO-2 3.41 |",
+      "cells": [
+        "映射",
+        "mapping",
+        "一个词表中的概念与另一个词表中一个或多个概念之间的关系；通常有方向",
+        "ISO-2 3.41"
+      ],
+      "sha256": "38ac3aea828ab6641b96d632b235d00d8134f77136a1dd6049f22f161ce4f472"
+    },
+    {
+      "id": "glossary-L0128",
+      "file": "docs/glossary.md",
+      "line": 128,
+      "section": "词表间映射",
+      "kind": "definition",
+      "raw": "| 映射簇 | mapping cluster | 三个以上词表之间协调维护的一组映射 | ISO-2 3.42 |",
+      "cells": [
+        "映射簇",
+        "mapping cluster",
+        "三个以上词表之间协调维护的一组映射",
+        "ISO-2 3.42"
+      ],
+      "sha256": "408c553ce8b5b26c2494e5187fc3b724e8955daeba9fe8b0ac197f6f60b97a32"
+    },
+    {
+      "id": "glossary-L0129",
+      "file": "docs/glossary.md",
+      "line": 129,
+      "section": "词表间映射",
+      "kind": "definition",
+      "raw": "| 名称规范表 | name authority list | 为一致地命名特定个体而设的受控词表 | ISO-2 3.50 |",
+      "cells": [
+        "名称规范表",
+        "name authority list",
+        "为一致地命名特定个体而设的受控词表",
+        "ISO-2 3.50"
+      ],
+      "sha256": "317501bc0183ce26c3743df2c337576bf5fc1ad1ccd0c954cfe11731b203cb78"
+    },
+    {
+      "id": "glossary-L0130",
+      "file": "docs/glossary.md",
+      "line": 130,
+      "section": "词表间映射",
+      "kind": "definition",
+      "raw": "| 对照表 | crosswalk | 两个以上词表之间概念映射的表 | ISO-2 3.21 |",
+      "cells": [
+        "对照表",
+        "crosswalk",
+        "两个以上词表之间概念映射的表",
+        "ISO-2 3.21"
+      ],
+      "sha256": "3e9cf0db1ea3e07a33e0d8c301e65a0ff2da6fe66212b13fd17e4a8943e88808"
+    },
+    {
+      "id": "glossary-L0131",
+      "file": "docs/glossary.md",
+      "line": 131,
+      "section": "词表间映射",
+      "kind": "definition",
+      "raw": "| 源词表 / 目标词表 | source / target vocabulary | 映射的起点 / 终点 | ISO-2 §3（条款号在样章之外） |",
+      "cells": [
+        "源词表 / 目标词表",
+        "source / target vocabulary",
+        "映射的起点 / 终点",
+        "ISO-2 §3（条款号在样章之外）"
+      ],
+      "sha256": "5a1fbaf32bcce89940bb70ef884fd6095df6568fb0b39700a73aff3dda47bcde"
+    },
+    {
+      "id": "glossary-L0132",
+      "file": "docs/glossary.md",
+      "line": 132,
+      "section": "词表间映射",
+      "kind": "definition",
+      "raw": "| 等价映射 | equivalence mapping | 目标概念与源概念范围相同 | ISO-2 3.27 |",
+      "cells": [
+        "等价映射",
+        "equivalence mapping",
+        "目标概念与源概念范围相同",
+        "ISO-2 3.27"
+      ],
+      "sha256": "2279c08242cd89c59a8c5149a531cfb109490c68d77d83351a565acc191fc846"
+    },
+    {
+      "id": "glossary-L0133",
+      "file": "docs/glossary.md",
+      "line": 133,
+      "section": "词表间映射",
+      "kind": "definition",
+      "raw": "| 精确 / 不精确 / 部分等价 | exact / inexact / partial equivalence | 等价的三个程度 | ISO-2 §11 |",
+      "cells": [
+        "精确 / 不精确 / 部分等价",
+        "exact / inexact / partial equivalence",
+        "等价的三个程度",
+        "ISO-2 §11"
+      ],
+      "sha256": "358b03abd2a916feac4660732ec39856d592629eeb83d00a9076536060239993"
+    },
+    {
+      "id": "glossary-L0134",
+      "file": "docs/glossary.md",
+      "line": 134,
+      "section": "词表间映射",
+      "kind": "definition",
+      "raw": "| 层级映射 | hierarchical mapping | 目标概念比源概念宽或窄 | ISO-2 §9 |",
+      "cells": [
+        "层级映射",
+        "hierarchical mapping",
+        "目标概念比源概念宽或窄",
+        "ISO-2 §9"
+      ],
+      "sha256": "041c0c275f18f25afc968817323983873754fc7f81aed305df7653a58f6eb634"
+    },
+    {
+      "id": "glossary-L0135",
+      "file": "docs/glossary.md",
+      "line": 135,
+      "section": "词表间映射",
+      "kind": "definition",
+      "raw": "| 相关映射 | associative mapping | 有关但非等价非层级 | ISO-2 §10 |",
+      "cells": [
+        "相关映射",
+        "associative mapping",
+        "有关但非等价非层级",
+        "ISO-2 §10"
+      ],
+      "sha256": "c7928d56fa49d92fb1d5b895efd697360d95a1f9feca3c58707cd11697bea790"
+    },
+    {
+      "id": "glossary-L0136",
+      "file": "docs/glossary.md",
+      "line": 136,
+      "section": "词表间映射",
+      "kind": "definition",
+      "raw": "| 区分式映射 | differentiated mapping | 标明映射类型和等价程度的映射方法 | ISO-2 3.23 |",
+      "cells": [
+        "区分式映射",
+        "differentiated mapping",
+        "标明映射类型和等价程度的映射方法",
+        "ISO-2 3.23"
+      ],
+      "sha256": "49b369b53a6e1ba9145e23f67cb144c1d847a2725a53d47b80669fdced9ed369"
+    },
+    {
+      "id": "glossary-L0137",
+      "file": "docs/glossary.md",
+      "line": 137,
+      "section": "词表间映射",
+      "kind": "definition",
+      "raw": "| 中心辐射 | hub structure | 所有词表映射到一个中心词表的结构模型 | ISO-2 §6 |",
+      "cells": [
+        "中心辐射",
+        "hub structure",
+        "所有词表映射到一个中心词表的结构模型",
+        "ISO-2 §6"
+      ],
+      "sha256": "d7fe0a92cfb37abcda5f8fe94f4964dcfdd1ceab428faa8ba710a615e551bdba"
+    },
+    {
+      "id": "glossary-L0138",
+      "file": "docs/glossary.md",
+      "line": 138,
+      "section": "词表间映射",
+      "kind": "definition",
+      "raw": "| exactMatch / closeMatch | — | SKOS 的精确 / 不精确等价；前者传递，后者不传递 | SKOS §10 |",
+      "cells": [
+        "exactMatch / closeMatch",
+        "—",
+        "SKOS 的精确 / 不精确等价；前者传递，后者不传递",
+        "SKOS §10"
+      ],
+      "sha256": "99cd38ed283437a520cd0c90a786993a7ba349d4cb3b75e75866b46621d39564"
+    },
+    {
+      "id": "glossary-L0139",
+      "file": "docs/glossary.md",
+      "line": 139,
+      "section": "词表间映射",
+      "kind": "definition",
+      "raw": "| broadMatch / narrowMatch / relatedMatch | — | SKOS 的层级 / 相关映射 | SKOS §10 |",
+      "cells": [
+        "broadMatch / narrowMatch / relatedMatch",
+        "—",
+        "SKOS 的层级 / 相关映射",
+        "SKOS §10"
+      ],
+      "sha256": "5d52dbb6b1846eb2dd5da12c6e5438327363fb27e09a54eefafe0d44cc54cc32"
+    },
+    {
+      "id": "glossary-L0145",
+      "file": "docs/glossary.md",
+      "line": 145,
+      "section": "知识体系",
+      "kind": "definition",
+      "raw": "| 知识体系 | body of knowledge, BoK | 一个学科或职业公认知识范围的结构化清单 | SWEBOK;ISO/IEC TR 19759 |",
+      "cells": [
+        "知识体系",
+        "body of knowledge, BoK",
+        "一个学科或职业公认知识范围的结构化清单",
+        "SWEBOK;ISO/IEC TR 19759"
+      ],
+      "sha256": "9320e8ab8d1f13da681f6a8b7cb46337dc5ad488113a8e63c29c5c53335fc4f1"
+    },
+    {
+      "id": "glossary-L0146",
+      "file": "docs/glossary.md",
+      "line": 146,
+      "section": "知识体系",
+      "kind": "definition",
+      "raw": "| 知识领域 | knowledge area, KA | 知识体系的主要区域 | SWEBOK;CS2023 |",
+      "cells": [
+        "知识领域",
+        "knowledge area, KA",
+        "知识体系的主要区域",
+        "SWEBOK;CS2023"
+      ],
+      "sha256": "813a83bf30ccb26a1948f5daa3902f1cd978f0e0a13c636e3b6b217a8af3e997"
+    },
+    {
+      "id": "glossary-L0147",
+      "file": "docs/glossary.md",
+      "line": 147,
+      "section": "知识体系",
+      "kind": "definition",
+      "raw": "| 知识单元 | knowledge unit, KU | 知识领域内的主题簇 | CS2023 |",
+      "cells": [
+        "知识单元",
+        "knowledge unit, KU",
+        "知识领域内的主题簇",
+        "CS2023"
+      ],
+      "sha256": "495146af77b1869b68bd1ea0ff2bc202429c24ae4f7c83f8d4d73775e42d4cdf"
+    },
+    {
+      "id": "glossary-L0148",
+      "file": "docs/glossary.md",
+      "line": 148,
+      "section": "知识体系",
+      "kind": "definition",
+      "raw": "| 主题 | topic | 知识单元内的具体知识点，标核心或选修 | CS2023 |",
+      "cells": [
+        "主题",
+        "topic",
+        "知识单元内的具体知识点，标核心或选修",
+        "CS2023"
+      ],
+      "sha256": "b10540aa588c560fc8661fcb1238bd780c391c4398a90daba3e50fe11e4032d2"
+    },
+    {
+      "id": "glossary-L0149",
+      "file": "docs/glossary.md",
+      "line": 149,
+      "section": "知识体系",
+      "kind": "definition",
+      "raw": "| 普遍接受的知识 | generally accepted knowledge | 多数项目多数时候适用且广泛认同的知识；知识体系只收这类 | SWEBOK |",
+      "cells": [
+        "普遍接受的知识",
+        "generally accepted knowledge",
+        "多数项目多数时候适用且广泛认同的知识；知识体系只收这类",
+        "SWEBOK"
+      ],
+      "sha256": "02a4414c1b7e9cf8c145b87240d8fa0c5a9f8b620a9a038c483d69873d526b56"
+    },
+    {
+      "id": "glossary-L0155",
+      "file": "docs/glossary.md",
+      "line": 155,
+      "section": "元数据",
+      "kind": "definition",
+      "raw": "| Dublin Core | Dublin Core Metadata Element Set | 十五个核心元数据元素，任何资源都可用 | ISO 15836-1:2017 |",
+      "cells": [
+        "Dublin Core",
+        "Dublin Core Metadata Element Set",
+        "十五个核心元数据元素，任何资源都可用",
+        "ISO 15836-1:2017"
+      ],
+      "sha256": "17041f9199a1735686cb7248eb23f4266afc7a26ee60119e1c5f4efb6ec1d5ef"
+    },
+    {
+      "id": "glossary-L0156",
+      "file": "docs/glossary.md",
+      "line": 156,
+      "section": "元数据",
+      "kind": "definition",
+      "raw": "| DCMI Metadata Terms | — | Dublin Core 的扩展属性与类 | ISO 15836-2:2019；DCMI 2020 |",
+      "cells": [
+        "DCMI Metadata Terms",
+        "—",
+        "Dublin Core 的扩展属性与类",
+        "ISO 15836-2:2019；DCMI 2020"
+      ],
+      "sha256": "177f44d93ba2fd0a4cfadde1769b40f16a304f08790b3a7041712807ed89be4a"
+    },
+    {
+      "id": "glossary-L0157",
+      "file": "docs/glossary.md",
+      "line": 157,
+      "section": "元数据",
+      "kind": "definition",
+      "raw": "| DCMI Type Vocabulary | — | `type` 的推荐取值，按媒介性质分 12 类 | DCMI |",
+      "cells": [
+        "DCMI Type Vocabulary",
+        "—",
+        "`type` 的推荐取值，按媒介性质分 12 类",
+        "DCMI"
+      ],
+      "sha256": "156a5c7fb70b4030e403ccff1594338d2df4ea7a8fd1227183d86a104283e8f1"
+    },
+    {
+      "id": "glossary-L0158",
+      "file": "docs/glossary.md",
+      "line": 158,
+      "section": "元数据",
+      "kind": "definition",
+      "raw": "| 资源 | resource | 被描述的东西：文档、图像、数据集、软件 | DCMI |",
+      "cells": [
+        "资源",
+        "resource",
+        "被描述的东西：文档、图像、数据集、软件",
+        "DCMI"
+      ],
+      "sha256": "13ee4c31869ce4eef8eef611542adaf09f716715f97561774aaa1333842b7158"
+    },
+    {
+      "id": "glossary-L0159",
+      "file": "docs/glossary.md",
+      "line": 159,
+      "section": "元数据",
+      "kind": "definition",
+      "raw": "| 内容单元 | — | 知识库里最小的可独立引用、可独立打标签的东西；参照 DITA topic | 本库，参照 DITA 1.3 §2.2.1 |",
+      "cells": [
+        "内容单元",
+        "—",
+        "知识库里最小的可独立引用、可独立打标签的东西；参照 DITA topic",
+        "本库，参照 DITA 1.3 §2.2.1"
+      ],
+      "sha256": "02c92f70101a763be949f4841c75e93434e9962ce334ae4aafc1b16710eb4017"
+    },
+    {
+      "id": "glossary-L0165",
+      "file": "docs/glossary.md",
+      "line": 165,
+      "section": "应用与生成",
+      "kind": "definition",
+      "raw": "| Application Profile | Application Profile | 为特定应用规定 metadata term、约束、使用与编码语法的文档集合 | DCMI Singapore Framework；中文查无高阶正文依据 |",
+      "cells": [
+        "Application Profile",
+        "Application Profile",
+        "为特定应用规定 metadata term、约束、使用与编码语法的文档集合",
+        "DCMI Singapore Framework；中文查无高阶正文依据"
+      ],
+      "sha256": "e459f04799ecf0cd73f1f46baaf4efd63053422e423f3c622bf3609a58f16759"
+    },
+    {
+      "id": "glossary-L0166",
+      "file": "docs/glossary.md",
+      "line": 166,
+      "section": "应用与生成",
+      "kind": "definition",
+      "raw": "| Reproducible Builds | Reproducible Builds | 使任何一方在相同 source、environment 和 instructions 下重建逐字节相同 artifacts 的实践 | Reproducible Builds definition |",
+      "cells": [
+        "Reproducible Builds",
+        "Reproducible Builds",
+        "使任何一方在相同 source、environment 和 instructions 下重建逐字节相同 artifacts 的实践",
+        "Reproducible Builds definition"
+      ],
+      "sha256": "2c35ed5536a831cf59d6f9a326b076cfbe747482dd668055c76e639bf043a766"
+    },
+    {
+      "id": "glossary-L0172",
+      "file": "docs/glossary.md",
+      "line": 172,
+      "section": "写作与设计方法",
+      "kind": "definition",
+      "raw": "| 相关 / 可找到 / 可理解 / 可使用 | relevant / findable / understandable / usable | plain language 的四条原则 | ISO 24495-1:2023 |",
+      "cells": [
+        "相关 / 可找到 / 可理解 / 可使用",
+        "relevant / findable / understandable / usable",
+        "plain language 的四条原则",
+        "ISO 24495-1:2023"
+      ],
+      "sha256": "77d6559c25e6ce19f2d8d8f478d1743b7ab47cef0d67c6c0ceb9567d29897ebc"
+    },
+    {
+      "id": "glossary-L0173",
+      "file": "docs/glossary.md",
+      "line": 173,
+      "section": "写作与设计方法",
+      "kind": "definition",
+      "raw": "| 第一原理 | first principle | 不能再从别的命题推出、只能作为起点的命题 | Aristotle, *Posterior Analytics* |",
+      "cells": [
+        "第一原理",
+        "first principle",
+        "不能再从别的命题推出、只能作为起点的命题",
+        "Aristotle, *Posterior Analytics*"
+      ],
+      "sha256": "3fbe00b6b2d8ad66e65eb89ab5d61e495491ef476b4d56d7386c6806aecb1fe3"
+    },
+    {
+      "id": "glossary-L0174",
+      "file": "docs/glossary.md",
+      "line": 174,
+      "section": "写作与设计方法",
+      "kind": "definition",
+      "raw": "| 设计理由 | design rationale | 记录“为什么这样决定”而不只是“决定了什么” | Kunz & Rittel 1970；Nygard 2011 |",
+      "cells": [
+        "设计理由",
+        "design rationale",
+        "记录“为什么这样决定”而不只是“决定了什么”",
+        "Kunz & Rittel 1970；Nygard 2011"
+      ],
+      "sha256": "dda08dff023a7c43bed4a234d176eedd10279358c3d3002555e5bc84c48501b3"
+    },
+    {
+      "id": "glossary-L0175",
+      "file": "docs/glossary.md",
+      "line": 175,
+      "section": "写作与设计方法",
+      "kind": "definition",
+      "raw": "| 被替代 | superseded | 决定记录被新决定取代后的状态 | Nygard ADR 2011 |",
+      "cells": [
+        "被替代",
+        "superseded",
+        "决定记录被新决定取代后的状态",
+        "Nygard ADR 2011"
+      ],
+      "sha256": "70d18de98a2adc213bb01654ec0dc955fe2f58c56b23aba0821c8ff8c56a744b"
+    },
+    {
+      "id": "glossary-L0176",
+      "file": "docs/glossary.md",
+      "line": 176,
+      "section": "写作与设计方法",
+      "kind": "definition",
+      "raw": "| 内容模型 | content model | 内容单元允许有哪些组成部分及其结构 | SGML（ISO 8879）、DITA 沿用 |",
+      "cells": [
+        "内容模型",
+        "content model",
+        "内容单元允许有哪些组成部分及其结构",
+        "SGML（ISO 8879）、DITA 沿用"
+      ],
+      "sha256": "1504eb9e9419d0261b73594e25c368ba550ebf650b10533ff43c72bb137284df"
+    },
+    {
+      "id": "glossary-L0177",
+      "file": "docs/glossary.md",
+      "line": 177,
+      "section": "写作与设计方法",
+      "kind": "definition",
+      "raw": "| 知识组织 | knowledge organization | 对知识进行描述、分类和排序的活动与系统；KOS 即知识组织系统 | ISO 25964；SKOS |",
+      "cells": [
+        "知识组织",
+        "knowledge organization",
+        "对知识进行描述、分类和排序的活动与系统；KOS 即知识组织系统",
+        "ISO 25964；SKOS"
+      ],
+      "sha256": "49b7dedc01e8999fb67dca094af07e056c5efe33fbebbbb6e8e73fe8107e38ee"
+    },
+    {
+      "id": "glossary-L0178",
+      "file": "docs/glossary.md",
+      "line": 178,
+      "section": "写作与设计方法",
+      "kind": "definition",
+      "raw": "| 公众人物 | public figure | 在社会事务中担任显著角色、或主动进入公共争议的人；本库 `person` 实体只收此类，具体为已发表作品的作者、公开项目的维护者、方法的提出者 | 美国判例法 *Gertz v. Robert Welch* (1974)，见 [Cornell LII](https://www.law.cornell.edu/wex/public_figure) |",
+      "cells": [
+        "公众人物",
+        "public figure",
+        "在社会事务中担任显著角色、或主动进入公共争议的人；本库 `person` 实体只收此类，具体为已发表作品的作者、公开项目的维护者、方法的提出者",
+        "美国判例法 *Gertz v. Robert Welch* (1974)，见 [Cornell LII](https://www.law.cornell.edu/wex/public_figure)"
+      ],
+      "sha256": "f67c92ce3d0841dae93c4a031c6ddf54b0acaec4636a958ee143006639969273"
+    },
+    {
+      "id": "glossary-L0179",
+      "file": "docs/glossary.md",
+      "line": 179,
+      "section": "写作与设计方法",
+      "kind": "definition",
+      "raw": "| 个体 | individual | 名称规范表所收的对象：唯一的个体，而非类 | ISO-2 3.50 注 |",
+      "cells": [
+        "个体",
+        "individual",
+        "名称规范表所收的对象：唯一的个体，而非类",
+        "ISO-2 3.50 注"
+      ],
+      "sha256": "e9c2ef6314b31212117332755fde00d713e4658184abfd1215e62c0129370252"
+    },
+    {
+      "id": "glossary-L0180",
+      "file": "docs/glossary.md",
+      "line": 180,
+      "section": "写作与设计方法",
+      "kind": "definition",
+      "raw": "| 划分 | partition | 把一个集合分成互不重叠、合起来是全集的几组 | 数学通用术语 |",
+      "cells": [
+        "划分",
+        "partition",
+        "把一个集合分成互不重叠、合起来是全集的几组",
+        "数学通用术语"
+      ],
+      "sha256": "40b2f60f5a282652a6854e9de8bd484cbaa453f952dd7ebd1d5214eebe117e64"
+    },
+    {
+      "id": "glossary-L0186",
+      "file": "docs/glossary.md",
+      "line": 186,
+      "section": "笔记的类型",
+      "kind": "definition",
+      "raw": "| 体裁 | genre | 按读者需求或内容性质划分的文本类别 | IPTC genre；Diátaxis |",
+      "cells": [
+        "体裁",
+        "genre",
+        "按读者需求或内容性质划分的文本类别",
+        "IPTC genre；Diátaxis"
+      ],
+      "sha256": "d10547636b8716a1fd7d6e07c7306ec55bcd88cfd1cd14fe6919296744b5d5b1"
+    },
+    {
+      "id": "glossary-L0187",
+      "file": "docs/glossary.md",
+      "line": 187,
+      "section": "笔记的类型",
+      "kind": "definition",
+      "raw": "| 排障 | troubleshooting | DITA 的 topic 类型：纠正性操作信息 | DITA 1.3 §2.7.1.6 |",
+      "cells": [
+        "排障",
+        "troubleshooting",
+        "DITA 的 topic 类型：纠正性操作信息",
+        "DITA 1.3 §2.7.1.6"
+      ],
+      "sha256": "c4306b44c7aacb0d1a93a4552e2d0ff77c3aa988b3c86ad8eb80862d5c4256f3"
+    },
+    {
+      "id": "glossary-L0188",
+      "file": "docs/glossary.md",
+      "line": 188,
+      "section": "笔记的类型",
+      "kind": "definition",
+      "raw": "| 闪念笔记 / 文献笔记 / 永久笔记 | fleeting / literature / permanent note | 按工作流阶段分的三种笔记 | Ahrens 2017 |",
+      "cells": [
+        "闪念笔记 / 文献笔记 / 永久笔记",
+        "fleeting / literature / permanent note",
+        "按工作流阶段分的三种笔记",
+        "Ahrens 2017"
+      ],
+      "sha256": "5eda748adff2a9c997379faf696f0fb6c61fbc04874e73e9b2a32d07153d2c5b"
+    },
+    {
+      "id": "glossary-L0189",
+      "file": "docs/glossary.md",
+      "line": 189,
+      "section": "笔记的类型",
+      "kind": "definition",
+      "raw": "| 隐性知识 / 显性知识 | tacit / explicit knowledge | 难以形式化的个人知识 / 正式而系统、易于交流的知识 | Nonaka 1991 |",
+      "cells": [
+        "隐性知识 / 显性知识",
+        "tacit / explicit knowledge",
+        "难以形式化的个人知识 / 正式而系统、易于交流的知识",
+        "Nonaka 1991"
+      ],
+      "sha256": "3eb0664fb9d36c381536f27fc21fdeb72cb016e7e0c4dbceb0b039ad8aa9f5cc"
+    },
+    {
+      "id": "glossary-L0190",
+      "file": "docs/glossary.md",
+      "line": 190,
+      "section": "笔记的类型",
+      "kind": "definition",
+      "raw": "| 速查表 | cheat sheet | 供快速参考的简明笔记集 | Wikidata Q2309859 |",
+      "cells": [
+        "速查表",
+        "cheat sheet",
+        "供快速参考的简明笔记集",
+        "Wikidata Q2309859"
+      ],
+      "sha256": "601cc77e7bbc57a464ac19b709f06f262afc3635ef7506718213b012c9c44432"
+    },
+    {
+      "id": "glossary-L0191",
+      "file": "docs/glossary.md",
+      "line": 191,
+      "section": "笔记的类型",
+      "kind": "definition",
+      "raw": "| 札记簿 | commonplace book | 抄录重要段落并按主题整理的本子 | Harvard Library |",
+      "cells": [
+        "札记簿",
+        "commonplace book",
+        "抄录重要段落并按主题整理的本子",
+        "Harvard Library"
+      ],
+      "sha256": "11bf6799fe3c2b69bfb21bb30b00041260ab34109e596fb40e7e3b4138e61454"
+    },
+    {
+      "id": "glossary-L0192",
+      "file": "docs/glossary.md",
+      "line": 192,
+      "section": "笔记的类型",
+      "kind": "definition",
+      "raw": "| 认知层级 | cognitive level | 对主题理解的深度：记忆到创造六级 | Bloom 修订版，Krathwohl 2002 |",
+      "cells": [
+        "认知层级",
+        "cognitive level",
+        "对主题理解的深度：记忆到创造六级",
+        "Bloom 修订版，Krathwohl 2002"
+      ],
+      "sha256": "58cd65d452ce9aa90028efdb0906b51964ecd7f7c7a957d5e9f76ca68c2743bd"
+    },
+    {
+      "id": "glossary-L0193",
+      "file": "docs/glossary.md",
+      "line": 193,
+      "section": "笔记的类型",
+      "kind": "definition",
+      "raw": "| 帕累托原则 | Pareto principle | 关键的少数与琐碎的多数；选材法则 | Juran 1951 命名 |",
+      "cells": [
+        "帕累托原则",
+        "Pareto principle",
+        "关键的少数与琐碎的多数；选材法则",
+        "Juran 1951 命名"
+      ],
+      "sha256": "e55876bd90b792071ec13ef7785174d64eb07fda344869a609b08156cb1538b5"
+    },
+    {
+      "id": "glossary-L0199",
+      "file": "docs/glossary.md",
+      "line": 199,
+      "section": "治理与维护",
+      "kind": "definition",
+      "raw": "| 治理 | governance | 组织借以被指导、监督并被问责的系统；对管理的管理 | ISO 37000:2021 |",
+      "cells": [
+        "治理",
+        "governance",
+        "组织借以被指导、监督并被问责的系统；对管理的管理",
+        "ISO 37000:2021"
+      ],
+      "sha256": "294b68c283c738d7e96251b3a3ce3f40bddec9329edb97e2c33e2a0729473db1"
+    },
+    {
+      "id": "glossary-L0200",
+      "file": "docs/glossary.md",
+      "line": 200,
+      "section": "治理与维护",
+      "kind": "definition",
+      "raw": "| 政策 | policy | 治理主体定下的、管理必须遵守的规则 | ISO 15489-1 §6.2 |",
+      "cells": [
+        "政策",
+        "policy",
+        "治理主体定下的、管理必须遵守的规则",
+        "ISO 15489-1 §6.2"
+      ],
+      "sha256": "a96e2621de7e4762294bb658d0d71ae0ce6ce05d0f694da1f3f881d3f1850e79"
+    },
+    {
+      "id": "glossary-L0201",
+      "file": "docs/glossary.md",
+      "line": 201,
+      "section": "治理与维护",
+      "kind": "definition",
+      "raw": "| 决策权 | decision rights | 谁有权对哪类事项做决定 | DAMA-DMBOK 数据治理 |",
+      "cells": [
+        "决策权",
+        "decision rights",
+        "谁有权对哪类事项做决定",
+        "DAMA-DMBOK 数据治理"
+      ],
+      "sha256": "24fafee08483b755e6fc42d27c0e7d5e9a7321eae59223abfb71f8ea32abf032"
+    },
+    {
+      "id": "glossary-L0202",
+      "file": "docs/glossary.md",
+      "line": 202,
+      "section": "治理与维护",
+      "kind": "definition",
+      "raw": "| 监控与评价 | monitoring and evaluation | 对管理过程及其结果的持续检查与定期评估 | ISO 15489-1 §6.4 |",
+      "cells": [
+        "监控与评价",
+        "monitoring and evaluation",
+        "对管理过程及其结果的持续检查与定期评估",
+        "ISO 15489-1 §6.4"
+      ],
+      "sha256": "b52111d33676d72b386ad38edbab48fe0522f5270d03ccb2807dc4487545b533"
+    },
+    {
+      "id": "glossary-L0203",
+      "file": "docs/glossary.md",
+      "line": 203,
+      "section": "治理与维护",
+      "kind": "definition",
+      "raw": "| 审计追踪 | audit trail | 记录谁在何时做了什么变更的连续记录 | ISO 15489-1 元数据要求 |",
+      "cells": [
+        "审计追踪",
+        "audit trail",
+        "记录谁在何时做了什么变更的连续记录",
+        "ISO 15489-1 元数据要求"
+      ],
+      "sha256": "a22d1645e39673df9482132ea2661c0efddf7cf418da7ec102bf81005cb1bcce"
+    },
+    {
+      "id": "glossary-L0204",
+      "file": "docs/glossary.md",
+      "line": 204,
+      "section": "治理与维护",
+      "kind": "definition",
+      "raw": "| 治理评审 | governance review | 治理主体对治理本身的定期评审 | ISO 37000:2021 |",
+      "cells": [
+        "治理评审",
+        "governance review",
+        "治理主体对治理本身的定期评审",
+        "ISO 37000:2021"
+      ],
+      "sha256": "5d94c2c44b274a45acaf56ecec016c101f542ddd2038fadb503f21591b9bc43e"
+    },
+    {
+      "id": "glossary-L0205",
+      "file": "docs/glossary.md",
+      "line": 205,
+      "section": "治理与维护",
+      "kind": "definition",
+      "raw": "| 审计 | audit | 对记录与过程是否符合规则的检查 | ISO 15489-1 §6.4 |",
+      "cells": [
+        "审计",
+        "audit",
+        "对记录与过程是否符合规则的检查",
+        "ISO 15489-1 §6.4"
+      ],
+      "sha256": "e63c811798849a4a3071cc963b712efedf5ce8ab3b1d3c4eda2f01743951570a"
+    },
+    {
+      "id": "glossary-L0206",
+      "file": "docs/glossary.md",
+      "line": 206,
+      "section": "治理与维护",
+      "kind": "definition",
+      "raw": "| 处置 | disposition | 执行保留、销毁或移交决定的过程 | ISO 15489-1 §3.8 |",
+      "cells": [
+        "处置",
+        "disposition",
+        "执行保留、销毁或移交决定的过程",
+        "ISO 15489-1 §3.8"
+      ],
+      "sha256": "bfe859bef6ee13e2662781d49e3b45cb8648906a6184a319e6d4efb758d240e5"
+    },
+    {
+      "id": "glossary-L0207",
+      "file": "docs/glossary.md",
+      "line": 207,
+      "section": "治理与维护",
+      "kind": "definition",
+      "raw": "| 断言 | assertion | 人判断而非抄自来源的字段值 | 本库用法；溯源依据 W3C PROV-O |",
+      "cells": [
+        "断言",
+        "assertion",
+        "人判断而非抄自来源的字段值",
+        "本库用法；溯源依据 W3C PROV-O"
+      ],
+      "sha256": "d934b7e74c5c667db0986ad900e49891c1387e14d2eb2a6c4a9cafe5a2666509"
+    },
+    {
+      "id": "glossary-L0208",
+      "file": "docs/glossary.md",
+      "line": 208,
+      "section": "治理与维护",
+      "kind": "definition",
+      "raw": "| 指标 | indicator | 脚本能算出或外部能通知、用于监控的量 | ISO 15489-1 §6.4 的监控对象 |",
+      "cells": [
+        "指标",
+        "indicator",
+        "脚本能算出或外部能通知、用于监控的量",
+        "ISO 15489-1 §6.4 的监控对象"
+      ],
+      "sha256": "39adf28546d3b235b344620fbbd9491c41cf2bffad4b9bfd4edb7ea8019a1f17"
+    },
+    {
+      "id": "glossary-L0209",
+      "file": "docs/glossary.md",
+      "line": 209,
+      "section": "治理与维护",
+      "kind": "definition",
+      "raw": "| 阈值 | threshold | 指标触发动作的界值 | 通用 |",
+      "cells": [
+        "阈值",
+        "threshold",
+        "指标触发动作的界值",
+        "通用"
+      ],
+      "sha256": "83d907b2dec9e729aec6f33687fb7cfde8852a99585eb7da760cfb9cbd03df2e"
+    },
+    {
+      "id": "glossary-L0210",
+      "file": "docs/glossary.md",
+      "line": 210,
+      "section": "治理与维护",
+      "kind": "definition",
+      "raw": "| 批准 | approve | 候选词审核通过转为正式词 | Z 11.1.6 |",
+      "cells": [
+        "批准",
+        "approve",
+        "候选词审核通过转为正式词",
+        "Z 11.1.6"
+      ],
+      "sha256": "203b1a0805c4ad4dcac09a374cacc7b7fc42b3ff1fe9460d14c74eb9f0711ce5"
+    },
+    {
+      "id": "glossary-L0216",
+      "file": "docs/glossary.md",
+      "line": 216,
+      "section": "知识图谱",
+      "kind": "definition",
+      "raw": "| 三元组 | triple | 主语 — 谓语 — 宾语，图的最小单位 | W3C RDF 1.1 |",
+      "cells": [
+        "三元组",
+        "triple",
+        "主语 — 谓语 — 宾语，图的最小单位",
+        "W3C RDF 1.1"
+      ],
+      "sha256": "41c448c3ab62895345fc143883e6a4ffad94d807b6b608bfb0d7b0999be1c90f"
+    },
+    {
+      "id": "glossary-L0217",
+      "file": "docs/glossary.md",
+      "line": 217,
+      "section": "知识图谱",
+      "kind": "definition",
+      "raw": "| 实体 | entity | 图的节点，有唯一 ID | KG |",
+      "cells": [
+        "实体",
+        "entity",
+        "图的节点，有唯一 ID",
+        "KG"
+      ],
+      "sha256": "6ea07c804accc373c37cb450cbdfc8e105295b43aae0f6a10e0e1e5941988fc9"
+    },
+    {
+      "id": "glossary-L0218",
+      "file": "docs/glossary.md",
+      "line": 218,
+      "section": "知识图谱",
+      "kind": "definition",
+      "raw": "| 关系 | relation, edge | 带类型的有向边 | KG |",
+      "cells": [
+        "关系",
+        "relation, edge",
+        "带类型的有向边",
+        "KG"
+      ],
+      "sha256": "ef39620b3cce57be9a3cd7680aaafd773b5cc93686af0aef45bf07f200db0fc7"
+    },
+    {
+      "id": "glossary-L0219",
+      "file": "docs/glossary.md",
+      "line": 219,
+      "section": "知识图谱",
+      "kind": "definition",
+      "raw": "| 属性 | property | 挂在实体或边上的字面值 | KG |",
+      "cells": [
+        "属性",
+        "property",
+        "挂在实体或边上的字面值",
+        "KG"
+      ],
+      "sha256": "c0160b797e25d175a3f5eabe84d52d8bdac721b8fcd04f6a4539225da3d262b7"
+    },
+    {
+      "id": "glossary-L0220",
+      "file": "docs/glossary.md",
+      "line": 220,
+      "section": "知识图谱",
+      "kind": "definition",
+      "raw": "| Schema | schema | 本体在工程语境的叫法：类型与关系的定义 | — |",
+      "cells": [
+        "Schema",
+        "schema",
+        "本体在工程语境的叫法：类型与关系的定义",
+        "—"
+      ],
+      "sha256": "35c32267e15e74f441f61549b9742147f37d4151069f5ade8672a2f9ac0beb53"
+    },
+    {
+      "id": "glossary-L0221",
+      "file": "docs/glossary.md",
+      "line": 221,
+      "section": "知识图谱",
+      "kind": "definition",
+      "raw": "| 推理 | reasoning, inference | 按规则从已有边推出新边 | KG |",
+      "cells": [
+        "推理",
+        "reasoning, inference",
+        "按规则从已有边推出新边",
+        "KG"
+      ],
+      "sha256": "589b35c0cb3c4878138515938c28fc3089a0e65753f892bf4904fafc1cd7b03b"
+    },
+    {
+      "id": "glossary-L0222",
+      "file": "docs/glossary.md",
+      "line": 222,
+      "section": "知识图谱",
+      "kind": "definition",
+      "raw": "| RDF | Resource Description Framework | W3C 的三元组数据模型 | W3C RDF 1.1 |",
+      "cells": [
+        "RDF",
+        "Resource Description Framework",
+        "W3C 的三元组数据模型",
+        "W3C RDF 1.1"
+      ],
+      "sha256": "dc3e75b335a82ea4b98f16279c08cdd5dd9884c0b0d2ecd02e2dff7f652303ad"
+    },
+    {
+      "id": "glossary-L0223",
+      "file": "docs/glossary.md",
+      "line": 223,
+      "section": "知识图谱",
+      "kind": "definition",
+      "raw": "| RDFS / OWL | — | RDF 上的 schema 语言 / 本体语言 | W3C |",
+      "cells": [
+        "RDFS / OWL",
+        "—",
+        "RDF 上的 schema 语言 / 本体语言",
+        "W3C"
+      ],
+      "sha256": "073e683f2e103d150268f61927818d4d87548e5e70ee65ca3c088d6bcdc92995"
+    },
+    {
+      "id": "glossary-L0224",
+      "file": "docs/glossary.md",
+      "line": 224,
+      "section": "知识图谱",
+      "kind": "definition",
+      "raw": "| SPARQL | — | RDF 查询语言 | W3C SPARQL 1.1 |",
+      "cells": [
+        "SPARQL",
+        "—",
+        "RDF 查询语言",
+        "W3C SPARQL 1.1"
+      ],
+      "sha256": "ffb715a765e080acb6a400da98c17b5cef25cdbaa38a90aeb511394999c4bb8f"
+    },
+    {
+      "id": "glossary-L0225",
+      "file": "docs/glossary.md",
+      "line": 225,
+      "section": "知识图谱",
+      "kind": "definition",
+      "raw": "| SKOS | Simple Knowledge Organization System | 用 RDF 表达词表的 W3C 标准 | W3C SKOS |",
+      "cells": [
+        "SKOS",
+        "Simple Knowledge Organization System",
+        "用 RDF 表达词表的 W3C 标准",
+        "W3C SKOS"
+      ],
+      "sha256": "ae15f9b46458fa157bf02c4214d300f8444174a555e84fd515dd5da76f561899"
+    },
+    {
+      "id": "glossary-L0226",
+      "file": "docs/glossary.md",
+      "line": 226,
+      "section": "知识图谱",
+      "kind": "definition",
+      "raw": "| 属性图 | property graph | 节点和边都可带属性的图模型 | ISO/IEC 39075 |",
+      "cells": [
+        "属性图",
+        "property graph",
+        "节点和边都可带属性的图模型",
+        "ISO/IEC 39075"
+      ],
+      "sha256": "3451f46422767bd8b0ad544fedd4a973f90beb52b26f9d6c394795531f7854bb"
+    },
+    {
+      "id": "glossary-L0227",
+      "file": "docs/glossary.md",
+      "line": 227,
+      "section": "知识图谱",
+      "kind": "definition",
+      "raw": "| Cypher / GQL | — | 属性图查询语言；GQL 是 2024 年的 ISO 标准 | ISO/IEC 39075:2024 |",
+      "cells": [
+        "Cypher / GQL",
+        "—",
+        "属性图查询语言；GQL 是 2024 年的 ISO 标准",
+        "ISO/IEC 39075:2024"
+      ],
+      "sha256": "9ba416cb92a4ac07baac8ba5c5aecc817cbf5608ad0471a50df9080f6d077158"
+    },
+    {
+      "id": "glossary-L0233",
+      "file": "docs/glossary.md",
+      "line": 233,
+      "section": "引用的标准与文献",
+      "kind": "literature",
+      "raw": "| ISO 25964-1:2011 / -2:2013 | 叙词表国际标准，见 [笔记](references/iso-25964.md) |",
+      "cells": [
+        "ISO 25964-1:2011 / -2:2013",
+        "叙词表国际标准，见 [笔记](references/iso-25964.md)"
+      ],
+      "sha256": "150b489e2cd6ef71634d5ee5e256344b10d154d63f9d3dfcb94b27554cd541cc"
+    },
+    {
+      "id": "glossary-L0234",
+      "file": "docs/glossary.md",
+      "line": 234,
+      "section": "引用的标准与文献",
+      "kind": "literature",
+      "raw": "| GB/T 13190.1-2015 / .2-2018 | 等同采用 ISO 25964 的国标 |",
+      "cells": [
+        "GB/T 13190.1-2015 / .2-2018",
+        "等同采用 ISO 25964 的国标"
+      ],
+      "sha256": "9f2d8c6d874518392917de78230209c3a5139f766eb700aabb7ee6741b20e8f2"
+    },
+    {
+      "id": "glossary-L0235",
+      "file": "docs/glossary.md",
+      "line": 235,
+      "section": "引用的标准与文献",
+      "kind": "literature",
+      "raw": "| ANSI/NISO Z39.19-2005 (R2010) | 美国受控词表标准，全文免费 |",
+      "cells": [
+        "ANSI/NISO Z39.19-2005 (R2010)",
+        "美国受控词表标准，全文免费"
+      ],
+      "sha256": "508f7440f81dd0f95056f454c4a10e399fc2651bfd4d8b8d539f83b8aafb04df"
+    },
+    {
+      "id": "glossary-L0236",
+      "file": "docs/glossary.md",
+      "line": 236,
+      "section": "引用的标准与文献",
+      "kind": "literature",
+      "raw": "| ISO 704 | 术语工作原则与方法，Wüster 理论的标准化版本；未核对 |",
+      "cells": [
+        "ISO 704",
+        "术语工作原则与方法，Wüster 理论的标准化版本；未核对"
+      ],
+      "sha256": "46d8dfb2d3b83dcd369ce7d2a285b24d6c682ce523ff21883fc6e0c4189eaa40"
+    },
+    {
+      "id": "glossary-L0237",
+      "file": "docs/glossary.md",
+      "line": 237,
+      "section": "引用的标准与文献",
+      "kind": "literature",
+      "raw": "| W3C SKOS / RDF / OWL / SPARQL | 语义网标准族 |",
+      "cells": [
+        "W3C SKOS / RDF / OWL / SPARQL",
+        "语义网标准族"
+      ],
+      "sha256": "c3d9979f4f21c54172c47439aefd7316507dece855defd7a8f5aa1f647bf9801"
+    },
+    {
+      "id": "glossary-L0238",
+      "file": "docs/glossary.md",
+      "line": 238,
+      "section": "引用的标准与文献",
+      "kind": "literature",
+      "raw": "| ISO/IEC 39075:2024 GQL | 属性图查询语言标准 |",
+      "cells": [
+        "ISO/IEC 39075:2024 GQL",
+        "属性图查询语言标准"
+      ],
+      "sha256": "ab1d5f9e321637edf0c2f7b3ad74583092ebea4bab8f79cee481849180d0408a"
+    },
+    {
+      "id": "glossary-L0239",
+      "file": "docs/glossary.md",
+      "line": 239,
+      "section": "引用的标准与文献",
+      "kind": "literature",
+      "raw": "| Cutter (1876) | 字典式目录规则，主题标目“一主题一词”的源头；未核对 |",
+      "cells": [
+        "Cutter (1876)",
+        "字典式目录规则，主题标目“一主题一词”的源头；未核对"
+      ],
+      "sha256": "a4ea77a0f976d2cf6e7fb51402992f853c224b786efa28ab52fa349b3a05ebff"
+    },
+    {
+      "id": "glossary-L0240",
+      "file": "docs/glossary.md",
+      "line": 240,
+      "section": "引用的标准与文献",
+      "kind": "literature",
+      "raw": "| Hulme (1911) | *Principles of Book Classification*,Library Association Record 连载；文献依据的源头 |",
+      "cells": [
+        "Hulme (1911)",
+        "*Principles of Book Classification*,Library Association Record 连载；文献依据的源头"
+      ],
+      "sha256": "87921c5e81edb18ed5cde4696f41d39d7ccabfefa938cfbf3eaa61f59daf314d"
+    },
+    {
+      "id": "glossary-L0241",
+      "file": "docs/glossary.md",
+      "line": 241,
+      "section": "引用的标准与文献",
+      "kind": "literature",
+      "raw": "| Dewey (1876) | 十进分类法；未核对 |",
+      "cells": [
+        "Dewey (1876)",
+        "十进分类法；未核对"
+      ],
+      "sha256": "8521e5a224c7b09e3e37c8bc1e33707d10407325d7cf965ee78a219c108bb162"
+    },
+    {
+      "id": "glossary-L0242",
+      "file": "docs/glossary.md",
+      "line": 242,
+      "section": "引用的标准与文献",
+      "kind": "literature",
+      "raw": "| Ranganathan (1933) | 冒号分类法，分面分析的源头；经 Z39.19 §5.3.4 转述 |",
+      "cells": [
+        "Ranganathan (1933)",
+        "冒号分类法，分面分析的源头；经 Z39.19 §5.3.4 转述"
+      ],
+      "sha256": "6cdb24c4aa8b9aef1286cd9808bd95b500977be0dc7feb3c87d608542ca05d84"
+    },
+    {
+      "id": "glossary-L0243",
+      "file": "docs/glossary.md",
+      "line": 243,
+      "section": "引用的标准与文献",
+      "kind": "literature",
+      "raw": "| Wüster (1931) | 斯图加特博士论文 *Internationale Sprachnormung in der Technik*；术语学奠基，ISO/TC 37 1936 年由此成立 |",
+      "cells": [
+        "Wüster (1931)",
+        "斯图加特博士论文 *Internationale Sprachnormung in der Technik*；术语学奠基，ISO/TC 37 1936 年由此成立"
+      ],
+      "sha256": "d42262e970075016259fff63f2343c785205687aec3640c3f34066e58b17214c"
+    },
+    {
+      "id": "glossary-L0244",
+      "file": "docs/glossary.md",
+      "line": 244,
+      "section": "引用的标准与文献",
+      "kind": "literature",
+      "raw": "| Gruber (1993) | 计算机领域本体的定义；未核对 |",
+      "cells": [
+        "Gruber (1993)",
+        "计算机领域本体的定义；未核对"
+      ],
+      "sha256": "74c326ac9e915bda30e7883c8e2efb8fc5cc573bae2a73853ab7cf4b882d117a"
+    },
+    {
+      "id": "glossary-L0245",
+      "file": "docs/glossary.md",
+      "line": 245,
+      "section": "引用的标准与文献",
+      "kind": "literature",
+      "raw": "| Hogan et al. (2021) | 知识图谱综述，[arXiv](https://arxiv.org/abs/2003.02320) |",
+      "cells": [
+        "Hogan et al. (2021)",
+        "知识图谱综述，[arXiv](https://arxiv.org/abs/2003.02320)"
+      ],
+      "sha256": "29d55771480bbe43723df8858a7a4eb3eba3c44bbd6fe14c887d25c08ca5e1d1"
+    },
+    {
+      "id": "glossary-L0246",
+      "file": "docs/glossary.md",
+      "line": 246,
+      "section": "引用的标准与文献",
+      "kind": "literature",
+      "raw": "| Ehrlinger & Wöß (2016) | 知识图谱定义梳理，[CEUR](https://ceur-ws.org/Vol-1695/paper4.pdf) |",
+      "cells": [
+        "Ehrlinger & Wöß (2016)",
+        "知识图谱定义梳理，[CEUR](https://ceur-ws.org/Vol-1695/paper4.pdf)"
+      ],
+      "sha256": "44597b8bf9f45ab7bcaddf6e97190a5f56dfa8b4dcd1d24ae858edbbbef9afff"
+    },
+    {
+      "id": "glossary-L0254",
+      "file": "docs/glossary.md",
+      "line": 254,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 可访问性与包容性设计 | Accessibility and Inclusive Design | `topics/accessibility-and-inclusive-design` |",
+      "cells": [
+        "可访问性与包容性设计",
+        "Accessibility and Inclusive Design",
+        "`topics/accessibility-and-inclusive-design`"
+      ],
+      "sha256": "de5528f6b254b735ebb6687180f350b630ceb11c6ae6ca3924b2cb4d6aaac1c5"
+    },
+    {
+      "id": "glossary-L0255",
+      "file": "docs/glossary.md",
+      "line": 255,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 设计中的问责与责任 | Accountability and Responsibility in Design | `topics/accountability-and-responsibility-in-design` |",
+      "cells": [
+        "设计中的问责与责任",
+        "Accountability and Responsibility in Design",
+        "`topics/accountability-and-responsibility-in-design`"
+      ],
+      "sha256": "f6365972e32a8741d2badad2075d7d3e2e9659768ac1d29e44c97beb4b3839e8"
+    },
+    {
+      "id": "glossary-L0256",
+      "file": "docs/glossary.md",
+      "line": 256,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 高级文件系统 | Advanced File systems | `topics/advanced-file-systems` |",
+      "cells": [
+        "高级文件系统",
+        "Advanced File systems",
+        "`topics/advanced-file-systems`"
+      ],
+      "sha256": "c068bc5270f6faa69fe9b2567d31e988b6c0473c5e11172af6005ade1f093413"
+    },
+    {
+      "id": "glossary-L0257",
+      "file": "docs/glossary.md",
+      "line": 257,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 高级程序设计构造 | Advanced Programming Constructs | `topics/advanced-programming-constructs` |",
+      "cells": [
+        "高级程序设计构造",
+        "Advanced Programming Constructs",
+        "`topics/advanced-programming-constructs`"
+      ],
+      "sha256": "0160ff4b6b84208b140c3416bb75fc96aa0637660fc7f2fbd64c76bc1d94deec"
+    },
+    {
+      "id": "glossary-L0258",
+      "file": "docs/glossary.md",
+      "line": 258,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 智能体与认知系统 | Agents and Cognitive Systems | `topics/agents-and-cognitive-systems` |",
+      "cells": [
+        "智能体与认知系统",
+        "Agents and Cognitive Systems",
+        "`topics/agents-and-cognitive-systems`"
+      ],
+      "sha256": "f96c0a72632bd7ba8da4fab6d6a5443ed6ac3c5d3c6b5e3a81ebf062484024a2"
+    },
+    {
+      "id": "glossary-L0259",
+      "file": "docs/glossary.md",
+      "line": 259,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| AI 攻击准备 | AI Attack Staging | `topics/ai-attack-staging` |",
+      "cells": [
+        "AI 攻击准备",
+        "AI Attack Staging",
+        "`topics/ai-attack-staging`"
+      ],
+      "sha256": "fabade2c696731d2ecfcb6535630def4eb6146502c471242a3f1d210809d4adb"
+    },
+    {
+      "id": "glossary-L0260",
+      "file": "docs/glossary.md",
+      "line": 260,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| AI 模型访问 | AI Model Access | `topics/ai-model-access` |",
+      "cells": [
+        "AI 模型访问",
+        "AI Model Access",
+        "`topics/ai-model-access`"
+      ],
+      "sha256": "0e3dc1d6443290def5ee7c3ff36ca9c09e89f0923fd392af10c62950d56ff698"
+    },
+    {
+      "id": "glossary-L0261",
+      "file": "docs/glossary.md",
+      "line": 261,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 算法基础 | Algorithmic Foundations | `topics/algorithmic-foundations` |",
+      "cells": [
+        "算法基础",
+        "Algorithmic Foundations",
+        "`topics/algorithmic-foundations`"
+      ],
+      "sha256": "6feed86cb1ad77613212555b57a04459622a26596cfef305bff7e43bfbcc4dd9"
+    },
+    {
+      "id": "glossary-L0262",
+      "file": "docs/glossary.md",
+      "line": 262,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 算法策略 | Algorithmic Strategies | `topics/algorithmic-strategies` |",
+      "cells": [
+        "算法策略",
+        "Algorithmic Strategies",
+        "`topics/algorithmic-strategies`"
+      ],
+      "sha256": "b3850c926a2400ed98a3972b1e6f84a990bbb252e7fe6722378b595f9cc52350"
+    },
+    {
+      "id": "glossary-L0263",
+      "file": "docs/glossary.md",
+      "line": 263,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 算法 | Algorithms | `topics/algorithms-software-development-fundamentals` |",
+      "cells": [
+        "算法",
+        "Algorithms",
+        "`topics/algorithms-software-development-fundamentals`"
+      ],
+      "sha256": "b0e8fbd3d9c31086f8b173cc63bf998dcb1072e1c1451d751ae1984a54149212"
+    },
+    {
+      "id": "glossary-L0264",
+      "file": "docs/glossary.md",
+      "line": 264,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 并行与分布式算法 | Algorithms | `topics/algorithms` |",
+      "cells": [
+        "并行与分布式算法",
+        "Algorithms",
+        "`topics/algorithms`"
+      ],
+      "sha256": "2d257fe05fa0797c4aa899f9bd9dd92e8b6db6d40c529f0e8c3e03b26fde7c3c"
+    },
+    {
+      "id": "glossary-L0265",
+      "file": "docs/glossary.md",
+      "line": 265,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| API 与 Web 服务 | API and Web Service | `topics/api-and-web-service` |",
+      "cells": [
+        "API 与 Web 服务",
+        "API and Web Service",
+        "`topics/api-and-web-service`"
+      ],
+      "sha256": "4e3ac7b6c4a39bc30966f296194786a65a6d039e99057eaa40ad9eaab5f2e5f5"
+    },
+    {
+      "id": "glossary-L0266",
+      "file": "docs/glossary.md",
+      "line": 266,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 应用层 | Application Layer | `topics/application-layer` |",
+      "cells": [
+        "应用层",
+        "Application Layer",
+        "`topics/application-layer`"
+      ],
+      "sha256": "878703dcb416a9d042fe3a56dc2a9e8c2d5c8cf241decd69c583f0a64201e2f4"
+    },
+    {
+      "id": "glossary-L0267",
+      "file": "docs/glossary.md",
+      "line": 267,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 应用与社会影响 | Applications and Societal Impact | `topics/applications-and-societal-impact` |",
+      "cells": [
+        "应用与社会影响",
+        "Applications and Societal Impact",
+        "`topics/applications-and-societal-impact`"
+      ],
+      "sha256": "ade41b641ea71d4341037066be81507f4cd5ddeec0cc00636d78eeed39607998"
+    },
+    {
+      "id": "glossary-L0268",
+      "file": "docs/glossary.md",
+      "line": 268,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 渲染应用与技术 | Applied Rendering and Techniques | `topics/applied-rendering-and-techniques` |",
+      "cells": [
+        "渲染应用与技术",
+        "Applied Rendering and Techniques",
+        "`topics/applied-rendering-and-techniques`"
+      ],
+      "sha256": "a181fdc905557796807fb1dd93397031e12cc95618cf1c7603ae87d4de423432"
+    },
+    {
+      "id": "glossary-L0269",
+      "file": "docs/glossary.md",
+      "line": 269,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 体系结构与组织 | Architecture and Organization | `topics/architecture-and-organization` |",
+      "cells": [
+        "体系结构与组织",
+        "Architecture and Organization",
+        "`topics/architecture-and-organization`"
+      ],
+      "sha256": "c7befde2d9af733843d5556da2da8449fc3a53fba6f65f3c0cb55ec10485cce7"
+    },
+    {
+      "id": "glossary-L0270",
+      "file": "docs/glossary.md",
+      "line": 270,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 面向切面程序设计 | Aspect-Oriented Programming | `topics/aspect-oriented-programming` |",
+      "cells": [
+        "面向切面程序设计",
+        "Aspect-Oriented Programming",
+        "`topics/aspect-oriented-programming`"
+      ],
+      "sha256": "b025516087e7bd7fab01c5e187ede54b757b1afc9de7849d16a1b1143d76e079"
+    },
+    {
+      "id": "glossary-L0271",
+      "file": "docs/glossary.md",
+      "line": 271,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 汇编级机器组织 | Assembly Level Machine Organization | `topics/assembly-level-machine-organization` |",
+      "cells": [
+        "汇编级机器组织",
+        "Assembly Level Machine Organization",
+        "`topics/assembly-level-machine-organization`"
+      ],
+      "sha256": "b1de664f8fc27b34d0d2b74246f0ce5cd3c08133f6a18ec0cec62f3ff2421b1f"
+    },
+    {
+      "id": "glossary-L0272",
+      "file": "docs/glossary.md",
+      "line": 272,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 身份认证 | Authentication | `topics/authentication` |",
+      "cells": [
+        "身份认证",
+        "Authentication",
+        "`topics/authentication`"
+      ],
+      "sha256": "5ae6e733c68950a896c2f173c0a6a4535b731b1c69f520e0d86c86497aaea7df"
+    },
+    {
+      "id": "glossary-L0273",
+      "file": "docs/glossary.md",
+      "line": 273,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 授权 | Authorization | `topics/authorization` |",
+      "cells": [
+        "授权",
+        "Authorization",
+        "`topics/authorization`"
+      ],
+      "sha256": "26343e4e68f2509556c8db2ddab6574086a28dd825e210562fae62711ad617cd"
+    },
+    {
+      "id": "glossary-L0274",
+      "file": "docs/glossary.md",
+      "line": 274,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 基本概念 | Basic Concepts | `topics/basic-concepts` |",
+      "cells": [
+        "基本概念",
+        "Basic Concepts",
+        "`topics/basic-concepts`"
+      ],
+      "sha256": "0d78555880cfb1f2a9d83ca1a8f257516e417c62ac3cce3fba4fb2aaff0258c7"
+    },
+    {
+      "id": "glossary-L0275",
+      "file": "docs/glossary.md",
+      "line": 275,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 速查表 | Cheat sheet | `forms/cheat-sheet` |",
+      "cells": [
+        "速查表",
+        "Cheat sheet",
+        "`forms/cheat-sheet`"
+      ],
+      "sha256": "580926738a9a713fa07fe598503dbc8fddb983a5e04df18f78e4cdde0ca3ff60"
+    },
+    {
+      "id": "glossary-L0276",
+      "file": "docs/glossary.md",
+      "line": 276,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 代码生成 | Code Generation | `topics/code-generation` |",
+      "cells": [
+        "代码生成",
+        "Code Generation",
+        "`topics/code-generation`"
+      ],
+      "sha256": "e7023b64d2e4cd0655be31f20e781c6a1f0710578aaf9101cb0bf8e2126a71e4"
+    },
+    {
+      "id": "glossary-L0277",
+      "file": "docs/glossary.md",
+      "line": 277,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 收集 | Collection | `topics/collection-artificial-intelligence`, `topics/collection` |",
+      "cells": [
+        "收集",
+        "Collection",
+        "`topics/collection-artificial-intelligence`, `topics/collection`"
+      ],
+      "sha256": "907ab092143929ee17045a9b855abd8431b6eb1fd40d2c42f72842d78593ac2b"
+    },
+    {
+      "id": "glossary-L0278",
+      "file": "docs/glossary.md",
+      "line": 278,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 命令与控制 | Command and Control | `topics/command-and-control-artificial-intelligence`, `topics/command-and-control` |",
+      "cells": [
+        "命令与控制",
+        "Command and Control",
+        "`topics/command-and-control-artificial-intelligence`, `topics/command-and-control`"
+      ],
+      "sha256": "3bcad3d51a66be02412c0b411dbd3202caebcedb5cc0b078982ac9d48eae37de"
+    },
+    {
+      "id": "glossary-L0279",
+      "file": "docs/glossary.md",
+      "line": 279,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 共同方面与共同关注点 | Common Aspects/Shared Concerns | `topics/common-aspects-shared-concerns` |",
+      "cells": [
+        "共同方面与共同关注点",
+        "Common Aspects/Shared Concerns",
+        "`topics/common-aspects-shared-concerns`"
+      ],
+      "sha256": "378965eda7daa663d9e43384c9305a9d3e88b0ef4d7c2257ded0bb330a25f3e4"
+    },
+    {
+      "id": "glossary-L0280",
+      "file": "docs/glossary.md",
+      "line": 280,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 沟通 | Communication | `topics/communication-society-ethics-and-the-profession` |",
+      "cells": [
+        "沟通",
+        "Communication",
+        "`topics/communication-society-ethics-and-the-profession`"
+      ],
+      "sha256": "c67544137f2d0fb4b1e0275248ba69945ee6ad19198d6bd99d6c89199502f0a8"
+    },
+    {
+      "id": "glossary-L0281",
+      "file": "docs/glossary.md",
+      "line": 281,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 通信 | Communication | `topics/communication` |",
+      "cells": [
+        "通信",
+        "Communication",
+        "`topics/communication`"
+      ],
+      "sha256": "e3d2b137275be38f9a80bb33d87556d8896188996c838f5f9421404ea84f7c25"
+    },
+    {
+      "id": "glossary-L0282",
+      "file": "docs/glossary.md",
+      "line": 282,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 编译器语义分析 | Compiler Semantic Analysis | `topics/compiler-semantic-analysis` |",
+      "cells": [
+        "编译器语义分析",
+        "Compiler Semantic Analysis",
+        "`topics/compiler-semantic-analysis`"
+      ],
+      "sha256": "24ff431815c33cddffd98185d881eff2f3d6e1ed1f082f6b23256c71880b0647"
+    },
+    {
+      "id": "glossary-L0283",
+      "file": "docs/glossary.md",
+      "line": 283,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 复杂度 | Complexity | `topics/complexity` |",
+      "cells": [
+        "复杂度",
+        "Complexity",
+        "`topics/complexity`"
+      ],
+      "sha256": "526ee7d3337cdcc7d25cfb34d12738b400811f4c0ba62b318973d5616d0f0144"
+    },
+    {
+      "id": "glossary-L0284",
+      "file": "docs/glossary.md",
+      "line": 284,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 计算模型与形式语言 | Computational Models and Formal Languages | `topics/computational-models-and-formal-languages` |",
+      "cells": [
+        "计算模型与形式语言",
+        "Computational Models and Formal Languages",
+        "`topics/computational-models-and-formal-languages`"
+      ],
+      "sha256": "2022a64b3acda216dc6b06aeeb5efa59b371e7d01be6eed94bd5b7accf7255f1"
+    },
+    {
+      "id": "glossary-L0285",
+      "file": "docs/glossary.md",
+      "line": 285,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 计算机动画 | Computer Animation | `topics/computer-animation` |",
+      "cells": [
+        "计算机动画",
+        "Computer Animation",
+        "`topics/computer-animation`"
+      ],
+      "sha256": "fafadf1ae77da38524938eca2e5fa800bd373e9802c709edf526ca56760cef3b"
+    },
+    {
+      "id": "glossary-L0286",
+      "file": "docs/glossary.md",
+      "line": 286,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 计算基础 | Computing Foundations | `topics/computing-foundations` |",
+      "cells": [
+        "计算基础",
+        "Computing Foundations",
+        "`topics/computing-foundations`"
+      ],
+      "sha256": "2f40348d62094616ce5ae6a5aebfb1a7089b5f2797f8e1fb05c48ea368d8d899"
+    },
+    {
+      "id": "glossary-L0287",
+      "file": "docs/glossary.md",
+      "line": 287,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 计算史 | Computing History | `topics/computing-history` |",
+      "cells": [
+        "计算史",
+        "Computing History",
+        "`topics/computing-history`"
+      ],
+      "sha256": "693ce7f73ff1b68d6d0724b87627a0b70d804d1337534d68de131d5f2f8dfcb1"
+    },
+    {
+      "id": "glossary-L0288",
+      "file": "docs/glossary.md",
+      "line": 288,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 并发 | Concurrency | `topics/concurrency` |",
+      "cells": [
+        "并发",
+        "Concurrency",
+        "`topics/concurrency`"
+      ],
+      "sha256": "2c5860215d2a300e026ac8c9b75d12365c020247d2485cf8667ea172fd443deb"
+    },
+    {
+      "id": "glossary-L0289",
+      "file": "docs/glossary.md",
+      "line": 289,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 配置 | Configuration | `topics/configuration` |",
+      "cells": [
+        "配置",
+        "Configuration",
+        "`topics/configuration`"
+      ],
+      "sha256": "e60392f6d8eedb96e7358ee3fbdfaad45910177ed33b6e07717a543848e54c52"
+    },
+    {
+      "id": "glossary-L0290",
+      "file": "docs/glossary.md",
+      "line": 290,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 协调 | Coordination | `topics/coordination` |",
+      "cells": [
+        "协调",
+        "Coordination",
+        "`topics/coordination`"
+      ],
+      "sha256": "14532e238ec4b1fc130bc92774068b4082b6ab942dc2279b60f3fdd736a34198"
+    },
+    {
+      "id": "glossary-L0291",
+      "file": "docs/glossary.md",
+      "line": 291,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 数据库系统核心概念 | Core Database System Concepts | `topics/core-database-system-concepts` |",
+      "cells": [
+        "数据库系统核心概念",
+        "Core Database System Concepts",
+        "`topics/core-database-system-concepts`"
+      ],
+      "sha256": "d3f19402309f8b0502a549c16af76665ea84fff3ffa787940e438b7ea0b99e83"
+    },
+    {
+      "id": "glossary-L0292",
+      "file": "docs/glossary.md",
+      "line": 292,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 凭据访问 | Credential Access | `topics/credential-access-artificial-intelligence`, `topics/credential-access` |",
+      "cells": [
+        "凭据访问",
+        "Credential Access",
+        "`topics/credential-access-artificial-intelligence`, `topics/credential-access`"
+      ],
+      "sha256": "ee5c438690a89583d2876d8df0650db77b4b9ea4578c2d78f14314cc998b991e"
+    },
+    {
+      "id": "glossary-L0293",
+      "file": "docs/glossary.md",
+      "line": 293,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 数据分析 | Data Analytics | `topics/data-analytics` |",
+      "cells": [
+        "数据分析",
+        "Data Analytics",
+        "`topics/data-analytics`"
+      ],
+      "sha256": "7ca23683a1854cb6802997a6e9fbffab3698ddaf4c6cb5947b1aa5543e52b7bc"
+    },
+    {
+      "id": "glossary-L0294",
+      "file": "docs/glossary.md",
+      "line": 294,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 数据建模 | Data Modeling | `topics/data-modeling` |",
+      "cells": [
+        "数据建模",
+        "Data Modeling",
+        "`topics/data-modeling`"
+      ],
+      "sha256": "9bb95db1b2d7c9159096f00e0cd1c0fcb23e72cb4f03e705527eb20e1167bd6a"
+    },
+    {
+      "id": "glossary-L0295",
+      "file": "docs/glossary.md",
+      "line": 295,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 数据保护 | Data Protection | `topics/data-protection` |",
+      "cells": [
+        "数据保护",
+        "Data Protection",
+        "`topics/data-protection`"
+      ],
+      "sha256": "041fe7c45eb34d20a28cff5e13acdab1820e95aafce9c0194d95f107c4094f08"
+    },
+    {
+      "id": "glossary-L0296",
+      "file": "docs/glossary.md",
+      "line": 296,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 数据安全与隐私 | Data Security and Privacy | `topics/data-security-and-privacy` |",
+      "cells": [
+        "数据安全与隐私",
+        "Data Security and Privacy",
+        "`topics/data-security-and-privacy`"
+      ],
+      "sha256": "ed623d37fb439dd208d39ea41c5b852575be83a5b8b99e204aaafcbb8af7aacc"
+    },
+    {
+      "id": "glossary-L0297",
+      "file": "docs/glossary.md",
+      "line": 297,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 数据库管理系统内部机制 | DBMS Internals | `topics/dbms-internals` |",
+      "cells": [
+        "数据库管理系统内部机制",
+        "DBMS Internals",
+        "`topics/dbms-internals`"
+      ],
+      "sha256": "097fc7dd608038ef7611dc084c2f9764ce28d154409b3abf6b1997589fee4060"
+    },
+    {
+      "id": "glossary-L0298",
+      "file": "docs/glossary.md",
+      "line": 298,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 防御规避 | Defense Evasion | `topics/defense-evasion` |",
+      "cells": [
+        "防御规避",
+        "Defense Evasion",
+        "`topics/defense-evasion`"
+      ],
+      "sha256": "7d14ea82e4afa1cb73185279cc7d9961b6cf3bb4ef333b54987f473aaa984cca"
+    },
+    {
+      "id": "glossary-L0299",
+      "file": "docs/glossary.md",
+      "line": 299,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 防御削弱 | Defense Impairment | `topics/defense-impairment` |",
+      "cells": [
+        "防御削弱",
+        "Defense Impairment",
+        "`topics/defense-impairment`"
+      ],
+      "sha256": "0f17f5c01dacb414cf5d217547f8f5915fa05e541400102566ffd072c0199d54"
+    },
+    {
+      "id": "glossary-L0300",
+      "file": "docs/glossary.md",
+      "line": 300,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 程序设计语言的设计原则 | Design Principles of Programming Languages | `topics/design-principles-of-programming-languages` |",
+      "cells": [
+        "程序设计语言的设计原则",
+        "Design Principles of Programming Languages",
+        "`topics/design-principles-of-programming-languages`"
+      ],
+      "sha256": "207919ab0091f2125a0d8c57dc308029c2d5ab54171338d786765ef02caf74a3"
+    },
+    {
+      "id": "glossary-L0301",
+      "file": "docs/glossary.md",
+      "line": 301,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 设备管理 | Device management | `topics/device-management` |",
+      "cells": [
+        "设备管理",
+        "Device management",
+        "`topics/device-management`"
+      ],
+      "sha256": "02883336bea7d60cd84ea26056c4d42bf83de439625fb5efe89c4716bdb645f6"
+    },
+    {
+      "id": "glossary-L0302",
+      "file": "docs/glossary.md",
+      "line": 302,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 示意图 | Diagram | `forms/diagram` |",
+      "cells": [
+        "示意图",
+        "Diagram",
+        "`forms/diagram`"
+      ],
+      "sha256": "8032a9e1c664ff58842c4bae492147b9ff0c0278f85b014cb36c00c7109d3c01"
+    },
+    {
+      "id": "glossary-L0303",
+      "file": "docs/glossary.md",
+      "line": 303,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 数字逻辑与数字系统 | Digital Logic and Digital Systems | `topics/digital-logic-and-digital-systems` |",
+      "cells": [
+        "数字逻辑与数字系统",
+        "Digital Logic and Digital Systems",
+        "`topics/digital-logic-and-digital-systems`"
+      ],
+      "sha256": "5106dd1e3753e65c653a022abd6b9ef48f981149050d16178a617081a4a411da"
+    },
+    {
+      "id": "glossary-L0304",
+      "file": "docs/glossary.md",
+      "line": 304,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 发现 | Discovery | `topics/discovery-artificial-intelligence`, `topics/discovery` |",
+      "cells": [
+        "发现",
+        "Discovery",
+        "`topics/discovery-artificial-intelligence`, `topics/discovery`"
+      ],
+      "sha256": "69ef7c2103c3a146f90ea1ca240d0d48877fa780b83085e32323015d6d47f5e3"
+    },
+    {
+      "id": "glossary-L0305",
+      "file": "docs/glossary.md",
+      "line": 305,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 分布式数据库与云计算 | Distributed Databases/Cloud Computing | `topics/distributed-databases-cloud-computing` |",
+      "cells": [
+        "分布式数据库与云计算",
+        "Distributed Databases/Cloud Computing",
+        "`topics/distributed-databases-cloud-computing`"
+      ],
+      "sha256": "7c242059937df3f52d8e50266348bdaa9c96507974f792adaa71eabbcb17335e"
+    },
+    {
+      "id": "glossary-L0306",
+      "file": "docs/glossary.md",
+      "line": 306,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 多样性、公平、包容与可访问性 | Diversity, Equity, Inclusion, and Accessibility | `topics/diversity-equity-inclusion-and-accessibility` |",
+      "cells": [
+        "多样性、公平、包容与可访问性",
+        "Diversity, Equity, Inclusion, and Accessibility",
+        "`topics/diversity-equity-inclusion-and-accessibility`"
+      ],
+      "sha256": "3837d7113b22b65d55cc6bfb5ad857de22a5848fd7b21944717fb6d6afd19859"
+    },
+    {
+      "id": "glossary-L0307",
+      "file": "docs/glossary.md",
+      "line": 307,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 计算经济 | Economies of Computing | `topics/economies-of-computing` |",
+      "cells": [
+        "计算经济",
+        "Economies of Computing",
+        "`topics/economies-of-computing`"
+      ],
+      "sha256": "cce21972b8a7ccdcb6394c4a5c38d0d356c86469d1ff4daa6819351c73ce2da9"
+    },
+    {
+      "id": "glossary-L0308",
+      "file": "docs/glossary.md",
+      "line": 308,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 嵌入式平台 | Embedded Platforms | `topics/embedded-platforms` |",
+      "cells": [
+        "嵌入式平台",
+        "Embedded Platforms",
+        "`topics/embedded-platforms`"
+      ],
+      "sha256": "13771b3f5308d79a3f6d35d9cf429614752797d03051c9e58351727c67a1aacd"
+    },
+    {
+      "id": "glossary-L0309",
+      "file": "docs/glossary.md",
+      "line": 309,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 新兴主题 | Emerging Topics | `topics/emerging-topics` |",
+      "cells": [
+        "新兴主题",
+        "Emerging Topics",
+        "`topics/emerging-topics`"
+      ],
+      "sha256": "4660743b836c621be8975399923192ca52a4fe8c768d10febeb03d9f8fd97825"
+    },
+    {
+      "id": "glossary-L0310",
+      "file": "docs/glossary.md",
+      "line": 310,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 编码与净化 | Encoding and Sanitization | `topics/encoding-and-sanitization` |",
+      "cells": [
+        "编码与净化",
+        "Encoding and Sanitization",
+        "`topics/encoding-and-sanitization`"
+      ],
+      "sha256": "57dc27af70aa036a2855516fd5f4406b9dc9434fd71473027ef0cfce6d0189f1"
+    },
+    {
+      "id": "glossary-L0311",
+      "file": "docs/glossary.md",
+      "line": 311,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 工程基础 | Engineering Foundations | `topics/engineering-foundations` |",
+      "cells": [
+        "工程基础",
+        "Engineering Foundations",
+        "`topics/engineering-foundations`"
+      ],
+      "sha256": "3bf6f1a9bc9de9e6c5c55e05ecc2f6063cc223c6c9b83e0754d3443252f82f58"
+    },
+    {
+      "id": "glossary-L0312",
+      "file": "docs/glossary.md",
+      "line": 312,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 设计评估 | Evaluating the Design | `topics/evaluating-the-design` |",
+      "cells": [
+        "设计评估",
+        "Evaluating the Design",
+        "`topics/evaluating-the-design`"
+      ],
+      "sha256": "e74cb42fc32338f9d1fc217e4d459e6685f9b05805ad04406fe286b7f9376820"
+    },
+    {
+      "id": "glossary-L0313",
+      "file": "docs/glossary.md",
+      "line": 313,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 评估 | Evaluation | `topics/evaluation` |",
+      "cells": [
+        "评估",
+        "Evaluation",
+        "`topics/evaluation`"
+      ],
+      "sha256": "d964320e641fbc0480197b99d56f01ecd6c66386a9864b9f8e21df9a748d2135"
+    },
+    {
+      "id": "glossary-L0314",
+      "file": "docs/glossary.md",
+      "line": 314,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 事件驱动与响应式程序设计 | Event-Driven and Reactive Programming | `topics/event-driven-and-reactive-programming` |",
+      "cells": [
+        "事件驱动与响应式程序设计",
+        "Event-Driven and Reactive Programming",
+        "`topics/event-driven-and-reactive-programming`"
+      ],
+      "sha256": "ac2ff620aaad89a383c6cca49b7a7de6f9dca9f75e023c7fe9232b311ecef507"
+    },
+    {
+      "id": "glossary-L0315",
+      "file": "docs/glossary.md",
+      "line": 315,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 考试 | Exam | `forms/exam` |",
+      "cells": [
+        "考试",
+        "Exam",
+        "`forms/exam`"
+      ],
+      "sha256": "8ddd5bf25d87a4225a3001c6b2bbfce8a28827a8f7076801449bacf6ca42070d"
+    },
+    {
+      "id": "glossary-L0316",
+      "file": "docs/glossary.md",
+      "line": 316,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 执行 | Execution | `topics/execution-artificial-intelligence`, `topics/execution` |",
+      "cells": [
+        "执行",
+        "Execution",
+        "`topics/execution-artificial-intelligence`, `topics/execution`"
+      ],
+      "sha256": "11523400a23fd4e902e1ab0471898e0a1c8000bd93bb8f23bbdd6fe67ff68427"
+    },
+    {
+      "id": "glossary-L0317",
+      "file": "docs/glossary.md",
+      "line": 317,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 练习 | Exercise | `forms/exercise` |",
+      "cells": [
+        "练习",
+        "Exercise",
+        "`forms/exercise`"
+      ],
+      "sha256": "6a1dc0b458d3eef0e96c1fd747cfc382ba3ce10fec737a02d9a8dbd0105b2cc4"
+    },
+    {
+      "id": "glossary-L0318",
+      "file": "docs/glossary.md",
+      "line": 318,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 数据外传 | Exfiltration | `topics/exfiltration-artificial-intelligence`, `topics/exfiltration` |",
+      "cells": [
+        "数据外传",
+        "Exfiltration",
+        "`topics/exfiltration-artificial-intelligence`, `topics/exfiltration`"
+      ],
+      "sha256": "07a9280082d663c1673037a0363bb2d4c2e9e792fe94f7802a75f0213834c264"
+    },
+    {
+      "id": "glossary-L0319",
+      "file": "docs/glossary.md",
+      "line": 319,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 实验 | Experiment | `forms/experiment` |",
+      "cells": [
+        "实验",
+        "Experiment",
+        "`forms/experiment`"
+      ],
+      "sha256": "e64bd4a57a724821708abd68ccc54f978e5baed50084e35e084b53c878492f6c"
+    },
+    {
+      "id": "glossary-L0320",
+      "file": "docs/glossary.md",
+      "line": 320,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 容错 | Fault tolerance | `topics/fault-tolerance` |",
+      "cells": [
+        "容错",
+        "Fault tolerance",
+        "`topics/fault-tolerance`"
+      ],
+      "sha256": "dca19582da3ed6ab7350e925fcb8259cc7b56086171f7961568271d157183212"
+    },
+    {
+      "id": "glossary-L0321",
+      "file": "docs/glossary.md",
+      "line": 321,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 图像 | Figure | `forms/figure` |",
+      "cells": [
+        "图像",
+        "Figure",
+        "`forms/figure`"
+      ],
+      "sha256": "ad68e042309ab073e0eda7a5b0ef9f3e1b72d864c5d4cb83fc61b3b8d1416d4b"
+    },
+    {
+      "id": "glossary-L0322",
+      "file": "docs/glossary.md",
+      "line": 322,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 文件处理 | File Handling | `topics/file-handling` |",
+      "cells": [
+        "文件处理",
+        "File Handling",
+        "`topics/file-handling`"
+      ],
+      "sha256": "98532b0899117100120748e8d82d193e118f84d5f81a3567ee3608b811a27a9d"
+    },
+    {
+      "id": "glossary-L0323",
+      "file": "docs/glossary.md",
+      "line": 323,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 文件系统接口与实现 | File Systems API and Implementation | `topics/file-systems-api-and-implementation` |",
+      "cells": [
+        "文件系统接口与实现",
+        "File Systems API and Implementation",
+        "`topics/file-systems-api-and-implementation`"
+      ],
+      "sha256": "598e5f590cf3e7f26e46689ec82917b09e33da6e286b885c193b3ba5176a37db"
+    },
+    {
+      "id": "glossary-L0324",
+      "file": "docs/glossary.md",
+      "line": 324,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 形式化开发方法 | Formal Development Methodologies | `topics/formal-development-methodologies` |",
+      "cells": [
+        "形式化开发方法",
+        "Formal Development Methodologies",
+        "`topics/formal-development-methodologies`"
+      ],
+      "sha256": "229750fbdb4537493a2900382c5a545c00e122585fb5147be48853715b2a26a5"
+    },
+    {
+      "id": "glossary-L0325",
+      "file": "docs/glossary.md",
+      "line": 325,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 形式语义 | Formal Semantics | `topics/formal-semantics` |",
+      "cells": [
+        "形式语义",
+        "Formal Semantics",
+        "`topics/formal-semantics`"
+      ],
+      "sha256": "b05ef5e5288e7fc1795d0766169ef7258bdd739be0248f9d1cda819136e0b674"
+    },
+    {
+      "id": "glossary-L0326",
+      "file": "docs/glossary.md",
+      "line": 326,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 基础数据结构与算法 | Foundational Data Structures and Algorithms | `topics/foundational-data-structures-and-algorithms` |",
+      "cells": [
+        "基础数据结构与算法",
+        "Foundational Data Structures and Algorithms",
+        "`topics/foundational-data-structures-and-algorithms`"
+      ],
+      "sha256": "d4d5ffe7f5c432e99973c76979c952a737c740c9f5b1d598d9bb13b363bef23c"
+    },
+    {
+      "id": "glossary-L0327",
+      "file": "docs/glossary.md",
+      "line": 327,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 安全基础 | Foundational Security | `topics/foundational-security` |",
+      "cells": [
+        "安全基础",
+        "Foundational Security",
+        "`topics/foundational-security`"
+      ],
+      "sha256": "eb9803d5e54f49ddd656e3d7cfa0e5867936cd5126a1b1f1258f29f36f416557"
+    },
+    {
+      "id": "glossary-L0328",
+      "file": "docs/glossary.md",
+      "line": 328,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 程序设计语言基础 | Foundations of Programming Languages | `topics/foundations-of-programming-languages` |",
+      "cells": [
+        "程序设计语言基础",
+        "Foundations of Programming Languages",
+        "`topics/foundations-of-programming-languages`"
+      ],
+      "sha256": "fb71119cf83f500711ff1898c96bdecf36d557181e9d0b748ade3e622265cae8"
+    },
+    {
+      "id": "glossary-L0329",
+      "file": "docs/glossary.md",
+      "line": 329,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 功能组织 | Functional Organization | `topics/functional-organization` |",
+      "cells": [
+        "功能组织",
+        "Functional Organization",
+        "`topics/functional-organization`"
+      ],
+      "sha256": "549f86f6b4a26c1dadad3713299686d96b1a30aa087334e1bf3cf0ad54399eae"
+    },
+    {
+      "id": "glossary-L0330",
+      "file": "docs/glossary.md",
+      "line": 330,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 函数式程序设计 | Functional Programming | `topics/functional-programming` |",
+      "cells": [
+        "函数式程序设计",
+        "Functional Programming",
+        "`topics/functional-programming`"
+      ],
+      "sha256": "485f41c0ac7fd157fce6212be2b14c907df9aaaa3dcbac1a5432d3805211c4b3"
+    },
+    {
+      "id": "glossary-L0331",
+      "file": "docs/glossary.md",
+      "line": 331,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 基本概念 | Fundamental Concepts | `topics/fundamental-concepts` |",
+      "cells": [
+        "基本概念",
+        "Fundamental Concepts",
+        "`topics/fundamental-concepts`"
+      ],
+      "sha256": "abc0e16166ee95aba3692e4328f0dce3462747c51af4813b3a2d3c6f1fe4559d"
+    },
+    {
+      "id": "glossary-L0332",
+      "file": "docs/glossary.md",
+      "line": 332,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 基础数据结构 | Fundamental Data Structures | `topics/fundamental-data-structures` |",
+      "cells": [
+        "基础数据结构",
+        "Fundamental Data Structures",
+        "`topics/fundamental-data-structures`"
+      ],
+      "sha256": "288ef8afc43bbbd85f99661585ae326c2a274ab02195f7bb1d91801b7c095962"
+    },
+    {
+      "id": "glossary-L0333",
+      "file": "docs/glossary.md",
+      "line": 333,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 基本问题 | Fundamental Issues | `topics/fundamental-issues` |",
+      "cells": [
+        "基本问题",
+        "Fundamental Issues",
+        "`topics/fundamental-issues`"
+      ],
+      "sha256": "1a7aea8fda0c57a825e7dba11cd9613f518bbb47f36b499bae2a75e888bad771"
+    },
+    {
+      "id": "glossary-L0334",
+      "file": "docs/glossary.md",
+      "line": 334,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 知识表示与推理基础 | Fundamental Knowledge Representation and Reasoning | `topics/fundamental-knowledge-representation-and-reasoning` |",
+      "cells": [
+        "知识表示与推理基础",
+        "Fundamental Knowledge Representation and Reasoning",
+        "`topics/fundamental-knowledge-representation-and-reasoning`"
+      ],
+      "sha256": "805860ea5c770fbd50d751be2ed7d5bccba3c4e61e3b61cd50a7be7f3470fd68"
+    },
+    {
+      "id": "glossary-L0335",
+      "file": "docs/glossary.md",
+      "line": 335,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 程序设计基本概念与实践 | Fundamental Programming Concepts and Practices | `topics/fundamental-programming-concepts-and-practices` |",
+      "cells": [
+        "程序设计基本概念与实践",
+        "Fundamental Programming Concepts and Practices",
+        "`topics/fundamental-programming-concepts-and-practices`"
+      ],
+      "sha256": "fea2608a6a5b4faf39b9e2a56fe75f332535b1fbadf6139a8c2de81127f1011c"
+    },
+    {
+      "id": "glossary-L0336",
+      "file": "docs/glossary.md",
+      "line": 336,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 网络基础 | Fundamentals | `topics/fundamentals` |",
+      "cells": [
+        "网络基础",
+        "Fundamentals",
+        "`topics/fundamentals`"
+      ],
+      "sha256": "576a03c38f87eb2ec7508aa878e0b0ea55ea54ad862d688e93fa49f0190aba83"
+    },
+    {
+      "id": "glossary-L0337",
+      "file": "docs/glossary.md",
+      "line": 337,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 游戏平台 | Game Platforms | `topics/game-platforms` |",
+      "cells": [
+        "游戏平台",
+        "Game Platforms",
+        "`topics/game-platforms`"
+      ],
+      "sha256": "225a41cef7b7239fcfae0a433dd2b57fb93d90e0225234674111915bfa4253d1"
+    },
+    {
+      "id": "glossary-L0338",
+      "file": "docs/glossary.md",
+      "line": 338,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 几何建模 | Geometric Modeling | `topics/geometric-modeling` |",
+      "cells": [
+        "几何建模",
+        "Geometric Modeling",
+        "`topics/geometric-modeling`"
+      ],
+      "sha256": "bb1adb95535dbbe16ea835df112b74bb5f7925f86645fb2306098ba4f02a8766"
+    },
+    {
+      "id": "glossary-L0339",
+      "file": "docs/glossary.md",
+      "line": 339,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 图表 | Graph | `forms/graph` |",
+      "cells": [
+        "图表",
+        "Graph",
+        "`forms/graph`"
+      ],
+      "sha256": "41744bb9611814076984e361456f337aec353333734a9496d68859e709aa7448"
+    },
+    {
+      "id": "glossary-L0340",
+      "file": "docs/glossary.md",
+      "line": 340,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 图形学与互动技术 | Graphics and Interactive Techniques | `topics/graphics-and-interactive-techniques` |",
+      "cells": [
+        "图形学与互动技术",
+        "Graphics and Interactive Techniques",
+        "`topics/graphics-and-interactive-techniques`"
+      ],
+      "sha256": "e56eb0e23c45d9ea33c782a108cb88c4eb890f1cc8f7361e448c43a175839af0"
+    },
+    {
+      "id": "glossary-L0341",
+      "file": "docs/glossary.md",
+      "line": 341,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 异构体系结构 | Heterogeneous Architectures | `topics/heterogeneous-architectures` |",
+      "cells": [
+        "异构体系结构",
+        "Heterogeneous Architectures",
+        "`topics/heterogeneous-architectures`"
+      ],
+      "sha256": "f79cd9e10e24f56921a81efe30686a2852e6ec9444a31d2f86f94c0ef69fe1aa"
+    },
+    {
+      "id": "glossary-L0342",
+      "file": "docs/glossary.md",
+      "line": 342,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 人机交互 | Human-Computer Interaction | `topics/human-computer-interaction` |",
+      "cells": [
+        "人机交互",
+        "Human-Computer Interaction",
+        "`topics/human-computer-interaction`"
+      ],
+      "sha256": "ba6af8e38c6c4853ebde2e1de2adcb771b202b4876a5de5b7a3c459d59115d11"
+    },
+    {
+      "id": "glossary-L0343",
+      "file": "docs/glossary.md",
+      "line": 343,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 图像处理 | Image Processing | `topics/image-processing` |",
+      "cells": [
+        "图像处理",
+        "Image Processing",
+        "`topics/image-processing`"
+      ],
+      "sha256": "7aab1cef80a54862c861b7563666a340e32e60f82ce62f8ba576ff31ba5640ec"
+    },
+    {
+      "id": "glossary-L0344",
+      "file": "docs/glossary.md",
+      "line": 344,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 沉浸 | Immersion | `topics/immersion` |",
+      "cells": [
+        "沉浸",
+        "Immersion",
+        "`topics/immersion`"
+      ],
+      "sha256": "b9b1ec091c2efee5bc1c030ec38f698ff15f2699d68c4d545d39ff0298b3e885"
+    },
+    {
+      "id": "glossary-L0345",
+      "file": "docs/glossary.md",
+      "line": 345,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 影响 | Impact | `topics/impact-artificial-intelligence`, `topics/impact` |",
+      "cells": [
+        "影响",
+        "Impact",
+        "`topics/impact-artificial-intelligence`, `topics/impact`"
+      ],
+      "sha256": "925fe2b1a07e546cd8dc558fcde1f60f345eb5b0a53d5dd67fde445dac0cba53"
+    },
+    {
+      "id": "glossary-L0346",
+      "file": "docs/glossary.md",
+      "line": 346,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 访问控制不当 | Improper Access Control | `topics/improper-access-control` |",
+      "cells": [
+        "访问控制不当",
+        "Improper Access Control",
+        "`topics/improper-access-control`"
+      ],
+      "sha256": "c7535685891b21aeeba60ac2e0e13e90f1af994321f5208797b0f106dfa8d020"
+    },
+    {
+      "id": "glossary-L0347",
+      "file": "docs/glossary.md",
+      "line": 347,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 编码规范遵循不当 | Improper Adherence to Coding Standards | `topics/improper-adherence-to-coding-standards` |",
+      "cells": [
+        "编码规范遵循不当",
+        "Improper Adherence to Coding Standards",
+        "`topics/improper-adherence-to-coding-standards`"
+      ],
+      "sha256": "6563ee9b7558404110d9933d83b5f32f7690719183445ab9d11f9044b4563d55"
+    },
+    {
+      "id": "glossary-L0348",
+      "file": "docs/glossary.md",
+      "line": 348,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 异常状况检查或处理不当 | Improper Check or Handling of Exceptional Conditions | `topics/improper-check-or-handling-of-exceptional-conditions` |",
+      "cells": [
+        "异常状况检查或处理不当",
+        "Improper Check or Handling of Exceptional Conditions",
+        "`topics/improper-check-or-handling-of-exceptional-conditions`"
+      ],
+      "sha256": "a9437885c4250f287d28fdb2d32a004af30883374ee52d6c809e1c0b10f15ee0"
+    },
+    {
+      "id": "glossary-L0349",
+      "file": "docs/glossary.md",
+      "line": 349,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 资源生命周期控制不当 | Improper Control of a Resource Through its Lifetime | `topics/improper-control-of-a-resource-through-its-lifetime` |",
+      "cells": [
+        "资源生命周期控制不当",
+        "Improper Control of a Resource Through its Lifetime",
+        "`topics/improper-control-of-a-resource-through-its-lifetime`"
+      ],
+      "sha256": "5023064d684f9d3b1386d5163d979a9e4dacce4ddddfd3d459859a0beda8aad2"
+    },
+    {
+      "id": "glossary-L0350",
+      "file": "docs/glossary.md",
+      "line": 350,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 多个行为正确实体间的交互不当 | Improper Interaction Between Multiple Correctly-Behaving Entities | `topics/improper-interaction-between-multiple-correctly-behaving-entities` |",
+      "cells": [
+        "多个行为正确实体间的交互不当",
+        "Improper Interaction Between Multiple Correctly-Behaving Entities",
+        "`topics/improper-interaction-between-multiple-correctly-behaving-entities`"
+      ],
+      "sha256": "b084205febfd10a9a131ec63f6ed7e74e99fc24adfb6ff5d08c5effda21ff055"
+    },
+    {
+      "id": "glossary-L0351",
+      "file": "docs/glossary.md",
+      "line": 351,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 中和处理不当 | Improper Neutralization | `topics/improper-neutralization` |",
+      "cells": [
+        "中和处理不当",
+        "Improper Neutralization",
+        "`topics/improper-neutralization`"
+      ],
+      "sha256": "9afc36b973a9c618deeaafca8fc9a7644aaca148d32cf73818999c3466afa7b7"
+    },
+    {
+      "id": "glossary-L0352",
+      "file": "docs/glossary.md",
+      "line": 352,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 计算错误 | Incorrect Calculation | `topics/incorrect-calculation` |",
+      "cells": [
+        "计算错误",
+        "Incorrect Calculation",
+        "`topics/incorrect-calculation`"
+      ],
+      "sha256": "1de4b98096d597912aec7fb2eba91d3bf84b7c362b7dfc5bd2f7fc75ba8c1a86"
+    },
+    {
+      "id": "glossary-L0353",
+      "file": "docs/glossary.md",
+      "line": 353,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 比较错误 | Incorrect Comparison | `topics/incorrect-comparison` |",
+      "cells": [
+        "比较错误",
+        "Incorrect Comparison",
+        "`topics/incorrect-comparison`"
+      ],
+      "sha256": "056d54cff18cdd93d7379e77f062a7365cfb9d893ea46da9d602f3f7376ffbf6"
+    },
+    {
+      "id": "glossary-L0354",
+      "file": "docs/glossary.md",
+      "line": 354,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 索引 | Index | `forms/index` |",
+      "cells": [
+        "索引",
+        "Index",
+        "`forms/index`"
+      ],
+      "sha256": "9213e0e4d6659c7e7442c67b51264e2b77ef3131b5110bdd888d6bc1ae3e13ef"
+    },
+    {
+      "id": "glossary-L0355",
+      "file": "docs/glossary.md",
+      "line": 355,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 初始访问 | Initial Access | `topics/initial-access-artificial-intelligence`, `topics/initial-access` |",
+      "cells": [
+        "初始访问",
+        "Initial Access",
+        "`topics/initial-access-artificial-intelligence`, `topics/initial-access`"
+      ],
+      "sha256": "586e9360d7f23bf9f11551fa869e5f5ccf36cfff336e7ae8ecbff666de134a1f"
+    },
+    {
+      "id": "glossary-L0356",
+      "file": "docs/glossary.md",
+      "line": 356,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 控制流管理不足 | Insufficient Control Flow Management | `topics/insufficient-control-flow-management` |",
+      "cells": [
+        "控制流管理不足",
+        "Insufficient Control Flow Management",
+        "`topics/insufficient-control-flow-management`"
+      ],
+      "sha256": "6efa550c511f26894ab2aea99e80e9a1900713c7375a630f8939d2cebce31dd4"
+    },
+    {
+      "id": "glossary-L0357",
+      "file": "docs/glossary.md",
+      "line": 357,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 知识产权 | Intellectual Property | `topics/intellectual-property` |",
+      "cells": [
+        "知识产权",
+        "Intellectual Property",
+        "`topics/intellectual-property`"
+      ],
+      "sha256": "ce17f2f1e68076302cad2e95604724b4e2ca1e656400f2ce4d9639b40473bea1"
+    },
+    {
+      "id": "glossary-L0358",
+      "file": "docs/glossary.md",
+      "line": 358,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 交互 | Interaction | `topics/interaction` |",
+      "cells": [
+        "交互",
+        "Interaction",
+        "`topics/interaction`"
+      ],
+      "sha256": "9dd0dc60ab49e40900b795b89c2a1bd7a0ee830d7cee97f7f6ead43fd8267657"
+    },
+    {
+      "id": "glossary-L0359",
+      "file": "docs/glossary.md",
+      "line": 359,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 交互式计算平台 | Interactive Computing Platforms | `topics/interactive-computing-platforms` |",
+      "cells": [
+        "交互式计算平台",
+        "Interactive Computing Platforms",
+        "`topics/interactive-computing-platforms`"
+      ],
+      "sha256": "540582eef34fa860f4fe3aaf0b066748ea2eb36386a38efcbed025f0363e9514"
+    },
+    {
+      "id": "glossary-L0360",
+      "file": "docs/glossary.md",
+      "line": 360,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 接口与通信 | Interfacing and Communication | `topics/interfacing-and-communication` |",
+      "cells": [
+        "接口与通信",
+        "Interfacing and Communication",
+        "`topics/interfacing-and-communication`"
+      ],
+      "sha256": "9b720c7c91979479a736a10da728256615e4f19d2e360d5a36dcff3d03f1bbad"
+    },
+    {
+      "id": "glossary-L0361",
+      "file": "docs/glossary.md",
+      "line": 361,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 网际层 | Internet Layer | `topics/internet-layer` |",
+      "cells": [
+        "网际层",
+        "Internet Layer",
+        "`topics/internet-layer`"
+      ],
+      "sha256": "6e66ba815ace4ac267a6115d298ef14033b251799c64ee8492871a59490a9544"
+    },
+    {
+      "id": "glossary-L0362",
+      "file": "docs/glossary.md",
+      "line": 362,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 语言语用 | Language Pragmatics | `topics/language-pragmatics` |",
+      "cells": [
+        "语言语用",
+        "Language Pragmatics",
+        "`topics/language-pragmatics`"
+      ],
+      "sha256": "45e63a69088dc161c5cbbadd98f4b6c119d405b33c7b430150fe3b709979e5dc"
+    },
+    {
+      "id": "glossary-L0363",
+      "file": "docs/glossary.md",
+      "line": 363,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 语言翻译与执行 | Language Translation and Execution | `topics/language-translation-and-execution` |",
+      "cells": [
+        "语言翻译与执行",
+        "Language Translation and Execution",
+        "`topics/language-translation-and-execution`"
+      ],
+      "sha256": "bc835141d8a87aa71ee46e053deab9ab239947a93cc495798673bf38058caa80"
+    },
+    {
+      "id": "glossary-L0364",
+      "file": "docs/glossary.md",
+      "line": 364,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 横向移动 | Lateral Movement | `topics/lateral-movement-artificial-intelligence`, `topics/lateral-movement` |",
+      "cells": [
+        "横向移动",
+        "Lateral Movement",
+        "`topics/lateral-movement-artificial-intelligence`, `topics/lateral-movement`"
+      ],
+      "sha256": "2f6a0a4850cb928be2d2298f374d354498ab74791d7bae95f08132fe66b75997"
+    },
+    {
+      "id": "glossary-L0365",
+      "file": "docs/glossary.md",
+      "line": 365,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 讲授 | Lecture | `forms/lecture` |",
+      "cells": [
+        "讲授",
+        "Lecture",
+        "`forms/lecture`"
+      ],
+      "sha256": "f76f1ba0f286b6a2fc7e8d8cca1e80ffb505b4d17c8cc8f389488f76eb8cae11"
+    },
+    {
+      "id": "glossary-L0366",
+      "file": "docs/glossary.md",
+      "line": 366,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 链路层 | Link Layer | `topics/link-layer` |",
+      "cells": [
+        "链路层",
+        "Link Layer",
+        "`topics/link-layer`"
+      ],
+      "sha256": "7ad2286630be23f3c02b21b95dbee4b3fc7462a37f6f62ddb0ae76aae1227ba4"
+    },
+    {
+      "id": "glossary-L0367",
+      "file": "docs/glossary.md",
+      "line": 367,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 逻辑程序设计 | Logic Programming | `topics/logic-programming` |",
+      "cells": [
+        "逻辑程序设计",
+        "Logic Programming",
+        "`topics/logic-programming`"
+      ],
+      "sha256": "cbca1d728baf6cfb7b3173d765637f0885cc564cc39e1283c8386a69ff6ea842"
+    },
+    {
+      "id": "glossary-L0368",
+      "file": "docs/glossary.md",
+      "line": 368,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 逻辑表示与推理 | Logical Representation and Reasoning | `topics/logical-representation-and-reasoning` |",
+      "cells": [
+        "逻辑表示与推理",
+        "Logical Representation and Reasoning",
+        "`topics/logical-representation-and-reasoning`"
+      ],
+      "sha256": "5a87ba99c4e478d82b5ee2f619a369bd93542e243fcf4b7245b4843e615c10cc"
+    },
+    {
+      "id": "glossary-L0369",
+      "file": "docs/glossary.md",
+      "line": 369,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 机器级数据表示 | Machine-Level Data Representation | `topics/machine-level-data-representation` |",
+      "cells": [
+        "机器级数据表示",
+        "Machine-Level Data Representation",
+        "`topics/machine-level-data-representation`"
+      ],
+      "sha256": "03393a9a0b833298ecebc2fccae763b595060b846047feb3d0a41726648fa987"
+    },
+    {
+      "id": "glossary-L0370",
+      "file": "docs/glossary.md",
+      "line": 370,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 数学和统计基础 | Mathematical and Statistical Foundations | `topics/mathematical-and-statistical-foundations` |",
+      "cells": [
+        "数学和统计基础",
+        "Mathematical and Statistical Foundations",
+        "`topics/mathematical-and-statistical-foundations`"
+      ],
+      "sha256": "d1e556493e595dae52cbe1524cb5e454b645c1e6dc97c501050d4db600bd3305"
+    },
+    {
+      "id": "glossary-L0371",
+      "file": "docs/glossary.md",
+      "line": 371,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 数学基础 | Mathematical Foundations | `topics/mathematical-foundations` |",
+      "cells": [
+        "数学基础",
+        "Mathematical Foundations",
+        "`topics/mathematical-foundations`"
+      ],
+      "sha256": "2a0c81f056c35dcc5c1cbcd8f294f343be3f6d82e08e4fd9070b2ff954b6f52a"
+    },
+    {
+      "id": "glossary-L0372",
+      "file": "docs/glossary.md",
+      "line": 372,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 存储层次 | Memory Hierarchy | `topics/memory-hierarchy` |",
+      "cells": [
+        "存储层次",
+        "Memory Hierarchy",
+        "`topics/memory-hierarchy`"
+      ],
+      "sha256": "664f59584b594dcd487bec3a66a9486bfba33231e224ca82b883053d9c200cb0"
+    },
+    {
+      "id": "glossary-L0373",
+      "file": "docs/glossary.md",
+      "line": 373,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 内存管理 | Memory Management | `topics/memory-management` |",
+      "cells": [
+        "内存管理",
+        "Memory Management",
+        "`topics/memory-management`"
+      ],
+      "sha256": "84bd6335d0fc1d2e0dfa213ee309f08c71b8cce562e3ff4910a62759d15a4c5a"
+    },
+    {
+      "id": "glossary-L0374",
+      "file": "docs/glossary.md",
+      "line": 374,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 伦理分析方法 | Methods for Ethical Analysis | `topics/methods-for-ethical-analysis` |",
+      "cells": [
+        "伦理分析方法",
+        "Methods for Ethical Analysis",
+        "`topics/methods-for-ethical-analysis`"
+      ],
+      "sha256": "1f979d0e1cce5a1df7e3d25dcf34bcbd164280633ac90488a3b694b59441956b"
+    },
+    {
+      "id": "glossary-L0375",
+      "file": "docs/glossary.md",
+      "line": 375,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 移动平台 | Mobile Platforms | `topics/mobile-platforms` |",
+      "cells": [
+        "移动平台",
+        "Mobile Platforms",
+        "`topics/mobile-platforms`"
+      ],
+      "sha256": "e7c803e190605a75dd0b1a3cbeadc8f5f33272deaacdecb989c620bf06a57e0e"
+    },
+    {
+      "id": "glossary-L0376",
+      "file": "docs/glossary.md",
+      "line": 376,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 移动性 | Mobility | `topics/mobility` |",
+      "cells": [
+        "移动性",
+        "Mobility",
+        "`topics/mobility`"
+      ],
+      "sha256": "b751aac5baadc21b20d82d028d3c2dced6ea896ec9cd46eac562ae76ad56a84d"
+    },
+    {
+      "id": "glossary-L0377",
+      "file": "docs/glossary.md",
+      "line": 377,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 叙述性文本 | Narrative text | `forms/narrative-text` |",
+      "cells": [
+        "叙述性文本",
+        "Narrative text",
+        "`forms/narrative-text`"
+      ],
+      "sha256": "1b9e35267e0f31e53e0d874acb79ea6d210db83d8b196c100e0554cfa53e2887"
+    },
+    {
+      "id": "glossary-L0378",
+      "file": "docs/glossary.md",
+      "line": 378,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 网络安全 | Network Security | `topics/network-security` |",
+      "cells": [
+        "网络安全",
+        "Network Security",
+        "`topics/network-security`"
+      ],
+      "sha256": "211a87342bfcc976835edb3fda73a009dac477f5838bb9ce023f3c0855ba974d"
+    },
+    {
+      "id": "glossary-L0379",
+      "file": "docs/glossary.md",
+      "line": 379,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 网络应用 | Networked Applications | `topics/networked-applications` |",
+      "cells": [
+        "网络应用",
+        "Networked Applications",
+        "`topics/networked-applications`"
+      ],
+      "sha256": "cab612264a2ef783300feea784a051939c1ce6e94e5351da06c032bc6ce4ee46"
+    },
+    {
+      "id": "glossary-L0380",
+      "file": "docs/glossary.md",
+      "line": 380,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 网络与通信 | Networking and Communication | `topics/networking-and-communication` |",
+      "cells": [
+        "网络与通信",
+        "Networking and Communication",
+        "`topics/networking-and-communication`"
+      ],
+      "sha256": "6b08c3536632e151aa46de6d954e9cdbe83a68ff85128f6c977b4dd1be20e1cd"
+    },
+    {
+      "id": "glossary-L0381",
+      "file": "docs/glossary.md",
+      "line": 381,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| NoSQL 系统 | NoSQL Systems | `topics/nosql-systems` |",
+      "cells": [
+        "NoSQL 系统",
+        "NoSQL Systems",
+        "`topics/nosql-systems`"
+      ],
+      "sha256": "2f78d57d74e3ace282988d2ceb75b0326c745c93328c93003871f38f7aa8fcc4"
+    },
+    {
+      "id": "glossary-L0382",
+      "file": "docs/glossary.md",
+      "line": 382,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| OAuth 与 OIDC | OAuth and OIDC | `topics/oauth-and-oidc` |",
+      "cells": [
+        "OAuth 与 OIDC",
+        "OAuth and OIDC",
+        "`topics/oauth-and-oidc`"
+      ],
+      "sha256": "6f6f04ded16a4a6cc2a452b127023da4a8ff108fce0e6128973f7f715f1fc37f"
+    },
+    {
+      "id": "glossary-L0383",
+      "file": "docs/glossary.md",
+      "line": 383,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 操作系统 | Operating Systems | `topics/operating-systems` |",
+      "cells": [
+        "操作系统",
+        "Operating Systems",
+        "`topics/operating-systems`"
+      ],
+      "sha256": "e160397c9e711cb67c357cb91156ff04c2e0284d4cfa206e352d0c76249a0a21"
+    },
+    {
+      "id": "glossary-L0384",
+      "file": "docs/glossary.md",
+      "line": 384,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 计算机系统概览 | Overview of Computer Systems | `topics/overview-of-computer-systems` |",
+      "cells": [
+        "计算机系统概览",
+        "Overview of Computer Systems",
+        "`topics/overview-of-computer-systems`"
+      ],
+      "sha256": "153ca68488d5955b383bea9b2f954719b642c235bf8a9ba9870d5e8fd09efcde"
+    },
+    {
+      "id": "glossary-L0385",
+      "file": "docs/glossary.md",
+      "line": 385,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 并行与分布式计算 | Parallel and Distributed Computing | `topics/parallel-and-distributed-computing-foundations-of-programming-languages`, `topics/parallel-and-distributed-computing` |",
+      "cells": [
+        "并行与分布式计算",
+        "Parallel and Distributed Computing",
+        "`topics/parallel-and-distributed-computing-foundations-of-programming-languages`, `topics/parallel-and-distributed-computing`"
+      ],
+      "sha256": "eebdcae1326a312dc84531216f77b4955476cdb84dae15e5f772ee079baad41b"
+    },
+    {
+      "id": "glossary-L0386",
+      "file": "docs/glossary.md",
+      "line": 386,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 感知与计算机视觉 | Perception and Computer Vision | `topics/perception-and-computer-vision` |",
+      "cells": [
+        "感知与计算机视觉",
+        "Perception and Computer Vision",
+        "`topics/perception-and-computer-vision`"
+      ],
+      "sha256": "69b0dcb8d68b6b8a8b6c0e3ced4b8a7b88d0b871cbc529d3ac7262928da14cd9"
+    },
+    {
+      "id": "glossary-L0387",
+      "file": "docs/glossary.md",
+      "line": 387,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 性能与能效 | Performance and Energy Efficiency | `topics/performance-and-energy-efficiency` |",
+      "cells": [
+        "性能与能效",
+        "Performance and Energy Efficiency",
+        "`topics/performance-and-energy-efficiency`"
+      ],
+      "sha256": "95b38cb6a5dc2db85f486a3562927a37acdbb1da07931fa73d4b87b6e8893a7d"
+    },
+    {
+      "id": "glossary-L0388",
+      "file": "docs/glossary.md",
+      "line": 388,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 性能评估 | Performance Evaluation | `topics/performance-evaluation` |",
+      "cells": [
+        "性能评估",
+        "Performance Evaluation",
+        "`topics/performance-evaluation`"
+      ],
+      "sha256": "1fa9ac6ae60d011c4f873e84cd9cecb962fd5705652e9c8f8ae164b943f04694"
+    },
+    {
+      "id": "glossary-L0389",
+      "file": "docs/glossary.md",
+      "line": 389,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 持久化 | Persistence | `topics/persistence-artificial-intelligence`, `topics/persistence` |",
+      "cells": [
+        "持久化",
+        "Persistence",
+        "`topics/persistence-artificial-intelligence`, `topics/persistence`"
+      ],
+      "sha256": "0b25f948335abeea274e7ff564ef457a814cac7af0b4c1a588ec1504a14102c7"
+    },
+    {
+      "id": "glossary-L0390",
+      "file": "docs/glossary.md",
+      "line": 390,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 规划 | Planning | `topics/planning` |",
+      "cells": [
+        "规划",
+        "Planning",
+        "`topics/planning`"
+      ],
+      "sha256": "5ca47436494bd91ef5c4c4afcafada3d3f8564d0c856d76bf585b135cfe12922"
+    },
+    {
+      "id": "glossary-L0391",
+      "file": "docs/glossary.md",
+      "line": 391,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 操作系统原理 | Principles of Operating System | `topics/principles-of-operating-system` |",
+      "cells": [
+        "操作系统原理",
+        "Principles of Operating System",
+        "`topics/principles-of-operating-system`"
+      ],
+      "sha256": "334d57377c84359f4a9262c293e193ccf07498a4ca42d5b40f37372549920614"
+    },
+    {
+      "id": "glossary-L0392",
+      "file": "docs/glossary.md",
+      "line": 392,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 隐私与公民自由 | Privacy and Civil Liberties | `topics/privacy-and-civil-liberties` |",
+      "cells": [
+        "隐私与公民自由",
+        "Privacy and Civil Liberties",
+        "`topics/privacy-and-civil-liberties`"
+      ],
+      "sha256": "72edec1f09a0ec5db8a56a05ee665d2aae28f9a919ef2b1ec11a4074fb8cb78b"
+    },
+    {
+      "id": "glossary-L0393",
+      "file": "docs/glossary.md",
+      "line": 393,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 权限提升 | Privilege Escalation | `topics/privilege-escalation-artificial-intelligence`, `topics/privilege-escalation` |",
+      "cells": [
+        "权限提升",
+        "Privilege Escalation",
+        "`topics/privilege-escalation-artificial-intelligence`, `topics/privilege-escalation`"
+      ],
+      "sha256": "e253808a49b03ab57584b8e43a0a94cc18360122d28580000a4f3c664bdfb355"
+    },
+    {
+      "id": "glossary-L0394",
+      "file": "docs/glossary.md",
+      "line": 394,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 概率表示与推理 | Probabilistic Representation and Reasoning | `topics/probabilistic-representation-and-reasoning` |",
+      "cells": [
+        "概率表示与推理",
+        "Probabilistic Representation and Reasoning",
+        "`topics/probabilistic-representation-and-reasoning`"
+      ],
+      "sha256": "a5569a478c2b024507aa2d0df71733fa19433a94b80c1a45d259e92750a89262"
+    },
+    {
+      "id": "glossary-L0395",
+      "file": "docs/glossary.md",
+      "line": 395,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 问题陈述 | Problem statement | `forms/problem-statement` |",
+      "cells": [
+        "问题陈述",
+        "Problem statement",
+        "`forms/problem-statement`"
+      ],
+      "sha256": "7b86af0daba3ef14817e6e19c17acc2225054a4a4f7bf7085ace90e319fb6a4c"
+    },
+    {
+      "id": "glossary-L0396",
+      "file": "docs/glossary.md",
+      "line": 396,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 进程模型 | Process Model | `topics/process-model` |",
+      "cells": [
+        "进程模型",
+        "Process Model",
+        "`topics/process-model`"
+      ],
+      "sha256": "c7bde1de7b3bfd7beaff3dfd10678219892b65cea4485efa8eafdaceedd9cfdf"
+    },
+    {
+      "id": "glossary-L0397",
+      "file": "docs/glossary.md",
+      "line": 397,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 产品需求 | Product Requirements | `topics/product-requirements` |",
+      "cells": [
+        "产品需求",
+        "Product Requirements",
+        "`topics/product-requirements`"
+      ],
+      "sha256": "e004ffda6e61e6dc1b2258a209a0a18b4aa0cce33256fee04730c6c3d6eef143"
+    },
+    {
+      "id": "glossary-L0398",
+      "file": "docs/glossary.md",
+      "line": 398,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 职业伦理 | Professional Ethics | `topics/professional-ethics` |",
+      "cells": [
+        "职业伦理",
+        "Professional Ethics",
+        "`topics/professional-ethics`"
+      ],
+      "sha256": "58e95e76ef8dc2fa94998a58a80633fe2c2c4c76576006140b54a5de72c2c3d1"
+    },
+    {
+      "id": "glossary-L0399",
+      "file": "docs/glossary.md",
+      "line": 399,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 程序抽象与表示 | Program Abstraction and Representation | `topics/program-abstraction-and-representation` |",
+      "cells": [
+        "程序抽象与表示",
+        "Program Abstraction and Representation",
+        "`topics/program-abstraction-and-representation`"
+      ],
+      "sha256": "11d56d3a3c6f9245ab07acb969d226ea1197707799a3a871726eccaac91233db"
+    },
+    {
+      "id": "glossary-L0400",
+      "file": "docs/glossary.md",
+      "line": 400,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 程序分析与分析器 | Program Analysis and Analyzers | `topics/program-analysis-and-analyzers` |",
+      "cells": [
+        "程序分析与分析器",
+        "Program Analysis and Analyzers",
+        "`topics/program-analysis-and-analyzers`"
+      ],
+      "sha256": "3ec885f49a1c62fae6b6bee18032354b152757f8499bb30d7ae49eb2c22a178e"
+    },
+    {
+      "id": "glossary-L0401",
+      "file": "docs/glossary.md",
+      "line": 401,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 并行与分布式程序 | Programs | `topics/programs` |",
+      "cells": [
+        "并行与分布式程序",
+        "Programs",
+        "`topics/programs`"
+      ],
+      "sha256": "b9cf0d6671619ea1835b844c564f69e74dce979d3901e5e02507b891f4040d33"
+    },
+    {
+      "id": "glossary-L0402",
+      "file": "docs/glossary.md",
+      "line": 402,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 保护与安全 | Protection and Safety | `topics/protection-and-safety` |",
+      "cells": [
+        "保护与安全",
+        "Protection and Safety",
+        "`topics/protection-and-safety`"
+      ],
+      "sha256": "8b38ae672ff2593beaed385ec2c92d0a9c7e6148c518c2c3f65bdb5824cb23ea"
+    },
+    {
+      "id": "glossary-L0403",
+      "file": "docs/glossary.md",
+      "line": 403,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 保护机制失效 | Protection Mechanism Failure | `topics/protection-mechanism-failure` |",
+      "cells": [
+        "保护机制失效",
+        "Protection Mechanism Failure",
+        "`topics/protection-mechanism-failure`"
+      ],
+      "sha256": "0bddd67dd1e7eb08978807eca042e6a4fee8c703d227247ccaca2e4f9b6f9f39"
+    },
+    {
+      "id": "glossary-L0404",
+      "file": "docs/glossary.md",
+      "line": 404,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 量子体系结构 | Quantum Architectures | `topics/quantum-architectures` |",
+      "cells": [
+        "量子体系结构",
+        "Quantum Architectures",
+        "`topics/quantum-architectures`"
+      ],
+      "sha256": "83b7741265f82feee320987e13902491d59ca8d475febb4eb60eb6eec9516381"
+    },
+    {
+      "id": "glossary-L0405",
+      "file": "docs/glossary.md",
+      "line": 405,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 查询构造 | Query Construction | `topics/query-construction` |",
+      "cells": [
+        "查询构造",
+        "Query Construction",
+        "`topics/query-construction`"
+      ],
+      "sha256": "3d9a6ba71f027869eafcdafdf53e8e256e7520acf7005f4dd23daf6c0aa656b1"
+    },
+    {
+      "id": "glossary-L0406",
+      "file": "docs/glossary.md",
+      "line": 406,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 查询处理 | Query Processing | `topics/query-processing` |",
+      "cells": [
+        "查询处理",
+        "Query Processing",
+        "`topics/query-processing`"
+      ],
+      "sha256": "870728331197c39e9388f095c7d4c9cdc5cbb7318932eab29230c0f8c65901fc"
+    },
+    {
+      "id": "glossary-L0407",
+      "file": "docs/glossary.md",
+      "line": 407,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 问卷 | Questionnaire | `forms/questionnaire` |",
+      "cells": [
+        "问卷",
+        "Questionnaire",
+        "`forms/questionnaire`"
+      ],
+      "sha256": "c3670d6d81615d9bf86408d4ead1a99000b49201ef8e325d966c959caebb56f7"
+    },
+    {
+      "id": "glossary-L0408",
+      "file": "docs/glossary.md",
+      "line": 408,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 实时与嵌入式系统 | Real-time and Embedded Systems | `topics/real-time-and-embedded-systems` |",
+      "cells": [
+        "实时与嵌入式系统",
+        "Real-time and Embedded Systems",
+        "`topics/real-time-and-embedded-systems`"
+      ],
+      "sha256": "aa8d7eba073c311472fd0afaa5000351867657f784c463014f69a9d3c3ae29e8"
+    },
+    {
+      "id": "glossary-L0409",
+      "file": "docs/glossary.md",
+      "line": 409,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 侦察 | Reconnaissance | `topics/reconnaissance-artificial-intelligence`, `topics/reconnaissance` |",
+      "cells": [
+        "侦察",
+        "Reconnaissance",
+        "`topics/reconnaissance-artificial-intelligence`, `topics/reconnaissance`"
+      ],
+      "sha256": "335b8ecfad37f8eeac31d1eec6ffdfab70a555a6d1911048f0876b20582d202c"
+    },
+    {
+      "id": "glossary-L0410",
+      "file": "docs/glossary.md",
+      "line": 410,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 重构与代码演化 | Refactoring and Code Evolution | `topics/refactoring-and-code-evolution` |",
+      "cells": [
+        "重构与代码演化",
+        "Refactoring and Code Evolution",
+        "`topics/refactoring-and-code-evolution`"
+      ],
+      "sha256": "6a3713cf6afd60995cc5ba777c1cfed1c6ec090b95e214ea6e5dd19f4f0dc166"
+    },
+    {
+      "id": "glossary-L0411",
+      "file": "docs/glossary.md",
+      "line": 411,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 关系数据库 | Relational Databases | `topics/relational-databases` |",
+      "cells": [
+        "关系数据库",
+        "Relational Databases",
+        "`topics/relational-databases`"
+      ],
+      "sha256": "73652b4c1ae07c2c8656ec243c121df54bf360b8ade539afd1bdc48982fa3b69"
+    },
+    {
+      "id": "glossary-L0412",
+      "file": "docs/glossary.md",
+      "line": 412,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 可靠性支持 | Reliability Support | `topics/reliability-support` |",
+      "cells": [
+        "可靠性支持",
+        "Reliability Support",
+        "`topics/reliability-support`"
+      ],
+      "sha256": "792069bc0409f8af4c335884040fc58c9302f91fa2d921ed7a587bf3c8ccc9d1"
+    },
+    {
+      "id": "glossary-L0413",
+      "file": "docs/glossary.md",
+      "line": 413,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 资源开发 | Resource Development | `topics/resource-development-artificial-intelligence`, `topics/resource-development` |",
+      "cells": [
+        "资源开发",
+        "Resource Development",
+        "`topics/resource-development-artificial-intelligence`, `topics/resource-development`"
+      ],
+      "sha256": "9cc1f81ec097bacce2ff88f00e067755ac864c8b89ce03fe59d5bf30a9f58d26"
+    },
+    {
+      "id": "glossary-L0414",
+      "file": "docs/glossary.md",
+      "line": 414,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 资源管理 | Resource Management | `topics/resource-management` |",
+      "cells": [
+        "资源管理",
+        "Resource Management",
+        "`topics/resource-management`"
+      ],
+      "sha256": "1645b20dc796f9706fe358fdbf2697c630cd703e48121f854121eae054a3b576"
+    },
+    {
+      "id": "glossary-L0415",
+      "file": "docs/glossary.md",
+      "line": 415,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 机器人平台 | Robot Platforms | `topics/robot-platforms` |",
+      "cells": [
+        "机器人平台",
+        "Robot Platforms",
+        "`topics/robot-platforms`"
+      ],
+      "sha256": "14a324d480690bf3d9d364e2fb45ffa69f6e269f6fdf9d85cab3063e58cd09c1"
+    },
+    {
+      "id": "glossary-L0416",
+      "file": "docs/glossary.md",
+      "line": 416,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 机器人学 | Robotics | `topics/robotics` |",
+      "cells": [
+        "机器人学",
+        "Robotics",
+        "`topics/robotics`"
+      ],
+      "sha256": "3e9bf2579d9cd28cf873e39058a405ce4aac09f3ee90c2afd8cd58b1a40abf5e"
+    },
+    {
+      "id": "glossary-L0417",
+      "file": "docs/glossary.md",
+      "line": 417,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 操作系统的作用与目的 | Role and Purpose of Operating Systems | `topics/role-and-purpose-of-operating-systems` |",
+      "cells": [
+        "操作系统的作用与目的",
+        "Role and Purpose of Operating Systems",
+        "`topics/role-and-purpose-of-operating-systems`"
+      ],
+      "sha256": "5a12bc6c44da3b8696bc40b9f73fd508029cea01a34c0d72268c4c81cf4f516e"
+    },
+    {
+      "id": "glossary-L0418",
+      "file": "docs/glossary.md",
+      "line": 418,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 路由与转发 | Routing and Forwarding | `topics/routing-and-forwarding` |",
+      "cells": [
+        "路由与转发",
+        "Routing and Forwarding",
+        "`topics/routing-and-forwarding`"
+      ],
+      "sha256": "84ffa3b07a344857a3de77e2c7baee56a733bcd6fd683cdc18fe8b990a0fa737"
+    },
+    {
+      "id": "glossary-L0419",
+      "file": "docs/glossary.md",
+      "line": 419,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 运行时行为与系统 | Run-time Behavior and Systems | `topics/run-time-behavior-and-systems` |",
+      "cells": [
+        "运行时行为与系统",
+        "Run-time Behavior and Systems",
+        "`topics/run-time-behavior-and-systems`"
+      ],
+      "sha256": "b9331931bbe7d2e23e15cff70ef75462cac11829c4cbed899edeac49e1a4aab6"
+    },
+    {
+      "id": "glossary-L0420",
+      "file": "docs/glossary.md",
+      "line": 420,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 调度 | Scheduling | `topics/scheduling` |",
+      "cells": [
+        "调度",
+        "Scheduling",
+        "`topics/scheduling`"
+      ],
+      "sha256": "d347a832891299bbeb3b1ba730e7a51ed709799ba39c4acd74f9b66f2fcaaadb"
+    },
+    {
+      "id": "glossary-L0421",
+      "file": "docs/glossary.md",
+      "line": 421,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 搜索 | Search | `topics/search` |",
+      "cells": [
+        "搜索",
+        "Search",
+        "`topics/search`"
+      ],
+      "sha256": "906686a5b52947d244c78c621c49ad5c6bb90502b65a5b444bc610660eb63d8e"
+    },
+    {
+      "id": "glossary-L0422",
+      "file": "docs/glossary.md",
+      "line": 422,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 安全编码 | Secure Coding | `topics/secure-coding` |",
+      "cells": [
+        "安全编码",
+        "Secure Coding",
+        "`topics/secure-coding`"
+      ],
+      "sha256": "f98fe330b8b0a5366f6b0581a3eab442fa6c77d33c65b58d9309791778000a24"
+    },
+    {
+      "id": "glossary-L0423",
+      "file": "docs/glossary.md",
+      "line": 423,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 安全编码与体系结构 | Secure Coding and Architecture | `topics/secure-coding-and-architecture` |",
+      "cells": [
+        "安全编码与体系结构",
+        "Secure Coding and Architecture",
+        "`topics/secure-coding-and-architecture`"
+      ],
+      "sha256": "7ca636813b8f270483eaefad27ace8e8bc3783a326fef7d1e3d0359e32ecb003"
+    },
+    {
+      "id": "glossary-L0424",
+      "file": "docs/glossary.md",
+      "line": 424,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 安全通信 | Secure Communication | `topics/secure-communication` |",
+      "cells": [
+        "安全通信",
+        "Secure Communication",
+        "`topics/secure-communication`"
+      ],
+      "sha256": "8c696cb8a1880fb7a39eea453052c0e35dcb9c70ee076e2d80c31e5816285f09"
+    },
+    {
+      "id": "glossary-L0425",
+      "file": "docs/glossary.md",
+      "line": 425,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 安全处理器体系结构 | Secure Processor Architectures | `topics/secure-processor-architectures` |",
+      "cells": [
+        "安全处理器体系结构",
+        "Secure Processor Architectures",
+        "`topics/secure-processor-architectures`"
+      ],
+      "sha256": "3fe5de2435db5c4d2852f5b2c1e66c9f62c4dac2512b7ac5df0dfeed4e537aa7"
+    },
+    {
+      "id": "glossary-L0426",
+      "file": "docs/glossary.md",
+      "line": 426,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 安全 | Security | `topics/security` |",
+      "cells": [
+        "安全",
+        "Security",
+        "`topics/security`"
+      ],
+      "sha256": "2508345a32a10255e672e441f019d93f772223e5207b258d5091801a336d9b7b"
+    },
+    {
+      "id": "glossary-L0427",
+      "file": "docs/glossary.md",
+      "line": 427,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 安全分析、设计与工程 | Security Analysis, Design, and Engineering | `topics/security-analysis-design-and-engineering` |",
+      "cells": [
+        "安全分析、设计与工程",
+        "Security Analysis, Design, and Engineering",
+        "`topics/security-analysis-design-and-engineering`"
+      ],
+      "sha256": "5586677ceac498ac11f873ce0bd78b9dda92113de9d142cda2541e47c7d8309b"
+    },
+    {
+      "id": "glossary-L0428",
+      "file": "docs/glossary.md",
+      "line": 428,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 安全治理 | Security Governance | `topics/security-governance` |",
+      "cells": [
+        "安全治理",
+        "Security Governance",
+        "`topics/security-governance`"
+      ],
+      "sha256": "ff71b78164d83fdf6ca47dcbc52cac54d82514cf7d086b260c061622a76a2d50"
+    },
+    {
+      "id": "glossary-L0429",
+      "file": "docs/glossary.md",
+      "line": 429,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 安全日志记录与错误处理 | Security Logging and Error Handling | `topics/security-logging-and-error-handling` |",
+      "cells": [
+        "安全日志记录与错误处理",
+        "Security Logging and Error Handling",
+        "`topics/security-logging-and-error-handling`"
+      ],
+      "sha256": "f6e199abd98690a2c39ebed0a02686c873533d591e6847b5de83decae3c88908"
+    },
+    {
+      "id": "glossary-L0430",
+      "file": "docs/glossary.md",
+      "line": 430,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 安全政策、法律与计算机犯罪 | Security Policies, Laws and Computer Crimes | `topics/security-policies-laws-and-computer-crimes` |",
+      "cells": [
+        "安全政策、法律与计算机犯罪",
+        "Security Policies, Laws and Computer Crimes",
+        "`topics/security-policies-laws-and-computer-crimes`"
+      ],
+      "sha256": "fde1284262aa08c66e6d02b3229d3fba6714d7c54efab087c14a195307d44423"
+    },
+    {
+      "id": "glossary-L0431",
+      "file": "docs/glossary.md",
+      "line": 431,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 自我评估 | Self assessment | `forms/self-assessment` |",
+      "cells": [
+        "自我评估",
+        "Self assessment",
+        "`forms/self-assessment`"
+      ],
+      "sha256": "f5ed75d3d091e38f35ce8b351b9d2134507f6b8c65ad464ab3b7db4f914d791c"
+    },
+    {
+      "id": "glossary-L0432",
+      "file": "docs/glossary.md",
+      "line": 432,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 自包含令牌 | Self-contained Tokens | `topics/self-contained-tokens` |",
+      "cells": [
+        "自包含令牌",
+        "Self-contained Tokens",
+        "`topics/self-contained-tokens`"
+      ],
+      "sha256": "0227f4f16bc425695cbdad1b028f2f4cad6fdb9591ab45aa6fa885c5166c7921"
+    },
+    {
+      "id": "glossary-L0433",
+      "file": "docs/glossary.md",
+      "line": 433,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 半结构化与非结构化数据库 | Semi-structured and Unstructured Databases | `topics/semi-structured-and-unstructured-databases` |",
+      "cells": [
+        "半结构化与非结构化数据库",
+        "Semi-structured and Unstructured Databases",
+        "`topics/semi-structured-and-unstructured-databases`"
+      ],
+      "sha256": "bf38f3497e666d80df29daaba2e686dcc925071fce11734bac1099cc1a437814"
+    },
+    {
+      "id": "glossary-L0434",
+      "file": "docs/glossary.md",
+      "line": 434,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 会话管理 | Session Management | `topics/session-management` |",
+      "cells": [
+        "会话管理",
+        "Session Management",
+        "`topics/session-management`"
+      ],
+      "sha256": "c867e81cb6a45b517d51d213b63fc21dcd75e8200c163d7263c53ff1584641fc"
+    },
+    {
+      "id": "glossary-L0435",
+      "file": "docs/glossary.md",
+      "line": 435,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 着色与高级渲染 | Shading and Advanced Rendering | `topics/shading-and-advanced-rendering` |",
+      "cells": [
+        "着色与高级渲染",
+        "Shading and Advanced Rendering",
+        "`topics/shading-and-advanced-rendering`"
+      ],
+      "sha256": "77794e173c71e0fd7afa8153e4084ff3d589878086a9fbab8a6380bba02a02c1"
+    },
+    {
+      "id": "glossary-L0436",
+      "file": "docs/glossary.md",
+      "line": 436,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| Shell 脚本编程 | Shell Scripting | `topics/shell-scripting` |",
+      "cells": [
+        "Shell 脚本编程",
+        "Shell Scripting",
+        "`topics/shell-scripting`"
+      ],
+      "sha256": "1a78516ef62277e9c99199ff12c818c80a396dad42151719f1ee9adc4263cb1c"
+    },
+    {
+      "id": "glossary-L0437",
+      "file": "docs/glossary.md",
+      "line": 437,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 仿真 | Simulation | `forms/simulation`, `topics/simulation` |",
+      "cells": [
+        "仿真",
+        "Simulation",
+        "`forms/simulation`, `topics/simulation`"
+      ],
+      "sha256": "889a483000d01b84f060a0728d3376470d2e1422acc9cf6e801a6c6c302e3ef2"
+    },
+    {
+      "id": "glossary-L0438",
+      "file": "docs/glossary.md",
+      "line": 438,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 单跳通信 | Single Hop Communication | `topics/single-hop-communication` |",
+      "cells": [
+        "单跳通信",
+        "Single Hop Communication",
+        "`topics/single-hop-communication`"
+      ],
+      "sha256": "a7094b248c15cc4669c1853f72b8428711967c9731ef6dc7bcd2fbbc381c2c21"
+    },
+    {
+      "id": "glossary-L0439",
+      "file": "docs/glossary.md",
+      "line": 439,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 幻灯片 | Slide | `forms/slide` |",
+      "cells": [
+        "幻灯片",
+        "Slide",
+        "`forms/slide`"
+      ],
+      "sha256": "0fd731a3a708ab1b73108b9ba5f14736dbd488b4e159e6b81faa2bce4164c567"
+    },
+    {
+      "id": "glossary-L0440",
+      "file": "docs/glossary.md",
+      "line": 440,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 社会情境 | Social Context | `topics/social-context` |",
+      "cells": [
+        "社会情境",
+        "Social Context",
+        "`topics/social-context`"
+      ],
+      "sha256": "ffadd5d90876594bc2726ac21e0366a1bf30cc7d1f8c31bfb3151cacf8b36f32"
+    },
+    {
+      "id": "glossary-L0441",
+      "file": "docs/glossary.md",
+      "line": 441,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 社会、伦理与职业 | Society, Ethics, and the Profession | `topics/society-ethics-and-the-profession-algorithmic-foundations`, `topics/society-ethics-and-the-profession-data-management`, `topics/society-ethics-and-the-profession-foundations-of-programming-languages`, `topics/society-ethics-and-the-profession-graphics-and-interactive-techniques`, `topics/society-ethics-and-the-profession-human-computer-interaction`, `topics/society-ethics-and-the-profession-operating-systems`, `topics/society-ethics-and-the-profession-security`, `topics/society-ethics-and-the-profession-software-development-fundamentals`, `topics/society-ethics-and-the-profession-systems-fundamentals`, `topics/society-ethics-and-the-profession` |",
+      "cells": [
+        "社会、伦理与职业",
+        "Society, Ethics, and the Profession",
+        "`topics/society-ethics-and-the-profession-algorithmic-foundations`, `topics/society-ethics-and-the-profession-data-management`, `topics/society-ethics-and-the-profession-foundations-of-programming-languages`, `topics/society-ethics-and-the-profession-graphics-and-interactive-techniques`, `topics/society-ethics-and-the-profession-human-computer-interaction`, `topics/society-ethics-and-the-profession-operating-systems`, `topics/society-ethics-and-the-profession-security`, `topics/society-ethics-and-the-profession-software-development-fundamentals`, `topics/society-ethics-and-the-profession-systems-fundamentals`, `topics/society-ethics-and-the-profession`"
+      ],
+      "sha256": "78d237772925b0576c690cf5f163caacf2d7fbd48a498f50b60a06ca807c1333"
+    },
+    {
+      "id": "glossary-L0442",
+      "file": "docs/glossary.md",
+      "line": 442,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件体系结构 | Software Architecture | `topics/software-architecture` |",
+      "cells": [
+        "软件体系结构",
+        "Software Architecture",
+        "`topics/software-architecture`"
+      ],
+      "sha256": "3d3a08c117f7f5aa8ad904671a64ca259978e7a94fc42503ad330a134eba5e14"
+    },
+    {
+      "id": "glossary-L0443",
+      "file": "docs/glossary.md",
+      "line": 443,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件配置管理 | Software Configuration Management | `topics/software-configuration-management` |",
+      "cells": [
+        "软件配置管理",
+        "Software Configuration Management",
+        "`topics/software-configuration-management`"
+      ],
+      "sha256": "d3e3021adc1a3c1c2be6fa12075a080a8b55448fd1ea90a52d6b34b83ce1907c"
+    },
+    {
+      "id": "glossary-L0444",
+      "file": "docs/glossary.md",
+      "line": 444,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件设计 | Software Design | `topics/software-design` |",
+      "cells": [
+        "软件设计",
+        "Software Design",
+        "`topics/software-design`"
+      ],
+      "sha256": "4f5fcc1123f55565f42ca1f78f2dfdc9f1178be9fd26a4e5951000708519e5aa"
+    },
+    {
+      "id": "glossary-L0445",
+      "file": "docs/glossary.md",
+      "line": 445,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件开发基础 | Software Development Fundamentals | `topics/software-development-fundamentals` |",
+      "cells": [
+        "软件开发基础",
+        "Software Development Fundamentals",
+        "`topics/software-development-fundamentals`"
+      ],
+      "sha256": "4ad39b228bdfbbfa73ce35fc9c24d41c2eb2b3d9f09d1e98202137634f451eec"
+    },
+    {
+      "id": "glossary-L0446",
+      "file": "docs/glossary.md",
+      "line": 446,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件开发实践 | Software Development Practices | `topics/software-development-practices` |",
+      "cells": [
+        "软件开发实践",
+        "Software Development Practices",
+        "`topics/software-development-practices`"
+      ],
+      "sha256": "cb3cd141c43ff448cdb49e09c144c109f80de40285ea9fd5b6d5b2a48f938a33"
+    },
+    {
+      "id": "glossary-L0447",
+      "file": "docs/glossary.md",
+      "line": 447,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件工程经济学 | Software Engineering Economics | `topics/software-engineering-economics` |",
+      "cells": [
+        "软件工程经济学",
+        "Software Engineering Economics",
+        "`topics/software-engineering-economics`"
+      ],
+      "sha256": "bb8ddf1741b987b62627fc902833bd341685c13b937fe3dec48b800c8426510f"
+    },
+    {
+      "id": "glossary-L0448",
+      "file": "docs/glossary.md",
+      "line": 448,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件工程管理 | Software Engineering Management | `topics/software-engineering-management` |",
+      "cells": [
+        "软件工程管理",
+        "Software Engineering Management",
+        "`topics/software-engineering-management`"
+      ],
+      "sha256": "5f84d7d0889001ba62e4963f07304ba8a135190017b2382bf4d11db33aa45161"
+    },
+    {
+      "id": "glossary-L0449",
+      "file": "docs/glossary.md",
+      "line": 449,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件工程模型与方法 | Software Engineering Models and Methods | `topics/software-engineering-models-and-methods` |",
+      "cells": [
+        "软件工程模型与方法",
+        "Software Engineering Models and Methods",
+        "`topics/software-engineering-models-and-methods`"
+      ],
+      "sha256": "f06fd15b4329e8c14f291c70b4787fe8905240ea98bdbafc2f126951a2abc60f"
+    },
+    {
+      "id": "glossary-L0450",
+      "file": "docs/glossary.md",
+      "line": 450,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件工程运维 | Software Engineering Operations | `topics/software-engineering-operations` |",
+      "cells": [
+        "软件工程运维",
+        "Software Engineering Operations",
+        "`topics/software-engineering-operations`"
+      ],
+      "sha256": "44851ed9670a612bcfd6907df2bc6f3ac02f4f6cd9732873a17971e4ef285f2b"
+    },
+    {
+      "id": "glossary-L0451",
+      "file": "docs/glossary.md",
+      "line": 451,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件工程过程 | Software Engineering Process | `topics/software-engineering-process` |",
+      "cells": [
+        "软件工程过程",
+        "Software Engineering Process",
+        "`topics/software-engineering-process`"
+      ],
+      "sha256": "63588d9aed5891774208d539d73e439d2583479d807cef8054cc552673495c59"
+    },
+    {
+      "id": "glossary-L0452",
+      "file": "docs/glossary.md",
+      "line": 452,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件工程职业实践 | Software Engineering Professional Practice | `topics/software-engineering-professional-practice` |",
+      "cells": [
+        "软件工程职业实践",
+        "Software Engineering Professional Practice",
+        "`topics/software-engineering-professional-practice`"
+      ],
+      "sha256": "7707868a8ace218d3d1f9c8c243e32270ad67399412c8f0c37149ed0fb9f3c3e"
+    },
+    {
+      "id": "glossary-L0453",
+      "file": "docs/glossary.md",
+      "line": 453,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件维护 | Software Maintenance | `topics/software-maintenance` |",
+      "cells": [
+        "软件维护",
+        "Software Maintenance",
+        "`topics/software-maintenance`"
+      ],
+      "sha256": "118e953ec879bde2eabc812e7a4df7a11aa34fc67c14066ca677b962d2ffeaa5"
+    },
+    {
+      "id": "glossary-L0454",
+      "file": "docs/glossary.md",
+      "line": 454,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件质量 | Software Quality | `topics/software-quality` |",
+      "cells": [
+        "软件质量",
+        "Software Quality",
+        "`topics/software-quality`"
+      ],
+      "sha256": "385806d496fe2029a904c8d358e3ca5bd2552dfce67b1b5a3fecb8e367ba1807"
+    },
+    {
+      "id": "glossary-L0455",
+      "file": "docs/glossary.md",
+      "line": 455,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件可靠性 | Software Reliability | `topics/software-reliability` |",
+      "cells": [
+        "软件可靠性",
+        "Software Reliability",
+        "`topics/software-reliability`"
+      ],
+      "sha256": "44e937469eea33faa74de10639892de2aaa2ca5f2e1c6a7fab1ab3455ac7f29a"
+    },
+    {
+      "id": "glossary-L0456",
+      "file": "docs/glossary.md",
+      "line": 456,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件需求 | Software Requirements | `topics/software-requirements` |",
+      "cells": [
+        "软件需求",
+        "Software Requirements",
+        "`topics/software-requirements`"
+      ],
+      "sha256": "917c5f8db4ca9daf83c8182c30007df64459ab4a11cc97ccff486d788243b786"
+    },
+    {
+      "id": "glossary-L0457",
+      "file": "docs/glossary.md",
+      "line": 457,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件安全 | Software Security | `topics/software-security` |",
+      "cells": [
+        "软件安全",
+        "Software Security",
+        "`topics/software-security`"
+      ],
+      "sha256": "d21a4384f4f2df4fe66cef8406a3cefe8d251f8ac563b23e6710a5ab2eb1e84f"
+    },
+    {
+      "id": "glossary-L0458",
+      "file": "docs/glossary.md",
+      "line": 458,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件测试 | Software Testing | `topics/software-testing` |",
+      "cells": [
+        "软件测试",
+        "Software Testing",
+        "`topics/software-testing`"
+      ],
+      "sha256": "208a3f216b7ad1b38ca3590c5499086dbde9938a350efadf7889665b8dc8cdcb"
+    },
+    {
+      "id": "glossary-L0459",
+      "file": "docs/glossary.md",
+      "line": 459,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 软件验证与确认 | Software Verification and Validation | `topics/software-verification-and-validation` |",
+      "cells": [
+        "软件验证与确认",
+        "Software Verification and Validation",
+        "`topics/software-verification-and-validation`"
+      ],
+      "sha256": "e335135da4a34f0deb7044933b2536b7d916c959dec11f885bd86c6b5031b519"
+    },
+    {
+      "id": "glossary-L0460",
+      "file": "docs/glossary.md",
+      "line": 460,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 专用平台开发 | Specialized Platform Development | `topics/specialized-platform-development` |",
+      "cells": [
+        "专用平台开发",
+        "Specialized Platform Development",
+        "`topics/specialized-platform-development`"
+      ],
+      "sha256": "866459d17b44f1cbb593edb9c5a60837efbbf3b215f7f57df5dc7cbb93f93dde"
+    },
+    {
+      "id": "glossary-L0461",
+      "file": "docs/glossary.md",
+      "line": 461,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 隐蔽 | Stealth | `topics/stealth` |",
+      "cells": [
+        "隐蔽",
+        "Stealth",
+        "`topics/stealth`"
+      ],
+      "sha256": "e2a01963a6e9eed725f72ab9c328fbc2fa13b3b99700b4af695ffc7cd611ceb4"
+    },
+    {
+      "id": "glossary-L0462",
+      "file": "docs/glossary.md",
+      "line": 462,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 可持续性 | Sustainability | `topics/sustainability` |",
+      "cells": [
+        "可持续性",
+        "Sustainability",
+        "`topics/sustainability`"
+      ],
+      "sha256": "c99bd6ded12eba02ee79d17f452095cb7b2f6e0fae25c8d5b50760b4fc2484bc"
+    },
+    {
+      "id": "glossary-L0463",
+      "file": "docs/glossary.md",
+      "line": 463,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 可持续性议题 | Sustainability Issues | `topics/sustainability-issues` |",
+      "cells": [
+        "可持续性议题",
+        "Sustainability Issues",
+        "`topics/sustainability-issues`"
+      ],
+      "sha256": "fc1e564e3650f7afab583c960b889bb7fd7e39b18519294b9da0ebfaae5949a4"
+    },
+    {
+      "id": "glossary-L0464",
+      "file": "docs/glossary.md",
+      "line": 464,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 语法分析 | Syntax Analysis | `topics/syntax-analysis` |",
+      "cells": [
+        "语法分析",
+        "Syntax Analysis",
+        "`topics/syntax-analysis`"
+      ],
+      "sha256": "74c3d401c88abf18039a1489e39fb2caf310c440cf98de8dfd672f50e9820bad"
+    },
+    {
+      "id": "glossary-L0465",
+      "file": "docs/glossary.md",
+      "line": 465,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 系统设计 | System Design | `topics/system-design-systems-fundamentals`, `topics/system-design` |",
+      "cells": [
+        "系统设计",
+        "System Design",
+        "`topics/system-design-systems-fundamentals`, `topics/system-design`"
+      ],
+      "sha256": "62ae4c1a02583e5b8eada672776071c8da7ed18f8f91458776463df12ea8b75c"
+    },
+    {
+      "id": "glossary-L0466",
+      "file": "docs/glossary.md",
+      "line": 466,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 系统性能 | System Performance | `topics/system-performance` |",
+      "cells": [
+        "系统性能",
+        "System Performance",
+        "`topics/system-performance`"
+      ],
+      "sha256": "d289023acb25daa7664185d793bcfba1883aea00f7a423ed9733471ea9db9b43"
+    },
+    {
+      "id": "glossary-L0467",
+      "file": "docs/glossary.md",
+      "line": 467,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 系统可靠性 | System Reliability | `topics/system-reliability` |",
+      "cells": [
+        "系统可靠性",
+        "System Reliability",
+        "`topics/system-reliability`"
+      ],
+      "sha256": "b896665e790143258881f7934048482b92981755d41912e20606adb99c66ca0a"
+    },
+    {
+      "id": "glossary-L0468",
+      "file": "docs/glossary.md",
+      "line": 468,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 系统安全 | System Security | `topics/system-security` |",
+      "cells": [
+        "系统安全",
+        "System Security",
+        "`topics/system-security`"
+      ],
+      "sha256": "9262cc9d5848ceb8dbb95d426ef5922d578729b261fbd52cea4a29dd9fd1394d"
+    },
+    {
+      "id": "glossary-L0469",
+      "file": "docs/glossary.md",
+      "line": 469,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 系统执行与内存模型 | Systems Execution and Memory Model | `topics/systems-execution-and-memory-model` |",
+      "cells": [
+        "系统执行与内存模型",
+        "Systems Execution and Memory Model",
+        "`topics/systems-execution-and-memory-model`"
+      ],
+      "sha256": "9db9fdfa5837a74b2553671620a3874e39978d6b3dbb604169cd2f44b2bb9104"
+    },
+    {
+      "id": "glossary-L0470",
+      "file": "docs/glossary.md",
+      "line": 470,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 系统基础 | Systems Fundamentals | `topics/systems-fundamentals` |",
+      "cells": [
+        "系统基础",
+        "Systems Fundamentals",
+        "`topics/systems-fundamentals`"
+      ],
+      "sha256": "84846e850d01b94c99da7a49b72b8b2146e96c218359e6ea1fe24903488c7bb6"
+    },
+    {
+      "id": "glossary-L0471",
+      "file": "docs/glossary.md",
+      "line": 471,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 表格 | Table | `forms/table` |",
+      "cells": [
+        "表格",
+        "Table",
+        "`forms/table`"
+      ],
+      "sha256": "2ab877c89ac9dcf858a9cbece0c64d18ff6da849ae2dc5b96306cce675e966d7"
+    },
+    {
+      "id": "glossary-L0472",
+      "file": "docs/glossary.md",
+      "line": 472,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 实体与物理计算 | Tangible/Physical Computing | `topics/tangible-physical-computing` |",
+      "cells": [
+        "实体与物理计算",
+        "Tangible/Physical Computing",
+        "`topics/tangible-physical-computing`"
+      ],
+      "sha256": "c9424c004f76d9874e81251f2d98261f8c33671b0983262778726ec902a89dd5"
+    },
+    {
+      "id": "glossary-L0473",
+      "file": "docs/glossary.md",
+      "line": 473,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 团队协作 | Teamwork | `topics/teamwork` |",
+      "cells": [
+        "团队协作",
+        "Teamwork",
+        "`topics/teamwork`"
+      ],
+      "sha256": "941ce2df7f1ca35d218ec78996be5fead9709cb40998d3d814876d253cfeb344"
+    },
+    {
+      "id": "glossary-L0474",
+      "file": "docs/glossary.md",
+      "line": 474,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 数据的作用与生命周期 | The Role of Data and the Data Life Cycle | `topics/the-role-of-data-and-the-data-life-cycle` |",
+      "cells": [
+        "数据的作用与生命周期",
+        "The Role of Data and the Data Life Cycle",
+        "`topics/the-role-of-data-and-the-data-life-cycle`"
+      ],
+      "sha256": "ddfc967410bb7e3ca8f72f9cce977232838a5a8ee2e7e4e58548d16229ecfb47"
+    },
+    {
+      "id": "glossary-L0475",
+      "file": "docs/glossary.md",
+      "line": 475,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 工具与环境 | Tools and Environments | `topics/tools-and-environments` |",
+      "cells": [
+        "工具与环境",
+        "Tools and Environments",
+        "`topics/tools-and-environments`"
+      ],
+      "sha256": "3be99a31fba49233516cbbff477cd1b9368bbbef905b66bfc8cd30ec3254c581"
+    },
+    {
+      "id": "glossary-L0476",
+      "file": "docs/glossary.md",
+      "line": 476,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 传输层 | Transport Layer | `topics/transport-layer` |",
+      "cells": [
+        "传输层",
+        "Transport Layer",
+        "`topics/transport-layer`"
+      ],
+      "sha256": "42e0e7b420d5d894a171f8d5ffd797a222a8fd130e0d86ef09c72d6ee25bcbac"
+    },
+    {
+      "id": "glossary-L0477",
+      "file": "docs/glossary.md",
+      "line": 477,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 类型系统 | Type Systems | `topics/type-systems` |",
+      "cells": [
+        "类型系统",
+        "Type Systems",
+        "`topics/type-systems`"
+      ],
+      "sha256": "af4ec4cc3565bbc025290205e945c8664779b671d9e63bda6e3bde186a551d8e"
+    },
+    {
+      "id": "glossary-L0478",
+      "file": "docs/glossary.md",
+      "line": 478,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 用户理解及个体目标与人际交互 | Understanding the User: Individual goals and interactions with others | `topics/understanding-the-user-individual-goals-and-interactions-with-others` |",
+      "cells": [
+        "用户理解及个体目标与人际交互",
+        "Understanding the User: Individual goals and interactions with others",
+        "`topics/understanding-the-user-individual-goals-and-interactions-with-others`"
+      ],
+      "sha256": "6305549bf96df9dc7e3551284bc481fce9f26df6482de23027248632b2f0bad4"
+    },
+    {
+      "id": "glossary-L0479",
+      "file": "docs/glossary.md",
+      "line": 479,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 验证与业务逻辑 | Validation and Business Logic | `topics/validation-and-business-logic` |",
+      "cells": [
+        "验证与业务逻辑",
+        "Validation and Business Logic",
+        "`topics/validation-and-business-logic`"
+      ],
+      "sha256": "f5dd7e8e3f8e530f60c6a54c8e67753e5f63654e26e8da17cd9d879057fd0832"
+    },
+    {
+      "id": "glossary-L0480",
+      "file": "docs/glossary.md",
+      "line": 480,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 虚拟化 | Virtualization | `topics/virtualization` |",
+      "cells": [
+        "虚拟化",
+        "Virtualization",
+        "`topics/virtualization`"
+      ],
+      "sha256": "b6d848408197a18d371866654cdce10af222efd50c0d2019984b3b88025e1d05"
+    },
+    {
+      "id": "glossary-L0481",
+      "file": "docs/glossary.md",
+      "line": 481,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| 可视化 | Visualization | `topics/visualization` |",
+      "cells": [
+        "可视化",
+        "Visualization",
+        "`topics/visualization`"
+      ],
+      "sha256": "aaa67ada6f9eec2a429fa52ceb340d413941c24d8ba7e1b6b4623d9d606bbacc"
+    },
+    {
+      "id": "glossary-L0482",
+      "file": "docs/glossary.md",
+      "line": 482,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| Web 前端安全 | Web Frontend Security | `topics/web-frontend-security` |",
+      "cells": [
+        "Web 前端安全",
+        "Web Frontend Security",
+        "`topics/web-frontend-security`"
+      ],
+      "sha256": "2b7fff33b6f3eb034e99fc5a25d6c514749cd6a834f471c84ffeec8f359bb377"
+    },
+    {
+      "id": "glossary-L0483",
+      "file": "docs/glossary.md",
+      "line": 483,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| Web 平台 | Web Platforms | `topics/web-platforms` |",
+      "cells": [
+        "Web 平台",
+        "Web Platforms",
+        "`topics/web-platforms`"
+      ],
+      "sha256": "1d20b0aeca397ca0a475a7fc550be82437b1bc9ee0a37030def76d893d5ae098"
+    },
+    {
+      "id": "glossary-L0484",
+      "file": "docs/glossary.md",
+      "line": 484,
+      "section": "模型译名",
+      "kind": "model_label",
+      "raw": "| Web 实时通信 | WebRTC | `topics/webrtc` |",
+      "cells": [
+        "Web 实时通信",
+        "WebRTC",
+        "`topics/webrtc`"
+      ],
+      "sha256": "fad3678aecbc81b365ffeb03bf9a015a541060bae97fecea9579e63fa87996c7"
+    }
+  ]
+}

@@ -1,0 +1,5875 @@
+{
+  "status": "proposal_not_adopted",
+  "baseline_commit": "7778e6ed5be637a57ec56bdaf90bff3f566c4e14",
+  "glossary_sha256": "32aaf25751cba829d9e66405b2b24941a847ab0371eabdb0d5feb9fcf820da53",
+  "coverage": {
+    "definition_rows": 143,
+    "model_registration_rows": 231,
+    "model_targets": 256
+  },
+  "limitations": [
+    "本轮未联网或下载外部正文。",
+    "引用原登记本身只证明现行写法，不证明外部事实。",
+    "已有阅读记录和已采纳决定不因本轮未取得原文失效。",
+    "小模型初筛存在概述伪装摘录、语言误分类和概念关系误判，主任务已校准；初筛结果不能直接成为正式数据。"
+  ],
+  "records": [
+    {
+      "id": "glossary-L0020",
+      "original_cells": [
+        "受控词表",
+        "controlled vocabulary",
+        "规定好的词、标题或代码列表，每项代表一个概念",
+        "ISO 2.12;Z 4.1"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "受控词表"
+        },
+        {
+          "language": "en",
+          "text": "controlled vocabulary"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 20,
+          "quote": "| 受控词表 | controlled vocabulary | 规定好的词、标题或代码列表，每项代表一个概念 | ISO 2.12;Z 4.1 |",
+          "kind": "input_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 42,
+          "quote": "| Part 1，2.12 | controlled vocabulary | 预先规定的 terms、headings 或 codes 列表，每项表示一个 concept |",
+          "kind": "reading_note_definition",
+          "summary": "仓库已有 ISO 免费样本阅读笔记的已核定义表；这是定义范围概述，不是标准原文逐字摘录。"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.12 与 Z 4.1 的标准原文逐字证据；中文形式的独立对应依据"
+      ],
+      "proposed_action": "维持现行登记，待人决定是否补充外部原文和中英对应；不自动选定首选形式。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0021",
+      "original_cells": [
+        "术语表 / 代码表",
+        "list, pick list",
+        "有限的一组词，按字母或其他明显逻辑排列，无关系",
+        "Z 5.4.1"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "术语表 / 代码表"
+        },
+        {
+          "language": "en",
+          "text": "list, pick list"
+        }
+      ],
+      "structure": "uncertain",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 21,
+          "quote": "| 术语表 / 代码表 | list, pick list | 有限的一组词，按字母或其他明显逻辑排列，无关系 | Z 5.4.1 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "Z 5.4.1 原文及 list 与 pick list 的关系；两种中文形式是否同义"
+      ],
+      "proposed_action": "维持现行登记，保留并列形式，待原文与对应核对；不自动拆成两个概念。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0022",
+      "original_cells": [
+        "同义词环",
+        "synonym ring",
+        "一组检索时视为等价的词；只用于检索，不用于标引",
+        "Z 5.4.2"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "同义词环"
+        },
+        {
+          "language": "en",
+          "text": "synonym ring"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 22,
+          "quote": "| 同义词环 | synonym ring | 一组检索时视为等价的词；只用于检索，不用于标引 | Z 5.4.2 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "Z 5.4.2 原文及中英对应证据"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不将检索等价自动解释为概念等价。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0023",
+      "original_cells": [
+        "分类法",
+        "taxonomy",
+        "全部由首选词构成、以层级或多层级连接的受控词表",
+        "Z 5.4.3"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "分类法"
+        },
+        {
+          "language": "en",
+          "text": "taxonomy"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 23,
+          "quote": "| 分类法 | taxonomy | 全部由首选词构成、以层级或多层级连接的受控词表 | Z 5.4.3 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "Z 5.4.3 原文及中文对应证据"
+      ],
+      "proposed_action": "维持现行登记，待核原文与范围；不自动扩展为本库结构规则。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0024",
+      "original_cells": [
+        "分类表",
+        "classification scheme",
+        "按分类排列的概念及先组组合的表",
+        "ISO 2.6"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "分类表"
+        },
+        {
+          "language": "en",
+          "text": "classification scheme"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 24,
+          "quote": "| 分类表 | classification scheme | 按分类排列的概念及先组组合的表 | ISO 2.6 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.6 原文逐字证据及中文对应"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不据名称相近与 taxonomy 合并。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0025",
+      "original_cells": [
+        "叙词表",
+        "thesaurus",
+        "按已知顺序排列、用标准化关系指示符清楚显示词间关系的受控词表",
+        "Z 5.4.4"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "叙词表"
+        },
+        {
+          "language": "en",
+          "text": "thesaurus"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 25,
+          "quote": "| 叙词表 | thesaurus | 按已知顺序排列、用标准化关系指示符清楚显示词间关系的受控词表 | Z 5.4.4 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "Z 5.4.4 原文及中文对应证据"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不把词表结构描述自动转为实现义务。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0026",
+      "original_cells": [
+        "本体",
+        "ontology",
+        "对概念化的明确规范：领域里有哪些类型的实体、允许哪些关系",
+        "Gruber 1993"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "本体"
+        },
+        {
+          "language": "en",
+          "text": "ontology"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 26,
+          "quote": "| 本体 | ontology | 对概念化的明确规范：领域里有哪些类型的实体、允许哪些关系 | Gruber 1993 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "Gruber 1993 原文逐字证据及中英对应"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不据此扩张受控词表模型。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0027",
+      "original_cells": [
+        "知识图谱",
+        "knowledge graph",
+        "以图为载体积累和传达现实世界知识的数据结构，节点为实体，边为关系",
+        "KG"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "知识图谱"
+        },
+        {
+          "language": "en",
+          "text": "knowledge graph"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 27,
+          "quote": "| 知识图谱 | knowledge graph | 以图为载体积累和传达现实世界知识的数据结构，节点为实体，边为关系 | KG |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "KG 来源原文、材料身份及中英对应"
+      ],
+      "proposed_action": "维持现行登记，待核来源；不据此改变本库实体与概念边界。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0033",
+      "original_cells": [
+        "概念",
+        "concept",
+        "思维单元；独立于表达它的词而存在",
+        "ISO 2.11"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "概念"
+        },
+        {
+          "language": "en",
+          "text": "concept"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 33,
+          "quote": "| 概念 | concept | 思维单元；独立于表达它的词而存在 | ISO 2.11 |",
+          "kind": "input_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 41,
+          "quote": "| Part 1，2.11 | concept | unit of thought；注释说明 concept 独立于表达它的 terms |",
+          "kind": "reading_note_definition",
+          "summary": "仓库已有 ISO 免费样本阅读笔记的已核定义表；这是定义范围概述，不是标准原文逐字摘录。"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.11 原文逐字证据及中文对应"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不因形式相同合并其他对象。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0034",
+      "original_cells": [
+        "词",
+        "term",
+        "表达概念的词或短语",
+        "ISO 2.61"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "词"
+        },
+        {
+          "language": "en",
+          "text": "term"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 34,
+          "quote": "| 词 | term | 表达概念的词或短语 | ISO 2.61 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.61 原文未取得（现有阅读笔记明确不在样本范围）；中文对应证据"
+      ],
+      "proposed_action": "维持现行登记，明确 ISO 2.61 原文缺口；不把当前定义写成已核标准定义。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0035",
+      "original_cells": [
+        "首选词 / 叙词",
+        "preferred term, descriptor",
+        "标引时用来代表概念的词",
+        "ISO 2.45"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "首选词 / 叙词"
+        },
+        {
+          "language": "en",
+          "text": "preferred term, descriptor"
+        }
+      ],
+      "structure": "uncertain",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 35,
+          "quote": "| 首选词 / 叙词 | preferred term, descriptor | 标引时用来代表概念的词 | ISO 2.45 |",
+          "kind": "input_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 54,
+          "quote": "| Part 1，2.45 | preferred term | indexing 时用来表示 concept 的 term |",
+          "kind": "reading_note_definition",
+          "summary": "仓库已有 ISO 免费样本阅读笔记的已核定义表；这是定义范围概述，不是标准原文逐字摘录。"
+        }
+      ],
+      "missing_evidence": [
+        "preferred term 与 descriptor 的分别定义及中英双形式对应"
+      ],
+      "proposed_action": "维持并列登记，待核形式关系；首选形式不能按表格位置自动选定。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0036",
+      "original_cells": [
+        "非首选词 / 非叙词",
+        "non-preferred term",
+        "不用于标引、只作入口的词",
+        "ISO 2.39"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "非首选词 / 非叙词"
+        },
+        {
+          "language": "en",
+          "text": "non-preferred term"
+        }
+      ],
+      "structure": "uncertain",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 36,
+          "quote": "| 非首选词 / 非叙词 | non-preferred term | 不用于标引、只作入口的词 | ISO 2.39 |",
+          "kind": "input_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 52,
+          "quote": "| Part 1，2.39 | non-preferred term | 不分配给 documents、但作为 thesaurus 或 index 入口的 term |",
+          "kind": "reading_note_definition",
+          "summary": "仓库已有 ISO 免费样本阅读笔记的已核定义表；这是定义范围概述，不是标准原文逐字摘录。"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.39 原文及两个中文形式是否可互换"
+      ],
+      "proposed_action": "维持现行登记，待核形式关系；不据排列位置作首选判断。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0037",
+      "original_cells": [
+        "入口词",
+        "entry term, lead-in term",
+        "引导用户找到可用词的词；叙词表里即非首选词",
+        "ISO 2.16"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "入口词"
+        },
+        {
+          "language": "en",
+          "text": "entry term, lead-in term"
+        }
+      ],
+      "structure": "uncertain",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 37,
+          "quote": "| 入口词 | entry term, lead-in term | 引导用户找到可用词的词；叙词表里即非首选词 | ISO 2.16 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.16 原文及 entry term 与 lead-in term 的关系"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不自动把入口词与非首选词作完全同义采纳。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0038",
+      "original_cells": [
+        "隐藏标签",
+        "hidden label",
+        "不显示但可检索的非首选词，如拼写错误",
+        "ISO 数据模型 `hidden`;SKOS `hiddenLabel`"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "隐藏标签"
+        },
+        {
+          "language": "en",
+          "text": "hidden label"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 38,
+          "quote": "| 隐藏标签 | hidden label | 不显示但可检索的非首选词，如拼写错误 | ISO 数据模型 `hidden`;SKOS `hiddenLabel` |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 数据模型相关原文和 SKOS 原文；两者构造的对应边界"
+      ],
+      "proposed_action": "维持现行登记，待核材料；不把两个来源的字段字符串合并成一个无条件语义。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0039",
+      "original_cells": [
+        "标识符",
+        "identifier",
+        "概念、词或其他实体的唯一标识",
+        "ISO 2.25"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "标识符"
+        },
+        {
+          "language": "en",
+          "text": "identifier"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 39,
+          "quote": "| 标识符 | identifier | 概念、词或其他实体的唯一标识 | ISO 2.25 |",
+          "kind": "input_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 48,
+          "quote": "| Part 1，2.25 | identifier | 在确定的 context 或 resource 内，为唯一识别 concept、term 或其他 entity 而使用的一组符号 |",
+          "kind": "reading_note_definition",
+          "summary": "仓库已有 ISO 免费样本阅读笔记的已核定义表；这是定义范围概述，不是标准原文逐字摘录。"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.25 原文逐字证据及中文对应"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不由本条定义推导具体 ID 格式。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0040",
+      "original_cells": [
+        "限定词",
+        "qualifier",
+        "加在词后区分同形异义的定义性词，如 `Apple (company)`",
+        "Z 4.1"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "限定词"
+        },
+        {
+          "language": "en",
+          "text": "qualifier"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 40,
+          "quote": "| 限定词 | qualifier | 加在词后区分同形异义的定义性词，如 `Apple (company)` | Z 4.1 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "Z 4.1 原文及中英对应"
+      ],
+      "proposed_action": "维持现行登记，待核原文；示例不扩展为一般规则。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0041",
+      "original_cells": [
+        "同形异义词",
+        "homograph",
+        "写法相同、意义不同的词",
+        "ISO 2.24"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "同形异义词"
+        },
+        {
+          "language": "en",
+          "text": "homograph"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 41,
+          "quote": "| 同形异义词 | homograph | 写法相同、意义不同的词 | ISO 2.24 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.24 原文逐字证据及中文对应"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不因同形自动合并概念。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0042",
+      "original_cells": [
+        "准同义词",
+        "quasi-synonym",
+        "日常意义不同但词表中视为同一概念的词",
+        "ISO 2.47"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "准同义词"
+        },
+        {
+          "language": "en",
+          "text": "quasi-synonym"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 42,
+          "quote": "| 准同义词 | quasi-synonym | 日常意义不同但词表中视为同一概念的词 | ISO 2.47 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.47 原文及中英对应"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不把日常意义差异抹平为一般同义。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0043",
+      "original_cells": [
+        "复合词",
+        "compound term",
+        "可拆成多个成分的词",
+        "ISO 2.9"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "复合词"
+        },
+        {
+          "language": "en",
+          "text": "compound term"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 43,
+          "quote": "| 复合词 | compound term | 可拆成多个成分的词 | ISO 2.9 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.9 原文未在本轮阅读笔记已核定义中；中文对应证据"
+      ],
+      "proposed_action": "维持现行登记，待核 ISO 2.9 原文；不据当前定义建立拆分规则。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0044",
+      "original_cells": [
+        "复合概念",
+        "complex concept",
+        "由多个简单概念组成的概念；是否拆分见 ISO §7",
+        "ISO §7"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "复合概念"
+        },
+        {
+          "language": "en",
+          "text": "complex concept"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 44,
+          "quote": "| 复合概念 | complex concept | 由多个简单概念组成的概念；是否拆分见 ISO §7 | ISO §7 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO §7 原文未读；中英对应与拆分边界"
+      ],
+      "proposed_action": "维持现行登记，待核 §7；不据此批准拆分或新增概念。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0045",
+      "original_cells": [
+        "领域",
+        "domain",
+        "词表覆盖的主题范围",
+        "—"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "领域"
+        },
+        {
+          "language": "en",
+          "text": "domain"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 45,
+          "quote": "| 领域 | domain | 词表覆盖的主题范围 | — |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "本条依据未登记；domain 在本条范围内的外部定义和中英对应"
+      ],
+      "proposed_action": "维持现行登记待人决定；不降级为本库自定候选，也不作违规结论。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0046",
+      "original_cells": [
+        "元数据",
+        "metadata",
+        "标识文档属性的数据；首选词常作为元数据值",
+        "ISO 2.33"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "元数据"
+        },
+        {
+          "language": "en",
+          "text": "metadata"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 46,
+          "quote": "| 元数据 | metadata | 标识文档属性的数据；首选词常作为元数据值 | ISO 2.33 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.33 原文及后半句适用边界"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不由例示句推出所有元数据规则。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0047",
+      "original_cells": [
+        "内容对象",
+        "content object",
+        "被标引的东西：文档、图像、人、组织、实物",
+        "Z 4.1;ISO 2.15 document"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "内容对象"
+        },
+        {
+          "language": "en",
+          "text": "content object"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 47,
+          "quote": "| 内容对象 | content object | 被标引的东西：文档、图像、人、组织、实物 | Z 4.1;ISO 2.15 document |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "Z 4.1 与 ISO 2.15 原文及 content object/document 的对应边界"
+      ],
+      "proposed_action": "维持现行登记，待分别核对两来源；不把 document 自动等同于全部列举对象。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0053",
+      "original_cells": [
+        "等价关系",
+        "USE / UF",
+        "两个词代表同一概念；一个定为首选，其余非首选",
+        "ISO 2.18"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "等价关系"
+        }
+      ],
+      "structure": "symbols",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 53,
+          "quote": "| 等价关系 | USE / UF | 两个词代表同一概念；一个定为首选，其余非首选 | ISO 2.18 |",
+          "kind": "input_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 44,
+          "quote": "| Part 1，2.18 | equivalence relationship | thesaurus 中两个 terms 表示同一个 concept 的关系 |",
+          "kind": "reading_note_definition",
+          "summary": "仓库已有 ISO 免费样本阅读笔记的已核定义表；这是定义范围概述，不是标准原文逐字摘录。"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.18 原文及 USE/UF 与中文关系说明的对应"
+      ],
+      "proposed_action": "维持现行登记，保留符号单列；首选形式须由概念与证据判断，不能按位置自动选定。",
+      "substantive_change": false,
+      "symbols": [
+        "USE / UF"
+      ],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "第一列关系概念与第二列关系指示符分开；符号不替代英文术语，不丢弃中文概念。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0054",
+      "original_cells": [
+        "复合等价",
+        "USE+ / UF+",
+        "一个词由另一语境中两个以上词表示",
+        "ISO 2.8"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "复合等价"
+        }
+      ],
+      "structure": "symbols",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 54,
+          "quote": "| 复合等价 | USE+ / UF+ | 一个词由另一语境中两个以上词表示 | ISO 2.8 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.8 原文及符号含义的直接证据"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不据名称自动生成拆分关系。",
+      "substantive_change": false,
+      "symbols": [
+        "USE+ / UF+"
+      ],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "第一列关系概念与第二列关系指示符分开；符号不替代英文术语，不丢弃中文概念。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0055",
+      "original_cells": [
+        "层级关系",
+        "BT / NT",
+        "一个概念的范围完全落在另一个之内",
+        "ISO 2.23"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "层级关系"
+        }
+      ],
+      "structure": "symbols",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 55,
+          "quote": "| 层级关系 | BT / NT | 一个概念的范围完全落在另一个之内 | ISO 2.23 |",
+          "kind": "input_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 47,
+          "quote": "| Part 1，2.23 | hierarchical relationship | 两个 concepts 中，一个的 scope 完全落在另一个的 scope 内 |",
+          "kind": "reading_note_definition",
+          "summary": "仓库已有 ISO 免费样本阅读笔记的已核定义表；这是定义范围概述，不是标准原文逐字摘录。"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.23 原文及 BT/NT 符号对应"
+      ],
+      "proposed_action": "维持现行登记，待核原文；关系端点仍须逐项判断。",
+      "substantive_change": false,
+      "symbols": [
+        "BT / NT"
+      ],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "第一列关系概念与第二列关系指示符分开；符号不替代英文术语，不丢弃中文概念。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0056",
+      "original_cells": [
+        "属种关系",
+        "BTG / NTG",
+        "层级的一种：是一种 (is-a)",
+        "ISO §10.2"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "属种关系"
+        }
+      ],
+      "structure": "symbols",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 56,
+          "quote": "| 属种关系 | BTG / NTG | 层级的一种：是一种 (is-a) | ISO §10.2 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO §10.2 原文未读；符号与中文关系的直接证据"
+      ],
+      "proposed_action": "维持现行登记，待核 §10.2；不把关系名称写成已核标准要求。",
+      "substantive_change": false,
+      "symbols": [
+        "BTG / NTG"
+      ],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "第一列关系概念与第二列关系指示符分开；符号不替代英文术语，不丢弃中文概念。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0057",
+      "original_cells": [
+        "整部关系",
+        "BTP / NTP",
+        "层级的一种：是一部分 (part-of)",
+        "ISO §10.2"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "整部关系"
+        }
+      ],
+      "structure": "symbols",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 57,
+          "quote": "| 整部关系 | BTP / NTP | 层级的一种：是一部分 (part-of) | ISO §10.2 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO §10.2 原文未读；整部关系译名与符号对应"
+      ],
+      "proposed_action": "维持现行登记，待核 §10.2；不据当前名称批准关系角色。",
+      "substantive_change": false,
+      "symbols": [
+        "BTP / NTP"
+      ],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "第一列关系概念与第二列关系指示符分开；符号不替代英文术语，不丢弃中文概念。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0058",
+      "original_cells": [
+        "实例关系",
+        "BTI / NTI",
+        "层级的一种：是实例 (instance-of)",
+        "ISO §10.2"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "实例关系"
+        }
+      ],
+      "structure": "symbols",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 58,
+          "quote": "| 实例关系 | BTI / NTI | 层级的一种：是实例 (instance-of) | ISO §10.2 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO §10.2 原文未读；实例关系译名与符号对应"
+      ],
+      "proposed_action": "维持现行登记，待核 §10.2；不据当前名称批准关系角色。",
+      "substantive_change": false,
+      "symbols": [
+        "BTI / NTI"
+      ],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "第一列关系概念与第二列关系指示符分开；符号不替代英文术语，不丢弃中文概念。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0059",
+      "original_cells": [
+        "相关关系",
+        "RT",
+        "非层级但语义联系强",
+        "ISO 2.2"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "相关关系"
+        }
+      ],
+      "structure": "symbols",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 59,
+          "quote": "| 相关关系 | RT | 非层级但语义联系强 | ISO 2.2 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.2 原文及 RT 符号对应"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不把 RT 作为无法分类时的兜底。",
+      "substantive_change": false,
+      "symbols": [
+        "RT"
+      ],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "第一列关系概念与第二列关系指示符分开；符号不替代英文术语，不丢弃中文概念。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0060",
+      "original_cells": [
+        "自定义关系",
+        "—",
+        "词表自行定义的关系类型",
+        "ISO §10.4"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "自定义关系"
+        }
+      ],
+      "structure": "uncertain",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 60,
+          "quote": "| 自定义关系 | — | 词表自行定义的关系类型 | ISO §10.4 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO §10.4 原文未读；本库是否需要该关系及其英文形式"
+      ],
+      "proposed_action": "维持现行登记待人决定；不把缺少英文形式解释为自动创建关系类型。",
+      "substantive_change": false,
+      "symbols": [
+        "—"
+      ],
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0061",
+      "original_cells": [
+        "聚合关系",
+        "paradigmatic",
+        "概念固有的关系，与具体文档无关；叙词表只收这类",
+        "ISO 2.41"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "聚合关系"
+        },
+        {
+          "language": "en",
+          "text": "paradigmatic"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 61,
+          "quote": "| 聚合关系 | paradigmatic | 概念固有的关系，与具体文档无关；叙词表只收这类 | ISO 2.41 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.41 原文及中文对应；‘只收这类’的范围依据"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不由定义后半句自动生成收录规则。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0062",
+      "original_cells": [
+        "组合关系",
+        "syntagmatic",
+        "因在某文档中同时出现而产生的关系；不进叙词表",
+        "ISO §4.3"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "组合关系"
+        },
+        {
+          "language": "en",
+          "text": "syntagmatic"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 62,
+          "quote": "| 组合关系 | syntagmatic | 因在某文档中同时出现而产生的关系；不进叙词表 | ISO §4.3 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO §4.3 原文未读；中文对应及排除范围"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不据当前摘要改变关系模型。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0063",
+      "original_cells": [
+        "单层级",
+        "monohierarchy",
+        "每个概念只有一个直接上位",
+        "ISO 2.34"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "单层级"
+        },
+        {
+          "language": "en",
+          "text": "monohierarchy"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 63,
+          "quote": "| 单层级 | monohierarchy | 每个概念只有一个直接上位 | ISO 2.34 |",
+          "kind": "input_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 50,
+          "quote": "| Part 1，2.34 | monohierarchical structure | 每个 concept 在直接上一级只能有一个 broader concept 的层级安排 |",
+          "kind": "reading_note_definition",
+          "summary": "仓库已有 ISO 免费样本阅读笔记的已核定义表；这是定义范围概述，不是标准原文逐字摘录。"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.34 原文及中文对应"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不由名称改变现有层级。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0064",
+      "original_cells": [
+        "多层级",
+        "polyhierarchy",
+        "一个概念可有多个直接上位",
+        "ISO 2.42"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "多层级"
+        },
+        {
+          "language": "en",
+          "text": "polyhierarchy"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 64,
+          "quote": "| 多层级 | polyhierarchy | 一个概念可有多个直接上位 | ISO 2.42 |",
+          "kind": "input_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 53,
+          "quote": "| Part 1，2.42 | polyhierarchical structure | 每个 concept 可以有多个 broader concepts 的层级安排 |",
+          "kind": "reading_note_definition",
+          "summary": "仓库已有 ISO 免费样本阅读笔记的已核定义表；这是定义范围概述，不是标准原文逐字摘录。"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.42 原文及中文对应"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不由名称改变现有层级。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0065",
+      "original_cells": [
+        "互反",
+        "reciprocal",
+        "关系必须双向登记：A BT B 则 B NT A",
+        "Z 5.4.4"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "互反"
+        },
+        {
+          "language": "en",
+          "text": "reciprocal"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 65,
+          "quote": "| 互反 | reciprocal | 关系必须双向登记：A BT B 则 B NT A | Z 5.4.4 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "Z 5.4.4 原文及 reciprocal 的中英对应"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不把登记描述直接当作系统实现门禁。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0071",
+      "original_cells": [
+        "分面",
+        "facet",
+        "同一内在类别的概念分组：对象、材料、动作、地点、时间",
+        "ISO 2.20"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "分面"
+        },
+        {
+          "language": "en",
+          "text": "facet"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 71,
+          "quote": "| 分面 | facet | 同一内在类别的概念分组：对象、材料、动作、地点、时间 | ISO 2.20 |",
+          "kind": "input_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 45,
+          "quote": "| Part 1，2.20 | facet | 同一 inherent category 的 concepts 分组 |",
+          "kind": "reading_note_definition",
+          "summary": "仓库已有 ISO 免费样本阅读笔记的已核定义表；这是定义范围概述，不是标准原文逐字摘录。"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.20 原文及中文对应；列举项是否穷尽"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不把示例列举当作固定类别集合。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0072",
+      "original_cells": [
+        "分面分析",
+        "facet analysis",
+        "把领域分解成概念、按分面分组、按划分特征细分",
+        "ISO 2.21;Z 5.3.4"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "分面分析"
+        },
+        {
+          "language": "en",
+          "text": "facet analysis"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 72,
+          "quote": "| 分面分析 | facet analysis | 把领域分解成概念、按分面分组、按划分特征细分 | ISO 2.21;Z 5.3.4 |",
+          "kind": "input_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 46,
+          "quote": "| Part 1，2.21 | facet analysis | 把 subject areas 分析为 concepts，按 facets 分组，并按 characteristics of division 细分 concepts |",
+          "kind": "reading_note_definition",
+          "summary": "仓库已有 ISO 免费样本阅读笔记的已核定义表；这是定义范围概述，不是标准原文逐字摘录。"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.21 与 Z 5.3.4 原文及中英对应"
+      ],
+      "proposed_action": "维持现行登记，待分别核对两来源；不自动把本地分析流程变成标准义务。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0073",
+      "original_cells": [
+        "划分特征",
+        "characteristic of division",
+        "把一个概念细分成一组下位概念所依据的属性",
+        "ISO 2.4"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "划分特征"
+        },
+        {
+          "language": "en",
+          "text": "characteristic of division"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 73,
+          "quote": "| 划分特征 | characteristic of division | 把一个概念细分成一组下位概念所依据的属性 | ISO 2.4 |",
+          "kind": "input_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 40,
+          "quote": "| Part 1，2.4 | characteristic of division | 用来把一个 concept 细分为一组 narrower concepts 的 attribute；组内各 concept 具有该 attribute 的不同值 |",
+          "kind": "reading_note_definition",
+          "summary": "仓库已有 ISO 免费样本阅读笔记的已核定义表；这是定义范围概述，不是标准原文逐字摘录。"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.4 原文及中文对应"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不据本条创建新的划分特征。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0074",
+      "original_cells": [
+        "树 / 层级",
+        "hierarchy",
+        "按 BT/NT 排出的上下位结构",
+        "ISO §10.2"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "树 / 层级"
+        },
+        {
+          "language": "en",
+          "text": "hierarchy"
+        }
+      ],
+      "structure": "uncertain",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 74,
+          "quote": "| 树 / 层级 | hierarchy | 按 BT/NT 排出的上下位结构 | ISO §10.2 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO §10.2 原文未读；树与层级是否同义"
+      ],
+      "proposed_action": "维持并列登记，待核形式关系；不因界面树形自动改变概念层级语义。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0075",
+      "original_cells": [
+        "节点",
+        "node",
+        "树上的一个位置",
+        "—"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "节点"
+        },
+        {
+          "language": "en",
+          "text": "node"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 75,
+          "quote": "| 节点 | node | 树上的一个位置 | — |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "本条依据未登记；node 在本库结构中的范围与中英对应"
+      ],
+      "proposed_action": "维持现行登记待人决定；不据界面位置定义概念或关系。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0076",
+      "original_cells": [
+        "顶层概念",
+        "top concept",
+        "树的根",
+        "ISO 数据模型"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "顶层概念"
+        },
+        {
+          "language": "en",
+          "text": "top concept"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 76,
+          "quote": "| 顶层概念 | top concept | 树的根 | ISO 数据模型 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 数据模型原文及 top concept 的中英对应"
+      ],
+      "proposed_action": "维持现行登记，待核模型原文；不由‘树的根’自动决定范围声明。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0077",
+      "original_cells": [
+        "节点标签",
+        "node label",
+        "树里说明一组兄弟按什么分的标签；内容只能是划分特征或分面名；非词，不能标引",
+        "ISO 2.38;Z 8.3.5"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "节点标签"
+        },
+        {
+          "language": "en",
+          "text": "node label"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 77,
+          "quote": "| 节点标签 | node label | 树里说明一组兄弟按什么分的标签；内容只能是划分特征或分面名；非词，不能标引 | ISO 2.38;Z 8.3.5 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.38 与 Z 8.3.5 原文及‘只能’等限制的直接证据"
+      ],
+      "proposed_action": "维持现行登记，待分别核对来源；不据当前定义新增节点标签规则。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0078",
+      "original_cells": [
+        "数组",
+        "array",
+        "一组同级概念",
+        "ISO 2.1"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "数组"
+        },
+        {
+          "language": "en",
+          "text": "array"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 78,
+          "quote": "| 数组 | array | 一组同级概念 | ISO 2.1 |",
+          "kind": "input_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 38,
+          "quote": "| Part 1，2.1 | array | 一组 sibling concepts |",
+          "kind": "reading_note_definition",
+          "summary": "仓库已有 ISO 免费样本阅读笔记的已核定义表；这是定义范围概述，不是标准原文逐字摘录。"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.1 原文及中文对应"
+      ],
+      "proposed_action": "维持现行登记，按 ISO 语境保留 array；编程语境的 Array 含义另行核对，不与本条合并。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0079",
+      "original_cells": [
+        "概念组 / 分组",
+        "concept group",
+        "按用途圈出的一批概念，可跨树、可嵌套",
+        "ISO 数据模型"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "概念组 / 分组"
+        },
+        {
+          "language": "en",
+          "text": "concept group"
+        }
+      ],
+      "structure": "uncertain",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 79,
+          "quote": "| 概念组 / 分组 | concept group | 按用途圈出的一批概念，可跨树、可嵌套 | ISO 数据模型 |",
+          "kind": "input_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 55,
+          "quote": "| Part 2，3.18 | concept group | 按指定 criterion 选择的一组 concepts |",
+          "kind": "reading_note_definition",
+          "summary": "仓库已有 ISO 免费样本阅读笔记的已核定义表；这是定义范围概述，不是标准原文逐字摘录。"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 数据模型原文及两个中文形式是否同义"
+      ],
+      "proposed_action": "维持并列登记，待核模型原文；不自动把分组与树结构合并。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0080",
+      "original_cells": [
+        "微词表",
+        "micro-thesaurus",
+        "叙词表的指定子集，可独立作为完整叙词表使用",
+        "ISO-2 3.46;ISO 数据模型"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "微词表"
+        },
+        {
+          "language": "en",
+          "text": "micro-thesaurus"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 80,
+          "quote": "| 微词表 | micro-thesaurus | 叙词表的指定子集，可独立作为完整叙词表使用 | ISO-2 3.46;ISO 数据模型 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO-2 3.46 与 ISO 数据模型原文及中文对应"
+      ],
+      "proposed_action": "维持现行登记，待核两类材料；不自动判定任何子集具备独立资格。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0081",
+      "original_cells": [
+        "辅助表 / 复分表",
+        "auxiliary table",
+        "分类法中单独列出的通用维度表（地区、时间、形式），拼接到主表号后",
+        "分类法实践，未核原文"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "辅助表 / 复分表"
+        },
+        {
+          "language": "en",
+          "text": "auxiliary table"
+        }
+      ],
+      "structure": "uncertain",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 81,
+          "quote": "| 辅助表 / 复分表 | auxiliary table | 分类法中单独列出的通用维度表（地区、时间、形式），拼接到主表号后 | 分类法实践，未核原文 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "所称分类法实践的具体来源原文；两个中文形式是否同义及适用范围"
+      ],
+      "proposed_action": "维持现行登记并保留‘未核原文’标记；不自动采用该名称或拼接规则。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0082",
+      "original_cells": [
+        "组配号",
+        "synthesized notation",
+        "主表号与辅助表号拼接而成的号码",
+        "ISO 2.22 facet indicator"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "组配号"
+        },
+        {
+          "language": "en",
+          "text": "synthesized notation"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 82,
+          "quote": "| 组配号 | synthesized notation | 主表号与辅助表号拼接而成的号码 | ISO 2.22 facet indicator |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.22 原文及 synthesized notation 与 facet indicator 的对应"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不据名称建立编号生成规则。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0083",
+      "original_cells": [
+        "先组",
+        "pre-coordination",
+        "建表或标引时就组合概念",
+        "ISO 2.44"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "先组"
+        },
+        {
+          "language": "en",
+          "text": "pre-coordination"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 83,
+          "quote": "| 先组 | pre-coordination | 建表或标引时就组合概念 | ISO 2.44 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.44 原文及中文对应"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不据定义决定具体标引流程。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0084",
+      "original_cells": [
+        "后组",
+        "post-coordination",
+        "检索时才组合首选词",
+        "ISO 2.43"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "后组"
+        },
+        {
+          "language": "en",
+          "text": "post-coordination"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 84,
+          "quote": "| 后组 | post-coordination | 检索时才组合首选词 | ISO 2.43 |",
+          "kind": "input_record"
+        }
+      ],
+      "missing_evidence": [
+        "ISO 2.43 原文及中文对应"
+      ],
+      "proposed_action": "维持现行登记，待核原文；不据定义决定具体检索实现。",
+      "substantive_change": false,
+      "symbols": [],
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0085",
+      "original_cells": [
+        "属性 / 维度",
+        "attribute, dimension",
+        "元数据层：文档的一个字段。不是词表结构，但 Z39.19 图 4 也把它叫 facet",
+        "Z 5.3.4"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "属性 / 维度"
+        },
+        {
+          "language": "en",
+          "text": "attribute, dimension"
+        }
+      ],
+      "structure": "multiple_concepts",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 85,
+          "quote": "| 属性 / 维度 | attribute, dimension | 元数据层：文档的一个字段。不是词表结构，但 Z39.19 图 4 也把它叫 facet | Z 5.3.4 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得 Z39.19 对应条款原文；阅读笔记只核对了部分条款，不能补作逐字证据。",
+      "proposed_action": "retain_current_effect_review_attribute_and_dimension_as_separate_components",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "属性和维度是否同义需要具体语境，不能按斜杠直接断定独立概念。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0091",
+      "original_cells": [
+        "范围注释",
+        "scope note",
+        "说明词的覆盖范围和用法限制的注释",
+        "ISO 5.2;Z 4.1"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "范围注释"
+        },
+        {
+          "language": "en",
+          "text": "scope note"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 91,
+          "quote": "| 范围注释 | scope note | 说明词的覆盖范围和用法限制的注释 | ISO 5.2;Z 4.1 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0092",
+      "original_cells": [
+        "定义",
+        "definition",
+        "词的定义，ISO 中挂在词上",
+        "ISO 数据模型"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "定义"
+        },
+        {
+          "language": "en",
+          "text": "definition"
+        }
+      ],
+      "structure": "uncertain",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 92,
+          "quote": "| 定义 | definition | 词的定义，ISO 中挂在词上 | ISO 数据模型 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "阅读笔记没有给出该数据模型的逐条原文；本轮未取得 ISO 原文。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0093",
+      "original_cells": [
+        "历史注释",
+        "history note",
+        "入表日期、变更记录、旧形式及有效期",
+        "Z 11.3.2.2"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "历史注释"
+        },
+        {
+          "language": "en",
+          "text": "history note"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 93,
+          "quote": "| 历史注释 | history note | 入表日期、变更记录、旧形式及有效期 | Z 11.3.2.2 |",
+          "kind": "current_glossary_record"
+        },
+        {
+          "file": "docs/references/z39-19.md",
+          "line": 52,
+          "quote": "| 11.3.2.2 | History of Changes | 每个 term should have history note，note should also track 修改历史；废弃词保留但不再标引时，替换日期和理由 should be given。完全删除时，正文说 may be desirable 另存 deleted terms 文件以保留范围与历史，措辞不是无条件要求。 |",
+          "kind": "reading_note_semantic_coverage"
+        }
+      ],
+      "missing_evidence": "本轮未取得 Z39.19 对应条款原文；阅读笔记只核对了部分条款，不能补作逐字证据。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0094",
+      "original_cells": [
+        "编辑注释",
+        "editorial note",
+        "给编辑看的内部注释",
+        "ISO 数据模型"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "编辑注释"
+        },
+        {
+          "language": "en",
+          "text": "editorial note"
+        }
+      ],
+      "structure": "uncertain",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 94,
+          "quote": "| 编辑注释 | editorial note | 给编辑看的内部注释 | ISO 数据模型 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "阅读笔记没有给出该数据模型的逐条原文；本轮未取得 ISO 原文。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0095",
+      "original_cells": [
+        "候选词",
+        "candidate term, provisional term",
+        "提出但未走完审批的词",
+        "Z 11.1.6"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "候选词"
+        },
+        {
+          "language": "en",
+          "text": "candidate term, provisional term"
+        }
+      ],
+      "structure": "synonyms",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 95,
+          "quote": "| 候选词 | candidate term, provisional term | 提出但未走完审批的词 | Z 11.1.6 |",
+          "kind": "current_glossary_record"
+        },
+        {
+          "file": "docs/references/z39-19.md",
+          "line": 36,
+          "quote": "| 11.1.6 | Candidate Terms | candidate terms 也称 provisional terms，指尚未完成全部 acceptance procedures 的 proposed terms；这些词 should be marked，对象是在 term record 中加 special symbol 或 phrase。一旦 candidate term 获准成为 term，该 symbol 或 phrase must be deleted。与单一数据库相连的联机环境通常不向用户显示 candidate terms；其他环境 may be displayed。这里不把它转换成本项目状态。 |",
+          "kind": "reading_note_semantic_coverage"
+        }
+      ],
+      "missing_evidence": "本轮未取得 Z39.19 对应条款原文；阅读笔记只核对了部分条款，不能补作逐字证据。",
+      "proposed_action": "retain_current_effect_review_synonym_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "synonyms",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0096",
+      "original_cells": [
+        "未标引词",
+        "unassigned term",
+        "为补全层级而收、尚未用于标引的词",
+        "Z 11.1.8"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "未标引词"
+        },
+        {
+          "language": "en",
+          "text": "unassigned term"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 96,
+          "quote": "| 未标引词 | unassigned term | 为补全层级而收、尚未用于标引的词 | Z 11.1.8 |",
+          "kind": "current_glossary_record"
+        },
+        {
+          "file": "docs/references/z39-19.md",
+          "line": 37,
+          "quote": "| 11.1.8 | Unassigned Terms | 建立层级时，尚未用于标引、但为补全层级且本身可能具有标引价值的词，正文说 frequently admitted into the controlled vocabulary。这里不把 unassigned 转换成本项目状态。 |",
+          "kind": "reading_note_semantic_coverage"
+        }
+      ],
+      "missing_evidence": "本轮未取得 Z39.19 对应条款原文；阅读笔记只核对了部分条款，不能补作逐字证据。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0097",
+      "original_cells": [
+        "废弃词",
+        "deprecated term",
+        "不再用于标引、保留供检索并指向替代词的词",
+        "Z 11.3.2.1"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "废弃词"
+        },
+        {
+          "language": "en",
+          "text": "deprecated term"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 97,
+          "quote": "| 废弃词 | deprecated term | 不再用于标引、保留供检索并指向替代词的词 | Z 11.3.2.1 |",
+          "kind": "current_glossary_record"
+        },
+        {
+          "file": "docs/references/z39-19.md",
+          "line": 51,
+          "quote": "| 11.3.2.1 | Methods for Handling of Modified or Deleted Terms | 除从未分配的词外，修改或删除对既有数据库记录检索能力的影响 must be considered。正文列出多种处理；若为检索或历史目的保留，词 must be marked，状态变更日期 must be recorded in the history note and displayed to users；另有一对一替换、可能需要人工介入的复杂替换，以及在特定条件下删除。选择取决于数据库规模、资源、变更性质与自动化能力；条款没有推出单一保留政策。 |",
+          "kind": "reading_note_semantic_coverage"
+        }
+      ],
+      "missing_evidence": "本轮未取得 Z39.19 对应条款原文；阅读笔记只核对了部分条款，不能补作逐字证据。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0098",
+      "original_cells": [
+        "孤儿词",
+        "orphan term",
+        "没有任何层级或相关关系的词",
+        "Z 11.4.4"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "孤儿词"
+        },
+        {
+          "language": "en",
+          "text": "orphan term"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 98,
+          "quote": "| 孤儿词 | orphan term | 没有任何层级或相关关系的词 | Z 11.4.4 |",
+          "kind": "current_glossary_record"
+        },
+        {
+          "file": "docs/references/z39-19.md",
+          "line": 53,
+          "quote": "| 11.4.4 | Term Deletion | 删除 term 时，system should prompt for verification；system must make all relevant reciprocal deletions，对象是让所有指向和来自 deleted term 的 links 同时删除；若产生 orphan term，system should inform editor。这是系统行为要求，不是项目删除门槛。 |",
+          "kind": "reading_note_semantic_coverage"
+        }
+      ],
+      "missing_evidence": "本轮未取得 Z39.19 对应条款原文；阅读笔记只核对了部分条款，不能补作逐字证据。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0099",
+      "original_cells": [
+        "状态",
+        "status",
+        "词或概念的生命周期状态",
+        "ISO 数据模型"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "状态"
+        },
+        {
+          "language": "en",
+          "text": "status"
+        }
+      ],
+      "structure": "uncertain",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 99,
+          "quote": "| 状态 | status | 词或概念的生命周期状态 | ISO 数据模型 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "阅读笔记没有给出该数据模型的逐条原文；本轮未取得 ISO 原文。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0100",
+      "original_cells": [
+        "版本历史",
+        "version history",
+        "词表整体的版本记录",
+        "ISO 数据模型"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "版本历史"
+        },
+        {
+          "language": "en",
+          "text": "version history"
+        }
+      ],
+      "structure": "uncertain",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 100,
+          "quote": "| 版本历史 | version history | 词表整体的版本记录 | ISO 数据模型 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "阅读笔记没有给出该数据模型的逐条原文；本轮未取得 ISO 原文。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0106",
+      "original_cells": [
+        "依据",
+        "warrant",
+        "一个词有资格进词表的理由",
+        "Z 5.3.5"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "依据"
+        },
+        {
+          "language": "en",
+          "text": "warrant"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 106,
+          "quote": "| 依据 | warrant | 一个词有资格进词表的理由 | Z 5.3.5 |",
+          "kind": "current_glossary_record"
+        },
+        {
+          "file": "docs/references/z39-19.md",
+          "line": 29,
+          "quote": "| 5.3.5 | Using Warrant to Select Terms | 选择纳入受控词表的词时，正文列出 literary warrant、user warrant 和 organizational warrant。5.3.5.1–5.3.5.3 分别把依据落到领域内容与参考来源、使用组织偏好，以及用户请求或检索中的用法。 |",
+          "kind": "reading_note_semantic_coverage"
+        }
+      ],
+      "missing_evidence": "本轮未取得 Z39.19 对应条款原文；阅读笔记只核对了部分条款，不能补作逐字证据。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0107",
+      "original_cells": [
+        "文献依据",
+        "literary warrant",
+        "词是领域文献里实际通行的说法",
+        "Z 5.3.5.1"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "文献依据"
+        },
+        {
+          "language": "en",
+          "text": "literary warrant"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 107,
+          "quote": "| 文献依据 | literary warrant | 词是领域文献里实际通行的说法 | Z 5.3.5.1 |",
+          "kind": "current_glossary_record"
+        },
+        {
+          "file": "docs/references/z39-19.md",
+          "line": 29,
+          "quote": "| 5.3.5 | Using Warrant to Select Terms | 选择纳入受控词表的词时，正文列出 literary warrant、user warrant 和 organizational warrant。5.3.5.1–5.3.5.3 分别把依据落到领域内容与参考来源、使用组织偏好，以及用户请求或检索中的用法。 |",
+          "kind": "reading_note_semantic_coverage"
+        }
+      ],
+      "missing_evidence": "本轮未取得 Z39.19 对应条款原文；阅读笔记只核对了部分条款，不能补作逐字证据。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0108",
+      "original_cells": [
+        "组织依据",
+        "organizational warrant",
+        "词是使用组织偏好的形式",
+        "Z 5.3.5.2"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "组织依据"
+        },
+        {
+          "language": "en",
+          "text": "organizational warrant"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 108,
+          "quote": "| 组织依据 | organizational warrant | 词是使用组织偏好的形式 | Z 5.3.5.2 |",
+          "kind": "current_glossary_record"
+        },
+        {
+          "file": "docs/references/z39-19.md",
+          "line": 29,
+          "quote": "| 5.3.5 | Using Warrant to Select Terms | 选择纳入受控词表的词时，正文列出 literary warrant、user warrant 和 organizational warrant。5.3.5.1–5.3.5.3 分别把依据落到领域内容与参考来源、使用组织偏好，以及用户请求或检索中的用法。 |",
+          "kind": "reading_note_semantic_coverage"
+        }
+      ],
+      "missing_evidence": "本轮未取得 Z39.19 对应条款原文；阅读笔记只核对了部分条款，不能补作逐字证据。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0109",
+      "original_cells": [
+        "用户依据",
+        "user warrant",
+        "词是用户检索时实际用的说法",
+        "Z 5.3.5.3"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "用户依据"
+        },
+        {
+          "language": "en",
+          "text": "user warrant"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 109,
+          "quote": "| 用户依据 | user warrant | 词是用户检索时实际用的说法 | Z 5.3.5.3 |",
+          "kind": "current_glossary_record"
+        },
+        {
+          "file": "docs/references/z39-19.md",
+          "line": 29,
+          "quote": "| 5.3.5 | Using Warrant to Select Terms | 选择纳入受控词表的词时，正文列出 literary warrant、user warrant 和 organizational warrant。5.3.5.1–5.3.5.3 分别把依据落到领域内容与参考来源、使用组织偏好，以及用户请求或检索中的用法。 |",
+          "kind": "reading_note_semantic_coverage"
+        }
+      ],
+      "missing_evidence": "本轮未取得 Z39.19 对应条款原文；阅读笔记只核对了部分条款，不能补作逐字证据。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0110",
+      "original_cells": [
+        "自上而下 / 自下而上",
+        "top down / bottom up",
+        "委员会法的两个方向；新建词表优先前者",
+        "Z 11.1.3.1"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "自上而下 / 自下而上"
+        },
+        {
+          "language": "en",
+          "text": "top down / bottom up"
+        }
+      ],
+      "structure": "synonyms",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 110,
+          "quote": "| 自上而下 / 自下而上 | top down / bottom up | 委员会法的两个方向；新建词表优先前者 | Z 11.1.3.1 |",
+          "kind": "current_glossary_record"
+        },
+        {
+          "file": "docs/references/z39-19.md",
+          "line": 33,
+          "quote": "| 11.1.3 | Construction Methods | 11.1.3.1–11.1.3.4 分别说明委员会方法、经验方法、方法组合和机器辅助。机器可辅助识别候选词、统计标引用词和用户查询，但正文仍把受控词表建设视为需要智力判断的工作。 |",
+          "kind": "reading_note_semantic_coverage"
+        }
+      ],
+      "missing_evidence": "本轮未取得 Z39.19 对应条款原文；阅读笔记只核对了部分条款，不能补作逐字证据。",
+      "proposed_action": "retain_current_effect_review_synonym_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "multiple_concepts",
+        "note": "自上而下与自下而上是相反方向，不是同义词。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0111",
+      "original_cells": [
+        "演绎法 / 归纳法",
+        "deductive / inductive",
+        "经验法的两种：先收集后控制 / 从头控制",
+        "Z 11.1.3.2"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "演绎法 / 归纳法"
+        },
+        {
+          "language": "en",
+          "text": "deductive / inductive"
+        }
+      ],
+      "structure": "synonyms",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 111,
+          "quote": "| 演绎法 / 归纳法 | deductive / inductive | 经验法的两种：先收集后控制 / 从头控制 | Z 11.1.3.2 |",
+          "kind": "current_glossary_record"
+        },
+        {
+          "file": "docs/references/z39-19.md",
+          "line": 33,
+          "quote": "| 11.1.3 | Construction Methods | 11.1.3.1–11.1.3.4 分别说明委员会方法、经验方法、方法组合和机器辅助。机器可辅助识别候选词、统计标引用词和用户查询，但正文仍把受控词表建设视为需要智力判断的工作。 |",
+          "kind": "reading_note_semantic_coverage"
+        }
+      ],
+      "missing_evidence": "本轮未取得 Z39.19 对应条款原文；阅读笔记只核对了部分条款，不能补作逐字证据。",
+      "proposed_action": "retain_current_effect_review_synonym_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "multiple_concepts",
+        "note": "演绎与归纳是不同方法；原行两段描述对应顺序也需单独核对。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0112",
+      "original_cells": [
+        "分析综合式分类",
+        "analytico-synthetic classification",
+        "先把主题分析成基本范畴，再综合类号；新主题是旧面的新组合",
+        "Ranganathan 1957"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "分析综合式分类"
+        },
+        {
+          "language": "en",
+          "text": "analytico-synthetic classification"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 112,
+          "quote": "| 分析综合式分类 | analytico-synthetic classification | 先把主题分析成基本范畴，再综合类号；新主题是旧面的新组合 | Ranganathan 1957 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "所列来源原文或逐条中文译名未在本轮取得；现有记录只能作为项目内登记和历史核对。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0113",
+      "original_cells": [
+        "好客准则",
+        "canon of hospitality",
+        "分类法容纳新类目而不扰动已有类号",
+        "Ranganathan 1957"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "好客准则"
+        },
+        {
+          "language": "en",
+          "text": "canon of hospitality"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 113,
+          "quote": "| 好客准则 | canon of hospitality | 分类法容纳新类目而不扰动已有类号 | Ranganathan 1957 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "所列来源原文或逐条中文译名未在本轮取得；现有记录只能作为项目内登记和历史核对。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0114",
+      "original_cells": [
+        "领域分析",
+        "domain analysis",
+        "分类反映话语共同体的目的与立场，无唯一正确分类",
+        "Hjørland & Albrechtsen 1995"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "领域分析"
+        },
+        {
+          "language": "en",
+          "text": "domain analysis"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 114,
+          "quote": "| 领域分析 | domain analysis | 分类反映话语共同体的目的与立场，无唯一正确分类 | Hjørland & Albrechtsen 1995 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "所列来源原文或逐条中文译名未在本轮取得；现有记录只能作为项目内登记和历史核对。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0115",
+      "original_cells": [
+        "剩余类目",
+        "residual category",
+        "“其他”“杂项”；其大小是分类失效的信号",
+        "Star & Bowker 2007"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "剩余类目"
+        },
+        {
+          "language": "en",
+          "text": "residual category"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 115,
+          "quote": "| 剩余类目 | residual category | “其他”“杂项”；其大小是分类失效的信号 | Star & Bowker 2007 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "所列来源原文或逐条中文译名未在本轮取得；现有记录只能作为项目内登记和历史核对。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0116",
+      "original_cells": [
+        "词汇控制",
+        "vocabulary control",
+        "让标引者和检索者对同一概念用同一个词",
+        "ISO §4.2;Z 1.1"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "词汇控制"
+        },
+        {
+          "language": "en",
+          "text": "vocabulary control"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 116,
+          "quote": "| 词汇控制 | vocabulary control | 让标引者和检索者对同一概念用同一个词 | ISO §4.2;Z 1.1 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0117",
+      "original_cells": [
+        "标引",
+        "indexing",
+        "分析文档主题、识别概念、分配标引词",
+        "ISO 2.27"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "标引"
+        },
+        {
+          "language": "en",
+          "text": "indexing"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 117,
+          "quote": "| 标引 | indexing | 分析文档主题、识别概念、分配标引词 | ISO 2.27 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0118",
+      "original_cells": [
+        "标引词",
+        "index term",
+        "分配给文档的词；keyword、tag 含义更宽",
+        "ISO 2.26"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "标引词"
+        },
+        {
+          "language": "en",
+          "text": "index term"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 118,
+          "quote": "| 标引词 | index term | 分配给文档的词；keyword、tag 含义更宽 | ISO 2.26 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0119",
+      "original_cells": [
+        "查全率 / 查准率",
+        "recall / precision",
+        "检索效果的两个指标；词表对两者都有正面影响",
+        "Z 5.3.6"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "查全率 / 查准率"
+        },
+        {
+          "language": "en",
+          "text": "recall / precision"
+        }
+      ],
+      "structure": "multiple_concepts",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 119,
+          "quote": "| 查全率 / 查准率 | recall / precision | 检索效果的两个指标；词表对两者都有正面影响 | Z 5.3.6 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得 Z39.19 对应条款原文；阅读笔记只核对了部分条款，不能补作逐字证据。",
+      "proposed_action": "retain_current_effect_review_recall_and_precision_as_separate_metrics",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "multiple_concepts",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0120",
+      "original_cells": [
+        "互操作性",
+        "interoperability",
+        "系统间交换并使用信息的能力",
+        "ISO 2.29"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "互操作性"
+        },
+        {
+          "language": "en",
+          "text": "interoperability"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 120,
+          "quote": "| 互操作性 | interoperability | 系统间交换并使用信息的能力 | ISO 2.29 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0121",
+      "original_cells": [
+        "来源分级",
+        "de-jure / de-facto / vendor / archival",
+        "引证来源按变更方式分档；依据为组织依据",
+        "Z 5.3.5.2；[命名实体设计](design/model/entities.md)"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "来源分级"
+        },
+        {
+          "language": "en",
+          "text": "de-jure / de-facto / vendor / archival"
+        }
+      ],
+      "structure": "multiple_concepts",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 121,
+          "quote": "| 来源分级 | de-jure / de-facto / vendor / archival | 引证来源按变更方式分档；依据为组织依据 | Z 5.3.5.2；[命名实体设计](design/model/entities.md) |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得 Z39.19 对应条款原文；阅读笔记只核对了部分条款，不能补作逐字证据。",
+      "proposed_action": "retain_current_effect_review_de_jure_de_facto_vendor_and_archival_as_separate_tiers",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "来源分级的四个值属于现行数据枚举；不由本行创建四个术语概念或新分类。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0127",
+      "original_cells": [
+        "映射",
+        "mapping",
+        "一个词表中的概念与另一个词表中一个或多个概念之间的关系；通常有方向",
+        "ISO-2 3.41"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "映射"
+        },
+        {
+          "language": "en",
+          "text": "mapping"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 127,
+          "quote": "| 映射 | mapping | 一个词表中的概念与另一个词表中一个或多个概念之间的关系；通常有方向 | ISO-2 3.41 |",
+          "kind": "current_glossary_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 60,
+          "quote": "| Part 2，3.41 | mapping, noun | mapping process 的产物，即一个 vocabulary 中的一个 concept 与另一个 vocabulary 中一个或多个 concepts 之间的关系 |",
+          "kind": "reading_note_semantic_coverage"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0128",
+      "original_cells": [
+        "映射簇",
+        "mapping cluster",
+        "三个以上词表之间协调维护的一组映射",
+        "ISO-2 3.42"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "映射簇"
+        },
+        {
+          "language": "en",
+          "text": "mapping cluster"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 128,
+          "quote": "| 映射簇 | mapping cluster | 三个以上词表之间协调维护的一组映射 | ISO-2 3.42 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0129",
+      "original_cells": [
+        "名称规范表",
+        "name authority list",
+        "为一致地命名特定个体而设的受控词表",
+        "ISO-2 3.50"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "名称规范表"
+        },
+        {
+          "language": "en",
+          "text": "name authority list"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 129,
+          "quote": "| 名称规范表 | name authority list | 为一致地命名特定个体而设的受控词表 | ISO-2 3.50 |",
+          "kind": "current_glossary_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 61,
+          "quote": "| Part 2，3.50 | name authority list | 用来一致命名 particular entities 的 controlled vocabulary；注释把这些 entities 限定为 unique individuals，而不是 classes |",
+          "kind": "reading_note_semantic_coverage"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0130",
+      "original_cells": [
+        "对照表",
+        "crosswalk",
+        "两个以上词表之间概念映射的表",
+        "ISO-2 3.21"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "对照表"
+        },
+        {
+          "language": "en",
+          "text": "crosswalk"
+        }
+      ],
+      "structure": "multiple_concepts",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 130,
+          "quote": "| 对照表 | crosswalk | 两个以上词表之间概念映射的表 | ISO-2 3.21 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_crosswalk_as_one_concept",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "crosswalk 在该行是一个概念；定义涉及多个词表不等于多个概念。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0131",
+      "original_cells": [
+        "源词表 / 目标词表",
+        "source / target vocabulary",
+        "映射的起点 / 终点",
+        "ISO-2 §3（条款号在样章之外）"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "源词表 / 目标词表"
+        },
+        {
+          "language": "en",
+          "text": "source / target vocabulary"
+        }
+      ],
+      "structure": "multiple_concepts",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 131,
+          "quote": "| 源词表 / 目标词表 | source / target vocabulary | 映射的起点 / 终点 | ISO-2 §3（条款号在样章之外） |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_source_vocabulary_and_target_vocabulary_as_distinct_roles",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "multiple_concepts",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0132",
+      "original_cells": [
+        "等价映射",
+        "equivalence mapping",
+        "目标概念与源概念范围相同",
+        "ISO-2 3.27"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "等价映射"
+        },
+        {
+          "language": "en",
+          "text": "equivalence mapping"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 132,
+          "quote": "| 等价映射 | equivalence mapping | 目标概念与源概念范围相同 | ISO-2 3.27 |",
+          "kind": "current_glossary_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 57,
+          "quote": "| Part 2，3.27 | equivalence mapping | 说明 target vocabulary 中的 concept 与 source vocabulary 中的 concept 在 scope 上被视为相同的 mapping |",
+          "kind": "reading_note_semantic_coverage"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0133",
+      "original_cells": [
+        "精确 / 不精确 / 部分等价",
+        "exact / inexact / partial equivalence",
+        "等价的三个程度",
+        "ISO-2 §11"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "精确 / 不精确 / 部分等价"
+        },
+        {
+          "language": "en",
+          "text": "exact / inexact / partial equivalence"
+        }
+      ],
+      "structure": "multiple_concepts",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 133,
+          "quote": "| 精确 / 不精确 / 部分等价 | exact / inexact / partial equivalence | 等价的三个程度 | ISO-2 §11 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_exact_inexact_and_partial_equivalence_as_distinct_degrees",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "multiple_concepts",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0134",
+      "original_cells": [
+        "层级映射",
+        "hierarchical mapping",
+        "目标概念比源概念宽或窄",
+        "ISO-2 §9"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "层级映射"
+        },
+        {
+          "language": "en",
+          "text": "hierarchical mapping"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 134,
+          "quote": "| 层级映射 | hierarchical mapping | 目标概念比源概念宽或窄 | ISO-2 §9 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0135",
+      "original_cells": [
+        "相关映射",
+        "associative mapping",
+        "有关但非等价非层级",
+        "ISO-2 §10"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "相关映射"
+        },
+        {
+          "language": "en",
+          "text": "associative mapping"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 135,
+          "quote": "| 相关映射 | associative mapping | 有关但非等价非层级 | ISO-2 §10 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0136",
+      "original_cells": [
+        "区分式映射",
+        "differentiated mapping",
+        "标明映射类型和等价程度的映射方法",
+        "ISO-2 3.23"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "区分式映射"
+        },
+        {
+          "language": "en",
+          "text": "differentiated mapping"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 136,
+          "quote": "| 区分式映射 | differentiated mapping | 标明映射类型和等价程度的映射方法 | ISO-2 3.23 |",
+          "kind": "current_glossary_record"
+        },
+        {
+          "file": "docs/references/iso-25964.md",
+          "line": 56,
+          "quote": "| Part 2，3.23 | differentiated mapping | 旨在区分 mapping 的不同 types 和 qualities 的方法 |",
+          "kind": "reading_note_semantic_coverage"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0137",
+      "original_cells": [
+        "中心辐射",
+        "hub structure",
+        "所有词表映射到一个中心词表的结构模型",
+        "ISO-2 §6"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "中心辐射"
+        },
+        {
+          "language": "en",
+          "text": "hub structure"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 137,
+          "quote": "| 中心辐射 | hub structure | 所有词表映射到一个中心词表的结构模型 | ISO-2 §6 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0138",
+      "original_cells": [
+        "exactMatch / closeMatch",
+        "—",
+        "SKOS 的精确 / 不精确等价；前者传递，后者不传递",
+        "SKOS §10"
+      ],
+      "proposed_forms": [
+        {
+          "symbol": "exactMatch"
+        },
+        {
+          "symbol": "closeMatch"
+        }
+      ],
+      "structure": "symbols",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 138,
+          "quote": "| exactMatch / closeMatch | — | SKOS 的精确 / 不精确等价；前者传递，后者不传递 | SKOS §10 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得 SKOS §10 原文；glossary 记录与项目概念文属于现行项目材料。",
+      "proposed_action": "retain_current_effect_review_exactMatch_and_closeMatch_as_distinct_symbols",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "symbols",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0139",
+      "original_cells": [
+        "broadMatch / narrowMatch / relatedMatch",
+        "—",
+        "SKOS 的层级 / 相关映射",
+        "SKOS §10"
+      ],
+      "proposed_forms": [
+        {
+          "symbol": "broadMatch"
+        },
+        {
+          "symbol": "narrowMatch"
+        },
+        {
+          "symbol": "relatedMatch"
+        }
+      ],
+      "structure": "symbols",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 139,
+          "quote": "| broadMatch / narrowMatch / relatedMatch | — | SKOS 的层级 / 相关映射 | SKOS §10 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得 SKOS §10 原文；glossary 记录与项目概念文属于现行项目材料。",
+      "proposed_action": "retain_current_effect_review_broadMatch_narrowMatch_and_relatedMatch_as_distinct_symbols",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "symbols",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0145",
+      "original_cells": [
+        "知识体系",
+        "body of knowledge, BoK",
+        "一个学科或职业公认知识范围的结构化清单",
+        "SWEBOK;ISO/IEC TR 19759"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "知识体系"
+        },
+        {
+          "language": "en",
+          "text": "body of knowledge, BoK"
+        }
+      ],
+      "structure": "synonyms",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 145,
+          "quote": "| 知识体系 | body of knowledge, BoK | 一个学科或职业公认知识范围的结构化清单 | SWEBOK;ISO/IEC TR 19759 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_body_of_knowledge_and_BoK_as_synonymous_forms",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "synonyms",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0146",
+      "original_cells": [
+        "知识领域",
+        "knowledge area, KA",
+        "知识体系的主要区域",
+        "SWEBOK;CS2023"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "知识领域"
+        },
+        {
+          "language": "en",
+          "text": "knowledge area, KA"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 146,
+          "quote": "| 知识领域 | knowledge area, KA | 知识体系的主要区域 | SWEBOK;CS2023 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "所列来源原文或逐条中文译名未在本轮取得；现有记录只能作为项目内登记和历史核对。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0147",
+      "original_cells": [
+        "知识单元",
+        "knowledge unit, KU",
+        "知识领域内的主题簇",
+        "CS2023"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "知识单元"
+        },
+        {
+          "language": "en",
+          "text": "knowledge unit, KU"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 147,
+          "quote": "| 知识单元 | knowledge unit, KU | 知识领域内的主题簇 | CS2023 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "所列来源原文或逐条中文译名未在本轮取得；现有记录只能作为项目内登记和历史核对。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0148",
+      "original_cells": [
+        "主题",
+        "topic",
+        "知识单元内的具体知识点，标核心或选修",
+        "CS2023"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "主题"
+        },
+        {
+          "language": "en",
+          "text": "topic"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 148,
+          "quote": "| 主题 | topic | 知识单元内的具体知识点，标核心或选修 | CS2023 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "所列来源原文或逐条中文译名未在本轮取得；现有记录只能作为项目内登记和历史核对。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0149",
+      "original_cells": [
+        "普遍接受的知识",
+        "generally accepted knowledge",
+        "多数项目多数时候适用且广泛认同的知识；知识体系只收这类",
+        "SWEBOK"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "普遍接受的知识"
+        },
+        {
+          "language": "en",
+          "text": "generally accepted knowledge"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 149,
+          "quote": "| 普遍接受的知识 | generally accepted knowledge | 多数项目多数时候适用且广泛认同的知识；知识体系只收这类 | SWEBOK |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "所列来源原文或逐条中文译名未在本轮取得；现有记录只能作为项目内登记和历史核对。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0155",
+      "original_cells": [
+        "Dublin Core",
+        "Dublin Core Metadata Element Set",
+        "十五个核心元数据元素，任何资源都可用",
+        "ISO 15836-1:2017"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "Dublin Core"
+        },
+        {
+          "language": "en",
+          "text": "Dublin Core Metadata Element Set"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 155,
+          "quote": "| Dublin Core | Dublin Core Metadata Element Set | 十五个核心元数据元素，任何资源都可用 | ISO 15836-1:2017 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0156",
+      "original_cells": [
+        "DCMI Metadata Terms",
+        "—",
+        "Dublin Core 的扩展属性与类",
+        "ISO 15836-2:2019；DCMI 2020"
+      ],
+      "proposed_forms": [
+        {
+          "language": "en",
+          "text": "DCMI Metadata Terms"
+        }
+      ],
+      "structure": "uncertain",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 156,
+          "quote": "| DCMI Metadata Terms | — | Dublin Core 的扩展属性与类 | ISO 15836-2:2019；DCMI 2020 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0157",
+      "original_cells": [
+        "DCMI Type Vocabulary",
+        "—",
+        "`type` 的推荐取值，按媒介性质分 12 类",
+        "DCMI"
+      ],
+      "proposed_forms": [
+        {
+          "language": "en",
+          "text": "DCMI Type Vocabulary"
+        }
+      ],
+      "structure": "uncertain",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 157,
+          "quote": "| DCMI Type Vocabulary | — | `type` 的推荐取值，按媒介性质分 12 类 | DCMI |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "所列来源原文或逐条中文译名未在本轮取得；现有记录只能作为项目内登记和历史核对。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0158",
+      "original_cells": [
+        "资源",
+        "resource",
+        "被描述的东西：文档、图像、数据集、软件",
+        "DCMI"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "资源"
+        },
+        {
+          "language": "en",
+          "text": "resource"
+        }
+      ],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 158,
+          "quote": "| 资源 | resource | 被描述的东西：文档、图像、数据集、软件 | DCMI |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "所列来源原文或逐条中文译名未在本轮取得；现有记录只能作为项目内登记和历史核对。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0159",
+      "original_cells": [
+        "内容单元",
+        "—",
+        "知识库里最小的可独立引用、可独立打标签的东西；参照 DITA topic",
+        "本库，参照 DITA 1.3 §2.2.1"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "内容单元"
+        }
+      ],
+      "structure": "uncertain",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 159,
+          "quote": "| 内容单元 | — | 知识库里最小的可独立引用、可独立打标签的东西；参照 DITA topic | 本库，参照 DITA 1.3 §2.2.1 |",
+          "kind": "current_glossary_record"
+        }
+      ],
+      "missing_evidence": "所列来源原文或逐条中文译名未在本轮取得；现有记录只能作为项目内登记和历史核对。",
+      "proposed_action": "retain_current_effect_review_definition_and_bilingual_correspondence",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0165",
+      "original_cells": [
+        "Application Profile",
+        "Application Profile",
+        "为特定应用规定 metadata term、约束、使用与编码语法的文档集合",
+        "DCMI Singapore Framework；中文查无高阶正文依据"
+      ],
+      "proposed_forms": [
+        {
+          "language": "en",
+          "text": "Application Profile"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 165,
+          "quote": "| Application Profile | Application Profile | 为特定应用规定 metadata term、约束、使用与编码语法的文档集合 | DCMI Singapore Framework；中文查无高阶正文依据 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/application-profile.md",
+          "line": 5,
+          "quote": "Application Profile 是为特定应用选择已有 `metadata term`、规定使用约束并说明应用语境的一组文档。它可以组合多个词汇表中的 `term`，但不改写来源定义；例如，本库可以沿用 Dublin Core 的 `subject`，再规定该字段必须引用正式主题词表，而不重新定义 `subject` 的语义。",
+          "kind": "concept-definition"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0166",
+      "original_cells": [
+        "Reproducible Builds",
+        "Reproducible Builds",
+        "使任何一方在相同 source、environment 和 instructions 下重建逐字节相同 artifacts 的实践",
+        "Reproducible Builds definition"
+      ],
+      "proposed_forms": [
+        {
+          "language": "en",
+          "text": "Reproducible Builds"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 166,
+          "quote": "| Reproducible Builds | Reproducible Builds | 使任何一方在相同 source、environment 和 instructions 下重建逐字节相同 artifacts 的实践 | Reproducible Builds definition |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/reproducible-builds.md",
+          "line": 5,
+          "quote": "Reproducible Builds 是使任何一方能够在相同 source、environment 和 instructions 下，重建逐比特相同的指定 artifacts 的实践。[Definitions](https://reproducible-builds.org/docs/definition/) 把“任何一方”和“指定 artifacts”都纳入定义，因此同一台机器重复生成相同 bytes 只是确定性证据，不是完整的可重建证据。",
+          "kind": "concept-definition"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0172",
+      "original_cells": [
+        "相关 / 可找到 / 可理解 / 可使用",
+        "relevant / findable / understandable / usable",
+        "plain language 的四条原则",
+        "ISO 24495-1:2023"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "相关"
+        },
+        {
+          "language": "en",
+          "text": "relevant"
+        },
+        {
+          "language": "zh-Hans",
+          "text": "可找到"
+        },
+        {
+          "language": "en",
+          "text": "findable"
+        },
+        {
+          "language": "zh-Hans",
+          "text": "可理解"
+        },
+        {
+          "language": "en",
+          "text": "understandable"
+        },
+        {
+          "language": "zh-Hans",
+          "text": "可使用"
+        },
+        {
+          "language": "en",
+          "text": "usable"
+        }
+      ],
+      "symbol": [],
+      "structure": "multiple_concepts",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 172,
+          "quote": "| 相关 / 可找到 / 可理解 / 可使用 | relevant / findable / understandable / usable | plain language 的四条原则 | ISO 24495-1:2023 |",
+          "kind": "glossary-entry"
+        }
+      ],
+      "missing_evidence": [
+        "复合行列出多个现有形式，但未提供每个分项可独立引用的定义原句；需逐项确认定义、来源和概念对应。"
+      ],
+      "proposed_action": "建议按现有分隔项逐项拆分：相关、可找到、可理解、可使用；不补造分项定义或新概念。",
+      "substantive_change": true,
+      "lead_review": {
+        "structure": "multiple_concepts",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0173",
+      "original_cells": [
+        "第一原理",
+        "first principle",
+        "不能再从别的命题推出、只能作为起点的命题",
+        "Aristotle, *Posterior Analytics*"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "第一原理"
+        },
+        {
+          "language": "en",
+          "text": "first principle"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 173,
+          "quote": "| 第一原理 | first principle | 不能再从别的命题推出、只能作为起点的命题 | Aristotle, *Posterior Analytics* |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/first-principles.md",
+          "line": 1,
+          "quote": "# 第一原理与设计理由 (First Principles and Design Rationale)",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0174",
+      "original_cells": [
+        "设计理由",
+        "design rationale",
+        "记录“为什么这样决定”而不只是“决定了什么”",
+        "Kunz & Rittel 1970；Nygard 2011"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "设计理由"
+        },
+        {
+          "language": "en",
+          "text": "design rationale"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 174,
+          "quote": "| 设计理由 | design rationale | 记录“为什么这样决定”而不只是“决定了什么” | Kunz & Rittel 1970；Nygard 2011 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/first-principles.md",
+          "line": 1,
+          "quote": "# 第一原理与设计理由 (First Principles and Design Rationale)",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0175",
+      "original_cells": [
+        "被替代",
+        "superseded",
+        "决定记录被新决定取代后的状态",
+        "Nygard ADR 2011"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "被替代"
+        },
+        {
+          "language": "en",
+          "text": "superseded"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 175,
+          "quote": "| 被替代 | superseded | 决定记录被新决定取代后的状态 | Nygard ADR 2011 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/first-principles.md",
+          "line": 49,
+          "quote": "| 状态 | 提议、采纳、废弃或被替代 |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0176",
+      "original_cells": [
+        "内容模型",
+        "content model",
+        "内容单元允许有哪些组成部分及其结构",
+        "SGML（ISO 8879）、DITA 沿用"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "内容模型"
+        },
+        {
+          "language": "en",
+          "text": "content model"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 176,
+          "quote": "| 内容模型 | content model | 内容单元允许有哪些组成部分及其结构 | SGML（ISO 8879）、DITA 沿用 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/application-profile.md",
+          "line": 20,
+          "quote": "本库采用这一方法，是为了从应用需求导出约束，而不是让某个输出格式决定内容模型。",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0177",
+      "original_cells": [
+        "知识组织",
+        "knowledge organization",
+        "对知识进行描述、分类和排序的活动与系统；KOS 即知识组织系统",
+        "ISO 25964；SKOS"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "知识组织"
+        },
+        {
+          "language": "en",
+          "text": "knowledge organization"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 177,
+          "quote": "| 知识组织 | knowledge organization | 对知识进行描述、分类和排序的活动与系统；KOS 即知识组织系统 | ISO 25964；SKOS |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/CONVENTIONS.md",
+          "line": 57,
+          "quote": "[README](README.md) 的文章关系树按“知识组织”归类。新文章挂在哪，判据是：假如只有一份词表，这个概念还有没有意义。有，它讲的是一份词表内部的事，放在受控词表之下；没有，它讲的是词表之间或词表之外的事，与受控词表并列。不属于知识组织的（如方法论）另起一棵。",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0178",
+      "original_cells": [
+        "公众人物",
+        "public figure",
+        "在社会事务中担任显著角色、或主动进入公共争议的人；本库 `person` 实体只收此类，具体为已发表作品的作者、公开项目的维护者、方法的提出者",
+        "美国判例法 *Gertz v. Robert Welch* (1974)，见 [Cornell LII](https://www.law.cornell.edu/wex/public_figure)"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "公众人物"
+        },
+        {
+          "language": "en",
+          "text": "public figure"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 178,
+          "quote": "| 公众人物 | public figure | 在社会事务中担任显著角色、或主动进入公共争议的人；本库 `person` 实体只收此类，具体为已发表作品的作者、公开项目的维护者、方法的提出者 | 美国判例法 *Gertz v. Robert Welch* (1974)，见 [Cornell LII](https://www.law.cornell.edu/wex/public_figure) |",
+          "kind": "glossary-entry"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0179",
+      "original_cells": [
+        "个体",
+        "individual",
+        "名称规范表所收的对象：唯一的个体，而非类",
+        "ISO-2 3.50 注"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "个体"
+        },
+        {
+          "language": "en",
+          "text": "individual"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 179,
+          "quote": "| 个体 | individual | 名称规范表所收的对象：唯一的个体，而非类 | ISO-2 3.50 注 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/vocabulary-mapping.md",
+          "line": 65,
+          "quote": "| 名称规范表（§23） | 收的是个体（人、机构）不是类 | 不与主题概念做等价映射 |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0180",
+      "original_cells": [
+        "划分",
+        "partition",
+        "把一个集合分成互不重叠、合起来是全集的几组",
+        "数学通用术语"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "划分"
+        },
+        {
+          "language": "en",
+          "text": "partition"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 180,
+          "quote": "| 划分 | partition | 把一个集合分成互不重叠、合起来是全集的几组 | 数学通用术语 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/body-of-knowledge.md",
+          "line": 5,
+          "quote": "知识体系把编制者为明确目的选取的知识组织成结构化说明。它可以刻画一门学科或一种职业实践的边界，也可以服务课程、认证或从业参考；具体对象、适用范围和内部结构以各体系自己的声明为准，不能预设所有体系都划分同一种范围。",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0186",
+      "original_cells": [
+        "体裁",
+        "genre",
+        "按读者需求或内容性质划分的文本类别",
+        "IPTC genre；Diátaxis"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "体裁"
+        },
+        {
+          "language": "en",
+          "text": "genre"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 186,
+          "quote": "| 体裁 | genre | 按读者需求或内容性质划分的文本类别 | IPTC genre；Diátaxis |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/metadata.md",
+          "line": 31,
+          "quote": "| type | 资源的性质或体裁 |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0187",
+      "original_cells": [
+        "排障",
+        "troubleshooting",
+        "DITA 的 topic 类型：纠正性操作信息",
+        "DITA 1.3 §2.7.1.6"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "排障"
+        },
+        {
+          "language": "en",
+          "text": "troubleshooting"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 187,
+          "quote": "| 排障 | troubleshooting | DITA 的 topic 类型：纠正性操作信息 | DITA 1.3 §2.7.1.6 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/note-types.md",
+          "line": 24,
+          "quote": "| DITA 1.3 技术内容 | concept、task、reference、troubleshooting、glossary entry | OASIS 标准的 topic 类型 |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0188",
+      "original_cells": [
+        "闪念笔记 / 文献笔记 / 永久笔记",
+        "fleeting / literature / permanent note",
+        "按工作流阶段分的三种笔记",
+        "Ahrens 2017"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "闪念笔记"
+        },
+        {
+          "language": "en",
+          "text": "fleeting"
+        },
+        {
+          "language": "zh-Hans",
+          "text": "文献笔记"
+        },
+        {
+          "language": "en",
+          "text": "literature"
+        },
+        {
+          "language": "zh-Hans",
+          "text": "永久笔记"
+        },
+        {
+          "language": "en",
+          "text": "permanent note"
+        }
+      ],
+      "symbol": [],
+      "structure": "multiple_concepts",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 188,
+          "quote": "| 闪念笔记 / 文献笔记 / 永久笔记 | fleeting / literature / permanent note | 按工作流阶段分的三种笔记 | Ahrens 2017 |",
+          "kind": "glossary-entry"
+        }
+      ],
+      "missing_evidence": [
+        "复合行列出多个现有形式，但未提供每个分项可独立引用的定义原句；需逐项确认定义、来源和概念对应。"
+      ],
+      "proposed_action": "建议按现有分隔项逐项拆分：闪念笔记、文献笔记、永久笔记；不补造分项定义或新概念。",
+      "substantive_change": true,
+      "lead_review": {
+        "structure": "multiple_concepts",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0189",
+      "original_cells": [
+        "隐性知识 / 显性知识",
+        "tacit / explicit knowledge",
+        "难以形式化的个人知识 / 正式而系统、易于交流的知识",
+        "Nonaka 1991"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "隐性知识"
+        },
+        {
+          "language": "en",
+          "text": "tacit"
+        },
+        {
+          "language": "zh-Hans",
+          "text": "显性知识"
+        },
+        {
+          "language": "en",
+          "text": "explicit knowledge"
+        }
+      ],
+      "symbol": [],
+      "structure": "multiple_concepts",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 189,
+          "quote": "| 隐性知识 / 显性知识 | tacit / explicit knowledge | 难以形式化的个人知识 / 正式而系统、易于交流的知识 | Nonaka 1991 |",
+          "kind": "glossary-entry"
+        }
+      ],
+      "missing_evidence": [
+        "复合行列出多个现有形式，但未提供每个分项可独立引用的定义原句；需逐项确认定义、来源和概念对应。"
+      ],
+      "proposed_action": "建议按现有分隔项逐项拆分：隐性知识、显性知识；不补造分项定义或新概念。",
+      "substantive_change": true,
+      "lead_review": {
+        "structure": "multiple_concepts",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0190",
+      "original_cells": [
+        "速查表",
+        "cheat sheet",
+        "供快速参考的简明笔记集",
+        "Wikidata Q2309859"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "速查表"
+        },
+        {
+          "language": "en",
+          "text": "cheat sheet"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 190,
+          "quote": "| 速查表 | cheat sheet | 供快速参考的简明笔记集 | Wikidata Q2309859 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/note-types.md",
+          "line": 5,
+          "quote": "笔记的类型回答“这条笔记是什么性质的东西”。它不是一根轴：一条笔记同时有体裁（给读者做什么用）、作者立场（是事实还是观点）、成熟度（是随手记还是定稿）、载体（是长文还是速查表）、认知层级（理解到什么深度）。这五根轴各有来源，互不替代；把它们压成一个“类型”字段，是 Diátaxis 四类装不下学习笔记的原因。",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0191",
+      "original_cells": [
+        "札记簿",
+        "commonplace book",
+        "抄录重要段落并按主题整理的本子",
+        "Harvard Library"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "札记簿"
+        },
+        {
+          "language": "en",
+          "text": "commonplace book"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 191,
+          "quote": "| 札记簿 | commonplace book | 抄录重要段落并按主题整理的本子 | Harvard Library |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/note-types.md",
+          "line": 64,
+          "quote": "另有两种来源较弱的：速查表 cheat sheet（Wikidata Q2309859，reference card 的子类，无标准级定义）；札记簿 commonplace book（Harvard Library：把重要段落抄录并按主题整理，常附编者自己的想法）。ISO 5127:2017 对文献类型有系统划分（3.4 文献、3.5 三次文献、3.5.5 参考工具书），条款在收费部分。",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0192",
+      "original_cells": [
+        "认知层级",
+        "cognitive level",
+        "对主题理解的深度：记忆到创造六级",
+        "Bloom 修订版，Krathwohl 2002"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "认知层级"
+        },
+        {
+          "language": "en",
+          "text": "cognitive level"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 192,
+          "quote": "| 认知层级 | cognitive level | 对主题理解的深度：记忆到创造六级 | Bloom 修订版，Krathwohl 2002 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/note-types.md",
+          "line": 5,
+          "quote": "笔记的类型回答“这条笔记是什么性质的东西”。它不是一根轴：一条笔记同时有体裁（给读者做什么用）、作者立场（是事实还是观点）、成熟度（是随手记还是定稿）、载体（是长文还是速查表）、认知层级（理解到什么深度）。这五根轴各有来源，互不替代；把它们压成一个“类型”字段，是 Diátaxis 四类装不下学习笔记的原因。",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0193",
+      "original_cells": [
+        "帕累托原则",
+        "Pareto principle",
+        "关键的少数与琐碎的多数；选材法则",
+        "Juran 1951 命名"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "帕累托原则"
+        },
+        {
+          "language": "en",
+          "text": "Pareto principle"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 193,
+          "quote": "| 帕累托原则 | Pareto principle | 关键的少数与琐碎的多数；选材法则 | Juran 1951 命名 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/note-types.md",
+          "line": 77,
+          "quote": "CS2023 自己用 Bloom 标注每个主题的预期掌握层级。帕累托原则（Juran 1951 年命名为 Pareto principle：“关键的少数与琐碎的多数”）是选材法则，决定先记哪二成，不是笔记的属性。",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0199",
+      "original_cells": [
+        "治理",
+        "governance",
+        "组织借以被指导、监督并被问责的系统；对管理的管理",
+        "ISO 37000:2021"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "治理"
+        },
+        {
+          "language": "en",
+          "text": "governance"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 199,
+          "quote": "| 治理 | governance | 组织借以被指导、监督并被问责的系统；对管理的管理 | ISO 37000:2021 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/CONVENTIONS.md",
+          "line": 19,
+          "quote": "4. 外部事实核对原文后才提交；本阶段只用已有离线资料，未核实内容如实标明；经授权的模型知识译名按[治理](../design/governance/governance.md#译名)登记，不冒充外部事实",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0200",
+      "original_cells": [
+        "政策",
+        "policy",
+        "治理主体定下的、管理必须遵守的规则",
+        "ISO 15489-1 §6.2"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "政策"
+        },
+        {
+          "language": "en",
+          "text": "policy"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 200,
+          "quote": "| 政策 | policy | 治理主体定下的、管理必须遵守的规则 | ISO 15489-1 §6.2 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/governance.md",
+          "line": 5,
+          "quote": "治理是**对管理的管理**：决定谁有权做什么决定、按什么政策、变更怎么准入、结果怎么被监督和追责。管理是把事做出来，治理是规定事该怎么被做、由谁做、做错了怎么发现。",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0201",
+      "original_cells": [
+        "决策权",
+        "decision rights",
+        "谁有权对哪类事项做决定",
+        "DAMA-DMBOK 数据治理"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "决策权"
+        },
+        {
+          "language": "en",
+          "text": "decision rights"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 201,
+          "quote": "| 决策权 | decision rights | 谁有权对哪类事项做决定 | DAMA-DMBOK 数据治理 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/governance.md",
+          "line": 18,
+          "quote": "| 决定靠临时约定 | 每次改动都要重新商量谁能改、要不要问 | 决策权写明 |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0202",
+      "original_cells": [
+        "监控与评价",
+        "monitoring and evaluation",
+        "对管理过程及其结果的持续检查与定期评估",
+        "ISO 15489-1 §6.4"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "监控与评价"
+        },
+        {
+          "language": "en",
+          "text": "monitoring and evaluation"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 202,
+          "quote": "| 监控与评价 | monitoring and evaluation | 对管理过程及其结果的持续检查与定期评估 | ISO 15489-1 §6.4 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/governance.md",
+          "line": 27,
+          "quote": "ISO 15489-1 把两层分得很清楚：第 6 章“政策与职责”——政策、职责分配、监控与评价、能力与培训——是治理层；第 9 章“创建、捕获与管理记录的过程”是管理层。DAMA 的说法是治理回答 why 和 who，管理回答 how。",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0203",
+      "original_cells": [
+        "审计追踪",
+        "audit trail",
+        "记录谁在何时做了什么变更的连续记录",
+        "ISO 15489-1 元数据要求"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "审计追踪"
+        },
+        {
+          "language": "en",
+          "text": "audit trail"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 203,
+          "quote": "| 审计追踪 | audit trail | 记录谁在何时做了什么变更的连续记录 | ISO 15489-1 元数据要求 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/governance.md",
+          "line": 21,
+          "quote": "| 错误静默发生 | 替换失败没报错，六行登记丢了几周 | 审计：审计追踪义务、检查脚本、防护措施 |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0204",
+      "original_cells": [
+        "治理评审",
+        "governance review",
+        "治理主体对治理本身的定期评审",
+        "ISO 37000:2021"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "治理评审"
+        },
+        {
+          "language": "en",
+          "text": "governance review"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 204,
+          "quote": "| 治理评审 | governance review | 治理主体对治理本身的定期评审 | ISO 37000:2021 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/governance.md",
+          "line": 23,
+          "quote": "| 治理规则本身不更新 | 阈值说“首轮后校准”，没人触发校准 | 治理评审 |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0205",
+      "original_cells": [
+        "审计",
+        "audit",
+        "对记录与过程是否符合规则的检查",
+        "ISO 15489-1 §6.4"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "审计"
+        },
+        {
+          "language": "en",
+          "text": "audit"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 205,
+          "quote": "| 审计 | audit | 对记录与过程是否符合规则的检查 | ISO 15489-1 §6.4 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/governance.md",
+          "line": 21,
+          "quote": "| 错误静默发生 | 替换失败没报错，六行登记丢了几周 | 审计：审计追踪义务、检查脚本、防护措施 |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0206",
+      "original_cells": [
+        "处置",
+        "disposition",
+        "执行保留、销毁或移交决定的过程",
+        "ISO 15489-1 §3.8"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "处置"
+        },
+        {
+          "language": "en",
+          "text": "disposition"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 206,
+          "quote": "| 处置 | disposition | 执行保留、销毁或移交决定的过程 | ISO 15489-1 §3.8 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/decisions/evidence-stage-boundary.md",
+          "line": 15,
+          "quote": "3. 无正式消费者、不会进入新正式结构、仅为补全旧断言而进行的来源或关系研究不做。旧值和处置保留在迁移审计中，标为低价值审计关闭，不取得新效力，也不进入下一阶段待办。",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0207",
+      "original_cells": [
+        "断言",
+        "assertion",
+        "人判断而非抄自来源的字段值",
+        "本库用法；溯源依据 W3C PROV-O"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "断言"
+        },
+        {
+          "language": "en",
+          "text": "assertion"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 207,
+          "quote": "| 断言 | assertion | 人判断而非抄自来源的字段值 | 本库用法；溯源依据 W3C PROV-O |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/CONVENTIONS.md",
+          "line": 18,
+          "quote": "3. 事实性断言能在“权威来源”里找到出处",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0208",
+      "original_cells": [
+        "指标",
+        "indicator",
+        "脚本能算出或外部能通知、用于监控的量",
+        "ISO 15489-1 §6.4 的监控对象"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "指标"
+        },
+        {
+          "language": "en",
+          "text": "indicator"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 208,
+          "quote": "| 指标 | indicator | 脚本能算出或外部能通知、用于监控的量 | ISO 15489-1 §6.4 的监控对象 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/terminology-database.md",
+          "line": 47,
+          "quote": "ISO 26162-3:2023 的公开摘要把术语数据集合的内容、数据质量评价、互操作性和持续改进列为重点，但没有公开维护程序、评价指标、角色或阈值。",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0209",
+      "original_cells": [
+        "阈值",
+        "threshold",
+        "指标触发动作的界值",
+        "通用"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "阈值"
+        },
+        {
+          "language": "en",
+          "text": "threshold"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 209,
+          "quote": "| 阈值 | threshold | 指标触发动作的界值 | 通用 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/governance.md",
+          "line": 23,
+          "quote": "| 治理规则本身不更新 | 阈值说“首轮后校准”，没人触发校准 | 治理评审 |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0210",
+      "original_cells": [
+        "批准",
+        "approve",
+        "候选词审核通过转为正式词",
+        "Z 11.1.6"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "批准"
+        },
+        {
+          "language": "en",
+          "text": "approve"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 210,
+          "quote": "| 批准 | approve | 候选词审核通过转为正式词 | Z 11.1.6 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/application-profile.md",
+          "line": 64,
+          "quote": "Application Profile 只取得选择、约束和说明已有 `metadata term` 的职责，不取得改写来源语义、批准新 designation 或改变正式词表的权力。当前 kb-design 只借用 DCMI 历史材料的职责分解和分层框架，没有因此建立正式 DCAP，也不使设计草案、映射或 target 接口生效。",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0216",
+      "original_cells": [
+        "三元组",
+        "triple",
+        "主语 — 谓语 — 宾语，图的最小单位",
+        "W3C RDF 1.1"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "三元组"
+        },
+        {
+          "language": "en",
+          "text": "triple"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 216,
+          "quote": "| 三元组 | triple | 主语 — 谓语 — 宾语，图的最小单位 | W3C RDF 1.1 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/knowledge-graph.md",
+          "line": 5,
+          "quote": "知识图谱是把知识表示成一张图：节点是实体，边是实体之间带类型的关系。最小单位是一个三元组“主语 — 谓语 — 宾语”：",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0217",
+      "original_cells": [
+        "实体",
+        "entity",
+        "图的节点，有唯一 ID",
+        "KG"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "实体"
+        },
+        {
+          "language": "en",
+          "text": "entity"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 217,
+          "quote": "| 实体 | entity | 图的节点，有唯一 ID | KG |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/controlled-vocabulary.md",
+          "line": 31,
+          "quote": "| 本体 | 用可定义的关系类型连接实体并支持形式语义 | 超出叙词表关系的知识表示 | 服务依赖数据库，数据库由某组织维护 |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0218",
+      "original_cells": [
+        "关系",
+        "relation, edge",
+        "带类型的有向边",
+        "KG"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "关系"
+        },
+        {
+          "language": "en",
+          "text": "relation, edge"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 218,
+          "quote": "| 关系 | relation, edge | 带类型的有向边 | KG |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/CONVENTIONS.md",
+          "line": 28,
+          "quote": "  - 好：`词表结构`、`概念关系`",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0219",
+      "original_cells": [
+        "属性",
+        "property",
+        "挂在实体或边上的字面值",
+        "KG"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "属性"
+        },
+        {
+          "language": "en",
+          "text": "property"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 219,
+          "quote": "| 属性 | property | 挂在实体或边上的字面值 | KG |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/application-profile.md",
+          "line": 30,
+          "quote": "| `Description Set Profile` | 哪些 property 可用，值和基数受什么约束 | `subject` 必须引用正式主题词表中的概念 |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0220",
+      "original_cells": [
+        "Schema",
+        "schema",
+        "本体在工程语境的叫法：类型与关系的定义",
+        "—"
+      ],
+      "proposed_forms": [
+        {
+          "language": "en",
+          "text": "Schema"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 220,
+          "quote": "| Schema | schema | 本体在工程语境的叫法：类型与关系的定义 | — |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/application-profile.md",
+          "line": 42,
+          "quote": "| `Application Profile` | 规定一个应用怎样选择、约束、使用和编码 metadata | 不负责在两个独立 schema 之间建立对应 |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得外部原文和来源定位；出处为空。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0221",
+      "original_cells": [
+        "推理",
+        "reasoning, inference",
+        "按规则从已有边推出新边",
+        "KG"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "推理"
+        },
+        {
+          "language": "en",
+          "text": "reasoning, inference"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 221,
+          "quote": "| 推理 | reasoning, inference | 按规则从已有边推出新边 | KG |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/knowledge-graph.md",
+          "line": 15,
+          "quote": "这个词没有 ISO 那样的正式标准定义。它是 Google 2012 年推广开的工业术语，口号是“things, not strings”——搜索的对象是事物本身，不是字符串。学术界最常引用的定义来自 Hogan 等人 2021 年的综述：**知识图谱是一个以图为载体的数据结构，用于积累和传达现实世界的知识，节点代表感兴趣的实体，边代表实体之间的关系**。Ehrlinger 与 Wöß 2016 年的定义则强调它“获取信息并把信息整合进本体，再用推理器推导出新知识”——即图谱 = 数据 + 本体 + 推理。",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "uncertain",
+        "note": "reasoning 与 inference 的对应范围不能由逗号确认完全等价。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0222",
+      "original_cells": [
+        "RDF",
+        "Resource Description Framework",
+        "W3C 的三元组数据模型",
+        "W3C RDF 1.1"
+      ],
+      "proposed_forms": [
+        {
+          "language": "en",
+          "text": "RDF"
+        },
+        {
+          "language": "en",
+          "text": "Resource Description Framework"
+        }
+      ],
+      "symbol": [
+        "RDF"
+      ],
+      "structure": "symbols",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 222,
+          "quote": "| RDF | Resource Description Framework | W3C 的三元组数据模型 | W3C RDF 1.1 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/knowledge-graph.md",
+          "line": 57,
+          "quote": "| | RDF 路线（语义网） | 属性图路线（工程） |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现有符号或缩写及其已列全称；分别核对概念对应，不自动扩展未登记名称。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "symbols",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0223",
+      "original_cells": [
+        "RDFS / OWL",
+        "—",
+        "RDF 上的 schema 语言 / 本体语言",
+        "W3C"
+      ],
+      "proposed_forms": [
+        {
+          "language": "en",
+          "text": "RDFS"
+        },
+        {
+          "language": "en",
+          "text": "OWL"
+        }
+      ],
+      "symbol": [
+        "RDFS",
+        "OWL"
+      ],
+      "structure": "symbols",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 223,
+          "quote": "| RDFS / OWL | — | RDF 上的 schema 语言 / 本体语言 | W3C |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/knowledge-graph.md",
+          "line": 60,
+          "quote": "| Schema | RDFS / OWL，形式化，可推理 | 通常无强制 schema，或用约束 |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "复合行列出多个现有形式，但未提供每个分项可独立引用的定义原句；需逐项确认定义、来源和概念对应。"
+      ],
+      "proposed_action": "建议按现有分隔项逐项拆分：RDFS、OWL；不补造分项定义或新概念。",
+      "substantive_change": true,
+      "lead_review": {
+        "structure": "symbols",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0224",
+      "original_cells": [
+        "SPARQL",
+        "—",
+        "RDF 查询语言",
+        "W3C SPARQL 1.1"
+      ],
+      "proposed_forms": [
+        {
+          "language": "en",
+          "text": "SPARQL"
+        }
+      ],
+      "symbol": [
+        "SPARQL"
+      ],
+      "structure": "symbols",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 224,
+          "quote": "| SPARQL | — | RDF 查询语言 | W3C SPARQL 1.1 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/knowledge-graph.md",
+          "line": 61,
+          "quote": "| 查询语言 | SPARQL(W3C 标准) | Cypher;ISO/IEC 39075 GQL(2024 年发布的国际标准) |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现有符号或缩写及其已列全称；分别核对概念对应，不自动扩展未登记名称。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "symbols",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0225",
+      "original_cells": [
+        "SKOS",
+        "Simple Knowledge Organization System",
+        "用 RDF 表达词表的 W3C 标准",
+        "W3C SKOS"
+      ],
+      "proposed_forms": [
+        {
+          "language": "en",
+          "text": "SKOS"
+        },
+        {
+          "language": "en",
+          "text": "Simple Knowledge Organization System"
+        }
+      ],
+      "symbol": [
+        "SKOS"
+      ],
+      "structure": "symbols",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 225,
+          "quote": "| SKOS | Simple Knowledge Organization System | 用 RDF 表达词表的 W3C 标准 | W3C SKOS |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/concept-group.md",
+          "line": 26,
+          "quote": "| [SKOS](../references/iso-25964.md) 对应 | — | `iso-thes:ThesaurusArray`(`skos:Collection` 子类） | `iso-thes:ConceptGroup`(`skos:Collection` 子类）；微词表加 `iso-thes:microThesaurusOf` |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现有符号或缩写及其已列全称；分别核对概念对应，不自动扩展未登记名称。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "symbols",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0226",
+      "original_cells": [
+        "属性图",
+        "property graph",
+        "节点和边都可带属性的图模型",
+        "ISO/IEC 39075"
+      ],
+      "proposed_forms": [
+        {
+          "language": "zh-Hans",
+          "text": "属性图"
+        },
+        {
+          "language": "en",
+          "text": "property graph"
+        }
+      ],
+      "symbol": [],
+      "structure": "one_concept",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 226,
+          "quote": "| 属性图 | property graph | 节点和边都可带属性的图模型 | ISO/IEC 39075 |",
+          "kind": "glossary-entry"
+        },
+        {
+          "file": "docs/concepts/knowledge-graph.md",
+          "line": 57,
+          "quote": "| | RDF 路线（语义网） | 属性图路线（工程） |",
+          "kind": "concept-or-decision"
+        }
+      ],
+      "missing_evidence": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "proposed_action": "保留现行形式、定义和出处登记；不改变现行效力，后续沿用既有历史证据并把外部原文限制单独记录。",
+      "substantive_change": false,
+      "lead_review": {
+        "structure": "one_concept",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    },
+    {
+      "id": "glossary-L0227",
+      "original_cells": [
+        "Cypher / GQL",
+        "—",
+        "属性图查询语言；GQL 是 2024 年的 ISO 标准",
+        "ISO/IEC 39075:2024"
+      ],
+      "proposed_forms": [
+        {
+          "language": "en",
+          "text": "Cypher"
+        },
+        {
+          "language": "en",
+          "text": "GQL"
+        }
+      ],
+      "symbol": [
+        "GQL"
+      ],
+      "structure": "symbols",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 227,
+          "quote": "| Cypher / GQL | — | 属性图查询语言；GQL 是 2024 年的 ISO 标准 | ISO/IEC 39075:2024 |",
+          "kind": "glossary-entry"
+        }
+      ],
+      "missing_evidence": [
+        "复合行列出多个现有形式，但未提供每个分项可独立引用的定义原句；需逐项确认定义、来源和概念对应。"
+      ],
+      "proposed_action": "建议按现有分隔项逐项拆分：Cypher、GQL；不补造分项定义或新概念。",
+      "substantive_change": true,
+      "lead_review": {
+        "structure": "symbols",
+        "note": "首轮仅为结构初筛；原值和现行效力保留，不构成具体采纳。",
+        "adopted": false
+      }
+    }
+  ]
+}
