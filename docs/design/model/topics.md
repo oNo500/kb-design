@@ -43,7 +43,7 @@
 
 `label`、`alt` 和 `hidden` 都附着于同一概念记录；USE／UF 说明同一概念的等价入口，不建立两个概念。`broader` 和 `related` 连接概念。界面显示文字，不改变两类关系的主体。
 
-主题标签的编辑权仍在主题生成输入。术语记录与展示布局按[术语具体采纳](../../decisions/term-data-values.md)和[术语实施结构](../../decisions/term-complete-structure.md)分别维护；编辑源切换必须完成规定验收，切换前 `docs/glossary.md` 仍是现行登记。切换后 glossary 是只读生成页，主题及载体的模型译名仍从现有标签和精确采纳输入派生，不建立新的术语概念或委托，也不把标签移到第二个编辑位置。
+主题标签的编辑权仍在主题生成输入。术语记录与展示布局按[术语具体采纳](../../decisions/term-data-values.md)和[术语实施结构](../../decisions/term-complete-structure.md)分别维护；[术语发布](../../decisions/term-complete-publication.md)已在规定验收通过后启用正式术语编辑源，glossary 是只读生成页。主题及载体的模型译名仍从现有标签和精确采纳输入派生，不建立新的术语概念或委托，也不把标签移到第二个编辑位置。
 
 映射使用 registry、item、rel 和相邻 basis；角色批准与逐条关系依据分别满足条件。旧数据仍可作为迁移输入的审计来源，不能作为严格读取的兼容格式。
 
@@ -209,7 +209,7 @@ HTML 在名称旁直接显示“模型知识 · 第 5 级”，并注明“外�
 
 第 3 步由当前生成链产生确定输出，结果须经人工审核。来源迁移账本定位旧引用，严格校验检查新结构，反向索引定位正式引用；这些能力均不批准实际派生或映射，也不能在正式迁移前改写当前数据。
 
-`uv run kb-core check-terms` 的正文诊断已经实现。它从 Git 取得动态 Markdown 清单，检查标题、加粗内容和中文引号，排除代码围栏、行内代码、链接目标和路径；正式切换前与现行 glossary 及主题、实体、类型词表的已登记写法比较；切换后先核对 terms/state 与精确采纳，再读取获准术语形式和原模型标签。已退出当前 designation 的历史标签只供纠正说明和查找，不进入当前准用集合。输出保留精确位置和上下文，模式为 `report-only`。命中只供人工判断，不形成 designation、概念、关系、违规、阻断或候选记录。
+`uv run kb-core check-terms` 的正文诊断已经实现。它从 Git 取得动态 Markdown 清单，检查标题、加粗内容和中文引号，排除代码围栏、行内代码、链接目标和路径；先核对正式 terms/state 与精确采纳，再读取获准术语形式、原模型标签及主题、实体、类型词表中的登记写法。已退出当前 designation 的历史标签只供纠正说明和查找，不进入当前准用集合。输出保留精确位置和上下文，模式为 `report-only`。命中只供人工判断，不形成 designation、概念、关系、违规、阻断或候选记录。
 
 ## 校验规则
 
@@ -233,8 +233,8 @@ HTML 在名称旁直接显示“模型知识 · 第 5 级”，并注明“外�
 | 树的分层、划分和复制来源 | [层级结构](hierarchy.md) | 本文的 `broader`、`arrays`、现行 `source` 按其规则填写 |
 | 外部体系登记、复制、映射和派生组 | [来源名称规范表](sources-registry.md) | 用途资格与严格共享引用的职责说明；本文不自行批准角色或关系 |
 | 主题标签 | 本文与生成输入 | `label`、`alt`、`hidden` 继续附着于现行主题概念；写法须已在现行 glossary 登记 |
-| designation 登记 | [治理](../governance/governance.md)与 `docs/glossary.md` | publication 前 glossary 保持编辑权；之后读取术语、布局及原模型标签的只读生成页；正文诊断只供人工判断 |
-| 术语基础 | [术语治理草案](../../drafts/terminology-governance.md) | 具体记录及条件式执行已采纳；发布须经规定验收，义务、委托与 TBX 未开放 |
+| designation 登记 | [治理](../governance/governance.md)与 `docs/glossary.md` | 术语形式由 terms 编辑、布局单独维护、模型标签保留原编辑源；glossary 只读生成，正文诊断只供人工判断 |
+| 术语基础 | [术语治理草案](../../drafts/terminology-governance.md) | 157 个正式概念及首批生成与参考消费已启用；义务、委托与 TBX 未开放 |
 | 分面字段 | [分面字段草案](../../drafts/facet-field.md) | 草案未生效；本文不设置该字段 |
 | 手工概念组 | [概念组草案](../../drafts/concept-groups.md) | 草案未生效；派生组可以从映射计算 |
 | 导航 | — | 渲染主题树得到导航，树不依赖界面 |

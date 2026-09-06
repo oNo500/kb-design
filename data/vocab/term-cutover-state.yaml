@@ -1,0 +1,15 @@
+schema: urn:kb-design:data:term-cutover-state
+version: 1
+active_editor: data/vocab/terms.yaml
+state: active
+terms_mode: active_editor
+consumers_enabled: true
+decision: decision-term-complete-publication
+history:
+- date: '2026-09-06'
+  event: activate_term_publication
+  decision: decision-term-complete-publication
+  reason: 获准157个结构化术语及完整glossary/app参考消费通过全量内容与工程验收后切换
+  from_value: null
+  to_value: active
+  linked_terms: []

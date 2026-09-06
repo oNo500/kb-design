@@ -15,7 +15,13 @@ ADMITTED = "admittedTerm-admn-sts"
 HISTORICAL = {"deprecatedTerm-admn-sts", "supersededTerm-admn-sts"}
 LANGUAGE_ORDER = {"zh-Hans": 0, "zh-Hant": 1, "en": 2}
 LANGUAGE_TITLES = {"zh-Hans": "简体中文", "zh-Hant": "繁体中文", "en": "英文"}
-READ_ONLY_DECLARATION = "本文件由术语记录确定生成，只读；如需修改，请编辑 `data/vocab/terms.yaml`。"
+READ_ONLY_DECLARATION = (
+    "本文件只读。概念、定义和术语形式由 `data/vocab/terms.yaml` 管理；"
+    "章节编排、说明、关系符号和历史名称展示由 "
+    "`data/inputs/terminology/glossary-layout.yaml` 管理；模型标签继续由各自现行编辑源"
+    "（`data/inputs/topics/`、`data/vocab/forms.yaml`）及 "
+    "`data/inputs/topics/label-adoptions.json` 的既有采纳记录管理。"
+)
 
 
 def _plain(value: Any) -> Any:

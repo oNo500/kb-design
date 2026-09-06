@@ -21,7 +21,7 @@
 | 决定记录 | `docs/decisions/` | 只追加；推翻时新建记录并标明替代关系 |
 | `Application Profile` 与导出 artifact contract | `docs/design/targets/` | [内容模型](../model/content-model.md)的上层职责和五个操作问题；[应用约束与表示分层](../../decisions/application-profile-boundary.md) |
 | 概念文 | `docs/concepts/` | [CONVENTIONS](../../concepts/CONVENTIONS.md) 的硬规则 |
-| designation 登记 | `docs/glossary.md`；切换后的 `data/vocab/terms.yaml` 与展示布局 | publication 前保留原编辑权；验收通过后术语记录为唯一编辑源，glossary 只读生成，模型标签保留原所有权 |
+| designation 登记 | `data/vocab/terms.yaml`、`data/inputs/terminology/glossary-layout.yaml` 与原模型标签输入；`docs/glossary.md` 只读生成 | terms 编辑概念、定义和形式，layout 编辑展示，模型标签保留 topics／forms／adoptions 所有权 |
 | 文献笔记 | `docs/references/` | 来源已经核对；阅读范围写明 |
 | 脚本 | `scripts/` | 本文“质量与验收”；脚本中的现行阈值常量与阈值表一致 |
 | 摘要 | `AGENTS.md`、`README.md` | 随被摘要的文档同步 |
@@ -39,12 +39,12 @@
 | 范围 | 已实现能力 | 未取得的效力 |
 |---|---|---|
 | 来源 | 六份 v2 词表、严格共享来源模型与校验、已采纳具体角色及引用、反向索引生成、固定夹具探测和复核义务接口 | 没有正式义务、持久正式索引、真实周期联网观察或正式消费者；本批数据实施不构成发版 |
-| 术语 | 三层记录、统一校验、确定性生成、正文诊断、维护索引、可选应用读取；完整记录与条件式执行已采纳 | publication 与编辑权切换须先完成规定验收；正式义务、委托、持久正式索引与 TBX 未启用 |
-| Obsidian | 六份正式词表的单向参考导出、新 vault 初始化、UUIDv4 `draft` 建立、只读内容校验、派生报告、项目 manifest 和安全发布 | 没有正式消费者、查询日志、回流、JCS、BagIt、reproducible build 或 durability 符合性与保证 |
+| 术语 | 157 个正式概念、统一校验、确定性生成、正文诊断、维护索引与首批术语参考消费；publication 和唯一编辑源已启用 | 正式义务、委托、持久正式索引与 TBX 未启用 |
+| Obsidian | 六份正式词表的单向参考导出、新 vault 初始化、UUIDv4 `draft` 建立、只读内容校验、派生报告、项目 manifest 和安全发布 | 未启用内容消费者，无查询日志、回流、JCS、BagIt、reproducible build 或 durability 符合性与保证 |
 
 来源探测的 `--live` 明确禁用，实际 JSONL 输出与探测 schema 尚未闭合。固定夹具只能证明只读行为和信号逻辑，不能确认真实来源状态。术语记录按具体值决定实施；测试夹具中的状态与消费者不是实际 publication，也不能替代切换验收。
 
-本批 157 个术语概念和 51 个新增来源分别按[术语具体采纳](../../decisions/term-data-values.md)与[术语来源采纳](../../decisions/source-term-complete-citations.md)实施。[术语实施结构](../../decisions/term-complete-structure.md)授权先完成完整生成和临时应用验收，再写 publication/state 并切换编辑源。该条件满足前 `docs/glossary.md` 保持原编辑权，不把记录落盘写成消费者启用。正式来源义务、术语义务、委托及持久正式索引仍未建立。
+本批 157 个术语概念和 51 个新增来源分别按[术语具体采纳](../../decisions/term-data-values.md)与[术语来源采纳](../../decisions/source-term-complete-citations.md)实施。规定的完整生成和临时应用验收已经通过；[术语发布](../../decisions/term-complete-publication.md)及实际 state 已启用 terms 唯一编辑源、完整 glossary 生成和首批术语参考消费。glossary 为只读生成页，layout、topics、forms 及语言采纳仍维护各自对象，外部正式 vault 未同步。正式来源义务、术语义务、委托及持久正式索引仍未建立。
 
 ### 迁移边界
 
@@ -122,11 +122,11 @@
 | 推翻决定记录 | 新建决定 → 旧决定标为被替代 | 决定记录 |
 | 摘要同步 | 被摘要文档改动后同步 `AGENTS.md`、README | 同一提交 |
 
-来源 v2 已实施；术语完整记录、有限规则例外和条件式执行已获明确采纳。publication/state 只在同一干净隔离快照的完整生成、临时应用与保护验收通过后写入，届时转移术语编辑权并启用列明的生成与参考消费。验收失败继续修复或用 Git 恢复，不提前切换；该授权排除外部正式 vault 写入、合并、发版、义务与委托，也不增加专用补偿体系。
+来源 v2 已实施；术语完整记录、有限规则例外及规定验收已完成，本批 publication/state 已按[术语发布](../../decisions/term-complete-publication.md)生效。terms 已接管术语编辑权，glossary 生成与首批术语参考消费已启用。恢复仍使用 Git；外部正式 vault 写入、合并、发版、义务与委托不在本次发布范围内，不增加专用补偿体系。
 
 ## 准入对象
 
-项目拟采用的每个 designation 都必须在现行登记编辑源保存准入根据，并在 glossary 呈现；正式切换前直接维护 glossary，切换后概念、定义和现行形式由 terms 数据维护。通常按下列来源阶梯检索，查到即止，写明在哪一级取得依据。既有概念的译名另有经人开放的模型知识例外，按本节“译名”的第 5 级记录；模型判断不能登记为外部出处。
+项目拟采用的每个 designation 都必须在现行登记编辑源保存准入根据，并在 glossary 呈现；概念、定义和现行形式由 terms 数据维护，glossary 不直接编辑。通常按下列来源阶梯检索，查到即止，写明在哪一级取得依据。既有概念的译名另有经人开放的模型知识例外，按本节“译名”的第 5 级记录；模型判断不能登记为外部出处。
 
 | 级 | 来源 | 例 |
 |---|---|---|
@@ -142,15 +142,15 @@
 
 查无记录必须可审计。提案逐级列明检索过的来源和结果；空白不算检索过。一个 designation 的形式依据、它所表示的概念以及记录中具体字段值或关系的依据须分别核对，任何一个状态门禁都不能替代另一个。
 
-`uv run kb-core check-terms` 是已经实现的候选识别器。它从 Git 中取得动态 Markdown 清单，检查标题、加粗内容和中文引号，排除代码围栏、行内代码、链接目标和路径；再与现行登记及主题、实体、类型词表中的已登记写法比较。术语切换后先完整核对 terms/state，再读取 active 概念的首选与准用形式和原模型标签；退出当前 designation 的历史标签只提供查找纠正说明，不成为当前准用名。默认输出是带精确位置的 `report-only` 人工复核材料，命中不构成项目名称、概念、关系或违规，也不阻断提交。可选状态或人工裁定输入目前不改变这个效力。
+`uv run kb-core check-terms` 是已经实现的候选识别器。它从 Git 中取得动态 Markdown 清单，检查标题、加粗内容和中文引号，排除代码围栏、行内代码、链接目标和路径；再与现行登记及主题、实体、类型词表中的已登记写法比较。术语登记读取先完整核对 terms/state，再读取 active 概念的首选与准用形式和原模型标签；退出当前 designation 的历史标签只提供查找纠正说明，不成为当前准用名。默认输出是带精确位置的 `report-only` 人工复核材料，命中不构成项目名称、概念、关系或违规，也不阻断提交。可选状态或人工裁定输入目前不改变这个效力。
 
-348 条术语迁移账本只继承既有审查位置、动作和去向。它不建立候选术语记录，不重准入现行 designation，也不改变 `docs/glossary.md` 的编辑权。本批完整术语记录的准入来自具体值采纳，编辑源接管来自另行满足的 publication 条件，均不从旧账本推导。
+348 条术语迁移账本只继承既有审查位置、动作和去向。它不建立候选术语记录，不重准入现行 designation，也不改变 `docs/glossary.md` 的编辑权。本批完整术语记录的准入来自具体值采纳，编辑源接管来自已验收并生效的 publication，均不从旧账本推导。
 
 划分特征草案中的属性名同样适用本节。将来需要采用时，由人按词典制定流程决定；划分特征的零自定例外尚未开放，不受译名例外扩及。
 
 ### 译名
 
-中英对照按对象保留唯一编辑源：术语切换前以 glossary 为登记源，切换后术语形式在 terms 数据中编辑，glossary 只读生成；主题与载体模型标签保留原词表及语言采纳所有权。词表的 `label` 与正文必须使用已登记形式。译名按下列阶梯处理，取得适用结果后停止。[译名依据扩展](../../decisions/industry-translation-basis.md)固定外部用法与名称变更边界；[译名检索来源](../../decisions/translation-reference-resources.md)细化固定术语库的使用；[模型知识译名](../../decisions/model-knowledge-translation.md)新增模型既有知识的使用级别。前四级按具体条目的编审与公布依据判断，不按网站整体赋级；第 5 级记录模型判断，不能宣称已经核实外部行业用法。
+中英对照按对象保留唯一编辑源：术语形式在 terms 数据中编辑，glossary 只读生成；主题与载体模型标签保留原词表及语言采纳所有权。词表的 `label` 与正文必须使用已登记形式。译名按下列阶梯处理，取得适用结果后停止。[译名依据扩展](../../decisions/industry-translation-basis.md)固定外部用法与名称变更边界；[译名检索来源](../../decisions/translation-reference-resources.md)细化固定术语库的使用；[模型知识译名](../../decisions/model-knowledge-translation.md)新增模型既有知识的使用级别。前四级按具体条目的编审与公布依据判断，不按网站整体赋级；第 5 级记录模型判断，不能宣称已经核实外部行业用法。
 
 | 级 | 采用根据 |
 |---|---|

@@ -26,7 +26,7 @@ uv run kb-core --help
 |---|---|
 | `build-topics` | 从生成输入重建正式主题词表 |
 | `check-topics` | 校验正式主题词表及其关系 |
-| `check-terms` | 生成 Markdown designation 人工复核报告；正式切换后读取经完整验权的术语登记 |
+| `check-terms` | 生成 Markdown designation 人工复核报告；读取经完整验权的正式术语登记 |
 | `check-sources` | 校验来源与引用结构 |
 | `build-source-index` | 生成来源反向索引，包含结构化语言依据的来源用途引用 |
 | `plan-source-migration` | 生成来源迁移预演 |
@@ -65,13 +65,27 @@ uv run kb-core prepare-source-evidence
 
 `build-terms build` 和 `build-terms check` 读取显式术语、state、布局与来源索引，先校验全部输入再生成或比较快照和术语表。布局 v2 按概念身份编排，领域未定时 `subject_fields` 可以为空；普通说明、缩写、文献说明、符号和历史纠正标签在布局维护。主题、载体的模型标签仍从原词表与语言采纳输入生成，不创建术语概念或委托。历史标签只用于纠正说明与查找，不自动成为准用形式。
 
-`term-data check` 与 `term-data index` 复用同一校验；索引只定位实际引用，不把提案和历史值当作现行引用，不创建正式义务。`check-terms` 在正式切换后完整核对 terms/state，再读取获准现行形式；缺失一半或授权不完整时失败，不回退旧登记来绕过检查。切换前维持原 Markdown 登记诊断，报告仍不批准术语或形成正文违规结论。
+`term-data check` 与 `term-data index` 复用同一校验；索引只定位实际引用，不把提案和历史值当作现行引用，不创建正式义务。`check-terms` 完整核对正式 terms/state，再读取获准现行形式；缺失一半或授权不完整时失败，不回退旧登记来绕过检查。报告仍不批准术语或形成正文违规结论。
+
+在仓库根目录重建已获准的视图：
+
+```bash
+uv run kb-core term-data check --root .
+uv run kb-core build-source-index --root . --output build/terms/source-reference-index.json
+uv run kb-core build-terms build --design-root . \
+  --terms data/vocab/terms.yaml --state data/vocab/term-cutover-state.yaml \
+  --layout data/inputs/terminology/glossary-layout.yaml \
+  --source-index build/terms/source-reference-index.json \
+  --snapshot-out build/terms/terms.snapshot.json --glossary-out docs/glossary.md
+```
+
+把最后一条的 `build` 改为 `check` 可检查输出漂移；使用 `uv run kb-core term-data index --root .` 生成可清理的维护索引。
 
 ## 数据边界
 
-主题输入位于 `data/inputs/topics/`，`build-topics` 重建 `data/vocab/topics.yaml`。本批 157 个术语概念与 51 个新增来源已获具体采纳；数据落盘和生成成功不等于 publication 或发版。
+主题输入位于 `data/inputs/topics/`，`build-topics` 重建 `data/vocab/topics.yaml`。本批 157 个正式术语概念与 51 个新增来源已实施，publication 已完成规定验收并生效；这不构成发版。
 
-正式切换前 `docs/glossary.md` 继续保持编辑权。规定的完整生成与临时应用验收通过后，才写真实 publication/state：terms 维护概念、定义和现行形式，`data/inputs/terminology/glossary-layout.yaml` 维护展示，glossary 成为完整只读生成页；主题和载体模型标签的原所有权不变。没有 retained-glossary 编辑源，不把审计账本作为长期生产输入。
+[术语发布](../../docs/decisions/term-complete-publication.md)与实际 state 已启用术语唯一编辑源及首批参考消费。terms 维护概念、定义和现行形式，`data/inputs/terminology/glossary-layout.yaml` 维护展示，glossary 是完整只读生成页；主题和载体模型标签继续由 topics／forms／adoptions 维护。没有 retained-glossary 编辑源，不把审计账本作为长期生产输入。
 
 迁移审计保留原行、旧值与去向；正式义务、委托、持久正式索引和 TBX 不因本批术语迁移启用。外部正式 vault 写入、合并与发版不在本轮条件式执行范围内。
 

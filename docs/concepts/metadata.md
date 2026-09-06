@@ -61,7 +61,7 @@ ISO 15836-1:2017，即 DCMI 的 `/elements/1.1/` 命名空间：
 | 元数据字段 | 值从哪来 |
 |---|---|
 | `subject` | 主题叙词表 |
-| `type` | 文档类型的代码表（DCMI Type Vocabulary 或自定） |
+| `type` | 文档类型的列表（DCMI Type Vocabulary 或自定） |
 | `creator`、`publisher` | 名称规范表 |
 | `identifier` | id 规则 |
 | `title`、`description`、`date` | 字面值，不受控 |

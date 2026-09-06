@@ -25,8 +25,9 @@
 
 - **当前阶段零自定**：通常禁止 AI 主动形成或选定无准入依据的 designation；现已由人开放[模型知识译名](docs/decisions/model-knowledge-translation.md)例外，仅允许为既有概念按译名第 5 级使用模型既有知识中的行业表达，并登记为模型判断、外部用法未核实。该例外不授权新建概念、类别或划分特征
 - 拟作项目术语而未登记的 designation 不得进入定稿。普通叙述、来源转录、文件路径、代码和值中的任意字符串不因出现而自动成为术语；候选、`defer`、草案、占位和示例不能替代形式依据与概念对应依据，也不能取得试用资格
-- 本阶段只用当前已有离线资料和模型既有知识，不联网或新增下载。译名第 4 级保留多个独立来源与概念对应要求；可用离线资料不足时可进入第 5 级，不要求补造外部出处。已有合格前级依据不被模型判断覆盖，实质含义冲突未解决时保留原名。名称变化不自动改变概念 id 或状态；生成与校验支持结构化语言依据及已授权模型采纳；多个不同来源引用不证明真实独立性，规则扩展不等于其他标签已获采纳
+- 原翻译批次的离线范围保持；本次冻结登记的必要只读原文核对按[术语依据范围](docs/decisions/term-evidence-scope.md)开放，不新增持久下载、OCR 或资料平台。译名第 4 级保留多个独立来源与概念对应要求；资料不足时可按已授权第 5 级登记模型判断。已有合格前级依据不被模型判断覆盖，实质含义冲突未解决时保留原名。名称、身份和状态的实际变更分别依具体采纳，不因生成或模式扩展自动发生
 - `basis.zh`／`basis.en` 使用[语言依据](docs/design/model/topics.md#语言依据)：外部等级与 `references`、第 5 级 `model`、第 6 级未采用原因、未重新分级的 `legacy` 分开。旧 `none` 不自动变第 6 级，旧 `self` 不自动变模型判断。模型输出关联 `data/inputs/topics/label-adoptions.json` 的采纳记录并显示“模型知识 · 第 5 级，外部用法未核实”；[本次批次授权](docs/decisions/structured-label-basis.md#批次授权)只覆盖原有缺失中文及语言依据结构迁移，不改变身份、关系或状态
+- 正式术语按[具体采纳](docs/decisions/term-data-values.md)及[实施结构](docs/decisions/term-complete-structure.md)管理。项目依据目前只批准内容单元、断言、阈值的概念和定义，以及 assertion、threshold 两个既有英文形式；须有有效 L3 完整记录、精确项目 scope 和历史。六条 de-facto 定义使用依[限定许可](docs/decisions/term-limited-definition-source-use.md)逐对象、来源版本和具体值核对，不改变档级或放宽其他对象。历史退出名不作为当前准用形式，同名的其他合法对象不被全局删除
 
 ## 标点与间距
 
@@ -48,11 +49,11 @@
 ## 阶段边界
 
 - 迁移账本只作审计，候选和诊断输出只供人工复核，schema、索引、探测、生成和维护能力只证明机械能力；它们都不等于正式数据、草案生效、正式切换或发版
-- 来源与术语基础的原范围见[当前阶段](docs/decisions/current-stage-scope.md)；本次来源迁移已按[来源执行](docs/decisions/source-execution-boundary.md)开放，优先可直接阅读的离线材料，复杂耗时材料标记“不核对”，恢复只用 Git，不实现补偿回滚。六份词表已按[来源收尾](docs/decisions/source-completion.md)完成来源 v2 数据与严格接口迁移；17 条未核映射只保留在决定隔离清单和 Git 历史，现有对象、标签和状态保留。仓库仍没有正式术语数据、正式义务、持久正式索引、委托、正式消费者或术语切换状态，不得因接口存在而创建或宣称存在
+- 来源与术语基础的原范围见[当前阶段](docs/decisions/current-stage-scope.md)，后续以具体已采纳决定为准。六份词表已按[来源收尾](docs/decisions/source-completion.md)完成来源 v2 迁移；17 条未核映射继续保留审查，不重开或提升为有效映射。完整术语数据、限定准入、生成与维护已实施，[术语发布](docs/decisions/term-complete-publication.md)在临时验收通过后启用结构化术语唯一编辑源及首批术语参考消费。正式义务、持久正式索引、委托、内容消费者、查询日志及回流仍未启用
 - Obsidian 是应用层，也是首个完整应用 target；`apps/obsidian/` 中的 `kb-obsidian` 工具读取所在设计仓库的干净 Git 快照，保留显式 `--design-root`，不使用提交白名单，见[工具归属](docs/decisions/obsidian-tool-location.md)。默认持久 vault 位于 Git 忽略的 `output/obsidian/`，也支持显式外部 vault；应用实现和输出目录存在仍不等于消费者激活
-- `kb-obsidian` 已实现新 vault 初始化、显式词表参考刷新、内容建立、内容校验和派生报告；刷新只更新 `kb/` 与 `app/manifest.json`，保留用户内容与配置，见[词表参考刷新](docs/decisions/obsidian-reference-refresh.md)。2026-09-05 已观察到正式库有一条 draft，尚无运行中的正式消费者、查询日志或回流接口，旧空库报告不能作为当前内容计数
+- `kb-obsidian` 已实现新 vault 初始化、显式词表及术语参考刷新、内容建立、内容校验和派生报告；刷新只更新 `kb/` 与 `app/manifest.json`，保留用户内容与配置，见[词表参考刷新](docs/decisions/obsidian-reference-refresh.md)。本轮只在临时 vault 完成完整数据验收，未写入外部正式库；过去空库或单条 draft 的观察不能作为当前内容计数，实际内容消费者、查询日志与回流仍未激活
 - 新内容单元使用无前缀、小写 UUIDv4，UUID 文件名承担稳定路径，title 与派生 alias 等元数据承担人的检索；建立器只创建通过当前约束校验的 `draft`，不批准内容状态或正式分类
-- 来源 v2 数据和严格读取已经实施，不等于正式消费者启用或发版；术语正式激活未发生。archival 只可保留 proposed discovery，不具备 approved 用途；TBX 继续后置为无真实接收方的未生效草案
+- 来源 v2 与术语参考的正式数据和严格读取已经实施，不等于内容消费者启用、外部 vault 同步或发版。archival 在来源用途记录中只可保留 proposed discovery，不具备 approved 用途；作为具体定义或语言材料的 basis 按独立合同核对。TBX 继续后置为无真实接收方的未生效草案
 
 ## 应用分层
 
@@ -74,7 +75,7 @@
 ## 编辑路径
 
 - `data/vocab/topics.yaml` 是正式主题词表和确定性生成物，不直接编辑；修改 `data/inputs/topics/` 或核心生成实现，以 `uv run kb-core build-topics` 重建，再运行 `uv run kb-core check-topics`
-- `docs/glossary.md` 仍是 designation 与中英对照的现行编辑源；仓库当前没有正式 `data/vocab/terms.yaml`，生成能力不转移编辑权
+- `data/vocab/terms.yaml` 是结构化术语概念、定义与现行名称的唯一编辑源；`docs/glossary.md` 是只读生成页。布局、说明、符号与已批准历史名称展示在 `data/inputs/terminology/glossary-layout.yaml` 维护；模型标签仍属于主题生成输入、`data/vocab/forms.yaml` 与既有语言采纳记录。使用 `kb-core term-data` 校验和定位引用、`build-terms` 生成与核对；正文诊断不产生准入决定
 
 ## 其他约定
 
