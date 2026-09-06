@@ -1,131 +1,926 @@
-# 来源名称规范表。设计见 design/sources-registry.md。名称、分级、版本、URL 记在 entities.yaml。
+# 来源 v2 数据；语义与采纳见 docs/decisions/source-completion.md。
 version:
-  id: "2026.08"
+  id: '2026.08'
   date: 2026-08-23
   note: 初版：27 个来源
-
 sources:
-  - id: gbt-13745
-    entity: gbt-13745
-    role: [mapping, structure]
-    checked: 2026-08-23
-  - id: cs2023
-    entity: cs2023
-    role: [mapping, structure]
-    checked: 2026-08-23
-  - id: swebok
-    entity: swebok
-    role: [mapping, structure]
-    checked: 2026-08-23
-  - id: acm-ccs
-    entity: acm-ccs
-    role: [mapping]
-    checked: 2026-08-23
-  - id: asvs
-    entity: asvs
-    role: [mapping, structure]
-    checked: 2026-08-23
-  - id: cwe
-    entity: cwe
-    role: [mapping, structure, group]
-    checked: 2026-08-23
-  - id: attack
-    entity: attack
-    role: [mapping, structure]
-    checked: 2026-08-23
-  - id: owasp-top10
-    entity: owasp-top10
-    role: [mapping, group]
-    checked: 2026-08-23
-  - id: owasp-llm-top10
-    entity: owasp-llm-top10
-    role: [mapping, structure, group]
-    checked: 2026-08-23
-  - id: atlas
-    entity: atlas
-    role: [mapping, structure]
-    checked: 2026-08-23
-  - id: nist-ai-rmf
-    entity: nist-ai-rmf
-    role: [mapping]
-    checked: 2026-08-23
-  - id: anthropic-docs
-    entity: anthropic-docs
-    role: [mapping]
-    checked: 2026-08-23
-  - id: rfc-1122
-    entity: rfc-1122
-    role: [mapping, structure]
-    checked: 2026-08-23
-  - id: rfc-9110
-    entity: rfc-9110
-    role: [mapping]
-    checked: 2026-08-23
-  - id: osi
-    entity: osi
-    role: [mapping]
-    checked: 2026-08-23
-  - id: mdn
-    entity: mdn
-    role: [mapping]
-    checked: 2026-08-23
-  - id: mdn-curriculum
-    entity: mdn-curriculum
-    role: [candidate]
-    checked: 2026-08-23
-  - id: iso-25964-1
-    entity: iso-25964-1
-    role: [mapping]
-    checked: 2026-08-23
-  - id: iso-25964-2
-    entity: iso-25964-2
-    role: [mapping]
-    checked: 2026-08-23
-  - id: z39-19
-    entity: z39-19
-    role: [mapping]
-    checked: 2026-08-23
-  - id: skos
-    entity: skos
-    role: [mapping]
-    checked: 2026-08-23
-  - id: diataxis
-    entity: diataxis
-    role: [mapping, structure]
-    checked: 2026-08-23
-  - id: wikidata
-    entity: wikidata
-    role: [mapping]
-    checked: 2026-08-23
-  - id: roadmap-sh
-    entity: roadmap-sh
-    role: [candidate]
-    checked: 2026-08-23
-  - id: teachyourselfcs
-    entity: teachyourselfcs
-    role: [candidate]
-    checked: 2026-08-23
-  - id: cmu-15-445
-    entity: cmu-15-445
-    role: [candidate]
-    checked: 2026-08-23
-  - id: db-engines
-    entity: db-engines
-    role: [candidate]
-    checked: 2026-08-23
-  - id: dita
-    entity: dita
-    role: [mapping, structure]
-    checked: 2026-08-23
-  - id: iptc-genre
-    entity: iptc-genre
-    role: [mapping, structure]
-    checked: 2026-08-23
-  - id: lom
-    entity: lom
-    role: [mapping, structure]
-    checked: 2026-08-23
-  - id: schema-org
-    entity: schema-org
-    role: [mapping]
-    checked: 2026-08-23
+- id: gbt-13745
+  entity: gbt-13745
+  roles:
+  - role: mapping
+    status: approved
+    decision: decision-source-completion
+  - role: structure
+    status: approved
+    decision: decision-source-completion
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: gbt-13745
+      entity: gbt-13745
+      role:
+      - mapping
+      - structure
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: approved
+        decision: decision-source-completion
+      - role: structure
+        status: approved
+        decision: decision-source-completion
+- id: cs2023
+  entity: cs2023
+  roles:
+  - role: mapping
+    status: approved
+    decision: decision-source-completion
+  - role: structure
+    status: approved
+    decision: decision-source-completion
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: cs2023
+      entity: cs2023
+      role:
+      - mapping
+      - structure
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: approved
+        decision: decision-source-completion
+      - role: structure
+        status: approved
+        decision: decision-source-completion
+- id: swebok
+  entity: swebok
+  roles:
+  - role: mapping
+    status: approved
+    decision: decision-source-completion
+  - role: structure
+    status: approved
+    decision: decision-source-completion
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: swebok
+      entity: swebok
+      role:
+      - mapping
+      - structure
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: approved
+        decision: decision-source-completion
+      - role: structure
+        status: approved
+        decision: decision-source-completion
+- id: acm-ccs
+  entity: acm-ccs
+  roles:
+  - role: mapping
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: acm-ccs
+      entity: acm-ccs
+      role:
+      - mapping
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: proposed
+        decision: null
+- id: asvs
+  entity: asvs
+  roles:
+  - role: mapping
+    status: approved
+    decision: decision-source-completion
+  - role: structure
+    status: approved
+    decision: decision-source-completion
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: asvs
+      entity: asvs
+      role:
+      - mapping
+      - structure
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: approved
+        decision: decision-source-completion
+      - role: structure
+        status: approved
+        decision: decision-source-completion
+- id: cwe
+  entity: cwe
+  roles:
+  - role: mapping
+    status: approved
+    decision: decision-source-completion
+  - role: structure
+    status: approved
+    decision: decision-source-completion
+  - role: group
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: cwe
+      entity: cwe
+      role:
+      - mapping
+      - structure
+      - group
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: approved
+        decision: decision-source-completion
+      - role: structure
+        status: approved
+        decision: decision-source-completion
+      - role: group
+        status: proposed
+        decision: null
+- id: attack
+  entity: attack
+  roles:
+  - role: mapping
+    status: approved
+    decision: decision-source-completion
+  - role: structure
+    status: approved
+    decision: decision-source-completion
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: attack
+      entity: attack
+      role:
+      - mapping
+      - structure
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: approved
+        decision: decision-source-completion
+      - role: structure
+        status: approved
+        decision: decision-source-completion
+- id: owasp-top10
+  entity: owasp-top10
+  roles:
+  - role: mapping
+    status: proposed
+    decision: null
+  - role: group
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: owasp-top10
+      entity: owasp-top10
+      role:
+      - mapping
+      - group
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: proposed
+        decision: null
+      - role: group
+        status: proposed
+        decision: null
+- id: owasp-llm-top10
+  entity: owasp-llm-top10
+  roles:
+  - role: mapping
+    status: approved
+    decision: decision-source-completion
+  - role: structure
+    status: approved
+    decision: decision-source-completion
+  - role: group
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: owasp-llm-top10
+      entity: owasp-llm-top10
+      role:
+      - mapping
+      - structure
+      - group
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: approved
+        decision: decision-source-completion
+      - role: structure
+        status: approved
+        decision: decision-source-completion
+      - role: group
+        status: proposed
+        decision: null
+- id: atlas
+  entity: atlas
+  roles:
+  - role: mapping
+    status: approved
+    decision: decision-source-completion
+  - role: structure
+    status: approved
+    decision: decision-source-completion
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: atlas
+      entity: atlas
+      role:
+      - mapping
+      - structure
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: approved
+        decision: decision-source-completion
+      - role: structure
+        status: approved
+        decision: decision-source-completion
+- id: nist-ai-rmf
+  entity: nist-ai-rmf
+  roles:
+  - role: mapping
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: nist-ai-rmf
+      entity: nist-ai-rmf
+      role:
+      - mapping
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: proposed
+        decision: null
+- id: anthropic-docs
+  entity: anthropic-docs
+  roles:
+  - role: mapping
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: anthropic-docs
+      entity: anthropic-docs
+      role:
+      - mapping
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: proposed
+        decision: null
+- id: rfc-1122
+  entity: rfc-1122
+  roles:
+  - role: mapping
+    status: approved
+    decision: decision-source-completion
+  - role: structure
+    status: approved
+    decision: decision-source-completion
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: rfc-1122
+      entity: rfc-1122
+      role:
+      - mapping
+      - structure
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: approved
+        decision: decision-source-completion
+      - role: structure
+        status: approved
+        decision: decision-source-completion
+- id: rfc-9110
+  entity: rfc-9110
+  roles:
+  - role: mapping
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: rfc-9110
+      entity: rfc-9110
+      role:
+      - mapping
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: proposed
+        decision: null
+- id: osi
+  entity: osi
+  roles:
+  - role: mapping
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: osi
+      entity: osi
+      role:
+      - mapping
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: proposed
+        decision: null
+- id: mdn
+  entity: mdn
+  roles:
+  - role: mapping
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: mdn
+      entity: mdn
+      role:
+      - mapping
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: proposed
+        decision: null
+- id: mdn-curriculum
+  entity: mdn-curriculum
+  roles:
+  - role: discovery
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: mdn-curriculum
+      entity: mdn-curriculum
+      role:
+      - candidate
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: discovery
+        status: proposed
+        decision: null
+- id: iso-25964-1
+  entity: iso-25964-1
+  roles:
+  - role: mapping
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: iso-25964-1
+      entity: iso-25964-1
+      role:
+      - mapping
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: proposed
+        decision: null
+- id: iso-25964-2
+  entity: iso-25964-2
+  roles:
+  - role: mapping
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: iso-25964-2
+      entity: iso-25964-2
+      role:
+      - mapping
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: proposed
+        decision: null
+- id: z39-19
+  entity: z39-19
+  roles:
+  - role: mapping
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: z39-19
+      entity: z39-19
+      role:
+      - mapping
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: proposed
+        decision: null
+- id: skos
+  entity: skos
+  roles:
+  - role: mapping
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: skos
+      entity: skos
+      role:
+      - mapping
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: proposed
+        decision: null
+- id: diataxis
+  entity: diataxis
+  roles:
+  - role: mapping
+    status: approved
+    decision: decision-source-completion
+  - role: structure
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: diataxis
+      entity: diataxis
+      role:
+      - mapping
+      - structure
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: approved
+        decision: decision-source-completion
+      - role: structure
+        status: proposed
+        decision: null
+- id: wikidata
+  entity: wikidata
+  roles:
+  - role: mapping
+    status: approved
+    decision: decision-source-completion
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: wikidata
+      entity: wikidata
+      role:
+      - mapping
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: approved
+        decision: decision-source-completion
+- id: roadmap-sh
+  entity: roadmap-sh
+  roles:
+  - role: discovery
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: roadmap-sh
+      entity: roadmap-sh
+      role:
+      - candidate
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: discovery
+        status: proposed
+        decision: null
+- id: teachyourselfcs
+  entity: teachyourselfcs
+  roles:
+  - role: discovery
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: teachyourselfcs
+      entity: teachyourselfcs
+      role:
+      - candidate
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: discovery
+        status: proposed
+        decision: null
+- id: cmu-15-445
+  entity: cmu-15-445
+  roles:
+  - role: discovery
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: cmu-15-445
+      entity: cmu-15-445
+      role:
+      - candidate
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: discovery
+        status: proposed
+        decision: null
+- id: db-engines
+  entity: db-engines
+  roles:
+  - role: discovery
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: db-engines
+      entity: db-engines
+      role:
+      - candidate
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: discovery
+        status: proposed
+        decision: null
+- id: dita
+  entity: dita
+  roles:
+  - role: mapping
+    status: approved
+    decision: decision-source-completion
+  - role: structure
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: dita
+      entity: dita
+      role:
+      - mapping
+      - structure
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: approved
+        decision: decision-source-completion
+      - role: structure
+        status: proposed
+        decision: null
+- id: iptc-genre
+  entity: iptc-genre
+  roles:
+  - role: mapping
+    status: approved
+    decision: decision-source-completion
+  - role: structure
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: iptc-genre
+      entity: iptc-genre
+      role:
+      - mapping
+      - structure
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: approved
+        decision: decision-source-completion
+      - role: structure
+        status: proposed
+        decision: null
+- id: lom
+  entity: lom
+  roles:
+  - role: mapping
+    status: approved
+    decision: decision-source-completion
+  - role: structure
+    status: proposed
+    decision: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: lom
+      entity: lom
+      role:
+      - mapping
+      - structure
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: approved
+        decision: decision-source-completion
+      - role: structure
+        status: proposed
+        decision: null
+- id: schema-org
+  entity: schema-org
+  roles:
+  - role: mapping
+    status: approved
+    decision: decision-source-completion
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - role
+    - checked
+    - roles
+    decisions:
+    - decision-source-completion
+    before:
+      id: schema-org
+      entity: schema-org
+      role:
+      - mapping
+      checked: '2026-08-23'
+    after:
+      roles:
+      - role: mapping
+        status: approved
+        decision: decision-source-completion
+schema_version: 2
+schema: urn:kb-design:data:source-uses

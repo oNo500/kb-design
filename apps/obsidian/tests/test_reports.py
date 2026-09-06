@@ -54,31 +54,36 @@ class ReportTests(unittest.TestCase):
                         {
                             "id": "unassigned-branch",
                             "status": "unassigned",
-                            "source": "cs2023",
+                            "source": {"registry": "cs2023", "item": "fixture", "locator": "fixture",
+                                       "basis": [{"entity": "cs2023", "locator": "fixture", "checked": "2026-09-06"}]},
                             "broader": ("security",),
                         },
                         {
                             "id": "security",
                             "status": "active",
-                            "source": "cs2023",
+                            "source": {"registry": "cs2023", "item": "fixture", "locator": "fixture",
+                                       "basis": [{"entity": "cs2023", "locator": "fixture", "checked": "2026-09-06"}]},
                             "broader": ("computing",),
                         },
                         {
                             "id": "computing",
                             "status": "active",
-                            "source": "gbt-13745",
+                            "source": {"registry": "gbt-13745", "item": "fixture", "locator": "fixture",
+                                       "basis": [{"entity": "gbt-13745", "locator": "fixture", "checked": "2026-09-06"}]},
                             "broader": (),
                         },
                         {
                             "id": "artificial-intelligence",
                             "status": "active",
-                            "source": "cs2023",
+                            "source": {"registry": "cs2023", "item": "fixture", "locator": "fixture",
+                                       "basis": [{"entity": "cs2023", "locator": "fixture", "checked": "2026-09-06"}]},
                             "broader": ("computing",),
                         },
                         {
                             "id": "application-security",
                             "status": "active",
-                            "source": "self",
+                            "assertions": {"source": {"disposition": "project_assertion", "original": "self",
+                                                      "migration": "audit/fixture#source"}},
                             "broader": ("security",),
                         },
                     )
@@ -125,6 +130,20 @@ class ReportTests(unittest.TestCase):
     def tearDown(self) -> None:
         self.vault_gate.stop()
         self.temporary.cleanup()
+
+    def test_missing_or_legacy_derivation_does_not_become_self(self) -> None:
+        """A missing derivation or an external match must not invent a project assertion."""
+        from dataclasses import replace
+        from kb_obsidian.errors import ApplicationError
+        from kb_obsidian.reports import build_reports
+
+        for extra in ({}, {"source": "self"}, {"source": "cs2023"},
+                      {"match": [{"registry": "cs2023", "item": "fixture", "rel": "exactMatch"}]}):
+            with self.subTest(extra=extra):
+                concept = {"id": "topic", "status": "active", "broader": (), **extra}
+                snapshot = replace(self.snapshot, documents={"topics": {"concepts": (concept,)}})
+                with self.assertRaisesRegex(ApplicationError, "source metadata"):
+                    build_reports(snapshot, self.validation, self.vault)
 
     def test_counts_only_valid_controlled_subjects_and_aggregates_descendants(self) -> None:
         """Scanning non-controlled links or promoting ancestors to direct use would corrupt usage facts."""

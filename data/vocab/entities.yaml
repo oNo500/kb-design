@@ -1,712 +1,6037 @@
-# 命名实体词表。设计见 design/entities.md。首批为作为词表来源的标准、知识体系与参考资料。
+# 来源 v2 数据；语义与采纳见 docs/decisions/source-completion.md。
 version:
-  id: "2026.08"
+  id: '2026.08'
   date: 2026-08-23
   note: 初版：27 个来源实体；第二批 30 个工具、语言、组织
-
 entities:
-  - id: gbt-13745
-    label: { zh: "GB/T 13745-2009 学科分类与代码", en: "GB/T 13745-2009 Classification and code of disciplines" }
-    kind: standard
-    tier: de-jure
-    version: "2009"
-    checked: 2026-08-23
+- id: gbt-13745
+  label:
+    zh: GB/T 13745-2009 学科分类与代码
+    en: GB/T 13745-2009 Classification and code of disciplines
+  kind: standard
+  tier: de-jure
+  version: '2009'
+  watch:
+  - locator: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 1
+  subjects:
+  - library-and-information-science
+  basis:
+    version:
+    - entity: gbt-13745
+      locator: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E；标准号与发布日期
+      checked: '2026-09-05'
+    source_status:
+    - entity: gbt-13745
+      locator: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E；标准号与发布日期；现行状态
+      checked: '2026-09-05'
+    urls:
+    - entity: gbt-13745
+      locator: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
+      checked: '2026-09-05'
+  status: candidate
+  added: 2026-08-23
+  source_status: current
+  urls:
+  - role: landing
     url: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
-    watch: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
-    subjects: [library-and-information-science]
-    basis:
-      subjects: self
-    status: candidate
-    added: 2026-08-23
-  - id: cs2023
-    label: { zh: "计算机科学课程 2023", en: "Computer Science Curricula 2023" }
-    kind: standard
-    tier: de-facto
-    version: "2024-01"
-    checked: 2026-08-23
-    url: https://csed.acm.org/cs2023/
-    watch: https://csed.acm.org/cs2023/
-    subjects: [computing]
-    basis:
-      subjects: cs2023:scope
-    status: active
-    added: 2026-08-23
-  - id: swebok
-    label: { zh: "软件工程知识体系指南 v4.0", en: "Guide to the Software Engineering Body of Knowledge v4.0" }
-    kind: standard
-    tier: de-facto
-    version: "4.0"
-    checked: 2026-08-23
+    primary: true
+  assertions:
+    subjects:
+    - values:
+      - library-and-information-science
+      disposition: project_assertion
+      original: self
+      migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/gbt-13745.basis.subjects
+  review:
+    checked: null
+    next_due: null
+    interval_months: 24
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - assertions
+    - basis
+    - checked
+    - review
+    - source_status
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: gbt-13745
+      label:
+        zh: GB/T 13745-2009 学科分类与代码
+        en: GB/T 13745-2009 Classification and code of disciplines
+      kind: standard
+      tier: de-jure
+      version: '2009'
+      checked: '2026-08-23'
+      url: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
+      watch: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
+      subjects:
+      - library-and-information-science
+      basis:
+        subjects: self
+      status: candidate
+      added: '2026-08-23'
+    after:
+      assertions:
+        subjects:
+        - values:
+          - library-and-information-science
+          disposition: project_assertion
+          original: self
+          migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/gbt-13745.basis.subjects
+      basis:
+        version:
+        - entity: gbt-13745
+          locator: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E；标准号与发布日期
+          checked: '2026-09-05'
+        source_status:
+        - entity: gbt-13745
+          locator: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E；标准号与发布日期；现行状态
+          checked: '2026-09-05'
+        urls:
+        - entity: gbt-13745
+          locator: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 24
+        grace_days: 30
+        obligations: []
+      source_status: current
+      urls:
+      - role: landing
+        url: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
+        primary: true
+      watch:
+      - locator: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=4C13F521FD6ECB6E5EC026FCD779986E
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 1
+- id: cs2023
+  label:
+    zh: 计算机科学课程 2023
+    en: Computer Science Curricula 2023
+  kind: standard
+  tier: de-facto
+  version: 2024-01
+  watch:
+  - locator: https://csed.acm.org/cs2023/
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  subjects:
+  - computing
+  basis:
+    subjects:
+    - values:
+      - computing
+      references:
+      - entity: cs2023
+        locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm
+          — Executive Summary；Body of Knowledge
+        checked: '2026-09-05'
+    version:
+    - entity: cs2023
+      locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；2024
+        年 1 月定稿，3 月编辑
+      checked: '2026-09-05'
+    urls:
+    - entity: cs2023
+      locator: https://csed.acm.org/final-report/
+      checked: '2026-09-05'
+    - entity: cs2023
+      locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  urls:
+  - role: landing
+    url: https://csed.acm.org/final-report/
+    primary: true
+  - role: full_text
+    url: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm
+    primary: false
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: cs2023
+      label:
+        zh: 计算机科学课程 2023
+        en: Computer Science Curricula 2023
+      kind: standard
+      tier: de-facto
+      version: 2024-01
+      checked: '2026-08-23'
+      url: https://csed.acm.org/cs2023/
+      watch: https://csed.acm.org/cs2023/
+      subjects:
+      - computing
+      basis:
+        subjects: cs2023:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - computing
+          references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm
+              — Executive Summary；Body of Knowledge
+            checked: '2026-09-05'
+        version:
+        - entity: cs2023
+          locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；2024
+            年 1 月定稿，3 月编辑
+          checked: '2026-09-05'
+        urls:
+        - entity: cs2023
+          locator: https://csed.acm.org/final-report/
+          checked: '2026-09-05'
+        - entity: cs2023
+          locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://csed.acm.org/final-report/
+        primary: true
+      - role: full_text
+        url: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm
+        primary: false
+      watch:
+      - locator: https://csed.acm.org/cs2023/
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: swebok
+  label:
+    zh: 软件工程知识体系指南 v4.0
+    en: Guide to the Software Engineering Body of Knowledge v4.0
+  kind: standard
+  tier: de-facto
+  version: '4.0'
+  watch:
+  - locator: https://www.computer.org/education/bodies-of-knowledge/software-engineering
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  subjects:
+  - software-engineering
+  basis:
+    subjects:
+    - values:
+      - software-engineering
+      references:
+      - entity: swebok
+        locator: https://www.computer.org/education/bodies-of-knowledge/software-engineering
+          — About SWEBoK；FAQs / Why is there a SWEBOK guide?
+        checked: '2026-09-06'
+    version:
+    - entity: swebok
+      locator: https://studylib.net/doc/27764293/swebok-v4；v4.0 封面、版权及 Table I.1；可读镜像转录，不声称全文已读
+      checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  urls:
+  - role: landing
     url: https://www.computer.org/education/bodies-of-knowledge/software-engineering
-    watch: https://www.computer.org/education/bodies-of-knowledge/software-engineering
-    subjects: [software-engineering]
-    basis:
-      subjects: swebok:scope
-    status: active
-    added: 2026-08-23
-  - id: acm-ccs
-    label: { zh: "ACM 计算分类系统 2012", en: "ACM Computing Classification System 2012" }
-    kind: standard
-    tier: de-facto
-    version: "2012"
-    checked: 2026-08-23
+    primary: true
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    before:
+      id: swebok
+      label:
+        zh: 软件工程知识体系指南 v4.0
+        en: Guide to the Software Engineering Body of Knowledge v4.0
+      kind: standard
+      tier: de-facto
+      version: '4.0'
+      checked: '2026-08-23'
+      url: https://www.computer.org/education/bodies-of-knowledge/software-engineering
+      watch: https://www.computer.org/education/bodies-of-knowledge/software-engineering
+      subjects:
+      - software-engineering
+      basis:
+        subjects: swebok:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - software-engineering
+          references:
+          - entity: swebok
+            locator: https://www.computer.org/education/bodies-of-knowledge/software-engineering
+              — About SWEBoK；FAQs / Why is there a SWEBOK guide?
+            checked: '2026-09-06'
+        version:
+        - entity: swebok
+          locator: https://studylib.net/doc/27764293/swebok-v4；v4.0 封面、版权及 Table I.1；可读镜像转录，不声称全文已读
+          checked: '2026-09-06'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://www.computer.org/education/bodies-of-knowledge/software-engineering
+        primary: true
+      watch:
+      - locator: https://www.computer.org/education/bodies-of-knowledge/software-engineering
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: acm-ccs
+  label:
+    zh: ACM 计算分类系统 2012
+    en: ACM Computing Classification System 2012
+  kind: standard
+  tier: de-facto
+  version: '2012'
+  subjects:
+  - computing
+  basis:
+    subjects:
+    - values:
+      - computing
+      references:
+      - entity: acm-ccs
+        locator: https://ccecc.acm.org/guidance/information-technology-applied/classification-mappings/acm-computing-classification-system-2012
+          — ACM Computing Classification System 2012；Learning Outcome 映射表 IT.1–IT.50
+        checked: '2026-09-06'
+    version:
+    - entity: acm-ccs
+      locator: https://ccecc.acm.org/guidance/information-technology-applied/classification-mappings/acm-computing-classification-system-2012
+        — ACM Computing Classification System 2012；Learning Outcome 映射表 IT.1–IT.50；2012
+        Computing Classification System
+      checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  watch:
+  - locator: https://dl.acm.org/ccs
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  replaced_by: null
+  urls:
+  - role: landing
     url: https://dl.acm.org/ccs
-    subjects: [computing]
-    basis:
-      subjects: acm-ccs:scope
-    status: active
-    added: 2026-08-23
-  - id: asvs
-    label: { zh: "OWASP 应用安全验证标准 5.0", en: "OWASP Application Security Verification Standard 5.0" }
-    kind: standard
-    tier: de-facto
-    version: "5.0"
-    checked: 2026-08-23
+    primary: true
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    before:
+      id: acm-ccs
+      label:
+        zh: ACM 计算分类系统 2012
+        en: ACM Computing Classification System 2012
+      kind: standard
+      tier: de-facto
+      version: '2012'
+      checked: '2026-08-23'
+      url: https://dl.acm.org/ccs
+      subjects:
+      - computing
+      basis:
+        subjects: acm-ccs:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - computing
+          references:
+          - entity: acm-ccs
+            locator: https://ccecc.acm.org/guidance/information-technology-applied/classification-mappings/acm-computing-classification-system-2012
+              — ACM Computing Classification System 2012；Learning Outcome 映射表 IT.1–IT.50
+            checked: '2026-09-06'
+        version:
+        - entity: acm-ccs
+          locator: https://ccecc.acm.org/guidance/information-technology-applied/classification-mappings/acm-computing-classification-system-2012
+            — ACM Computing Classification System 2012；Learning Outcome 映射表 IT.1–IT.50；2012
+            Computing Classification System
+          checked: '2026-09-06'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://dl.acm.org/ccs
+        primary: true
+      watch:
+      - locator: https://dl.acm.org/ccs
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: asvs
+  label:
+    zh: OWASP 应用安全验证标准 5.0
+    en: OWASP Application Security Verification Standard 5.0
+  kind: standard
+  tier: de-facto
+  version: 5.0.0
+  watch:
+  - locator: https://github.com/OWASP/ASVS/releases
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  subjects:
+  - security
+  basis:
+    subjects:
+    - values:
+      - security
+      references:
+      - entity: asvs
+        locator: https://owasp.org/www-project-application-security-verification-standard/
+          — What is the ASVS?；More Details on the ASVS
+        checked: '2026-09-06'
+    urls:
+    - entity: asvs
+      locator: https://owasp.org/www-project-application-security-verification-standard/
+      checked: '2026-09-05'
+    version:
+    - entity: asvs
+      locator: https://github.com/OWASP/ASVS/releases/download/v5.0.0_release/OWASP_Application_Security_Verification_Standard_5.0.0_en.json；Version=5.0.0
+      checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  urls:
+  - role: landing
     url: https://owasp.org/www-project-application-security-verification-standard/
-    watch: https://github.com/OWASP/ASVS/releases
-    subjects: [security]
-    basis:
-      subjects: asvs:scope
-    status: active
-    added: 2026-08-23
-  - id: cwe
-    label: { zh: "MITRE 通用缺陷枚举", en: "MITRE Common Weakness Enumeration" }
-    kind: standard
-    tier: de-facto
-    version: "4.20"
-    checked: 2026-08-23
+    primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - version
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: asvs
+      label:
+        zh: OWASP 应用安全验证标准 5.0
+        en: OWASP Application Security Verification Standard 5.0
+      kind: standard
+      tier: de-facto
+      version: '5.0'
+      checked: '2026-08-23'
+      url: https://owasp.org/www-project-application-security-verification-standard/
+      watch: https://github.com/OWASP/ASVS/releases
+      subjects:
+      - security
+      basis:
+        subjects: asvs:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - security
+          references:
+          - entity: asvs
+            locator: https://owasp.org/www-project-application-security-verification-standard/
+              — What is the ASVS?；More Details on the ASVS
+            checked: '2026-09-06'
+        urls:
+        - entity: asvs
+          locator: https://owasp.org/www-project-application-security-verification-standard/
+          checked: '2026-09-05'
+        version:
+        - entity: asvs
+          locator: https://github.com/OWASP/ASVS/releases/download/v5.0.0_release/OWASP_Application_Security_Verification_Standard_5.0.0_en.json；Version=5.0.0
+          checked: '2026-09-06'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://owasp.org/www-project-application-security-verification-standard/
+        primary: true
+      version: 5.0.0
+      watch:
+      - locator: https://github.com/OWASP/ASVS/releases
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: cwe
+  label:
+    zh: MITRE 通用缺陷枚举
+    en: MITRE Common Weakness Enumeration
+  kind: standard
+  tier: de-facto
+  version: '4.20'
+  watch:
+  - locator: https://cwe.mitre.org/data/index.html
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  subjects:
+  - security
+  basis:
+    subjects:
+    - values:
+      - security
+      references:
+      - entity: cwe
+        locator: https://cwe.mitre.org/about/index.html — About CWE；CWE List / Using
+          the CWE List
+        checked: '2026-09-06'
+    version:
+    - entity: cwe
+      locator: https://cwe.mitre.org/news/archives/news2026.html；4.20，2026-04-30 发布
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  urls:
+  - role: landing
     url: https://cwe.mitre.org/
-    watch: https://cwe.mitre.org/data/index.html
-    subjects: [security]
-    basis:
-      subjects: cwe:scope
-    status: active
-    added: 2026-08-23
-  - id: attack
-    label: { zh: "MITRE ATT&CK Enterprise", en: "MITRE ATT&CK Enterprise" }
-    kind: standard
-    tier: de-facto
-    version: "19.2"
-    checked: 2026-08-23
-    url: https://attack.mitre.org/
-    watch: https://attack.mitre.org/resources/versions/
-    subjects: [security]
-    basis:
-      subjects: attack:scope
-    status: active
-    added: 2026-08-23
-  - id: owasp-top10
-    label: { zh: "OWASP Top 10", en: "OWASP Top 10" }
-    kind: standard
-    tier: de-facto
-    version: "2021"
-    checked: 2026-08-23
+    primary: true
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: cwe
+      label:
+        zh: MITRE 通用缺陷枚举
+        en: MITRE Common Weakness Enumeration
+      kind: standard
+      tier: de-facto
+      version: '4.20'
+      checked: '2026-08-23'
+      url: https://cwe.mitre.org/
+      watch: https://cwe.mitre.org/data/index.html
+      subjects:
+      - security
+      basis:
+        subjects: cwe:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - security
+          references:
+          - entity: cwe
+            locator: https://cwe.mitre.org/about/index.html — About CWE；CWE List /
+              Using the CWE List
+            checked: '2026-09-06'
+        version:
+        - entity: cwe
+          locator: https://cwe.mitre.org/news/archives/news2026.html；4.20，2026-04-30
+            发布
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://cwe.mitre.org/
+        primary: true
+      watch:
+      - locator: https://cwe.mitre.org/data/index.html
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: attack
+  label:
+    zh: MITRE ATT&CK Enterprise
+    en: MITRE ATT&CK Enterprise
+  kind: standard
+  tier: de-facto
+  version: '19.2'
+  watch:
+  - locator: https://attack.mitre.org/resources/versions/
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  subjects:
+  - security
+  basis:
+    subjects:
+    - values:
+      - security
+      references:
+      - entity: attack
+        locator: https://attack.mitre.org/ — 页首 MITRE ATT&CK 介绍；ATT&CK Matrix for
+          Enterprise
+        checked: '2026-09-06'
+    version:
+    - entity: attack
+      locator: https://attack.mitre.org/resources/versions/；Current Version v19.2
+      checked: '2026-09-05'
+    source_status:
+    - entity: attack
+      locator: https://attack.mitre.org/resources/versions/；Current Version v19.2
+      checked: '2026-09-05'
+    urls:
+    - entity: attack
+      locator: https://attack.mitre.org/resources/versions/
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  source_status: current
+  urls:
+  - role: landing
+    url: https://attack.mitre.org/resources/versions/
+    primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - source_status
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: attack
+      label:
+        zh: MITRE ATT&CK Enterprise
+        en: MITRE ATT&CK Enterprise
+      kind: standard
+      tier: de-facto
+      version: '19.2'
+      checked: '2026-08-23'
+      url: https://attack.mitre.org/
+      watch: https://attack.mitre.org/resources/versions/
+      subjects:
+      - security
+      basis:
+        subjects: attack:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - security
+          references:
+          - entity: attack
+            locator: https://attack.mitre.org/ — 页首 MITRE ATT&CK 介绍；ATT&CK Matrix
+              for Enterprise
+            checked: '2026-09-06'
+        version:
+        - entity: attack
+          locator: https://attack.mitre.org/resources/versions/；Current Version v19.2
+          checked: '2026-09-05'
+        source_status:
+        - entity: attack
+          locator: https://attack.mitre.org/resources/versions/；Current Version v19.2
+          checked: '2026-09-05'
+        urls:
+        - entity: attack
+          locator: https://attack.mitre.org/resources/versions/
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      source_status: current
+      urls:
+      - role: landing
+        url: https://attack.mitre.org/resources/versions/
+        primary: true
+      watch:
+      - locator: https://attack.mitre.org/resources/versions/
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: owasp-top10
+  label:
+    zh: OWASP Top 10
+    en: OWASP Top 10
+  kind: standard
+  tier: de-facto
+  version: '2021'
+  watch:
+  - locator: https://owasp.org/www-project-top-ten/
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  subjects:
+  - security
+  basis:
+    subjects:
+    - values:
+      - security
+      references:
+      - entity: owasp-top10
+        locator: https://owasp.org/Top10/2021/ — OWASP Top 10:2021 开篇；The Top 10:2021
+          List
+        checked: '2026-09-06'
+    source_status:
+    - entity: owasp-top10
+      locator: https://owasp.org/www-project-top-ten/；current 2025 与旧版 2021，限定选用版本地位
+      checked: '2026-09-05'
+    urls:
+    - entity: owasp-top10
+      locator: https://owasp.org/www-project-top-ten/
+      checked: '2026-09-05'
+    version:
+    - entity: owasp-top10
+      locator: https://owasp.org/www-project-top-ten/；旧版 2021 与当前 2025，保留所选 2021 版
+      checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  source_status: superseded
+  urls:
+  - role: landing
     url: https://owasp.org/www-project-top-ten/
-    watch: https://owasp.org/www-project-top-ten/
-    subjects: [security]
-    basis:
-      subjects: owasp-top10:scope
-    status: active
-    added: 2026-08-23
-  - id: owasp-llm-top10
-    label: { zh: "OWASP LLM 应用 Top 10", en: "OWASP Top 10 for LLM Applications" }
-    kind: standard
-    tier: de-facto
-    version: "2025"
-    checked: 2026-08-23
+    primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - source_status
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: owasp-top10
+      label:
+        zh: OWASP Top 10
+        en: OWASP Top 10
+      kind: standard
+      tier: de-facto
+      version: '2021'
+      checked: '2026-08-23'
+      url: https://owasp.org/www-project-top-ten/
+      watch: https://owasp.org/www-project-top-ten/
+      subjects:
+      - security
+      basis:
+        subjects: owasp-top10:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - security
+          references:
+          - entity: owasp-top10
+            locator: https://owasp.org/Top10/2021/ — OWASP Top 10:2021 开篇；The Top
+              10:2021 List
+            checked: '2026-09-06'
+        source_status:
+        - entity: owasp-top10
+          locator: https://owasp.org/www-project-top-ten/；current 2025 与旧版 2021，限定选用版本地位
+          checked: '2026-09-05'
+        urls:
+        - entity: owasp-top10
+          locator: https://owasp.org/www-project-top-ten/
+          checked: '2026-09-05'
+        version:
+        - entity: owasp-top10
+          locator: https://owasp.org/www-project-top-ten/；旧版 2021 与当前 2025，保留所选 2021
+            版
+          checked: '2026-09-06'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      source_status: superseded
+      urls:
+      - role: landing
+        url: https://owasp.org/www-project-top-ten/
+        primary: true
+      watch:
+      - locator: https://owasp.org/www-project-top-ten/
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: owasp-llm-top10
+  label:
+    zh: OWASP LLM 应用 Top 10
+    en: OWASP Top 10 for LLM Applications
+  kind: standard
+  tier: de-facto
+  version: '2025'
+  watch:
+  - locator: https://github.com/OWASP/www-project-top-10-for-large-language-model-applications
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  subjects:
+  - artificial-intelligence
+  - security
+  basis:
+    subjects:
+    - values:
+      - artificial-intelligence
+      references:
+      - entity: owasp-llm-top10
+        locator: https://genai.owasp.org/llm-top-10/ — 2025 Top 10 Risk & Mitigations
+          for LLMs and Gen AI Apps 开篇
+        checked: '2026-09-06'
+    - values:
+      - security
+      references:
+      - entity: owasp-llm-top10
+        locator: https://genai.owasp.org/llm-top-10/ — 2025 Top 10 Risk & Mitigations
+          for LLMs and Gen AI Apps 开篇
+        checked: '2026-09-06'
+    version:
+    - entity: owasp-llm-top10
+      locator: https://genai.owasp.org/llm-top-10/；LLM01:2025 等条目标识
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  urls:
+  - role: landing
     url: https://genai.owasp.org/llm-top-10/
-    watch: https://github.com/OWASP/www-project-top-10-for-large-language-model-applications
-    subjects: [artificial-intelligence, security]
-    basis:
-      subjects: owasp-llm-top10:scope
-    status: active
-    added: 2026-08-23
-  - id: atlas
-    label: { zh: "MITRE ATLAS", en: "MITRE ATLAS" }
-    kind: standard
-    tier: de-facto
-    version: "2026.07"
-    checked: 2026-08-23
-    url: https://atlas.mitre.org/
-    watch: https://github.com/mitre-atlas/atlas-data/tree/main/dist
-    subjects: [artificial-intelligence, security]
-    basis:
-      subjects: atlas:scope
-    status: active
-    added: 2026-08-23
-  - id: nist-ai-rmf
-    label: { zh: "NIST 人工智能风险管理框架 1.0", en: "NIST AI Risk Management Framework 1.0" }
-    kind: standard
-    tier: de-jure
-    version: "1.0"
-    checked: 2026-08-23
+    primary: true
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: owasp-llm-top10
+      label:
+        zh: OWASP LLM 应用 Top 10
+        en: OWASP Top 10 for LLM Applications
+      kind: standard
+      tier: de-facto
+      version: '2025'
+      checked: '2026-08-23'
+      url: https://genai.owasp.org/llm-top-10/
+      watch: https://github.com/OWASP/www-project-top-10-for-large-language-model-applications
+      subjects:
+      - artificial-intelligence
+      - security
+      basis:
+        subjects: owasp-llm-top10:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - artificial-intelligence
+          references:
+          - entity: owasp-llm-top10
+            locator: https://genai.owasp.org/llm-top-10/ — 2025 Top 10 Risk & Mitigations
+              for LLMs and Gen AI Apps 开篇
+            checked: '2026-09-06'
+        - values:
+          - security
+          references:
+          - entity: owasp-llm-top10
+            locator: https://genai.owasp.org/llm-top-10/ — 2025 Top 10 Risk & Mitigations
+              for LLMs and Gen AI Apps 开篇
+            checked: '2026-09-06'
+        version:
+        - entity: owasp-llm-top10
+          locator: https://genai.owasp.org/llm-top-10/；LLM01:2025 等条目标识
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://genai.owasp.org/llm-top-10/
+        primary: true
+      watch:
+      - locator: https://github.com/OWASP/www-project-top-10-for-large-language-model-applications
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: atlas
+  label:
+    zh: MITRE ATLAS
+    en: MITRE ATLAS
+  kind: standard
+  tier: de-facto
+  version: '2026.07'
+  watch:
+  - locator: https://github.com/mitre-atlas/atlas-data/tree/main/dist
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  subjects:
+  - artificial-intelligence
+  - security
+  basis:
+    subjects:
+    - values:
+      - artificial-intelligence
+      references:
+      - entity: atlas
+        locator: https://github.com/mitre-atlas/atlas-data — README / MITRE ATLAS
+          Data 开篇；ATLAS Data Format / collection.description
+        checked: '2026-09-06'
+    - values:
+      - security
+      references:
+      - entity: atlas
+        locator: https://github.com/mitre-atlas/atlas-data — README / MITRE ATLAS
+          Data 开篇；ATLAS Data Format / collection.description
+        checked: '2026-09-06'
+    version:
+    - entity: atlas
+      locator: https://github.com/mitre-atlas/atlas-data/tree/main/dist/v6；ATLAS-2026.07.yaml
+        文件名，blob 275c840f6e6ccc2b7be9fe8607fdc3344c242a42，仅目录元数据
+      checked: '2026-09-05'
+    urls:
+    - entity: atlas
+      locator: https://github.com/mitre-atlas/atlas-data/tree/main/dist/v6
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  urls:
+  - role: landing
+    url: https://github.com/mitre-atlas/atlas-data/tree/main/dist/v6
+    primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: atlas
+      label:
+        zh: MITRE ATLAS
+        en: MITRE ATLAS
+      kind: standard
+      tier: de-facto
+      version: '2026.07'
+      checked: '2026-08-23'
+      url: https://atlas.mitre.org/
+      watch: https://github.com/mitre-atlas/atlas-data/tree/main/dist
+      subjects:
+      - artificial-intelligence
+      - security
+      basis:
+        subjects: atlas:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - artificial-intelligence
+          references:
+          - entity: atlas
+            locator: https://github.com/mitre-atlas/atlas-data — README / MITRE ATLAS
+              Data 开篇；ATLAS Data Format / collection.description
+            checked: '2026-09-06'
+        - values:
+          - security
+          references:
+          - entity: atlas
+            locator: https://github.com/mitre-atlas/atlas-data — README / MITRE ATLAS
+              Data 开篇；ATLAS Data Format / collection.description
+            checked: '2026-09-06'
+        version:
+        - entity: atlas
+          locator: https://github.com/mitre-atlas/atlas-data/tree/main/dist/v6；ATLAS-2026.07.yaml
+            文件名，blob 275c840f6e6ccc2b7be9fe8607fdc3344c242a42，仅目录元数据
+          checked: '2026-09-05'
+        urls:
+        - entity: atlas
+          locator: https://github.com/mitre-atlas/atlas-data/tree/main/dist/v6
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://github.com/mitre-atlas/atlas-data/tree/main/dist/v6
+        primary: true
+      watch:
+      - locator: https://github.com/mitre-atlas/atlas-data/tree/main/dist
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: nist-ai-rmf
+  label:
+    zh: NIST 人工智能风险管理框架 1.0
+    en: NIST AI Risk Management Framework 1.0
+  kind: standard
+  tier: de-jure
+  version: '1.0'
+  watch:
+  - locator: https://www.nist.gov/itl/ai-risk-management-framework
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 1
+  subjects:
+  - artificial-intelligence
+  basis:
+    subjects:
+    - values:
+      - artificial-intelligence
+      references:
+      - entity: nist-ai-rmf
+        locator: https://www.nist.gov/itl/ai-risk-management-framework — Overview
+          of the AI RMF
+        checked: '2026-09-06'
+    version:
+    - entity: nist-ai-rmf
+      locator: https://www.nist.gov/itl/ai-risk-management-framework；1.0，2023-01-26
+        发布
+      checked: '2026-09-05'
+    urls:
+    - entity: nist-ai-rmf
+      locator: https://www.nist.gov/itl/ai-risk-management-framework
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  urls:
+  - role: landing
     url: https://www.nist.gov/itl/ai-risk-management-framework
-    watch: https://www.nist.gov/itl/ai-risk-management-framework
-    subjects: [artificial-intelligence]
-    basis:
-      subjects: nist-ai-rmf:scope
-    status: active
-    added: 2026-08-23
-  - id: anthropic-docs
-    label: { zh: "Anthropic 文档", en: "Anthropic Documentation" }
-    kind: standard
-    tier: vendor
-    version: "2026-08"
-    checked: 2026-08-23
-    url: https://docs.anthropic.com/
-    subjects: [artificial-intelligence]
-    basis:
-      subjects: anthropic-docs:scope
-    status: active
-    added: 2026-08-23
-  - id: rfc-1122
-    label: { zh: "RFC 1122 互联网主机要求：通信层", en: "RFC 1122 Requirements for Internet Hosts — Communication Layers" }
-    kind: standard
-    tier: de-jure
-    version: "1989"
-    checked: 2026-08-23
-    url: https://www.rfc-editor.org/info/rfc1122
-    watch: https://www.rfc-editor.org/info/rfc1122
-    subjects: [networking-and-communication]
-    basis:
-      subjects: rfc-1122:scope
-    status: active
-    added: 2026-08-23
-  - id: rfc-9110
-    label: { zh: "RFC 9110 HTTP 语义", en: "RFC 9110 HTTP Semantics" }
-    kind: standard
-    tier: de-jure
-    version: "2022"
-    checked: 2026-08-23
-    url: https://www.rfc-editor.org/info/rfc9110
-    watch: https://www.rfc-editor.org/info/rfc9110
-    subjects: [networking-and-communication]
-    basis:
-      subjects: rfc-9110:scope
-    status: active
-    added: 2026-08-23
-  - id: osi
-    label: { zh: "ISO/IEC 7498-1 OSI 参考模型", en: "ISO/IEC 7498-1 OSI Basic Reference Model" }
-    kind: standard
-    tier: de-jure
-    version: "1994"
-    checked: 2026-08-23
+    primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 24
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: nist-ai-rmf
+      label:
+        zh: NIST 人工智能风险管理框架 1.0
+        en: NIST AI Risk Management Framework 1.0
+      kind: standard
+      tier: de-jure
+      version: '1.0'
+      checked: '2026-08-23'
+      url: https://www.nist.gov/itl/ai-risk-management-framework
+      watch: https://www.nist.gov/itl/ai-risk-management-framework
+      subjects:
+      - artificial-intelligence
+      basis:
+        subjects: nist-ai-rmf:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - artificial-intelligence
+          references:
+          - entity: nist-ai-rmf
+            locator: https://www.nist.gov/itl/ai-risk-management-framework — Overview
+              of the AI RMF
+            checked: '2026-09-06'
+        version:
+        - entity: nist-ai-rmf
+          locator: https://www.nist.gov/itl/ai-risk-management-framework；1.0，2023-01-26
+            发布
+          checked: '2026-09-05'
+        urls:
+        - entity: nist-ai-rmf
+          locator: https://www.nist.gov/itl/ai-risk-management-framework
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 24
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://www.nist.gov/itl/ai-risk-management-framework
+        primary: true
+      watch:
+      - locator: https://www.nist.gov/itl/ai-risk-management-framework
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 1
+- id: anthropic-docs
+  label:
+    zh: Anthropic 文档
+    en: Anthropic Documentation
+  kind: standard
+  tier: vendor
+  version: null
+  subjects:
+  - artificial-intelligence
+  basis:
+    subjects:
+    - values:
+      - artificial-intelligence
+      references:
+      - entity: anthropic-docs
+        locator: https://platform.claude.com/docs/en/home — Choose how you build；Messages；Build
+        checked: '2026-09-06'
+    urls:
+    - entity: anthropic-docs
+      locator: https://platform.claude.com/docs/en/home
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  urls:
+  - role: landing
+    url: https://platform.claude.com/docs/en/home
+    primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 6
+    grace_days: 30
+    obligations: []
+  watch:
+  - locator: https://docs.anthropic.com/
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 6
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - version
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: anthropic-docs
+      label:
+        zh: Anthropic 文档
+        en: Anthropic Documentation
+      kind: standard
+      tier: vendor
+      version: 2026-08
+      checked: '2026-08-23'
+      url: https://docs.anthropic.com/
+      subjects:
+      - artificial-intelligence
+      basis:
+        subjects: anthropic-docs:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - artificial-intelligence
+          references:
+          - entity: anthropic-docs
+            locator: https://platform.claude.com/docs/en/home — Choose how you build；Messages；Build
+            checked: '2026-09-06'
+        urls:
+        - entity: anthropic-docs
+          locator: https://platform.claude.com/docs/en/home
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 6
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://platform.claude.com/docs/en/home
+        primary: true
+      version: null
+      watch:
+      - locator: https://docs.anthropic.com/
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 6
+- id: rfc-1122
+  label:
+    zh: RFC 1122 互联网主机要求：通信层
+    en: RFC 1122 Requirements for Internet Hosts — Communication Layers
+  kind: standard
+  tier: de-jure
+  version: '1989'
+  watch:
+  - locator: https://www.rfc-editor.org/info/rfc1122
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 1
+  subjects:
+  - networking-and-communication
+  basis:
+    subjects:
+    - values:
+      - networking-and-communication
+      references:
+      - entity: rfc-1122
+        locator: https://www.rfc-editor.org/rfc/rfc1122.html — §1 Introduction，原文第
+          5 页
+        checked: '2026-09-06'
+    version:
+    - entity: rfc-1122
+      locator: https://www.rfc-editor.org/info/rfc1122/；RFC 1122 发布年份
+      checked: '2026-09-05'
+    urls:
+    - entity: rfc-1122
+      locator: https://www.rfc-editor.org/info/rfc1122/
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  urls:
+  - role: landing
+    url: https://www.rfc-editor.org/info/rfc1122/
+    primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 24
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: rfc-1122
+      label:
+        zh: RFC 1122 互联网主机要求：通信层
+        en: RFC 1122 Requirements for Internet Hosts — Communication Layers
+      kind: standard
+      tier: de-jure
+      version: '1989'
+      checked: '2026-08-23'
+      url: https://www.rfc-editor.org/info/rfc1122
+      watch: https://www.rfc-editor.org/info/rfc1122
+      subjects:
+      - networking-and-communication
+      basis:
+        subjects: rfc-1122:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - networking-and-communication
+          references:
+          - entity: rfc-1122
+            locator: https://www.rfc-editor.org/rfc/rfc1122.html — §1 Introduction，原文第
+              5 页
+            checked: '2026-09-06'
+        version:
+        - entity: rfc-1122
+          locator: https://www.rfc-editor.org/info/rfc1122/；RFC 1122 发布年份
+          checked: '2026-09-05'
+        urls:
+        - entity: rfc-1122
+          locator: https://www.rfc-editor.org/info/rfc1122/
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 24
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://www.rfc-editor.org/info/rfc1122/
+        primary: true
+      watch:
+      - locator: https://www.rfc-editor.org/info/rfc1122
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 1
+- id: rfc-9110
+  label:
+    zh: RFC 9110 HTTP 语义
+    en: RFC 9110 HTTP Semantics
+  kind: standard
+  tier: de-jure
+  version: '2022'
+  watch:
+  - locator: https://www.rfc-editor.org/info/rfc9110
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 1
+  subjects:
+  - networking-and-communication
+  basis:
+    subjects:
+    - values:
+      - networking-and-communication
+      references:
+      - entity: rfc-9110
+        locator: https://www.rfc-editor.org/rfc/rfc9110.html — Abstract
+        checked: '2026-09-06'
+    version:
+    - entity: rfc-9110
+      locator: https://datatracker.ietf.org/doc/rfc9110/；June 2022
+      checked: '2026-09-05'
+    urls:
+    - entity: rfc-9110
+      locator: https://datatracker.ietf.org/doc/rfc9110/
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  urls:
+  - role: landing
+    url: https://datatracker.ietf.org/doc/rfc9110/
+    primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 24
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: rfc-9110
+      label:
+        zh: RFC 9110 HTTP 语义
+        en: RFC 9110 HTTP Semantics
+      kind: standard
+      tier: de-jure
+      version: '2022'
+      checked: '2026-08-23'
+      url: https://www.rfc-editor.org/info/rfc9110
+      watch: https://www.rfc-editor.org/info/rfc9110
+      subjects:
+      - networking-and-communication
+      basis:
+        subjects: rfc-9110:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - networking-and-communication
+          references:
+          - entity: rfc-9110
+            locator: https://www.rfc-editor.org/rfc/rfc9110.html — Abstract
+            checked: '2026-09-06'
+        version:
+        - entity: rfc-9110
+          locator: https://datatracker.ietf.org/doc/rfc9110/；June 2022
+          checked: '2026-09-05'
+        urls:
+        - entity: rfc-9110
+          locator: https://datatracker.ietf.org/doc/rfc9110/
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 24
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://datatracker.ietf.org/doc/rfc9110/
+        primary: true
+      watch:
+      - locator: https://www.rfc-editor.org/info/rfc9110
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 1
+- id: osi
+  label:
+    zh: ISO/IEC 7498-1 OSI 参考模型
+    en: ISO/IEC 7498-1 OSI Basic Reference Model
+  kind: standard
+  tier: de-jure
+  version: '1994'
+  watch:
+  - locator: https://www.iso.org/standard/20269.html
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 1
+  subjects:
+  - networking-and-communication
+  basis:
+    subjects:
+    - values:
+      - networking-and-communication
+      references:
+      - entity: osi
+        locator: https://www.iso.org/standard/20269.html — Abstract
+        checked: '2026-09-06'
+    version:
+    - entity: osi
+      locator: https://www.iso.org/standard/20269.html；ISO/IEC 7498-1:1994
+      checked: '2026-09-05'
+    source_status:
+    - entity: osi
+      locator: https://www.iso.org/standard/20269.html；仍现行，阶段 90.93
+      checked: '2026-09-05'
+    urls:
+    - entity: osi
+      locator: https://www.iso.org/standard/20269.html
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  source_status: current
+  urls:
+  - role: landing
     url: https://www.iso.org/standard/20269.html
-    watch: https://www.iso.org/standard/20269.html
-    subjects: [networking-and-communication]
-    basis:
-      subjects: osi:scope
-    status: active
-    added: 2026-08-23
-  - id: mdn
-    label: { zh: "MDN Web 技术参考", en: "MDN Web technology references" }
-    kind: standard
-    tier: de-facto
-    version: "2026-08-20"
-    checked: 2026-08-23
+    primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 24
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - source_status
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: osi
+      label:
+        zh: ISO/IEC 7498-1 OSI 参考模型
+        en: ISO/IEC 7498-1 OSI Basic Reference Model
+      kind: standard
+      tier: de-jure
+      version: '1994'
+      checked: '2026-08-23'
+      url: https://www.iso.org/standard/20269.html
+      watch: https://www.iso.org/standard/20269.html
+      subjects:
+      - networking-and-communication
+      basis:
+        subjects: osi:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - networking-and-communication
+          references:
+          - entity: osi
+            locator: https://www.iso.org/standard/20269.html — Abstract
+            checked: '2026-09-06'
+        version:
+        - entity: osi
+          locator: https://www.iso.org/standard/20269.html；ISO/IEC 7498-1:1994
+          checked: '2026-09-05'
+        source_status:
+        - entity: osi
+          locator: https://www.iso.org/standard/20269.html；仍现行，阶段 90.93
+          checked: '2026-09-05'
+        urls:
+        - entity: osi
+          locator: https://www.iso.org/standard/20269.html
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 24
+        grace_days: 30
+        obligations: []
+      source_status: current
+      urls:
+      - role: landing
+        url: https://www.iso.org/standard/20269.html
+        primary: true
+      watch:
+      - locator: https://www.iso.org/standard/20269.html
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 1
+- id: mdn
+  label:
+    zh: MDN Web 技术参考
+    en: MDN Web technology references
+  kind: standard
+  tier: de-facto
+  version: null
+  subjects:
+  - specialized-platform-development
+  basis:
+    subjects:
+    - values:
+      - specialized-platform-development
+      references:
+      - entity: mdn
+        locator: https://developer.mozilla.org/en-US/docs/Web — Documentation for
+          Web developers；Web technology references
+        checked: '2026-09-06'
+    urls:
+    - entity: mdn
+      locator: https://developer.mozilla.org/en-US/docs/Web
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  urls:
+  - role: landing
     url: https://developer.mozilla.org/en-US/docs/Web
-    subjects: [specialized-platform-development]
-    basis:
-      subjects: mdn:scope
-    status: active
-    added: 2026-08-23
-  - id: mdn-curriculum
-    label: { zh: "MDN 课程", en: "MDN Curriculum" }
-    kind: standard
-    tier: de-facto
-    version: "2025-10"
-    checked: 2026-08-23
+    primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  watch:
+  - locator: https://developer.mozilla.org/en-US/docs/Web
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - version
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: mdn
+      label:
+        zh: MDN Web 技术参考
+        en: MDN Web technology references
+      kind: standard
+      tier: de-facto
+      version: '2026-08-20'
+      checked: '2026-08-23'
+      url: https://developer.mozilla.org/en-US/docs/Web
+      subjects:
+      - specialized-platform-development
+      basis:
+        subjects: mdn:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - specialized-platform-development
+          references:
+          - entity: mdn
+            locator: https://developer.mozilla.org/en-US/docs/Web — Documentation
+              for Web developers；Web technology references
+            checked: '2026-09-06'
+        urls:
+        - entity: mdn
+          locator: https://developer.mozilla.org/en-US/docs/Web
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://developer.mozilla.org/en-US/docs/Web
+        primary: true
+      version: null
+      watch:
+      - locator: https://developer.mozilla.org/en-US/docs/Web
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: mdn-curriculum
+  label:
+    zh: MDN 课程
+    en: MDN Curriculum
+  kind: standard
+  tier: de-facto
+  version: 2025-10
+  subjects:
+  - specialized-platform-development
+  basis:
+    subjects:
+    - values:
+      - specialized-platform-development
+      references:
+      - entity: mdn-curriculum
+        locator: https://developer.mozilla.org/en-US/curriculum/ — The essential skillset
+          for new front-end developers；Modules / Core
+        checked: '2026-09-06'
+    version:
+    - entity: mdn-curriculum
+      locator: https://developer.mozilla.org/en-US/curriculum/；Last updated October
+        2025，仅更新月份
+      checked: '2026-09-05'
+    urls:
+    - entity: mdn-curriculum
+      locator: https://developer.mozilla.org/en-US/curriculum/
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  urls:
+  - role: landing
     url: https://developer.mozilla.org/en-US/curriculum/
-    subjects: [specialized-platform-development]
-    basis:
-      subjects: mdn-curriculum:scope
-    status: active
-    added: 2026-08-23
-  - id: iso-25964-1
-    label: { zh: "ISO 25964-1:2011 叙词表", en: "ISO 25964-1:2011 Thesauri for information retrieval" }
-    kind: standard
-    tier: de-jure
-    version: "2011"
-    checked: 2026-08-23
+    primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  watch:
+  - locator: https://developer.mozilla.org/en-US/curriculum/
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: mdn-curriculum
+      label:
+        zh: MDN 课程
+        en: MDN Curriculum
+      kind: standard
+      tier: de-facto
+      version: 2025-10
+      checked: '2026-08-23'
+      url: https://developer.mozilla.org/en-US/curriculum/
+      subjects:
+      - specialized-platform-development
+      basis:
+        subjects: mdn-curriculum:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - specialized-platform-development
+          references:
+          - entity: mdn-curriculum
+            locator: https://developer.mozilla.org/en-US/curriculum/ — The essential
+              skillset for new front-end developers；Modules / Core
+            checked: '2026-09-06'
+        version:
+        - entity: mdn-curriculum
+          locator: https://developer.mozilla.org/en-US/curriculum/；Last updated October
+            2025，仅更新月份
+          checked: '2026-09-05'
+        urls:
+        - entity: mdn-curriculum
+          locator: https://developer.mozilla.org/en-US/curriculum/
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://developer.mozilla.org/en-US/curriculum/
+        primary: true
+      watch:
+      - locator: https://developer.mozilla.org/en-US/curriculum/
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: iso-25964-1
+  label:
+    zh: ISO 25964-1:2011 叙词表
+    en: ISO 25964-1:2011 Thesauri for information retrieval
+  kind: standard
+  tier: de-jure
+  version: '2011'
+  watch:
+  - locator: https://www.iso.org/standard/53657.html
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 1
+  subjects:
+  - information-science
+  basis:
+    subjects:
+    - values:
+      - information-science
+      references:
+      - entity: iso-25964-1
+        locator: https://www.iso.org/standard/53657.html — Abstract
+        checked: '2026-09-06'
+    version:
+    - entity: iso-25964-1
+      locator: https://www.iso.org/standard/53657.html；ISO 25964-1:2011，第 1 版，2011-08
+      checked: '2026-08-29'
+    source_status:
+    - entity: iso-25964-1
+      locator: https://www.iso.org/standard/53657.html；现行版本与 2022 年复审确认信息
+      checked: '2026-08-29'
+    urls:
+    - entity: iso-25964-1
+      locator: https://www.iso.org/standard/53657.html
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  source_status: current
+  urls:
+  - role: landing
     url: https://www.iso.org/standard/53657.html
-    watch: https://www.iso.org/standard/53657.html
-    subjects: [information-science]
-    basis:
-      subjects: iso-25964-1:scope
-    status: active
-    added: 2026-08-23
-  - id: iso-25964-2
-    label: { zh: "ISO 25964-2:2013 与其他词表的互操作", en: "ISO 25964-2:2013 Interoperability with other vocabularies" }
-    kind: standard
-    tier: de-jure
-    version: "2013"
-    checked: 2026-08-23
+    primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 24
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - source_status
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-fields-p1-p4
+    - decision-source-data-batch
+    before:
+      id: iso-25964-1
+      label:
+        zh: ISO 25964-1:2011 叙词表
+        en: ISO 25964-1:2011 Thesauri for information retrieval
+      kind: standard
+      tier: de-jure
+      version: '2011'
+      checked: '2026-08-23'
+      url: https://www.iso.org/standard/53657.html
+      watch: https://www.iso.org/standard/53657.html
+      subjects:
+      - information-science
+      basis:
+        subjects: iso-25964-1:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - information-science
+          references:
+          - entity: iso-25964-1
+            locator: https://www.iso.org/standard/53657.html — Abstract
+            checked: '2026-09-06'
+        version:
+        - entity: iso-25964-1
+          locator: https://www.iso.org/standard/53657.html；ISO 25964-1:2011，第 1 版，2011-08
+          checked: '2026-08-29'
+        source_status:
+        - entity: iso-25964-1
+          locator: https://www.iso.org/standard/53657.html；现行版本与 2022 年复审确认信息
+          checked: '2026-08-29'
+        urls:
+        - entity: iso-25964-1
+          locator: https://www.iso.org/standard/53657.html
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 24
+        grace_days: 30
+        obligations: []
+      source_status: current
+      urls:
+      - role: landing
+        url: https://www.iso.org/standard/53657.html
+        primary: true
+      watch:
+      - locator: https://www.iso.org/standard/53657.html
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 1
+- id: iso-25964-2
+  label:
+    zh: ISO 25964-2:2013 与其他词表的互操作
+    en: ISO 25964-2:2013 Interoperability with other vocabularies
+  kind: standard
+  tier: de-jure
+  version: '2013'
+  watch:
+  - locator: https://www.iso.org/standard/53658.html
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 1
+  subjects:
+  - information-science
+  basis:
+    subjects:
+    - values:
+      - information-science
+      references:
+      - entity: iso-25964-2
+        locator: https://www.iso.org/standard/53658.html — Abstract
+        checked: '2026-09-06'
+    version:
+    - entity: iso-25964-2
+      locator: https://www.iso.org/standard/53658.html；ISO 25964-2:2013，第 1 版，2013-03
+      checked: '2026-08-29'
+    source_status:
+    - entity: iso-25964-2
+      locator: https://www.iso.org/standard/53658.html；现行版本与 2023 年复审确认信息
+      checked: '2026-08-29'
+    urls:
+    - entity: iso-25964-2
+      locator: https://www.iso.org/standard/53658.html
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  source_status: current
+  urls:
+  - role: landing
     url: https://www.iso.org/standard/53658.html
-    watch: https://www.iso.org/standard/53658.html
-    subjects: [information-science]
-    basis:
-      subjects: iso-25964-2:scope
-    status: active
-    added: 2026-08-23
-  - id: z39-19
-    label: { zh: "ANSI/NISO Z39.19-2005 (R2010)", en: "ANSI/NISO Z39.19-2005 (R2010) Guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies" }
-    kind: standard
-    tier: de-jure
-    version: "2005 (R2010)"
-    checked: 2026-08-23
+    primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 24
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - source_status
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-fields-p1-p4
+    - decision-source-data-batch
+    before:
+      id: iso-25964-2
+      label:
+        zh: ISO 25964-2:2013 与其他词表的互操作
+        en: ISO 25964-2:2013 Interoperability with other vocabularies
+      kind: standard
+      tier: de-jure
+      version: '2013'
+      checked: '2026-08-23'
+      url: https://www.iso.org/standard/53658.html
+      watch: https://www.iso.org/standard/53658.html
+      subjects:
+      - information-science
+      basis:
+        subjects: iso-25964-2:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - information-science
+          references:
+          - entity: iso-25964-2
+            locator: https://www.iso.org/standard/53658.html — Abstract
+            checked: '2026-09-06'
+        version:
+        - entity: iso-25964-2
+          locator: https://www.iso.org/standard/53658.html；ISO 25964-2:2013，第 1 版，2013-03
+          checked: '2026-08-29'
+        source_status:
+        - entity: iso-25964-2
+          locator: https://www.iso.org/standard/53658.html；现行版本与 2023 年复审确认信息
+          checked: '2026-08-29'
+        urls:
+        - entity: iso-25964-2
+          locator: https://www.iso.org/standard/53658.html
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 24
+        grace_days: 30
+        obligations: []
+      source_status: current
+      urls:
+      - role: landing
+        url: https://www.iso.org/standard/53658.html
+        primary: true
+      watch:
+      - locator: https://www.iso.org/standard/53658.html
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 1
+- id: z39-19
+  label:
+    zh: ANSI/NISO Z39.19-2005 (R2010)
+    en: ANSI/NISO Z39.19-2005 (R2010) Guidelines for the Construction, Format, and
+      Management of Monolingual Controlled Vocabularies
+  kind: standard
+  tier: de-jure
+  version: 2005 (R2010)
+  watch:
+  - locator: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 1
+  subjects:
+  - information-science
+  basis:
+    subjects:
+    - values:
+      - information-science
+      references:
+      - entity: z39-19
+        locator: https://www.niso.org/publications/ansiniso-z3919-2005-r2010 — Abstract
+        checked: '2026-09-06'
+    version:
+    - entity: z39-19
+      locator: https://www.niso.org/publications/ansiniso-z3919-2005-r2010；出版标题；项目出版页的
+        2005 edition / 2010 reaffirmation version of record 说明
+      checked: '2026-08-29'
+    urls:
+    - entity: z39-19
+      locator: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
+      checked: '2026-09-05'
+    - entity: z39-19
+      locator: https://doi.org/10.3789/ansi.niso.z39.19-2005R2010
+      checked: '2026-09-05'
+    - entity: z39-19
+      locator: https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  urls:
+  - role: landing
     url: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
-    watch: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
-    subjects: [information-science]
-    basis:
-      subjects: z39-19:scope
-    status: active
-    added: 2026-08-23
-  - id: skos
-    label: { zh: "W3C SKOS 参考", en: "W3C SKOS Simple Knowledge Organization System Reference" }
-    kind: standard
-    tier: de-jure
-    version: "2009-08-18"
-    checked: 2026-08-23
+    primary: true
+  - role: doi
+    url: https://doi.org/10.3789/ansi.niso.z39.19-2005R2010
+    primary: false
+  - role: full_text
+    url: https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf
+    primary: false
+  review:
+    checked: null
+    next_due: null
+    interval_months: 24
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-fields-p1-p4
+    - decision-source-data-batch
+    before:
+      id: z39-19
+      label:
+        zh: ANSI/NISO Z39.19-2005 (R2010)
+        en: ANSI/NISO Z39.19-2005 (R2010) Guidelines for the Construction, Format,
+          and Management of Monolingual Controlled Vocabularies
+      kind: standard
+      tier: de-jure
+      version: 2005 (R2010)
+      checked: '2026-08-23'
+      url: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
+      watch: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
+      subjects:
+      - information-science
+      basis:
+        subjects: z39-19:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - information-science
+          references:
+          - entity: z39-19
+            locator: https://www.niso.org/publications/ansiniso-z3919-2005-r2010 —
+              Abstract
+            checked: '2026-09-06'
+        version:
+        - entity: z39-19
+          locator: https://www.niso.org/publications/ansiniso-z3919-2005-r2010；出版标题；项目出版页的
+            2005 edition / 2010 reaffirmation version of record 说明
+          checked: '2026-08-29'
+        urls:
+        - entity: z39-19
+          locator: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
+          checked: '2026-09-05'
+        - entity: z39-19
+          locator: https://doi.org/10.3789/ansi.niso.z39.19-2005R2010
+          checked: '2026-09-05'
+        - entity: z39-19
+          locator: https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 24
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
+        primary: true
+      - role: doi
+        url: https://doi.org/10.3789/ansi.niso.z39.19-2005R2010
+        primary: false
+      - role: full_text
+        url: https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf
+        primary: false
+      watch:
+      - locator: https://www.niso.org/publications/ansiniso-z3919-2005-r2010
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 1
+- id: skos
+  label:
+    zh: W3C SKOS 参考
+    en: W3C SKOS Simple Knowledge Organization System Reference
+  kind: standard
+  tier: de-jure
+  version: '2009-08-18'
+  watch:
+  - locator: https://www.w3.org/TR/skos-reference/
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 1
+  subjects:
+  - information-science
+  basis:
+    subjects:
+    - values:
+      - information-science
+      references:
+      - entity: skos
+        locator: https://www.w3.org/TR/skos-reference/ — Abstract；Synopsis
+        checked: '2026-09-06'
+    version:
+    - entity: skos
+      locator: https://www.w3.org/TR/skos-reference/；文档状态及 W3C Recommendation 日期
+      checked: '2026-08-29'
+    source_status:
+    - entity: skos
+      locator: https://www.w3.org/standards/history/skos-reference/；最新 Recommendation
+        为 2009-08-18，区别被替代 SKOS Core
+      checked: '2026-09-05'
+    urls:
+    - entity: skos
+      locator: https://www.w3.org/TR/skos-reference/
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  source_status: current
+  urls:
+  - role: canonical
     url: https://www.w3.org/TR/skos-reference/
-    watch: https://www.w3.org/TR/skos-reference/
-    subjects: [information-science]
-    basis:
-      subjects: skos:scope
-    status: active
-    added: 2026-08-23
-  - id: diataxis
-    label: { zh: "Diátaxis", en: "Diátaxis" }
-    kind: standard
-    tier: de-facto
-    version: "2026-08"
-    checked: 2026-08-23
+    primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 24
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - source_status
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-fields-p1-p4
+    - decision-source-data-batch
+    before:
+      id: skos
+      label:
+        zh: W3C SKOS 参考
+        en: W3C SKOS Simple Knowledge Organization System Reference
+      kind: standard
+      tier: de-jure
+      version: '2009-08-18'
+      checked: '2026-08-23'
+      url: https://www.w3.org/TR/skos-reference/
+      watch: https://www.w3.org/TR/skos-reference/
+      subjects:
+      - information-science
+      basis:
+        subjects: skos:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - information-science
+          references:
+          - entity: skos
+            locator: https://www.w3.org/TR/skos-reference/ — Abstract；Synopsis
+            checked: '2026-09-06'
+        version:
+        - entity: skos
+          locator: https://www.w3.org/TR/skos-reference/；文档状态及 W3C Recommendation
+            日期
+          checked: '2026-08-29'
+        source_status:
+        - entity: skos
+          locator: https://www.w3.org/standards/history/skos-reference/；最新 Recommendation
+            为 2009-08-18，区别被替代 SKOS Core
+          checked: '2026-09-05'
+        urls:
+        - entity: skos
+          locator: https://www.w3.org/TR/skos-reference/
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 24
+        grace_days: 30
+        obligations: []
+      source_status: current
+      urls:
+      - role: canonical
+        url: https://www.w3.org/TR/skos-reference/
+        primary: true
+      watch:
+      - locator: https://www.w3.org/TR/skos-reference/
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 1
+- id: diataxis
+  label:
+    zh: Diátaxis
+    en: Diátaxis
+  kind: standard
+  tier: de-facto
+  version: null
+  subjects:
+  - software-engineering
+  basis: {}
+  status: candidate
+  added: 2026-08-23
+  assertions:
+    subjects:
+    - values:
+      - software-engineering
+      disposition: project_assertion
+      original: self
+      migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/diataxis.basis.subjects
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  watch:
+  - locator: https://diataxis.fr/
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  replaced_by: null
+  urls:
+  - role: landing
     url: https://diataxis.fr/
-    subjects: [software-engineering]
-    basis:
-      subjects: self
-    status: candidate
-    added: 2026-08-23
-  - id: wikidata
-    label: { zh: "Wikidata", en: "Wikidata" }
-    kind: standard
-    tier: de-facto
-    version: "rolling"
-    checked: 2026-08-23
+    primary: true
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - assertions
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - version
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: diataxis
+      label:
+        zh: Diátaxis
+        en: Diátaxis
+      kind: standard
+      tier: de-facto
+      version: 2026-08
+      checked: '2026-08-23'
+      url: https://diataxis.fr/
+      subjects:
+      - software-engineering
+      basis:
+        subjects: self
+      status: candidate
+      added: '2026-08-23'
+    after:
+      assertions:
+        subjects:
+        - values:
+          - software-engineering
+          disposition: project_assertion
+          original: self
+          migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/diataxis.basis.subjects
+      basis: {}
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://diataxis.fr/
+        primary: true
+      version: null
+      watch:
+      - locator: https://diataxis.fr/
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: wikidata
+  label:
+    zh: Wikidata
+    en: Wikidata
+  kind: standard
+  tier: de-facto
+  version: null
+  subjects:
+  - library-and-information-science
+  basis: {}
+  status: candidate
+  added: 2026-08-23
+  assertions:
+    subjects:
+    - values:
+      - library-and-information-science
+      disposition: project_assertion
+      original: self
+      migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/wikidata.basis.subjects
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  watch:
+  - locator: https://www.wikidata.org/
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  replaced_by: null
+  urls:
+  - role: landing
     url: https://www.wikidata.org/
-    subjects: [library-and-information-science]
-    basis:
-      subjects: self
-    status: candidate
-    added: 2026-08-23
-  - id: roadmap-sh
-    label: { zh: "roadmap.sh", en: "roadmap.sh" }
-    kind: standard
-    tier: de-facto
-    version: "rolling"
-    checked: 2026-08-23
+    primary: true
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - assertions
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - version
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: wikidata
+      label:
+        zh: Wikidata
+        en: Wikidata
+      kind: standard
+      tier: de-facto
+      version: rolling
+      checked: '2026-08-23'
+      url: https://www.wikidata.org/
+      subjects:
+      - library-and-information-science
+      basis:
+        subjects: self
+      status: candidate
+      added: '2026-08-23'
+    after:
+      assertions:
+        subjects:
+        - values:
+          - library-and-information-science
+          disposition: project_assertion
+          original: self
+          migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/wikidata.basis.subjects
+      basis: {}
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://www.wikidata.org/
+        primary: true
+      version: null
+      watch:
+      - locator: https://www.wikidata.org/
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: roadmap-sh
+  label:
+    zh: roadmap.sh
+    en: roadmap.sh
+  kind: standard
+  tier: de-facto
+  version: null
+  subjects:
+  - computing
+  basis:
+    urls:
+    - entity: roadmap-sh
+      locator: https://roadmap.sh/
+      checked: '2026-09-05'
+  status: candidate
+  added: 2026-08-23
+  urls:
+  - role: landing
     url: https://roadmap.sh/
-    subjects: [computing]
-    basis:
-      subjects: self
-    status: candidate
-    added: 2026-08-23
-  - id: teachyourselfcs
-    label: { zh: "Teach Yourself Computer Science", en: "Teach Yourself Computer Science" }
-    kind: publication
-    tier: archival
-    version: "2020"
-    checked: 2026-08-23
+    primary: true
+  assertions:
+    subjects:
+    - values:
+      - computing
+      disposition: project_assertion
+      original: self
+      migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/roadmap-sh.basis.subjects
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  watch:
+  - locator: https://roadmap.sh/
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - assertions
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - version
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: roadmap-sh
+      label:
+        zh: roadmap.sh
+        en: roadmap.sh
+      kind: standard
+      tier: de-facto
+      version: rolling
+      checked: '2026-08-23'
+      url: https://roadmap.sh/
+      subjects:
+      - computing
+      basis:
+        subjects: self
+      status: candidate
+      added: '2026-08-23'
+    after:
+      assertions:
+        subjects:
+        - values:
+          - computing
+          disposition: project_assertion
+          original: self
+          migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/roadmap-sh.basis.subjects
+      basis:
+        urls:
+        - entity: roadmap-sh
+          locator: https://roadmap.sh/
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://roadmap.sh/
+        primary: true
+      version: null
+      watch:
+      - locator: https://roadmap.sh/
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: teachyourselfcs
+  label:
+    zh: Teach Yourself Computer Science
+    en: Teach Yourself Computer Science
+  kind: publication
+  tier: archival
+  version: '2020'
+  subjects:
+  - computing
+  basis:
+    version:
+    - entity: teachyourselfcs
+      locator: https://teachyourselfcs.com/；May 2020 更新，保留年份精度
+      checked: '2026-09-05'
+    urls:
+    - entity: teachyourselfcs
+      locator: https://teachyourselfcs.com/
+      checked: '2026-09-05'
+  status: candidate
+  added: 2026-08-23
+  urls:
+  - role: landing
     url: https://teachyourselfcs.com/
-    subjects: [computing]
-    basis:
-      subjects: self
-    status: candidate
-    added: 2026-08-23
-  - id: cmu-15-445
-    label: { zh: "CMU 15-445 数据库系统", en: "CMU 15-445 Database Systems" }
-    kind: publication
-    tier: archival
-    version: "Fall 2025"
-    checked: 2026-08-23
-    url: https://15445.courses.cs.cmu.edu/
-    subjects: [data-management]
-    basis:
-      subjects: cmu-15-445:scope
-    status: active
-    added: 2026-08-23
-  - id: db-engines
-    label: { zh: "DB-Engines 排名", en: "DB-Engines Ranking" }
-    kind: standard
-    tier: de-facto
-    version: "rolling"
-    checked: 2026-08-23
+    primary: true
+  assertions:
+    subjects:
+    - values:
+      - computing
+      disposition: project_assertion
+      original: self
+      migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/teachyourselfcs.basis.subjects
+  review:
+    checked: null
+    next_due: null
+    interval_months: null
+    grace_days: 30
+    obligations: []
+  watch:
+  - locator: https://teachyourselfcs.com/
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 12
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - assertions
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: teachyourselfcs
+      label:
+        zh: Teach Yourself Computer Science
+        en: Teach Yourself Computer Science
+      kind: publication
+      tier: archival
+      version: '2020'
+      checked: '2026-08-23'
+      url: https://teachyourselfcs.com/
+      subjects:
+      - computing
+      basis:
+        subjects: self
+      status: candidate
+      added: '2026-08-23'
+    after:
+      assertions:
+        subjects:
+        - values:
+          - computing
+          disposition: project_assertion
+          original: self
+          migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/teachyourselfcs.basis.subjects
+      basis:
+        version:
+        - entity: teachyourselfcs
+          locator: https://teachyourselfcs.com/；May 2020 更新，保留年份精度
+          checked: '2026-09-05'
+        urls:
+        - entity: teachyourselfcs
+          locator: https://teachyourselfcs.com/
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: null
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://teachyourselfcs.com/
+        primary: true
+      watch:
+      - locator: https://teachyourselfcs.com/
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 12
+- id: cmu-15-445
+  label:
+    zh: CMU 15-445 数据库系统
+    en: CMU 15-445 Database Systems
+  kind: publication
+  tier: archival
+  version: Fall 2025
+  subjects:
+  - data-management
+  basis:
+    subjects:
+    - values:
+      - data-management
+      references:
+      - entity: cmu-15-445
+        locator: https://15445.courses.cs.cmu.edu/fall2025/ — 课程开篇，第 1–4 段
+        checked: '2026-09-06'
+    version:
+    - entity: cmu-15-445
+      locator: https://15445.courses.cs.cmu.edu/fall2025/；Fall 2025 归档
+      checked: '2026-09-05'
+    urls:
+    - entity: cmu-15-445
+      locator: https://15445.courses.cs.cmu.edu/fall2025/
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  urls:
+  - role: archive
+    url: https://15445.courses.cs.cmu.edu/fall2025/
+    primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: null
+    grace_days: 30
+    obligations: []
+  watch:
+  - locator: https://15445.courses.cs.cmu.edu/
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 12
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: cmu-15-445
+      label:
+        zh: CMU 15-445 数据库系统
+        en: CMU 15-445 Database Systems
+      kind: publication
+      tier: archival
+      version: Fall 2025
+      checked: '2026-08-23'
+      url: https://15445.courses.cs.cmu.edu/
+      subjects:
+      - data-management
+      basis:
+        subjects: cmu-15-445:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - data-management
+          references:
+          - entity: cmu-15-445
+            locator: https://15445.courses.cs.cmu.edu/fall2025/ — 课程开篇，第 1–4 段
+            checked: '2026-09-06'
+        version:
+        - entity: cmu-15-445
+          locator: https://15445.courses.cs.cmu.edu/fall2025/；Fall 2025 归档
+          checked: '2026-09-05'
+        urls:
+        - entity: cmu-15-445
+          locator: https://15445.courses.cs.cmu.edu/fall2025/
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: null
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: archive
+        url: https://15445.courses.cs.cmu.edu/fall2025/
+        primary: true
+      watch:
+      - locator: https://15445.courses.cs.cmu.edu/
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 12
+- id: db-engines
+  label:
+    zh: DB-Engines 排名
+    en: DB-Engines Ranking
+  kind: standard
+  tier: de-facto
+  version: null
+  subjects:
+  - data-management
+  basis:
+    subjects:
+    - values:
+      - data-management
+      references:
+      - entity: db-engines
+        locator: https://db-engines.com/en/blog_post/21 — One year of DB-Engines.com，开篇与系统概览／排名段；页面站点说明
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  watch:
+  - locator: https://db-engines.com/en/ranking
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  replaced_by: null
+  urls:
+  - role: landing
     url: https://db-engines.com/en/ranking
-    subjects: [data-management]
-    basis:
-      subjects: db-engines:scope
-    status: active
-    added: 2026-08-23
-
-  - id: dita
-    label: { zh: "DITA 1.3", en: "Darwin Information Typing Architecture 1.3" }
-    kind: standard
-    tier: de-jure
-    version: "1.3"
-    checked: 2026-08-23
-    url: https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/dita-v1.3-os-part1-base.html
-    watch: https://www.oasis-open.org/committees/dita/
-    subjects: [journalism-and-communication]
-    basis:
-      subjects: dita:scope
-    status: active
-    added: 2026-08-23
-  - id: iptc-genre
-    label: { zh: "IPTC NewsCodes 体裁词表", en: "IPTC NewsCodes Genre" }
-    kind: standard
-    tier: de-facto
-    version: "2024-02-13"
-    checked: 2026-08-23
+    primary: true
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - version
+    - watch
+    decisions:
+    - decision-source-completion
+    before:
+      id: db-engines
+      label:
+        zh: DB-Engines 排名
+        en: DB-Engines Ranking
+      kind: standard
+      tier: de-facto
+      version: rolling
+      checked: '2026-08-23'
+      url: https://db-engines.com/en/ranking
+      subjects:
+      - data-management
+      basis:
+        subjects: db-engines:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - data-management
+          references:
+          - entity: db-engines
+            locator: https://db-engines.com/en/blog_post/21 — One year of DB-Engines.com，开篇与系统概览／排名段；页面站点说明
+            checked: '2026-09-06'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://db-engines.com/en/ranking
+        primary: true
+      version: null
+      watch:
+      - locator: https://db-engines.com/en/ranking
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: dita
+  label:
+    zh: DITA 1.3
+    en: Darwin Information Typing Architecture 1.3
+  kind: standard
+  tier: de-jure
+  version: '1.3'
+  watch:
+  - locator: https://www.oasis-open.org/committees/dita/
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 1
+  subjects:
+  - journalism-and-communication
+  basis:
+    subjects:
+    - values:
+      - journalism-and-communication
+      references:
+      - entity: dita
+        locator: https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/dita-v1.3-os-part1-base.html
+          — Abstract；Related work / Part 2；配套 §2.7.1.6 Troubleshooting topic
+        checked: '2026-09-06'
+    version:
+    - entity: dita
+      locator: https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/dita-v1.3-os-part1-base.html；OASIS
+        Standard，Version 1.3，17 December 2015
+      checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  review:
+    checked: null
+    next_due: null
+    interval_months: 24
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  urls:
+  - role: canonical
+    url: http://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/dita-v1.3-os-part1-base.html
+    primary: true
+  - role: full_text
+    url: http://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/dita-v1.3-os-part2-tech-content.html
+    primary: false
+  - role: full_text
+    url: http://docs.oasis-open.org/dita/dita/v1.3/os/part3-all-inclusive/dita-v1.3-os-part3-all-inclusive.html
+    primary: false
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    before:
+      id: dita
+      label:
+        zh: DITA 1.3
+        en: Darwin Information Typing Architecture 1.3
+      kind: standard
+      tier: de-jure
+      version: '1.3'
+      checked: '2026-08-23'
+      url: https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/dita-v1.3-os-part1-base.html
+      watch: https://www.oasis-open.org/committees/dita/
+      subjects:
+      - journalism-and-communication
+      basis:
+        subjects: dita:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - journalism-and-communication
+          references:
+          - entity: dita
+            locator: https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/dita-v1.3-os-part1-base.html
+              — Abstract；Related work / Part 2；配套 §2.7.1.6 Troubleshooting topic
+            checked: '2026-09-06'
+        version:
+        - entity: dita
+          locator: https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/dita-v1.3-os-part1-base.html；OASIS
+            Standard，Version 1.3，17 December 2015
+          checked: '2026-09-06'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 24
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: canonical
+        url: http://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/dita-v1.3-os-part1-base.html
+        primary: true
+      - role: full_text
+        url: http://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/dita-v1.3-os-part2-tech-content.html
+        primary: false
+      - role: full_text
+        url: http://docs.oasis-open.org/dita/dita/v1.3/os/part3-all-inclusive/dita-v1.3-os-part3-all-inclusive.html
+        primary: false
+      watch:
+      - locator: https://www.oasis-open.org/committees/dita/
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 1
+- id: iptc-genre
+  label:
+    zh: IPTC NewsCodes 体裁词表
+    en: IPTC NewsCodes Genre
+  kind: standard
+  tier: de-facto
+  version: null
+  subjects:
+  - journalism-and-communication
+  basis:
+    subjects:
+    - values:
+      - journalism-and-communication
+      references:
+      - entity: iptc-genre
+        locator: https://cv.iptc.org/newscodes/genre/ — Scheme Definition；genre:Analysis
+          / Definition
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  watch:
+  - locator: https://cv.iptc.org/newscodes/genre/
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  replaced_by: null
+  urls:
+  - role: landing
     url: https://cv.iptc.org/newscodes/genre/
-    subjects: [journalism-and-communication]
+    primary: true
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - url
+    - urls
+    - version
+    - watch
+    decisions:
+    - decision-source-completion
+    before:
+      id: iptc-genre
+      label:
+        zh: IPTC NewsCodes 体裁词表
+        en: IPTC NewsCodes Genre
+      kind: standard
+      tier: de-facto
+      version: '2024-02-13'
+      checked: '2026-08-23'
+      url: https://cv.iptc.org/newscodes/genre/
+      subjects:
+      - journalism-and-communication
+      basis:
+        subjects: iptc-genre:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - journalism-and-communication
+          references:
+          - entity: iptc-genre
+            locator: https://cv.iptc.org/newscodes/genre/ — Scheme Definition；genre:Analysis
+              / Definition
+            checked: '2026-09-06'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      urls:
+      - role: landing
+        url: https://cv.iptc.org/newscodes/genre/
+        primary: true
+      version: null
+      watch:
+      - locator: https://cv.iptc.org/newscodes/genre/
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: lom
+  label:
+    zh: IEEE 1484.12.1-2002 学习对象元数据
+    en: IEEE 1484.12.1-2002 Learning Object Metadata
+  kind: standard
+  tier: de-jure
+  version: '2002'
+  watch:
+  - locator: https://standards.ieee.org/ieee/1484.12.1/7699/
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 1
+  subjects:
+  - education
+  basis:
+    subjects:
+    - values:
+      - education
+      references:
+      - entity: lom
+        locator: https://standards.ieee.org/ieee/1484.12.1/3294/ — IEEE 1484.12.1-2002
+          标题下范围说明；Standard Committee / Learning Technology
+        checked: '2026-09-06'
+    version:
+    - entity: lom
+      locator: https://standards.ieee.org/ieee/1484.12.1/3294/；IEEE 1484.12.1-2002
+        出版身份
+      checked: '2026-09-05'
+    source_status:
+    - entity: lom
+      locator: https://standards.ieee.org/ieee/1484.12.1/3294/；Status Superseded，Superseded
+        by 2020
+      checked: '2026-09-05'
+    urls:
+    - entity: lom
+      locator: https://standards.ieee.org/ieee/1484.12.1/3294/
+      checked: '2026-09-05'
+  status: active
+  added: 2026-08-23
+  source_status: superseded
+  urls:
+  - role: landing
+    url: https://standards.ieee.org/ieee/1484.12.1/3294/
+    primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 24
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - checked
+    - review
+    - source_status
+    - url
+    - urls
+    - version
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: lom
+      label:
+        zh: IEEE 1484.12.1-2002 学习对象元数据
+        en: IEEE 1484.12.1-2002 Learning Object Metadata
+      kind: standard
+      tier: de-jure
+      version: 2002（2020 版已取代，取值变动未核）
+      checked: '2026-08-23'
+      url: https://github.com/LICEF/lompad/blob/master/documentation/LOM_1484_12_1_v1_Final_Draft.pdf
+      watch: https://standards.ieee.org/ieee/1484.12.1/7699/
+      subjects:
+      - education
+      basis:
+        subjects: lom:scope
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - education
+          references:
+          - entity: lom
+            locator: https://standards.ieee.org/ieee/1484.12.1/3294/ — IEEE 1484.12.1-2002
+              标题下范围说明；Standard Committee / Learning Technology
+            checked: '2026-09-06'
+        version:
+        - entity: lom
+          locator: https://standards.ieee.org/ieee/1484.12.1/3294/；IEEE 1484.12.1-2002
+            出版身份
+          checked: '2026-09-05'
+        source_status:
+        - entity: lom
+          locator: https://standards.ieee.org/ieee/1484.12.1/3294/；Status Superseded，Superseded
+            by 2020
+          checked: '2026-09-05'
+        urls:
+        - entity: lom
+          locator: https://standards.ieee.org/ieee/1484.12.1/3294/
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 24
+        grace_days: 30
+        obligations: []
+      source_status: superseded
+      urls:
+      - role: landing
+        url: https://standards.ieee.org/ieee/1484.12.1/3294/
+        primary: true
+      version: '2002'
+      watch:
+      - locator: https://standards.ieee.org/ieee/1484.12.1/7699/
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 1
+- id: schema-org
+  label:
+    zh: schema.org
+    en: schema.org
+  kind: standard
+  tier: de-facto
+  version: '30.0'
+  watch:
+  - locator: https://schema.org/docs/releases.html
+    signals:
+    - availability
+    - redirect
+    cadence_months:
+      availability: 1
+      redirect: 1
+      content: 3
+  subjects:
+  - information-science
+  basis:
+    version:
+    - entity: schema-org
+      locator: https://schema.org/version/latest；30.0 stable release，2026-03-19
+      checked: '2026-09-05'
+    source_status:
+    - entity: schema-org
+      locator: https://schema.org/version/latest；30.0 stable release，2026-03-19
+      checked: '2026-09-05'
+    urls:
+    - entity: schema-org
+      locator: https://schema.org/version/latest
+      checked: '2026-09-05'
+  status: candidate
+  added: 2026-08-23
+  source_status: current
+  urls:
+  - role: landing
+    url: https://schema.org/version/latest
+    primary: true
+  assertions:
+    subjects:
+    - values:
+      - information-science
+      disposition: project_assertion
+      original: self
+      migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/schema-org.basis.subjects
+  review:
+    checked: null
+    next_due: null
+    interval_months: 12
+    grace_days: 30
+    obligations: []
+  replaced_by: null
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - assertions
+    - basis
+    - checked
+    - review
+    - source_status
+    - url
+    - urls
+    - watch
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: schema-org
+      label:
+        zh: schema.org
+        en: schema.org
+      kind: standard
+      tier: de-facto
+      version: '30.0'
+      checked: '2026-08-23'
+      url: https://schema.org/
+      watch: https://schema.org/docs/releases.html
+      subjects:
+      - information-science
+      basis:
+        subjects: self
+      status: candidate
+      added: '2026-08-23'
+    after:
+      assertions:
+        subjects:
+        - values:
+          - information-science
+          disposition: project_assertion
+          original: self
+          migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/schema-org.basis.subjects
+      basis:
+        version:
+        - entity: schema-org
+          locator: https://schema.org/version/latest；30.0 stable release，2026-03-19
+          checked: '2026-09-05'
+        source_status:
+        - entity: schema-org
+          locator: https://schema.org/version/latest；30.0 stable release，2026-03-19
+          checked: '2026-09-05'
+        urls:
+        - entity: schema-org
+          locator: https://schema.org/version/latest
+          checked: '2026-09-05'
+      review:
+        checked: null
+        next_due: null
+        interval_months: 12
+        grace_days: 30
+        obligations: []
+      source_status: current
+      urls:
+      - role: landing
+        url: https://schema.org/version/latest
+        primary: true
+      watch:
+      - locator: https://schema.org/docs/releases.html
+        signals:
+        - availability
+        - redirect
+        cadence_months:
+          availability: 1
+          redirect: 1
+          content: 3
+- id: anthropic
+  label:
+    zh: Anthropic
+    en: Anthropic
+  kind: organization
+  subjects:
+  - artificial-intelligence
+  basis: {}
+  status: candidate
+  added: 2026-08-23
+  assertions:
+    subjects:
+    - values:
+      - artificial-intelligence
+      disposition: project_assertion
+      original: self
+      migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/anthropic.basis.subjects
+  match:
+  - registry: wikidata
+    item: Q116758847
+    rel: exactMatch
     basis:
-      subjects: iptc-genre:scope
-    status: active
-    added: 2026-08-23
-
-  - id: lom
-    label: { zh: "IEEE 1484.12.1-2002 学习对象元数据", en: "IEEE 1484.12.1-2002 Learning Object Metadata" }
-    kind: standard
-    tier: de-jure
-    version: "2002（2020 版已取代，取值变动未核）"
-    checked: 2026-08-23
-    url: https://github.com/LICEF/lompad/blob/master/documentation/LOM_1484_12_1_v1_Final_Draft.pdf
-    watch: https://standards.ieee.org/ieee/1484.12.1/7699/
-    subjects: [education]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q116758847&oldid=2537652532；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - assertions
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: anthropic
+      label:
+        zh: Anthropic
+        en: Anthropic
+      kind: organization
+      subjects:
+      - artificial-intelligence
+      basis:
+        subjects: self
+      match:
+      - source: wikidata
+        id: Q116758847
+        rel: exactMatch
+      status: candidate
+      added: '2026-08-23'
+    after:
+      assertions:
+        subjects:
+        - values:
+          - artificial-intelligence
+          disposition: project_assertion
+          original: self
+          migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/anthropic.basis.subjects
+      basis: {}
+      match:
+      - registry: wikidata
+        item: Q116758847
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q116758847&oldid=2537652532；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: openai
+  label:
+    zh: OpenAI
+    en: OpenAI
+  kind: organization
+  subjects:
+  - artificial-intelligence
+  basis: {}
+  status: candidate
+  added: 2026-08-23
+  assertions:
+    subjects:
+    - values:
+      - artificial-intelligence
+      disposition: project_assertion
+      original: self
+      migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/openai.basis.subjects
+  match:
+  - registry: wikidata
+    item: Q21708200
+    rel: exactMatch
     basis:
-      subjects: lom:scope
-    status: active
-    added: 2026-08-23
-  - id: schema-org
-    label: { zh: "schema.org", en: "schema.org" }
-    kind: standard
-    tier: de-facto
-    version: "30.0"
-    checked: 2026-08-23
-    url: https://schema.org/
-    watch: https://schema.org/docs/releases.html
-    subjects: [information-science]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q21708200&oldid=2540352658；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - assertions
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: openai
+      label:
+        zh: OpenAI
+        en: OpenAI
+      kind: organization
+      subjects:
+      - artificial-intelligence
+      basis:
+        subjects: self
+      match:
+      - source: wikidata
+        id: Q21708200
+        rel: exactMatch
+      status: candidate
+      added: '2026-08-23'
+    after:
+      assertions:
+        subjects:
+        - values:
+          - artificial-intelligence
+          disposition: project_assertion
+          original: self
+          migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/openai.basis.subjects
+      basis: {}
+      match:
+      - registry: wikidata
+        item: Q21708200
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q21708200&oldid=2540352658；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: moonshot-ai
+  label:
+    zh: 月之暗面
+    en: Moonshot AI
+  kind: organization
+  subjects:
+  - artificial-intelligence
+  basis: {}
+  status: candidate
+  added: 2026-08-23
+  assertions:
+    subjects:
+    - values:
+      - artificial-intelligence
+      disposition: project_assertion
+      original: self
+      migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/moonshot-ai.basis.subjects
+  match:
+  - registry: wikidata
+    item: Q130270266
+    rel: exactMatch
     basis:
-      subjects: self
-    status: candidate
-    added: 2026-08-23
-
-  # 第二批：常用工具、语言、组织（2026-08-23）
-  - id: anthropic
-    label: { zh: "Anthropic", en: "Anthropic" }
-    kind: organization
-    subjects: [artificial-intelligence]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q130270266&oldid=2538904973；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - assertions
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: moonshot-ai
+      label:
+        zh: 月之暗面
+        en: Moonshot AI
+      kind: organization
+      subjects:
+      - artificial-intelligence
+      basis:
+        subjects: self
+      match:
+      - source: wikidata
+        id: Q130270266
+        rel: exactMatch
+      status: candidate
+      added: '2026-08-23'
+    after:
+      assertions:
+        subjects:
+        - values:
+          - artificial-intelligence
+          disposition: project_assertion
+          original: self
+          migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/moonshot-ai.basis.subjects
+      basis: {}
+      match:
+      - registry: wikidata
+        item: Q130270266
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q130270266&oldid=2538904973；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: astral
+  label:
+    zh: Astral
+    en: Astral
+  kind: organization
+  subjects:
+  - software-engineering
+  basis: {}
+  scope: uv、ruff、ty 的开发公司；Wikidata 条目未能确认
+  status: candidate
+  added: 2026-08-23
+  assertions:
+    subjects:
+    - values:
+      - software-engineering
+      disposition: project_assertion
+      original: self
+      migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/astral.basis.subjects
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - assertions
+    - basis
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: astral
+      label:
+        zh: Astral
+        en: Astral
+      kind: organization
+      subjects:
+      - software-engineering
+      basis:
+        subjects: self
+      scope: uv、ruff、ty 的开发公司；Wikidata 条目未能确认
+      status: candidate
+      added: '2026-08-23'
+    after:
+      assertions:
+        subjects:
+        - values:
+          - software-engineering
+          disposition: project_assertion
+          original: self
+          migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/astral.basis.subjects
+      basis: {}
+- id: claude-code
+  label:
+    zh: Claude Code
+    en: Claude Code
+  kind: software
+  form: command-line interface
+  vendor: anthropic
+  subjects:
+  - artificial-intelligence
+  - tools-and-environments
+  basis:
+    subjects:
+    - values:
+      - artificial-intelligence
+      references:
+      - entity: cs2023
+        locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；AI
+          — Artificial Intelligence；Preamble（AI 技术、智能助手、自主智能体、生成与行动）
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q138457287&oldid=2540480429；labels/descriptions、P31、P856
+        checked: '2026-09-06'
+    - values:
+      - tools-and-environments
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+          #7'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q138457287&oldid=2540480429；labels/descriptions、P31/P279、P856
+        checked: '2026-09-06'
+  scope: Anthropic 的命令行编程智能体；不含 Claude 模型本身
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q138457287
+    rel: exactMatch
     basis:
-      subjects: self
-    match: [{ source: wikidata, id: Q116758847, rel: exactMatch }]
-    status: candidate
-    added: 2026-08-23
-  - id: openai
-    label: { zh: "OpenAI", en: "OpenAI" }
-    kind: organization
-    subjects: [artificial-intelligence]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q138457287&oldid=2540480429；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: claude-code
+      label:
+        zh: Claude Code
+        en: Claude Code
+      kind: software
+      form: command-line interface
+      vendor: anthropic
+      subjects:
+      - artificial-intelligence
+      - tools-and-environments
+      basis:
+        subjects: cs2023:SE-Tools#7
+      scope: Anthropic 的命令行编程智能体；不含 Claude 模型本身
+      match:
+      - source: wikidata
+        id: Q138457287
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - artificial-intelligence
+          references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；AI
+              — Artificial Intelligence；Preamble（AI 技术、智能助手、自主智能体、生成与行动）
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q138457287&oldid=2540480429；labels/descriptions、P31、P856
+            checked: '2026-09-06'
+        - values:
+          - tools-and-environments
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+              #7'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q138457287&oldid=2540480429；labels/descriptions、P31/P279、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q138457287
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q138457287&oldid=2540480429；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: codex
+  label:
+    zh: Codex
+    en: Codex
+  kind: software
+  form: command-line interface
+  vendor: openai
+  subjects:
+  - artificial-intelligence
+  - tools-and-environments
+  basis:
+    subjects:
+    - values:
+      - artificial-intelligence
+      references:
+      - entity: cs2023
+        locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；AI
+          — Artificial Intelligence；Preamble（智能助手、自主智能体、生成与行动）
+        checked: '2026-09-06'
+    - values:
+      - tools-and-environments
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+          — Tools and Environments；Illustrative Learning Outcomes，KA Core #6/#7（工具选择与软件产品开发支持）'
+        checked: '2026-09-06'
+  scope: OpenAI 的编程智能体（2025 年起的 CLI 与云端产品）；Wikidata 的 Q108582200 是 2021 年的同名模型，不映射
+  status: candidate
+  added: 2026-08-23
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    decisions:
+    - decision-source-completion
+    before:
+      id: codex
+      label:
+        zh: Codex
+        en: Codex
+      kind: software
+      form: command-line interface
+      vendor: openai
+      subjects:
+      - artificial-intelligence
+      - tools-and-environments
+      basis:
+        subjects: cs2023:SE-Tools#7
+      scope: OpenAI 的编程智能体（2025 年起的 CLI 与云端产品）；Wikidata 的 Q108582200 是 2021 年的同名模型，不映射
+      status: candidate
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - artificial-intelligence
+          references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；AI
+              — Artificial Intelligence；Preamble（智能助手、自主智能体、生成与行动）
+            checked: '2026-09-06'
+        - values:
+          - tools-and-environments
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+              — Tools and Environments；Illustrative Learning Outcomes，KA Core #6/#7（工具选择与软件产品开发支持）'
+            checked: '2026-09-06'
+- id: antigravity
+  label:
+    zh: Antigravity
+    en: Google Antigravity
+  kind: software
+  form: integrated development environment
+  subjects:
+  - artificial-intelligence
+  - tools-and-environments
+  basis:
+    subjects:
+    - values:
+      - artificial-intelligence
+      references:
+      - entity: cs2023
+        locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；AI
+          — Artificial Intelligence；Preamble（AI 技术、智能助手、自主智能体、生成与行动）
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q136827654&oldid=2540267026；labels/descriptions、P31、P856
+        checked: '2026-09-06'
+    - values:
+      - tools-and-environments
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+          #7'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q136827654&oldid=2540267026；labels/descriptions、P31/P279、P856
+        checked: '2026-09-06'
+  scope: Google 的 AI 编程工具
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q136827654
+    rel: exactMatch
     basis:
-      subjects: self
-    match: [{ source: wikidata, id: Q21708200, rel: exactMatch }]
-    status: candidate
-    added: 2026-08-23
-  - id: moonshot-ai
-    label: { zh: "月之暗面", en: "Moonshot AI" }
-    kind: organization
-    subjects: [artificial-intelligence]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q136827654&oldid=2540267026；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: antigravity
+      label:
+        zh: Antigravity
+        en: Google Antigravity
+      kind: software
+      form: integrated development environment
+      subjects:
+      - artificial-intelligence
+      - tools-and-environments
+      basis:
+        subjects: cs2023:SE-Tools#7
+      scope: Google 的 AI 编程工具
+      match:
+      - source: wikidata
+        id: Q136827654
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - artificial-intelligence
+          references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；AI
+              — Artificial Intelligence；Preamble（AI 技术、智能助手、自主智能体、生成与行动）
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q136827654&oldid=2540267026；labels/descriptions、P31、P856
+            checked: '2026-09-06'
+        - values:
+          - tools-and-environments
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+              #7'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q136827654&oldid=2540267026；labels/descriptions、P31/P279、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q136827654
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q136827654&oldid=2540267026；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: kimi-code
+  label:
+    zh: Kimi Code
+    en: Kimi Code
+  kind: software
+  vendor: moonshot-ai
+  subjects:
+  - artificial-intelligence
+  - tools-and-environments
+  basis:
+    subjects:
+    - values:
+      - artificial-intelligence
+      references:
+      - entity: cs2023
+        locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；AI
+          — Artificial Intelligence；Preamble（智能助手、自主智能体、生成与行动）
+        checked: '2026-09-06'
+    - values:
+      - tools-and-environments
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+          — Tools and Environments；Illustrative Learning Outcomes，KA Core #6/#7（工具选择与软件产品开发支持）'
+        checked: '2026-09-06'
+  scope: 月之暗面的编程智能体；Wikidata 无条目
+  status: candidate
+  added: 2026-08-23
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    decisions:
+    - decision-source-completion
+    before:
+      id: kimi-code
+      label:
+        zh: Kimi Code
+        en: Kimi Code
+      kind: software
+      vendor: moonshot-ai
+      subjects:
+      - artificial-intelligence
+      - tools-and-environments
+      basis:
+        subjects: cs2023:SE-Tools#7
+      scope: 月之暗面的编程智能体；Wikidata 无条目
+      status: candidate
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - artificial-intelligence
+          references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；AI
+              — Artificial Intelligence；Preamble（智能助手、自主智能体、生成与行动）
+            checked: '2026-09-06'
+        - values:
+          - tools-and-environments
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+              — Tools and Environments；Illustrative Learning Outcomes，KA Core #6/#7（工具选择与软件产品开发支持）'
+            checked: '2026-09-06'
+- id: openclaw
+  label:
+    zh: OpenClaw
+    en: OpenClaw
+  kind: software
+  form: autonomous agent
+  subjects:
+  - artificial-intelligence
+  basis:
+    subjects:
+    - values:
+      - artificial-intelligence
+      references:
+      - entity: cs2023
+        locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；AI
+          — Artificial Intelligence；Preamble（AI 技术、智能助手、自主智能体、生成与行动）
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q137916205&oldid=2536755323；labels/descriptions、P31、P856
+        checked: '2026-09-06'
+  scope: 开源自主 AI 助手
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q137916205
+    rel: exactMatch
     basis:
-      subjects: self
-    match: [{ source: wikidata, id: Q130270266, rel: exactMatch }]
-    status: candidate
-    added: 2026-08-23
-  - id: astral
-    label: { zh: "Astral", en: "Astral" }
-    kind: organization
-    subjects: [software-engineering]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q137916205&oldid=2536755323；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    - subjects
+    decisions:
+    - decision-source-completion
+    before:
+      id: openclaw
+      label:
+        zh: OpenClaw
+        en: OpenClaw
+      kind: software
+      form: autonomous agent
+      subjects:
+      - artificial-intelligence
+      - tools-and-environments
+      basis:
+        subjects: cs2023:SE-Tools#7
+      scope: 开源自主 AI 助手
+      match:
+      - source: wikidata
+        id: Q137916205
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - artificial-intelligence
+          references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；AI
+              — Artificial Intelligence；Preamble（AI 技术、智能助手、自主智能体、生成与行动）
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q137916205&oldid=2536755323；labels/descriptions、P31、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q137916205
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q137916205&oldid=2536755323；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+      subjects:
+      - artificial-intelligence
+- id: opencode
+  label:
+    zh: OpenCode
+    en: OpenCode
+  kind: software
+  subjects:
+  - artificial-intelligence
+  - tools-and-environments
+  basis:
+    subjects:
+    - values:
+      - artificial-intelligence
+      references:
+      - entity: cs2023
+        locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；AI
+          — Artificial Intelligence；Preamble（智能助手、自主智能体、生成与行动）
+        checked: '2026-09-06'
+    - values:
+      - tools-and-environments
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+          — Tools and Environments；Illustrative Learning Outcomes，KA Core #6/#7（工具选择与软件产品开发支持）'
+        checked: '2026-09-06'
+  scope: 开源终端编程智能体；Wikidata 的 Q133055048 是德国的开源交换平台，不映射
+  status: candidate
+  added: 2026-08-23
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    decisions:
+    - decision-source-completion
+    before:
+      id: opencode
+      label:
+        zh: OpenCode
+        en: OpenCode
+      kind: software
+      subjects:
+      - artificial-intelligence
+      - tools-and-environments
+      basis:
+        subjects: cs2023:SE-Tools#7
+      scope: 开源终端编程智能体；Wikidata 的 Q133055048 是德国的开源交换平台，不映射
+      status: candidate
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - artificial-intelligence
+          references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；AI
+              — Artificial Intelligence；Preamble（智能助手、自主智能体、生成与行动）
+            checked: '2026-09-06'
+        - values:
+          - tools-and-environments
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+              — Tools and Environments；Illustrative Learning Outcomes，KA Core #6/#7（工具选择与软件产品开发支持）'
+            checked: '2026-09-06'
+- id: typescript
+  label:
+    zh: TypeScript
+    en: TypeScript
+  kind: programming-language
+  subjects:
+  - foundations-of-programming-languages
+  basis:
+    subjects:
+    - values:
+      - foundations-of-programming-languages
+      references:
+      - entity: cs2023
+        locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；FPL
+          — Foundations of Programming Languages；Preamble（共同抽象、跨语言适用、语言选择与实现）
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q978185&oldid=2532629356；labels/descriptions、P31、P856
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q978185
+    rel: exactMatch
     basis:
-      subjects: self
-    scope: "uv、ruff、ty 的开发公司；Wikidata 条目未能确认"
-    status: candidate
-    added: 2026-08-23
-  - id: claude-code
-    label: { zh: "Claude Code", en: "Claude Code" }
-    kind: software
-    form: "command-line interface"   # Wikidata instance of
-    vendor: anthropic
-    subjects: [artificial-intelligence, tools-and-environments]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q978185&oldid=2532629356；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: typescript
+      label:
+        zh: TypeScript
+        en: TypeScript
+      kind: programming-language
+      subjects:
+      - foundations-of-programming-languages
+      basis:
+        subjects: cs2023:FPL
+      match:
+      - source: wikidata
+        id: Q978185
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - foundations-of-programming-languages
+          references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；FPL
+              — Foundations of Programming Languages；Preamble（共同抽象、跨语言适用、语言选择与实现）
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q978185&oldid=2532629356；labels/descriptions、P31、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q978185
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q978185&oldid=2532629356；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: javascript
+  label:
+    zh: JavaScript
+    en: JavaScript
+  kind: programming-language
+  subjects:
+  - foundations-of-programming-languages
+  basis:
+    subjects:
+    - values:
+      - foundations-of-programming-languages
+      references:
+      - entity: cs2023
+        locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；FPL
+          — Foundations of Programming Languages；Preamble（共同抽象、跨语言适用、语言选择与实现）
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q2005&oldid=2527256614；labels/descriptions、P31、P856
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q2005
+    rel: exactMatch
     basis:
-      subjects: cs2023:SE-Tools#7
-    scope: "Anthropic 的命令行编程智能体；不含 Claude 模型本身"
-    match: [{ source: wikidata, id: Q138457287, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: codex
-    label: { zh: "Codex", en: "Codex" }
-    kind: software
-    form: "command-line interface"   # Wikidata instance of
-    vendor: openai
-    subjects: [artificial-intelligence, tools-and-environments]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q2005&oldid=2527256614；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: javascript
+      label:
+        zh: JavaScript
+        en: JavaScript
+      kind: programming-language
+      subjects:
+      - foundations-of-programming-languages
+      basis:
+        subjects: cs2023:FPL
+      match:
+      - source: wikidata
+        id: Q2005
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - foundations-of-programming-languages
+          references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；FPL
+              — Foundations of Programming Languages；Preamble（共同抽象、跨语言适用、语言选择与实现）
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q2005&oldid=2527256614；labels/descriptions、P31、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q2005
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q2005&oldid=2527256614；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: python
+  label:
+    zh: Python
+    en: Python
+  kind: programming-language
+  subjects:
+  - foundations-of-programming-languages
+  basis:
+    subjects:
+    - values:
+      - foundations-of-programming-languages
+      references:
+      - entity: cs2023
+        locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；FPL
+          — Foundations of Programming Languages；Preamble（共同抽象、跨语言适用、语言选择与实现）
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q28865&oldid=2530995293；labels/descriptions、P31、P856
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q28865
+    rel: exactMatch
     basis:
-      subjects: cs2023:SE-Tools#7
-    scope: "OpenAI 的编程智能体（2025 年起的 CLI 与云端产品）；Wikidata 的 Q108582200 是 2021 年的同名模型，不映射"
-    status: candidate
-    added: 2026-08-23
-  - id: antigravity
-    label: { zh: "Antigravity", en: "Google Antigravity" }
-    kind: software
-    form: "integrated development environment"   # Wikidata instance of
-    subjects: [artificial-intelligence, tools-and-environments]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q28865&oldid=2530995293；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: python
+      label:
+        zh: Python
+        en: Python
+      kind: programming-language
+      subjects:
+      - foundations-of-programming-languages
+      basis:
+        subjects: cs2023:FPL
+      match:
+      - source: wikidata
+        id: Q28865
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - foundations-of-programming-languages
+          references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；FPL
+              — Foundations of Programming Languages；Preamble（共同抽象、跨语言适用、语言选择与实现）
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q28865&oldid=2530995293；labels/descriptions、P31、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q28865
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q28865&oldid=2530995293；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: go
+  label:
+    zh: Go
+    en: Go
+  kind: programming-language
+  subjects:
+  - foundations-of-programming-languages
+  basis:
+    subjects:
+    - values:
+      - foundations-of-programming-languages
+      references:
+      - entity: cs2023
+        locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；FPL
+          — Foundations of Programming Languages；Preamble（共同抽象、跨语言适用、语言选择与实现）
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q37227&oldid=2539468495；labels/descriptions、P31、P856
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q37227
+    rel: exactMatch
     basis:
-      subjects: cs2023:SE-Tools#7
-    scope: "Google 的 AI 编程工具"
-    match: [{ source: wikidata, id: Q136827654, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: kimi-code
-    label: { zh: "Kimi Code", en: "Kimi Code" }
-    kind: software
-    vendor: moonshot-ai
-    subjects: [artificial-intelligence, tools-and-environments]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q37227&oldid=2539468495；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: go
+      label:
+        zh: Go
+        en: Go
+      kind: programming-language
+      subjects:
+      - foundations-of-programming-languages
+      basis:
+        subjects: cs2023:FPL
+      match:
+      - source: wikidata
+        id: Q37227
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - foundations-of-programming-languages
+          references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；FPL
+              — Foundations of Programming Languages；Preamble（共同抽象、跨语言适用、语言选择与实现）
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q37227&oldid=2539468495；labels/descriptions、P31、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q37227
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q37227&oldid=2539468495；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: rust
+  label:
+    zh: Rust
+    en: Rust
+  kind: programming-language
+  subjects:
+  - foundations-of-programming-languages
+  basis:
+    subjects:
+    - values:
+      - foundations-of-programming-languages
+      references:
+      - entity: cs2023
+        locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；FPL
+          — Foundations of Programming Languages；Preamble（共同抽象、跨语言适用、语言选择与实现）
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q575650&oldid=2540091247；labels/descriptions、P31、P856
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q575650
+    rel: exactMatch
     basis:
-      subjects: cs2023:SE-Tools#7
-    scope: "月之暗面的编程智能体；Wikidata 无条目"
-    status: candidate
-    added: 2026-08-23
-  - id: openclaw
-    label: { zh: "OpenClaw", en: "OpenClaw" }
-    kind: software
-    form: "autonomous agent"   # Wikidata instance of
-    subjects: [artificial-intelligence, tools-and-environments]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q575650&oldid=2540091247；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: rust
+      label:
+        zh: Rust
+        en: Rust
+      kind: programming-language
+      subjects:
+      - foundations-of-programming-languages
+      basis:
+        subjects: cs2023:FPL
+      match:
+      - source: wikidata
+        id: Q575650
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - foundations-of-programming-languages
+          references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；FPL
+              — Foundations of Programming Languages；Preamble（共同抽象、跨语言适用、语言选择与实现）
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q575650&oldid=2540091247；labels/descriptions、P31、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q575650
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q575650&oldid=2540091247；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: vite
+  label:
+    zh: Vite
+    en: Vite
+  kind: software
+  form: JavaScript bundler
+  subjects:
+  - tools-and-environments
+  - web-platforms
+  basis:
+    subjects:
+    - values:
+      - tools-and-environments
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+          #4.a'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q111590996&oldid=2533730182；labels/descriptions、P31/P279、P856
+        checked: '2026-09-06'
+    - values:
+      - web-platforms
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SPD-Web
+          — Web Platforms；KA Core #1（Web programming languages，例如 JavaScript）、#2（Web
+          platforms/frameworks）'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q111590996&oldid=2533730182；labels/descriptions、P31、P856
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q111590996
+    rel: exactMatch
     basis:
-      subjects: cs2023:SE-Tools#7
-    scope: "开源自主 AI 助手"
-    match: [{ source: wikidata, id: Q137916205, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: opencode
-    label: { zh: "OpenCode", en: "OpenCode" }
-    kind: software
-    subjects: [artificial-intelligence, tools-and-environments]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q111590996&oldid=2533730182；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: vite
+      label:
+        zh: Vite
+        en: Vite
+      kind: software
+      form: JavaScript bundler
+      subjects:
+      - tools-and-environments
+      - web-platforms
+      basis:
+        subjects: cs2023:SE-Tools#4
+      match:
+      - source: wikidata
+        id: Q111590996
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - tools-and-environments
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+              #4.a'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q111590996&oldid=2533730182；labels/descriptions、P31/P279、P856
+            checked: '2026-09-06'
+        - values:
+          - web-platforms
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SPD-Web
+              — Web Platforms；KA Core #1（Web programming languages，例如 JavaScript）、#2（Web
+              platforms/frameworks）'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q111590996&oldid=2533730182；labels/descriptions、P31、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q111590996
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q111590996&oldid=2533730182；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: oxc
+  label:
+    zh: oxc
+    en: oxc
+  kind: software
+  subjects:
+  - tools-and-environments
+  - web-platforms
+  basis: {}
+  scope: JavaScript 工具链（解析器、linter 等），Rust 实现；Wikidata 无条目
+  status: candidate
+  added: 2026-08-23
+  assertions:
+    subjects:
+    - values:
+      - tools-and-environments
+      - web-platforms
+      disposition: project_assertion
+      original: self
+      migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/oxc.basis.subjects
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - assertions
+    - basis
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: oxc
+      label:
+        zh: oxc
+        en: oxc
+      kind: software
+      subjects:
+      - tools-and-environments
+      - web-platforms
+      basis:
+        subjects: self
+      scope: JavaScript 工具链（解析器、linter 等），Rust 实现；Wikidata 无条目
+      status: candidate
+      added: '2026-08-23'
+    after:
+      assertions:
+        subjects:
+        - values:
+          - tools-and-environments
+          - web-platforms
+          disposition: project_assertion
+          original: self
+          migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/oxc.basis.subjects
+      basis: {}
+- id: webpack
+  label:
+    zh: webpack
+    en: webpack
+  kind: software
+  form: JavaScript bundler
+  subjects:
+  - tools-and-environments
+  - web-platforms
+  basis:
+    subjects:
+    - values:
+      - tools-and-environments
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+          #4.a'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q22909730&oldid=2539483640；labels/descriptions、P31/P279、P856
+        checked: '2026-09-06'
+    - values:
+      - web-platforms
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SPD-Web
+          — Web Platforms；KA Core #1（Web programming languages，例如 JavaScript）、#2（Web
+          platforms/frameworks）'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q22909730&oldid=2539483640；labels/descriptions、P31、P856
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q22909730
+    rel: exactMatch
     basis:
-      subjects: cs2023:SE-Tools#7
-    scope: "开源终端编程智能体；Wikidata 的 Q133055048 是德国的开源交换平台，不映射"
-    status: candidate
-    added: 2026-08-23
-  - id: typescript
-    label: { zh: "TypeScript", en: "TypeScript" }
-    kind: programming-language
-    subjects: [foundations-of-programming-languages]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q22909730&oldid=2539483640；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: webpack
+      label:
+        zh: webpack
+        en: webpack
+      kind: software
+      form: JavaScript bundler
+      subjects:
+      - tools-and-environments
+      - web-platforms
+      basis:
+        subjects: cs2023:SE-Tools#4
+      match:
+      - source: wikidata
+        id: Q22909730
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - tools-and-environments
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+              #4.a'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q22909730&oldid=2539483640；labels/descriptions、P31/P279、P856
+            checked: '2026-09-06'
+        - values:
+          - web-platforms
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SPD-Web
+              — Web Platforms；KA Core #1（Web programming languages，例如 JavaScript）、#2（Web
+              platforms/frameworks）'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q22909730&oldid=2539483640；labels/descriptions、P31、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q22909730
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q22909730&oldid=2539483640；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: eslint
+  label:
+    zh: ESLint
+    en: ESLint
+  kind: software
+  form: linter
+  subjects:
+  - tools-and-environments
+  - web-platforms
+  basis:
+    subjects:
+    - values:
+      - tools-and-environments
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+          #3'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q55452824&oldid=2540376393；labels/descriptions、P31/P279、P856
+        checked: '2026-09-06'
+    - values:
+      - web-platforms
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SPD-Web
+          — Web Platforms；KA Core #1（Web programming languages，例如 JavaScript）、#2（Web
+          platforms/frameworks）'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q55452824&oldid=2540376393；labels/descriptions、P31、P856
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q55452824
+    rel: exactMatch
     basis:
-      subjects: cs2023:FPL
-    match: [{ source: wikidata, id: Q978185, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: javascript
-    label: { zh: "JavaScript", en: "JavaScript" }
-    kind: programming-language
-    subjects: [foundations-of-programming-languages]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q55452824&oldid=2540376393；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: eslint
+      label:
+        zh: ESLint
+        en: ESLint
+      kind: software
+      form: linter
+      subjects:
+      - tools-and-environments
+      - web-platforms
+      basis:
+        subjects: cs2023:SE-Tools#3
+      match:
+      - source: wikidata
+        id: Q55452824
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - tools-and-environments
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+              #3'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q55452824&oldid=2540376393；labels/descriptions、P31/P279、P856
+            checked: '2026-09-06'
+        - values:
+          - web-platforms
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SPD-Web
+              — Web Platforms；KA Core #1（Web programming languages，例如 JavaScript）、#2（Web
+              platforms/frameworks）'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q55452824&oldid=2540376393；labels/descriptions、P31、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q55452824
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q55452824&oldid=2540376393；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: nextjs
+  label:
+    zh: Next.js
+    en: Next.js
+  kind: software
+  form: JavaScript framework
+  subjects:
+  - web-platforms
+  basis:
+    subjects:
+    - values:
+      - web-platforms
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SPD-Web
+          #2'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q56062435&oldid=2539071850；labels/descriptions、P31/P279、P856
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q56062435
+    rel: exactMatch
     basis:
-      subjects: cs2023:FPL
-    match: [{ source: wikidata, id: Q2005, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: python
-    label: { zh: "Python", en: "Python" }
-    kind: programming-language
-    subjects: [foundations-of-programming-languages]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q56062435&oldid=2539071850；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: nextjs
+      label:
+        zh: Next.js
+        en: Next.js
+      kind: software
+      form: JavaScript framework
+      subjects:
+      - web-platforms
+      basis:
+        subjects: cs2023:SPD-Web#2
+      match:
+      - source: wikidata
+        id: Q56062435
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - web-platforms
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SPD-Web
+              #2'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q56062435&oldid=2539071850；labels/descriptions、P31/P279、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q56062435
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q56062435&oldid=2539071850；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: react
+  label:
+    zh: React
+    en: React
+  kind: software
+  form: web framework
+  subjects:
+  - web-platforms
+  basis:
+    subjects:
+    - values:
+      - web-platforms
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SPD-Web
+          #2'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q19399674&oldid=2531086275；labels/descriptions、P31/P279、P856
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q19399674
+    rel: exactMatch
     basis:
-      subjects: cs2023:FPL
-    match: [{ source: wikidata, id: Q28865, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: go
-    label: { zh: "Go", en: "Go" }
-    kind: programming-language
-    subjects: [foundations-of-programming-languages]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q19399674&oldid=2531086275；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: react
+      label:
+        zh: React
+        en: React
+      kind: software
+      form: web framework
+      subjects:
+      - web-platforms
+      basis:
+        subjects: cs2023:SPD-Web#2
+      match:
+      - source: wikidata
+        id: Q19399674
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - web-platforms
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SPD-Web
+              #2'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q19399674&oldid=2531086275；labels/descriptions、P31/P279、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q19399674
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q19399674&oldid=2531086275；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: vuejs
+  label:
+    zh: Vue.js
+    en: Vue.js
+  kind: software
+  form: JavaScript framework
+  subjects:
+  - web-platforms
+  basis:
+    subjects:
+    - values:
+      - web-platforms
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SPD-Web
+          #2'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q24589705&oldid=2525014457；labels/descriptions、P31/P279、P856
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q24589705
+    rel: exactMatch
     basis:
-      subjects: cs2023:FPL
-    match: [{ source: wikidata, id: Q37227, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: rust
-    label: { zh: "Rust", en: "Rust" }
-    kind: programming-language
-    subjects: [foundations-of-programming-languages]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q24589705&oldid=2525014457；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: vuejs
+      label:
+        zh: Vue.js
+        en: Vue.js
+      kind: software
+      form: JavaScript framework
+      subjects:
+      - web-platforms
+      basis:
+        subjects: cs2023:SPD-Web#2
+      match:
+      - source: wikidata
+        id: Q24589705
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - web-platforms
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SPD-Web
+              #2'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q24589705&oldid=2525014457；labels/descriptions、P31/P279、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q24589705
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q24589705&oldid=2525014457；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: nestjs
+  label:
+    zh: NestJS
+    en: NestJS
+  kind: software
+  form: JavaScript framework
+  subjects:
+  - web-platforms
+  basis:
+    subjects:
+    - values:
+      - web-platforms
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SPD-Web
+          #2'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q107015664&oldid=2537334085；labels/descriptions、P31/P279、P856
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q107015664
+    rel: exactMatch
     basis:
-      subjects: cs2023:FPL
-    match: [{ source: wikidata, id: Q575650, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: vite
-    label: { zh: "Vite", en: "Vite" }
-    kind: software
-    form: "JavaScript bundler"   # Wikidata instance of
-    subjects: [tools-and-environments, web-platforms]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q107015664&oldid=2537334085；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: nestjs
+      label:
+        zh: NestJS
+        en: NestJS
+      kind: software
+      form: JavaScript framework
+      subjects:
+      - web-platforms
+      basis:
+        subjects: cs2023:SPD-Web#2
+      match:
+      - source: wikidata
+        id: Q107015664
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - web-platforms
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SPD-Web
+              #2'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q107015664&oldid=2537334085；labels/descriptions、P31/P279、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q107015664
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q107015664&oldid=2537334085；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: uv
+  label:
+    zh: uv
+    en: uv
+  kind: software
+  vendor: astral
+  subjects:
+  - tools-and-environments
+  basis: {}
+  scope: Python 包与项目管理器，Rust 实现；Wikidata 无条目
+  status: candidate
+  added: 2026-08-23
+  assertions:
+    subjects:
+    - values:
+      - tools-and-environments
+      disposition: project_assertion
+      original: self
+      migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/uv.basis.subjects
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - assertions
+    - basis
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: uv
+      label:
+        zh: uv
+        en: uv
+      kind: software
+      vendor: astral
+      subjects:
+      - tools-and-environments
+      basis:
+        subjects: self
+      scope: Python 包与项目管理器，Rust 实现；Wikidata 无条目
+      status: candidate
+      added: '2026-08-23'
+    after:
+      assertions:
+        subjects:
+        - values:
+          - tools-and-environments
+          disposition: project_assertion
+          original: self
+          migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/uv.basis.subjects
+      basis: {}
+- id: ruff
+  label:
+    zh: Ruff
+    en: Ruff
+  kind: software
+  form: linter
+  vendor: astral
+  subjects:
+  - tools-and-environments
+  basis:
+    subjects:
+    - values:
+      - tools-and-environments
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+          #3'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q115911873&oldid=2540077635；labels/descriptions、P31/P279、P856
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q115911873
+    rel: exactMatch
     basis:
-      subjects: cs2023:SE-Tools#4
-    match: [{ source: wikidata, id: Q111590996, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: oxc
-    label: { zh: "oxc", en: "oxc" }
-    kind: software
-    subjects: [tools-and-environments, web-platforms]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q115911873&oldid=2540077635；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: ruff
+      label:
+        zh: Ruff
+        en: Ruff
+      kind: software
+      form: linter
+      vendor: astral
+      subjects:
+      - tools-and-environments
+      basis:
+        subjects: cs2023:SE-Tools#3
+      match:
+      - source: wikidata
+        id: Q115911873
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - tools-and-environments
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+              #3'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q115911873&oldid=2540077635；labels/descriptions、P31/P279、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q115911873
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q115911873&oldid=2540077635；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: ty
+  label:
+    zh: ty
+    en: ty
+  kind: software
+  vendor: astral
+  subjects:
+  - tools-and-environments
+  - type-systems
+  basis:
+    subjects:
+    - values:
+      - tools-and-environments
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+          — Tools and Environments；KA Core #3（静态与动态分析等测试工具）'
+        checked: '2026-09-06'
+    - values:
+      - type-systems
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；FPL-Types
+          — Type Systems；CS Core #5（静态和动态类型的目标及限制）'
+        checked: '2026-09-06'
+  scope: Python 类型检查器；Wikidata 无条目
+  status: candidate
+  added: 2026-08-23
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    decisions:
+    - decision-source-completion
+    before:
+      id: ty
+      label:
+        zh: ty
+        en: ty
+      kind: software
+      vendor: astral
+      subjects:
+      - tools-and-environments
+      - type-systems
+      basis:
+        subjects:
+        - cs2023:SE-Tools#3
+        - cs2023:FPL-Types#5
+      scope: Python 类型检查器；Wikidata 无条目
+      status: candidate
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - tools-and-environments
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+              — Tools and Environments；KA Core #3（静态与动态分析等测试工具）'
+            checked: '2026-09-06'
+        - values:
+          - type-systems
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；FPL-Types
+              — Type Systems；CS Core #5（静态和动态类型的目标及限制）'
+            checked: '2026-09-06'
+- id: pytest
+  label:
+    zh: pytest
+    en: pytest
+  kind: software
+  form: software testing tool
+  subjects:
+  - tools-and-environments
+  - software-verification-and-validation
+  basis:
+    subjects:
+    - values:
+      - tools-and-environments
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+          #3'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q28975377&oldid=2508245902；labels/descriptions、P31/P279、P856
+        checked: '2026-09-06'
+    - values:
+      - software-verification-and-validation
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Validation
+          #4'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q28975377&oldid=2508245902；labels/descriptions、P31/P279、P856
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q28975377
+    rel: exactMatch
     basis:
-      subjects: self
-    scope: "JavaScript 工具链（解析器、linter 等），Rust 实现；Wikidata 无条目"
-    status: candidate
-    added: 2026-08-23
-  - id: webpack
-    label: { zh: "webpack", en: "webpack" }
-    kind: software
-    form: "JavaScript bundler"   # Wikidata instance of
-    subjects: [tools-and-environments, web-platforms]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q28975377&oldid=2508245902；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: pytest
+      label:
+        zh: pytest
+        en: pytest
+      kind: software
+      form: software testing tool
+      subjects:
+      - tools-and-environments
+      - software-verification-and-validation
+      basis:
+        subjects:
+        - cs2023:SE-Tools#3
+        - cs2023:SE-Validation#4
+      match:
+      - source: wikidata
+        id: Q28975377
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - tools-and-environments
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+              #3'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q28975377&oldid=2508245902；labels/descriptions、P31/P279、P856
+            checked: '2026-09-06'
+        - values:
+          - software-verification-and-validation
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Validation
+              #4'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q28975377&oldid=2508245902；labels/descriptions、P31/P279、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q28975377
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q28975377&oldid=2508245902；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: pyright
+  label:
+    zh: Pyright
+    en: Pyright
+  kind: software
+  form: static type checker
+  subjects:
+  - tools-and-environments
+  - type-systems
+  basis:
+    subjects:
+    - values:
+      - tools-and-environments
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+          #3'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q102522262&oldid=2530894696；labels/descriptions、P31/P279、P856
+        checked: '2026-09-06'
+    - values:
+      - type-systems
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；FPL-Types
+          #5'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q102522262&oldid=2530894696；labels/descriptions、P31/P279、P856
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q102522262
+    rel: exactMatch
     basis:
-      subjects: cs2023:SE-Tools#4
-    match: [{ source: wikidata, id: Q22909730, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: eslint
-    label: { zh: "ESLint", en: "ESLint" }
-    kind: software
-    form: "linter"   # Wikidata instance of
-    subjects: [tools-and-environments, web-platforms]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q102522262&oldid=2530894696；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: pyright
+      label:
+        zh: Pyright
+        en: Pyright
+      kind: software
+      form: static type checker
+      subjects:
+      - tools-and-environments
+      - type-systems
+      basis:
+        subjects:
+        - cs2023:SE-Tools#3
+        - cs2023:FPL-Types#5
+      match:
+      - source: wikidata
+        id: Q102522262
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - tools-and-environments
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools
+              #3'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q102522262&oldid=2530894696；labels/descriptions、P31/P279、P856
+            checked: '2026-09-06'
+        - values:
+          - type-systems
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；FPL-Types
+              #5'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q102522262&oldid=2530894696；labels/descriptions、P31/P279、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q102522262
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q102522262&oldid=2530894696；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: pydantic
+  label:
+    zh: Pydantic
+    en: Pydantic
+  kind: software
+  form: Python package
+  subjects:
+  - web-platforms
+  - foundations-of-programming-languages
+  basis: {}
+  scope: 数据解析与校验库
+  status: candidate
+  added: 2026-08-23
+  assertions:
+    subjects:
+    - values:
+      - web-platforms
+      - foundations-of-programming-languages
+      disposition: project_assertion
+      original: self
+      migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/pydantic.basis.subjects
+  version: '2'
+  match:
+  - registry: wikidata
+    item: Q107381687
+    rel: exactMatch
     basis:
-      subjects: cs2023:SE-Tools#3
-    match: [{ source: wikidata, id: Q55452824, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: nextjs
-    label: { zh: "Next.js", en: "Next.js" }
-    kind: software
-    form: "JavaScript framework"   # Wikidata instance of
-    subjects: [web-platforms]
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q107381687&oldid=2539015373；软件身份、描述及官网标识
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - assertions
+    - basis
+    - match
+    - scope
+    - version
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: pydantic
+      label:
+        zh: Pydantic
+        en: Pydantic
+      kind: software
+      form: Python package
+      subjects:
+      - web-platforms
+      - foundations-of-programming-languages
+      basis:
+        subjects: self
+      scope: 数据解析与校验库；本库指 v2
+      match:
+      - source: wikidata
+        id: Q107381687
+        rel: exactMatch
+      status: candidate
+      added: '2026-08-23'
+    after:
+      assertions:
+        subjects:
+        - values:
+          - web-platforms
+          - foundations-of-programming-languages
+          disposition: project_assertion
+          original: self
+          migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/pydantic.basis.subjects
+      basis: {}
+      match:
+      - registry: wikidata
+        item: Q107381687
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q107381687&oldid=2539015373；软件身份、描述及官网标识
+          checked: '2026-09-06'
+      scope: 数据解析与校验库
+      version: '2'
+- id: fastapi
+  label:
+    zh: FastAPI
+    en: FastAPI
+  kind: software
+  form: web framework
+  subjects:
+  - web-platforms
+  basis:
+    subjects:
+    - values:
+      - web-platforms
+      references:
+      - entity: cs2023
+        locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SPD-Web
+          #2'
+        checked: '2026-09-06'
+      - entity: wikidata
+        locator: https://www.wikidata.org/w/index.php?title=Q101119404&oldid=2524737798；labels/descriptions、P31/P279、P856
+        checked: '2026-09-06'
+  status: active
+  added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q101119404
+    rel: exactMatch
     basis:
-      subjects: cs2023:SPD-Web#2
-    match: [{ source: wikidata, id: Q56062435, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: react
-    label: { zh: "React", en: "React" }
-    kind: software
-    form: "web framework"   # Wikidata instance of
-    subjects: [web-platforms]
-    basis:
-      subjects: cs2023:SPD-Web#2
-    match: [{ source: wikidata, id: Q19399674, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: vuejs
-    label: { zh: "Vue.js", en: "Vue.js" }
-    kind: software
-    form: "JavaScript framework"   # Wikidata instance of
-    subjects: [web-platforms]
-    basis:
-      subjects: cs2023:SPD-Web#2
-    match: [{ source: wikidata, id: Q24589705, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: nestjs
-    label: { zh: "NestJS", en: "NestJS" }
-    kind: software
-    form: "JavaScript framework"   # Wikidata instance of
-    subjects: [web-platforms]
-    basis:
-      subjects: cs2023:SPD-Web#2
-    match: [{ source: wikidata, id: Q107015664, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: uv
-    label: { zh: "uv", en: "uv" }
-    kind: software
-    vendor: astral
-    subjects: [tools-and-environments]
-    basis:
-      subjects: self
-    scope: "Python 包与项目管理器，Rust 实现；Wikidata 无条目"
-    status: candidate
-    added: 2026-08-23
-  - id: ruff
-    label: { zh: "Ruff", en: "Ruff" }
-    kind: software
-    form: "linter"   # Wikidata instance of
-    vendor: astral
-    subjects: [tools-and-environments]
-    basis:
-      subjects: cs2023:SE-Tools#3
-    match: [{ source: wikidata, id: Q115911873, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: ty
-    label: { zh: "ty", en: "ty" }
-    kind: software
-    vendor: astral
-    subjects: [tools-and-environments, type-systems]
-    basis:
-      subjects: [cs2023:SE-Tools#3, cs2023:FPL-Types#5]
-    scope: "Python 类型检查器；Wikidata 无条目"
-    status: candidate
-    added: 2026-08-23
-  - id: pytest
-    label: { zh: "pytest", en: "pytest" }
-    kind: software
-    form: "software testing tool"   # Wikidata instance of
-    subjects: [tools-and-environments, software-verification-and-validation]
-    basis:
-      subjects: [cs2023:SE-Tools#3, cs2023:SE-Validation#4]
-    match: [{ source: wikidata, id: Q28975377, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: pyright
-    label: { zh: "Pyright", en: "Pyright" }
-    kind: software
-    form: "static type checker"   # Wikidata instance of
-    subjects: [tools-and-environments, type-systems]
-    basis:
-      subjects: [cs2023:SE-Tools#3, cs2023:FPL-Types#5]
-    match: [{ source: wikidata, id: Q102522262, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-  - id: pydantic
-    label: { zh: "Pydantic", en: "Pydantic" }
-    kind: software
-    form: "Python package"   # Wikidata instance of
-    subjects: [web-platforms, foundations-of-programming-languages]
-    basis:
-      subjects: self
-    scope: "数据解析与校验库；本库指 v2"
-    match: [{ source: wikidata, id: Q107381687, rel: exactMatch }]
-    status: candidate
-    added: 2026-08-23
-  - id: fastapi
-    label: { zh: "FastAPI", en: "FastAPI" }
-    kind: software
-    form: "web framework"   # Wikidata instance of
-    subjects: [web-platforms]
-    basis:
-      subjects: cs2023:SPD-Web#2
-    match: [{ source: wikidata, id: Q101119404, rel: exactMatch }]
-    status: active
-    added: 2026-08-23
-
-  - id: obsidian
-    label: { zh: "Obsidian", en: "Obsidian" }
-    kind: software
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q101119404&oldid=2524737798；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - basis
+    - match
+    decisions:
+    - decision-source-completion
+    before:
+      id: fastapi
+      label:
+        zh: FastAPI
+        en: FastAPI
+      kind: software
+      form: web framework
+      subjects:
+      - web-platforms
+      basis:
+        subjects: cs2023:SPD-Web#2
+      match:
+      - source: wikidata
+        id: Q101119404
+        rel: exactMatch
+      status: active
+      added: '2026-08-23'
+    after:
+      basis:
+        subjects:
+        - values:
+          - web-platforms
+          references:
+          - entity: cs2023
+            locator: 'https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SPD-Web
+              #2'
+            checked: '2026-09-06'
+          - entity: wikidata
+            locator: https://www.wikidata.org/w/index.php?title=Q101119404&oldid=2524737798；labels/descriptions、P31/P279、P856
+            checked: '2026-09-06'
+      match:
+      - registry: wikidata
+        item: Q101119404
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q101119404&oldid=2524737798；labels/descriptions、P31/P279、P856
+          checked: '2026-09-06'
+- id: obsidian
+  label:
+    zh: Obsidian
+    en: Obsidian
+  kind: software
+  subjects:
+  - computing
+  basis: {}
+  scope: 本地笔记与知识管理软件；本记录指应用本身，不单独表示配套服务或社区插件。
+  status: candidate
+  added: 2026-09-05
+  assertions:
+    subjects:
+    - values:
+      - computing
+      disposition: project_assertion
+      original: self
+      migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/obsidian.basis.subjects
+  urls:
+  - role: landing
     url: https://obsidian.md/
-    subjects: [computing]
+    primary: true
+  match:
+  - registry: wikidata
+    item: Q103994532
+    rel: exactMatch
     basis:
-      subjects: self
-    scope: "本地笔记与知识管理软件；本记录指应用本身，不单独表示配套服务或社区插件。"
-    match:
-      - { source: wikidata, id: Q103994532, rel: exactMatch }
-    status: candidate
-    added: 2026-09-05
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q103994532&oldid=2530661391；软件身份、P31、P856；与
+        https://obsidian.md/ 产品身份交叉核对
+      checked: '2026-09-05'
+  history:
+  - date: '2026-09-06'
+    action: source-v2-migration
+    fields:
+    - assertions
+    - basis
+    - match
+    - url
+    - urls
+    decisions:
+    - decision-source-completion
+    - decision-source-data-batch
+    before:
+      id: obsidian
+      label:
+        zh: Obsidian
+        en: Obsidian
+      kind: software
+      url: https://obsidian.md/
+      subjects:
+      - computing
+      basis:
+        subjects: self
+      scope: 本地笔记与知识管理软件；本记录指应用本身，不单独表示配套服务或社区插件。
+      match:
+      - source: wikidata
+        id: Q103994532
+        rel: exactMatch
+      status: candidate
+      added: '2026-09-05'
+    after:
+      assertions:
+        subjects:
+        - values:
+          - computing
+          disposition: project_assertion
+          original: self
+          migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/obsidian.basis.subjects
+      basis: {}
+      match:
+      - registry: wikidata
+        item: Q103994532
+        rel: exactMatch
+        basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/w/index.php?title=Q103994532&oldid=2530661391；软件身份、P31、P856；与
+            https://obsidian.md/ 产品身份交叉核对
+          checked: '2026-09-05'
+      urls:
+      - role: landing
+        url: https://obsidian.md/
+        primary: true
+schema_version: 2
+schema: urn:kb-design:data:entities

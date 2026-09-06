@@ -182,6 +182,8 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 
 下表指定 location、type、reference form 与 loss。所有表示均无回流接口。缺失的可选值和空列表不生成 property；正文保留结构所需的空值。实体与来源用途的形状使用核心生成 schema，内部引用必须存在，实际来源使用须具备对应 approved 角色；导出对捕获的词表、决定、义务和语言采纳字节调用完整核心语义检查，覆盖字段精准采纳、复核周期、观察政策和语言依据，不重新读取这些输入。通过检查仍不等于发布或正式消费者激活。
 
+按[来源收尾](../../decisions/source-completion.md)隔离的 17 条旧映射不进入词表笔记、来源链接或外部映射表。导出因此不提供这些历史关系的浏览与跳转，查阅须回到决定隔离清单和 Git 历史；空表或缺边不表示此前没有引用。该损失不影响对象、标签、项目状态及其他关系的表示。24 个既有数组显示项目保留的成员和顺序，不能据此认定外部组完整或原文顺序一致。
+
 ### 文档字段
 
 | 源字段 | 目标落点与类型 | 引用与信息保存 |
@@ -207,7 +209,7 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 | 其他外部 `basis` | 正文“外部依据”表 | 每条保存字段、来源实体 Wikilink、locator 与可选 checked |
 | `assertions.subjects`、`assertions.source` | 正文“项目判断”表 | 保存适用主题 Wikilinks、project_assertion、原 self 与审计定位；不产生外部依据链接 |
 | `source` | `kb_source` Text link 与正文“派生来源”表 | registry 投影为来源用途 Wikilink；正文另保存 item、locator 及每条相邻依据的实体 Wikilink、locator、checked |
-| `match` | 正文“外部映射”表 | 每条保存 registry Wikilink、item、rel 与完整相邻依据；不默认补关系 |
+| `match` | 正文“外部映射”表 | 每条保存 registry Wikilink、item、rel 与完整相邻依据；不默认补关系，隔离关系不进入此表 |
 | `history` | 正文“历史记录”YAML 代码块 | 保存真实日期、动作、字段、决定、前后值、依据及次序；注释和原排版不保留，历史 checked 不冒充当前 review.checked |
 
 ### 关系字段
@@ -220,7 +222,7 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 | 主题数组 `superordinate` | `kb_superordinate` Text link | 指向真实主题 |
 | 主题数组的派生成员 | `kb_members` List | 主题 Wikilinks，顺序取正式主题记录，不生成新的 source 字段 |
 | 载体数组 `local_analysis` | 根索引“隔离记录”表 | 逐字保存 legacy_source_label、isolated 状态与真实决定 ID；仅为历史隔离，不生成来源链接或有效本地分析 |
-| 数组 `external_group` | `kb_source` Text link 与正文“外部分组” | registry 需要 structure approved；完整保存 item、locator、相邻依据，不推导成员派生 |
+| 数组 `external_group` | `kb_source` Text link 与正文“外部分组” | registry 需要 structure approved；完整保存 item、locator、相邻依据，不推导成员派生或逐序完整复制 |
 | 主题、类型、体裁、载体 `replaced_by` | `kb_replaced_by` Text link | 指向同类正式对象，历史理由在 history 保存 |
 
 ### 实体字段

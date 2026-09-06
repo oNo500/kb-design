@@ -1,5 +1,7 @@
 """Source evidence must remain distinct from project assertions in the export."""
 import copy
+import json
+from unittest.mock import patch
 import datetime as dt
 import unittest
 import tempfile
@@ -107,6 +109,36 @@ class SourceV2ExportTests(unittest.TestCase):
         self.save()
         self.assertTrue(load_repository(self.root, input_bytes=captured))
         with self.assertRaises(ExportError):
+            load_repository(self.root)
+
+    def test_scope_correction_uses_captured_exact_authority(self):
+        topic = self.documents["topics"]["concepts"][0]
+        topic["label"]["zh"] = "主题"
+        topic["scope"] = "Corrected scope"
+        approval = "design/decisions/structured-label-basis.md#批次授权"
+        topic["basis"]["zh"] = {"level": 5, "model": {
+            "name": "GPT-6", "date": "2026-09-05", "rationale": "按既有概念的模型知识译名", "approval": approval}}
+        adoption = {"authorization": approval, "records": {"topics/topic/zh": {
+            "accept": True, "label": "主题", "basis": copy.deepcopy(topic["basis"]["zh"]),
+            "original": {"en": "Topic", "scope": "Original scope"}}}}
+        patches = self.decision["answers"][0]["patches"]
+        patches.extend([
+            {"identity": "topics/concepts/topic", "field": "scope", "value": "Corrected scope"},
+            {"identity": "topics/concepts/topic", "field": "scope.correction",
+             "value": {"before": "Original scope", "after": "Corrected scope"}},
+        ])
+        self.save()
+        path = self.root / "data/inputs/topics/label-adoptions.json"
+        path.parent.mkdir(parents=True)
+        path.write_text(json.dumps(adoption))
+        captured = _read_repository_inputs(self.root)
+        patches[-1]["value"]["before"] = "Forged original scope"
+        self.save()
+        with patch.object(Path, "read_bytes", side_effect=AssertionError("semantic reread")), \
+             patch.object(Path, "read_text", side_effect=AssertionError("semantic reread")):
+            files = build_content_files(self.root, input_bytes=captured)
+        self.assertIn("Corrected scope", files["kb/topics/topic.md"].decode())
+        with self.assertRaisesRegex(ExportError, "scope"):
             load_repository(self.root)
 
     def test_unverified_source_status_and_version_are_not_fabricated(self):

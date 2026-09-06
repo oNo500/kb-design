@@ -1,4 +1,4 @@
-# 载体词表。设计见 design/content-model.md。
+# 来源 v2 数据；语义与采纳见 docs/decisions/source-completion.md。
 version:
   id: '2026.08'
   date: 2026-08-23
@@ -6,10 +6,16 @@ version:
 arrays:
 - id: forms-presentation
   superordinate: forms
-  source: lom
+  local_analysis:
+    legacy_source_label: lom
+    state: isolated
+    decision: decision-source-0011
 - id: forms-activity
   superordinate: forms
-  source: lom
+  local_analysis:
+    legacy_source_label: lom
+    state: isolated
+    decision: decision-source-0011
 forms:
 - id: diagram
   label:
@@ -30,13 +36,10 @@ forms:
         locator: diagram
   arrays:
   - forms-presentation
-  match:
-  - source: lom
-    id: diagram
-    rel: exactMatch
   scope: 示意图：用线条和符号表示结构或过程
   status: unassigned
   added: 2026-08-23
+  match: []
 - id: figure
   label:
     en: Figure
@@ -56,13 +59,10 @@ forms:
         locator: figure
   arrays:
   - forms-presentation
-  match:
-  - source: lom
-    id: figure
-    rel: exactMatch
   scope: 图像：照片、插图等非示意性的图
   status: unassigned
   added: 2026-08-23
+  match: []
 - id: graph
   label:
     en: Graph
@@ -82,13 +82,10 @@ forms:
         locator: graph
   arrays:
   - forms-presentation
-  match:
-  - source: lom
-    id: graph
-    rel: exactMatch
   scope: 图表：数据的图形化呈现
   status: unassigned
   added: 2026-08-23
+  match: []
 - id: index
   label:
     en: Index
@@ -108,13 +105,10 @@ forms:
         locator: index
   arrays:
   - forms-presentation
-  match:
-  - source: lom
-    id: index
-    rel: exactMatch
   scope: 索引：按条目指向位置的查找表
   status: unassigned
   added: 2026-08-23
+  match: []
 - id: slide
   label:
     en: Slide
@@ -134,13 +128,10 @@ forms:
         locator: slide
   arrays:
   - forms-presentation
-  match:
-  - source: lom
-    id: slide
-    rel: exactMatch
   scope: 幻灯片式的分页呈现
   status: unassigned
   added: 2026-08-23
+  match: []
 - id: table
   label:
     en: Table
@@ -160,13 +151,10 @@ forms:
         locator: table
   arrays:
   - forms-presentation
-  match:
-  - source: lom
-    id: table
-    rel: exactMatch
   scope: 表：按行列组织的数据
   status: unassigned
   added: 2026-08-23
+  match: []
 - id: narrative-text
   label:
     en: Narrative text
@@ -186,13 +174,10 @@ forms:
         locator: narrative text
   arrays:
   - forms-presentation
-  match:
-  - source: lom
-    id: narrative text
-    rel: exactMatch
   scope: 连续的叙述性正文
   status: unassigned
   added: 2026-08-23
+  match: []
 - id: exercise
   label:
     en: Exercise
@@ -212,13 +197,10 @@ forms:
         locator: exercise
   arrays:
   - forms-activity
-  match:
-  - source: lom
-    id: exercise
-    rel: exactMatch
   scope: 练习：供读者动手完成的题
   status: unassigned
   added: 2026-08-23
+  match: []
 - id: simulation
   label:
     en: Simulation
@@ -238,13 +220,10 @@ forms:
         locator: simulation
   arrays:
   - forms-activity
-  match:
-  - source: lom
-    id: simulation
-    rel: exactMatch
   scope: 模拟：可操作的仿真环境
   status: unassigned
   added: 2026-08-23
+  match: []
 - id: questionnaire
   label:
     en: Questionnaire
@@ -264,13 +243,10 @@ forms:
         locator: questionnaire
   arrays:
   - forms-activity
-  match:
-  - source: lom
-    id: questionnaire
-    rel: exactMatch
   scope: 问卷：一组供填答的问题
   status: unassigned
   added: 2026-08-23
+  match: []
 - id: exam
   label:
     en: Exam
@@ -290,13 +266,10 @@ forms:
         locator: exam
   arrays:
   - forms-activity
-  match:
-  - source: lom
-    id: exam
-    rel: exactMatch
   scope: 考试：有评分的测验
   status: unassigned
   added: 2026-08-23
+  match: []
 - id: experiment
   label:
     en: Experiment
@@ -316,13 +289,10 @@ forms:
         locator: experiment
   arrays:
   - forms-activity
-  match:
-  - source: lom
-    id: experiment
-    rel: exactMatch
   scope: 实验：按步骤操作并观察结果
   status: unassigned
   added: 2026-08-23
+  match: []
 - id: problem-statement
   label:
     en: Problem statement
@@ -342,13 +312,10 @@ forms:
         locator: problem statement
   arrays:
   - forms-activity
-  match:
-  - source: lom
-    id: problem statement
-    rel: exactMatch
   scope: 问题陈述：只给出问题、不给解法
   status: unassigned
   added: 2026-08-23
+  match: []
 - id: self-assessment
   label:
     en: Self assessment
@@ -368,13 +335,10 @@ forms:
         locator: self assessment
   arrays:
   - forms-activity
-  match:
-  - source: lom
-    id: self assessment
-    rel: exactMatch
   scope: 自测：读者自行评估掌握程度的题
   status: unassigned
   added: 2026-08-23
+  match: []
 - id: lecture
   label:
     en: Lecture
@@ -394,13 +358,10 @@ forms:
         locator: lecture
   arrays:
   - forms-activity
-  match:
-  - source: lom
-    id: lecture
-    rel: exactMatch
   scope: 讲授：面向听众的讲解
   status: unassigned
   added: 2026-08-23
+  match: []
 - id: cheat-sheet
   label:
     en: Cheat sheet
@@ -420,10 +381,15 @@ forms:
         locator: Q2309859
   arrays:
   - forms-presentation
-  match:
-  - source: wikidata
-    id: Q2309859
-    rel: exactMatch
   scope: 速查表：供快速参考的简明笔记集；LOM 无此项，据 Wikidata
   status: unassigned
   added: 2026-08-23
+  match:
+  - registry: wikidata
+    item: Q2309859
+    rel: exactMatch
+    basis:
+    - entity: wikidata
+      locator: https://www.wikidata.org/w/index.php?title=Q2309859&oldid=2485488116；labels/descriptions、P31/P279、P856
+      checked: '2026-09-06'
+schema_version: 2

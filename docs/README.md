@@ -13,7 +13,7 @@
 | 审计材料 | `data/audit/` | 保存迁移账本、维护记录和复核材料，不批准正式值 |
 | 执行记录 | `work/` | 保存路线、计划、复核与历史过程材料，不属于项目设计 |
 
-当前基础边界见[当前阶段](decisions/current-stage-scope.md)，本次来源迁移的开放范围与 Git 恢复方式见[来源执行](decisions/source-execution-boundary.md)，最新取证顺序见[来源核对取舍](decisions/source-evidence-priority.md)。monorepo 的目录、包和输出边界见[仓库布局](decisions/monorepo-layout.md)。
+来源与术语基础的原范围见[当前阶段](decisions/current-stage-scope.md)；来源 v2 数据和严格接口已按[来源收尾](decisions/source-completion.md)实施，该决定覆盖原迁移阻断与本批数组处置。17 条未核映射只作隔离审计，实际对象保留；正式义务、持久正式索引、正式消费者及术语激活仍未发生。本次迁移的开放范围与 Git 恢复方式见[来源执行](decisions/source-execution-boundary.md)，取证顺序见[来源核对取舍](decisions/source-evidence-priority.md)。monorepo 的目录、包和输出边界见[仓库布局](decisions/monorepo-layout.md)。
 
 ## 设计入口
 
@@ -24,7 +24,7 @@
 | 主题 | [主题词表](design/model/topics.md) | 正式主题词表、生成路径与校验规则 |
 | 层级 | [层级结构](design/model/hierarchy.md) | 树、多层级、数组与结构来源 |
 | 实体 | [命名实体](design/model/entities.md) | 个体、来源实体和现行数据边界 |
-| 来源 | [来源登记](design/model/sources-registry.md) | 正式来源用途与未激活基础的边界 |
+| 来源 | [来源登记](design/model/sources-registry.md) | 来源 v2 数据、已采纳用途与未激活消费者的边界 |
 | 内容 | [内容模型](design/model/content-model.md) | 内容单元字段、状态、身份与引用 |
 | 治理 | [治理规则](design/governance/governance.md) | 对象效力、决策权、变更与验收 |
 | 维护 | [维护规则](design/governance/maintenance.md) | 指标、触发、动作、复核与审计 |

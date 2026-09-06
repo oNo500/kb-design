@@ -127,6 +127,40 @@ def walk_decision_ids(front):
     return rows
 
 
+def visit_record_decisions(relative: Path, document: object) -> List[Dict[str, str]]:
+    """Index declared decisions without treating audit snapshots as current data."""
+    if not isinstance(document, dict):
+        return []
+    contexts = {
+        "data/vocab/entities.yaml": ("entities", "entity"),
+        "data/vocab/sources.yaml": ("sources", "source_use"),
+        "data/vocab/forms.yaml": ("arrays", "arrays"),
+    }
+    context = contexts.get(str(relative))
+    if context is None:
+        return []
+    collection, record_kind = context
+    rows = []
+    for index, record in enumerate(document.get(collection, [])):
+        if not isinstance(record, dict):
+            continue
+        if collection == "arrays":
+            local = record.get("local_analysis")
+            if not isinstance(local, dict):
+                continue
+            references = [(f"local_analysis.{path}", decision, "local_analysis.decision")
+                          for path, decision in walk_decision_ids({"decision": local.get("decision")})]
+        else:
+            references = [(path, decision, "history.decision")
+                          for path, decision in walk_decision_ids({"history": record.get("history", [])})]
+        for field_path, decision_id, reference_kind in references:
+            rows.append(index_row(
+                "decision", decision_id, reference_kind, relative,
+                f"{record_kind}:{record.get('id', index)}", f"{collection}[{index}].{field_path}",
+            ))
+    return rows
+
+
 def visit_decisions(root: Path) -> List[Dict[str, str]]:
     directory = root / "docs/decisions"
     if not directory.exists():
@@ -225,6 +259,7 @@ def build_reference_index(root: Path) -> Dict[str, object]:
         document = load_yaml_or_json(path)
         relative = path.relative_to(root)
         entries.extend(visit_language_basis(relative, document))
+        entries.extend(visit_record_decisions(relative, document))
         entries.extend(
             visit_reference_use(use)
             for use in collect_reference_uses(relative, document)

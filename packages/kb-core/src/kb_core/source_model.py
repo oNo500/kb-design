@@ -1107,9 +1107,14 @@ def _entity_semantic_issues(topics_doc, entities_doc, uses_doc, obligations_doc,
         if entity not in entities or entities[entity].get("kind") not in {"standard", "publication"}:
             issues.append(Issue("SOURCE_ENTITY_MISSING", "data/vocab/sources.yaml", uid, "entity", "use must reference a source entity"))
         source_entity = entities.get(entity, {})
-        if source_entity.get("tier") == "archival":
+        # Preserved candidate discovery is registration, not actual-use qualification.
+        proposed_discovery_only = bool(use.get("roles")) and all(
+            role == {"role": "discovery", "status": "proposed", "decision": None}
+            for role in use.get("roles", [])
+        )
+        if source_entity.get("tier") == "archival" and not proposed_discovery_only:
             issues.append(Issue("SOURCE_SCHEMA_INVALID", "data/vocab/sources.yaml", uid, "entity",
-                                "archival source cannot be registered for source uses"))
+                                "archival source permits only proposed discovery registration"))
         for role in use.get("roles", []):
             if isinstance(role, dict) and role.get("role") in {"structure", "group"} and role.get("status") == "approved":
                 qualification = dependent_role_qualification_error(source_entity, use, accepted, role["role"])
@@ -1169,7 +1174,8 @@ def _record_evidence_issues(relative, document, sources, adoptions, accepted):
                 else:
                     messages = validate_basis(value, (record.get("label") or {}).get(language),
                                               record, language, sources, adoptions,
-                                              collection="topics" if collection == "concepts" else collection)
+                                              collection="topics" if collection == "concepts" else collection,
+                                              accepted_decisions=accepted)
                 issues.extend(Issue("SOURCE_SCHEMA_INVALID", str(relative), identity,
                                     "basis." + language, message) for message in messages)
     return issues

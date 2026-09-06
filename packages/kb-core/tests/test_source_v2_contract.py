@@ -148,6 +148,45 @@ class SourceV2ContractTests(unittest.TestCase):
                 if mutation == 'unversioned-de-facto': entity['version'] = None
             self.assertTrue(any(issue.file == 'data/vocab/sources.yaml' for issue in validate_source_documents(changed, decisions)), mutation)
 
+    def test_archival_preserves_only_proposed_discovery_without_use_qualification(self):
+        from kb_core.source_model import validate_source_documents, validate_reference_documents, ReferenceUse
+        documents = copy.deepcopy(self.docs)
+        decisions = {'source-approval': copy.deepcopy(self.decision)}
+        entity = documents['entities']['entities'][0]
+        entity['tier'] = 'archival'
+        entity['review'].update(interval_months=None, next_due=None)
+        use = documents['sources']['sources'][0]
+        discovery = {'role': 'discovery', 'status': 'proposed', 'decision': None}
+        use['roles'] = [discovery]
+        self.assertEqual([], validate_source_documents(documents, decisions))
+
+        for role in ('mapping', 'structure', 'group', 'discovery'):
+            with self.subTest(role=role):
+                changed = copy.deepcopy(documents)
+                status = 'approved' if role == 'discovery' else 'proposed'
+                changed['sources']['sources'][0]['roles'] = [
+                    {'role': role, 'status': status,
+                     'decision': 'source-approval' if status == 'approved' else None}]
+                decisions['source-approval']['answers'][0]['patches'].append(
+                    {'identity': f'sources/registry/roles/{role}', 'field': 'status', 'value': status})
+                self.assertTrue(any(issue.code == 'SOURCE_SCHEMA_INVALID' and
+                                    issue.file == 'data/vocab/sources.yaml'
+                                    for issue in validate_source_documents(changed, decisions)))
+                changed['sources']['sources'][0]['roles'].append(discovery)
+                self.assertTrue(any(issue.code == 'SOURCE_SCHEMA_INVALID' and
+                                    issue.file == 'data/vocab/sources.yaml'
+                                    for issue in validate_source_documents(changed, decisions)))
+
+        basis = [{'entity': 'standard', 'locator': 'section 1', 'checked': '2026-09-05'}]
+        for kind in ('source', 'match', 'external_group'):
+            with self.subTest(reference=kind):
+                value = {'registry': 'registry', 'item': '1', 'basis': basis}
+                value.update({'rel': 'exactMatch'} if kind == 'match' else {'locator': 'section 1'})
+                issues = validate_reference_documents(documents['entities'], documents['sources'],
+                    [ReferenceUse(kind, 'data/vocab/topics.yaml', 'topic', kind, value)], decisions)
+                expected = 'SOURCE_EXTERNAL_GROUP_ROLE_NOT_APPROVED' if kind == 'external_group' else 'SOURCE_ROLE_NOT_APPROVED'
+                self.assertIn(expected, {issue.code for issue in issues})
+
     def test_group_requires_its_own_authorized_mapping(self):
         from kb_core.source_model import validate_source_documents
         for mutation in ('missing', 'borrowed'):

@@ -56,7 +56,17 @@ def _topic_records(snapshot: DesignSnapshot) -> dict[str, dict[str, object]]:
             raise ApplicationError("design collection topics.concepts has an invalid record")
         identifier = concept.get("id")
         status = concept.get("status")
-        source = concept.get("source")
+        derivation = concept.get("source")
+        assertions = concept.get("assertions", {})
+        assertion = assertions.get("source") if isinstance(assertions, Mapping) else None
+        if isinstance(derivation, Mapping) and isinstance(derivation.get("registry"), str):
+            source = derivation["registry"]
+        elif (derivation is None and isinstance(assertion, Mapping)
+              and assertion.get("disposition") == "project_assertion"
+              and assertion.get("original") == "self"):
+            source = "self"
+        else:
+            raise ApplicationError(f"formal topic source metadata is invalid: {concept.get('id')}")
         broader = concept.get("broader")
         if not isinstance(identifier, str) or not identifier:
             raise ApplicationError("formal topic has an invalid id")

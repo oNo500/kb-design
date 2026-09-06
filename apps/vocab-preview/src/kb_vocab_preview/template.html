@@ -131,6 +131,7 @@ function renderDetail(){
  h+=section('所属分组',listify(r.arrays).map(id=>refValue(n.cat,id,'arrays')));
  if(n.group==='arrays'){
   h+=section('上位对象',[refValue(n.cat,r.superordinate)]);
+  if(n.cat==='topics'&&(r.source||r.external_group))h+='<p class="muted">成员列表表示本地收录的主题，不表示来源分组的完整成员或原有顺序。</p>';
   h+=section('分组成员',ins.filter(e=>e.type==='group').map(e=>ref(byKey.get(e.a))));
  }else h+=section('下属分组',ins.filter(e=>e.type==='group'&&byKey.get(e.a).group==='arrays').map(e=>ref(byKey.get(e.a))));
  if(n.cat!=='entities')h+=section('关联主题',listify(r.subjects).map(id=>refValue('topics',id)));

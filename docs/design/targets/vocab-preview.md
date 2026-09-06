@@ -21,11 +21,11 @@
 | roles | 逐项展示角色、状态和决定 | proposed、approved、retired 不混同；来源卡片也显示状态与真实决定 ID |
 | 外部 basis | 字段、适用主题、来源实体与定位 | subjects 保留 values／references 分组；图中的依据边指向实体，不假造来源用途 |
 | assertions | 独立“项目判断”详情 | 保存 original、disposition、migration 和适用值，不生成外部依据边 |
-| source、match、external_group | 独立完整详情与来源用途链接 | 保存 registry、item、locator 或 rel 及相邻依据；外部分组使用 structure 含义 |
+| source、match、external_group | 独立完整详情与来源用途链接 | 保存 registry、item、locator 或 rel 及相邻依据；外部分组使用 structure 含义，不表示成员逐序完整复制 |
 | 载体数组 local_analysis | 独立“隔离记录”详情 | 保留旧显示字符串、isolated 状态及决定 ID，不形成来源图边、用途或有效本地分析 |
 | 语言 basis | 独立名称依据详情 | 保留等级、来源、模型判断与“外部用法未核实”；不把模型或 legacy 标记生成外部依据边 |
 
-主题层级允许多上位条目出现在多个分支；分组与上下位关系分别展示。关系图只画能够解析到现有对象的关系，不以图中缺边证明原数据没有引用。所有记录另有原始 YAML、输入哈希及读取时间；这些信息不是采纳凭证。
+主题层级允许多上位条目出现在多个分支；分组与上下位关系分别展示。关系图只画能够解析到现有对象的关系，不以图中缺边证明原数据没有引用。按[来源收尾](../../decisions/source-completion.md)隔离的 17 条旧 match 不在当前 YAML、映射详情和图边中，因而页面不提供这些历史关系的浏览与跳转；原值与结论须查决定隔离清单及 Git 历史。现有对象、标签、项目状态及其他关系仍显示。24 个数组的成员和顺序表示项目选择，SPD-SEP 缺项及顺序差异没有被外部分组依据消除。所有记录另有原始 YAML、输入哈希及读取时间；这些信息不是采纳凭证。
 
 ## 实时行为
 

@@ -286,6 +286,9 @@ def _validate_record(
     relative_path: str,
     collection: str,
     record: Mapping[str, Any],
+    *,
+    adoptions=None,
+    accepted_decisions=None,
 ) -> None:
     object_id = str(record.get("id", "<missing-id>"))
     record_path = f"{collection}[{object_id}]"
@@ -353,7 +356,8 @@ def _validate_record(
                 raise _error(relative_path, object_id, path, "model requires structured language evidence")
             if collection != "entities" and field in ("zh", "en") and isinstance(basis, dict):
                 errors = validate_basis(basis, record.get("label", {}).get(field), record,
-                                        field, None, collection=name)
+                                        field, None, adoptions, collection=name,
+                                        accepted_decisions=accepted_decisions)
                 if errors:
                     raise _error(relative_path, object_id, path, "; ".join(errors))
             elif isinstance(basis, list):
@@ -438,6 +442,10 @@ def load_repository(
     """Load and validate the six formal vocabulary documents."""
 
     snapshot = input_bytes if input_bytes is not None else _read_repository_inputs(repo_root)
+    try:
+        decisions, obligations, adoptions = _parse_support_inputs(snapshot)
+    except (ValueError, UnicodeError, yaml.YAMLError) as exc:
+        raise ExportError(f"invalid source support document: {exc}") from exc
     documents: dict[str, dict] = {}
     for name, (relative_path, allowed_top) in _FILES.items():
         try:
@@ -484,14 +492,11 @@ def load_repository(
                 if object_id in seen:
                     raise _error(relative_path, object_id, f"{collection}[{object_id}].id", "duplicate stable ID")
                 seen.add(object_id)
-                _validate_record(name, relative_path, collection, record)
+                _validate_record(name, relative_path, collection, record,
+                                 adoptions=adoptions, accepted_decisions=decisions)
         documents[name] = document
 
-    _validate_references(documents)
-    try:
-        decisions, obligations, adoptions = _parse_support_inputs(snapshot)
-    except (ValueError, UnicodeError, yaml.YAMLError) as exc:
-        raise ExportError(f"invalid source support document: {exc}") from exc
+    _validate_references(documents, adoptions=adoptions, accepted_decisions=decisions)
     issues = source_model.validate_source_documents(documents, decisions, obligations, adoptions)
     if issues:
         issue = issues[0]
@@ -529,7 +534,7 @@ def _require_targets(
             )
 
 
-def _validate_references(documents: Mapping[str, dict]) -> None:
+def _validate_references(documents: Mapping[str, dict], *, adoptions=None, accepted_decisions=None) -> None:
     topics = _index(documents["topics"]["concepts"])
     arrays = _index(documents["topics"]["arrays"])
     entities = _index(documents["entities"]["entities"])
@@ -577,7 +582,8 @@ def _validate_references(documents: Mapping[str, dict]) -> None:
                 for language, basis in record.get("basis", {}).items():
                     if language in ("zh", "en") and isinstance(basis, dict):
                         errors = validate_basis(basis, record["label"].get(language), record,
-                                                language, sources, collection=name)
+                                                language, sources, adoptions, collection=name,
+                                                accepted_decisions=accepted_decisions)
                         if errors:
                             raise _error(relative_path, str(record["id"]),
                                          f"{collection}[{record['id']}].basis.{language}", "; ".join(errors))
@@ -830,6 +836,8 @@ def _render_array(
         "",
         "本记录表示主题树内的分组，不改变成员主题的概念身份。",
     ]
+    if record.get("source") or record.get("external_group"):
+        body.extend(("", "成员列表表示本地收录的主题，不表示来源分组的完整成员或原有顺序。"))
     return _note(properties, body + _common_body(record)[1:])
 
 

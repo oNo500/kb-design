@@ -2,7 +2,7 @@
 
 `data/vocab/sources.yaml` 以稳定 id 登记来源用途，entity 指向[命名实体词表](entities.md)中的来源实体。名称、类别、档级、版本、地址与外部状态留在实体表，不重复保存。理论见[词表映射](../../concepts/vocabulary-mapping.md)与[知识体系](../../concepts/body-of-knowledge.md)。
 
-本文采用已采纳的[来源字段合同](../../decisions/source-v2-field-contract.md)。正式来源数据及其引用尚未完成迁移；新合同、工具与字段采纳不等于完整记录、角色、关系或正式切换获准。严格入口只接受 v2，旧格式仅由 Git 和迁移审计保留。
+本文采用已采纳的[来源字段合同](../../decisions/source-v2-field-contract.md)。具体数据及引用按[来源收尾](../../decisions/source-completion.md)的列明范围实施；新合同与工具不扩大记录、角色、关系的采纳范围，也不表示正式切换获准。严格入口只接受 v2，旧格式仅由 Git 和迁移审计保留。
 
 ## 对象分工
 
@@ -31,9 +31,9 @@ id 与 entity 保持现有一对一关系，entity 必须指向 kind 为 standar
 
 role 的 status 只取 proposed、approved、retired。proposed 的 decision 为 null；approved 或 retired 必须指向确实批准该对象、角色与状态的已采纳决定。旧 mapping、structure、group 不自动升级；旧 candidate 转为 proposed discovery，不产生概念、名称或试用资格。
 
-现有用途的适用限制继续保留：structure 同时要求 mapping，并受[层级结构](hierarchy.md)的来源选择、复制深度与同一视角规则约束；来源为 de-jure 或有版本号的 de-facto。无版本 de-facto 和 vendor 不因格式迁移取得结构用途，archival 也不因此取得用途。group 继续要求 mapping，只使用本库已有映射；它不由一条映射或消费者使用自动批准。任何适用范围扩展均须另行决定。
+现有用途的适用限制继续保留：structure 同时要求 mapping，并受[层级结构](hierarchy.md)的来源选择、复制深度与同一视角规则约束；来源为 de-jure 或有版本号的 de-facto。无版本 de-facto 和 vendor 不因格式迁移取得结构用途，archival 只可保留 proposed discovery，不具备任何 approved 用途。group 继续要求 mapping，只使用本库已有映射；它不由一条映射或消费者使用自动批准。任何适用范围扩展均须另行决定。
 
-当前来源清单以[正式数据](../../../data/vocab/sources.yaml)为准；该文件的旧角色并不是新合同中的 approved。tier 决定档级与复核周期，不决定外部状态或角色批准。按[来源数据批次](../../decisions/source-data-batch.md)，source_status 可省略，version 必有但可为 null；前者表示外部状态未核实，后者表示未登记可核实版本。它们不批准任何用途，无版本 de-facto 的 structure 限制保持。
+当前来源清单以[正式数据](../../../data/vocab/sources.yaml)为准；角色须有新合同中的状态与对应决定，旧角色字符串本身不是 approved。tier 决定档级与复核周期，不决定外部状态或角色批准。按[来源数据批次](../../decisions/source-data-batch.md)，source_status 可省略，version 必有但可为 null；前者表示外部状态未核实，后者表示未登记可核实版本。它们不批准任何用途，无版本 de-facto 的 structure 限制保持。
 
 ## 严格引用
 
@@ -56,7 +56,7 @@ source_status 缺省不自动否定具体历史或固定材料，也不批准其
 
 载体数组按[来源迁移](../../decisions/source-migration-policy.md) Q16 保存 local_analysis，字段为 legacy_source_label、state: isolated、decision。decision 指向批准本地分析隔离的决定；原标签、父项与成员保留，不转换为 external_group，不新建来源或划分特征。该记录只保存既有本地分析，不进入外部来源索引。
 
-外部数组的 external_group 与成员的 source 分别核对。CS2023 主派生与补充来源、match 按 Q14 分开；RFC 层次按 Q17 逐层保存依据。派生概念组仍是已有映射的确定性视图，不能显示尚未建立的缺口、创建概念或替代结构复制。
+外部数组的 external_group 与成员的 source 分别核对。[来源收尾](../../decisions/source-completion.md)保留本批 24 个既有数组的成员和顺序，作为项目选择；external_group 只证明外部组身份，不证明成员逐序完整复制。SPD-SEP 缺项和已有顺序差异留待复核，不由此次采纳新建概念或改变父项。未来新借入仍受原结构复制规则约束。CS2023 主派生与补充来源、match 按 Q14 分开；RFC 层次按 Q17 逐层保存依据。派生概念组仍是已有映射的确定性视图，不能显示尚未建立的缺口、创建概念或替代结构复制。
 
 ## 映射关系
 
@@ -74,9 +74,9 @@ source_status 缺省不自动否定具体历史或固定材料，也不批准其
 
 ## 实施边界
 
-schema、严格校验、反向索引、迁移准备和应用表示按同一合同实施。旧紧凑依据、旧 source、旧 match、role 字符串数组和标量 watch 不进入正式新快照；未核对必需事实阻断对应转换，不通过丢字段、补空证明或改状态解除。
+schema、严格校验、反向索引、迁移准备和应用表示按同一合同实施。旧紧凑依据、旧 source、旧 match、role 字符串数组和标量 watch 不进入正式新快照；未核对必需事实原则上阻断对应转换，不通过丢字段、补空证明或改状态解除。[来源收尾](../../decisions/source-completion.md)只为明确列出的 17 条 match 采纳隔离处置：15 条 LOM 映射以及 Advice、reference → TechArticle 不进入正式 match，原关系及未核结论留在决定隔离清单和 Git 历史。对象、标签、项目状态及其他关系保持；这不批准旧格式兼容或其他缺失事实的省略。
 
-反向索引只提供影响位置，不作修改结论。项目判断、本地分析与历史 before／after 不产生正式外部引用边。历史来源账本保留原基线与哈希，当前变化另行记录，不重写旧账本为已批准。
+反向索引只提供影响位置，不作修改结论。隔离关系不产生正式引用边；索引中没有这些边不表示历史上没有关系。项目判断、本地分析与历史 before／after 不产生正式外部引用边。历史来源账本保留原基线与哈希，当前变化另行记录，不重写旧账本为已批准。
 
 来源探测的固定 HEAD／GET 夹具只提供信号，live 与正式周期运行没有因本合同开放；观察不回写状态、日期或依据。来源复核义务接口不能凭空创建正式义务、目标或解决结论。术语正式激活与来源迁移分开。
 

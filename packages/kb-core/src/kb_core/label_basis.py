@@ -79,11 +79,29 @@ def source_references(value, record=None):
             and ref['source'] not in _MARKERS and _text(ref.get('locator'))]
 
 
-def validate_basis(value, label, record, language, sources, decisions=None, collection='topics'):
+def _scope_correction_authorized(accepted_decisions, collection, record, original_scope):
+    """Match a captured effective decision without rewriting label history."""
+    if collection != 'topics' or not accepted_decisions:
+        return False
+    from kb_core.source_model import decision_authorizes
+    identity = 'topics/concepts/{}'.format(record.get('id', '?'))
+    current_scope = record.get('scope')
+    correction = {'before': original_scope, 'after': current_scope}
+    return any(
+        decision_authorizes(accepted_decisions, decision_id, identity, 'scope', current_scope)
+        and decision_authorizes(accepted_decisions, decision_id, identity, 'scope.correction', correction)
+        for decision_id in accepted_decisions
+    )
+
+
+def validate_basis(value, label, record, language, sources, decisions=None, collection='topics',
+                   *, accepted_decisions=None):
     """Return all detectable evidence/adoption errors, without modifying inputs.
 
     ``decisions=None`` permits standalone display/export validation. Supplying a
     mapping (including an empty one) requires exact accepted model adoption.
+    ``accepted_decisions`` is the caller's captured effective source-decision map.
+    It permits only exact scope corrections; adoption snapshots remain immutable.
     ``sources=None`` checks shape only, before a source registry is loaded.
     Distinct level-4 source IDs are necessary, not proof of independence.
     """
@@ -195,7 +213,9 @@ def validate_basis(value, label, record, language, sources, decisions=None, coll
                 else:
                     if original['en'] != (record.get('label') or {}).get('en'):
                         error('采纳记录原英文已过期')
-                    if original['scope'] != record.get('scope'):
+                    if (original['scope'] != record.get('scope')
+                            and not _scope_correction_authorized(accepted_decisions, collection,
+                                                                 record, original['scope'])):
                         error('采纳记录原 scope 已过期')
     else:
         if set(normalized) != {'level', 'reason'} or not _text(normalized.get('reason')):

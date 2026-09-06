@@ -172,3 +172,137 @@ class ReferenceMigrationTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, f'topics/concepts/alpha.{field}'):
                     migration.migrate_reference_document(self.root, 'topics', original, inputs)
                 self.assertEqual(value, original['concepts'][0][field])
+
+    def completion_fixture(self, isolate=False, correct=False):
+        identity = 'topics/concepts/alpha'
+        old = [{'source': 'register', 'id': item, 'rel': 'exactMatch'} for item in ('A', 'B')]
+        new = [{'registry': 'register', 'item': item, 'rel': 'exactMatch',
+                'basis': [{'entity': 'publisher', 'locator': 'section', 'checked': '2026-09-05'}]}
+               for item in ('A', 'B')]
+        self.original['concepts'][0]['match'] = old
+        entry = self.inputs['records'][identity]
+        entry['before']['match'] = copy.deepcopy(old)
+        if isolate:
+            new = new[1:]
+        if correct:
+            new[0]['item'] = 'corrected'
+            new[0]['rel'] = 'closeMatch'
+        entry['after']['match'] = new
+        entry['evidence']['match'] = {'reviewed': True, 'decision': 'completion'}
+        patches = [{'identity': identity, 'field': 'match', 'value': copy.deepcopy(new)}]
+        if isolate:
+            entry['evidence']['match']['isolated'] = [0]
+            patches.append({'identity': identity, 'field': 'match[0].isolation', 'value': copy.deepcopy(old[0])})
+        if correct:
+            patches.append({'identity': identity, 'field': 'match[0].correction',
+                            'value': {'before': copy.deepcopy(old[0]), 'after': copy.deepcopy(new[0])}})
+        patches.extend([{'identity': 'sources/register', 'field': 'entity', 'value': 'publisher'},
+                        {'identity': 'sources/register/roles/mapping', 'field': 'status', 'value': 'approved'}])
+        (self.root / 'data/vocab/entities.yaml').write_text(yaml.safe_dump({'schema_version': 2,
+            'entities': [{'id': 'publisher', 'kind': 'publication', 'tier': 'de-jure'}]}))
+        (self.root / 'data/vocab/sources.yaml').write_text(yaml.safe_dump({'schema_version': 2,
+            'sources': [{'id': 'register', 'entity': 'publisher', 'roles': [
+                {'role': 'mapping', 'status': 'approved', 'decision': 'completion'}]}]}))
+        self.write_completion(patches)
+        return entry, patches
+
+    def write_completion(self, patches, identifier='completion', status='accepted'):
+        decision = decision_document(identifier, patches)
+        decision['status'] = status
+        (self.root / f'docs/decisions/source-{identifier}.md').write_text('---\n' + yaml.safe_dump(decision) + '---\n')
+
+    def test_isolation_preserves_retained_mapping_and_requires_exact_same_decision(self):
+        entry, patches = self.completion_fixture(isolate=True)
+        result = migration.migrate_reference_document(self.root, 'topics', self.original, self.inputs)
+        self.assertEqual(entry['after']['match'], result['concepts'][0]['match'])
+        self.assertEqual(2, len(self.original['concepts'][0]['match']))
+        self.write_completion([p for p in patches if p['field'] != 'match[0].isolation'])
+        self.write_completion([p for p in patches if p['field'] == 'match[0].isolation'], 'borrowed')
+        with self.assertRaisesRegex(ValueError, 'isolation'):
+            migration.migrate_reference_document(self.root, 'topics', self.original, self.inputs)
+
+    def test_isolation_rejects_forgery_bad_indices_and_unapproved_deletion(self):
+        entry, patches = self.completion_fixture(isolate=True)
+        for indices in ([True], [0, 0], [-1], [2], ['0'], None, []):
+            with self.subTest(indices=indices):
+                entry['evidence']['match']['isolated'] = indices
+                with self.assertRaises(ValueError):
+                    migration.migrate_reference_document(self.root, 'topics', self.original, self.inputs)
+        entry['evidence']['match']['isolated'] = [0]
+        patches[1]['value']['id'] = 'forged'
+        self.write_completion(patches)
+        with self.assertRaisesRegex(ValueError, 'isolation'):
+            migration.migrate_reference_document(self.root, 'topics', self.original, self.inputs)
+
+    def test_correction_requires_exact_before_after_permission(self):
+        entry, patches = self.completion_fixture(correct=True)
+        result = migration.migrate_reference_document(self.root, 'topics', self.original, self.inputs)
+        self.assertEqual(entry['after']['match'], result['concepts'][0]['match'])
+        patches[1]['value']['before']['id'] = 'stale'
+        self.write_completion(patches)
+        with self.assertRaisesRegex(ValueError, 'mapping identity'):
+            migration.migrate_reference_document(self.root, 'topics', self.original, self.inputs)
+
+    def test_scope_correction_preserves_language_history_and_refuses_stale_scope(self):
+        entry = self.inputs['records']['topics/concepts/alpha']
+        entry['before']['scope'] = None
+        entry['after']['scope'] = 'Corrected scope'
+        entry['evidence']['scope'] = {'reviewed': True, 'decision': 'completion'}
+        self.write_completion([{'identity': 'topics/concepts/alpha', 'field': 'scope', 'value': 'Corrected scope'}])
+        result = migration.migrate_reference_document(self.root, 'topics', self.original, self.inputs)
+        self.assertEqual('Corrected scope', result['concepts'][0]['scope'])
+        self.assertEqual(self.original['concepts'][0]['basis'], result['concepts'][0]['basis'])
+        self.original['concepts'][0]['scope'] = 'Changed since approval'
+        with self.assertRaisesRegex(ValueError, 'stale'):
+            migration.migrate_reference_document(self.root, 'topics', self.original, self.inputs)
+
+    def test_complete_isolation_retains_empty_match_and_needs_whole_field_grant(self):
+        entry, patches = self.completion_fixture(isolate=True)
+        entry['evidence']['match']['isolated'] = [0, 1]
+        entry['after']['match'] = []
+        patches[0]['value'] = []
+        patches.append({'identity': 'topics/concepts/alpha', 'field': 'match[1].isolation',
+                        'value': copy.deepcopy(entry['before']['match'][1])})
+        self.write_completion(patches)
+        result = migration.migrate_reference_document(self.root, 'topics', self.original, self.inputs)
+        self.assertEqual([], result['concepts'][0]['match'])
+        self.write_completion(patches[1:])
+        with self.assertRaisesRegex(ValueError, 'missing reviewed field adoption'):
+            migration.migrate_reference_document(self.root, 'topics', self.original, self.inputs)
+        self.write_completion(patches)
+        del entry['after']['match']
+        with self.assertRaisesRegex(ValueError, 'mapping identity'):
+            migration.migrate_reference_document(self.root, 'topics', self.original, self.inputs)
+
+    def test_whole_field_grant_cannot_reorder_retained_matches_or_approve_invalid_reference(self):
+        entry, patches = self.completion_fixture()
+        entry['after']['match'].reverse()
+        patches[0]['value'] = copy.deepcopy(entry['after']['match'])
+        self.write_completion(patches)
+        with self.assertRaisesRegex(ValueError, 'mapping identity'):
+            migration.migrate_reference_document(self.root, 'topics', self.original, self.inputs)
+        entry['after']['match'].reverse()
+        entry['after']['match'][0]['basis'] = []
+        patches[0]['value'] = copy.deepcopy(entry['after']['match'])
+        self.write_completion(patches)
+        with self.assertRaisesRegex(ValueError, 'match'):
+            migration.migrate_reference_document(self.root, 'topics', self.original, self.inputs)
+
+    def test_isolation_draft_and_borrowed_target_grants_are_not_authority(self):
+        entry, patches = self.completion_fixture(isolate=True)
+        self.write_completion(patches, status='draft')
+        with self.assertRaisesRegex(ValueError, 'isolation'):
+            migration.migrate_reference_document(self.root, 'topics', self.original, self.inputs)
+        patches[1]['identity'] = 'topics/concepts/other'
+        self.write_completion(patches)
+        with self.assertRaisesRegex(ValueError, 'isolation'):
+            migration.migrate_reference_document(self.root, 'topics', self.original, self.inputs)
+
+    def test_scope_correction_requires_own_exact_field_adoption(self):
+        entry = self.inputs['records']['topics/concepts/alpha']
+        entry['before']['scope'] = None
+        entry['after']['scope'] = 'Corrected scope'
+        entry['evidence']['scope'] = {'reviewed': True, 'decision': 'completion'}
+        self.write_completion([{'identity': 'topics/concepts/alpha', 'field': 'scope', 'value': 'Other scope'}])
+        with self.assertRaisesRegex(ValueError, 'scope: missing reviewed field adoption'):
+            migration.migrate_reference_document(self.root, 'topics', self.original, self.inputs)

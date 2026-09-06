@@ -13,7 +13,7 @@
 | 对象 | 在哪 | 生命周期／验收 |
 |---|---|---|
 | 主题词表、命名实体词表、文档类型词表 | `data/vocab/topics.yaml`、`data/vocab/entities.yaml`、`data/vocab/types.yaml` | 状态机见各词表设计；校验见[维护](maintenance.md) |
-| 来源名称规范表 | `data/vocab/sources.yaml` | [来源名称规范表](../model/sources-registry.md)；当前仍是旧正式形状 |
+| 来源名称规范表 | `data/vocab/sources.yaml` | [来源用途登记](../model/sources-registry.md)；v2 角色、状态和决定作用范围按来源收尾采纳 |
 | 词表的生成输入 | `data/inputs/topics/` | 修改生成输入等同修改数据，适用相应词表规则 |
 | 变更记录与指标快照 | `data/vocab/CHANGELOG.md`、`data/audit/maintenance/signals.yaml` | 只追加；见[维护](maintenance.md)的审计追踪 |
 | 来源 | `data/vocab/entities.yaml` 中 `kind` 为 standard／publication 的实体 | 现行 `tier` 与复核见[维护](maintenance.md) |
@@ -28,19 +28,19 @@
 | 知识库内容 | 在别处 | [内容模型](../model/content-model.md)与各应用映射 |
 | 治理规则本身 | 本文 | 本文“治理评审” |
 
-正式 `data/vocab/entities.yaml`、`data/vocab/sources.yaml` 和 `data/vocab/topics.yaml` 继续决定当前数据形状。语言依据按[已采纳决定](../../decisions/structured-label-basis.md)结构化并补齐本批缺失中文；其他旧引用不因此切换为后置共享结构，既有标签、id、状态、`tier`、用途和关系不变。
+六份正式词表采用来源 v2 数据与严格共享引用；具体字段、角色、范围修正和关系按[来源收尾](../../decisions/source-completion.md)列明范围实施，不从 schema 允许推导批准。语言依据继续按[语言依据结构](../../decisions/structured-label-basis.md)独立管理，原采纳与 original.scope 不回写。现有对象、标签、id、状态与 tier 保留；24 个数组保留成员和顺序作为项目选择，17 条未核 match 留在决定隔离清单和 Git 历史，不再作为正式映射。
 
-现行 [Obsidian 映射](../targets/obsidian.md)按应用无关模型、`Application Profile` 语义选择和导出 artifact contract 分工。`kb-design` 单向导出六份正式词表，`apps/obsidian/` 中的 `kb-obsidian` 工具已实现新 vault 初始化、内容建立、只读校验和派生报告。生成文件可以在 Obsidian 中编辑，但修改不回流、不取得项目效力；本地持久 vault 当前没有实际用户内容，消费者没有正式激活，也没有可审计查询日志或回流接口。
+现行 [Obsidian 映射](../targets/obsidian.md)按应用无关模型、`Application Profile` 语义选择和导出 artifact contract 分工。`kb-design` 单向导出六份正式词表，`apps/obsidian/` 中的 `kb-obsidian` 工具已实现新 vault 初始化、内容建立、只读校验和派生报告。生成文件可以在 Obsidian 中编辑，但修改不回流、不取得项目效力；2026-09-05 已观察到正式 vault 有一条 draft 内容，该观察不表示正式消费者激活，也不提供可审计查询日志或回流接口。
 
 ### 能力边界
 
-以下基础已经实现，但没有接管正式数据。
+以下能力按各自已采纳范围实施。来源数据迁移、工具能力和正式消费者启用分别判断，不能因前一项完成而推导后一项。
 
 | 范围 | 已实现能力 | 未取得的效力 |
 |---|---|---|
-| 来源 | 六份 schema、共享来源模型、离线校验、反向索引、固定夹具探测、迁移预演和复核义务接口 | 没有正式来源 v2 数据、正式义务、正式索引、真实联网观察、具体角色批准或正式切换 |
+| 来源 | 六份 v2 词表、严格共享来源模型与校验、已采纳具体角色及引用、反向索引生成、固定夹具探测和复核义务接口 | 没有正式义务、持久正式索引、真实周期联网观察或正式消费者；本批数据实施不构成发版 |
 | 术语 | 三层候选模式、状态转换校验、确定性生成器、正文诊断、维护索引和复核义务接口 | 没有正式术语数据、义务、委托、消费者、切换状态或编辑权转移 |
-| Obsidian | 六份正式词表的单向参考导出、新 vault 初始化、UUIDv4 `draft` 建立、只读内容校验、派生报告、项目 manifest 和安全发布 | 没有实际用户内容、正式消费者、查询日志、回流、JCS、BagIt、reproducible build 或 durability 符合性与保证 |
+| Obsidian | 六份正式词表的单向参考导出、新 vault 初始化、UUIDv4 `draft` 建立、只读内容校验、派生报告、项目 manifest 和安全发布 | 没有正式消费者、查询日志、回流、JCS、BagIt、reproducible build 或 durability 符合性与保证 |
 
 来源探测的 `--live` 明确禁用，实际 JSONL 输出与探测 schema 尚未闭合。固定夹具只能证明只读行为和信号逻辑，不能确认真实来源状态。术语生成器和维护接口没有正式输入；测试夹具中的状态与消费者也不是仓库现状。
 
@@ -48,7 +48,7 @@
 
 ### 迁移边界
 
-`data/audit/migrations/source-v1/` 的六份账本保存来源旧身份、旧用途、旧 `basis`、旧 `source`、旧 `match`、旧 `origin` 的库存、分类和阻断。账本的推荐值、`proposed` 或处置不批准真实来源事实，不修改正式数据；既有预演只能作为已保存的历史结果，不能宣称当前 HEAD 可按原冻结输入重放。
+`data/audit/migrations/source-v1/` 的六份账本保存来源旧身份、旧用途、旧 `basis`、旧 `source`、旧 `match`、旧 `origin` 的库存、分类和阻断。账本的推荐值、`proposed` 或处置不批准真实来源事实；现行迁移取值由独立采纳决定授权，不能将旧账本改写为已批准。来源收尾决定保存 17 条未核映射的旧值和隔离结论，实际对象仍在正式词表中；隔离条目不产生正式引用边。既有预演只能作为已保存的历史结果，不能宣称当前 HEAD 可按原冻结输入重放。
 
 `data/audit/migrations/term-v1/terms.tsv` 的 348 条记录保存冻结审查结论和消费者去向。`audit-only`、`retain-owner`、`retain-pending-l3`、旧 `keep`、`defer` 或 `remove` 都不构成 designation 准入、概念对应、术语候选、删除许可或正式状态。
 
@@ -74,10 +74,10 @@
 | 整篇重写 | 改文章不打补丁；改动涉及一节以上时整节或整篇重写，并逐项核对旧版去向 | 本库的过程规则，见[写作规范](../../concepts/writing-conventions.md) | `AGENTS.md` |
 | 先用数据试 | 规则定稿前用真实数据跑一遍 | 本库的过程规则，来自已发生的失败 | 本文“审计” |
 | 验证投入 | 审查和测试按目标失败及后果配置；没有独有风险证据、已被更强门禁覆盖或只证明机械事实的检查不设计、不执行 | ISO 19011:2026 §4.7、§4.8；[决定记录](../../decisions/verification-effort.md) | 本文“验证投入” |
-| 范围决定顶层 | 顶层概念由范围声明决定；顶层之下按知识体系全借，借到有稳定编号的最深一层 | ISO 25964-1 §13.1；Z39.19 §11.1.3、§11.1.7、§11.1.8 | [层级结构](../model/hierarchy.md)规则 3–5 |
-| 原样复制 | 复制的结构原样保留，不拆不改；本地分析另建数组；同一视角只取一个来源 | [决定记录](../../decisions/borrow-and-analyze.md) | [层级结构](../model/hierarchy.md)规则 6、13 |
-| 结构来源资格 | 现行正式旧数据中，可作结构来源的实体必须具有正式 `structure` 用途，并为 `de-jure`，或为有版本号的 `de-facto`；`vendor` 只作映射。后置严格接口另要求经决定批准的角色，但尚未激活 | Z39.19 §5.3.5.2 组织依据；来源分级 | [来源名称规范表](../model/sources-registry.md) |
-| 映射来源登记 | 现行 `source`、`match.source`、语言依据的 `references[].source` 和其他紧凑 `basis` 引用的来源必须登记在正式 `data/vocab/sources.yaml`。后置共享 `basis.entity`、`source.registry` 和 `match.registry` 已实现但未切换 | ISO 25964-2 §23 名称规范表 | [来源名称规范表](../model/sources-registry.md) |
+| 范围决定顶层 | 顶层概念由范围声明决定；未来新借入按知识体系完整借入，借到有稳定编号的最深一层；本批既有数组按来源收尾保留成员与顺序 | ISO 25964-1 §13.1；Z39.19 §11.1.3、§11.1.7、§11.1.8 | [层级结构](../model/hierarchy.md)规则 3–5 |
+| 原样复制 | 未来新借入的结构原样保留，不拆不改；本批 24 个既有数组按来源收尾保留项目选择，不声明逐序完整复制；本地分析另建数组，同一视角只取一个来源 | [决定记录](../../decisions/borrow-and-analyze.md) | [层级结构](../model/hierarchy.md)规则 6、13 |
+| 结构来源资格 | 结构来源须同时具有经决定批准的 `structure` 和 `mapping`，并为 `de-jure` 或有版本号的 `de-facto`；`vendor` 不具备结构用途，archival 只可保留 proposed discovery，不具备 approved 用途 | Z39.19 §5.3.5.2 组织依据；来源分级 | [来源名称规范表](../model/sources-registry.md) |
+| 映射来源登记 | 共享 `basis.entity` 指向正式来源实体；`source.registry`、`match.registry` 和 `external_group.registry` 指向具有相应用途批准的登记。语言依据 `references[].source` 保持独立合同；旧紧凑引用不进入严格读取 | ISO 25964-2 §23 名称规范表 | [来源名称规范表](../model/sources-registry.md) |
 | 不删 | `deprecated` 概念记录和内容单元保留；旧表示形式按既有检索、替代关系或历史追踪需要随概念记录保留。只有本地 `candidate` 概念记录可以按维护条件取得删除资格，实际删除仍服从决策权 | Z39.19 §11.3.2；ISO 15489-1 §3.8 处置决定 | [内容模型](../model/content-model.md)、[维护](maintenance.md) |
 | id 不变 | 现行 id 一经引用不改；改名只改 `label`，旧形式按检索和历史需要保留并建立替代引导。候选术语接口的独立身份格式不适用于现行词表，也不表示正式身份已经分配 | Z39.19 §11.3.1.2 的替代与引用处理 | [内容模型](../model/content-model.md) |
 | 与工具无关 | 与应用无关层不提工具字段和格式；当前 `data/vocab/` 正式数据是源，各应用从它导出，不反向编辑；映射不得改动字段定义。未激活生成能力不转移编辑权 | [决定记录](../../decisions/form-independence.md) | [内容模型](../model/content-model.md) |

@@ -1,6 +1,7 @@
 import json
 import pathlib
 import unittest
+import yaml
 
 from kb_core.build_source_index import build_reference_index
 from kb_core.source_model import collect_reference_uses
@@ -84,6 +85,37 @@ class SourceIndexTests(unittest.TestCase):
     def test_two_runs_are_byte_identical(self):
         self.assertEqual(self.entries(), self.entries())
 
+    def test_record_decisions_are_indexed_without_audit_payload_references(self):
+        with materialized_current_layout(FIXTURE) as root:
+            before = index_reference_set(build_reference_index(root)['entries'])
+            for filename, collection in [('entities', 'entities'), ('sources', 'sources')]:
+                path = root / f'data/vocab/{filename}.yaml'
+                document = load_yaml(path)
+                document[collection][0]['history'] = [{
+                    'decisions': [f'decision-{filename}-history'],
+                    'before': {'decisions': ['audit-only-before'],
+                               'match': [{'registry': 'audit-only-use'}]},
+                    'after': {'decision': 'audit-only-after'},
+                }]
+                path.write_text(yaml.safe_dump(document), encoding='utf-8')
+            (root / 'data/vocab/forms.yaml').write_text(yaml.safe_dump({'arrays': [{
+                'id': 'isolated', 'local_analysis': {'state': 'isolated',
+                    'legacy_source_label': 'audit-only-label', 'decision': 'decision-isolation'},
+            }]}), encoding='utf-8')
+            (root / 'docs/decisions/source-audit.md').write_text(
+                '---\nid: decision-audit\nanswers:\n  - patches:\n'
+                '      - value: {decision: audit-only-patch, match: [{registry: audit-only-use}]}\n---\n',
+                encoding='utf-8')
+            added = index_reference_set(build_reference_index(root)['entries']) - before
+        self.assertEqual({
+            ('decision', 'decision-entities-history', 'history.decision',
+             'data/vocab/entities.yaml', 'entity:source-main', 'entities[0].history[0].decisions[0]'),
+            ('decision', 'decision-sources-history', 'history.decision',
+             'data/vocab/sources.yaml', 'source_use:use-main', 'sources[0].history[0].decisions[0]'),
+            ('decision', 'decision-isolation', 'local_analysis.decision',
+             'data/vocab/forms.yaml', 'arrays:isolated', 'arrays[0].local_analysis.decision'),
+        }, added)
+
     def test_repository_outputs_are_outside_formal_document_discovery(self):
         with materialized_current_layout(FIXTURE) as root:
             expected = build_reference_index(root)
@@ -113,7 +145,8 @@ class SourceIndexTests(unittest.TestCase):
                           "concepts[0].terms[0].basis[0].entity"}, paths)
 
     def test_isolated_local_analysis_is_not_a_source_reference(self):
-        rows = [row for row in self.entries() if "local_analysis" in row["field_path"]]
+        rows = [row for row in self.entries() if "local_analysis" in row["field_path"]
+                and row["target_kind"] in {"source_entity", "source_use"}]
         self.assertEqual([], rows)
 
     def test_external_group_is_indexed_as_structure_use(self):

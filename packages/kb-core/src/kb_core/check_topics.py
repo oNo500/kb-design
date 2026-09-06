@@ -4,7 +4,7 @@ from kb_core.repository import project_root
 import yaml, pathlib, sys, re, collections
 from kb_core.label_basis import validate_basis
 from kb_core.label_adoptions import load_adoptions
-from kb_core.source_model import validate_repository, is_review_overdue, normalize_yaml_dates
+from kb_core.source_model import validate_repository, is_review_overdue, normalize_yaml_dates, _load_accepted_decisions
 ROOT = project_root() / 'data/vocab'
 T = yaml.safe_load(open(ROOT/'topics.yaml'))
 E = yaml.safe_load(open(ROOT/'entities.yaml'))
@@ -80,6 +80,7 @@ for e in entities.values():
 # basis
 selfcount = collections.Counter(); judged = collections.Counter()
 adoptions = load_adoptions(ROOT.parent.parent)
+accepted_decisions = _load_accepted_decisions(ROOT.parent.parent / 'docs/decisions')
 for name, coll in [('entities', entities), ('topics', concepts)]:
     for x in coll.values():
         b = x.get('basis') or {}
@@ -90,7 +91,7 @@ for name, coll in [('entities', entities), ('topics', concepts)]:
                     selfcount[(name,'label.'+field)] += 1
                 bad.extend(f"{name}: {x['id']} basis.{field}: {message}" for message in
                            validate_basis(val, x['label'].get(field), x, field, sources, adoptions,
-                                          collection=name))
+                                          collection=name, accepted_decisions=accepted_decisions))
             else:
                 judged[(name, field)] += 1
         for field, assertion in x.get('assertions', {}).items():
@@ -107,7 +108,8 @@ for name, document in [('forms', F), ('types', Y), ('genres', G)]:
             if language in ('zh', 'en'):
                 bad.extend(f"{name}: {record['id']} basis.{language}: {message}" for message in
                            validate_basis(value, record['label'].get(language), record, language,
-                                          sources, adoptions, collection=name))
+                                          sources, adoptions, collection=name,
+                                          accepted_decisions=accepted_decisions))
 
 if E.get('schema_version') != 2 or S.get('schema_version') != 2:
     for message in bad:

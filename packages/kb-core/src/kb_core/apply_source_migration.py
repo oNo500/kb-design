@@ -237,7 +237,8 @@ def migrate_reference_document(root, collection, document, inputs):
     """Replace reference fields only, requiring exact old values and adoptions.
 
     This produces a candidate document, not activation or approval of a dataset.
-    Language basis, IDs, memberships and every non-reference field are copied.
+    Language basis, IDs and memberships are copied. Scope changes require a separate
+    exact adoption and an old-value snapshot after language adoptions are applied.
     """
     from kb_core.source_model import collect_reference_uses, validate_references, _load_accepted_decisions
     if inputs.get('schema_version') != 2 or not isinstance(inputs.get('records'), dict):
@@ -282,20 +283,45 @@ def migrate_reference_document(root, collection, document, inputs):
                 blockers.extend(f'{identity}.{field}: missing reviewed migration input' for field in sorted(before))
                 continue
             after = entry.get('after')
-            if (set(entry) != {'before', 'after', 'evidence'} or entry.get('before') != before
-                    or not isinstance(after, dict) or set(after) - REFERENCE_FIELDS):
+            expected_before = deepcopy(before)
+            if isinstance(after, dict) and 'scope' in after:
+                expected_before['scope'] = deepcopy(record.get('scope'))
+            if (set(entry) != {'before', 'after', 'evidence'} or entry.get('before') != expected_before
+                    or not isinstance(after, dict) or set(after) - (REFERENCE_FIELDS | {'scope'})):
                 blockers.append(f'{identity}: stale or invalid reference migration input')
                 continue
             errors = []
-            # Preserve mapping identity, relation and order; no unapproved deletion.
+            # Isolation preserves the old object in the same accepted decision;
+            # it is not an adoption of that object's external claim.
             old_matches, new_matches = before.get('match', []), after.get('match', [])
+            evidence = entry.get('evidence')
+            if not isinstance(evidence, dict):
+                blockers.append(f'{identity}: invalid migration evidence')
+                continue
+            match_evidence = evidence.get('match', {})
+            isolated = match_evidence.get('isolated', []) if isinstance(match_evidence, dict) else []
+            if (not isinstance(isolated, list)
+                    or any(type(index) is not int or not 0 <= index < len(old_matches) for index in isolated)
+                    or len(set(isolated)) != len(isolated)):
+                errors.append(f'{identity}.match: invalid isolation indexes')
+                isolated = []
+            for index in isolated:
+                if not _field_is_adopted(decisions, identity, f'match[{index}].isolation',
+                                         old_matches[index], match_evidence):
+                    errors.append(f'{identity}.match[{index}]: missing exact isolation adoption')
+            retained = [(index, old) for index, old in enumerate(old_matches) if index not in isolated]
             if (('match' in before and 'match' not in after)
-                    or not isinstance(new_matches, list) or len(old_matches) != len(new_matches)
-                    or any(not isinstance(new, dict) or
-                           (old.get('source'), str(old.get('id')), old.get('rel')) !=
-                           (new.get('registry'), new.get('item'), new.get('rel'))
-                           for old, new in zip(old_matches, new_matches))):
+                    or not isinstance(new_matches, list) or len(retained) != len(new_matches)):
                 errors.append(f'{identity}.match: mapping identity or relation changed')
+            else:
+                for (index, old), new in zip(retained, new_matches):
+                    same = (isinstance(new, dict)
+                            and (old['source'], old['id'], old['rel']) ==
+                            (new.get('registry'), new.get('item'), new.get('rel')))
+                    if not same and not _field_is_adopted(
+                            decisions, identity, f'match[{index}].correction',
+                            {'before': old, 'after': new}, match_evidence):
+                        errors.append(f'{identity}.match[{index}]: mapping identity or relation changed')
             old_source = before.get('source')
             if old_source == 'self':
                 assertion = after.get('assertions', {}).get('source', {})
@@ -323,7 +349,7 @@ def migrate_reference_document(root, collection, document, inputs):
                 # be backed by the exact field/value in an accepted decision.
                 if field == 'match' and value == [] and before.get('match', []) == []:
                     continue
-                if not _field_is_adopted(decisions, identity, field, value, entry.get('evidence', {}).get(field)):
+                if not _field_is_adopted(decisions, identity, field, value, evidence.get(field)):
                     errors.append(f'{identity}.{field}: missing reviewed field adoption')
             if errors:
                 blockers.extend(errors)
