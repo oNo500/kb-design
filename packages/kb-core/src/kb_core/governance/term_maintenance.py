@@ -2,6 +2,7 @@
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
+import re
 from typing import FrozenSet, List, Mapping, Optional, Sequence
 
 
@@ -290,7 +291,33 @@ def _decision_paths(decisions):
     return {str(value): "docs/decisions" for value in decisions}
 
 
-def build_term_reference_index(document, obligations, decisions):
+def current_basis_decisions(record):
+    """Yield only explicit current basis approvals, never historical snapshots."""
+    bases = [("basis", _value(record, "basis", {}))]
+    bases.extend((f"definitions[{index}].basis", _value(definition, "basis", {}))
+                 for index, definition in enumerate(_value(record, "definitions", ())))
+    for path, basis in bases:
+        for kind in ("project", "model"):
+            decision = _value(_value(basis, kind, {}), "approval")
+            if isinstance(decision, str) and decision:
+                yield f"{path}.{kind}.approval", decision
+
+
+def layout_concept_references(layout):
+    """Yield current display targets; original_cells remains historical audit."""
+    for section, field in (("groups", "members"), ("symbol_mappings", "concept_ids"),
+                           ("historical_designations", "target_concept_ids")):
+        for index, row in enumerate(layout.get(section, [])):
+            for target_index, identity in enumerate(row[field]):
+                yield identity, row.get("id", row.get("origin_id")), f"{section}[{index}].{field}[{target_index}]"
+    pattern = re.compile(r"\btc-[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}\b")
+    for index, row in enumerate(layout.get("reference_entries", [])):
+        for cell_index, cell in enumerate(row["cells"]):
+            for identity in pattern.findall(cell):
+                yield identity, row["id"], f"reference_entries[{index}].cells[{cell_index}]"
+
+
+def build_term_reference_index(document, obligations, decisions, *, layout=None, decision_documents=None):
     entries = []
     decision_paths = _decision_paths(decisions)
     states = {}
@@ -326,6 +353,10 @@ def build_term_reference_index(document, obligations, decisions):
                         concept_record, term_path, concept_state,
                     ),
                 ))
+                for path, decision_id in current_basis_decisions(term):
+                    entries.extend(_decision_relation(
+                        "term", term_id, term_state, term_record, path, decision_id, decision_paths,
+                    ))
                 for history_index, event in enumerate(_value(term, "history", ())):
                     decision_id = _value(event, "decision")
                     if decision_id:
@@ -334,6 +365,10 @@ def build_term_reference_index(document, obligations, decisions):
                             f"history[{history_index}].decision",
                             decision_id, decision_paths,
                         ))
+        for path, decision_id in current_basis_decisions(concept):
+            entries.extend(_decision_relation(
+                "concept", concept_id, concept_state, concept_record, path, decision_id, decision_paths,
+            ))
         for history_index, event in enumerate(_value(concept, "history", ())):
             decision_id = _value(event, "decision")
             if decision_id:
@@ -441,6 +476,37 @@ def build_term_reference_index(document, obligations, decisions):
                     "generated_outputs", states.get(("concept", concept_id), "unknown"),
                 ),
             ))
+
+    if layout is not None:
+        for identity, record, path in layout_concept_references(layout):
+            entries.append(_index_entry(
+                "concept", identity, "layout.concept", "data/inputs/terminology/glossary-layout.yaml",
+                record, path, "historical" if path.startswith("historical_designations[") else "reference",
+            ))
+        for index, row in enumerate(layout.get("historical_designations", [])):
+            if row.get("approval"):
+                entries.append(_index_entry(
+                    "decision", row["approval"], "layout.decision", "data/inputs/terminology/glossary-layout.yaml",
+                    row["origin_id"], f"historical_designations[{index}].approval", "historical",
+                ))
+
+    # Captured effective decisions declare targets; these index edges do not
+    # independently authorize a change or interpret nested patch/audit values.
+    for decision_id, decision in (decision_documents or {}).items():
+        for answer_index, answer in enumerate(decision.get("answers", [])):
+            for patch_index, patch in enumerate(answer.get("patches", [])):
+                identity = patch.get("identity")
+                if not isinstance(identity, str):
+                    continue
+                concept_id = identity.removeprefix("terms/concepts/")
+                if ("concept", concept_id) not in states:
+                    continue
+                entries.append(_index_entry(
+                    "concept", concept_id, "decision.declared_concept",
+                    decision_paths.get(decision_id, "docs/decisions"),
+                    f"decision:{decision_id}",
+                    f"answers[{answer_index}].patches[{patch_index}].identity", "declared",
+                ))
 
     for decision_id, path in decision_paths.items():
         entries.append(_index_entry(

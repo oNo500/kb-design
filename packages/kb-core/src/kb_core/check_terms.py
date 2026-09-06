@@ -42,9 +42,13 @@ def registered_form(value):
     return re.sub(r"[`*]", "", value).strip().lower()
 
 
+def has_formal_term_input():
+    return ((ROOT / "data/vocab/terms.yaml").exists()
+            or (ROOT / "data/vocab/term-cutover-state.yaml").exists())
+
+
 def glossary_forms():
-    if ((ROOT / "data/vocab/terms.yaml").exists()
-            or (ROOT / "data/vocab/term-cutover-state.yaml").exists()):
+    if has_formal_term_input():
         from kb_core.governance.term_commands import registered_term_forms
         return {registered_form(form) for form in registered_term_forms(ROOT)}
     forms = set()
@@ -183,7 +187,9 @@ def parse_args(argv):
 
 def main(argv=None):
     arguments = parse_args(sys.argv[1:] if argv is None else argv)
-    known = glossary_forms() | vocabulary_forms()
+    known = glossary_forms()
+    if not has_formal_term_input():
+        known |= vocabulary_forms()
     snapshot = _load_document(arguments.snapshot) if arguments.snapshot else {
         "known_forms": sorted(known),
         "concepts": [],

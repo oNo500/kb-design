@@ -89,6 +89,31 @@ class SourceIndexTests(unittest.TestCase):
         self.assertIn("concepts[0].languages[0].terms[1].basis[0].entity", source_paths)
         self.assertIn("concepts[0].definitions[0].basis[0].entity", source_paths)
 
+    def test_project_basis_approval_is_internal_and_audit_snapshots_are_not_current(self):
+        with materialized_current_layout(FIXTURE) as root:
+            document = yaml.safe_load(
+                (ROOT / "tests/fixtures/terminology/valid/minimal-active.yaml").read_text()
+            )
+            concept = document["concepts"][0]
+            basis = {"project": {"approval": "decision-project-current",
+                "origin": {"commit": "a" * 40, "file": "docs/project.md", "locator": "Scope"},
+                "rationale": "Existing project meaning"}}
+            concept["basis"] = basis
+            concept["definitions"][0]["basis"] = basis
+            concept["languages"][0]["terms"][0]["basis"] = basis
+            concept["history"][0]["before"] = {"basis": {"project": {"approval": "audit-only"}}}
+            (root / "data/vocab/terms.yaml").write_text(yaml.safe_dump(document))
+            rows = [row for row in build_reference_index(root)["entries"]
+                    if row["file"] == "data/vocab/terms.yaml"]
+        approvals = {row["field_path"] for row in rows
+                     if row["target_kind"] == "decision" and row["target_id"] == "decision-project-current"}
+        self.assertEqual({"concepts[0].basis.project.approval",
+                          "concepts[0].definitions[0].basis.project.approval",
+                          "concepts[0].languages[0].terms[0].basis.project.approval"}, approvals)
+        self.assertNotIn("audit-only", {row["target_id"] for row in rows})
+        self.assertFalse(any(row["target_kind"] == "source_entity" and ".project." in row["field_path"]
+                             for row in rows))
+
     def entries(self):
         with materialized_current_layout(FIXTURE) as root:
             return build_reference_index(root)["entries"]

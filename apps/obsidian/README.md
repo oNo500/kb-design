@@ -29,11 +29,11 @@ uv run kb-obsidian --help
 
 ## 术语表示
 
-应用已按[术语实施范围](../../docs/decisions/term-infrastructure-scope.md)接入可选术语输入。`data/vocab/terms.yaml` 与 `data/vocab/term-cutover-state.yaml` 必须共同存在或共同缺省；只存在其中一份会失败。存在时从同一干净 Git 快照捕获数据、决定、schema 与实现，并调用核心统一术语校验，核对具体记录、状态、引用和发布授权。
+应用按[术语实施结构](../../docs/decisions/term-complete-structure.md)读取可选术语输入。`data/vocab/terms.yaml` 与 `data/vocab/term-cutover-state.yaml` 必须共同存在或共同缺省；只存在一份会失败。存在时从同一干净 Git 快照捕获数据、决定、schema、布局和实现，并调用核心统一校验，核对具体记录、定义来源许可、项目依据、状态、引用及发布授权。
 
-获准概念导出为 `kb/terms/<tc-id>.md` 只读参考页，按概念身份记录路径；`tm-id` 形式不另建概念页。页内保存语言形式、定义、范围、依据性质和出处，manifest、引用与刷新检查识别术语路径。术语页不成为主题分类，不建立委托或回流；模型标签没有独立术语概念时不创建该页。
+获准概念生成 `kb/terms/<tc-id>.md` 只读参考页；`tm-id` 形式不另建概念页。页内保存语言形式、定义、范围、依据性质和出处，manifest、链接与刷新检查识别术语路径。历史纠正标签只提供查找说明，不代表当前准用；项目依据与外部依据分别显示。术语页不成为内容主题，不建立委托或回流；模型标签没有独立术语概念时不创建该页。
 
-当前仓库没有正式 terms/state，具体数据尚未采纳，应用能力不表示真实术语消费者已经启用。两份输入共同缺省时继续导出六份现行词表；正式 vault 未因本次工程写入，刷新写集仍为 `kb/` 与 `app/manifest.json`。
+本批完整记录及条件式执行已经采纳，publication/state 仍须在同一干净隔离快照的完整生成、临时导出与刷新、manifest、链接和内容保护验收通过后写入。条件满足前不宣称编辑源已切换或真实消费者已启用；缺省两份输入时仍导出既有六份词表。外部正式 vault 未列入本轮写集，刷新写集仍为 `kb/` 与 `app/manifest.json`。
 
 ## 参考导出
 
@@ -134,4 +134,4 @@ uv run kb-obsidian refresh
 
 应用不自动改写用户内容或配置，不自动返回、修复或切换任何内容。内容回流、自动修复、查询日志、社区插件和 Obsidian GUI 自动化未实现。Quick Switcher 的交互、Bases 的实际显示和视觉布局仍需在 Obsidian 中人工验收；解析 YAML、JSON 或 Base 文件只证明生成文件合同。
 
-默认 `output/obsidian/` 只是新的可用位置，本次迁移没有创建该 vault，也没有搬迁或刷新现有外部 `kb-vault`。应用存在和命令可运行仍不构成正式消费者、来源或术语激活，也不构成发版。相关决定见[仓库布局](../../docs/decisions/monorepo-layout.md)、[工具归属](../../docs/decisions/obsidian-tool-location.md)与[词表刷新](../../docs/decisions/obsidian-reference-refresh.md)。
+默认 `output/obsidian/` 只是新的可用位置，本次迁移没有创建该 vault，也没有搬迁或刷新现有外部 `kb-vault`。来源 v2 数据已实施，术语参考消费按已采纳的 publication 条件启用；应用存在和命令可运行不能代替该条件，也不构成外部正式 vault 已更新或发版。相关决定见[仓库布局](../../docs/decisions/monorepo-layout.md)、[工具归属](../../docs/decisions/obsidian-tool-location.md)与[词表刷新](../../docs/decisions/obsidian-reference-refresh.md)。

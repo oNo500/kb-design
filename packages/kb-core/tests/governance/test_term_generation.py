@@ -166,6 +166,8 @@ class TermGenerationTests(unittest.TestCase):
         self.active_state = load_cutover_state(ACTIVE_STATE)
         self.rolled_back_state = load_cutover_state(ROLLED_BACK_STATE)
         self.layout = yaml.safe_load(LAYOUT.read_text(encoding="utf-8"))
+        for group in self.layout["groups"]:
+            group["members"] = []
         self.layout["groups"][1]["members"] = [
             "00000000-0000-4000-8000-000000000002",
             "00000000-0000-4000-8000-000000000003",
@@ -225,7 +227,12 @@ class TermGenerationTests(unittest.TestCase):
             (design_root / "data/inputs/topics").mkdir(parents=True)
             shutil.copy2(ROOT / "data/inputs/topics/label-adoptions.json",
                          design_root / "data/inputs/topics/label-adoptions.json")
-            shutil.copytree(ROOT / "docs/decisions", design_root / "docs/decisions")
+            (design_root / "docs/decisions").mkdir(parents=True)
+            for path in (ROOT / "docs/decisions").glob("source-*.md"):
+                shutil.copy2(path, design_root / "docs/decisions" / path.name)
+            (design_root / "schemas").mkdir()
+            shutil.copy2(ROOT / "schemas/glossary-layout-v2.schema.json",
+                         design_root / "schemas/glossary-layout-v2.schema.json")
             terms_path = design_root / "data/vocab/terms.yaml"
             source_index_path = root / "source-index.json"
             snapshot_path = root / "terms-v1.json"
@@ -234,15 +241,36 @@ class TermGenerationTests(unittest.TestCase):
                 (ROOT / "tests/fixtures/terminology/valid/minimal-active.yaml").read_text()
             )
             valid["concepts"][0]["subject_fields"] = []
+            fixture_concept = valid["concepts"][0]
+            for reference in fixture_concept["basis"]:
+                reference["entity"] = "gbt-13745"
+            for definition in fixture_concept["definitions"]:
+                for reference in definition["basis"]:
+                    reference["entity"] = "gbt-13745"
+            for language in fixture_concept["languages"]:
+                for term_value in language["terms"]:
+                    if isinstance(term_value["basis"], list):
+                        for reference in term_value["basis"]:
+                            reference["entity"] = "gbt-13745"
             terms_path.write_text(
                 yaml.safe_dump(valid, allow_unicode=True, sort_keys=False),
                 encoding="utf-8",
             )
             layout_path = root / "layout.yaml"
-            layout = copy.deepcopy(self.layout)
-            for group in layout["groups"]:
-                group["members"] = []
-            layout["groups"][0]["members"] = [valid["concepts"][0]["id"]]
+            layout = {
+                "schema": "urn:kb-design:layout:glossary:2", "version": 2,
+                "groups": [{"id": "fixture", "title": "生成测试", "order": 1,
+                            "members": [valid["concepts"][0]["id"]]}],
+                "source_abbreviations": {"id": "sources", "title": "出处缩写",
+                                         "order": 0, "entries": []},
+                "standards_appendix": {"id": "standards", "title": "引用文献",
+                                       "order": 2, "entries": []},
+                "reference_entries": [], "symbol_mappings": [],
+                "historical_designations": [],
+                "model_labels": {"generation_inputs": ["data/vocab/topics.yaml"],
+                    "display_rule": "按中英形式合并并保留身份。",
+                    "language_notice": "模型知识 · 第 5 级，外部用法未核实"},
+            }
             layout_path.write_text(yaml.safe_dump(layout, allow_unicode=True), encoding="utf-8")
             concept_grant = {
                 "id": "decision-term-0001", "schema": "urn:kb-design:data:decision",
@@ -251,6 +279,9 @@ class TermGenerationTests(unittest.TestCase):
                 "resolution": "recommended", "patches": [{"identity": f"terms/concepts/{valid['concepts'][0]['id']}",
                 "field": "record", "value": semantic_concept(valid["concepts"][0])}]}],
             }
+            concept_grant["answers"][0]["patches"].append({
+                "identity": "@control:terms", "field": "glossary_layout", "value": layout,
+            })
             state_value = yaml.safe_load(ACTIVE_STATE.read_text())
             publication = {key: state_value[key] for key in
                            ("active_editor", "state", "terms_mode", "consumers_enabled")}

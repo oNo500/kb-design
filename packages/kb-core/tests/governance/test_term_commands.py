@@ -21,13 +21,21 @@ class TermCommandTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             root = pathlib.Path(temporary)
             (root / "data/vocab").mkdir(parents=True)
-            for path in (ROOT / "data/vocab").glob("*.yaml"):
+            for name in ("topics", "types", "genres", "forms", "entities", "sources"):
+                path = ROOT / "data/vocab" / f"{name}.yaml"
                 shutil.copy2(path, root / "data/vocab" / path.name)
-            shutil.copytree(ROOT / "docs/decisions", root / "docs/decisions")
+            # Source and label grants belong to the copied vocabulary context;
+            # real term record grants would require their entire approved batch.
+            (root / "docs/decisions").mkdir(parents=True)
+            for path in (ROOT / "docs/decisions").glob("source-*.md"):
+                shutil.copy2(path, root / "docs/decisions" / path.name)
             shutil.copytree(ROOT / "data/inputs/topics", root / "data/inputs/topics")
             document = yaml.safe_load((ROOT / "tests/fixtures/terminology/valid/minimal-active.yaml").read_text())
             concept = document["concepts"][0]
             concept["subject_fields"] = []
+            # Keep this CLI fixture within the ordinary de-jure definition path;
+            # it does not exercise the separately constrained source exceptions.
+            concept["definitions"][0]["basis"][0]["entity"] = "gbt-13745"
             decision_id = "decision-term-command-fixture"
             for item in [concept, *concept["languages"][0]["terms"]]:
                 item["history"][0]["decision"] = decision_id
@@ -75,12 +83,42 @@ class TermCommandTests(unittest.TestCase):
                          "import json; from kb_core.check_terms import glossary_forms; "
                          "print(json.dumps(sorted(glossary_forms())))"]
             env = {**os.environ, "KB_DESIGN_ROOT": str(root)}
+            incomplete = subprocess.run(read_args, text=True, capture_output=True, env=env)
+            self.assertNotEqual(0, incomplete.returncode)
+            self.assertIn("glossary-layout.yaml", incomplete.stderr)
+            vocabulary_form = next(row for row in yaml.safe_load(
+                (root / "data/vocab/entities.yaml").read_text())["entities"]
+                if row["id"] == "gbt-13745")["label"]["en"]
+            layout = {
+                "schema": "urn:kb-design:layout:glossary:2", "version": 2,
+                "groups": [{"id": "fixture", "title": "Fixture", "order": 1, "members": [concept["id"]]}],
+                "source_abbreviations": {"id": "sources", "title": "Sources", "order": 0, "entries": []},
+                "standards_appendix": {"id": "standards", "title": "Standards", "order": 2, "entries": []},
+                "reference_entries": [], "symbol_mappings": [],
+                "historical_designations": [{"origin_id": "fixture-old", "forms": ["Legacy only", vocabulary_form],
+                    "target_concept_ids": [concept["id"]], "disposition": "withdrawn", "reason": "Fixture",
+                    "display": "Legacy only", "effect": "historical lookup", "approval": decision_id}],
+                "model_labels": {"generation_inputs": ["topics"], "display_rule": "Fixture", "language_notice": "Fixture"},
+            }
+            layout_path = root / "data/inputs/terminology/glossary-layout.yaml"
+            layout_path.parent.mkdir(parents=True)
+            layout_path.write_text(yaml.safe_dump(layout))
+            unapproved = subprocess.run(read_args, text=True, capture_output=True, env=env)
+            self.assertNotEqual(0, unapproved.returncode)
+            self.assertIn("TERM_LAYOUT_ADOPTION_MISSING", unapproved.stderr)
+            decision["answers"][0]["patches"].append({
+                "identity": "@control:terms", "field": "glossary_layout", "value": layout,
+            })
+            (root / "docs/decisions/term-command-fixture.md").write_text(
+                "---\n" + yaml.safe_dump(decision) + "---\n# 夹具决定\n"
+            )
             read = subprocess.run(read_args, text=True, capture_output=True, env=env)
             self.assertEqual(0, read.returncode, read.stderr)
             forms = json.loads(read.stdout)
             self.assertIn("alpha", forms)
             self.assertIn("beta", forms)
             self.assertNotIn("legacy only", forms)
+            self.assertIn(vocabulary_form.lower(), forms)
             state["decision"] = "decision-term-infrastructure-scope"
             state_path.write_text(yaml.safe_dump(state))
             forged = subprocess.run(read_args, text=True, capture_output=True, env=env)

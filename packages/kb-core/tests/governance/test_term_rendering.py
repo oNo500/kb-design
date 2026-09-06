@@ -7,6 +7,7 @@ from kb_core.governance.build_terms import (
     build_model_label_rows,
     canonical_snapshot,
     ordered_concepts,
+    validate_glossary_layout,
 )
 from kb_core.governance.term_rendering import render_glossary, render_term_markdown
 from kb_core.build_source_index import visit_reference_use
@@ -56,6 +57,71 @@ STATE = {"state": "active", "terms_mode": "active_editor", "consumers_enabled": 
 
 
 class TermRenderingTests(unittest.TestCase):
+    def layout_v2(self):
+        return {
+            "schema": "urn:kb-design:layout:glossary:2", "version": 2,
+            "groups": [{"id": "one", "title": "应用与生成", "order": 1, "members": [TC1]}],
+            "source_abbreviations": {"id": "sources", "title": "出处缩写", "order": 0,
+                "entries": [{"id": "a", "cells": ["ISO", "ISO source"],
+                             "meaning": "只作引用说明。", "source_entity_ids": ["source-a"]}]},
+            "standards_appendix": {"id": "standards", "title": "引用文献", "order": 2,
+                "entries": [{"id": "s", "cells": ["Standard", "Historical lead"],
+                             "verification": "未升级为已核事实。"}]},
+            "reference_entries": [{"id": "r", "section": "应用与生成",
+                "cells": ["来源分级", "tiers", "项目规则说明", "rules.md"],
+                "content_role": "reference_explanation", "scope": "不是四个术语概念。"}],
+            "symbol_mappings": [{"origin_id": "o", "symbols": ["USE", "UF"],
+                "concept_ids": [TC1], "role": "relationship_indicator",
+                "display_note": "关系指示符，不是术语形式。"}],
+            "historical_designations": [{"origin_id": "h", "forms": ["旧称"],
+                "target_concept_ids": [TC1], "disposition": "withdraw",
+                "reason": "名称不准确。", "display": "改用当前首选形式。",
+                "effect": "已退出当前准用名称。", "approval": "decision-layout"}],
+            "model_labels": {"generation_inputs": ["topics.yaml"],
+                "display_rule": "按中英形式合并并保留身份。",
+                "language_notice": "模型知识 · 第 5 级，外部用法未核实"},
+        }
+
+    def test_layout_v2_is_complete_and_unapproved_value_is_rejected(self):
+        layout = self.layout_v2()
+        self.assertEqual((), validate_glossary_layout(layout, concept_ids={TC1}))
+        self.assertIn("TERM_LAYOUT_ADOPTION_MISSING",
+                      validate_glossary_layout(layout, concept_ids={TC1}, accepted_decisions={}))
+        grant = {
+            "id": "decision-layout", "schema": "urn:kb-design:data:decision",
+            "schema_version": 1, "status": "accepted", "date": "2026-09-06",
+            "level": "L1", "scope": "fixture", "supersedes": [],
+            "answers": [{"question": "Q01", "resolution": "recommended", "patches": [{
+                "identity": "@control:terms", "field": "glossary_layout", "value": layout,
+            }]}],
+        }
+        self.assertIn("TERM_LAYOUT_ADOPTION_MISSING", validate_glossary_layout(
+            layout, concept_ids={TC1}, accepted_decisions={grant["id"]: grant},
+        ))
+        grant["level"] = "L3"
+        self.assertEqual((), validate_glossary_layout(
+            layout, concept_ids={TC1}, accepted_decisions={grant["id"]: grant},
+        ))
+        dropped = copy.deepcopy(layout)
+        dropped["groups"][0]["members"] = []
+        self.assertTrue(any("TERM_LAYOUT_MEMBER_MISSING" in issue
+                            for issue in validate_glossary_layout(dropped, concept_ids={TC1})))
+
+    def test_layout_v2_sections_and_project_basis_are_readable(self):
+        value = concept()
+        value["basis"] = {"project": {"approval": "decision-project",
+            "origin": {"commit": "abc123", "file": "docs/design/model.md", "locator": "内容单元"},
+            "rationale": "采用现行项目定义。"}}
+        rendered = render_glossary({"concepts": [value], "model_labels": [{
+            "zh": "模型译名", "en": "Model label", "targets": ["topics/a"],
+            "target_models": [{"target": "topics/a", "model": {"name": "gpt", "date": "2026-09-06", "rationale": "r", "approval": "d"}}],
+        }]}, self.layout_v2(), STATE, SOURCES)
+        for expected in ("出处缩写", "ISO source", "补充说明", "来源分级", "关系符号",
+                         "USE / UF", "历史名称", "旧称", "引用文献", "Historical lead",
+                         "模型译名", "topics/a", "项目决定依据，不是外部来源",
+                         "abc123:docs/design/model.md", "采用现行项目定义"):
+            self.assertIn(expected, rendered)
+
     def test_layout_members_are_complete_and_ordered(self):
         document = {"concepts": [concept(TC2), concept(TC1)]}
         layout = {"groups": [

@@ -24,6 +24,7 @@ from kb_core.governance.term_validation import (
     validate_term_snapshot,
 )
 from kb_core.governance.term_git import TermGitError, captured_previous_terms
+from kb_core.governance.build_terms import validate_glossary_layout
 from kb_core.repository import project_root
 from kb_core import source_model
 from jsonschema import Draft202012Validator, FormatChecker
@@ -52,9 +53,11 @@ _TERM_FILES = OrderedDict((
     ("terms", "data/vocab/terms.yaml"),
     ("term_state", "data/vocab/term-cutover-state.yaml"),
 ))
+_TERM_LAYOUT = ("term_layout", "data/inputs/terminology/glossary-layout.yaml")
 _TERM_SCHEMA_FILES = (
     "schemas/terms-v1.schema.json",
     "schemas/term-cutover-state-v1.schema.json",
+    "schemas/glossary-layout-v2.schema.json",
 )
 _COLLECTION_FIELDS = {
     ("topics", "arrays"): {"id", "superordinate", "source"},
@@ -223,6 +226,7 @@ _KIND_DIRECTORIES = {
 }
 _DIRECTORY_KINDS = {directory: kind for kind, directory in _KIND_DIRECTORIES.items()}
 _WIKILINK = re.compile(r"\[\[([^\]|#]+)(?:\|[^\]]+)?\]\]")
+_DATE = re.compile(r"^[0-9]{4}-[0-9]{2}-[0-9]{2}$")
 
 
 def _error(relative_path: str, object_id: str, field_path: str, message: str) -> ExportError:
@@ -275,6 +279,20 @@ def _check_string_list(relative_path: str, object_id: str, field_path: str, valu
         raise _error(relative_path, object_id, field_path, "expected list")
     for index, item in enumerate(value):
         _check_string(relative_path, object_id, f"{field_path}[{index}]", item)
+
+
+def _date_value(relative_path: str, object_id: str, field_path: str, value: Any) -> datetime.date:
+    if type(value) is datetime.date:
+        return value
+    if type(value) is str and _DATE.fullmatch(value):
+        try:
+            parsed = datetime.date.fromisoformat(value)
+        except ValueError:
+            pass
+        else:
+            if parsed.isoformat() == value:
+                return parsed
+    raise _error(relative_path, object_id, field_path, "expected date")
 
 
 def _check_language_forms(
@@ -338,8 +356,13 @@ def _validate_record(
         _check_string_list(relative_path, object_id, f"{record_path}.{field}", record[field])
 
     for field in ("added", "checked"):
-        if field in record and not isinstance(record[field], datetime.date):
-            raise _error(relative_path, object_id, f"{record_path}.{field}", "expected date")
+        if field in record:
+            record[field] = _date_value(
+                relative_path,
+                object_id,
+                f"{record_path}.{field}",
+                record[field],
+            )
 
     if "label" in record:
         label_path = f"{record_path}.label"
@@ -479,6 +502,11 @@ def _read_repository_inputs(repo_root: pathlib.Path) -> dict[str, bytes]:
             raise ExportError(str(exc)) from exc
         if previous_terms is not None:
             inputs["_support:previous-terms.yaml"] = previous_terms
+        layout_name, layout_path = _TERM_LAYOUT
+        try:
+            inputs[layout_name] = (root / layout_path).read_bytes()
+        except OSError as exc:
+            raise ExportError(f"{layout_path}: cannot read term layout: {exc}") from exc
     inputs.update(_read_support_inputs(root))
     return inputs
 
@@ -497,6 +525,8 @@ def load_repository(
             "data/vocab/terms.yaml and data/vocab/term-cutover-state.yaml "
             "must either both exist or both be absent"
         )
+    if all(present_terms.values()) and _TERM_LAYOUT[0] not in snapshot:
+        raise ExportError(f"{_TERM_LAYOUT[1]} is required with formal terms")
     try:
         decisions, obligations, adoptions = _parse_support_inputs(snapshot)
     except (ValueError, UnicodeError, yaml.YAMLError) as exc:
@@ -522,8 +552,12 @@ def load_repository(
             {"id", "date", "note"},
         )
         _check_string(relative_path, "<version>", "version.id", document["version"]["id"])
-        if not isinstance(document["version"]["date"], datetime.date):
-            raise _error(relative_path, "<version>", "version.date", "expected date")
+        document["version"]["date"] = _date_value(
+            relative_path,
+            "<version>",
+            "version.date",
+            document["version"]["date"],
+        )
         _check_string(relative_path, "<version>", "version.note", document["version"]["note"])
         for collection in allowed_top - {"version", "schema", "schema_version"}:
             records = document.get(collection)
@@ -560,13 +594,17 @@ def load_repository(
         try:
             terms = yaml.safe_load(snapshot["terms"].decode("utf-8"))
             term_state = yaml.safe_load(snapshot["term_state"].decode("utf-8"))
+            term_layout = yaml.safe_load(snapshot[_TERM_LAYOUT[0]].decode("utf-8"))
+            layout_schema = json.loads(
+                snapshot["_support:schemas/glossary-layout-v2.schema.json"]
+            )
             previous_content = snapshot.get("_support:previous-terms.yaml")
             previous_terms = (
                 yaml.safe_load(previous_content.decode("utf-8"))
                 if previous_content is not None
                 else None
             )
-        except (UnicodeError, yaml.YAMLError) as exc:
+        except (KeyError, UnicodeError, json.JSONDecodeError, yaml.YAMLError) as exc:
             raise ExportError(f"invalid formal term input: {exc}") from exc
         term_issues = validate_term_snapshot(
             terms,
@@ -581,8 +619,23 @@ def load_repository(
         if term_issues:
             issue = term_issues[0]
             raise ExportError(f"{issue.origin}: {issue.path}: {issue.code}: {issue.message}")
+        layout_issues = validate_glossary_layout(
+            term_layout,
+            concept_ids={
+                concept["id"]
+                for concept in terms["concepts"]
+                if concept["workflow"] == "active"
+            },
+            accepted_decisions=decisions,
+            schema=layout_schema,
+        )
+        if layout_issues:
+            raise ExportError(
+                f"{_TERM_LAYOUT[1]}: {layout_issues[0]}"
+            )
         documents["terms"] = terms
         documents["term_state"] = term_state
+        documents["term_layout"] = term_layout
     return documents
 
 
@@ -1107,7 +1160,11 @@ def build_content_files(
                 ("aliases", aliases),
                 ("tags", ["kb-design/term"]),
             ))
-            body = render_term_markdown(concept, source_entities)
+            body = render_term_markdown(
+                concept,
+                source_entities,
+                layout=documents["term_layout"],
+            )
             _insert(
                 files,
                 f"kb/terms/{concept['id']}.md",
@@ -1291,6 +1348,17 @@ def build_manifest(
                 "sha256": _sha256(content),
                 "version": str(version),
             })
+        layout_name, relative_path = _TERM_LAYOUT
+        try:
+            content = snapshot[layout_name]
+            version = yaml.safe_load(content.decode("utf-8"))["version"]
+        except (UnicodeError, yaml.YAMLError, KeyError, TypeError) as exc:
+            raise ExportError(f"{relative_path}: cannot build manifest: {exc}") from exc
+        inputs.append({
+            "path": relative_path,
+            "sha256": _sha256(content),
+            "version": str(version),
+        })
 
     if exporter_bytes is None:
         try:

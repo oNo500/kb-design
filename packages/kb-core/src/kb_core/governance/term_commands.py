@@ -12,7 +12,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 from kb_core.repository import project_root
 from kb_core.source_model import normalize_yaml_dates
-from kb_core.governance.build_terms import capture_validation_context
+from kb_core.governance.build_terms import capture_validation_context, load_glossary_layout
 from kb_core.governance.term_maintenance import build_term_reference_index, decision_index
 from kb_core.governance.term_model import ROOT as SCHEMA_ROOT
 from kb_core.governance.term_git import captured_previous_terms
@@ -52,7 +52,17 @@ def read_term_data(root, *, terms=None, state=None, previous=None, require_publi
         ))
     if issues:
         raise ValueError("\n".join(f"{item.code} {item.path}: {item.message}" for item in issues))
+    if state_value is not None:
+        read_term_layout(root, value, decisions)
     return value, state_value, sources, decisions, adoptions
+
+
+def read_term_layout(root, document, decisions):
+    return load_glossary_layout(
+        Path(root) / "data/inputs/terminology/glossary-layout.yaml",
+        concept_ids={row["id"] for row in document["concepts"] if row["workflow"] == "active"},
+        accepted_decisions=decisions,
+    )
 
 
 def registered_term_forms(root):
@@ -68,7 +78,24 @@ def registered_term_forms(root):
     }
     for row in build_model_label_rows(sources["topics"], sources["forms"], adoptions, decisions):
         forms.update((row["zh"], row["en"]))
+    # Preserve the diagnostic's existing vocabulary ownership, using the same
+    # validated capture rather than reopening potentially changed YAML files.
+    for name, collection in (("topics", "concepts"), ("entities", "entities"), ("types", "types")):
+        for record in sources[name].get(collection, []):
+            for field in ("label", "alt", "hidden"):
+                forms.update(_strings(record.get(field)))
     return forms
+
+
+def _strings(value):
+    if isinstance(value, str):
+        yield value
+    elif isinstance(value, dict):
+        for nested in value.values():
+            yield from _strings(nested)
+    elif isinstance(value, list):
+        for nested in value:
+            yield from _strings(nested)
 
 
 def _obligations(root):
@@ -106,7 +133,10 @@ def main(argv=None):
             records = [concept, *(term for language in concept["languages"] for term in language["terms"])]
             referenced_decisions.update(event["decision"] for record in records for event in record["history"])
         paths = {key: path for key, path in decision_index(root).items() if key in referenced_decisions}
-        index = build_term_reference_index(value, obligations, paths)
+        layout = read_term_layout(root, value, decisions) if state is not None else None
+        index = build_term_reference_index(
+            value, obligations, paths, layout=layout, decision_documents=decisions,
+        )
         output = args.output or root / "build/terms/term-reference-index.json"
         destination = output.resolve()
         protected = [root / name for name in ("data", "docs", "schemas", "packages", "apps")]

@@ -59,7 +59,7 @@ ISO 25964-2 §23 把名称规范表定义为为一致命名特定实体而建立
 
 需要更多类别时从 Wikidata 取，并记录 Q 号。`publication` 的具体形式记在 `form`，值是 Wikidata Q 号或其 slug。
 
-`person` 只收在相关主题或活动中有显著公开角色的公众人物（public figure，*Gertz v. Robert Welch* 1974 的意义）：已发表作品的作者、公开项目的维护者或方法的提出者，并且有 Wikidata 条目或可引用的公开出处。相关主题或活动只限定公开角色的判断范围，不形成新的数据类别。不收私人、同事或联系人。文献实体用 `creator` 指向人，软件实体的个人维护者用 `vendor` 指向人。
+`person` 只收在相关主题或活动中有显著公开角色、且符合公众人物判断依据的人。已发表作品的作者、公开项目的维护者和方法的提出者只作为可能的收录对象，不因该身份、Wikidata 条目或公开出处自动取得公众人物资格；须分别说明一般公众人物依据，或相关公共争议中的突出角色及适用范围，并提供可引用的公开出处。不收私人、同事或联系人。文献实体用 `creator` 指向人，软件实体的个人维护者用 `vendor` 指向人。该规则由[人员收录澄清](../../decisions/person-admission-clarification.md)采纳；不扩大隐私边界，不自动删改现有实体。
 
 ### 来源记录
 
@@ -86,7 +86,7 @@ watch 每项包含 locator、signals、cadence_months。locator 是观察地址�
 | `vendor` | 单一厂商文档，随产品迭代 | Anthropic 文档、Neo4j 文档 |
 | `archival` | 发表后内容固定 | 论文、书、博文、issue、演讲 |
 
-同一发布方可以跨档：W3C Recommendation 是 `de-jure`，Working Draft 是 `de-facto`；Wikidata 数据是 `de-facto`，引用它的论文是 `archival`。全部现行 `tier` 值保持不变。
+同一发布方可以跨档：W3C Recommendation 是 `de-jure`，Working Draft 是 `de-facto`；Wikidata 数据是 `de-facto`，引用它的论文是 `archival`。既有来源的 `tier` 不因术语迁移改变；新增来源按[术语来源采纳](../../decisions/source-term-complete-citations.md)的具体记录登记。
 
 `tier` 当前继续承担分级和复核周期含义，但不等于来源的外部状态，也不能单独推出 `mapping`、`structure`、`group` 或发现用途。正式迁移后的用途资格由用途记录的角色决定；字段合同不改变现有 `tier`。
 

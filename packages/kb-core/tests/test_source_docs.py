@@ -1,4 +1,3 @@
-import json
 import pathlib
 import unittest
 
@@ -45,38 +44,6 @@ def load_ledger():
     return yaml.safe_load(LEDGER.read_text(encoding="utf-8"))
 
 
-def nested_origin_facts(value):
-    keys = []
-    scalar_values = []
-    if isinstance(value, dict):
-        for key, child in value.items():
-            if key == "origin":
-                keys.append(key)
-            child_keys, child_values = nested_origin_facts(child)
-            keys.extend(child_keys)
-            scalar_values.extend(child_values)
-    elif isinstance(value, list):
-        for child in value:
-            child_keys, child_values = nested_origin_facts(child)
-            keys.extend(child_keys)
-            scalar_values.extend(child_values)
-    elif value == "origin":
-        scalar_values.append(value)
-    return keys, scalar_values
-
-
-def formal_vocab_documents():
-    for path in sorted((ROOT / "data" / "vocab").rglob("*")):
-        if not path.is_file() or path.suffix not in {".yaml", ".json"}:
-            continue
-        if "migrations" in path.parts:
-            continue
-        if path.suffix == ".json":
-            yield path, json.loads(path.read_text(encoding="utf-8"))
-        else:
-            yield path, yaml.safe_load(path.read_text(encoding="utf-8"))
-
-
 class SourceDocsTests(unittest.TestCase):
     def test_origin_ledger_closes_exactly_the_frozen_identities(self):
         ledger = load_ledger()
@@ -87,23 +54,6 @@ class SourceDocsTests(unittest.TestCase):
         self.assertEqual(19, len(set(identities)))
         self.assertEqual(EXPECTED_IDENTITIES, set(identities))
         self.assertTrue(all(row["closure_status"] == "closed" for row in rows))
-
-    def test_formal_data_and_ledger_create_no_origin_value(self):
-        ledger = load_ledger()
-        self.assertEqual(
-            "forbidden", ledger["decision"]["policy"]["formal_origin_field"]
-        )
-        self.assertEqual(0, ledger["counts"]["formal_origin_values"])
-        self.assertTrue(
-            all(row["new_value"]["formal_origin"] is None for row in ledger["rows"])
-        )
-
-        findings = []
-        for path, document in formal_vocab_documents():
-            keys, values = nested_origin_facts(document)
-            if keys or values:
-                findings.append(str(path.relative_to(ROOT)))
-        self.assertEqual([], findings)
 
     def test_document_dispositions_cover_every_identity_once(self):
         ledger = load_ledger()

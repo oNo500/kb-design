@@ -164,7 +164,8 @@ def visit_record_decisions(relative: Path, document: object) -> List[Dict[str, s
 
 
 def visit_term_decisions(relative: Path, document: dict) -> List[Dict[str, str]]:
-    """Index explicit term/concept histories, never proposal or audit values."""
+    """Index current approvals and history decisions, never nested audit values."""
+    from kb_core.governance.term_maintenance import current_basis_decisions
     rows = []
     for concept_index, concept in enumerate(document.get("concepts", [])):
         concept_path = f"concepts[{concept_index}]"
@@ -176,6 +177,10 @@ def visit_term_decisions(relative: Path, document: dict) -> List[Dict[str, str]]
                     f"{concept_path}.languages[{language_index}].terms[{term_index}]",
                 ))
         for record, identity, prefix in records:
+            for path, decision in current_basis_decisions(record):
+                rows.append(index_row(
+                    "decision", decision, "basis.approval", relative, identity, f"{prefix}.{path}",
+                ))
             for path, decision in walk_decision_ids({"history": record.get("history", [])}):
                 rows.append(index_row(
                     "decision", decision, "history.decision", relative, identity,

@@ -129,5 +129,51 @@ class TermMaintenanceTests(unittest.TestCase):
         )
 
 
+class CurrentTermReferenceTests(unittest.TestCase):
+    def test_current_project_approvals_are_locatable_without_audit_leakage(self):
+        document = {'concepts': [{'id': 'tc-fixture', 'workflow': 'active',
+            'basis': {'project': {'approval': 'concept-grant'}},
+            'definitions': [{'basis': {'project': {'approval': 'definition-grant'}}}],
+            'languages': [{'terms': [{'id': 'tm-fixture', 'administrative_status': 'preferredTerm-admn-sts',
+                'basis': {'project': {'approval': 'term-grant'}},
+                'history': [{'from_value': {'basis': {'project': {'approval': 'audit-only'}}}}]}]}]}]}
+        rows = build_term_reference_index(document, {'obligations': []}, {})['entries']
+        decisions = {(row['target_id'], row['record'], row['field_path']) for row in rows
+                     if row['target_kind'] == 'decision'}
+        self.assertEqual({('concept-grant', 'concept:tc-fixture', 'basis.project.approval'),
+                          ('definition-grant', 'concept:tc-fixture', 'definitions[0].basis.project.approval'),
+                          ('term-grant', 'term:tm-fixture', 'basis.project.approval')}, decisions)
+
+    def test_layout_concept_targets_are_locatable_but_original_cells_are_not_current(self):
+        identity = 'tc-00000000-0000-4000-8000-000000000001'
+        layout = {'groups': [], 'symbol_mappings': [{'origin_id': 'symbols', 'concept_ids': [identity]}],
+                  'historical_designations': [{'origin_id': 'old-name', 'target_concept_ids': [identity]}],
+                  'reference_entries': [{'id': 'explanation', 'cells': [f'[entry](#{identity})'],
+                                         'original_cells': ['tc-00000000-0000-4000-8000-000000000002']}]}
+        rows = build_term_reference_index({'concepts': []}, {'obligations': []}, {}, layout=layout)['entries']
+        targets = {(row['target_id'], row['field_path']) for row in rows if row['target_kind'] == 'concept'}
+        self.assertEqual({(identity, 'symbol_mappings[0].concept_ids[0]'),
+                          (identity, 'historical_designations[0].target_concept_ids[0]'),
+                          (identity, 'reference_entries[0].cells[0]')}, targets)
+
+    def test_decision_declarations_expose_permission_targets_without_audit_targets(self):
+        identity = 'tc-00000000-0000-4000-8000-000000000001'
+        other = 'tc-00000000-0000-4000-8000-000000000002'
+        document = {'concepts': [{'id': identity, 'workflow': 'active'}, {'id': other, 'workflow': 'active'}]}
+        decision = {'answers': [{'patches': [
+            {'identity': identity, 'field': 'definition_source_permission', 'value': {'before': {'identity': other}}},
+            {'identity': f'terms/concepts/{identity}', 'field': 'record', 'value': {}},
+            {'identity': f'terms/concepts/{identity}', 'field': 'project_basis_scope', 'value': {}},
+            {'identity': 'tc-unknown', 'field': 'definition_source_permission', 'value': {}},
+        ]}]}
+        rows = build_term_reference_index(document, {'obligations': []},
+            {'permission': 'docs/decisions/term-permission.md'},
+            decision_documents={'permission': decision})['entries']
+        targets = {(row['target_id'], row['field_path'], row['state']) for row in rows
+                   if row['record'] == 'decision:permission' and row['target_kind'] == 'concept'}
+        self.assertEqual({(identity, f'answers[0].patches[{index}].identity', 'declared')
+                          for index in range(3)}, targets)
+
+
 if __name__ == "__main__":
     unittest.main()

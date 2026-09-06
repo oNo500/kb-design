@@ -9,7 +9,7 @@ import unittest
 
 import yaml
 
-from kb_core.governance.term_validation import semantic_concept
+from kb_core.governance.term_validation import semantic_concept, semantic_project_basis_scope
 from kb_obsidian.exporter import ExportError, build_content_files, build_manifest, load_repository
 
 from .test_source_v2_export import decision_bytes, documents_v2, fixture_inputs
@@ -35,18 +35,29 @@ def _decision(decision_id, patches):
     }
 
 
-def term_inputs(*, precise=True, bilingual=False, reverse_languages=False):
+def term_inputs(*, precise=True, bilingual=False, reverse_languages=False, project_basis=False):
     documents = documents_v2()
     inputs = fixture_inputs(documents)
     terms = yaml.safe_load(TERM_FIXTURE.read_text(encoding="utf-8"))
     state = yaml.safe_load(STATE_FIXTURE.read_text(encoding="utf-8"))
     concept = terms["concepts"][0]
     concept["subject_fields"] = []
+    if project_basis:
+        concept["basis"] = {"project": {
+            "approval": "decision-term-0001",
+            "origin": {
+                "commit": "1" * 40,
+                "file": "docs/design/model/fixture.md",
+                "locator": "项目定义",
+            },
+            "rationale": "该定义属于已采纳的项目合同。",
+        }}
     for definition in concept["definitions"]:
         for basis in definition["basis"]:
             basis["entity"] = "standard"
-    for basis in concept["basis"]:
-        basis["entity"] = "standard"
+    if isinstance(concept["basis"], list):
+        for basis in concept["basis"]:
+            basis["entity"] = "standard"
     for language in concept["languages"]:
         for term in language["terms"]:
             for basis in term["basis"]:
@@ -95,11 +106,18 @@ def term_inputs(*, precise=True, bilingual=False, reverse_languages=False):
     if not precise:
         concept_grant = copy.deepcopy(concept_grant)
         concept_grant["definitions"][0]["text"] = "Wrong grant value."
-    adoption = _decision("decision-term-0001", [{
+    adoption_patches = [{
         "identity": f"terms/concepts/{concept['id']}",
         "field": "record",
         "value": concept_grant,
-    }])
+    }]
+    if project_basis:
+        adoption_patches.append({
+            "identity": f"terms/concepts/{concept['id']}",
+            "field": "project_basis_scope",
+            "value": semantic_project_basis_scope(concept),
+        })
+    adoption = _decision("decision-term-0001", adoption_patches)
     state_grant = _decision("decision-term-fixture-active", [{
         "identity": "@control:terms",
         "field": "publication",
@@ -113,9 +131,51 @@ def term_inputs(*, precise=True, bilingual=False, reverse_languages=False):
         "_support:docs/decisions/term-fixture-adoption.md": decision_bytes(adoption),
         "_support:docs/decisions/term-fixture-activation.md": decision_bytes(state_grant),
     })
+    concept_id = concept["id"]
+    layout = {
+        "schema": "urn:kb-design:layout:glossary:2",
+        "version": 2,
+        "groups": [{
+            "id": "fixture", "title": "合成分组", "order": 1,
+            "members": [concept_id],
+        }],
+        "source_abbreviations": {
+            "id": "source-abbreviations", "title": "出处缩写", "order": 0,
+            "entries": [],
+        },
+        "standards_appendix": {
+            "id": "cited-standards", "title": "引用的标准与文献", "order": 2,
+            "entries": [],
+        },
+        "reference_entries": [],
+        "symbol_mappings": [{
+            "origin_id": "fixture-symbol", "symbols": ["FX"],
+            "concept_ids": [concept_id], "role": "relationship_indicator",
+            "display_note": "仅作关系指示符，不是当前术语形式。",
+        }],
+        "historical_designations": [{
+            "origin_id": "fixture-history", "forms": ["旧称列表"],
+            "target_concept_ids": [concept_id], "disposition": "withdrawn",
+            "reason": "名称已退出。", "display": "旧称列表仅供检索纠正。",
+            "effect": "不作为当前准用名称。", "approval": "decision-term-0001",
+        }],
+        "model_labels": {
+            "generation_inputs": ["data/vocab/topics.yaml"],
+            "display_rule": "只展示既有对象标签。",
+            "language_notice": "模型知识，第 5 级，外部用法未核实。",
+        },
+    }
+    inputs["term_layout"] = yaml.safe_dump(layout).encode()
+    layout_grant = _decision("decision-term-fixture-layout", [{
+        "identity": "@control:terms",
+        "field": "glossary_layout",
+        "value": layout,
+    }])
+    inputs["_support:docs/decisions/term-fixture-layout.md"] = decision_bytes(layout_grant)
     for relative in (
         "schemas/terms-v1.schema.json",
         "schemas/term-cutover-state-v1.schema.json",
+        "schemas/glossary-layout-v2.schema.json",
     ):
         inputs["_support:" + relative] = (ROOT / relative).read_bytes()
     return inputs
@@ -151,6 +211,8 @@ def superseded_term_inputs(*, current_grant=True):
 
 
 def commit_inputs(root, inputs, message):
+    for path in (root / "docs/decisions").glob("term-*.md"):
+        path.unlink()
     for name, relative in {
         "topics": "data/vocab/topics.yaml",
         "entities": "data/vocab/entities.yaml",
@@ -160,6 +222,7 @@ def commit_inputs(root, inputs, message):
         "forms": "data/vocab/forms.yaml",
         "terms": "data/vocab/terms.yaml",
         "term_state": "data/vocab/term-cutover-state.yaml",
+        "term_layout": "data/inputs/terminology/glossary-layout.yaml",
     }.items():
         (root / relative).write_bytes(inputs[name])
     for key, content in inputs.items():
@@ -184,6 +247,13 @@ class TermExportTests(unittest.TestCase):
     def test_active_terms_require_exact_concept_and_publication_grants(self):
         with self.assertRaisesRegex(ExportError, "TERM_ADOPTION_MISSING"):
             load_repository(Path("/synthetic"), input_bytes=term_inputs(precise=False))
+
+    def test_active_terms_require_the_captured_v2_layout(self):
+        inputs = term_inputs()
+        del inputs["term_layout"]
+
+        with self.assertRaisesRegex(ExportError, "glossary-layout.yaml"):
+            load_repository(Path("/synthetic"), input_bytes=inputs)
 
     def test_superseded_grant_remains_history_but_not_current_authority(self):
         documents = load_repository(
@@ -214,12 +284,31 @@ class TermExportTests(unittest.TestCase):
         self.assertIn("tm-11111111-1111-4111-8111-111111111111", text)
         self.assertIn("tm-22222222-2222-4222-8222-222222222222", text)
         self.assertIn("Standard · 1", text)
+        self.assertIn("旧称列表仅供检索纠正", text)
+        self.assertIn("不作为当前准用名称", text)
         self.assertIn("[[kb/topics/topic|Topic]]", files["kb/entities/standard.md"].decode())
 
         manifest = json.loads(build_manifest(Path("/synthetic"), files, input_bytes=inputs))
         self.assertEqual(1, manifest["object_counts"]["term"])
         term_input = next(row for row in manifest["inputs"] if row["path"] == "data/vocab/terms.yaml")
         self.assertEqual("1", term_input["version"])
+        layout_input = next(
+            row for row in manifest["inputs"]
+            if row["path"] == "data/inputs/terminology/glossary-layout.yaml"
+        )
+        self.assertEqual("2", layout_input["version"])
+
+    def test_project_basis_is_rendered_as_project_evidence(self):
+        files = build_content_files(
+            Path("/synthetic"), input_bytes=term_inputs(project_basis=True)
+        )
+        text = files[
+            "kb/terms/tc-11111111-1111-4111-8111-111111111111.md"
+        ].decode()
+
+        self.assertIn("项目决定依据，不是外部来源", text)
+        self.assertIn("采纳决定：decision-term-0001", text)
+        self.assertIn("docs/design/model/fixture.md", text)
 
     def test_bilingual_page_identity_is_stable_when_input_language_order_changes(self):
         forward = build_content_files(

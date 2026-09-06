@@ -59,19 +59,21 @@ uv run kb-core prepare-source-evidence
 
 ## 术语入口
 
-术语结构与必要取证分别按[术语实施范围](../../docs/decisions/term-infrastructure-scope.md)和[术语依据范围](../../docs/decisions/term-evidence-scope.md)实施。`governance/term_validation.py` 提供生成、维护和应用共用的完整检查：schema、来源引用、稳定身份、状态历史、精确字段采纳及切换授权分别核对。决定 ID 存在不等于覆盖具体值。
+术语结构与语言依据分别按[术语实施范围](../../docs/decisions/term-infrastructure-scope.md)和[术语依据范围](../../docs/decisions/term-evidence-scope.md)实施；完整记录、有限规则和布局分别见[术语具体采纳](../../docs/decisions/term-data-values.md)、[限定定义许可](../../docs/decisions/term-limited-definition-source-use.md)与[术语实施结构](../../docs/decisions/term-complete-structure.md)。`governance/term_validation.py` 为生成、维护与应用共用入口，分别核对 schema、来源、完整记录采纳、稳定身份、状态历史和发布授权。
 
-`build-terms build` 和 `build-terms check` 读取显式指定的术语、state、布局与来源索引，先校验全部输入再生成或比较快照和术语表。章节按概念 ID 编排，与可空的 `subject_fields` 分开；模型译名继续从主题、载体和原语言采纳输入生成，不创建新的术语概念。
+定义依据默认拒绝 de-facto／vendor；只有本批六个概念的完整 definition_source_permission 与同一概念的 L3 许可、record grant 精确匹配时例外放行，不改变来源 tier 或其他用途。project basis 只用于内容单元、断言、阈值的概念和定义，以及 assertion、threshold 两个既有英文形式，中文语言依据独立；其他缺外部依据的条目不能套用。
 
-`term-data check` 与 `term-data index` 复用同一校验；索引只定位实际引用，不把历史提案当作当前引用，也不创建正式义务。`check-terms` 在正式 terms/state 存在后核对发布授权并读取获准形式；缺失一半或授权不完整时失败，不退回旧登记来绕过检查。两者均不存在时，现行 Markdown 登记读取继续有效。
+`build-terms build` 和 `build-terms check` 读取显式术语、state、布局与来源索引，先校验全部输入再生成或比较快照和术语表。布局 v2 按概念身份编排，领域未定时 `subject_fields` 可以为空；普通说明、缩写、文献说明、符号和历史纠正标签在布局维护。主题、载体的模型标签仍从原词表与语言采纳输入生成，不创建术语概念或委托。历史标签只用于纠正说明与查找，不自动成为准用形式。
 
-当前没有正式 `terms.yaml` 或 `term-cutover-state.yaml`。具体数据、旧登记保留源与完整生成的衔接仍待采纳和完成；入口可运行不等于编辑权已切换。
+`term-data check` 与 `term-data index` 复用同一校验；索引只定位实际引用，不把提案和历史值当作现行引用，不创建正式义务。`check-terms` 在正式切换后完整核对 terms/state，再读取获准现行形式；缺失一半或授权不完整时失败，不回退旧登记来绕过检查。切换前维持原 Markdown 登记诊断，报告仍不批准术语或形成正文违规结论。
 
 ## 数据边界
 
-`data/vocab/` 中只有六份现行正式词表。`build-topics` 可以更新 `data/vocab/topics.yaml`；其他生成、诊断、索引和迁移输出不因命令成功而成为正式数据。
+主题输入位于 `data/inputs/topics/`，`build-topics` 重建 `data/vocab/topics.yaml`。本批 157 个术语概念与 51 个新增来源已获具体采纳；数据落盘和生成成功不等于 publication 或发版。
 
-主题生成输入位于 `data/inputs/topics/`。`docs/glossary.md` 继续是 designation 与中英对照的现行编辑源；`data/inputs/terminology/glossary-layout.yaml` 仍未启用，仓库没有正式 `data/vocab/terms.yaml`。迁移账本与复核材料位于 `data/audit/`，只作审计。
+正式切换前 `docs/glossary.md` 继续保持编辑权。规定的完整生成与临时应用验收通过后，才写真实 publication/state：terms 维护概念、定义和现行形式，`data/inputs/terminology/glossary-layout.yaml` 维护展示，glossary 成为完整只读生成页；主题和载体模型标签的原所有权不变。没有 retained-glossary 编辑源，不把审计账本作为长期生产输入。
+
+迁移审计保留原行、旧值与去向；正式义务、委托、持久正式索引和 TBX 不因本批术语迁移启用。外部正式 vault 写入、合并与发版不在本轮条件式执行范围内。
 
 ## 开发检查
 

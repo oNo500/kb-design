@@ -2,6 +2,8 @@
 """检查仓库内 Markdown 的相对链接与锚点是否存在。外部 URL 不查。"""
 import json, os, re, sys, pathlib, unicodedata
 
+import yaml
+
 root = pathlib.Path(__file__).resolve().parent.parent
 # Historical decisions and the frozen README retain their original path context.
 migration = json.loads((root / 'work/plans/2026-09-05-monorepo-files.json').read_text())
@@ -26,11 +28,28 @@ def slug(h):
     h = re.sub(r'[^\w\s一-鿿-]', '', h)
     return re.sub(r'\s+', '-', h)
 
+def markdown_lines(path):
+    lines = path.read_text(encoding='utf-8').split('\n')
+    if lines and lines[0] == '---':
+        end = next((index for index in range(1, len(lines))
+                    if lines[index] in {'---', '...'}), None)
+        if end is not None:
+            try:
+                frontmatter = yaml.safe_load('\n'.join(lines[1:end]))
+            except yaml.YAMLError:
+                frontmatter = None
+            if isinstance(frontmatter, dict):
+                # Blank the metadata rather than removing it, preserving line numbers.
+                lines[:end + 1] = [''] * (end + 1)
+    return lines
+
+
+bodies = {p: markdown_lines(p) for p in files}
 headings = {}
 for p in files:
     hs = set()
     in_code = False
-    for line in p.read_text(encoding='utf-8').split('\n'):
+    for line in bodies[p]:
         if line.strip().startswith('```'): in_code = not in_code; continue
         if not in_code and line.startswith('#'):
             hs.add(slug(line.lstrip('#')))
@@ -42,7 +61,7 @@ for p in files:
     if p.relative_to(root).as_posix() in historical:
         continue
     in_code = False
-    for n, line in enumerate(p.read_text(encoding='utf-8').split('\n'), 1):
+    for n, line in enumerate(bodies[p], 1):
         if line.strip().startswith('```'): in_code = not in_code; continue
         if in_code: continue
         line = re.sub(r'`[^`]*`', '', line)

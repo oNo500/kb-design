@@ -55,6 +55,25 @@ def semantic_term(concept_id: str, language: str,
     }
 
 
+def semantic_project_basis_scope(concept: Mapping[str, object]) -> dict[str, object]:
+    definitions = [
+        copy.deepcopy(row) for row in concept.get("definitions", [])
+        if term_basis_kind(row.get("basis")) == "project"
+    ]
+    terms = [
+        semantic_term(concept["id"], language, term)
+        for _, language, term in _term_rows({"concepts": [concept]})
+        if term_basis_kind(term.get("basis")) == "project"
+    ]
+    concept_basis = concept.get("basis")
+    return {
+        "concept_basis": copy.deepcopy(concept_basis)
+        if term_basis_kind(concept_basis) == "project" else None,
+        "definitions": definitions,
+        "terms": terms,
+    }
+
+
 def _issue(code, path, message, origin="term"):
     return TermIssue(code, origin, path, message)
 
@@ -258,8 +277,7 @@ def _validate_model_basis(value, previous, decisions, historical, issues):
         approval = basis["model"]["approval"]
         concept_grants = _patch_decision_ids(
             decisions, f"terms/concepts/{concept['id']}", "record",
-            semantic_concept(concept),
-            levels={"L2", "L3"},
+            semantic_concept(concept), levels={"L2", "L3"},
         )
         if approval not in concept_grants or approval not in _history_decisions(term):
             issues.append(_issue(
@@ -293,6 +311,95 @@ def _validate_model_basis(value, previous, decisions, historical, issues):
                 "TERM_MODEL_BASIS_CORRECTION_MISSING", path,
                 "external basis cannot be replaced by model basis without an exact correction",
             ))
+
+
+def _validate_project_basis(value, decisions, issues):
+    for concept in value.get("concepts", []):
+        concept_id = concept["id"]
+        scope = semantic_project_basis_scope(concept)
+        record_grants = _patch_decision_ids(
+            decisions, f"terms/concepts/{concept_id}", "record",
+            semantic_concept(concept), level="L3",
+        )
+        scope_grants = _patch_decision_ids(
+            decisions, f"terms/concepts/{concept_id}", "project_basis_scope",
+            scope, level="L3",
+        )
+        uses = []
+        if term_basis_kind(concept.get("basis")) == "project":
+            uses.append((concept["basis"], f"concepts[{concept_id}].basis",
+                         concept.get("history", [])))
+        for index, definition in enumerate(concept.get("definitions", [])):
+            if term_basis_kind(definition.get("basis")) == "project":
+                uses.append((definition["basis"], f"concepts[{concept_id}].definitions[{index}].basis",
+                             concept.get("history", [])))
+        for _, _, term in _term_rows({"concepts": [concept]}):
+            if term_basis_kind(term.get("basis")) == "project":
+                uses.append((term["basis"], f"terms[{term['id']}].basis",
+                             term.get("history", [])))
+        for basis, path, history in uses:
+            approval = basis["project"]["approval"]
+            if (
+                approval not in record_grants
+                or approval not in scope_grants
+                or approval not in _history_decisions({"history": history})
+            ):
+                issues.append(_issue(
+                    "TERM_PROJECT_BASIS_UNAUTHORIZED", path,
+                    "project basis lacks its exact L3 record and scope authorization",
+                ))
+
+
+def _validate_definition_sources(value, source_documents, decisions, issues):
+    entities = {
+        row.get("id"): row
+        for row in source_documents.get("entities", {}).get("entities", [])
+        if isinstance(row, Mapping)
+    }
+    for concept in value.get("concepts", []):
+        concept_id = concept["id"]
+        l3_records = _patch_decision_ids(
+            decisions, f"terms/concepts/{concept_id}", "record",
+            semantic_concept(concept), level="L3",
+        )
+        for definition in concept.get("definitions", []):
+            if term_basis_kind(definition.get("basis")) != "external":
+                continue
+            for reference in definition["basis"]:
+                entity = entities.get(reference.get("entity"), {})
+                if entity.get("tier") not in {"de-facto", "vendor"}:
+                    continue
+                permitted = False
+                for decision_id, front in decisions.items():
+                    if front.get("level") != "L3" or not l3_records:
+                        continue
+                    for answer in front.get("answers", []):
+                        for patch in answer.get("patches", []):
+                            permission = patch.get("value")
+                            if (
+                                patch.get("identity") == concept_id
+                                and patch.get("field") == "definition_source_permission"
+                                and isinstance(permission, Mapping)
+                                and set(permission) == {
+                                    "source_entity", "registered_tier", "registered_version",
+                                    "read_material", "checked", "concept_basis", "definitions",
+                                }
+                                and permission.get("source_entity") == entity.get("id")
+                                and permission.get("registered_tier") == entity.get("tier")
+                                and permission.get("registered_version") == entity.get("version")
+                                and permission.get("concept_basis") == concept.get("basis")
+                                and permission.get("definitions") == [definition]
+                                and isinstance(permission.get("read_material"), str)
+                                and permission["read_material"].strip()
+                                and permission.get("checked") == reference.get("checked")
+                            ):
+                                permitted = True
+                if not permitted:
+                    issues.append(_issue(
+                        "TERM_DEFINITION_SOURCE_FORBIDDEN",
+                        f"concepts[{concept_id}].definitions",
+                        "de-facto and vendor definition sources require an exact L3 permission",
+                    ))
 
 
 def _validate_static_relations(document, issues):
@@ -504,6 +611,8 @@ def validate_term_snapshot(value, *, source_documents, accepted_decisions,
     issues.extend(_convert_source_issues(source_issues))
     _validate_adoption(value, previous, decisions, issues)
     _validate_model_basis(value, previous, decisions, historical, issues)
+    _validate_project_basis(value, decisions, issues)
+    _validate_definition_sources(value, source_documents, decisions, issues)
     _validate_all_history(value, decisions, historical, issues)
     if previous is not None:
         previous_schema = schema_issues(previous)

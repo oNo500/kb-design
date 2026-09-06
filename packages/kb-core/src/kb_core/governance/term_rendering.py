@@ -68,7 +68,18 @@ def _source_rows(references: Sequence[Mapping[str, object]], source_entities):
 
 def _evidence_lines(basis, source_entities):
     if isinstance(basis, Mapping):
-        if term_basis_kind(basis) != "model":
+        kind = term_basis_kind(basis)
+        if kind == "project" or (set(basis) == {"project"} and isinstance(basis["project"], Mapping)):
+            project = basis["project"]
+            origin = project.get("origin", {})
+            return [
+                "项目决定依据，不是外部来源",
+                "采纳决定：" + str(project.get("approval", "—")),
+                "项目原文：`" + str(origin.get("commit", "—")) + ":"
+                + str(origin.get("file", "—")) + "` · " + str(origin.get("locator", "—")),
+                "采用理由：" + str(project.get("rationale", "—")),
+            ]
+        if kind != "model":
             raise ValueError("TERM_BASIS_INVALID")
         model = basis["model"]
         return [
@@ -93,7 +104,15 @@ def _preferred(concept):
     return result
 
 
-def render_term_markdown(concept, source_entities) -> str:
+def _concept_layout_rows(concept_id, layout):
+    symbols = [row for row in (layout or {}).get("symbol_mappings", [])
+               if concept_id in row.get("concept_ids", [])]
+    historical = [row for row in (layout or {}).get("historical_designations", [])
+                  if concept_id in row.get("target_concept_ids", [])]
+    return symbols, historical
+
+
+def render_term_markdown(concept, source_entities, *, layout=None) -> str:
     """Render one concept body, including every language and evidence layer."""
     preferred = _preferred(concept)
     chinese = preferred.get("zh-Hans") or preferred.get("zh-Hant")
@@ -161,7 +180,30 @@ def render_term_markdown(concept, source_entities) -> str:
             lines.extend(f"  - 依据：{row}" for row in _evidence_lines(term.get("basis"), source_entities))
     else:
         lines.append("无。")
+    symbols, historical_designations = _concept_layout_rows(concept["id"], layout)
+    if symbols:
+        lines.extend(["", "## 关系符号", ""])
+        for row in symbols:
+            lines.append("- " + " / ".join(row["symbols"]) + "：" + row["display_note"])
+    if historical_designations:
+        lines.extend(["", "## 历史名称", ""])
+        for row in historical_designations:
+            lines.append("- " + " / ".join(row["forms"]) + "：已退出所列概念的当前准用名称。")
+            lines.append("  - " + row["display"])
+            lines.append("  - 原因：" + row["reason"])
+            lines.append("  - 效力：" + row["effect"])
+            lines.append("  - 采纳决定：" + row["approval"])
     return "\n".join(lines).rstrip() + "\n"
+
+
+def _layout_entry_lines(entry):
+    lines = ["- " + "｜".join(entry["cells"])]
+    for key, title in (("meaning", "性质"), ("scope_note", "范围"),
+                       ("scope", "范围"), ("basis_note", "依据"),
+                       ("verification", "核验"), ("display_notice", "说明")):
+        if entry.get(key):
+            lines.append("  - " + title + "：" + entry[key])
+    return lines
 
 
 def _summary_row(concept):
@@ -196,6 +238,11 @@ def render_glossary(snapshot, layout, state, source_entities=None) -> str:
     lines = ["# 术语表 (Glossary)", READ_ONLY_DECLARATION, "",
              "本页按应用章节编排，并由同一已校验快照确定生成。", "",
              "快照 SHA-256：`" + hashlib.sha256(_canonical_json(snapshot)).hexdigest() + "`。"]
+    abbreviation_section = layout.get("source_abbreviations", {})
+    if abbreviation_section.get("entries"):
+        lines.extend(["", "## " + abbreviation_section["title"], ""])
+        for entry in abbreviation_section["entries"]:
+            lines.extend(_layout_entry_lines(entry))
     for group in sorted(layout["groups"], key=lambda row: (row["order"], row["id"])):
         lines.extend(["", "## " + group["title"], "",
                       "| 中文 | 英文 | 定义 | 允许形式 | 概念 ID |",
@@ -217,6 +264,28 @@ def render_glossary(snapshot, layout, state, source_entities=None) -> str:
                     lines.append("**" + line[3:] + "**")
                 else:
                     lines.append(line)
+    if layout.get("reference_entries"):
+        lines.extend(["", "## 补充说明", ""])
+        for entry in layout["reference_entries"]:
+            lines.extend(_layout_entry_lines(entry))
+    if layout.get("symbol_mappings"):
+        lines.extend(["", "## 关系符号", ""])
+        for row in layout["symbol_mappings"]:
+            lines.append("- " + " / ".join(row["symbols"]) + "：" + row["display_note"]
+                         + " 参见 " + "、".join(f"`{item}`" for item in row["concept_ids"]) + "。")
+    if layout.get("historical_designations"):
+        lines.extend(["", "## 历史名称", ""])
+        for row in layout["historical_designations"]:
+            lines.append("- " + " / ".join(row["forms"]) + "：已退出所列概念的当前准用名称。")
+            lines.append("  - " + row["display"])
+            lines.append("  - 原因：" + row["reason"])
+            lines.append("  - 效力：" + row["effect"])
+            lines.append("  - 目标：" + "、".join(f"`{item}`" for item in row["target_concept_ids"]))
+    appendix = layout.get("standards_appendix", {})
+    if appendix.get("entries"):
+        lines.extend(["", "## " + appendix["title"], ""])
+        for entry in appendix["entries"]:
+            lines.extend(_layout_entry_lines(entry))
     lines.extend(["", "## 来源目录", ""])
     catalog = source_entities or {row["id"]: row for row in snapshot.get("source_entities", [])}
     if catalog:

@@ -97,6 +97,37 @@ class SourceV2ExportTests(unittest.TestCase):
         (self.root / "docs/decisions/source-fixture-decision.md").write_bytes(decision_bytes(self.decision))
         (self.root / "docs/decisions/source-migration-policy.md").write_bytes(migration_policy_bytes())
 
+    def test_canonical_string_dates_are_normalized_to_date_values(self):
+        for document in self.documents.values():
+            document["version"]["date"] = "2026-09-05"
+        for record in self.documents["topics"]["concepts"]:
+            record["added"] = "2026-09-05"
+        for record in self.documents["entities"]["entities"]:
+            record["added"] = "2026-09-05"
+
+        loaded = load(self.documents)
+
+        self.assertEqual(dt.date(2026, 9, 5), loaded["entities"]["version"]["date"])
+        self.assertIs(type(loaded["entities"]["entities"][0]["added"]), dt.date)
+
+    def test_noncanonical_invalid_and_datetime_dates_are_rejected(self):
+        cases = (
+            ("record", "2026-9-5"),
+            ("record", "2026-02-30"),
+            ("record", dt.datetime(2026, 9, 5, 12, 0)),
+            ("version", "2026-9-5"),
+            ("version", dt.datetime(2026, 9, 5, 12, 0)),
+        )
+        for location, value in cases:
+            with self.subTest(location=location, value=value):
+                documents = documents_v2()
+                if location == "record":
+                    documents["topics"]["concepts"][0]["added"] = value
+                else:
+                    documents["topics"]["version"]["date"] = value
+                with self.assertRaisesRegex(ExportError, "expected date"):
+                    load(documents)
+
     def test_role_decision_scope_cannot_be_borrowed(self):
         self.decision["answers"][0]["patches"][0]["value"] = "another-entity"
         self.save()

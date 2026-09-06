@@ -30,9 +30,13 @@ _OPTIONAL_TERM_DOCUMENTS = {
     "terms": "data/vocab/terms.yaml",
     "term_state": "data/vocab/term-cutover-state.yaml",
 }
+_TERM_LAYOUT_DOCUMENT = {
+    "term_layout": "data/inputs/terminology/glossary-layout.yaml",
+}
 _TERM_SCHEMA_FILES = (
     "schemas/terms-v1.schema.json",
     "schemas/term-cutover-state-v1.schema.json",
+    "schemas/glossary-layout-v2.schema.json",
 )
 _IMPLEMENTATION_FILES = (
     "pyproject.toml",
@@ -40,16 +44,19 @@ _IMPLEMENTATION_FILES = (
     "packages/kb-core/src/kb_core/__init__.py",
     "packages/kb-core/src/kb_core/label_basis.py",
     "packages/kb-core/src/kb_core/source_model.py",
+    "packages/kb-core/src/kb_core/build_source_index.py",
     "packages/kb-core/src/kb_core/label_adoptions.py",
     "packages/kb-core/src/kb_core/repository.py",
     "packages/kb-core/src/kb_core/governance/__init__.py",
     "packages/kb-core/src/kb_core/governance/term_model.py",
     "packages/kb-core/src/kb_core/governance/term_git.py",
+    "packages/kb-core/src/kb_core/governance/build_terms.py",
     "packages/kb-core/src/kb_core/governance/term_transitions.py",
     "packages/kb-core/src/kb_core/governance/term_validation.py",
     "packages/kb-core/src/kb_core/governance/term_rendering.py",
     "schemas/terms-v1.schema.json",
     "schemas/term-cutover-state-v1.schema.json",
+    "schemas/glossary-layout-v2.schema.json",
 )
 
 
@@ -226,8 +233,26 @@ def load_design(root: Path) -> DesignSnapshot:
     optional_present = disk_optional == optional_paths
     formal_documents = dict(_FORMAL_DOCUMENTS)
     if optional_present:
-        formal_documents.update(_OPTIONAL_TERM_DOCUMENTS)
-        for name, relative_path in _OPTIONAL_TERM_DOCUMENTS.items():
+        term_documents = {
+            **_OPTIONAL_TERM_DOCUMENTS,
+            **_TERM_LAYOUT_DOCUMENT,
+        }
+        layout_path = next(iter(_TERM_LAYOUT_DOCUMENT.values()))
+        committed_layout = _git(
+            design_root,
+            "ls-tree",
+            "-r",
+            "--name-only",
+            commit,
+            "--",
+            layout_path,
+        ).splitlines()
+        if committed_layout != [layout_path] or not (design_root / layout_path).is_file():
+            raise ApplicationError(
+                "data/inputs/terminology/glossary-layout.yaml is required with formal terms"
+            )
+        formal_documents.update(term_documents)
+        for name, relative_path in term_documents.items():
             try:
                 content = (design_root / relative_path).read_bytes()
             except OSError as exc:

@@ -1,4 +1,5 @@
 import copy
+import json
 import unittest
 from pathlib import Path
 
@@ -7,6 +8,7 @@ import yaml
 from kb_core.governance.term_validation import (
     historical_decisions_from_documents,
     semantic_concept,
+    semantic_project_basis_scope,
     semantic_term,
     validate_term_snapshot,
 )
@@ -15,6 +17,9 @@ from kb_core.source_model import accepted_decisions_from_documents
 
 ROOT = Path(__file__).resolve().parents[4]
 FIXTURE = ROOT / "tests/fixtures/terminology/valid/minimal-active.yaml"
+CANDIDATE = json.loads(
+    (ROOT / "work/reviews/2026-09-06-term-complete-candidate.json").read_text()
+)
 
 
 def decision(decision_id, patches, *, status="accepted", level="L3", supersedes=None):
@@ -260,6 +265,72 @@ class TermValidationTests(unittest.TestCase):
         self.assertIn(
             "TERM_MODEL_APPROVAL_INVALID",
             self.codes(value=wrong_concept, decisions=decisions),
+        )
+
+    def test_project_basis_requires_exact_l3_record_and_project_scope(self):
+        concept = next(
+            row for row in CANDIDATE["proposed_terms"]["concepts"]
+            if row["id"] == "tc-56bf269d-a675-4fc3-a2c1-b1f38a734d81"
+        )
+        value = {"schema": "urn:kb-design:schema:terms:1", "version": 1,
+                 "concepts": [copy.deepcopy(concept)]}
+        approval = concept["basis"]["project"]["approval"]
+        grant = decision(approval, [
+            {"identity": f"terms/concepts/{concept['id']}", "field": "record",
+             "value": semantic_concept(concept)},
+            {"identity": f"terms/concepts/{concept['id']}", "field": "project_basis_scope",
+             "value": semantic_project_basis_scope(concept)},
+        ], level="L3")
+
+        self.assertEqual(set(), self.codes(value=value, decisions={approval: grant}))
+        grant["answers"][0]["patches"].pop()
+        self.assertIn(
+            "TERM_PROJECT_BASIS_UNAUTHORIZED",
+            self.codes(value=value, decisions={approval: grant}),
+        )
+
+        data_driven = copy.deepcopy(value)
+        changed = data_driven["concepts"][0]
+        changed["id"] = "tc-77777777-7777-4777-8777-777777777777"
+        changed["history"][0]["decision"] = approval
+        for term in changed["languages"][0]["terms"]:
+            term["id"] = "tm-77777777-7777-4777-8777-777777777777"
+            term["history"][0]["decision"] = approval
+        grant = decision(approval, [
+            {"identity": f"terms/concepts/{changed['id']}", "field": "record",
+             "value": semantic_concept(changed)},
+            {"identity": f"terms/concepts/{changed['id']}", "field": "project_basis_scope",
+             "value": semantic_project_basis_scope(changed)},
+        ], level="L3")
+        self.assertEqual(set(), self.codes(value=data_driven, decisions={approval: grant}))
+
+    def test_de_facto_definition_requires_exact_l3_permission_and_source_version(self):
+        entry = CANDIDATE["limited_definition_permission_proposal"]["entries"][0]
+        concept = next(
+            row for row in CANDIDATE["proposed_terms"]["concepts"]
+            if row["id"] == entry["concept_id"]
+        )
+        value = {"schema": "urn:kb-design:schema:terms:1", "version": 1,
+                 "concepts": [copy.deepcopy(concept)]}
+        data_grant = decision("decision-term-data-values", [{
+            "identity": f"terms/concepts/{concept['id']}", "field": "record",
+            "value": semantic_concept(concept),
+        }], level="L3")
+        permission = decision(
+            "decision-term-limited-definition-source-use",
+            [entry["permission_patch"]], level="L3",
+        )
+        decisions = {data_grant["id"]: data_grant, permission["id"]: permission}
+        self.sources["entities"]["entities"].append({
+            "id": "swebok", "kind": "standard", "tier": "de-facto",
+            "version": "4.0", "fixed_sha256": "1" * 64,
+        })
+
+        self.assertEqual(set(), self.codes(value=value, decisions=decisions))
+        self.sources["entities"]["entities"][-1]["version"] = "5.0"
+        self.assertIn(
+            "TERM_DEFINITION_SOURCE_FORBIDDEN",
+            self.codes(value=value, decisions=decisions),
         )
 
     def test_english_term_cannot_use_model_basis(self):

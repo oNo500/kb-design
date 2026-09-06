@@ -5,6 +5,7 @@ import dataclasses
 import hashlib
 import json
 import pathlib
+import re
 import sys
 from dataclasses import dataclass
 from typing import Any, Mapping, Optional, Sequence, Tuple
@@ -22,7 +23,7 @@ from kb_core.governance.term_rendering import (
     render_term_markdown,
 )
 from kb_core.governance.term_git import captured_previous_terms
-from kb_core.source_model import collect_reference_uses, validate_source_documents
+from kb_core.source_model import collect_reference_uses, decision_authorizes, validate_source_documents
 
 
 REPOSITORY_ROOT = project_root(__file__)
@@ -322,6 +323,71 @@ def _load_json(path: pathlib.Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def validate_glossary_layout(value, *, concept_ids=None, accepted_decisions=None,
+                             schema=None) -> tuple[str, ...]:
+    """Validate captured layout structure, membership and exact authorization."""
+    if schema is None:
+        schema = json.loads(
+            (REPOSITORY_ROOT / "schemas/glossary-layout-v2.schema.json").read_text(encoding="utf-8")
+        )
+    issues = [
+        "TERM_LAYOUT_SCHEMA " + error.json_path + " " + error.message
+        for error in Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(value)
+    ]
+    if issues:
+        return tuple(sorted(issues))
+    groups = value["groups"]
+    for field in ("id", "order"):
+        values = [group[field] for group in groups]
+        if len(values) != len(set(values)):
+            issues.append("TERM_LAYOUT_GROUP_DUPLICATE " + field)
+    known = set(concept_ids) if concept_ids is not None else None
+    member_ids = {member for group in groups for member in group["members"]}
+    if known is not None:
+        missing = sorted(known - member_ids)
+        unknown = sorted(member_ids - known)
+        if missing:
+            issues.append("TERM_LAYOUT_MEMBER_MISSING " + " ".join(missing))
+        if unknown:
+            issues.append("TERM_LAYOUT_MEMBER_UNKNOWN " + " ".join(unknown))
+        for section in ("symbol_mappings", "historical_designations"):
+            key = "concept_ids" if section == "symbol_mappings" else "target_concept_ids"
+            bad = sorted({item for row in value[section] for item in row[key]} - known)
+            if bad:
+                issues.append("TERM_LAYOUT_TARGET_UNKNOWN " + " ".join(bad))
+        referenced = {
+            match.group(0)
+            for row in value["reference_entries"]
+            for cell in row["cells"]
+            for match in re.finditer(
+                r"tc-[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}",
+                cell,
+            )
+        }
+        bad_references = sorted(referenced - known)
+        if bad_references:
+            issues.append("TERM_LAYOUT_TARGET_UNKNOWN " + " ".join(bad_references))
+    if accepted_decisions is not None and not any(
+        front.get("level") == "L3"
+        and decision_authorizes(accepted_decisions, decision_id, "@control:terms",
+                               "glossary_layout", value)
+        for decision_id, front in accepted_decisions.items()
+    ):
+        issues.append("TERM_LAYOUT_ADOPTION_MISSING")
+    return tuple(sorted(issues))
+
+
+def load_glossary_layout(path, *, concept_ids=None, accepted_decisions=None, schema=None):
+    value = _load_yaml(path)
+    issues = validate_glossary_layout(
+        value, concept_ids=concept_ids, accepted_decisions=accepted_decisions,
+        schema=schema,
+    )
+    if issues:
+        raise ValueError("\n".join(issues))
+    return value
+
+
 def capture_validation_context(root: pathlib.Path, *, with_history: bool = False):
     """Capture and validate every repository input shared by term consumers."""
     documents = {
@@ -385,7 +451,6 @@ def _outputs(arguments: argparse.Namespace) -> Tuple[bytes, bytes]:
     document = yaml.safe_load(terms_bytes)
     state_value = _load_yaml(arguments.state)
     state = load_cutover_state(arguments.state)
-    layout = _load_yaml(arguments.layout)
     source_index = _load_json(arguments.source_index)
     captured, decisions, adoptions, historical_decisions = capture_validation_context(
         root, with_history=True,
@@ -405,6 +470,10 @@ def _outputs(arguments: argparse.Namespace) -> Tuple[bytes, bytes]:
     if issues:
         raise ValueError("\n".join(f"{issue.code} {issue.path} {issue.message}" for issue in issues))
     active = {row["id"]: row for row in document.get("concepts", []) if row.get("workflow") == "active"}
+    layout = load_glossary_layout(
+        arguments.layout, concept_ids=active, accepted_decisions=decisions,
+        schema=_load_json(root / "schemas/glossary-layout-v2.schema.json"),
+    )
     ordered_concepts({"concepts": list(active.values())}, layout)
     _validate_source_index(document, source_index)
     model_labels = build_model_label_rows(captured["topics"], captured["forms"], adoptions, decisions)

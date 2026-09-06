@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from datetime import date
 import copy
 import json
+import re
 from pathlib import Path
 from typing import Literal, Optional, Sequence
 
@@ -80,7 +81,7 @@ class LanguageRecord:
 class DefinitionRecord:
     language: LanguageTag
     text: str
-    basis: Sequence[object]
+    basis: object
 
 
 @dataclass(frozen=True)
@@ -95,7 +96,7 @@ class ConceptRecord:
     subject_fields: Sequence[SubjectFieldRecord]
     definitions: Sequence[DefinitionRecord]
     languages: Sequence[LanguageRecord]
-    basis: Sequence[object]
+    basis: object
     source: Optional[object]
     match: Sequence[object]
     workflow: Workflow
@@ -164,9 +165,34 @@ def local_term_definitions(refs):
             ),
         },
     )
+    project_basis = object_schema(
+        ("project",),
+        {
+            "project": object_schema(
+                ("approval", "origin", "rationale"),
+                {
+                    "approval": {"type": "string", "minLength": 1},
+                    "origin": object_schema(
+                        ("commit", "file", "locator"),
+                        {
+                            "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+                            "file": {"type": "string", "minLength": 1},
+                            "locator": {"type": "string", "minLength": 1},
+                        },
+                    ),
+                    "rationale": {"type": "string", "minLength": 1},
+                },
+            ),
+        },
+    )
+    concept_basis = {"oneOf": [
+        {"$ref": "#/$defs/basis"},
+        {"$ref": "#/$defs/project_basis"},
+    ]}
     term_basis = {"oneOf": [
         {"$ref": "#/$defs/basis"},
         {"$ref": "#/$defs/model_basis"},
+        {"$ref": "#/$defs/project_basis"},
     ]}
     history = object_schema(
         ("date", "event", "decision", "reason", "from_value", "to_value", "linked_terms"),
@@ -233,7 +259,7 @@ def local_term_definitions(refs):
         {
             "language": {"$ref": "#/$defs/language"},
             "text": {"type": "string", "minLength": 1},
-            "basis": {"$ref": "#/$defs/basis"},
+            "basis": {"$ref": "#/$defs/concept_basis"},
         },
     )
     concept = object_schema(
@@ -257,7 +283,7 @@ def local_term_definitions(refs):
                 "uniqueItems": True,
                 "items": {"$ref": "#/$defs/language_record"},
             },
-            "basis": {"$ref": "#/$defs/basis"},
+            "basis": {"$ref": "#/$defs/concept_basis"},
             "source": {"$ref": "#/$defs/source_reference"},
             "match": {
                 "type": "array",
@@ -276,6 +302,8 @@ def local_term_definitions(refs):
         "language": language,
         "basis": basis,
         "model_basis": model_basis,
+        "project_basis": project_basis,
+        "concept_basis": concept_basis,
         "term_basis": term_basis,
         "source_reference": {"$ref": refs["source"]},
         "match_reference": {"$ref": refs["match"]},
@@ -354,6 +382,25 @@ def term_basis_kind(value):
         return "external"
     if (
         isinstance(value, dict)
+        and set(value) == {"project"}
+        and isinstance(value["project"], dict)
+        and set(value["project"]) == {"approval", "origin", "rationale"}
+        and isinstance(value["project"].get("origin"), dict)
+        and set(value["project"]["origin"]) == {"commit", "file", "locator"}
+        and isinstance(value["project"]["origin"].get("commit"), str)
+        and re.fullmatch(r"[0-9a-f]{40}", value["project"]["origin"]["commit"])
+        and all(
+            isinstance(item, str) and item.strip()
+            for item in (
+                value["project"].get("approval"), value["project"].get("rationale"),
+                value["project"]["origin"].get("file"),
+                value["project"]["origin"].get("locator"),
+            )
+        )
+    ):
+        return "project"
+    if (
+        isinstance(value, dict)
         and set(value) == {"level", "model"}
         and type(value.get("level")) is int
         and value.get("level") == 5
@@ -381,7 +428,7 @@ def parse_terms(value):
             for row in concept["subject_fields"]
         )
         definitions = tuple(
-            DefinitionRecord(row["language"], row["text"], tuple(row["basis"]))
+            DefinitionRecord(row["language"], row["text"], copy.deepcopy(row["basis"]))
             for row in concept["definitions"]
         )
         languages = []
@@ -403,7 +450,7 @@ def parse_terms(value):
             subject_fields,
             definitions,
             tuple(languages),
-            tuple(concept["basis"]),
+            copy.deepcopy(concept["basis"]),
             concept.get("source"),
             tuple(concept.get("match", ())),
             concept["workflow"],
@@ -424,9 +471,12 @@ def collect_reference_uses(document, file="terms"):
     def field(value, name, default=None):
         return value.get(name, default) if isinstance(value, dict) else getattr(value, name, default)
 
-    def append_basis(uses, basis, record, path, *, allow_model=False):
+    def append_basis(uses, basis, record, path, *, allow_model=False,
+                     allow_project=False):
         kind = "external" if isinstance(basis, tuple) else term_basis_kind(basis)
         if kind == "model" and allow_model:
+            return
+        if kind == "project" and allow_project:
             return
         if kind != "external":
             uses.append(ReferenceUse("basis", str(file), record, path, basis))
@@ -443,6 +493,7 @@ def collect_reference_uses(document, file="terms"):
         append_basis(
             uses, field(concept, "basis", []), record,
             f"concepts[{concept_index}].basis",
+            allow_project=True,
         )
         for index, subject in enumerate(field(concept, "subject_fields", [])):
             append_basis(
@@ -453,6 +504,7 @@ def collect_reference_uses(document, file="terms"):
             append_basis(
                 uses, field(definition, "basis", []), record,
                 f"concepts[{concept_index}].definitions[{index}].basis",
+                allow_project=True,
             )
         for language_index, language in enumerate(field(concept, "languages", [])):
             for term_index, term in enumerate(field(language, "terms", [])):
@@ -460,6 +512,7 @@ def collect_reference_uses(document, file="terms"):
                     uses, field(term, "basis", []), record,
                     f"concepts[{concept_index}].languages[{language_index}].terms[{term_index}].basis",
                     allow_model=True,
+                    allow_project=True,
                 )
         # Preserve discovery for the pre-schema future-consumer fixture while
         # applying the same exact model/external classification.
@@ -468,6 +521,7 @@ def collect_reference_uses(document, file="terms"):
                 uses, field(term, "basis", []), record,
                 f"concepts[{concept_index}].terms[{term_index}].basis",
                 allow_model=True,
+                allow_project=True,
             )
         source = field(concept, "source")
         if source is not None:

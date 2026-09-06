@@ -60,6 +60,7 @@ def _old_snapshot(snapshot: DesignSnapshot, manifest_path: Path, raw: bytes) -> 
     allowed_input_sets.append(
         allowed_input_sets[0]
         | set(design_source._OPTIONAL_TERM_DOCUMENTS.values())
+        | set(design_source._TERM_LAYOUT_DOCUMENT.values())
         | set(design_source._TERM_SCHEMA_FILES)
     )
     if set(inputs) not in allowed_input_sets:
@@ -68,6 +69,7 @@ def _old_snapshot(snapshot: DesignSnapshot, manifest_path: Path, raw: bytes) -> 
     selected_documents = dict(design_source._FORMAL_DOCUMENTS)
     if set(design_source._OPTIONAL_TERM_DOCUMENTS.values()) <= set(inputs):
         selected_documents.update(design_source._OPTIONAL_TERM_DOCUMENTS)
+        selected_documents.update(design_source._TERM_LAYOUT_DOCUMENT)
     for name, relative in selected_documents.items():
         data = _git_bytes(snapshot.root, "show", f"{commit}:{relative}")
         if _sha256(data) != inputs[relative]:

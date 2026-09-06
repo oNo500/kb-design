@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:kb-design:schema:glossary-layout:2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "version", "groups", "source_abbreviations", "standards_appendix", "reference_entries", "symbol_mappings", "historical_designations", "model_labels"],
+  "properties": {
+    "schema": {"const": "urn:kb-design:layout:glossary:2"},
+    "version": {"const": 2},
+    "groups": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/group"}},
+    "source_abbreviations": {"$ref": "#/$defs/entry_section"},
+    "standards_appendix": {"$ref": "#/$defs/entry_section"},
+    "reference_entries": {"type": "array", "items": {"$ref": "#/$defs/reference_entry"}},
+    "symbol_mappings": {"type": "array", "items": {"$ref": "#/$defs/symbol_mapping"}},
+    "historical_designations": {"type": "array", "items": {"$ref": "#/$defs/historical"}},
+    "model_labels": {"$ref": "#/$defs/model_labels"}
+  },
+  "$defs": {
+    "id": {"type": "string", "minLength": 1},
+    "tc": {"type": "string", "pattern": "^tc-[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"},
+    "group": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "title", "order", "members"],
+      "properties": {"id": {"$ref": "#/$defs/id"}, "title": {"$ref": "#/$defs/id"}, "order": {"type": "integer", "minimum": 1}, "members": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/tc"}}}
+    },
+    "entry_section": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "title", "order", "entries"],
+      "properties": {"id": {"$ref": "#/$defs/id"}, "title": {"$ref": "#/$defs/id"}, "order": {"type": "integer", "minimum": 0}, "entries": {"type": "array", "items": {"$ref": "#/$defs/display_entry"}}}
+    },
+    "display_entry": {
+      "type": "object", "required": ["id", "cells"],
+      "properties": {"id": {"$ref": "#/$defs/id"}, "cells": {"type": "array", "minItems": 2, "items": {"type": "string"}}, "meaning": {"type": "string"}, "source_entity_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}, "scope_note": {"type": "string"}, "verification": {"type": "string"}, "link_base": {"type": "string"}, "original_cells": {"type": "array", "items": {"type": "string"}}, "display_notice": {"type": "string"}},
+      "additionalProperties": false
+    },
+    "reference_entry": {
+      "type": "object",
+      "properties": {"id": {"$ref": "#/$defs/id"}, "cells": {"type": "array", "minItems": 4, "items": {"type": "string"}}, "section": {"type": "string"}, "content_role": {"const": "reference_explanation"}, "scope": {"type": "string"}, "link_base": {"type": "string"}, "original_cells": {"type": "array", "items": {"type": "string"}}, "basis_note": {"type": "string"}, "basis": {"type": "array"}},
+      "required": ["id", "section", "cells", "content_role", "scope"],
+      "unevaluatedProperties": false
+    },
+    "symbol_mapping": {
+      "type": "object", "additionalProperties": false,
+      "required": ["origin_id", "symbols", "concept_ids", "role", "display_note"],
+      "properties": {"origin_id": {"$ref": "#/$defs/id"}, "symbols": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}, "concept_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/tc"}}, "role": {"const": "relationship_indicator"}, "display_note": {"type": "string", "minLength": 1}}
+    },
+    "historical": {
+      "type": "object", "additionalProperties": false,
+      "required": ["origin_id", "forms", "target_concept_ids", "disposition", "reason", "display", "effect", "approval"],
+      "properties": {"origin_id": {"$ref": "#/$defs/id"}, "forms": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}, "target_concept_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/tc"}}, "disposition": {"type": "string"}, "reason": {"type": "string"}, "display": {"type": "string"}, "effect": {"type": "string"}, "approval": {"type": "string"}}
+    },
+    "model_labels": {
+      "type": "object", "additionalProperties": false,
+      "required": ["generation_inputs", "display_rule", "language_notice"],
+      "properties": {"generation_inputs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}, "display_rule": {"type": "string"}, "language_notice": {"type": "string"}}
+    }
+  }
+}

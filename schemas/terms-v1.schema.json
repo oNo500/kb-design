@@ -7,11 +7,17 @@
       "minItems": 1,
       "type": "array"
     },
+    "concept_basis": {
+      "oneOf": [
+        {"$ref": "#/$defs/basis"},
+        {"$ref": "#/$defs/project_basis"}
+      ]
+    },
     "concept": {
       "additionalProperties": false,
       "properties": {
         "basis": {
-          "$ref": "#/$defs/basis"
+          "$ref": "#/$defs/concept_basis"
         },
         "definitions": {
           "items": {
@@ -80,7 +86,7 @@
       "additionalProperties": false,
       "properties": {
         "basis": {
-          "$ref": "#/$defs/basis"
+          "$ref": "#/$defs/concept_basis"
         },
         "language": {
           "$ref": "#/$defs/language"
@@ -220,6 +226,32 @@
       ],
       "type": "object"
     },
+    "project_basis": {
+      "additionalProperties": false,
+      "properties": {
+        "project": {
+          "additionalProperties": false,
+          "properties": {
+            "approval": {"minLength": 1, "type": "string"},
+            "origin": {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {"pattern": "^[0-9a-f]{40}$", "type": "string"},
+                "file": {"minLength": 1, "type": "string"},
+                "locator": {"minLength": 1, "type": "string"}
+              },
+              "required": ["commit", "file", "locator"],
+              "type": "object"
+            },
+            "rationale": {"minLength": 1, "type": "string"}
+          },
+          "required": ["approval", "origin", "rationale"],
+          "type": "object"
+        }
+      },
+      "required": ["project"],
+      "type": "object"
+    },
     "source_reference": {
       "$ref": "urn:kb-design:schema:source-migration:1#/$defs/source"
     },
@@ -316,6 +348,9 @@
         },
         {
           "$ref": "#/$defs/model_basis"
+        },
+        {
+          "$ref": "#/$defs/project_basis"
         }
       ]
     }
