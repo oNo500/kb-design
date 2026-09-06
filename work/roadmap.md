@@ -6,13 +6,13 @@
 
 | 工作 | 状态 | 完成口径 |
 |---|---|---|
-| [来源迁移收尾](../docs/decisions/source-completion.md) | 实现与验收完成 | 六份 v2 数据、严格接口及临时导出通过[迁移验收](reviews/2026-09-06-source-v2-acceptance.md)；17 条未核关系按决定保留审查，原对象不删除，不作为有效映射；本地合并完成后关闭本轮执行 |
+| [来源迁移收尾](../docs/decisions/source-completion.md) | 本轮完成 | 六份 v2 数据、严格接口及临时导出通过[迁移验收](reviews/2026-09-06-source-v2-acceptance.md)；17 条未核关系按决定保留审查，原对象不删除，不作为有效映射；不自动开启其他后置工作 |
 | [来源首批准备](reviews/2026-09-05-source-evidence-conclusions.md) | 历史盘点与审阅完成 | 四份来源、四个关系、七个角色及正文材料已有处置；这不等于必要证据补齐或来源 v2 迁移完成 |
 | [终端访问](../docs/decisions/obsidian-agent-entry.md) | 工具子阶段完成 | 新库代理入口与 CLI 规则已实现；见[验收记录](reviews/2026-09-05-obsidian-agent-entry.md)。该记录不跟踪后续实例操作 |
 | [实时词表预览](plans/2026-09-05-vocab-preview.md) | 当前范围完成 | uv 启动与浏览器自动更新已验证，见[预览验收](reviews/2026-09-05-vocab-preview.md) |
 | [monorepo 迁移](plans/2026-09-05-monorepo-layout.md) | 当前范围完成 | 目录、依赖、命令与输出路径已验证，见[迁移验收](reviews/2026-09-05-monorepo-layout.md) |
 
-本轮顶层执行以来源迁移验收和交付收尾。未核关系按明确决定留待后续资料核对，不重新打开整批迁移；其他后置工作未自动开始。
+本轮来源迁移已完成验收与交付准备。未核关系按明确决定留待后续资料核对，不重新打开整批迁移；其他后置工作未自动开始。
 
 ## 项目状态
 
