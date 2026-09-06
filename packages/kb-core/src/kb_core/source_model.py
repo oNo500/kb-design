@@ -909,6 +909,9 @@ def load_decision_patches(paths: Sequence[Path]) -> List[DecisionPatch]:
 
 
 def collect_reference_uses(file: Path, document: object) -> List[ReferenceUse]:
+    if str(file) == "data/vocab/terms.yaml":
+        from kb_core.governance.term_model import collect_reference_uses as collect_terms
+        return list(collect_terms(document, str(file)))
     return list(_walk_reference_uses(file, document))
 
 

@@ -254,7 +254,8 @@ def _validate_terms(previous, current, decisions, issues):
                 ))
 
 
-def _validate_replacements(current, issues):
+def validate_replacements(current):
+    issues = []
     terms = index_terms(current)
     for term_id, (concept_id, language, term) in terms.items():
         path = f"terms[{term_id}].replaced_by"
@@ -289,13 +290,16 @@ def _validate_replacements(current, issues):
             f"terms[{cycle[0]}].replaced_by",
             "replacement cycle: " + " -> ".join(cycle),
         ))
+    return tuple(sorted(issues, key=lambda issue: (
+        issue.path, issue.code, issue.message,
+    )))
 
 
 def validate_transition(previous, current, decisions):
     issues = []
     _validate_concepts(previous, current, decisions, issues)
     _validate_terms(previous, current, decisions, issues)
-    _validate_replacements(current, issues)
+    issues.extend(validate_replacements(current))
     return tuple(sorted(issues, key=lambda issue: (
         issue.path, issue.code, issue.message,
     )))

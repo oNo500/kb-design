@@ -56,10 +56,19 @@ def _old_snapshot(snapshot: DesignSnapshot, manifest_path: Path, raw: bytes) -> 
         raise ApplicationError(f"invalid old design commit in {manifest_path}: {commit!r}")
     _git_bytes(snapshot.root, "merge-base", "--is-ancestor", commit, snapshot.commit)
     inputs = _manifest_inputs(manifest_path, manifest["inputs"])
-    if set(inputs) != set(design_source._FORMAL_DOCUMENTS.values()):
+    allowed_input_sets = [set(design_source._FORMAL_DOCUMENTS.values())]
+    allowed_input_sets.append(
+        allowed_input_sets[0]
+        | set(design_source._OPTIONAL_TERM_DOCUMENTS.values())
+        | set(design_source._TERM_SCHEMA_FILES)
+    )
+    if set(inputs) not in allowed_input_sets:
         raise ApplicationError(f"old design input set mismatch: {manifest_path}")
     documents = {}
-    for name, relative in design_source._FORMAL_DOCUMENTS.items():
+    selected_documents = dict(design_source._FORMAL_DOCUMENTS)
+    if set(design_source._OPTIONAL_TERM_DOCUMENTS.values()) <= set(inputs):
+        selected_documents.update(design_source._OPTIONAL_TERM_DOCUMENTS)
+    for name, relative in selected_documents.items():
         data = _git_bytes(snapshot.root, "show", f"{commit}:{relative}")
         if _sha256(data) != inputs[relative]:
             raise ApplicationError(f"old design input hash mismatch: {relative} in {manifest_path}")
@@ -67,6 +76,12 @@ def _old_snapshot(snapshot: DesignSnapshot, manifest_path: Path, raw: bytes) -> 
             documents[name] = yaml.safe_load(data)
         except yaml.YAMLError as exc:
             raise ApplicationError(f"invalid old design input: {relative}") from exc
+    for relative in design_source._TERM_SCHEMA_FILES:
+        if relative not in inputs:
+            continue
+        data = _git_bytes(snapshot.root, "show", f"{commit}:{relative}")
+        if _sha256(data) != inputs[relative]:
+            raise ApplicationError(f"old design input hash mismatch: {relative} in {manifest_path}")
     return DesignSnapshot(snapshot.root, commit, documents, inputs)
 
 

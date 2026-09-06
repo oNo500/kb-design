@@ -1,0 +1,159 @@
+{
+  "status": "evidence_only_not_adopted",
+  "scope": "只核对 Sönke Ahrens 公开讲述中 fleeting note、literature note、permanent note 三个形式及其含义；不扩展到其他笔记流派。",
+  "sources": [
+    {
+      "url": "https://examstudyexpert.com/zettelkasten/",
+      "title": "Zettelkasten \"Super\" Notes: with Dr Sönke Ahrens",
+      "source_identity": "William Wadsworth 对 Sönke Ahrens 的公开播客访谈逐字稿；引文明确标注为 [Sönke Ahrens]，作者本人是相关方法和书籍的讲述者。",
+      "locations": [
+        "L91-L106"
+      ],
+      "nature": "作者公开讲述的访谈转录，不是论坛转述，也不是出版物全文。",
+      "excerpts": [
+        {
+          "concept": "fleeting note",
+          "location": "L94",
+          "quote": "Fleeting notes are usually just reminders",
+          "english_word_count": 6
+        },
+        {
+          "concept": "permanent note",
+          "location": "L96",
+          "quote": "Permanent notes are what we usually refer to",
+          "english_word_count": 8
+        },
+        {
+          "concept": "literature note",
+          "location": "L103",
+          "quote": "notes you write to something you’ve read",
+          "english_word_count": 8
+        }
+      ],
+      "quote_limit_note": "本来源三段短摘录合计 22 个英文词。"
+    },
+    {
+      "url": "https://www.soenkeahrens.de/",
+      "title": "Sönke Ahrens",
+      "source_identity": "作者个人网站；页面将其标为作者并介绍《Das Zettelkasten-Prinzip》及数字 Zettelkasten 课程。",
+      "locations": [
+        "L0-L15"
+      ],
+      "nature": "作者官方身份与作品页面；当前可读内容没有三个英文术语的定义摘录。",
+      "excerpts": []
+    }
+  ],
+  "concepts": [
+    {
+      "id": "fleeting-note",
+      "forms": {
+        "en": "fleeting note",
+        "zh_proposal": "闪念笔记"
+      },
+      "definition_proposal_zh": "在忙于其他事情时快速记下的当下想法提醒；它通常不是完整表达，需要尽快处理，值得保留的内容再改写为长期笔记。",
+      "evidence": [
+        "https://examstudyexpert.com/zettelkasten/ ; captured L91-L95"
+      ],
+      "form_support": "英文形式由作者本人在访谈中直接使用；中文“闪念笔记”仍是项目现有登记形式，本次原文没有中文译名。",
+      "definition_support": "作者直接说明其是当下想法的 reminder，并说明需要很快处理；关于“改写后删除原笔记”的更细规则未由本来源直接给出。",
+      "unresolved": [
+        "出版物中该术语的精确页码和完整段落未在本次合法可读页面取得。"
+      ],
+      "inheritance_only": false,
+      "proposed_disposition": "definition_ready_for_review_not_adopted"
+    },
+    {
+      "id": "literature-note",
+      "forms": {
+        "en": "literature note",
+        "zh_proposal": "文献笔记"
+      },
+      "definition_proposal_zh": "针对读过的材料所作的笔记，保存在与永久笔记分开的地方；不能只复制摘录，应回看并思考它怎样服务于正在发展的想法，通常需要改写。",
+      "evidence": [
+        "https://examstudyexpert.com/zettelkasten/ ; captured L103-L106"
+      ],
+      "form_support": "英文形式由作者本人在访谈中直接使用；中文“文献笔记”仍是项目现有登记形式，本次原文没有中文译名。",
+      "definition_support": "作者直接称其为写给所读材料的 notes，说明它与永久笔记分开保存，并要求进一步处理和改写。",
+      "unresolved": [
+        "作者在该访谈中没有给出 literature note 的一句式完整边界，也未直接确认中文对应。",
+        "出版物中该术语的精确页码和完整段落未在本次合法可读页面取得。"
+      ],
+      "inheritance_only": false,
+      "proposed_disposition": "definition_ready_for_review_not_adopted"
+    },
+    {
+      "id": "permanent-note",
+      "forms": {
+        "en": "permanent note",
+        "zh_proposal": "永久笔记"
+      },
+      "definition_proposal_zh": "经过处理、值得长期保留、以他人也能理解的方式写成，并在卡片盒中继续连接和发展的笔记。",
+      "evidence": [
+        "https://examstudyexpert.com/zettelkasten/ ; captured L95-L102",
+        "https://examstudyexpert.com/zettelkasten/ ; captured L113-L114"
+      ],
+      "form_support": "英文形式由作者本人在访谈中直接使用；中文“永久笔记”仍是项目现有登记形式，本次原文没有中文译名。",
+      "definition_support": "作者称其为值得永久保留的第二类笔记，并将其描述为 Zettelkasten 的主要部分；访谈还说明其以自己的语言形成可重组的文字片段。",
+      "unresolved": [
+        "作者在本访谈中没有逐字说出“每条一个想法”作为普遍定义，只在介绍 Luhmann 版本时描述单一想法；该细节不能扩大为 Ahrens 全部定义。",
+        "出版物中该术语的精确页码和完整段落未在本次合法可读页面取得。"
+      ],
+      "inheritance_only": false,
+      "proposed_disposition": "definition_ready_for_review_not_adopted"
+    }
+  ],
+  "legacy_mapping": {
+    "current_glossary": "docs/glossary.md:L188：闪念笔记 / 文献笔记 / 永久笔记 | fleeting / literature / permanent note",
+    "old_ledger_records": [
+      {
+        "review_line": 247,
+        "language": "en",
+        "form": "fleeting",
+        "action": "defer",
+        "disposition": "audit-only"
+      },
+      {
+        "review_line": 249,
+        "language": "en",
+        "form": "literature",
+        "action": "defer",
+        "disposition": "audit-only"
+      },
+      {
+        "review_line": 250,
+        "language": "en",
+        "form": "permanent note",
+        "action": "defer",
+        "disposition": "audit-only"
+      },
+      {
+        "review_line": 256,
+        "language": "zh",
+        "form": "文献笔记",
+        "action": "defer",
+        "disposition": "audit-only"
+      },
+      {
+        "review_line": 259,
+        "language": "zh",
+        "form": "永久笔记",
+        "action": "defer",
+        "disposition": "audit-only"
+      },
+      {
+        "review_line": 262,
+        "language": "zh",
+        "form": "闪念笔记",
+        "action": "defer",
+        "disposition": "audit-only"
+      }
+    ],
+    "inheritance_rule": "本次原文只增加审查证据，不改变旧账本 legacy_identity、current_action、disposition 或现行 glossary 编辑权；没有新增术语采纳。"
+  },
+  "unresolved_material": [
+    "作者官方站点和 Google Books 合法页面确认作者与书籍身份，但本次可读内容没有三个术语的完整出版物原文。",
+    "论坛页面及其他读者摘要没有作为作者原文使用，因此不能用来补强形式、中文译名或超出访谈的定义细节。",
+    "三个类别均在作者访谈中出现；不存在‘作者只说明一两类、其余缺失’的情况，但 literature note 与 permanent note 的更细分类边界仍未由本次作者原文完整解决。"
+  ],
+  "lead_review": "作者直接说明这三个现有名称的含义；访谈还提及 project notes，因此不得将本批三项称为作者全部、互斥且穷尽的笔记分类。中文名称仍是项目既有登记，外部中文形式未核。"
+}

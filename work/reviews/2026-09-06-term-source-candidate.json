@@ -1,0 +1,2549 @@
+{
+  "status": "complete_source_entity_proposal_not_adopted",
+  "scope": "覆盖主线确认后的 13 条术语来源依赖。仅提出来源实体值；不改变现有 62 个实体、31 条来源用途、正式术语数据、决定或应用状态。",
+  "future_decision_id": "decision-source-term-citations",
+  "identity_decision": {
+    "prior_dependency_id": "dcmi",
+    "confirmed_id": "dcmi-metadata-terms",
+    "status": "confirmed_by_mainline",
+    "reason": "实际引用的是 DCMI Metadata Terms；主线负责同步术语候选 references 与 dependency。"
+  },
+  "items": [
+    {
+      "proposed_record": {
+        "id": "gruber-official",
+        "label": {
+          "en": "Ontology"
+        },
+        "kind": "publication",
+        "version": "2008",
+        "tier": "archival",
+        "subjects": [],
+        "status": "candidate",
+        "urls": [
+          {
+            "role": "landing",
+            "url": "https://tomgruber.org/writing/definition-of-ontology/",
+            "primary": true
+          }
+        ],
+        "added": "2026-09-06",
+        "basis": {
+          "label": [
+            {
+              "entity": "gruber-official",
+              "locator": "页面正文书目信息：Tom Gruber (2008), Ontology；正文说明其更新 1993 ontology definition",
+              "checked": "2026-09-06"
+            }
+          ],
+          "kind": [
+            {
+              "entity": "gruber-official",
+              "locator": "页面正文书目信息：Tom Gruber (2008), Ontology；正文说明其更新 1993 ontology definition",
+              "checked": "2026-09-06"
+            }
+          ],
+          "urls": [
+            {
+              "entity": "gruber-official",
+              "locator": "页面正文书目信息：Tom Gruber (2008), Ontology；正文说明其更新 1993 ontology definition",
+              "checked": "2026-09-06"
+            }
+          ],
+          "version": [
+            {
+              "entity": "gruber-official",
+              "locator": "页面正文书目信息：Tom Gruber (2008), Ontology；正文说明其更新 1993 ontology definition",
+              "checked": "2026-09-06"
+            }
+          ]
+        },
+        "watch": [
+          {
+            "locator": "https://tomgruber.org/writing/definition-of-ontology/",
+            "signals": [
+              "availability",
+              "redirect"
+            ],
+            "cadence_months": {
+              "availability": 1,
+              "redirect": 1,
+              "content": 12
+            }
+          }
+        ],
+        "review": {
+          "checked": null,
+          "next_due": null,
+          "interval_months": null,
+          "grace_days": 30,
+          "obligations": []
+        },
+        "replaced_by": null,
+        "history": [
+          {
+            "date": "2026-09-06",
+            "action": "source-registration",
+            "fields": [
+              "id",
+              "label",
+              "kind",
+              "version",
+              "tier",
+              "subjects",
+              "status",
+              "urls",
+              "added",
+              "basis",
+              "watch",
+              "review",
+              "replaced_by"
+            ],
+            "before": {},
+            "after": {
+              "id": "gruber-official",
+              "label": {
+                "en": "Ontology"
+              },
+              "kind": "publication",
+              "version": "2008",
+              "tier": "archival",
+              "subjects": [],
+              "status": "candidate",
+              "urls": [
+                {
+                  "role": "landing",
+                  "url": "https://tomgruber.org/writing/definition-of-ontology/",
+                  "primary": true
+                }
+              ],
+              "added": "2026-09-06",
+              "basis": {
+                "label": [
+                  {
+                    "entity": "gruber-official",
+                    "locator": "页面正文书目信息：Tom Gruber (2008), Ontology；正文说明其更新 1993 ontology definition",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "kind": [
+                  {
+                    "entity": "gruber-official",
+                    "locator": "页面正文书目信息：Tom Gruber (2008), Ontology；正文说明其更新 1993 ontology definition",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "urls": [
+                  {
+                    "entity": "gruber-official",
+                    "locator": "页面正文书目信息：Tom Gruber (2008), Ontology；正文说明其更新 1993 ontology definition",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "version": [
+                  {
+                    "entity": "gruber-official",
+                    "locator": "页面正文书目信息：Tom Gruber (2008), Ontology；正文说明其更新 1993 ontology definition",
+                    "checked": "2026-09-06"
+                  }
+                ]
+              },
+              "watch": [
+                {
+                  "locator": "https://tomgruber.org/writing/definition-of-ontology/",
+                  "signals": [
+                    "availability",
+                    "redirect"
+                  ],
+                  "cadence_months": {
+                    "availability": 1,
+                    "redirect": 1,
+                    "content": 12
+                  }
+                }
+              ],
+              "review": {
+                "checked": null,
+                "next_due": null,
+                "interval_months": null,
+                "grace_days": 30,
+                "obligations": []
+              },
+              "replaced_by": null
+            },
+            "decisions": [
+              "decision-source-term-citations"
+            ]
+          }
+        ]
+      },
+      "adopted": false,
+      "purpose": "仅作为术语候选中具体 basis 的来源实体；不创建 structure、mapping 或其他来源用途角色。",
+      "material_identity": "Tom Gruber 在作者个人站点转载的 Encyclopedia of Database Systems 条目；页面明确标为 2008 年 Ontology 条目，并说明更新 1993 年定义。",
+      "supported_fields": [
+        "label",
+        "kind",
+        "version",
+        "urls"
+      ],
+      "unknown_fields": [
+        "未核 Springer 版本全文；不登记外部 current 状态。"
+      ],
+      "tier_rationale": "固定发表的百科条目，内容身份由题名与发表年份界定，按 archival。",
+      "evidence_url": "https://tomgruber.org/writing/definition-of-ontology/"
+    },
+    {
+      "proposed_record": {
+        "id": "hogan-paper",
+        "label": {
+          "en": "Knowledge Graphs"
+        },
+        "kind": "publication",
+        "version": "arXiv v6",
+        "tier": "archival",
+        "subjects": [],
+        "status": "candidate",
+        "urls": [
+          {
+            "role": "full_text",
+            "url": "https://arxiv.org/pdf/2003.02320v6",
+            "primary": true
+          }
+        ],
+        "added": "2026-09-06",
+        "basis": {
+          "label": [
+            {
+              "entity": "hogan-paper",
+              "locator": "https://export.arxiv.org/api/query?id_list=2003.02320；entry title Knowledge Graphs；entry id 指向 2003.02320v6",
+              "checked": "2026-09-06"
+            }
+          ],
+          "kind": [
+            {
+              "entity": "hogan-paper",
+              "locator": "https://export.arxiv.org/api/query?id_list=2003.02320；arXiv entry、authors、journal_ref 与 DOI",
+              "checked": "2026-09-06"
+            }
+          ],
+          "urls": [
+            {
+              "entity": "hogan-paper",
+              "locator": "https://export.arxiv.org/api/query?id_list=2003.02320；PDF link https://arxiv.org/pdf/2003.02320v6",
+              "checked": "2026-09-06"
+            }
+          ],
+          "version": [
+            {
+              "entity": "hogan-paper",
+              "locator": "https://export.arxiv.org/api/query?id_list=2003.02320；entry id 2003.02320v6；updated 2021-09-11T21:36:53Z；abs submission history v6",
+              "checked": "2026-09-06"
+            }
+          ]
+        },
+        "watch": [
+          {
+            "locator": "https://arxiv.org/pdf/2003.02320v6",
+            "signals": [
+              "availability",
+              "redirect"
+            ],
+            "cadence_months": {
+              "availability": 1,
+              "redirect": 1,
+              "content": 12
+            }
+          }
+        ],
+        "review": {
+          "checked": null,
+          "next_due": null,
+          "interval_months": null,
+          "grace_days": 30,
+          "obligations": []
+        },
+        "replaced_by": null,
+        "history": [
+          {
+            "date": "2026-09-06",
+            "action": "source-registration",
+            "fields": [
+              "id",
+              "label",
+              "kind",
+              "version",
+              "tier",
+              "subjects",
+              "status",
+              "urls",
+              "added",
+              "basis",
+              "watch",
+              "review",
+              "replaced_by"
+            ],
+            "before": {},
+            "after": {
+              "id": "hogan-paper",
+              "label": {
+                "en": "Knowledge Graphs"
+              },
+              "kind": "publication",
+              "version": "arXiv v6",
+              "tier": "archival",
+              "subjects": [],
+              "status": "candidate",
+              "urls": [
+                {
+                  "role": "full_text",
+                  "url": "https://arxiv.org/pdf/2003.02320v6",
+                  "primary": true
+                }
+              ],
+              "added": "2026-09-06",
+              "basis": {
+                "label": [
+                  {
+                    "entity": "hogan-paper",
+                    "locator": "https://export.arxiv.org/api/query?id_list=2003.02320；entry title Knowledge Graphs；entry id 指向 2003.02320v6",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "kind": [
+                  {
+                    "entity": "hogan-paper",
+                    "locator": "https://export.arxiv.org/api/query?id_list=2003.02320；arXiv entry、authors、journal_ref 与 DOI",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "urls": [
+                  {
+                    "entity": "hogan-paper",
+                    "locator": "https://export.arxiv.org/api/query?id_list=2003.02320；PDF link https://arxiv.org/pdf/2003.02320v6",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "version": [
+                  {
+                    "entity": "hogan-paper",
+                    "locator": "https://export.arxiv.org/api/query?id_list=2003.02320；entry id 2003.02320v6；updated 2021-09-11T21:36:53Z；abs submission history v6",
+                    "checked": "2026-09-06"
+                  }
+                ]
+              },
+              "watch": [
+                {
+                  "locator": "https://arxiv.org/pdf/2003.02320v6",
+                  "signals": [
+                    "availability",
+                    "redirect"
+                  ],
+                  "cadence_months": {
+                    "availability": 1,
+                    "redirect": 1,
+                    "content": 12
+                  }
+                }
+              ],
+              "review": {
+                "checked": null,
+                "next_due": null,
+                "interval_months": null,
+                "grace_days": 30,
+                "obligations": []
+              },
+              "replaced_by": null
+            },
+            "decisions": [
+              "decision-source-term-citations"
+            ]
+          }
+        ]
+      },
+      "adopted": false,
+      "purpose": "仅作为术语候选中具体 basis 的来源实体；不创建 structure、mapping 或其他来源用途角色。",
+      "material_identity": "Hogan 等作者的 Knowledge Graphs 综述论文；候选实际读取的无版本 arXiv PDF 地址由当前 API 解析为 2003.02320v6，现改用版本化 PDF 地址。API 同时列出期刊引用与 DOI，但本记录 version 只表示所引 arXiv v6。",
+      "supported_fields": [
+        "label",
+        "kind",
+        "version",
+        "urls"
+      ],
+      "unknown_fields": [
+        "不把期刊发表年 2021 作为 arXiv PDF 的版次；不登记外部 current 状态。"
+      ],
+      "tier_rationale": "固定发表论文，按 archival。",
+      "evidence_url": "https://arxiv.org/pdf/2003.02320v6"
+    },
+    {
+      "proposed_record": {
+        "id": "rdf11",
+        "label": {
+          "en": "RDF 1.1 Concepts and Abstract Syntax"
+        },
+        "kind": "standard",
+        "version": "2014-02-25",
+        "tier": "de-jure",
+        "subjects": [],
+        "status": "candidate",
+        "urls": [
+          {
+            "role": "canonical",
+            "url": "https://www.w3.org/TR/rdf11-concepts/",
+            "primary": true
+          }
+        ],
+        "added": "2026-09-06",
+        "basis": {
+          "label": [
+            {
+              "entity": "rdf11",
+              "locator": "文档头：RDF 1.1 Concepts and Abstract Syntax；W3C Recommendation 25 February 2014；版本化 URI /TR/2014/REC-rdf11-concepts-20140225/",
+              "checked": "2026-09-06"
+            }
+          ],
+          "kind": [
+            {
+              "entity": "rdf11",
+              "locator": "文档头：RDF 1.1 Concepts and Abstract Syntax；W3C Recommendation 25 February 2014；版本化 URI /TR/2014/REC-rdf11-concepts-20140225/",
+              "checked": "2026-09-06"
+            }
+          ],
+          "urls": [
+            {
+              "entity": "rdf11",
+              "locator": "文档头：RDF 1.1 Concepts and Abstract Syntax；W3C Recommendation 25 February 2014；版本化 URI /TR/2014/REC-rdf11-concepts-20140225/",
+              "checked": "2026-09-06"
+            }
+          ],
+          "version": [
+            {
+              "entity": "rdf11",
+              "locator": "文档头：RDF 1.1 Concepts and Abstract Syntax；W3C Recommendation 25 February 2014；版本化 URI /TR/2014/REC-rdf11-concepts-20140225/",
+              "checked": "2026-09-06"
+            }
+          ]
+        },
+        "watch": [
+          {
+            "locator": "https://www.w3.org/TR/rdf11-concepts/",
+            "signals": [
+              "availability",
+              "redirect"
+            ],
+            "cadence_months": {
+              "availability": 1,
+              "redirect": 1,
+              "content": 1
+            }
+          }
+        ],
+        "review": {
+          "checked": null,
+          "next_due": null,
+          "interval_months": 24,
+          "grace_days": 30,
+          "obligations": []
+        },
+        "replaced_by": null,
+        "history": [
+          {
+            "date": "2026-09-06",
+            "action": "source-registration",
+            "fields": [
+              "id",
+              "label",
+              "kind",
+              "version",
+              "tier",
+              "subjects",
+              "status",
+              "urls",
+              "added",
+              "basis",
+              "watch",
+              "review",
+              "replaced_by"
+            ],
+            "before": {},
+            "after": {
+              "id": "rdf11",
+              "label": {
+                "en": "RDF 1.1 Concepts and Abstract Syntax"
+              },
+              "kind": "standard",
+              "version": "2014-02-25",
+              "tier": "de-jure",
+              "subjects": [],
+              "status": "candidate",
+              "urls": [
+                {
+                  "role": "canonical",
+                  "url": "https://www.w3.org/TR/rdf11-concepts/",
+                  "primary": true
+                }
+              ],
+              "added": "2026-09-06",
+              "basis": {
+                "label": [
+                  {
+                    "entity": "rdf11",
+                    "locator": "文档头：RDF 1.1 Concepts and Abstract Syntax；W3C Recommendation 25 February 2014；版本化 URI /TR/2014/REC-rdf11-concepts-20140225/",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "kind": [
+                  {
+                    "entity": "rdf11",
+                    "locator": "文档头：RDF 1.1 Concepts and Abstract Syntax；W3C Recommendation 25 February 2014；版本化 URI /TR/2014/REC-rdf11-concepts-20140225/",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "urls": [
+                  {
+                    "entity": "rdf11",
+                    "locator": "文档头：RDF 1.1 Concepts and Abstract Syntax；W3C Recommendation 25 February 2014；版本化 URI /TR/2014/REC-rdf11-concepts-20140225/",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "version": [
+                  {
+                    "entity": "rdf11",
+                    "locator": "文档头：RDF 1.1 Concepts and Abstract Syntax；W3C Recommendation 25 February 2014；版本化 URI /TR/2014/REC-rdf11-concepts-20140225/",
+                    "checked": "2026-09-06"
+                  }
+                ]
+              },
+              "watch": [
+                {
+                  "locator": "https://www.w3.org/TR/rdf11-concepts/",
+                  "signals": [
+                    "availability",
+                    "redirect"
+                  ],
+                  "cadence_months": {
+                    "availability": 1,
+                    "redirect": 1,
+                    "content": 1
+                  }
+                }
+              ],
+              "review": {
+                "checked": null,
+                "next_due": null,
+                "interval_months": 24,
+                "grace_days": 30,
+                "obligations": []
+              },
+              "replaced_by": null
+            },
+            "decisions": [
+              "decision-source-term-citations"
+            ]
+          }
+        ]
+      },
+      "adopted": false,
+      "purpose": "仅作为术语候选中具体 basis 的来源实体；不创建 structure、mapping 或其他来源用途角色。",
+      "material_identity": "W3C Recommendation，RDF 1.1 Concepts and Abstract Syntax。",
+      "supported_fields": [
+        "label",
+        "kind",
+        "version",
+        "urls"
+      ],
+      "unknown_fields": [
+        "未核当前是否有后继规范；不登记 source_status。"
+      ],
+      "tier_rationale": "W3C Recommendation 有正式发布流程与版本标识，按 de-jure。",
+      "evidence_url": "https://www.w3.org/TR/rdf11-concepts/"
+    },
+    {
+      "proposed_record": {
+        "id": "rdfs11",
+        "label": {
+          "en": "RDF Schema 1.1"
+        },
+        "kind": "standard",
+        "version": "2014-02-25",
+        "tier": "de-jure",
+        "subjects": [],
+        "status": "candidate",
+        "urls": [
+          {
+            "role": "canonical",
+            "url": "https://www.w3.org/TR/rdf-schema/",
+            "primary": true
+          }
+        ],
+        "added": "2026-09-06",
+        "basis": {
+          "label": [
+            {
+              "entity": "rdfs11",
+              "locator": "文档头：RDF Schema 1.1；版本化 URI /TR/2014/REC-rdf-schema-20140225/",
+              "checked": "2026-09-06"
+            }
+          ],
+          "kind": [
+            {
+              "entity": "rdfs11",
+              "locator": "文档头：RDF Schema 1.1；版本化 URI /TR/2014/REC-rdf-schema-20140225/",
+              "checked": "2026-09-06"
+            }
+          ],
+          "urls": [
+            {
+              "entity": "rdfs11",
+              "locator": "文档头：RDF Schema 1.1；版本化 URI /TR/2014/REC-rdf-schema-20140225/",
+              "checked": "2026-09-06"
+            }
+          ],
+          "version": [
+            {
+              "entity": "rdfs11",
+              "locator": "文档头：RDF Schema 1.1；版本化 URI /TR/2014/REC-rdf-schema-20140225/",
+              "checked": "2026-09-06"
+            }
+          ]
+        },
+        "watch": [
+          {
+            "locator": "https://www.w3.org/TR/rdf-schema/",
+            "signals": [
+              "availability",
+              "redirect"
+            ],
+            "cadence_months": {
+              "availability": 1,
+              "redirect": 1,
+              "content": 1
+            }
+          }
+        ],
+        "review": {
+          "checked": null,
+          "next_due": null,
+          "interval_months": 24,
+          "grace_days": 30,
+          "obligations": []
+        },
+        "replaced_by": null,
+        "history": [
+          {
+            "date": "2026-09-06",
+            "action": "source-registration",
+            "fields": [
+              "id",
+              "label",
+              "kind",
+              "version",
+              "tier",
+              "subjects",
+              "status",
+              "urls",
+              "added",
+              "basis",
+              "watch",
+              "review",
+              "replaced_by"
+            ],
+            "before": {},
+            "after": {
+              "id": "rdfs11",
+              "label": {
+                "en": "RDF Schema 1.1"
+              },
+              "kind": "standard",
+              "version": "2014-02-25",
+              "tier": "de-jure",
+              "subjects": [],
+              "status": "candidate",
+              "urls": [
+                {
+                  "role": "canonical",
+                  "url": "https://www.w3.org/TR/rdf-schema/",
+                  "primary": true
+                }
+              ],
+              "added": "2026-09-06",
+              "basis": {
+                "label": [
+                  {
+                    "entity": "rdfs11",
+                    "locator": "文档头：RDF Schema 1.1；版本化 URI /TR/2014/REC-rdf-schema-20140225/",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "kind": [
+                  {
+                    "entity": "rdfs11",
+                    "locator": "文档头：RDF Schema 1.1；版本化 URI /TR/2014/REC-rdf-schema-20140225/",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "urls": [
+                  {
+                    "entity": "rdfs11",
+                    "locator": "文档头：RDF Schema 1.1；版本化 URI /TR/2014/REC-rdf-schema-20140225/",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "version": [
+                  {
+                    "entity": "rdfs11",
+                    "locator": "文档头：RDF Schema 1.1；版本化 URI /TR/2014/REC-rdf-schema-20140225/",
+                    "checked": "2026-09-06"
+                  }
+                ]
+              },
+              "watch": [
+                {
+                  "locator": "https://www.w3.org/TR/rdf-schema/",
+                  "signals": [
+                    "availability",
+                    "redirect"
+                  ],
+                  "cadence_months": {
+                    "availability": 1,
+                    "redirect": 1,
+                    "content": 1
+                  }
+                }
+              ],
+              "review": {
+                "checked": null,
+                "next_due": null,
+                "interval_months": 24,
+                "grace_days": 30,
+                "obligations": []
+              },
+              "replaced_by": null
+            },
+            "decisions": [
+              "decision-source-term-citations"
+            ]
+          }
+        ]
+      },
+      "adopted": false,
+      "purpose": "仅作为术语候选中具体 basis 的来源实体；不创建 structure、mapping 或其他来源用途角色。",
+      "material_identity": "W3C Recommendation，RDF Schema 1.1。",
+      "supported_fields": [
+        "label",
+        "kind",
+        "version",
+        "urls"
+      ],
+      "unknown_fields": [
+        "未核当前是否有后继规范；不登记 source_status。"
+      ],
+      "tier_rationale": "W3C Recommendation 有正式发布流程与版本标识，按 de-jure。",
+      "evidence_url": "https://www.w3.org/TR/rdf-schema/"
+    },
+    {
+      "proposed_record": {
+        "id": "owl2",
+        "label": {
+          "en": "OWL 2 Web Ontology Language Document Overview (Second Edition)"
+        },
+        "kind": "standard",
+        "version": "2012-12-11",
+        "tier": "de-jure",
+        "subjects": [],
+        "status": "candidate",
+        "urls": [
+          {
+            "role": "canonical",
+            "url": "https://www.w3.org/TR/owl2-overview/",
+            "primary": true
+          }
+        ],
+        "added": "2026-09-06",
+        "basis": {
+          "label": [
+            {
+              "entity": "owl2",
+              "locator": "文档头：OWL 2 Web Ontology Language Document Overview (Second Edition)；W3C Recommendation 11 December 2012",
+              "checked": "2026-09-06"
+            }
+          ],
+          "kind": [
+            {
+              "entity": "owl2",
+              "locator": "文档头：OWL 2 Web Ontology Language Document Overview (Second Edition)；W3C Recommendation 11 December 2012",
+              "checked": "2026-09-06"
+            }
+          ],
+          "urls": [
+            {
+              "entity": "owl2",
+              "locator": "文档头：OWL 2 Web Ontology Language Document Overview (Second Edition)；W3C Recommendation 11 December 2012",
+              "checked": "2026-09-06"
+            }
+          ],
+          "version": [
+            {
+              "entity": "owl2",
+              "locator": "文档头：OWL 2 Web Ontology Language Document Overview (Second Edition)；W3C Recommendation 11 December 2012",
+              "checked": "2026-09-06"
+            }
+          ]
+        },
+        "watch": [
+          {
+            "locator": "https://www.w3.org/TR/owl2-overview/",
+            "signals": [
+              "availability",
+              "redirect"
+            ],
+            "cadence_months": {
+              "availability": 1,
+              "redirect": 1,
+              "content": 1
+            }
+          }
+        ],
+        "review": {
+          "checked": null,
+          "next_due": null,
+          "interval_months": 24,
+          "grace_days": 30,
+          "obligations": []
+        },
+        "replaced_by": null,
+        "history": [
+          {
+            "date": "2026-09-06",
+            "action": "source-registration",
+            "fields": [
+              "id",
+              "label",
+              "kind",
+              "version",
+              "tier",
+              "subjects",
+              "status",
+              "urls",
+              "added",
+              "basis",
+              "watch",
+              "review",
+              "replaced_by"
+            ],
+            "before": {},
+            "after": {
+              "id": "owl2",
+              "label": {
+                "en": "OWL 2 Web Ontology Language Document Overview (Second Edition)"
+              },
+              "kind": "standard",
+              "version": "2012-12-11",
+              "tier": "de-jure",
+              "subjects": [],
+              "status": "candidate",
+              "urls": [
+                {
+                  "role": "canonical",
+                  "url": "https://www.w3.org/TR/owl2-overview/",
+                  "primary": true
+                }
+              ],
+              "added": "2026-09-06",
+              "basis": {
+                "label": [
+                  {
+                    "entity": "owl2",
+                    "locator": "文档头：OWL 2 Web Ontology Language Document Overview (Second Edition)；W3C Recommendation 11 December 2012",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "kind": [
+                  {
+                    "entity": "owl2",
+                    "locator": "文档头：OWL 2 Web Ontology Language Document Overview (Second Edition)；W3C Recommendation 11 December 2012",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "urls": [
+                  {
+                    "entity": "owl2",
+                    "locator": "文档头：OWL 2 Web Ontology Language Document Overview (Second Edition)；W3C Recommendation 11 December 2012",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "version": [
+                  {
+                    "entity": "owl2",
+                    "locator": "文档头：OWL 2 Web Ontology Language Document Overview (Second Edition)；W3C Recommendation 11 December 2012",
+                    "checked": "2026-09-06"
+                  }
+                ]
+              },
+              "watch": [
+                {
+                  "locator": "https://www.w3.org/TR/owl2-overview/",
+                  "signals": [
+                    "availability",
+                    "redirect"
+                  ],
+                  "cadence_months": {
+                    "availability": 1,
+                    "redirect": 1,
+                    "content": 1
+                  }
+                }
+              ],
+              "review": {
+                "checked": null,
+                "next_due": null,
+                "interval_months": 24,
+                "grace_days": 30,
+                "obligations": []
+              },
+              "replaced_by": null
+            },
+            "decisions": [
+              "decision-source-term-citations"
+            ]
+          }
+        ]
+      },
+      "adopted": false,
+      "purpose": "仅作为术语候选中具体 basis 的来源实体；不创建 structure、mapping 或其他来源用途角色。",
+      "material_identity": "W3C Recommendation，OWL 2 Web Ontology Language Document Overview 第二版。",
+      "supported_fields": [
+        "label",
+        "kind",
+        "version",
+        "urls"
+      ],
+      "unknown_fields": [
+        "未核当前是否有后继规范；不登记 source_status。"
+      ],
+      "tier_rationale": "W3C Recommendation 有正式发布流程与版本标识，按 de-jure。",
+      "evidence_url": "https://www.w3.org/TR/owl2-overview/"
+    },
+    {
+      "proposed_record": {
+        "id": "sparql11",
+        "label": {
+          "en": "SPARQL 1.1 Query Language"
+        },
+        "kind": "standard",
+        "version": "2013-03-21",
+        "tier": "de-jure",
+        "subjects": [],
+        "status": "candidate",
+        "urls": [
+          {
+            "role": "canonical",
+            "url": "https://www.w3.org/TR/sparql11-query/",
+            "primary": true
+          }
+        ],
+        "added": "2026-09-06",
+        "basis": {
+          "label": [
+            {
+              "entity": "sparql11",
+              "locator": "文档头：SPARQL 1.1 Query Language；W3C Recommendation 21 March 2013",
+              "checked": "2026-09-06"
+            }
+          ],
+          "kind": [
+            {
+              "entity": "sparql11",
+              "locator": "文档头：SPARQL 1.1 Query Language；W3C Recommendation 21 March 2013",
+              "checked": "2026-09-06"
+            }
+          ],
+          "urls": [
+            {
+              "entity": "sparql11",
+              "locator": "文档头：SPARQL 1.1 Query Language；W3C Recommendation 21 March 2013",
+              "checked": "2026-09-06"
+            }
+          ],
+          "version": [
+            {
+              "entity": "sparql11",
+              "locator": "文档头：SPARQL 1.1 Query Language；W3C Recommendation 21 March 2013",
+              "checked": "2026-09-06"
+            }
+          ]
+        },
+        "watch": [
+          {
+            "locator": "https://www.w3.org/TR/sparql11-query/",
+            "signals": [
+              "availability",
+              "redirect"
+            ],
+            "cadence_months": {
+              "availability": 1,
+              "redirect": 1,
+              "content": 1
+            }
+          }
+        ],
+        "review": {
+          "checked": null,
+          "next_due": null,
+          "interval_months": 24,
+          "grace_days": 30,
+          "obligations": []
+        },
+        "replaced_by": null,
+        "history": [
+          {
+            "date": "2026-09-06",
+            "action": "source-registration",
+            "fields": [
+              "id",
+              "label",
+              "kind",
+              "version",
+              "tier",
+              "subjects",
+              "status",
+              "urls",
+              "added",
+              "basis",
+              "watch",
+              "review",
+              "replaced_by"
+            ],
+            "before": {},
+            "after": {
+              "id": "sparql11",
+              "label": {
+                "en": "SPARQL 1.1 Query Language"
+              },
+              "kind": "standard",
+              "version": "2013-03-21",
+              "tier": "de-jure",
+              "subjects": [],
+              "status": "candidate",
+              "urls": [
+                {
+                  "role": "canonical",
+                  "url": "https://www.w3.org/TR/sparql11-query/",
+                  "primary": true
+                }
+              ],
+              "added": "2026-09-06",
+              "basis": {
+                "label": [
+                  {
+                    "entity": "sparql11",
+                    "locator": "文档头：SPARQL 1.1 Query Language；W3C Recommendation 21 March 2013",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "kind": [
+                  {
+                    "entity": "sparql11",
+                    "locator": "文档头：SPARQL 1.1 Query Language；W3C Recommendation 21 March 2013",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "urls": [
+                  {
+                    "entity": "sparql11",
+                    "locator": "文档头：SPARQL 1.1 Query Language；W3C Recommendation 21 March 2013",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "version": [
+                  {
+                    "entity": "sparql11",
+                    "locator": "文档头：SPARQL 1.1 Query Language；W3C Recommendation 21 March 2013",
+                    "checked": "2026-09-06"
+                  }
+                ]
+              },
+              "watch": [
+                {
+                  "locator": "https://www.w3.org/TR/sparql11-query/",
+                  "signals": [
+                    "availability",
+                    "redirect"
+                  ],
+                  "cadence_months": {
+                    "availability": 1,
+                    "redirect": 1,
+                    "content": 1
+                  }
+                }
+              ],
+              "review": {
+                "checked": null,
+                "next_due": null,
+                "interval_months": 24,
+                "grace_days": 30,
+                "obligations": []
+              },
+              "replaced_by": null
+            },
+            "decisions": [
+              "decision-source-term-citations"
+            ]
+          }
+        ]
+      },
+      "adopted": false,
+      "purpose": "仅作为术语候选中具体 basis 的来源实体；不创建 structure、mapping 或其他来源用途角色。",
+      "material_identity": "W3C Recommendation，SPARQL 1.1 Query Language。",
+      "supported_fields": [
+        "label",
+        "kind",
+        "version",
+        "urls"
+      ],
+      "unknown_fields": [
+        "未核当前是否有后继规范；不登记 source_status。"
+      ],
+      "tier_rationale": "W3C Recommendation 有正式发布流程与版本标识，按 de-jure。",
+      "evidence_url": "https://www.w3.org/TR/sparql11-query/"
+    },
+    {
+      "proposed_record": {
+        "id": "dcmi-metadata-terms",
+        "label": {
+          "en": "DCMI Metadata Terms"
+        },
+        "kind": "standard",
+        "version": "2020-01-20",
+        "tier": "de-jure",
+        "subjects": [],
+        "status": "candidate",
+        "urls": [
+          {
+            "role": "canonical",
+            "url": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
+            "primary": true
+          }
+        ],
+        "added": "2026-09-06",
+        "basis": {
+          "label": [
+            {
+              "entity": "dcmi-metadata-terms",
+              "locator": "文档头：DCMI Metadata Terms；Date Issued 2020-01-20；DCMI Recommendation",
+              "checked": "2026-09-06"
+            }
+          ],
+          "kind": [
+            {
+              "entity": "dcmi-metadata-terms",
+              "locator": "文档头：DCMI Metadata Terms；Date Issued 2020-01-20；DCMI Recommendation",
+              "checked": "2026-09-06"
+            }
+          ],
+          "urls": [
+            {
+              "entity": "dcmi-metadata-terms",
+              "locator": "文档头：DCMI Metadata Terms；Date Issued 2020-01-20；DCMI Recommendation",
+              "checked": "2026-09-06"
+            }
+          ],
+          "version": [
+            {
+              "entity": "dcmi-metadata-terms",
+              "locator": "文档头：DCMI Metadata Terms；Date Issued 2020-01-20；DCMI Recommendation",
+              "checked": "2026-09-06"
+            }
+          ]
+        },
+        "watch": [
+          {
+            "locator": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
+            "signals": [
+              "availability",
+              "redirect"
+            ],
+            "cadence_months": {
+              "availability": 1,
+              "redirect": 1,
+              "content": 1
+            }
+          }
+        ],
+        "review": {
+          "checked": null,
+          "next_due": null,
+          "interval_months": 24,
+          "grace_days": 30,
+          "obligations": []
+        },
+        "replaced_by": null,
+        "history": [
+          {
+            "date": "2026-09-06",
+            "action": "source-registration",
+            "fields": [
+              "id",
+              "label",
+              "kind",
+              "version",
+              "tier",
+              "subjects",
+              "status",
+              "urls",
+              "added",
+              "basis",
+              "watch",
+              "review",
+              "replaced_by"
+            ],
+            "before": {},
+            "after": {
+              "id": "dcmi-metadata-terms",
+              "label": {
+                "en": "DCMI Metadata Terms"
+              },
+              "kind": "standard",
+              "version": "2020-01-20",
+              "tier": "de-jure",
+              "subjects": [],
+              "status": "candidate",
+              "urls": [
+                {
+                  "role": "canonical",
+                  "url": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
+                  "primary": true
+                }
+              ],
+              "added": "2026-09-06",
+              "basis": {
+                "label": [
+                  {
+                    "entity": "dcmi-metadata-terms",
+                    "locator": "文档头：DCMI Metadata Terms；Date Issued 2020-01-20；DCMI Recommendation",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "kind": [
+                  {
+                    "entity": "dcmi-metadata-terms",
+                    "locator": "文档头：DCMI Metadata Terms；Date Issued 2020-01-20；DCMI Recommendation",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "urls": [
+                  {
+                    "entity": "dcmi-metadata-terms",
+                    "locator": "文档头：DCMI Metadata Terms；Date Issued 2020-01-20；DCMI Recommendation",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "version": [
+                  {
+                    "entity": "dcmi-metadata-terms",
+                    "locator": "文档头：DCMI Metadata Terms；Date Issued 2020-01-20；DCMI Recommendation",
+                    "checked": "2026-09-06"
+                  }
+                ]
+              },
+              "watch": [
+                {
+                  "locator": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
+                  "signals": [
+                    "availability",
+                    "redirect"
+                  ],
+                  "cadence_months": {
+                    "availability": 1,
+                    "redirect": 1,
+                    "content": 1
+                  }
+                }
+              ],
+              "review": {
+                "checked": null,
+                "next_due": null,
+                "interval_months": 24,
+                "grace_days": 30,
+                "obligations": []
+              },
+              "replaced_by": null
+            },
+            "decisions": [
+              "decision-source-term-citations"
+            ]
+          }
+        ]
+      },
+      "adopted": false,
+      "purpose": "仅作为术语候选中具体 basis 的来源实体；不创建 structure、mapping 或其他来源用途角色。",
+      "material_identity": "DCMI Usage Board 发布的 DCMI Metadata Terms Recommendation。候选依赖 ID 为 dcmi，但该 ID 的字面范围宽于本实体。",
+      "supported_fields": [
+        "label",
+        "kind",
+        "version",
+        "urls"
+      ],
+      "unknown_fields": [
+        "ID 是否改为 dcmi-metadata-terms 待人工决定；未核当前是否有后继规范；不登记 source_status。"
+      ],
+      "tier_rationale": "Recommendation 有正式发布身份与日期，按 de-jure。",
+      "evidence_url": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
+    },
+    {
+      "proposed_record": {
+        "id": "dcmi-singapore-framework",
+        "label": {
+          "en": "The Singapore Framework for Dublin Core™ Application Profiles"
+        },
+        "kind": "publication",
+        "version": "2008-01-14",
+        "tier": "archival",
+        "subjects": [],
+        "status": "candidate",
+        "urls": [
+          {
+            "role": "canonical",
+            "url": "https://www.dublincore.org/specifications/dublin-core/singapore-framework/",
+            "primary": true
+          }
+        ],
+        "added": "2026-09-06",
+        "basis": {
+          "label": [
+            {
+              "entity": "dcmi-singapore-framework",
+              "locator": "文档头：The Singapore Framework for Dublin Core™ Application Profiles；Date Issued 2008-01-14；docs/references/dcmi-application-profiles.md 已核状态为 past、note",
+              "checked": "2026-09-06"
+            }
+          ],
+          "kind": [
+            {
+              "entity": "dcmi-singapore-framework",
+              "locator": "文档头：The Singapore Framework for Dublin Core™ Application Profiles；Date Issued 2008-01-14；docs/references/dcmi-application-profiles.md 已核状态为 past、note",
+              "checked": "2026-09-06"
+            }
+          ],
+          "urls": [
+            {
+              "entity": "dcmi-singapore-framework",
+              "locator": "文档头：The Singapore Framework for Dublin Core™ Application Profiles；Date Issued 2008-01-14；docs/references/dcmi-application-profiles.md 已核状态为 past、note",
+              "checked": "2026-09-06"
+            }
+          ],
+          "version": [
+            {
+              "entity": "dcmi-singapore-framework",
+              "locator": "文档头：The Singapore Framework for Dublin Core™ Application Profiles；Date Issued 2008-01-14；docs/references/dcmi-application-profiles.md 已核状态为 past、note",
+              "checked": "2026-09-06"
+            }
+          ]
+        },
+        "watch": [
+          {
+            "locator": "https://www.dublincore.org/specifications/dublin-core/singapore-framework/",
+            "signals": [
+              "availability",
+              "redirect"
+            ],
+            "cadence_months": {
+              "availability": 1,
+              "redirect": 1,
+              "content": 12
+            }
+          }
+        ],
+        "review": {
+          "checked": null,
+          "next_due": null,
+          "interval_months": null,
+          "grace_days": 30,
+          "obligations": []
+        },
+        "replaced_by": null,
+        "history": [
+          {
+            "date": "2026-09-06",
+            "action": "source-registration",
+            "fields": [
+              "id",
+              "label",
+              "kind",
+              "version",
+              "tier",
+              "subjects",
+              "status",
+              "urls",
+              "added",
+              "basis",
+              "watch",
+              "review",
+              "replaced_by"
+            ],
+            "before": {},
+            "after": {
+              "id": "dcmi-singapore-framework",
+              "label": {
+                "en": "The Singapore Framework for Dublin Core™ Application Profiles"
+              },
+              "kind": "publication",
+              "version": "2008-01-14",
+              "tier": "archival",
+              "subjects": [],
+              "status": "candidate",
+              "urls": [
+                {
+                  "role": "canonical",
+                  "url": "https://www.dublincore.org/specifications/dublin-core/singapore-framework/",
+                  "primary": true
+                }
+              ],
+              "added": "2026-09-06",
+              "basis": {
+                "label": [
+                  {
+                    "entity": "dcmi-singapore-framework",
+                    "locator": "文档头：The Singapore Framework for Dublin Core™ Application Profiles；Date Issued 2008-01-14；docs/references/dcmi-application-profiles.md 已核状态为 past、note",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "kind": [
+                  {
+                    "entity": "dcmi-singapore-framework",
+                    "locator": "文档头：The Singapore Framework for Dublin Core™ Application Profiles；Date Issued 2008-01-14；docs/references/dcmi-application-profiles.md 已核状态为 past、note",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "urls": [
+                  {
+                    "entity": "dcmi-singapore-framework",
+                    "locator": "文档头：The Singapore Framework for Dublin Core™ Application Profiles；Date Issued 2008-01-14；docs/references/dcmi-application-profiles.md 已核状态为 past、note",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "version": [
+                  {
+                    "entity": "dcmi-singapore-framework",
+                    "locator": "文档头：The Singapore Framework for Dublin Core™ Application Profiles；Date Issued 2008-01-14；docs/references/dcmi-application-profiles.md 已核状态为 past、note",
+                    "checked": "2026-09-06"
+                  }
+                ]
+              },
+              "watch": [
+                {
+                  "locator": "https://www.dublincore.org/specifications/dublin-core/singapore-framework/",
+                  "signals": [
+                    "availability",
+                    "redirect"
+                  ],
+                  "cadence_months": {
+                    "availability": 1,
+                    "redirect": 1,
+                    "content": 12
+                  }
+                }
+              ],
+              "review": {
+                "checked": null,
+                "next_due": null,
+                "interval_months": null,
+                "grace_days": 30,
+                "obligations": []
+              },
+              "replaced_by": null
+            },
+            "decisions": [
+              "decision-source-term-citations"
+            ]
+          }
+        ]
+      },
+      "adopted": false,
+      "purpose": "仅作为术语候选中具体 basis 的来源实体；不创建 structure、mapping 或其他来源用途角色。",
+      "material_identity": "DCMI 2008 年 Note；现有阅读笔记将其限定为历史概念和文档结构依据。",
+      "supported_fields": [
+        "label",
+        "kind",
+        "version",
+        "urls"
+      ],
+      "unknown_fields": [
+        "不把 past 状态误写为内容过时，也不登记 source_status。"
+      ],
+      "tier_rationale": "固定发表的历史 Note，按 archival；archival 表示内容固定。",
+      "evidence_url": "https://www.dublincore.org/specifications/dublin-core/singapore-framework/"
+    },
+    {
+      "proposed_record": {
+        "id": "reproducible-builds",
+        "label": {
+          "en": "Definitions"
+        },
+        "kind": "publication",
+        "version": null,
+        "tier": "de-facto",
+        "subjects": [],
+        "status": "candidate",
+        "urls": [
+          {
+            "role": "canonical",
+            "url": "https://reproducible-builds.org/docs/definition/",
+            "primary": true
+          }
+        ],
+        "added": "2026-09-06",
+        "basis": {
+          "label": [
+            {
+              "entity": "reproducible-builds",
+              "locator": "页面 title：Definitions — reproducible-builds.org；When is a build reproducible?；继承 docs/references/reproducible-builds.md 已核阅读范围",
+              "checked": "2026-09-01"
+            }
+          ],
+          "kind": [
+            {
+              "entity": "reproducible-builds",
+              "locator": "页面 title：Definitions — reproducible-builds.org；When is a build reproducible?；继承 docs/references/reproducible-builds.md 已核阅读范围",
+              "checked": "2026-09-01"
+            }
+          ],
+          "urls": [
+            {
+              "entity": "reproducible-builds",
+              "locator": "页面 title：Definitions — reproducible-builds.org；When is a build reproducible?；继承 docs/references/reproducible-builds.md 已核阅读范围",
+              "checked": "2026-09-01"
+            }
+          ]
+        },
+        "watch": [
+          {
+            "locator": "https://reproducible-builds.org/docs/definition/",
+            "signals": [
+              "availability",
+              "redirect"
+            ],
+            "cadence_months": {
+              "availability": 1,
+              "redirect": 1,
+              "content": 3
+            }
+          }
+        ],
+        "review": {
+          "checked": null,
+          "next_due": null,
+          "interval_months": 12,
+          "grace_days": 30,
+          "obligations": []
+        },
+        "replaced_by": null,
+        "history": [
+          {
+            "date": "2026-09-06",
+            "action": "source-registration",
+            "fields": [
+              "id",
+              "label",
+              "kind",
+              "version",
+              "tier",
+              "subjects",
+              "status",
+              "urls",
+              "added",
+              "basis",
+              "watch",
+              "review",
+              "replaced_by"
+            ],
+            "before": {},
+            "after": {
+              "id": "reproducible-builds",
+              "label": {
+                "en": "Definitions"
+              },
+              "kind": "publication",
+              "version": null,
+              "tier": "de-facto",
+              "subjects": [],
+              "status": "candidate",
+              "urls": [
+                {
+                  "role": "canonical",
+                  "url": "https://reproducible-builds.org/docs/definition/",
+                  "primary": true
+                }
+              ],
+              "added": "2026-09-06",
+              "basis": {
+                "label": [
+                  {
+                    "entity": "reproducible-builds",
+                    "locator": "页面 title：Definitions — reproducible-builds.org；When is a build reproducible?；继承 docs/references/reproducible-builds.md 已核阅读范围",
+                    "checked": "2026-09-01"
+                  }
+                ],
+                "kind": [
+                  {
+                    "entity": "reproducible-builds",
+                    "locator": "页面 title：Definitions — reproducible-builds.org；When is a build reproducible?；继承 docs/references/reproducible-builds.md 已核阅读范围",
+                    "checked": "2026-09-01"
+                  }
+                ],
+                "urls": [
+                  {
+                    "entity": "reproducible-builds",
+                    "locator": "页面 title：Definitions — reproducible-builds.org；When is a build reproducible?；继承 docs/references/reproducible-builds.md 已核阅读范围",
+                    "checked": "2026-09-01"
+                  }
+                ]
+              },
+              "watch": [
+                {
+                  "locator": "https://reproducible-builds.org/docs/definition/",
+                  "signals": [
+                    "availability",
+                    "redirect"
+                  ],
+                  "cadence_months": {
+                    "availability": 1,
+                    "redirect": 1,
+                    "content": 3
+                  }
+                }
+              ],
+              "review": {
+                "checked": null,
+                "next_due": null,
+                "interval_months": 12,
+                "grace_days": 30,
+                "obligations": []
+              },
+              "replaced_by": null
+            },
+            "decisions": [
+              "decision-source-term-citations"
+            ]
+          }
+        ]
+      },
+      "adopted": false,
+      "purpose": "仅作为术语候选中具体 basis 的来源实体；不创建 structure、mapping 或其他来源用途角色。",
+      "material_identity": "Reproducible Builds 项目的官方定义页。",
+      "supported_fields": [
+        "label",
+        "kind",
+        "urls"
+      ],
+      "unknown_fields": [
+        "页面未给可核版次，version 保持 null；不登记 source_status。"
+      ],
+      "tier_rationale": "项目持续维护的官方说明页，内容可滚动更新，按 de-facto。",
+      "evidence_url": "https://reproducible-builds.org/docs/definition/"
+    },
+    {
+      "proposed_record": {
+        "id": "iplf-plain-language",
+        "label": {
+          "en": "What is plain language?"
+        },
+        "kind": "publication",
+        "version": null,
+        "tier": "de-facto",
+        "subjects": [],
+        "status": "candidate",
+        "urls": [
+          {
+            "role": "canonical",
+            "url": "https://www.iplfederation.org/plain-language/",
+            "primary": true
+          }
+        ],
+        "added": "2026-09-06",
+        "basis": {
+          "label": [
+            {
+              "entity": "iplf-plain-language",
+              "locator": "页面标题 What is plain language?；定义摘要与四原则；work/reviews/2026-09-06-term-iplf-evidence.json",
+              "checked": "2026-09-06"
+            }
+          ],
+          "kind": [
+            {
+              "entity": "iplf-plain-language",
+              "locator": "页面标题 What is plain language?；定义摘要与四原则；work/reviews/2026-09-06-term-iplf-evidence.json",
+              "checked": "2026-09-06"
+            }
+          ],
+          "urls": [
+            {
+              "entity": "iplf-plain-language",
+              "locator": "页面标题 What is plain language?；定义摘要与四原则；work/reviews/2026-09-06-term-iplf-evidence.json",
+              "checked": "2026-09-06"
+            }
+          ]
+        },
+        "watch": [
+          {
+            "locator": "https://www.iplfederation.org/plain-language/",
+            "signals": [
+              "availability",
+              "redirect"
+            ],
+            "cadence_months": {
+              "availability": 1,
+              "redirect": 1,
+              "content": 3
+            }
+          }
+        ],
+        "review": {
+          "checked": null,
+          "next_due": null,
+          "interval_months": 12,
+          "grace_days": 30,
+          "obligations": []
+        },
+        "replaced_by": null,
+        "history": [
+          {
+            "date": "2026-09-06",
+            "action": "source-registration",
+            "fields": [
+              "id",
+              "label",
+              "kind",
+              "version",
+              "tier",
+              "subjects",
+              "status",
+              "urls",
+              "added",
+              "basis",
+              "watch",
+              "review",
+              "replaced_by"
+            ],
+            "before": {},
+            "after": {
+              "id": "iplf-plain-language",
+              "label": {
+                "en": "What is plain language?"
+              },
+              "kind": "publication",
+              "version": null,
+              "tier": "de-facto",
+              "subjects": [],
+              "status": "candidate",
+              "urls": [
+                {
+                  "role": "canonical",
+                  "url": "https://www.iplfederation.org/plain-language/",
+                  "primary": true
+                }
+              ],
+              "added": "2026-09-06",
+              "basis": {
+                "label": [
+                  {
+                    "entity": "iplf-plain-language",
+                    "locator": "页面标题 What is plain language?；定义摘要与四原则；work/reviews/2026-09-06-term-iplf-evidence.json",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "kind": [
+                  {
+                    "entity": "iplf-plain-language",
+                    "locator": "页面标题 What is plain language?；定义摘要与四原则；work/reviews/2026-09-06-term-iplf-evidence.json",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "urls": [
+                  {
+                    "entity": "iplf-plain-language",
+                    "locator": "页面标题 What is plain language?；定义摘要与四原则；work/reviews/2026-09-06-term-iplf-evidence.json",
+                    "checked": "2026-09-06"
+                  }
+                ]
+              },
+              "watch": [
+                {
+                  "locator": "https://www.iplfederation.org/plain-language/",
+                  "signals": [
+                    "availability",
+                    "redirect"
+                  ],
+                  "cadence_months": {
+                    "availability": 1,
+                    "redirect": 1,
+                    "content": 3
+                  }
+                }
+              ],
+              "review": {
+                "checked": null,
+                "next_due": null,
+                "interval_months": 12,
+                "grace_days": 30,
+                "obligations": []
+              },
+              "replaced_by": null
+            },
+            "decisions": [
+              "decision-source-term-citations"
+            ]
+          }
+        ]
+      },
+      "adopted": false,
+      "purpose": "仅作为术语候选中具体 basis 的来源实体；不创建 structure、mapping 或其他来源用途角色。",
+      "material_identity": "International Plain Language Federation 的官方定义与原则说明页，不是 ISO 标准正文。",
+      "supported_fields": [
+        "label",
+        "kind",
+        "urls"
+      ],
+      "unknown_fields": [
+        "页面未给可核版次，version 保持 null；不登记 source_status。"
+      ],
+      "tier_rationale": "组织持续维护的官方说明页，按 de-facto。",
+      "evidence_url": "https://www.iplfederation.org/plain-language/"
+    },
+    {
+      "proposed_record": {
+        "id": "ahrens-zettelkasten-interview",
+        "label": {
+          "en": "Zettelkasten \"Super\" Notes: with Dr Sönke Ahrens"
+        },
+        "kind": "publication",
+        "version": null,
+        "tier": "archival",
+        "subjects": [],
+        "status": "candidate",
+        "urls": [
+          {
+            "role": "canonical",
+            "url": "https://examstudyexpert.com/zettelkasten/",
+            "primary": true
+          }
+        ],
+        "added": "2026-09-06",
+        "basis": {
+          "label": [
+            {
+              "entity": "ahrens-zettelkasten-interview",
+              "locator": "页面标题；公开播客访谈逐字稿 L91-L106；work/reviews/2026-09-06-term-ahrens-evidence.json",
+              "checked": "2026-09-06"
+            }
+          ],
+          "kind": [
+            {
+              "entity": "ahrens-zettelkasten-interview",
+              "locator": "页面标题；公开播客访谈逐字稿 L91-L106；work/reviews/2026-09-06-term-ahrens-evidence.json",
+              "checked": "2026-09-06"
+            }
+          ],
+          "urls": [
+            {
+              "entity": "ahrens-zettelkasten-interview",
+              "locator": "页面标题；公开播客访谈逐字稿 L91-L106；work/reviews/2026-09-06-term-ahrens-evidence.json",
+              "checked": "2026-09-06"
+            }
+          ]
+        },
+        "watch": [
+          {
+            "locator": "https://examstudyexpert.com/zettelkasten/",
+            "signals": [
+              "availability",
+              "redirect"
+            ],
+            "cadence_months": {
+              "availability": 1,
+              "redirect": 1,
+              "content": 12
+            }
+          }
+        ],
+        "review": {
+          "checked": null,
+          "next_due": null,
+          "interval_months": null,
+          "grace_days": 30,
+          "obligations": []
+        },
+        "replaced_by": null,
+        "history": [
+          {
+            "date": "2026-09-06",
+            "action": "source-registration",
+            "fields": [
+              "id",
+              "label",
+              "kind",
+              "version",
+              "tier",
+              "subjects",
+              "status",
+              "urls",
+              "added",
+              "basis",
+              "watch",
+              "review",
+              "replaced_by"
+            ],
+            "before": {},
+            "after": {
+              "id": "ahrens-zettelkasten-interview",
+              "label": {
+                "en": "Zettelkasten \"Super\" Notes: with Dr Sönke Ahrens"
+              },
+              "kind": "publication",
+              "version": null,
+              "tier": "archival",
+              "subjects": [],
+              "status": "candidate",
+              "urls": [
+                {
+                  "role": "canonical",
+                  "url": "https://examstudyexpert.com/zettelkasten/",
+                  "primary": true
+                }
+              ],
+              "added": "2026-09-06",
+              "basis": {
+                "label": [
+                  {
+                    "entity": "ahrens-zettelkasten-interview",
+                    "locator": "页面标题；公开播客访谈逐字稿 L91-L106；work/reviews/2026-09-06-term-ahrens-evidence.json",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "kind": [
+                  {
+                    "entity": "ahrens-zettelkasten-interview",
+                    "locator": "页面标题；公开播客访谈逐字稿 L91-L106；work/reviews/2026-09-06-term-ahrens-evidence.json",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "urls": [
+                  {
+                    "entity": "ahrens-zettelkasten-interview",
+                    "locator": "页面标题；公开播客访谈逐字稿 L91-L106；work/reviews/2026-09-06-term-ahrens-evidence.json",
+                    "checked": "2026-09-06"
+                  }
+                ]
+              },
+              "watch": [
+                {
+                  "locator": "https://examstudyexpert.com/zettelkasten/",
+                  "signals": [
+                    "availability",
+                    "redirect"
+                  ],
+                  "cadence_months": {
+                    "availability": 1,
+                    "redirect": 1,
+                    "content": 12
+                  }
+                }
+              ],
+              "review": {
+                "checked": null,
+                "next_due": null,
+                "interval_months": null,
+                "grace_days": 30,
+                "obligations": []
+              },
+              "replaced_by": null
+            },
+            "decisions": [
+              "decision-source-term-citations"
+            ]
+          }
+        ]
+      },
+      "adopted": false,
+      "purpose": "仅作为术语候选中具体 basis 的来源实体；不创建 structure、mapping 或其他来源用途角色。",
+      "material_identity": "William Wadsworth 对 Sönke Ahrens 的公开播客访谈逐字稿；术语引文标注为 Sönke Ahrens 本人发言。",
+      "supported_fields": [
+        "label",
+        "kind",
+        "urls"
+      ],
+      "unknown_fields": [
+        "页面未给足以区分内容版本的版次，version 保持 null；不是 2017 出版物正文。"
+      ],
+      "tier_rationale": "固定发表的访谈转录，按 archival。",
+      "evidence_url": "https://examstudyexpert.com/zettelkasten/"
+    },
+    {
+      "proposed_record": {
+        "id": "iso-15489-1",
+        "label": {
+          "en": "Information and documentation — Records management — Part 1: Concepts and principles"
+        },
+        "kind": "standard",
+        "version": "2016",
+        "tier": "de-jure",
+        "subjects": [],
+        "status": "candidate",
+        "urls": [
+          {
+            "role": "landing",
+            "url": "https://www.iso.org/standard/62542.html",
+            "primary": true
+          }
+        ],
+        "added": "2026-09-06",
+        "basis": {
+          "label": [
+            {
+              "entity": "iso-15489-1",
+              "locator": "iTeh 免费样章封面：ISO 15489-1，Second edition，2016-04-15；题名 Information and documentation — Records management — Part 1: Concepts and principles",
+              "checked": "2026-09-06"
+            }
+          ],
+          "kind": [
+            {
+              "entity": "iso-15489-1",
+              "locator": "iTeh 免费样章封面：ISO 15489-1，Second edition，2016-04-15；题名 Information and documentation — Records management — Part 1: Concepts and principles",
+              "checked": "2026-09-06"
+            }
+          ],
+          "urls": [
+            {
+              "entity": "iso-15489-1",
+              "locator": "iTeh 免费样章封面：ISO 15489-1，Second edition，2016-04-15；题名 Information and documentation — Records management — Part 1: Concepts and principles",
+              "checked": "2026-09-06"
+            }
+          ],
+          "version": [
+            {
+              "entity": "iso-15489-1",
+              "locator": "iTeh 免费样章封面：ISO 15489-1，Second edition，2016-04-15；题名 Information and documentation — Records management — Part 1: Concepts and principles",
+              "checked": "2026-09-06"
+            }
+          ]
+        },
+        "watch": [
+          {
+            "locator": "https://www.iso.org/standard/62542.html",
+            "signals": [
+              "availability",
+              "redirect"
+            ],
+            "cadence_months": {
+              "availability": 1,
+              "redirect": 1,
+              "content": 1
+            }
+          }
+        ],
+        "review": {
+          "checked": null,
+          "next_due": null,
+          "interval_months": 24,
+          "grace_days": 30,
+          "obligations": []
+        },
+        "replaced_by": null,
+        "history": [
+          {
+            "date": "2026-09-06",
+            "action": "source-registration",
+            "fields": [
+              "id",
+              "label",
+              "kind",
+              "version",
+              "tier",
+              "subjects",
+              "status",
+              "urls",
+              "added",
+              "basis",
+              "watch",
+              "review",
+              "replaced_by"
+            ],
+            "before": {},
+            "after": {
+              "id": "iso-15489-1",
+              "label": {
+                "en": "Information and documentation — Records management — Part 1: Concepts and principles"
+              },
+              "kind": "standard",
+              "version": "2016",
+              "tier": "de-jure",
+              "subjects": [],
+              "status": "candidate",
+              "urls": [
+                {
+                  "role": "landing",
+                  "url": "https://www.iso.org/standard/62542.html",
+                  "primary": true
+                }
+              ],
+              "added": "2026-09-06",
+              "basis": {
+                "label": [
+                  {
+                    "entity": "iso-15489-1",
+                    "locator": "iTeh 免费样章封面：ISO 15489-1，Second edition，2016-04-15；题名 Information and documentation — Records management — Part 1: Concepts and principles",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "kind": [
+                  {
+                    "entity": "iso-15489-1",
+                    "locator": "iTeh 免费样章封面：ISO 15489-1，Second edition，2016-04-15；题名 Information and documentation — Records management — Part 1: Concepts and principles",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "urls": [
+                  {
+                    "entity": "iso-15489-1",
+                    "locator": "iTeh 免费样章封面：ISO 15489-1，Second edition，2016-04-15；题名 Information and documentation — Records management — Part 1: Concepts and principles",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "version": [
+                  {
+                    "entity": "iso-15489-1",
+                    "locator": "iTeh 免费样章封面：ISO 15489-1，Second edition，2016-04-15；题名 Information and documentation — Records management — Part 1: Concepts and principles",
+                    "checked": "2026-09-06"
+                  }
+                ]
+              },
+              "watch": [
+                {
+                  "locator": "https://www.iso.org/standard/62542.html",
+                  "signals": [
+                    "availability",
+                    "redirect"
+                  ],
+                  "cadence_months": {
+                    "availability": 1,
+                    "redirect": 1,
+                    "content": 1
+                  }
+                }
+              ],
+              "review": {
+                "checked": null,
+                "next_due": null,
+                "interval_months": 24,
+                "grace_days": 30,
+                "obligations": []
+              },
+              "replaced_by": null
+            },
+            "decisions": [
+              "decision-source-term-citations"
+            ]
+          }
+        ]
+      },
+      "adopted": false,
+      "purpose": "仅作为术语候选中具体 basis 的来源实体；不创建 structure、mapping 或其他来源用途角色。",
+      "material_identity": "ISO 15489-1:2016 第二版；本轮重新读取现有笔记所列 iTeh 免费样章封面，候选定义来自同一样章 §3.8。",
+      "supported_fields": [
+        "label",
+        "kind",
+        "version",
+        "urls"
+      ],
+      "unknown_fields": [
+        "ISO landing page 本轮受防护页阻挡；未核当前外部状态，不登记 source_status。"
+      ],
+      "tier_rationale": "ISO 国际标准有正式发布流程与版本标识，按 de-jure。",
+      "evidence_url": "https://www.iso.org/standard/62542.html"
+    },
+    {
+      "proposed_record": {
+        "id": "juran-1974-non-pareto",
+        "label": {
+          "en": "The Non-Pareto Principle; Mea Culpa"
+        },
+        "kind": "publication",
+        "version": "1974",
+        "tier": "archival",
+        "subjects": [],
+        "status": "candidate",
+        "urls": [
+          {
+            "role": "full_text",
+            "url": "https://www.juran.com/wp-content/uploads/2021/03/The-Non-Pareto-Principle-1974.pdf",
+            "primary": true
+          }
+        ],
+        "added": "2026-09-06",
+        "basis": {
+          "label": [
+            {
+              "entity": "juran-1974-non-pareto",
+              "locator": "PDF 题名 The Non-Pareto Principle; Mea Culpa；正文与文件身份标示 1974；候选已核 PDF page index 0-2",
+              "checked": "2026-09-06"
+            }
+          ],
+          "kind": [
+            {
+              "entity": "juran-1974-non-pareto",
+              "locator": "PDF 题名 The Non-Pareto Principle; Mea Culpa；正文与文件身份标示 1974；候选已核 PDF page index 0-2",
+              "checked": "2026-09-06"
+            }
+          ],
+          "urls": [
+            {
+              "entity": "juran-1974-non-pareto",
+              "locator": "PDF 题名 The Non-Pareto Principle; Mea Culpa；正文与文件身份标示 1974；候选已核 PDF page index 0-2",
+              "checked": "2026-09-06"
+            }
+          ],
+          "version": [
+            {
+              "entity": "juran-1974-non-pareto",
+              "locator": "PDF 题名 The Non-Pareto Principle; Mea Culpa；正文与文件身份标示 1974；候选已核 PDF page index 0-2",
+              "checked": "2026-09-06"
+            }
+          ]
+        },
+        "watch": [
+          {
+            "locator": "https://www.juran.com/wp-content/uploads/2021/03/The-Non-Pareto-Principle-1974.pdf",
+            "signals": [
+              "availability",
+              "redirect"
+            ],
+            "cadence_months": {
+              "availability": 1,
+              "redirect": 1,
+              "content": 12
+            }
+          }
+        ],
+        "review": {
+          "checked": null,
+          "next_due": null,
+          "interval_months": null,
+          "grace_days": 30,
+          "obligations": []
+        },
+        "replaced_by": null,
+        "history": [
+          {
+            "date": "2026-09-06",
+            "action": "source-registration",
+            "fields": [
+              "id",
+              "label",
+              "kind",
+              "version",
+              "tier",
+              "subjects",
+              "status",
+              "urls",
+              "added",
+              "basis",
+              "watch",
+              "review",
+              "replaced_by"
+            ],
+            "before": {},
+            "after": {
+              "id": "juran-1974-non-pareto",
+              "label": {
+                "en": "The Non-Pareto Principle; Mea Culpa"
+              },
+              "kind": "publication",
+              "version": "1974",
+              "tier": "archival",
+              "subjects": [],
+              "status": "candidate",
+              "urls": [
+                {
+                  "role": "full_text",
+                  "url": "https://www.juran.com/wp-content/uploads/2021/03/The-Non-Pareto-Principle-1974.pdf",
+                  "primary": true
+                }
+              ],
+              "added": "2026-09-06",
+              "basis": {
+                "label": [
+                  {
+                    "entity": "juran-1974-non-pareto",
+                    "locator": "PDF 题名 The Non-Pareto Principle; Mea Culpa；正文与文件身份标示 1974；候选已核 PDF page index 0-2",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "kind": [
+                  {
+                    "entity": "juran-1974-non-pareto",
+                    "locator": "PDF 题名 The Non-Pareto Principle; Mea Culpa；正文与文件身份标示 1974；候选已核 PDF page index 0-2",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "urls": [
+                  {
+                    "entity": "juran-1974-non-pareto",
+                    "locator": "PDF 题名 The Non-Pareto Principle; Mea Culpa；正文与文件身份标示 1974；候选已核 PDF page index 0-2",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "version": [
+                  {
+                    "entity": "juran-1974-non-pareto",
+                    "locator": "PDF 题名 The Non-Pareto Principle; Mea Culpa；正文与文件身份标示 1974；候选已核 PDF page index 0-2",
+                    "checked": "2026-09-06"
+                  }
+                ]
+              },
+              "watch": [
+                {
+                  "locator": "https://www.juran.com/wp-content/uploads/2021/03/The-Non-Pareto-Principle-1974.pdf",
+                  "signals": [
+                    "availability",
+                    "redirect"
+                  ],
+                  "cadence_months": {
+                    "availability": 1,
+                    "redirect": 1,
+                    "content": 12
+                  }
+                }
+              ],
+              "review": {
+                "checked": null,
+                "next_due": null,
+                "interval_months": null,
+                "grace_days": 30,
+                "obligations": []
+              },
+              "replaced_by": null
+            },
+            "decisions": [
+              "decision-source-term-citations"
+            ]
+          }
+        ]
+      },
+      "adopted": false,
+      "purpose": "仅作为术语候选中具体 basis 的来源实体；不创建 structure、mapping 或其他来源用途角色。",
+      "material_identity": "J. M. Juran 1974 年发表的历史说明论文；不是 1951 年原稿。",
+      "supported_fields": [
+        "label",
+        "kind",
+        "version",
+        "urls"
+      ],
+      "unknown_fields": [
+        "不把网站文件上传年份当作作品版本；不登记 source_status。"
+      ],
+      "tier_rationale": "固定发表论文，按 archival。",
+      "evidence_url": "https://www.juran.com/wp-content/uploads/2021/03/The-Non-Pareto-Principle-1974.pdf"
+    }
+  ],
+  "version_patches": {
+    "purpose": "非空 version 的未来采纳 patch；需与同一决定中的完整实体采纳一起使用，当前未采纳。",
+    "patches": [
+      {
+        "identity": "entities/gruber-official",
+        "field": "version",
+        "value": "2008"
+      },
+      {
+        "identity": "entities/gruber-official",
+        "field": "basis.version",
+        "value": [
+          {
+            "entity": "gruber-official",
+            "locator": "页面正文书目信息：Tom Gruber (2008), Ontology；正文说明其更新 1993 ontology definition",
+            "checked": "2026-09-06"
+          }
+        ]
+      },
+      {
+        "identity": "entities/hogan-paper",
+        "field": "version",
+        "value": "arXiv v6"
+      },
+      {
+        "identity": "entities/hogan-paper",
+        "field": "basis.version",
+        "value": [
+          {
+            "entity": "hogan-paper",
+            "locator": "https://export.arxiv.org/api/query?id_list=2003.02320；entry id 2003.02320v6；updated 2021-09-11T21:36:53Z；abs submission history v6",
+            "checked": "2026-09-06"
+          }
+        ]
+      },
+      {
+        "identity": "entities/rdf11",
+        "field": "version",
+        "value": "2014-02-25"
+      },
+      {
+        "identity": "entities/rdf11",
+        "field": "basis.version",
+        "value": [
+          {
+            "entity": "rdf11",
+            "locator": "文档头：RDF 1.1 Concepts and Abstract Syntax；W3C Recommendation 25 February 2014；版本化 URI /TR/2014/REC-rdf11-concepts-20140225/",
+            "checked": "2026-09-06"
+          }
+        ]
+      },
+      {
+        "identity": "entities/rdfs11",
+        "field": "version",
+        "value": "2014-02-25"
+      },
+      {
+        "identity": "entities/rdfs11",
+        "field": "basis.version",
+        "value": [
+          {
+            "entity": "rdfs11",
+            "locator": "文档头：RDF Schema 1.1；版本化 URI /TR/2014/REC-rdf-schema-20140225/",
+            "checked": "2026-09-06"
+          }
+        ]
+      },
+      {
+        "identity": "entities/owl2",
+        "field": "version",
+        "value": "2012-12-11"
+      },
+      {
+        "identity": "entities/owl2",
+        "field": "basis.version",
+        "value": [
+          {
+            "entity": "owl2",
+            "locator": "文档头：OWL 2 Web Ontology Language Document Overview (Second Edition)；W3C Recommendation 11 December 2012",
+            "checked": "2026-09-06"
+          }
+        ]
+      },
+      {
+        "identity": "entities/sparql11",
+        "field": "version",
+        "value": "2013-03-21"
+      },
+      {
+        "identity": "entities/sparql11",
+        "field": "basis.version",
+        "value": [
+          {
+            "entity": "sparql11",
+            "locator": "文档头：SPARQL 1.1 Query Language；W3C Recommendation 21 March 2013",
+            "checked": "2026-09-06"
+          }
+        ]
+      },
+      {
+        "identity": "entities/dcmi-metadata-terms",
+        "field": "version",
+        "value": "2020-01-20"
+      },
+      {
+        "identity": "entities/dcmi-metadata-terms",
+        "field": "basis.version",
+        "value": [
+          {
+            "entity": "dcmi-metadata-terms",
+            "locator": "文档头：DCMI Metadata Terms；Date Issued 2020-01-20；DCMI Recommendation",
+            "checked": "2026-09-06"
+          }
+        ]
+      },
+      {
+        "identity": "entities/dcmi-singapore-framework",
+        "field": "version",
+        "value": "2008-01-14"
+      },
+      {
+        "identity": "entities/dcmi-singapore-framework",
+        "field": "basis.version",
+        "value": [
+          {
+            "entity": "dcmi-singapore-framework",
+            "locator": "文档头：The Singapore Framework for Dublin Core™ Application Profiles；Date Issued 2008-01-14；docs/references/dcmi-application-profiles.md 已核状态为 past、note",
+            "checked": "2026-09-06"
+          }
+        ]
+      },
+      {
+        "identity": "entities/iso-15489-1",
+        "field": "version",
+        "value": "2016"
+      },
+      {
+        "identity": "entities/iso-15489-1",
+        "field": "basis.version",
+        "value": [
+          {
+            "entity": "iso-15489-1",
+            "locator": "iTeh 免费样章封面：ISO 15489-1，Second edition，2016-04-15；题名 Information and documentation — Records management — Part 1: Concepts and principles",
+            "checked": "2026-09-06"
+          }
+        ]
+      },
+      {
+        "identity": "entities/juran-1974-non-pareto",
+        "field": "version",
+        "value": "1974"
+      },
+      {
+        "identity": "entities/juran-1974-non-pareto",
+        "field": "basis.version",
+        "value": [
+          {
+            "entity": "juran-1974-non-pareto",
+            "locator": "PDF 题名 The Non-Pareto Principle; Mea Culpa；正文与文件身份标示 1974；候选已核 PDF page index 0-2",
+            "checked": "2026-09-06"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": {
+    "dependency_count": 13,
+    "proposed_count": 13,
+    "dependency_ids": [
+      "gruber-official",
+      "hogan-paper",
+      "rdf11",
+      "rdfs11",
+      "owl2",
+      "sparql11",
+      "dcmi-metadata-terms",
+      "dcmi-singapore-framework",
+      "reproducible-builds",
+      "iplf-plain-language",
+      "ahrens-zettelkasten-interview",
+      "iso-15489-1",
+      "juran-1974-non-pareto"
+    ],
+    "extra_existing_proposal_excluded": [
+      "iplf-iso-standard"
+    ],
+    "missing_dependencies": [],
+    "formal_baseline_unchanged": {
+      "source_uses": 31,
+      "entities": 62
+    }
+  },
+  "mechanical_validation": {
+    "schema_projection": "把 items[].proposed_record 投影到 schema 为 urn:kb-design:data:entities、schema_version 为 2 的数据文档，再用 schemas/source-entities.schema.json 校验。",
+    "expected_adoption_errors": [
+      "history.decisions 引用未来决定 decision-source-term-citations，当前不存在；这是待采纳 blocker，不能用虚假 accepted 决定消除。"
+    ],
+    "semantic_limits": [
+      "schema 通过只证明字段形状；不批准来源身份、字段值、术语 basis 或用途角色。",
+      "未登记 source_status，因为未逐项核对当前外部状态。"
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 schema: urn:kb-design:data:term-cutover-state
 version: 1
 state: active
-active_editor: vocab/terms.yaml
+active_editor: data/vocab/terms.yaml
 terms_mode: active_editor
 consumers_enabled: true
 decision: decision-term-fixture-active

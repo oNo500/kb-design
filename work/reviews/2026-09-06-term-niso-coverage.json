@@ -1,0 +1,656 @@
+{
+  "review": {
+    "source": "ANSI/NISO Z39.19-2005 (R2010)",
+    "input": "work/reviews/2026-09-06-term-inventory.json",
+    "checked_date": "2026-09-06",
+    "scope": "仅现行记录中引用 Z39.19 的条目；复用已实际读取的 NISO 官方 PDF turn76view0，不新增英文直接引文。",
+    "material_boundary": "中文形式不冒称 NISO 中文证据；保留现行值，缺失证据不自动否定登记；建议未采纳。"
+  },
+  "items": [
+    {
+      "id": "glossary-L0020",
+      "original_cells": [
+        "受控词表",
+        "controlled vocabulary",
+        "规定好的词、标题或代码列表，每项代表一个概念",
+        "ISO 2.12;Z 4.1"
+      ],
+      "supported_fields": [
+        "英文形式与定义范围"
+      ],
+      "unsupported_fields": [
+        "中文形式及中文官方对应"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§4.1",
+        "pdf_page_index": "PDF page index 16",
+        "printed_page": "印刷 p.5"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0021",
+      "original_cells": [
+        "术语表 / 代码表",
+        "list, pick list",
+        "有限的一组词，按字母或其他明显逻辑排列，无关系",
+        "Z 5.4.1"
+      ],
+      "supported_fields": [
+        "list 与 pick list 的同义称呼及有限列表范围"
+      ],
+      "unsupported_fields": [
+        "中文两种形式是否应作项目同义 designation"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§5.4.1",
+        "pdf_page_index": "PDF page index 27-28",
+        "printed_page": "印刷 p.17"
+      },
+      "minimal_correction_proposal": "保留原值；标准 §5.4.1 将 list 与 pick list 作为同一条目的称呼，中文并列形式待人决定，不按位置选首选。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0022",
+      "original_cells": [
+        "同义词环",
+        "synonym ring",
+        "一组检索时视为等价的词；只用于检索，不用于标引",
+        "Z 5.4.2"
+      ],
+      "supported_fields": [
+        "synonym ring 的 retrieval-only 结构范围"
+      ],
+      "unsupported_fields": [
+        "中文形式及项目检索语义"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§5.4.2",
+        "pdf_page_index": "PDF page index 28-29",
+        "printed_page": "印刷 p.18"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0023",
+      "original_cells": [
+        "分类法",
+        "taxonomy",
+        "全部由首选词构成、以层级或多层级连接的受控词表",
+        "Z 5.4.3"
+      ],
+      "supported_fields": [
+        "taxonomy 与 preferred terms、层级连接的范围"
+      ],
+      "unsupported_fields": [
+        "中文形式及项目结构规则"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§5.4.3",
+        "pdf_page_index": "PDF page index 29",
+        "printed_page": "印刷 p.18"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0025",
+      "original_cells": [
+        "叙词表",
+        "thesaurus",
+        "按已知顺序排列、用标准化关系指示符清楚显示词间关系的受控词表",
+        "Z 5.4.4"
+      ],
+      "supported_fields": [
+        "thesaurus 的顺序、关系显示和指示符范围"
+      ],
+      "unsupported_fields": [
+        "中文形式及项目结构规则"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§5.4.4",
+        "pdf_page_index": "PDF page index 29",
+        "printed_page": "印刷 p.18"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0040",
+      "original_cells": [
+        "限定词",
+        "qualifier",
+        "加在词后区分同形异义的定义性词，如 `Apple (company)`",
+        "Z 4.1"
+      ],
+      "supported_fields": [
+        "qualifier 区分 homographs 的范围"
+      ],
+      "unsupported_fields": [
+        "中文形式及示例适用边界"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§4.1；§6.2.1",
+        "pdf_page_index": "PDF page index 19；31-32",
+        "printed_page": "印刷 p.8；20-21"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0047",
+      "original_cells": [
+        "内容对象",
+        "content object",
+        "被标引的东西：文档、图像、人、组织、实物",
+        "Z 4.1;ISO 2.15 document"
+      ],
+      "supported_fields": [
+        "content object 的标准语境"
+      ],
+      "unsupported_fields": [
+        "中文形式与 ISO document 的对应"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§4.1；§5.2.2",
+        "pdf_page_index": "PDF page index 15；22-23",
+        "printed_page": "印刷 p.4；11-12"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0065",
+      "original_cells": [
+        "互反",
+        "reciprocal",
+        "关系必须双向登记：A BT B 则 B NT A",
+        "Z 5.4.4"
+      ],
+      "supported_fields": [
+        "reciprocal 的反向关系语境"
+      ],
+      "unsupported_fields": [
+        "中文形式及项目关系实现义务"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§4.1；§8.3",
+        "pdf_page_index": "PDF page index 19；57-58",
+        "printed_page": "印刷 p.8；46-47"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0072",
+      "original_cells": [
+        "分面分析",
+        "facet analysis",
+        "把领域分解成概念、按分面分组、按划分特征细分",
+        "ISO 2.21;Z 5.3.4"
+      ],
+      "supported_fields": [
+        "facet analysis 的组织方法语境"
+      ],
+      "unsupported_fields": [
+        "中文形式及项目采用"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§5.3.4",
+        "pdf_page_index": "PDF page index 25-26",
+        "printed_page": "印刷 p.14-15"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0077",
+      "original_cells": [
+        "节点标签",
+        "node label",
+        "树里说明一组兄弟按什么分的标签；内容只能是划分特征或分面名；非词，不能标引",
+        "ISO 2.38;Z 8.3.5"
+      ],
+      "supported_fields": [
+        "node label 的非标引和层级说明语境"
+      ],
+      "unsupported_fields": [
+        "中文形式及字段绑定"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§4.1；§8.3.5",
+        "pdf_page_index": "PDF page index 18；51-56",
+        "printed_page": "印刷 p.7；40-45"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0085",
+      "original_cells": [
+        "属性 / 维度",
+        "attribute, dimension",
+        "元数据层：文档的一个字段。不是词表结构，但 Z39.19 图 4 也把它叫 facet",
+        "Z 5.3.4"
+      ],
+      "supported_fields": [
+        "图 4 中 facet 用于内容对象属性的语境"
+      ],
+      "unsupported_fields": [
+        "attribute/dimension 与 facet 是否等同"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§5.3.4 Figure 4",
+        "pdf_page_index": "PDF page index 25",
+        "printed_page": "印刷 p.14"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0091",
+      "original_cells": [
+        "范围注释",
+        "scope note",
+        "说明词的覆盖范围和用法限制的注释",
+        "ISO 5.2;Z 4.1"
+      ],
+      "supported_fields": [
+        "scope note 的选定含义说明语境"
+      ],
+      "unsupported_fields": [
+        "中文形式及项目 scope 字段"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§4.1；§6.2.2",
+        "pdf_page_index": "PDF page index 20；33",
+        "printed_page": "印刷 p.9；22"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0093",
+      "original_cells": [
+        "历史注释",
+        "history note",
+        "入表日期、变更记录、旧形式及有效期",
+        "Z 11.3.2.2"
+      ],
+      "supported_fields": [
+        "history note 的时间发展与变更记录语境"
+      ],
+      "unsupported_fields": [
+        "中文形式及项目生命周期字段"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§4.1；§6.2.3；§11.3.2.2",
+        "pdf_page_index": "PDF page index 19；33-34；108",
+        "printed_page": "印刷 p.8；22-23；97"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0095",
+      "original_cells": [
+        "候选词",
+        "candidate term, provisional term",
+        "提出但未走完审批的词",
+        "Z 11.1.6"
+      ],
+      "supported_fields": [
+        "candidate term 与 provisional term 的同一标准称呼及未完成 acceptance procedures 的范围"
+      ],
+      "unsupported_fields": [
+        "项目 candidate 状态、审批角色和转换规则"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§4.1；§11.1.6",
+        "pdf_page_index": "PDF page index 19；104",
+        "printed_page": "印刷 p.8；93"
+      },
+      "minimal_correction_proposal": "保留原值；candidate/provisional 仅作标准语境对应，不创建或批准项目状态。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0096",
+      "original_cells": [
+        "未标引词",
+        "unassigned term",
+        "为补全层级而收、尚未用于标引的词",
+        "Z 11.1.8"
+      ],
+      "supported_fields": [
+        "为补全 hierarchy 而收录、尚未用于 indexing 的语境"
+      ],
+      "unsupported_fields": [
+        "项目 unassigned 状态"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§11.1.8",
+        "pdf_page_index": "PDF page index 104",
+        "printed_page": "印刷 p.93"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0097",
+      "original_cells": [
+        "废弃词",
+        "deprecated term",
+        "不再用于标引、保留供检索并指向替代词的词",
+        "Z 11.3.2.1"
+      ],
+      "supported_fields": [],
+      "unsupported_fields": [
+        "deprecated term 的独立定义及项目保留政策"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§11.3.2.1",
+        "pdf_page_index": "PDF page index 110-111",
+        "printed_page": "印刷 p.99-100"
+      },
+      "minimal_correction_proposal": "保留原值；将 deprecated term 的项目生命周期语义列为未支持，不自动删除或赋状态。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0098",
+      "original_cells": [
+        "孤儿词",
+        "orphan term",
+        "没有任何层级或相关关系的词",
+        "Z 11.4.4"
+      ],
+      "supported_fields": [
+        "orphan term 的系统删除提示语境"
+      ],
+      "unsupported_fields": [
+        "项目删除门槛"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§4.1；§11.4.4",
+        "pdf_page_index": "PDF page index 19；112",
+        "printed_page": "印刷 p.8；133"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0106",
+      "original_cells": [
+        "依据",
+        "warrant",
+        "一个词有资格进词表的理由",
+        "Z 5.3.5"
+      ],
+      "supported_fields": [
+        "warrant 作为选择术语依据的语境"
+      ],
+      "unsupported_fields": [
+        "warrant 的独立完整定义"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§5.3.5",
+        "pdf_page_index": "PDF page index 27",
+        "printed_page": "印刷 p.16"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0107",
+      "original_cells": [
+        "文献依据",
+        "literary warrant",
+        "词是领域文献里实际通行的说法",
+        "Z 5.3.5.1"
+      ],
+      "supported_fields": [
+        "literary warrant 的文献使用依据"
+      ],
+      "unsupported_fields": [
+        "中文形式"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§5.3.5.1",
+        "pdf_page_index": "PDF page index 27",
+        "printed_page": "印刷 p.16"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0108",
+      "original_cells": [
+        "组织依据",
+        "organizational warrant",
+        "词是使用组织偏好的形式",
+        "Z 5.3.5.2"
+      ],
+      "supported_fields": [
+        "organizational warrant 的组织偏好依据"
+      ],
+      "unsupported_fields": [
+        "中文形式"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§5.3.5.2",
+        "pdf_page_index": "PDF page index 27",
+        "printed_page": "印刷 p.16"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0109",
+      "original_cells": [
+        "用户依据",
+        "user warrant",
+        "词是用户检索时实际用的说法",
+        "Z 5.3.5.3"
+      ],
+      "supported_fields": [
+        "user warrant 的用户请求或检索依据"
+      ],
+      "unsupported_fields": [
+        "中文形式"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§5.3.5.3",
+        "pdf_page_index": "PDF page index 27",
+        "printed_page": "印刷 p.16"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0110",
+      "original_cells": [
+        "自上而下 / 自下而上",
+        "top down / bottom up",
+        "委员会法的两个方向；新建词表优先前者",
+        "Z 11.1.3.1"
+      ],
+      "supported_fields": [
+        "top down / bottom up 的委员会建设方向及新建/增补差异"
+      ],
+      "unsupported_fields": [
+        "中文官方对应"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§11.1.3.1",
+        "pdf_page_index": "PDF page index 102",
+        "printed_page": "印刷 p.91"
+      },
+      "minimal_correction_proposal": "保留原值；按 §11.1.3.1 的委员会建设方向解释，不按普通上下方向扩写。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0111",
+      "original_cells": [
+        "演绎法 / 归纳法",
+        "deductive / inductive",
+        "经验法的两种：先收集后控制 / 从头控制",
+        "Z 11.1.3.2"
+      ],
+      "supported_fields": [
+        "deductive / inductive 的经验法控制时点及层级方向"
+      ],
+      "unsupported_fields": [
+        "中文官方对应"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§11.1.3.2",
+        "pdf_page_index": "PDF page index 102-103",
+        "printed_page": "印刷 p.91-92"
+      },
+      "minimal_correction_proposal": "保留原值；按 §11.1.3.2 的经验法解释，不按普通逻辑学改写。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0116",
+      "original_cells": [
+        "词汇控制",
+        "vocabulary control",
+        "让标引者和检索者对同一概念用同一个词",
+        "ISO §4.2;Z 1.1"
+      ],
+      "supported_fields": [
+        "vocabulary control 的控制同义词、同形异义词和关系语境"
+      ],
+      "unsupported_fields": [
+        "项目字段与效果保证"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§1.2；§4.1",
+        "pdf_page_index": "PDF page index 12；21",
+        "printed_page": "印刷 p.1；10"
+      },
+      "minimal_correction_proposal": "保留原值；仅按所列 Z39.19 条款理解其范围，不自动选择首选、不新增项目状态或规则。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0119",
+      "original_cells": [
+        "查全率 / 查准率",
+        "recall / precision",
+        "检索效果的两个指标；词表对两者都有正面影响",
+        "Z 5.3.6"
+      ],
+      "supported_fields": [
+        "recall / precision 作为检索效果参数"
+      ],
+      "unsupported_fields": [
+        "项目实际计算和效果保证"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§4.1；§5.3.6",
+        "pdf_page_index": "PDF page index 19；27",
+        "printed_page": "印刷 p.8；16"
+      },
+      "minimal_correction_proposal": "保留原值；recall 与 precision 分开保留，不把正面影响写成效果保证。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0121",
+      "original_cells": [
+        "来源分级",
+        "de-jure / de-facto / vendor / archival",
+        "引证来源按变更方式分档；依据为组织依据",
+        "Z 5.3.5.2；[命名实体设计](design/model/entities.md)"
+      ],
+      "supported_fields": [],
+      "unsupported_fields": [
+        "de-jure/de-facto/vendor/archival 分档依据"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "无适用 Z39.19 条款",
+        "pdf_page_index": "—",
+        "printed_page": "—"
+      },
+      "minimal_correction_proposal": "保留原值；该行无适用 Z39.19 条款，不据此改档或否定。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0210",
+      "original_cells": [
+        "批准",
+        "approve",
+        "候选词审核通过转为正式词",
+        "Z 11.1.6"
+      ],
+      "supported_fields": [
+        "candidate 获批为 term 的标准语境"
+      ],
+      "unsupported_fields": [
+        "项目 approve 状态和审批权"
+      ],
+      "locator": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "web_ref_id": "turn76view0",
+        "section": "§11.1.6",
+        "pdf_page_index": "PDF page index 104",
+        "printed_page": "印刷 p.93"
+      },
+      "minimal_correction_proposal": "保留原值；仅记录标准中 candidate 获批为 term 的语境，不创建项目审批状态。",
+      "adopted": false
+    }
+  ]
+}
+

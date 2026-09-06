@@ -43,6 +43,10 @@ def registered_form(value):
 
 
 def glossary_forms():
+    if ((ROOT / "data/vocab/terms.yaml").exists()
+            or (ROOT / "data/vocab/term-cutover-state.yaml").exists()):
+        from kb_core.governance.term_commands import registered_term_forms
+        return {registered_form(form) for form in registered_term_forms(ROOT)}
     forms = set()
     registered_table = False
     for line in GLOSSARY.read_text(encoding="utf-8").splitlines():

@@ -2,6 +2,7 @@ import copy
 import hashlib
 import json
 import pathlib
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -15,6 +16,8 @@ from kb_core.governance.build_terms import (
     load_cutover_state,
     render_glossary,
 )
+from kb_core.build_source_index import build_reference_index
+from kb_core.governance.term_validation import semantic_concept
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[4]
@@ -163,6 +166,10 @@ class TermGenerationTests(unittest.TestCase):
         self.active_state = load_cutover_state(ACTIVE_STATE)
         self.rolled_back_state = load_cutover_state(ROLLED_BACK_STATE)
         self.layout = yaml.safe_load(LAYOUT.read_text(encoding="utf-8"))
+        self.layout["groups"][1]["members"] = [
+            "00000000-0000-4000-8000-000000000002",
+            "00000000-0000-4000-8000-000000000003",
+        ]
 
     def test_generation_is_byte_stable(self):
         first = canonical_snapshot(
@@ -211,29 +218,64 @@ class TermGenerationTests(unittest.TestCase):
     def test_manual_output_drift_fails(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = pathlib.Path(temporary)
-            terms_path = root / "terms.yaml"
+            design_root = root / "design"
+            (design_root / "data/vocab").mkdir(parents=True)
+            for name in ("topics", "types", "genres", "forms", "entities", "sources"):
+                shutil.copy2(ROOT / f"data/vocab/{name}.yaml", design_root / f"data/vocab/{name}.yaml")
+            (design_root / "data/inputs/topics").mkdir(parents=True)
+            shutil.copy2(ROOT / "data/inputs/topics/label-adoptions.json",
+                         design_root / "data/inputs/topics/label-adoptions.json")
+            shutil.copytree(ROOT / "docs/decisions", design_root / "docs/decisions")
+            terms_path = design_root / "data/vocab/terms.yaml"
             source_index_path = root / "source-index.json"
             snapshot_path = root / "terms-v1.json"
             glossary_path = root / "glossary.md"
             valid = yaml.safe_load(
                 (ROOT / "tests/fixtures/terminology/valid/minimal-active.yaml").read_text()
             )
-            valid["concepts"][0]["subject_fields"][0]["topic_id"] = "basic-unit"
+            valid["concepts"][0]["subject_fields"] = []
             terms_path.write_text(
                 yaml.safe_dump(valid, allow_unicode=True, sort_keys=False),
                 encoding="utf-8",
             )
+            layout_path = root / "layout.yaml"
+            layout = copy.deepcopy(self.layout)
+            for group in layout["groups"]:
+                group["members"] = []
+            layout["groups"][0]["members"] = [valid["concepts"][0]["id"]]
+            layout_path.write_text(yaml.safe_dump(layout, allow_unicode=True), encoding="utf-8")
+            concept_grant = {
+                "id": "decision-term-0001", "schema": "urn:kb-design:data:decision",
+                "schema_version": 1, "status": "accepted", "date": "2026-09-06", "level": "L3",
+                "scope": "fixture", "supersedes": [], "answers": [{"question": "Q01",
+                "resolution": "recommended", "patches": [{"identity": f"terms/concepts/{valid['concepts'][0]['id']}",
+                "field": "record", "value": semantic_concept(valid["concepts"][0])}]}],
+            }
+            state_value = yaml.safe_load(ACTIVE_STATE.read_text())
+            publication = {key: state_value[key] for key in
+                           ("active_editor", "state", "terms_mode", "consumers_enabled")}
+            state_grant = {"id": state_value["decision"], "schema": "urn:kb-design:data:decision",
+                "schema_version": 1, "status": "accepted", "date": "2026-09-06", "level": "L3",
+                "scope": "fixture", "supersedes": [], "answers": [{"question": "Q01",
+                "resolution": "recommended", "patches": [{"identity": "@control:terms",
+                "field": "publication", "value": publication}]}]}
+            for name, decision_value in (("term-fixture-record.md", concept_grant),
+                                         ("term-fixture-state.md", state_grant)):
+                (design_root / "docs/decisions" / name).write_text(
+                    "---\n" + yaml.safe_dump(decision_value, allow_unicode=True, sort_keys=False) + "---\n",
+                    encoding="utf-8")
             source_index_path.write_text(
-                json.dumps(self.source_index, ensure_ascii=False) + "\n",
+                json.dumps(build_reference_index(design_root), ensure_ascii=False) + "\n",
                 encoding="utf-8",
             )
             arguments = [
+                "--design-root", str(design_root),
                 "--terms",
                 str(terms_path),
                 "--state",
                 str(ACTIVE_STATE),
                 "--layout",
-                str(LAYOUT),
+                str(layout_path),
                 "--source-index",
                 str(source_index_path),
                 "--snapshot-out",

@@ -54,7 +54,6 @@
           "items": {
             "$ref": "#/$defs/subject_field"
           },
-          "minItems": 1,
           "type": "array",
           "uniqueItems": true
         },
@@ -180,6 +179,47 @@
     "match_reference": {
       "$ref": "urn:kb-design:schema:source-migration:1#/$defs/match"
     },
+    "model_basis": {
+      "additionalProperties": false,
+      "properties": {
+        "level": {
+          "const": 5
+        },
+        "model": {
+          "additionalProperties": false,
+          "properties": {
+            "approval": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "date": {
+              "format": "date",
+              "type": "string"
+            },
+            "name": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "rationale": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "date",
+            "rationale",
+            "approval"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "level",
+        "model"
+      ],
+      "type": "object"
+    },
     "source_reference": {
       "$ref": "urn:kb-design:schema:source-migration:1#/$defs/source"
     },
@@ -238,7 +278,7 @@
           ]
         },
         "basis": {
-          "$ref": "#/$defs/basis"
+          "$ref": "#/$defs/term_basis"
         },
         "history": {
           "items": {
@@ -268,6 +308,16 @@
         "history"
       ],
       "type": "object"
+    },
+    "term_basis": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/basis"
+        },
+        {
+          "$ref": "#/$defs/model_basis"
+        }
+      ]
     }
   },
   "$id": "urn:kb-design:schema:terms:1",

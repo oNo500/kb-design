@@ -75,6 +75,7 @@ _TYPES_CONFIG = {
         "kb_object": "text",
         "kb_label": "text",
         "kb_version": "text",
+        "kb_schema_version": "number",
         "kb_replaced_by": "text",
         "kb_superordinate": "text",
         "kb_kind": "text",
@@ -313,6 +314,19 @@ def _required_kb_targets(snapshot: DesignSnapshot) -> set[str]:
             target = f"{directory}/{record['id']}.md"
             _relative_path(target, context=f"design collection {document_name}.{collection_name}")
             targets.add(target)
+    terms = snapshot.documents.get("terms")
+    if terms is not None:
+        if not isinstance(terms, Mapping) or not isinstance(terms.get("concepts"), Sequence):
+            raise ApplicationError("design document terms must contain a concept list")
+        for concept in terms["concepts"]:
+            if (
+                isinstance(concept, Mapping)
+                and concept.get("workflow") == "active"
+                and isinstance(concept.get("id"), str)
+            ):
+                target = f"kb/terms/{concept['id']}.md"
+                _relative_path(target, context="design collection terms.concepts")
+                targets.add(target)
     return targets
 
 

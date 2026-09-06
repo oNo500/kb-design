@@ -1,0 +1,583 @@
+{
+  "review": {
+    "input": "work/reviews/2026-09-06-term-inventory.json",
+    "checked_date": "2026-09-06",
+    "scope": "知识体系与笔记/内容方法组指定原行；复用已有审查记录并对必要的作者/发布者页面作有界只读核对。",
+    "material_boundary": "不把工作流、知识维度、认知过程互换；不把作者分类自动转为项目属性；建议未采纳。"
+  },
+  "items": [
+    {
+      "id": "glossary-L0145",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 145,
+        "cells": [
+          "知识体系",
+          "body of knowledge, BoK",
+          "一个学科或职业公认知识范围的结构化清单",
+          "SWEBOK;ISO/IEC TR 19759"
+        ]
+      },
+      "supported_fields": [
+        "英文形式 body of knowledge 与 SWEBOK/ISO TR 的来源语境",
+        "知识体系作为结构化知识范围的本地概念说明"
+      ],
+      "unsupported_fields": [
+        "中文形式及完整通用定义",
+        "SWEBOK v4.0 与 v4.0a 的版本替代关系"
+      ],
+      "source_evidence": [
+        {
+          "entity": "swebok",
+          "url": "https://www.computer.org/education/bodies-of-knowledge/software-engineering",
+          "locator": "SWEBOK v4.0 Table I.1 的既有核对记录；ISO/IEC TR 19759 现行来源登记",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        },
+        {
+          "entity": "iso-iec-tr-19759",
+          "url": "https://www.iso.org/standard/67604.html",
+          "locator": "SWEBOK v4.0 Table I.1 的既有核对记录；ISO/IEC TR 19759 现行来源登记",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "minimal_correction_or_inheritance": "继承现行登记；保留 SWEBOK 与 ISO/TR 的分开来源，不把两者合并为同一结构。",
+      "source_entity": {
+        "existing": [
+          "swebok",
+          "iso-iec-tr-19759"
+        ],
+        "needs_add": []
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0146",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 146,
+        "cells": [
+          "知识领域",
+          "knowledge area, KA",
+          "知识体系的主要区域",
+          "SWEBOK;CS2023"
+        ]
+      },
+      "supported_fields": [
+        "SWEBOK 与 CS2023 中 knowledge area 的层级语境"
+      ],
+      "unsupported_fields": [
+        "中文形式及两个来源的概念范围等同",
+        "通用固定层数"
+      ],
+      "source_evidence": [
+        {
+          "entity": "swebok",
+          "url": "https://www.computer.org/education/bodies-of-knowledge/software-engineering",
+          "locator": "CS2023 Final Report Knowledge Model（既有 cs2023-relations 报告）；SWEBOK v4.0 Table I.1 既有核对记录",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        },
+        {
+          "entity": "cs2023",
+          "url": "https://csed.acm.org/final-report/",
+          "locator": "CS2023 Final Report Knowledge Model（既有 cs2023-relations 报告）；SWEBOK v4.0 Table I.1 既有核对记录",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "minimal_correction_or_inheritance": "继承现行登记；按各来源自身层级解释，保留来源差异。",
+      "source_entity": {
+        "existing": [
+          "swebok",
+          "cs2023"
+        ],
+        "needs_add": []
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0147",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 147,
+        "cells": [
+          "知识单元",
+          "knowledge unit, KU",
+          "知识领域内的主题簇",
+          "CS2023"
+        ]
+      },
+      "supported_fields": [
+        "CS2023 Knowledge Unit 的英文形式与来源语境",
+        "知识领域下属单元的组织关系"
+      ],
+      "unsupported_fields": [
+        "中文形式及‘主题簇’的中文对应",
+        "CS2023 之外的通用定义"
+      ],
+      "source_evidence": [
+        {
+          "entity": "cs2023",
+          "url": "https://csed.acm.org/final-report/",
+          "locator": "CS2023 Final Report Knowledge Model；既有 work/reviews/2026-09-06-cs2023-relations.json 逐项记录",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "minimal_correction_or_inheritance": "继承现行登记；保留 CS2023 来源限定，不外推为所有知识体系的固定层级。",
+      "source_entity": {
+        "existing": [
+          "cs2023"
+        ],
+        "needs_add": []
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0148",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 148,
+        "cells": [
+          "主题",
+          "topic",
+          "知识单元内的具体知识点，标核心或选修",
+          "CS2023"
+        ]
+      },
+      "supported_fields": [
+        "CS2023 topic 作为知识单元内组织内容的语境"
+      ],
+      "unsupported_fields": [
+        "中文形式",
+        "‘标核心或选修’是否为 CS2023 原文同一表述"
+      ],
+      "source_evidence": [
+        {
+          "entity": "cs2023",
+          "url": "https://csed.acm.org/final-report/",
+          "locator": "CS2023 Final Report Knowledge Model；既有 cs2023-relations 报告",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "minimal_correction_or_inheritance": "继承现行登记；将核心/非核心或其他课程属性与 topic 结构分开核对。",
+      "source_entity": {
+        "existing": [
+          "cs2023"
+        ],
+        "needs_add": []
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0149",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 149,
+        "cells": [
+          "普遍接受的知识",
+          "generally accepted knowledge",
+          "多数项目多数时候适用且广泛认同的知识；知识体系只收这类",
+          "SWEBOK"
+        ]
+      },
+      "supported_fields": [
+        "SWEBOK 选择 generally accepted knowledge 的来源语境"
+      ],
+      "unsupported_fields": [
+        "中文形式",
+        "‘多数项目多数时候适用’的精确定义和‘只收这类’的强断言"
+      ],
+      "source_evidence": [
+        {
+          "entity": "swebok",
+          "url": "https://www.computer.org/education/bodies-of-knowledge/software-engineering",
+          "locator": "SWEBOK 既有来源核对记录及 docs/concepts/body-of-knowledge.md:9；具体全文范围未在本报告复开",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "minimal_correction_or_inheritance": "继承现行登记；把该行作为 SWEBOK 语境的概括，不扩写成所有知识体系准入规则。",
+      "source_entity": {
+        "existing": [
+          "swebok"
+        ],
+        "needs_add": []
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0166",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 166,
+        "cells": [
+          "Reproducible Builds",
+          "Reproducible Builds",
+          "使任何一方在相同 source、environment 和 instructions 下重建逐字节相同 artifacts 的实践",
+          "Reproducible Builds definition"
+        ]
+      },
+      "supported_fields": [
+        "定义与 source/environment/instructions/artifacts 四类输入的边界"
+      ],
+      "unsupported_fields": [
+        "项目已满足 Reproducible Builds 的符合性",
+        "中文形式作为外部译名"
+      ],
+      "source_evidence": [
+        {
+          "entity": "reproducible-builds",
+          "url": "https://reproducible-builds.org/docs/definition/",
+          "locator": "https://reproducible-builds.org/docs/definition/，定义页第 5-15 行；docs/references/reproducible-builds.md:5",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "minimal_correction_or_inheritance": "继承现行英文名称和定义边界；补来源实体登记提案，不宣称当前导出已达该标准。",
+      "source_entity": {
+        "existing": [],
+        "needs_add": [
+          "reproducible-builds"
+        ]
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0172",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 172,
+        "cells": [
+          "相关 / 可找到 / 可理解 / 可使用",
+          "relevant / findable / understandable / usable",
+          "plain language 的四条原则",
+          "ISO 24495-1:2023"
+        ]
+      },
+      "supported_fields": [
+        "IPLF 对四项 plain language 原则的公开概括",
+        "四个英文形式在同一组原则中的并列关系"
+      ],
+      "unsupported_fields": [
+        "ISO 24495-1 正文完整定义与符合性",
+        "中文形式的官方译名"
+      ],
+      "source_evidence": [
+        {
+          "entity": "iplf-iso-standard",
+          "url": "https://www.iplfederation.org/iso-standard/",
+          "locator": "work/reviews/2026-09-06-term-iplf-evidence.json；IPLF 官方标准介绍页正文第 34-47 行及定义页第 84-89 行",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "minimal_correction_or_inheritance": "继承现行四项并列形式；补来源实体提案，继续标明依据为 IPLF 介绍而非 ISO 正文。",
+      "source_entity": {
+        "existing": [],
+        "needs_add": [
+          "iplf-iso-standard"
+        ]
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0186",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 186,
+        "cells": [
+          "体裁",
+          "genre",
+          "按读者需求或内容性质划分的文本类别",
+          "IPTC genre；Diátaxis"
+        ]
+      },
+      "supported_fields": [
+        "IPTC genre 的体裁语境与已有 Analysis 适配记录",
+        "Diátaxis 的方法框架语境（仅作为并列来源）"
+      ],
+      "unsupported_fields": [
+        "genre 与本库体裁字段的完全等同",
+        "中文形式及 Diátaxis 对 genre 的直接定义"
+      ],
+      "source_evidence": [
+        {
+          "entity": "iptc-genre",
+          "url": "https://cv.iptc.org/newscodes/genre/",
+          "locator": "work/reviews/2026-09-05-source-evidence-conclusions.md:51、87-99；现行 docs/concepts/note-types.md:30",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        },
+        {
+          "entity": "diataxis",
+          "url": "https://diataxis.fr/",
+          "locator": "work/reviews/2026-09-05-source-evidence-conclusions.md:51、87-99；现行 docs/concepts/note-types.md:30",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "minimal_correction_or_inheritance": "继承现行登记；保留 IPTC 新闻语境与本库笔记语境的适配边界，不合并两来源定义。",
+      "source_entity": {
+        "existing": [
+          "iptc-genre",
+          "diataxis"
+        ],
+        "needs_add": []
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0187",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 187,
+        "cells": [
+          "排障",
+          "troubleshooting",
+          "DITA 的 topic 类型：纠正性操作信息",
+          "DITA 1.3 §2.7.1.6"
+        ]
+      },
+      "supported_fields": [
+        "DITA 1.3 troubleshooting 作为 topic 类型的来源语境",
+        "既有 DITA match 的历史核对记录"
+      ],
+      "unsupported_fields": [
+        "中文形式",
+        "‘纠正性操作信息’的完整条款及所选 DITA 版本的全部适用范围"
+      ],
+      "source_evidence": [
+        {
+          "entity": "dita",
+          "url": "https://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/technicalContent/dita-technicalContent-InformationTypes.html",
+          "locator": "work/reviews/2026-09-05-source-evidence-conclusions.md:120；docs/concepts/note-types.md:24-26、102",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "minimal_correction_or_inheritance": "继承现行登记；保持 DITA 1.3 版本边界，不把 topic 类型自动转为项目内容状态。",
+      "source_entity": {
+        "existing": [
+          "dita"
+        ],
+        "needs_add": []
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0188",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 188,
+        "cells": [
+          "闪念笔记 / 文献笔记 / 永久笔记",
+          "fleeting / literature / permanent note",
+          "按工作流阶段分的三种笔记",
+          "Ahrens 2017"
+        ]
+      },
+      "supported_fields": [
+        "Ahrens 访谈中 fleeting/literature/permanent 三种英文形式及其工作流阶段语境"
+      ],
+      "unsupported_fields": [
+        "中文形式的外部对应",
+        "出版物全文页码和完整定义"
+      ],
+      "source_evidence": [
+        {
+          "entity": "ahrens-zettelkasten-interview",
+          "url": "https://examstudyexpert.com/zettelkasten/",
+          "locator": "work/reviews/2026-09-06-term-ahrens-evidence.json；公开访谈转录 L91-L106",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "minimal_correction_or_inheritance": "继承现行并列登记；补作者访谈来源实体提案，不把三种形式转成项目状态字段。",
+      "source_entity": {
+        "existing": [],
+        "needs_add": [
+          "ahrens-zettelkasten-interview"
+        ]
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0189",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 189,
+        "cells": [
+          "隐性知识 / 显性知识",
+          "tacit / explicit knowledge",
+          "难以形式化的个人知识 / 正式而系统、易于交流的知识",
+          "Nonaka 1991"
+        ]
+      },
+      "supported_fields": [
+        "HBR 官方页面确认 Nonaka 文章标题、作者和 2007 重印材料身份"
+      ],
+      "unsupported_fields": [
+        "tacit/explicit knowledge 的定义原文",
+        "1991 原始出版物定位",
+        "中文形式及本库知识维度采用"
+      ],
+      "source_evidence": [
+        {
+          "entity": "nonaka-knowledge-creating-company",
+          "url": "https://hbr.org/2007/07/the-knowledge-creating-company",
+          "locator": "https://hbr.org/2007/07/the-knowledge-creating-company，页面第 67-72、97-101 行；仅读到摘要和材料身份",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "minimal_correction_or_inheritance": "继承现行登记但标为依据不足；补原始文章或合法可读定义材料后再判断，不把工作流与知识维度互换。",
+      "source_entity": {
+        "existing": [],
+        "needs_add": [
+          "nonaka-knowledge-creating-company"
+        ]
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0190",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 190,
+        "cells": [
+          "速查表",
+          "cheat sheet",
+          "供快速参考的简明笔记集",
+          "Wikidata Q2309859"
+        ]
+      },
+      "supported_fields": [
+        "Wikidata Q2309859 的现有关系核对记录（如报告所述）"
+      ],
+      "unsupported_fields": [
+        "Wikidata 条目的完整定义和 revision",
+        "cheat sheet 与本库 form/type 字段的对应",
+        "中文形式外部依据"
+      ],
+      "source_evidence": [
+        {
+          "entity": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q2309859",
+          "locator": "现有 Wikidata 关系报告及 docs/concepts/note-types.md:64、103；本条关系不扩展为标准定义",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "minimal_correction_or_inheritance": "继承现行登记；保留其为载体/形式线索，不把它自动写入体裁或认知字段。",
+      "source_entity": {
+        "existing": [
+          "wikidata"
+        ],
+        "needs_add": []
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0191",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 191,
+        "cells": [
+          "札记簿",
+          "commonplace book",
+          "抄录重要段落并按主题整理的本子",
+          "Harvard Library"
+        ]
+      },
+      "supported_fields": [
+        "PDF 正文明确使用 Cognitive Process dimension，并列出六个主要类别 Remember、Understand、Apply、Analyze、Evaluate、Create",
+        "PDF 正文明确区分 Knowledge dimension 与 Cognitive Process dimension，并将前者置于表格纵轴、后者置于横轴",
+        "Taxonomy Table 用知识维度与认知过程维度的交叉单元分类教育目标"
+      ],
+      "unsupported_fields": [
+        "commonplace book 原文定义",
+        "中文形式与 Harvard Library 页面对应"
+      ],
+      "source_evidence": [
+        {
+          "entity": "harvard-library-commonplace-books",
+          "url": "https://web.archive.org/web/2015/http://ocp.hul.harvard.edu/reading/commonplace.html",
+          "locator": "docs/concepts/note-types.md:64、113；所列 Wayback URL 本次打开失败（Internal Error），未取得原文",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "minimal_correction_or_inheritance": "维持现行登记待补证；不把打开失败写成未命中或批准现有定义。",
+      "source_entity": {
+        "existing": [],
+        "needs_add": [
+          "harvard-library-commonplace-books"
+        ]
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0192",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 192,
+        "cells": [
+          "认知层级",
+          "cognitive level",
+          "对主题理解的深度：记忆到创造六级",
+          "Bloom 修订版，Krathwohl 2002"
+        ]
+      },
+      "supported_fields": [
+        "PDF 正文明确使用 Cognitive Process dimension，并列出六个主要类别 Remember、Understand、Apply、Analyze、Evaluate、Create",
+        "PDF 正文明确区分 Knowledge dimension 与 Cognitive Process dimension，并将前者置于表格纵轴、后者置于横轴",
+        "Taxonomy Table 用知识维度与认知过程维度的交叉单元分类教育目标"
+      ],
+      "unsupported_fields": [
+        "中文形式及六级顺序的逐条中文对应",
+        "将 cognitive process dimension 直接改写为项目的认知层级字段"
+      ],
+      "source_evidence": [
+        {
+          "entity": "krathwohl-2002",
+          "url": "https://cmapspublic2.ihmc.us/rid=1Q2PTM7HL-26LTFBX-9YN8/Krathwohl%202002.pdf",
+          "locator": "https://cmapspublic2.ihmc.us/rid=1Q2PTM7HL-26LTFBX-9YN8/Krathwohl%202002.pdf；PDF page index 2-5（印刷 pp. 214-217），正文 The Cognitive Process dimension、The Knowledge dimension、The Taxonomy Table 及 Tables 2-3；web ref turn110view0-turn110view3",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "minimal_correction_or_inheritance": "维持现行登记但把定义修正为‘修订版 Taxonomy 的 Cognitive Process dimension 六个主要类别（Remember、Understand、Apply、Analyze、Evaluate、Create）’；Knowledge dimension 是另一维度，四类知识构成表格纵轴，不能把二者合并为单一认知层级。中文形式与项目字段仍待人决定。",
+      "source_entity": {
+        "existing": [],
+        "needs_add": [
+          "krathwohl-2002"
+        ]
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0193",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 193,
+        "cells": [
+          "帕累托原则",
+          "Pareto principle",
+          "关键的少数与琐碎的多数；选材法则",
+          "Juran 1951 命名"
+        ]
+      },
+      "supported_fields": [
+        "Juran Institute 1974 PDF 对 Pareto principle 命名与 vital few/trivial many 现象的材料身份及叙述",
+        "Juran 对该现象跨多个领域观察及其非 Pareto 原创、非固定比例的边界说明"
+      ],
+      "unsupported_fields": [
+        "将其写成固定 80/20 比例或普遍选材法则",
+        "中文形式及完整术语对应"
+      ],
+      "source_evidence": [
+        {
+          "entity": "juran-1974-non-pareto",
+          "url": "https://www.juran.com/wp-content/uploads/2021/03/The-Non-Pareto-Principle-1974.pdf",
+          "locator": "https://www.juran.com/wp-content/uploads/2021/03/The-Non-Pareto-Principle-1974.pdf，PDF page index 0-2（印刷页 1-3），lines 1-21、158-168、194-209",
+          "material": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "minimal_correction_or_inheritance": "继承现行登记但收窄为 Juran 对‘vital few and trivial many’现象及命名经过的来源语境；明确正文不提供固定普遍 80/20 定律，也不直接建立本库选材规则。补来源实体提案。",
+      "source_entity": {
+        "existing": [],
+        "needs_add": [
+          "juran-1974-non-pareto"
+        ]
+      },
+      "adopted": false
+    }
+  ]
+}

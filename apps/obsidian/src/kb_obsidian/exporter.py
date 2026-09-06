@@ -19,6 +19,11 @@ from typing import Any, Iterable, Mapping, Sequence
 import yaml
 
 from kb_core.label_basis import basis_rows, validate_basis
+from kb_core.governance.term_validation import (
+    historical_decisions_from_documents,
+    validate_term_snapshot,
+)
+from kb_core.governance.term_git import TermGitError, captured_previous_terms
 from kb_core.repository import project_root
 from kb_core import source_model
 from jsonschema import Draft202012Validator, FormatChecker
@@ -42,6 +47,14 @@ _FILES = OrderedDict(
         ("genres", ("data/vocab/genres.yaml", {"version", "genres"})),
         ("forms", ("data/vocab/forms.yaml", {"version", "arrays", "forms"})),
     )
+)
+_TERM_FILES = OrderedDict((
+    ("terms", "data/vocab/terms.yaml"),
+    ("term_state", "data/vocab/term-cutover-state.yaml"),
+))
+_TERM_SCHEMA_FILES = (
+    "schemas/terms-v1.schema.json",
+    "schemas/term-cutover-state-v1.schema.json",
 )
 _COLLECTION_FIELDS = {
     ("topics", "arrays"): {"id", "superordinate", "source"},
@@ -206,6 +219,7 @@ _KIND_DIRECTORIES = {
     "type": "types",
     "genre": "genres",
     "form": "forms",
+    "term": "terms",
 }
 _DIRECTORY_KINDS = {directory: kind for kind, directory in _KIND_DIRECTORIES.items()}
 _WIKILINK = re.compile(r"\[\[([^\]|#]+)(?:\|[^\]]+)?\]\]")
@@ -389,10 +403,16 @@ def _validate_record(
 
 
 def _support_paths(root):
-    paths = list((pathlib.Path(root) / "docs/decisions").glob("source-*.md"))
+    paths = [
+        path
+        for pattern in ("source-*.md", "term-*.md")
+        for path in (pathlib.Path(root) / "docs/decisions").glob(pattern)
+    ]
     paths.extend(pathlib.Path(root) / relative for relative in (
         "data/inputs/topics/label-adoptions.json", "data/vocab/source-obligations.yaml")
         if (pathlib.Path(root) / relative).exists())
+    if all((pathlib.Path(root) / relative).exists() for relative in _TERM_FILES.values()):
+        paths.extend(pathlib.Path(root) / relative for relative in _TERM_SCHEMA_FILES)
     return sorted(paths)
 
 
@@ -401,18 +421,26 @@ def _read_support_inputs(root):
             for path in _support_paths(root)}
 
 
-def _parse_support_inputs(snapshot):
+def _decision_frontmatters(snapshot):
     decisions = []
+    for key, content in snapshot.items():
+        if not key.startswith("_support:") or not key.endswith(".md"):
+            continue
+        text = content.decode("utf-8")
+        if text.startswith("---\n") and "\n---\n" in text[4:]:
+            decisions.append(yaml.safe_load(text.split("---\n", 2)[1]))
+    return decisions
+
+
+def _parse_support_inputs(snapshot):
+    decisions = _decision_frontmatters(snapshot)
     obligations = None
     adoptions = None
     for key, content in snapshot.items():
         if not key.startswith("_support:"):
             continue
         text = content.decode("utf-8")
-        if key.endswith(".md"):
-            if text.startswith("---\n") and "\n---\n" in text[4:]:
-                decisions.append(yaml.safe_load(text.split("---\n", 2)[1]))
-        elif key.endswith("source-obligations.yaml"):
+        if key.endswith("source-obligations.yaml"):
             obligations = yaml.safe_load(text)
         elif key.endswith("label-adoptions.json"):
             from kb_core.label_adoptions import validate_adoptions
@@ -430,6 +458,27 @@ def _read_repository_inputs(repo_root: pathlib.Path) -> dict[str, bytes]:
             raise ExportError(
                 f"{relative_path}: object <document>: document: {exc}"
             ) from exc
+    present = {
+        name: (root / relative_path).exists()
+        for name, relative_path in _TERM_FILES.items()
+    }
+    if len(set(present.values())) != 1:
+        raise ExportError(
+            "data/vocab/terms.yaml and data/vocab/term-cutover-state.yaml "
+            "must either both exist or both be absent"
+        )
+    if all(present.values()):
+        for name, relative_path in _TERM_FILES.items():
+            try:
+                inputs[name] = (root / relative_path).read_bytes()
+            except OSError as exc:
+                raise ExportError(f"{relative_path}: cannot read term input: {exc}") from exc
+        try:
+            previous_terms = captured_previous_terms(root, inputs["terms"])
+        except TermGitError as exc:
+            raise ExportError(str(exc)) from exc
+        if previous_terms is not None:
+            inputs["_support:previous-terms.yaml"] = previous_terms
     inputs.update(_read_support_inputs(root))
     return inputs
 
@@ -442,6 +491,12 @@ def load_repository(
     """Load and validate the six formal vocabulary documents."""
 
     snapshot = input_bytes if input_bytes is not None else _read_repository_inputs(repo_root)
+    present_terms = {name: name in snapshot for name in _TERM_FILES}
+    if len(set(present_terms.values())) != 1:
+        raise ExportError(
+            "data/vocab/terms.yaml and data/vocab/term-cutover-state.yaml "
+            "must either both exist or both be absent"
+        )
     try:
         decisions, obligations, adoptions = _parse_support_inputs(snapshot)
     except (ValueError, UnicodeError, yaml.YAMLError) as exc:
@@ -501,6 +556,33 @@ def load_repository(
     if issues:
         issue = issues[0]
         raise ExportError(f"{issue.file}: {issue.record}: {issue.field_path}: {issue.code}: {issue.message}")
+    if all(present_terms.values()):
+        try:
+            terms = yaml.safe_load(snapshot["terms"].decode("utf-8"))
+            term_state = yaml.safe_load(snapshot["term_state"].decode("utf-8"))
+            previous_content = snapshot.get("_support:previous-terms.yaml")
+            previous_terms = (
+                yaml.safe_load(previous_content.decode("utf-8"))
+                if previous_content is not None
+                else None
+            )
+        except (UnicodeError, yaml.YAMLError) as exc:
+            raise ExportError(f"invalid formal term input: {exc}") from exc
+        term_issues = validate_term_snapshot(
+            terms,
+            source_documents={name: documents[name] for name in ("topics", "entities", "sources")},
+            accepted_decisions=decisions,
+            previous=previous_terms,
+            state=term_state,
+            historical_decisions=historical_decisions_from_documents(
+                _decision_frontmatters(snapshot)
+            ),
+        )
+        if term_issues:
+            issue = term_issues[0]
+            raise ExportError(f"{issue.origin}: {issue.path}: {issue.code}: {issue.message}")
+        documents["terms"] = terms
+        documents["term_state"] = term_state
     return documents
 
 
@@ -986,6 +1068,52 @@ def build_content_files(
     array_labels = {array_id: array_id for array_id in arrays}
     files: dict[str, bytes] = {}
 
+    if "terms" in documents:
+        try:
+            from kb_core.governance.term_rendering import render_term_markdown
+        except ImportError as exc:
+            raise ExportError("shared term renderer is unavailable") from exc
+        source_entities = _index(documents["entities"]["entities"])
+        term_schema_version = documents["terms"]["version"]
+        for concept in sorted(
+            (item for item in documents["terms"]["concepts"] if item["workflow"] == "active"),
+            key=lambda item: item["id"],
+        ):
+            preferred_by_language = {
+                language["language"]: next(
+                    term["text"]
+                    for term in language["terms"]
+                    if term["administrative_status"] == "preferredTerm-admn-sts"
+                )
+                for language in concept["languages"]
+            }
+            preferred = next(
+                preferred_by_language[language]
+                for language in ("zh-Hans", "zh-Hant", "en")
+                if language in preferred_by_language
+            )
+            aliases = sorted({
+                term["text"]
+                for language in concept["languages"]
+                for term in language["terms"]
+                if term["text"] != preferred
+            })
+            properties = OrderedDict((
+                ("kb_id", concept["id"]),
+                ("kb_object", "term"),
+                ("kb_label", preferred),
+                ("kb_status", concept["workflow"]),
+                ("kb_schema_version", term_schema_version),
+                ("aliases", aliases),
+                ("tags", ["kb-design/term"]),
+            ))
+            body = render_term_markdown(concept, source_entities)
+            _insert(
+                files,
+                f"kb/terms/{concept['id']}.md",
+                (_frontmatter(properties) + "\n" + body.rstrip() + "\n").encode("utf-8"),
+            )
+
     topic_version = str(documents["topics"]["version"]["id"])
     for object_id in sorted(topics):
         _insert(
@@ -1076,7 +1204,14 @@ def _manifest_identity(relative_path: str) -> tuple[str, str]:
             object_kind = _DIRECTORY_KINDS[path.parts[1]]
         except KeyError as exc:
             raise ExportError(f"unknown output directory: {relative_path}") from exc
-        if not _ID.fullmatch(path.stem):
+        if object_kind == "term":
+            valid_id = re.fullmatch(
+                r"tc-[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}",
+                path.stem,
+            )
+        else:
+            valid_id = _ID.fullmatch(path.stem)
+        if not valid_id:
             raise ExportError(f"invalid output ID: {relative_path}")
         return object_kind, path.stem
     raise ExportError(f"unknown output path: {relative_path}")
@@ -1131,6 +1266,31 @@ def build_manifest(
                 "version": str(version),
             }
         )
+    if "terms" in snapshot and "term_state" in snapshot:
+        for name, relative_path in _TERM_FILES.items():
+            try:
+                content = snapshot[name]
+                document = yaml.safe_load(content.decode("utf-8"))
+                version = document["version"]
+            except (UnicodeError, yaml.YAMLError, KeyError, TypeError) as exc:
+                raise ExportError(f"{relative_path}: cannot build manifest: {exc}") from exc
+            inputs.append({
+                "path": relative_path,
+                "sha256": _sha256(content),
+                "version": str(version),
+            })
+        for relative_path in _TERM_SCHEMA_FILES:
+            key = "_support:" + relative_path
+            try:
+                content = snapshot[key]
+                version = json.loads(content)["$id"]
+            except (UnicodeError, json.JSONDecodeError, KeyError, TypeError) as exc:
+                raise ExportError(f"{relative_path}: cannot build manifest: {exc}") from exc
+            inputs.append({
+                "path": relative_path,
+                "sha256": _sha256(content),
+                "version": str(version),
+            })
 
     if exporter_bytes is None:
         try:

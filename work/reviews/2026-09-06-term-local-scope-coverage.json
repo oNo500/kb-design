@@ -1,0 +1,381 @@
+[
+  {
+    "id": "glossary-L0045",
+    "original_cells": [
+      "领域",
+      "domain",
+      "词表覆盖的主题范围",
+      "—"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "external source and formal clause",
+      "外部中文译名或正式双语用法",
+      "独立外部原文逐字核对"
+    ],
+    "evidence_status": "no_external_source_given",
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 45,
+        "quote": "| 领域 | domain | 词表覆盖的主题范围 | — |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "minimal_correction_proposal": "保留普通项目叙述“领域”；没有给定外部来源，不为它新建术语概念。",
+    "adopted": false,
+    "proposed_action": "retain_current_project_usage_without_creating_new_concept; human_decision_needed_before_external_term_claim"
+  },
+  {
+    "id": "glossary-L0075",
+    "original_cells": [
+      "节点",
+      "node",
+      "树上的一个位置",
+      "—"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "external source and formal clause",
+      "外部中文译名或正式双语用法",
+      "独立外部原文逐字核对"
+    ],
+    "evidence_status": "no_external_source_given",
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 75,
+        "quote": "| 节点 | node | 树上的一个位置 | — |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "minimal_correction_proposal": "保留普通项目叙述“节点”；没有给定外部来源，不为它新建术语概念。",
+    "adopted": false,
+    "proposed_action": "retain_current_project_usage_without_creating_new_concept; human_decision_needed_before_external_term_claim"
+  },
+  {
+    "id": "glossary-L0081",
+    "original_cells": [
+      "辅助表 / 复分表",
+      "auxiliary table",
+      "分类法中单独列出的通用维度表（地区、时间、形式），拼接到主表号后",
+      "分类法实践，未核原文"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "external source and formal clause",
+      "外部中文译名或正式双语用法",
+      "独立外部原文逐字核对"
+    ],
+    "evidence_status": "no_external_source_given",
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 81,
+        "quote": "| 辅助表 / 复分表 | auxiliary table | 分类法中单独列出的通用维度表（地区、时间、形式），拼接到主表号后 | 分类法实践，未核原文 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "minimal_correction_proposal": "保留现行未核原文记录；辅助表／复分表的外部定义仍缺口，不把分类法实践说明升级为来源证据。",
+    "adopted": false,
+    "proposed_action": "retain_current_record_and_mark_unverified_classification_practice; human_decision_needed_before_external terminology claim"
+  },
+  {
+    "id": "glossary-L0112",
+    "original_cells": [
+      "分析综合式分类",
+      "analytico-synthetic classification",
+      "先把主题分析成基本范畴，再综合类号；新主题是旧面的新组合",
+      "Ranganathan 1957"
+    ],
+    "supported_fields": [
+      "the current project explanation/model rule at the cited location"
+    ],
+    "unsupported_fields": [
+      "外部中文译名或正式双语用法",
+      "独立外部原文逐字核对"
+    ],
+    "evidence_status": "project_material_support",
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 112,
+        "quote": "| 分析综合式分类 | analytico-synthetic classification | 先把主题分析成基本范畴，再综合类号；新主题是旧面的新组合 | Ranganathan 1957 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/concepts/classifying-new-subjects.md",
+        "line": 18,
+        "quote": "枚举式分类（杜威那种）给每个主题预先分配一个号，新主题出现就得改表。Ranganathan 在 1930 年代面对学科快速增长，提出**分析综合式分类**：先把主题分析成几个基本范畴——人物、物质、能量、空间、时间（PMEST）——再把各范畴的类号综合起来。新主题是旧面的新组合，不需要表上有它的格子。",
+        "kind": "project_concept_explanation"
+      }
+    ],
+    "minimal_correction_proposal": "保留“分析综合式分类”现行记录；概念文明确其项目解释，所列 Ranganathan 原典未在本轮核对，不能把 PMEST 或新主题规则当作原典事实。",
+    "adopted": false,
+    "proposed_action": "retain_current_record; preserve source limitation and do not promote project explanation to external fact"
+  },
+  {
+    "id": "glossary-L0113",
+    "original_cells": [
+      "好客准则",
+      "canon of hospitality",
+      "分类法容纳新类目而不扰动已有类号",
+      "Ranganathan 1957"
+    ],
+    "supported_fields": [
+      "the current project explanation/model rule at the cited location"
+    ],
+    "unsupported_fields": [
+      "外部中文译名或正式双语用法",
+      "独立外部原文逐字核对"
+    ],
+    "evidence_status": "project_material_support",
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 113,
+        "quote": "| 好客准则 | canon of hospitality | 分类法容纳新类目而不扰动已有类号 | Ranganathan 1957 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/concepts/classifying-new-subjects.md",
+        "line": 20,
+        "quote": "他把这条写进了分类的准则。**好客准则**（Canon of Hospitality，《Prolegomena》第二版）：类号的构造要允许在数组里无限加入新的同级类号、在链的末端无限加入新类号，而不扰动已有类号。",
+        "kind": "project_concept_explanation"
+      }
+    ],
+    "minimal_correction_proposal": "保留“好客准则”现行记录；概念文明确其项目解释，原典定位未在本轮核对，不补充更强定义。",
+    "adopted": false,
+    "proposed_action": "retain_current_record; preserve source limitation and do not promote project explanation to external fact"
+  },
+  {
+    "id": "glossary-L0114",
+    "original_cells": [
+      "领域分析",
+      "domain analysis",
+      "分类反映话语共同体的目的与立场，无唯一正确分类",
+      "Hjørland & Albrechtsen 1995"
+    ],
+    "supported_fields": [
+      "the current project explanation/model rule at the cited location"
+    ],
+    "unsupported_fields": [
+      "外部中文译名或正式双语用法",
+      "独立外部原文逐字核对"
+    ],
+    "evidence_status": "project_material_support",
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 114,
+        "quote": "| 领域分析 | domain analysis | 分类反映话语共同体的目的与立场，无唯一正确分类 | Hjørland & Albrechtsen 1995 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/concepts/classifying-new-subjects.md",
+        "line": 32,
+        "quote": "Hjørland 和 Albrechtsen 1995 年提出领域分析：知识领域是思想或话语共同体，分类反映该共同体的认识论立场和使用目的；换一个目的，分法就该换。没有唯一正确的分类，只有对某个目的好用的分类。",
+        "kind": "project_concept_explanation"
+      }
+    ],
+    "minimal_correction_proposal": "保留“领域分析”现行记录；概念文转述 Hjørland 与 Albrechtsen，原论文未在本轮核对，不把该转述当作原文。",
+    "adopted": false,
+    "proposed_action": "retain_current_record; preserve source limitation and do not promote project explanation to external fact"
+  },
+  {
+    "id": "glossary-L0115",
+    "original_cells": [
+      "剩余类目",
+      "residual category",
+      "“其他”“杂项”；其大小是分类失效的信号",
+      "Star & Bowker 2007"
+    ],
+    "supported_fields": [
+      "the current project explanation/model rule at the cited location"
+    ],
+    "unsupported_fields": [
+      "外部中文译名或正式双语用法",
+      "独立外部原文逐字核对"
+    ],
+    "evidence_status": "project_material_support",
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 115,
+        "quote": "| 剩余类目 | residual category | “其他”“杂项”；其大小是分类失效的信号 | Star & Bowker 2007 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/concepts/classifying-new-subjects.md",
+        "line": 38,
+        "quote": "Bowker 和 Star 在《Sorting Things Out》（1999）里研究国际疾病分类、种族分类等大型系统，指出每个分类都有“其他”，而且分类一旦运转就变得不可见，没人再问它为什么这样分。Star 和 Bowker 2007 年进一步把**剩余类目**（residual category）——“其他”“杂项”“未分类”——作为分类失效的信号：剩余类目的大小和增长，就是分类需要修订的体温计。",
+        "kind": "project_concept_explanation"
+      }
+    ],
+    "minimal_correction_proposal": "保留“剩余类目”现行记录；概念文转述 Star 与 Bowker，原论文未在本轮核对，不把其作为外部原文证据。",
+    "adopted": false,
+    "proposed_action": "retain_current_record; preserve source limitation and do not promote project explanation to external fact"
+  },
+  {
+    "id": "glossary-L0159",
+    "original_cells": [
+      "内容单元",
+      "—",
+      "知识库里最小的可独立引用、可独立打标签的东西；参照 DITA topic",
+      "本库，参照 DITA 1.3 §2.2.1"
+    ],
+    "supported_fields": [
+      "the current project explanation/model rule at the cited location"
+    ],
+    "unsupported_fields": [
+      "external concept equivalence and translation"
+    ],
+    "evidence_status": "project_material_support",
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 159,
+        "quote": "| 内容单元 | — | 知识库里最小的可独立引用、可独立打标签的东西；参照 DITA topic | 本库，参照 DITA 1.3 §2.2.1 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/design/model/content-model.md",
+        "line": 15,
+        "quote": "内容单元使用以下现行字段。",
+        "kind": "project_model"
+      }
+    ],
+    "minimal_correction_proposal": "保留已采纳的本库“内容单元”定义；DITA §2.2.1 仅是参照且未在本轮核对，不将其与外部 content object 自动等同。",
+    "adopted": false,
+    "proposed_action": "retain_adopted_project_definition; do not infer an external equivalent or new formal concept"
+  },
+  {
+    "id": "glossary-L0180",
+    "original_cells": [
+      "划分",
+      "partition",
+      "把一个集合分成互不重叠、合起来是全集的几组",
+      "数学通用术语"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "external source and formal clause",
+      "外部中文译名或正式双语用法",
+      "独立外部原文逐字核对"
+    ],
+    "evidence_status": "no_external_source_given",
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 180,
+        "quote": "| 划分 | partition | 把一个集合分成互不重叠、合起来是全集的几组 | 数学通用术语 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "minimal_correction_proposal": "保留通用数学术语“划分”；当前仅有通用来源，不扩展为本项目分类术语。",
+    "adopted": false,
+    "proposed_action": "retain_current_record; preserve source limitation and do not promote project explanation to external fact"
+  },
+  {
+    "id": "glossary-L0207",
+    "original_cells": [
+      "断言",
+      "assertion",
+      "人判断而非抄自来源的字段值",
+      "本库用法；溯源依据 W3C PROV-O"
+    ],
+    "supported_fields": [
+      "the current project explanation/model rule at the cited location"
+    ],
+    "unsupported_fields": [
+      "external concept equivalence and translation"
+    ],
+    "evidence_status": "project_material_support",
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 207,
+        "quote": "| 断言 | assertion | 人判断而非抄自来源的字段值 | 本库用法；溯源依据 W3C PROV-O |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/design/governance/maintenance.md",
+        "line": 44,
+        "quote": "人工赋值表达项目判断，designation 的形式依据回答名称能否采用，概念对应依据回答所指为何，字段 basis 回答具体值或关系为何成立。三者互不替代。",
+        "kind": "project_governance_rule"
+      }
+    ],
+    "minimal_correction_proposal": "保留本库“断言”项目用法；PROV-O 只作溯源背景，未核外部对应概念，不新增 formal term。",
+    "adopted": false,
+    "proposed_action": "retain_adopted_project_definition; do not infer an external equivalent or new formal concept"
+  },
+  {
+    "id": "glossary-L0209",
+    "original_cells": [
+      "阈值",
+      "threshold",
+      "指标触发动作的界值",
+      "通用"
+    ],
+    "supported_fields": [
+      "the current project explanation/model rule at the cited location"
+    ],
+    "unsupported_fields": [
+      "external source and formal clause",
+      "外部中文译名或正式双语用法",
+      "独立外部原文逐字核对"
+    ],
+    "evidence_status": "project_material_support",
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 209,
+        "quote": "| 阈值 | threshold | 指标触发动作的界值 | 通用 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/design/governance/maintenance.md",
+        "line": 98,
+        "quote": "所有现行数字只在本节出现，其他文档和脚本引用本表。除标明外部依据的项目外，其余均为本库估值，须在首轮维护，即第一次编辑审核完成后校准。",
+        "kind": "project_governance_rule"
+      }
+    ],
+    "minimal_correction_proposal": "保留现行阈值定义及本库来源标注；不将项目界值声称为外部标准术语。",
+    "adopted": false,
+    "proposed_action": "retain_current_project_usage_without_creating_new_concept; human_decision_needed_before_external_term_claim"
+  },
+  {
+    "id": "glossary-L0121",
+    "original_cells": [
+      "来源分级",
+      "de-jure / de-facto / vendor / archival",
+      "引证来源按变更方式分档；依据为组织依据",
+      "Z 5.3.5.2；[命名实体设计](design/model/entities.md)"
+    ],
+    "supported_fields": [
+      "the current project explanation/model rule at the cited location"
+    ],
+    "unsupported_fields": [
+      "外部中文译名或正式双语用法",
+      "独立外部原文逐字核对"
+    ],
+    "evidence_status": "project_material_support",
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 121,
+        "quote": "| 来源分级 | de-jure / de-facto / vendor / archival | 引证来源按变更方式分档；依据为组织依据 | Z 5.3.5.2；[命名实体设计](design/model/entities.md) |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/design/model/entities.md",
+        "line": 80,
+        "quote": "`tier` 对 `standard` 和 `publication` 必填，其余类别不填。分级依据来源如何变更：权威程度决定能否引用，变更方式决定复核周期；按 Z39.19 §5.3.5.2，这属于组织依据。复核周期见[维护](../governance/maintenance.md)。",
+        "kind": "project_model"
+      }
+    ],
+    "minimal_correction_proposal": "保留来源分级作为项目来源字段／治理说明；de-jure、de-facto、vendor、archival 是四个并列值，是否另立独立术语需人决定。",
+    "adopted": false,
+    "proposed_action": "retain_as_project_source_tier_field_explanation; human_decision_needed_if_independent_designation_is_required"
+  }
+]

@@ -1,0 +1,1687 @@
+[
+  {
+    "id": "glossary-L0020",
+    "original_cells": [
+      "受控词表",
+      "controlled vocabulary",
+      "规定好的词、标题或代码列表，每项代表一个概念",
+      "ISO 2.12;Z 4.1"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 20,
+        "quote": "| 受控词表 | controlled vocabulary | 规定好的词、标题或代码列表，每项代表一个概念 | ISO 2.12;Z 4.1 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 42,
+        "quote": "| Part 1，2.12 | controlled vocabulary | 预先规定的 terms、headings 或 codes 列表，每项表示一个 concept |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0024",
+    "original_cells": [
+      "分类表",
+      "classification scheme",
+      "按分类排列的概念及先组组合的表",
+      "ISO 2.6"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 24,
+        "quote": "| 分类表 | classification scheme | 按分类排列的概念及先组组合的表 | ISO 2.6 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0033",
+    "original_cells": [
+      "概念",
+      "concept",
+      "思维单元；独立于表达它的词而存在",
+      "ISO 2.11"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 33,
+        "quote": "| 概念 | concept | 思维单元；独立于表达它的词而存在 | ISO 2.11 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 41,
+        "quote": "| Part 1，2.11 | concept | unit of thought；注释说明 concept 独立于表达它的 terms |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0034",
+    "original_cells": [
+      "词",
+      "term",
+      "表达概念的词或短语",
+      "ISO 2.61"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 34,
+        "quote": "| 词 | term | 表达概念的词或短语 | ISO 2.61 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0035",
+    "original_cells": [
+      "首选词 / 叙词",
+      "preferred term, descriptor",
+      "标引时用来代表概念的词",
+      "ISO 2.45"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 35,
+        "quote": "| 首选词 / 叙词 | preferred term, descriptor | 标引时用来代表概念的词 | ISO 2.45 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 54,
+        "quote": "| Part 1，2.45 | preferred term | indexing 时用来表示 concept 的 term |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0036",
+    "original_cells": [
+      "非首选词 / 非叙词",
+      "non-preferred term",
+      "不用于标引、只作入口的词",
+      "ISO 2.39"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 36,
+        "quote": "| 非首选词 / 非叙词 | non-preferred term | 不用于标引、只作入口的词 | ISO 2.39 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 52,
+        "quote": "| Part 1，2.39 | non-preferred term | 不分配给 documents、但作为 thesaurus 或 index 入口的 term |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0037",
+    "original_cells": [
+      "入口词",
+      "entry term, lead-in term",
+      "引导用户找到可用词的词；叙词表里即非首选词",
+      "ISO 2.16"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 37,
+        "quote": "| 入口词 | entry term, lead-in term | 引导用户找到可用词的词；叙词表里即非首选词 | ISO 2.16 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0038",
+    "original_cells": [
+      "隐藏标签",
+      "hidden label",
+      "不显示但可检索的非首选词，如拼写错误",
+      "ISO 数据模型 `hidden`;SKOS `hiddenLabel`"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage",
+      "specific external model clause"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 38,
+        "quote": "| 隐藏标签 | hidden label | 不显示但可检索的非首选词，如拼写错误 | ISO 数据模型 `hidden`;SKOS `hiddenLabel` |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0039",
+    "original_cells": [
+      "标识符",
+      "identifier",
+      "概念、词或其他实体的唯一标识",
+      "ISO 2.25"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 39,
+        "quote": "| 标识符 | identifier | 概念、词或其他实体的唯一标识 | ISO 2.25 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 48,
+        "quote": "| Part 1，2.25 | identifier | 在确定的 context 或 resource 内，为唯一识别 concept、term 或其他 entity 而使用的一组符号 |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0041",
+    "original_cells": [
+      "同形异义词",
+      "homograph",
+      "写法相同、意义不同的词",
+      "ISO 2.24"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 41,
+        "quote": "| 同形异义词 | homograph | 写法相同、意义不同的词 | ISO 2.24 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0042",
+    "original_cells": [
+      "准同义词",
+      "quasi-synonym",
+      "日常意义不同但词表中视为同一概念的词",
+      "ISO 2.47"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 42,
+        "quote": "| 准同义词 | quasi-synonym | 日常意义不同但词表中视为同一概念的词 | ISO 2.47 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0043",
+    "original_cells": [
+      "复合词",
+      "compound term",
+      "可拆成多个成分的词",
+      "ISO 2.9"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 43,
+        "quote": "| 复合词 | compound term | 可拆成多个成分的词 | ISO 2.9 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0044",
+    "original_cells": [
+      "复合概念",
+      "complex concept",
+      "由多个简单概念组成的概念；是否拆分见 ISO §7",
+      "ISO §7"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 44,
+        "quote": "| 复合概念 | complex concept | 由多个简单概念组成的概念；是否拆分见 ISO §7 | ISO §7 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0046",
+    "original_cells": [
+      "元数据",
+      "metadata",
+      "标识文档属性的数据；首选词常作为元数据值",
+      "ISO 2.33"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 46,
+        "quote": "| 元数据 | metadata | 标识文档属性的数据；首选词常作为元数据值 | ISO 2.33 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0047",
+    "original_cells": [
+      "内容对象",
+      "content object",
+      "被标引的东西：文档、图像、人、组织、实物",
+      "Z 4.1;ISO 2.15 document"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 47,
+        "quote": "| 内容对象 | content object | 被标引的东西：文档、图像、人、组织、实物 | Z 4.1;ISO 2.15 document |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0053",
+    "original_cells": [
+      "等价关系",
+      "USE / UF",
+      "两个词代表同一概念；一个定为首选，其余非首选",
+      "ISO 2.18"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 53,
+        "quote": "| 等价关系 | USE / UF | 两个词代表同一概念；一个定为首选，其余非首选 | ISO 2.18 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 44,
+        "quote": "| Part 1，2.18 | equivalence relationship | thesaurus 中两个 terms 表示同一个 concept 的关系 |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0054",
+    "original_cells": [
+      "复合等价",
+      "USE+ / UF+",
+      "一个词由另一语境中两个以上词表示",
+      "ISO 2.8"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 54,
+        "quote": "| 复合等价 | USE+ / UF+ | 一个词由另一语境中两个以上词表示 | ISO 2.8 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0055",
+    "original_cells": [
+      "层级关系",
+      "BT / NT",
+      "一个概念的范围完全落在另一个之内",
+      "ISO 2.23"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 55,
+        "quote": "| 层级关系 | BT / NT | 一个概念的范围完全落在另一个之内 | ISO 2.23 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 47,
+        "quote": "| Part 1，2.23 | hierarchical relationship | 两个 concepts 中，一个的 scope 完全落在另一个的 scope 内 |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0056",
+    "original_cells": [
+      "属种关系",
+      "BTG / NTG",
+      "层级的一种：是一种 (is-a)",
+      "ISO §10.2"
+    ],
+    "supported_fields": [
+      "Only the cited clause or section title is identifiable in current records"
+    ],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage",
+      "full body of cited section"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 56,
+        "quote": "| 属种关系 | BTG / NTG | 层级的一种：是一种 (is-a) | ISO §10.2 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "catalog_only",
+    "minimal_correction_proposal": "保留现行定义和登记效力；仅记录目录可见范围，待原文取得后核对，不据目录补定义。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0057",
+    "original_cells": [
+      "整部关系",
+      "BTP / NTP",
+      "层级的一种：是一部分 (part-of)",
+      "ISO §10.2"
+    ],
+    "supported_fields": [
+      "Only the cited clause or section title is identifiable in current records"
+    ],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage",
+      "full body of cited section"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 57,
+        "quote": "| 整部关系 | BTP / NTP | 层级的一种：是一部分 (part-of) | ISO §10.2 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "catalog_only",
+    "minimal_correction_proposal": "保留现行定义和登记效力；仅记录目录可见范围，待原文取得后核对，不据目录补定义。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0058",
+    "original_cells": [
+      "实例关系",
+      "BTI / NTI",
+      "层级的一种：是实例 (instance-of)",
+      "ISO §10.2"
+    ],
+    "supported_fields": [
+      "Only the cited clause or section title is identifiable in current records"
+    ],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage",
+      "full body of cited section"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 58,
+        "quote": "| 实例关系 | BTI / NTI | 层级的一种：是实例 (instance-of) | ISO §10.2 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "catalog_only",
+    "minimal_correction_proposal": "保留现行定义和登记效力；仅记录目录可见范围，待原文取得后核对，不据目录补定义。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0059",
+    "original_cells": [
+      "相关关系",
+      "RT",
+      "非层级但语义联系强",
+      "ISO 2.2"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 59,
+        "quote": "| 相关关系 | RT | 非层级但语义联系强 | ISO 2.2 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 39,
+        "quote": "| Part 1，2.2 | associative relationship | 两个 concepts 没有 hierarchical relationship，但具有强语义联系 |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0060",
+    "original_cells": [
+      "自定义关系",
+      "—",
+      "词表自行定义的关系类型",
+      "ISO §10.4"
+    ],
+    "supported_fields": [
+      "Only the cited clause or section title is identifiable in current records"
+    ],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage",
+      "full body of cited section"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 60,
+        "quote": "| 自定义关系 | — | 词表自行定义的关系类型 | ISO §10.4 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "catalog_only",
+    "minimal_correction_proposal": "保留现行定义和登记效力；仅记录目录可见范围，待原文取得后核对，不据目录补定义。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0061",
+    "original_cells": [
+      "聚合关系",
+      "paradigmatic",
+      "概念固有的关系，与具体文档无关；叙词表只收这类",
+      "ISO 2.41"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 61,
+        "quote": "| 聚合关系 | paradigmatic | 概念固有的关系，与具体文档无关；叙词表只收这类 | ISO 2.41 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0062",
+    "original_cells": [
+      "组合关系",
+      "syntagmatic",
+      "因在某文档中同时出现而产生的关系；不进叙词表",
+      "ISO §4.3"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 62,
+        "quote": "| 组合关系 | syntagmatic | 因在某文档中同时出现而产生的关系；不进叙词表 | ISO §4.3 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0063",
+    "original_cells": [
+      "单层级",
+      "monohierarchy",
+      "每个概念只有一个直接上位",
+      "ISO 2.34"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 63,
+        "quote": "| 单层级 | monohierarchy | 每个概念只有一个直接上位 | ISO 2.34 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 50,
+        "quote": "| Part 1，2.34 | monohierarchical structure | 每个 concept 在直接上一级只能有一个 broader concept 的层级安排 |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0064",
+    "original_cells": [
+      "多层级",
+      "polyhierarchy",
+      "一个概念可有多个直接上位",
+      "ISO 2.42"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 64,
+        "quote": "| 多层级 | polyhierarchy | 一个概念可有多个直接上位 | ISO 2.42 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 53,
+        "quote": "| Part 1，2.42 | polyhierarchical structure | 每个 concept 可以有多个 broader concepts 的层级安排 |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0071",
+    "original_cells": [
+      "分面",
+      "facet",
+      "同一内在类别的概念分组：对象、材料、动作、地点、时间",
+      "ISO 2.20"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 71,
+        "quote": "| 分面 | facet | 同一内在类别的概念分组：对象、材料、动作、地点、时间 | ISO 2.20 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 45,
+        "quote": "| Part 1，2.20 | facet | 同一 inherent category 的 concepts 分组 |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0072",
+    "original_cells": [
+      "分面分析",
+      "facet analysis",
+      "把领域分解成概念、按分面分组、按划分特征细分",
+      "ISO 2.21;Z 5.3.4"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 72,
+        "quote": "| 分面分析 | facet analysis | 把领域分解成概念、按分面分组、按划分特征细分 | ISO 2.21;Z 5.3.4 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 46,
+        "quote": "| Part 1，2.21 | facet analysis | 把 subject areas 分析为 concepts，按 facets 分组，并按 characteristics of division 细分 concepts |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0073",
+    "original_cells": [
+      "划分特征",
+      "characteristic of division",
+      "把一个概念细分成一组下位概念所依据的属性",
+      "ISO 2.4"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 73,
+        "quote": "| 划分特征 | characteristic of division | 把一个概念细分成一组下位概念所依据的属性 | ISO 2.4 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 40,
+        "quote": "| Part 1，2.4 | characteristic of division | 用来把一个 concept 细分为一组 narrower concepts 的 attribute；组内各 concept 具有该 attribute 的不同值 |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0074",
+    "original_cells": [
+      "树 / 层级",
+      "hierarchy",
+      "按 BT/NT 排出的上下位结构",
+      "ISO §10.2"
+    ],
+    "supported_fields": [
+      "Only the cited clause or section title is identifiable in current records"
+    ],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage",
+      "full body of cited section"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 74,
+        "quote": "| 树 / 层级 | hierarchy | 按 BT/NT 排出的上下位结构 | ISO §10.2 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "catalog_only",
+    "minimal_correction_proposal": "保留现行定义和登记效力；仅记录目录可见范围，待原文取得后核对，不据目录补定义。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0076",
+    "original_cells": [
+      "顶层概念",
+      "top concept",
+      "树的根",
+      "ISO 数据模型"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage",
+      "specific external model clause"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 76,
+        "quote": "| 顶层概念 | top concept | 树的根 | ISO 数据模型 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0077",
+    "original_cells": [
+      "节点标签",
+      "node label",
+      "树里说明一组兄弟按什么分的标签；内容只能是划分特征或分面名；非词，不能标引",
+      "ISO 2.38;Z 8.3.5"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 77,
+        "quote": "| 节点标签 | node label | 树里说明一组兄弟按什么分的标签；内容只能是划分特征或分面名；非词，不能标引 | ISO 2.38;Z 8.3.5 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 51,
+        "quote": "| Part 1，2.38 | node label | 插入层级或分类显示、说明 terms 如何安排的 label；它既不是 preferred term，也不是 non-preferred term |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0078",
+    "original_cells": [
+      "数组",
+      "array",
+      "一组同级概念",
+      "ISO 2.1"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 78,
+        "quote": "| 数组 | array | 一组同级概念 | ISO 2.1 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 38,
+        "quote": "| Part 1，2.1 | array | 一组 sibling concepts |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0079",
+    "original_cells": [
+      "概念组 / 分组",
+      "concept group",
+      "按用途圈出的一批概念，可跨树、可嵌套",
+      "ISO 数据模型"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage",
+      "specific external model clause"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 79,
+        "quote": "| 概念组 / 分组 | concept group | 按用途圈出的一批概念，可跨树、可嵌套 | ISO 数据模型 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 55,
+        "quote": "| Part 2，3.18 | concept group | 按指定 criterion 选择的一组 concepts |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0080",
+    "original_cells": [
+      "微词表",
+      "micro-thesaurus",
+      "叙词表的指定子集，可独立作为完整叙词表使用",
+      "ISO-2 3.46;ISO 数据模型"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage",
+      "specific external model clause"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 80,
+        "quote": "| 微词表 | micro-thesaurus | 叙词表的指定子集，可独立作为完整叙词表使用 | ISO-2 3.46;ISO 数据模型 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 55,
+        "quote": "| Part 2，3.18 | concept group | 按指定 criterion 选择的一组 concepts |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0082",
+    "original_cells": [
+      "组配号",
+      "synthesized notation",
+      "主表号与辅助表号拼接而成的号码",
+      "ISO 2.22 facet indicator"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 82,
+        "quote": "| 组配号 | synthesized notation | 主表号与辅助表号拼接而成的号码 | ISO 2.22 facet indicator |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0083",
+    "original_cells": [
+      "先组",
+      "pre-coordination",
+      "建表或标引时就组合概念",
+      "ISO 2.44"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 83,
+        "quote": "| 先组 | pre-coordination | 建表或标引时就组合概念 | ISO 2.44 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0084",
+    "original_cells": [
+      "后组",
+      "post-coordination",
+      "检索时才组合首选词",
+      "ISO 2.43"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 84,
+        "quote": "| 后组 | post-coordination | 检索时才组合首选词 | ISO 2.43 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0092",
+    "original_cells": [
+      "定义",
+      "definition",
+      "词的定义，ISO 中挂在词上",
+      "ISO 数据模型"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage",
+      "specific external model clause"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 92,
+        "quote": "| 定义 | definition | 词的定义，ISO 中挂在词上 | ISO 数据模型 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0094",
+    "original_cells": [
+      "编辑注释",
+      "editorial note",
+      "给编辑看的内部注释",
+      "ISO 数据模型"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage",
+      "specific external model clause"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 94,
+        "quote": "| 编辑注释 | editorial note | 给编辑看的内部注释 | ISO 数据模型 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0099",
+    "original_cells": [
+      "状态",
+      "status",
+      "词或概念的生命周期状态",
+      "ISO 数据模型"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage",
+      "specific external model clause"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 99,
+        "quote": "| 状态 | status | 词或概念的生命周期状态 | ISO 数据模型 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0100",
+    "original_cells": [
+      "版本历史",
+      "version history",
+      "词表整体的版本记录",
+      "ISO 数据模型"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage",
+      "specific external model clause"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 100,
+        "quote": "| 版本历史 | version history | 词表整体的版本记录 | ISO 数据模型 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0116",
+    "original_cells": [
+      "词汇控制",
+      "vocabulary control",
+      "让标引者和检索者对同一概念用同一个词",
+      "ISO §4.2;Z 1.1"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 116,
+        "quote": "| 词汇控制 | vocabulary control | 让标引者和检索者对同一概念用同一个词 | ISO §4.2;Z 1.1 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0117",
+    "original_cells": [
+      "标引",
+      "indexing",
+      "分析文档主题、识别概念、分配标引词",
+      "ISO 2.27"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 117,
+        "quote": "| 标引 | indexing | 分析文档主题、识别概念、分配标引词 | ISO 2.27 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0118",
+    "original_cells": [
+      "标引词",
+      "index term",
+      "分配给文档的词；keyword、tag 含义更宽",
+      "ISO 2.26"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 118,
+        "quote": "| 标引词 | index term | 分配给文档的词；keyword、tag 含义更宽 | ISO 2.26 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0120",
+    "original_cells": [
+      "互操作性",
+      "interoperability",
+      "系统间交换并使用信息的能力",
+      "ISO 2.29"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 120,
+        "quote": "| 互操作性 | interoperability | 系统间交换并使用信息的能力 | ISO 2.29 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0127",
+    "original_cells": [
+      "映射",
+      "mapping",
+      "一个词表中的概念与另一个词表中一个或多个概念之间的关系；通常有方向",
+      "ISO-2 3.41"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 127,
+        "quote": "| 映射 | mapping | 一个词表中的概念与另一个词表中一个或多个概念之间的关系；通常有方向 | ISO-2 3.41 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 60,
+        "quote": "| Part 2，3.41 | mapping, noun | mapping process 的产物，即一个 vocabulary 中的一个 concept 与另一个 vocabulary 中一个或多个 concepts 之间的关系 |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0128",
+    "original_cells": [
+      "映射簇",
+      "mapping cluster",
+      "三个以上词表之间协调维护的一组映射",
+      "ISO-2 3.42"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 128,
+        "quote": "| 映射簇 | mapping cluster | 三个以上词表之间协调维护的一组映射 | ISO-2 3.42 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0129",
+    "original_cells": [
+      "名称规范表",
+      "name authority list",
+      "为一致地命名特定个体而设的受控词表",
+      "ISO-2 3.50"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 129,
+        "quote": "| 名称规范表 | name authority list | 为一致地命名特定个体而设的受控词表 | ISO-2 3.50 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 61,
+        "quote": "| Part 2，3.50 | name authority list | 用来一致命名 particular entities 的 controlled vocabulary；注释把这些 entities 限定为 unique individuals，而不是 classes |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0130",
+    "original_cells": [
+      "对照表",
+      "crosswalk",
+      "两个以上词表之间概念映射的表",
+      "ISO-2 3.21"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 130,
+        "quote": "| 对照表 | crosswalk | 两个以上词表之间概念映射的表 | ISO-2 3.21 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0131",
+    "original_cells": [
+      "源词表 / 目标词表",
+      "source / target vocabulary",
+      "映射的起点 / 终点",
+      "ISO-2 §3（条款号在样章之外）"
+    ],
+    "supported_fields": [
+      "Only the cited clause or section title is identifiable in current records"
+    ],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage",
+      "full body of cited section"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 131,
+        "quote": "| 源词表 / 目标词表 | source / target vocabulary | 映射的起点 / 终点 | ISO-2 §3（条款号在样章之外） |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "catalog_only",
+    "minimal_correction_proposal": "保留源词表／目标词表的现行角色表达；当前只把它们作为映射端点记录，不补造各自独立定义。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0132",
+    "original_cells": [
+      "等价映射",
+      "equivalence mapping",
+      "目标概念与源概念范围相同",
+      "ISO-2 3.27"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 132,
+        "quote": "| 等价映射 | equivalence mapping | 目标概念与源概念范围相同 | ISO-2 3.27 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 57,
+        "quote": "| Part 2，3.27 | equivalence mapping | 说明 target vocabulary 中的 concept 与 source vocabulary 中的 concept 在 scope 上被视为相同的 mapping |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0133",
+    "original_cells": [
+      "精确 / 不精确 / 部分等价",
+      "exact / inexact / partial equivalence",
+      "等价的三个程度",
+      "ISO-2 §11"
+    ],
+    "supported_fields": [
+      "Only the cited clause or section title is identifiable in current records"
+    ],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage",
+      "full body of cited section"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 133,
+        "quote": "| 精确 / 不精确 / 部分等价 | exact / inexact / partial equivalence | 等价的三个程度 | ISO-2 §11 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "catalog_only",
+    "minimal_correction_proposal": "保留 exact、inexact、partial 三个原有组件和现行中文；不把 ISO §11 目录或 SKOS property 直接当作三项定义，待正文或人工决定。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0134",
+    "original_cells": [
+      "层级映射",
+      "hierarchical mapping",
+      "目标概念比源概念宽或窄",
+      "ISO-2 §9"
+    ],
+    "supported_fields": [
+      "Only the cited clause or section title is identifiable in current records"
+    ],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage",
+      "full body of cited section"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 134,
+        "quote": "| 层级映射 | hierarchical mapping | 目标概念比源概念宽或窄 | ISO-2 §9 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "catalog_only",
+    "minimal_correction_proposal": "保留现行定义和登记效力；仅记录目录可见范围，待原文取得后核对，不据目录补定义。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0135",
+    "original_cells": [
+      "相关映射",
+      "associative mapping",
+      "有关但非等价非层级",
+      "ISO-2 §10"
+    ],
+    "supported_fields": [
+      "Only the cited clause or section title is identifiable in current records"
+    ],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage",
+      "full body of cited section"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 135,
+        "quote": "| 相关映射 | associative mapping | 有关但非等价非层级 | ISO-2 §10 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "catalog_only",
+    "minimal_correction_proposal": "保留现行定义和登记效力；仅记录目录可见范围，待原文取得后核对，不据目录补定义。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0136",
+    "original_cells": [
+      "区分式映射",
+      "differentiated mapping",
+      "标明映射类型和等价程度的映射方法",
+      "ISO-2 3.23"
+    ],
+    "supported_fields": [
+      "English term and definition scope as summarized in prior reading note"
+    ],
+    "unsupported_fields": [
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 136,
+        "quote": "| 区分式映射 | differentiated mapping | 标明映射类型和等价程度的映射方法 | ISO-2 3.23 |",
+        "kind": "current_glossary_record"
+      },
+      {
+        "file": "docs/references/iso-25964.md",
+        "line": 56,
+        "quote": "| Part 2，3.23 | differentiated mapping | 旨在区分 mapping 的不同 types 和 qualities 的方法 |",
+        "kind": "prior_reading_note"
+      }
+    ],
+    "evidence_status": "prior_reading_note_support",
+    "minimal_correction_proposal": "保留现行定义和登记效力；阅读笔记仅作历史核对，不升级为本轮外部原文或中文译名证据。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0137",
+    "original_cells": [
+      "中心辐射",
+      "hub structure",
+      "所有词表映射到一个中心词表的结构模型",
+      "ISO-2 §6"
+    ],
+    "supported_fields": [
+      "Only the cited clause or section title is identifiable in current records"
+    ],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage",
+      "full body of cited section"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 137,
+        "quote": "| 中心辐射 | hub structure | 所有词表映射到一个中心词表的结构模型 | ISO-2 §6 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "catalog_only",
+    "minimal_correction_proposal": "保留现行定义和登记效力；仅记录目录可见范围，待原文取得后核对，不据目录补定义。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0177",
+    "original_cells": [
+      "知识组织",
+      "knowledge organization",
+      "对知识进行描述、分类和排序的活动与系统；KOS 即知识组织系统",
+      "ISO 25964；SKOS"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 177,
+        "quote": "| 知识组织 | knowledge organization | 对知识进行描述、分类和排序的活动与系统；KOS 即知识组织系统 | ISO 25964；SKOS |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0179",
+    "original_cells": [
+      "个体",
+      "individual",
+      "名称规范表所收的对象：唯一的个体，而非类",
+      "ISO-2 3.50 注"
+    ],
+    "supported_fields": [],
+    "unsupported_fields": [
+      "definition text and clause-level semantics",
+      "external Chinese translation/formal bilingual usage"
+    ],
+    "evidence": [
+      {
+        "file": "docs/glossary.md",
+        "line": 179,
+        "quote": "| 个体 | individual | 名称规范表所收的对象：唯一的个体，而非类 | ISO-2 3.50 注 |",
+        "kind": "current_glossary_record"
+      }
+    ],
+    "evidence_status": "not_obtained",
+    "minimal_correction_proposal": "保留现行定义和登记效力；标记本轮未取得对应 ISO 原文，不作重新准入判断。",
+    "adopted": false
+  }
+]

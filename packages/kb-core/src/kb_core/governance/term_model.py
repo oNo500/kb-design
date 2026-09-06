@@ -1,6 +1,8 @@
 from kb_core.repository import project_root
 from collections import Counter
 from dataclasses import dataclass
+from datetime import date
+import copy
 import json
 from pathlib import Path
 from typing import Literal, Optional, Sequence
@@ -63,7 +65,7 @@ class TermRecord:
     id: str
     text: str
     administrative_status: AdministrativeStatus
-    basis: Sequence[object]
+    basis: object
     replaced_by: Optional[str]
     history: Sequence[HistoryEvent]
 
@@ -147,6 +149,25 @@ def local_term_definitions(refs):
         "minItems": 1,
         "items": {"$ref": refs["basis"]},
     }
+    model_basis = object_schema(
+        ("level", "model"),
+        {
+            "level": {"const": 5},
+            "model": object_schema(
+                ("name", "date", "rationale", "approval"),
+                {
+                    "name": {"type": "string", "minLength": 1},
+                    "date": {"type": "string", "format": "date"},
+                    "rationale": {"type": "string", "minLength": 1},
+                    "approval": {"type": "string", "minLength": 1},
+                },
+            ),
+        },
+    )
+    term_basis = {"oneOf": [
+        {"$ref": "#/$defs/basis"},
+        {"$ref": "#/$defs/model_basis"},
+    ]}
     history = object_schema(
         ("date", "event", "decision", "reason", "from_value", "to_value", "linked_terms"),
         {
@@ -169,7 +190,7 @@ def local_term_definitions(refs):
             "id": {"type": "string", "pattern": term_pattern},
             "text": {"type": "string", "minLength": 1},
             "administrative_status": {"enum": list(ADMINISTRATIVE_STATUSES)},
-            "basis": {"$ref": "#/$defs/basis"},
+            "basis": {"$ref": "#/$defs/term_basis"},
             "replaced_by": {"type": "string", "pattern": term_pattern},
             "history": {
                 "type": "array",
@@ -221,7 +242,6 @@ def local_term_definitions(refs):
             "id": {"type": "string", "pattern": concept_pattern},
             "subject_fields": {
                 "type": "array",
-                "minItems": 1,
                 "uniqueItems": True,
                 "items": {"$ref": "#/$defs/subject_field"},
             },
@@ -255,6 +275,8 @@ def local_term_definitions(refs):
     return {
         "language": language,
         "basis": basis,
+        "model_basis": model_basis,
+        "term_basis": term_basis,
         "source_reference": {"$ref": refs["source"]},
         "match_reference": {"$ref": refs["match"]},
         "history": history,
@@ -326,6 +348,31 @@ def _parse_history(value):
     )
 
 
+def term_basis_kind(value):
+    """Classify a term-form basis without treating arbitrary dicts as model evidence."""
+    if isinstance(value, list):
+        return "external"
+    if (
+        isinstance(value, dict)
+        and set(value) == {"level", "model"}
+        and type(value.get("level")) is int
+        and value.get("level") == 5
+        and isinstance(value.get("model"), dict)
+        and set(value["model"]) == {"name", "date", "rationale", "approval"}
+        and all(
+            isinstance(value["model"].get(key), str)
+            and value["model"][key].strip()
+            for key in ("name", "date", "rationale", "approval")
+        )
+    ):
+        try:
+            date.fromisoformat(value["model"]["date"])
+        except ValueError:
+            return "invalid"
+        return "model"
+    return "invalid"
+
+
 def parse_terms(value):
     concepts = []
     for concept in value["concepts"]:
@@ -344,7 +391,7 @@ def parse_terms(value):
                     row["id"],
                     row["text"],
                     row["administrative_status"],
-                    tuple(row["basis"]),
+                    copy.deepcopy(row["basis"]),
                     row.get("replaced_by"),
                     tuple(_parse_history(event) for event in row["history"]),
                 )
@@ -374,43 +421,62 @@ def load_terms(path: Path):
 
 
 def collect_reference_uses(document, file="terms"):
+    def field(value, name, default=None):
+        return value.get(name, default) if isinstance(value, dict) else getattr(value, name, default)
+
+    def append_basis(uses, basis, record, path, *, allow_model=False):
+        kind = "external" if isinstance(basis, tuple) else term_basis_kind(basis)
+        if kind == "model" and allow_model:
+            return
+        if kind != "external":
+            uses.append(ReferenceUse("basis", str(file), record, path, basis))
+            return
+        for basis_index, item in enumerate(basis):
+            uses.append(ReferenceUse(
+                "basis", str(file), record, f"{path}[{basis_index}]", item,
+            ))
+
     uses = []
-    for concept_index, concept in enumerate(document.concepts):
-        record = concept.id
-        for basis_index, basis in enumerate(concept.basis):
+    concepts = field(document, "concepts", ())
+    for concept_index, concept in enumerate(concepts):
+        record = field(concept, "id", str(concept_index))
+        append_basis(
+            uses, field(concept, "basis", []), record,
+            f"concepts[{concept_index}].basis",
+        )
+        for index, subject in enumerate(field(concept, "subject_fields", [])):
+            append_basis(
+                uses, field(subject, "basis", []), record,
+                f"concepts[{concept_index}].subject_fields[{index}].basis",
+            )
+        for index, definition in enumerate(field(concept, "definitions", [])):
+            append_basis(
+                uses, field(definition, "basis", []), record,
+                f"concepts[{concept_index}].definitions[{index}].basis",
+            )
+        for language_index, language in enumerate(field(concept, "languages", [])):
+            for term_index, term in enumerate(field(language, "terms", [])):
+                append_basis(
+                    uses, field(term, "basis", []), record,
+                    f"concepts[{concept_index}].languages[{language_index}].terms[{term_index}].basis",
+                    allow_model=True,
+                )
+        # Preserve discovery for the pre-schema future-consumer fixture while
+        # applying the same exact model/external classification.
+        for term_index, term in enumerate(field(concept, "terms", [])):
+            append_basis(
+                uses, field(term, "basis", []), record,
+                f"concepts[{concept_index}].terms[{term_index}].basis",
+                allow_model=True,
+            )
+        source = field(concept, "source")
+        if source is not None:
             uses.append(ReferenceUse(
-                "basis", file, record,
-                f"concepts[{concept_index}].basis[{basis_index}]", basis,
+                "source", str(file), record, f"concepts[{concept_index}].source", source,
             ))
-        for index, field in enumerate(concept.subject_fields):
-            for basis_index, basis in enumerate(field.basis):
-                uses.append(ReferenceUse(
-                    "basis", file, record,
-                    f"concepts[{concept_index}].subject_fields[{index}].basis[{basis_index}]",
-                    basis,
-                ))
-        for index, definition in enumerate(concept.definitions):
-            for basis_index, basis in enumerate(definition.basis):
-                uses.append(ReferenceUse(
-                    "basis", file, record,
-                    f"concepts[{concept_index}].definitions[{index}].basis[{basis_index}]",
-                    basis,
-                ))
-        for language_index, language in enumerate(concept.languages):
-            for term_index, term in enumerate(language.terms):
-                for basis_index, basis in enumerate(term.basis):
-                    uses.append(ReferenceUse(
-                        "basis", file, record,
-                        f"concepts[{concept_index}].languages[{language_index}].terms[{term_index}].basis[{basis_index}]",
-                        basis,
-                    ))
-        if concept.source is not None:
+        for index, match in enumerate(field(concept, "match", [])):
             uses.append(ReferenceUse(
-                "source", file, record, f"concepts[{concept_index}].source", concept.source,
-            ))
-        for index, match in enumerate(concept.match):
-            uses.append(ReferenceUse(
-                "match", file, record, f"concepts[{concept_index}].match[{index}]", match,
+                "match", str(file), record, f"concepts[{concept_index}].match[{index}]", match,
             ))
     return tuple(uses)
 
@@ -422,7 +488,7 @@ def _duplicate_issues(values, code, path):
     ]
 
 
-def validate_terms(document, source_root: Path, topic_ids):
+def validate_term_document(document, topic_ids):
     issues = []
     issues.extend(_duplicate_issues(
         (concept.id for concept in document.concepts),
@@ -470,6 +536,13 @@ def validate_terms(document, source_root: Path, topic_ids):
                     f"unknown topic id {field.topic_id}",
                 ))
 
+    return tuple(sorted(issues, key=lambda issue: (
+        issue.path, issue.code, issue.message,
+    )))
+
+
+def validate_terms(document, source_root: Path, topic_ids):
+    issues = list(validate_term_document(document, topic_ids))
     for issue in validate_references(source_root, collect_reference_uses(document)):
         issues.append(TermIssue(
             "TERM_SOURCE_CONTRACT_" + issue.code,

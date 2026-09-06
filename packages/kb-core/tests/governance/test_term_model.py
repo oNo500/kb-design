@@ -6,9 +6,11 @@ import yaml
 
 from kb_core.governance.term_model import (
     build_terms_schema,
+    collect_reference_uses,
     exported_reference_uris,
     parse_terms,
     schema_issues,
+    term_basis_kind,
     validate_terms,
 )
 from kb_core.source_model import SCHEMA_IDS
@@ -72,6 +74,38 @@ class TermModelTests(unittest.TestCase):
                 self.assertTrue(schema_issues(value))
         self.assertTrue(schema_issues(load_yaml("invalid/legacy-reference-values.yaml")))
 
+    def test_term_basis_accepts_exact_model_record_but_other_basis_positions_do_not(self):
+        model_basis = {
+            "level": 5,
+            "model": {
+                "name": "GPT-5", "date": "2026-09-06",
+                "rationale": "Existing Chinese industry expression.",
+                "approval": "decision-term-0001",
+            },
+        }
+        term_value = copy.deepcopy(self.valid_value)
+        term_value["concepts"][0]["languages"][0]["terms"][0]["basis"] = model_basis
+        self.assertEqual((), schema_issues(term_value))
+        self.assertEqual("model", term_basis_kind(model_basis))
+
+        for label, mutate in (
+            ("definition", lambda value: value["concepts"][0]["definitions"][0].update(basis=model_basis)),
+            ("concept", lambda value: value["concepts"][0].update(basis=model_basis)),
+            ("mixed", lambda value: value["concepts"][0]["languages"][0]["terms"][0].update(
+                basis=[self.valid_value["concepts"][0]["basis"][0], model_basis]
+            )),
+        ):
+            with self.subTest(label=label):
+                value = copy.deepcopy(self.valid_value)
+                mutate(value)
+                self.assertTrue(schema_issues(value))
+
+        invalid_position = copy.deepcopy(self.valid_value)
+        invalid_position["concepts"][0]["basis"] = model_basis
+        uses = collect_reference_uses(invalid_position, "data/vocab/terms.yaml")
+        self.assertEqual("concepts[0].basis", uses[0].field_path)
+        self.assertEqual(model_basis, uses[0].value)
+
     def test_schema_refs_match_source_model(self):
         refs = exported_reference_uris()
         schema = build_terms_schema()
@@ -130,6 +164,12 @@ class TermModelTests(unittest.TestCase):
             ["TERM_SUBJECT_FIELD_UNKNOWN"],
             [issue.code for issue in issues],
         )
+
+    def test_subject_fields_may_be_empty(self):
+        value = copy.deepcopy(self.valid_value)
+        value["concepts"][0]["subject_fields"] = []
+
+        self.assertEqual((), schema_issues(value))
 
     def test_active_definition_conflicts_fail(self):
         value = copy.deepcopy(self.valid_value)

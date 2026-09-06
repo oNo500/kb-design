@@ -131,6 +131,8 @@ def visit_record_decisions(relative: Path, document: object) -> List[Dict[str, s
     """Index declared decisions without treating audit snapshots as current data."""
     if not isinstance(document, dict):
         return []
+    if str(relative) == "data/vocab/terms.yaml":
+        return visit_term_decisions(relative, document)
     contexts = {
         "data/vocab/entities.yaml": ("entities", "entity"),
         "data/vocab/sources.yaml": ("sources", "source_use"),
@@ -158,6 +160,27 @@ def visit_record_decisions(relative: Path, document: object) -> List[Dict[str, s
                 "decision", decision_id, reference_kind, relative,
                 f"{record_kind}:{record.get('id', index)}", f"{collection}[{index}].{field_path}",
             ))
+    return rows
+
+
+def visit_term_decisions(relative: Path, document: dict) -> List[Dict[str, str]]:
+    """Index explicit term/concept histories, never proposal or audit values."""
+    rows = []
+    for concept_index, concept in enumerate(document.get("concepts", [])):
+        concept_path = f"concepts[{concept_index}]"
+        records = [(concept, f"concept:{concept.get('id')}", concept_path)]
+        for language_index, language in enumerate(concept.get("languages", [])):
+            for term_index, term in enumerate(language.get("terms", [])):
+                records.append((
+                    term, f"term:{term.get('id')}",
+                    f"{concept_path}.languages[{language_index}].terms[{term_index}]",
+                ))
+        for record, identity, prefix in records:
+            for path, decision in walk_decision_ids({"history": record.get("history", [])}):
+                rows.append(index_row(
+                    "decision", decision, "history.decision", relative, identity,
+                    f"{prefix}.{path}",
+                ))
     return rows
 
 

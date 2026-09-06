@@ -26,19 +26,20 @@ uv run kb-core --help
 |---|---|
 | `build-topics` | 从生成输入重建正式主题词表 |
 | `check-topics` | 校验正式主题词表及其关系 |
-| `check-terms` | 生成 Markdown designation 人工复核报告 |
+| `check-terms` | 生成 Markdown designation 人工复核报告；正式切换后读取经完整验权的术语登记 |
 | `check-sources` | 校验来源与引用结构 |
 | `build-source-index` | 生成来源反向索引，包含结构化语言依据的来源用途引用 |
 | `plan-source-migration` | 生成来源迁移预演 |
 | `probe-sources` | 对固定夹具执行只读来源探测 |
 | `prepare-source-evidence` | 整理首批离线来源证据与变化项，只供人工审阅 |
 | `source-model` | 维护来源模式相关产物 |
-| `build-terms` | 构建或核对未激活术语视图 |
+| `build-terms` | 经统一术语校验与精确采纳检查构建或核对术语视图 |
+| `term-data check`、`term-data index` | 校验术语数据或生成只读维护索引 |
 | `migrate-terms` | 物化或校验术语迁移结果 |
 
 使用 `uv run kb-core <命令> --help` 查看参数。命令使用显式仓库根定位资源，不要求调用者先进入包目录。
 
-`check-sources` 要求显式传入 `--root`，完整 schema 校验面向候选数据或固定测试夹具根目录。正式来源 v2 数据尚未激活，不能把该命令可运行写成现行正式数据已经就绪。
+`check-sources` 要求显式传入 `--root`，来源 v2 数据与严格引用已按[来源收尾](../../docs/decisions/source-completion.md)实施。命令检查结构、引用及采纳范围，不自动启用正式义务或消费者。
 
 ## 离线证据
 
@@ -55,6 +56,16 @@ uv run kb-core prepare-source-evidence
 `--root /absolute/checkout` 显式选择输入仓库；`--output build/other-evidence` 可选择该仓库 `build/` 下的子目录。正式目录、vault 输出区和符号链接目标不能作为输出；目标若有不属于本工具的文件，会拒绝覆盖。串行运行本命令，不与另一个调用并发替换同一输出。
 
 待核条件来自已批准的首批审查范围。字段存在可以改变“缺失”的提示，但不会自动关闭关系判断、角色批准或其他语义门禁。当前不支持任意材料导入、PDF 解析或正式候选生成；更换检索对象或新增原始材料需要明确其路径、材料性质和定位规则。试用结果见[离线证据验收](../../work/reviews/2026-09-05-offline-source-evidence.md)。
+
+## 术语入口
+
+术语结构与必要取证分别按[术语实施范围](../../docs/decisions/term-infrastructure-scope.md)和[术语依据范围](../../docs/decisions/term-evidence-scope.md)实施。`governance/term_validation.py` 提供生成、维护和应用共用的完整检查：schema、来源引用、稳定身份、状态历史、精确字段采纳及切换授权分别核对。决定 ID 存在不等于覆盖具体值。
+
+`build-terms build` 和 `build-terms check` 读取显式指定的术语、state、布局与来源索引，先校验全部输入再生成或比较快照和术语表。章节按概念 ID 编排，与可空的 `subject_fields` 分开；模型译名继续从主题、载体和原语言采纳输入生成，不创建新的术语概念。
+
+`term-data check` 与 `term-data index` 复用同一校验；索引只定位实际引用，不把历史提案当作当前引用，也不创建正式义务。`check-terms` 在正式 terms/state 存在后核对发布授权并读取获准形式；缺失一半或授权不完整时失败，不退回旧登记来绕过检查。两者均不存在时，现行 Markdown 登记读取继续有效。
+
+当前没有正式 `terms.yaml` 或 `term-cutover-state.yaml`。具体数据、旧登记保留源与完整生成的衔接仍待采纳和完成；入口可运行不等于编辑权已切换。
 
 ## 数据边界
 

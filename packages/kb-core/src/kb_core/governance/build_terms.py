@@ -12,6 +12,17 @@ from typing import Any, Mapping, Optional, Sequence, Tuple
 import yaml
 from jsonschema import Draft202012Validator, FormatChecker
 from kb_core.governance.term_model import TermsSchemaError, schema_issues
+from kb_core.governance.term_model import parse_terms
+from kb_core.build_source_index import visit_record_decisions, visit_reference_use
+from kb_core.label_adoptions import validate_adoptions
+from kb_core.governance.term_validation import load_term_decision_sets, validate_term_snapshot
+from kb_core.label_basis import validate_basis
+from kb_core.governance.term_rendering import (
+    render_glossary as _render_glossary,
+    render_term_markdown,
+)
+from kb_core.governance.term_git import captured_previous_terms
+from kb_core.source_model import collect_reference_uses, validate_source_documents
 
 
 REPOSITORY_ROOT = project_root(__file__)
@@ -180,6 +191,9 @@ def _snapshot_value(
     active_concepts: Sequence[Any],
     source_index: Mapping[str, object],
     state: Any,
+    *,
+    source_entities: Optional[Mapping[str, object]] = None,
+    model_labels: Optional[Sequence[Mapping[str, object]]] = None,
 ) -> Mapping[str, Any]:
     return {
         "schema": _get(document, "schema"),
@@ -188,6 +202,13 @@ def _snapshot_value(
             canonical_json(source_index)
         ).hexdigest(),
         "cutover_decision": _get(state, "decision"),
+        "source_entities": [
+            _plain(value) for _, value in sorted((source_entities or {}).items())
+        ],
+        "model_labels": sorted(
+            (_plain(row) for row in (model_labels or ())),
+            key=lambda row: (row.get("zh", ""), row.get("en", ""), row.get("targets", [])),
+        ),
         "concepts": [
             _snapshot_concept(concept)
             for concept in sorted(
@@ -201,6 +222,9 @@ def canonical_snapshot(
     document: Any,
     source_index: Mapping[str, object],
     state: Any,
+    *,
+    source_entities: Optional[Mapping[str, object]] = None,
+    model_labels: Optional[Sequence[Mapping[str, object]]] = None,
 ) -> bytes:
     _ensure_consumers_enabled(state)
     active = tuple(
@@ -209,7 +233,8 @@ def canonical_snapshot(
         if _get(concept, "workflow") == "active"
     )
     return canonical_json(
-        _snapshot_value(document, active, source_index, state)
+        _snapshot_value(document, active, source_index, state,
+                        source_entities=source_entities, model_labels=model_labels)
     )
 
 
@@ -217,193 +242,76 @@ def ordered_concepts(document: Any, layout: Mapping[str, object]) -> Tuple[Any, 
     groups = sorted(
         layout["groups"], key=lambda group: (group["order"], group["id"])
     )
-    group_order = {
-        group["id"]: index for index, group in enumerate(groups)
-    }
+    concepts = {_get(concept, "id"): concept for concept in _get(document, "concepts")}
+    seen = set()
+    ordered = []
+    for group in groups:
+        local = set()
+        for concept_id in group.get("members", []):
+            if concept_id in local:
+                raise ValueError("TERM_LAYOUT_MEMBER_DUPLICATE " + concept_id)
+            local.add(concept_id)
+            if concept_id not in concepts:
+                raise ValueError("TERM_LAYOUT_MEMBER_UNKNOWN " + concept_id)
+            if concept_id not in seen:
+                ordered.append(concepts[concept_id])
+                seen.add(concept_id)
+    missing = sorted(set(concepts) - seen)
+    if missing:
+        raise ValueError("TERM_LAYOUT_MEMBER_MISSING " + " ".join(missing))
+    return tuple(ordered)
 
-    def concept_key(concept: Any) -> Tuple[int, str]:
-        group_indexes = sorted(
-            group_order[_get(field, "topic_id")]
-            for field in _get(concept, "subject_fields")
-            if _get(field, "topic_id") in group_order
+
+def build_model_label_rows(topics, forms, adoptions, accepted_decisions) -> list:
+    """Render current adopted level-5 labels without changing adoption records."""
+    rows = {}
+    for collection, document in (("topics", topics), ("forms", forms)):
+        records = document.get("concepts", document.get("forms", []))
+        current_level5 = set()
+        for record in records:
+            value = record.get("basis", {}).get("zh")
+            if not isinstance(value, Mapping) or value.get("level") != 5:
+                continue
+            key = f"{collection}/{record['id']}/zh"
+            current_level5.add(key)
+            adoption = adoptions.get(key)
+            if not isinstance(adoption, Mapping) or adoption.get("accept") is not True:
+                raise ValueError("MODEL_LABEL_ADOPTION_MISSING " + key)
+            label = record.get("label", {}).get("zh")
+            if adoption.get("label") != label or adoption.get("basis") != value:
+                raise ValueError("MODEL_LABEL_ADOPTION_STALE " + key)
+            errors = validate_basis(value, label, record, "zh", sources=None,
+                                    decisions=adoptions, collection=collection,
+                                    accepted_decisions=accepted_decisions)
+            if errors:
+                raise ValueError("; ".join(errors))
+            english = record.get("label", {}).get("en")
+            identity = (label, english)
+            row = rows.setdefault(identity, {"zh": label, "en": english,
+                                              "targets": [], "target_models": []})
+            target = f"{collection}/{record['id']}"
+            row["targets"].append(target)
+            model = _plain(value["model"])
+            row["target_models"].append({"target": target, "model": model})
+        invalid_targets = sorted(
+            key for key, adoption in adoptions.items()
+            if key.startswith(collection + "/") and key.endswith("/zh")
+            and isinstance(adoption, Mapping) and adoption.get("accept") is True
+            and isinstance(adoption.get("basis"), Mapping)
+            and adoption["basis"].get("level") == 5 and key not in current_level5
         )
-        if not group_indexes:
-            raise ValueError(
-                "TERM_LAYOUT_GROUP_MISSING " + _get(concept, "id")
-            )
-        return group_indexes[0], _get(concept, "id")
-
-    return tuple(sorted(_get(document, "concepts"), key=concept_key))
-
-
-def _preferred_texts(concept: Any) -> Mapping[str, str]:
-    preferred = {}
-    for language in _get(concept, "languages"):
-        terms = [
-            term
-            for term in _get(language, "terms")
-            if _get(term, "administrative_status") == PREFERRED
-        ]
-        if len(terms) != 1:
-            raise ValueError(
-                "TERM_PREFERRED_TERM_COUNT "
-                + _get(concept, "id")
-                + " "
-                + _get(language, "language")
-            )
-        preferred[_get(language, "language")] = _get(terms[0], "text")
-    return preferred
-
-
-def _definition_text(concept: Any) -> str:
-    definitions = sorted(
-        _get_optional(concept, "definitions", ()),
-        key=lambda definition: (
-            LANGUAGE_ORDER[_get(definition, "language")],
-            _get(definition, "text"),
-        ),
-    )
-    return _get(definitions[0], "text") if definitions else "—"
-
-
-def _admitted_texts(concept: Any) -> str:
-    values = []
-    for language in _get(concept, "languages"):
-        language_tag = _get(language, "language")
-        for term in _get(language, "terms"):
-            if _get(term, "administrative_status") == ADMITTED:
-                values.append(
-                    (
-                        LANGUAGE_ORDER[language_tag],
-                        _get(term, "id"),
-                        language_tag + "：" + _get(term, "text"),
-                    )
-                )
-    return "；".join(value[2] for value in sorted(values)) or "—"
-
-
-def _markdown_cell(value: Any) -> str:
-    return str(value).replace("|", "\\|").replace("\n", " ")
-
-
-def _concept_row(concept: Any) -> str:
-    preferred = _preferred_texts(concept)
-    chinese = "；".join(
-        preferred[language]
-        for language in ("zh-Hans", "zh-Hant")
-        if language in preferred
-    ) or "—"
-    english = preferred.get("en", "—")
-    cells = (
-        chinese,
-        english,
-        _definition_text(concept),
-        _admitted_texts(concept),
-        _get(concept, "id"),
-    )
-    return "| " + " | ".join(_markdown_cell(cell) for cell in cells) + " |"
-
-
-def _historical_rows(concepts: Sequence[Any]) -> Sequence[str]:
-    rows = []
-    for concept in concepts:
-        for language in _get(concept, "languages"):
-            for term in _get(language, "terms"):
-                status = _get(term, "administrative_status")
-                if status not in HISTORICAL:
-                    continue
-                cells = (
-                    _get(term, "text"),
-                    _get(language, "language"),
-                    status,
-                    _get_optional(term, "replaced_by", "—"),
-                    _get(concept, "id"),
-                )
-                rows.append(
-                    (
-                        _get(concept, "id"),
-                        LANGUAGE_ORDER[_get(language, "language")],
-                        STATUS_ORDER[status],
-                        _get(term, "id"),
-                        "| "
-                        + " | ".join(_markdown_cell(cell) for cell in cells)
-                        + " |",
-                    )
-                )
-    return tuple(row[4] for row in sorted(rows))
+        if invalid_targets:
+            raise ValueError("MODEL_LABEL_TARGET_INVALID " + " ".join(invalid_targets))
+    return sorted(rows.values(), key=lambda row: tuple(row["targets"]))
 
 
 def render_glossary(
     snapshot: Mapping[str, object],
     layout: Mapping[str, object],
     state: Any,
+    source_entities: Optional[Mapping[str, object]] = None,
 ) -> str:
-    _ensure_consumers_enabled(state)
-    active_snapshot = {
-        "concepts": [
-            concept
-            for concept in snapshot["concepts"]
-            if concept["workflow"] == "active"
-        ]
-    }
-    concepts = ordered_concepts(active_snapshot, layout)
-    snapshot_sha256 = hashlib.sha256(canonical_json(snapshot)).hexdigest()
-    lines = [
-        "# 术语表 (Glossary)",
-        READ_ONLY_DECLARATION,
-        "",
-        "快照 SHA-256：`" + snapshot_sha256 + "`。",
-        "",
-        "## " + layout["source_abbreviations"]["title"],
-        "",
-        "出处名称与定位从同一快照绑定的来源索引读取。",
-    ]
-    groups = sorted(
-        layout["groups"], key=lambda group: (group["order"], group["id"])
-    )
-    for group in groups:
-        group_concepts = [
-            concept
-            for concept in concepts
-            if group["id"]
-            in {
-                _get(field, "topic_id")
-                for field in _get(concept, "subject_fields")
-            }
-        ]
-        lines.extend(
-            [
-                "",
-                "## " + group["title"],
-                "",
-                "| 中文 | 英文 | 定义 | 允许形式 | 概念 ID |",
-                "|---|---|---|---|---|",
-            ]
-        )
-        lines.extend(_concept_row(concept) for concept in group_concepts)
-
-    history_rows = _historical_rows(concepts)
-    lines.extend(["", "## 历史形式", ""])
-    if history_rows:
-        lines.extend(
-            [
-                "| 形式 | 语言 | 状态 | 替代术语 ID | 概念 ID |",
-                "|---|---|---|---|---|",
-                *history_rows,
-            ]
-        )
-    else:
-        lines.append("无。")
-    lines.extend(
-        [
-            "",
-            "## " + layout["standards_appendix"]["title"],
-            "",
-            "标准与文献引用从术语记录和来源索引读取。",
-            "",
-        ]
-    )
-    return "\n".join(lines)
+    return _render_glossary(snapshot, layout, _plain(state), source_entities)
 
 
 def _load_yaml(path: pathlib.Path) -> Any:
@@ -414,16 +322,96 @@ def _load_json(path: pathlib.Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _outputs(arguments: argparse.Namespace) -> Tuple[bytes, bytes]:
-    document = _load_yaml(arguments.terms)
-    issues = schema_issues(document)
+def capture_validation_context(root: pathlib.Path, *, with_history: bool = False):
+    """Capture and validate every repository input shared by term consumers."""
+    documents = {
+        name: _load_yaml(root / "data/vocab" / f"{name}.yaml")
+        for name in ("topics", "types", "genres", "forms", "entities", "sources")
+    }
+    decisions, historical_decisions = load_term_decision_sets(root)
+    adoptions = validate_adoptions(
+        _load_json(root / "data/inputs/topics/label-adoptions.json")
+    )
+    obligations_path = root / "data/vocab/source-obligations.yaml"
+    obligations = _load_yaml(obligations_path) if obligations_path.is_file() else None
+    issues = validate_source_documents(
+        documents, decisions, obligations_document=obligations, adoptions=adoptions,
+    )
     if issues:
-        raise TermsSchemaError(issues)
+        raise ValueError("\n".join(
+            f"{issue.code} {issue.file} {issue.field_path} {issue.message}"
+            for issue in issues
+        ))
+    result = (documents, decisions, adoptions)
+    return result + (historical_decisions,) if with_history else result
+
+
+def _source_catalog(document: Any, entities_document: Mapping[str, object]) -> Mapping[str, object]:
+    active_document = {
+        "schema": document["schema"], "version": document["version"],
+        "concepts": [row for row in document.get("concepts", [])
+                     if row.get("workflow") == "active"],
+    }
+    referenced = {
+        use.value["entity"] for use in collect_reference_uses(
+            pathlib.Path("data/vocab/terms.yaml"), active_document)
+        if use.kind == "basis" and isinstance(use.value, Mapping) and use.value.get("entity")
+    }
+    return {
+        row["id"]: {
+            "id": row["id"], "label": row.get("label", {}),
+            "version": row.get("version"), "urls": row.get("urls", []),
+        }
+        for row in entities_document.get("entities", []) if row.get("id") in referenced
+    }
+
+
+def _validate_source_index(document: Any, source_index: Mapping[str, object]) -> None:
+    relative = pathlib.Path("data/vocab/terms.yaml")
+    expected = [visit_reference_use(use) for use in collect_reference_uses(relative, document)]
+    expected.extend(visit_record_decisions(relative, document))
+    expected_keys = {canonical_json(row) for row in expected}
+    actual = source_index.get("entries", []) if isinstance(source_index, Mapping) else []
+    actual_terms = [row for row in actual if isinstance(row, Mapping)
+                    and row.get("file") == "data/vocab/terms.yaml"]
+    actual_keys = {canonical_json(row) for row in actual_terms}
+    if actual_keys != expected_keys or len(actual_terms) != len(actual_keys):
+        raise ValueError("TERM_SOURCE_INDEX_MISMATCH")
+
+
+def _outputs(arguments: argparse.Namespace) -> Tuple[bytes, bytes]:
+    root = arguments.design_root.resolve()
+    terms_bytes = arguments.terms.read_bytes()
+    document = yaml.safe_load(terms_bytes)
+    state_value = _load_yaml(arguments.state)
     state = load_cutover_state(arguments.state)
     layout = _load_yaml(arguments.layout)
     source_index = _load_json(arguments.source_index)
-    snapshot = canonical_snapshot(document, source_index, state)
-    glossary = render_glossary(json.loads(snapshot), layout, state).encode("utf-8")
+    captured, decisions, adoptions, historical_decisions = capture_validation_context(
+        root, with_history=True,
+    )
+    git_previous_bytes = captured_previous_terms(root, terms_bytes)
+    git_previous = yaml.safe_load(git_previous_bytes) if git_previous_bytes is not None else None
+    issues = list(validate_term_snapshot(document, source_documents=captured,
+                                    accepted_decisions=decisions, previous=git_previous,
+                                    state=state_value,
+                                    historical_decisions=historical_decisions))
+    if arguments.previous:
+        explicit_previous = _load_yaml(arguments.previous)
+        issues.extend(validate_term_snapshot(
+            document, source_documents=captured, accepted_decisions=decisions,
+            previous=explicit_previous, historical_decisions=historical_decisions,
+        ))
+    if issues:
+        raise ValueError("\n".join(f"{issue.code} {issue.path} {issue.message}" for issue in issues))
+    active = {row["id"]: row for row in document.get("concepts", []) if row.get("workflow") == "active"}
+    ordered_concepts({"concepts": list(active.values())}, layout)
+    _validate_source_index(document, source_index)
+    model_labels = build_model_label_rows(captured["topics"], captured["forms"], adoptions, decisions)
+    sources = _source_catalog(document, captured["entities"])
+    snapshot = canonical_snapshot(document, source_index, state,
+                                  source_entities=sources, model_labels=model_labels)
+    glossary = render_glossary(json.loads(snapshot), layout, state, sources).encode("utf-8")
     return snapshot, glossary
 
 
@@ -460,12 +448,14 @@ def _parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command", required=True)
     for command in ("build", "check"):
         subparser = subparsers.add_parser(command)
+        subparser.add_argument("--design-root", type=pathlib.Path, default=REPOSITORY_ROOT)
         subparser.add_argument("--terms", required=True, type=pathlib.Path)
         subparser.add_argument("--state", required=True, type=pathlib.Path)
         subparser.add_argument("--layout", required=True, type=pathlib.Path)
         subparser.add_argument("--source-index", required=True, type=pathlib.Path)
         subparser.add_argument("--snapshot-out", required=True, type=pathlib.Path)
         subparser.add_argument("--glossary-out", required=True, type=pathlib.Path)
+        subparser.add_argument("--previous", type=pathlib.Path)
     return parser
 
 

@@ -135,6 +135,41 @@ class RefreshTests(unittest.TestCase):
         self.assertEqual(before["app/manifest.json"], (backup / "app/manifest.json").read_bytes())
         verify_vault(self.new, self.vault)
 
+    def test_refresh_adds_an_active_term_page_without_changing_user_or_config_bytes(self):
+        before = self.tree()
+        concept_id = "tc-11111111-1111-4111-8111-111111111111"
+        terms = {"concepts": [{"id": concept_id, "workflow": "active"}]}
+        state = {"state": "active"}
+        documents = {**self.documents, "terms": terms, "term_state": state}
+        hashes = dict(self.new.input_hashes)
+        for name, value in (("terms", terms), ("term-cutover-state", state)):
+            relative = f"data/vocab/{name}.yaml"
+            data = yaml.safe_dump(value).encode()
+            path = self.design / relative
+            path.write_bytes(data)
+            hashes[relative] = _sha256(data)
+        self.git("add", ".")
+        self.git("commit", "--quiet", "-m", "active term")
+        self.new = DesignSnapshot(
+            self.design,
+            self.git("rev-parse", "HEAD"),
+            documents,
+            hashes,
+        )
+        term_path = f"kb/terms/{concept_id}.md"
+        self.references[term_path] = b"active term\n"
+
+        self.refresh()
+        after = self.tree()
+
+        self.assertEqual(b"active term\n", after[term_path])
+        protected = lambda tree: {
+            path: content for path, content in tree.items()
+            if not path.startswith("kb/") and path != "app/manifest.json"
+        }
+        self.assertEqual(protected(before), protected(after))
+        verify_vault(self.new, self.vault)
+
     def test_rejects_managed_conflicts_without_writes(self):
         for path in ("kb/topics/topic.md", "app/templates/inbox.md", "app/views/inbox.base"):
             with self.subTest(path=path):

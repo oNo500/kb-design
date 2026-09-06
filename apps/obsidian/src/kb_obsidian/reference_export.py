@@ -27,8 +27,11 @@ _SHA256 = re.compile(r"^[0-9a-f]{64}$")
 _IDENTIFIER = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 _DIRECTORY_KINDS = {
     "topics": "topic", "arrays": "array", "entities": "entity", "sources": "source",
-    "types": "type", "genres": "genre", "forms": "form",
+    "types": "type", "genres": "genre", "forms": "form", "terms": "term",
 }
+_TERM_IDENTIFIER = re.compile(
+    r"^tc-[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+)
 
 
 def _sha256(content: bytes) -> str:
@@ -111,7 +114,8 @@ def _manifest_identity(relative_path: str) -> tuple[str, str]:
         return "base", path.stem
     if len(path.parts) == 3 and path.parts[0] == "kb" and path.suffix == ".md":
         kind = _DIRECTORY_KINDS.get(path.parts[1])
-        if kind is not None and _IDENTIFIER.fullmatch(path.stem):
+        identifier = _TERM_IDENTIFIER if kind == "term" else _IDENTIFIER
+        if kind is not None and identifier.fullmatch(path.stem):
             return kind, path.stem
     raise ApplicationError(f"unknown manifest file path: {relative_path}")
 

@@ -28,8 +28,8 @@
     },
     "active_editor": {
       "enum": [
-        "vocab/terms.yaml",
-        "concepts/glossary.md"
+        "data/vocab/terms.yaml",
+        "docs/glossary.md"
       ]
     },
     "terms_mode": {
@@ -118,7 +118,7 @@
           "const": "active"
         },
         "active_editor": {
-          "const": "vocab/terms.yaml"
+          "const": "data/vocab/terms.yaml"
         },
         "terms_mode": {
           "const": "active_editor"
@@ -134,7 +134,7 @@
           "const": "rolled_back"
         },
         "active_editor": {
-          "const": "concepts/glossary.md"
+          "const": "docs/glossary.md"
         },
         "terms_mode": {
           "const": "audit_read_only"

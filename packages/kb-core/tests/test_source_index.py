@@ -44,6 +44,51 @@ def reference_use_index_key(use):
 
 
 class SourceIndexTests(unittest.TestCase):
+    def test_term_history_and_field_evidence_are_indexed_without_audit_values(self):
+        with materialized_current_layout(FIXTURE) as root:
+            document = yaml.safe_load(
+                (ROOT / "tests/fixtures/terminology/valid/minimal-active.yaml").read_text()
+            )
+            concept = document["concepts"][0]
+            concept["history"][0]["before"] = {"basis": [{"entity": "audit-only", "locator": "old"}]}
+            path = root / "data/vocab/terms.yaml"
+            path.write_text(yaml.safe_dump(document), encoding="utf-8")
+            rows = [row for row in build_reference_index(root)["entries"]
+                    if row["file"] == "data/vocab/terms.yaml"]
+
+        paths = {row["field_path"] for row in rows}
+        self.assertIn("concepts[0].history[0].decision", paths)
+        self.assertIn("concepts[0].languages[0].terms[0].history[0].decision", paths)
+        self.assertIn("concepts[0].definitions[0].basis[0].entity", paths)
+        self.assertNotIn("audit-only", {row["target_id"] for row in rows})
+
+    def test_term_model_basis_is_not_a_source_but_external_term_basis_remains(self):
+        with materialized_current_layout(FIXTURE) as root:
+            document = yaml.safe_load(
+                (ROOT / "tests/fixtures/terminology/valid/minimal-active.yaml").read_text()
+            )
+            terms = document["concepts"][0]["languages"][0]["terms"]
+            terms[0]["basis"] = {
+                "level": 5,
+                "model": {
+                    "name": "GPT-5", "date": "2026-09-06",
+                    "rationale": "Existing Chinese industry expression.",
+                    "approval": "decision-term-0001",
+                },
+            }
+            path = root / "data/vocab/terms.yaml"
+            path.write_text(yaml.safe_dump(document), encoding="utf-8")
+            rows = [row for row in build_reference_index(root)["entries"]
+                    if row["file"] == "data/vocab/terms.yaml"]
+
+        source_paths = {
+            row["field_path"] for row in rows
+            if row["target_kind"] in {"source_entity", "source_use"}
+        }
+        self.assertNotIn("concepts[0].languages[0].terms[0].basis.level", source_paths)
+        self.assertIn("concepts[0].languages[0].terms[1].basis[0].entity", source_paths)
+        self.assertIn("concepts[0].definitions[0].basis[0].entity", source_paths)
+
     def entries(self):
         with materialized_current_layout(FIXTURE) as root:
             return build_reference_index(root)["entries"]

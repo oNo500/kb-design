@@ -1,0 +1,60 @@
+{
+  "review": {
+    "source": "ANSI/NISO Z39.19-2005 (R2010)",
+    "title": "Guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies",
+    "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+    "publisher_page": "https://www.niso.org/publications/ansiniso-z3919-2005-r2010",
+    "checked_date": "2026-09-06",
+    "material": "NISO 官方出版页链接的官方托管 PDF；正文可读，未下载持久副本，未 OCR。",
+    "scope": "仅核对 recall、precision、§5.3.6、§11.1.3.1 和 §11.1.3.2；不核对中文官方译名，不扩展其他条款。",
+    "quote_budget": "本文件对该 PDF 的英文直接摘录合计 22 词；其余为中文摘要或准确转述。",
+    "web_ref_ids": ["turn76view0", "turn81view0", "turn81view1", "turn81view2", "turn81view3"],
+    "page_numbering": "以下 PDF page index 沿 web 工具 P 编号，为零基页索引；括号内同时给出印刷页码。"
+  },
+  "items": [
+    {
+      "id": "z3919-4-recall",
+      "target": "recall",
+      "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+      "original_location": "PDF page index 19（第 20 页，印刷 p. 8-9），glossary, extracted lines 947-955",
+      "excerpt": "retrieve all relevant content objects",
+      "definition_proposal_zh": "查全率：检索系统检出集合中全部相关内容对象的能力；通常以检出的相关内容对象数除以集合中全部相关内容对象数计算百分比。高查全率意味着更全面，但也可能增加检出不相关内容对象的风险。",
+      "evidence_scope": "词汇表直接给出能力定义、计算分母与高查全率的取舍，并与 precision 交叉引用；§5.3.6 说明检索效果传统上用 recall 与 precision 两个参数衡量，受控词表设计可对两者产生正面影响（PDF page index 27，即第 28 页，印刷 p. 16；lines 1279-1282）。",
+      "unresolved_facts": ["本次没有核对本项目实际检索集合、相关性判定或指标计算口径。","该英文术语的中文形式未作为 NISO 官方中文译名核对。"],
+      "basis_proposal": "可将该条作为 recall 的定义依据和独立于 precision 的指标语义依据；不要把‘词表对两者都有正面影响’扩写成项目效果保证。"
+    },
+    {
+      "id": "z3919-4-precision",
+      "target": "precision",
+      "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+      "original_location": "PDF page index 19（第 20 页，印刷 p. 8-9），glossary, extracted lines 918-926",
+      "excerpt": "retrieve only relevant content objects",
+      "definition_proposal_zh": "查准率：检索系统只检出相关内容对象的能力；通常以检出的相关内容对象数除以检出的内容对象总数计算百分比。高查准率提高结果相关性，但可能漏掉部分相关对象。",
+      "evidence_scope": "词汇表直接给出能力定义、计算分母与高查准率的取舍，并与 recall 交叉引用；§5.3.6 将 recall 与 precision 并列为传统检索效果参数，并列出限定词、上下位关系、复合词和先组等可改善 precision 的受控词表方法（PDF page index 27，即第 28 页，印刷 p. 16；lines 1279-1294）。",
+      "unresolved_facts": ["本次没有核对本项目实际检索集合、相关性判定或指标计算口径。","该英文术语的中文形式未作为 NISO 官方中文译名核对。"],
+      "basis_proposal": "可将该条作为 precision 的定义依据，并与 recall 分开建模；不要将标准列举的方法写成项目已经采用或必然改善的规则。"
+    },
+    {
+      "id": "z3919-11.1.3.1-top-bottom",
+      "target": "11.1.3.1 The Committee Approach: Top Down and Bottom Up",
+      "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+      "original_location": "PDF page index 102（第 103 页，印刷 p. 91），§11.1.3.1, extracted lines 4122-4137",
+      "excerpt": "broadest terms are identified first",
+      "definition_proposal_zh": "自上而下：委员会建设先识别最宽泛的术语，再选择下位术语达到所需具体程度，并在过程中建立必要层级和关系。自下而上：从内容对象语料得到的术语开始纳入词表，从范围最窄的术语向更一般的术语组织层级。新建词表时标准偏好前者；已有词表增加新概念时通常采用后者。",
+      "evidence_scope": "该节把两者限定为委员会建设的两种方法：top down 以宽到窄选择术语，bottom up 以窄到宽组织层级；偏好关系还明确区分新建词表与已有词表增补。它不是普通管理流程或逻辑学方向的泛称。",
+      "unresolved_facts": ["本项目具体建设任务是否属于新建词表或既有词表增补，需按任务范围另行判断。","现有中文形式未作为 NISO 官方中文译名核对；本条只建立英文语义与中文解释的工作对应。"],
+      "basis_proposal": "可据此修正项目概念文：top down/bottom up 的专门含义应保留术语来源、起始材料和层级方向；不得仅按‘自上而下/自下而上’的字面推断。"
+    },
+    {
+      "id": "z3919-11.1.3.2-deductive-inductive",
+      "target": "11.1.3.2 The Empirical Approach: Deductive and Inductive Methods",
+      "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+      "original_location": "PDF page index 102-103（第 103-104 页，印刷 p. 91-92），§11.1.3.2, extracted lines 4138-4159",
+      "excerpt": "Vocabulary control is applied from the outset",
+      "definition_proposal_zh": "演绎法：从内容对象提取术语，在收集到足够数量前不控制词表，也不确定术语关系；之后由专家先识别最宽类，再按逻辑关系分配其余术语，形成较宽到较窄的层级。归纳法：术语在内容对象中遇到时即选择纳入，词汇控制从一开始实施；如需层级，则逐项把术语放入早期形成的一个或多个更宽类别，形成较窄到较宽的组织，并从一开始作为持续工作。",
+      "evidence_scope": "该节把 deductive/inductive 放在 empirical approach 下定义，区分的是何时进行词汇控制、关系确定和层级组织，不是普通逻辑学中的演绎有效性与归纳推理强度。标准还说明实践中可组合两种方法，早期决定可能随经验修订（PDF p. 103, lines 4160-4168）。",
+      "unresolved_facts": ["本项目现有‘先收集后控制/从头控制’概述尚未按标准逐句重写；本记录只提出准确语义，不修改概念文。","本项目是否采用其中一种或组合方法，需要另行按建设任务决定。","现有中文形式未作为 NISO 官方中文译名核对。"],
+      "basis_proposal": "可据 §11.1.3.2 作为项目术语语义依据：deductive/inductive 的分界应写控制时点、专家复核和层级方向；不要替换成抽象的逻辑学定义。"
+    }
+  ]
+}

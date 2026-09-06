@@ -1,0 +1,380 @@
+{
+  "review": "2026-09-06-term-governance-coverage",
+  "scope": "本轮只读核对指定治理／方法条目；结果为整批具体提案审查，不采纳。",
+  "sources": [
+    {
+      "id": "sep-aristotle",
+      "name": "Aristotle’s Logic / Aristotle and Mathematics",
+      "url": "https://plato.stanford.edu/entries/aristotle-logic/",
+      "locator": "§6.2 The Regress Problem；§6.4 Knowledge of First Principles；secondary scholarly entry",
+      "quote": "indemonstrable first premises of sciences",
+      "nature": "Stanford Encyclopedia of Philosophy secondary scholarly source",
+      "limit": "不是亚里士多德原典；本轮未直接读取 Posterior Analytics。",
+      "quote_word_count": 1
+    },
+    {
+      "id": "nygard",
+      "name": "Documenting Architecture Decisions",
+      "url": "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+      "locator": "正文第 13–25、32、34–41 行；Context / Decision / Status / Consequences",
+      "quote": "If a decision is reversed, we will keep the old one around, but mark it as superseded.",
+      "nature": "作者 Michael Nygard 的公开原文",
+      "limit": "支持 ADR 场景及 superseded 状态；不自动定义本库全部治理状态。",
+      "quote_word_count": 1
+    },
+    {
+      "id": "gertz",
+      "name": "Gertz v. Robert Welch, Inc.",
+      "url": "https://www.law.cornell.edu/supremecourt/text/418/323",
+      "locator": "Syllabus 第 34–36 行；Opinion 第 40–42 行",
+      "quote": "Absent clear evidence of general fame or notoriety in the community",
+      "nature": "美国最高法院判决全文的 Cornell LII 公开转录",
+      "limit": "法律语境为诽谤诉讼中的 public figure；不等于本库实体收录条件。",
+      "quote_word_count": 1
+    },
+    {
+      "id": "iso37000",
+      "name": "ISO 37000 Governance of organizations — official public materials",
+      "url": "https://www.iso.org/news/ref2717.html",
+      "locator": "ISO 新闻稿中 ISO 37000 定义段；另见 https://committee.iso.org/ISO_37000_Governance 的 Scope 与 Principles",
+      "quote": "directed, overseen and held accountable",
+      "nature": "ISO 官方新闻稿与委员会公开说明",
+      "limit": "公开新闻稿／说明，不是标准全文；不能替代付费正文。",
+      "quote_word_count": 1
+    },
+    {
+      "id": "iso15489",
+      "name": "ISO 15489-1:2016 official abstract",
+      "url": "https://www.iso.org/standard/62542.html",
+      "locator": "公开 Abstract；标准信息页，未取得 §3.8、§6.2、§6.4 或元数据正文",
+      "quote": "policies, assigned responsibilities, monitoring and training",
+      "nature": "ISO 官方标准信息页公开摘要",
+      "limit": "摘要支持范围和主题，不公开词条所需条款原文；标准全文未读。",
+      "quote_word_count": 1
+    },
+    {
+      "id": "dama",
+      "name": "What is Data Management?",
+      "url": "https://dama.org/about-dama/what-is-data-management/",
+      "locator": "Data Governance 项目符号，官方页面公开说明",
+      "quote": "Establishes accountability, policies, and decision rights",
+      "nature": "DAMA International 官方公开介绍页",
+      "limit": "DAMA-DMBOK 正文未读；介绍页不是完整定义或章节原文。",
+      "quote_word_count": 1
+    }
+  ],
+  "items": [
+    {
+      "id": "glossary-L0173",
+      "original": "| 第一原理 | first principle | 不能再从别的命题推出、只能作为起点的命题 | Aristotle, *Posterior Analytics* |",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 173,
+          "quote": "| 第一原理 | first principle | 不能再从别的命题推出、只能作为起点的命题 | Aristotle, *Posterior Analytics* |",
+          "nature": "现行词汇表原条目"
+        },
+        {
+          "file": "docs/concepts/first-principles.md",
+          "line": 7,
+          "quote": "**第一原理**是一门学科中适合作为论证起点的基本命题。这类命题必须真实、居先、直接且不可证明，比结论更可知，并且是结论成立的原因。亚里士多德在《后分析篇》中指出：如果每项知识都依赖证明，而证明的前提又需要证明，论证就会陷入无限倒退或循环；证明链因此必须终止于无需证明的直接起点。他用 `ἀρχή`（archē，本原）指称这样的起点。",
+          "nature": "本地概念文或阅读笔记"
+        }
+      ],
+      "external_source": "sep-aristotle",
+      "can_support": "项目文支持本库把第一原理作为论证起点；不能据 SEP 或项目文证明完整的亚里士多德原典解释。",
+      "cannot_support": "不能把公开摘要、二手阅读记录或项目解释扩大为未取得的外部正文定义，也不能因此改变现行项目规则或状态。",
+      "minimal_correction": "保留现有形式和项目释义；把“不可推出”作为释义的一部分，注明本轮外部原典未直接核对。",
+      "unread_limit": "概念文第 7 行及 SEP 公开条目可作二手说明；未读《后分析篇》原典。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0174",
+      "original": "| 设计理由 | design rationale | 记录“为什么这样决定”而不只是“决定了什么” | Kunz & Rittel 1970；Nygard 2011 |",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 174,
+          "quote": "| 设计理由 | design rationale | 记录“为什么这样决定”而不只是“决定了什么” | Kunz & Rittel 1970；Nygard 2011 |",
+          "nature": "现行词汇表原条目"
+        },
+        {
+          "file": "docs/concepts/first-principles.md",
+          "line": 11,
+          "quote": "**设计理由**（design rationale）记录为什么作出一个决定，而不只记录决定的内容。第一原理可以成为设计理由追溯到的最深一层：它说明一条理由最终依赖该学科中的哪些适当起点。",
+          "nature": "本地概念文或阅读笔记"
+        }
+      ],
+      "external_source": "nygard",
+      "can_support": "Nygard 原文支持 ADR 记录 motivation、context、decision、consequences；Kunz/Rittel 原文未取得，不能据阅读笔记补足 IBIS 定义。",
+      "cannot_support": "不能把公开摘要、二手阅读记录或项目解释扩大为未取得的外部正文定义，也不能因此改变现行项目规则或状态。",
+      "minimal_correction": "保留现有形式和定义；明确其对象是记录决定理由，不扩展为完整设计历史。",
+      "unread_limit": "概念文与 Nygard 原文已读；Kunz/Rittel 原始工作论文 PDF 本轮未取得。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0175",
+      "original": "| 被替代 | superseded | 决定记录被新决定取代后的状态 | Nygard ADR 2011 |",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 175,
+          "quote": "| 被替代 | superseded | 决定记录被新决定取代后的状态 | Nygard ADR 2011 |",
+          "nature": "现行词汇表原条目"
+        },
+        {
+          "file": "docs/concepts/first-principles.md",
+          "line": 40,
+          "quote": "IBIS 保存提出过的立场、支持与反对论据以及最终选择，因此记录的是论证过程，不只是结论。",
+          "nature": "本地概念文或阅读笔记"
+        }
+      ],
+      "external_source": "nygard",
+      "can_support": "Nygard 原文直接支持旧 ADR 保留并标记 superseded；不支持把该状态扩展到任意对象。",
+      "cannot_support": "不能把公开摘要、二手阅读记录或项目解释扩大为未取得的外部正文定义，也不能因此改变现行项目规则或状态。",
+      "minimal_correction": "保留现有状态形式和定义；补充替代记录链接是必要使用条件。",
+      "unread_limit": "已读 Nygard 原文第 32、40 行；项目状态语义仍由现行治理决定。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0178",
+      "original": "| 公众人物 | public figure | 在社会事务中担任显著角色、或主动进入公共争议的人；本库 `person` 实体只收此类，具体为已发表作品的作者、公开项目的维护者、方法的提出者 | 美国判例法 *Gertz v. Robert Welch* (1974)，见 [Cornell LII](https://www.law.cornell.edu/wex/public_figure) |",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 178,
+          "quote": "| 公众人物 | public figure | 在社会事务中担任显著角色、或主动进入公共争议的人；本库 `person` 实体只收此类，具体为已发表作品的作者、公开项目的维护者、方法的提出者 | 美国判例法 *Gertz v. Robert Welch* (1974)，见 [Cornell LII](https://www.law.cornell.edu/wex/public_figure) |",
+          "nature": "现行词汇表原条目"
+        },
+        {
+          "file": "docs/concepts/writing-conventions.md",
+          "line": 45,
+          "quote": "术语一致性与命名准入也须分开。统一使用已登记名称可以降低歧义；某个普通词出现在正文中，不表示已经成为项目术语，更不能由写作诊断自动产生概念。例如，软件的名称可以在介绍中转录，但受控实体引用仍需合法身份。[受控词表](controlled-vocabulary.md)、[治理规则](../design/governance/governance.md)",
+          "nature": "本地概念文或阅读笔记"
+        }
+      ],
+      "external_source": "gertz",
+      "can_support": "Gertz 支持需看一般名望、社会事务参与和具体争议；不支持本库列举身份自动满足法律分类。",
+      "cannot_support": "不能把公开摘要、二手阅读记录或项目解释扩大为未取得的外部正文定义，也不能因此改变现行项目规则或状态。",
+      "minimal_correction": "最小修正：把词条的法律定义与本库收录筛选条件分开；不得把公开作者、维护者或方法提出者自动判为 public figure。",
+      "unread_limit": "已读 Cornell LII 判决；本库收录边界是项目规则，不是美国法结论。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0199",
+      "original": "| 治理 | governance | 组织借以被指导、监督并被问责的系统；对管理的管理 | ISO 37000:2021 |",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 199,
+          "quote": "| 治理 | governance | 组织借以被指导、监督并被问责的系统；对管理的管理 | ISO 37000:2021 |",
+          "nature": "现行词汇表原条目"
+        },
+        {
+          "file": "docs/concepts/governance.md",
+          "line": 9,
+          "quote": "- ISO 37000:2021 把治理定义为一个以人为基础的系统，组织借此被**指导、监督并被问责**，以合乎伦理和负责任的方式实现其既定目的；它明确区分治理主体和管理层的角色",
+          "nature": "本地概念文或阅读笔记"
+        }
+      ],
+      "external_source": "iso37000",
+      "can_support": "ISO 37000 公开材料支持指导、监督、问责和组织目的；不能以新闻稿替代标准正文全部定义。",
+      "cannot_support": "不能把公开摘要、二手阅读记录或项目解释扩大为未取得的外部正文定义，也不能因此改变现行项目规则或状态。",
+      "minimal_correction": "保留现有形式；将项目“对管理的管理”标为解释性概括，并保留 ISO 37000 的组织治理范围。",
+      "unread_limit": "ISO 37000 正文未读；使用 ISO 官方委员会页和新闻稿公开材料。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0200",
+      "original": "| 政策 | policy | 治理主体定下的、管理必须遵守的规则 | ISO 15489-1 §6.2 |",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 200,
+          "quote": "| 政策 | policy | 治理主体定下的、管理必须遵守的规则 | ISO 15489-1 §6.2 |",
+          "nature": "现行词汇表原条目"
+        },
+        {
+          "file": "docs/references/iso-15489.md",
+          "line": 32,
+          "quote": "1 范围；2 规范性引用；3 术语；4 原则；5 文件与文件系统（5.2.2 权威文件的特征、5.2.3 文件元数据）；6 政策与职责；7 鉴定（理解业务、确定文件需求）；8 文件控制（8.2 元数据方案、8.3 业务分类方案、8.4 访问权限规则、8.5 处置授权）；9 创建、捕获与管理文件的过程（9.4 分类与标引、9.8 迁移与转换、9.9 处置）。",
+          "nature": "本地概念文或阅读笔记"
+        }
+      ],
+      "external_source": "iso15489",
+      "can_support": "ISO 15489 官方摘要支持 policies 是记录管理的一部分；不能从摘要核实词条的“治理主体定下”全部语义。",
+      "cannot_support": "不能把公开摘要、二手阅读记录或项目解释扩大为未取得的外部正文定义，也不能因此改变现行项目规则或状态。",
+      "minimal_correction": "保留现有形式和项目定义；说明 ISO 15489 §6.2 的标准正文未在本轮公开取得。",
+      "unread_limit": "标准信息页摘要已读，付费正文及 §6.2 未读。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0201",
+      "original": "| 决策权 | decision rights | 谁有权对哪类事项做决定 | DAMA-DMBOK 数据治理 |",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 201,
+          "quote": "| 决策权 | decision rights | 谁有权对哪类事项做决定 | DAMA-DMBOK 数据治理 |",
+          "nature": "现行词汇表原条目"
+        },
+        {
+          "file": "docs/concepts/governance.md",
+          "line": 18,
+          "quote": "| 决定靠临时约定 | 每次改动都要重新商量谁能改、要不要问 | 决策权写明 |",
+          "nature": "本地概念文或阅读笔记"
+        }
+      ],
+      "external_source": "dama",
+      "can_support": "DAMA 官方页面支持数据治理包含 accountability、policies、decision rights；未支持“谁有权对哪类事项”的完整字段模型。",
+      "cannot_support": "不能把公开摘要、二手阅读记录或项目解释扩大为未取得的外部正文定义，也不能因此改变现行项目规则或状态。",
+      "minimal_correction": "保留现有形式；以项目决定权规则说明作为本库用法，不把 DAMA 页面概括扩展为完整权责模型。",
+      "unread_limit": "DAMA-DMBOK 正文未读；仅使用 DAMA 官方公开介绍页。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0202",
+      "original": "| 监控与评价 | monitoring and evaluation | 对管理过程及其结果的持续检查与定期评估 | ISO 15489-1 §6.4 |",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 202,
+          "quote": "| 监控与评价 | monitoring and evaluation | 对管理过程及其结果的持续检查与定期评估 | ISO 15489-1 §6.4 |",
+          "nature": "现行词汇表原条目"
+        },
+        {
+          "file": "docs/references/iso-15489.md",
+          "line": 32,
+          "quote": "1 范围；2 规范性引用；3 术语；4 原则；5 文件与文件系统（5.2.2 权威文件的特征、5.2.3 文件元数据）；6 政策与职责；7 鉴定（理解业务、确定文件需求）；8 文件控制（8.2 元数据方案、8.3 业务分类方案、8.4 访问权限规则、8.5 处置授权）；9 创建、捕获与管理文件的过程（9.4 分类与标引、9.8 迁移与转换、9.9 处置）。",
+          "nature": "本地概念文或阅读笔记"
+        }
+      ],
+      "external_source": "iso15489",
+      "can_support": "ISO 官方摘要列出 monitoring，但未公开其定义、频率、评价方法或结果要求。",
+      "cannot_support": "不能把公开摘要、二手阅读记录或项目解释扩大为未取得的外部正文定义，也不能因此改变现行项目规则或状态。",
+      "minimal_correction": "保留形式；定义可作为项目解释性摘要，标注 ISO §6.4 正文未核。",
+      "unread_limit": "标准信息页摘要已读，付费正文及 §6.4 未读。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0203",
+      "original": "| 审计追踪 | audit trail | 记录谁在何时做了什么变更的连续记录 | ISO 15489-1 元数据要求 |",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 203,
+          "quote": "| 审计追踪 | audit trail | 记录谁在何时做了什么变更的连续记录 | ISO 15489-1 元数据要求 |",
+          "nature": "现行词汇表原条目"
+        },
+        {
+          "file": "docs/references/iso-15489.md",
+          "line": 32,
+          "quote": "1 范围；2 规范性引用；3 术语；4 原则；5 文件与文件系统（5.2.2 权威文件的特征、5.2.3 文件元数据）；6 政策与职责；7 鉴定（理解业务、确定文件需求）；8 文件控制（8.2 元数据方案、8.3 业务分类方案、8.4 访问权限规则、8.5 处置授权）；9 创建、捕获与管理文件的过程（9.4 分类与标引、9.8 迁移与转换、9.9 处置）。",
+          "nature": "本地概念文或阅读笔记"
+        }
+      ],
+      "external_source": "iso15489",
+      "can_support": "ISO 官方摘要支持 records metadata 是范围之一；不能支持词条的谁、何时、何事三要素。",
+      "cannot_support": "不能把公开摘要、二手阅读记录或项目解释扩大为未取得的外部正文定义，也不能因此改变现行项目规则或状态。",
+      "minimal_correction": "保留形式；不要把“连续记录”或具体字段要求归因于未取得的 ISO 元数据正文。",
+      "unread_limit": "ISO 23081/15489 元数据相关正文未读。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0204",
+      "original": "| 治理评审 | governance review | 治理主体对治理本身的定期评审 | ISO 37000:2021 |",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 204,
+          "quote": "| 治理评审 | governance review | 治理主体对治理本身的定期评审 | ISO 37000:2021 |",
+          "nature": "现行词汇表原条目"
+        },
+        {
+          "file": "docs/concepts/governance.md",
+          "line": 23,
+          "quote": "| 治理规则本身不更新 | 阈值说“首轮后校准”，没人触发校准 | 治理评审 |",
+          "nature": "本地概念文或阅读笔记"
+        }
+      ],
+      "external_source": "iso37000",
+      "can_support": "ISO 37000 公开材料支持 governance 的监督和问责方向；未取得“治理评审”作为独立术语的原文定义。",
+      "cannot_support": "不能把公开摘要、二手阅读记录或项目解释扩大为未取得的外部正文定义，也不能因此改变现行项目规则或状态。",
+      "minimal_correction": "保留形式和项目用法；将其作为本库治理机制的解释，不宣称 ISO 37000 给出该固定中文对象。",
+      "unread_limit": "ISO 37000 正文未读。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0205",
+      "original": "| 审计 | audit | 对记录与过程是否符合规则的检查 | ISO 15489-1 §6.4 |",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 205,
+          "quote": "| 审计 | audit | 对记录与过程是否符合规则的检查 | ISO 15489-1 §6.4 |",
+          "nature": "现行词汇表原条目"
+        },
+        {
+          "file": "docs/concepts/governance.md",
+          "line": 21,
+          "quote": "| 错误静默发生 | 替换失败没报错，六行登记丢了几周 | 审计：审计追踪义务、检查脚本、防护措施 |",
+          "nature": "本地概念文或阅读笔记"
+        }
+      ],
+      "external_source": "iso15489",
+      "can_support": "ISO 15489 官方摘要支持 records controls 与管理过程范围；不能从摘要核实该审计定义。",
+      "cannot_support": "不能把公开摘要、二手阅读记录或项目解释扩大为未取得的外部正文定义，也不能因此改变现行项目规则或状态。",
+      "minimal_correction": "保留形式；把项目“符合规则的检查”标为本库应用定义，避免声称 ISO §6.4 原文逐字如此。",
+      "unread_limit": "标准信息页摘要已读，§6.4 正文未读。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0206",
+      "original": "| 处置 | disposition | 执行保留、销毁或移交决定的过程 | ISO 15489-1 §3.8 |",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 206,
+          "quote": "| 处置 | disposition | 执行保留、销毁或移交决定的过程 | ISO 15489-1 §3.8 |",
+          "nature": "现行词汇表原条目"
+        },
+        {
+          "file": "docs/references/iso-15489.md",
+          "line": 16,
+          "quote": "| 3.8 | disposition 处置 | 执行文件保管、销毁或移交决定的一系列过程；这些决定记录在处置授权或其他文件里 |",
+          "nature": "本地概念文或阅读笔记"
+        }
+      ],
+      "external_source": "iso15489",
+      "can_support": "本地笔记转述 ISO 3.8 的保管、销毁或移交过程；官方公开摘要不足以核实 3.8 原句。",
+      "cannot_support": "不能把公开摘要、二手阅读记录或项目解释扩大为未取得的外部正文定义，也不能因此改变现行项目规则或状态。",
+      "minimal_correction": "保留形式和历史阅读记录；指出现有定义来自本地阅读笔记，外部正文未直接核对。",
+      "unread_limit": "ISO 15489 正文第 3.8 未公开取得。",
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0208",
+      "original": "| 指标 | indicator | 脚本能算出或外部能通知、用于监控的量 | ISO 15489-1 §6.4 的监控对象 |",
+      "evidence": [
+        {
+          "file": "docs/glossary.md",
+          "line": 208,
+          "quote": "| 指标 | indicator | 脚本能算出或外部能通知、用于监控的量 | ISO 15489-1 §6.4 的监控对象 |",
+          "nature": "现行词汇表原条目"
+        },
+        {
+          "file": "docs/concepts/governance.md",
+          "line": 47,
+          "quote": "- 维护的阈值由治理层定复核周期",
+          "nature": "本地概念文或阅读笔记"
+        }
+      ],
+      "external_source": "iso15489",
+      "can_support": "ISO 官方摘要支持 monitoring 属于记录管理范围；不能支持该计算或通知机制定义。",
+      "cannot_support": "不能把公开摘要、二手阅读记录或项目解释扩大为未取得的外部正文定义，也不能因此改变现行项目规则或状态。",
+      "minimal_correction": "保留形式；将“脚本能算出或外部能通知”明确为项目用法，不归因于 ISO §6.4 原文。",
+      "unread_limit": "标准信息页摘要已读，§6.4 正文未读。",
+      "adopted": false
+    }
+  ]
+}

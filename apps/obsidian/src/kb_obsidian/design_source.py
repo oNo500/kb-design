@@ -12,6 +12,7 @@ from types import MappingProxyType
 from typing import Any, Mapping
 
 import yaml
+from kb_core.governance.term_git import TermGitError, captured_previous_terms
 from kb_core.repository import project_root
 
 from .errors import ApplicationError
@@ -25,13 +26,30 @@ _FORMAL_DOCUMENTS = {
     "genres": "data/vocab/genres.yaml",
     "forms": "data/vocab/forms.yaml",
 }
+_OPTIONAL_TERM_DOCUMENTS = {
+    "terms": "data/vocab/terms.yaml",
+    "term_state": "data/vocab/term-cutover-state.yaml",
+}
+_TERM_SCHEMA_FILES = (
+    "schemas/terms-v1.schema.json",
+    "schemas/term-cutover-state-v1.schema.json",
+)
 _IMPLEMENTATION_FILES = (
+    "pyproject.toml",
     "apps/obsidian/src/kb_obsidian/exporter.py",
     "packages/kb-core/src/kb_core/__init__.py",
     "packages/kb-core/src/kb_core/label_basis.py",
     "packages/kb-core/src/kb_core/source_model.py",
     "packages/kb-core/src/kb_core/label_adoptions.py",
     "packages/kb-core/src/kb_core/repository.py",
+    "packages/kb-core/src/kb_core/governance/__init__.py",
+    "packages/kb-core/src/kb_core/governance/term_model.py",
+    "packages/kb-core/src/kb_core/governance/term_git.py",
+    "packages/kb-core/src/kb_core/governance/term_transitions.py",
+    "packages/kb-core/src/kb_core/governance/term_validation.py",
+    "packages/kb-core/src/kb_core/governance/term_rendering.py",
+    "schemas/terms-v1.schema.json",
+    "schemas/term-cutover-state-v1.schema.json",
 )
 
 
@@ -100,8 +118,12 @@ def _verify_snapshot_implementation(root: Path, commit: str) -> Mapping[str, byt
     verified: dict[str, bytes] = {}
     decision_paths = tuple(path for path in _git(root, "ls-tree", "-r", "--name-only", commit, "--", "docs/decisions").splitlines()
                            if Path(path).parent.as_posix() == "docs/decisions"
-                           and Path(path).match("source-*.md"))
-    actual_decisions = {path.relative_to(root).as_posix() for path in (root / "docs/decisions").glob("source-*.md")}
+                           and (Path(path).match("source-*.md") or Path(path).match("term-*.md")))
+    actual_decisions = {
+        path.relative_to(root).as_posix()
+        for pattern in ("source-*.md", "term-*.md")
+        for path in (root / "docs/decisions").glob(pattern)
+    }
     if actual_decisions != set(decision_paths):
         raise ApplicationError("source decision file set differs from commit")
     optional_paths = tuple(path for path in (
@@ -177,11 +199,60 @@ def load_design(root: Path) -> DesignSnapshot:
             raise ApplicationError(f"cannot read formal design document {relative_path}: {exc}") from exc
         captured[name] = content
         input_hashes[relative_path] = hashlib.sha256(content).hexdigest()
+    optional_paths = set(_OPTIONAL_TERM_DOCUMENTS.values())
+    committed_optional = set(
+        _git(
+            design_root,
+            "ls-tree",
+            "-r",
+            "--name-only",
+            commit,
+            "--",
+            *_OPTIONAL_TERM_DOCUMENTS.values(),
+        ).splitlines()
+    )
+    disk_optional = {
+        relative_path
+        for relative_path in _OPTIONAL_TERM_DOCUMENTS.values()
+        if (design_root / relative_path).exists()
+    }
+    if len(committed_optional) == 1 or len(disk_optional) == 1:
+        raise ApplicationError(
+            "data/vocab/terms.yaml and data/vocab/term-cutover-state.yaml "
+            "must either both exist or both be absent"
+        )
+    if committed_optional != disk_optional:
+        raise ApplicationError("term input file set differs from commit")
+    optional_present = disk_optional == optional_paths
+    formal_documents = dict(_FORMAL_DOCUMENTS)
+    if optional_present:
+        formal_documents.update(_OPTIONAL_TERM_DOCUMENTS)
+        for name, relative_path in _OPTIONAL_TERM_DOCUMENTS.items():
+            try:
+                content = (design_root / relative_path).read_bytes()
+            except OSError as exc:
+                raise ApplicationError(f"cannot read formal design document {relative_path}: {exc}") from exc
+            captured[name] = content
+            input_hashes[relative_path] = hashlib.sha256(content).hexdigest()
+        try:
+            previous_terms = captured_previous_terms(
+                design_root,
+                captured["terms"],
+                commit=commit,
+            )
+        except TermGitError as exc:
+            raise ApplicationError(str(exc)) from exc
+        if previous_terms is not None:
+            captured["_support:previous-terms.yaml"] = previous_terms
     # Capture decision, obligation and language-adoption bytes from the same
     # verified commit. The reader consumes these bytes, never a later disk read.
     support = _verify_snapshot_implementation(design_root, commit)
     captured.update({"_support:" + path: content for path, content in support.items()
-                     if path.startswith("docs/decisions/") or path.startswith("data/")})
+                     if path.startswith("docs/decisions/") or path.startswith("data/")
+                     or (optional_present and path in _TERM_SCHEMA_FILES)})
+    if optional_present:
+        for relative_path in _TERM_SCHEMA_FILES:
+            input_hashes[relative_path] = hashlib.sha256(support[relative_path]).hexdigest()
     _validate_formal_inputs(design_root, captured)
     for name, content in captured.items():
         if name.startswith("_support:"):
@@ -189,13 +260,13 @@ def load_design(root: Path) -> DesignSnapshot:
         try:
             documents[name] = _freeze(yaml.safe_load(content))
         except (UnicodeError, yaml.YAMLError) as exc:
-            raise ApplicationError(f"cannot parse formal design document {_FORMAL_DOCUMENTS[name]}: {exc}") from exc
+            raise ApplicationError(f"cannot parse formal design document {formal_documents[name]}: {exc}") from exc
     if (_git(design_root, "rev-parse", "HEAD") != commit
             or _git(design_root, "status", "--porcelain", "--untracked-files=no")):
         raise ApplicationError("design source changed while loading snapshot")
     _verify_snapshot_implementation(design_root, commit)
     # Git status alone can miss skip-worktree edits or untracked replacements.
-    for name, relative_path in _FORMAL_DOCUMENTS.items():
+    for name, relative_path in formal_documents.items():
         try:
             committed = subprocess.run(
                 ["git", "-C", str(design_root), "show", f"{commit}:{relative_path}"],

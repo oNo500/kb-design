@@ -16,6 +16,7 @@ COMMANDS = {
     "prepare-source-evidence": "prepare_source_evidence",
     "source-model": "source_model",
     "build-terms": "governance.build_terms",
+    "term-data": "governance.term_commands",
     "migrate-terms": "governance.migrate_terms",
 }
 

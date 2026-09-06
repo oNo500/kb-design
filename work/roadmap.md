@@ -6,14 +6,14 @@
 
 | 工作 | 状态 | 完成口径 |
 |---|---|---|
-| [术语基础收尾](plans/2026-09-06-infrastructure-completion.md) | 执行中 | 已完成离线首轮对账与现行缺陷修复，见[准备进展](reviews/2026-09-06-term-preparation.md)；字段与采纳、正式迁移、应用读取和统一验收尚未闭合 |
+| [术语基础收尾](plans/2026-09-06-infrastructure-completion.md) | 执行中 | 取证、具体采纳包与共享工程已汇总，见[集成进展](reviews/2026-09-06-term-integration-progress.md)；具体值、保留编辑源、正式迁移与统一验收尚未闭合 |
 | [来源迁移收尾](../docs/decisions/source-completion.md) | 本轮完成 | 六份 v2 数据、严格接口及临时导出通过[迁移验收](reviews/2026-09-06-source-v2-acceptance.md)；17 条未核关系按决定保留审查，原对象不删除，不作为有效映射 |
 | [来源首批准备](reviews/2026-09-05-source-evidence-conclusions.md) | 历史盘点与审阅完成 | 保留当时材料和处置，当前来源结果以迁移验收为准 |
 | [终端访问](../docs/decisions/obsidian-agent-entry.md) | 工具子阶段完成 | 新库代理入口与 CLI 规则已实现；见[验收记录](reviews/2026-09-05-obsidian-agent-entry.md)，不据此认定真实库接入完成 |
 | [实时词表预览](plans/2026-09-05-vocab-preview.md) | 当前范围完成 | uv 启动与浏览器自动更新已验证，见[预览验收](reviews/2026-09-05-vocab-preview.md) |
 | [monorepo 迁移](plans/2026-09-05-monorepo-layout.md) | 当前范围完成 | 目录、依赖、命令与输出路径已验证，见[迁移验收](reviews/2026-09-05-monorepo-layout.md) |
 
-来源迁移已完成验收与本地合并。术语 v2 收尾计划已获执行授权，离线对账与独立工程修复已开始；具体术语、规则和编辑权变更仍须按集中提案采纳。其他后置工作未自动开始。
+来源迁移已完成验收与本地合并。术语 v2 收尾计划已获执行授权，具体采纳包及共享校验、生成、维护和应用读取已形成；具体术语、规则和编辑权变更仍须按集中提案采纳。其他后置工作未自动开始。
 
 ## 阶段顺序
 

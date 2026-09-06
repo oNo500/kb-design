@@ -197,7 +197,7 @@ class VaultInitializationTests(unittest.TestCase):
         self.assertIn('kb_status == "draft"', self._filter_expressions(drafts["filters"]))
 
     def test_registers_only_actual_content_and_formal_property_bindings(self) -> None:
-        """Property types must name only the content contract and approved source v2 export bindings."""
+        """Property types name only approved content, vocabulary and optional term bindings."""
         from kb_obsidian.vault import initialize_vault
 
         initialize_vault(self.design.resolve(), self.target)
@@ -217,6 +217,7 @@ class VaultInitializationTests(unittest.TestCase):
             "kb_object": "text",
             "kb_label": "text",
             "kb_version": "text",
+            "kb_schema_version": "number",
             "kb_replaced_by": "text",
             "kb_superordinate": "text",
             "kb_kind": "text",

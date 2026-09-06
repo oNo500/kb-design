@@ -1,0 +1,487 @@
+{
+  "status": "proposal_not_adopted",
+  "scope": "仅新增三份已实际读取材料的来源实体提案；不改变现有来源，不创建用途角色，空subjects不猜归属，version:null不猜版次，外部状态未核不填写。",
+  "items": [
+    {
+      "proposed_record": {
+        "id": "iplf-iso-standard",
+        "label": {
+          "en": "ISO plain language standard"
+        },
+        "kind": "publication",
+        "version": null,
+        "tier": "de-facto",
+        "subjects": [],
+        "status": "candidate",
+        "urls": [
+          {
+            "role": "landing",
+            "url": "https://www.iplfederation.org/iso-standard/",
+            "primary": true
+          }
+        ],
+        "added": "2026-09-06",
+        "basis": {
+          "label": [
+            {
+              "entity": "iplf-iso-standard",
+              "locator": "https://www.iplfederation.org/iso-standard/；页面标题及材料性质",
+              "checked": "2026-09-06"
+            }
+          ],
+          "kind": [
+            {
+              "entity": "iplf-iso-standard",
+              "locator": "https://www.iplfederation.org/iso-standard/；页面标题及材料性质",
+              "checked": "2026-09-06"
+            }
+          ],
+          "urls": [
+            {
+              "entity": "iplf-iso-standard",
+              "locator": "https://www.iplfederation.org/iso-standard/；页面标题及材料性质",
+              "checked": "2026-09-06"
+            }
+          ]
+        },
+        "watch": [
+          {
+            "locator": "https://www.iplfederation.org/iso-standard/",
+            "signals": [
+              "availability",
+              "redirect"
+            ],
+            "cadence_months": {
+              "availability": 1,
+              "redirect": 1,
+              "content": 3
+            }
+          }
+        ],
+        "review": {
+          "checked": null,
+          "next_due": null,
+          "interval_months": 12,
+          "grace_days": 30,
+          "obligations": []
+        },
+        "replaced_by": null,
+        "history": [
+          {
+            "date": "2026-09-06",
+            "action": "source-registration",
+            "fields": [
+              "id",
+              "label",
+              "kind",
+              "version",
+              "tier",
+              "subjects",
+              "status",
+              "urls",
+              "added",
+              "basis",
+              "watch",
+              "review",
+              "replaced_by"
+            ],
+            "before": {},
+            "after": {
+              "id": "iplf-iso-standard",
+              "label": {
+                "en": "ISO plain language standard"
+              },
+              "kind": "publication",
+              "version": null,
+              "tier": "de-facto",
+              "subjects": [],
+              "status": "candidate",
+              "urls": [
+                {
+                  "role": "landing",
+                  "url": "https://www.iplfederation.org/iso-standard/",
+                  "primary": true
+                }
+              ],
+              "added": "2026-09-06",
+              "basis": {
+                "label": [
+                  {
+                    "entity": "iplf-iso-standard",
+                    "locator": "https://www.iplfederation.org/iso-standard/；页面标题及材料性质",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "kind": [
+                  {
+                    "entity": "iplf-iso-standard",
+                    "locator": "https://www.iplfederation.org/iso-standard/；页面标题及材料性质",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "urls": [
+                  {
+                    "entity": "iplf-iso-standard",
+                    "locator": "https://www.iplfederation.org/iso-standard/；页面标题及材料性质",
+                    "checked": "2026-09-06"
+                  }
+                ]
+              },
+              "watch": [
+                {
+                  "locator": "https://www.iplfederation.org/iso-standard/",
+                  "signals": [
+                    "availability",
+                    "redirect"
+                  ],
+                  "cadence_months": {
+                    "availability": 1,
+                    "redirect": 1,
+                    "content": 3
+                  }
+                }
+              ],
+              "review": {
+                "checked": null,
+                "next_due": null,
+                "interval_months": 12,
+                "grace_days": 30,
+                "obligations": []
+              },
+              "replaced_by": null
+            },
+            "decisions": [
+              "decision-term-source-values"
+            ]
+          }
+        ]
+      },
+      "adopted": false,
+      "purpose": "仅作为具体引用的bibliographic basis；不创建structure/mapping用途或来源注册表角色。",
+      "tier_rationale": "按可滚动维护的说明页处理，不表示权威等级。",
+      "evidence_url": "https://www.iplfederation.org/iso-standard/"
+    },
+    {
+      "proposed_record": {
+        "id": "iplf-plain-language",
+        "label": {
+          "en": "What is plain language?"
+        },
+        "kind": "publication",
+        "version": null,
+        "tier": "de-facto",
+        "subjects": [],
+        "status": "candidate",
+        "urls": [
+          {
+            "role": "landing",
+            "url": "https://www.iplfederation.org/plain-language/",
+            "primary": true
+          }
+        ],
+        "added": "2026-09-06",
+        "basis": {
+          "label": [
+            {
+              "entity": "iplf-plain-language",
+              "locator": "https://www.iplfederation.org/plain-language/；页面标题及材料性质",
+              "checked": "2026-09-06"
+            }
+          ],
+          "kind": [
+            {
+              "entity": "iplf-plain-language",
+              "locator": "https://www.iplfederation.org/plain-language/；页面标题及材料性质",
+              "checked": "2026-09-06"
+            }
+          ],
+          "urls": [
+            {
+              "entity": "iplf-plain-language",
+              "locator": "https://www.iplfederation.org/plain-language/；页面标题及材料性质",
+              "checked": "2026-09-06"
+            }
+          ]
+        },
+        "watch": [
+          {
+            "locator": "https://www.iplfederation.org/plain-language/",
+            "signals": [
+              "availability",
+              "redirect"
+            ],
+            "cadence_months": {
+              "availability": 1,
+              "redirect": 1,
+              "content": 3
+            }
+          }
+        ],
+        "review": {
+          "checked": null,
+          "next_due": null,
+          "interval_months": 12,
+          "grace_days": 30,
+          "obligations": []
+        },
+        "replaced_by": null,
+        "history": [
+          {
+            "date": "2026-09-06",
+            "action": "source-registration",
+            "fields": [
+              "id",
+              "label",
+              "kind",
+              "version",
+              "tier",
+              "subjects",
+              "status",
+              "urls",
+              "added",
+              "basis",
+              "watch",
+              "review",
+              "replaced_by"
+            ],
+            "before": {},
+            "after": {
+              "id": "iplf-plain-language",
+              "label": {
+                "en": "What is plain language?"
+              },
+              "kind": "publication",
+              "version": null,
+              "tier": "de-facto",
+              "subjects": [],
+              "status": "candidate",
+              "urls": [
+                {
+                  "role": "landing",
+                  "url": "https://www.iplfederation.org/plain-language/",
+                  "primary": true
+                }
+              ],
+              "added": "2026-09-06",
+              "basis": {
+                "label": [
+                  {
+                    "entity": "iplf-plain-language",
+                    "locator": "https://www.iplfederation.org/plain-language/；页面标题及材料性质",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "kind": [
+                  {
+                    "entity": "iplf-plain-language",
+                    "locator": "https://www.iplfederation.org/plain-language/；页面标题及材料性质",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "urls": [
+                  {
+                    "entity": "iplf-plain-language",
+                    "locator": "https://www.iplfederation.org/plain-language/；页面标题及材料性质",
+                    "checked": "2026-09-06"
+                  }
+                ]
+              },
+              "watch": [
+                {
+                  "locator": "https://www.iplfederation.org/plain-language/",
+                  "signals": [
+                    "availability",
+                    "redirect"
+                  ],
+                  "cadence_months": {
+                    "availability": 1,
+                    "redirect": 1,
+                    "content": 3
+                  }
+                }
+              ],
+              "review": {
+                "checked": null,
+                "next_due": null,
+                "interval_months": 12,
+                "grace_days": 30,
+                "obligations": []
+              },
+              "replaced_by": null
+            },
+            "decisions": [
+              "decision-term-source-values"
+            ]
+          }
+        ]
+      },
+      "adopted": false,
+      "purpose": "仅作为具体引用的bibliographic basis；不创建structure/mapping用途或来源注册表角色。",
+      "tier_rationale": "按可滚动维护的说明页处理，不表示权威等级。",
+      "evidence_url": "https://www.iplfederation.org/plain-language/"
+    },
+    {
+      "proposed_record": {
+        "id": "ahrens-zettelkasten-interview",
+        "label": {
+          "en": "Zettelkasten \"Super\" Notes: with Dr Sönke Ahrens"
+        },
+        "kind": "publication",
+        "version": null,
+        "tier": "archival",
+        "subjects": [],
+        "status": "candidate",
+        "urls": [
+          {
+            "role": "landing",
+            "url": "https://examstudyexpert.com/zettelkasten/",
+            "primary": true
+          }
+        ],
+        "added": "2026-09-06",
+        "basis": {
+          "label": [
+            {
+              "entity": "ahrens-zettelkasten-interview",
+              "locator": "https://examstudyexpert.com/zettelkasten/；页面标题及材料性质",
+              "checked": "2026-09-06"
+            }
+          ],
+          "kind": [
+            {
+              "entity": "ahrens-zettelkasten-interview",
+              "locator": "https://examstudyexpert.com/zettelkasten/；页面标题及材料性质",
+              "checked": "2026-09-06"
+            }
+          ],
+          "urls": [
+            {
+              "entity": "ahrens-zettelkasten-interview",
+              "locator": "https://examstudyexpert.com/zettelkasten/；页面标题及材料性质",
+              "checked": "2026-09-06"
+            }
+          ]
+        },
+        "watch": [
+          {
+            "locator": "https://examstudyexpert.com/zettelkasten/",
+            "signals": [
+              "availability",
+              "redirect"
+            ],
+            "cadence_months": {
+              "availability": 1,
+              "redirect": 1,
+              "content": 12
+            }
+          }
+        ],
+        "review": {
+          "checked": null,
+          "next_due": null,
+          "interval_months": null,
+          "grace_days": 30,
+          "obligations": []
+        },
+        "replaced_by": null,
+        "history": [
+          {
+            "date": "2026-09-06",
+            "action": "source-registration",
+            "fields": [
+              "id",
+              "label",
+              "kind",
+              "version",
+              "tier",
+              "subjects",
+              "status",
+              "urls",
+              "added",
+              "basis",
+              "watch",
+              "review",
+              "replaced_by"
+            ],
+            "before": {},
+            "after": {
+              "id": "ahrens-zettelkasten-interview",
+              "label": {
+                "en": "Zettelkasten \"Super\" Notes: with Dr Sönke Ahrens"
+              },
+              "kind": "publication",
+              "version": null,
+              "tier": "archival",
+              "subjects": [],
+              "status": "candidate",
+              "urls": [
+                {
+                  "role": "landing",
+                  "url": "https://examstudyexpert.com/zettelkasten/",
+                  "primary": true
+                }
+              ],
+              "added": "2026-09-06",
+              "basis": {
+                "label": [
+                  {
+                    "entity": "ahrens-zettelkasten-interview",
+                    "locator": "https://examstudyexpert.com/zettelkasten/；页面标题及材料性质",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "kind": [
+                  {
+                    "entity": "ahrens-zettelkasten-interview",
+                    "locator": "https://examstudyexpert.com/zettelkasten/；页面标题及材料性质",
+                    "checked": "2026-09-06"
+                  }
+                ],
+                "urls": [
+                  {
+                    "entity": "ahrens-zettelkasten-interview",
+                    "locator": "https://examstudyexpert.com/zettelkasten/；页面标题及材料性质",
+                    "checked": "2026-09-06"
+                  }
+                ]
+              },
+              "watch": [
+                {
+                  "locator": "https://examstudyexpert.com/zettelkasten/",
+                  "signals": [
+                    "availability",
+                    "redirect"
+                  ],
+                  "cadence_months": {
+                    "availability": 1,
+                    "redirect": 1,
+                    "content": 12
+                  }
+                }
+              ],
+              "review": {
+                "checked": null,
+                "next_due": null,
+                "interval_months": null,
+                "grace_days": 30,
+                "obligations": []
+              },
+              "replaced_by": null
+            },
+            "decisions": [
+              "decision-term-source-values"
+            ]
+          }
+        ]
+      },
+      "adopted": false,
+      "purpose": "仅作为具体引用的bibliographic basis；不创建structure/mapping用途或来源注册表角色。",
+      "tier_rationale": "按已发表访谈材料处理，不表示其内容已过时。",
+      "evidence_url": "https://examstudyexpert.com/zettelkasten/"
+    }
+  ],
+  "mechanical_validation": {
+    "errors": [],
+    "not_semantic_approval": true
+  }
+}

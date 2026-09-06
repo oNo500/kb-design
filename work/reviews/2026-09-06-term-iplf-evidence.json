@@ -1,0 +1,75 @@
+{
+  "review": "2026-09-06-term-iplf-evidence",
+  "scope": "本轮只核对 IPLF 官方标准介绍页及其直接链接的 IPLF plain language 定义页；未阅读或下载 ISO 24495-1 付费正文。",
+  "sources": [
+    {
+      "name": "ISO plain language standard",
+      "url": "https://www.iplfederation.org/iso-standard/",
+      "locator": "网页正文第 34–47 行，Part 1: Governing principles and guidelines；第 100–107 行，实施资源性质",
+      "quotes": [
+        "get what they need (relevant)",
+        "find what they need (findable)",
+        "understand what they find (understandable)",
+        "use the information (usable)"
+      ],
+      "quote_word_count_approx": 19,
+      "nature": "IPLF 对 ISO 24495-1:2023 的官方介绍页，说明标准名称、四项原则、研究与共识基础以及实施资源。",
+      "limitation": "该页是标准发起组织的介绍，不是 ISO 24495-1 正文；本轮未取得 ISO 正文，不能据此声称已核对全文指南或符合性。页面还明确支持性文件不是由 ISO 发布。",
+      "source_registration": {
+        "local_reading_note": "存在：docs/references/writing-guides.md:11，登记 ISO 信息页和 IPLF 摘要及其阅读范围。",
+        "formal_source_entity": "未在本轮指定离线目录中找到独立的 IPLF／ISO 24495 来源实体登记；不据此改变现行来源效力。"
+      }
+    },
+    {
+      "name": "What is plain language?",
+      "url": "https://www.iplfederation.org/plain-language/",
+      "locator": "网页正文第 17–19 行，定义摘要；第 53–63 行，2014 年定义与 ISO 关系；第 77–89 行，四原则的可观察特征",
+      "quotes": [
+        "A communication is in plain language if its wording, structure, and design are so clear"
+      ],
+      "quote_word_count_approx": 15,
+      "nature": "IPLF 官方定义页；页面说明该定义由 IPLF 及三个创始组织于 2014 年正式采用，并成为 ISO 标准基础。",
+      "limitation": "这是 IPLF 的公开定义与解释页面，不是 ISO 24495-1 正文；页面对四原则给出概括性特征和示例，不能替代标准的完整指南、术语定义或符合性判断。"
+    }
+  ],
+  "components": [
+    {
+      "original_name": "relevant",
+      "url": "https://www.iplfederation.org/iso-standard/",
+      "locator": "第 38–40 行，Part 1 四原则列表；定义页第 84–86 行",
+      "quote_ref": "sources[0].quotes[0]",
+      "definition_proposal_zh": "相关：文档包含读者为当前目的所需要的信息，并尽量少包含读者不需要的信息。",
+      "nature_and_limit": "IPLF 对 ISO 原则的公开概括；定义页给出‘有读者需要的全部信息，几乎没有不需要的信息’这一可观察特征。未核对 ISO 正文的完整条件。",
+      "source_registration": "已登记于 docs/references/writing-guides.md:11；当前词汇表条目为 docs/glossary.md:172。"
+    },
+    {
+      "original_name": "findable",
+      "url": "https://www.iplfederation.org/iso-standard/",
+      "locator": "第 38–42 行，Part 1 四原则列表；定义页第 84–89 行",
+      "quote_ref": "sources[0].quotes[1]",
+      "definition_proposal_zh": "可找到：文档的结构和设计使读者能够找到自己需要的信息。",
+      "nature_and_limit": "IPLF 对 ISO 原则的公开概括；定义页把结构和设计列为帮助读者找到信息的方式。未核对 ISO 正文的全部指南。",
+      "source_registration": "已登记于 docs/references/writing-guides.md:11；当前词汇表条目为 docs/glossary.md:172。"
+    },
+    {
+      "original_name": "understandable",
+      "url": "https://www.iplfederation.org/iso-standard/",
+      "locator": "第 38–42 行，Part 1 四原则列表；定义页第 84–89 行",
+      "quote_ref": "sources[0].quotes[2]",
+      "definition_proposal_zh": "可理解：文档以读者能够理解的方式表达找到的信息，包括使用读者熟悉的词语。",
+      "nature_and_limit": "IPLF 对 ISO 原则的公开概括；定义页给出熟悉词语和可理解表达的示例。未核对 ISO 正文的完整语言、结构和设计要求。",
+      "source_registration": "已登记于 docs/references/writing-guides.md:11；当前词汇表条目为 docs/glossary.md:172。"
+    },
+    {
+      "original_name": "usable",
+      "url": "https://www.iplfederation.org/iso-standard/",
+      "locator": "第 38–42 行，Part 1 四原则列表；定义页第 86–89 行",
+      "quote_ref": "sources[0].quotes[3]",
+      "definition_proposal_zh": "可使用：读者能够使用所理解的信息完成文档预期的任务或回答其问题。",
+      "nature_and_limit": "IPLF 对 ISO 原则的公开概括；定义页说明找得到、理解了的信息应能支持读者完成文档 intended purpose，并指出需通过读者测试评价文档是否有效。未核对 ISO 正文的评价指南。",
+      "source_registration": "已登记于 docs/references/writing-guides.md:11；当前词汇表条目为 docs/glossary.md:172。"
+    }
+  ],
+  "cross_source_conclusion": "IPLF 标准介绍页提供四原则的精确英文名称及公开概括；IPLF 定义页提供 plain language 的公开定义和四原则的可观察特征。二者支持把四项中文定义作为准确的审查提案，但不等于已阅读 ISO 24495-1 全文，也不产生当前标准符合性结论。",
+  "status": "审查材料，不是正式术语数据或采纳决定"
+}

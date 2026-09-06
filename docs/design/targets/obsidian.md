@@ -4,7 +4,7 @@
 
 ## 当前状态
 
-完整应用设计和实现已经建立：参考导出器生成六份正式词表的单向表示；`kb-obsidian` 从干净设计快照初始化完整 vault，建立 UUIDv4 `draft` 内容，校验内容字段与引用，并生成派生报告。语言依据按[语言依据结构](../../decisions/structured-label-basis.md)显示等级和真实依据性质。
+完整应用设计和实现已经建立：参考导出器生成六份正式词表的单向表示；`kb-obsidian` 从干净设计快照初始化完整 vault，建立 UUIDv4 `draft` 内容，校验内容字段与引用，并生成派生报告。语言依据按[语言依据结构](../../decisions/structured-label-basis.md)显示等级和真实依据性质。按[术语实施范围](../../decisions/term-infrastructure-scope.md)，实现另支持经正式批准和发布的术语概念参考页；当前术语数据与发布状态尚未建立，该能力未激活。
 
 工具按[工具归属](../../decisions/obsidian-tool-location.md)和[仓库布局](../../decisions/monorepo-layout.md)同仓维护，默认读取所在仓库，也接受显式 `--design-root`；manifest 记录实际提交与输入哈希，不使用提交白名单。命令默认输出仍为 `output/obsidian/`，正式知识库为仓库外的 `~/Documents/kb-vault/`，操作正式库时必须显式指定。
 
@@ -166,7 +166,7 @@ identifier 规则已经由[内容单元标识符](../../decisions/content-unit-i
 
 词表矩阵逐个记录 source identity、必填性与基数、literal／reference、datatype 或受控值、target location／property、缺省与省略、loss 保存位置和可逆性。内容矩阵在相同语义边界上另记录建立条件、编辑条件、查询用途和无效表现。
 
-词表对象只写非空 properties；`None`、空字符串和空列表省略。当前词表表示使用 Text、List、Date 和 Tags。相同 property name 在一个 vault 中必须保持同一 Obsidian type。引用单值使用 Text link，引用多值使用由 Text link 组成的 List，日期使用 Date，其他 scalar 使用 Text。
+词表对象只写非空 properties；`None`、空字符串和空列表省略。现行六份词表表示使用 Text、List、Date 和 Tags；术语页的模式版本另使用 Number。相同 property name 在一个 vault 中必须保持同一 Obsidian type。引用单值使用 Text link，引用多值使用由 Text link 组成的 List，日期使用 Date，其他 scalar 使用 Text。
 
 ## Obsidian 表示
 
@@ -250,6 +250,26 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 | `roles` 中 approved 项 | `kb_approved_roles` List | 专用于资格筛选，不从 kb_roles 推导批准 |
 
 来源用途和主题数组无 label、status、aliases 字段时，以 ID 显示标题和 kb_label，不生成 kb_status 或 aliases。所有 aliases 只消费既有形式，不翻译、不补名，链接目标仍是稳定 ID 文件。
+
+## 术语表示
+
+本节按[术语实施范围](../../decisions/term-infrastructure-scope.md)规定获准术语的单向应用表示，不改变应用无关词表语义。`data/vocab/terms.yaml` 和 `data/vocab/term-cutover-state.yaml` 必须同时存在且通过完整校验才被消费；仅有一个文件时拒绝加载。两者均不存在时只处理现行六份词表，不创建术语消费者状态。
+
+| 来源字段 | Obsidian 表示 | 边界 |
+|---|---|---|
+| 术语概念 `id` | `kb/terms/<tc-id>.md`、`kb_id` Text | 仅 `tc-*` UUIDv4 是术语概念页身份，不能使用 `tm-*` 或主题身份 |
+| `workflow` | `kb_status` Text | 只有获准 `active` 概念生成页面；状态字符串本身不授予资格 |
+| 各语言首选形式 | 标题与 `kb_label` Text | 按简体中文、繁体中文、英文的固定顺序选择可用显示名；缺中文时保持英文 |
+| 其他形式 | `aliases` List 与正文 | 稳定排序去重；历史形式可用于检索，但只在正文历史区说明，不变成允许形式 |
+| `version` | `kb_schema_version` Number | 这是术语 schema 的版本，不伪装成词表发版版本 |
+| 定义、语言及形式依据 | 正文逐语言展示，来源采用 Markdown 链接 | 所有已有语言与逐项定位保留，不只选第一条定义 |
+| `subject_fields`、`source`、`match` | 正文范围与对应依据 | 不据此产生内容分类、主题节点或词表标签委托 |
+
+术语所有者为 `terms.yaml`，参考页修改不回流。模型译名仍属于主题、载体及其采纳输入，没有独立获准术语概念时不生成术语页；不得由显示行或别名批量建立新概念。
+
+应用从同一干净 Git 提交捕获术语数据、发布状态、相应 schema、有效来源与术语决定及相关核心实现。现行来源校验和核心术语完整校验均通过后才生成。manifest 保存相应输入哈希和实际模式版本；文件集合、对象种类、路径及内容引用必须一致。
+
+新增术语参考页沿用 `kb/` 和 `app/manifest.json` 的刷新写集。术语页存在、夹具能够刷新或 schema 可解析都不表示真实消费者已启用；实际接入仍以具体术语采纳、正式切换和统一验收为条件。
 
 ## 内容表示
 
