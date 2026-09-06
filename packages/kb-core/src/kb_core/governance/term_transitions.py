@@ -160,6 +160,14 @@ def _validate_terms(previous, current, decisions, issues):
     current_terms = index_terms(current)
     changed_by_language = defaultdict(set)
 
+    # A status transition cannot silently delete a registration. This API has
+    # no deletion disposition contract; an unrelated decision ID is not one.
+    for term_id in sorted(previous_terms.keys() - current_terms.keys()):
+        issues.append(_issue(
+            "TERM_ID_REMOVED", f"terms[{term_id}]",
+            "status transitions must retain stable term identities",
+        ))
+
     for term_id, (concept_id, language, term) in current_terms.items():
         old_entry = previous_terms.get(term_id)
         old_term = None if old_entry is None else old_entry[2]
@@ -212,12 +220,16 @@ def _validate_terms(previous, current, decisions, issues):
         before_preferred = set() if before is None else _preferred_ids(before)
         after_preferred = set() if after is None else _preferred_ids(after)
         group_path = f"concepts[{concept_id}].languages[{language}]"
-        if len(before_preferred) != 1 or len(after_preferred) != 1:
+        if (before is not None and len(before_preferred) != 1) or len(after_preferred) != 1:
             issues.append(_issue(
                 "TERM_PREFERRED_COUNT",
                 group_path,
-                "each snapshot must contain exactly one preferred term",
+                "each existing language record must contain exactly one preferred term",
             ))
+        # First registration has no old preferred term to demote. Per-term
+        # admission history and decisions are still checked above.
+        if before is None:
+            continue
         if before_preferred != after_preferred:
             changed = changed_by_language[(concept_id, language)]
             linked = set()

@@ -46,6 +46,45 @@ class TermTransitionTests(unittest.TestCase):
         self.before_value = load_yaml("valid/minimal-active.yaml")
         self.before = parse_terms(self.before_value)
 
+    def test_first_candidate_accepts_one_preferred_per_new_language(self):
+        empty = copy.deepcopy(self.before_value)
+        empty["concepts"] = []
+        candidate = copy.deepcopy(self.before_value)
+        concept = candidate["concepts"][0]
+        concept["workflow"] = "candidate"
+        concept["history"][0]["to_value"] = "candidate"
+
+        issues = validate_transition(
+            parse_terms(empty), parse_terms(candidate),
+            frozenset({"decision-term-0001"}),
+        )
+
+        self.assertEqual((), issues)
+
+    def test_first_candidate_still_requires_admission_history(self):
+        empty = copy.deepcopy(self.before_value)
+        empty["concepts"] = []
+        candidate = copy.deepcopy(self.before_value)
+        concept = candidate["concepts"][0]
+        concept["workflow"] = "candidate"
+        concept["history"][0]["to_value"] = "candidate"
+        concept["languages"][0]["terms"][0]["history"] = []
+
+        issues = validate_transition(
+            parse_terms(empty), parse_terms(candidate),
+            frozenset({"decision-term-0001"}),
+        )
+
+        self.assertIn("TERM_TRANSITION_HISTORY", {issue.code for issue in issues})
+
+    def test_removing_an_admitted_form_requires_explicit_disposition(self):
+        current = copy.deepcopy(self.before_value)
+        current["concepts"][0]["languages"][0]["terms"].pop()
+
+        issues = validate_transition(self.before, parse_terms(current), DECISIONS)
+
+        self.assertIn("TERM_ID_REMOVED", {issue.code for issue in issues})
+
     def test_requires_one_preferred_term(self):
         current_value = copy.deepcopy(self.before_value)
         alpha = term(current_value, ALPHA)

@@ -215,8 +215,12 @@ class TermGenerationTests(unittest.TestCase):
             source_index_path = root / "source-index.json"
             snapshot_path = root / "terms-v1.json"
             glossary_path = root / "glossary.md"
+            valid = yaml.safe_load(
+                (ROOT / "tests/fixtures/terminology/valid/minimal-active.yaml").read_text()
+            )
+            valid["concepts"][0]["subject_fields"][0]["topic_id"] = "basic-unit"
             terms_path.write_text(
-                yaml.safe_dump(self.document, allow_unicode=True, sort_keys=False),
+                yaml.safe_dump(valid, allow_unicode=True, sort_keys=False),
                 encoding="utf-8",
             )
             source_index_path.write_text(
@@ -263,6 +267,36 @@ class TermGenerationTests(unittest.TestCase):
             )
             self.assertEqual(1, drifted.returncode)
             self.assertIn("TERM_OUTPUT_DRIFT", drifted.stderr)
+
+    def test_invalid_input_cannot_replace_existing_outputs(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = pathlib.Path(temporary)
+            invalid = yaml.safe_load(
+                (ROOT / "tests/fixtures/terminology/valid/minimal-active.yaml").read_text()
+            )
+            invalid["concepts"][0]["id"] = "invalid-concept-id"
+            invalid["concepts"][0]["subject_fields"][0]["topic_id"] = "basic-unit"
+            terms_path = root / "terms.yaml"
+            terms_path.write_text(yaml.safe_dump(invalid), encoding="utf-8")
+            index_path = root / "index.json"
+            index_path.write_text("{}", encoding="utf-8")
+            snapshot_path = root / "snapshot.json"
+            glossary_path = root / "glossary.md"
+            snapshot_path.write_bytes(b"previous snapshot")
+            glossary_path.write_bytes(b"previous glossary")
+
+            result = subprocess.run(
+                [sys.executable, "-m", "kb_core.governance.build_terms", "build",
+                 "--terms", str(terms_path), "--state", str(ACTIVE_STATE),
+                 "--layout", str(LAYOUT), "--source-index", str(index_path),
+                 "--snapshot-out", str(snapshot_path), "--glossary-out", str(glossary_path)],
+                cwd=ROOT, capture_output=True, text=True,
+            )
+
+            self.assertEqual(1, result.returncode)
+            self.assertIn("TERM_SCHEMA_INVALID", result.stderr)
+            self.assertEqual(b"previous snapshot", snapshot_path.read_bytes())
+            self.assertEqual(b"previous glossary", glossary_path.read_bytes())
 
     def test_all_consumers_share_snapshot_hash(self):
         snapshot_bytes = canonical_snapshot(

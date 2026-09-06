@@ -121,6 +121,35 @@ class CheckTermsTest(unittest.TestCase):
         )
         self.assertIn("已登记首选项", candidates)
 
+    def test_term_prefix_does_not_turn_a_registered_row_into_a_header(self):
+        glossary = self.root / "docs/glossary.md"
+        glossary.write_text(
+            glossary.read_text(encoding="utf-8")
+            + "| 术语表 / 代码表 | list, pick list | 预先规定的列表 | fixture |\n",
+            encoding="utf-8",
+        )
+        article = self.root / "docs/concepts/fixture.md"
+        article.write_text(article.read_text(encoding="utf-8") + "\n**术语表**和**代码表**。\n",
+                           encoding="utf-8")
+
+        candidates = self.candidate_strings(self.run_script())
+
+        self.assertTrue({"术语表", "代码表"}.isdisjoint(candidates))
+
+    def test_source_descriptions_are_not_registered_designations(self):
+        glossary = self.root / "docs/glossary.md"
+        glossary.write_text(
+            glossary.read_text(encoding="utf-8")
+            + "\n## 引用的标准与文献\n\n| 名称 | 是什么 |\n|---|---|\n"
+            + "| 夹具来源名 | 普通来源说明文字 |\n",
+            encoding="utf-8",
+        )
+        article = self.root / "docs/concepts/fixture.md"
+        article.write_text(article.read_text(encoding="utf-8")
+                           + "\n**普通来源说明文字**。\n", encoding="utf-8")
+
+        self.assertIn("普通来源说明文字", self.candidate_strings(self.run_script()))
+
     def test_reports_pending_human_judgment_without_term_verdict(self):
         output = self.run_script()
 

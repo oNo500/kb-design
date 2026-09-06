@@ -11,6 +11,7 @@ from typing import Any, Mapping, Optional, Sequence, Tuple
 
 import yaml
 from jsonschema import Draft202012Validator, FormatChecker
+from kb_core.governance.term_model import TermsSchemaError, schema_issues
 
 
 REPOSITORY_ROOT = project_root(__file__)
@@ -415,6 +416,9 @@ def _load_json(path: pathlib.Path) -> Any:
 
 def _outputs(arguments: argparse.Namespace) -> Tuple[bytes, bytes]:
     document = _load_yaml(arguments.terms)
+    issues = schema_issues(document)
+    if issues:
+        raise TermsSchemaError(issues)
     state = load_cutover_state(arguments.state)
     layout = _load_yaml(arguments.layout)
     source_index = _load_json(arguments.source_index)

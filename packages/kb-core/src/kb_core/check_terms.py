@@ -44,16 +44,25 @@ def registered_form(value):
 
 def glossary_forms():
     forms = set()
+    registered_table = False
     for line in GLOSSARY.read_text(encoding="utf-8").splitlines():
-        if not line.startswith("| "):
-            continue
-        if line.startswith("| 术语") or line.startswith("|---"):
+        if not line.startswith("|"):
+            registered_table = False
             continue
         cells = [cell.strip() for cell in line.strip("|").split("|")]
+        if cells in (
+            ["术语", "英文", "定义", "出处"],
+            ["术语", "符号", "定义", "出处"],
+            ["中文形式", "英文形式", "对应记录"],
+        ):
+            registered_table = True
+            continue
+        if not registered_table or all(re.fullmatch(r":?-+:?", cell) for cell in cells):
+            continue
         for cell in cells[:2]:
             for part in GLOSSARY_SEPARATOR.split(cell):
                 form = registered_form(part)
-                if form:
+                if form and form != "—":
                     forms.add(form)
     return forms
 
