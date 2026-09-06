@@ -5403,8 +5403,16 @@ entities:
   vendor: astral
   subjects:
   - tools-and-environments
-  basis: {}
-  scope: Python 包与项目管理器，Rust 实现；Wikidata 无条目
+  basis:
+    vendor:
+      - entity: uv-docs
+        locator: https://docs.astral.sh/uv/；Introduction：uv is backed by Astral
+        checked: "2026-09-06"
+    scope:
+      - entity: uv-docs
+        locator: https://docs.astral.sh/uv/；Introduction：Python package and project manager, written in Rust
+        checked: "2026-09-06"
+  scope: Python 包与项目管理器，Rust 实现。
   status: candidate
   added: 2026-08-23
   assertions:
@@ -5446,6 +5454,27 @@ entities:
           original: self
           migration: git:633f6842be6c7aac1683dbf517b87d3d76447f69:data/vocab/entities.yaml#entities/uv.basis.subjects
       basis: {}
+  - date: "2026-09-06"
+    action: engineering-conventions-evidence
+    fields:
+      - basis.vendor
+      - basis.scope
+      - scope
+    decisions: []
+    before:
+      scope: Python 包与项目管理器，Rust 实现；Wikidata 无条目
+      basis: {}
+    after:
+      scope: Python 包与项目管理器，Rust 实现。
+      basis:
+        vendor:
+          - entity: uv-docs
+            locator: https://docs.astral.sh/uv/；Introduction：uv is backed by Astral
+            checked: "2026-09-06"
+        scope:
+          - entity: uv-docs
+            locator: https://docs.astral.sh/uv/；Introduction：Python package and project manager, written in Rust
+            checked: "2026-09-06"
 - id: ruff
   label:
     zh: Ruff
@@ -11865,5 +11894,410 @@ entities:
         grace_days: 30
         obligations: []
       replaced_by: null
+- id: uv-docs
+  label:
+    zh: uv 文档
+    en: uv Documentation
+  kind: standard
+  tier: vendor
+  version: null
+  subjects:
+    - tools-and-environments
+  basis:
+    subjects:
+      - values:
+          - tools-and-environments
+        references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools — Tools and Environments；开发工具与环境的主题范围；具体产品功能另见相邻依据
+            checked: "2026-09-06"
+          - entity: uv-docs
+            locator: https://docs.astral.sh/uv/；官方文档标题、功能与使用说明
+            checked: "2026-09-06"
+    label:
+      - entity: uv-docs
+        locator: https://docs.astral.sh/uv/；官方文档标题、功能与使用说明
+        checked: "2026-09-06"
+    urls:
+      - entity: uv-docs
+        locator: https://docs.astral.sh/uv/；官方文档标题、功能与使用说明
+        checked: "2026-09-06"
+    scope:
+      - entity: uv-docs
+        locator: https://docs.astral.sh/uv/；官方文档标题、功能与使用说明
+        checked: "2026-09-06"
+  scope: uv 官方文档，说明 Python 项目、依赖、运行环境和命令行工具的管理。
+  status: candidate
+  added: "2026-09-06"
+  urls:
+    - role: landing
+      url: https://docs.astral.sh/uv/
+      primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 6
+    grace_days: 30
+    obligations: []
+  watch: []
+  replaced_by: null
+  history:
+    - date: "2026-09-06"
+      action: engineering-conventions-admission
+      fields:
+        - id
+        - label
+        - kind
+        - tier
+        - subjects
+        - scope
+        - urls
+      decisions: []
+- id: npm-docs
+  label:
+    zh: npm 文档
+    en: npm Documentation
+  kind: standard
+  tier: vendor
+  version: null
+  subjects:
+    - tools-and-environments
+  basis:
+    subjects:
+      - values:
+          - tools-and-environments
+        references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools — Tools and Environments；开发工具与环境的主题范围；具体产品功能另见相邻依据
+            checked: "2026-09-06"
+          - entity: npm-docs
+            locator: https://docs.npmjs.com/；官方文档标题、功能与使用说明
+            checked: "2026-09-06"
+    label:
+      - entity: npm-docs
+        locator: https://docs.npmjs.com/；官方文档标题、功能与使用说明
+        checked: "2026-09-06"
+    urls:
+      - entity: npm-docs
+        locator: https://docs.npmjs.com/；官方文档标题、功能与使用说明
+        checked: "2026-09-06"
+    scope:
+      - entity: npm-docs
+        locator: https://docs.npmjs.com/；官方文档标题、功能与使用说明
+        checked: "2026-09-06"
+  scope: npm 官方文档，说明命令行客户端、包配置与 registry 服务。
+  status: candidate
+  added: "2026-09-06"
+  urls:
+    - role: landing
+      url: https://docs.npmjs.com/
+      primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 6
+    grace_days: 30
+    obligations: []
+  watch: []
+  replaced_by: null
+  history:
+    - date: "2026-09-06"
+      action: engineering-conventions-admission
+      fields:
+        - id
+        - label
+        - kind
+        - tier
+        - subjects
+        - scope
+        - urls
+      decisions: []
+- id: fnm-docs
+  label:
+    zh: fnm 文档
+    en: fnm Documentation
+  kind: standard
+  tier: vendor
+  version: null
+  subjects:
+    - tools-and-environments
+  basis:
+    subjects:
+      - values:
+          - tools-and-environments
+        references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools — Tools and Environments；开发工具与环境的主题范围；具体产品功能另见相邻依据
+            checked: "2026-09-06"
+          - entity: fnm-docs
+            locator: https://github.com/Schniz/fnm#readme；官方文档标题、功能与使用说明
+            checked: "2026-09-06"
+    label:
+      - entity: fnm-docs
+        locator: https://github.com/Schniz/fnm#readme；官方文档标题、功能与使用说明
+        checked: "2026-09-06"
+    urls:
+      - entity: fnm-docs
+        locator: https://github.com/Schniz/fnm#readme；官方文档标题、功能与使用说明
+        checked: "2026-09-06"
+    scope:
+      - entity: fnm-docs
+        locator: https://github.com/Schniz/fnm#readme；官方文档标题、功能与使用说明
+        checked: "2026-09-06"
+  scope: fnm 项目 README 与链接的命令文档，说明 Node.js 版本管理及 shell 配置。
+  status: candidate
+  added: "2026-09-06"
+  urls:
+    - role: landing
+      url: https://github.com/Schniz/fnm#readme
+      primary: true
+  review:
+    checked: null
+    next_due: null
+    interval_months: 6
+    grace_days: 30
+    obligations: []
+  watch: []
+  replaced_by: null
+  history:
+    - date: "2026-09-06"
+      action: engineering-conventions-admission
+      fields:
+        - id
+        - label
+        - kind
+        - tier
+        - subjects
+        - scope
+        - urls
+      decisions: []
+- id: bun
+  label:
+    zh: Bun
+    en: Bun
+  kind: software
+  subjects:
+    - tools-and-environments
+  basis:
+    label:
+      - entity: wikidata
+        locator: https://www.wikidata.org/wiki/Q113048518；标签、描述、instance of 中的 run-time system、package manager、free and open-source software
+        checked: "2026-09-06"
+    kind:
+      - entity: wikidata
+        locator: https://www.wikidata.org/wiki/Q113048518；标签、描述、instance of 中的 run-time system、package manager、free and open-source software
+        checked: "2026-09-06"
+    scope:
+      - entity: wikidata
+        locator: https://www.wikidata.org/wiki/Q113048518；标签、描述、instance of 中的 run-time system、package manager、free and open-source software
+        checked: "2026-09-06"
+    subjects:
+      - values:
+          - tools-and-environments
+        references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools — Tools and Environments；开发工具与环境的主题范围；具体产品功能另见相邻依据
+            checked: "2026-09-06"
+          - entity: wikidata
+            locator: https://www.wikidata.org/wiki/Q113048518；标签、描述、instance of 中的 run-time system、package manager、free and open-source software
+            checked: "2026-09-06"
+    vendor:
+      - entity: wikidata
+        locator: https://www.wikidata.org/wiki/Q113048518；owned by Anthropic；同时核对 https://bun.com/blog/bun-joins-anthropic 的收购公告
+        checked: "2026-09-06"
+  scope: JavaScript 运行时与工具集，包含包管理器。
+  status: candidate
+  added: "2026-09-06"
+  urls:
+    - role: canonical
+      url: https://bun.com/
+      primary: true
+  match:
+    - registry: wikidata
+      item: Q113048518
+      rel: exactMatch
+      basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/wiki/Q113048518；标签、描述、软件类别及官网指向同一产品
+          checked: "2026-09-06"
+  vendor: anthropic
+  history:
+    - date: "2026-09-06"
+      action: engineering-conventions-admission
+      fields:
+        - id
+        - label
+        - kind
+        - subjects
+        - basis
+        - scope
+        - status
+        - added
+        - urls
+        - match
+        - vendor
+      decisions: []
+- id: npm
+  label:
+    zh: npm
+    en: npm
+  kind: software
+  subjects:
+    - tools-and-environments
+  basis:
+    label:
+      - entity: npm-docs
+        locator: https://docs.npmjs.com/cli/v11/commands/npm/；Description：the package manager for the Node JavaScript platform
+        checked: "2026-09-06"
+    kind:
+      - entity: npm-docs
+        locator: https://docs.npmjs.com/cli/v11/commands/npm/；Description：the package manager for the Node JavaScript platform
+        checked: "2026-09-06"
+    scope:
+      - entity: npm-docs
+        locator: https://docs.npmjs.com/cli/v11/commands/npm/；Description：the package manager for the Node JavaScript platform
+        checked: "2026-09-06"
+    subjects:
+      - values:
+          - tools-and-environments
+        references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools — Tools and Environments；开发工具与环境的主题范围；具体产品功能另见相邻依据
+            checked: "2026-09-06"
+          - entity: npm-docs
+            locator: https://docs.npmjs.com/cli/v11/commands/npm/；Description：the package manager for the Node JavaScript platform
+            checked: "2026-09-06"
+  scope: npm 命令行包管理器；此实体不代表同名公司或 registry 服务。
+  status: candidate
+  added: "2026-09-06"
+  urls:
+    - role: canonical
+      url: https://docs.npmjs.com/cli/v11/commands/npm/
+      primary: true
+  history:
+    - date: "2026-09-06"
+      action: engineering-conventions-admission
+      fields:
+        - id
+        - label
+        - kind
+        - subjects
+        - basis
+        - scope
+        - status
+        - added
+        - urls
+      decisions: []
+- id: fnm
+  label:
+    zh: fnm
+    en: fnm
+  kind: software
+  subjects:
+    - tools-and-environments
+  basis:
+    label:
+      - entity: fnm-docs
+        locator: https://github.com/Schniz/fnm#readme；Fast Node Manager；Features；Shell Setup
+        checked: "2026-09-06"
+    kind:
+      - entity: fnm-docs
+        locator: https://github.com/Schniz/fnm#readme；Fast Node Manager；Features；Shell Setup
+        checked: "2026-09-06"
+    scope:
+      - entity: fnm-docs
+        locator: https://github.com/Schniz/fnm#readme；Fast Node Manager；Features；Shell Setup
+        checked: "2026-09-06"
+    subjects:
+      - values:
+          - tools-and-environments
+        references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools — Tools and Environments；开发工具与环境的主题范围；具体产品功能另见相邻依据
+            checked: "2026-09-06"
+          - entity: fnm-docs
+            locator: https://github.com/Schniz/fnm#readme；Fast Node Manager；Features；Shell Setup
+            checked: "2026-09-06"
+  scope: Node.js 版本管理器，支持 .node-version 与 .nvmrc 文件。
+  status: candidate
+  added: "2026-09-06"
+  urls:
+    - role: canonical
+      url: https://github.com/Schniz/fnm
+      primary: true
+  history:
+    - date: "2026-09-06"
+      action: engineering-conventions-admission
+      fields:
+        - id
+        - label
+        - kind
+        - subjects
+        - basis
+        - scope
+        - status
+        - added
+        - urls
+      decisions: []
+- id: nodejs
+  label:
+    zh: Node.js
+    en: Node.js
+  kind: software
+  subjects:
+    - tools-and-environments
+  basis:
+    label:
+      - entity: wikidata
+        locator: https://www.wikidata.org/wiki/Q756100；标签、描述 JavaScript runtime environment；instance of 软件与运行时
+        checked: "2026-09-06"
+    kind:
+      - entity: wikidata
+        locator: https://www.wikidata.org/wiki/Q756100；标签、描述 JavaScript runtime environment；instance of 软件与运行时
+        checked: "2026-09-06"
+    scope:
+      - entity: wikidata
+        locator: https://www.wikidata.org/wiki/Q756100；标签、描述 JavaScript runtime environment；instance of 软件与运行时
+        checked: "2026-09-06"
+    subjects:
+      - values:
+          - tools-and-environments
+        references:
+          - entity: cs2023
+            locator: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools — Tools and Environments；开发工具与环境的主题范围；具体产品功能另见相邻依据
+            checked: "2026-09-06"
+          - entity: wikidata
+            locator: https://www.wikidata.org/wiki/Q756100；标签、描述 JavaScript runtime environment；instance of 软件与运行时
+            checked: "2026-09-06"
+  scope: JavaScript 运行时环境。
+  status: candidate
+  added: "2026-09-06"
+  urls:
+    - role: canonical
+      url: https://nodejs.org/
+      primary: true
+  match:
+    - registry: wikidata
+      item: Q756100
+      rel: exactMatch
+      basis:
+        - entity: wikidata
+          locator: https://www.wikidata.org/wiki/Q756100；标签、描述、软件类别及官网指向同一产品
+          checked: "2026-09-06"
+  history:
+    - date: "2026-09-06"
+      action: engineering-conventions-admission
+      fields:
+        - id
+        - label
+        - kind
+        - subjects
+        - basis
+        - scope
+        - status
+        - added
+        - urls
+        - match
+      decisions: []
 schema_version: 2
 schema: urn:kb-design:data:entities
