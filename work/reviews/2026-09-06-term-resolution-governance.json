@@ -1,0 +1,4347 @@
+{
+  "review": "2026-09-06-term-resolution-governance",
+  "scope": "保留历轮实际读取的治理/知识体系/内容条目证据；不以模板缺口覆盖更强原文；后续独立取证未完，不宣称全部解决。",
+  "items": [
+    {
+      "id": "glossary-L0145",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 145,
+        "cells": [
+          "知识体系",
+          "body of knowledge, BoK",
+          "一个学科或职业公认知识范围的结构化清单",
+          "SWEBOK;ISO/IEC TR 19759"
+        ],
+        "raw": "| 知识体系 | body of knowledge, BoK | 一个学科或职业公认知识范围的结构化清单 | SWEBOK;ISO/IEC TR 19759 |"
+      },
+      "projection": {
+        "concept": "知识体系",
+        "definitions": {
+          "zh-Hans": "一个学科或职业公认知识范围的结构化清单"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "知识体系"
+          },
+          {
+            "language": "en",
+            "text": "body of knowledge, BoK"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://www.computer.org/education/bodies-of-knowledge/software-engineering",
+          "date": "既有记录日期；本轮未重新赋值",
+          "locator": "SWEBOK v4.0 Table I.1 的既有核对记录；ISO/IEC TR 19759 现行来源登记",
+          "quote": null,
+          "nature": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        },
+        {
+          "url": "https://www.iso.org/standard/67604.html",
+          "date": "既有记录日期；本轮未重新赋值",
+          "locator": "SWEBOK v4.0 Table I.1 的既有核对记录；ISO/IEC TR 19759 现行来源登记",
+          "quote": null,
+          "nature": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        },
+        {
+          "url": "https://www.computer.org/education/bodies-of-knowledge/software-engineering",
+          "locator": "Focus on Generally Accepted Knowledge；官方 HTML 本轮通过 urllib 内存读取成功，网页工具 open 返回 403",
+          "date": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "明确区分 software engineering body of knowledge（专业知识总和）与只描述其中普遍接受部分的 Guide。"
+        }
+      ],
+      "can_support": [
+        "英文形式 body of knowledge 与 SWEBOK/ISO TR 的来源语境",
+        "知识体系作为结构化知识范围的本地概念说明"
+      ],
+      "cannot_support": [
+        "中文形式及完整通用定义",
+        "SWEBOK v4.0 与 v4.0a 的版本替代关系"
+      ],
+      "minimal_correction": "旧定义将 body of knowledge 与指南的结构化清单混同；改定义，不以 ISO/IEC TR 19759 标题单独证明通用定义。BoK 与全称拆为两个英文形式。",
+      "remaining_issues": [
+        "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "旧定义将 body of knowledge 与指南的结构化清单混同；改定义，不以 ISO/IEC TR 19759 标题单独证明通用定义。BoK 与全称拆为两个英文形式。",
+        "remaining_work": [
+          "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": "本轮未取得所列 ISO 条款原文；现有阅读笔记只覆盖有限定义或范围。",
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0145",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 145,
+            "cells": [
+              "知识体系",
+              "body of knowledge, BoK",
+              "一个学科或职业公认知识范围的结构化清单",
+              "SWEBOK;ISO/IEC TR 19759"
+            ],
+            "raw": "| 知识体系 | body of knowledge, BoK | 一个学科或职业公认知识范围的结构化清单 | SWEBOK;ISO/IEC TR 19759 |",
+            "sha256": "9320e8ab8d1f13da681f6a8b7cb46337dc5ad488113a8e63c29c5c53335fc4f1"
+          },
+          "resolution": "supported_with_explicit_corrections",
+          "proposed_fields": {
+            "english_forms": [
+              "body of knowledge",
+              "BoK"
+            ],
+            "chinese_form": "知识体系",
+            "definition_zh": "一个学科或职业领域内的知识总和。",
+            "scope_note": "SWEBOK Guide 对软件工程知识总和中普遍接受的部分进行识别和描述；指南及其结构化内容表不是知识总和本身。",
+            "basis": [
+              {
+                "material": "https://www.computer.org/education/bodies-of-knowledge/software-engineering",
+                "location": "Focus on Generally Accepted Knowledge；官方 HTML 本轮通过 urllib 内存读取成功，网页工具 open 返回 403",
+                "read_on": "2026-09-06",
+                "nature": "external_primary",
+                "supports": "明确区分 software engineering body of knowledge（专业知识总和）与只描述其中普遍接受部分的 Guide。"
+              }
+            ],
+            "chinese_basis": {
+              "level": 5,
+              "model": "GPT-6",
+              "date": "2026-09-06",
+              "rationale": "知识体系是模型既有知识中的常用对应表达；不冒充本次已核中文原文。",
+              "external_usage_verified": false
+            }
+          },
+          "evidence": [
+            {
+              "material": "https://www.computer.org/education/bodies-of-knowledge/software-engineering",
+              "location": "Focus on Generally Accepted Knowledge；官方 HTML 本轮通过 urllib 内存读取成功，网页工具 open 返回 403",
+              "read_on": "2026-09-06",
+              "nature": "external_primary",
+              "supports": "明确区分 software engineering body of knowledge（专业知识总和）与只描述其中普遍接受部分的 Guide。"
+            }
+          ],
+          "reason": "旧定义将 body of knowledge 与指南的结构化清单混同；改定义，不以 ISO/IEC TR 19759 标题单独证明通用定义。BoK 与全称拆为两个英文形式。",
+          "remaining_evidence_issues": [],
+          "adoption_choices": [
+            "采纳知识总和定义，删除结构化清单限定。"
+          ],
+          "adopted": false,
+          "formal_data_written": false,
+          "language_judgment": {
+            "level": 5,
+            "model": "GPT-6",
+            "date": "2026-09-06",
+            "rationale": "知识体系是模型既有知识中的常用对应表达；不冒充本次已核中文原文。",
+            "external_usage_verified": false
+          }
+        }
+      ],
+      "concrete_value_projection": {
+        "english_forms": [
+          "body of knowledge",
+          "BoK"
+        ],
+        "chinese_form": "知识体系",
+        "definition_zh": "一个学科或职业领域内的知识总和。",
+        "scope_note": "SWEBOK Guide 对软件工程知识总和中普遍接受的部分进行识别和描述；指南及其结构化内容表不是知识总和本身。",
+        "basis": [
+          {
+            "material": "https://www.computer.org/education/bodies-of-knowledge/software-engineering",
+            "location": "Focus on Generally Accepted Knowledge；官方 HTML 本轮通过 urllib 内存读取成功，网页工具 open 返回 403",
+            "read_on": "2026-09-06",
+            "nature": "external_primary",
+            "supports": "明确区分 software engineering body of knowledge（专业知识总和）与只描述其中普遍接受部分的 Guide。"
+          }
+        ],
+        "chinese_basis": {
+          "level": 5,
+          "model": "GPT-6",
+          "date": "2026-09-06",
+          "rationale": "知识体系是模型既有知识中的常用对应表达；不冒充本次已核中文原文。",
+          "external_usage_verified": false
+        }
+      }
+    },
+    {
+      "id": "glossary-L0146",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 146,
+        "cells": [
+          "知识领域",
+          "knowledge area, KA",
+          "知识体系的主要区域",
+          "SWEBOK;CS2023"
+        ],
+        "raw": "| 知识领域 | knowledge area, KA | 知识体系的主要区域 | SWEBOK;CS2023 |"
+      },
+      "projection": {
+        "concept": "知识领域",
+        "definitions": {
+          "zh-Hans": "知识体系的主要区域"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "知识领域"
+          },
+          {
+            "language": "en",
+            "text": "knowledge area, KA"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://www.computer.org/education/bodies-of-knowledge/software-engineering",
+          "date": "既有记录日期；本轮未重新赋值",
+          "locator": "CS2023 Final Report Knowledge Model（既有 cs2023-relations 报告）；SWEBOK v4.0 Table I.1 既有核对记录",
+          "quote": null,
+          "nature": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        },
+        {
+          "url": "https://csed.acm.org/final-report/",
+          "date": "既有记录日期；本轮未重新赋值",
+          "locator": "CS2023 Final Report Knowledge Model（既有 cs2023-relations 报告）；SWEBOK v4.0 Table I.1 既有核对记录",
+          "quote": null,
+          "nature": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "can_support": [
+        "SWEBOK 与 CS2023 中 knowledge area 的层级语境"
+      ],
+      "cannot_support": [
+        "中文形式及两个来源的概念范围等同",
+        "通用固定层数"
+      ],
+      "minimal_correction": "知识领域保留来源的知识单元分组角色；缩写须从原文对应称呼引用，不把逗号串存成单名。",
+      "remaining_issues": [
+        "据本条材料组装完整具体记录与精确来源定位；采纳仍待人，不能把这一点列为取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "知识领域保留来源的知识单元分组角色；缩写须从原文对应称呼引用，不把逗号串存成单名。",
+        "remaining_work": [
+          "据本条材料组装完整具体记录与精确来源定位；采纳仍待人，不能把这一点列为取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "concrete_value_projection": {
+        "definition_zh": "CS2023 知识模型中一组相互关联的知识单元。",
+        "english_forms": [
+          "knowledge area",
+          "KA"
+        ],
+        "chinese_forms": [
+          "知识领域"
+        ],
+        "chinese_basis_proposal": [
+          {
+            "text": "知识领域",
+            "level": 5,
+            "model": {
+              "name": "gpt-6-astra",
+              "date": "2026-09-06",
+              "rationale": "知识领域保留来源的知识单元分组角色；缩写须从原文对应称呼引用，不把逗号串存成单名。 中文为模型既有知识判断，外部用法未核实。",
+              "approval": "future exact value decision; not adopted"
+            }
+          }
+        ],
+        "subject_fields": [],
+        "basis_rule": "概念/定义及英文用逐条实际来源；不使用中文模型判断给英文或定义兜底。"
+      },
+      "earlier_worker_remaining_issues": "所列来源原文或逐条中文译名未在本轮取得；现有记录只能作为项目内登记和历史核对。",
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence"
+    },
+    {
+      "id": "glossary-L0147",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 147,
+        "cells": [
+          "知识单元",
+          "knowledge unit, KU",
+          "知识领域内的主题簇",
+          "CS2023"
+        ],
+        "raw": "| 知识单元 | knowledge unit, KU | 知识领域内的主题簇 | CS2023 |"
+      },
+      "projection": {
+        "concept": "知识单元",
+        "definitions": {
+          "zh-Hans": "知识领域内的主题簇"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "知识单元"
+          },
+          {
+            "language": "en",
+            "text": "knowledge unit, KU"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://csed.acm.org/final-report/",
+          "date": "既有记录日期；本轮未重新赋值",
+          "locator": "CS2023 Final Report Knowledge Model；既有 work/reviews/2026-09-06-cs2023-relations.json 逐项记录",
+          "quote": null,
+          "nature": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "can_support": [
+        "CS2023 Knowledge Unit 的英文形式与来源语境",
+        "知识领域下属单元的组织关系"
+      ],
+      "cannot_support": [
+        "中文形式及‘主题簇’的中文对应",
+        "CS2023 之外的通用定义"
+      ],
+      "minimal_correction": "知识单元不仅是主题簇，必须补入来源定义明确的学习成果。",
+      "remaining_issues": [
+        "据本条材料组装完整具体记录与精确来源定位；采纳仍待人，不能把这一点列为取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "知识单元不仅是主题簇，必须补入来源定义明确的学习成果。",
+        "remaining_work": [
+          "据本条材料组装完整具体记录与精确来源定位；采纳仍待人，不能把这一点列为取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "concrete_value_projection": {
+        "definition_zh": "CS2023 知识模型中一组相关主题及这些主题的学习成果。",
+        "english_forms": [
+          "knowledge unit",
+          "KU"
+        ],
+        "chinese_forms": [
+          "知识单元"
+        ],
+        "chinese_basis_proposal": [
+          {
+            "text": "知识单元",
+            "level": 5,
+            "model": {
+              "name": "gpt-6-astra",
+              "date": "2026-09-06",
+              "rationale": "知识单元不仅是主题簇，必须补入来源定义明确的学习成果。 中文为模型既有知识判断，外部用法未核实。",
+              "approval": "future exact value decision; not adopted"
+            }
+          }
+        ],
+        "subject_fields": [],
+        "basis_rule": "概念/定义及英文用逐条实际来源；不使用中文模型判断给英文或定义兜底。"
+      },
+      "earlier_worker_remaining_issues": "所列来源原文或逐条中文译名未在本轮取得；现有记录只能作为项目内登记和历史核对。",
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence"
+    },
+    {
+      "id": "glossary-L0148",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 148,
+        "cells": [
+          "主题",
+          "topic",
+          "知识单元内的具体知识点，标核心或选修",
+          "CS2023"
+        ],
+        "raw": "| 主题 | topic | 知识单元内的具体知识点，标核心或选修 | CS2023 |"
+      },
+      "projection": {
+        "concept": "主题",
+        "definitions": {
+          "zh-Hans": "知识单元内的具体知识点，标核心或选修"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "主题"
+          },
+          {
+            "language": "en",
+            "text": "topic"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://csed.acm.org/final-report/",
+          "date": "既有记录日期；本轮未重新赋值",
+          "locator": "CS2023 Final Report Knowledge Model；既有 cs2023-relations 报告",
+          "quote": null,
+          "nature": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "can_support": [
+        "CS2023 topic 作为知识单元内组织内容的语境"
+      ],
+      "cannot_support": [
+        "中文形式",
+        "‘标核心或选修’是否为 CS2023 原文同一表述"
+      ],
+      "minimal_correction": "主题限于 CS2023 知识模型中的组成内容，核心/选修是来源课程属性，不升级为本库分类状态。",
+      "remaining_issues": [
+        "据本条材料组装完整具体记录与精确来源定位；采纳仍待人，不能把这一点列为取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "主题限于 CS2023 知识模型中的组成内容，核心/选修是来源课程属性，不升级为本库分类状态。",
+        "remaining_work": [
+          "据本条材料组装完整具体记录与精确来源定位；采纳仍待人，不能把这一点列为取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "concrete_value_projection": {
+        "definition_zh": "CS2023 知识单元中的知识主题，按课程模型标为核心或选修。",
+        "english_forms": [
+          "topic"
+        ],
+        "chinese_forms": [
+          "主题"
+        ],
+        "chinese_basis_proposal": [
+          {
+            "text": "主题",
+            "level": 5,
+            "model": {
+              "name": "gpt-6-astra",
+              "date": "2026-09-06",
+              "rationale": "主题限于 CS2023 知识模型中的组成内容，核心/选修是来源课程属性，不升级为本库分类状态。 中文为模型既有知识判断，外部用法未核实。",
+              "approval": "future exact value decision; not adopted"
+            }
+          }
+        ],
+        "subject_fields": [],
+        "basis_rule": "概念/定义及英文用逐条实际来源；不使用中文模型判断给英文或定义兜底。"
+      },
+      "earlier_worker_remaining_issues": "所列来源原文或逐条中文译名未在本轮取得；现有记录只能作为项目内登记和历史核对。",
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence"
+    },
+    {
+      "id": "glossary-L0149",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 149,
+        "cells": [
+          "普遍接受的知识",
+          "generally accepted knowledge",
+          "多数项目多数时候适用且广泛认同的知识；知识体系只收这类",
+          "SWEBOK"
+        ],
+        "raw": "| 普遍接受的知识 | generally accepted knowledge | 多数项目多数时候适用且广泛认同的知识；知识体系只收这类 | SWEBOK |"
+      },
+      "projection": {
+        "concept": "普遍接受的知识",
+        "definitions": {
+          "zh-Hans": "多数项目多数时候适用且广泛认同的知识；知识体系只收这类"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "普遍接受的知识"
+          },
+          {
+            "language": "en",
+            "text": "generally accepted knowledge"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://www.computer.org/education/bodies-of-knowledge/software-engineering",
+          "date": "既有记录日期；本轮未重新赋值",
+          "locator": "SWEBOK 既有来源核对记录及 docs/concepts/body-of-knowledge.md:9；具体全文范围未在本报告复开",
+          "quote": null,
+          "nature": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        },
+        {
+          "url": "https://www.computer.org/education/bodies-of-knowledge/software-engineering",
+          "locator": "FAQ: How do you define generally accepted knowledge?；官方 HTML 本轮内存读取",
+          "date": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "直接给出 most projects most of the time 与广泛共识，并排除所有项目统一应用的解释。"
+        }
+      ],
+      "can_support": [
+        "SWEBOK 选择 generally accepted knowledge 的来源语境"
+      ],
+      "cannot_support": [
+        "中文形式",
+        "‘多数项目多数时候适用’的精确定义和‘只收这类’的强断言"
+      ],
+      "minimal_correction": "删除“知识体系只收这类”；该限定针对 SWEBOK Guide 的覆盖范围，不针对 body of knowledge 本身。",
+      "remaining_issues": [
+        "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "删除“知识体系只收这类”；该限定针对 SWEBOK Guide 的覆盖范围，不针对 body of knowledge 本身。",
+        "remaining_work": [
+          "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": "所列来源原文或逐条中文译名未在本轮取得；现有记录只能作为项目内登记和历史核对。",
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0149",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 149,
+            "cells": [
+              "普遍接受的知识",
+              "generally accepted knowledge",
+              "多数项目多数时候适用且广泛认同的知识；知识体系只收这类",
+              "SWEBOK"
+            ],
+            "raw": "| 普遍接受的知识 | generally accepted knowledge | 多数项目多数时候适用且广泛认同的知识；知识体系只收这类 | SWEBOK |",
+            "sha256": "02a4414c1b7e9cf8c145b87240d8fa0c5a9f8b620a9a038c483d69873d526b56"
+          },
+          "resolution": "supported_with_explicit_corrections",
+          "proposed_fields": {
+            "english_form": "generally accepted knowledge",
+            "chinese_form": "普遍接受的知识",
+            "definition_zh": "在大多数项目的大多数情况下适用，且其价值和作用获得广泛共识的知识。",
+            "scope_note": "该解释用于 SWEBOK 所引 PMI 语境；不要求所有项目统一应用，也不把全部知识体系限定为此子集。",
+            "basis": [
+              {
+                "material": "https://www.computer.org/education/bodies-of-knowledge/software-engineering",
+                "location": "FAQ: How do you define generally accepted knowledge?；官方 HTML 本轮内存读取",
+                "read_on": "2026-09-06",
+                "nature": "external_primary",
+                "supports": "直接给出 most projects most of the time 与广泛共识，并排除所有项目统一应用的解释。"
+              }
+            ],
+            "chinese_basis": {
+              "level": 5,
+              "model": "GPT-6",
+              "date": "2026-09-06",
+              "rationale": "保留普遍接受的知识作为模型第 5 级中文对应，英文概念与边界已核。",
+              "external_usage_verified": false
+            }
+          },
+          "evidence": [
+            {
+              "material": "https://www.computer.org/education/bodies-of-knowledge/software-engineering",
+              "location": "FAQ: How do you define generally accepted knowledge?；官方 HTML 本轮内存读取",
+              "read_on": "2026-09-06",
+              "nature": "external_primary",
+              "supports": "直接给出 most projects most of the time 与广泛共识，并排除所有项目统一应用的解释。"
+            }
+          ],
+          "reason": "删除“知识体系只收这类”；该限定针对 SWEBOK Guide 的覆盖范围，不针对 body of knowledge 本身。",
+          "remaining_evidence_issues": [],
+          "adoption_choices": [],
+          "adopted": false,
+          "formal_data_written": false,
+          "language_judgment": {
+            "level": 5,
+            "model": "GPT-6",
+            "date": "2026-09-06",
+            "rationale": "保留普遍接受的知识作为模型第 5 级中文对应，英文概念与边界已核。",
+            "external_usage_verified": false
+          }
+        }
+      ],
+      "concrete_value_projection": {
+        "english_form": "generally accepted knowledge",
+        "chinese_form": "普遍接受的知识",
+        "definition_zh": "在大多数项目的大多数情况下适用，且其价值和作用获得广泛共识的知识。",
+        "scope_note": "该解释用于 SWEBOK 所引 PMI 语境；不要求所有项目统一应用，也不把全部知识体系限定为此子集。",
+        "basis": [
+          {
+            "material": "https://www.computer.org/education/bodies-of-knowledge/software-engineering",
+            "location": "FAQ: How do you define generally accepted knowledge?；官方 HTML 本轮内存读取",
+            "read_on": "2026-09-06",
+            "nature": "external_primary",
+            "supports": "直接给出 most projects most of the time 与广泛共识，并排除所有项目统一应用的解释。"
+          }
+        ],
+        "chinese_basis": {
+          "level": 5,
+          "model": "GPT-6",
+          "date": "2026-09-06",
+          "rationale": "保留普遍接受的知识作为模型第 5 级中文对应，英文概念与边界已核。",
+          "external_usage_verified": false
+        }
+      }
+    },
+    {
+      "id": "glossary-L0173",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 173,
+        "cells": [
+          "第一原理",
+          "first principle",
+          "不能再从别的命题推出、只能作为起点的命题",
+          "Aristotle, *Posterior Analytics*"
+        ],
+        "raw": "| 第一原理 | first principle | 不能再从别的命题推出、只能作为起点的命题 | Aristotle, *Posterior Analytics* |"
+      },
+      "projection": {
+        "concept": "第一原理",
+        "definitions": {
+          "zh-Hans": "不能再从别的命题推出、只能作为起点的命题"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "第一原理"
+          },
+          {
+            "language": "en",
+            "text": "first principle"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://classics.mit.edu/Aristotle/posterior.1.i.html",
+          "locator": "Book I, Part 2，basic truth / immediate proposition 段；Part 3，证明无限倒退讨论",
+          "quote": "An immediate proposition is one which has no other proposition prior to it.",
+          "checked": "2026-09-06",
+          "nature": "Aristotle 原著 G. R. G. Mure 英译，MIT Internet Classics Archive",
+          "support": "证明起点为直接命题；前提真实、居先与直接。"
+        },
+        {
+          "url": "https://classics.mit.edu/Aristotle/metaphysics.1.i.html",
+          "locator": "Book I, Part 2；Part 7",
+          "quote": "first principles",
+          "checked": "2026-09-06",
+          "nature": "Aristotle 原著 W. D. Ross 英译，MIT Internet Classics Archive",
+          "support": "核实 first principles / first principle 英文形式及由原理认识其他事物的语境。"
+        }
+      ],
+      "can_support": [],
+      "cannot_support": [],
+      "minimal_correction": "旧定义“只能作为起点”过强，可能排除对起点的认识与论辩；改为证明中的直接起点，保留原概念，不转成一般拆解方法。",
+      "remaining_issues": [
+        "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "旧定义“只能作为起点”过强，可能排除对起点的认识与论辩；改为证明中的直接起点，保留原概念，不转成一般拆解方法。",
+        "remaining_work": [
+          "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0173",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 173,
+            "cells": [
+              "第一原理",
+              "first principle",
+              "不能再从别的命题推出、只能作为起点的命题",
+              "Aristotle, *Posterior Analytics*"
+            ],
+            "raw": "| 第一原理 | first principle | 不能再从别的命题推出、只能作为起点的命题 | Aristotle, *Posterior Analytics* |"
+          },
+          "status": "evidence_ready",
+          "adopted": false,
+          "projection": {
+            "concept": "第一原理",
+            "definitions": {
+              "zh-Hans": "在一门学科的证明中作为直接起点、不由更先的命题证明的基本命题。",
+              "en": "A basic proposition that serves as an immediate starting point of demonstration in a science and is not demonstrated from prior propositions."
+            },
+            "definition_nature": "基于已核原文的概括；英文定义亦为本轮概括，不是来源逐字引文",
+            "scope_note": "保留原条目的论证起点概念。这里的不可证明是该证明体系的起点地位，不等于任意假设、显而易见、不可质疑或无需认识依据。",
+            "language_forms": [
+              {
+                "language": "zh-Hans",
+                "text": "第一原理",
+                "basis": {
+                  "level": 5,
+                  "model": {
+                    "name": "GPT-6",
+                    "date": "2026-09-06",
+                    "rationale": "“第一原理”是模型既有哲学与科学方法语境中的常见译名，指论证的基本起点；不是把 first principles thinking 另建为方法概念。保留原中文；本轮未核中文外部用法。"
+                  },
+                  "external_usage_verified": false,
+                  "adoption_status": "具体译名判断已完成，尚未写入正式采纳数据"
+                }
+              },
+              {
+                "language": "en",
+                "text": "first principle",
+                "basis": {
+                  "nature": "本轮已核外部英文形式",
+                  "references": [
+                    {
+                      "url": "https://classics.mit.edu/Aristotle/posterior.1.i.html",
+                      "locator": "Book I, Part 2，basic truth / immediate proposition 段；Part 3，证明无限倒退讨论"
+                    },
+                    {
+                      "url": "https://classics.mit.edu/Aristotle/metaphysics.1.i.html",
+                      "locator": "Book I, Part 2；Part 7"
+                    }
+                  ]
+                }
+              }
+            ],
+            "basis": [
+              {
+                "url": "https://classics.mit.edu/Aristotle/posterior.1.i.html",
+                "locator": "Book I, Part 2，basic truth / immediate proposition 段；Part 3，证明无限倒退讨论",
+                "quote": "An immediate proposition is one which has no other proposition prior to it.",
+                "checked": "2026-09-06",
+                "nature": "Aristotle 原著 G. R. G. Mure 英译，MIT Internet Classics Archive",
+                "support": "证明起点为直接命题；前提真实、居先与直接。"
+              },
+              {
+                "url": "https://classics.mit.edu/Aristotle/metaphysics.1.i.html",
+                "locator": "Book I, Part 2；Part 7",
+                "quote": "first principles",
+                "checked": "2026-09-06",
+                "nature": "Aristotle 原著 W. D. Ross 英译，MIT Internet Classics Archive",
+                "support": "核实 first principles / first principle 英文形式及由原理认识其他事物的语境。"
+              }
+            ]
+          },
+          "actual_basis": [
+            {
+              "url": "https://classics.mit.edu/Aristotle/posterior.1.i.html",
+              "locator": "Book I, Part 2，basic truth / immediate proposition 段；Part 3，证明无限倒退讨论",
+              "quote": "An immediate proposition is one which has no other proposition prior to it.",
+              "checked": "2026-09-06",
+              "nature": "Aristotle 原著 G. R. G. Mure 英译，MIT Internet Classics Archive",
+              "support": "证明起点为直接命题；前提真实、居先与直接。"
+            },
+            {
+              "url": "https://classics.mit.edu/Aristotle/metaphysics.1.i.html",
+              "locator": "Book I, Part 2；Part 7",
+              "quote": "first principles",
+              "checked": "2026-09-06",
+              "nature": "Aristotle 原著 W. D. Ross 英译，MIT Internet Classics Archive",
+              "support": "核实 first principles / first principle 英文形式及由原理认识其他事物的语境。"
+            }
+          ],
+          "semantic_resolution": "旧定义“只能作为起点”过强，可能排除对起点的认识与论辩；改为证明中的直接起点，保留原概念，不转成一般拆解方法。",
+          "scope_change_proposal": null,
+          "source_limitations": [],
+          "remaining_evidence_issues": [],
+          "attempted_steps": [
+            "读取原词汇行及 docs/concepts/first-principles.md。",
+            "直接读取 MIT 所载《后分析篇》Book I Parts 2–3；以《形而上学》Book I Parts 2、7 补英文形式。"
+          ]
+        }
+      ],
+      "concrete_value_projection": {
+        "concept": "第一原理",
+        "definitions": {
+          "zh-Hans": "在一门学科的证明中作为直接起点、不由更先的命题证明的基本命题。",
+          "en": "A basic proposition that serves as an immediate starting point of demonstration in a science and is not demonstrated from prior propositions."
+        },
+        "definition_nature": "基于已核原文的概括；英文定义亦为本轮概括，不是来源逐字引文",
+        "scope_note": "保留原条目的论证起点概念。这里的不可证明是该证明体系的起点地位，不等于任意假设、显而易见、不可质疑或无需认识依据。",
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "第一原理",
+            "basis": {
+              "level": 5,
+              "model": {
+                "name": "GPT-6",
+                "date": "2026-09-06",
+                "rationale": "“第一原理”是模型既有哲学与科学方法语境中的常见译名，指论证的基本起点；不是把 first principles thinking 另建为方法概念。保留原中文；本轮未核中文外部用法。"
+              },
+              "external_usage_verified": false,
+              "adoption_status": "具体译名判断已完成，尚未写入正式采纳数据"
+            }
+          },
+          {
+            "language": "en",
+            "text": "first principle",
+            "basis": {
+              "nature": "本轮已核外部英文形式",
+              "references": [
+                {
+                  "url": "https://classics.mit.edu/Aristotle/posterior.1.i.html",
+                  "locator": "Book I, Part 2，basic truth / immediate proposition 段；Part 3，证明无限倒退讨论"
+                },
+                {
+                  "url": "https://classics.mit.edu/Aristotle/metaphysics.1.i.html",
+                  "locator": "Book I, Part 2；Part 7"
+                }
+              ]
+            }
+          }
+        ],
+        "basis": [
+          {
+            "url": "https://classics.mit.edu/Aristotle/posterior.1.i.html",
+            "locator": "Book I, Part 2，basic truth / immediate proposition 段；Part 3，证明无限倒退讨论",
+            "quote": "An immediate proposition is one which has no other proposition prior to it.",
+            "checked": "2026-09-06",
+            "nature": "Aristotle 原著 G. R. G. Mure 英译，MIT Internet Classics Archive",
+            "support": "证明起点为直接命题；前提真实、居先与直接。"
+          },
+          {
+            "url": "https://classics.mit.edu/Aristotle/metaphysics.1.i.html",
+            "locator": "Book I, Part 2；Part 7",
+            "quote": "first principles",
+            "checked": "2026-09-06",
+            "nature": "Aristotle 原著 W. D. Ross 英译，MIT Internet Classics Archive",
+            "support": "核实 first principles / first principle 英文形式及由原理认识其他事物的语境。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glossary-L0174",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 174,
+        "cells": [
+          "设计理由",
+          "design rationale",
+          "记录“为什么这样决定”而不只是“决定了什么”",
+          "Kunz & Rittel 1970；Nygard 2011"
+        ],
+        "raw": "| 设计理由 | design rationale | 记录“为什么这样决定”而不只是“决定了什么” | Kunz & Rittel 1970；Nygard 2011 |"
+      },
+      "projection": {
+        "concept": "设计理由",
+        "definitions": {
+          "zh-Hans": "记录“为什么这样决定”而不只是“决定了什么”"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "设计理由"
+          },
+          {
+            "language": "en",
+            "text": "design rationale"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://kmi.open.ac.uk/publications/techreport/kmi-95-14",
+          "locator": "Simon Buckingham Shum, Design Argumentation as Design Rationale, KMI-95-14 (1995), 摘要首句",
+          "quote": "A design rationale (DR) is a representation of the reasoning behind the design of an artifact.",
+          "checked": "2026-09-06",
+          "nature": "发布者或作者原文，本轮直接读取",
+          "support": "直接支持英文形式及跨设计领域的推理表示定义。"
+        },
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/0142694X94900264",
+          "locator": "Diane McKerlie and Allan MacLean (1994), Reasoning with Design Rationale, Design Studies 15(2), 214–226，公开摘要",
+          "quote": "the reasons and processes behind them",
+          "checked": "2026-09-06",
+          "nature": "发布者或作者原文，本轮直接读取",
+          "support": "作者公开摘要支持不只表示方案，也表示理由及过程；无需购买全文。"
+        },
+        {
+          "url": "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+          "locator": "Michael Nygard (2011), 开头 motivation / rationale 段",
+          "quote": "the motivation behind certain decisions",
+          "checked": "2026-09-06",
+          "nature": "发布者或作者原文，本轮直接读取",
+          "support": "ADR 是保留理由的一种具体应用，不能独占 design rationale 外延。"
+        }
+      ],
+      "can_support": [],
+      "cannot_support": [],
+      "minimal_correction": "以作者直接定义补齐旧无证据记录；“记录为什么”改为理由与推理的表示，未缩小至 ADR 或 IBIS。",
+      "remaining_issues": [
+        "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "以作者直接定义补齐旧无证据记录；“记录为什么”改为理由与推理的表示，未缩小至 ADR 或 IBIS。",
+        "remaining_work": [
+          "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0174",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 174,
+            "cells": [
+              "设计理由",
+              "design rationale",
+              "记录“为什么这样决定”而不只是“决定了什么”",
+              "Kunz & Rittel 1970；Nygard 2011"
+            ],
+            "raw": "| 设计理由 | design rationale | 记录“为什么这样决定”而不只是“决定了什么” | Kunz & Rittel 1970；Nygard 2011 |"
+          },
+          "status": "evidence_ready",
+          "adopted": false,
+          "projection": {
+            "concept": "设计理由",
+            "definitions": {
+              "zh-Hans": "对设计某个系统或人工制品时所作选择及其背后推理的明确表达。",
+              "en": "An explicit representation of the reasoning behind choices made in designing a system or artifact."
+            },
+            "definition_nature": "基于已核原文的概括；英文定义亦为本轮概括，不是来源逐字引文",
+            "scope_note": "覆盖设计选择、理由和有关论证；不限于软件架构、不等于 ADR 文档类型，也不要求必须采用 IBIS 图式。",
+            "language_forms": [
+              {
+                "language": "zh-Hans",
+                "text": "设计理由",
+                "basis": {
+                  "level": 5,
+                  "model": {
+                    "name": "GPT-6",
+                    "date": "2026-09-06",
+                    "rationale": "“设计理由”是模型既有设计研究、软件工程语境中的可用译名，强调理由及推理而非只列设计结果；保留旧中文，不自造“设计理据”等替代名称。中文外部用法未核实。"
+                  },
+                  "external_usage_verified": false,
+                  "adoption_status": "具体译名判断已完成，尚未写入正式采纳数据"
+                }
+              },
+              {
+                "language": "en",
+                "text": "design rationale",
+                "basis": {
+                  "nature": "本轮已核外部英文形式",
+                  "references": [
+                    {
+                      "url": "https://kmi.open.ac.uk/publications/techreport/kmi-95-14",
+                      "locator": "Simon Buckingham Shum, Design Argumentation as Design Rationale, KMI-95-14 (1995), 摘要首句"
+                    },
+                    {
+                      "url": "https://www.sciencedirect.com/science/article/pii/0142694X94900264",
+                      "locator": "Diane McKerlie and Allan MacLean (1994), Reasoning with Design Rationale, Design Studies 15(2), 214–226，公开摘要"
+                    },
+                    {
+                      "url": "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+                      "locator": "Michael Nygard (2011), 开头 motivation / rationale 段"
+                    }
+                  ]
+                }
+              }
+            ],
+            "basis": [
+              {
+                "url": "https://kmi.open.ac.uk/publications/techreport/kmi-95-14",
+                "locator": "Simon Buckingham Shum, Design Argumentation as Design Rationale, KMI-95-14 (1995), 摘要首句",
+                "quote": "A design rationale (DR) is a representation of the reasoning behind the design of an artifact.",
+                "checked": "2026-09-06",
+                "nature": "发布者或作者原文，本轮直接读取",
+                "support": "直接支持英文形式及跨设计领域的推理表示定义。"
+              },
+              {
+                "url": "https://www.sciencedirect.com/science/article/pii/0142694X94900264",
+                "locator": "Diane McKerlie and Allan MacLean (1994), Reasoning with Design Rationale, Design Studies 15(2), 214–226，公开摘要",
+                "quote": "the reasons and processes behind them",
+                "checked": "2026-09-06",
+                "nature": "发布者或作者原文，本轮直接读取",
+                "support": "作者公开摘要支持不只表示方案，也表示理由及过程；无需购买全文。"
+              },
+              {
+                "url": "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+                "locator": "Michael Nygard (2011), 开头 motivation / rationale 段",
+                "quote": "the motivation behind certain decisions",
+                "checked": "2026-09-06",
+                "nature": "发布者或作者原文，本轮直接读取",
+                "support": "ADR 是保留理由的一种具体应用，不能独占 design rationale 外延。"
+              }
+            ]
+          },
+          "actual_basis": [
+            {
+              "url": "https://kmi.open.ac.uk/publications/techreport/kmi-95-14",
+              "locator": "Simon Buckingham Shum, Design Argumentation as Design Rationale, KMI-95-14 (1995), 摘要首句",
+              "quote": "A design rationale (DR) is a representation of the reasoning behind the design of an artifact.",
+              "checked": "2026-09-06",
+              "nature": "发布者或作者原文，本轮直接读取",
+              "support": "直接支持英文形式及跨设计领域的推理表示定义。"
+            },
+            {
+              "url": "https://www.sciencedirect.com/science/article/pii/0142694X94900264",
+              "locator": "Diane McKerlie and Allan MacLean (1994), Reasoning with Design Rationale, Design Studies 15(2), 214–226，公开摘要",
+              "quote": "the reasons and processes behind them",
+              "checked": "2026-09-06",
+              "nature": "发布者或作者原文，本轮直接读取",
+              "support": "作者公开摘要支持不只表示方案，也表示理由及过程；无需购买全文。"
+            },
+            {
+              "url": "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+              "locator": "Michael Nygard (2011), 开头 motivation / rationale 段",
+              "quote": "the motivation behind certain decisions",
+              "checked": "2026-09-06",
+              "nature": "发布者或作者原文，本轮直接读取",
+              "support": "ADR 是保留理由的一种具体应用，不能独占 design rationale 外延。"
+            }
+          ],
+          "semantic_resolution": "以作者直接定义补齐旧无证据记录；“记录为什么”改为理由与推理的表示，未缩小至 ADR 或 IBIS。",
+          "scope_change_proposal": null,
+          "source_limitations": [
+            "Kunz/Rittel 1970 的书目与 URL https://escholarship.org/uc/item/5cj786v8 已定位，但本轮未核报告正文；不作为定义的已读证据。替代作者原文已足以完成本条取证。"
+          ],
+          "remaining_evidence_issues": [],
+          "attempted_steps": [
+            "读取原行与本地第一原理文章。",
+            "检索并打开 Berkeley eScholarship 的 Kunz/Rittel 1970 原报告及 PDF；PDF 仅返回书目信息，页图调用未返回可阅读图像，未据此声称读到正文。",
+            "转读 Simon Buckingham Shum 所属 Open University 的本人报告摘要，取得直接定义；核读 McKerlie/MacLean 作者论文公开摘要与 Nygard 原博文。"
+          ]
+        }
+      ],
+      "concrete_value_projection": {
+        "concept": "设计理由",
+        "definitions": {
+          "zh-Hans": "对设计某个系统或人工制品时所作选择及其背后推理的明确表达。",
+          "en": "An explicit representation of the reasoning behind choices made in designing a system or artifact."
+        },
+        "definition_nature": "基于已核原文的概括；英文定义亦为本轮概括，不是来源逐字引文",
+        "scope_note": "覆盖设计选择、理由和有关论证；不限于软件架构、不等于 ADR 文档类型，也不要求必须采用 IBIS 图式。",
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "设计理由",
+            "basis": {
+              "level": 5,
+              "model": {
+                "name": "GPT-6",
+                "date": "2026-09-06",
+                "rationale": "“设计理由”是模型既有设计研究、软件工程语境中的可用译名，强调理由及推理而非只列设计结果；保留旧中文，不自造“设计理据”等替代名称。中文外部用法未核实。"
+              },
+              "external_usage_verified": false,
+              "adoption_status": "具体译名判断已完成，尚未写入正式采纳数据"
+            }
+          },
+          {
+            "language": "en",
+            "text": "design rationale",
+            "basis": {
+              "nature": "本轮已核外部英文形式",
+              "references": [
+                {
+                  "url": "https://kmi.open.ac.uk/publications/techreport/kmi-95-14",
+                  "locator": "Simon Buckingham Shum, Design Argumentation as Design Rationale, KMI-95-14 (1995), 摘要首句"
+                },
+                {
+                  "url": "https://www.sciencedirect.com/science/article/pii/0142694X94900264",
+                  "locator": "Diane McKerlie and Allan MacLean (1994), Reasoning with Design Rationale, Design Studies 15(2), 214–226，公开摘要"
+                },
+                {
+                  "url": "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+                  "locator": "Michael Nygard (2011), 开头 motivation / rationale 段"
+                }
+              ]
+            }
+          }
+        ],
+        "basis": [
+          {
+            "url": "https://kmi.open.ac.uk/publications/techreport/kmi-95-14",
+            "locator": "Simon Buckingham Shum, Design Argumentation as Design Rationale, KMI-95-14 (1995), 摘要首句",
+            "quote": "A design rationale (DR) is a representation of the reasoning behind the design of an artifact.",
+            "checked": "2026-09-06",
+            "nature": "发布者或作者原文，本轮直接读取",
+            "support": "直接支持英文形式及跨设计领域的推理表示定义。"
+          },
+          {
+            "url": "https://www.sciencedirect.com/science/article/pii/0142694X94900264",
+            "locator": "Diane McKerlie and Allan MacLean (1994), Reasoning with Design Rationale, Design Studies 15(2), 214–226，公开摘要",
+            "quote": "the reasons and processes behind them",
+            "checked": "2026-09-06",
+            "nature": "发布者或作者原文，本轮直接读取",
+            "support": "作者公开摘要支持不只表示方案，也表示理由及过程；无需购买全文。"
+          },
+          {
+            "url": "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+            "locator": "Michael Nygard (2011), 开头 motivation / rationale 段",
+            "quote": "the motivation behind certain decisions",
+            "checked": "2026-09-06",
+            "nature": "发布者或作者原文，本轮直接读取",
+            "support": "ADR 是保留理由的一种具体应用，不能独占 design rationale 外延。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glossary-L0175",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 175,
+        "cells": [
+          "被替代",
+          "superseded",
+          "决定记录被新决定取代后的状态",
+          "Nygard ADR 2011"
+        ],
+        "raw": "| 被替代 | superseded | 决定记录被新决定取代后的状态 | Nygard ADR 2011 |"
+      },
+      "projection": {
+        "concept": "被替代",
+        "definitions": {
+          "zh-Hans": "决定记录被新决定取代后的状态"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "被替代"
+          },
+          {
+            "language": "en",
+            "text": "superseded"
+          }
+        ]
+      },
+      "actual_basis": [],
+      "can_support": [],
+      "cannot_support": [],
+      "minimal_correction": "被替代保留 ADR 语境和旧记录，不自动适用于全部对象或等同项目 deprecated。",
+      "remaining_issues": [
+        "据本条材料组装完整具体记录与精确来源定位；采纳仍待人，不能把这一点列为取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "被替代保留 ADR 语境和旧记录，不自动适用于全部对象或等同项目 deprecated。",
+        "remaining_work": [
+          "据本条材料组装完整具体记录与精确来源定位；采纳仍待人，不能把这一点列为取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "concrete_value_projection": {
+        "definition_zh": "决定记录被后续决定取代但仍保留供查阅的状态。",
+        "english_forms": [
+          "superseded"
+        ],
+        "chinese_forms": [
+          "被替代"
+        ],
+        "chinese_basis_proposal": [
+          {
+            "text": "被替代",
+            "level": 5,
+            "model": {
+              "name": "gpt-6-astra",
+              "date": "2026-09-06",
+              "rationale": "被替代保留 ADR 语境和旧记录，不自动适用于全部对象或等同项目 deprecated。 中文为模型既有知识判断，外部用法未核实。",
+              "approval": "future exact value decision; not adopted"
+            }
+          }
+        ],
+        "subject_fields": [],
+        "basis_rule": "概念/定义及英文用逐条实际来源；不使用中文模型判断给英文或定义兜底。"
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence"
+    },
+    {
+      "id": "glossary-L0176",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 176,
+        "cells": [
+          "内容模型",
+          "content model",
+          "内容单元允许有哪些组成部分及其结构",
+          "SGML（ISO 8879）、DITA 沿用"
+        ],
+        "raw": "| 内容模型 | content model | 内容单元允许有哪些组成部分及其结构 | SGML（ISO 8879）、DITA 沿用 |"
+      },
+      "projection": {
+        "concept": "内容模型",
+        "definitions": {
+          "zh-Hans": "内容单元允许有哪些组成部分及其结构"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "内容模型"
+          },
+          {
+            "language": "en",
+            "text": "content model"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://www.w3.org/TR/xhtml-building/terms.html",
+          "date": "2026-09-06",
+          "locator": "Terms and Definitions, content model",
+          "quote": "the declared markup structure allowed within instances of an element type",
+          "nature": "本轮打开的公开原文"
+        },
+        {
+          "url": "https://www.w3.org/TR/REC-xml/#sec-element-content",
+          "locator": "XML 1.0 Fifth Edition §3.2.1 Element Content，定义及序列、选择、重复说明",
+          "quote": "a simple grammar governing the allowed types of the child elements and the order in which they are allowed to appear",
+          "checked": "2026-09-06",
+          "nature": "发布者或作者原文，本轮直接读取",
+          "support": "支持允许组成、次序及后段选择和重复机制。"
+        },
+        {
+          "url": "https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/archSpec/base/dtd-coding-overview.html",
+          "locator": "DITA 1.3 §2.6.3.1，Content models defined as entities",
+          "quote": "Every element in a DITA DTD defines its content model using an entity.",
+          "checked": "2026-09-06",
+          "nature": "发布者或作者原文，本轮直接读取",
+          "support": "核实 DITA 沿用 content model，并通过约束模块移除允许元素。"
+        }
+      ],
+      "can_support": [],
+      "cannot_support": [],
+      "minimal_correction": "把旧“组成部分及其结构”展开成可辨认约束，外延不变；原 SGML ISO 8879 的出处保留为历史登记，不冒充本轮逐条核读。",
+      "remaining_issues": [
+        "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "把旧“组成部分及其结构”展开成可辨认约束，外延不变；原 SGML ISO 8879 的出处保留为历史登记，不冒充本轮逐条核读。",
+        "remaining_work": [
+          "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0176",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 176,
+            "cells": [
+              "内容模型",
+              "content model",
+              "内容单元允许有哪些组成部分及其结构",
+              "SGML（ISO 8879）、DITA 沿用"
+            ],
+            "raw": "| 内容模型 | content model | 内容单元允许有哪些组成部分及其结构 | SGML（ISO 8879）、DITA 沿用 |"
+          },
+          "status": "evidence_ready",
+          "adopted": false,
+          "projection": {
+            "concept": "内容模型",
+            "definitions": {
+              "zh-Hans": "规定一个内容单元允许包含哪些组成部分，以及它们的组合、次序和重复方式的结构约束。",
+              "en": "Structural constraints specifying the permitted components of a content unit and their combination, order, and repetition."
+            },
+            "definition_nature": "基于已核原文的概括；英文定义亦为本轮概括，不是来源逐字引文",
+            "scope_note": "保留原行结构化内容语境。XML 的直接定义约束子元素类型与次序，DITA 用其约束元素内容；不扩张为 CMS 业务实体模型，也不把整体概念仅限于 XML 元素。",
+            "language_forms": [
+              {
+                "language": "zh-Hans",
+                "text": "内容模型",
+                "basis": {
+                  "level": 5,
+                  "model": {
+                    "name": "GPT-6",
+                    "date": "2026-09-06",
+                    "rationale": "“内容模型”是模型既有结构化写作、XML/DITA 语境中的行业译名；content 指允许组成的内容，model 指规则结构，不译成显示布局。保留旧中文，外部中文用法未核实。"
+                  },
+                  "external_usage_verified": false,
+                  "adoption_status": "具体译名判断已完成，尚未写入正式采纳数据"
+                }
+              },
+              {
+                "language": "en",
+                "text": "content model",
+                "basis": {
+                  "nature": "本轮已核外部英文形式",
+                  "references": [
+                    {
+                      "url": "https://www.w3.org/TR/REC-xml/#sec-element-content",
+                      "locator": "XML 1.0 Fifth Edition §3.2.1 Element Content，定义及序列、选择、重复说明"
+                    },
+                    {
+                      "url": "https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/archSpec/base/dtd-coding-overview.html",
+                      "locator": "DITA 1.3 §2.6.3.1，Content models defined as entities"
+                    }
+                  ]
+                }
+              }
+            ],
+            "basis": [
+              {
+                "url": "https://www.w3.org/TR/REC-xml/#sec-element-content",
+                "locator": "XML 1.0 Fifth Edition §3.2.1 Element Content，定义及序列、选择、重复说明",
+                "quote": "a simple grammar governing the allowed types of the child elements and the order in which they are allowed to appear",
+                "checked": "2026-09-06",
+                "nature": "发布者或作者原文，本轮直接读取",
+                "support": "支持允许组成、次序及后段选择和重复机制。"
+              },
+              {
+                "url": "https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/archSpec/base/dtd-coding-overview.html",
+                "locator": "DITA 1.3 §2.6.3.1，Content models defined as entities",
+                "quote": "Every element in a DITA DTD defines its content model using an entity.",
+                "checked": "2026-09-06",
+                "nature": "发布者或作者原文，本轮直接读取",
+                "support": "核实 DITA 沿用 content model，并通过约束模块移除允许元素。"
+              }
+            ]
+          },
+          "actual_basis": [
+            {
+              "url": "https://www.w3.org/TR/REC-xml/#sec-element-content",
+              "locator": "XML 1.0 Fifth Edition §3.2.1 Element Content，定义及序列、选择、重复说明",
+              "quote": "a simple grammar governing the allowed types of the child elements and the order in which they are allowed to appear",
+              "checked": "2026-09-06",
+              "nature": "发布者或作者原文，本轮直接读取",
+              "support": "支持允许组成、次序及后段选择和重复机制。"
+            },
+            {
+              "url": "https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/archSpec/base/dtd-coding-overview.html",
+              "locator": "DITA 1.3 §2.6.3.1，Content models defined as entities",
+              "quote": "Every element in a DITA DTD defines its content model using an entity.",
+              "checked": "2026-09-06",
+              "nature": "发布者或作者原文，本轮直接读取",
+              "support": "核实 DITA 沿用 content model，并通过约束模块移除允许元素。"
+            }
+          ],
+          "semantic_resolution": "把旧“组成部分及其结构”展开成可辨认约束，外延不变；原 SGML ISO 8879 的出处保留为历史登记，不冒充本轮逐条核读。",
+          "scope_change_proposal": null,
+          "source_limitations": [],
+          "remaining_evidence_issues": [],
+          "attempted_steps": [
+            "读取旧词汇行。",
+            "直接核读 W3C XML §3.2.1。",
+            "尝试猜测的 DITA contentmodels.html 路径返回 404；按发布者搜索定位并直接核读正式版 dtd-coding-overview.html §2.6.3.1。"
+          ]
+        }
+      ],
+      "concrete_value_projection": {
+        "concept": "内容模型",
+        "definitions": {
+          "zh-Hans": "规定一个内容单元允许包含哪些组成部分，以及它们的组合、次序和重复方式的结构约束。",
+          "en": "Structural constraints specifying the permitted components of a content unit and their combination, order, and repetition."
+        },
+        "definition_nature": "基于已核原文的概括；英文定义亦为本轮概括，不是来源逐字引文",
+        "scope_note": "保留原行结构化内容语境。XML 的直接定义约束子元素类型与次序，DITA 用其约束元素内容；不扩张为 CMS 业务实体模型，也不把整体概念仅限于 XML 元素。",
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "内容模型",
+            "basis": {
+              "level": 5,
+              "model": {
+                "name": "GPT-6",
+                "date": "2026-09-06",
+                "rationale": "“内容模型”是模型既有结构化写作、XML/DITA 语境中的行业译名；content 指允许组成的内容，model 指规则结构，不译成显示布局。保留旧中文，外部中文用法未核实。"
+              },
+              "external_usage_verified": false,
+              "adoption_status": "具体译名判断已完成，尚未写入正式采纳数据"
+            }
+          },
+          {
+            "language": "en",
+            "text": "content model",
+            "basis": {
+              "nature": "本轮已核外部英文形式",
+              "references": [
+                {
+                  "url": "https://www.w3.org/TR/REC-xml/#sec-element-content",
+                  "locator": "XML 1.0 Fifth Edition §3.2.1 Element Content，定义及序列、选择、重复说明"
+                },
+                {
+                  "url": "https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/archSpec/base/dtd-coding-overview.html",
+                  "locator": "DITA 1.3 §2.6.3.1，Content models defined as entities"
+                }
+              ]
+            }
+          }
+        ],
+        "basis": [
+          {
+            "url": "https://www.w3.org/TR/REC-xml/#sec-element-content",
+            "locator": "XML 1.0 Fifth Edition §3.2.1 Element Content，定义及序列、选择、重复说明",
+            "quote": "a simple grammar governing the allowed types of the child elements and the order in which they are allowed to appear",
+            "checked": "2026-09-06",
+            "nature": "发布者或作者原文，本轮直接读取",
+            "support": "支持允许组成、次序及后段选择和重复机制。"
+          },
+          {
+            "url": "https://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/archSpec/base/dtd-coding-overview.html",
+            "locator": "DITA 1.3 §2.6.3.1，Content models defined as entities",
+            "quote": "Every element in a DITA DTD defines its content model using an entity.",
+            "checked": "2026-09-06",
+            "nature": "发布者或作者原文，本轮直接读取",
+            "support": "核实 DITA 沿用 content model，并通过约束模块移除允许元素。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glossary-L0177",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 177,
+        "cells": [
+          "知识组织",
+          "knowledge organization",
+          "对知识进行描述、分类和排序的活动与系统；KOS 即知识组织系统",
+          "ISO 25964；SKOS"
+        ],
+        "raw": "| 知识组织 | knowledge organization | 对知识进行描述、分类和排序的活动与系统；KOS 即知识组织系统 | ISO 25964；SKOS |"
+      },
+      "projection": {
+        "concept": "知识组织",
+        "definitions": {
+          "zh-Hans": "对知识进行描述、分类和排序的活动与系统；KOS 即知识组织系统"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "知识组织"
+          },
+          {
+            "language": "en",
+            "text": "knowledge organization"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://www.isko.org/cyclo/knowledge_organization",
+          "locator": "Birger Hjørland, Knowledge organization (KO), §1 Introduction，末两段",
+          "quote": "The two main aspects of KO are (1) knowledge organization processes (KOP) and (2) knowledge organization systems (KOS).",
+          "checked": "2026-09-06",
+          "nature": "发布者或作者原文，本轮直接读取",
+          "support": "作者直接说明 KO 同时涵盖活动与系统，列编目、主题分析、标引、分类。"
+        },
+        {
+          "url": "https://www.w3.org/TR/skos-reference/",
+          "locator": "SKOS Reference, Abstract 第 2 段",
+          "quote": "Many knowledge organization systems, such as thesauri, taxonomies, classification schemes and subject heading systems",
+          "checked": "2026-09-06",
+          "nature": "发布者或作者原文，本轮直接读取",
+          "support": "核实 KOS 英文展开及系统实例；不单凭 SKOS 给整个 KO 活动定义。"
+        }
+      ],
+      "can_support": [],
+      "cannot_support": [
+        "definition text and clause-level semantics",
+        "external Chinese translation/formal bilingual usage"
+      ],
+      "minimal_correction": "已补齐此前误记的原文缺口。定义保持活动与系统，明确 KO/KOS 关系，未缩小至词表、SKOS 或单一分类操作。",
+      "remaining_issues": [
+        "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "已补齐此前误记的原文缺口。定义保持活动与系统，明确 KO/KOS 关系，未缩小至词表、SKOS 或单一分类操作。",
+        "remaining_work": [
+          "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0177",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 177,
+            "cells": [
+              "知识组织",
+              "knowledge organization",
+              "对知识进行描述、分类和排序的活动与系统；KOS 即知识组织系统",
+              "ISO 25964；SKOS"
+            ],
+            "raw": "| 知识组织 | knowledge organization | 对知识进行描述、分类和排序的活动与系统；KOS 即知识组织系统 | ISO 25964；SKOS |"
+          },
+          "status": "evidence_ready",
+          "adopted": false,
+          "projection": {
+            "concept": "知识组织",
+            "definitions": {
+              "zh-Hans": "围绕知识及其文献表示进行描述、标引、分类和组织的活动，以及支持这些活动的系统。",
+              "en": "Activities for describing, indexing, classifying, and organizing knowledge and its documentary representations, together with systems supporting those activities."
+            },
+            "definition_nature": "基于已核原文的概括；英文定义亦为本轮概括，不是来源逐字引文",
+            "scope_note": "沿用原行活动与系统两方面，不将 knowledge organization 与 knowledge organization system 视为同一名称；KOS 是其中的系统方面。",
+            "language_forms": [
+              {
+                "language": "zh-Hans",
+                "text": "知识组织",
+                "basis": {
+                  "level": 5,
+                  "model": {
+                    "name": "GPT-6",
+                    "date": "2026-09-06",
+                    "rationale": "“知识组织”是模型既有图书情报学领域对应 knowledge organization 的常见表达，覆盖组织过程及系统研究；不译成组织机构意义的“知识型组织”。保留旧中文，中文外部用法未核实。"
+                  },
+                  "external_usage_verified": false,
+                  "adoption_status": "具体译名判断已完成，尚未写入正式采纳数据"
+                }
+              },
+              {
+                "language": "en",
+                "text": "knowledge organization",
+                "basis": {
+                  "nature": "本轮已核外部英文形式",
+                  "references": [
+                    {
+                      "url": "https://www.isko.org/cyclo/knowledge_organization",
+                      "locator": "Birger Hjørland, Knowledge organization (KO), §1 Introduction，末两段"
+                    },
+                    {
+                      "url": "https://www.w3.org/TR/skos-reference/",
+                      "locator": "SKOS Reference, Abstract 第 2 段"
+                    }
+                  ]
+                }
+              }
+            ],
+            "basis": [
+              {
+                "url": "https://www.isko.org/cyclo/knowledge_organization",
+                "locator": "Birger Hjørland, Knowledge organization (KO), §1 Introduction，末两段",
+                "quote": "The two main aspects of KO are (1) knowledge organization processes (KOP) and (2) knowledge organization systems (KOS).",
+                "checked": "2026-09-06",
+                "nature": "发布者或作者原文，本轮直接读取",
+                "support": "作者直接说明 KO 同时涵盖活动与系统，列编目、主题分析、标引、分类。"
+              },
+              {
+                "url": "https://www.w3.org/TR/skos-reference/",
+                "locator": "SKOS Reference, Abstract 第 2 段",
+                "quote": "Many knowledge organization systems, such as thesauri, taxonomies, classification schemes and subject heading systems",
+                "checked": "2026-09-06",
+                "nature": "发布者或作者原文，本轮直接读取",
+                "support": "核实 KOS 英文展开及系统实例；不单凭 SKOS 给整个 KO 活动定义。"
+              }
+            ]
+          },
+          "actual_basis": [
+            {
+              "url": "https://www.isko.org/cyclo/knowledge_organization",
+              "locator": "Birger Hjørland, Knowledge organization (KO), §1 Introduction，末两段",
+              "quote": "The two main aspects of KO are (1) knowledge organization processes (KOP) and (2) knowledge organization systems (KOS).",
+              "checked": "2026-09-06",
+              "nature": "发布者或作者原文，本轮直接读取",
+              "support": "作者直接说明 KO 同时涵盖活动与系统，列编目、主题分析、标引、分类。"
+            },
+            {
+              "url": "https://www.w3.org/TR/skos-reference/",
+              "locator": "SKOS Reference, Abstract 第 2 段",
+              "quote": "Many knowledge organization systems, such as thesauri, taxonomies, classification schemes and subject heading systems",
+              "checked": "2026-09-06",
+              "nature": "发布者或作者原文，本轮直接读取",
+              "support": "核实 KOS 英文展开及系统实例；不单凭 SKOS 给整个 KO 活动定义。"
+            }
+          ],
+          "semantic_resolution": "已补齐此前误记的原文缺口。定义保持活动与系统，明确 KO/KOS 关系，未缩小至词表、SKOS 或单一分类操作。",
+          "scope_change_proposal": null,
+          "source_limitations": [],
+          "remaining_evidence_issues": [],
+          "attempted_steps": [
+            "读取旧词汇行与先前报告。",
+            "ISKO 的 web.open 返回 Internal Error，搜索索引可见定义；随后直接只读 HTTP 取得作者网页正文并阅读 §1，实际正文可得。",
+            "直接核读 W3C SKOS Abstract，将 KOS 系统实例与 KO 的活动定义分开。"
+          ]
+        }
+      ],
+      "concrete_value_projection": {
+        "concept": "知识组织",
+        "definitions": {
+          "zh-Hans": "围绕知识及其文献表示进行描述、标引、分类和组织的活动，以及支持这些活动的系统。",
+          "en": "Activities for describing, indexing, classifying, and organizing knowledge and its documentary representations, together with systems supporting those activities."
+        },
+        "definition_nature": "基于已核原文的概括；英文定义亦为本轮概括，不是来源逐字引文",
+        "scope_note": "沿用原行活动与系统两方面，不将 knowledge organization 与 knowledge organization system 视为同一名称；KOS 是其中的系统方面。",
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "知识组织",
+            "basis": {
+              "level": 5,
+              "model": {
+                "name": "GPT-6",
+                "date": "2026-09-06",
+                "rationale": "“知识组织”是模型既有图书情报学领域对应 knowledge organization 的常见表达，覆盖组织过程及系统研究；不译成组织机构意义的“知识型组织”。保留旧中文，中文外部用法未核实。"
+              },
+              "external_usage_verified": false,
+              "adoption_status": "具体译名判断已完成，尚未写入正式采纳数据"
+            }
+          },
+          {
+            "language": "en",
+            "text": "knowledge organization",
+            "basis": {
+              "nature": "本轮已核外部英文形式",
+              "references": [
+                {
+                  "url": "https://www.isko.org/cyclo/knowledge_organization",
+                  "locator": "Birger Hjørland, Knowledge organization (KO), §1 Introduction，末两段"
+                },
+                {
+                  "url": "https://www.w3.org/TR/skos-reference/",
+                  "locator": "SKOS Reference, Abstract 第 2 段"
+                }
+              ]
+            }
+          }
+        ],
+        "basis": [
+          {
+            "url": "https://www.isko.org/cyclo/knowledge_organization",
+            "locator": "Birger Hjørland, Knowledge organization (KO), §1 Introduction，末两段",
+            "quote": "The two main aspects of KO are (1) knowledge organization processes (KOP) and (2) knowledge organization systems (KOS).",
+            "checked": "2026-09-06",
+            "nature": "发布者或作者原文，本轮直接读取",
+            "support": "作者直接说明 KO 同时涵盖活动与系统，列编目、主题分析、标引、分类。"
+          },
+          {
+            "url": "https://www.w3.org/TR/skos-reference/",
+            "locator": "SKOS Reference, Abstract 第 2 段",
+            "quote": "Many knowledge organization systems, such as thesauri, taxonomies, classification schemes and subject heading systems",
+            "checked": "2026-09-06",
+            "nature": "发布者或作者原文，本轮直接读取",
+            "support": "核实 KOS 英文展开及系统实例；不单凭 SKOS 给整个 KO 活动定义。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glossary-L0178",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 178,
+        "cells": [
+          "公众人物",
+          "public figure",
+          "在社会事务中担任显著角色、或主动进入公共争议的人；本库 `person` 实体只收此类，具体为已发表作品的作者、公开项目的维护者、方法的提出者",
+          "美国判例法 *Gertz v. Robert Welch* (1974)，见 [Cornell LII](https://www.law.cornell.edu/wex/public_figure)"
+        ],
+        "raw": "| 公众人物 | public figure | 在社会事务中担任显著角色、或主动进入公共争议的人；本库 `person` 实体只收此类，具体为已发表作品的作者、公开项目的维护者、方法的提出者 | 美国判例法 *Gertz v. Robert Welch* (1974)，见 [Cornell LII](https://www.law.cornell.edu/wex/public_figure) |"
+      },
+      "projection": {
+        "concept": "公众人物",
+        "definitions": {
+          "zh-Hans": "在社会事务中担任显著角色、或主动进入公共争议的人；本库 `person` 实体只收此类，具体为已发表作品的作者、公开项目的维护者、方法的提出者"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "公众人物"
+          },
+          {
+            "language": "en",
+            "text": "public figure"
+          }
+        ]
+      },
+      "actual_basis": [],
+      "can_support": [],
+      "cannot_support": [],
+      "minimal_correction": "直接读Gertz判决所述两种public figure依据：一般广泛知名，或在特定公共争议中取得突出地位。原作者/维护者/方法提出者是项目收录规则，不能自动证明法律身份。",
+      "remaining_issues": [
+        "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "直接读Gertz判决所述两种public figure依据：一般广泛知名，或在特定公共争议中取得突出地位。原作者/维护者/方法提出者是项目收录规则，不能自动证明法律身份。",
+        "remaining_work": [
+          "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "supplementary_resolution_records": [
+        {
+          "url": "https://www.law.cornell.edu/supremecourt/text/418/323",
+          "locator": "Syllabus(3)(b)及Opinion广泛名望/特定争议段（网页L207–208）",
+          "checked": "2026-09-06",
+          "nature": "判决原文，直接读取"
+        }
+      ],
+      "concrete_value_projection": {
+        "definition_zh": "在Gertz判例语境中，因广泛名望而在一般事务中，或因参与特定公共争议而在相关事项中具有突出公共地位的人。",
+        "english_forms": [
+          "public figure"
+        ],
+        "chinese_forms": [
+          "公众人物"
+        ],
+        "scope_note": "本库按公开作品/项目/方法筛选person是既有项目用途；不得据这个筛选宣称每个被收录者均满足美国诽谤法public figure门槛。",
+        "chinese_model_rationale": "公众人物是法律及公共传播语境中public figure的通行中文；保留其限定语境，外部中文用法未核实。"
+      }
+    },
+    {
+      "id": "glossary-L0179",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 179,
+        "cells": [
+          "个体",
+          "individual",
+          "名称规范表所收的对象：唯一的个体，而非类",
+          "ISO-2 3.50 注"
+        ],
+        "raw": "| 个体 | individual | 名称规范表所收的对象：唯一的个体，而非类 | ISO-2 3.50 注 |"
+      },
+      "projection": {
+        "concept": "个体",
+        "definitions": {
+          "zh-Hans": "名称规范表所收的对象：唯一的个体，而非类"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "个体"
+          },
+          {
+            "language": "en",
+            "text": "individual"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://www.w3.org/TR/owl2-primer/#Modeling_Knowledge:_Basic_Notions",
+          "locator": "OWL 2 Primer Second Edition §3；§4.1；§4.7",
+          "quote": "we denote objects as individuals, categories as classes and relations as properties",
+          "checked": "2026-09-06",
+          "nature": "发布者或作者原文，本轮直接读取",
+          "support": "支持对象/类区分，§4.1 用 Mary 实例化 Woman；§4.7 明确不同名称不保证不同个体。"
+        }
+      ],
+      "can_support": [],
+      "cannot_support": [
+        "definition text and clause-level semantics",
+        "external Chinese translation/formal bilingual usage"
+      ],
+      "minimal_correction": "从定义中移出“名称规范表所收”至应用说明，仍指原来的特定对象概念；修正“唯一”可能造成的不同名字必为不同对象误读。",
+      "remaining_issues": [
+        "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "从定义中移出“名称规范表所收”至应用说明，仍指原来的特定对象概念；修正“唯一”可能造成的不同名字必为不同对象误读。",
+        "remaining_work": [
+          "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "concrete_value_projection": {
+        "concept": "个体",
+        "definitions": {
+          "zh-Hans": "在所描述的领域中被作为单个对象识别的对象，而非概括一类对象的类。",
+          "en": "An object identified as a particular object in the domain being described, rather than a class of objects."
+        },
+        "definition_nature": "基于已核原文的概括；英文定义亦为本轮概括，不是来源逐字引文",
+        "scope_note": "保留原行名称规范表所管理的特定对象语境，例如某个人、组织或特定作品；名称规范表的收录是本项目应用说明，不是个体的通用必要条件。不同名称可以指同一个体；“唯一”不意味着一名一物。",
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "个体",
+            "basis": {
+              "level": 5,
+              "model": {
+                "name": "GPT-6",
+                "date": "2026-09-06",
+                "rationale": "“个体”是模型既有本体论、知识表示语境中 individual 的通行译名，指具体被识别对象，不限自然人，也不把类的任意数学成员自动等同名称规范表对象。保留中文，外部中文用法未核实。"
+              },
+              "external_usage_verified": false,
+              "adoption_status": "具体译名判断已完成，尚未写入正式采纳数据"
+            }
+          },
+          {
+            "language": "en",
+            "text": "individual",
+            "basis": {
+              "nature": "本轮已核外部英文形式",
+              "references": [
+                {
+                  "url": "https://www.w3.org/TR/owl2-primer/#Modeling_Knowledge:_Basic_Notions",
+                  "locator": "OWL 2 Primer Second Edition §3；§4.1；§4.7"
+                }
+              ]
+            }
+          }
+        ],
+        "basis": [
+          {
+            "url": "https://www.w3.org/TR/owl2-primer/#Modeling_Knowledge:_Basic_Notions",
+            "locator": "OWL 2 Primer Second Edition §3；§4.1；§4.7",
+            "quote": "we denote objects as individuals, categories as classes and relations as properties",
+            "checked": "2026-09-06",
+            "nature": "发布者或作者原文，本轮直接读取",
+            "support": "支持对象/类区分，§4.1 用 Mary 实例化 Woman；§4.7 明确不同名称不保证不同个体。"
+          }
+        ]
+      },
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0179",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 179,
+            "cells": [
+              "个体",
+              "individual",
+              "名称规范表所收的对象：唯一的个体，而非类",
+              "ISO-2 3.50 注"
+            ],
+            "raw": "| 个体 | individual | 名称规范表所收的对象：唯一的个体，而非类 | ISO-2 3.50 注 |"
+          },
+          "status": "evidence_ready",
+          "adopted": false,
+          "projection": {
+            "concept": "个体",
+            "definitions": {
+              "zh-Hans": "在所描述的领域中被作为单个对象识别的对象，而非概括一类对象的类。",
+              "en": "An object identified as a particular object in the domain being described, rather than a class of objects."
+            },
+            "definition_nature": "基于已核原文的概括；英文定义亦为本轮概括，不是来源逐字引文",
+            "scope_note": "保留原行名称规范表所管理的特定对象语境，例如某个人、组织或特定作品；名称规范表的收录是本项目应用说明，不是个体的通用必要条件。不同名称可以指同一个体；“唯一”不意味着一名一物。",
+            "language_forms": [
+              {
+                "language": "zh-Hans",
+                "text": "个体",
+                "basis": {
+                  "level": 5,
+                  "model": {
+                    "name": "GPT-6",
+                    "date": "2026-09-06",
+                    "rationale": "“个体”是模型既有本体论、知识表示语境中 individual 的通行译名，指具体被识别对象，不限自然人，也不把类的任意数学成员自动等同名称规范表对象。保留中文，外部中文用法未核实。"
+                  },
+                  "external_usage_verified": false,
+                  "adoption_status": "具体译名判断已完成，尚未写入正式采纳数据"
+                }
+              },
+              {
+                "language": "en",
+                "text": "individual",
+                "basis": {
+                  "nature": "本轮已核外部英文形式",
+                  "references": [
+                    {
+                      "url": "https://www.w3.org/TR/owl2-primer/#Modeling_Knowledge:_Basic_Notions",
+                      "locator": "OWL 2 Primer Second Edition §3；§4.1；§4.7"
+                    }
+                  ]
+                }
+              }
+            ],
+            "basis": [
+              {
+                "url": "https://www.w3.org/TR/owl2-primer/#Modeling_Knowledge:_Basic_Notions",
+                "locator": "OWL 2 Primer Second Edition §3；§4.1；§4.7",
+                "quote": "we denote objects as individuals, categories as classes and relations as properties",
+                "checked": "2026-09-06",
+                "nature": "发布者或作者原文，本轮直接读取",
+                "support": "支持对象/类区分，§4.1 用 Mary 实例化 Woman；§4.7 明确不同名称不保证不同个体。"
+              }
+            ]
+          },
+          "actual_basis": [
+            {
+              "url": "https://www.w3.org/TR/owl2-primer/#Modeling_Knowledge:_Basic_Notions",
+              "locator": "OWL 2 Primer Second Edition §3；§4.1；§4.7",
+              "quote": "we denote objects as individuals, categories as classes and relations as properties",
+              "checked": "2026-09-06",
+              "nature": "发布者或作者原文，本轮直接读取",
+              "support": "支持对象/类区分，§4.1 用 Mary 实例化 Woman；§4.7 明确不同名称不保证不同个体。"
+            }
+          ],
+          "semantic_resolution": "从定义中移出“名称规范表所收”至应用说明，仍指原来的特定对象概念；修正“唯一”可能造成的不同名字必为不同对象误读。",
+          "scope_change_proposal": null,
+          "source_limitations": [
+            "ISO 25964-2 §3.50 注的 unique individuals 仅有本地阅读记录，本轮未重读 ISO 原文；不将该记录作为外部新引文。"
+          ],
+          "remaining_evidence_issues": [],
+          "attempted_steps": [
+            "读取原词汇行、docs/references/iso-25964.md 的 Part 2 §3.50 阅读记录和 docs/design/model/entities.md 的现有对象边界。",
+            "直接核读 W3C OWL 2 Primer §3、§4.1 与 §4.7，确认对象/类与非唯一名称原则。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0180",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 180,
+        "cells": [
+          "划分",
+          "partition",
+          "把一个集合分成互不重叠、合起来是全集的几组",
+          "数学通用术语"
+        ],
+        "raw": "| 划分 | partition | 把一个集合分成互不重叠、合起来是全集的几组 | 数学通用术语 |"
+      },
+      "projection": {
+        "concept": "划分",
+        "definitions": {
+          "zh-Hans": "把一个集合分成互不重叠、合起来是全集的几组"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "划分"
+          },
+          {
+            "language": "en",
+            "text": "partition"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://www.cs.cornell.edu/courses/cs3110/2012fa/recitations/rec14.html",
+          "locator": "Cornell CS 3110 Fall 2012, Recitation 14, 首段",
+          "quote": "a partition of S is a set of nonempty subsets of S",
+          "checked": "2026-09-06",
+          "nature": "发布者或作者原文，本轮直接读取",
+          "support": "首段同时明确每个元素恰属一个子集、两两不交及覆盖 S；课程随后才讨论实现，定义不限实现。"
+        }
+      ],
+      "can_support": [],
+      "cannot_support": [
+        "external source and formal clause",
+        "外部中文译名或正式双语用法",
+        "独立外部原文逐字核对"
+      ],
+      "minimal_correction": "补上旧定义遗漏的非空条件，并从“把集合分开”的过程式叙述改为所得子集集合；这是同一数学概念的定义精化。",
+      "remaining_issues": [
+        "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "补上旧定义遗漏的非空条件，并从“把集合分开”的过程式叙述改为所得子集集合；这是同一数学概念的定义精化。",
+        "remaining_work": [
+          "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0180",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 180,
+            "cells": [
+              "划分",
+              "partition",
+              "把一个集合分成互不重叠、合起来是全集的几组",
+              "数学通用术语"
+            ],
+            "raw": "| 划分 | partition | 把一个集合分成互不重叠、合起来是全集的几组 | 数学通用术语 |"
+          },
+          "status": "evidence_ready",
+          "adopted": false,
+          "projection": {
+            "concept": "划分",
+            "definitions": {
+              "zh-Hans": "一个集合的非空子集所组成的集合，其中各子集两两不相交，且它们的并集等于原集合。",
+              "en": "A set of nonempty subsets of a set, pairwise disjoint and having the original set as their union."
+            },
+            "definition_nature": "基于已核原文的概括；英文定义亦为本轮概括，不是来源逐字引文",
+            "scope_note": "保留原行集合论意义，不指磁盘分区、任意聚类或只要求不重叠的分组；原集合每个元素恰落在一个子集中。",
+            "language_forms": [
+              {
+                "language": "zh-Hans",
+                "text": "划分",
+                "basis": {
+                  "level": 5,
+                  "model": {
+                    "name": "GPT-6",
+                    "date": "2026-09-06",
+                    "rationale": "“划分”是模型既有离散数学、集合论中 partition 的常见译名；以非空、互斥和穷尽三个条件对应既有概念，不将 partition 当分类学任意分类。保留中文，外部中文用法未核实。"
+                  },
+                  "external_usage_verified": false,
+                  "adoption_status": "具体译名判断已完成，尚未写入正式采纳数据"
+                }
+              },
+              {
+                "language": "en",
+                "text": "partition",
+                "basis": {
+                  "nature": "本轮已核外部英文形式",
+                  "references": [
+                    {
+                      "url": "https://www.cs.cornell.edu/courses/cs3110/2012fa/recitations/rec14.html",
+                      "locator": "Cornell CS 3110 Fall 2012, Recitation 14, 首段"
+                    }
+                  ]
+                }
+              }
+            ],
+            "basis": [
+              {
+                "url": "https://www.cs.cornell.edu/courses/cs3110/2012fa/recitations/rec14.html",
+                "locator": "Cornell CS 3110 Fall 2012, Recitation 14, 首段",
+                "quote": "a partition of S is a set of nonempty subsets of S",
+                "checked": "2026-09-06",
+                "nature": "发布者或作者原文，本轮直接读取",
+                "support": "首段同时明确每个元素恰属一个子集、两两不交及覆盖 S；课程随后才讨论实现，定义不限实现。"
+              }
+            ]
+          },
+          "actual_basis": [
+            {
+              "url": "https://www.cs.cornell.edu/courses/cs3110/2012fa/recitations/rec14.html",
+              "locator": "Cornell CS 3110 Fall 2012, Recitation 14, 首段",
+              "quote": "a partition of S is a set of nonempty subsets of S",
+              "checked": "2026-09-06",
+              "nature": "发布者或作者原文，本轮直接读取",
+              "support": "首段同时明确每个元素恰属一个子集、两两不交及覆盖 S；课程随后才讨论实现，定义不限实现。"
+            }
+          ],
+          "semantic_resolution": "补上旧定义遗漏的非空条件，并从“把集合分开”的过程式叙述改为所得子集集合；这是同一数学概念的定义精化。",
+          "scope_change_proposal": null,
+          "source_limitations": [],
+          "remaining_evidence_issues": [],
+          "attempted_steps": [
+            "读取原词汇行。",
+            "按集合定义检索大学课程原文，直接阅读 Cornell Recitation 14 首段，核实三项条件。"
+          ]
+        }
+      ],
+      "concrete_value_projection": {
+        "concept": "划分",
+        "definitions": {
+          "zh-Hans": "一个集合的非空子集所组成的集合，其中各子集两两不相交，且它们的并集等于原集合。",
+          "en": "A set of nonempty subsets of a set, pairwise disjoint and having the original set as their union."
+        },
+        "definition_nature": "基于已核原文的概括；英文定义亦为本轮概括，不是来源逐字引文",
+        "scope_note": "保留原行集合论意义，不指磁盘分区、任意聚类或只要求不重叠的分组；原集合每个元素恰落在一个子集中。",
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "划分",
+            "basis": {
+              "level": 5,
+              "model": {
+                "name": "GPT-6",
+                "date": "2026-09-06",
+                "rationale": "“划分”是模型既有离散数学、集合论中 partition 的常见译名；以非空、互斥和穷尽三个条件对应既有概念，不将 partition 当分类学任意分类。保留中文，外部中文用法未核实。"
+              },
+              "external_usage_verified": false,
+              "adoption_status": "具体译名判断已完成，尚未写入正式采纳数据"
+            }
+          },
+          {
+            "language": "en",
+            "text": "partition",
+            "basis": {
+              "nature": "本轮已核外部英文形式",
+              "references": [
+                {
+                  "url": "https://www.cs.cornell.edu/courses/cs3110/2012fa/recitations/rec14.html",
+                  "locator": "Cornell CS 3110 Fall 2012, Recitation 14, 首段"
+                }
+              ]
+            }
+          }
+        ],
+        "basis": [
+          {
+            "url": "https://www.cs.cornell.edu/courses/cs3110/2012fa/recitations/rec14.html",
+            "locator": "Cornell CS 3110 Fall 2012, Recitation 14, 首段",
+            "quote": "a partition of S is a set of nonempty subsets of S",
+            "checked": "2026-09-06",
+            "nature": "发布者或作者原文，本轮直接读取",
+            "support": "首段同时明确每个元素恰属一个子集、两两不交及覆盖 S；课程随后才讨论实现，定义不限实现。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glossary-L0186",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 186,
+        "cells": [
+          "体裁",
+          "genre",
+          "按读者需求或内容性质划分的文本类别",
+          "IPTC genre；Diátaxis"
+        ],
+        "raw": "| 体裁 | genre | 按读者需求或内容性质划分的文本类别 | IPTC genre；Diátaxis |"
+      },
+      "projection": {
+        "concept": "体裁",
+        "definitions": {
+          "zh-Hans": "按读者需求或内容性质划分的文本类别"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "体裁"
+          },
+          {
+            "language": "en",
+            "text": "genre"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://cv.iptc.org/newscodes/genre/",
+          "date": "2026-09-06",
+          "locator": "Human readable concept data, Background",
+          "quote": "Scene setting and explanation for an event being reported",
+          "nature": "本轮打开的公开原文"
+        },
+        {
+          "url": "https://cv.iptc.org/newscodes/genre/",
+          "date": "既有记录日期；本轮未重新赋值",
+          "locator": "work/reviews/2026-09-05-source-evidence-conclusions.md:51、87-99；现行 docs/concepts/note-types.md:30",
+          "quote": null,
+          "nature": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        },
+        {
+          "url": "https://diataxis.fr/",
+          "date": "既有记录日期；本轮未重新赋值",
+          "locator": "work/reviews/2026-09-05-source-evidence-conclusions.md:51、87-99；现行 docs/concepts/note-types.md:30",
+          "quote": null,
+          "nature": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        },
+        {
+          "url": "https://www.iptc.org/std/NewsCodes/guidelines/",
+          "locator": "NewsCodes Guidelines §1.1 Descriptive NewsCodes，Genre 行",
+          "quote": "Indicates a nature, journalistic or intellectual characteristic of an item",
+          "checked": "2026-09-06",
+          "nature": "发布者或作者原文，本轮直接读取",
+          "support": "这是词表总体说明，非 Background 或单个成员定义；支持 genre 的总体分类维度。"
+        },
+        {
+          "url": "https://diataxis.fr/",
+          "locator": "首页四种需求与四种文档形式段",
+          "quote": "Diátaxis identifies four distinct needs, and four corresponding forms of documentation",
+          "checked": "2026-09-06",
+          "nature": "发布者或作者原文，本轮直接读取",
+          "support": "支持读者需求与文档形式的组织依据，不支持把 Diátaxis 说成 genre 定义标准。"
+        }
+      ],
+      "can_support": [
+        "IPTC genre 的体裁语境与已有 Analysis 适配记录",
+        "Diátaxis 的方法框架语境（仅作为并列来源）"
+      ],
+      "cannot_support": [
+        "genre 与本库体裁字段的完全等同",
+        "中文形式及 Diátaxis 对 genre 的直接定义"
+      ],
+      "minimal_correction": "IPTC官方总体genre定义已经取得。将一般性质说明与本库作者立场应用分开；不再把Diátaxis需求和genre混为来源同义定义，也不要求框架等同。",
+      "remaining_issues": [
+        "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "IPTC官方总体genre定义已经取得。将一般性质说明与本库作者立场应用分开；不再把Diátaxis需求和genre混为来源同义定义，也不要求框架等同。",
+        "remaining_work": [
+          "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0186",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 186,
+            "cells": [
+              "体裁",
+              "genre",
+              "按读者需求或内容性质划分的文本类别",
+              "IPTC genre；Diátaxis"
+            ],
+            "raw": "| 体裁 | genre | 按读者需求或内容性质划分的文本类别 | IPTC genre；Diátaxis |"
+          },
+          "status": "evidence_ready",
+          "adopted": false,
+          "projection": {
+            "concept": "体裁",
+            "definitions": {
+              "zh-Hans": "按内容性质及其新闻或知识表达特征区分的文本类别。",
+              "en": "A category of text distinguished by its content nature, expressive characteristics, or the reader needs it serves."
+            },
+            "definition_nature": "基于已核原文的概括；英文定义亦为本轮概括，不是来源逐字引文",
+            "scope_note": "IPTC提供genre整体维度，本库以genre字段表达作者立场的子集选择见content-model.md:22、67–69；Diátaxis读者需求另属type的组织依据，不作为genre英文形式或定义basis。",
+            "language_forms": [
+              {
+                "language": "zh-Hans",
+                "text": "体裁",
+                "basis": {
+                  "level": 5,
+                  "model": {
+                    "name": "GPT-6",
+                    "date": "2026-09-06",
+                    "rationale": "“体裁”是模型既有文本研究与内容组织中 genre 的常见译名，强调文本性质和表达用途，区别于主题、载体与成熟度；保留原中文，中文外部用法未核实。"
+                  },
+                  "external_usage_verified": false,
+                  "adoption_status": "具体译名判断已完成，尚未写入正式采纳数据"
+                }
+              },
+              {
+                "language": "en",
+                "text": "genre",
+                "basis": {
+                  "nature": "本轮已核外部英文形式",
+                  "references": [
+                    {
+                      "url": "https://www.iptc.org/std/NewsCodes/guidelines/",
+                      "locator": "NewsCodes Guidelines §1.1 Descriptive NewsCodes，Genre 行"
+                    }
+                  ]
+                }
+              }
+            ],
+            "basis": [
+              {
+                "url": "https://www.iptc.org/std/NewsCodes/guidelines/",
+                "locator": "NewsCodes Guidelines §1.1 Descriptive NewsCodes，Genre 行",
+                "quote": "Indicates a nature, journalistic or intellectual characteristic of an item",
+                "checked": "2026-09-06",
+                "nature": "发布者或作者原文，本轮直接读取",
+                "support": "这是词表总体说明，非 Background 或单个成员定义；支持 genre 的总体分类维度。"
+              }
+            ]
+          },
+          "actual_basis": [
+            {
+              "url": "https://www.iptc.org/std/NewsCodes/guidelines/",
+              "locator": "NewsCodes Guidelines §1.1 Descriptive NewsCodes，Genre 行",
+              "quote": "Indicates a nature, journalistic or intellectual characteristic of an item",
+              "checked": "2026-09-06",
+              "nature": "发布者或作者原文，本轮直接读取",
+              "support": "这是词表总体说明，非 Background 或单个成员定义；支持 genre 的总体分类维度。"
+            },
+            {
+              "url": "https://diataxis.fr/",
+              "locator": "首页四种需求与四种文档形式段",
+              "quote": "Diátaxis identifies four distinct needs, and four corresponding forms of documentation",
+              "checked": "2026-09-06",
+              "nature": "发布者或作者原文，本轮直接读取",
+              "support": "支持读者需求与文档形式的组织依据，不支持把 Diátaxis 说成 genre 定义标准。"
+            }
+          ],
+          "semantic_resolution": "保留原复合定义并明示综合解释的性质；不把 genre 缩成新闻体裁，也不把 Diátaxis 的 needs 冒称 IPTC 原定义。",
+          "scope_change_proposal": null,
+          "source_limitations": [],
+          "remaining_evidence_issues": [],
+          "attempted_steps": [
+            "读取原词汇行及 docs/concepts/note-types.md，识别项目同时引用 IPTC 与 Diátaxis。",
+            "直接核读 IPTC NewsCodes Guidelines §1.1 的整个 Genre 说明，而非某个词表成员。",
+            "直接核读 Diátaxis 首页；附加直接 HTTP 请求曾返回 403，但 web.open 已取得正式页面正文。"
+          ]
+        }
+      ],
+      "concrete_value_projection": {
+        "concept": "体裁",
+        "definitions": {
+          "zh-Hans": "按内容性质及其新闻或知识表达特征区分的文本类别。",
+          "en": "A category of text distinguished by its content nature, expressive characteristics, or the reader needs it serves."
+        },
+        "definition_nature": "基于已核原文的概括；英文定义亦为本轮概括，不是来源逐字引文",
+        "scope_note": "IPTC提供genre整体维度，本库以genre字段表达作者立场的子集选择见content-model.md:22、67–69；Diátaxis读者需求另属type的组织依据，不作为genre英文形式或定义basis。",
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "体裁",
+            "basis": {
+              "level": 5,
+              "model": {
+                "name": "GPT-6",
+                "date": "2026-09-06",
+                "rationale": "“体裁”是模型既有文本研究与内容组织中 genre 的常见译名，强调文本性质和表达用途，区别于主题、载体与成熟度；保留原中文，中文外部用法未核实。"
+              },
+              "external_usage_verified": false,
+              "adoption_status": "具体译名判断已完成，尚未写入正式采纳数据"
+            }
+          },
+          {
+            "language": "en",
+            "text": "genre",
+            "basis": {
+              "nature": "本轮已核外部英文形式",
+              "references": [
+                {
+                  "url": "https://www.iptc.org/std/NewsCodes/guidelines/",
+                  "locator": "NewsCodes Guidelines §1.1 Descriptive NewsCodes，Genre 行"
+                }
+              ]
+            }
+          }
+        ],
+        "basis": [
+          {
+            "url": "https://www.iptc.org/std/NewsCodes/guidelines/",
+            "locator": "NewsCodes Guidelines §1.1 Descriptive NewsCodes，Genre 行",
+            "quote": "Indicates a nature, journalistic or intellectual characteristic of an item",
+            "checked": "2026-09-06",
+            "nature": "发布者或作者原文，本轮直接读取",
+            "support": "这是词表总体说明，非 Background 或单个成员定义；支持 genre 的总体分类维度。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glossary-L0187",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 187,
+        "cells": [
+          "排障",
+          "troubleshooting",
+          "DITA 的 topic 类型：纠正性操作信息",
+          "DITA 1.3 §2.7.1.6"
+        ],
+        "raw": "| 排障 | troubleshooting | DITA 的 topic 类型：纠正性操作信息 | DITA 1.3 §2.7.1.6 |"
+      },
+      "projection": {
+        "concept": "排障",
+        "definitions": {
+          "zh-Hans": "DITA 的 topic 类型：纠正性操作信息"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "排障"
+          },
+          {
+            "language": "en",
+            "text": "troubleshooting"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://docs.oasis-open.org/dita/dita/v1.3/csd01/part2-tech-content/archSpec/technicalContent/dita-troubleshooting-topic.html",
+          "date": "2026-09-06",
+          "locator": "2.7.1.6 Troubleshooting topic",
+          "quote": "The troubleshooting topic type provides markup for corrective action information such as troubleshooting and alarm clearing.",
+          "nature": "本轮打开的公开原文"
+        },
+        {
+          "url": "https://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/technicalContent/dita-technicalContent-InformationTypes.html",
+          "date": "既有记录日期；本轮未重新赋值",
+          "locator": "work/reviews/2026-09-05-source-evidence-conclusions.md:120；docs/concepts/note-types.md:24-26、102",
+          "quote": null,
+          "nature": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        },
+        {
+          "url": "https://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/technicalContent/dita-troubleshooting-topic.html",
+          "locator": "DITA 1.3 §2.7.1.6，首段及 The troubleshooting information type、结构小节",
+          "quote": "The troubleshooting topic type provides markup for corrective action information such as troubleshooting and alarm clearing.",
+          "checked": "2026-09-06",
+          "nature": "发布者或作者原文，本轮直接读取",
+          "support": "正文逐项描述 condition/symptom、cause、remedy，允许非一一配对及未知原因/办法；结构规定顶层 troubleshooting 元素。"
+        }
+      ],
+      "can_support": [
+        "DITA 1.3 troubleshooting 作为 topic 类型的来源语境",
+        "既有 DITA match 的历史核对记录"
+      ],
+      "cannot_support": [
+        "中文形式",
+        "‘纠正性操作信息’的完整条款及所选 DITA 版本的全部适用范围"
+      ],
+      "minimal_correction": "将旧“纠正性操作信息”补足为条件、原因、办法及恢复目标；不将原 topic 类型偷偷换成一般排障活动。若要另收活动，需要另行提出概念划分，本次未提出新概念。",
+      "remaining_issues": [
+        "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "将旧“纠正性操作信息”补足为条件、原因、办法及恢复目标；不将原 topic 类型偷偷换成一般排障活动。若要另收活动，需要另行提出概念划分，本次未提出新概念。",
+        "remaining_work": [
+          "按具体值、名称去向与来源身份形成完整提案；未采纳不是取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "concrete_value_projection": {
+        "concept": "排障",
+        "definitions": {
+          "zh-Hans": "用于记录问题情形或症状、可能原因及纠正办法的 DITA 主题类型，以支持系统、产品或服务恢复正常。",
+          "en": "A DITA topic type for documenting conditions or symptoms, possible causes, and remedies to help restore a system, product, or service to normal."
+        },
+        "definition_nature": "基于已核原文的概括；英文定义亦为本轮概括，不是来源逐字引文",
+        "scope_note": "严格保留旧行与“笔记的类型”小节的 DITA topic 类型外延。一般排障活动与承载其信息的主题类型有区别；本记录定义后者，英文界面形式 troubleshooting 需连同本范围说明理解。允许未知原因或未知办法，亦涵盖告警清除策略。",
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "排障",
+            "basis": {
+              "level": 5,
+              "model": {
+                "name": "GPT-6",
+                "date": "2026-09-06",
+                "rationale": "“排障”是模型既有技术写作中 troubleshooting 的常见简洁译名。保留旧名称并明确其在本条指排障信息类型，不能仅凭该英文词把活动、文档类别和 XML 元素当同一概念；中文外部用法未核实。"
+              },
+              "external_usage_verified": false,
+              "adoption_status": "具体译名判断已完成，尚未写入正式采纳数据"
+            }
+          },
+          {
+            "language": "en",
+            "text": "troubleshooting",
+            "basis": {
+              "nature": "本轮已核外部英文形式",
+              "references": [
+                {
+                  "url": "https://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/technicalContent/dita-troubleshooting-topic.html",
+                  "locator": "DITA 1.3 §2.7.1.6，首段及 The troubleshooting information type、结构小节"
+                }
+              ]
+            }
+          }
+        ],
+        "basis": [
+          {
+            "url": "https://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/technicalContent/dita-troubleshooting-topic.html",
+            "locator": "DITA 1.3 §2.7.1.6，首段及 The troubleshooting information type、结构小节",
+            "quote": "The troubleshooting topic type provides markup for corrective action information such as troubleshooting and alarm clearing.",
+            "checked": "2026-09-06",
+            "nature": "发布者或作者原文，本轮直接读取",
+            "support": "正文逐项描述 condition/symptom、cause、remedy，允许非一一配对及未知原因/办法；结构规定顶层 troubleshooting 元素。"
+          }
+        ]
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0187",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 187,
+            "cells": [
+              "排障",
+              "troubleshooting",
+              "DITA 的 topic 类型：纠正性操作信息",
+              "DITA 1.3 §2.7.1.6"
+            ],
+            "raw": "| 排障 | troubleshooting | DITA 的 topic 类型：纠正性操作信息 | DITA 1.3 §2.7.1.6 |"
+          },
+          "status": "evidence_ready",
+          "adopted": false,
+          "projection": {
+            "concept": "排障",
+            "definitions": {
+              "zh-Hans": "用于记录问题情形或症状、可能原因及纠正办法的 DITA 主题类型，以支持系统、产品或服务恢复正常。",
+              "en": "A DITA topic type for documenting conditions or symptoms, possible causes, and remedies to help restore a system, product, or service to normal."
+            },
+            "definition_nature": "基于已核原文的概括；英文定义亦为本轮概括，不是来源逐字引文",
+            "scope_note": "严格保留旧行与“笔记的类型”小节的 DITA topic 类型外延。一般排障活动与承载其信息的主题类型有区别；本记录定义后者，英文界面形式 troubleshooting 需连同本范围说明理解。允许未知原因或未知办法，亦涵盖告警清除策略。",
+            "language_forms": [
+              {
+                "language": "zh-Hans",
+                "text": "排障",
+                "basis": {
+                  "level": 5,
+                  "model": {
+                    "name": "GPT-6",
+                    "date": "2026-09-06",
+                    "rationale": "“排障”是模型既有技术写作中 troubleshooting 的常见简洁译名。保留旧名称并明确其在本条指排障信息类型，不能仅凭该英文词把活动、文档类别和 XML 元素当同一概念；中文外部用法未核实。"
+                  },
+                  "external_usage_verified": false,
+                  "adoption_status": "具体译名判断已完成，尚未写入正式采纳数据"
+                }
+              },
+              {
+                "language": "en",
+                "text": "troubleshooting",
+                "basis": {
+                  "nature": "本轮已核外部英文形式",
+                  "references": [
+                    {
+                      "url": "https://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/technicalContent/dita-troubleshooting-topic.html",
+                      "locator": "DITA 1.3 §2.7.1.6，首段及 The troubleshooting information type、结构小节"
+                    }
+                  ]
+                }
+              }
+            ],
+            "basis": [
+              {
+                "url": "https://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/technicalContent/dita-troubleshooting-topic.html",
+                "locator": "DITA 1.3 §2.7.1.6，首段及 The troubleshooting information type、结构小节",
+                "quote": "The troubleshooting topic type provides markup for corrective action information such as troubleshooting and alarm clearing.",
+                "checked": "2026-09-06",
+                "nature": "发布者或作者原文，本轮直接读取",
+                "support": "正文逐项描述 condition/symptom、cause、remedy，允许非一一配对及未知原因/办法；结构规定顶层 troubleshooting 元素。"
+              }
+            ]
+          },
+          "actual_basis": [
+            {
+              "url": "https://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/technicalContent/dita-troubleshooting-topic.html",
+              "locator": "DITA 1.3 §2.7.1.6，首段及 The troubleshooting information type、结构小节",
+              "quote": "The troubleshooting topic type provides markup for corrective action information such as troubleshooting and alarm clearing.",
+              "checked": "2026-09-06",
+              "nature": "发布者或作者原文，本轮直接读取",
+              "support": "正文逐项描述 condition/symptom、cause、remedy，允许非一一配对及未知原因/办法；结构规定顶层 troubleshooting 元素。"
+            }
+          ],
+          "semantic_resolution": "将旧“纠正性操作信息”补足为条件、原因、办法及恢复目标；不将原 topic 类型偷偷换成一般排障活动。若要另收活动，需要另行提出概念划分，本次未提出新概念。",
+          "scope_change_proposal": null,
+          "source_limitations": [],
+          "remaining_evidence_issues": [],
+          "attempted_steps": [
+            "读取旧行及笔记类型上下文，确认旧定义对象是 DITA topic 类型。",
+            "从 Document types 概览进入正式 DITA 1.3 §2.7.1.6，直接读取条件、原因、办法及结构全文；与搜索所得 Errata 01 标题区分，正式采用原行对应 os 版本。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0189",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 189,
+        "cells": [
+          "隐性知识 / 显性知识",
+          "tacit / explicit knowledge",
+          "难以形式化的个人知识 / 正式而系统、易于交流的知识",
+          "Nonaka 1991"
+        ],
+        "raw": "| 隐性知识 / 显性知识 | tacit / explicit knowledge | 难以形式化的个人知识 / 正式而系统、易于交流的知识 | Nonaka 1991 |"
+      },
+      "projection": {
+        "concept": "隐性知识 / 显性知识",
+        "definitions": {
+          "zh-Hans": "难以形式化的个人知识 / 正式而系统、易于交流的知识"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "隐性知识 / 显性知识"
+          },
+          {
+            "language": "en",
+            "text": "tacit / explicit knowledge"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://hbr.org/2007/07/the-knowledge-creating-company",
+          "date": "既有记录日期；本轮未重新赋值",
+          "locator": "https://hbr.org/2007/07/the-knowledge-creating-company，页面第 67-72、97-101 行；仅读到摘要和材料身份",
+          "quote": null,
+          "nature": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        },
+        {
+          "url": "https://api.pageplace.de/preview/DT0400.9781847876621_A23446119/preview-9781847876621_A23446119.pdf",
+          "locator": "Managing Industrial Knowledge 第 1 章，Nonaka、Toyama、Konno，PDF p.22 署名；PDF p.24／印刷 p.15，知识两种形式段落",
+          "date": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "原作者在章正文同时说明两者的表达、交流与存储差别；合法电子书预览承载原作者正文。"
+        }
+      ],
+      "can_support": [
+        "HBR 官方页面确认 Nonaka 文章标题、作者和 2007 重印材料身份"
+      ],
+      "cannot_support": [
+        "tacit/explicit knowledge 的定义原文",
+        "1991 原始出版物定位",
+        "中文形式及本库知识维度采用"
+      ],
+      "minimal_correction": "旧行包含两个不同概念，拆两条；来源由无法取得正文的 Nonaka 1991 精确改为本轮读到的 Nonaka、Toyama、Konno 同名章节，不假称已核 1991 原刊。",
+      "remaining_issues": [
+        "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "旧行包含两个不同概念，拆两条；来源由无法取得正文的 Nonaka 1991 精确改为本轮读到的 Nonaka、Toyama、Konno 同名章节，不假称已核 1991 原刊。",
+        "remaining_work": [
+          "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": [
+        "复合行列出多个现有形式，但未提供每个分项可独立引用的定义原句；需逐项确认定义、来源和概念对应。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0189",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 189,
+            "cells": [
+              "隐性知识 / 显性知识",
+              "tacit / explicit knowledge",
+              "难以形式化的个人知识 / 正式而系统、易于交流的知识",
+              "Nonaka 1991"
+            ],
+            "raw": "| 隐性知识 / 显性知识 | tacit / explicit knowledge | 难以形式化的个人知识 / 正式而系统、易于交流的知识 | Nonaka 1991 |",
+            "sha256": "3eb0664fb9d36c381536f27fc21fdeb72cb016e7e0c4dbceb0b039ad8aa9f5cc"
+          },
+          "resolution": "supported_with_explicit_corrections",
+          "proposed_fields": {
+            "split_records": [
+              {
+                "english_form": "tacit knowledge",
+                "chinese_form": "隐性知识",
+                "definition_zh": "高度个人化、植根于行动和经验，难以形式化和交流的知识。"
+              },
+              {
+                "english_form": "explicit knowledge",
+                "chinese_form": "显性知识",
+                "definition_zh": "能够以正式、系统的语言表达，并较容易地处理、传递和存储的知识。"
+              }
+            ],
+            "basis": [
+              {
+                "material": "https://api.pageplace.de/preview/DT0400.9781847876621_A23446119/preview-9781847876621_A23446119.pdf",
+                "location": "Managing Industrial Knowledge 第 1 章，Nonaka、Toyama、Konno，PDF p.22 署名；PDF p.24／印刷 p.15，知识两种形式段落",
+                "read_on": "2026-09-06",
+                "nature": "external_primary",
+                "supports": "原作者在章正文同时说明两者的表达、交流与存储差别；合法电子书预览承载原作者正文。",
+                "quote": "tacit knowledge is highly personal and hard to formalize"
+              }
+            ],
+            "chinese_basis": {
+              "level": 5,
+              "model": "GPT-6",
+              "date": "2026-09-06",
+              "rationale": "隐性知识和显性知识是模型已有的知识管理领域惯用中文对应；本次未核中文作者版。",
+              "external_usage_verified": false
+            }
+          },
+          "evidence": [
+            {
+              "material": "https://api.pageplace.de/preview/DT0400.9781847876621_A23446119/preview-9781847876621_A23446119.pdf",
+              "location": "Managing Industrial Knowledge 第 1 章，Nonaka、Toyama、Konno，PDF p.22 署名；PDF p.24／印刷 p.15，知识两种形式段落",
+              "read_on": "2026-09-06",
+              "nature": "external_primary",
+              "supports": "原作者在章正文同时说明两者的表达、交流与存储差别；合法电子书预览承载原作者正文。",
+              "quote": "tacit knowledge is highly personal and hard to formalize"
+            }
+          ],
+          "reason": "旧行包含两个不同概念，拆两条；来源由无法取得正文的 Nonaka 1991 精确改为本轮读到的 Nonaka、Toyama、Konno 同名章节，不假称已核 1991 原刊。",
+          "remaining_evidence_issues": [],
+          "adoption_choices": [
+            "批准一行拆为两概念；不把二者写成同义词。"
+          ],
+          "adopted": false,
+          "formal_data_written": false,
+          "language_judgment": {
+            "level": 5,
+            "model": "GPT-6",
+            "date": "2026-09-06",
+            "rationale": "隐性知识和显性知识是模型已有的知识管理领域惯用中文对应；本次未核中文作者版。",
+            "external_usage_verified": false
+          }
+        }
+      ],
+      "concrete_value_projection": {
+        "split_records": [
+          {
+            "english_form": "tacit knowledge",
+            "chinese_form": "隐性知识",
+            "definition_zh": "高度个人化、植根于行动和经验，难以形式化和交流的知识。"
+          },
+          {
+            "english_form": "explicit knowledge",
+            "chinese_form": "显性知识",
+            "definition_zh": "能够以正式、系统的语言表达，并较容易地处理、传递和存储的知识。"
+          }
+        ],
+        "basis": [
+          {
+            "material": "https://api.pageplace.de/preview/DT0400.9781847876621_A23446119/preview-9781847876621_A23446119.pdf",
+            "location": "Managing Industrial Knowledge 第 1 章，Nonaka、Toyama、Konno，PDF p.22 署名；PDF p.24／印刷 p.15，知识两种形式段落",
+            "read_on": "2026-09-06",
+            "nature": "external_primary",
+            "supports": "原作者在章正文同时说明两者的表达、交流与存储差别；合法电子书预览承载原作者正文。",
+            "quote": "tacit knowledge is highly personal and hard to formalize"
+          }
+        ],
+        "chinese_basis": {
+          "level": 5,
+          "model": "GPT-6",
+          "date": "2026-09-06",
+          "rationale": "隐性知识和显性知识是模型已有的知识管理领域惯用中文对应；本次未核中文作者版。",
+          "external_usage_verified": false
+        }
+      }
+    },
+    {
+      "id": "glossary-L0190",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 190,
+        "cells": [
+          "速查表",
+          "cheat sheet",
+          "供快速参考的简明笔记集",
+          "Wikidata Q2309859"
+        ],
+        "raw": "| 速查表 | cheat sheet | 供快速参考的简明笔记集 | Wikidata Q2309859 |"
+      },
+      "projection": {
+        "concept": "速查表",
+        "definitions": {
+          "zh-Hans": "供快速参考的简明笔记集"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "速查表"
+          },
+          {
+            "language": "en",
+            "text": "cheat sheet"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q2309859",
+          "date": "既有记录日期；本轮未重新赋值",
+          "locator": "现有 Wikidata 关系报告及 docs/concepts/note-types.md:64、103；本条关系不扩展为标准定义",
+          "quote": null,
+          "nature": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        },
+        {
+          "url": "https://www.dictionary.com/browse/cheat-sheet",
+          "locator": "noun 义项 2；来源注明 Dictionary.com Unabridged based on Random House Unabridged Dictionary",
+          "date": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "词典直接定义参考资料含义；既非 Wikidata 描述串，也非单个产品实例。"
+        }
+      ],
+      "can_support": [
+        "Wikidata Q2309859 的现有关系核对记录（如报告所述）"
+      ],
+      "cannot_support": [
+        "Wikidata 条目的完整定义和 revision",
+        "cheat sheet 与本库 form/type 字段的对应",
+        "中文形式外部依据"
+      ],
+      "minimal_correction": "以词典直接义项替代 Wikidata Q2309859 单一实体描述，删除定义中未由该义项限定的“简明笔记集”。",
+      "remaining_issues": [
+        "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "以词典直接义项替代 Wikidata Q2309859 单一实体描述，删除定义中未由该义项限定的“简明笔记集”。",
+        "remaining_work": [
+          "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0190",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 190,
+            "cells": [
+              "速查表",
+              "cheat sheet",
+              "供快速参考的简明笔记集",
+              "Wikidata Q2309859"
+            ],
+            "raw": "| 速查表 | cheat sheet | 供快速参考的简明笔记集 | Wikidata Q2309859 |",
+            "sha256": "601cc77e7bbc57a464ac19b709f06f262afc3635ef7506718213b012c9c44432"
+          },
+          "resolution": "supported_with_explicit_corrections",
+          "proposed_fields": {
+            "english_form": "cheat sheet",
+            "chinese_form": "速查表",
+            "definition_zh": "汇集笔记或其他辅助信息，供学习或记忆时查阅的文档。",
+            "scope_note": "采用词典第二义项的参考文档含义，不采用考试作弊材料义项。",
+            "basis": [
+              {
+                "material": "https://www.dictionary.com/browse/cheat-sheet",
+                "location": "noun 义项 2；来源注明 Dictionary.com Unabridged based on Random House Unabridged Dictionary",
+                "read_on": "2026-09-06",
+                "nature": "external_primary",
+                "supports": "词典直接定义参考资料含义；既非 Wikidata 描述串，也非单个产品实例。"
+              }
+            ],
+            "chinese_basis": {
+              "level": 5,
+              "model": "GPT-6",
+              "date": "2026-09-06",
+              "rationale": "速查表是模型已有技术文档领域惯用表达；不是该英语词典的已核官方中译。",
+              "external_usage_verified": false
+            }
+          },
+          "evidence": [
+            {
+              "material": "https://www.dictionary.com/browse/cheat-sheet",
+              "location": "noun 义项 2；来源注明 Dictionary.com Unabridged based on Random House Unabridged Dictionary",
+              "read_on": "2026-09-06",
+              "nature": "external_primary",
+              "supports": "词典直接定义参考资料含义；既非 Wikidata 描述串，也非单个产品实例。"
+            }
+          ],
+          "reason": "以词典直接义项替代 Wikidata Q2309859 单一实体描述，删除定义中未由该义项限定的“简明笔记集”。",
+          "remaining_evidence_issues": [],
+          "adoption_choices": [],
+          "adopted": false,
+          "formal_data_written": false,
+          "language_judgment": {
+            "level": 5,
+            "model": "GPT-6",
+            "date": "2026-09-06",
+            "rationale": "速查表是模型已有技术文档领域惯用表达；不是该英语词典的已核官方中译。",
+            "external_usage_verified": false
+          }
+        }
+      ],
+      "concrete_value_projection": {
+        "english_form": "cheat sheet",
+        "chinese_form": "速查表",
+        "definition_zh": "汇集笔记或其他辅助信息，供学习或记忆时查阅的文档。",
+        "scope_note": "采用词典第二义项的参考文档含义，不采用考试作弊材料义项。",
+        "basis": [
+          {
+            "material": "https://www.dictionary.com/browse/cheat-sheet",
+            "location": "noun 义项 2；来源注明 Dictionary.com Unabridged based on Random House Unabridged Dictionary",
+            "read_on": "2026-09-06",
+            "nature": "external_primary",
+            "supports": "词典直接定义参考资料含义；既非 Wikidata 描述串，也非单个产品实例。"
+          }
+        ],
+        "chinese_basis": {
+          "level": 5,
+          "model": "GPT-6",
+          "date": "2026-09-06",
+          "rationale": "速查表是模型已有技术文档领域惯用表达；不是该英语词典的已核官方中译。",
+          "external_usage_verified": false
+        }
+      }
+    },
+    {
+      "id": "glossary-L0191",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 191,
+        "cells": [
+          "札记簿",
+          "commonplace book",
+          "抄录重要段落并按主题整理的本子",
+          "Harvard Library"
+        ],
+        "raw": "| 札记簿 | commonplace book | 抄录重要段落并按主题整理的本子 | Harvard Library |"
+      },
+      "projection": {
+        "concept": "札记簿",
+        "definitions": {
+          "zh-Hans": "抄录重要段落并按主题整理的本子"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "札记簿"
+          },
+          {
+            "language": "en",
+            "text": "commonplace book"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://web.archive.org/web/2015/http://ocp.hul.harvard.edu/reading/commonplace.html",
+          "date": "既有记录日期；本轮未重新赋值",
+          "locator": "docs/concepts/note-types.md:64、113；所列 Wayback URL 本次打开失败（Internal Error），未取得原文",
+          "quote": null,
+          "nature": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        },
+        {
+          "url": "https://takenote.library.harvard.edu/fragment-and-whole",
+          "locator": "Tiffany Stern, The Fragment and the Whole，正文第 6–8 段（页面行 133–138）",
+          "date": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "明确写出 commonplace books 依 headings 组织，内容可来自书面文本、口头文本和个人观察。"
+        }
+      ],
+      "can_support": [
+        "PDF 正文明确使用 Cognitive Process dimension，并列出六个主要类别 Remember、Understand、Apply、Analyze、Evaluate、Create",
+        "PDF 正文明确区分 Knowledge dimension 与 Cognitive Process dimension，并将前者置于表格纵轴、后者置于横轴",
+        "Taxonomy Table 用知识维度与认知过程维度的交叉单元分类教育目标"
+      ],
+      "cannot_support": [
+        "commonplace book 原文定义",
+        "中文形式与 Harvard Library 页面对应"
+      ],
+      "minimal_correction": "Harvard同机构现行作者正文已补齐，旧失效链接不再构成概念证据阻断。定义补入阅读、听闻、观察等材料；默认保留札记簿中文，摘录簿只是模型备选，不因外部英文页更换就必须改旧名。",
+      "remaining_issues": [
+        "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "Harvard同机构现行作者正文已补齐，旧失效链接不再构成概念证据阻断。定义补入阅读、听闻、观察等材料；默认保留札记簿中文，摘录簿只是模型备选，不因外部英文页更换就必须改旧名。",
+        "remaining_work": [
+          "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0191",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 191,
+            "cells": [
+              "札记簿",
+              "commonplace book",
+              "抄录重要段落并按主题整理的本子",
+              "Harvard Library"
+            ],
+            "raw": "| 札记簿 | commonplace book | 抄录重要段落并按主题整理的本子 | Harvard Library |",
+            "sha256": "11bf6799fe3c2b69bfb21bb30b00041260ab34109e596fb40e7e3b4138e61454"
+          },
+          "resolution": "supported_with_explicit_corrections",
+          "proposed_fields": {
+            "english_form": "commonplace book",
+            "chinese_form": "札记簿",
+            "definition_zh": "将阅读、听闻或个人观察所得的摘录和笔记按选定标题组织起来的笔记本。",
+            "old_form_disposition": {
+              "text": "札记簿",
+              "action": "保留在迁移前值；不自动登记为批准的同义词"
+            },
+            "basis": [
+              {
+                "material": "https://takenote.library.harvard.edu/fragment-and-whole",
+                "location": "Tiffany Stern, The Fragment and the Whole，正文第 6–8 段（页面行 133–138）",
+                "read_on": "2026-09-06",
+                "nature": "external_primary",
+                "supports": "明确写出 commonplace books 依 headings 组织，内容可来自书面文本、口头文本和个人观察。"
+              }
+            ],
+            "chinese_basis": {
+              "level": 5,
+              "model": "GPT-6",
+              "date": "2026-09-06",
+              "rationale": "札记簿作为当前已登记中文名称，在此以按主题标题组织摘录与笔记的具体范围沿用；外部中文用法未核实。",
+              "external_usage_verified": false
+            },
+            "alternative_name_proposal": {
+              "text": "摘录簿",
+              "status": "alternative_not_adopted",
+              "rationale": "原报告模型建议突出摘录性质，但实际定义也容纳观察和笔记，尚未证明旧札记簿有实质错误；默认沿用旧名，新增名称可另明列，不为取证替代强迫改中文。"
+            }
+          },
+          "evidence": [
+            {
+              "material": "https://takenote.library.harvard.edu/fragment-and-whole",
+              "location": "Tiffany Stern, The Fragment and the Whole，正文第 6–8 段（页面行 133–138）",
+              "read_on": "2026-09-06",
+              "nature": "external_primary",
+              "supports": "明确写出 commonplace books 依 headings 组织，内容可来自书面文本、口头文本和个人观察。"
+            }
+          ],
+          "reason": "以同机构现行作者专题页替代失效旧入口；旧“抄录重要段落”过窄。摘录簿是模型已有中文表达；不凭英语页面制造中文引用。",
+          "remaining_evidence_issues": [],
+          "adoption_choices": [
+            "采纳摘录簿为第 5 级中文形式；如需保留札记簿为项目规定形式，须明确由人选定，不能声称 Harvard 提供中译。"
+          ],
+          "adopted": false,
+          "formal_data_written": false,
+          "language_judgment": {
+            "level": 5,
+            "model": "GPT-6",
+            "date": "2026-09-06",
+            "rationale": "札记簿作为当前已登记中文名称，在此以按主题标题组织摘录与笔记的具体范围沿用；外部中文用法未核实。",
+            "external_usage_verified": false
+          }
+        }
+      ],
+      "concrete_value_projection": {
+        "english_form": "commonplace book",
+        "chinese_form": "札记簿",
+        "definition_zh": "将阅读、听闻或个人观察所得的摘录和笔记按选定标题组织起来的笔记本。",
+        "old_form_disposition": {
+          "text": "札记簿",
+          "action": "保留在迁移前值；不自动登记为批准的同义词"
+        },
+        "basis": [
+          {
+            "material": "https://takenote.library.harvard.edu/fragment-and-whole",
+            "location": "Tiffany Stern, The Fragment and the Whole，正文第 6–8 段（页面行 133–138）",
+            "read_on": "2026-09-06",
+            "nature": "external_primary",
+            "supports": "明确写出 commonplace books 依 headings 组织，内容可来自书面文本、口头文本和个人观察。"
+          }
+        ],
+        "chinese_basis": {
+          "level": 5,
+          "model": "GPT-6",
+          "date": "2026-09-06",
+          "rationale": "札记簿作为当前已登记中文名称，在此以按主题标题组织摘录与笔记的具体范围沿用；外部中文用法未核实。",
+          "external_usage_verified": false
+        },
+        "alternative_name_proposal": {
+          "text": "摘录簿",
+          "status": "alternative_not_adopted",
+          "rationale": "原报告模型建议突出摘录性质，但实际定义也容纳观察和笔记，尚未证明旧札记簿有实质错误；默认沿用旧名，新增名称可另明列，不为取证替代强迫改中文。"
+        }
+      }
+    },
+    {
+      "id": "glossary-L0192",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 192,
+        "cells": [
+          "认知层级",
+          "cognitive level",
+          "对主题理解的深度：记忆到创造六级",
+          "Bloom 修订版，Krathwohl 2002"
+        ],
+        "raw": "| 认知层级 | cognitive level | 对主题理解的深度：记忆到创造六级 | Bloom 修订版，Krathwohl 2002 |"
+      },
+      "projection": {
+        "concept": "认知层级",
+        "definitions": {
+          "zh-Hans": "对主题理解的深度：记忆到创造六级"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "认知层级"
+          },
+          {
+            "language": "en",
+            "text": "cognitive level"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://cmapspublic2.ihmc.us/rid=1Q2PTM7HL-26LTFBX-9YN8/Krathwohl%202002.pdf",
+          "date": "既有记录日期；本轮未重新赋值",
+          "locator": "https://cmapspublic2.ihmc.us/rid=1Q2PTM7HL-26LTFBX-9YN8/Krathwohl%202002.pdf；PDF page index 2-5（印刷 pp. 214-217），正文 The Cognitive Process dimension、The Knowledge dimension、The Taxonomy Table 及 Tables 2-3；web ref turn110view0-turn110view3",
+          "quote": null,
+          "nature": "既有来源核对记录或指定发布者材料；不将项目笔记冒充来源原文。"
+        }
+      ],
+      "can_support": [
+        "PDF 正文明确使用 Cognitive Process dimension，并列出六个主要类别 Remember、Understand、Apply、Analyze、Evaluate、Create",
+        "PDF 正文明确区分 Knowledge dimension 与 Cognitive Process dimension，并将前者置于表格纵轴、后者置于横轴",
+        "Taxonomy Table 用知识维度与认知过程维度的交叉单元分类教育目标"
+      ],
+      "cannot_support": [
+        "中文形式及六级顺序的逐条中文对应",
+        "将 cognitive process dimension 直接改写为项目的认知层级字段"
+      ],
+      "minimal_correction": "原认知层级/cognitive level误把来源维度简化成理解深度；明确建议名称与范围纠正，不把旧名自动设同义。现行level可选与自评用途保持，不改变字段可选性。",
+      "remaining_issues": [
+        "将明确before/after、来源替换及名称地位形成具体采纳值；缺人工采纳不再列作取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "原认知层级/cognitive level误把来源维度简化成理解深度；明确建议名称与范围纠正，不把旧名自动设同义。现行level可选与自评用途保持，不改变字段可选性。",
+        "remaining_work": [
+          "将明确before/after、来源替换及名称地位形成具体采纳值；缺人工采纳不再列作取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "concrete_value_projection": {
+        "definition_zh": "修订版教育目标分类中用于区分记忆、理解、应用、分析、评价和创造的认知过程维度。",
+        "english_forms": [
+          "cognitive process dimension"
+        ],
+        "chinese_forms": [
+          "认知过程维度"
+        ],
+        "basis": {
+          "url": "https://cmapspublic2.ihmc.us/rid=1Q2PTM7HL-26LTFBX-9YN8/Krathwohl%202002.pdf",
+          "locator": "PDF index2–5，印刷pp.214–217，Cognitive Process dimension、Tables2–3；继承已核阅读记录",
+          "checked": "2026-09-06"
+        },
+        "chinese_model_basis": {
+          "level": 5,
+          "name": "gpt-6-astra",
+          "date": "2026-09-06",
+          "rationale": "原认知层级/cognitive level误把来源维度简化成理解深度；明确建议名称与范围纠正，不把旧名自动设同义。现行level可选与自评用途保持，不改变字段可选性。 中文是既有概念的行业名称判断，外部用法未核实。",
+          "adopted": false
+        }
+      },
+      "name_change_proposal": {
+        "before": [
+          "认知层级",
+          "cognitive level"
+        ],
+        "after": {
+          "en": [
+            "cognitive process dimension"
+          ],
+          "zh-Hans": [
+            "认知过程维度"
+          ]
+        },
+        "old_forms": "当前glossary原值不改；今后具体采纳必须明列旧形式地位，不能静默删除或无依据写admitted。"
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence"
+    },
+    {
+      "id": "glossary-L0199",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 199,
+        "cells": [
+          "治理",
+          "governance",
+          "组织借以被指导、监督并被问责的系统；对管理的管理",
+          "ISO 37000:2021"
+        ],
+        "raw": "| 治理 | governance | 组织借以被指导、监督并被问责的系统；对管理的管理 | ISO 37000:2021 |"
+      },
+      "projection": {
+        "concept": "定义建议改为：组织为实现其既定目的而被指导、监督并被问责的以人为本系统；“对管理的管理”只能作为本库解释。",
+        "definitions": {
+          "zh-Hans": "定义建议改为：组织为实现其既定目的而被指导、监督并被问责的以人为本系统；“对管理的管理”只能作为本库解释。"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "治理"
+          },
+          {
+            "language": "en",
+            "text": "governance"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://cdn.standards.iteh.ai/samples/65036/68ac8ac92aac4aa6b0568042fdab2da5/ISO-37000-2021.pdf",
+          "date": "2026-09-06",
+          "locator": "§3.1.1；PDF p.9（index8），印刷p.1",
+          "quote": "human-based system by which an organization (3.1.3) is directed, overseen and held accountable for achieving its defined purpose",
+          "nature": "本轮打开的公开原文"
+        }
+      ],
+      "can_support": [],
+      "cannot_support": [],
+      "minimal_correction": "实际ISO§3.1.1英文为governance of organizations，旧governance语境本为组织治理，提案保留同一概念并显式补足名称，不把省略写法自动判同义。",
+      "remaining_issues": [
+        "将明确before/after、来源替换及名称地位形成具体采纳值；缺人工采纳不再列作取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已打开并读取公开原文定位；未将公开材料扩大为完整标准正文。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "实际ISO§3.1.1英文为governance of organizations，旧governance语境本为组织治理，提案保留同一概念并显式补足名称，不把省略写法自动判同义。",
+        "remaining_work": [
+          "将明确before/after、来源替换及名称地位形成具体采纳值；缺人工采纳不再列作取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "concrete_value_projection": {
+        "definition_zh": "组织借以被指导、监督和问责、以实现其既定目的的以人为本系统。",
+        "english_forms": [
+          "governance of organizations"
+        ],
+        "chinese_forms": [
+          "治理"
+        ],
+        "basis": {
+          "url": "https://cdn.standards.iteh.ai/samples/65036/68ac8ac92aac4aa6b0568042fdab2da5/ISO-37000-2021.pdf",
+          "locator": "§3.1.1；PDF p.9（index8），印刷p.1",
+          "checked": "2026-09-06"
+        },
+        "chinese_model_basis": {
+          "level": 5,
+          "name": "gpt-6-astra",
+          "date": "2026-09-06",
+          "rationale": "实际ISO§3.1.1英文为governance of organizations，旧governance语境本为组织治理，提案保留同一概念并显式补足名称，不把省略写法自动判同义。 中文是既有概念的行业名称判断，外部用法未核实。",
+          "adopted": false
+        }
+      },
+      "name_change_proposal": {
+        "before": [
+          "治理",
+          "governance"
+        ],
+        "after": {
+          "en": [
+            "governance of organizations"
+          ],
+          "zh-Hans": [
+            "治理"
+          ]
+        },
+        "old_forms": "当前glossary原值不改；今后具体采纳必须明列旧形式地位，不能静默删除或无依据写admitted。"
+      },
+      "direct_supplement": {
+        "url": "https://cdn.standards.iteh.ai/samples/65036/68ac8ac92aac4aa6b0568042fdab2da5/ISO-37000-2021.pdf",
+        "checked": "2026-09-06",
+        "locator": "§3.1.1；PDF p.9（index8），印刷p.1",
+        "read_method": "本摘要直接打开合法样章并定位定义，纠正工人把印刷页称PDF页的错误。"
+      },
+      "earlier_worker_remaining_issues": [],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence"
+    },
+    {
+      "id": "glossary-L0200",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 200,
+        "cells": [
+          "政策",
+          "policy",
+          "治理主体定下的、管理必须遵守的规则",
+          "ISO 15489-1 §6.2"
+        ],
+        "raw": "| 政策 | policy | 治理主体定下的、管理必须遵守的规则 | ISO 15489-1 §6.2 |"
+      },
+      "projection": {
+        "concept": "定义建议改为：治理主体正式表达的组织意向与方向；不要写成“治理主体定下的、管理必须遵守的规则”，那是项目政策约束而非 ISO 37000 的 policy 定义。",
+        "definitions": {
+          "zh-Hans": "定义建议改为：治理主体正式表达的组织意向与方向；不要写成“治理主体定下的、管理必须遵守的规则”，那是项目政策约束而非 ISO 37000 的 policy 定义。"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "政策"
+          },
+          {
+            "language": "en",
+            "text": "policy"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://cdn.standards.iteh.ai/samples/65036/68ac8ac92aac4aa6b0568042fdab2da5/ISO-37000-2021.pdf",
+          "date": "2026-09-06",
+          "locator": "§3.2.9；PDF p.12（index11），印刷p.4",
+          "quote": "intentions and direction of an organization (3.1.3), as formally expressed by its governing body (3.3.4)",
+          "nature": "本轮打开的公开原文"
+        }
+      ],
+      "can_support": [],
+      "cannot_support": [],
+      "minimal_correction": "实际ISO§3.2.9原名为governance policy，不是无条件的policy。旧条目已限定治理主体，但以强制规则解释过窄；提案将名称和定义一起纠正到治理政策，原政策/policy完整保留在before值，不默认成为准用同义名。若要保留一般policy概念，不能让本段替代其一般定义。",
+      "remaining_issues": [
+        "将明确before/after、来源替换及名称地位形成具体采纳值；缺人工采纳不再列作取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已打开并读取公开原文定位；未将公开材料扩大为完整标准正文。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "实际ISO§3.2.9原名为governance policy，不是无条件的policy。旧条目已限定治理主体，但以强制规则解释过窄；提案将名称和定义一起纠正到治理政策，原政策/policy完整保留在before值，不默认成为准用同义名。若要保留一般policy概念，不能让本段替代其一般定义。",
+        "remaining_work": [
+          "将明确before/after、来源替换及名称地位形成具体采纳值；缺人工采纳不再列作取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "concrete_value_projection": {
+        "definition_zh": "治理主体正式表达的组织意向和方向。",
+        "english_forms": [
+          "governance policy"
+        ],
+        "chinese_forms": [
+          "治理政策"
+        ],
+        "basis": {
+          "url": "https://cdn.standards.iteh.ai/samples/65036/68ac8ac92aac4aa6b0568042fdab2da5/ISO-37000-2021.pdf",
+          "locator": "§3.2.9；PDF p.12（index11），印刷p.4",
+          "checked": "2026-09-06"
+        },
+        "chinese_model_basis": {
+          "level": 5,
+          "name": "gpt-6-astra",
+          "date": "2026-09-06",
+          "rationale": "实际ISO§3.2.9原名为governance policy，不是无条件的policy。旧条目已限定治理主体，但以强制规则解释过窄；提案将名称和定义一起纠正到治理政策，原政策/policy完整保留在before值，不默认成为准用同义名。若要保留一般policy概念，不能让本段替代其一般定义。 中文是既有概念的行业名称判断，外部用法未核实。",
+          "adopted": false
+        }
+      },
+      "name_change_proposal": {
+        "before": [
+          "政策",
+          "policy"
+        ],
+        "after": {
+          "en": [
+            "governance policy"
+          ],
+          "zh-Hans": [
+            "治理政策"
+          ]
+        },
+        "old_forms": "当前glossary原值不改；今后具体采纳必须明列旧形式地位，不能静默删除或无依据写admitted。"
+      },
+      "direct_supplement": {
+        "url": "https://cdn.standards.iteh.ai/samples/65036/68ac8ac92aac4aa6b0568042fdab2da5/ISO-37000-2021.pdf",
+        "checked": "2026-09-06",
+        "locator": "§3.2.9；PDF p.12（index11），印刷p.4",
+        "read_method": "本摘要直接打开合法样章并定位定义，纠正工人把印刷页称PDF页的错误。"
+      },
+      "earlier_worker_remaining_issues": [],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence"
+    },
+    {
+      "id": "glossary-L0201",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 201,
+        "cells": [
+          "决策权",
+          "decision rights",
+          "谁有权对哪类事项做决定",
+          "DAMA-DMBOK 数据治理"
+        ],
+        "raw": "| 决策权 | decision rights | 谁有权对哪类事项做决定 | DAMA-DMBOK 数据治理 |"
+      },
+      "projection": {
+        "concept": "决策权",
+        "definitions": {
+          "zh-Hans": "谁有权对哪类事项做决定"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "决策权"
+          },
+          {
+            "language": "en",
+            "text": "decision rights"
+          }
+        ]
+      },
+      "actual_basis": [],
+      "can_support": [],
+      "cannot_support": [],
+      "minimal_correction": "本库governance.md决策权三级及decision-rights-defaults已明确谁可决定哪些事项；DAMA仅列英文名称，不能冒充完整外部定义。建议把本行作为现行项目定义用项目basis表达，是真实模型缺口而非资料泛缺。",
+      "remaining_issues": [
+        "将已提项目basis分支的覆盖范围显式扩至这条既有项目权限定义，不造新概念或扩大实际决策权。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "model_expression_gap",
+        "meaning": "本库governance.md决策权三级及decision-rights-defaults已明确谁可决定哪些事项；DAMA仅列英文名称，不能冒充完整外部定义。建议把本行作为现行项目定义用项目basis表达，是真实模型缺口而非资料泛缺。",
+        "remaining_work": [
+          "将已提项目basis分支的覆盖范围显式扩至这条既有项目权限定义，不造新概念或扩大实际决策权。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "existing_project_definition_model_expression_gap",
+      "concrete_value_projection": {
+        "definition_zh": "本库对哪些主体可以决定哪些事项，以及哪些事项须先提案的权限分配。",
+        "english_forms": [
+          "decision rights"
+        ],
+        "chinese_forms": [
+          "决策权"
+        ],
+        "meaning_basis_proposal": {
+          "kind": "project",
+          "references": [
+            {
+              "path": "docs/design/governance/governance.md",
+              "locator": "决策权§，当前L89–99"
+            },
+            {
+              "path": "docs/decisions/decision-rights-defaults.md",
+              "locator": "已采纳首批权限边界"
+            }
+          ]
+        },
+        "language_basis": "旧glossary和DAMA名称使用分别证明现行中英文形式；不能把项目定义写进外部DAMA引用。"
+      }
+    },
+    {
+      "id": "glossary-L0202",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 202,
+        "cells": [
+          "监控与评价",
+          "monitoring and evaluation",
+          "对管理过程及其结果的持续检查与定期评估",
+          "ISO 15489-1 §6.4"
+        ],
+        "raw": "| 监控与评价 | monitoring and evaluation | 对管理过程及其结果的持续检查与定期评估 | ISO 15489-1 §6.4 |"
+      },
+      "projection": {
+        "concept": "监控与评价",
+        "definitions": {
+          "zh-Hans": "对管理过程及其结果的持续检查与定期评估"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "监控与评价"
+          },
+          {
+            "language": "en",
+            "text": "monitoring and evaluation"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://www.oecd.org/content/dam/oecd/zh/publications/reports/2023/06/glossary-of-key-terms-in-evaluation-and-results-based-management-for-sustainable-development-second-edition_2767e14e/74f41029-en-zh.pdf",
+          "locator": "OECD 2024 EN-ZH 第二版；Monitoring PDF p.39；Evaluation PDF p.29",
+          "date": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "官方中英对照分别为监测与评估；监测持续收集数据，评估系统客观评价；并无一律按固定周期评价的定义。"
+        }
+      ],
+      "can_support": [],
+      "cannot_support": [],
+      "minimal_correction": "旧行把两个活动合成一条定义，且“定期”不是 evaluation 必要条件。直接使用已核中文对应，勿退回模型等级。ISO 15489-1 §6.4 只保留为历史出处，不冒充已读该条完整定义。",
+      "remaining_issues": [
+        "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "旧行把两个活动合成一条定义，且“定期”不是 evaluation 必要条件。直接使用已核中文对应，勿退回模型等级。ISO 15489-1 §6.4 只保留为历史出处，不冒充已读该条完整定义。",
+        "remaining_work": [
+          "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0202",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 202,
+            "cells": [
+              "监控与评价",
+              "monitoring and evaluation",
+              "对管理过程及其结果的持续检查与定期评估",
+              "ISO 15489-1 §6.4"
+            ],
+            "raw": "| 监控与评价 | monitoring and evaluation | 对管理过程及其结果的持续检查与定期评估 | ISO 15489-1 §6.4 |",
+            "sha256": "b52111d33676d72b386ad38edbab48fe0522f5270d03ccb2807dc4487545b533"
+          },
+          "resolution": "supported_with_explicit_corrections",
+          "proposed_fields": {
+            "split_records": [
+              {
+                "english_form": "monitoring",
+                "chinese_form": "监测",
+                "definition_zh": "持续、系统地收集或整理指定指标及其他资料，以掌握实施进展、结果和相关背景的过程。"
+              },
+              {
+                "english_form": "evaluation",
+                "chinese_form": "评估",
+                "definition_zh": "对计划中、进行中或已完成的干预及其设计、实施和结果进行系统、客观的评价。"
+              }
+            ],
+            "old_combination": "监控与评价 / monitoring and evaluation 保留为原行组合检索线索，不作为两概念同义词。",
+            "basis": [
+              {
+                "material": "https://www.oecd.org/content/dam/oecd/zh/publications/reports/2023/06/glossary-of-key-terms-in-evaluation-and-results-based-management-for-sustainable-development-second-edition_2767e14e/74f41029-en-zh.pdf",
+                "location": "OECD 2024 EN-ZH 第二版；Monitoring PDF p.39；Evaluation PDF p.29",
+                "read_on": "2026-09-06",
+                "nature": "external_primary",
+                "supports": "官方中英对照分别为监测与评估；监测持续收集数据，评估系统客观评价；并无一律按固定周期评价的定义。"
+              }
+            ],
+            "chinese_basis": {
+              "kind": "external_bilingual",
+              "references": [
+                {
+                  "material": "https://www.oecd.org/content/dam/oecd/zh/publications/reports/2023/06/glossary-of-key-terms-in-evaluation-and-results-based-management-for-sustainable-development-second-edition_2767e14e/74f41029-en-zh.pdf",
+                  "location": "OECD 2024 EN-ZH 第二版；Monitoring PDF p.39；Evaluation PDF p.29",
+                  "read_on": "2026-09-06",
+                  "nature": "external_primary",
+                  "supports": "官方中英对照分别为监测与评估；监测持续收集数据，评估系统客观评价；并无一律按固定周期评价的定义。"
+                }
+              ],
+              "note": "已读OECD官方中英对应，优先于模型第5级；具体外部等级按既有语言分级规则投影，不用模型覆盖。"
+            }
+          },
+          "evidence": [
+            {
+              "material": "https://www.oecd.org/content/dam/oecd/zh/publications/reports/2023/06/glossary-of-key-terms-in-evaluation-and-results-based-management-for-sustainable-development-second-edition_2767e14e/74f41029-en-zh.pdf",
+              "location": "OECD 2024 EN-ZH 第二版；Monitoring PDF p.39；Evaluation PDF p.29",
+              "read_on": "2026-09-06",
+              "nature": "external_primary",
+              "supports": "官方中英对照分别为监测与评估；监测持续收集数据，评估系统客观评价；并无一律按固定周期评价的定义。"
+            }
+          ],
+          "reason": "旧行把两个活动合成一条定义，且“定期”不是 evaluation 必要条件。直接使用已核中文对应，勿退回模型等级。ISO 15489-1 §6.4 只保留为历史出处，不冒充已读该条完整定义。",
+          "remaining_evidence_issues": [],
+          "adoption_choices": [
+            "一行拆为监测与评估；组合词只作迁移来源与检索线索。"
+          ],
+          "adopted": false,
+          "formal_data_written": false
+        }
+      ],
+      "concrete_value_projection": {
+        "split_records": [
+          {
+            "english_form": "monitoring",
+            "chinese_form": "监测",
+            "definition_zh": "持续、系统地收集或整理指定指标及其他资料，以掌握实施进展、结果和相关背景的过程。"
+          },
+          {
+            "english_form": "evaluation",
+            "chinese_form": "评估",
+            "definition_zh": "对计划中、进行中或已完成的干预及其设计、实施和结果进行系统、客观的评价。"
+          }
+        ],
+        "old_combination": "监控与评价 / monitoring and evaluation 保留为原行组合检索线索，不作为两概念同义词。",
+        "basis": [
+          {
+            "material": "https://www.oecd.org/content/dam/oecd/zh/publications/reports/2023/06/glossary-of-key-terms-in-evaluation-and-results-based-management-for-sustainable-development-second-edition_2767e14e/74f41029-en-zh.pdf",
+            "location": "OECD 2024 EN-ZH 第二版；Monitoring PDF p.39；Evaluation PDF p.29",
+            "read_on": "2026-09-06",
+            "nature": "external_primary",
+            "supports": "官方中英对照分别为监测与评估；监测持续收集数据，评估系统客观评价；并无一律按固定周期评价的定义。"
+          }
+        ],
+        "chinese_basis": {
+          "kind": "external_bilingual",
+          "references": [
+            {
+              "material": "https://www.oecd.org/content/dam/oecd/zh/publications/reports/2023/06/glossary-of-key-terms-in-evaluation-and-results-based-management-for-sustainable-development-second-edition_2767e14e/74f41029-en-zh.pdf",
+              "location": "OECD 2024 EN-ZH 第二版；Monitoring PDF p.39；Evaluation PDF p.29",
+              "read_on": "2026-09-06",
+              "nature": "external_primary",
+              "supports": "官方中英对照分别为监测与评估；监测持续收集数据，评估系统客观评价；并无一律按固定周期评价的定义。"
+            }
+          ],
+          "note": "已读OECD官方中英对应，优先于模型第5级；具体外部等级按既有语言分级规则投影，不用模型覆盖。"
+        }
+      }
+    },
+    {
+      "id": "glossary-L0203",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 203,
+        "cells": [
+          "审计追踪",
+          "audit trail",
+          "记录谁在何时做了什么变更的连续记录",
+          "ISO 15489-1 元数据要求"
+        ],
+        "raw": "| 审计追踪 | audit trail | 记录谁在何时做了什么变更的连续记录 | ISO 15489-1 元数据要求 |"
+      },
+      "projection": {
+        "concept": "定义建议改为：按时间顺序记录并重建围绕特定操作、过程或事件的活动序列；项目“谁、何时、做了什么”是可选的实现字段，不是完整外部定义。",
+        "definitions": {
+          "zh-Hans": "定义建议改为：按时间顺序记录并重建围绕特定操作、过程或事件的活动序列；项目“谁、何时、做了什么”是可选的实现字段，不是完整外部定义。"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "审计追踪"
+          },
+          {
+            "language": "en",
+            "text": "audit trail"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://csrc.nist.gov/glossary/term/audit_trail",
+          "date": "2026-09-06",
+          "locator": "Audit trail definition",
+          "quote": "A chronological record that reconstructs and examines the sequence of activities",
+          "nature": "本轮打开的公开原文"
+        },
+        {
+          "url": "https://csrc.nist.gov/glossary/term/audit_trail",
+          "date": "2026-09-06",
+          "locator": "Audit trail definition；NIST CSRC 页面",
+          "quote": "A chronological record that reconstructs and examines the sequence of activities",
+          "nature": "本轮打开的公开原文"
+        }
+      ],
+      "can_support": [],
+      "cannot_support": [],
+      "minimal_correction": "NIST实际定义支持时序重建与检查；原谁/何时/何事是常见实现内容，可单列，不替代完整定义。",
+      "remaining_issues": [
+        "将明确before/after、来源替换及名称地位形成具体采纳值；缺人工采纳不再列作取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已打开并读取公开原文定位；未将公开材料扩大为完整标准正文。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "NIST实际定义支持时序重建与检查；原谁/何时/何事是常见实现内容，可单列，不替代完整定义。",
+        "remaining_work": [
+          "将明确before/after、来源替换及名称地位形成具体采纳值；缺人工采纳不再列作取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "concrete_value_projection": {
+        "definition_zh": "按时间顺序记录活动，使特定操作、过程或事件周围的活动序列能够被重建和检查的记录。",
+        "english_forms": [
+          "audit trail"
+        ],
+        "chinese_forms": [
+          "审计追踪"
+        ],
+        "basis": [
+          {
+            "url": "https://csrc.nist.gov/glossary/term/audit_trail",
+            "date": "2026-09-06",
+            "locator": "Audit trail definition；NIST CSRC 页面",
+            "quote": "A chronological record that reconstructs and examines the sequence of activities",
+            "nature": "本轮打开的公开原文"
+          }
+        ],
+        "chinese_model_basis": {
+          "level": 5,
+          "name": "gpt-6-astra",
+          "date": "2026-09-06",
+          "rationale": "NIST实际定义支持时序重建与检查；原谁/何时/何事是常见实现内容，可单列，不替代完整定义。 中文是既有概念的行业名称判断，外部用法未核实。",
+          "adopted": false
+        }
+      },
+      "earlier_worker_remaining_issues": [],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence"
+    },
+    {
+      "id": "glossary-L0204",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 204,
+        "cells": [
+          "治理评审",
+          "governance review",
+          "治理主体对治理本身的定期评审",
+          "ISO 37000:2021"
+        ],
+        "raw": "| 治理评审 | governance review | 治理主体对治理本身的定期评审 | ISO 37000:2021 |"
+      },
+      "projection": {
+        "concept": "保留治理评审作为项目机制名称；ISO 37000 样本支持治理监督与治理主体职责，但未给 governance review 独立定义。",
+        "definitions": {
+          "zh-Hans": "保留治理评审作为项目机制名称；ISO 37000 样本支持治理监督与治理主体职责，但未给 governance review 独立定义。"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "治理评审"
+          },
+          {
+            "language": "en",
+            "text": "governance review"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://cdn.standards.iteh.ai/samples/65036/68ac8ac92aac4aa6b0568042fdab2da5/ISO-37000-2021.pdf",
+          "date": "2026-09-06",
+          "locator": "§3.1.1 与第 6 章目录；治理监督语境",
+          "quote": "governance of organizations",
+          "nature": "本轮打开的公开原文"
+        },
+        {
+          "url": "https://www.gov.uk/guidance/external-governance-reviews-guide-for-fe-college-corporations-and-designated-institutions",
+          "locator": "Benefits of an external governance review；Scope of the review",
+          "date": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "英国教育部实际治理指导明确以独立评价治理有效性为目的，并覆盖政策、实践、结构及治理行为。"
+        },
+        {
+          "url": "docs/design/governance/governance.md",
+          "locator": "治理评审，当前行 286–291",
+          "date": "2026-09-06",
+          "nature": "project_record",
+          "supports": "本库固定 12 个月复审政策、决策权、阈值，并记录决定；这是项目规定。"
+        }
+      ],
+      "can_support": [],
+      "cannot_support": [],
+      "minimal_correction": "gov.uk 足以证明英文治理评审用法及其治理有效性对象；不因此声称 ISO 37000 含 governance review 独立词条。一般定义删去“必须治理主体自行、必须定期”，把项目年审落入 scope_note。",
+      "remaining_issues": [
+        "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已打开并读取公开原文定位；未将公开材料扩大为完整标准正文。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "gov.uk 足以证明英文治理评审用法及其治理有效性对象；不因此声称 ISO 37000 含 governance review 独立词条。一般定义删去“必须治理主体自行、必须定期”，把项目年审落入 scope_note。",
+        "remaining_work": [
+          "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得 governance review 作为独立术语的定义；仅有 ISO 37000 治理监督与评审相关语境。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0204",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 204,
+            "cells": [
+              "治理评审",
+              "governance review",
+              "治理主体对治理本身的定期评审",
+              "ISO 37000:2021"
+            ],
+            "raw": "| 治理评审 | governance review | 治理主体对治理本身的定期评审 | ISO 37000:2021 |",
+            "sha256": "5d94c2c44b274a45acaf56ecec016c101f542ddd2038fadb503f21591b9bc43e"
+          },
+          "resolution": "supported_with_explicit_corrections",
+          "proposed_fields": {
+            "english_form": "governance review",
+            "chinese_form": "治理评审",
+            "definition_zh": "对治理安排及其有效性的评审。",
+            "scope_note": "本库以政策表、决策权矩阵和阈值表的年度评审实现该活动；固定周期和由谁评审来自本库治理规则。",
+            "basis": [
+              {
+                "material": "https://www.gov.uk/guidance/external-governance-reviews-guide-for-fe-college-corporations-and-designated-institutions",
+                "location": "Benefits of an external governance review；Scope of the review",
+                "read_on": "2026-09-06",
+                "nature": "external_primary",
+                "supports": "英国教育部实际治理指导明确以独立评价治理有效性为目的，并覆盖政策、实践、结构及治理行为。",
+                "quote": "An external governance review independently evaluates governance effectiveness."
+              },
+              {
+                "material": "docs/design/governance/governance.md",
+                "location": "治理评审，当前行 286–291",
+                "read_on": "2026-09-06",
+                "nature": "project_record",
+                "supports": "本库固定 12 个月复审政策、决策权、阈值，并记录决定；这是项目规定。"
+              }
+            ],
+            "chinese_basis": {
+              "level": 5,
+              "model": "GPT-6",
+              "date": "2026-09-06",
+              "rationale": "治理评审是模型已有治理实践中文表达；不声称英国官方中文译名。",
+              "external_usage_verified": false
+            }
+          },
+          "evidence": [
+            {
+              "material": "https://www.gov.uk/guidance/external-governance-reviews-guide-for-fe-college-corporations-and-designated-institutions",
+              "location": "Benefits of an external governance review；Scope of the review",
+              "read_on": "2026-09-06",
+              "nature": "external_primary",
+              "supports": "英国教育部实际治理指导明确以独立评价治理有效性为目的，并覆盖政策、实践、结构及治理行为。",
+              "quote": "An external governance review independently evaluates governance effectiveness."
+            },
+            {
+              "material": "docs/design/governance/governance.md",
+              "location": "治理评审，当前行 286–291",
+              "read_on": "2026-09-06",
+              "nature": "project_record",
+              "supports": "本库固定 12 个月复审政策、决策权、阈值，并记录决定；这是项目规定。"
+            }
+          ],
+          "reason": "gov.uk 足以证明英文治理评审用法及其治理有效性对象；不因此声称 ISO 37000 含 governance review 独立词条。一般定义删去“必须治理主体自行、必须定期”，把项目年审落入 scope_note。",
+          "remaining_evidence_issues": [],
+          "adoption_choices": [
+            "采用外部活动的窄概念说明和独立项目年审说明；撤销 ISO 37000 独立术语定义归因。"
+          ],
+          "adopted": false,
+          "formal_data_written": false,
+          "language_judgment": {
+            "level": 5,
+            "model": "GPT-6",
+            "date": "2026-09-06",
+            "rationale": "治理评审是模型已有治理实践中文表达；不声称英国官方中文译名。",
+            "external_usage_verified": false
+          }
+        }
+      ],
+      "concrete_value_projection": {
+        "english_form": "governance review",
+        "chinese_form": "治理评审",
+        "definition_zh": "对治理安排及其有效性的评审。",
+        "scope_note": "本库以政策表、决策权矩阵和阈值表的年度评审实现该活动；固定周期和由谁评审来自本库治理规则。",
+        "basis": [
+          {
+            "material": "https://www.gov.uk/guidance/external-governance-reviews-guide-for-fe-college-corporations-and-designated-institutions",
+            "location": "Benefits of an external governance review；Scope of the review",
+            "read_on": "2026-09-06",
+            "nature": "external_primary",
+            "supports": "英国教育部实际治理指导明确以独立评价治理有效性为目的，并覆盖政策、实践、结构及治理行为。",
+            "quote": "An external governance review independently evaluates governance effectiveness."
+          },
+          {
+            "material": "docs/design/governance/governance.md",
+            "location": "治理评审，当前行 286–291",
+            "read_on": "2026-09-06",
+            "nature": "project_record",
+            "supports": "本库固定 12 个月复审政策、决策权、阈值，并记录决定；这是项目规定。"
+          }
+        ],
+        "chinese_basis": {
+          "level": 5,
+          "model": "GPT-6",
+          "date": "2026-09-06",
+          "rationale": "治理评审是模型已有治理实践中文表达；不声称英国官方中文译名。",
+          "external_usage_verified": false
+        }
+      }
+    },
+    {
+      "id": "glossary-L0205",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 205,
+        "cells": [
+          "审计",
+          "audit",
+          "对记录与过程是否符合规则的检查",
+          "ISO 15489-1 §6.4"
+        ],
+        "raw": "| 审计 | audit | 对记录与过程是否符合规则的检查 | ISO 15489-1 §6.4 |"
+      },
+      "projection": {
+        "concept": "定义建议改为：为取得审计证据并客观评价审计准则满足程度而进行的系统、独立、有记录的过程；NIST 同时列出记录与活动合规检查语境。",
+        "definitions": {
+          "zh-Hans": "定义建议改为：为取得审计证据并客观评价审计准则满足程度而进行的系统、独立、有记录的过程；NIST 同时列出记录与活动合规检查语境。"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "审计"
+          },
+          {
+            "language": "en",
+            "text": "audit"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://csrc.nist.gov/glossary",
+          "date": "2026-09-06",
+          "locator": "NIST CSRC Glossary；audit entry not separately located in this pass",
+          "quote": "未找到可直接引用的 audit 定义",
+          "nature": "本轮打开的公开原文"
+        },
+        {
+          "url": "https://csrc.nist.gov/glossary/term/audit",
+          "date": "2026-09-06",
+          "locator": "Definitions；NIST CSRC 页面第 113–131 行",
+          "quote": "Systematic, independent and documented process for obtaining audit evidence and evaluating it objectively",
+          "nature": "本轮打开的公开原文"
+        }
+      ],
+      "can_support": [],
+      "cannot_support": [],
+      "minimal_correction": "已取得NIST audit独立条目，定义不是audit trail；以证据和准则评价补足原符合规则的概述。",
+      "remaining_issues": [
+        "将明确before/after、来源替换及名称地位形成具体采纳值；缺人工采纳不再列作取证缺口。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已打开并读取公开原文定位；未将公开材料扩大为完整标准正文。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "已取得NIST audit独立条目，定义不是audit trail；以证据和准则评价补足原符合规则的概述。",
+        "remaining_work": [
+          "将明确before/after、来源替换及名称地位形成具体采纳值；缺人工采纳不再列作取证缺口。"
+        ],
+        "not_adopted": true
+      },
+      "concrete_value_projection": {
+        "definition_zh": "为取得审计证据并客观评价审计准则满足程度而开展的系统、独立、有记录的过程。",
+        "english_forms": [
+          "audit"
+        ],
+        "chinese_forms": [
+          "审计"
+        ],
+        "basis": [
+          {
+            "url": "https://csrc.nist.gov/glossary/term/audit",
+            "date": "2026-09-06",
+            "locator": "Definitions；NIST CSRC 页面第 113–131 行",
+            "quote": "Systematic, independent and documented process for obtaining audit evidence and evaluating it objectively",
+            "nature": "本轮打开的公开原文"
+          }
+        ],
+        "chinese_model_basis": {
+          "level": 5,
+          "name": "gpt-6-astra",
+          "date": "2026-09-06",
+          "rationale": "已取得NIST audit独立条目，定义不是audit trail；以证据和准则评价补足原符合规则的概述。 中文是既有概念的行业名称判断，外部用法未核实。",
+          "adopted": false
+        }
+      },
+      "earlier_worker_remaining_issues": [],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence"
+    },
+    {
+      "id": "glossary-L0208",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 208,
+        "cells": [
+          "指标",
+          "indicator",
+          "脚本能算出或外部能通知、用于监控的量",
+          "ISO 15489-1 §6.4 的监控对象"
+        ],
+        "raw": "| 指标 | indicator | 脚本能算出或外部能通知、用于监控的量 | ISO 15489-1 §6.4 的监控对象 |"
+      },
+      "projection": {
+        "concept": "指标",
+        "definitions": {
+          "zh-Hans": "脚本能算出或外部能通知、用于监控的量"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "指标"
+          },
+          {
+            "language": "en",
+            "text": "indicator"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://www.oecd.org/content/dam/oecd/zh/publications/reports/2023/06/glossary-of-key-terms-in-evaluation-and-results-based-management-for-sustainable-development-second-edition_2767e14e/74f41029-en-zh.pdf",
+          "locator": "Indicator，PDF p.35，英文及中文指标紧邻，含注释",
+          "date": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "支持 quantitative/qualitative 的双重范围与指标中文对应；不限脚本可计算的量。"
+        }
+      ],
+      "can_support": [],
+      "cannot_support": [],
+      "minimal_correction": "替换旧实现式定义及不准确的 ISO 15489 §6.4 归因；保留实现方式作为项目说明。",
+      "remaining_issues": [
+        "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "替换旧实现式定义及不准确的 ISO 15489 §6.4 归因；保留实现方式作为项目说明。",
+        "remaining_work": [
+          "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0208",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 208,
+            "cells": [
+              "指标",
+              "indicator",
+              "脚本能算出或外部能通知、用于监控的量",
+              "ISO 15489-1 §6.4 的监控对象"
+            ],
+            "raw": "| 指标 | indicator | 脚本能算出或外部能通知、用于监控的量 | ISO 15489-1 §6.4 的监控对象 |",
+            "sha256": "39adf28546d3b235b344620fbbd9491c41cf2bffad4b9bfd4edb7ea8019a1f17"
+          },
+          "resolution": "supported_with_explicit_corrections",
+          "proposed_fields": {
+            "english_form": "indicator",
+            "chinese_form": "指标",
+            "definition_zh": "与干预及其结果或发生背景有关的定量或定性因素、变量。",
+            "scope_note": "本库由脚本计算或接收外部通知是指标获取方式，不是 indicator 的通用定义；指标需要解释，不能自动等同准确测量。",
+            "basis": [
+              {
+                "material": "https://www.oecd.org/content/dam/oecd/zh/publications/reports/2023/06/glossary-of-key-terms-in-evaluation-and-results-based-management-for-sustainable-development-second-edition_2767e14e/74f41029-en-zh.pdf",
+                "location": "Indicator，PDF p.35，英文及中文指标紧邻，含注释",
+                "read_on": "2026-09-06",
+                "nature": "external_primary",
+                "supports": "支持 quantitative/qualitative 的双重范围与指标中文对应；不限脚本可计算的量。"
+              }
+            ],
+            "chinese_basis": {
+              "kind": "external_bilingual",
+              "references": [
+                {
+                  "material": "https://www.oecd.org/content/dam/oecd/zh/publications/reports/2023/06/glossary-of-key-terms-in-evaluation-and-results-based-management-for-sustainable-development-second-edition_2767e14e/74f41029-en-zh.pdf",
+                  "location": "Indicator，PDF p.35，英文及中文指标紧邻，含注释",
+                  "read_on": "2026-09-06",
+                  "nature": "external_primary",
+                  "supports": "支持 quantitative/qualitative 的双重范围与指标中文对应；不限脚本可计算的量。"
+                }
+              ],
+              "note": "已读OECD官方中英对应，优先于模型第5级；具体外部等级按既有语言分级规则投影，不用模型覆盖。"
+            }
+          },
+          "evidence": [
+            {
+              "material": "https://www.oecd.org/content/dam/oecd/zh/publications/reports/2023/06/glossary-of-key-terms-in-evaluation-and-results-based-management-for-sustainable-development-second-edition_2767e14e/74f41029-en-zh.pdf",
+              "location": "Indicator，PDF p.35，英文及中文指标紧邻，含注释",
+              "read_on": "2026-09-06",
+              "nature": "external_primary",
+              "supports": "支持 quantitative/qualitative 的双重范围与指标中文对应；不限脚本可计算的量。"
+            }
+          ],
+          "reason": "替换旧实现式定义及不准确的 ISO 15489 §6.4 归因；保留实现方式作为项目说明。",
+          "remaining_evidence_issues": [],
+          "adoption_choices": [],
+          "adopted": false,
+          "formal_data_written": false
+        }
+      ],
+      "concrete_value_projection": {
+        "english_form": "indicator",
+        "chinese_form": "指标",
+        "definition_zh": "与干预及其结果或发生背景有关的定量或定性因素、变量。",
+        "scope_note": "本库由脚本计算或接收外部通知是指标获取方式，不是 indicator 的通用定义；指标需要解释，不能自动等同准确测量。",
+        "basis": [
+          {
+            "material": "https://www.oecd.org/content/dam/oecd/zh/publications/reports/2023/06/glossary-of-key-terms-in-evaluation-and-results-based-management-for-sustainable-development-second-edition_2767e14e/74f41029-en-zh.pdf",
+            "location": "Indicator，PDF p.35，英文及中文指标紧邻，含注释",
+            "read_on": "2026-09-06",
+            "nature": "external_primary",
+            "supports": "支持 quantitative/qualitative 的双重范围与指标中文对应；不限脚本可计算的量。"
+          }
+        ],
+        "chinese_basis": {
+          "kind": "external_bilingual",
+          "references": [
+            {
+              "material": "https://www.oecd.org/content/dam/oecd/zh/publications/reports/2023/06/glossary-of-key-terms-in-evaluation-and-results-based-management-for-sustainable-development-second-edition_2767e14e/74f41029-en-zh.pdf",
+              "location": "Indicator，PDF p.35，英文及中文指标紧邻，含注释",
+              "read_on": "2026-09-06",
+              "nature": "external_primary",
+              "supports": "支持 quantitative/qualitative 的双重范围与指标中文对应；不限脚本可计算的量。"
+            }
+          ],
+          "note": "已读OECD官方中英对应，优先于模型第5级；具体外部等级按既有语言分级规则投影，不用模型覆盖。"
+        }
+      }
+    },
+    {
+      "id": "glossary-L0210",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 210,
+        "cells": [
+          "批准",
+          "approve",
+          "候选词审核通过转为正式词",
+          "Z 11.1.6"
+        ],
+        "raw": "| 批准 | approve | 候选词审核通过转为正式词 | Z 11.1.6 |"
+      },
+      "projection": {
+        "concept": "批准",
+        "definitions": {
+          "zh-Hans": "候选词审核通过转为正式词"
+        },
+        "language_forms": [
+          {
+            "language": "zh-Hans",
+            "text": "批准"
+          },
+          {
+            "language": "en",
+            "text": "approve"
+          }
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+          "locator": "§11.1.6 Candidate Terms，PDF p.105／印刷 p.93；并参 §11.4.5",
+          "date": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "直接规定候选词批准为词后删除候选标记；不是凭历史读书笔记推定。"
+        }
+      ],
+      "can_support": [
+        "candidate 获批为 term 的标准语境"
+      ],
+      "cannot_support": [
+        "项目 approve 状态和审批权"
+      ],
+      "minimal_correction": "可以支持词表接受动作。Z39.19 正文是 approved 的动词语境，并未给 approve 独立术语定义；用语境释义，不伪造标准定义号。",
+      "remaining_issues": [
+        "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+      ],
+      "attempted_steps": [
+        "读取词汇表原条目与本地概念／阅读笔记。",
+        "已检查既有来源 URL；未取得对应条款正文，未据记忆补写。"
+      ],
+      "adopted": false,
+      "summary_judgment": {
+        "status": "evidence_ready",
+        "meaning": "可以支持词表接受动作。Z39.19 正文是 approved 的动词语境，并未给 approve 独立术语定义；用语境释义，不伪造标准定义号。",
+        "remaining_work": [
+          "按实际来源材料身份形成来源提案和完整具体值；名称修正、拆分及源替换明示采纳，当前不迁移。"
+        ],
+        "not_adopted": true
+      },
+      "earlier_worker_remaining_issues": [
+        "未取得本轮可引用的外部原文；现有出处登记或阅读记录的效力与材料限制分开保留。"
+      ],
+      "remaining_issues_kind": "assembly_or_exact_adoption_not_missing_evidence",
+      "concrete_value_projection": {
+        "english_form": "approve",
+        "chinese_form": "批准",
+        "definition_zh": "完成接受程序并允许候选词作为词纳入受控词表。",
+        "scope_note": "这里限定词表维护语境。项目 candidate 概念记录转为 active 的规则及批准权另由项目治理决定，不由标准自动授予。",
+        "basis": [
+          {
+            "material": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+            "location": "§11.1.6 Candidate Terms，PDF p.105／印刷 p.93；并参 §11.4.5",
+            "read_on": "2026-09-06",
+            "nature": "external_primary",
+            "supports": "直接规定候选词批准为词后删除候选标记；不是凭历史读书笔记推定。",
+            "quote": "As soon as a candidate term is approved as a term"
+          }
+        ],
+        "chinese_basis": {
+          "level": 5,
+          "model": "GPT-6",
+          "date": "2026-09-06",
+          "rationale": "批准是模型已有 approve 对应中文；第 5 级，仅中文形式未核外部对应。",
+          "external_usage_verified": false
+        }
+      },
+      "supplementary_resolution_records": [
+        {
+          "id": "glossary-L0210",
+          "original": {
+            "file": "docs/glossary.md",
+            "line": 210,
+            "cells": [
+              "批准",
+              "approve",
+              "候选词审核通过转为正式词",
+              "Z 11.1.6"
+            ],
+            "raw": "| 批准 | approve | 候选词审核通过转为正式词 | Z 11.1.6 |",
+            "sha256": "203b1a0805c4ad4dcac09a374cacc7b7fc42b3ff1fe9460d14c74eb9f0711ce5"
+          },
+          "resolution": "supported_with_explicit_corrections",
+          "proposed_fields": {
+            "english_form": "approve",
+            "chinese_form": "批准",
+            "definition_zh": "完成接受程序并允许候选词作为词纳入受控词表。",
+            "scope_note": "这里限定词表维护语境。项目 candidate 概念记录转为 active 的规则及批准权另由项目治理决定，不由标准自动授予。",
+            "basis": [
+              {
+                "material": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+                "location": "§11.1.6 Candidate Terms，PDF p.105／印刷 p.93；并参 §11.4.5",
+                "read_on": "2026-09-06",
+                "nature": "external_primary",
+                "supports": "直接规定候选词批准为词后删除候选标记；不是凭历史读书笔记推定。",
+                "quote": "As soon as a candidate term is approved as a term"
+              }
+            ],
+            "chinese_basis": {
+              "level": 5,
+              "model": "GPT-6",
+              "date": "2026-09-06",
+              "rationale": "批准是模型已有 approve 对应中文；第 5 级，仅中文形式未核外部对应。",
+              "external_usage_verified": false
+            }
+          },
+          "evidence": [
+            {
+              "material": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+              "location": "§11.1.6 Candidate Terms，PDF p.105／印刷 p.93；并参 §11.4.5",
+              "read_on": "2026-09-06",
+              "nature": "external_primary",
+              "supports": "直接规定候选词批准为词后删除候选标记；不是凭历史读书笔记推定。",
+              "quote": "As soon as a candidate term is approved as a term"
+            }
+          ],
+          "reason": "可以支持词表接受动作。Z39.19 正文是 approved 的动词语境，并未给 approve 独立术语定义；用语境释义，不伪造标准定义号。",
+          "remaining_evidence_issues": [],
+          "adoption_choices": [],
+          "adopted": false,
+          "formal_data_written": false,
+          "language_judgment": {
+            "level": 5,
+            "model": "GPT-6",
+            "date": "2026-09-06",
+            "rationale": "批准是模型已有 approve 对应中文；第 5 级，仅中文形式未核外部对应。",
+            "external_usage_verified": false
+          }
+        }
+      ]
+    }
+  ],
+  "status": "consolidated_evidence_in_progress_not_adopted",
+  "consolidation_note": "本轮由 assemble_term_data_proposal 独占整理。actual_basis 合并首次读取快照与最后写回版本；旧未核说法留earlier_worker_remaining_issues作为工作历史，不当作当前结论。"
+}

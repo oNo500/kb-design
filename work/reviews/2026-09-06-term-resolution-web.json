@@ -1,0 +1,56 @@
+[
+  {
+    "id": "glossary-L0155",
+    "original": "| Dublin Core | Dublin Core Metadata Element Set | 十五个核心元数据元素，任何资源都可用 | ISO 15836-1:2017 |",
+    "attempts": [
+      {"url":"https://www.dublincore.org/specifications/dublin-core/dcmi-terms/","date":"2026-09-06","location":"§1，DCMI Metadata Terms；§3 /elements/1.1 namespace","result":"官方页明确包含十五个 Dublin Core Metadata Element Set terms，并将扩展属性、类、数据类型和词表编码方案另称 DCMI metadata terms；没有支持“任何资源都可用”的绝对措辞。"},
+      {"url":"https://www.dublincore.org/specifications/dublin-core/","date":"2026-09-06","location":"Dublin Core 页面，Current Specifications","result":"官方历史页说明原始 Dublin Core 从十三个发展为十五个元素，并列出 ISO 15836-1:2017。"}
+    ],
+    "conclusion": {"supported_fields":["Dublin Core Metadata Element Set 是十五元素集合","Dublin Core 可作为该集合的简称，但也可能在语境中指 DCMI 生态"],"unsupported_fields":["任何资源都可用：官方材料支持 broadly applicable，不支持无条件的任何资源表述"],"proposed_value":"Dublin Core：由十五个元素组成的 Dublin Core Metadata Element Set；在需要区分生态时另称 DCMI metadata terms。","proposed_form":"保留 Dublin Core / Dublin Core Metadata Element Set；不新增中文形式。","source_choice":"DCMI 官方 DCMI Metadata Terms 与 Dublin Core 页面；ISO 15836-1 作为现有书目来源保留，具体条款未取得。","source_entity":"需确认或新增 DCMI 官方来源实体；ISO 15836-1 来源实体按现有登记另行确认。","chinese_status":"既有登记，改写仅是定义提案。","adopted":false},
+    "remaining_questions":["Dublin Core 简称在本项目每处是否都明确指十五元素集，需人工决定是否拆为两个概念。"]
+  },
+  {
+    "id":"glossary-L0158",
+    "original":"| 资源 | resource | 被描述的东西：文档、图像、数据集、软件 | DCMI |",
+    "attempts":[
+      {"url":"https://www.dublincore.org/specifications/dublin-core/dcmi-terms/","date":"2026-09-06","location":"§1 Introduction and Definitions；`dcterms:subject` 条目","result":"官方页将 DCMI terms 用于资源描述；`subject` 定义为资源的 topic，并建议使用 URI 或受控词表。页面没有把 resource 限定为四种示例。"}
+    ],
+    "conclusion":{"supported_fields":["resource 是被元数据描述的对象","文档、图像、数据集和软件可作为项目示例"],"unsupported_fields":["四类示例构成完整定义：官方材料未作封闭枚举","DCMI 单独作为来源定位过粗"],"proposed_value":"资源：被描述的对象；文档、图像、数据集和软件是示例，不构成封闭范围。","proposed_form":"保留 resource / 资源。","source_choice":"DCMI Metadata Terms §1；不替换为 RDF resource 的更窄技术定义。","source_entity":"需确认或新增 DCMI 官方来源实体。","chinese_status":"既有登记，改写仅是定义提案。","adopted":false},
+    "remaining_questions":["是否需要另设 RDF `rdfs:Resource` 概念，不能由本行 resource 自动推出。"]
+  },
+  {
+    "id":"glossary-L0218",
+    "original":"| 关系 | relation, edge | 带类型的有向边 | KG |",
+    "attempts":[{"url":"https://arxiv.org/pdf/2003.02320","date":"2026-09-06","location":"P1 L68-L88；P4 L192-L200","result":"Hogan 等采用 knowledge graph 的 inclusive definition：nodes represent entities，edges represent relations；directed edge-labelled graph 用有向带标签边表示实体间二元关系。"}],
+    "conclusion":{"supported_fields":["edge 在 directed edge-labelled graph 中是有向带标签边","knowledge graph 中 edge 可表示实体间 relation"],"unsupported_fields":["relation 与 edge 是无条件同义；relation 是语义，edge 是图中的表示","不能自动改名为 RDF predicate 或 SKOS property"],"proposed_value":"建议拆为两个相邻条目：relation 是实体间关系的语义；edge 是图中承载该关系的连接结构。关系可由不同图模型以有向带标签边等方式表示，edge 不自动等于某个 RDF predicate。","proposed_form":"保留 relation, edge；中文分别采用既有“关系”和“边”，不新增中文形式。","source_choice":"继续使用原 KG 来源语境，以现有 candidate `hogan-paper` 的 P1/P4 为主要来源；不静默换成 RDF 规范。","source_entity":"复用现有 source candidate `hogan-paper`（candidate 13），不新增来源实体。","chinese_status":"既有中文“关系”“边”；按 level 5 模型知识分别判断，理由是中文已区分语义关系与图结构。","zh_basis":{"level":5,"model":{"name":"gpt-6-astra","date":"2026-09-06","rationale":"在 Hogan 的知识图谱语境中，relation 表示实体间语义联系，edge 表示图上的连接表示；两者职责不同，保留既有中文区分。","approval":"本次用户授权的 web resolution 提案；未采纳"}},"adopted":false},
+    "remaining_questions":["后续正式术语数据是否接受 relation 与 edge 的独立稳定身份，属于尚未采纳的结构决定。"]
+  },
+  {
+    "id":"glossary-L0220",
+    "original":"| Schema | schema | 本体在工程语境的叫法：类型与关系的定义 | — |",
+    "attempts":[{"url":"https://arxiv.org/pdf/2003.02320","date":"2026-09-06","location":"P1 L84-L88","result":"Hogan 说明 schema 在知识图谱中表示 high-level structure，并与 identity、context 分列。"},{"url":"https://www.w3.org/TR/rdf-schema/","date":"2026-09-06","location":"Abstract；§1 L63-L72","result":"RDFS 是 RDF data-modelling vocabulary 的扩展，提供描述资源及 domain/range 等机制。"},{"url":"https://www.w3.org/TR/owl2-overview/","date":"2026-09-06","location":"Abstract；§1","result":"OWL 2 是具有形式语义的 ontology language；不是 schema 一词的通用同义语。"}],
+    "conclusion":{"supported_fields":["schema 可指知识图谱或数据模型的高层结构","RDFS、OWL 分别是 RDF 建模词汇和本体语言"],"unsupported_fields":["Schema 是 ontology 的工程叫法","类型与关系是所有 schema 的完整定义"],"proposed_value":"Schema：为知识图谱或数据模型规定高层结构的说明，可涉及类型、关系或约束；不等同于 ontology。","proposed_form":"保留 Schema / schema；中文不新增 designation，沿用现有说明中的“模式”仅作普通释义。","source_choice":"复用现有 source candidates `hogan-paper`、`rdfs11`、`owl2`；不把三个来源合并成一个概念。","source_entity":"复用现有 source candidates `hogan-paper`、`rdfs11`、`owl2`（candidate 13），本行原出处仍需另行采纳。","chinese_status":"既有登记；不新增中文 designation。","adopted":false},
+    "remaining_questions":["本项目是否需要把 schema 限定为某一数据模型的结构合同，不能由外部定义替本地决定。"]
+  },
+  {
+    "id":"glossary-L0221",
+    "original":"| 推理 | reasoning, inference | 按规则从已有边推出新边 | KG |",
+    "attempts":[{"url":"https://arxiv.org/pdf/2003.02320","date":"2026-09-06","location":"P1 L79-L83","result":"Hogan 说明量化陈述需要 ontology 或 rules；deductive methods 可 entail and accumulate further knowledge，另有 inductive methods。"}],
+    "conclusion":{"supported_fields":["reasoning 可依据 ontology 或 rules 进行 deductive entailment","知识图谱可累积进一步知识"],"unsupported_fields":["推理结果必然是新边","reasoning 与 inference 已由并列证明同一概念","只存在规则推理而无 inductive knowledge extraction"],"proposed_value":"建议保留为一个本地概念：推理／reasoning, inference，指依据本体、规则或其他表达形式从已有知识得到进一步知识；Hogan 的 deductive 与 inductive 是知识取得方式，不足以要求本地拆成两个新概念。","proposed_form":"保留 reasoning, inference；中文沿用既有“推理”，不新增中文形式。","source_choice":"复用现有 source candidate `hogan-paper`（candidate 13）的 P1；不以 RDFS/OWL 直接替换 KG 定义。","source_entity":"复用现有 source candidate `hogan-paper`（candidate 13）；W3C RDFS/OWL 仅作相邻语义背景。","chinese_status":"既有中文“推理”；按 level 5 模型知识判断，理由是本地原范围把 reasoning/inference 作为同一过程的两个英文表达。","zh_basis":{"level":5,"model":{"name":"gpt-6-astra","date":"2026-09-06","rationale":"Hogan 同时把 deductive entailment 与 inductive extraction 作为知识产生方式；本地条目讨论从已有知识得到进一步知识，适合保留一个推理概念，不扩建新概念。","approval":"本次用户授权的 web resolution 提案；未采纳"}},"adopted":false},
+    "remaining_questions":["若未来需要区分 deductive reasoning 与 inductive knowledge extraction，应以独立用途和定义提案另行建立概念，当前不拆。"]
+  },
+  {
+    "id":"glossary-L0226",
+    "original":"| 属性图 | property graph | 节点和边都可带属性的图模型 | ISO/IEC 39075 |",
+    "attempts":[{"url":"https://arxiv.org/pdf/2003.02320","date":"2026-09-06","location":"P6 L277-L328","result":"Hogan 说明 property graph 为复杂关系提供灵活性；property–value pairs 和 label 可关联到 nodes 与 edges。"},{"url":"https://www.iso.org/standard/76120.html","date":"2026-09-06","location":"Abstract；出版信息","result":"ISO/IEC 39075:2024，第一版，2024-04；摘要定义 property graph 的数据结构和基本操作，并规定管理 property graphs 的语言。正文 610 页未取得。"}],
+    "conclusion":{"supported_fields":["节点和边都可关联 property–value pairs 是 Hogan 对 property graph 的直接说明","property graph 是图数据模型","ISO/IEC 39075:2024 官方摘要支持 property graph 数据结构和基本操作"],"unsupported_fields":["ISO 正文中该中文定义的逐字条款：未取得","property 必须是字面值：Hogan 说 property–value pair，未作该限制"],"proposed_value":"属性图：一种图数据模型，允许把标签和 property–value pairs 关联到节点和边，以表示更复杂的关系。","proposed_form":"保留 property graph / 属性图。","source_choice":"复用现有 source candidate `hogan-paper`（candidate 13）支持具体最小语义；ISO/IEC 39075:2024 官方页支持标准身份、日期和摘要范围，不把摘要冒充正文条款。","source_entity":"复用现有 source candidate `hogan-paper`（candidate 13）；ISO/IEC 39075:2024 来源实体仍需独立确认。","chinese_status":"既有中文“属性图”；按 level 5 模型知识判断，理由是该形式准确保留 property graph 在图数据模型中的作用。","zh_basis":{"level":5,"model":{"name":"gpt-6-astra","date":"2026-09-06","rationale":"属性图是 property graph 的既有中文表达，能保留节点、边和属性值对的模型范围，不把 property graph 缩成 RDF property。","approval":"本次用户授权的 web resolution 提案；未采纳"}},"adopted":false},
+    "remaining_questions":["是否需要以 ISO 正文而非 Hogan 教程承担正式属性图定义，待取得合法可读正文后复核。"]
+  },
+  {
+    "id":"glossary-L0227",
+    "original":"| Cypher / GQL | — | 属性图查询语言；GQL 是 2024 年的 ISO 标准 | ISO/IEC 39075:2024 |",
+    "attempts":[{"url":"https://www.iso.org/standard/76120.html","date":"2026-09-06","location":"L2-L12、L40-L59","result":"ISO 官方页确认 ISO/IEC 39075:2024 是 GQL，第一版，2024-04，Published；摘要说其规定用于 property graphs 的数据管理语言语法和语义。"},{"url":"https://neo4j.com/docs/cypher-manual/current/introduction/","date":"2026-09-06","location":"Introduction","result":"Neo4j 官方文档将 Cypher 定义为 Neo4j 的声明式查询语言，用于 property graph databases；该页是厂商文档，不是 ISO 标准。"},{"url":"https://neo4j.com/docs/getting-started/cypher/","date":"2026-09-06","location":"What is Cypher?","result":"Neo4j 官方入门页说明 Cypher 是 Neo4j 的声明式、GQL-conformant query language；不能据此说 Cypher 与 GQL 同一语言。"}],
+    "conclusion":{"supported_fields":["GQL 是 ISO/IEC 39075:2024 的名称，2024-04 发布","GQL 规定 property graph 数据管理语言的语法和语义","Cypher 是 Neo4j 的声明式图查询语言"],"unsupported_fields":["Cypher / GQL 是一个合并术语或同一语言","Cypher 由 ISO/IEC 39075:2024 标准化","仅凭 ISO 摘要补出完整 GQL 定义"],"proposed_value":"拆为两个独立条目：Cypher 是 Neo4j 的声明式 property graph 查询语言；GQL 是 ISO/IEC 39075:2024 规定的 property graph 数据管理语言。两者都查询图，但不视为同一语言。","proposed_form":"保留 Cypher / GQL 两个英文形式；中文沿用既有“Cypher / GQL”，不新增中文 designation。","source_choice":"GQL 使用 ISO 官方页承担标准身份和摘要范围；Cypher 使用 Neo4j 官方文档承担产品语言身份；不得用一方来源覆盖另一方。","source_entity":"复用现有 source candidate `hogan-paper`（candidate 13）作为属性图背景；ISO/IEC 39075 与 Neo4j Cypher 来源需分别确认或新增。","chinese_status":"既有中文形式；按 level 5 模型知识判断，理由是两者是不同发布方、不同语言身份，不能合并。","zh_basis":{"level":5,"model":{"name":"gpt-6-astra","date":"2026-09-06","rationale":"GQL 是 ISO 标准化的数据管理语言，Cypher 是 Neo4j 的声明式查询语言；中文保留英文形式并拆分身份，避免把标准与实现语言混为一谈。","approval":"本次用户授权的 web resolution 提案；未采纳"}},"adopted":false},
+    "remaining_questions":["ISO 正文和 Cypher 规范的完整语法／兼容范围未读；不据本摘要声明二者的标准一致性或完整互操作性。"]
+  }
+]

@@ -1,0 +1,137 @@
+{
+  "review": "2026-09-06-term-resolution-final-semantics",
+  "status": "evidence_resolution_complete_not_adopted",
+  "scope": "仅增量 L201、L178、L221，不修改现行规则或正式数据。",
+  "items": [
+    {
+      "id": "glossary-L0201",
+      "original": "| 决策权 | decision rights | 谁有权对哪类事项做决定 | DAMA-DMBOK 数据治理 |",
+      "status": "evidence_ready",
+      "adopted": false,
+      "projection": {
+        "concept": "决策权",
+        "definitions": {"zh-Hans": "被赋予对特定事项作出决定的权限，明确哪些主体能在何种范围与条件下作出哪些决定。"},
+        "definition_nature": "基于已核正式机构定义及实际权限配置的中文概括，不是官方中文译文或 decision rights 单独词条的逐字转录。",
+        "language_forms": [
+          {"language": "en", "text": "decision rights"},
+          {"language": "zh-Hans", "text": "决策权", "basis": {"level": 5, "model": {"name": "GPT-6", "date": "2026-09-06", "rationale": "决策权是模型既有组织治理和数据治理语境中的行业表达，指作决定的权限，区别于执行职责和结果问责；保留旧中文，外部中文用法未核实。"}}}
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://www.canada.ca/en/department-national-defence/corporate/reports-publications/data-governance.html",
+          "locator": "DND/CAF Data Governance Framework，Appendix B, data governance；§6.4.2 Chief Data Officer；§6.4.3.1 Data Governors",
+          "quote": "A system of decision rights and accountabilities applicable to data-related processes.",
+          "checked": "2026-09-06",
+          "nature": "直接读取政府机构正式框架",
+          "support": "附录注说明行动、数据资产、主体、条件和方法；正文将跨部门决定及数据域责任分配给明确主体，可据此概括谁对哪些事项拥有决定权限，超过关联词共现。"
+        }
+      ],
+      "semantic_resolution": "定义材料已齐。不将整套 data governance 定义等同 decision rights，也不把执行或问责纳入权限定义。保留原治理语境。",
+      "source_choice": {
+        "primary": "加拿大 DND/CAF 正式 Data Governance Framework",
+        "original_dama": "旧 DAMA-DMBOK 出处保留为历史登记，本轮未读付费原典。",
+        "khatri_brown": "Khatri/Brown 2010 DOI 10.1145/1629175.1629210 在 CiNii、OpenAIRE 元数据中可见 who/decision-domain 摘要，作为定位线索；ACM 原站未成功，不用聚合站转录冒充一手已读正文。"
+      },
+      "attempted_steps": [
+        "读取旧 L201 与已有报告。",
+        "检索 Khatri/Brown DOI；CACM web.open 内部错误，直接 HTTP 403，dl.acm.org 同 DOI 页面内部错误。",
+        "直接读取加拿大 DND/CAF 框架的定义、CDO 及 Data Governors 权限条款。"
+      ],
+      "remaining_evidence_issues": [],
+      "remaining_decisions": ["是否采纳新来源与概括定义；此为采纳事项，不是取证缺口。"],
+      "scope_change_proposal": null
+    },
+    {
+      "id": "glossary-L0178",
+      "original": "| 公众人物 | public figure | 在社会事务中担任显著角色、或主动进入公共争议的人；本库 `person` 实体只收此类，具体为已发表作品的作者、公开项目的维护者、方法的提出者 | 美国判例法 *Gertz v. Robert Welch* (1974)，见 [Cornell LII](https://www.law.cornell.edu/wex/public_figure) |",
+      "status": "evidence_ready",
+      "adopted": false,
+      "projection": {
+        "concept": "公众人物",
+        "definitions": {"zh-Hans": "在美国诽谤法语境中，因广泛名望或影响而具有一般公众人物地位，或因在某项公共争议中承担突出角色而仅就相关问题具有公众人物地位的人。"},
+        "definition_nature": "根据判决多数意见的概括，不是司法认定或官方中文译文。",
+        "language_forms": [
+          {"language": "en", "text": "public figure"},
+          {"language": "zh-Hans", "text": "公众人物", "basis": {"level": 5, "model": {"name": "GPT-6", "date": "2026-09-06", "rationale": "公众人物是模型既有法律及公共传播语境中的惯用表达；本条绑定 Gertz 诽谤法概念，不把公开可查姓名或职业活动等同该身份。外部中文用法未核实。"}}}
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://www.law.cornell.edu/supremecourt/text/418/323",
+          "locator": "Gertz v. Robert Welch, Inc., 418 U.S. 323 (1974)，法院多数意见 351–352 页，网页 ¶40–42；另见 345 页",
+          "quote": "he has published several books and articles on legal subjects",
+          "checked": "2026-09-06",
+          "nature": "直接读取判决多数意见",
+          "support": "Gertz 出版法律书文且活跃于专业事务，仍不足以成为公众人物。法院分别考察普遍声名和社会事务参与，或特定公共争议中的突出参与。"
+        }
+      ],
+      "semantic_resolution": "旧规则将作者、维护者或方法提出者当作 Gertz 意义公众人物的充分实例，推导不成立。发表作品与公开出处至多证明公开活动或身份可追溯；不能自动证明一般声名或特定公共争议角色。公开项目不等于公共争议，Wikidata 条目也不证明法律身份。",
+      "scope_note": "法律概念与 person 收录规则分开。判例处理诽谤责任，不授权采集私人信息；本轮没有评价具体人物身份。",
+      "minimal_rule_revision_proposal": {
+        "target": "docs/design/model/entities.md 人员收录段；docs/glossary.md L178 的项目规则部分",
+        "level": "人类决定，不自动生效",
+        "proposed_text": "person 只收在相关主题或活动中有显著公开角色、且符合公众人物判断依据的人。已发表作品的作者、公开项目的维护者和方法的提出者只作为可能的收录对象，不因该身份、Wikidata 条目或公开出处自动取得公众人物资格；须分别说明一般公众人物依据，或相关公共争议中的突出角色及适用范围，并提供可引用的公开出处。不收私人、同事或联系人。文献实体用 creator 指向人，软件实体的个人维护者用 vendor 指向人。",
+        "effect": "撤去例子自动充分的推导；保留公众人物门槛与私人、同事、联系人排除，不扩大隐私边界，不自动删改现有实体。",
+        "alternative_not_applied": "若本意是按公开专业角色收录而不要求美国诽谤法身份，须由人另行决定独立收录规则及名称；不能借术语修正静默放宽现行门槛。"
+      },
+      "attempted_steps": [
+        "重读 Gertz 多数意见 351–352 页和实体模型 person 段。",
+        "以判决中已出版专业书文但非公众人物的事实对照旧作者例子，区分公开活动、公共争议和一般名望。"
+      ],
+      "remaining_evidence_issues": [],
+      "remaining_decisions": ["须由人选择并采纳 person 规则修订；原文和具体提案均已齐，现行规则未改。"]
+    },
+    {
+      "id": "glossary-L0221",
+      "original": "| 推理 | reasoning, inference | 按规则从已有边推出新边 | KG |",
+      "status": "evidence_ready",
+      "adopted": false,
+      "projection": {
+        "concept": "推理",
+        "definitions": {"zh-Hans": "依据已有知识及本体或规则所表达的条件，推导或判定进一步知识是否成立的过程。"},
+        "definition_nature": "根据 Hogan 所述规则与蕴涵过程形成的概括。",
+        "language_forms": [
+          {"language": "en", "text": "reasoning", "usage": "建议首选形式，沿用原行首项"},
+          {"language": "en", "text": "inference", "usage": "建议在本条知识图谱规则推导范围内作为同义形式，不作跨领域全等断言", "basis_note": "Hogan 给定义和规则过程；Ontotext 在同一语义规则应用过程中明确并称 data inference or reasoning。"},
+          {"language": "zh-Hans", "text": "推理", "basis": {"level": 5, "model": {"name": "GPT-6", "date": "2026-09-06", "rationale": "推理是模型既有知识表示语境中 reasoning 和 inference 的通用译名；中文同译本身不证明英文全等，本条同义判断另有相同规则过程的外部依据。中文外部用法未核实。"}}}
+        ]
+      },
+      "actual_basis": [
+        {
+          "url": "https://arxiv.org/html/2003.02320v6",
+          "locator": "Hogan et al., Knowledge Graphs, arXiv:2003.02320v6，§4.3 Reasoning、§4.3.1 Rules，Table 6 和 Figure 22",
+          "quote": "Rules can be leveraged for reasoning in a number of ways.",
+          "checked": "2026-09-06",
+          "nature": "直接读取同一作者论文的 HTML 正文",
+          "support": "inference rules 的 body/head 图模式匹配得到有效蕴涵；后文区分递归物化与查询重写，说明推理不必写入新边。"
+        },
+        {
+          "url": "https://www.ontotext.com/knowledgehub/fundamentals/semantic-repository/",
+          "locator": "What Is a Semantic Repository?，Benefits 列表第二项；后文 TRREE 规则引擎说明",
+          "quote": "automatically discover new facts and build new data based on semantic rules (data inference or reasoning)",
+          "checked": "2026-09-06",
+          "nature": "直接读取知识图谱技术发布者本人说明",
+          "support": "同一个根据语义规则取得新事实的过程被明确并称 data inference 或 reasoning，不是两个词简单并列。"
+        }
+      ],
+      "semantic_resolution": "Hogan 单独不足以证明两个词在全部语境同义，但 §4.3.1 明确了本条原有规则推导过程。Ontotext 同一过程的直接并称支持一个受范围限制的概念及两个英文形式：reasoning 首选，inference 为限定同义形式。",
+      "same_context_example": {
+        "nature": "基于 Hogan Table 6 的本轮说明示例，非来源逐字例子",
+        "facts": "a 属于 A；A 是 B 的子类。",
+        "rule": "子类成员规则允许推出 a 属于 B。",
+        "denotation": "reasoning 与本条 inference 均指该逻辑推导过程；若 inference 指所得结论本身或机器学习模型运行，则不属于此处同义范围。",
+        "materialization_note": "可物化结论，也可查询时重写获得答案，不能把物化当作定义必要条件。"
+      },
+      "scope_note": "保留旧按规则推出的知识图谱范围，将新边改为进一步知识或蕴涵判定；未扩为所有归纳学习，未新建 deduction 或 induction 概念。",
+      "attempted_steps": [
+        "读取旧 L221 及先前只核 Hogan 引言的记录。",
+        "直接读取 Hogan HTML v6 §4.3、§4.3.1、§4.3.2，核对规则、物化和查询重写。",
+        "W3C 旧 inference 主题 URL 重定向至标准首页，未据此引用；改读 Ontotext 本人语义仓库说明，取得同过程直接并称。"
+      ],
+      "remaining_evidence_issues": [],
+      "remaining_decisions": ["采纳定义、reasoning 首选及 inference 限定同义形式；不能改写为全领域同义声明。"],
+      "scope_change_proposal": null
+    }
+  ]
+}

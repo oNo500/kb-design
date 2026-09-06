@@ -1,0 +1,990 @@
+{
+  "review": {
+    "input": "build/term-review/resolution/iso_basic.json",
+    "source": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+    "source_material": "ISO 25964-1:2011 iTeh 免费样本（15页）；本次实际打开，未下载持久副本、未 OCR。",
+    "checked_date": "2026-09-06",
+    "web_ref_id": "turn113view0",
+    "scope": "逐条处理 27 条；对样本实际含有的 2.1–2.47 定义补齐，缺段记录实际尝试和边界；不作正式迁移、采纳或状态变更。"
+  },
+  "items": [
+    {
+      "id": "glossary-L0024",
+      "original": [
+        "分类表",
+        "classification scheme",
+        "按分类排列的概念及先组组合的表",
+        "ISO 2.6"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0",
+        "location": "印刷 p.2（PDF index 7）"
+      },
+      "concept": {
+        "english_form": "classification scheme",
+        "english_definition": "A schedule of concepts and pre-coordinated combinations arranged by classification.",
+        "chinese_suggestion": "分类表：按分类排列的概念及先组组合的表。",
+        "definition_status": "source_definition_read"
+      },
+      "remaining_questions": [
+        "中文形式及中英对应未由该英文样本证明。",
+        "项目是否采用该概念及字段语义仍未决定。"
+      ],
+      "next_step": "可将该英文定义作为概念整理依据；中文形式与项目采用另行按治理决定。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      }
+    },
+    {
+      "id": "glossary-L0034",
+      "original": [
+        "词",
+        "term",
+        "表达概念的词或短语",
+        "ISO 2.61"
+      ],
+      "material": {
+        "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+        "material": "NISO 官方托管 Z39.19-2005 (R2010) PDF；本次复用已实际读取的全文，未下载持久副本、未 OCR。",
+        "location": "§4.1 glossary，印刷 p.8-9（PDF page index 19）；web ref turn76view0/turn81view0",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn76view0"
+      },
+      "concept": {
+        "english_form": "term",
+        "english_definition": "One or more words designating a concept.",
+        "chinese_suggestion": "词：表示一个概念的一个或多个词。",
+        "definition_status": "supplementary_source_definition_read"
+      },
+      "remaining_questions": [
+        "ISO 25964-1 §2.61 本身仍未在 iTeh 样本取得；本定义来自 NISO Z39.19，不能回写为 ISO 条款。",
+        "中文形式及项目术语层语义仍待人决定。"
+      ],
+      "next_step": "保留现行登记；将 NISO 定义作为补充 basis，待决定是否与 ISO 引用分开呈现。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      }
+    },
+    {
+      "id": "glossary-L0037",
+      "original": [
+        "入口词",
+        "entry term, lead-in term",
+        "引导用户找到可用词的词；叙词表里即非首选词",
+        "ISO 2.16"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0",
+        "location": "印刷 p.4（PDF index 9）"
+      },
+      "concept": {
+        "english_form": "entry term, lead-in term",
+        "english_definition": "A controlled-vocabulary term not for direct metadata use, guiding the user to another usable term; in a thesaurus it is generally a non-preferred term.",
+        "chinese_suggestion": "入口词：不直接用于元数据，而是引导用户找到另一可用术语；叙词表中通常称非首选词。",
+        "definition_status": "source_definition_read"
+      },
+      "remaining_questions": [
+        "中文形式及中英对应未由该英文样本证明。",
+        "项目是否采用该概念及字段语义仍未决定。"
+      ],
+      "next_step": "可将该英文定义作为概念整理依据；中文形式与项目采用另行按治理决定。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      }
+    },
+    {
+      "id": "glossary-L0038",
+      "original": [
+        "隐藏标签",
+        "hidden label",
+        "不显示但可检索的非首选词，如拼写错误",
+        "ISO 数据模型 `hidden`;SKOS `hiddenLabel`"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "location": "已实际打开样本；所引数据模型属于未取得的后续模型章节，未以目录或工件替代定义。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0"
+      },
+      "concept": {
+        "english_form": "hidden label",
+        "english_definition": "The ISO XSD models hidden/non-preferred term output through term structures; SKOS hiddenLabel is a lexical-label property usable for text-index querying. Neither XSD nor SKOS is an ISO Part 1 prose definition.",
+        "chinese_suggestion": "隐藏标签：不用于直接标引、但可作为文本索引检索入口的非首选形式；ISO 模型与 SKOS 属性分开表示。",
+        "definition_status": "supplementary_model_support"
+      },
+      "remaining_questions": [
+        "XSD 结构不能替代 ISO 正文定义；ISO hidden 的正式条款定位仍未取得。",
+        "项目是否采用 hidden 与 SKOS hiddenLabel 的字段对应仍待决定。"
+      ],
+      "next_step": "保留现行登记；将 XSD 与 SKOS 作为结构和属性依据，分开记录，不宣称 ISO hidden 与 SKOS hiddenLabel 无损等同。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      },
+      "additional_materials": [
+        {
+          "url": "https://www.niso.org/schemas/iso25964/iso25964-1_v1.4.xsd",
+          "location": "ThesaurusTerm complexType documentation for Definition and status-related attributes；XSD read in memory via urllib",
+          "material": "NISO 托管 XML Schema 1.4 交换工件。",
+          "checked": "2026-09-06"
+        },
+        {
+          "url": "https://www.w3.org/TR/skos-reference/#labels",
+          "location": "W3C SKOS Reference §5，skos:hiddenLabel",
+          "material": "W3C Recommendation。",
+          "checked": "2026-09-06"
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0041",
+      "original": [
+        "同形异义词",
+        "homograph",
+        "写法相同、意义不同的词",
+        "ISO 2.24"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0",
+        "location": "印刷 p.6（PDF index 10）"
+      },
+      "concept": {
+        "english_form": "homograph",
+        "english_definition": "One of two or more words written alike but having different meanings.",
+        "chinese_suggestion": "同形异义词：写法相同而意义不同的词。",
+        "definition_status": "source_definition_read"
+      },
+      "remaining_questions": [
+        "中文形式及中英对应未由该英文样本证明。",
+        "项目是否采用该概念及字段语义仍未决定。"
+      ],
+      "next_step": "可将该英文定义作为概念整理依据；中文形式与项目采用另行按治理决定。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      }
+    },
+    {
+      "id": "glossary-L0042",
+      "original": [
+        "准同义词",
+        "quasi-synonym",
+        "日常意义不同但词表中视为同一概念的词",
+        "ISO 2.47"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0",
+        "location": "印刷 p.9（PDF index 14）"
+      },
+      "concept": {
+        "english_form": "quasi-synonym",
+        "english_definition": "Terms ordinarily regarded as different in meaning but usable as labels for the same concept in a given controlled vocabulary.",
+        "chinese_suggestion": "准同义词：日常用法通常意义不同，但在特定受控词表中可以作为同一概念标签的术语。",
+        "definition_status": "source_definition_read"
+      },
+      "remaining_questions": [
+        "中文形式及中英对应未由该英文样本证明。",
+        "项目是否采用该概念及字段语义仍未决定。"
+      ],
+      "next_step": "可将该英文定义作为概念整理依据；中文形式与项目采用另行按治理决定。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      }
+    },
+    {
+      "id": "glossary-L0043",
+      "original": [
+        "复合词",
+        "compound term",
+        "可拆成多个成分的词",
+        "ISO 2.9"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0",
+        "location": "印刷 p.3（PDF index 8）"
+      },
+      "concept": {
+        "english_form": "compound term",
+        "english_definition": "A term that can be split morphologically into separate components; it may be multi-word or one word.",
+        "chinese_suggestion": "复合词：可按形态拆成独立成分的术语；可以是多词，也可以是单词。",
+        "definition_status": "source_definition_read"
+      },
+      "remaining_questions": [
+        "中文形式及中英对应未由该英文样本证明。",
+        "项目是否采用该概念及字段语义仍未决定。"
+      ],
+      "next_step": "可将该英文定义作为概念整理依据；中文形式与项目采用另行按治理决定。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      }
+    },
+    {
+      "id": "glossary-L0044",
+      "original": [
+        "复合概念",
+        "complex concept",
+        "由多个简单概念组成的概念；是否拆分见 ISO §7",
+        "ISO §7"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "location": "已实际打开样本；目录虽列第 7 章，正文未取得，未以目录替代 complex concept 定义。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0"
+      },
+      "concept": {
+        "english_form": "complex concept",
+        "english_definition": "In the ISO model discussion, a compound concept such as coal mining can be represented by a combination of two or more simpler concepts; the article notes this case is not specifically handled by ISO 25964.",
+        "chinese_suggestion": "复合概念：如 coal mining，可由两个或更多已存在的较简单概念组合表示；该解释来自 Will 2012 的 ISO 模型说明，不替代 ISO 第 7 章定义。",
+        "definition_status": "alternative_author_definition"
+      },
+      "remaining_questions": [
+        "ISO Part 1 第 7 章正文及其正式术语边界仍未取得。",
+        "是否把复合概念作为独立概念记录，还是仅作组合表示，仍需按 ISO 与本库用途决定。"
+      ],
+      "next_step": "保留现行登记；将 Will 2012 作为替代作者依据，暂不把该依据写成 ISO 原条款或自动触发拆分。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      },
+      "additional_materials": [
+        {
+          "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+          "location": "NISO §7 Compound Terms（目录定位）；本次未将该章正文当作已读定义",
+          "material": "NISO 官方 PDF，章节存在但未取得可支持 complex concept 的逐条正文。",
+          "checked": "2026-09-06"
+        },
+        {
+          "url": "https://asistdl.onlinelibrary.wiley.com/doi/10.1002/bult.2012.1720380413",
+          "location": "Leonard Will, The ISO 25964 data model for the structure of an information retrieval thesaurus, §Compound Equivalence，网页正文 lines 92-120；First published 19 April 2012",
+          "material": "作者公开全文；Will 为 ISO 25964 数据模型说明作者，文章明确以 coal mining 说明 compound concept 由两个或更多较简单概念表示。",
+          "checked": "2026-09-06"
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0046",
+      "original": [
+        "元数据",
+        "metadata",
+        "标识文档属性的数据；首选词常作为元数据值",
+        "ISO 2.33"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0",
+        "location": "印刷 p.6（PDF index 11）"
+      },
+      "concept": {
+        "english_form": "metadata",
+        "english_definition": "Data identifying attributes of a document, typically supporting location, discovery, documentation, evaluation or selection; preferred terms or notations may be metadata values.",
+        "chinese_suggestion": "元数据：识别文档属性、通常用于定位、发现、记录、评价或选择的数据；首选词或记号可作为元数据值。",
+        "definition_status": "source_definition_read"
+      },
+      "remaining_questions": [
+        "中文形式及中英对应未由该英文样本证明。",
+        "项目是否采用该概念及字段语义仍未决定。"
+      ],
+      "next_step": "可将该英文定义作为概念整理依据；中文形式与项目采用另行按治理决定。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      }
+    },
+    {
+      "id": "glossary-L0054",
+      "original": [
+        "复合等价",
+        "USE+ / UF+",
+        "一个词由另一语境中两个以上词表示",
+        "ISO 2.8"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0",
+        "location": "印刷 p.2（PDF index 7）"
+      },
+      "concept": {
+        "english_form": "USE+ / UF+",
+        "english_definition": "A relationship or mapping in which one term or concept in one context is represented by two or more terms or concepts in another.",
+        "chinese_suggestion": "复合等价：一个语境中的一个术语或概念在另一语境中由两个或更多术语或概念表示的关系或映射。",
+        "definition_status": "source_definition_read"
+      },
+      "remaining_questions": [
+        "中文形式及中英对应未由该英文样本证明。",
+        "项目是否采用该概念及字段语义仍未决定。"
+      ],
+      "next_step": "可将该英文定义作为概念整理依据；中文形式与项目采用另行按治理决定。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      }
+    },
+    {
+      "id": "glossary-L0056",
+      "original": [
+        "属种关系",
+        "BTG / NTG",
+        "层级的一种：是一种 (is-a)",
+        "ISO §10.2"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "location": "已实际打开样本；目录虽列第 10.2 节，正文未取得，未补写关系类型定义。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0"
+      },
+      "concept": {
+        "english_form": "BTG / NTG",
+        "english_definition": "A generic relationship links a class-like broader term to narrower terms that are members of that class.",
+        "chinese_suggestion": "属种关系：补充采用 NISO 关系语境，表示较宽的类与其成员型下位术语之间的关系；ISO §10.2 原文仍未取得。",
+        "definition_status": "supplementary_source_boundary"
+      },
+      "remaining_questions": [
+        "取得所引缺段或数据模型原文。",
+        "当前中文定义不能据目录或相邻条款自动确认。"
+      ],
+      "next_step": "保留现行登记；把 NISO 语境作为补充比较材料，待对应 ISO 正文取得后再判断是否修正。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      },
+      "additional_materials": [
+        {
+          "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+          "location": "§8.3.1 Generic Relationships，印刷 p.47（PDF page index 58）",
+          "material": "NISO 官方 PDF 的补充语境；不替代原行所引 ISO 条款，也不把跨标准相似定义当作同一来源证明。",
+          "checked": "2026-09-06"
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0057",
+      "original": [
+        "整部关系",
+        "BTP / NTP",
+        "层级的一种：是一部分 (part-of)",
+        "ISO §10.2"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "location": "已实际打开样本；目录虽列第 10.2 节，正文未取得，未补写关系类型定义。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0"
+      },
+      "concept": {
+        "english_form": "BTP / NTP",
+        "english_definition": "A whole-part relationship links a whole to terms representing its parts.",
+        "chinese_suggestion": "整部关系：补充采用 NISO 关系语境，表示整体与其部分之间的关系；ISO §10.2 原文仍未取得。",
+        "definition_status": "supplementary_source_boundary"
+      },
+      "remaining_questions": [
+        "取得所引缺段或数据模型原文。",
+        "当前中文定义不能据目录或相邻条款自动确认。"
+      ],
+      "next_step": "保留现行登记；把 NISO 语境作为补充比较材料，待对应 ISO 正文取得后再判断是否修正。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      },
+      "additional_materials": [
+        {
+          "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+          "location": "§8.3.3 Whole-Part Relationships，印刷 p.49（PDF page index 60）",
+          "material": "NISO 官方 PDF 的补充语境；不替代原行所引 ISO 条款，也不把跨标准相似定义当作同一来源证明。",
+          "checked": "2026-09-06"
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0058",
+      "original": [
+        "实例关系",
+        "BTI / NTI",
+        "层级的一种：是实例 (instance-of)",
+        "ISO §10.2"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "location": "已实际打开样本；目录虽列第 10.2 节，正文未取得，未补写关系类型定义。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0"
+      },
+      "concept": {
+        "english_form": "BTI / NTI",
+        "english_definition": "An instance relationship links a general class or type to an individual instance.",
+        "chinese_suggestion": "实例关系：补充采用 NISO 关系语境，表示一般类或类型与具体实例之间的关系；ISO §10.2 原文仍未取得。",
+        "definition_status": "supplementary_source_boundary"
+      },
+      "remaining_questions": [
+        "取得所引缺段或数据模型原文。",
+        "当前中文定义不能据目录或相邻条款自动确认。"
+      ],
+      "next_step": "保留现行登记；把 NISO 语境作为补充比较材料，待对应 ISO 正文取得后再判断是否修正。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      },
+      "additional_materials": [
+        {
+          "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+          "location": "§8.3.2 Instance Relationships，印刷 p.48（PDF page index 59）",
+          "material": "NISO 官方 PDF 的补充语境；不替代原行所引 ISO 条款，也不把跨标准相似定义当作同一来源证明。",
+          "checked": "2026-09-06"
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0061",
+      "original": [
+        "聚合关系",
+        "paradigmatic",
+        "概念固有的关系，与具体文档无关；叙词表只收这类",
+        "ISO 2.41"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0",
+        "location": "印刷 p.8（PDF index 13）"
+      },
+      "concept": {
+        "english_form": "paradigmatic",
+        "english_definition": "A relationship inherent in the concepts themselves, shown in a structured vocabulary independently of indexed documents.",
+        "chinese_suggestion": "聚合关系：概念自身固有的关系，在结构化词表中独立于被标引文档显示。",
+        "definition_status": "source_definition_read"
+      },
+      "remaining_questions": [
+        "中文形式及中英对应未由该英文样本证明。",
+        "项目是否采用该概念及字段语义仍未决定。"
+      ],
+      "next_step": "可将该英文定义作为概念整理依据；中文形式与项目采用另行按治理决定。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      }
+    },
+    {
+      "id": "glossary-L0062",
+      "original": [
+        "组合关系",
+        "syntagmatic",
+        "因在某文档中同时出现而产生的关系；不进叙词表",
+        "ISO §4.3"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "location": "已实际打开样本；目录虽列第 4.3 节，正文未取得，未补写关系定义。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0"
+      },
+      "concept": {
+        "english_form": "syntagmatic",
+        "english_definition": "A syntagmatic relationship is based on terms occurring together in a document, rather than an inherent conceptual relationship.",
+        "chinese_suggestion": "组合关系：补充采用 NISO 关系语境，表示术语因在文档中共同出现而形成的关系，不是概念自身固有关系；ISO §4.3 原文仍未取得。",
+        "definition_status": "supplementary_source_boundary"
+      },
+      "remaining_questions": [
+        "取得所引缺段或数据模型原文。",
+        "当前中文定义不能据目录或相邻条款自动确认。"
+      ],
+      "next_step": "保留现行登记；把 NISO 语境作为补充比较材料，待对应 ISO 正文取得后再判断是否修正。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      },
+      "additional_materials": [
+        {
+          "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+          "location": "§4.3 Paradigmatic versus Syntagmatic Relationships，印刷 p.16-17（PDF page index 27-28）",
+          "material": "NISO 官方 PDF 的补充语境；不替代原行所引 ISO 条款，也不把跨标准相似定义当作同一来源证明。",
+          "checked": "2026-09-06"
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0065",
+      "original": [
+        "互反",
+        "reciprocal",
+        "关系必须双向登记：A BT B 则 B NT A",
+        "Z 5.4.4"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "location": "该原行的有效依据是 Z39.19，不是 ISO Part 1；本报告不以 ISO 替代。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0"
+      },
+      "concept": {
+        "english_form": "reciprocal",
+        "english_definition": null,
+        "chinese_suggestion": "互反（沿用现行登记，待人决定）",
+        "definition_status": "source_definition_missing"
+      },
+      "remaining_questions": [
+        "取得所引缺段或数据模型原文。",
+        "当前中文定义不能据目录或相邻条款自动确认。"
+      ],
+      "next_step": "保留现行登记与历史结论；取得缺段后再核对，不据目录补写。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      }
+    },
+    {
+      "id": "glossary-L0074",
+      "original": [
+        "树 / 层级",
+        "hierarchy",
+        "按 BT/NT 排出的上下位结构",
+        "ISO §10.2"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "location": "已实际打开样本；目录虽列第 10.2 节，正文未取得，未补写关系类型定义。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0"
+      },
+      "concept": {
+        "english_form": "hierarchy",
+        "english_definition": "A hierarchy is a structured arrangement of broader and narrower terms or concepts; the cited ISO §10.2 treatment was not obtained.",
+        "chinese_suggestion": "树 / 层级：可暂作上下位术语或概念的结构安排；ISO §10.2 正文仍未取得，不能据此决定树与层级是否完全同义。",
+        "definition_status": "supplementary_source_boundary"
+      },
+      "remaining_questions": [
+        "取得所引缺段或数据模型原文。",
+        "当前中文定义不能据目录或相邻条款自动确认。"
+      ],
+      "next_step": "保留现行登记；把 NISO 语境作为补充比较材料，待对应 ISO 正文取得后再判断是否修正。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      },
+      "additional_materials": [
+        {
+          "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+          "location": "§4.1 glossary 的 hierarchy/tree 相关定义及 §8.3，印刷 p.7-8、46-51（PDF page index 18-20、57-62）",
+          "material": "NISO 官方 PDF 的补充语境；不替代原行所引 ISO 条款，也不把跨标准相似定义当作同一来源证明。",
+          "checked": "2026-09-06"
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0076",
+      "original": [
+        "顶层概念",
+        "top concept",
+        "树的根",
+        "ISO 数据模型"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "location": "已实际打开样本；所引数据模型属于未取得的后续模型章节，未以目录或工件替代定义。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0"
+      },
+      "concept": {
+        "english_form": "top concept",
+        "english_definition": "A top concept is represented through a top-level relationship identifying the top-level concept of the related concept.",
+        "chinese_suggestion": "顶层概念：在叙词表层级关系中作为相关概念顶层概念的概念；XSD 只支持该结构表达，不替代 ISO 第 15 章正文。",
+        "definition_status": "supplementary_model_support"
+      },
+      "remaining_questions": [
+        "XSD 是交换结构，ISO 数据模型正文仍未取得。",
+        "现行‘树的根’是否完全覆盖该层级语义仍待决定。"
+      ],
+      "next_step": "保留现行登记；以 XSD 作为结构补充依据，不将其写成 ISO 第 15 章原文定义。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      },
+      "additional_materials": [
+        {
+          "url": "https://www.niso.org/schemas/iso25964/iso25964-1_v1.4.xsd",
+          "location": "TopLevelRelationship and hasTopConcept element documentation; XSD read in memory via urllib",
+          "material": "NISO 托管 XML Schema 1.4 交换工件。",
+          "checked": "2026-09-06"
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0080",
+      "original": [
+        "微词表",
+        "micro-thesaurus",
+        "叙词表的指定子集，可独立作为完整叙词表使用",
+        "ISO-2 3.46;ISO 数据模型"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53658/9d9f9da6097147e68f418edf4f8350f0/ISO-25964-2-2013.pdf",
+        "material": "ISO 25964-2:2013 iTeh 免费样本；本次实际打开并读到 3.46，未下载持久副本、未 OCR。",
+        "location": "印刷 p.8（PDF page index 13），§3.46",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn134view0/turn136view0"
+      },
+      "concept": {
+        "english_form": "microthesaurus",
+        "english_definition": "A designated subset of a thesaurus capable of functioning as a complete thesaurus.",
+        "chinese_suggestion": "微词表：叙词表中指定的、能够作为完整叙词表运行的子集。",
+        "definition_status": "source_definition_read"
+      },
+      "remaining_questions": [
+        "中文形式及项目是否把该子集作为独立词表仍待人决定。"
+      ],
+      "next_step": "保留现行登记；将 ISO 25964-2 §3.46 作为直接定义依据，不把 Part 1 数据模型替代 Part 2 条款。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      },
+      "additional_materials": [
+        {
+          "url": "https://www.niso.org/schemas/iso25964/iso25964-1_v1.4.xsd",
+          "location": "NISO XSD 1.4 的概念组/微词表相关结构（主线以 urllib 内存读取）",
+          "material": "NISO 托管交换工件，不替代 ISO-2 §3.46 正文。",
+          "checked": "2026-09-06"
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0081",
+      "original": [
+        "辅助表 / 复分表",
+        "auxiliary table",
+        "分类法中单独列出的通用维度表（地区、时间、形式），拼接到主表号后",
+        "分类法实践，未核原文"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "location": "原行已标明分类法实践未核原文；本次没有取得该实践材料。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0"
+      },
+      "concept": {
+        "english_form": "auxiliary table",
+        "english_definition": null,
+        "chinese_suggestion": "辅助表 / 复分表（沿用现行登记，待人决定）",
+        "definition_status": "source_definition_missing"
+      },
+      "remaining_questions": [
+        "取得所引缺段或数据模型原文。",
+        "当前中文定义不能据目录或相邻条款自动确认。"
+      ],
+      "next_step": "保留现行登记与历史结论；取得缺段后再核对，不据目录补写。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      }
+    },
+    {
+      "id": "glossary-L0082",
+      "original": [
+        "组配号",
+        "synthesized notation",
+        "主表号与辅助表号拼接而成的号码",
+        "ISO 2.22 facet indicator"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0",
+        "location": "印刷 p.5（PDF index 10）"
+      },
+      "concept": {
+        "english_form": "synthesized notation",
+        "english_definition": "Synthesized notation is a notation formed by combining main numbers and/or auxiliary numbers according to the classification system to express a complex subject; it is distinct from a facet indicator, which marks a facet.",
+        "chinese_suggestion": "组配号：由主号与辅助号或多个主号按规则组合、用于表达复合主题的记号；与表示分面开始的 facet indicator 分开。",
+        "definition_status": "supplementary_author_and_use_case_support"
+      },
+      "remaining_questions": [
+        "ISO §2.22 只把 synthesized compound notation 放在 facet indicator 的说明中，未在本样本给出 synthesized notation 独立词条定义。",
+        "当前中文‘组配号’与 synthesized notation 的正式对应仍需人决定。"
+      ],
+      "next_step": "保留现行登记；以 ISO §2.22 的上下文和 UDC 使用案例共同支持概念区分，不把 facet indicator 当作 synthesized notation。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      },
+      "additional_materials": [
+        {
+          "url": "https://www.w3.org/2006/07/SWD/wiki/EucUDC",
+          "location": "W3C Semantic Web Deployment Wiki, Universal Decimal Classification；贡献者 Antoine Isaac 与 Aida Slavic；lines 47-80 展示辅助号、分面指示符和组合主号表达复合主题",
+          "material": "W3C 归档使用案例；贡献者提交的 UDC 说明，不是 ISO 标准正文。",
+          "checked": "2026-09-06"
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0083",
+      "original": [
+        "先组",
+        "pre-coordination",
+        "建表或标引时就组合概念",
+        "ISO 2.44"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0",
+        "location": "印刷 p.7（PDF index 14）"
+      },
+      "concept": {
+        "english_form": "pre-coordination",
+        "english_definition": "Combination of concepts, classes or terms of a controlled vocabulary during construction or during indexing or classification.",
+        "chinese_suggestion": "先组：在建表或用于标引、分类时组合受控词表的概念、类或术语。",
+        "definition_status": "source_definition_read"
+      },
+      "remaining_questions": [
+        "中文形式及中英对应未由该英文样本证明。",
+        "项目是否采用该概念及字段语义仍未决定。"
+      ],
+      "next_step": "可将该英文定义作为概念整理依据；中文形式与项目采用另行按治理决定。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      }
+    },
+    {
+      "id": "glossary-L0084",
+      "original": [
+        "后组",
+        "post-coordination",
+        "检索时才组合首选词",
+        "ISO 2.43"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0",
+        "location": "印刷 p.7（PDF index 14）"
+      },
+      "concept": {
+        "english_form": "post-coordination",
+        "english_definition": "Combination of preferred terms of a controlled vocabulary at the time of searching.",
+        "chinese_suggestion": "后组：在检索时组合受控词表的首选词。",
+        "definition_status": "source_definition_read"
+      },
+      "remaining_questions": [
+        "中文形式及中英对应未由该英文样本证明。",
+        "项目是否采用该概念及字段语义仍未决定。"
+      ],
+      "next_step": "可将该英文定义作为概念整理依据；中文形式与项目采用另行按治理决定。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      }
+    },
+    {
+      "id": "glossary-L0085",
+      "original": [
+        "属性 / 维度",
+        "attribute, dimension",
+        "元数据层：文档的一个字段。不是词表结构，但 Z39.19 图 4 也把它叫 facet",
+        "Z 5.3.4"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "location": "该原行的有效依据是 Z39.19，不是 ISO Part 1；本报告不以 ISO 替代。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0"
+      },
+      "concept": {
+        "english_form": "attribute, dimension",
+        "english_definition": null,
+        "chinese_suggestion": "属性 / 维度（沿用现行登记，待人决定）",
+        "definition_status": "source_definition_missing"
+      },
+      "remaining_questions": [
+        "取得所引缺段或数据模型原文。",
+        "当前中文定义不能据目录或相邻条款自动确认。"
+      ],
+      "next_step": "保留现行登记与历史结论；取得缺段后再核对，不据目录补写。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      }
+    },
+    {
+      "id": "glossary-L0092",
+      "original": [
+        "定义",
+        "definition",
+        "词的定义，ISO 中挂在词上",
+        "ISO 数据模型"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "location": "已实际打开样本；所引数据模型属于未取得的后续模型章节，未以目录或工件替代定义。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0"
+      },
+      "concept": {
+        "english_form": "definition",
+        "english_definition": "The XSD models Definition as a note giving definitions of a term, not necessarily limited to the scope of the concept labelled by that term.",
+        "chinese_suggestion": "定义：给术语提供定义的注释；其内容不必限于该术语在本叙词表中标记的概念范围。",
+        "definition_status": "supplementary_model_support"
+      },
+      "remaining_questions": [
+        "XSD 结构说明不替代 ISO 第 15 章正文；项目定义字段是否采用该不受概念范围限制的语义仍待决定。"
+      ],
+      "next_step": "保留现行登记；把 Definition 作为术语定义注释的结构依据，区分术语解释与概念 scope。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      },
+      "additional_materials": [
+        {
+          "url": "https://www.niso.org/schemas/iso25964/iso25964-1_v1.4.xsd",
+          "location": "Definition element documentation under ThesaurusTerm; XSD read in memory via urllib",
+          "material": "NISO 托管 XML Schema 1.4 交换工件，明确是 term definition note，且不必限于该术语标记的概念范围。",
+          "checked": "2026-09-06"
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0094",
+      "original": [
+        "编辑注释",
+        "editorial note",
+        "给编辑看的内部注释",
+        "ISO 数据模型"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "location": "已实际打开样本；所引数据模型属于未取得的后续模型章节，未以目录或工件替代定义。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0"
+      },
+      "concept": {
+        "english_form": "editorial note",
+        "english_definition": "The XSD models EditorialNote as a note for thesaurus editors during the editing process.",
+        "chinese_suggestion": "编辑注释：供叙词表编辑者在编辑过程中使用的注释，不等同于面向用户的定义或范围注释。",
+        "definition_status": "supplementary_model_support"
+      },
+      "remaining_questions": [
+        "XSD 结构说明不替代 ISO 第 15 章正文；项目是否保留独立 editorial note 字段仍待决定。"
+      ],
+      "next_step": "保留现行登记；把 XSD 作为编辑过程注释的结构依据，不写入 workflow 或 administrative_status。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      },
+      "additional_materials": [
+        {
+          "url": "https://www.niso.org/schemas/iso25964/iso25964-1_v1.4.xsd",
+          "location": "EditorialNote element documentation under ThesaurusTerm; XSD read in memory via urllib",
+          "material": "NISO 托管 XML Schema 1.4 交换工件，明确为词表编辑者编辑过程使用的 note。",
+          "checked": "2026-09-06"
+        }
+      ]
+    },
+    {
+      "id": "glossary-L0097",
+      "original": [
+        "废弃词",
+        "deprecated term",
+        "不再用于标引、保留供检索并指向替代词的词",
+        "Z 11.3.2.1"
+      ],
+      "material": {
+        "url": "https://cdn.standards.iteh.ai/samples/53657/808a87d0fbea484bb0013de6a2eea4a9/ISO-25964-1-2011.pdf",
+        "material": "ISO 25964-1:2011 iTeh 免费样本；本次通过 web 实际打开，未下载持久副本、未 OCR。",
+        "location": "该原行的有效依据是 Z39.19，不是 ISO Part 1；本报告不以 ISO 替代。",
+        "checked": "2026-09-06",
+        "web_ref_id": "turn113view0"
+      },
+      "concept": {
+        "english_form": "deprecated term",
+        "english_definition": "NISO §11.3.2.1 supports handling modified or superseded terms, but does not define deprecated term as a standalone project status.",
+        "chinese_suggestion": "废弃词：现有 NISO 补充材料只支持修改、替代及历史保留的处理语境，不足以定义项目生命周期状态。",
+        "definition_status": "supplementary_source_boundary"
+      },
+      "remaining_questions": [
+        "取得所引缺段或数据模型原文。",
+        "当前中文定义不能据目录或相邻条款自动确认。"
+      ],
+      "next_step": "保留现行登记；把 NISO 语境作为补充比较材料，待对应 ISO 正文取得后再判断是否修正。",
+      "chinese_model_judgment": {
+        "model": "gpt-6-astra",
+        "date": "2026-09-06",
+        "reason": "沿用现行中文登记并根据已核英文概念提出工作对应；不冒称 ISO 官方中文译名，不改变正式准入。"
+      },
+      "additional_materials": [
+        {
+          "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+          "location": "§11.3.2.1 Methods for Handling of Modified or Deleted Terms，印刷 p.130-132（PDF page index 141-143）",
+          "material": "NISO 官方 PDF 的补充语境；不替代原行所引 ISO 条款，也不把跨标准相似定义当作同一来源证明。",
+          "checked": "2026-09-06"
+        }
+      ]
+    }
+  ]
+}
+

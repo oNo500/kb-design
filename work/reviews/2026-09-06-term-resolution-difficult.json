@@ -1,0 +1,308 @@
+{
+  "schema": "term-resolution-review",
+  "version": 1,
+  "checked": "2026-09-06",
+  "scope": "原待核登记的同概念定义与替代依据提案；无正式采纳",
+  "method": "合法公开网页、作者论文和机构材料的有界续查；未下载持久全文、未使用OCR、未绕过付费或登录。索引正文与直接打开正文分别注明。",
+  "items": [
+    {
+      "adopted": false,
+      "proposal_status": "specific_value_and_source_substitution_proposal",
+      "chinese_name_basis": "模型知识第5级建议；现有中文形式保留，外部中文用法未核实；不以英文材料冒充中文译名证据",
+      "approval_required": "具体定义及必要来源实体/来源替换须纳入完整字段采纳包，本报告不执行采纳",
+      "id": "glossary-L0112",
+      "english_name": "analytico-synthetic classification",
+      "chinese_name": "分析综合式分类",
+      "chinese_definition_proposal": "先把主题分析为组成它的基本概念或分面，再依规定的组合次序综合表示该主题的分类方法。",
+      "sources": [
+        {
+          "title": "Hjørland — Facet analysis",
+          "url": "https://www.isko.org/cyclo/facet_analysis",
+          "locator": "§3 Basic principles of facet analysis；分析与综合两步及后续说明",
+          "nature": "作者研究论文公开版本；直接读取搜索索引提供的正文，页面直接访问返回403",
+          "checked": "2026-09-06",
+          "evidence_summary": "先分解主题为基本概念，再按相关单元组合表示主题；复合类可按需综合。"
+        },
+        {
+          "title": "Kaula — Canons in Analytico-Synthetic Classification",
+          "url": "https://article.imrpress.com/journal/KO/7/3/10.5771/0943-7444-1980-3-118/4a183d5ac38a2c528b0133c11817a7a7.pdf",
+          "locator": "International Classification 7(3), 1980, pp.118–125；§2 p.118；§7、§7.1、§7.2 p.125",
+          "nature": "作者研究论文原文；针对Ranganathan准则的后续分析，不是Ranganathan1957原典",
+          "checked": "2026-09-06",
+          "evidence_summary": "§2说明扩充分类表及新类号而不扰动现有安排；§7将hospitality区分为数组与链上的插入、扩展准则。"
+        }
+      ],
+      "same_concept_rationale": "与旧登记的先分析、再综合类号机制一致。Hjørland直接讨论analytico-synthetic methodology；不用faceted classification的新名称替换现有概念。",
+      "source_change_proposal": "定义依据改用Hjørland2013作者文章；保留Ranganathan历史归属说明，但不把本轮核对标在1957原典上。",
+      "remaining_issues": [
+        "Ranganathan1957版本未取得；如坚持定义必须直接引该版本，仍缺其原典定位。采用本次替代依据则具体定义已有支持。"
+      ]
+    },
+    {
+      "adopted": false,
+      "proposal_status": "specific_value_and_source_substitution_proposal",
+      "chinese_name_basis": "模型知识第5级建议；现有中文形式保留，外部中文用法未核实；不以英文材料冒充中文译名证据",
+      "approval_required": "具体定义及必要来源实体/来源替换须纳入完整字段采纳包，本报告不执行采纳",
+      "id": "glossary-L0113",
+      "english_name": "canon of hospitality",
+      "chinese_name": "好客准则",
+      "chinese_definition_proposal": "要求分类法能够在数组和链中容纳新增类目及类号，并保持既有安排的准则。",
+      "sources": [
+        {
+          "title": "Kaula — Canons in Analytico-Synthetic Classification",
+          "url": "https://article.imrpress.com/journal/KO/7/3/10.5771/0943-7444-1980-3-118/4a183d5ac38a2c528b0133c11817a7a7.pdf",
+          "locator": "International Classification 7(3), 1980, pp.118–125；§2 p.118；§7、§7.1、§7.2 p.125",
+          "nature": "作者研究论文原文；针对Ranganathan准则的后续分析，不是Ranganathan1957原典",
+          "checked": "2026-09-06",
+          "evidence_summary": "§2说明扩充分类表及新类号而不扰动现有安排；§7将hospitality区分为数组与链上的插入、扩展准则。"
+        }
+      ],
+      "same_concept_rationale": "Kaula明确讨论Canon of Hospitality及其数组/链分组，并把不扰动既有安排列为准则作用。保留旧概念，不创建数组和链两个新登记对象。",
+      "source_change_proposal": "改用Kaula1980对同一准则的作者研究原文；不要继续把Denton打不开当作该概念无依据。",
+      "remaining_issues": [
+        "未取得Ranganathan1957原典；新定义是对已读Kaula研究的中文概述，不能宣称已逐字核对1957原文。"
+      ]
+    },
+    {
+      "adopted": false,
+      "proposal_status": "specific_value_and_source_substitution_proposal",
+      "chinese_name_basis": "模型知识第5级建议；现有中文形式保留，外部中文用法未核实；不以英文材料冒充中文译名证据",
+      "approval_required": "具体定义及必要来源实体/来源替换须纳入完整字段采纳包，本报告不执行采纳",
+      "id": "glossary-L0115",
+      "english_name": "residual category",
+      "chinese_name": "剩余类目",
+      "chinese_definition_proposal": "给定分类系统中无法得到正式表示的类目。",
+      "sources": [
+        {
+          "title": "Star & Bowker — Enacting silence",
+          "url": "https://link.springer.com/article/10.1007/s10676-007-9141-7",
+          "locator": "Abstract，Ethics and Information Technology 9 (2007), pp.273–280",
+          "nature": "原作者论文在出版商页面的公开摘要；正文仍为订阅内容",
+          "checked": "2026-09-06",
+          "evidence_summary": "作者直接把residual categories界定为给定分类系统无法正式表示的类目。"
+        }
+      ],
+      "same_concept_rationale": "来自原作者2007论文摘要的直接界定；比旧“其他/杂项”示例更准确。",
+      "source_change_proposal": "原作者、原论文不变，定位改为公开摘要。删除定义中的“其大小是分类失效的信号”，除非另取得直接支持该评价的正文。",
+      "remaining_issues": [
+        "公开摘要未支持以类目大小判断分类失效；该旧附加断言不能随定义入库。"
+      ]
+    },
+    {
+      "adopted": false,
+      "proposal_status": "specific_value_and_source_substitution_proposal",
+      "chinese_name_basis": "模型知识第5级建议；现有中文形式保留，外部中文用法未核实；不以英文材料冒充中文译名证据",
+      "approval_required": "具体定义及必要来源实体/来源替换须纳入完整字段采纳包，本报告不执行采纳",
+      "id": "glossary-L0133",
+      "component": "exact equivalence",
+      "english_name": "exact equivalence",
+      "chinese_name": "精确等价",
+      "chinese_definition_proposal": "源词表与目标词表中的两个概念具有相同范围的等价关系。",
+      "sources": [
+        {
+          "title": "Leonard Will — Differences between SKOS and ISO standards",
+          "url": "https://lists.w3.org/Archives/Public/public-esw-thes/2009Feb/0033.html",
+          "locator": "Mapping between thesauri，a–c三项（网页行131–140）",
+          "nature": "ISO工作组数据模型小组负责人本人公开邮件；2009-02-13，作者明确属个人解释而非正式标准",
+          "checked": "2026-09-06",
+          "evidence_summary": "exact为范围相同；partial为一方范围完全包含于另一方；inexact为有交集且双方各有对方不含的部分。"
+        },
+        {
+          "title": "SKOS Simple Knowledge Organization System Primer",
+          "url": "https://www.w3.org/TR/2009/NOTE-skos-primer-20090818/",
+          "locator": "Appendix Correspondences between ISO-2788/5964 and SKOS constructs，inter-KOS semantic relationships（行811–816）",
+          "nature": "W3C Working Group Note；对ISO2788/5964的解释，不是ISO25964-2 §11正文",
+          "checked": "2026-09-06",
+          "evidence_summary": "列出exact、inexact、partial；inexact表示一般意思相同但不完全相同，partial表示一个形式含义比另一个更宽。"
+        },
+        {
+          "title": "German National Library — MARC Proposal 2014-05",
+          "url": "https://wwws.loc.gov/marc/mac/2014/2014-05.html",
+          "locator": "§1 BACKGROUND，ISO25964-2 Table1的EQ/BM/NM/RM转录；§2 DISCUSSION",
+          "nature": "德国国家图书馆提交、美国国会图书馆公开的机构原提案；2014-06-29通过，2014-07-24认可",
+          "checked": "2026-09-06",
+          "evidence_summary": "明确跨叙词表映射；BM/NM为更宽/更窄，RM为相关且非同义、近义、宽义或狭义。"
+        }
+      ],
+      "same_concept_rationale": "Will对映射中exact的判据明确，W3C与LoC确认英文形式。",
+      "source_change_proposal": "采用Will本人公开解释作为具体定义依据，附W3C/LoC语境；不把它记作已读ISO25964-2 §11.2。",
+      "remaining_issues": [
+        "ISO25964-2 §11.2正文未取得；如必须声称本定义逐字等同该条款，仍需核对。具体替代定义本身已有直接证据。"
+      ]
+    },
+    {
+      "adopted": false,
+      "proposal_status": "specific_value_and_source_substitution_proposal",
+      "chinese_name_basis": "模型知识第5级建议；现有中文形式保留，外部中文用法未核实；不以英文材料冒充中文译名证据",
+      "approval_required": "具体定义及必要来源实体/来源替换须纳入完整字段采纳包，本报告不执行采纳",
+      "id": "glossary-L0133",
+      "component": "inexact equivalence",
+      "english_name": "inexact equivalence",
+      "chinese_name": "不精确等价",
+      "chinese_definition_proposal": "源词表与目标词表中的两个概念范围有交集，但各自仍包含另一概念未涵盖部分的等价关系。",
+      "sources": [
+        {
+          "title": "Leonard Will — Differences between SKOS and ISO standards",
+          "url": "https://lists.w3.org/Archives/Public/public-esw-thes/2009Feb/0033.html",
+          "locator": "Mapping between thesauri，a–c三项（网页行131–140）",
+          "nature": "ISO工作组数据模型小组负责人本人公开邮件；2009-02-13，作者明确属个人解释而非正式标准",
+          "checked": "2026-09-06",
+          "evidence_summary": "exact为范围相同；partial为一方范围完全包含于另一方；inexact为有交集且双方各有对方不含的部分。"
+        },
+        {
+          "title": "SKOS Simple Knowledge Organization System Primer",
+          "url": "https://www.w3.org/TR/2009/NOTE-skos-primer-20090818/",
+          "locator": "Appendix Correspondences between ISO-2788/5964 and SKOS constructs，inter-KOS semantic relationships（行811–816）",
+          "nature": "W3C Working Group Note；对ISO2788/5964的解释，不是ISO25964-2 §11正文",
+          "checked": "2026-09-06",
+          "evidence_summary": "列出exact、inexact、partial；inexact表示一般意思相同但不完全相同，partial表示一个形式含义比另一个更宽。"
+        }
+      ],
+      "same_concept_rationale": "采用Will对overlapping equivalence的明确概念范围判据；W3C的含义不完全相同表述相容。",
+      "source_change_proposal": "用可读作者解释给出独立定义，撤去原提案仅称“三个并列等级”的占位描述。",
+      "remaining_issues": [
+        "该判据来自Will2009个人解释，不能宣称是已核ISO25964-2 §11.3的全部规则。不得由此给skos:closeMatch赋予相同集合论公理。"
+      ]
+    },
+    {
+      "adopted": false,
+      "proposal_status": "specific_value_and_source_substitution_proposal",
+      "chinese_name_basis": "模型知识第5级建议；现有中文形式保留，外部中文用法未核实；不以英文材料冒充中文译名证据",
+      "approval_required": "具体定义及必要来源实体/来源替换须纳入完整字段采纳包，本报告不执行采纳",
+      "id": "glossary-L0133",
+      "component": "partial equivalence",
+      "english_name": "partial equivalence",
+      "chinese_name": "部分等价",
+      "chinese_definition_proposal": "源词表与目标词表中的两个概念范围不相同，且一个概念的范围完全包含于另一个概念范围的等价关系。",
+      "sources": [
+        {
+          "title": "Leonard Will — Differences between SKOS and ISO standards",
+          "url": "https://lists.w3.org/Archives/Public/public-esw-thes/2009Feb/0033.html",
+          "locator": "Mapping between thesauri，a–c三项（网页行131–140）",
+          "nature": "ISO工作组数据模型小组负责人本人公开邮件；2009-02-13，作者明确属个人解释而非正式标准",
+          "checked": "2026-09-06",
+          "evidence_summary": "exact为范围相同；partial为一方范围完全包含于另一方；inexact为有交集且双方各有对方不含的部分。"
+        },
+        {
+          "title": "SKOS Simple Knowledge Organization System Primer",
+          "url": "https://www.w3.org/TR/2009/NOTE-skos-primer-20090818/",
+          "locator": "Appendix Correspondences between ISO-2788/5964 and SKOS constructs，inter-KOS semantic relationships（行811–816）",
+          "nature": "W3C Working Group Note；对ISO2788/5964的解释，不是ISO25964-2 §11正文",
+          "checked": "2026-09-06",
+          "evidence_summary": "列出exact、inexact、partial；inexact表示一般意思相同但不完全相同，partial表示一个形式含义比另一个更宽。"
+        }
+      ],
+      "same_concept_rationale": "Will与W3C公开材料均把partial与宽窄包含联系起来。这与已有报告仅按overlap泛说等价程度不同，需以具体字段采纳处理。",
+      "source_change_proposal": "采用有明确包含判据的替代来源；撤销先前未经正文支持的“不能把partial当作hierarchical mapping”绝对断言。二者可描述相同范围包含情形，但前者是等价程度称法，后者显式表达映射方向，不自动合并概念身份。",
+      "remaining_issues": [
+        "ISO25964-2 §11.4正文未取得，不能声称已验证其与2009解释的逐项一致性；若项目坚持专指该条款而不接受替代定义，该项仍需原条款。"
+      ]
+    },
+    {
+      "adopted": false,
+      "proposal_status": "specific_value_and_source_substitution_proposal",
+      "chinese_name_basis": "模型知识第5级建议；现有中文形式保留，外部中文用法未核实；不以英文材料冒充中文译名证据",
+      "approval_required": "具体定义及必要来源实体/来源替换须纳入完整字段采纳包，本报告不执行采纳",
+      "id": "glossary-L0134",
+      "english_name": "hierarchical mapping",
+      "chinese_name": "层级映射",
+      "chinese_definition_proposal": "连接不同词表中范围较宽与范围较窄概念的有向映射，按目标概念相对源概念的范围区分为宽义映射或狭义映射。",
+      "sources": [
+        {
+          "title": "Dextre Clarke — The Information Retrieval Thesaurus",
+          "url": "https://www.isko.org/cyclo/thesaurus",
+          "locator": "§3.2 Networked uses, especially in the Semantic Web；Figure3",
+          "nature": "ISO工作组负责人后续作者论文公开版本；读取搜索索引提供的完整相关正文",
+          "checked": "2026-09-06",
+          "evidence_summary": "明确ISO25964-2有equivalence、hierarchical、associative mappings；层级映射有宽窄方向，simple equivalence可限定exact/inexact。"
+        },
+        {
+          "title": "German National Library — MARC Proposal 2014-05",
+          "url": "https://wwws.loc.gov/marc/mac/2014/2014-05.html",
+          "locator": "§1 BACKGROUND，ISO25964-2 Table1的EQ/BM/NM/RM转录；§2 DISCUSSION",
+          "nature": "德国国家图书馆提交、美国国会图书馆公开的机构原提案；2014-06-29通过，2014-07-24认可",
+          "checked": "2026-09-06",
+          "evidence_summary": "明确跨叙词表映射；BM/NM为更宽/更窄，RM为相关且非同义、近义、宽义或狭义。"
+        }
+      ],
+      "same_concept_rationale": "Clarke后续论文直接说明hierarchical mappings及方向；机构原提案转录BM/NM的解释，足以支持旧概念具体定义。",
+      "source_change_proposal": "由ISO目录定位改为Clarke§3.2与LoC提案§1的已核正文，不把机构转录伪装成本轮ISO标准正文阅读。",
+      "remaining_issues": [
+        "ISO25964-2 §9完整操作建议未核，但本条定义与英文形式已有直接作者/机构依据。"
+      ]
+    },
+    {
+      "adopted": false,
+      "proposal_status": "specific_value_and_source_substitution_proposal",
+      "chinese_name_basis": "模型知识第5级建议；现有中文形式保留，外部中文用法未核实；不以英文材料冒充中文译名证据",
+      "approval_required": "具体定义及必要来源实体/来源替换须纳入完整字段采纳包，本报告不执行采纳",
+      "id": "glossary-L0135",
+      "english_name": "associative mapping",
+      "chinese_name": "相关映射",
+      "chinese_definition_proposal": "连接不同词表中语义相关概念的映射；目标概念与源概念不是同义、近义或宽窄关系。",
+      "sources": [
+        {
+          "title": "Dextre Clarke — The Information Retrieval Thesaurus",
+          "url": "https://www.isko.org/cyclo/thesaurus",
+          "locator": "§3.2 Networked uses, especially in the Semantic Web；Figure3",
+          "nature": "ISO工作组负责人后续作者论文公开版本；读取搜索索引提供的完整相关正文",
+          "checked": "2026-09-06",
+          "evidence_summary": "明确ISO25964-2有equivalence、hierarchical、associative mappings；层级映射有宽窄方向，simple equivalence可限定exact/inexact。"
+        },
+        {
+          "title": "German National Library — MARC Proposal 2014-05",
+          "url": "https://wwws.loc.gov/marc/mac/2014/2014-05.html",
+          "locator": "§1 BACKGROUND，ISO25964-2 Table1的EQ/BM/NM/RM转录；§2 DISCUSSION",
+          "nature": "德国国家图书馆提交、美国国会图书馆公开的机构原提案；2014-06-29通过，2014-07-24认可",
+          "checked": "2026-09-06",
+          "evidence_summary": "明确跨叙词表映射；BM/NM为更宽/更窄，RM为相关且非同义、近义、宽义或狭义。"
+        }
+      ],
+      "same_concept_rationale": "Clarke明确associative mappings，LoC提案说明相关RM及排除同义/近义/宽窄的条件；形式与定义互相对应。",
+      "source_change_proposal": "替换仅列§10目录的依据；保留associative mapping名称，RM/related mapping作为来源的关系表达而非自动新增同义形式。",
+      "remaining_issues": [
+        "ISO25964-2 §10完整操作建议未核，但本条具体定义已有机构转录支持。"
+      ]
+    },
+    {
+      "adopted": false,
+      "proposal_status": "specific_value_and_source_substitution_proposal",
+      "chinese_name_basis": "模型知识第5级建议；现有中文形式保留，外部中文用法未核实；不以英文材料冒充中文译名证据",
+      "approval_required": "具体定义及必要来源实体/来源替换须纳入完整字段采纳包，本报告不执行采纳",
+      "id": "glossary-L0137",
+      "english_name": "hub structure",
+      "chinese_name": "中心辐射",
+      "chinese_definition_proposal": "指定一个词表作为中心，其他参与词表通过与该中心词表建立概念映射而相互衔接的映射结构。",
+      "sources": [
+        {
+          "title": "Zeng — Interoperability",
+          "url": "https://www.isko.org/cyclo/interoperability",
+          "locator": "§5.2 Models of mapping process；Table2（期刊版2019, p.138）",
+          "nature": "ISO工作组成员后续作者论文；相关正文从搜索索引直接取得，期刊PDF亦可识别",
+          "checked": "2026-09-06",
+          "evidence_summary": "hub模型指定一个词表作为中介，其余词表与之建立概念映射；不要求所有非中心词表相互直接映射。"
+        },
+        {
+          "title": "Kempf, Neubert & Faden — Building the Bridge",
+          "url": "https://publikationen.bibliothek.kit.edu/1000049658/3725121",
+          "locator": "LIS2015机构演讲，slide24（PDF第24页），Model3 Hub structure (6.4)",
+          "nature": "ZBW作者机构研究演讲，KIT机构库公开原件",
+          "checked": "2026-09-06",
+          "evidence_summary": "将一个词表指定为hub，其他词表作为satellite映射到它；与旧条目所述结构一致。"
+        }
+      ],
+      "same_concept_rationale": "Zeng与ZBW原作者材料明确相同中心/卫星结构；不添加必须双向或必须全量映射的限制。",
+      "source_change_proposal": "用Zeng§5.2/Table2与ZBW slide24替换仅有ISO§6目录的依据；旧“所有词表”限定为参与本映射结构的词表。",
+      "remaining_issues": [
+        "ISO25964-2 §6.4完整条款未核；不声称本项目选择此结构是ISO强制要求。"
+      ]
+    }
+  ],
+  "unresolved_standard_text": "ISO25964-2 §9–11和§6.4完整正文仍未取得；本报告提供具体同概念替代来源提案，不把替代阅读标为原标准逐项核实。Ranganathan1957原典同理。",
+  "attempts_not_used_as_definition_evidence": [
+    "Denton/Miskatonic prolegomena页面受限，facet-web-howto仅返回验证页。",
+    "Ranganathan机构库扫描件可识别，但后续定位超时；未做OCR，未据此声称已读1957原典。",
+    "NISO reading list定位了作者文；部分旧PDF链接打不开，转查作者公开版本、机构库和出版商原件。",
+    "ZBW2015 slide22把partial与BM/NM联系，不能据此替代ISO§11全部判据；本报告采用明确表述概念范围的Will/W3C作为替代定义建议。"
+  ]
+}

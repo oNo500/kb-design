@@ -1,0 +1,369 @@
+{
+  "status": "proposal_only",
+  "items": [
+    {
+      "id": "glossary-L0056",
+      "original": {
+        "id": "glossary-L0056",
+        "file": "docs/glossary.md",
+        "line": 56,
+        "section": "关系",
+        "kind": "definition",
+        "raw": "| 属种关系 | BTG / NTG | 层级的一种：是一种 (is-a) | ISO §10.2 |",
+        "cells": [
+          "属种关系",
+          "BTG / NTG",
+          "层级的一种：是一种 (is-a)",
+          "ISO §10.2"
+        ],
+        "sha256": "64ea1fd79770bf1b8fb53b6dcb6805735c74ebb90f8bbb45ea284150ca95acbd"
+      },
+      "status": "specific_semantic_proposal_not_adopted",
+      "proposed_definitions": [
+        "一种类与子类之间的层级关系：子类的每个成员都属于上位类，上位类则还包含该子类之外的成员。"
+      ],
+      "proposed_forms": [
+        "属种关系",
+        "generic relationship"
+      ],
+      "actual_evidence": [
+        {
+          "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+          "locator": "§8.3.1 与 §8.3.2，印刷47–48，PDF index58–59",
+          "checked": "2026-09-06",
+          "nature": "标准正文"
+        }
+      ],
+      "correction_rationale": "原is-a过于笼统：属种关系与实例关系都可称is-a，故需同时写明类/子类及全部/部分判据。",
+      "model_zh": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "仅判断既有中文形式与本条明确含义的对应；保留原名称，不宣称外部中文用法已核实。"
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0062",
+      "original": {
+        "id": "glossary-L0062",
+        "file": "docs/glossary.md",
+        "line": 62,
+        "section": "关系",
+        "kind": "definition",
+        "raw": "| 组合关系 | syntagmatic | 因在某文档中同时出现而产生的关系；不进叙词表 | ISO §4.3 |",
+        "cells": [
+          "组合关系",
+          "syntagmatic",
+          "因在某文档中同时出现而产生的关系；不进叙词表",
+          "ISO §4.3"
+        ],
+        "sha256": "d8e21df79811a6c26b685c13c5969faaf4d537d711ade6f629c26b6268525984"
+      },
+      "status": "specific_semantic_proposal_not_adopted",
+      "proposed_definitions": [
+        "随特定表达或文献语境形成的、依赖该语境的概念关系。"
+      ],
+      "proposed_forms": [
+        "组合关系",
+        "syntagmatic relation"
+      ],
+      "actual_evidence": [
+        {
+          "url": "https://www.isko.org/cyclo/kos",
+          "locator": "Mazzocchi，Knowledge organization system，§5.1，a priori/a posteriori 与 paradigmatic/syntagmatic 段",
+          "checked": "2026-09-06",
+          "nature": "作者研究文章；搜索索引完整相关段已读，直接网页403"
+        }
+      ],
+      "correction_rationale": "不能把简单同篇共现等同任何语义关系；原“不进叙词表”须限定为不作为脱离语境的词表语义关系固定下来。原ISO§4.3仍未读，明确提替代作者依据，不沿用错误NISO§4.3定位。",
+      "model_zh": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "仅判断既有中文形式与本条明确含义的对应；保留原名称，不宣称外部中文用法已核实。"
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0074",
+      "original": {
+        "id": "glossary-L0074",
+        "file": "docs/glossary.md",
+        "line": 74,
+        "section": "结构",
+        "kind": "definition",
+        "raw": "| 树 / 层级 | hierarchy | 按 BT/NT 排出的上下位结构 | ISO §10.2 |",
+        "cells": [
+          "树 / 层级",
+          "hierarchy",
+          "按 BT/NT 排出的上下位结构",
+          "ISO §10.2"
+        ],
+        "sha256": "4acae61b05501d3ad02e45935dbff12fbdba107cc67ba12b0a17eb84f398f3bf"
+      },
+      "status": "specific_semantic_proposal_not_adopted",
+      "proposed_definitions": [
+        {
+          "term": "层级",
+          "en": "hierarchy",
+          "definition": "按上位与下位关系组织的概念结构；可含单上位或多上位安排。"
+        },
+        {
+          "term": "树",
+          "en": "tree",
+          "definition": "由根节点及其子树递归组成的节点结构。"
+        }
+      ],
+      "proposed_forms": [
+        "层级 / hierarchy",
+        "树 / tree"
+      ],
+      "actual_evidence": [
+        {
+          "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+          "locator": "§8.3 与 §8.3.4，印刷47–50",
+          "checked": "2026-09-06",
+          "nature": "标准正文"
+        },
+        {
+          "url": "https://xlinux.nist.gov/dads/HTML/tree.html",
+          "locator": "Definition(1)及Formal Definition；2017-12-15",
+          "checked": "2026-09-06",
+          "nature": "NIST词典作者条目"
+        }
+      ],
+      "correction_rationale": "建议把原“树/层级”两个已有中文分别登记，不能让一般hierarchy的多上位范围变成严格树的同义定义。这里只形成明确拆分建议，不新增主题分类或数据。",
+      "model_zh": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "仅判断既有中文形式与本条明确含义的对应；保留原名称，不宣称外部中文用法已核实。"
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0081",
+      "original": {
+        "id": "glossary-L0081",
+        "file": "docs/glossary.md",
+        "line": 81,
+        "section": "结构",
+        "kind": "definition",
+        "raw": "| 辅助表 / 复分表 | auxiliary table | 分类法中单独列出的通用维度表（地区、时间、形式），拼接到主表号后 | 分类法实践，未核原文 |",
+        "cells": [
+          "辅助表 / 复分表",
+          "auxiliary table",
+          "分类法中单独列出的通用维度表（地区、时间、形式），拼接到主表号后",
+          "分类法实践，未核原文"
+        ],
+        "sha256": "7e5ff6fa6e0df295aeaef2dae6ebb0cde23cd1a48f4a63611dc63278ed1e88aa"
+      },
+      "status": "specific_semantic_proposal_not_adopted",
+      "proposed_definitions": [
+        "分类法中为可重复适用的特征或关系设置、与主表类号配合使用的表；通用辅助表跨多个主题适用，专用辅助表只适用于指定范围。"
+      ],
+      "proposed_forms": [
+        "辅助表",
+        "复分表",
+        "auxiliary table"
+      ],
+      "actual_evidence": [
+        {
+          "url": "https://udcc.org/index.php/site/page?view=about_structure",
+          "locator": "UDC Tables，special auxiliaries、Common auxiliary tables、Common auxiliary numbers；UDC Synthetic Structure",
+          "checked": "2026-09-06",
+          "nature": "分类体系维护机构原文"
+        }
+      ],
+      "correction_rationale": "原定义把所有auxiliary table都限定为通用维度并仅允许尾部拼接，过窄。通用/专用是来源解释，不自动新增两概念。本轮取证支持辅助表机制；复分表的现行中文按模型语言判断单列。",
+      "model_zh": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "仅判断既有中文形式与本条明确含义的对应；保留原名称，不宣称外部中文用法已核实。"
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0085",
+      "original": {
+        "id": "glossary-L0085",
+        "file": "docs/glossary.md",
+        "line": 85,
+        "section": "结构",
+        "kind": "definition",
+        "raw": "| 属性 / 维度 | attribute, dimension | 元数据层：文档的一个字段。不是词表结构，但 Z39.19 图 4 也把它叫 facet | Z 5.3.4 |",
+        "cells": [
+          "属性 / 维度",
+          "attribute, dimension",
+          "元数据层：文档的一个字段。不是词表结构，但 Z39.19 图 4 也把它叫 facet",
+          "Z 5.3.4"
+        ],
+        "sha256": "005f4035c1f6c898befabe42f43507cb9f12b883240a2d71a10f0223b2f03c92"
+      },
+      "status": "specific_semantic_proposal_not_adopted",
+      "proposed_definitions": [
+        "在元数据检索语境中，用于描述、排序或筛选内容对象的一项特性；它通过字段及其值表示，在组织和检索时可作为一个维度。"
+      ],
+      "proposed_forms": [
+        "属性 / attribute",
+        "维度 / dimension（限元数据检索语境）"
+      ],
+      "actual_evidence": [
+        {
+          "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+          "locator": "§5.3.4 Figure4及续文，印刷14–15",
+          "checked": "2026-09-06",
+          "nature": "标准正文"
+        },
+        {
+          "url": "https://searchuserinterfaces.com/book/sui_ch8_navigation_and_search.html",
+          "locator": "Hearst，Search User Interfaces，2009，§8.3 attribute与dimension同例；§8.6 facet/dimension/feature type",
+          "checked": "2026-09-06",
+          "nature": "原作者公开书稿"
+        }
+      ],
+      "correction_rationale": "建议保留元数据检索的限定范围：attribute为首选英文，dimension只在同一描述或检索维度语境作为允许形式，不声称所有学科中无条件同义。明确特性与存储字段不是同一层，词表分面结构仍独立。",
+      "model_zh": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "仅判断既有中文形式与本条明确含义的对应；保留原名称，不宣称外部中文用法已核实。"
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0092",
+      "original": {
+        "id": "glossary-L0092",
+        "file": "docs/glossary.md",
+        "line": 92,
+        "section": "注释与生命周期",
+        "kind": "definition",
+        "raw": "| 定义 | definition | 词的定义，ISO 中挂在词上 | ISO 数据模型 |",
+        "cells": [
+          "定义",
+          "definition",
+          "词的定义，ISO 中挂在词上",
+          "ISO 数据模型"
+        ],
+        "sha256": "7dc44caf7b48964196b8f8bb4d9600082a9b769047779d72778d3f22b8a9db08"
+      },
+      "status": "specific_semantic_proposal_not_adopted",
+      "proposed_definitions": [
+        "用来描述一个概念并将其与相关概念区别开的表达。"
+      ],
+      "proposed_forms": [
+        "定义",
+        "definition"
+      ],
+      "actual_evidence": [
+        {
+          "url": "https://cdn.standards.iteh.ai/samples/62330/f8493dfbf02f4f23b9d9524832aa0b9b/ISO-1087-2019.pdf",
+          "locator": "§3.3.1，PDF p.12，印刷p.6",
+          "checked": "2026-09-06",
+          "nature": "ISO免费样章正文"
+        },
+        {
+          "url": "https://www.niso.org/schemas/iso25964/iso25964-1_v1.4.xsd",
+          "locator": "ThesaurusTerm/Definition及Definition类型说明",
+          "checked": "2026-09-06",
+          "nature": "标准配套模型工件，内存读取XML"
+        }
+      ],
+      "correction_rationale": "一般definition意义由ISO1087支持；在某数据模型中作为词的注释存储，是应用位置说明，不能把Definition类当作一般定义概念。",
+      "model_zh": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "仅判断既有中文形式与本条明确含义的对应；保留原名称，不宣称外部中文用法已核实。"
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0097",
+      "original": {
+        "id": "glossary-L0097",
+        "file": "docs/glossary.md",
+        "line": 97,
+        "section": "注释与生命周期",
+        "kind": "definition",
+        "raw": "| 废弃词 | deprecated term | 不再用于标引、保留供检索并指向替代词的词 | Z 11.3.2.1 |",
+        "cells": [
+          "废弃词",
+          "deprecated term",
+          "不再用于标引、保留供检索并指向替代词的词",
+          "Z 11.3.2.1"
+        ],
+        "sha256": "8724e21da434ff6fd4977d1549bc4025192ac03a2da9ca6ba57a3101a6992f72"
+      },
+      "status": "specific_semantic_proposal_not_adopted",
+      "proposed_definitions": [
+        "与首选术语同义，但在可接受性评价中被列为不宜使用的术语。"
+      ],
+      "proposed_forms": [
+        "废弃词",
+        "deprecated term"
+      ],
+      "actual_evidence": [
+        {
+          "url": "https://gso-sims-preview-doc-aws.s3-eu-west-1.amazonaws.com/iso-1087-2019-en.html",
+          "locator": "ISO1087:2019，§3.4.21；对照§3.4.22 obsolete term",
+          "checked": "2026-09-06",
+          "nature": "GSO公开HTML预览；实际直接读取"
+        },
+        {
+          "url": "https://niso-sts.org/tbx-html/element/tbx-normativeAuthorization.html",
+          "locator": "Description：preferred/admitted/deprecated的使用等级",
+          "checked": "2026-09-06",
+          "nature": "NISO标准标签说明"
+        }
+      ],
+      "correction_rationale": "原“不再用于标引、保留并指向替代”混合定义和项目处理动作。新定义明确deprecated的评价性质，与不再常用的obsolete不同；项目保留记录及替代链规则另按现行状态约束，不在本提案偷偷删除。",
+      "model_zh": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "仅判断既有中文形式与本条明确含义的对应；保留原名称，不宣称外部中文用法已核实。"
+      },
+      "adopted": false
+    },
+    {
+      "id": "glossary-L0114",
+      "original": {
+        "id": "glossary-L0114",
+        "file": "docs/glossary.md",
+        "line": 114,
+        "section": "建设与治理",
+        "kind": "definition",
+        "raw": "| 领域分析 | domain analysis | 分类反映话语共同体的目的与立场，无唯一正确分类 | Hjørland & Albrechtsen 1995 |",
+        "cells": [
+          "领域分析",
+          "domain analysis",
+          "分类反映话语共同体的目的与立场，无唯一正确分类",
+          "Hjørland & Albrechtsen 1995"
+        ],
+        "sha256": "858431190f3f2f4c7a3f101496d8d58baa9c2536f610a85170851797413d78e8"
+      },
+      "status": "specific_semantic_proposal_not_adopted",
+      "proposed_definitions": [
+        "在知识组织中，从特定领域的知识内容、需求、研究传统及认识论立场出发，分析该领域的信息组织并提出有依据的组织方式的方法。"
+      ],
+      "proposed_forms": [
+        "领域分析",
+        "domain analysis"
+      ],
+      "actual_evidence": [
+        {
+          "url": "https://www.isko.org/cyclo/domain_analysis",
+          "locator": "Hjørland，Domain Analysis，2017，§1.4、§2.1、§4.7、§7 Conclusion",
+          "checked": "2026-09-06",
+          "nature": "原作者后续论文；搜索索引返回完整相关段；不是1995原论文"
+        }
+      ],
+      "correction_rationale": "原定义主要是方法立场，缺少方法本身；作者§1.4及§7直接说明从具体内容/需求出发研究现有组织、辨析假设与利益、提出有依据的分类。保留原知识组织领域语境，不换成软件工程领域分析。原1995引用作为历史来源，定义依据明确建议替换为已读作者后续阐释。",
+      "adopted": false
+    }
+  ]
+}

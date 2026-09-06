@@ -20534,5 +20534,10 @@
       "production_input": "不读 migration inventory 或 terms.tsv 作为日常有效源；初次迁移以冻结清单对账，后续以保留源和 Git 维护。"
     },
     "activation_order": "单次批准后完成必要代码与合同实现、来源与术语数据迁移、保留源建立及完整对账；以同一隔离 Git 快照设置上述状态并生成完整 glossary 和临时 vault，统一验收。失败则继续修复或用 Git 恢复；不再次要求人补定本包已明确的控制字段。"
+  },
+  "execution_notice": {
+    "migration_authorized": false,
+    "reason": "用户明确否决部分术语迁移并将84条待核另设保留编辑源后切换的方案；此前整包采纳回复不用于授权该范围调整。",
+    "current_work": "保留具体值供完整核对与后续明确采纳，暂停正式迁移、编辑权切换和消费者激活。"
   }
 }

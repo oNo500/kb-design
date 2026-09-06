@@ -1,0 +1,394 @@
+[
+  {
+    "id": "glossary-L0106",
+    "original_cells": [
+      "依据",
+      "warrant",
+      "一个词有资格进词表的理由",
+      "Z 5.3.5"
+    ],
+    "source": {
+      "url": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+      "locator": "§5.3.5, existing review locator: printed p.16",
+      "checked": "2026-09-06",
+      "nature": "prior_direct_record"
+    },
+    "english_name": "warrant",
+    "chinese_definition_proposal": "一个词有资格进入词表的理由；项目记录区分 literary、user、organizational warrant。",
+    "supported_scope": "现行项目记录与所述历史材料支持该范围的项目整理",
+    "remaining_issues": [
+      "既有核对记录与本轮原文核实分开。",
+      "正式中文译名未由外部原文核实"
+    ],
+    "attempted_steps": [
+      "opened or reused the cited material at §5.3.5, existing review locator: printed p.16",
+      "compared the source component with the original glossary cells",
+      "kept the body-text gap explicit and did not infer a definition"
+    ],
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0112",
+    "original_cells": [
+      "分析综合式分类",
+      "analytico-synthetic classification",
+      "先把主题分析成基本范畴，再综合类号；新主题是旧面的新组合",
+      "Ranganathan 1957"
+    ],
+    "source": {
+      "url": "https://www.miskatonic.org/library/prolegomena.html",
+      "locator": "项目概念文引用的 Denton 摘要，原典页码未提供",
+      "checked": "2026-09-06",
+      "nature": "项目概念文引用的二手摘要，非本轮核对的 Ranganathan 原典"
+    },
+    "english_name": "analytico-synthetic classification",
+    "chinese_definition_proposal": "先分析主题的基本范畴，再综合类号的分类方法；不把 PMEST 扩写为原典定义。",
+    "supported_scope": "现行项目记录与所述历史材料支持该范围的项目整理",
+    "remaining_issues": [
+      "Ranganathan 原典未取得；现有中文与定义只能作为项目登记和二手转述，不补充作者原文事实。"
+    ],
+    "attempted_steps": [
+      "打开项目现有 Miskatonic 公开摘要 URL",
+      "该 URL 被工具限制，未取得页面正文",
+      "保留 Ranganathan 原典缺口，不将项目概念文转述当作原文"
+    ],
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0113",
+    "original_cells": [
+      "好客准则",
+      "canon of hospitality",
+      "分类法容纳新类目而不扰动已有类号",
+      "Ranganathan 1957"
+    ],
+    "source": {
+      "url": "https://www.miskatonic.org/library/prolegomena.html",
+      "locator": "项目概念文引用的 Denton 摘要，原典页码未提供",
+      "checked": "2026-09-06",
+      "nature": "项目概念文引用的二手摘要，非本轮核对的 Ranganathan 原典"
+    },
+    "english_name": "canon of hospitality",
+    "chinese_definition_proposal": "允许在既有层级或数组中加入新类号而不扰动已有安排的项目解释。",
+    "supported_scope": "现行项目记录与所述历史材料支持该范围的项目整理",
+    "remaining_issues": [
+      "Ranganathan 原典未取得；现有中文与定义只能作为项目登记和二手转述，不补充作者原文事实。"
+    ],
+    "attempted_steps": [
+      "打开项目现有 Miskatonic 公开摘要 URL",
+      "该 URL 被工具限制，未取得页面正文",
+      "保留 Ranganathan 原典缺口，不将项目概念文转述当作原文"
+    ],
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0114",
+    "original_cells": [
+      "领域分析",
+      "domain analysis",
+      "分类反映话语共同体的目的与立场，无唯一正确分类",
+      "Hjørland & Albrechtsen 1995"
+    ],
+    "source": {
+      "url": "https://www.isko.org/cyclo/domain_analysis",
+      "locator": "§1.1、§2.2；ISKO Encyclopedia article, version last edited 2024-09-02",
+      "checked": "2026-09-06",
+      "nature": "Hjørland 本人 2017 年后续阐释；作者公开材料，不是 1995 原论文。",
+      "quote": "Domains can be broad like banking or narrow like arithmetic operations."
+    },
+    "english_name": "domain analysis",
+    "chinese_definition_proposal": "按话语共同体的知识立场与使用目的分析领域，分类没有脱离目的的唯一正确答案。",
+    "supported_scope": "现行项目记录与所述历史材料支持该范围的项目整理",
+    "remaining_issues": [
+      "可支持 domain 的范围可变和方法语境，但不能替代 Hjørland 与 Albrechtsen 1995 原文的逐条核对。"
+    ],
+    "attempted_steps": [
+      "通过 NISO 资源所列背景核对现有 1995 引用",
+      "读取 Hjørland 本人 ISKO 后续文章的可见摘要和正文片段",
+      "将其作为后续作者阐释候选依据，不回写 1995 原文"
+    ],
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0115",
+    "original_cells": [
+      "剩余类目",
+      "residual category",
+      "“其他”“杂项”；其大小是分类失效的信号",
+      "Star & Bowker 2007"
+    ],
+    "source": {
+      "url": "https://link.springer.com/article/10.1007/s10676-007-9141-7",
+      "locator": "Ethics and Information Technology 9, 2007；原文未核对",
+      "checked": "2026-09-06",
+      "nature": "项目概念文列出的论文页面，非本轮核对的原文"
+    },
+    "english_name": "residual category",
+    "chinese_definition_proposal": "分类中“其他／杂项／未分类”等剩余位置及其增长所显示的分类缺口。",
+    "supported_scope": "现行项目记录与所述历史材料支持该范围的项目整理",
+    "remaining_issues": [
+      "Star 与 Bowker 2007 原文未取得；现有中文仅作项目转述和待核记录。"
+    ],
+    "attempted_steps": [
+      "打开项目现有 Springer DOI URL",
+      "DOI 重定向到 Springer 页面但工具拒绝安全打开",
+      "保留 Star 与 Bowker 2007 原文缺口，不从标题或旧转述补定义"
+    ],
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0117",
+    "original_cells": [
+      "标引",
+      "indexing",
+      "分析文档主题、识别概念、分配标引词",
+      "ISO 2.27"
+    ],
+    "source": {
+      "url": "https://cdn.standards.iteh.ai/samples/53658/9d9f9da6097147e68f418edf4f8350f0/ISO-25964-2-2013.pdf",
+      "locator": "§3.36 PDF p.12, lines 470-486",
+      "checked": "2026-09-06",
+      "nature": "public_sample_definition",
+      "quote": "intellectual analysis of the subject (3.75) matter of a document (3.24) to identify the concepts (3.17)"
+    },
+    "english_name": "indexing",
+    "chinese_definition_proposal": "对文档主题进行智力分析、识别概念并分配相应标引词以便检索的活动。",
+    "supported_scope": "公开样本直接支持该条英文定义范围",
+    "remaining_issues": [
+      "Public sample directly supports the English definition scope; external Chinese translation remains unverified."
+    ],
+    "attempted_steps": [
+      "opened or reused the cited material at §3.36 PDF p.12, lines 470-486",
+      "compared the source component with the original glossary cells",
+      "retained exact public-sample scope without changing the glossary entry"
+    ],
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0118",
+    "original_cells": [
+      "标引词",
+      "index term",
+      "分配给文档的词；keyword、tag 含义更宽",
+      "ISO 2.26"
+    ],
+    "source": {
+      "url": "https://cdn.standards.iteh.ai/samples/53658/9d9f9da6097147e68f418edf4f8350f0/ISO-25964-2-2013.pdf",
+      "locator": "§3.35 PDF p.12, lines 470-473",
+      "checked": "2026-09-06",
+      "nature": "public_sample_definition",
+      "quote": "term (3.84) assigned to a document (3.24) in the process of indexing (3.36)"
+    },
+    "english_name": "index term",
+    "chinese_definition_proposal": "在标引过程中分配给文档的 term；keyword、tag 可能有更宽含义。",
+    "supported_scope": "公开样本直接支持该条英文定义范围",
+    "remaining_issues": [
+      "Public sample directly supports the English definition scope; external Chinese translation remains unverified."
+    ],
+    "attempted_steps": [
+      "opened or reused the cited material at §3.35 PDF p.12, lines 470-473",
+      "compared the source component with the original glossary cells",
+      "retained exact public-sample scope without changing the glossary entry"
+    ],
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0128",
+    "original_cells": [
+      "映射簇",
+      "mapping cluster",
+      "三个以上词表之间协调维护的一组映射",
+      "ISO-2 3.42"
+    ],
+    "source": {
+      "url": "https://cdn.standards.iteh.ai/samples/53658/9d9f9da6097147e68f418edf4f8350f0/ISO-25964-2-2013.pdf",
+      "locator": "§3.42 PDF p.12, lines 512-518",
+      "checked": "2026-09-06",
+      "nature": "public_sample_definition",
+      "quote": "coordinated set of mappings (3.41) between the concepts (3.17) of three or more vocabularies"
+    },
+    "english_name": "mapping cluster",
+    "chinese_definition_proposal": "协调维护的多词表映射集合；沿用现行中文范围，不扩写新判据。",
+    "supported_scope": "现行项目记录与所述历史材料支持该范围的项目整理",
+    "remaining_issues": [
+      "Public sample directly supports the English definition scope; external Chinese translation remains unverified."
+    ],
+    "attempted_steps": [
+      "opened or reused the cited material at §3.42 PDF p.12, lines 512-518",
+      "compared the source component with the original glossary cells",
+      "retained exact public-sample scope without changing the glossary entry"
+    ],
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0130",
+    "original_cells": [
+      "对照表",
+      "crosswalk",
+      "两个以上词表之间概念映射的表",
+      "ISO-2 3.21"
+    ],
+    "source": {
+      "url": "https://cdn.standards.iteh.ai/samples/53658/9d9f9da6097147e68f418edf4f8350f0/ISO-25964-2-2013.pdf",
+      "locator": "§3.21 PDF p.9, lines 360-363",
+      "checked": "2026-09-06",
+      "nature": "public_sample_definition",
+      "quote": "table of mappings (3.41) between the concepts (3.17) in two or more structured vocabularies"
+    },
+    "english_name": "crosswalk",
+    "chinese_definition_proposal": "两个以上结构化词表之间概念映射的表；保持与词表映射概念文同一层级。",
+    "supported_scope": "现行项目记录与所述历史材料支持该范围的项目整理",
+    "remaining_issues": [
+      "Public sample directly supports the English definition scope; external Chinese translation remains unverified."
+    ],
+    "attempted_steps": [
+      "opened or reused the cited material at §3.21 PDF p.9, lines 360-363",
+      "compared the source component with the original glossary cells",
+      "retained exact public-sample scope without changing the glossary entry"
+    ],
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0131",
+    "original_cells": [
+      "源词表 / 目标词表",
+      "source / target vocabulary",
+      "映射的起点 / 终点",
+      "ISO-2 §3（条款号在样章之外）"
+    ],
+    "source": {
+      "url": "https://cdn.standards.iteh.ai/samples/53658/9d9f9da6097147e68f418edf4f8350f0/ISO-25964-2-2013.pdf",
+      "locator": "§3.27 PDF p.10, lines 401-405",
+      "checked": "2026-09-06",
+      "nature": "public_sample_definition",
+      "quote": "the concept (3.17) in the target vocabulary (3.82) is considered identical in scope to the concept (3.17) in the source vocabulary"
+    },
+    "english_name": "source / target vocabulary",
+    "chinese_definition_proposal": "source vocabulary 是映射起点，target vocabulary 是映射终点；两者是不同角色。",
+    "supported_scope": "公开样本直接支持该条英文定义范围",
+    "remaining_issues": [
+      "Public sample directly supports the English definition scope; external Chinese translation remains unverified.",
+      "§3.27 establishes source and target as distinct mapping endpoints; it does not provide separate standalone entries."
+    ],
+    "attempted_steps": [
+      "opened or reused the cited material at §3.27 PDF p.10, lines 401-405",
+      "compared the source component with the original glossary cells",
+      "retained exact public-sample scope without changing the glossary entry"
+    ],
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0133",
+    "original_cells": [
+      "精确 / 不精确 / 部分等价",
+      "exact / inexact / partial equivalence",
+      "等价的三个程度",
+      "ISO-2 §11"
+    ],
+    "source": {
+      "url": "https://taxonomystrategies.com/international-standards-for-kos-supporting-information-retrieval-iso-25964-part-2/",
+      "locator": "Slide 8、Slide 9，页面脚本；演讲日期 2026-08-19，Joseph Busch",
+      "checked": "2026-09-06",
+      "nature": "Taxonomy Strategies 作者／行业演讲页面，报告 ISO 25964 Part 2；不是 ISO 标准正文。",
+      "quote": "Consider how much overlap is enough or too much in the context of search results to warrant an exact, inexact, or partial equivalence mapping."
+    },
+    "english_name": "exact / inexact / partial equivalence",
+    "chinese_definition_proposal": "exact、inexact、partial 是按检索结果语境判断等价程度的三个并列等级；现有材料支持 partial 属于等价程度讨论，不能把它直接当作 hierarchical mapping。",
+    "supported_scope": "现行项目记录与所述历史材料支持该范围的项目整理",
+    "remaining_issues": [
+      "Busch 演讲没有给出三项完整形式化判据；ISO §11 正文仍未取得。",
+      "partial 与 hierarchical mapping 的具体边界可由演讲区分，但仍需人工决定是否把该辅助依据写入项目定义。"
+    ],
+    "attempted_steps": [
+      "打开 Joseph Busch 演讲页面及其可见 slide script",
+      "核对 Slide 8 对 exact、inexact、partial 的 overlap 语境",
+      "核对 Slide 9 将 hierarchical mapping 表述为 broader／narrower",
+      "将作者演讲作为辅助定义依据，不冒称 ISO §11 原文"
+    ],
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0134",
+    "original_cells": [
+      "层级映射",
+      "hierarchical mapping",
+      "目标概念比源概念宽或窄",
+      "ISO-2 §9"
+    ],
+    "source": {
+      "url": "https://cdn.standards.iteh.ai/samples/53658/9d9f9da6097147e68f418edf4f8350f0/ISO-25964-2-2013.pdf",
+      "locator": "§9 PDF p.3 table of contents",
+      "checked": "2026-09-06",
+      "nature": "contents_only"
+    },
+    "english_name": "hierarchical mapping",
+    "chinese_definition_proposal": "层级映射；保留现行“目标概念比源概念宽或窄”的项目表达。",
+    "supported_scope": "现行项目记录与所述历史材料支持该范围的项目整理",
+    "remaining_issues": [
+      "§9 正文未取得。",
+      "正式中文译名未由外部原文核实"
+    ],
+    "attempted_steps": [
+      "opened or reused the cited material at §9 PDF p.3 table of contents",
+      "compared the source component with the original glossary cells",
+      "kept the body-text gap explicit and did not infer a definition"
+    ],
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0135",
+    "original_cells": [
+      "相关映射",
+      "associative mapping",
+      "有关但非等价非层级",
+      "ISO-2 §10"
+    ],
+    "source": {
+      "url": "https://cdn.standards.iteh.ai/samples/53658/9d9f9da6097147e68f418edf4f8350f0/ISO-25964-2-2013.pdf",
+      "locator": "§10 PDF p.3 table of contents",
+      "checked": "2026-09-06",
+      "nature": "contents_only"
+    },
+    "english_name": "associative mapping",
+    "chinese_definition_proposal": "相关映射；保留现行“有关但非等价非层级”的项目表达。",
+    "supported_scope": "现行项目记录与所述历史材料支持该范围的项目整理",
+    "remaining_issues": [
+      "§10 正文未取得。",
+      "正式中文译名未由外部原文核实"
+    ],
+    "attempted_steps": [
+      "opened or reused the cited material at §10 PDF p.3 table of contents",
+      "compared the source component with the original glossary cells",
+      "kept the body-text gap explicit and did not infer a definition"
+    ],
+    "adopted": false
+  },
+  {
+    "id": "glossary-L0137",
+    "original_cells": [
+      "中心辐射",
+      "hub structure",
+      "所有词表映射到一个中心词表的结构模型",
+      "ISO-2 §6"
+    ],
+    "source": {
+      "url": "https://cdn.standards.iteh.ai/samples/53658/9d9f9da6097147e68f418edf4f8350f0/ISO-25964-2-2013.pdf",
+      "locator": "§6 PDF p.3 table of contents",
+      "checked": "2026-09-06",
+      "nature": "contents_only"
+    },
+    "english_name": "hub structure",
+    "chinese_definition_proposal": "所有词表映射到一个中心词表的映射结构；不把项目结构选择写成 ISO 要求。",
+    "supported_scope": "现行项目记录与所述历史材料支持该范围的项目整理",
+    "remaining_issues": [
+      "§6 正文未取得；本库做法不能由目录推出标准推荐。",
+      "正式中文译名未由外部原文核实"
+    ],
+    "attempted_steps": [
+      "opened or reused the cited material at §6 PDF p.3 table of contents",
+      "compared the source component with the original glossary cells",
+      "kept the body-text gap explicit and did not infer a definition"
+    ],
+    "adopted": false
+  }
+]

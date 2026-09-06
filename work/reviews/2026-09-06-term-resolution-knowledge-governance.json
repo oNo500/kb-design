@@ -1,0 +1,431 @@
+{
+  "review": "2026-09-06-term-resolution-knowledge-governance",
+  "status": "proposed_not_adopted",
+  "scope": "仅原 glossary 九行的语义补证与具体字段提案；未修改正式数据或旧报告。",
+  "items": [
+    {
+      "id": "glossary-L0145",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 145,
+        "cells": [
+          "知识体系",
+          "body of knowledge, BoK",
+          "一个学科或职业公认知识范围的结构化清单",
+          "SWEBOK;ISO/IEC TR 19759"
+        ],
+        "raw": "| 知识体系 | body of knowledge, BoK | 一个学科或职业公认知识范围的结构化清单 | SWEBOK;ISO/IEC TR 19759 |",
+        "sha256": "9320e8ab8d1f13da681f6a8b7cb46337dc5ad488113a8e63c29c5c53335fc4f1"
+      },
+      "resolution": "supported_with_explicit_corrections",
+      "proposed_fields": {
+        "english_forms": [
+          "body of knowledge",
+          "BoK"
+        ],
+        "chinese_form": "知识体系",
+        "definition_zh": "一个学科或职业领域内的知识总和。",
+        "scope_note": "SWEBOK Guide 对软件工程知识总和中普遍接受的部分进行识别和描述；指南及其结构化内容表不是知识总和本身。"
+      },
+      "evidence": [
+        {
+          "material": "https://www.computer.org/education/bodies-of-knowledge/software-engineering",
+          "location": "Focus on Generally Accepted Knowledge；官方 HTML 本轮通过 urllib 内存读取成功，网页工具 open 返回 403",
+          "read_on": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "明确区分 software engineering body of knowledge（专业知识总和）与只描述其中普遍接受部分的 Guide。"
+        }
+      ],
+      "reason": "旧定义将 body of knowledge 与指南的结构化清单混同；改定义，不以 ISO/IEC TR 19759 标题单独证明通用定义。BoK 与全称拆为两个英文形式。",
+      "remaining_evidence_issues": [],
+      "adoption_choices": [
+        "采纳知识总和定义，删除结构化清单限定。"
+      ],
+      "adopted": false,
+      "formal_data_written": false,
+      "language_judgment": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "知识体系是模型既有知识中的常用对应表达；不冒充本次已核中文原文。",
+        "external_usage_verified": false
+      }
+    },
+    {
+      "id": "glossary-L0149",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 149,
+        "cells": [
+          "普遍接受的知识",
+          "generally accepted knowledge",
+          "多数项目多数时候适用且广泛认同的知识；知识体系只收这类",
+          "SWEBOK"
+        ],
+        "raw": "| 普遍接受的知识 | generally accepted knowledge | 多数项目多数时候适用且广泛认同的知识；知识体系只收这类 | SWEBOK |",
+        "sha256": "02a4414c1b7e9cf8c145b87240d8fa0c5a9f8b620a9a038c483d69873d526b56"
+      },
+      "resolution": "supported_with_explicit_corrections",
+      "proposed_fields": {
+        "english_form": "generally accepted knowledge",
+        "chinese_form": "普遍接受的知识",
+        "definition_zh": "在大多数项目的大多数情况下适用，且其价值和作用获得广泛共识的知识。",
+        "scope_note": "该解释用于 SWEBOK 所引 PMI 语境；不要求所有项目统一应用，也不把全部知识体系限定为此子集。"
+      },
+      "evidence": [
+        {
+          "material": "https://www.computer.org/education/bodies-of-knowledge/software-engineering",
+          "location": "FAQ: How do you define generally accepted knowledge?；官方 HTML 本轮内存读取",
+          "read_on": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "直接给出 most projects most of the time 与广泛共识，并排除所有项目统一应用的解释。"
+        }
+      ],
+      "reason": "删除“知识体系只收这类”；该限定针对 SWEBOK Guide 的覆盖范围，不针对 body of knowledge 本身。",
+      "remaining_evidence_issues": [],
+      "adoption_choices": [],
+      "adopted": false,
+      "formal_data_written": false,
+      "language_judgment": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "保留普遍接受的知识作为模型第 5 级中文对应，英文概念与边界已核。",
+        "external_usage_verified": false
+      }
+    },
+    {
+      "id": "glossary-L0189",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 189,
+        "cells": [
+          "隐性知识 / 显性知识",
+          "tacit / explicit knowledge",
+          "难以形式化的个人知识 / 正式而系统、易于交流的知识",
+          "Nonaka 1991"
+        ],
+        "raw": "| 隐性知识 / 显性知识 | tacit / explicit knowledge | 难以形式化的个人知识 / 正式而系统、易于交流的知识 | Nonaka 1991 |",
+        "sha256": "3eb0664fb9d36c381536f27fc21fdeb72cb016e7e0c4dbceb0b039ad8aa9f5cc"
+      },
+      "resolution": "supported_with_explicit_corrections",
+      "proposed_fields": {
+        "split_records": [
+          {
+            "english_form": "tacit knowledge",
+            "chinese_form": "隐性知识",
+            "definition_zh": "高度个人化、植根于行动和经验，难以形式化和交流的知识。"
+          },
+          {
+            "english_form": "explicit knowledge",
+            "chinese_form": "显性知识",
+            "definition_zh": "能够以正式、系统的语言表达，并较容易地处理、传递和存储的知识。"
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "material": "https://api.pageplace.de/preview/DT0400.9781847876621_A23446119/preview-9781847876621_A23446119.pdf",
+          "location": "Managing Industrial Knowledge 第 1 章，Nonaka、Toyama、Konno，PDF p.22 署名；PDF p.24／印刷 p.15，知识两种形式段落",
+          "read_on": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "原作者在章正文同时说明两者的表达、交流与存储差别；合法电子书预览承载原作者正文。",
+          "quote": "tacit knowledge is highly personal and hard to formalize"
+        }
+      ],
+      "reason": "旧行包含两个不同概念，拆两条；来源由无法取得正文的 Nonaka 1991 精确改为本轮读到的 Nonaka、Toyama、Konno 同名章节，不假称已核 1991 原刊。",
+      "remaining_evidence_issues": [],
+      "adoption_choices": [
+        "批准一行拆为两概念；不把二者写成同义词。"
+      ],
+      "adopted": false,
+      "formal_data_written": false,
+      "language_judgment": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "隐性知识和显性知识是模型已有的知识管理领域惯用中文对应；本次未核中文作者版。",
+        "external_usage_verified": false
+      }
+    },
+    {
+      "id": "glossary-L0190",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 190,
+        "cells": [
+          "速查表",
+          "cheat sheet",
+          "供快速参考的简明笔记集",
+          "Wikidata Q2309859"
+        ],
+        "raw": "| 速查表 | cheat sheet | 供快速参考的简明笔记集 | Wikidata Q2309859 |",
+        "sha256": "601cc77e7bbc57a464ac19b709f06f262afc3635ef7506718213b012c9c44432"
+      },
+      "resolution": "supported_with_explicit_corrections",
+      "proposed_fields": {
+        "english_form": "cheat sheet",
+        "chinese_form": "速查表",
+        "definition_zh": "汇集笔记或其他辅助信息，供学习或记忆时查阅的文档。",
+        "scope_note": "采用词典第二义项的参考文档含义，不采用考试作弊材料义项。"
+      },
+      "evidence": [
+        {
+          "material": "https://www.dictionary.com/browse/cheat-sheet",
+          "location": "noun 义项 2；来源注明 Dictionary.com Unabridged based on Random House Unabridged Dictionary",
+          "read_on": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "词典直接定义参考资料含义；既非 Wikidata 描述串，也非单个产品实例。"
+        }
+      ],
+      "reason": "以词典直接义项替代 Wikidata Q2309859 单一实体描述，删除定义中未由该义项限定的“简明笔记集”。",
+      "remaining_evidence_issues": [],
+      "adoption_choices": [],
+      "adopted": false,
+      "formal_data_written": false,
+      "language_judgment": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "速查表是模型已有技术文档领域惯用表达；不是该英语词典的已核官方中译。",
+        "external_usage_verified": false
+      }
+    },
+    {
+      "id": "glossary-L0191",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 191,
+        "cells": [
+          "札记簿",
+          "commonplace book",
+          "抄录重要段落并按主题整理的本子",
+          "Harvard Library"
+        ],
+        "raw": "| 札记簿 | commonplace book | 抄录重要段落并按主题整理的本子 | Harvard Library |",
+        "sha256": "11bf6799fe3c2b69bfb21bb30b00041260ab34109e596fb40e7e3b4138e61454"
+      },
+      "resolution": "supported_with_explicit_corrections",
+      "proposed_fields": {
+        "english_form": "commonplace book",
+        "chinese_form": "摘录簿",
+        "definition_zh": "将阅读、听闻或个人观察所得的摘录和笔记按选定标题组织起来的笔记本。",
+        "old_form_disposition": {
+          "text": "札记簿",
+          "action": "保留在迁移前值；不自动登记为批准的同义词"
+        }
+      },
+      "evidence": [
+        {
+          "material": "https://takenote.library.harvard.edu/fragment-and-whole",
+          "location": "Tiffany Stern, The Fragment and the Whole，正文第 6–8 段（页面行 133–138）",
+          "read_on": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "明确写出 commonplace books 依 headings 组织，内容可来自书面文本、口头文本和个人观察。"
+        }
+      ],
+      "reason": "以同机构现行作者专题页替代失效旧入口；旧“抄录重要段落”过窄。摘录簿是模型已有中文表达；不凭英语页面制造中文引用。",
+      "remaining_evidence_issues": [],
+      "adoption_choices": [
+        "采纳摘录簿为第 5 级中文形式；如需保留札记簿为项目规定形式，须明确由人选定，不能声称 Harvard 提供中译。"
+      ],
+      "adopted": false,
+      "formal_data_written": false,
+      "language_judgment": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "建议使用模型已有的摘录簿对应 commonplace book；外部中文用法未核实。不把既有札记簿机械提升为外部依据。",
+        "external_usage_verified": false
+      }
+    },
+    {
+      "id": "glossary-L0202",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 202,
+        "cells": [
+          "监控与评价",
+          "monitoring and evaluation",
+          "对管理过程及其结果的持续检查与定期评估",
+          "ISO 15489-1 §6.4"
+        ],
+        "raw": "| 监控与评价 | monitoring and evaluation | 对管理过程及其结果的持续检查与定期评估 | ISO 15489-1 §6.4 |",
+        "sha256": "b52111d33676d72b386ad38edbab48fe0522f5270d03ccb2807dc4487545b533"
+      },
+      "resolution": "supported_with_explicit_corrections",
+      "proposed_fields": {
+        "split_records": [
+          {
+            "english_form": "monitoring",
+            "chinese_form": "监测",
+            "definition_zh": "持续、系统地收集或整理指定指标及其他资料，以掌握实施进展、结果和相关背景的过程。"
+          },
+          {
+            "english_form": "evaluation",
+            "chinese_form": "评估",
+            "definition_zh": "对计划中、进行中或已完成的干预及其设计、实施和结果进行系统、客观的评价。"
+          }
+        ],
+        "old_combination": "监控与评价 / monitoring and evaluation 保留为原行组合检索线索，不作为两概念同义词。"
+      },
+      "evidence": [
+        {
+          "material": "https://www.oecd.org/content/dam/oecd/zh/publications/reports/2023/06/glossary-of-key-terms-in-evaluation-and-results-based-management-for-sustainable-development-second-edition_2767e14e/74f41029-en-zh.pdf",
+          "location": "OECD 2024 EN-ZH 第二版；Monitoring PDF p.39；Evaluation PDF p.29",
+          "read_on": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "官方中英对照分别为监测与评估；监测持续收集数据，评估系统客观评价；并无一律按固定周期评价的定义。"
+        }
+      ],
+      "reason": "旧行把两个活动合成一条定义，且“定期”不是 evaluation 必要条件。直接使用已核中文对应，勿退回模型等级。ISO 15489-1 §6.4 只保留为历史出处，不冒充已读该条完整定义。",
+      "remaining_evidence_issues": [],
+      "adoption_choices": [
+        "一行拆为监测与评估；组合词只作迁移来源与检索线索。"
+      ],
+      "adopted": false,
+      "formal_data_written": false
+    },
+    {
+      "id": "glossary-L0204",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 204,
+        "cells": [
+          "治理评审",
+          "governance review",
+          "治理主体对治理本身的定期评审",
+          "ISO 37000:2021"
+        ],
+        "raw": "| 治理评审 | governance review | 治理主体对治理本身的定期评审 | ISO 37000:2021 |",
+        "sha256": "5d94c2c44b274a45acaf56ecec016c101f542ddd2038fadb503f21591b9bc43e"
+      },
+      "resolution": "supported_with_explicit_corrections",
+      "proposed_fields": {
+        "english_form": "governance review",
+        "chinese_form": "治理评审",
+        "definition_zh": "对治理安排及其有效性的评审。",
+        "scope_note": "本库以政策表、决策权矩阵和阈值表的年度评审实现该活动；固定周期和由谁评审来自本库治理规则。"
+      },
+      "evidence": [
+        {
+          "material": "https://www.gov.uk/guidance/external-governance-reviews-guide-for-fe-college-corporations-and-designated-institutions",
+          "location": "Benefits of an external governance review；Scope of the review",
+          "read_on": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "英国教育部实际治理指导明确以独立评价治理有效性为目的，并覆盖政策、实践、结构及治理行为。",
+          "quote": "An external governance review independently evaluates governance effectiveness."
+        },
+        {
+          "material": "docs/design/governance/governance.md",
+          "location": "治理评审，当前行 286–291",
+          "read_on": "2026-09-06",
+          "nature": "project_record",
+          "supports": "本库固定 12 个月复审政策、决策权、阈值，并记录决定；这是项目规定。"
+        }
+      ],
+      "reason": "gov.uk 足以证明英文治理评审用法及其治理有效性对象；不因此声称 ISO 37000 含 governance review 独立词条。一般定义删去“必须治理主体自行、必须定期”，把项目年审落入 scope_note。",
+      "remaining_evidence_issues": [],
+      "adoption_choices": [
+        "采用外部活动的窄概念说明和独立项目年审说明；撤销 ISO 37000 独立术语定义归因。"
+      ],
+      "adopted": false,
+      "formal_data_written": false,
+      "language_judgment": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "治理评审是模型已有治理实践中文表达；不声称英国官方中文译名。",
+        "external_usage_verified": false
+      }
+    },
+    {
+      "id": "glossary-L0208",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 208,
+        "cells": [
+          "指标",
+          "indicator",
+          "脚本能算出或外部能通知、用于监控的量",
+          "ISO 15489-1 §6.4 的监控对象"
+        ],
+        "raw": "| 指标 | indicator | 脚本能算出或外部能通知、用于监控的量 | ISO 15489-1 §6.4 的监控对象 |",
+        "sha256": "39adf28546d3b235b344620fbbd9491c41cf2bffad4b9bfd4edb7ea8019a1f17"
+      },
+      "resolution": "supported_with_explicit_corrections",
+      "proposed_fields": {
+        "english_form": "indicator",
+        "chinese_form": "指标",
+        "definition_zh": "与干预及其结果或发生背景有关的定量或定性因素、变量。",
+        "scope_note": "本库由脚本计算或接收外部通知是指标获取方式，不是 indicator 的通用定义；指标需要解释，不能自动等同准确测量。"
+      },
+      "evidence": [
+        {
+          "material": "https://www.oecd.org/content/dam/oecd/zh/publications/reports/2023/06/glossary-of-key-terms-in-evaluation-and-results-based-management-for-sustainable-development-second-edition_2767e14e/74f41029-en-zh.pdf",
+          "location": "Indicator，PDF p.35，英文及中文指标紧邻，含注释",
+          "read_on": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "支持 quantitative/qualitative 的双重范围与指标中文对应；不限脚本可计算的量。"
+        }
+      ],
+      "reason": "替换旧实现式定义及不准确的 ISO 15489 §6.4 归因；保留实现方式作为项目说明。",
+      "remaining_evidence_issues": [],
+      "adoption_choices": [],
+      "adopted": false,
+      "formal_data_written": false
+    },
+    {
+      "id": "glossary-L0210",
+      "original": {
+        "file": "docs/glossary.md",
+        "line": 210,
+        "cells": [
+          "批准",
+          "approve",
+          "候选词审核通过转为正式词",
+          "Z 11.1.6"
+        ],
+        "raw": "| 批准 | approve | 候选词审核通过转为正式词 | Z 11.1.6 |",
+        "sha256": "203b1a0805c4ad4dcac09a374cacc7b7fc42b3ff1fe9460d14c74eb9f0711ce5"
+      },
+      "resolution": "supported_with_explicit_corrections",
+      "proposed_fields": {
+        "english_form": "approve",
+        "chinese_form": "批准",
+        "definition_zh": "完成接受程序并允许候选词作为词纳入受控词表。",
+        "scope_note": "这里限定词表维护语境。项目 candidate 概念记录转为 active 的规则及批准权另由项目治理决定，不由标准自动授予。"
+      },
+      "evidence": [
+        {
+          "material": "https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf",
+          "location": "§11.1.6 Candidate Terms，PDF p.105／印刷 p.93；并参 §11.4.5",
+          "read_on": "2026-09-06",
+          "nature": "external_primary",
+          "supports": "直接规定候选词批准为词后删除候选标记；不是凭历史读书笔记推定。",
+          "quote": "As soon as a candidate term is approved as a term"
+        }
+      ],
+      "reason": "可以支持词表接受动作。Z39.19 正文是 approved 的动词语境，并未给 approve 独立术语定义；用语境释义，不伪造标准定义号。",
+      "remaining_evidence_issues": [],
+      "adoption_choices": [],
+      "adopted": false,
+      "formal_data_written": false,
+      "language_judgment": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "批准是模型已有 approve 对应中文；第 5 级，仅中文形式未核外部对应。",
+        "external_usage_verified": false
+      }
+    }
+  ],
+  "retrieval_notes": [
+    "SWEBOK web.open 两次失败后通过 urllib 只读内存读取官方 HTML 成功；未保存外部原文。",
+    "Nonaka 的 JAIST 搜索命中实际为他人博士论文，已排除；WU/HEC/UKY 入口失败，HBR 可见页未含隐显正文；最终取得合法电子书预览中 Nonaka、Toyama、Konno 原作者章节。",
+    "Harvard 采用当前 Take Note 作者正文替代旧失效入口。",
+    "OECD 中英 PDF 的印刷页码与 PDF 页码不一致，以上统一注明 PDF 的 1 起算页码。",
+    "未执行测试、下载持久外部文件或 OCR。"
+  ],
+  "remaining_decisions": "字段修正、拆条、来源替代及中文形式建议仍须按用户本次批次采纳；未将提案伪装成正式批准。"
+}

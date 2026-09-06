@@ -1,0 +1,239 @@
+{
+  "status": "source_resolution_proposal_not_adopted",
+  "checked": "2026-09-06",
+  "policy_boundary": {
+    "locator": "docs/design/governance/maintenance.md:26",
+    "rule": "de-facto 和 vendor 只作入口和例证，不作定义来源；vendor 的接口文档不进概念文和设计文档。",
+    "consequence": "IPLF 与 Reproducible Builds 项目网页可继续作入口或例证，但不能作为候选定义 basis；不得通过擅改 tier 或开放例外消除冲突。",
+    "adoption_notice": "下列替代仅为实际读取后的来源建议，不修改规则、正式数据、候选记录或来源用途。"
+  },
+  "resolutions": [
+    {
+      "concept_group": "plain-language-four-principles",
+      "concept_ids": [
+        "tc-2cdb43fb-ad5e-4aec-ad71-56eb596b78eb",
+        "tc-2938e52c-9172-4bc1-b3ea-a1c0476fe909",
+        "tc-973e68b6-1e0f-47a9-9ab7-0660d591969c",
+        "tc-9985f5e9-89cc-4fe1-849f-c2be99f97727"
+      ],
+      "old_source": {
+        "entity": "iplf-plain-language",
+        "tier": "de-facto",
+        "material": "IPLF 官方持续维护的 What is plain language? 页面。",
+        "support_degree": "页面直接给出 IPLF 定义及四项可观察特征，内容支持较强；但现行 maintenance 政策禁止 de-facto 来源承担定义 basis，只能保留为入口或例证。",
+        "disposition": "replace_definition_basis_keep_as_entry_or_example_only"
+      },
+      "replacement_source": {
+        "proposed_entity_id": "iso-24495-1",
+        "label": {
+          "en": "Plain language — Part 1: Governing principles and guidelines"
+        },
+        "identity": "ISO 24495-1:2023, International Standard, Edition 1, 2023-06。",
+        "kind": "standard",
+        "tier": "de-jure",
+        "version": "2023",
+        "urls": [
+          {
+            "role": "landing",
+            "url": "https://www.iso.org/standard/78907.html"
+          },
+          {
+            "role": "full_text",
+            "url": "https://cdn.standards.iteh.ai/samples/78907/d194fac21d6a45f38bfcfec9657f7498/ISO-24495-1-2023.pdf"
+          }
+        ],
+        "checked": "2026-09-06"
+      },
+      "actual_read": {
+        "locator": "免费样章 PDF p. 9（印刷 p. 3），§4 Governing principles；PDF pp. 9–11（印刷 pp. 3–5），§5.1 与 §5.2.1–§5.2.3。",
+        "short_excerpt": "Readers get what they need; can easily find what they need; understand what they find; use the information.",
+        "excerpt_word_count": 18,
+        "verified_scope": [
+          "§4 逐项列出 relevant、findable、understandable、usable 四个原则及其相互关系。",
+          "§5.1 展开 readers、purpose、context、document type 与所需内容，直接支持 relevant 候选的主要边界。",
+          "§5.2.1–§5.2.3 展开结构、设计与查找信息，直接支持 findable 候选的主要边界。"
+        ]
+      },
+      "per_concept_support": [
+        {
+          "concept_id": "tc-2cdb43fb-ad5e-4aec-ad71-56eb596b78eb",
+          "term": "relevant",
+          "support": "full_for_core_and_current_detail",
+          "basis_locator": "ISO 24495-1:2023 免费样章 PDF p. 9（印刷 p. 3），§4 Principle 1；PDF pp. 9–11（印刷 pp. 3–5），§5.1.1–§5.1.6",
+          "checked": "2026-09-06"
+        },
+        {
+          "concept_id": "tc-2938e52c-9172-4bc1-b3ea-a1c0476fe909",
+          "term": "findable",
+          "support": "full_for_core_and_current_detail",
+          "basis_locator": "ISO 24495-1:2023 免费样章 PDF p. 9（印刷 p. 3），§4 Principle 2；PDF p. 11（印刷 p. 5），§5.2.1–§5.2.3",
+          "checked": "2026-09-06"
+        },
+        {
+          "concept_id": "tc-973e68b6-1e0f-47a9-9ab7-0660d591969c",
+          "term": "understandable",
+          "support": "core_only",
+          "basis_locator": "ISO 24495-1:2023 免费样章 PDF p. 9（印刷 p. 3），§4 Principle 3",
+          "checked": "2026-09-06"
+        },
+        {
+          "concept_id": "tc-9985f5e9-89cc-4fe1-849f-c2be99f97727",
+          "term": "usable",
+          "support": "core_only",
+          "basis_locator": "ISO 24495-1:2023 免费样章 PDF p. 9（印刷 p. 3），§4 Principle 4 及原则关系段",
+          "checked": "2026-09-06"
+        }
+      ],
+      "unresolved": [
+        "免费样章在 PDF p. 11 结束，未提供 §5.3 与 §5.4；因此不能用本次阅读支持 understandable 中“熟悉的词语”或 usable 中“完成任务或回答问题”的细节。",
+        "若不另取可用的固定正文，understandable 与 usable 应收窄到 §4 直接表达的核心含义，而不是沿用 IPLF 页面细节。",
+        "证据存在不自动批准新来源实体、定义改写或术语值。"
+      ]
+    },
+    {
+      "concept_group": "cypher",
+      "concept_ids": [],
+      "old_source": {
+        "entity": null,
+        "tier": null,
+        "material": "现有复合登记 Cypher / GQL 只列 ISO/IEC 39075:2024，未给 Cypher 自身可读定义来源；若采用厂商说明则会触发 vendor 定义来源禁令。",
+        "support_degree": "当前候选没有可采纳的 Cypher 定义 basis。",
+        "disposition": "split_cypher_from_gql_and_add_fixed_author_paper_basis"
+      },
+      "replacement_source": {
+        "proposed_entity_id": "francis-et-al-2018-cypher",
+        "label": {
+          "en": "Cypher: An Evolving Query Language for Property Graphs"
+        },
+        "identity": "Francis 等作者的 SIGMOD ’18 同行评审会议论文，ACM Proceedings pp. 1433–1445，DOI 10.1145/3183713.3190657；读取 University of Edinburgh Research Explorer 保存的 peer reviewed version。",
+        "kind": "publication",
+        "tier": "archival",
+        "version": "2018",
+        "urls": [
+          {
+            "role": "doi",
+            "url": "https://doi.org/10.1145/3183713.3190657"
+          },
+          {
+            "role": "full_text",
+            "url": "https://www.pure.ed.ac.uk/ws/files/56321692/cypher_sigmod18_crc_1.pdf"
+          }
+        ],
+        "checked": "2026-09-06"
+      },
+      "actual_read": {
+        "locator": "作者稿 PDF p. 2（论文 p. 1433），Abstract 与 §1；PDF p. 3（论文 p. 1434），§2 The Cypher Language。",
+        "short_excerpt": "Cypher is a declarative query language for property graphs.",
+        "excerpt_word_count": 9,
+        "verified_scope": [
+          "论文身份页标明 peer reviewed version、SIGMOD ’18、页码与 DOI。",
+          "Abstract 说明 Cypher 是 evolving property graph query language，并说明 Cypher 9 与 openCypher Implementers Group。",
+          "§2 直接定义 Cypher 为 property graphs 的 declarative query language，并说明可查询、修改数据及规定 schema definitions。"
+        ]
+      },
+      "arxiv_identity_check": {
+        "correct_related_id": "arXiv:1802.09984v2",
+        "title": "Formal Semantics of the Language Cypher",
+        "relation": "同一研究团队的相关固定论文，直接称 Cypher 为 property graphs 的 query language，并给 read-only core fragment 的 denotational semantics。",
+        "not_same_work_notice": "arXiv:1802.09984 不是 SIGMOD 论文 Cypher: An Evolving Query Language for Property Graphs 的同题预印本，作者列表也多 Martin Schuster；不得把该 arXiv ID 填成 SIGMOD 论文的版本或地址。",
+        "checked": "2026-09-06"
+      },
+      "recommendation": {
+        "supported_definition": "Cypher 是用于属性图的声明式查询语言。",
+        "boundary": "该论文支持 Cypher 身份和 Cypher 9 语境，不支持把 Cypher 与 ISO/IEC 39075 GQL 合并为一个概念，也不证明 Cypher 本身是 ISO 标准。",
+        "candidate_action": "将现有复合行拆分时，Cypher 可用本固定作者论文作定义 basis；GQL 仍须独立读取 ISO/IEC 39075 材料。"
+      },
+      "unresolved": [
+        "当前 term-data candidate 尚未建立 Cypher 独立 concept ID；本提案不创建概念或决定拆分。",
+        "未读取 ISO/IEC 39075 正文，GQL 的定义和标准版本仍未解决。"
+      ]
+    },
+    {
+      "concept_group": "reproducible-builds",
+      "concept_ids": [
+        "tc-224b9f45-d624-4543-bc81-f64d02f81aa0"
+      ],
+      "old_source": {
+        "entity": "reproducible-builds",
+        "tier": "de-facto",
+        "material": "Reproducible Builds 项目持续维护的 Definitions 页面。",
+        "support_degree": "网页完整支持当前候选中的 same source code、build environment、build instructions、any party 与 bit-by-bit identical artifacts；但 de-facto 来源按现行政策不能承担定义 basis。",
+        "disposition": "replace_definition_basis_keep_as_entry_or_example_only"
+      },
+      "replacement_source": {
+        "proposed_entity_id": "lamb-zacchiroli-2021-reproducible-builds",
+        "label": {
+          "en": "Reproducible Builds: Increasing the Integrity of Software Supply Chains"
+        },
+        "identity": "Chris Lamb 与 Stefano Zacchiroli 的 IEEE Software 论文，2021，DOI 10.1109/MS.2021.3073045；读取 arXiv:2104.06020v1 固定作者稿。",
+        "kind": "publication",
+        "tier": "archival",
+        "version": "arXiv v1",
+        "urls": [
+          {
+            "role": "doi",
+            "url": "https://doi.org/10.1109/MS.2021.3073045"
+          },
+          {
+            "role": "full_text",
+            "url": "https://arxiv.org/pdf/2104.06020v1"
+          }
+        ],
+        "checked": "2026-09-06"
+      },
+      "actual_read": {
+        "locator": "arXiv:2104.06020v1，PDF p. 2，Reproducible Builds，Definition 1。",
+        "short_excerpt": "every build produces bit-for-bit identical artifacts, no matter the environment in which the build is performed.",
+        "excerpt_word_count": 15,
+        "verified_scope": [
+          "Definition 1 要求指定 source code 的具体版本及全部 build dependencies。",
+          "每次构建须产生逐比特相同 artifacts，且不受执行构建的环境影响。",
+          "前文把独立 builders 的输出比较作为供应链完整性机制。"
+        ]
+      },
+      "support_comparison": {
+        "current_candidate_definition": "使任何一方在相同 source、environment 和 instructions 下重建逐字节相同 artifacts 的实践。",
+        "paper_support": "支持指定源码与依赖、每次构建产生逐比特相同 artifacts，以及独立 builders 的验证语境。",
+        "mismatch": "论文 Definition 1 说 no matter the environment，并未把“相同 environment 和 instructions”列为定义条件；不能只换 basis 而保持现有句子并声称完整支持。",
+        "recommended_resolution": "建议人采纳固定作者论文及其完整定义条件，重写候选定义；不为旧项目网页开放 de-facto 定义来源例外，也不改变其 tier。"
+      },
+      "recommended_choice": {
+        "choice": "adopt_ieee_author_paper_definition",
+        "definition_before": "使任何一方在相同 source、environment 和 instructions 下重建逐字节相同 artifacts 的实践。",
+        "definition_after": "软件产品的构建过程具有可重现性，是指在指定其源码的具体版本及全部构建依赖后，无论在哪种环境执行，每次构建都产生逐比特相同的产物。",
+        "basis_after": {
+          "entity": "lamb-zacchiroli-2021-reproducible-builds",
+          "locator": "https://arxiv.org/pdf/2104.06020v1；PDF p. 2，Reproducible Builds，Definition 1",
+          "checked": "2026-09-06"
+        },
+        "condition_preservation": [
+          "指定源码的具体版本。",
+          "指定全部构建依赖。",
+          "每次构建均产生逐比特相同的产物。",
+          "论文原条件是 no matter the environment；定义译写保留为“无论在哪种环境执行”，不能删成无条件的“重复构建相同”。"
+        ],
+        "difference_from_old_definition": [
+          "旧项目网页定义把相同 source code、build environment 和 build instructions 作为前提，并要求 any party 重建指定 artifacts。",
+          "IEEE 论文 Definition 1 指定 source code 版本和全部 build dependencies，并要求无论构建环境为何，每次构建都产生逐比特相同 artifacts；它没有把相同 instructions 写成独立条件。",
+          "新旧定义不能伪装为逐项同义；采纳本选项会明确改写概念边界和定义依据。"
+        ],
+        "application_impact": "当前应用只验证同一环境下的确定性，尚未证明跨环境构建、全部构建依赖已完整指定或任意构建均逐比特相同。因此即使采纳此定义，仍不得宣称当前应用满足 reproducible build 定义或 conformance；现有“仅同环境确定性”的完成边界保持不变。",
+        "adoption_boundary": "这是供人明确采纳的值与 basis 选项，不修改现行候选、规则或来源 tier。"
+      },
+      "unresolved": [
+        "推荐选项已给出完整前后值；是否采纳这一定义边界仍由人决定。",
+        "本提案提出推荐选择但不自行执行采纳，不改规则，也不把项目网页强行改为 archival。"
+      ]
+    }
+  ],
+  "summary": {
+    "resolvable_without_rule_change": [
+      "plain-language 四原则的核心名称与核心含义可改用 ISO 24495-1:2023 免费样章；relevant 与 findable 的当前细节也有样章正文。",
+      "Cypher 可改用 Francis 等 2018 SIGMOD 固定作者论文，并与 GQL 分开。"
+    ],
+    "partially_blocked": [
+      "understandable 与 usable 的当前详细定义超出 ISO 免费样章已读范围，应收窄或另取固定正文。",
+      "Reproducible Builds 推荐按固定作者论文的完整条件改写定义，等待人采纳；若拒绝改写，现行候选仍缺少政策允许且完整同义的定义来源。"
+    ]
+  }
+}

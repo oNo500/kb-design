@@ -1,0 +1,364 @@
+{
+  "status": "review_in_progress_not_adopted",
+  "items": [
+    {
+      "id": "glossary-L0045",
+      "original": {
+        "id": "glossary-L0045",
+        "file": "docs/glossary.md",
+        "line": 45,
+        "section": "基本单位",
+        "kind": "definition",
+        "raw": "| 领域 | domain | 词表覆盖的主题范围 | — |",
+        "cells": [
+          "领域",
+          "domain",
+          "词表覆盖的主题范围",
+          "—"
+        ],
+        "sha256": "9fe3ead2fb716a440b1b139aad618b027a7e9df0a467c3fa0f9e84204752af30"
+      },
+      "resolution": "external_definition_supported_with_project_scope",
+      "proposed_fields": {
+        "definition_zh": "专门知识的范围；本库用它说明词表覆盖的主题范围。",
+        "english_form": "domain",
+        "chinese_form": "领域"
+      },
+      "evidence": [
+        {
+          "material": "https://cdn.standards.iteh.ai/samples/62330/f8493dfbf02f4f23b9d9524832aa0b9b/ISO-1087-2019.pdf",
+          "location": "§3.1.4，PDF p.7（印刷 p.1），注释续 p.8；domain / subject field",
+          "nature": "external_primary_sample",
+          "read_on": "2026-09-06"
+        },
+        {
+          "location": "词表用途、用户与范围",
+          "material": "docs/design/model/topics.md",
+          "nature": "project_record",
+          "read_on": "2026-09-06",
+          "sha256": "aeaad8794a96bf7593d15045c1b6f228360645e1a3176eaa2c069a38af8d96b9"
+        }
+      ],
+      "reason": "直接读到ISO1087的domain及subject field定义与边界依目的确定的注释。建议补一般定义，把词表覆盖范围保留为项目用途说明；不新增学科分类，不把一个domain等同具体某份词表。原英文domain保留，不自动新增subject field为准用形式。",
+      "language_judgment": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "仅就现行“领域”表达与本条明确概念的对应提出模型判断；不宣称外部中文用法已核实。"
+      },
+      "adopted": false,
+      "formal_data_written": false
+    },
+    {
+      "id": "glossary-L0060",
+      "original": {
+        "id": "glossary-L0060",
+        "file": "docs/glossary.md",
+        "line": 60,
+        "section": "关系",
+        "kind": "definition",
+        "raw": "| 自定义关系 | — | 词表自行定义的关系类型 | ISO §10.4 |",
+        "cells": [
+          "自定义关系",
+          "—",
+          "词表自行定义的关系类型",
+          "ISO §10.4"
+        ],
+        "sha256": "885c347854ca20ca75b7c6ff4ad438f40b4e1838bb3e2c234a723e086069d378"
+      },
+      "resolution": "external_definition_supported",
+      "proposed_fields": {
+        "definition_zh": "在既有关系类型之下，由词表管理方进一步规定的关系类型。",
+        "english_form": "custom relationship type",
+        "chinese_form": "自定义关系"
+      },
+      "evidence": [
+        {
+          "location": "HierarchicalRelationship/role 的 documentation；AssociativeRelationship/role",
+          "material": "https://www.niso.org/schemas/iso25964/iso25964-1_v1.4.xsd",
+          "nature": "external_primary",
+          "read_on": "2026-09-06"
+        }
+      ],
+      "reason": "本轮直接读取XSD说明支持自定义关系类型及父类型细分；属于标准配套工件，不宣称读到ISO §10.4。建议把依据明确改为配套XSD。此项不授权本库新增任何关系类型。",
+      "language_judgment": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "仅就现行“自定义关系”表达与本条明确概念的对应提出模型判断；不宣称外部中文用法已核实。"
+      },
+      "adopted": false,
+      "formal_data_written": false
+    },
+    {
+      "id": "glossary-L0075",
+      "original": {
+        "id": "glossary-L0075",
+        "file": "docs/glossary.md",
+        "line": 75,
+        "section": "结构",
+        "kind": "definition",
+        "raw": "| 节点 | node | 树上的一个位置 | — |",
+        "cells": [
+          "节点",
+          "node",
+          "树上的一个位置",
+          "—"
+        ],
+        "sha256": "48e26e1ca8412d7b52a09a3f764655b0c78b4466f075884fd9b6d483e1515286"
+      },
+      "resolution": "external_definition_supported",
+      "proposed_fields": {
+        "definition_zh": "图或树数据结构中的一个顶点；在本库主题树中用来表示概念。",
+        "english_form": "node",
+        "chinese_form": "节点"
+      },
+      "evidence": [
+        {
+          "location": "Definition (1)，2004-12-17 条目",
+          "material": "https://xlinux.nist.gov/dads/HTML/node.html",
+          "nature": "external_primary",
+          "read_on": "2026-09-06"
+        },
+        {
+          "location": "开头主题树节点解释",
+          "material": "docs/design/model/hierarchy.md",
+          "nature": "project_record",
+          "read_on": "2026-09-06",
+          "sha256": "f795d36c693d1b1bf9b9c47753cdf9781e7f38e3fc1319cd8a6b6106da8f0357"
+        }
+      ],
+      "reason": "NIST正文支持图与树中的node；本库节点表示概念是现行模型限定。建议以NIST为一般定义依据，本库用法单列，不把数据结构节点当另一主题概念。",
+      "language_judgment": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "仅就现行“节点”表达与本条明确概念的对应提出模型判断；不宣称外部中文用法已核实。"
+      },
+      "adopted": false,
+      "formal_data_written": false
+    },
+    {
+      "id": "glossary-L0099",
+      "original": {
+        "id": "glossary-L0099",
+        "file": "docs/glossary.md",
+        "line": 99,
+        "section": "注释与生命周期",
+        "kind": "definition",
+        "raw": "| 状态 | status | 词或概念的生命周期状态 | ISO 数据模型 |",
+        "cells": [
+          "状态",
+          "status",
+          "词或概念的生命周期状态",
+          "ISO 数据模型"
+        ],
+        "sha256": "9b3d52dd8575a6591cad8973839ed40fff8d223b53be45a8a3c5e9ccbd136e7a"
+      },
+      "resolution": "external_definition_supported",
+      "proposed_fields": {
+        "definition_zh": "记录概念或术语在管理流程中所处阶段的属性。",
+        "english_form": "status",
+        "chinese_form": "状态"
+      },
+      "evidence": [
+        {
+          "location": "ThesaurusConceptStruct/status 与 ThesaurusTerm/status documentation",
+          "material": "https://www.niso.org/schemas/iso25964/iso25964-1_v1.4.xsd",
+          "nature": "external_primary",
+          "read_on": "2026-09-06"
+        }
+      ],
+      "reason": "工件明确说明status记录approved、candidates、superseded、deprecated等；这些是示例，不能用来替换本库实际状态机，也不把状态属性与某个状态值混成一项。",
+      "language_judgment": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "仅就现行“状态”表达与本条明确概念的对应提出模型判断；不宣称外部中文用法已核实。"
+      },
+      "adopted": false,
+      "formal_data_written": false
+    },
+    {
+      "id": "glossary-L0100",
+      "original": {
+        "id": "glossary-L0100",
+        "file": "docs/glossary.md",
+        "line": 100,
+        "section": "注释与生命周期",
+        "kind": "definition",
+        "raw": "| 版本历史 | version history | 词表整体的版本记录 | ISO 数据模型 |",
+        "cells": [
+          "版本历史",
+          "version history",
+          "词表整体的版本记录",
+          "ISO 数据模型"
+        ],
+        "sha256": "a5225b14b7015eec8a04ba3c4b85447aa7c50338af0f0584f0a729dbdeb0f133"
+      },
+      "resolution": "external_definition_supported",
+      "proposed_fields": {
+        "definition_zh": "词表已经形成的版本或版次的记录，可含版本标识、日期和说明。",
+        "english_form": "version history",
+        "chinese_form": "版本历史"
+      },
+      "evidence": [
+        {
+          "location": "ThesaurusStruct/Version documentation 与 VersionHistory complexType",
+          "material": "https://www.niso.org/schemas/iso25964/iso25964-1_v1.4.xsd",
+          "nature": "external_primary",
+          "read_on": "2026-09-06"
+        }
+      ],
+      "reason": "本轮实际读取版本记录说明与identifier/date/versionNote/currentVersion/thisVersion字段；不把词表版本历史等同单条术语history。英文现行空格写法与工件类名VersionHistory的表达差异须在形式依据中说明。",
+      "language_judgment": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "仅就现行“版本历史”表达与本条明确概念的对应提出模型判断；不宣称外部中文用法已核实。"
+      },
+      "adopted": false,
+      "formal_data_written": false
+    },
+    {
+      "id": "glossary-L0159",
+      "original": {
+        "id": "glossary-L0159",
+        "file": "docs/glossary.md",
+        "line": 159,
+        "section": "元数据",
+        "kind": "definition",
+        "raw": "| 内容单元 | — | 知识库里最小的可独立引用、可独立打标签的东西；参照 DITA topic | 本库，参照 DITA 1.3 §2.2.1 |",
+        "cells": [
+          "内容单元",
+          "—",
+          "知识库里最小的可独立引用、可独立打标签的东西；参照 DITA topic",
+          "本库，参照 DITA 1.3 §2.2.1"
+        ],
+        "sha256": "02c92f70101a763be949f4841c75e93434e9962ce334ae4aafc1b16710eb4017"
+      },
+      "resolution": "project_basis_design_gap",
+      "proposed_fields": {
+        "definition_zh": "知识库中可独立引用、可独立标引的最小单位；有标题，只讲一个主题。",
+        "english_form": null,
+        "chinese_form": "内容单元"
+      },
+      "evidence": [
+        {
+          "location": "内容单元",
+          "material": "docs/design/model/content-model.md",
+          "nature": "project_record",
+          "read_on": "2026-09-06",
+          "sha256": "0a84bfe9adde66f5d2a8451d9f0cb63bebde3db5bfede5364258f374b66ca5a5"
+        },
+        {
+          "location": "后果",
+          "material": "docs/decisions/form-independence.md",
+          "nature": "project_record",
+          "read_on": "2026-09-06",
+          "sha256": "8c26c782071b2ad981e61bee22b41f7c308f330e9e206e00a19827c6fc6b7427"
+        }
+      ],
+      "reason": "现行模型和既有决定明确此项目对象与名称；DITA topic是转述来源，不自动等同。当前terms概念及定义basis只能external source，不足以如实表示项目决定的效力。应明确提出项目依据结构，不通过旁路保留文件宣称完成。",
+      "language_judgment": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "仅就现行“内容单元”表达与本条明确概念的对应提出模型判断；不宣称外部中文用法已核实。"
+      },
+      "adopted": false,
+      "formal_data_written": false
+    },
+    {
+      "id": "glossary-L0207",
+      "original": {
+        "id": "glossary-L0207",
+        "file": "docs/glossary.md",
+        "line": 207,
+        "section": "治理与维护",
+        "kind": "definition",
+        "raw": "| 断言 | assertion | 人判断而非抄自来源的字段值 | 本库用法；溯源依据 W3C PROV-O |",
+        "cells": [
+          "断言",
+          "assertion",
+          "人判断而非抄自来源的字段值",
+          "本库用法；溯源依据 W3C PROV-O"
+        ],
+        "sha256": "d934b7e74c5c667db0986ad900e49891c1387e14d2eb2a6c4a9cafe5a2666509"
+      },
+      "resolution": "project_basis_design_gap",
+      "proposed_fields": {
+        "definition_zh": "本库中由人作出判断、而非直接抄自来源的字段值。",
+        "english_form": "assertion",
+        "chinese_form": "断言"
+      },
+      "evidence": [
+        {
+          "location": "断言与依据",
+          "material": "docs/design/governance/maintenance.md",
+          "nature": "project_record",
+          "read_on": "2026-09-06",
+          "sha256": "905a565a8196327ca2845a7396ea3010d188ba163639f3ec6ef6b18d4842a50f"
+        },
+        {
+          "location": "治理与维护",
+          "material": "docs/glossary.md",
+          "nature": "project_record",
+          "read_on": "2026-09-06",
+          "sha256": "32aaf25751cba829d9e66405b2b24941a847ab0371eabdb0d5feb9fcf820da53"
+        }
+      ],
+      "reason": "这是现行项目限定用法；PROV-O支撑溯源机制，不证明该术语的一般定义。须如实登记为既有项目定义，不引用PROV-O冒充定义来源。",
+      "language_judgment": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "仅就现行“断言”表达与本条明确概念的对应提出模型判断；不宣称外部中文用法已核实。"
+      },
+      "adopted": false,
+      "formal_data_written": false
+    },
+    {
+      "id": "glossary-L0209",
+      "original": {
+        "id": "glossary-L0209",
+        "file": "docs/glossary.md",
+        "line": 209,
+        "section": "治理与维护",
+        "kind": "definition",
+        "raw": "| 阈值 | threshold | 指标触发动作的界值 | 通用 |",
+        "cells": [
+          "阈值",
+          "threshold",
+          "指标触发动作的界值",
+          "通用"
+        ],
+        "sha256": "83d907b2dec9e729aec6f33687fb7cfde8852a99585eb7da760cfb9cbd03df2e"
+      },
+      "resolution": "project_basis_design_gap",
+      "proposed_fields": {
+        "definition_zh": "用于判定指标何时触发复核或提案的界值。",
+        "english_form": "threshold",
+        "chinese_form": "阈值"
+      },
+      "evidence": [
+        {
+          "location": "阈值及触发与动作",
+          "material": "docs/design/governance/maintenance.md",
+          "nature": "project_record",
+          "read_on": "2026-09-06",
+          "sha256": "905a565a8196327ca2845a7396ea3010d188ba163639f3ec6ef6b18d4842a50f"
+        }
+      ],
+      "reason": "原“指标触发动作的界值”与现行治理相比过于宽泛：达到阈值只触发复核/提案，不自动批准修改。此限制来自现行设计，不能拿不相关测量学threshold定义代替。",
+      "language_judgment": {
+        "level": 5,
+        "model": "GPT-6",
+        "date": "2026-09-06",
+        "rationale": "仅就现行“阈值”表达与本条明确概念的对应提出模型判断；不宣称外部中文用法已核实。"
+      },
+      "adopted": false,
+      "formal_data_written": false
+    }
+  ]
+}
