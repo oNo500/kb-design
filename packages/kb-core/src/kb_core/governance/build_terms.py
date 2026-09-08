@@ -193,7 +193,7 @@ def _snapshot_value(
     source_index: Mapping[str, object],
     state: Any,
     *,
-    source_entities: Optional[Mapping[str, object]] = None,
+    bibliography_references: Optional[Mapping[str, object]] = None,
     model_labels: Optional[Sequence[Mapping[str, object]]] = None,
 ) -> Mapping[str, Any]:
     return {
@@ -203,8 +203,8 @@ def _snapshot_value(
             canonical_json(source_index)
         ).hexdigest(),
         "cutover_decision": _get(state, "decision"),
-        "source_entities": [
-            _plain(value) for _, value in sorted((source_entities or {}).items())
+        "bibliography_references": [
+            _plain(value) for _, value in sorted((bibliography_references or {}).items())
         ],
         "model_labels": sorted(
             (_plain(row) for row in (model_labels or ())),
@@ -224,7 +224,7 @@ def canonical_snapshot(
     source_index: Mapping[str, object],
     state: Any,
     *,
-    source_entities: Optional[Mapping[str, object]] = None,
+    bibliography_references: Optional[Mapping[str, object]] = None,
     model_labels: Optional[Sequence[Mapping[str, object]]] = None,
 ) -> bytes:
     _ensure_consumers_enabled(state)
@@ -235,7 +235,7 @@ def canonical_snapshot(
     )
     return canonical_json(
         _snapshot_value(document, active, source_index, state,
-                        source_entities=source_entities, model_labels=model_labels)
+                        bibliography_references=bibliography_references, model_labels=model_labels)
     )
 
 
@@ -310,9 +310,9 @@ def render_glossary(
     snapshot: Mapping[str, object],
     layout: Mapping[str, object],
     state: Any,
-    source_entities: Optional[Mapping[str, object]] = None,
+    bibliography_references: Optional[Mapping[str, object]] = None,
 ) -> str:
-    return _render_glossary(snapshot, layout, _plain(state), source_entities)
+    return _render_glossary(snapshot, layout, _plain(state), bibliography_references)
 
 
 def _load_yaml(path: pathlib.Path) -> Any:
@@ -394,6 +394,7 @@ def capture_validation_context(root: pathlib.Path, *, with_history: bool = False
         name: _load_yaml(root / "data/vocab" / f"{name}.yaml")
         for name in ("topics", "types", "genres", "forms", "entities", "sources")
     }
+    documents["bibliography"] = _load_yaml(root / "data/references/bibliography.yaml")
     decisions, historical_decisions = load_term_decision_sets(root)
     adoptions = validate_adoptions(
         _load_json(root / "data/inputs/topics/label-adoptions.json")
@@ -419,16 +420,16 @@ def _source_catalog(document: Any, entities_document: Mapping[str, object]) -> M
                      if row.get("workflow") == "active"],
     }
     referenced = {
-        use.value["entity"] for use in collect_reference_uses(
+        use.value["reference"] for use in collect_reference_uses(
             pathlib.Path("data/vocab/terms.yaml"), active_document)
-        if use.kind == "basis" and isinstance(use.value, Mapping) and use.value.get("entity")
+        if use.kind == "basis" and isinstance(use.value, Mapping) and use.value.get("reference")
     }
     return {
         row["id"]: {
             "id": row["id"], "label": row.get("label", {}),
             "version": row.get("version"), "urls": row.get("urls", []),
         }
-        for row in entities_document.get("entities", []) if row.get("id") in referenced
+        for row in entities_document.get("references", []) if row.get("id") in referenced
     }
 
 
@@ -477,9 +478,9 @@ def _outputs(arguments: argparse.Namespace) -> Tuple[bytes, bytes]:
     ordered_concepts({"concepts": list(active.values())}, layout)
     _validate_source_index(document, source_index)
     model_labels = build_model_label_rows(captured["topics"], captured["forms"], adoptions, decisions)
-    sources = _source_catalog(document, captured["entities"])
+    sources = _source_catalog(document, captured["bibliography"])
     snapshot = canonical_snapshot(document, source_index, state,
-                                  source_entities=sources, model_labels=model_labels)
+                                  bibliography_references=sources, model_labels=model_labels)
     glossary = render_glossary(json.loads(snapshot), layout, state, sources).encode("utf-8")
     return snapshot, glossary
 

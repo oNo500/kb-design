@@ -2,7 +2,7 @@
 
 知识库的内容模型定义一条内容单元具有哪些字段、受控值和约束。本文与应用无关：不提工具字段名、文件格式或目录；应用落地分别写在 `docs/design/targets/` 中。字段取自 Dublin Core（ISO 15836），受控字段的值来自本库现行词表。理论见[元数据](../../concepts/metadata.md)。
 
-来源 v2 已实施；157 个正式术语概念、唯一编辑源及首批生成与参考消费已按[术语发布](../../decisions/term-complete-publication.md)启用。本文继续规定内容字段、值域、标识符、生命周期和应用映射：术语参考消费不新增内容术语字段，不把术语概念身份写入现行受控值，也不改变内容生命周期。载体中文补全仍只改变显示标签与语言依据。
+来源身份与引用按[参考文献分离](../../decisions/source-bibliography-separation.md)区分普通实体和设计文献；157 个正式术语概念、唯一编辑源及首批生成与参考消费已按[术语发布](../../decisions/term-complete-publication.md)启用。本文继续规定内容字段、值域、标识符、生命周期和应用映射：术语参考消费不新增内容术语字段，不把术语概念身份写入现行受控值，也不改变内容生命周期。载体中文补全仍只改变显示标签与语言依据。
 
 ## 内容单元
 
@@ -24,8 +24,8 @@
 | `level` | 本库扩展 | 否 | 认知过程维度：Bloom 修订版的六类认知活动之一，见下 |
 | `subject` | subject | 是 | 主题词表的概念 id，一个或多个 |
 | `entities` | 本库扩展，最近的 DCMI 属性是 `references` | 否 | 命名实体词表的 id，零个或多个 |
-| `source` | source | 否 | 本单元派生自的内容单元或实体 id |
-| `references` | references | 否 | 引用的文献、标准，实体 id |
+| `source` | source | 否 | 本单元派生自的内容单元、普通实体或书目文献 id |
+| `references` | references | 否 | 引用的已登记文献，参考文献目录 id |
 | `created` | created | 是 | ISO 8601 日期 |
 | `modified` | modified | 否 | ISO 8601 日期 |
 | `status` | 本库扩展 | 是 | `draft`／`active`／`deprecated` |
@@ -35,7 +35,7 @@
 
 不设 `description`：`title` 加 `subject` 已足够定位，正文本身就是说明。不设 `creator`、`publisher`、`rights`：本库由一人使用，这些值恒定。
 
-`entities` 是本库扩展。Dublin Core 没有表示内容涉及哪些具体产品的字段，最近的是 `references`，但 `references` 表示引用；内容提到 Claude Code 不等于引用其文档。`entities` 记录涉及的实体，`references` 记录引用的文献。
+`entities` 是本库扩展。Dublin Core 没有表示内容涉及哪些具体产品的字段，最近的是 `references`，但 `references` 表示引用；内容提到 Claude Code 不等于引用其文档。`entities` 记录涉及的软件、组织、编程语言等普通实体，`references` 只指向参考文献目录中的文献身份；两者不能混填。目录登记实际贡献设计的依据，普通笔记引用的资料可在正文保存标题与链接，不要求先进入目录，也不由引用自动取得设计依据资格。这些值域和拆分是本项目选择，不宣称由 DCMI 直接规定。
 
 `status` 也是本库扩展。DCMI 有 `valid` 和 `isReplacedBy`，没有表示当前是否在用的状态字段。`isReplacedBy` 只覆盖直接替代这一种离开方式：因直接替代而废弃且存在替代项时必填；确认过时且没有替代项时留空，并在正文首段说明原因。草稿与定稿的区分、无替代的过时，都由状态表达。取值与词表生命周期对齐，见下文。
 
@@ -43,11 +43,11 @@
 
 | 对象 | 职责 | 当前效力 |
 |---|---|---|
-| 内容单元 `source` | 按 Dublin Core 表示本内容单元实际派生自另一内容单元或实体 | 现行字段和值不变 |
+| 内容单元 `source` | 按 Dublin Core 表示本内容单元实际派生自另一内容单元、普通实体或书目文献 | 保留实际派生语义，引用按明确的对象类型解析 |
 | 主题旧 `origin` | 曾用于陈述本地概念的源头文献 | 不再是主题目标字段；历史库存只在迁移账本中审计 |
-| 共享 `source` | 用 `registry`、`item`、`locator` 和相邻 `basis` 表示记录或结构的实际派生 | 来源 v2 已实施；逐条派生与用途采纳不替代内容来源字段 |
+| 共享 `source` | 用 `registry`、`item`、`locator` 和相邻 `basis` 表示记录或结构的实际派生 | 来源身份与引用按[参考文献分离](../../decisions/source-bibliography-separation.md)区分普通实体和设计文献；逐条派生与用途采纳不替代内容来源字段 |
 
-三者不能互相替代。内容单元引用文献用 `references`，涉及实体用 `entities`，具体字段值的依据按[维护](../governance/maintenance.md)记录；这些关系也不能仅因来源、索引或诊断命中自动生成。本次同步不修改任何内容 `source` 值，也不为旧 `origin` 补写新关系。
+三者不能互相替代。内容单元引用文献用 `references`，涉及实体用 `entities`，具体字段值的依据按[维护](../governance/maintenance.md)记录；这些关系也不能仅因来源、索引或诊断命中自动生成。身份迁移只调整既有引用的目标位置，不产生新的派生关系，也不为旧 `origin` 补写关系。
 
 ## 文档类型词表
 
@@ -135,9 +135,11 @@ UUIDv4 不从标题、显示文本、alias、文件名、排序位置、时间�
 | `form` | `data/vocab/forms.yaml` | 值在表内 |
 | `level` | 本文认知过程维度表 | 值在表内 |
 | `subject` | `data/vocab/topics.yaml` | 值在表内，且 `status` 不是 `deprecated`；引用对概念状态的影响见[主题词表设计](topics.md)的生命周期 |
-| `entities`、`references`、`source` | `data/vocab/entities.yaml` 或内容单元 | 值在对应对象内 |
+| `entities` | 命名实体词表 | 只指向普通实体 |
+| `references` | 参考文献目录 | 只指向已登记文献 |
+| `source` | 内容单元、命名实体词表或参考文献目录 | 按明确对象类型解析既有派生来源，不靠类别或文件存在猜测 |
 
-内容单元对词表的引用是单向的：词表不记录哪些内容引用了它，需要时由脚本从内容反查。
+内容单元对词表和参考文献目录的引用是单向的：目录不记录哪些内容引用了它，需要时从内容反查。旧受控引用与链接的调整须按一次性迁移的明确写集执行，保持内容身份、标题、正文和状态；普通参考刷新不得因此扩大用户内容写集。具体路径与属性表示留在应用 target。
 
 术语数据服务于登记生成和只读参考消费，不参与上表的内容受控引用校验。术语 publication 与编辑源切换已按[术语发布](../../decisions/term-complete-publication.md)完成；委托未开放，主题标签和内容字段不改成术语概念身份。仓库正文诊断仍只提供人工复核线索。
 

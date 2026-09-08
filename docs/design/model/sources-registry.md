@@ -1,15 +1,15 @@
 # 来源用途登记
 
-`data/vocab/sources.yaml` 以稳定 id 登记来源用途，entity 指向[命名实体词表](entities.md)中的来源实体。名称、类别、档级、版本、地址与外部状态留在实体表，不重复保存。理论见[词表映射](../../concepts/vocabulary-mapping.md)与[知识体系](../../concepts/body-of-knowledge.md)。
+`data/vocab/sources.yaml` 以稳定 id 登记来源用途，reference 指向[参考文献目录](bibliography.md)中的文献记录。名称、类别、档级、版本、地址与外部状态留在参考文献目录，不重复保存。理论见[词表映射](../../concepts/vocabulary-mapping.md)与[知识体系](../../concepts/body-of-knowledge.md)。
 
-本文采用已采纳的[来源字段合同](../../decisions/source-v2-field-contract.md)。具体数据及引用按[来源收尾](../../decisions/source-completion.md)的列明范围实施；新合同与工具不扩大记录、角色、关系的采纳范围，也不表示正式切换获准。严格入口只接受 v2，旧格式仅由 Git 和迁移审计保留。
+本文按[参考文献分离](../../decisions/source-bibliography-separation.md)与原[来源字段合同](../../decisions/source-v2-field-contract.md)规定身份和用途的分工。严格入口只接受 schema_version 3，拒绝旧 entity 引用。旧决定和历史不改写；只有本次采纳列明的机械身份、字段位置映射可用于解释原授权，不扩大记录、角色、关系或限定许可。
 
 ## 对象分工
 
 | 对象 | 职责 | 效力边界 |
 |---|---|---|
-| 来源实体 | 身份、名称、版本、地址、档级及外部状态 | 不批准用途或具体关系 |
-| 用途记录 | id、entity、roles、history | 不改变来源身份，不自动产生派生或映射 |
+| 文献记录 | 身份、名称、版本、地址、档级及外部状态 | 不批准用途或具体关系 |
+| 用途记录 | id、reference、roles、history | 不改变来源身份，不自动产生派生或映射 |
 | basis | 支持具体字段值的外部依据 | 不表示实际派生、映射或项目批准 |
 | source | 记录或结构的实际派生 | 不表示普通参考、项目判断或概念等同 |
 | match | 本地与外部对象的具体映射 | 不替代标签、范围或层级依据 |
@@ -20,7 +20,7 @@
 
 ## 用途记录
 
-id 与 entity 保持现有一对一关系，entity 必须指向 kind 为 standard 或 publication 的实体。roles 是非空的逐角色记录列表，每项包含 role、status、decision。history 只追加真实动作、日期、字段与决定；旧用途 checked 保留在迁移前值中，不成为角色批准日期或实体复核日期。
+id 与 reference 保持现有一对一关系，reference 必须指向参考文献目录中的记录，不能指向普通实体。roles 是非空的逐角色记录列表，每项包含 role、status、decision。history 只追加真实动作、日期、字段与决定；旧用途 checked 保留在迁移前值中，不成为角色批准日期或实体复核日期。
 
 | role | 资格用途 | 对应引用 |
 |---|---|---|
@@ -39,12 +39,12 @@ role 的 status 只取 proposed、approved、retired。proposed 的 decision 为
 
 | 对象 | 字段 | 条件 |
 |---|---|---|
-| basis 项 | entity、locator、按可变性要求的 checked | 指向来源实体；不要求用途角色；定位可重复核对 |
+| basis 项 | reference、locator、按可变性要求的 checked | 指向文献记录；不要求用途角色；定位可重复核对 |
 | source | registry、item、locator、basis | structure 已获准；locator 保存逐行最终定位，不只保存模板 |
 | match 项 | registry、item、rel、basis | mapping 已获准；每条关系有相邻非空依据 |
 | external_group | registry、item、locator、basis | structure 已获准；只表达分组依据 |
 
-可变内容的 basis 必须有真实 checked。固定版本与真实内容哈希共同确定引用内容时才可省略；版本字符串本身不足以证明内容固定，version: null 更不能触发该例外。entity 指来源实体，registry 指用途登记，两者不能互换。
+可变内容的 basis 必须有真实 checked。固定版本与真实内容哈希共同确定引用内容时才可省略；版本字符串本身不足以证明内容固定，version: null 更不能触发该例外。reference 指文献记录，registry 指用途登记，两者不能互换。普通实体事实的直接 URL 入口限于[实体依据](entities.md#事实依据)列明字段，不能用于本节 source、match、external_group 或术语依据。
 
 source_status 缺省不自动否定具体历史或固定材料，也不批准其关系。引用仍须核对所选材料、定位、真实日期、用途资格和逐条采纳；确实依赖外部现行状态的操作在缺值时阻断。已填写状态保持发布者依据与精确字段采纳，不以可省略为由覆盖合格结论。
 

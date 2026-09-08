@@ -19,7 +19,6 @@ from .vault import verify_vault
 
 _LEVELS = frozenset({"remember", "understand", "apply", "analyze", "evaluate", "create"})
 _STATUSES = frozenset({"draft", "active", "deprecated"})
-_REFERENCE_KINDS = frozenset({"standard", "publication"})
 _LINK = re.compile(r"^\[\[([^\[\]|#^\r\n]+)(?:\|([^\[\]\r\n]+))?\]\]$")
 _TARGET_PREFIXES = {
     "type": "kb/types/",
@@ -27,6 +26,7 @@ _TARGET_PREFIXES = {
     "form": "kb/forms/",
     "topic": "kb/topics/",
     "entity": "kb/entities/",
+    "reference": "kb/references/",
     "content": "content/",
 }
 
@@ -373,6 +373,7 @@ def _validate_content_tree(snapshot: DesignSnapshot, content_root: Path) -> Vali
 
     topics = _entries(snapshot, "topics", "concepts")
     entities = _entries(snapshot, "entities", "entities")
+    bibliography = _entries(snapshot, "bibliography", "references")
     types = _entries(snapshot, "types", "types")
     genres = _entries(snapshot, "genres", "genres")
     forms = _entries(snapshot, "forms", "forms")
@@ -420,14 +421,17 @@ def _validate_content_tree(snapshot: DesignSnapshot, content_root: Path) -> Vali
         source = _optional_text(record, "kb_source", issues)
         if source is not None:
             parsed_source = _parse_link(source)
-            if parsed_source is None or parsed_source[0] not in {"content", "entity"}:
+            if parsed_source is None or parsed_source[0] not in {"content", "entity", "reference"}:
                 _add(
                     issues,
                     record,
                     "content.reference_kind",
                     "kb_source",
-                    "kb_source must be an exact content or kb/entities Wikilink",
+                    "kb_source must be an exact content, kb/entities or kb/references Wikilink",
                 )
+            elif parsed_source[0] == "reference" and parsed_source[1] not in bibliography:
+                _add(issues, record, "content.reference_missing", "kb_source",
+                     f"source reference does not exist: {parsed_source[1]}")
             elif parsed_source[0] == "entity" and parsed_source[1] not in entities:
                 _add(
                     issues,
@@ -437,23 +441,7 @@ def _validate_content_tree(snapshot: DesignSnapshot, content_root: Path) -> Vali
                     f"source entity does not exist: {parsed_source[1]}",
                 )
 
-        reference_ids = _controlled_list(
-            record,
-            "kb_references",
-            "entity",
-            entities,
-            issues,
-            required=False,
-        )
-        for identifier in reference_ids:
-            if entities[identifier].get("kind") not in _REFERENCE_KINDS:
-                _add(
-                    issues,
-                    record,
-                    "content.reference_entity_kind",
-                    "kb_references",
-                    f"references target must be a standard or publication: {identifier}",
-                )
+        _controlled_list(record, "kb_references", "reference", bibliography, issues, required=False)
 
         _date_value(record, "kb_created", issues, required=True)
         _date_value(record, "kb_modified", issues, required=False)

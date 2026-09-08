@@ -2,7 +2,7 @@
   "$defs": {
     "basis": {
       "items": {
-        "$ref": "urn:kb-design:schema:source-entities:2#/$defs/basisItem"
+        "$ref": "urn:kb-design:schema:source-bibliography:3#/$defs/basisItem"
       },
       "minItems": 1,
       "type": "array"

@@ -19,7 +19,7 @@ TC2 = "tc-22222222-2222-4222-8222-222222222222"
 
 
 def basis(locator):
-    return [{"entity": "source-a", "locator": locator, "checked": "2026-09-06"}]
+    return [{"reference": "source-a", "locator": locator, "checked": "2026-09-06"}]
 
 
 def term(term_id, text, status="preferredTerm-admn-sts", locator="term"):
@@ -178,10 +178,10 @@ class TermRenderingTests(unittest.TestCase):
         document = {"schema": "urn:kb-design:schema:terms:1", "version": 1,
                     "concepts": [concept()]}
         snapshot = json.loads(canonical_snapshot(
-            document, {"rows": []}, STATE, source_entities=SOURCES,
+            document, {"rows": []}, STATE, bibliography_references=SOURCES,
             model_labels=[{"zh": "模型名", "en": "Model name", "targets": ["topics/a"]}],
         ))
-        self.assertEqual("甲来源", snapshot["source_entities"][0]["label"]["zh"])
+        self.assertEqual("甲来源", snapshot["bibliography_references"][0]["label"]["zh"])
         self.assertEqual("模型名", snapshot["model_labels"][0]["zh"])
 
     def test_model_rows_keep_distinct_chinese_identities_and_reject_stale_scope(self):
@@ -281,7 +281,7 @@ class TermRenderingTests(unittest.TestCase):
             "https://cdn.example.test/ISO-15489-1-2016.pdf；"
             "PDF p. 10（印刷 p. 2），§3.8 disposition"
         )
-        value["basis"] = [{"entity": "source-a", "locator": locator,
+        value["basis"] = [{"reference": "source-a", "locator": locator,
                            "checked": "2026-09-06"}]
         rendered = render_term_markdown(value, SOURCES)
         self.assertIn("[定位](https://cdn.example.test/ISO-15489-1-2016.pdf)", rendered)

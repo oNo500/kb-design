@@ -26,7 +26,7 @@ from .errors import ApplicationError
 _SHA256 = re.compile(r"^[0-9a-f]{64}$")
 _IDENTIFIER = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 _DIRECTORY_KINDS = {
-    "topics": "topic", "arrays": "array", "entities": "entity", "sources": "source",
+    "references": "reference", "topics": "topic", "arrays": "array", "entities": "entity", "sources": "source",
     "types": "type", "genres": "genre", "forms": "form", "terms": "term",
 }
 _TERM_IDENTIFIER = re.compile(

@@ -23,7 +23,8 @@ INDEX_KEYS = (
 
 def discover_formal_documents(root: Path) -> Sequence[Path]:
     return tuple(sorted(
-        path for path in (root / "data/vocab").rglob("*")
+        path for directory in (root / "data/vocab", root / "data/references")
+        for path in directory.rglob("*")
         if path.is_file() and path.suffix in FORMAL_SUFFIXES
         and not EXCLUDED_PARTS.intersection(path.relative_to(root).parts)
     ))
@@ -57,8 +58,8 @@ def index_row(target_kind, target_id, reference_kind, file, record, field_path):
 def visit_reference_use(use: ReferenceUse) -> Dict[str, str]:
     if use.kind == "basis":
         return index_row(
-            "source_entity", use.value["entity"], "basis.entity",
-            use.file, use.record, use.field_path + ".entity",
+            "bibliography_reference", use.value["reference"], "basis.reference",
+            use.file, use.record, use.field_path + ".reference",
         )
     return index_row(
         "source_use", use.value["registry"], f"{use.kind}.registry",
@@ -75,8 +76,8 @@ def visit_uses(root: Path) -> List[Dict[str, str]]:
     for use_index, source_use in enumerate(document.get("sources", [])):
         record = f"source_use:{source_use['id']}"
         rows.append(index_row(
-            "source_entity", source_use["entity"], "use.entity",
-            "data/vocab/sources.yaml", record, f"sources[{use_index}].entity",
+            "bibliography_reference", source_use["reference"], "use.reference",
+            "data/vocab/sources.yaml", record, f"sources[{use_index}].reference",
         ))
         for role_index, role in enumerate(source_use.get("roles", [])):
             if role.get("decision"):
@@ -89,17 +90,17 @@ def visit_uses(root: Path) -> List[Dict[str, str]]:
 
 
 def visit_replacements(root: Path) -> List[Dict[str, str]]:
-    path = root / "data/vocab/entities.yaml"
+    path = root / "data/references/bibliography.yaml"
     if not path.exists():
         return []
     document = load_yaml_or_json(path)
     return [
         index_row(
-            "source_entity", entity["replaced_by"], "entity.replaced_by",
-            "data/vocab/entities.yaml", f"entity:{entity['id']}",
-            f"entities[{index}].replaced_by",
+            "bibliography_reference", entity["replaced_by"], "reference.replaced_by",
+            "data/references/bibliography.yaml", f"reference:{entity['id']}",
+            f"references[{index}].replaced_by",
         )
-        for index, entity in enumerate(document.get("entities", []))
+        for index, entity in enumerate(document.get("references", []))
         if entity.get("replaced_by")
     ]
 
@@ -135,6 +136,7 @@ def visit_record_decisions(relative: Path, document: object) -> List[Dict[str, s
         return visit_term_decisions(relative, document)
     contexts = {
         "data/vocab/entities.yaml": ("entities", "entity"),
+        "data/references/bibliography.yaml": ("references", "reference"),
         "data/vocab/sources.yaml": ("sources", "source_use"),
         "data/vocab/forms.yaml": ("arrays", "arrays"),
     }
@@ -291,8 +293,8 @@ def build_reference_index(root: Path) -> Dict[str, object]:
         entries.extend(
             visit_reference_use(use)
             for use in collect_reference_uses(relative, document)
-            if isinstance(use.value, dict) and isinstance(use.value.get("entity" if use.kind == "basis" else "registry"), str)
-            and use.value.get("entity" if use.kind == "basis" else "registry")
+            if isinstance(use.value, dict) and isinstance(use.value.get("reference" if use.kind == "basis" else "registry"), str)
+            and use.value.get("reference" if use.kind == "basis" else "registry")
         )
     entries.extend(visit_uses(root))
     entries.extend(visit_replacements(root))

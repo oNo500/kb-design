@@ -41,11 +41,11 @@ def _cell(value: Any) -> str:
     return str(value).replace("|", "\\|").replace("\n", " ")
 
 
-def _source_rows(references: Sequence[Mapping[str, object]], source_entities):
+def _source_rows(references: Sequence[Mapping[str, object]], bibliography_references):
     rows = []
     for reference in references:
-        entity_id = reference.get("entity", "?")
-        entity = source_entities.get(entity_id, {}) if isinstance(source_entities, Mapping) else {}
+        entity_id = reference.get("reference", "?")
+        entity = bibliography_references.get(entity_id, {}) if isinstance(bibliography_references, Mapping) else {}
         label = entity.get("label", {}) if isinstance(entity, Mapping) else {}
         names = " / ".join(str(label[key]) for key in ("zh", "en") if label.get(key))
         name = names or str(entity_id)
@@ -72,7 +72,7 @@ def _source_rows(references: Sequence[Mapping[str, object]], source_entities):
     return rows
 
 
-def _evidence_lines(basis, source_entities):
+def _evidence_lines(basis, bibliography_references):
     if isinstance(basis, Mapping):
         kind = term_basis_kind(basis)
         if kind == "project" or (set(basis) == {"project"} and isinstance(basis["project"], Mapping)):
@@ -95,7 +95,7 @@ def _evidence_lines(basis, source_entities):
             "判断理由：" + model["rationale"],
             "采纳授权：" + model["approval"],
         ]
-    rows = _source_rows(basis or (), source_entities)
+    rows = _source_rows(basis or (), bibliography_references)
     return rows or ["未登记。"]
 
 
@@ -118,7 +118,7 @@ def _concept_layout_rows(concept_id, layout):
     return symbols, historical
 
 
-def render_term_markdown(concept, source_entities, *, layout=None) -> str:
+def render_term_markdown(concept, bibliography_references, *, layout=None) -> str:
     """Render one concept body, including every language and evidence layer."""
     preferred = _preferred(concept)
     chinese = preferred.get("zh-Hans") or preferred.get("zh-Hant")
@@ -127,7 +127,7 @@ def render_term_markdown(concept, source_entities, *, layout=None) -> str:
     if chinese and english:
         title += f" ({english})"
     lines = [f"# {title}", "", f"概念 ID：`{concept['id']}`。", "", "## 概念依据", ""]
-    lines.extend(f"- {row}" for row in _evidence_lines(concept.get("basis"), source_entities))
+    lines.extend(f"- {row}" for row in _evidence_lines(concept.get("basis"), bibliography_references))
     lines.extend(["", "## 定义", ""])
     definitions = sorted(concept.get("definitions", []),
                          key=lambda row: (LANGUAGE_ORDER.get(row.get("language"), 99), row.get("text", "")))
@@ -135,21 +135,21 @@ def render_term_markdown(concept, source_entities, *, layout=None) -> str:
         lines.append("无。")
     for definition in definitions:
         lines.extend([f"### {LANGUAGE_TITLES.get(definition['language'], '其他语言')}定义", "", definition["text"], "", "依据："])
-        lines.extend(f"- {row}" for row in _evidence_lines(definition.get("basis"), source_entities))
+        lines.extend(f"- {row}" for row in _evidence_lines(definition.get("basis"), bibliography_references))
         lines.append("")
     subject_fields = concept.get("subject_fields", [])
     if subject_fields:
         lines.extend(["## 适用学科", ""])
         for field in subject_fields:
             lines.append(f"- {field['topic_id']}")
-            lines.extend(f"  - 依据：{row}" for row in _evidence_lines(field.get("basis"), source_entities))
+            lines.extend(f"  - 依据：{row}" for row in _evidence_lines(field.get("basis"), bibliography_references))
         lines.append("")
     if concept.get("source") or concept.get("match"):
         lines.extend(["## 概念对应", ""])
         for kind, values in (("来源", [concept.get("source")] if concept.get("source") else []),
                              ("映射", concept.get("match", []))):
             for value in values:
-                identity = value.get("registry") or value.get("entity") or value.get("id") or "未标识"
+                identity = value.get("registry") or value.get("reference") or value.get("id") or "未标识"
                 details = [str(identity)]
                 if value.get("item"):
                     details.append("目标项 " + str(value["item"]))
@@ -163,7 +163,7 @@ def render_term_markdown(concept, source_entities, *, layout=None) -> str:
                         else "来源定位 " + locator
                     )
                 lines.append(f"- {kind}：" + " · ".join(details))
-                lines.extend(f"  - 依据：{row}" for row in _evidence_lines(value.get("basis"), source_entities))
+                lines.extend(f"  - 依据：{row}" for row in _evidence_lines(value.get("basis"), bibliography_references))
         lines.append("")
     lines.extend(["## 术语形式", ""])
     historical = []
@@ -176,14 +176,14 @@ def render_term_markdown(concept, source_entities, *, layout=None) -> str:
                 historical.append((language["language"], term))
                 continue
             lines.append(f"- {term['text']}（`{term['id']}`；{status}）")
-            lines.extend(f"  - 依据：{row}" for row in _evidence_lines(term.get("basis"), source_entities))
+            lines.extend(f"  - 依据：{row}" for row in _evidence_lines(term.get("basis"), bibliography_references))
         lines.append("")
     lines.extend(["## 历史形式", ""])
     if historical:
         for language, term in historical:
             replacement = f"；替代形式 `{term['replaced_by']}`" if term.get("replaced_by") else ""
             lines.append(f"- {LANGUAGE_TITLES.get(language, '其他语言')}：{term['text']}（`{term['id']}`；{term['administrative_status']}{replacement}）")
-            lines.extend(f"  - 依据：{row}" for row in _evidence_lines(term.get("basis"), source_entities))
+            lines.extend(f"  - 依据：{row}" for row in _evidence_lines(term.get("basis"), bibliography_references))
     else:
         lines.append("无。")
     symbols, historical_designations = _concept_layout_rows(concept["id"], layout)
@@ -225,7 +225,7 @@ def _summary_row(concept):
     return "| " + " | ".join(map(_cell, (chinese, english, definitions, "；".join(admitted) or "—", concept["id"]))) + " |"
 
 
-def render_glossary(snapshot, layout, state, source_entities=None) -> str:
+def render_glossary(snapshot, layout, state, bibliography_references=None) -> str:
     if not state.get("consumers_enabled") or state.get("terms_mode") != "active_editor" or state.get("state") != "active":
         raise ValueError("TERM_CONSUMERS_DISABLED")
     concepts = {row["id"]: row for row in snapshot.get("concepts", []) if row.get("workflow") == "active"}
@@ -260,7 +260,7 @@ def render_glossary(snapshot, layout, state, source_entities=None) -> str:
             name = (preferred.get("zh-Hans") or preferred.get("zh-Hant")
                     or preferred.get("en") or concept_id)
             lines.extend(["", f"**{name}**（`{concept_id}`）", ""])
-            detail = render_term_markdown(concept, source_entities or {}).splitlines()[2:]
+            detail = render_term_markdown(concept, bibliography_references or {}).splitlines()[2:]
             for line in detail:
                 if line.startswith("概念 ID："):
                     continue
@@ -293,7 +293,7 @@ def render_glossary(snapshot, layout, state, source_entities=None) -> str:
         for entry in appendix["entries"]:
             lines.extend(_layout_entry_lines(entry))
     lines.extend(["", "## 来源目录", ""])
-    catalog = source_entities or {row["id"]: row for row in snapshot.get("source_entities", [])}
+    catalog = bibliography_references or {row["id"]: row for row in snapshot.get("bibliography_references", [])}
     if catalog:
         for entity_id in sorted(catalog):
             entity = catalog[entity_id]

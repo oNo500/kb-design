@@ -3,12 +3,14 @@ import pathlib
 import unittest
 
 import yaml
+from source_governance_helpers import current_reference_value
 from jsonschema import Draft202012Validator, FormatChecker
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 FIXTURES = ROOT / "tests" / "fixtures" / "source-governance"
 SCHEMA_NAMES = (
+    "source-bibliography.schema.json",
     "source-entities.schema.json",
     "source-uses.schema.json",
     "source-obligations.schema.json",
@@ -47,9 +49,16 @@ def current_cutover_paths(value):
 
 
 def errors(schema_name, fixture_name):
+    document = load_fixture(fixture_name)
+    if schema_name in {"source-entities.schema.json", "source-uses.schema.json"}:
+        document = current_reference_value(document)
+    if fixture_name == "valid/entities.yaml":
+        document["references"] = document.pop("entities")
+        document["schema"] = "urn:kb-design:data:bibliography"
+        schema_name = "source-bibliography.schema.json"
     return list(Draft202012Validator(
         load_schema(schema_name), format_checker=FormatChecker()
-    ).iter_errors(load_fixture(fixture_name)))
+    ).iter_errors(document))
 
 
 def validate_definition(schema_name, definition, value):

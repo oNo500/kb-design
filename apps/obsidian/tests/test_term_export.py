@@ -54,19 +54,19 @@ def term_inputs(*, precise=True, bilingual=False, reverse_languages=False, proje
         }}
     for definition in concept["definitions"]:
         for basis in definition["basis"]:
-            basis["entity"] = "standard"
+            basis["reference"] = "standard"
     if isinstance(concept["basis"], list):
         for basis in concept["basis"]:
-            basis["entity"] = "standard"
+            basis["reference"] = "standard"
     for language in concept["languages"]:
         for term in language["terms"]:
             for basis in term["basis"]:
-                basis["entity"] = "standard"
+                basis["reference"] = "standard"
     if bilingual:
         concept["definitions"].append({
             "language": "zh-Hans",
             "text": "合成概念。",
-            "basis": [{"entity": "standard", "locator": "definition", "checked": "2026-08-31"}],
+            "basis": [{"reference": "standard", "locator": "definition", "checked": "2026-08-31"}],
         })
         concept["languages"].append({
             "language": "zh-Hans",
@@ -74,7 +74,7 @@ def term_inputs(*, precise=True, bilingual=False, reverse_languages=False, proje
                 "id": "tm-33333333-3333-4333-8333-333333333333",
                 "text": "阿尔法",
                 "administrative_status": "preferredTerm-admn-sts",
-                "basis": [{"entity": "standard", "locator": "preferred term", "checked": "2026-08-31"}],
+                "basis": [{"reference": "standard", "locator": "preferred term", "checked": "2026-08-31"}],
                 "history": [{
                     "date": "2026-08-31",
                     "event": "registered",
@@ -88,7 +88,7 @@ def term_inputs(*, precise=True, bilingual=False, reverse_languages=False, proje
                 "id": "tm-44444444-4444-4444-8444-444444444444",
                 "text": "旧阿尔法",
                 "administrative_status": "deprecatedTerm-admn-sts",
-                "basis": [{"entity": "standard", "locator": "deprecated term", "checked": "2026-08-31"}],
+                "basis": [{"reference": "standard", "locator": "deprecated term", "checked": "2026-08-31"}],
                 "history": [{
                     "date": "2026-08-31",
                     "event": "registered",
@@ -216,6 +216,7 @@ def commit_inputs(root, inputs, message):
     for name, relative in {
         "topics": "data/vocab/topics.yaml",
         "entities": "data/vocab/entities.yaml",
+        "bibliography": "data/references/bibliography.yaml",
         "sources": "data/vocab/sources.yaml",
         "types": "data/vocab/types.yaml",
         "genres": "data/vocab/genres.yaml",
@@ -286,7 +287,7 @@ class TermExportTests(unittest.TestCase):
         self.assertIn("Standard · 1", text)
         self.assertIn("旧称列表仅供检索纠正", text)
         self.assertIn("不作为当前准用名称", text)
-        self.assertIn("[[kb/topics/topic|Topic]]", files["kb/entities/standard.md"].decode())
+        self.assertIn("[[kb/topics/topic|Topic]]", files["kb/references/standard.md"].decode())
 
         manifest = json.loads(build_manifest(Path("/synthetic"), files, input_bytes=inputs))
         self.assertEqual(1, manifest["object_counts"]["term"])

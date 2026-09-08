@@ -21,6 +21,7 @@ from .errors import ApplicationError
 _FORMAL_DOCUMENTS = {
     "topics": "data/vocab/topics.yaml",
     "entities": "data/vocab/entities.yaml",
+    "bibliography": "data/references/bibliography.yaml",
     "sources": "data/vocab/sources.yaml",
     "types": "data/vocab/types.yaml",
     "genres": "data/vocab/genres.yaml",
@@ -189,7 +190,7 @@ def _validate_formal_inputs(root: Path, inputs: Mapping[str, bytes]) -> None:
 
 
 def load_design(root: Path) -> DesignSnapshot:
-    """Load and validate the six formal documents from a clean Git snapshot."""
+    """Load and validate the formal vocabularies and bibliography from a clean Git snapshot."""
     design_root = _resolve_git_root(root)
     commit = _git(design_root, "rev-parse", "HEAD")
     if _git(design_root, "status", "--porcelain", "--untracked-files=no"):

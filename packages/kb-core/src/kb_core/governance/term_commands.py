@@ -80,7 +80,8 @@ def registered_term_forms(root):
         forms.update((row["zh"], row["en"]))
     # Preserve the diagnostic's existing vocabulary ownership, using the same
     # validated capture rather than reopening potentially changed YAML files.
-    for name, collection in (("topics", "concepts"), ("entities", "entities"), ("types", "types")):
+    for name, collection in (("topics", "concepts"), ("entities", "entities"),
+                             ("bibliography", "references"), ("types", "types")):
         for record in sources[name].get(collection, []):
             for field in ("label", "alt", "hidden"):
                 forms.update(_strings(record.get(field)))

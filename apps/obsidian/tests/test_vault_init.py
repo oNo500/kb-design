@@ -139,7 +139,7 @@ class VaultInitializationTests(unittest.TestCase):
         summary = initialize_vault(self.design.resolve(), self.target)
 
         self.assertEqual(self.design_commit, summary["design_commit"])
-        self.assertEqual(6, len(summary["input_hashes"]))
+        self.assertEqual(7, len(summary["input_hashes"]))
         self.assertEqual(
             {
                 "home.md", "inbox", "sources", "content", "indexes",
@@ -224,6 +224,8 @@ class VaultInitializationTests(unittest.TestCase):
             "kb_vendor": "text",
             "kb_tier": "text",
             "kb_entity_version": "text",
+            "kb_reference_version": "text",
+            "kb_reference": "text",
             "kb_url": "text",
             "kb_watch": "multitext",
             "kb_entity": "text",

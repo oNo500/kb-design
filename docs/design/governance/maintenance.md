@@ -10,28 +10,28 @@
 
 ## 对象与状态
 
-现行维护作用于以下六类对象，每类对象有自己的状态。来源字段按已采纳的[来源字段合同](../../decisions/source-v2-field-contract.md)实施；具体字段与引用按[来源收尾](../../decisions/source-completion.md)采纳范围实施，严格工具不保留旧格式兼容。
+现行维护作用于以下六类对象，每类对象有自己的状态。文献身份按[参考文献分离](../../decisions/source-bibliography-separation.md)进入独立目录，来源字段继续受原字段合同和具体采纳范围约束。严格工具使用 v3，不保留旧格式兼容；机械身份和字段映射不扩大原权限。
 
 | 对象 | 在哪 | 状态 | 说明 |
 |---|---|---|---|
-| 来源实体 | `data/vocab/entities.yaml`，kind 为 standard／publication | status 为项目状态；source_status 为 current／superseded／withdrawn，或省略表示外部状态未核实 | tier 另行决定复核周期，不是状态，不自动增加用途 |
+| 文献记录 | `data/references/bibliography.yaml` | status 为项目状态；source_status 为 current／superseded／withdrawn，或省略表示外部状态未核实 | tier 另行决定复核周期，不是状态，不自动增加用途 |
 | 概念记录 | `data/vocab/topics.yaml` | `unassigned`／`candidate`／`active`／`deprecated` | 见[主题词表设计](../model/topics.md) |
 | 命名实体记录 | `data/vocab/entities.yaml` | `candidate`／`active`／`deprecated` | 见[命名实体词表](../model/entities.md) |
 | 断言 | 各词表的人工赋值字段 | 外部 basis 与项目 assertions 分开 | 见下节；语言依据使用独立合同 |
 | 内容单元 | 知识库 | `draft`／`active`／`deprecated` | 见[内容模型](../model/content-model.md)；不删，处置决定在该文档中 |
 | 词表版本 | 各词表的 `version` 块 | 当前版 | 见[词表版本](../model/versioning.md) |
 
-来源实体、概念记录和命名实体记录的状态互不继承。`unassigned` 只属于现行主题概念；`candidate` 概念记录只表示概念进入现行审核，不表示其中任一 designation 获得试用资格。
+文献记录、概念记录和命名实体记录的状态互不继承。`unassigned` 只属于现行主题概念；`candidate` 概念记录只表示概念进入现行审核，不表示其中任一 designation 获得试用资格。
 
 来源用途继续受现行 `tier` 和[来源用途登记](../model/sources-registry.md)共同限制：de-facto 和 vendor 默认只作入口和例证，不作定义来源，vendor 的接口文档不进概念文和设计文档；有版本号的 de-facto 只有在正式用途已经登记时才可承担现行结构用途。[限定定义许可](../../decisions/term-limited-definition-source-use.md)只允许知识体系、普遍接受的知识使用列明的 swebok 材料，知识领域、知识单元、主题使用列明的 cs2023 材料，体裁使用列明的 iptc-genre 材料。每项许可绑定同一术语概念的完整 `definition_source_permission`：来源、登记档级与版本、实际材料、核对日期、概念依据和精确定义值，并同时要求完整 record grant。来源登记版本不冒充网页 revision；许可不改变来源 tier、版本或用途，不开放其他概念和定义。其他 de-facto／vendor 定义根默认拒绝，不以同一来源的泛许可、其他概念的决定或旧版定义放行。
 
 ### 能力边界
 
-来源实体外部状态、来源用途角色状态、来源复核义务状态、候选术语记录、术语状态转换和术语复核义务已经有模式或操作接口。字段和角色按各自已采纳决定实施；接口存在不自动接管现行六类对象的决策权。
+文献记录外部状态、来源用途角色状态、来源复核义务状态、候选术语记录、术语状态转换和术语复核义务已经有模式或操作接口。字段和角色按各自已采纳决定实施；接口存在不自动接管现行六类对象的决策权。
 
 | 接口 | 已实现能力 | 当前边界 |
 |---|---|---|
-| 来源实体与用途 | 结构化地址、外部状态、字段级依据、复核字段、观察入口、逐角色状态、决定引用和只追加历史 | 本批字段与具体角色按来源收尾决定采纳；完整记录的机械合格不代替证据、决定或正式切换 |
+| 文献记录与用途 | 结构化地址、外部状态、字段级依据、复核字段、观察入口、逐角色状态、决定引用和只追加历史 | 本批字段与具体角色按来源收尾决定采纳；完整记录的机械合格不代替证据、决定或正式切换 |
 | 来源义务与索引 | 开启、解决、再次触发和反向定位接口 | 正式来源义务和正式索引不存在；接口结果不是复核结论 |
 | 术语记录与转换 | 三层记录、独立状态、身份与精确采纳校验 | 本批具体值按采纳决定实施；不替代主题或实体状态；publication 已通过规定验收并启用 |
 | 术语义务与索引 | 义务转换、决定反查和双向定位接口 | 正式术语义务和正式索引不存在；没有获准周期或阈值 |
@@ -49,7 +49,7 @@
 | 命名实体词表 | subjects、form 的类别选择、scope、vendor |
 | 内容单元 | subject、type；具体依据表示仍待决定 |
 
-外部依据使用 entity、locator、按内容可变性要求的 checked。subjects 的依据使用 values 与 references 分组，明确每条材料支持哪些主题；values 不得超出该记录 subjects，外部依据与项目判断合计覆盖全部 subjects。复制派生与映射也分别要求相邻依据，不能因“直接复制”免除 source 或 match 的证据门禁。
+外部文献依据使用 reference、locator、按内容可变性要求的 checked，reference 指向参考文献目录。普通实体的 label、kind、urls、scope、vendor 可按[实体事实依据](../model/entities.md#事实依据)使用互斥的 url、locator、checked；该入口不适用于 subjects、术语、映射或派生，不授予用途资格。subjects 的依据使用 values 与 references 分组，明确每条材料支持哪些主题；values 不得超出该记录 subjects，外部依据与项目判断合计覆盖全部 subjects。复制派生与映射也分别要求相邻依据，不能因“直接复制”免除 source 或 match 的证据门禁。
 
 原 self 归属判断以 assertions.subjects 保存 values、disposition: project_assertion、original: self、migration。原 source: self 以 assertions.source 保存项目建立事实；外部 source 与该判断互斥。载体数组的本地分析按 Q16 保存 local_analysis，不充当外部 source 或 external_group。
 
@@ -70,10 +70,10 @@
 | 计数 | “其他”类目的下位概念数 | 概念记录 | GB/T “其他学科”等剩余类目 |
 | 计数 | 候选识别器报告的独立字符串数、总出现次数和出现文件数 | 带上下文的未解析字符串线索 | 公开的抽取、排除、标签比较和规范化规则（Z39.19 §11.1.3.4 a） |
 | 计数 | 没有匹配任何概念的检索次数 | 带上下文的未解析字符串线索 | 应用提供的检索记录（Z39.19 §11.1.3.4 c） |
-| 时间 | 距上次复核的月数 | 来源实体 | review.checked；旧日期仅作迁移历史 |
+| 时间 | 距上次复核的月数 | 文献记录 | review.checked；旧日期仅作迁移历史 |
 | 时间 | 距上次编辑审核的月数 | 词表 | `data/audit/maintenance/signals.yaml` |
-| 外部事件 | 来源发布新版 | 来源实体 | 结构化 watch 的 locator 与 signals |
-| 外部事件 | 链接失效 | 来源实体、引用 | 链接检查 |
+| 外部事件 | 来源发布新版 | 文献记录 | 结构化 watch 的 locator 与 signals |
+| 外部事件 | 链接失效 | 文献记录、引用 | 链接检查 |
 
 脚本输出和人工提名后的 `candidate` 概念记录分别计量。未解析字符串保留来源上下文，只是复核线索；它不会因未匹配而直接成为项目采用的名称、概念、关系或结构结论。
 
@@ -114,7 +114,7 @@
 | 链接检查 | 3 个月，所有档相同 | 本库 |
 | 过度使用的概念 | 单个概念的引用占全部引用 ≥ 10% | Z39.19 §11.3.1.3：过度与过少使用都是修改或删除的复审线索；数字为本库估值 |
 
-review 使用 checked、next_due、interval_months、grace_days、obligations；日期计算按既有周期、月底规则和 30 天宽限。本批 review 的全面复核日期保持为空，缺值不能充当已复核证明。watch 的地址／重定向周期与内容周期按[来源实体](../model/entities.md#来源记录)分别保存，不能并入人工复核周期；每 3 个月的链接检查仍是独立事项。
+review 使用 checked、next_due、interval_months、grace_days、obligations；日期计算按既有周期、月底规则和 30 天宽限。本批 review 的全面复核日期保持为空，缺值不能充当已复核证明。watch 的地址／重定向周期与内容周期按[文献记录](../model/bibliography.md#文献记录)分别保存，不能并入人工复核周期；每 3 个月的链接检查仍是独立事项。
 
 术语接口没有获准的复核周期、阈值或自动动作。不得把 6、12、20、24 个月、30 天或任何现行 `candidate` 阈值继承给术语义务。
 
@@ -184,7 +184,7 @@ watch 的 locator 表示观察地址，signals 指定 availability、redirect、
 | 索引 | 提供可能受影响位置 | 项目 assertions、local_analysis 与历史值不产生外部引用边 |
 | 义务 | 保存已有正式输入下的复核工作项 | 正式义务尚未建立时不得虚构目标、结论或发布阻断 |
 | 正式修改 | 根据材料与采纳决定修改获准字段 | 不自动改变 tier、身份、用途、关系或术语 |
-| 严格切换 | 同一快照使用 v2 数据和消费者 | 必需证据与整批验收未完成不得合并，不增加兼容读取 |
+| 严格切换 | 同一快照使用 v3 来源数据、参考文献目录和消费者 | 必需证据与整批验收未完成不得合并，不增加兼容读取 |
 
 来源变化可在实际正式对象存在时通过稳定 ID 提出术语复核范围；术语具体数据由其采纳决定控制，来源变化本身不创建术语义务、委托或新记录。恢复只使用明确范围的 Git revert，正式 vault 与 Git 忽略输出不属于可由仓库 Git 恢复的范围。
 
@@ -194,13 +194,15 @@ watch 的 locator 表示观察地址，signals 指定 availability、redirect、
 
 | 层 | 记在哪 | 记什么 |
 |---|---|---|
-| 对象 | 概念和实体的现行 `history` | 每次状态变化的日期、内容和原因（Z39.19 §11.3.2.2 历史注释） |
+| 对象 | 概念、实体和文献的现行 `history` | 每次状态变化的日期、内容和原因（Z39.19 §11.3.2.2 历史注释） |
 | 版本 | `data/vocab/CHANGELOG.md` | 每版新增、废弃、改名和来源更新；只追加 |
 | 规则 | `docs/decisions/` | 治理规则本身的变更；ADR 只追加 |
 | 维护动作 | `data/vocab/CHANGELOG.md` 当前版节 | 每次定期复审执行的动作 |
 | 指标快照 | `data/audit/maintenance/signals.yaml` | 历次定期复审指标、编辑审核日期和治理年审日期 |
 | 来源迁移 | `data/audit/migrations/source-v1/`、[来源收尾](../../decisions/source-completion.md) | 六份原基线账本保留历史审计；收尾决定另保存隔离关系与本批处置，不重写旧账本 |
 | 术语迁移 | `data/audit/migrations/term-v1/terms.tsv` | 348 条冻结审查和消费者去向；只作 audit-only 继承 |
+
+书目分离的逐对象去向与引用变换由专门采纳和迁移清单审计。旧决定及历史 before／after 保留原基线；新的机械映射仅解释列明的位置变换，不覆盖原事实、状态或授权。候选和未核材料保留原审计状态，普通笔记参考链接不自动成为目录记录。
 
 注明不覆盖也是审计追踪。未安放的内容可以被承认，但必须记录。
 

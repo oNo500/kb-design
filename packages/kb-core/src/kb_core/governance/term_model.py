@@ -120,7 +120,7 @@ class TermsSchemaError(ValueError):
 
 def exported_reference_uris():
     return {
-        "basis": SCHEMA_IDS["source-entities.schema.json"] + "#/$defs/basisItem",
+        "basis": SCHEMA_IDS["source-bibliography.schema.json"] + "#/$defs/basisItem",
         "source": SCHEMA_IDS["source-migration.schema.json"] + "#/$defs/source",
         "match": SCHEMA_IDS["source-migration.schema.json"] + "#/$defs/match",
     }

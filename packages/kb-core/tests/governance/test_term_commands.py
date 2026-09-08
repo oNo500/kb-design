@@ -21,6 +21,7 @@ class TermCommandTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             root = pathlib.Path(temporary)
             (root / "data/vocab").mkdir(parents=True)
+            shutil.copytree(ROOT / "data/references", root / "data/references")
             for name in ("topics", "types", "genres", "forms", "entities", "sources"):
                 path = ROOT / "data/vocab" / f"{name}.yaml"
                 shutil.copy2(path, root / "data/vocab" / path.name)
@@ -35,7 +36,7 @@ class TermCommandTests(unittest.TestCase):
             concept["subject_fields"] = []
             # Keep this CLI fixture within the ordinary de-jure definition path;
             # it does not exercise the separately constrained source exceptions.
-            concept["definitions"][0]["basis"][0]["entity"] = "gbt-13745"
+            concept["definitions"][0]["basis"][0]["reference"] = "gbt-13745"
             decision_id = "decision-term-command-fixture"
             for item in [concept, *concept["languages"][0]["terms"]]:
                 item["history"][0]["decision"] = decision_id
@@ -87,7 +88,7 @@ class TermCommandTests(unittest.TestCase):
             self.assertNotEqual(0, incomplete.returncode)
             self.assertIn("glossary-layout.yaml", incomplete.stderr)
             vocabulary_form = next(row for row in yaml.safe_load(
-                (root / "data/vocab/entities.yaml").read_text())["entities"]
+                (root / "data/references/bibliography.yaml").read_text())["references"]
                 if row["id"] == "gbt-13745")["label"]["en"]
             layout = {
                 "schema": "urn:kb-design:layout:glossary:2", "version": 2,

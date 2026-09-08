@@ -49,11 +49,11 @@
 ## 阶段边界
 
 - 迁移账本只作审计，候选和诊断输出只供人工复核，schema、索引、探测、生成和维护能力只证明机械能力；它们都不等于正式数据、草案生效、正式切换或发版
-- 来源与术语基础的原范围见[当前阶段](docs/decisions/current-stage-scope.md)，后续以具体已采纳决定为准。六份词表已按[来源收尾](docs/decisions/source-completion.md)完成来源 v2 迁移；17 条未核映射继续保留审查，不重开或提升为有效映射。完整术语数据、限定准入、生成与维护已实施，[术语发布](docs/decisions/term-complete-publication.md)在临时验收通过后启用结构化术语唯一编辑源及首批术语参考消费。正式义务、持久正式索引、委托、内容消费者、查询日志及回流仍未启用
+- 来源与术语基础的原范围见[当前阶段](docs/decisions/current-stage-scope.md)，后续以具体已采纳决定为准。六份词表的来源 v2 基线按[来源收尾](docs/decisions/source-completion.md)保留；当前按[参考文献分离](docs/decisions/source-bibliography-separation.md)将设计文献置于 `data/references/bibliography.yaml`，六份词表与书目严格使用来源 schema_version 3；17 条未核映射继续保留审查，不重开或提升为有效映射。完整术语数据、限定准入、生成与维护已实施，[术语发布](docs/decisions/term-complete-publication.md)在临时验收通过后启用结构化术语唯一编辑源及首批术语参考消费。正式义务、持久正式索引、委托、内容消费者、查询日志及回流仍未启用
 - Obsidian 是应用层，也是首个完整应用 target；`apps/obsidian/` 中的 `kb-obsidian` 工具读取所在设计仓库的干净 Git 快照，保留显式 `--design-root`，不使用提交白名单，见[工具归属](docs/decisions/obsidian-tool-location.md)。默认持久 vault 位于 Git 忽略的 `output/obsidian/`，也支持显式外部 vault；应用实现和输出目录存在仍不等于消费者激活
 - `kb-obsidian` 已实现新 vault 初始化、显式词表及术语参考刷新、内容建立、内容校验和派生报告；刷新只更新 `kb/` 与 `app/manifest.json`，保留用户内容与配置，见[词表参考刷新](docs/decisions/obsidian-reference-refresh.md)。本轮只在临时 vault 完成完整数据验收，未写入外部正式库；过去空库或单条 draft 的观察不能作为当前内容计数，实际内容消费者、查询日志与回流仍未激活
 - 新内容单元使用无前缀、小写 UUIDv4，UUID 文件名承担稳定路径，title 与派生 alias 等元数据承担人的检索；建立器只创建通过当前约束校验的 `draft`，不批准内容状态或正式分类
-- 来源 v2 与术语参考的正式数据和严格读取已经实施，不等于内容消费者启用、外部 vault 同步或发版。archival 在来源用途记录中只可保留 proposed discovery，不具备 approved 用途；作为具体定义或语言材料的 basis 按独立合同核对。TBX 继续后置为无真实接收方的未生效草案
+- 来源与术语参考的严格读取及书目分离，不等于内容消费者启用、外部 vault 同步或发版。archival 在来源用途记录中只可保留 proposed discovery，不具备 approved 用途；作为具体定义或语言材料的 basis 按独立合同核对。TBX 继续后置为无真实接收方的未生效草案
 
 ## 应用分层
 
@@ -74,13 +74,16 @@
 
 ## 编辑路径
 
+- `data/vocab/entities.yaml` 只保存软件、组织、编程语言等普通实体；设计文献唯一编辑源为 `data/references/bibliography.yaml`，不新增受控词表。用途的 reference 与依据的 reference 指向书目，registry 仍指向用途登记；旧决定与历史保留，只按列明机械映射解释原授权，不扩大权限。
+- 普通实体仅 basis.label、kind、urls、scope、vendor 可采用互斥的 url、locator、checked 官方事实依据；subjects、术语、映射不接受 URL 后备。正文参考链接无需书目准入，候选或未核材料不因迁移提升状态。Obsidian 文献参考输出到 `kb/references/`，entities 与 references 分别解析；普通刷新写集不扩张，旧内容引用使用明确写集的一次性迁移。
+
 - `data/vocab/topics.yaml` 是正式主题词表和确定性生成物，不直接编辑；修改 `data/inputs/topics/` 或核心生成实现，以 `uv run kb-core build-topics` 重建，再运行 `uv run kb-core check-topics`
 - `data/vocab/terms.yaml` 是结构化术语概念、定义与现行名称的唯一编辑源；`docs/glossary.md` 是只读生成页。布局、说明、符号与已批准历史名称展示在 `data/inputs/terminology/glossary-layout.yaml` 维护；模型标签仍属于主题生成输入、`data/vocab/forms.yaml` 与既有语言采纳记录。使用 `kb-core term-data` 校验和定位引用、`build-terms` 生成与核对；正文诊断不产生准入决定
 
 ## 其他约定
 
 - `docs/concepts/` 下的文章另按 [docs/concepts/CONVENTIONS.md](docs/concepts/CONVENTIONS.md)
-- 全部政策见 [docs/design/governance/governance.md](docs/design/governance/governance.md)；来源分级见 [docs/design/model/entities.md](docs/design/model/entities.md)，复核按 [docs/design/governance/maintenance.md](docs/design/governance/maintenance.md)
+- 全部政策见 [docs/design/governance/governance.md](docs/design/governance/governance.md)；来源分级见 [docs/design/model/bibliography.md](docs/design/model/bibliography.md)，复核按 [docs/design/governance/maintenance.md](docs/design/governance/maintenance.md)
 - 外部事实须核对原文后才提交；本阶段未取得的外部事实如实标为未核实。译名第 5 级按模型知识例外登记，不冒充已核外部事实；链接用 `[标题](url)`
 
 

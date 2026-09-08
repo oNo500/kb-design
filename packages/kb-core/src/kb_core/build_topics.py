@@ -10,7 +10,7 @@ from datetime import date
 import yaml
 from kb_core.repository import project_root
 from kb_core.label_adoptions import apply_adoptions, load_adoptions
-from kb_core.apply_source_migration import load_reference_inputs, migrate_reference_document
+from kb_core.apply_source_migration import load_reference_inputs, assemble_historical_reference_document
 from kb_core.gbt_en import en_of
 
 TODAY = '2026-08-23'
@@ -163,8 +163,29 @@ def _assemble_topics(ROOT):
 
 def build_topics(root, reference_inputs=None):
     root = pathlib.Path(root)
-    return migrate_reference_document(root, 'topics', _assemble_topics(root),
-                                      load_reference_inputs(root, reference_inputs))
+    from kb_core.source_model import BIBLIOGRAPHY_BASE_COMMIT, migrate_bibliography_value
+    document = assemble_historical_reference_document(root, 'topics', _assemble_topics(root),
+                                          load_reference_inputs(root, reference_inputs))
+    migration = json.loads((root / 'data/inputs/topics/bibliography-migration.json').read_text())
+    if (migration.get('schema') != 'urn:kb-design:input:bibliography-migration'
+            or migration.get('version') != 1
+            or migration.get('decision') != 'decision-bibliography-separation'
+            or migration.get('base_commit') != BIBLIOGRAPHY_BASE_COMMIT):
+        raise ValueError('invalid bibliography generation migration')
+    from kb_core.source_model import _load_accepted_decisions
+    decision = _load_accepted_decisions(root / 'docs/decisions').get(migration['decision'], {})
+    controls = [patch.get('value', {}) for answer in decision.get('answers', []) for patch in answer.get('patches', [])
+                if patch.get('identity') == '@control:bibliography' and patch.get('field') == 'migration']
+    if decision.get('level') != 'L3' or not any(control.get('base_commit') == migration['base_commit']
+            and control.get('migrated_reference_ids') == migration.get('reference_ids') for control in controls):
+        raise ValueError('bibliography generation migration lacks exact authorization')
+    document = migrate_bibliography_value(document, set(migration['reference_ids']))
+    document['schema_version'] = 3
+    from kb_core.source_model import collect_reference_uses, validate_references
+    issues = validate_references(root, collect_reference_uses(pathlib.Path('data/vocab/topics.yaml'), document))
+    if issues:
+        raise ValueError('\n'.join(str(issue) for issue in issues))
+    return document
 
 
 def topic_output_path(root, output=None):

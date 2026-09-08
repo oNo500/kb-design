@@ -5,8 +5,9 @@ from typing import List, Sequence, get_args, get_type_hints
 
 
 EXPECTED_SCHEMA_IDS = {
-    "source-entities.schema.json": "urn:kb-design:schema:source-entities:2",
-    "source-uses.schema.json": "urn:kb-design:schema:source-uses:2",
+    "source-bibliography.schema.json": "urn:kb-design:schema:source-bibliography:3",
+    "source-entities.schema.json": "urn:kb-design:schema:source-entities:3",
+    "source-uses.schema.json": "urn:kb-design:schema:source-uses:3",
     "source-obligations.schema.json": "urn:kb-design:schema:source-obligations:1",
     "source-reference-index.schema.json": "urn:kb-design:schema:source-reference-index:1",
     "source-probe.schema.json": "urn:kb-design:schema:source-probe:1",

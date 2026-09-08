@@ -13,13 +13,14 @@ from kb_core.governance.term_validation import (
     validate_term_snapshot,
 )
 from kb_core.source_model import accepted_decisions_from_documents
+from source_governance_helpers import current_reference_value
 
 
 ROOT = Path(__file__).resolve().parents[4]
 FIXTURE = ROOT / "tests/fixtures/terminology/valid/minimal-active.yaml"
-CANDIDATE = json.loads(
+CANDIDATE = current_reference_value(json.loads(
     (ROOT / "work/reviews/2026-09-06-term-complete-candidate.json").read_text()
-)
+))
 
 
 def decision(decision_id, patches, *, status="accepted", level="L3", supersedes=None):
@@ -44,7 +45,7 @@ class TermValidationTests(unittest.TestCase):
         self.term = self.concept["languages"][0]["terms"][0]
         self.sources = {
             "topics": {"concepts": [{"id": "computing"}]},
-            "entities": {"entities": [{
+            "bibliography": {"references": [{
                 "id": "cs2023", "kind": "standard", "tier": "de-jure",
                 "version": "2023", "fixed_sha256": "0" * 64,
             }]},
@@ -228,7 +229,7 @@ class TermValidationTests(unittest.TestCase):
 
     def test_bad_source_reference_is_rejected_despite_exact_grant(self):
         value = copy.deepcopy(self.value)
-        value["concepts"][0]["definitions"][0]["basis"][0]["entity"] = "missing"
+        value["concepts"][0]["definitions"][0]["basis"][0]["reference"] = "missing"
 
         self.assertIn("TERM_SOURCE_CONTRACT_SOURCE_ENTITY_MISSING", self.codes(value=value))
 
@@ -321,13 +322,13 @@ class TermValidationTests(unittest.TestCase):
             [entry["permission_patch"]], level="L3",
         )
         decisions = {data_grant["id"]: data_grant, permission["id"]: permission}
-        self.sources["entities"]["entities"].append({
+        self.sources["bibliography"]["references"].append({
             "id": "swebok", "kind": "standard", "tier": "de-facto",
             "version": "4.0", "fixed_sha256": "1" * 64,
         })
 
         self.assertEqual(set(), self.codes(value=value, decisions=decisions))
-        self.sources["entities"]["entities"][-1]["version"] = "5.0"
+        self.sources["bibliography"]["references"][-1]["version"] = "5.0"
         self.assertIn(
             "TERM_DEFINITION_SOURCE_FORBIDDEN",
             self.codes(value=value, decisions=decisions),
@@ -656,7 +657,7 @@ class TermValidationTests(unittest.TestCase):
         value = copy.deepcopy(self.value)
         value["concepts"][0]["subject_fields"] = [{
             "topic_id": "array-only",
-            "basis": [{"entity": "cs2023", "locator": "array", "checked": "2026-08-31"}],
+            "basis": [{"reference": "cs2023", "locator": "array", "checked": "2026-08-31"}],
         }]
         self.sources["topics"]["arrays"] = [{"id": "array-only"}]
 

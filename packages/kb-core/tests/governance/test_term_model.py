@@ -111,7 +111,7 @@ class TermModelTests(unittest.TestCase):
         schema = build_terms_schema()
 
         self.assertEqual(
-            SCHEMA_IDS["source-entities.schema.json"] + "#/$defs/basisItem",
+            SCHEMA_IDS["source-bibliography.schema.json"] + "#/$defs/basisItem",
             refs["basis"],
         )
         self.assertEqual(
@@ -125,7 +125,7 @@ class TermModelTests(unittest.TestCase):
 
     def test_source_issue_code_and_path_are_preserved(self):
         value = copy.deepcopy(self.valid_value)
-        value["concepts"][0]["definitions"][0]["basis"][0]["entity"] = "missing"
+        value["concepts"][0]["definitions"][0]["basis"][0]["reference"] = "missing"
 
         issues = validate_terms(
             parse_terms(value), self.source_root, self.topic_ids,

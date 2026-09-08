@@ -2,9 +2,9 @@
 
 `data/vocab/topics.yaml` 是本库的正式主题叙词表，也是由 `uv run kb-core build-topics` 确定生成的输出。它由概念记录、记录中的标签、概念之间的层级与相关关系，以及概念到外部词表的映射构成，用于给内容单元标引主题、检索和生成导航。知识图谱和导航是它的用法或升级方向，不是词表本身。
 
-人工不直接编辑 `data/vocab/topics.yaml`。当前编辑源是生成脚本及其实际读取的 `data/inputs/topics/` 输入；修改输出而不修改编辑源，会在下次生成时丢失。本文规定词表范围、记录、关系、映射、生命周期、建设流程和校验。树的结构见[层级结构](hierarchy.md)，外部来源登记见[来源名称规范表](sources-registry.md)。理论依据见[受控词表](../../concepts/controlled-vocabulary.md)和[词表的建设与维护](../../concepts/vocabulary-construction.md)。
+人工不直接编辑 `data/vocab/topics.yaml`。当前编辑源是生成脚本及其实际读取的 `data/inputs/topics/` 输入；修改输出而不修改编辑源，会在下次生成时丢失。本文规定词表范围、记录、关系、映射、生命周期、建设流程和校验。树的结构见[层级结构](hierarchy.md)，外部来源登记见[来源用途登记](sources-registry.md)。理论依据见[受控词表](../../concepts/controlled-vocabulary.md)和[词表的建设与维护](../../concepts/vocabulary-construction.md)。
 
-来源引用按[来源收尾](../../decisions/source-completion.md)的逐项采纳范围实施。下文按已采纳的[来源字段合同](../../decisions/source-v2-field-contract.md)说明目标记录和严格生成要求；工具只输出并校验新格式，缺少逐字段采纳输入时失败，不退回旧 source 或 match。主题身份、结构和语言采纳保持各自所有权；术语迁移不建立标签委托。
+来源引用按[来源收尾](../../decisions/source-completion.md)的逐项采纳范围实施。下文按原[来源字段合同](../../decisions/source-v2-field-contract.md)及[参考文献分离](../../decisions/source-bibliography-separation.md)说明目标记录和严格生成要求；文献 basis.reference 指向参考文献目录，registry 仍指向用途登记，主题与映射不接受直接 URL 后备；工具只输出并校验新格式，缺少逐字段采纳输入时失败，不退回旧 source 或 match。主题身份、结构和语言采纳保持各自所有权；术语迁移不建立标签委托。
 
 ## 词表总览
 
@@ -79,7 +79,7 @@
 | 通用职业技能（写作、沟通、时间管理） | `computing` › `society-ethics-and-the-profession`；写作另可挂在 `journalism-and-communication` 以下 | CS2023 SEP |
 | 术语学（ISO 704、1087、30042） | `linguistics` › 740.35 应用语言学以下，作为本地概念 | GB/T 13745 740.35 |
 | Web 开发 | `specialized-platform-development` › Web Platforms；MDN 只作映射 | CS2023 SPD |
-| 结构化写作（DITA） | `journalism-and-communication` 以下；DITA 标准作为实体，`subjects` 指向同一处 | GB/T 13745 860；技术写作属传播 |
+| 结构化写作（DITA） | `journalism-and-communication` 以下；DITA 标准作为参考文献，`subjects` 指向同一处 | GB/T 13745 860；技术写作属传播 |
 
 ### 排除范围
 
@@ -110,7 +110,9 @@
 - `data/inputs/topics/label-decisions.json`
 - `data/inputs/topics/label-adoptions.json`
 - `data/vocab/sources.yaml`（语言依据的来源登记校验）
-- `data/inputs/topics/source-references-v2.json`（逐字段来源引用采纳；也可由 `--references` 显式指定）
+- `data/references/bibliography.yaml`（文献身份与严格引用校验）
+- `data/inputs/topics/source-references-v2.json`（保留原 v2 逐字段采纳基线；也可由 `--references` 显式指定）
+- `data/inputs/topics/bibliography-migration.json`（按列明机械变换将上述结果转为 v3 文献引用，不扩大原采纳）
 - `data/inputs/topics/scope-zh.json`
 - `packages/kb-core/src/kb_core/build_topics.py` 中的顶层、图书馆情报与文献学分支、多层级规则、版本和日期
 
@@ -118,7 +120,7 @@
 
 核心包中的 `label_basis` 模块统一语言依据的标准化、校验与人读字段，`label_adoptions` 模块处理采纳记录。新增输入只参与标签采纳及依据校验，树结构仍由原有输入决定。
 
-来源引用输入记录准确旧值、目标新值和对应采纳决定；缺失输入或未覆盖的引用阻断生成，不能原样输出旧字段。[来源收尾](../../decisions/source-completion.md)明确隔离的旧 match 必须有准确旧值与决定对应，才能从正式映射中排除；不能把任何未核引用自动当作空值。`--output` 可以将候选写到 build 下或外部临时目录；不把临时生成当作正式切换。修改主题数据时先改生成脚本或实际输入，再重建并检查差异；应用只读取输出，不反向编辑。
+来源引用输入记录准确旧值、目标新值和对应采纳决定；书目分离只按采纳清单转换文献身份位置与依据键名，原采纳内容、语言等级和历史保持；缺失输入或未覆盖的引用阻断生成，不能原样输出旧字段。[来源收尾](../../decisions/source-completion.md)明确隔离的旧 match 必须有准确旧值与决定对应，才能从正式映射中排除；不能把任何未核引用自动当作空值。`--output` 可以将候选写到 build 下或外部临时目录；不把临时生成当作正式切换。修改主题数据时先改生成脚本或实际输入，再重建并检查差异；应用只读取输出，不反向编辑。
 
 ## 概念记录
 
@@ -148,7 +150,7 @@ source 与 assertions.source 互斥。本地建立且没有实际派生时不填
 
 ## 语言依据
 
-[语言依据结构](../../decisions/structured-label-basis.md)规定 `basis.zh`／`basis.en` 的现行合同，替代旧字符串模型标记。语言依据与来源 v2 的共享引用是两个合同；来源迁移不改变既有语言等级、模型授权或采纳记录。
+[语言依据结构](../../decisions/structured-label-basis.md)规定 `basis.zh`／`basis.en` 的现行合同，替代旧字符串模型标记。语言依据与来源共享引用是两个合同；来源迁移不改变既有语言等级、模型授权或采纳记录。
 
 | 依据性质 | 结构 | 条件 |
 |---|---|---|
@@ -165,7 +167,7 @@ source 与 assertions.source 互斥。本地建立且没有实际派生时不填
 
 ### 模型标记
 
-第 5 级使用完整的 `model` 对象，保留模型、日期、判断与授权，不再写单独的 `basis.zh: model` 字符串。这个历史章节锚点继续保留；当前依据形状以上表为准，模型信息不作为来源实体或来源用途。
+第 5 级使用完整的 `model` 对象，保留模型、日期、判断与授权，不再写单独的 `basis.zh: model` 字符串。这个历史章节锚点继续保留；当前依据形状以上表为准，模型信息不作为文献身份或来源用途。
 
 ### 采纳记录
 
@@ -201,7 +203,7 @@ HTML 在名称旁直接显示“模型知识 · 第 5 级”，并注明“外�
 ## 建设流程
 
 1. 写明“范围与用途”的排除项。
-2. 逐个核对各数组来源的当前版本和条目，并登记到 `sources.yaml`。
+2. 逐个核对各数组来源的当前版本和条目，需要登记设计文献时先核对实际贡献并进入参考文献目录，再在 `sources.yaml` 分别取得用途资格。
 3. 按[层级结构](hierarchy.md)的来源表复制第 3 层，记录全部使用 `unassigned`，填写严格 `source`，并用具有独立依据的 `match` 指回来源条目。
 4. 把现有约 90 个概念挂到树上：来源已有的第 3 层概念并入复制结构；本地概念先建立 `candidate` 记录，没有实际派生来源时不填 `source`。生成器按已采纳引用输入表示本地建立事实，不以 `source: self` 回退。
 5. 自下而上校正时，从现有内容、书签和文献识别带来源上下文的字符串或名词短语，先与已登记的 `label`、`alt` 和 `hidden` 匹配。匹配后按概念 id 与树比较；未解析项只交人工判断，不自动建立概念或关系。
@@ -224,14 +226,14 @@ HTML 在名称旁直接显示“模型知识 · 第 5 级”，并注明“外�
 - label.en 和 alt 的现有全表唯一性规则保留；统计每个第 2 层概念下 unassigned 比例，候选引用计数依赖正式消费者的可审计输入。
 - 分析数组的成员位于上位下位集合内，同一已登记 characteristic 下每个下位概念至多属于一组；自定断言指标不因字段形状变化取消。
 
-现行数据已采用严格 v2；后续严格命令失败须按报错定位事实、采纳或结构问题，不允许恢复旧格式。候选识别仍为 report-only，不形成新概念或关系。
+现行来源数据采用严格 v3；后续严格命令失败须按报错定位事实、采纳或结构问题，不允许恢复旧格式。候选识别仍为 report-only，不形成新概念或关系。
 
 ## 设计分工
 
 | 事项 | 文档 | 关系 |
 |---|---|---|
 | 树的分层、划分和复制来源 | [层级结构](hierarchy.md) | 本文的 `broader`、`arrays`、现行 `source` 按其规则填写 |
-| 外部体系登记、复制、映射和派生组 | [来源名称规范表](sources-registry.md) | 用途资格与严格共享引用的职责说明；本文不自行批准角色或关系 |
+| 外部体系登记、复制、映射和派生组 | [来源用途登记](sources-registry.md) | 用途资格与严格共享引用的职责说明；本文不自行批准角色或关系 |
 | 主题标签 | 本文与生成输入 | `label`、`alt`、`hidden` 继续附着于现行主题概念；写法须已在现行 glossary 登记 |
 | designation 登记 | [治理](../governance/governance.md)与 `docs/glossary.md` | 术语形式由 terms 编辑、布局单独维护、模型标签保留原编辑源；glossary 只读生成，正文诊断只供人工判断 |
 | 术语基础 | [术语治理草案](../../drafts/terminology-governance.md) | 157 个正式概念及首批生成与参考消费已启用；义务、委托与 TBX 未开放 |

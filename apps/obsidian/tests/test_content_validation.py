@@ -47,10 +47,9 @@ class ContentValidationTests(unittest.TestCase):
                 "entities": {
                     "entities": (
                         {"id": "obsidian", "kind": "software", "status": "active"},
-                        {"id": "rfc-9562", "kind": "standard", "status": "active"},
-                        {"id": "metadata-paper", "kind": "publication", "status": "active"},
                     )
                 },
+                "bibliography": {"references": ({"id": "rfc-9562", "kind": "standard", "status": "active"}, {"id": "metadata-paper", "kind": "publication", "status": "active"})},
                 "sources": {"sources": ()},
                 "types": {"types": ({"id": "tutorial", "status": "active"},)},
                 "genres": {"genres": ({"id": "analysis", "status": "active"},)},
@@ -63,6 +62,17 @@ class ContentValidationTests(unittest.TestCase):
         self.vault_gate.stop()
         self.temporary.cleanup()
 
+    def test_entity_and_bibliography_targets_remain_distinct(self):
+        """A real target in the wrong directory must not authorize an object reference."""
+        from kb_obsidian.validation import validate_content
+        self._write_note(UUID_A, kb_entities=["[[kb/references/rfc-9562]]"],
+                         kb_references=["[[kb/entities/obsidian]]"],
+                         kb_source="[[kb/references/rfc-9562]]")
+        before = {path: path.read_bytes() for path in (self.vault / "content").glob("*.md")}
+        result = validate_content(self.snapshot, self.vault)
+        self.assertEqual({"kb_entities", "kb_references"}, {issue.field for issue in result.issues})
+        self.assertEqual(before, {path: path.read_bytes() for path in before})
+
     def test_valid_content_parses_all_sixteen_fields_as_immutable_data(self) -> None:
         """Removing any modeled field check must not let the complete contract drift silently."""
         from kb_obsidian.validation import validate_content
@@ -74,7 +84,7 @@ class ContentValidationTests(unittest.TestCase):
             kb_level="analyze",
             kb_entities=["[[kb/entities/obsidian|Obsidian]]"],
             kb_source=f"[[content/{UUID_B}|来源内容]]",
-            kb_references=["[[kb/entities/rfc-9562|RFC 9562]]"],
+            kb_references=["[[kb/references/rfc-9562|RFC 9562]]"],
             kb_modified="2026-09-03",
             kb_status="deprecated",
             kb_is_replaced_by=f"[[content/{UUID_C}|新内容]]",

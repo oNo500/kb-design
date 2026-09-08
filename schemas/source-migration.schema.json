@@ -7,17 +7,17 @@
           "format": "date",
           "type": "string"
         },
-        "entity": {
-          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
-          "type": "string"
-        },
         "locator": {
           "minLength": 1,
+          "type": "string"
+        },
+        "reference": {
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
           "type": "string"
         }
       },
       "required": [
-        "entity",
+        "reference",
         "locator"
       ],
       "type": "object"

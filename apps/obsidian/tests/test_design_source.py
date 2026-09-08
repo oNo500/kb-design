@@ -170,8 +170,8 @@ class DesignSourceTests(unittest.TestCase):
             manifest = export_reference(snapshot, output)
 
             self.assertEqual(self.fixture_commit, manifest["design_commit"])
-            self.assertEqual({"topics", "entities", "sources", "types", "genres", "forms"}, set(snapshot.documents))
-            self.assertEqual(6, len(snapshot.input_hashes))
+            self.assertEqual({"topics", "entities", "bibliography", "sources", "types", "genres", "forms"}, set(snapshot.documents))
+            self.assertEqual(7, len(snapshot.input_hashes))
             self.assertTrue((output / "kb").is_dir())
             self.assertEqual(["kb"], sorted(path.name for path in output.iterdir()))
 

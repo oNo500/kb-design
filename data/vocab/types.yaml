@@ -1,110 +1,104 @@
-# 来源 v2 数据；语义与采纳见 docs/decisions/source-completion.md。
+# 来源 v3 引用；语义与迁移见 docs/decisions/source-bibliography-separation.md。
 version:
-  id: '2026.08'
-  date: 2026-08-23
+  id: "2026.08"
+  date: "2026-08-23"
   note: Diátaxis 四类加 DITA 两类
 types:
-- id: tutorial
-  label:
-    zh: 教程
-    en: Tutorial
-  scope: 读者为了学习、动手做一遍；带着做，保证成功
-  status: active
-  added: 2026-08-23
-  match:
-  - registry: diataxis
-    item: tutorials
-    rel: exactMatch
-    basis:
-    - entity: diataxis
-      locator: https://diataxis.fr/tutorials/；开头、Obligations of the teacher、Aspire
-        to perfect reliability
-      checked: '2026-09-06'
-- id: how-to
-  label:
-    zh: 操作指南
-    en: How-to guide
-  scope: 读者为了完成一个具体任务；步骤，不解释
-  status: active
-  added: 2026-08-23
-  match:
-  - registry: diataxis
-    item: how-to-guides
-    rel: exactMatch
-    basis:
-    - entity: diataxis
-      locator: https://diataxis.fr/how-to-guides/；开头、What how-to guides are not、Key
-        principles
-      checked: '2026-09-06'
-  - registry: schema-org
-    item: HowTo
-    rel: closeMatch
-    basis:
-    - entity: schema-org
-      locator: https://schema.org/version/30.0/schemaorg-current-https.jsonld；@graph[@id="schema:HowTo"].rdfs:comment
-      checked: '2026-09-06'
-- id: reference
-  label:
-    zh: 参考
-    en: Reference
-  scope: 读者为了查阅事实；克制中立，结构镜像被描述的对象
-  status: active
-  added: 2026-08-23
-  match:
-  - registry: diataxis
-    item: reference
-    rel: exactMatch
-    basis:
-    - entity: diataxis
-      locator: https://diataxis.fr/reference/；开头、Describe and only describe、Respect
-        the structure of the machinery
-      checked: '2026-09-06'
-- id: explanation
-  label:
-    zh: 解释
-    en: Explanation
-  scope: 读者为了理解为什么；讨论，多角度，承认观点
-  status: active
-  added: 2026-08-23
-  match:
-  - registry: diataxis
-    item: explanation
-    rel: exactMatch
-    basis:
-    - entity: diataxis
-      locator: https://diataxis.fr/explanation/#admit-opinion-and-perspective；开篇、boundaries
-        与观点范围
-      checked: '2026-09-05'
-- id: troubleshooting
-  label:
-    zh: 排障
-    en: Troubleshooting
-  scope: 读者为了纠正一个已出现的问题；症状、原因、处理
-  status: active
-  added: 2026-08-23
-  match:
-  - registry: dita
-    item: 2.7.1.6
-    rel: exactMatch
-    basis:
-    - entity: dita
-      locator: https://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/technicalContent/dita-troubleshooting-topic.html；2.7.1.6
-        开头、The troubleshooting information type、页脚
-      checked: '2026-09-06'
-- id: glossary-entry
-  label:
-    zh: 术语条目
-    en: Glossary entry
-  scope: 一个术语的一个义项
-  status: active
-  added: 2026-08-23
-  match:
-  - registry: dita
-    item: 2.7.1.7
-    rel: exactMatch
-    basis:
-    - entity: dita
-      locator: https://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/technicalContent/dita-glossary-topic.html；2.7.1.7
-        开头、The structure of the glossentry topic、页脚
-      checked: '2026-09-06'
-schema_version: 2
+  - id: tutorial
+    label:
+      zh: 教程
+      en: Tutorial
+    scope: 读者为了学习、动手做一遍；带着做，保证成功
+    status: active
+    added: "2026-08-23"
+    match:
+      - registry: diataxis
+        item: tutorials
+        rel: exactMatch
+        basis:
+          - reference: diataxis
+            locator: https://diataxis.fr/tutorials/；开头、Obligations of the teacher、Aspire to perfect reliability
+            checked: "2026-09-06"
+  - id: how-to
+    label:
+      zh: 操作指南
+      en: How-to guide
+    scope: 读者为了完成一个具体任务；步骤，不解释
+    status: active
+    added: "2026-08-23"
+    match:
+      - registry: diataxis
+        item: how-to-guides
+        rel: exactMatch
+        basis:
+          - reference: diataxis
+            locator: https://diataxis.fr/how-to-guides/；开头、What how-to guides are not、Key principles
+            checked: "2026-09-06"
+      - registry: schema-org
+        item: HowTo
+        rel: closeMatch
+        basis:
+          - reference: schema-org
+            locator: https://schema.org/version/30.0/schemaorg-current-https.jsonld；@graph[@id="schema:HowTo"].rdfs:comment
+            checked: "2026-09-06"
+  - id: reference
+    label:
+      zh: 参考
+      en: Reference
+    scope: 读者为了查阅事实；克制中立，结构镜像被描述的对象
+    status: active
+    added: "2026-08-23"
+    match:
+      - registry: diataxis
+        item: reference
+        rel: exactMatch
+        basis:
+          - reference: diataxis
+            locator: https://diataxis.fr/reference/；开头、Describe and only describe、Respect the structure of the machinery
+            checked: "2026-09-06"
+  - id: explanation
+    label:
+      zh: 解释
+      en: Explanation
+    scope: 读者为了理解为什么；讨论，多角度，承认观点
+    status: active
+    added: "2026-08-23"
+    match:
+      - registry: diataxis
+        item: explanation
+        rel: exactMatch
+        basis:
+          - reference: diataxis
+            locator: https://diataxis.fr/explanation/#admit-opinion-and-perspective；开篇、boundaries 与观点范围
+            checked: "2026-09-05"
+  - id: troubleshooting
+    label:
+      zh: 排障
+      en: Troubleshooting
+    scope: 读者为了纠正一个已出现的问题；症状、原因、处理
+    status: active
+    added: "2026-08-23"
+    match:
+      - registry: dita
+        item: 2.7.1.6
+        rel: exactMatch
+        basis:
+          - reference: dita
+            locator: https://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/technicalContent/dita-troubleshooting-topic.html；2.7.1.6 开头、The troubleshooting information type、页脚
+            checked: "2026-09-06"
+  - id: glossary-entry
+    label:
+      zh: 术语条目
+      en: Glossary entry
+    scope: 一个术语的一个义项
+    status: active
+    added: "2026-08-23"
+    match:
+      - registry: dita
+        item: 2.7.1.7
+        rel: exactMatch
+        basis:
+          - reference: dita
+            locator: https://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/technicalContent/dita-glossary-topic.html；2.7.1.7 开头、The structure of the glossentry topic、页脚
+            checked: "2026-09-06"
+schema_version: 3

@@ -5,12 +5,12 @@ concepts:
     subject_fields:
       - topic_id: computing
         basis:
-          - {entity: cs2023, locator: "knowledge area", checked: "2026-08-31"}
+          - {reference: cs2023, locator: "knowledge area", checked: "2026-08-31"}
     definitions:
       - language: en
         text: A fixture concept.
         basis:
-          - {entity: cs2023, locator: "definition", checked: "2026-08-31"}
+          - {reference: cs2023, locator: "definition", checked: "2026-08-31"}
     languages:
       - language: en
         terms:
@@ -18,7 +18,7 @@ concepts:
             text: Alpha
             administrative_status: preferredTerm-admn-sts
             basis:
-              - {entity: cs2023, locator: "preferred term", checked: "2026-08-31"}
+              - {reference: cs2023, locator: "preferred term", checked: "2026-08-31"}
             history:
               - date: "2026-08-31"
                 event: registered
@@ -31,7 +31,7 @@ concepts:
             text: Beta
             administrative_status: admittedTerm-admn-sts
             basis:
-              - {entity: cs2023, locator: "admitted term", checked: "2026-08-31"}
+              - {reference: cs2023, locator: "admitted term", checked: "2026-08-31"}
             history:
               - date: "2026-08-31"
                 event: registered
@@ -41,7 +41,7 @@ concepts:
                 to_value: admittedTerm-admn-sts
                 linked_terms: [tm-22222222-2222-4222-8222-222222222222]
     basis:
-      - {entity: cs2023, locator: "concept identity", checked: "2026-08-31"}
+      - {reference: cs2023, locator: "concept identity", checked: "2026-08-31"}
     workflow: active
     history:
       - date: "2026-08-31"

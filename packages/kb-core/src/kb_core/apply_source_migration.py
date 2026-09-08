@@ -233,17 +233,17 @@ def _field_is_adopted(decisions, identity, field, value, evidence):
             and decision_authorizes(decisions, evidence.get('decision'), identity, field, value))
 
 
-def migrate_reference_document(root, collection, document, inputs):
+def assemble_historical_reference_document(root, collection, document, inputs):
     """Replace reference fields only, requiring exact old values and adoptions.
 
     This produces a candidate document, not activation or approval of a dataset.
     Language basis, IDs and memberships are copied. Scope changes require a separate
     exact adoption and an old-value snapshot after language adoptions are applied.
     """
-    from kb_core.source_model import collect_reference_uses, validate_references, _load_accepted_decisions
+    from kb_core.source_model import collect_reference_uses, validate_references, _load_accepted_decisions, compile_decisions
     if inputs.get('schema_version') != 2 or not isinstance(inputs.get('records'), dict):
         raise ValueError('invalid v2 reference inputs')
-    decisions = _load_accepted_decisions(Path(root) / 'docs/decisions')
+    decisions = compile_decisions(_load_accepted_decisions(Path(root) / 'docs/decisions'))
     result = deepcopy(document)
     blockers = []
     seen = set()
@@ -362,12 +362,32 @@ def migrate_reference_document(root, collection, document, inputs):
             blockers.append(f'{identity}: unknown migration target')
     if blockers:
         raise ValueError('\n'.join(sorted(blockers)))
-    references = collect_reference_uses(Path(f'data/vocab/{collection}.yaml'), result)
-    issues = validate_references(Path(root), references)
-    if issues:
-        raise ValueError('\n'.join(f'{collection}/{issue.record}.{issue.field_path}: {issue.code}' for issue in issues))
     result['schema_version'] = 2
+    # This historical stage still rejects malformed adopted values. It does not
+    # resolve current catalog identities or grant current source-use authority.
+    from jsonschema import Draft202012Validator, FormatChecker
+    from kb_core.source_model import build_schema_documents, collect_reference_uses
+    schema = deepcopy(build_schema_documents()['source-migration.schema.json'])
+    item = schema['$defs']['basisItem']
+    item['required'] = ['entity', 'locator']
+    item['properties']['entity'] = item['properties'].pop('reference')
+    definitions = {'basis': 'basisItem', 'source': 'source',
+                   'match': 'match', 'external_group': 'source'}
+    for use in collect_reference_uses(Path(f'data/vocab/{collection}.yaml'), result):
+        check = {'$defs': schema['$defs'], '$ref': '#/$defs/' + definitions[use.kind]}
+        errors = list(Draft202012Validator(check, format_checker=FormatChecker()).iter_errors(use.value))
+        if errors:
+            raise ValueError(f'{collection}/{use.record}.{use.field_path}: {errors[0].message}')
     return result
+
+
+def migrate_reference_document(root, collection, document, inputs):
+    """Return the historical v2 candidate after exact input-adoption checks.
+
+    This is not a current formal-document reader. The topic generator applies
+    the separately authorized bibliography stage before live v3 validation.
+    """
+    return assemble_historical_reference_document(root, collection, document, inputs)
 
 
 def write_reference_candidate(root, collection, output, inputs_path=None):

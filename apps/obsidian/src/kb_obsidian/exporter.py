@@ -43,6 +43,7 @@ _FILES = OrderedDict(
     (
         ("topics", ("data/vocab/topics.yaml", {"version", "arrays", "concepts"})),
         ("entities", ("data/vocab/entities.yaml", {"schema", "schema_version", "version", "entities"})),
+        ("bibliography", ("data/references/bibliography.yaml", {"schema", "schema_version", "version", "references"})),
         ("sources", ("data/vocab/sources.yaml", {"schema", "schema_version", "version", "sources"})),
         ("types", ("data/vocab/types.yaml", {"version", "types"})),
         ("genres", ("data/vocab/genres.yaml", {"version", "genres"})),
@@ -201,8 +202,10 @@ for _key in _COLLECTION_FIELDS:
 _COLLECTION_FIELDS[("entities", "entities")].difference_update({"url", "checked"})
 _COLLECTION_FIELDS[("entities", "entities")].update({"urls", "review", "source_status", "fixed_sha256"})
 _COLLECTION_FIELDS[("forms", "arrays")].add("local_analysis")
-_COLLECTION_FIELDS[("sources", "sources")] = {"id", "entity", "roles", "history"}
-_REQUIRED_FIELDS[("sources", "sources")] = {"id", "entity", "roles"}
+_COLLECTION_FIELDS[("bibliography", "references")] = set(_COLLECTION_FIELDS[("entities", "entities")])
+_REQUIRED_FIELDS[("bibliography", "references")] = set(_REQUIRED_FIELDS[("entities", "entities")])
+_COLLECTION_FIELDS[("sources", "sources")] = {"id", "reference", "roles", "history"}
+_REQUIRED_FIELDS[("sources", "sources")] = {"id", "reference", "roles"}
 
 
 def _schema_check(value, schema, location):
@@ -218,6 +221,7 @@ _KIND_DIRECTORIES = {
     "topic": "topics",
     "array": "arrays",
     "entity": "entities",
+    "reference": "references",
     "source": "sources",
     "type": "types",
     "genre": "genres",
@@ -335,7 +339,7 @@ def _validate_record(
     string_fields = {
         "id",
         "superordinate",
-        "entity",
+        "reference",
         "kind",
         "vendor",
         "replaced_by",
@@ -347,7 +351,7 @@ def _validate_record(
         "status",
     }
     for field in string_fields & set(record):
-        if collection == "entities" and field in {"version", "replaced_by"} and record[field] is None:
+        if collection in {"entities", "references"} and field in {"version", "replaced_by"} and record[field] is None:
             continue
         _check_string(relative_path, object_id, f"{record_path}.{field}", record[field])
 
@@ -371,7 +375,7 @@ def _validate_record(
         if field in record:
             _check_language_forms(relative_path, object_id, f"{record_path}.{field}", record[field], True)
 
-    if "basis" in record and collection != "entities":
+    if "basis" in record and collection not in {"entities", "references"}:
         allowed_basis = {"subjects"} if collection == "entities" else {"zh", "en"}
         _check_keys(
             relative_path,
@@ -391,7 +395,7 @@ def _validate_record(
             path = f"{record_path}.basis.{field}"
             if basis == "model" or isinstance(basis, list) and "model" in basis:
                 raise _error(relative_path, object_id, path, "model requires structured language evidence")
-            if collection != "entities" and field in ("zh", "en") and isinstance(basis, dict):
+            if collection not in {"entities", "references"} and field in ("zh", "en") and isinstance(basis, dict):
                 errors = validate_basis(basis, record.get("label", {}).get(field), record,
                                         field, None, adoptions, collection=name,
                                         accepted_decisions=accepted_decisions)
@@ -538,10 +542,10 @@ def load_repository(
         except (KeyError, UnicodeError, yaml.YAMLError) as exc:
             raise ExportError(f"{relative_path}: object <document>: document: {exc}") from exc
         _check_keys(relative_path, "<document>", "document", document, allowed_top)
-        if type(document.get("schema_version")) is not int or document["schema_version"] != 2:
-            raise ExportError(f"{relative_path}: schema_version must be 2")
-        if name in {"entities", "sources"}:
-            schema_name = "source-entities.schema.json" if name == "entities" else "source-uses.schema.json"
+        if type(document.get("schema_version")) is not int or document["schema_version"] != 3:
+            raise ExportError(f"{relative_path}: schema_version must be 3")
+        if name in {"entities", "sources", "bibliography"}:
+            schema_name = {"entities": "source-entities.schema.json", "sources": "source-uses.schema.json", "bibliography": "source-bibliography.schema.json"}[name]
             _schema_check(document, source_model.build_schema_documents()[schema_name], relative_path)
         _check_keys(relative_path, "<version>", "version", document.get("version"), {"id", "date", "note"})
         _check_required_keys(
@@ -608,7 +612,7 @@ def load_repository(
             raise ExportError(f"invalid formal term input: {exc}") from exc
         term_issues = validate_term_snapshot(
             terms,
-            source_documents={name: documents[name] for name in ("topics", "entities", "sources")},
+            source_documents={name: documents[name] for name in ("topics", "entities", "bibliography", "sources")},
             accepted_decisions=decisions,
             previous=previous_terms,
             state=term_state,
@@ -673,6 +677,7 @@ def _validate_references(documents: Mapping[str, dict], *, adoptions=None, accep
     topics = _index(documents["topics"]["concepts"])
     arrays = _index(documents["topics"]["arrays"])
     entities = _index(documents["entities"]["entities"])
+    bibliography = _index(documents["bibliography"]["references"])
     sources = _index(documents["sources"]["sources"])
     form_arrays = _index(documents["forms"]["arrays"])
 
@@ -687,7 +692,7 @@ def _validate_references(documents: Mapping[str, dict], *, adoptions=None, accep
         for field in ("vendor", "creator", "replaced_by"):
             _require_targets("data/vocab/entities.yaml", "entities", record, field, entities)
     for record in sources.values():
-        _require_targets("data/vocab/sources.yaml", "sources", record, "entity", entities)
+        _require_targets("data/vocab/sources.yaml", "sources", record, "reference", bibliography)
     for record in documents["forms"]["forms"]:
         _require_targets("data/vocab/forms.yaml", "forms", record, "arrays", form_arrays)
     for record in form_arrays.values():
@@ -713,7 +718,7 @@ def _validate_references(documents: Mapping[str, dict], *, adoptions=None, accep
     ):
         relative_path = _FILES[name][0]
         for record in documents[name][collection]:
-            if collection != "entities":
+            if collection not in {"entities", "references"}:
                 for language, basis in record.get("basis", {}).items():
                     if language in ("zh", "en") and isinstance(basis, dict):
                         errors = validate_basis(basis, record["label"].get(language), record,
@@ -729,9 +734,11 @@ def _validate_references(documents: Mapping[str, dict], *, adoptions=None, accep
                 for target in group["values"]:
                     if target not in topics or target not in record["subjects"]:
                         raise ExportError(f"entities[{record['id']}].{field}: unsupported subject {target}")
-    for record in sources.values():
-        if entities[record["entity"]].get("kind") not in {"standard", "publication"}:
-            raise ExportError(f"sources[{record['id']}].entity: expected source entity")
+    for record in bibliography.values():
+        _require_targets("data/references/bibliography.yaml", "references", record, "subjects", topics)
+        _require_targets("data/references/bibliography.yaml", "references", record, "replaced_by", bibliography)
+        for field in ("vendor", "creator"):
+            _require_targets("data/references/bibliography.yaml", "references", record, field, entities)
 
 
 def display_label(record: Mapping[str, Any]) -> str:
@@ -848,7 +855,7 @@ def _common_properties(record: Mapping[str, Any], object_kind: str, version: str
 
 
 def _evidence_rows(field, targets, references):
-    return [(field, targets, link("entity", item["entity"], item["entity"]),
+    return [(field, targets, (link("reference", item["reference"], item["reference"]) if "reference" in item else item["url"]),
              item["locator"], item.get("checked", "")) for item in references]
 
 
@@ -888,7 +895,7 @@ def _common_body(
         else:
             external_rows.extend(_evidence_rows(field, "", value))
     for table in (_table(basis_title, ("字段", "值"), language_rows),
-                  _table("外部依据", ("字段", "适用值", "来源实体", "定位", "核对日期"), external_rows)):
+                  _table("外部依据", ("字段", "适用值", "参考文献或链接", "定位", "核对日期"), external_rows)):
         if table:
             sections.extend(("", table))
     assertion_rows = []
@@ -907,9 +914,9 @@ def _common_body(
             for evidence in item["basis"]:
                 rows.append((link("source", item["registry"], item["registry"]), item["item"],
                              item.get("rel", ""), item.get("locator", ""),
-                             link("entity", evidence["entity"], evidence["entity"]),
+                             link("reference", evidence["reference"], evidence["reference"]),
                              evidence["locator"], evidence.get("checked", "")))
-        table = _table(title, ("来源用途", "外部条目", "关系", "定位", "依据实体", "依据定位", "核对日期"), rows)
+        table = _table(title, ("来源用途", "外部条目", "关系", "定位", "依据文献", "依据定位", "核对日期"), rows)
         if table:
             sections.extend(("", table))
     if "local_analysis" in record:
@@ -981,17 +988,21 @@ def _render_entity(
     version: str,
     topic_labels: Mapping[str, str],
     entity_labels: Mapping[str, str],
+    reference_labels: Mapping[str, str] | None = None,
 ) -> bytes:
-    properties = _common_properties(record, "entity", version)
+    object_kind = "reference" if reference_labels is not None else "entity"
+    properties = _common_properties(record, object_kind, version)
     properties["kb_kind"] = record.get("kind")
     properties["kb_subjects"] = [link("topic", item, topic_labels[item]) for item in record.get("subjects", [])]
     for field in ("vendor", "creator", "replaced_by"):
         values = _references(record.get(field))
-        links = [link("entity", item, entity_labels[item]) for item in values]
+        target_kind = "reference" if field == "replaced_by" and reference_labels is not None else "entity"
+        labels = reference_labels if target_kind == "reference" else entity_labels
+        links = [link(target_kind, item, labels[item]) for item in values]
         properties[f"kb_{field}"] = links if isinstance(record.get(field), list) else (links[0] if links else None)
     for field in ("form", "tier", "added", "source_status", "fixed_sha256"):
         properties[f"kb_{field}"] = record.get(field)
-    properties["kb_entity_version"] = record.get("version")
+    properties[f"kb_{object_kind}_version"] = record.get("version")
     properties["kb_url"] = next((item["url"] for item in record.get("urls", []) if item["primary"]), None)
     review = record.get("review", {})
     for field in ("checked", "next_due", "interval_months", "grace_days"):
@@ -1020,8 +1031,8 @@ def _render_source(
     entity_labels: Mapping[str, str],
 ) -> bytes:
     properties = _common_properties(record, "source", version)
-    entity = str(record["entity"])
-    properties["kb_entity"] = link("entity", entity, entity_labels[entity])
+    reference = str(record["reference"])
+    properties["kb_reference"] = link("reference", reference, entity_labels[reference])
     properties["kb_roles"] = [item["role"] for item in record["roles"]]
     properties["kb_approved_roles"] = [item["role"] for item in record["roles"] if item["status"] == "approved"]
     body = [
@@ -1029,7 +1040,7 @@ def _render_source(
         "",
         "## 用途说明",
         "",
-        "本记录表示来源用途，不表示来源实体身份。",
+        "本记录表示来源用途，不表示文献身份。",
     ]
     body.extend(("", _table("用途资格", ("角色", "状态", "决定"),
                             [(item["role"], item["status"], item["decision"]) for item in record["roles"]])))
@@ -1110,6 +1121,7 @@ def build_content_files(
     topics = _index(documents["topics"]["concepts"])
     arrays = _index(documents["topics"]["arrays"])
     entities = _index(documents["entities"]["entities"])
+    bibliography = _index(documents["bibliography"]["references"])
     sources = _index(documents["sources"]["sources"])
     types = _index(documents["types"]["types"])
     genres = _index(documents["genres"]["genres"])
@@ -1117,7 +1129,8 @@ def build_content_files(
 
     topic_labels = _labels(topics)
     entity_labels = _labels(entities)
-    source_labels = {source_id: entity_labels[record["entity"]] for source_id, record in sources.items()}
+    reference_labels = _labels(bibliography)
+    source_labels = {source_id: reference_labels[record["reference"]] for source_id, record in sources.items()}
     array_labels = {array_id: array_id for array_id in arrays}
     files: dict[str, bytes] = {}
 
@@ -1126,7 +1139,6 @@ def build_content_files(
             from kb_core.governance.term_rendering import render_term_markdown
         except ImportError as exc:
             raise ExportError("shared term renderer is unavailable") from exc
-        source_entities = _index(documents["entities"]["entities"])
         term_schema_version = documents["terms"]["version"]
         for concept in sorted(
             (item for item in documents["terms"]["concepts"] if item["workflow"] == "active"),
@@ -1162,7 +1174,7 @@ def build_content_files(
             ))
             body = render_term_markdown(
                 concept,
-                source_entities,
+                bibliography,
                 layout=documents["term_layout"],
             )
             _insert(
@@ -1190,6 +1202,10 @@ def build_content_files(
             _render_array(arrays[object_id], topic_version, members[object_id], topic_labels, source_labels),
         )
 
+    reference_version = str(documents["bibliography"]["version"]["id"])
+    for object_id in sorted(bibliography):
+        _insert(files, f"kb/references/{object_id}.md", _render_entity(bibliography[object_id], reference_version, topic_labels, entity_labels, reference_labels))
+
     entity_version = str(documents["entities"]["version"]["id"])
     for object_id in sorted(entities):
         _insert(
@@ -1203,7 +1219,7 @@ def build_content_files(
         _insert(
             files,
             f"kb/sources/{object_id}.md",
-            _render_source(sources[object_id], source_version, entity_labels),
+            _render_source(sources[object_id], source_version, reference_labels),
         )
 
     for object_kind, index in (("type", types), ("genre", genres), ("form", forms)):
@@ -1219,8 +1235,9 @@ def build_content_files(
             )
 
     _insert(files, "kb/views/topics.base", _base("topics", "topics", ("kb_id", "kb_label", "kb_status", "kb_broader")))
+    _insert(files, "kb/views/references.base", _base("references", "references", ("kb_id", "kb_label", "kb_status", "kb_kind")))
     _insert(files, "kb/views/entities.base", _base("entities", "entities", ("kb_id", "kb_label", "kb_status", "kb_kind")))
-    _insert(files, "kb/views/sources.base", _base("sources", "sources", ("kb_id", "kb_label", "kb_entity", "kb_roles")))
+    _insert(files, "kb/views/sources.base", _base("sources", "sources", ("kb_id", "kb_label", "kb_reference", "kb_roles")))
     _insert(
         files,
         "index.md",

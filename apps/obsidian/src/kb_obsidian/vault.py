@@ -82,6 +82,8 @@ _TYPES_CONFIG = {
         "kb_vendor": "text",
         "kb_tier": "text",
         "kb_entity_version": "text",
+        "kb_reference_version": "text",
+        "kb_reference": "text",
         "kb_url": "text",
         "kb_watch": "multitext",
         "kb_entity": "text",
@@ -114,6 +116,7 @@ _FORMAL_TARGETS = (
     ("topics", "concepts", "kb/topics"),
     ("topics", "arrays", "kb/arrays"),
     ("entities", "entities", "kb/entities"),
+    ("bibliography", "references", "kb/references"),
     ("sources", "sources", "kb/sources"),
     ("types", "types", "kb/types"),
     ("genres", "genres", "kb/genres"),
@@ -371,6 +374,7 @@ def _home_bytes() -> bytes:
         + "## 受管理入口\n\n"
         + "- [[kb/views/topics.base|正式主题]]\n"
         + "- [[kb/views/entities.base|实体]]\n"
+        + "- [[kb/views/references.base|参考文献]]\n"
         + "- [[kb/views/sources.base|来源用途]]\n"
         + "- [[app/reports/index|维护报告]]\n"
         + "- [[app/rules/index|应用规则]]\n"

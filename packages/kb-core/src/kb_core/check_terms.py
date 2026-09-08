@@ -88,11 +88,15 @@ def strings(value):
 
 def vocabulary_forms():
     forms = set()
-    for filename in VOCABULARIES:
+    paths = [ROOT / "data/vocab" / filename for filename in VOCABULARIES]
+    bibliography = ROOT / "data/references/bibliography.yaml"
+    if bibliography.exists():
+        paths.append(bibliography)
+    for path in paths:
         document = yaml.safe_load(
-            (ROOT / "data/vocab" / filename).read_text(encoding="utf-8")
+            path.read_text(encoding="utf-8")
         ) or {}
-        for collection_name in VOCABULARY_COLLECTIONS:
+        for collection_name in (*VOCABULARY_COLLECTIONS, "references"):
             for record in document.get(collection_name, []):
                 for field_name in ("label", "alt", "hidden"):
                     for value in strings(record.get(field_name)):

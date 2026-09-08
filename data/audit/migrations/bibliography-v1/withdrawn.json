@@ -1,0 +1,275 @@
+{
+  "base_commit": "688f2b262598a17a87230bf4298c25e12d6f216e",
+  "records": [
+    {
+      "id": "uv-docs",
+      "label": {
+        "zh": "uv 文档",
+        "en": "uv Documentation"
+      },
+      "kind": "standard",
+      "tier": "vendor",
+      "version": null,
+      "subjects": [
+        "tools-and-environments"
+      ],
+      "basis": {
+        "subjects": [
+          {
+            "values": [
+              "tools-and-environments"
+            ],
+            "references": [
+              {
+                "entity": "cs2023",
+                "locator": "https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools — Tools and Environments；开发工具与环境的主题范围；具体产品功能另见相邻依据",
+                "checked": "2026-09-06"
+              },
+              {
+                "entity": "uv-docs",
+                "locator": "https://docs.astral.sh/uv/；官方文档标题、功能与使用说明",
+                "checked": "2026-09-06"
+              }
+            ]
+          }
+        ],
+        "label": [
+          {
+            "entity": "uv-docs",
+            "locator": "https://docs.astral.sh/uv/；官方文档标题、功能与使用说明",
+            "checked": "2026-09-06"
+          }
+        ],
+        "urls": [
+          {
+            "entity": "uv-docs",
+            "locator": "https://docs.astral.sh/uv/；官方文档标题、功能与使用说明",
+            "checked": "2026-09-06"
+          }
+        ],
+        "scope": [
+          {
+            "entity": "uv-docs",
+            "locator": "https://docs.astral.sh/uv/；官方文档标题、功能与使用说明",
+            "checked": "2026-09-06"
+          }
+        ]
+      },
+      "scope": "uv 官方文档，说明 Python 项目、依赖、运行环境和命令行工具的管理。",
+      "status": "candidate",
+      "added": "2026-09-06",
+      "urls": [
+        {
+          "role": "landing",
+          "url": "https://docs.astral.sh/uv/",
+          "primary": true
+        }
+      ],
+      "review": {
+        "checked": null,
+        "next_due": null,
+        "interval_months": 6,
+        "grace_days": 30,
+        "obligations": []
+      },
+      "watch": [],
+      "replaced_by": null,
+      "history": [
+        {
+          "date": "2026-09-06",
+          "action": "engineering-conventions-admission",
+          "fields": [
+            "id",
+            "label",
+            "kind",
+            "tier",
+            "subjects",
+            "scope",
+            "urls"
+          ],
+          "decisions": []
+        }
+      ]
+    },
+    {
+      "id": "npm-docs",
+      "label": {
+        "zh": "npm 文档",
+        "en": "npm Documentation"
+      },
+      "kind": "standard",
+      "tier": "vendor",
+      "version": null,
+      "subjects": [
+        "tools-and-environments"
+      ],
+      "basis": {
+        "subjects": [
+          {
+            "values": [
+              "tools-and-environments"
+            ],
+            "references": [
+              {
+                "entity": "cs2023",
+                "locator": "https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools — Tools and Environments；开发工具与环境的主题范围；具体产品功能另见相邻依据",
+                "checked": "2026-09-06"
+              },
+              {
+                "entity": "npm-docs",
+                "locator": "https://docs.npmjs.com/；官方文档标题、功能与使用说明",
+                "checked": "2026-09-06"
+              }
+            ]
+          }
+        ],
+        "label": [
+          {
+            "entity": "npm-docs",
+            "locator": "https://docs.npmjs.com/；官方文档标题、功能与使用说明",
+            "checked": "2026-09-06"
+          }
+        ],
+        "urls": [
+          {
+            "entity": "npm-docs",
+            "locator": "https://docs.npmjs.com/；官方文档标题、功能与使用说明",
+            "checked": "2026-09-06"
+          }
+        ],
+        "scope": [
+          {
+            "entity": "npm-docs",
+            "locator": "https://docs.npmjs.com/；官方文档标题、功能与使用说明",
+            "checked": "2026-09-06"
+          }
+        ]
+      },
+      "scope": "npm 官方文档，说明命令行客户端、包配置与 registry 服务。",
+      "status": "candidate",
+      "added": "2026-09-06",
+      "urls": [
+        {
+          "role": "landing",
+          "url": "https://docs.npmjs.com/",
+          "primary": true
+        }
+      ],
+      "review": {
+        "checked": null,
+        "next_due": null,
+        "interval_months": 6,
+        "grace_days": 30,
+        "obligations": []
+      },
+      "watch": [],
+      "replaced_by": null,
+      "history": [
+        {
+          "date": "2026-09-06",
+          "action": "engineering-conventions-admission",
+          "fields": [
+            "id",
+            "label",
+            "kind",
+            "tier",
+            "subjects",
+            "scope",
+            "urls"
+          ],
+          "decisions": []
+        }
+      ]
+    },
+    {
+      "id": "fnm-docs",
+      "label": {
+        "zh": "fnm 文档",
+        "en": "fnm Documentation"
+      },
+      "kind": "standard",
+      "tier": "vendor",
+      "version": null,
+      "subjects": [
+        "tools-and-environments"
+      ],
+      "basis": {
+        "subjects": [
+          {
+            "values": [
+              "tools-and-environments"
+            ],
+            "references": [
+              {
+                "entity": "cs2023",
+                "locator": "https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm；SE-Tools — Tools and Environments；开发工具与环境的主题范围；具体产品功能另见相邻依据",
+                "checked": "2026-09-06"
+              },
+              {
+                "entity": "fnm-docs",
+                "locator": "https://github.com/Schniz/fnm#readme；官方文档标题、功能与使用说明",
+                "checked": "2026-09-06"
+              }
+            ]
+          }
+        ],
+        "label": [
+          {
+            "entity": "fnm-docs",
+            "locator": "https://github.com/Schniz/fnm#readme；官方文档标题、功能与使用说明",
+            "checked": "2026-09-06"
+          }
+        ],
+        "urls": [
+          {
+            "entity": "fnm-docs",
+            "locator": "https://github.com/Schniz/fnm#readme；官方文档标题、功能与使用说明",
+            "checked": "2026-09-06"
+          }
+        ],
+        "scope": [
+          {
+            "entity": "fnm-docs",
+            "locator": "https://github.com/Schniz/fnm#readme；官方文档标题、功能与使用说明",
+            "checked": "2026-09-06"
+          }
+        ]
+      },
+      "scope": "fnm 项目 README 与链接的命令文档，说明 Node.js 版本管理及 shell 配置。",
+      "status": "candidate",
+      "added": "2026-09-06",
+      "urls": [
+        {
+          "role": "landing",
+          "url": "https://github.com/Schniz/fnm#readme",
+          "primary": true
+        }
+      ],
+      "review": {
+        "checked": null,
+        "next_due": null,
+        "interval_months": 6,
+        "grace_days": 30,
+        "obligations": []
+      },
+      "watch": [],
+      "replaced_by": null,
+      "history": [
+        {
+          "date": "2026-09-06",
+          "action": "engineering-conventions-admission",
+          "fields": [
+            "id",
+            "label",
+            "kind",
+            "tier",
+            "subjects",
+            "scope",
+            "urls"
+          ],
+          "decisions": []
+        }
+      ]
+    }
+  ]
+}

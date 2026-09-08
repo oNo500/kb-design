@@ -47,9 +47,10 @@ class CreateContentTests(unittest.TestCase):
                 "entities": {
                     "entities": (
                         {"id": "obsidian", "label": {"zh": "Obsidian", "en": "Obsidian"}, "kind": "software", "status": "active"},
-                        {"id": "rfc-9562", "label": {"zh": "RFC 9562", "en": "RFC 9562"}, "kind": "standard", "status": "active"},
+
                     )
                 },
+                "bibliography": {"references": ({"id": "rfc-9562", "label": {"zh": "RFC 9562", "en": "RFC 9562"}, "kind": "standard", "status": "active"},)},
                 "sources": {"sources": ()},
                 "types": {"types": ({"id": "explanation", "label": {"zh": "解释", "en": "Explanation"}, "status": "active"},)},
                 "genres": {"genres": ({"id": "analysis", "label": {"zh": "分析", "en": "Analysis"}, "status": "active"},)},
@@ -91,7 +92,7 @@ class CreateContentTests(unittest.TestCase):
         self.assertEqual(["[[kb/topics/controlled-vocabulary|受控词表]]"], properties["kb_subjects"])
         self.assertEqual("[[kb/forms/diagram|图示]]", properties["kb_form"])
         self.assertEqual(["[[kb/entities/obsidian|Obsidian]]"], properties["kb_entities"])
-        self.assertEqual(["[[kb/entities/rfc-9562|RFC 9562]]"], properties["kb_references"])
+        self.assertEqual(["[[kb/references/rfc-9562|RFC 9562]]"], properties["kb_references"])
         self.assertEqual("2026-09-03", properties["kb_created"])
         self.assertEqual("draft", properties["kb_status"])
         self.assertEqual("zh", properties["kb_language"])

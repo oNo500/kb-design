@@ -13,7 +13,7 @@ from typing import Callable
 from .design_source import DesignSnapshot
 from .errors import ApplicationError
 from .render import render_frontmatter
-from .validation import _LEVELS, _REFERENCE_KINDS, _entries, _validate_content_tree
+from .validation import _LEVELS, _entries, _validate_content_tree
 from .vault import verify_vault
 
 
@@ -160,6 +160,7 @@ def create_content(
 
     topics = _entries(snapshot, "topics", "concepts")
     entities_by_id = _entries(snapshot, "entities", "entities")
+    references_by_id = _entries(snapshot, "bibliography", "references")
     types = _entries(snapshot, "types", "types")
     genres = _entries(snapshot, "genres", "genres")
     forms = _entries(snapshot, "forms", "forms")
@@ -191,14 +192,8 @@ def create_content(
             _target(entity, entities_by_id, "kb/entities/", language, name="entity") for entity in entity_ids
         ]
     if reference_ids:
-        for reference in reference_ids:
-            record = entities_by_id.get(reference)
-            if record is None:
-                raise ApplicationError(f"unknown reference: {reference}")
-            if record.get("kind") not in _REFERENCE_KINDS:
-                raise ApplicationError(f"reference must target a standard or publication: {reference}")
         properties["kb_references"] = [
-            _target(reference, entities_by_id, "kb/entities/", language, name="reference")
+            _target(reference, references_by_id, "kb/references/", language, name="reference")
             for reference in reference_ids
         ]
     try:

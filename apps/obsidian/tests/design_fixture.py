@@ -9,6 +9,7 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[3]
 FORMAL_PATHS = (
     "data/vocab/topics.yaml",
     "data/vocab/entities.yaml",
+    "data/references/bibliography.yaml",
     "data/vocab/sources.yaml",
     "data/vocab/types.yaml",
     "data/vocab/genres.yaml",

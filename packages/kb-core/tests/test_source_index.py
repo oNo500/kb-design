@@ -5,7 +5,7 @@ import yaml
 
 from kb_core.build_source_index import build_reference_index
 from kb_core.source_model import collect_reference_uses
-from source_governance_helpers import load_yaml, materialized_current_layout
+from source_governance_helpers import load_yaml, materialized_current_layout, current_reference_value
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[3]
@@ -22,6 +22,14 @@ def formal_reference_set(root):
     del root
     rows = json.loads(EXPECTED.read_text(encoding="utf-8"))
     for row in rows:
+        if row["target_kind"] == "source_entity":
+            row["target_kind"] = "bibliography_reference"
+        row["reference_kind"] = row["reference_kind"].replace("basis.entity", "basis.reference").replace("use.entity", "use.reference").replace("entity.replaced_by", "reference.replaced_by")
+        row["field_path"] = row["field_path"].replace(".entity", ".reference")
+        if row["file"] == "vocab/entities.yaml":
+            row["file"] = "data/references/bibliography.yaml"
+            row["field_path"] = row["field_path"].replace("entities[", "references[")
+            row["record"] = row["record"].replace("entity:", "reference:")
         if row["file"].startswith("vocab/"):
             row["file"] = "data/" + row["file"]
         elif row["file"].startswith("design/decisions/"):
@@ -37,8 +45,8 @@ def index_reference_set(entries):
 
 def reference_use_index_key(use):
     if use.kind == "basis":
-        return ("source_entity", use.value["entity"], "basis.entity", use.file,
-                use.record, use.field_path + ".entity")
+        return ("bibliography_reference", use.value["reference"], "basis.reference", use.file,
+                use.record, use.field_path + ".reference")
     return ("source_use", use.value["registry"], f"{use.kind}.registry", use.file,
             use.record, use.field_path + ".registry")
 
@@ -59,7 +67,7 @@ class SourceIndexTests(unittest.TestCase):
         paths = {row["field_path"] for row in rows}
         self.assertIn("concepts[0].history[0].decision", paths)
         self.assertIn("concepts[0].languages[0].terms[0].history[0].decision", paths)
-        self.assertIn("concepts[0].definitions[0].basis[0].entity", paths)
+        self.assertIn("concepts[0].definitions[0].basis[0].reference", paths)
         self.assertNotIn("audit-only", {row["target_id"] for row in rows})
 
     def test_term_model_basis_is_not_a_source_but_external_term_basis_remains(self):
@@ -83,11 +91,11 @@ class SourceIndexTests(unittest.TestCase):
 
         source_paths = {
             row["field_path"] for row in rows
-            if row["target_kind"] in {"source_entity", "source_use"}
+            if row["target_kind"] in {"bibliography_reference", "source_use"}
         }
         self.assertNotIn("concepts[0].languages[0].terms[0].basis.level", source_paths)
-        self.assertIn("concepts[0].languages[0].terms[1].basis[0].entity", source_paths)
-        self.assertIn("concepts[0].definitions[0].basis[0].entity", source_paths)
+        self.assertIn("concepts[0].languages[0].terms[1].basis[0].reference", source_paths)
+        self.assertIn("concepts[0].definitions[0].basis[0].reference", source_paths)
 
     def test_project_basis_approval_is_internal_and_audit_snapshots_are_not_current(self):
         with materialized_current_layout(FIXTURE) as root:
@@ -111,7 +119,7 @@ class SourceIndexTests(unittest.TestCase):
                           "concepts[0].definitions[0].basis.project.approval",
                           "concepts[0].languages[0].terms[0].basis.project.approval"}, approvals)
         self.assertNotIn("audit-only", {row["target_id"] for row in rows})
-        self.assertFalse(any(row["target_kind"] == "source_entity" and ".project." in row["field_path"]
+        self.assertFalse(any(row["target_kind"] == "bibliography_reference" and ".project." in row["field_path"]
                              for row in rows))
 
     def entries(self):
@@ -120,8 +128,8 @@ class SourceIndexTests(unittest.TestCase):
 
     def test_index_covers_all_required_reference_kinds(self):
         kinds = {row["reference_kind"] for row in self.entries()}
-        required = {"basis.entity", "source.registry", "match.registry", "use.entity",
-                    "entity.replaced_by", "role.decision", "obligation.decisions",
+        required = {"basis.reference", "source.registry", "match.registry", "use.reference",
+                    "reference.replaced_by", "role.decision", "obligation.decisions",
                     "obligation.previous", "history.decision", "obligation.target"}
         self.assertTrue(required <= kinds)
 
@@ -179,7 +187,7 @@ class SourceIndexTests(unittest.TestCase):
             added = index_reference_set(build_reference_index(root)['entries']) - before
         self.assertEqual({
             ('decision', 'decision-entities-history', 'history.decision',
-             'data/vocab/entities.yaml', 'entity:source-main', 'entities[0].history[0].decisions[0]'),
+             'data/vocab/entities.yaml', 'entity:fixture-tool', 'entities[0].history[0].decisions[0]'),
             ('decision', 'decision-sources-history', 'history.decision',
              'data/vocab/sources.yaml', 'source_use:use-main', 'sources[0].history[0].decisions[0]'),
             ('decision', 'decision-isolation', 'local_analysis.decision',
@@ -210,13 +218,13 @@ class SourceIndexTests(unittest.TestCase):
             for row in entries
             if row["file"] == "data/vocab/terms.yaml"
         }
-        self.assertEqual({"concepts[0].basis[0].entity", "concepts[0].source.registry",
+        self.assertEqual({"concepts[0].basis[0].reference", "concepts[0].source.registry",
                           "concepts[0].match[0].registry",
-                          "concepts[0].terms[0].basis[0].entity"}, paths)
+                          "concepts[0].terms[0].basis[0].reference"}, paths)
 
     def test_isolated_local_analysis_is_not_a_source_reference(self):
         rows = [row for row in self.entries() if "local_analysis" in row["field_path"]
-                and row["target_kind"] in {"source_entity", "source_use"}]
+                and row["target_kind"] in {"bibliography_reference", "source_use"}]
         self.assertEqual([], rows)
 
     def test_external_group_is_indexed_as_structure_use(self):
@@ -228,11 +236,11 @@ class SourceIndexTests(unittest.TestCase):
     def test_index_shared_rows_equal_public_collector_rows(self):
         document_path = FIXTURE / "vocab/topics.yaml"
         uses = collect_reference_uses(
-            pathlib.Path("data/vocab/topics.yaml"), load_yaml(document_path)
+            pathlib.Path("data/vocab/topics.yaml"), current_reference_value(load_yaml(document_path))
         )
         expected = {reference_use_index_key(use) for use in uses}
         actual = {reference_key(row) for row in self.entries()
-                  if row["reference_kind"] in {"basis.entity", "source.registry",
+                  if row["reference_kind"] in {"basis.reference", "source.registry",
                                                 "match.registry", "external_group.registry"}
                   and row["file"] == "data/vocab/topics.yaml"}
         self.assertEqual(expected, actual)

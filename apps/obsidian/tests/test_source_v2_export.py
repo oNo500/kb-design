@@ -18,7 +18,7 @@ from kb_obsidian.exporter import ExportError, build_content_files, load_reposito
 def documents_v2():
     day = dt.date(2026, 9, 5)
     version = {"id": "fixture", "date": day, "note": "synthetic"}
-    evidence = {"entity": "standard", "locator": "https://example.invalid/status", "checked": day}
+    evidence = {"reference": "standard", "locator": "https://example.invalid/status", "checked": day}
     assertion = {"disposition": "project_assertion", "original": "self", "migration": "audit/fixture#source"}
     source = {"registry": "registry", "item": "item-one", "locator": "https://example.invalid/item", "basis": [evidence]}
     topic = {"id": "topic", "label": {"en": "Topic"}, "basis": {"zh": {"legacy": "none"}, "en": {"level": 1, "references": [{"source": "registry", "locator": "https://example.invalid/item"}]}},
@@ -38,24 +38,25 @@ def documents_v2():
                "status": "candidate", "added": day, "assertions": {"subjects": [{**assertion, "values": ["topic"]}]}}
     roles = [{"role": role, "status": "approved", "decision": "source-fixture-decision"} for role in ("mapping", "structure")]
     result = {"topics": {"version": version, "concepts": [topic], "arrays": []},
-              "entities": {"schema": "urn:kb-design:data:entities", "schema_version": 2, "version": version, "entities": [entity, general]},
-              "sources": {"schema": "urn:kb-design:data:source-uses", "schema_version": 2, "version": version,
-                          "sources": [{"id": "registry", "entity": "standard", "roles": roles, "history": [{"date": day, "action": "migration", "fields": ["roles"], "decisions": []}]}]}}
+              "entities": {"schema": "urn:kb-design:data:entities", "schema_version": 3, "version": version, "entities": [general]},
+              "bibliography": {"schema": "urn:kb-design:data:bibliography", "schema_version": 3, "version": version, "references": [entity]},
+              "sources": {"schema": "urn:kb-design:data:source-uses", "schema_version": 3, "version": version,
+                          "sources": [{"id": "registry", "reference": "standard", "roles": roles, "history": [{"date": day, "action": "migration", "fields": ["roles"], "decisions": []}]}]}}
     for name in ("types", "genres", "forms"):
         result[name] = {"version": version, name: []}
     result["forms"]["arrays"] = [{"id": "local", "superordinate": "forms", "assertions": {"source": assertion}}]
     result["forms"]["arrays"].append({"id": "isolated-form", "superordinate": "forms",
         "local_analysis": {"legacy_source_label": "lom", "state": "isolated", "decision": "decision-source-0011"}})
     for document in result.values():
-        document["schema_version"] = 2
+        document["schema_version"] = 3
     return result
 
 
 def decision_v2():
-    patches = [{"identity": "sources/registry", "field": "entity", "value": "standard"}]
+    patches = [{"identity": "sources/registry", "field": "reference", "value": "standard"}]
     patches += [{"identity": "sources/registry/roles/" + role, "field": "status", "value": "approved"}
                 for role in ("mapping", "structure")]
-    patches += [{"identity": "entities/standard", "field": field, "value": value}
+    patches += [{"identity": "references/standard", "field": field, "value": value}
                 for field, value in (("version", "1"), ("source_status", "current"))]
     return {"id": "source-fixture-decision", "schema": "urn:kb-design:data:decision", "schema_version": 1,
             "status": "accepted", "date": "2026-09-05", "level": "L3", "scope": "synthetic application test",
@@ -93,7 +94,9 @@ class SourceV2ExportTests(unittest.TestCase):
 
     def save(self):
         for name, document in self.documents.items():
-            (self.root / "data/vocab" / (name + ".yaml")).write_text(yaml.safe_dump(document))
+            directory = self.root / ("data/references" if name == "bibliography" else "data/vocab")
+            directory.mkdir(parents=True, exist_ok=True)
+            (directory / (name + ".yaml")).write_text(yaml.safe_dump(document))
         (self.root / "docs/decisions/source-fixture-decision.md").write_bytes(decision_bytes(self.decision))
         (self.root / "docs/decisions/source-migration-policy.md").write_bytes(migration_policy_bytes())
 
@@ -173,7 +176,7 @@ class SourceV2ExportTests(unittest.TestCase):
             load_repository(self.root)
 
     def test_unverified_source_status_and_version_are_not_fabricated(self):
-        entity = self.documents["entities"]["entities"][0]
+        entity = self.documents["bibliography"]["references"][0]
         del entity["source_status"]
         del entity["basis"]["source_status"]
         entity["version"] = None
@@ -181,10 +184,10 @@ class SourceV2ExportTests(unittest.TestCase):
         self.save()
         output = Path(self.temp.name) / "unverified-export"
         write_export(self.root, output)
-        text = (output / "kb/entities/standard.md").read_text()
+        text = (output / "kb/references/standard.md").read_text()
         properties = yaml.safe_load(text.split("---")[1])
         self.assertNotIn("kb_source_status", properties)
-        self.assertNotIn("kb_entity_version", properties)
+        self.assertNotIn("kb_reference_version", properties)
         self.assertEqual("active", properties["kb_status"])
         self.assertIn("外部状态未核实", text)
         self.assertIn("未登记可核实版本", text)
@@ -226,12 +229,12 @@ class SourceV2ExportTests(unittest.TestCase):
         self.assertTrue((output / "manifest.json").is_file())
         for field, value, error_path in (
             ("source_status", "withdrawn", "source_status"),
-            ("review", {**self.documents["entities"]["entities"][0]["review"], "next_due": None}, "review.next_due"),
+            ("review", {**self.documents["bibliography"]["references"][0]["review"], "next_due": None}, "review.next_due"),
             ("watch", [{"locator": "https://example.invalid/changes", "signals": ["revision"],
                         "cadence_months": {"availability": 1, "redirect": 1, "content": 6}}], "watch")):
             with self.subTest(field=field):
                 self.documents = documents_v2()
-                self.documents["entities"]["entities"][0][field] = value
+                self.documents["bibliography"]["references"][0][field] = value
                 self.save()
                 output = Path(self.temp.name) / ("invalid-" + field)
                 result = run(output)
@@ -241,10 +244,10 @@ class SourceV2ExportTests(unittest.TestCase):
 
     def test_evidence_assertions_roles_and_history_survive_rendering(self):
         files = build_content_files(Path("/synthetic"), input_bytes=fixture_inputs(documents_v2()))
-        entity = files["kb/entities/standard.md"].decode()
+        entity = files["kb/references/standard.md"].decode()
         self.assertEqual(yaml.safe_load(entity.split("---")[1])["kb_status"], "active")
         self.assertEqual(yaml.safe_load(entity.split("---")[1])["kb_source_status"], "current")
-        for text in ("https://mirror.invalid/", "2001-01-01", "revision", "24", "kb/entities/standard", "kb/topics/topic"):
+        for text in ("https://mirror.invalid/", "2001-01-01", "revision", "24", "kb/references/standard", "kb/topics/topic"):
             self.assertIn(text, entity)
         general = files["kb/entities/organization.md"].decode()
         self.assertIn("## 项目判断", general)
@@ -276,7 +279,7 @@ class SourceV2ExportTests(unittest.TestCase):
                        lambda d: d["topics"]["concepts"][0].update(source="registry"),
                        lambda d: d["topics"]["concepts"][0]["source"].update(extra="lost"),
                        lambda d: d["sources"]["sources"][0]["roles"][1].update(status="proposed", decision=None),
-                       lambda d: d["topics"]["concepts"][0]["source"]["basis"][0].update(entity="missing")):
+                       lambda d: d["topics"]["concepts"][0]["source"]["basis"][0].update(reference="missing")):
             documents = copy.deepcopy(documents_v2())
             change(documents)
             with self.assertRaises(ExportError):

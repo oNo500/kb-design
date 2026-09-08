@@ -2,7 +2,11 @@
 
 from __future__ import annotations
 
+import ast
+import io
 import json
+import sys
+import tarfile
 import os
 import re
 import shutil
@@ -14,7 +18,7 @@ from typing import Optional
 
 import yaml
 
-from . import __version__, design_source
+from . import __version__
 from .design_source import DesignSnapshot, load_design
 from .errors import ApplicationError
 from .managed import _reference_files, _VIEWS, _yaml_bytes
@@ -56,20 +60,30 @@ def _old_snapshot(snapshot: DesignSnapshot, manifest_path: Path, raw: bytes) -> 
         raise ApplicationError(f"invalid old design commit in {manifest_path}: {commit!r}")
     _git_bytes(snapshot.root, "merge-base", "--is-ancestor", commit, snapshot.commit)
     inputs = _manifest_inputs(manifest_path, manifest["inputs"])
-    allowed_input_sets = [set(design_source._FORMAL_DOCUMENTS.values())]
+    # The ancestor owns its input contract; never interpret it with today's reader.
+    source = _git_bytes(snapshot.root, "show", f"{commit}:apps/obsidian/src/kb_obsidian/design_source.py")
+    contract = {}
+    for node in ast.parse(source).body:
+        if isinstance(node, ast.Assign) and len(node.targets) == 1 and isinstance(node.targets[0], ast.Name):
+            if node.targets[0].id in {"_FORMAL_DOCUMENTS", "_OPTIONAL_TERM_DOCUMENTS", "_TERM_LAYOUT_DOCUMENT", "_TERM_SCHEMA_FILES"}:
+                contract[node.targets[0].id] = ast.literal_eval(node.value)
+    required = {"_FORMAL_DOCUMENTS", "_OPTIONAL_TERM_DOCUMENTS", "_TERM_LAYOUT_DOCUMENT", "_TERM_SCHEMA_FILES"}
+    if set(contract) != required:
+        raise ApplicationError("ancestor design input contract is unavailable")
+    allowed_input_sets = [set(contract["_FORMAL_DOCUMENTS"].values())]
     allowed_input_sets.append(
         allowed_input_sets[0]
-        | set(design_source._OPTIONAL_TERM_DOCUMENTS.values())
-        | set(design_source._TERM_LAYOUT_DOCUMENT.values())
-        | set(design_source._TERM_SCHEMA_FILES)
+        | set(contract["_OPTIONAL_TERM_DOCUMENTS"].values())
+        | set(contract["_TERM_LAYOUT_DOCUMENT"].values())
+        | set(contract["_TERM_SCHEMA_FILES"])
     )
     if set(inputs) not in allowed_input_sets:
         raise ApplicationError(f"old design input set mismatch: {manifest_path}")
     documents = {}
-    selected_documents = dict(design_source._FORMAL_DOCUMENTS)
-    if set(design_source._OPTIONAL_TERM_DOCUMENTS.values()) <= set(inputs):
-        selected_documents.update(design_source._OPTIONAL_TERM_DOCUMENTS)
-        selected_documents.update(design_source._TERM_LAYOUT_DOCUMENT)
+    selected_documents = dict(contract["_FORMAL_DOCUMENTS"])
+    if set(contract["_OPTIONAL_TERM_DOCUMENTS"].values()) <= set(inputs):
+        selected_documents.update(contract["_OPTIONAL_TERM_DOCUMENTS"])
+        selected_documents.update(contract["_TERM_LAYOUT_DOCUMENT"])
     for name, relative in selected_documents.items():
         data = _git_bytes(snapshot.root, "show", f"{commit}:{relative}")
         if _sha256(data) != inputs[relative]:
@@ -78,13 +92,50 @@ def _old_snapshot(snapshot: DesignSnapshot, manifest_path: Path, raw: bytes) -> 
             documents[name] = yaml.safe_load(data)
         except yaml.YAMLError as exc:
             raise ApplicationError(f"invalid old design input: {relative}") from exc
-    for relative in design_source._TERM_SCHEMA_FILES:
+    for relative in contract["_TERM_SCHEMA_FILES"]:
         if relative not in inputs:
             continue
         data = _git_bytes(snapshot.root, "show", f"{commit}:{relative}")
         if _sha256(data) != inputs[relative]:
             raise ApplicationError(f"old design input hash mismatch: {relative} in {manifest_path}")
     return DesignSnapshot(snapshot.root, commit, documents, inputs)
+
+
+def _verify_old_vault(snapshot: DesignSnapshot, vault: Path) -> None:
+    """Run the ancestor's vault contract in an isolated, disposable source tree."""
+    archive = _git_bytes(snapshot.root, "archive", snapshot.commit, "apps/obsidian/src", "packages/kb-core/src")
+    with tempfile.TemporaryDirectory(prefix="kb-obsidian-ancestor-") as directory:
+        root = Path(directory)
+        with tarfile.open(fileobj=io.BytesIO(archive)) as bundle:
+            for member in bundle.getmembers():
+                if not member.isfile() and not member.isdir():
+                    raise ApplicationError("ancestor implementation contains unsupported filesystem entries")
+                target = PurePosixPath(member.name)
+                if target.is_absolute() or ".." in target.parts:
+                    raise ApplicationError("ancestor implementation contains unsafe paths")
+                destination = root.joinpath(*target.parts)
+                if member.isdir():
+                    destination.mkdir(parents=True, exist_ok=True)
+                else:
+                    destination.parent.mkdir(parents=True, exist_ok=True)
+                    with bundle.extractfile(member) as stream:
+                        destination.write_bytes(stream.read())
+        script = """import json, pathlib, sys
+root = pathlib.Path(sys.argv[1])
+sys.path[:0] = [str(root / 'apps/obsidian/src'), str(root / 'packages/kb-core/src')]
+from kb_obsidian.design_source import DesignSnapshot
+from kb_obsidian.vault import verify_vault
+value = json.load(sys.stdin)
+snapshot = DesignSnapshot(pathlib.Path(value['root']), value['commit'], value['documents'], value['inputs'])
+verify_vault(snapshot, pathlib.Path(sys.argv[2]))
+"""
+        completed = subprocess.run([sys.executable, "-c", script, str(root), str(vault)],
+            input=json.dumps({"root": str(snapshot.root), "commit": snapshot.commit,
+                              "documents": snapshot.documents, "inputs": snapshot.input_hashes},
+                             default=lambda value: value.isoformat()), capture_output=True, text=True)
+        if completed.returncode:
+            detail = completed.stderr.strip().splitlines()
+            raise ApplicationError(f"ancestor vault verification failed: {detail[-1] if detail else 'unknown failure'}")
 
 
 def _check_managed(
@@ -232,7 +283,7 @@ def refresh_vocabulary(design_root: Path, vault: Path, *, dry_run: bool = False)
             if entry["path"] in formats:
                 entry["sha256"] = _sha256(actual[entry["path"]])
         _write_files(staged, {"app/manifest.json": _json_bytes(old_manifest)})
-        verify_vault(old, staged)
+        _verify_old_vault(old, staged)
 
         _check_content(snapshot, root, references, markdown)
         managed = {path: data for path, data in actual.items() if not path.startswith("kb/")}

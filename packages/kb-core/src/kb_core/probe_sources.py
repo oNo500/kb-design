@@ -229,9 +229,9 @@ def unique_endpoints(rows):
 
 
 def load_probe_endpoints(root, previous):
-    document = yaml.safe_load((root / "data/vocab/entities.yaml").read_text(encoding="utf-8"))
+    document = yaml.safe_load((root / "data/references/bibliography.yaml").read_text(encoding="utf-8"))
     rows = []
-    for entity in document["entities"]:
+    for entity in document["references"]:
         url_roles = {row["url"]: row["role"] for row in entity.get("urls", [])}
         for address in entity.get("urls", []):
             if address["role"] not in EVIDENCE_ROLES:

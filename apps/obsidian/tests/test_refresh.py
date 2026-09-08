@@ -32,6 +32,7 @@ class RefreshTests(unittest.TestCase):
         self.documents = {
             "topics": {"concepts": [{"id": "topic", "status": "active", "label": {"zh": "主题"}}], "arrays": []},
             "entities": {"entities": []},
+            "bibliography": {"references": []},
             "sources": {"sources": []},
             "types": {"types": [{"id": "explanation", "status": "active", "label": {"zh": "解释"}}]},
             "genres": {"genres": [{"id": "analysis", "status": "active", "label": {"zh": "分析"}}]},
@@ -71,6 +72,10 @@ class RefreshTests(unittest.TestCase):
         return subprocess.run(["git", "-C", str(self.design), *args], check=True, capture_output=True).stdout.decode().strip()
 
     def snapshot(self, version):
+        import shutil
+        source_root = Path(__file__).resolve().parents[3]
+        for relative in ("apps/obsidian/src", "packages/kb-core/src"):
+            shutil.copytree(source_root / relative, self.design / relative, dirs_exist_ok=True, ignore=shutil.ignore_patterns("__pycache__"))
         hashes = {}
         for name, relative in design_source._FORMAL_DOCUMENTS.items():
             path = self.design / relative
@@ -93,6 +98,34 @@ class RefreshTests(unittest.TestCase):
             "kb_obsidian.refresh.export_reference", side_effect=export
         ):
             return refresh_vocabulary(self.design, self.vault, **kwargs)
+
+    def test_ancestor_contract_verifies_old_namespace_without_live_compatibility(self):
+        """A changed input set must retain proven ancestry without reinterpreting old targets."""
+        from kb_obsidian.refresh import _old_snapshot, _verify_old_vault
+        self.git("checkout", "--quiet", self.old.commit)
+        source = self.design / "apps/obsidian/src/kb_obsidian/design_source.py"
+        source.write_text(source.read_text().replace('    "bibliography": "data/references/bibliography.yaml",\n', ''))
+        validator = self.design / "apps/obsidian/src/kb_obsidian/vault.py"
+        validator.write_text(validator.read_text().replace('    ("bibliography", "references", "kb/references"),\n', ''))
+        self.git("rm", "data/references/bibliography.yaml")
+        self.git("add", ".")
+        self.git("commit", "--quiet", "-m", "ancestor input contract")
+        commit = self.git("rev-parse", "HEAD")
+        documents = {key: value for key, value in self.documents.items() if key != "bibliography"}
+        hashes = {key: value for key, value in self.old.input_hashes.items() if key != "data/references/bibliography.yaml"}
+        old = DesignSnapshot(self.design, commit, documents, hashes)
+        raw = _json_bytes(_manifest(old, self.original))
+        _write_files(self.vault, {"app/manifest.json": raw})
+        new = self.snapshot("new contract")
+        captured = _old_snapshot(new, self.vault / "app/manifest.json", raw)
+        self.assertNotIn("bibliography", captured.documents)
+        _verify_old_vault(captured, self.vault)
+        with self.assertRaisesRegex(ApplicationError, "bibliography"):
+            verify_vault(captured, self.vault)
+        corrupt = json.loads(raw)
+        corrupt["inputs"][0]["sha256"] = "0" * 64
+        with self.assertRaisesRegex(ApplicationError, "input hash mismatch"):
+            _old_snapshot(new, self.vault / "app/manifest.json", _json_bytes(corrupt))
 
     def test_refresh_preserves_managed_agent_rules(self):
         """Reference refresh must retain the registered agent rules and their ownership."""

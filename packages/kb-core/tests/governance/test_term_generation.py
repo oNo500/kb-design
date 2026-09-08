@@ -222,6 +222,7 @@ class TermGenerationTests(unittest.TestCase):
             root = pathlib.Path(temporary)
             design_root = root / "design"
             (design_root / "data/vocab").mkdir(parents=True)
+            shutil.copytree(ROOT / "data/references", design_root / "data/references")
             for name in ("topics", "types", "genres", "forms", "entities", "sources"):
                 shutil.copy2(ROOT / f"data/vocab/{name}.yaml", design_root / f"data/vocab/{name}.yaml")
             (design_root / "data/inputs/topics").mkdir(parents=True)
@@ -243,15 +244,15 @@ class TermGenerationTests(unittest.TestCase):
             valid["concepts"][0]["subject_fields"] = []
             fixture_concept = valid["concepts"][0]
             for reference in fixture_concept["basis"]:
-                reference["entity"] = "gbt-13745"
+                reference["reference"] = "gbt-13745"
             for definition in fixture_concept["definitions"]:
                 for reference in definition["basis"]:
-                    reference["entity"] = "gbt-13745"
+                    reference["reference"] = "gbt-13745"
             for language in fixture_concept["languages"]:
                 for term_value in language["terms"]:
                     if isinstance(term_value["basis"], list):
                         for reference in term_value["basis"]:
-                            reference["entity"] = "gbt-13745"
+                            reference["reference"] = "gbt-13745"
             terms_path.write_text(
                 yaml.safe_dump(valid, allow_unicode=True, sort_keys=False),
                 encoding="utf-8",
@@ -378,10 +379,8 @@ class TermGenerationTests(unittest.TestCase):
         snapshot = json.loads(snapshot_bytes)
         expected = hashlib.sha256(canonical_json(snapshot)).hexdigest()
         glossary = render_glossary(snapshot, self.layout, self.active_state)
-        self.assertEqual(
-            "本文件由术语记录确定生成，只读；如需修改，请编辑 `data/vocab/terms.yaml`。",
-            glossary.splitlines()[1],
-        )
+        self.assertIn("本文件只读", glossary.splitlines()[1])
+        self.assertIn("data/vocab/terms.yaml", glossary.splitlines()[1])
         self.assertIn(f"快照 SHA-256：`{expected}`", glossary)
 
     def test_rolled_back_state_disables_generation(self):

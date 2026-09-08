@@ -19,6 +19,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 COLLECTIONS = {
     "topics": "concepts", "entities": "entities", "sources": "sources",
     "types": "types", "genres": "genres", "forms": "forms",
+    "bibliography": "references",
 }
 
 
@@ -43,7 +44,7 @@ def _validate_record(record, location):
         value = record.get(field)
         if value is not None and not (isinstance(value, list) and all(isinstance(v, str) for v in value)):
             raise ValueError(f"{location}：{field} 必须是字符串列表")
-    for field in ("entity", "form", "superordinate", "scope", "status"):
+    for field in ("reference", "form", "superordinate", "scope", "status"):
         if record.get(field) is not None and not isinstance(record[field], str):
             raise ValueError(f"{location}：{field} 必须是字符串")
     if record.get("basis") is not None and not isinstance(record["basis"], dict):
@@ -98,10 +99,10 @@ def _collection(name, content):
         raise ValueError(f"{location}{line}：YAML 格式错误，{getattr(error, 'problem', '请检查文件')}") from error
     if not isinstance(document, dict) or not isinstance(document.get(COLLECTIONS[name]), list):
         raise ValueError(f"{location}：缺少 {COLLECTIONS[name]} 条目列表")
-    if type(document.get("schema_version")) is not int or document["schema_version"] != 2:
-        raise ValueError(f"{location}：schema_version 必须为 2")
-    if name in {"entities", "sources"}:
-        schema_name = "source-entities.schema.json" if name == "entities" else "source-uses.schema.json"
+    if type(document.get("schema_version")) is not int or document["schema_version"] != 3:
+        raise ValueError(f"{location}：schema_version 必须为 3")
+    if name in {"entities", "sources", "bibliography"}:
+        schema_name = {"entities": "source-entities.schema.json", "sources": "source-uses.schema.json", "bibliography": "source-bibliography.schema.json"}[name]
         _schema_validate(document, source_model.build_schema_documents()[schema_name], location)
     keys = set()
     for key, _ in tree.value:
@@ -146,9 +147,10 @@ class SnapshotStore:
         contents = {}
         for name in COLLECTIONS:
             try:
-                contents[name] = (self.root / "data/vocab" / f"{name}.yaml").read_bytes()
+                directory = "data/references" if name == "bibliography" else "data/vocab"
+                contents[name] = (self.root / directory / f"{name}.yaml").read_bytes()
             except OSError as error:
-                raise ValueError(f"{name}.yaml：无法读取词表文件") from error
+                raise ValueError(f"{name}.yaml：无法读取数据文件") from error
         return contents
 
     def status(self):
@@ -205,7 +207,7 @@ def _safe_json(value):
 
 def _page(state):
     if state["snapshot"] is None:
-        page = '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>词表预览</title><body style="font:16px system-ui;padding:40px"><h1>等待有效词表</h1><p>修正 data/vocab/ 中的文件后，页面会自动更新。</p></body></html>'
+        page = '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>词表预览</title><body style="font:16px system-ui;padding:40px"><h1>等待有效词表</h1><p>修正 data/vocab/ 或 data/references/ 中的文件后，页面会自动更新。</p></body></html>'
     else:
         template = files("kb_vocab_preview").joinpath("template.html").read_text(encoding="utf-8")
         page = template.replace('__SNAPSHOT__', _safe_json(state["snapshot"]))
@@ -268,7 +270,7 @@ def main():
     except (OSError, ValueError) as error:
         parser.exit(1, f"无法启动预览：{error}\n")
     print(f"词表预览：http://127.0.0.1:{server.server_port}", flush=True)
-    print(f"只读工作区：{Path(root).resolve()} / data/vocab；Ctrl+C 停止", flush=True)
+    print(f"只读工作区：{Path(root).resolve()} / data/vocab、data/references；Ctrl+C 停止", flush=True)
     try:
         server.serve_forever()
     except KeyboardInterrupt:

@@ -40,12 +40,12 @@ class CheckSourcesTests(unittest.TestCase):
 
     def test_malformed_structured_references_cannot_disappear_before_validation(self):
         cases = (
-            ({"source": {"registry": ["src"], "item": "item", "locator": "section", "basis": [{"entity": "src", "locator": "section"}]}}, "SOURCE_REFERENCE_VALUE_INVALID"),
-            ({"basis": [{"entity": "src", "locator": ["section"]}]}, "SOURCE_REFERENCE_VALUE_INVALID"),
-            ({"source": {"registry": "src", "locator": "section", "basis": [{"entity": "src", "locator": "section"}]}}, "SOURCE_SOURCE_ITEM_MISSING"),
+            ({"source": {"registry": ["src"], "item": "item", "locator": "section", "basis": [{"reference": "src", "locator": "section"}]}}, "SOURCE_REFERENCE_VALUE_INVALID"),
+            ({"basis": [{"reference": "src", "locator": ["section"]}]}, "SOURCE_REFERENCE_VALUE_INVALID"),
+            ({"source": {"registry": "src", "locator": "section", "basis": [{"reference": "src", "locator": "section"}]}}, "SOURCE_SOURCE_ITEM_MISSING"),
             ({"match": [{"registry": "src", "item": "item", "rel": "exactMatch"}]}, "SOURCE_MATCH_BASIS_MISSING"),
-            ({"basis": [{"entity": "src"}]}, "SOURCE_BASIS_LOCATOR_MISSING"),
-            ({"basis": [{"entity": "src", "locator": "section", "unexpected": True}]}, "SOURCE_REFERENCE_VALUE_INVALID"),
+            ({"basis": [{"reference": "src"}]}, "SOURCE_BASIS_LOCATOR_MISSING"),
+            ({"basis": [{"reference": "src", "locator": "section", "unexpected": True}]}, "SOURCE_REFERENCE_VALUE_INVALID"),
         )
         for fields, expected in cases:
             with self.subTest(fields=fields), materialized_current_layout(FIXTURES / "valid") as root:
@@ -64,9 +64,9 @@ class CheckSourcesTests(unittest.TestCase):
 
     def test_history_deletion_and_reordering_are_rejected(self):
         with materialized_current_layout(FIXTURES / "previous") as previous, materialized_current_layout(FIXTURES / "previous") as current:
-            path = current / "data/vocab/entities.yaml"
+            path = current / "data/references/bibliography.yaml"
             document = yaml.safe_load(path.read_text())
-            document["entities"][0]["history"].reverse()
+            document["references"][0]["history"].reverse()
             path.write_text(yaml.safe_dump(document))
             self.assertIn("SOURCE_HISTORY_NOT_APPEND_ONLY",
                           {issue.code for issue in model.validate_repository(current, previous)})
@@ -95,7 +95,7 @@ class CheckSourcesTests(unittest.TestCase):
         reference = model.ReferenceUse(
             "basis", "data/vocab/terms.yaml", "concept:tc-1",
             "definitions[0].basis[0]",
-            {"entity": "missing", "locator": "§ 1"},
+            {"reference": "missing", "locator": "§ 1"},
         )
         issues = self.reference_issues([reference])
         self.assertTrue(issues, "missing source entity must produce an issue")

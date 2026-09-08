@@ -23,6 +23,11 @@ from kb_core.source_model import (
     accepted_decisions_from_documents,
     build_schema_documents,
     decision_authorizes,
+    effective_decision_patches,
+    compile_decisions,
+    _migration_after,
+    migrate_bibliography_value,
+    BIBLIOGRAPHY_BASE_COMMIT,
     normalize_yaml_dates,
     validate_reference_documents,
 )
@@ -151,6 +156,26 @@ def _term_rows(value):
                 yield concept, language.get("language"), term
 
 
+def _migration_history_authorizes(decisions, identity, before, after, events):
+    for event in events:
+        front = decisions.get(event.get("decision"), {})
+        if front.get("level") != "L3" or event.get("event") != "bibliography-reference-migration" or event.get("from_value") != event.get("to_value"):
+            continue
+        for answer in front.get("answers", []):
+            for patch in answer.get("patches", []):
+                if patch.get("identity") != "@control:bibliography" or patch.get("field") != "migration":
+                    continue
+                control = patch.get("value", {})
+                if control.get("base_commit") != BIBLIOGRAPHY_BASE_COMMIT:
+                    continue
+                for grant in control.get("grants", []):
+                    old = {"identity": identity, "field": "record", "value": before}
+                    new = {"identity": identity, "field": "record", "value": after}
+                    if grant.get("before") == old and grant.get("after") == new and new in effective_decision_patches(decisions, grant.get("decision")):
+                        return True
+    return False
+
+
 def _validate_adoption(value, previous, decisions, issues):
     previous_concepts = {
         row["id"]: row for row in (previous or {}).get("concepts", [])
@@ -209,7 +234,7 @@ def _validate_adoption(value, previous, decisions, issues):
             ))
         elif old is not None and semantic_concept(old) != semantic_concept(concept):
             new_history = concept.get("history", [])[len(old.get("history", [])):]
-            if not concept_grants & _history_decisions({"history": new_history}):
+            if not concept_grants & _history_decisions({"history": new_history}) and not _migration_history_authorizes(decisions, identity, semantic_concept(old), semantic_concept(concept), new_history):
                 issues.append(_issue(
                     "TERM_ADOPTION_HISTORY_MISSING", f"concepts[{concept_index}].history",
                     "changed concept history does not record its exact current grant",
@@ -353,7 +378,7 @@ def _validate_project_basis(value, decisions, issues):
 def _validate_definition_sources(value, source_documents, decisions, issues):
     entities = {
         row.get("id"): row
-        for row in source_documents.get("entities", {}).get("entities", [])
+        for row in source_documents.get("bibliography", {}).get("references", [])
         if isinstance(row, Mapping)
     }
     for concept in value.get("concepts", []):
@@ -366,25 +391,25 @@ def _validate_definition_sources(value, source_documents, decisions, issues):
             if term_basis_kind(definition.get("basis")) != "external":
                 continue
             for reference in definition["basis"]:
-                entity = entities.get(reference.get("entity"), {})
+                entity = entities.get(reference.get("reference"), {})
                 if entity.get("tier") not in {"de-facto", "vendor"}:
                     continue
                 permitted = False
                 for decision_id, front in decisions.items():
                     if front.get("level") != "L3" or not l3_records:
                         continue
-                    for answer in front.get("answers", []):
-                        for patch in answer.get("patches", []):
+                    for patches in [effective_decision_patches(decisions, decision_id)]:
+                        for patch in patches:
                             permission = patch.get("value")
                             if (
                                 patch.get("identity") == concept_id
                                 and patch.get("field") == "definition_source_permission"
                                 and isinstance(permission, Mapping)
                                 and set(permission) == {
-                                    "source_entity", "registered_tier", "registered_version",
+                                    "source_reference", "registered_tier", "registered_version",
                                     "read_material", "checked", "concept_basis", "definitions",
                                 }
-                                and permission.get("source_entity") == entity.get("id")
+                                and permission.get("source_reference") == entity.get("id")
                                 and permission.get("registered_tier") == entity.get("tier")
                                 and permission.get("registered_version") == entity.get("version")
                                 and permission.get("concept_basis") == concept.get("basis")
@@ -419,7 +444,7 @@ def _validate_static_relations(document, issues):
 
 
 def _validate_state_chain(history, current, states, transitions, path, issues,
-                          direct_active_grants=frozenset()):
+                          direct_active_grants=frozenset(), migration_decisions=frozenset()):
     state = None
     found = False
     for index, event in enumerate(history):
@@ -434,6 +459,9 @@ def _validate_state_chain(history, current, states, transitions, path, issues,
             and after == "active"
             and event.get("decision") in direct_active_grants
         ):
+            allowed = True
+        if (before == after and event.get("event") == "bibliography-reference-migration"
+                and event.get("decision") in migration_decisions):
             allowed = True
         if before != state or not allowed:
             issues.append(_issue(
@@ -477,7 +505,19 @@ def _complete_historical_record(value, concept_id, workflow=None):
         "schema": "urn:kb-design:schema:terms:1", "version": 1,
         "concepts": [restored],
     }
-    return not schema_issues(document)
+    if not schema_issues(document):
+        return True
+    schemas = copy.deepcopy(list(build_schema_documents().values()))
+    for schema in schemas:
+        if "basisItem" in schema.get("$defs", {}):
+            schema["$defs"]["basisItem"] = {
+                "type": "object", "additionalProperties": False,
+                "required": ["entity", "locator"],
+                "properties": {"entity": {"type": "string", "minLength": 1},
+                               "locator": {"type": "string", "minLength": 1},
+                               "checked": {"type": "string", "format": "date"}},
+            }
+    return not schema_issues(document, source_schemas=schemas)
 
 
 def _historical_active_grants(decisions, concept_id):
@@ -497,6 +537,22 @@ def _historical_active_grants(decisions, concept_id):
     return result
 
 
+def _concept_migration_decisions(concept, decisions):
+    identity = f"terms/concepts/{concept['id']}"
+    after = semantic_concept(concept)
+    result = set()
+    for event in concept.get("history", []):
+        front = decisions.get(event.get("decision"), {})
+        for answer in front.get("answers", []):
+            for patch in answer.get("patches", []):
+                if patch.get("identity") != "@control:bibliography" or patch.get("field") != "migration":
+                    continue
+                for grant in patch.get("value", {}).get("grants", []):
+                    if grant.get("after") == {"identity": identity, "field": "record", "value": after} and _migration_history_authorizes(decisions, identity, grant["before"]["value"], after, [event]):
+                        result.add(event["decision"])
+    return result
+
+
 def _validate_all_history(value, effective_decisions, historical_decisions, issues):
     for concept_index, concept in enumerate(value.get("concepts", [])):
         concept_grants = _patch_decision_ids(
@@ -504,6 +560,7 @@ def _validate_all_history(value, effective_decisions, historical_decisions, issu
             semantic_concept(concept),
             levels={"L2", "L3"},
         )
+        migration_decisions = _concept_migration_decisions(concept, effective_decisions)
         concept_path = f"concepts[{concept_index}].history"
         for index, event in enumerate(concept.get("history", [])):
             if event.get("decision") not in historical_decisions:
@@ -516,6 +573,7 @@ def _validate_all_history(value, effective_decisions, historical_decisions, issu
             {"candidate", "active", "deprecated"}, CONCEPT_TRANSITIONS,
             concept_path, issues,
             _historical_active_grants(historical_decisions, concept["id"]),
+            migration_decisions=migration_decisions,
         )
         for _, _, term in _term_rows({"concepts": [concept]}):
             term_path = f"terms[{term['id']}].history"
@@ -530,7 +588,7 @@ def _validate_all_history(value, effective_decisions, historical_decisions, issu
                 {
                     "preferredTerm-admn-sts", "admittedTerm-admn-sts",
                     "deprecatedTerm-admn-sts", "supersededTerm-admn-sts",
-                }, TERM_TRANSITIONS, term_path, issues,
+                }, TERM_TRANSITIONS, term_path, issues, migration_decisions=migration_decisions,
             )
 
 
@@ -586,7 +644,7 @@ def validate_term_snapshot(value, *, source_documents, accepted_decisions,
                            previous=None, state=None,
                            historical_decisions=None) -> tuple[TermIssue, ...]:
     """Validate a captured term snapshot without reading repository data."""
-    decisions = _accepted(accepted_decisions)
+    decisions = compile_decisions(_accepted(accepted_decisions))
     historical_input = (
         accepted_decisions if historical_decisions is None else historical_decisions
     )
@@ -603,7 +661,7 @@ def validate_term_snapshot(value, *, source_documents, accepted_decisions,
     _validate_static_relations(document, issues)
     references = collect_reference_uses(document)
     source_issues = validate_reference_documents(
-        source_documents.get("entities", {}),
+        source_documents.get("bibliography", {}),
         source_documents.get("sources", {}),
         references,
         decisions,
@@ -615,12 +673,35 @@ def validate_term_snapshot(value, *, source_documents, accepted_decisions,
     _validate_definition_sources(value, source_documents, decisions, issues)
     _validate_all_history(value, decisions, historical, issues)
     if previous is not None:
-        previous_schema = schema_issues(previous)
+        previous_for_schema = copy.deepcopy(previous)
+        transition_value = copy.deepcopy(value)
+        transition_by_id = {row["id"]: row for row in transition_value.get("concepts", [])}
+        by_id = {row["id"]: row for row in value.get("concepts", [])}
+        for index, old in enumerate(previous.get("concepts", [])):
+            current = by_id.get(old["id"], {})
+            events = current.get("history", [])[len(old.get("history", [])):]
+            if current and _migration_history_authorizes(decisions, f"terms/concepts/{old['id']}", semantic_concept(old), semantic_concept(current), events):
+                migrated = copy.deepcopy(current)
+                migrated["history"] = copy.deepcopy(old.get("history", []))
+                old_terms = {term["id"]: term for _, _, term in _term_rows({"concepts": [old]})}
+                for _, _, term in _term_rows({"concepts": [migrated]}):
+                    term["history"] = copy.deepcopy(old_terms[term["id"]].get("history", []))
+                previous_for_schema["concepts"][index] = migrated
+                # Exact reference relocation was checked above and by the full
+                # history validator. It is metadata, not a lifecycle transition.
+                allowed = _concept_migration_decisions(current, decisions)
+                projected = transition_by_id[old["id"]]
+                for item in [projected, *[t for _, _, t in _term_rows({"concepts": [projected]})]]:
+                    item["history"] = [event for event in item.get("history", [])
+                                       if not (event.get("event") == "bibliography-reference-migration"
+                                               and event.get("decision") in allowed
+                                               and event.get("from_value") == event.get("to_value"))]
+        previous_schema = schema_issues(previous_for_schema)
         if previous_schema:
             issues.extend(previous_schema)
         else:
             issues.extend(validate_transition(
-                parse_terms(previous), document, frozenset(historical),
+                parse_terms(previous_for_schema), parse_terms(transition_value), frozenset(historical),
             ))
     if state is not None:
         _validate_state(state, decisions, historical, issues)
