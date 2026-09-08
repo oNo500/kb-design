@@ -21,7 +21,7 @@ import yaml
 from . import __version__
 from .design_source import DesignSnapshot, load_design
 from .errors import ApplicationError
-from .managed import _reference_files, _VIEWS, _yaml_bytes
+from .managed import _reference_files, _VIEWS, _yaml_bytes, base_content_sha256
 from .reference_export import export_reference
 from .validation import _validate_content_tree
 from .vault import (
@@ -149,6 +149,13 @@ def _check_managed(
     formats = []
     for relative, data in sorted(actual.items()):
         expected = entries[relative]["sha256"]
+        saved = entries[relative].get("base_snapshot")
+        if saved is not None:
+            if base_content_sha256(data, path=relative) != base_content_sha256(saved.encode("utf-8"), path=relative):
+                raise ApplicationError(f"managed Base structure hash mismatch: {relative}")
+            if _sha256(data) != expected:
+                formats.append(relative)
+            continue
         if _sha256(data) == expected:
             continue
         view = _VIEWS.get(relative)
@@ -158,7 +165,7 @@ def _check_managed(
             baseline = references.get(relative)
         if baseline is not None and _sha256(baseline) == expected:
             try:
-                equivalent = yaml.safe_load(data) == yaml.safe_load(baseline)
+                equivalent = base_content_sha256(data, path=relative) == base_content_sha256(baseline, path=relative)
             except (ValueError, UnicodeError, yaml.YAMLError):
                 pass
         if not equivalent:
@@ -271,15 +278,19 @@ def refresh_vocabulary(design_root: Path, vault: Path, *, dry_run: bool = False)
         export_reference(snapshot, reference_root)
         references = _reference_files(reference_root)
         formats = _check_managed(root, raw, actual, references)
-        for relative in formats:
-            if relative in references:
-                references[relative] = actual[relative]
+        for relative in references.keys() & actual.keys():
+            if relative.endswith(".base"):
+                if base_content_sha256(references[relative], path=relative) == base_content_sha256(actual[relative], path=relative):
+                    references[relative] = actual[relative]
+                elif any(view.get("sort") for view in yaml.safe_load(actual[relative])["views"]):
+                    raise ApplicationError(f"new Base structure conflicts with retained sorting: {relative}")
         staged = temporary / "vault"
         (staged / "content").mkdir(parents=True)
         _write_files(staged, actual)
-        # Only demonstrably equivalent Base formatting may change old hashes.
+        # Adapt only proven Base preferences for the ancestor's byte contract.
         old_manifest = json.loads(raw)
         for entry in old_manifest["files"]:
+            entry.pop("base_snapshot", None)
             if entry["path"] in formats:
                 entry["sha256"] = _sha256(actual[entry["path"]])
         _write_files(staged, {"app/manifest.json": _json_bytes(old_manifest)})

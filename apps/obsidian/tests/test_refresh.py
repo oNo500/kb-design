@@ -223,6 +223,69 @@ class RefreshTests(unittest.TestCase):
         self.assertEqual([path], result["normalized_base_formats"])
         verify_vault(self.new, self.vault)
 
+    def test_sort_preferences_allow_content_creation_but_not_structure_changes(self):
+        from kb_obsidian.create_content import create_content
+        path = "app/views/inbox.base"
+        value = yaml.safe_load((self.vault / path).read_bytes())
+        value["views"][0]["sort"] = [{"property": "file.mtime", "direction": "ASC"}]
+        data = _yaml_bytes(value)
+        (self.vault / path).write_bytes(data)
+        create_content(self.old, self.vault, title="排序后", type_id="explanation",
+                       genre_id="analysis", subjects=["topic"])
+        self.assertEqual(data, (self.vault / path).read_bytes())
+        for mutation in ("filter", "columns", "direction", "property", "namespace"):
+            with self.subTest(mutation=mutation):
+                changed = yaml.safe_load(data)
+                if mutation == "filter":
+                    changed["filters"] = 'file.inFolder("sources")'
+                elif mutation == "columns":
+                    changed["views"][0]["order"].append("title")
+                elif mutation == "namespace":
+                    changed["views"][0]["sort"][0]["property"] = "note.file.mtime"
+                else:
+                    changed["views"][0]["sort"][0][mutation] = "invalid"
+                (self.vault / path).write_bytes(_yaml_bytes(changed))
+                before = self.tree()
+                with self.assertRaises(ApplicationError):
+                    create_content(self.old, self.vault, title="拒绝", type_id="explanation",
+                                   genre_id="analysis", subjects=["topic"])
+                self.assertEqual(before, self.tree())
+        (self.vault / path).write_bytes(data)
+
+    def test_legacy_sort_migration_preserves_bytes_and_allows_resorting(self):
+        path = "app/views/inbox.base"
+        manifest_path = self.vault / "app/manifest.json"
+        manifest = json.loads(manifest_path.read_bytes())
+        for entry in manifest["files"]:
+            entry.pop("base_snapshot", None)
+        manifest_path.write_bytes(_json_bytes(manifest))
+        value = yaml.safe_load((self.vault / path).read_bytes())
+        value["views"][0]["sort"] = [{"property": "file.mtime", "direction": "ASC"}]
+        data = _yaml_bytes(value)
+        (self.vault / path).write_bytes(data)
+        self.refresh()
+        self.assertEqual(data, (self.vault / path).read_bytes())
+        value["views"][0]["sort"][0]["direction"] = "DESC"
+        (self.vault / path).write_bytes(_yaml_bytes(value))
+        verify_vault(self.new, self.vault)
+        value["views"][0].pop("sort")
+        (self.vault / path).write_bytes(_yaml_bytes(value))
+        verify_vault(self.new, self.vault)
+
+    def test_reference_sort_survives_refresh_without_losing_integrity(self):
+        path, value = self.reference_view()
+        value["views"][0]["sort"] = [{"property": "note.kb_label", "direction": "DESC"}]
+        data = _yaml_bytes(value)
+        (self.vault / path).write_bytes(data)
+        self.refresh()
+        self.assertEqual(data, (self.vault / path).read_bytes())
+        value["views"][0]["sort"][0]["direction"] = "ASC"
+        (self.vault / path).write_bytes(_yaml_bytes(value))
+        verify_vault(self.new, self.vault)
+        data = (self.vault / path).read_bytes()
+        self.refresh()
+        self.assertEqual(data, (self.vault / path).read_bytes())
+
     def reference_view(self):
         path = "kb/views/topics.base"
         view = {"filters": {"and": ['file.inFolder("kb/topics")']},

@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import hashlib
+
 from collections.abc import Mapping
 from pathlib import Path
 
@@ -19,6 +21,42 @@ def _yaml_bytes(value: object) -> bytes:
         default_flow_style=False,
         sort_keys=False,
     ).encode("utf-8")
+
+
+def base_content_sha256(content: bytes, *, path: str = "Base") -> str:
+    """Hash Base structure while allowing valid sorting of displayed columns."""
+    try:
+        value = yaml.safe_load(content)
+        if not isinstance(value, dict) or not isinstance(value.get("views"), list):
+            raise ValueError("invalid Base views")
+        for view in value["views"]:
+            if not isinstance(view, dict):
+                raise ValueError("invalid Base view")
+            sorting = view.pop("sort", [])
+            if not isinstance(sorting, list):
+                raise ValueError("invalid Base sort")
+            columns = view.get("order", [])
+            if not isinstance(columns, list) or not all(isinstance(v, str) for v in columns):
+                raise ValueError("invalid Base columns")
+            def property_key(name: str) -> str:
+                return name if name.startswith(("note.", "file.", "formula.")) else f"note.{name}"
+
+            allowed = {property_key(column) for column in columns}
+            seen = set()
+            for item in sorting:
+                if not isinstance(item, dict) or set(item) != {"property", "direction"}:
+                    raise ValueError("invalid Base sort entry")
+                prop = item["property"]
+                key = property_key(prop) if isinstance(prop, str) else None
+                if (view.get("type") != "table" or not isinstance(prop, str)
+                        or key not in allowed or key in seen
+                        or item["direction"] not in ("ASC", "DESC")):
+                    raise ValueError("invalid Base sort property or direction")
+                seen.add(key)
+        canonical = yaml.safe_dump(value, allow_unicode=True, sort_keys=True).encode("utf-8")
+    except (ValueError, TypeError, UnicodeError, yaml.YAMLError, RecursionError) as exc:
+        raise ApplicationError(f"invalid Base structure or sort preference: {path}") from exc
+    return hashlib.sha256(canonical).hexdigest()
 
 
 _TEMPLATES = {

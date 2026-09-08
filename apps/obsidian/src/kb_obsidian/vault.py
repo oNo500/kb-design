@@ -19,6 +19,7 @@ from kb_core.repository import project_root
 from . import __version__
 from .design_source import DesignSnapshot, load_design
 from .errors import ApplicationError
+from .managed import base_content_sha256
 from .managed import build_managed_files
 from .reference_export import export_reference
 from .render import render_frontmatter
@@ -282,7 +283,9 @@ def _manifest_files(manifest_path: Path, value: object) -> dict[str, Mapping[str
     files: dict[str, Mapping[str, object]] = {}
     for index, entry in enumerate(value):
         context = f"{manifest_path} files[{index}]"
-        if not isinstance(entry, Mapping) or set(entry) != {"path", "kind", "sha256"}:
+        if not isinstance(entry, Mapping) or set(entry) not in (
+            {"path", "kind", "sha256"}, {"path", "kind", "sha256", "base_snapshot"}
+        ):
             raise ApplicationError(f"vault manifest has an invalid file entry: {context}")
         path = _relative_path(entry["path"], context=context)
         try:
@@ -294,6 +297,12 @@ def _manifest_files(manifest_path: Path, value: object) -> dict[str, Mapping[str
         digest = entry["sha256"]
         if not isinstance(digest, str) or _SHA256.fullmatch(digest) is None:
             raise ApplicationError(f"vault manifest has an invalid file hash for {path}: {manifest_path}")
+        if "base_snapshot" in entry:
+            baseline = entry["base_snapshot"]
+            if (not path.endswith(".base") or not isinstance(baseline, str)
+                    or _sha256(baseline.encode("utf-8")) != digest):
+                raise ApplicationError(f"vault manifest has an invalid Base snapshot hash: {path}")
+            base_content_sha256(baseline.encode("utf-8"), path=path)
         if path in files:
             raise ApplicationError(f"vault manifest has a duplicate file path: {path} in {manifest_path}")
         files[path] = entry
@@ -344,7 +353,8 @@ def _manifest(snapshot: DesignSnapshot, managed_files: Mapping[str, bytes]) -> d
             for path, digest in sorted(snapshot.input_hashes.items())
         ],
         "files": [
-            {"path": path, "kind": _kind(path), "sha256": _sha256(content)}
+            {"path": path, "kind": _kind(path), "sha256": _sha256(content),
+             **({"base_snapshot": content.decode("utf-8")} if path.endswith(".base") else {})}
             for path, content in sorted(managed_files.items())
         ],
     }
@@ -490,6 +500,11 @@ def verify_vault(snapshot: DesignSnapshot, vault: Path) -> Path:
     for path in sorted(entries):
         actual_hash = _sha256(actual_files[path])
         expected_hash = entries[path]["sha256"]
+        baseline = entries[path].get("base_snapshot")
+        if baseline is not None:
+            if base_content_sha256(actual_files[path], path=path) != base_content_sha256(baseline.encode("utf-8"), path=path):
+                raise ApplicationError(f"managed Base structure hash mismatch: {path}")
+            continue
         if actual_hash != expected_hash:
             raise ApplicationError(
                 f"managed file hash mismatch: {path}; expected {expected_hash}, actual {actual_hash}"

@@ -74,6 +74,12 @@ obsidian vault=实际ID base:query path=app/views/content.base format=json
 
 本项目没有新增原生 CLI 包装器，上述检查由调用方执行。新内容仍经过 `kb-obsidian new-content`；普通材料及正文修改服从任务授权，写后校验。AI 不直接更改内容 properties、稳定身份、状态或路径。详见[终端访问决定](../../docs/decisions/obsidian-agent-entry.md)。
 
+## 视图排序
+
+完整 vault 的 Base 表格允许按已有显示列排序，保留升序、降序、排序次序及清空排序；筛选、显示列和其他结构仍受管理。新建或刷新后的清单保存 Base 发布快照，后续排序不阻断内容建立和校验。旧库先运行 `refresh --dry-run` 核对，再执行 `refresh` 迁移；不会重写应用视图或撤销排序。
+
+新清单应由当前工具读取，旧版工具会拒绝新增快照字段。具体合同见[视图排序](../../docs/decisions/obsidian-base-sort-preferences.md)。
+
 ## 内容建立
 
 以下命令在默认 vault 中创建一条 `draft` 内容。`--subject` 至少出现一次；`--subject`、`--entity` 和 `--reference` 可以重复。`--form`、`--level` 和 `--language` 可选，语言默认是 `zh`。
