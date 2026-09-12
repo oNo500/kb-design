@@ -102,6 +102,8 @@ class DesignSourceTests(unittest.TestCase):
         from kb_obsidian.reference_export import export_reference
         with tempfile.TemporaryDirectory() as temporary:
             root = self.clone_design(Path(temporary) / "design")
+            # Chinese paths must work even when Git quotes non-ASCII filenames.
+            subprocess.run(["git", "-C", str(root), "config", "core.quotepath", "true"], check=True)
             subprocess.run(["git", "-C", str(root), "-c", "user.name=Test",
                             "-c", "user.email=test@example.invalid", "commit",
                             "--quiet", "--allow-empty", "-m", "new design"], check=True)

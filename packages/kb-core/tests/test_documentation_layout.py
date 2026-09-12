@@ -16,6 +16,9 @@ class DocumentationLayoutTests(unittest.TestCase):
             ("docs/model/sources/decision-source-approval.md", "history"),
             ("docs/model/vocabulary/reading-iso-25964.md", "source"),
             ("docs/model/vocabulary/topics.md", "formal"),
+            ("docs/model/vocabulary/提案-分面字段.md", "draft"),
+            ("docs/model/vocabulary/阅读-ISO 25964 叙词表标准.md", "source"),
+            ("docs/model/sources/决定-来源模式.md", "history"),
         ):
             with self.subTest(path=path):
                 self.assertEqual(expected, classify_markdown_path(path))
@@ -36,5 +39,22 @@ class DocumentationLayoutTests(unittest.TestCase):
             duplicate = root / "docs/model/terminology/decision-source-copy.md"
             duplicate.parent.mkdir(parents=True)
             shutil.copyfile(relocated, duplicate)
+            self.assertEqual({}, _load_accepted_decisions(root / "docs"))
+            self.assertEqual({}, load_term_decisions(root))
+
+    def test_chinese_decision_names_keep_selection_and_duplicate_rejection(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            _, grant = write_fixture(root)
+            old = root / "docs/decisions/source-approval.md"
+            moved = root / "docs/model/sources/决定-来源模式.md"
+            moved.parent.mkdir(parents=True)
+            old.rename(moved)
+            shutil.copyfile(moved, moved.with_name("提案-来源模式.md"))
+            self.assertEqual({grant["id"]: grant}, _load_accepted_decisions(root / "docs"))
+            self.assertEqual({grant["id"]: grant}, load_term_decisions(root))
+            duplicate = root / "docs/model/terminology" / moved.name
+            duplicate.parent.mkdir(parents=True)
+            shutil.copyfile(moved, duplicate)
             self.assertEqual({}, _load_accepted_decisions(root / "docs"))
             self.assertEqual({}, load_term_decisions(root))

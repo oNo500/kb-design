@@ -42,10 +42,10 @@ class SourceEvidenceTests(unittest.TestCase):
             {'use_id': key, 'new_role': 'mapping', 'new_status': 'proposed', 'decision': None}
             for key in ['gbt-13745', 'diataxis']
         ]})
-        self.text('docs/model/vocabulary/reading-gbt-13745.md', '# 分类清单\n\n转载清单，非原始 PDF。\n\n## 520 计算机科学技术\n\n条目说明。\n')
-        self.text('docs/governance/writing/reading-writing-guides.md', '# 阅读记录\n\n## 用途\n\n[Diátaxis Explanation](https://diataxis.fr/explanation/)：解释原因。\n')
+        self.text('docs/model/vocabulary/阅读-GB-T 13745-2009 学科分类清单.md', '# 分类清单\n\n转载清单，非原始 PDF。\n\n## 520 计算机科学技术\n\n条目说明。\n')
+        self.text('docs/governance/writing/阅读-写作规范.md', '# 阅读记录\n\n## 用途\n\n[Diátaxis Explanation](https://diataxis.fr/explanation/)：解释原因。\n')
         for path in ['current-stage-scope', 'source-validation-policy']:
-            self.text({'current-stage-scope': 'docs/governance/decision-making/decision-current-stage-scope.md', 'source-validation-policy': 'docs/model/sources/decision-source-validation-policy.md'}[path], '# 阶段规则\n\n不自动采纳。\n')
+            self.text({'current-stage-scope': 'docs/governance/decision-making/决定-当前阶段.md', 'source-validation-policy': 'docs/model/sources/决定-来源校验.md'}[path], '# 阶段规则\n\n不自动采纳。\n')
 
     def text(self, relative, text):
         path = self.root / relative
@@ -112,7 +112,7 @@ class SourceEvidenceTests(unittest.TestCase):
     def test_material_and_record_changes_invalidate_only_affected_item(self):
         """Changing evidence or the supported value must never retain its old cached result."""
         self.run_prepare()
-        p = self.root / 'docs/model/vocabulary/reading-gbt-13745.md'
+        p = self.root / 'docs/model/vocabulary/阅读-GB-T 13745-2009 学科分类清单.md'
         p.write_text(p.read_text().replace('520 计算机科学技术', '520 计算机科学技术 修订'))
         summary = self.run_prepare()
         self.assertEqual(['computing-gbt-520'], summary['changed'])
@@ -134,7 +134,7 @@ class SourceEvidenceTests(unittest.TestCase):
     def test_missing_material_discards_old_excerpts_and_retains_gap(self):
         """A removed offline material must be reported as missing rather than served from cache."""
         self.run_prepare()
-        (self.root / 'docs/governance/writing/reading-writing-guides.md').unlink()
+        (self.root / 'docs/governance/writing/阅读-写作规范.md').unlink()
         self.run_prepare()
         item = self.report()['items'][1]
         self.assertEqual('missing', item['materials'][0]['availability'])
@@ -148,7 +148,7 @@ class SourceEvidenceTests(unittest.TestCase):
         data = yaml.safe_load(p.read_text()); data['rows'][1]['disposition'] = 'changed_conclusion'
         self.write('data/audit/migrations/source-v1/match.yaml', data)
         self.assertEqual(['explanation-diataxis'], self.run_prepare()['changed'])
-        self.text('docs/governance/decision-making/decision-current-stage-scope.md', '# 新阶段\n新边界\n')
+        self.text('docs/governance/decision-making/决定-当前阶段.md', '# 新阶段\n新边界\n')
         self.assertEqual(2, len(self.run_prepare()['changed']))
 
     def test_rejects_output_over_formal_data_and_symlinked_build(self):

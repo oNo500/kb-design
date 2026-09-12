@@ -8,17 +8,17 @@
 
 ## 设计依据
 
-- [Obsidian 官方帮助](reading-obsidian-help.md)
+- [Obsidian 官方帮助](阅读-Obsidian%20官方帮助.md)
 
 ## 相关决定
 
 决定保留形成时的正文与路径语境；现行规则结合后续具体采纳解释。
 
-- [终端访问](decision-obsidian-agent-entry.md)
-- [视图排序](decision-obsidian-base-sort-preferences.md)
-- [词表参考刷新](decision-obsidian-reference-refresh.md)
-- [Obsidian 工具归属](decision-obsidian-tool-location.md)
+- [终端访问](决定-终端访问.md)
+- [视图排序](决定-视图排序.md)
+- [词表参考刷新](决定-词表参考刷新.md)
+- [Obsidian 工具归属](决定-Obsidian%20工具归属.md)
 
 ## 项目入口
 
-返回[项目文档](../../README.md)。
+返回[项目文档](../../索引-项目文档.md)。

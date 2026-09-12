@@ -1,4 +1,4 @@
-from kb_core.documentation import decision_paths
+from kb_core.documentation import decision_paths, decision_selection_name
 import copy
 import hashlib
 import json
@@ -231,7 +231,7 @@ class TermGenerationTests(unittest.TestCase):
                          design_root / "data/inputs/topics/label-adoptions.json")
             (design_root / "docs/decisions").mkdir(parents=True)
             for path in decision_paths(ROOT / "docs", ("source-*.md",)):
-                shutil.copy2(path, design_root / "docs/decisions" / path.name.removeprefix("decision-"))
+                shutil.copy2(path, design_root / "docs/decisions" / decision_selection_name(path))
             (design_root / "schemas").mkdir()
             shutil.copy2(ROOT / "schemas/glossary-layout-v2.schema.json",
                          design_root / "schemas/glossary-layout-v2.schema.json")

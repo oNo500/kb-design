@@ -19,7 +19,7 @@ from kb_core.governance.check_term_usage import (
 
 
 ROOT = project_root()
-GLOSSARY = ROOT / "docs/glossary.md"
+GLOSSARY = ROOT / "docs/参考-术语表.md"
 VOCABULARIES = ("topics.yaml", "entities.yaml", "types.yaml")
 VOCABULARY_COLLECTIONS = ("concepts", "entities", "types")
 GLOSSARY_SEPARATOR = re.compile(r"\s*/\s*|、|，|,")

@@ -23,7 +23,7 @@ RECIPES = (
         'source': 'gbt-13745', 'item': '520', 'ledger': 'match-inventory.tsv:49',
         'basis_field': 'concepts[computing].basis.zh',
         'material': {
-            'path': 'docs/model/vocabulary/reading-gbt-13745.md', 'kind': 'transcription',
+            'path': 'docs/model/vocabulary/阅读-GB-T 13745-2009 学科分类清单.md', 'kind': 'transcription',
             'description': '项目保存的转载清单，不是本轮核对的标准原文',
             'needle': '520 计算机科学技术',
             'source_url': 'https://xkfl.xhma.com/',
@@ -37,7 +37,7 @@ RECIPES = (
         'source': 'diataxis', 'item': 'explanation', 'ledger': 'match-inventory.tsv:755',
         'basis_field': None,
         'material': {
-            'path': 'docs/governance/writing/reading-writing-guides.md', 'kind': 'reading-note',
+            'path': 'docs/governance/writing/阅读-写作规范.md', 'kind': 'reading-note',
             'description': '项目阅读记录，不是原页面快照或本轮外部核验',
             'needle': 'https://diataxis.fr/explanation/',
             'source_url': 'https://diataxis.fr/explanation/',
@@ -46,7 +46,7 @@ RECIPES = (
                     'external_status_evidence', 'mapping_role_decision', 'relation_review'],
     },
 )
-POLICIES = ('docs/governance/decision-making/decision-current-stage-scope.md', 'docs/model/sources/decision-source-validation-policy.md')
+POLICIES = ('docs/governance/decision-making/决定-当前阶段.md', 'docs/model/sources/决定-来源校验.md')
 OUTPUT_FILES = {'evidence.json', 'evidence.md', 'changes.md', 'cache.json'}
 MISSING_LABELS = {
     'primary_standard_and_amendments': '缺原始标准及适用修改单的逐值证据',

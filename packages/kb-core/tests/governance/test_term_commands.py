@@ -1,4 +1,4 @@
-from kb_core.documentation import decision_paths
+from kb_core.documentation import decision_paths, decision_selection_name
 import copy
 import json
 import os
@@ -30,7 +30,7 @@ class TermCommandTests(unittest.TestCase):
             # real term record grants would require their entire approved batch.
             (root / "docs/decisions").mkdir(parents=True)
             for path in decision_paths(ROOT / "docs", ("source-*.md",)):
-                shutil.copy2(path, root / "docs/decisions" / path.name.removeprefix("decision-"))
+                shutil.copy2(path, root / "docs/decisions" / decision_selection_name(path))
             shutil.copytree(ROOT / "data/inputs/topics", root / "data/inputs/topics")
             document = yaml.safe_load((ROOT / "tests/fixtures/terminology/valid/minimal-active.yaml").read_text())
             concept = document["concepts"][0]

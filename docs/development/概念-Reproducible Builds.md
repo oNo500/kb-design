@@ -40,8 +40,8 @@ BagIt manifest 按 RFC 8493 记录文件及 checksum；普通项目 manifest 不
 
 - Lamb, C. 与 Zacchiroli, S. [Reproducible Builds: Increasing the Integrity of Software Supply Chains](https://arxiv.org/pdf/2104.06020v1)，IEEE Software，2021，[DOI](https://doi.org/10.1109/MS.2021.3073045)：固定作者稿第 2 页 Definition 1，源码版本、全部依赖与环境无关条件。
 - [Definitions](https://reproducible-builds.org/docs/definition/)：官网条件对照与实践入口，不承担本库定义依据。
-- [Reproducible Builds 阅读笔记](reading-reproducible-builds.md)：官网材料的既有核对记录；其中相同环境条件不替代 IEEE 论文定义。
-- [BagIt 文件包格式阅读笔记](reading-rfc-8493.md)：manifest、checksum、complete bag 与 valid bag 的边界。
-- [RFC 8785 阅读笔记](reading-rfc-8785.md)：JCS 的组合条件与当前参数边界。
-- [W3C PROV 阅读笔记](../model/sources/reading-w3c-prov.md)：provenance 对象、关系与证明边界。
-- [Python 文件系统阅读笔记](reading-python-filesystem.md)：原子可见性、持久性与事务边界。
+- [Reproducible Builds 阅读笔记](阅读-Reproducible%20Builds.md)：官网材料的既有核对记录；其中相同环境条件不替代 IEEE 论文定义。
+- [BagIt 文件包格式阅读笔记](阅读-BagIt%20文件包格式.md)：manifest、checksum、complete bag 与 valid bag 的边界。
+- [RFC 8785 阅读笔记](阅读-RFC%208785.md)：JCS 的组合条件与当前参数边界。
+- [W3C PROV 阅读笔记](../model/sources/阅读-W3C%20PROV.md)：provenance 对象、关系与证明边界。
+- [Python 文件系统阅读笔记](阅读-Python%20文件系统.md)：原子可见性、持久性与事务边界。

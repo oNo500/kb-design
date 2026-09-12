@@ -126,7 +126,7 @@ def default_design_root() -> Path:
 def _verify_snapshot_implementation(root: Path, commit: str) -> Mapping[str, bytes]:
     """Return selected implementation bytes only when Git and the worktree agree."""
     verified: dict[str, bytes] = {}
-    selected_decisions = tuple(path for path in _git(root, "ls-tree", "-r", "--name-only", commit, "--", "docs").splitlines()
+    selected_decisions = tuple(path for path in _git(root, "ls-tree", "-r", "--name-only", "-z", commit, "--", "docs").split("\0")
                                if is_decision_path(path, ("source-*.md", "term-*.md")))
     actual_decisions = {
         path.relative_to(root).as_posix()

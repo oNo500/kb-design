@@ -69,11 +69,11 @@ DCMI 将本文采用的 2005、2007、2008 和 2009 材料列入 past specificat
 
 ## 权威来源
 
-- [DCMI Application Profiles 阅读笔记](reading-dcmi-application-profiles.md)：材料身份、职责边界、规范状态、译名结论和项目边界
+- [DCMI Application Profiles 阅读笔记](阅读-DCMI%20Application%20Profiles.md)：材料身份、职责边界、规范状态、译名结论和项目边界
 - [Dublin Core™ Application Profile Guidelines](https://www.dublincore.org/specifications/dublin-core/application-profile-guidelines/)：`term` 的选择、约束与应用语境
 - [The Singapore Framework for Dublin Core™ Application Profiles](https://www.dublincore.org/specifications/dublin-core/singapore-framework/)：Application Profile 的组件与分层
 - [Guidelines for Dublin Core™ Application Profiles](https://www.dublincore.org/specifications/dublin-core/profile-guidelines/)：功能范围、模型、字段约束、使用指南和编码指南
 - [DCMI Abstract Model](https://www.dublincore.org/specifications/dublin-core/abstract-model/)：metadata 模型、encoding guideline 与 `Syntax Encoding Scheme`
-- [Obsidian 官方帮助阅读笔记](../obsidian/reading-obsidian-help.md)：properties、YAML 和应用能力边界
+- [Obsidian 官方帮助阅读笔记](../obsidian/阅读-Obsidian%20官方帮助.md)：properties、YAML 和应用能力边界
 
 偏离约定：Application Profile 的中文 designation 未经现行阶梯核实，文章标题保留来源原名。

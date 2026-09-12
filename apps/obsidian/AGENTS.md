@@ -6,7 +6,7 @@
 
 应用通过 uv workspace 依赖 `packages/kb-core/`。命令从显式仓库根定位资源，不依赖调用时的工作目录。默认 vault 位于 `output/obsidian/`；显式 `--output`、`--vault` 和 `--design-root` 优先，并允许外部绝对路径。
 
-设计来源必须是干净的 Git 快照。manifest 记录实际提交与输入哈希，不使用提交白名单。旧 vault 刷新仍须验证祖先提交与旧输入哈希，见[工具归属](../../docs/applications/obsidian/decision-obsidian-tool-location.md)。
+设计来源必须是干净的 Git 快照。manifest 记录实际提交与输入哈希，不使用提交白名单。旧 vault 刷新仍须验证祖先提交与旧输入哈希，见[工具归属](../../docs/applications/obsidian/决定-Obsidian%20工具归属.md)。
 
 ## 写集边界
 

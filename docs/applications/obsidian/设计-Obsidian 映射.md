@@ -1,16 +1,16 @@
 # Obsidian 映射
 
-本文规定 Obsidian 作为 `kb-design` 首个完整落地应用层的 `Application Profile`。现行词表参考导出的 artifact contract 是上游物化子系统，`apps/obsidian/` 中的 `kb-obsidian` 工具从干净的设计提交消费其结果并建立完整 vault。本文按[内容模型](../../model/content/设计-内容模型.md)引用应用无关语义，再规定 Obsidian 的功能范围、对象职责、field binding、使用方式与具体表示；artifact contract 只负责把已经选定的正式词表表示物化为文件。分层依据见 [Application Profile](../shared/概念-Application%20Profile.md)、[Reproducible Builds](../../development/概念-Reproducible%20Builds.md)、[方法登记](../../governance/decision-making/设计-方法登记.md)、[设计与应用分离](../shared/decision-form-independence.md)和[应用约束与表示分层](../shared/decision-application-profile-boundary.md)。
+本文规定 Obsidian 作为 `kb-design` 首个完整落地应用层的 `Application Profile`。现行词表参考导出的 artifact contract 是上游物化子系统，`apps/obsidian/` 中的 `kb-obsidian` 工具从干净的设计提交消费其结果并建立完整 vault。本文按[内容模型](../../model/content/设计-内容模型.md)引用应用无关语义，再规定 Obsidian 的功能范围、对象职责、field binding、使用方式与具体表示；artifact contract 只负责把已经选定的正式词表表示物化为文件。分层依据见 [Application Profile](../shared/概念-Application%20Profile.md)、[Reproducible Builds](../../development/概念-Reproducible%20Builds.md)、[方法登记](../../governance/decision-making/设计-方法登记.md)、[设计与应用分离](../shared/决定-设计与应用分离.md)和[应用约束与表示分层](../shared/决定-应用约束与表示分层.md)。
 
 ## 当前状态
 
-本 target 规定六份正式词表、参考文献目录和经发布门禁启用的术语参考表示，以及内容建立、校验与报告。`kb-obsidian` 从干净设计快照初始化 vault，建立 UUIDv4 `draft` 内容；语言依据按[语言依据结构](../../model/terminology/decision-structured-label-basis.md)显示等级和真实依据性质，术语输入按[术语发布](../../model/terminology/decision-term-complete-publication.md)独立校验。
+本 target 规定六份正式词表、参考文献目录和经发布门禁启用的术语参考表示，以及内容建立、校验与报告。`kb-obsidian` 从干净设计快照初始化 vault，建立 UUIDv4 `draft` 内容；语言依据按[语言依据结构](../../model/terminology/决定-语言依据结构.md)显示等级和真实依据性质，术语输入按[术语发布](../../model/terminology/决定-术语发布条件.md)独立校验。
 
-工具按[工具归属](decision-obsidian-tool-location.md)和[仓库布局](../../development/decision-monorepo-layout.md)同仓维护，默认读取所在仓库，也接受显式 `--design-root`；manifest 记录实际提交与输入哈希，不使用提交白名单。命令默认输出仍为 `output/obsidian/`，正式知识库为仓库外的 `~/Documents/kb-vault/`，操作正式库时必须显式指定。
+工具按[工具归属](决定-Obsidian%20工具归属.md)和[仓库布局](../../development/决定-仓库布局.md)同仓维护，默认读取所在仓库，也接受显式 `--design-root`；manifest 记录实际提交与输入哈希，不使用提交白名单。命令默认输出仍为 `output/obsidian/`，正式知识库为仓库外的 `~/Documents/kb-vault/`，操作正式库时必须显式指定。
 
 历史单条 draft 或空库观察不代表当前内容数量。参考数据、工具能力、临时验收与正式库同步分别保留证据，内容存在不自动启用正式消费者。书目分离的应用迁移按明确写集执行，本文不作为迁移完成记录。
 
-按[终端访问](decision-obsidian-agent-entry.md)，新库生成受管理的根 `AGENTS.md`。普通参考刷新不更新旧库规则或用户内容；当前没有可审计查询日志和自动回流接口。
+按[终端访问](决定-终端访问.md)，新库生成受管理的根 `AGENTS.md`。普通参考刷新不更新旧库规则或用户内容；当前没有可审计查询日志和自动回流接口。
 
 ## 功能范围
 
@@ -46,7 +46,7 @@ Obsidian 不能直接表达的约束由校验器保留，不能用自由 tag、�
 | 派生报告 | `app/reports/` | `kb-obsidian` 校验和报告命令 | 只保存可重算事实与复核线索，可以删除和重建 |
 | 应用配置 | `.obsidian/` | 初始化器给出最低基线，其余由使用者维护 | 不修改模型、正式数据或项目决定 |
 
-受管理表示和派生报告中的所有文件都可以由文件系统工具修改；只有 Obsidian 支持的 Markdown 和 Base 文件可以在 Obsidian 中编辑，普通 JSON manifest 不是 Obsidian 内容格式。对这些文件的修改不回流、不取得项目效力。[视图排序](decision-obsidian-base-sort-preferences.md)允许 Base 表格的合格排序及 YAML 排版作为本地偏好保留，通过发布快照核对其余结构；其他受管理修改仍形成阻断性漂移。派生报告不作为下一次结论的输入。用户文件不属于受管理写集，生成器不得覆盖、移动或删除。
+受管理表示和派生报告中的所有文件都可以由文件系统工具修改；只有 Obsidian 支持的 Markdown 和 Base 文件可以在 Obsidian 中编辑，普通 JSON manifest 不是 Obsidian 内容格式。对这些文件的修改不回流、不取得项目效力。[视图排序](决定-视图排序.md)允许 Base 表格的合格排序及 YAML 排版作为本地偏好保留，通过发布快照核对其余结构；其他受管理修改仍形成阻断性漂移。派生报告不作为下一次结论的输入。用户文件不属于受管理写集，生成器不得覆盖、移动或删除。
 
 
 根规则只在 manifest 明确登记时属于受管理写集。旧库中未登记的同名文件保持原权属；校验和刷新均不自动接管。已登记规则的缺失、符号链接或字节漂移必须阻断后续内容与刷新操作。
@@ -103,7 +103,7 @@ AI 优先使用原生 CLI 与本地命令；工具无法完成时直接说明并
 
 搜索初始上限为 10，初次读取最多三个候选；核对 ID、label、scope、上位、数组和来源。正文、文件名、alias、命中次数或 Base 行都不能直接批准 subject 或概念关系。UUID 内容使用标题、alias 和正文检索。
 
-调用方检查超时、退出码、错误文本、JSON 结构和路径匹配。退出码 0 不等于成功；失败、截断或超时不得触发后续写入。热路径设 2 秒期限，仅串行重试一次，冷启动期限单独处理。AI 写入边界以[终端访问决定](decision-obsidian-agent-entry.md)和生成的根规则为准；本阶段没有新的 CLI 包装器、自动分类或属性更新接口。
+调用方检查超时、退出码、错误文本、JSON 结构和路径匹配。退出码 0 不等于成功；失败、截断或超时不得触发后续写入。热路径设 2 秒期限，仅串行重试一次，冷启动期限单独处理。AI 写入边界以[终端访问决定](决定-终端访问.md)和生成的根规则为准；本阶段没有新的 CLI 包装器、自动分类或属性更新接口。
 
 ## 对象边界
 
@@ -148,7 +148,7 @@ Obsidian URI、Unique note creator 和普通新建命令只能作为 `inbox/` �
 
 内容建立必须通过受管理模板配合建立器，或具备同等约束的工具完成。Templates 只能插入片段和日期，不能生成并检查合法 identifier、校验受控值或保证必填性。建立器生成无前缀、小写 UUIDv4，检查现有 identifier 和目标路径没有重复，让使用者选择恰好一个 `type`、恰好一个 `genre` 和至少一个非 deprecated `subject`，写入一级标题、`title`、由标题派生的 `aliases`、`created` 与 `status: draft`，再回读并运行单文件校验。无法判断必填值时，材料继续留在 `inbox/`。
 
-identifier 规则已经由[内容单元标识符](../../model/content/decision-content-unit-identifiers.md)决定，`kb-obsidian new-content` 已实现上述受约束的 `draft` 建立路径。建立器可用只证明应用行为存在；新文件仍须由使用者提供内容和受控选择，建立动作也不批准 `active` 状态或激活正式消费者。
+identifier 规则已经由[内容单元标识符](../../model/content/决定-内容单元标识符.md)决定，`kb-obsidian new-content` 已实现上述受约束的 `draft` 建立路径。建立器可用只证明应用行为存在；新文件仍须由使用者提供内容和受控选择，建立动作也不批准 `active` 状态或激活正式消费者。
 
 ### 内容状态
 
@@ -184,7 +184,7 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 
 下表指定 location、type、reference form 与 loss。所有表示均无回流接口。缺失的可选值和空列表不生成 property；正文保留结构所需的空值。实体、书目与来源用途的形状使用核心生成 schema，内部引用必须存在，实际来源使用须具备对应 approved 角色；导出对捕获的词表、决定、义务和语言采纳字节调用完整核心语义检查，覆盖字段精准采纳、复核周期、观察政策和语言依据，不重新读取这些输入。通过检查仍不等于发布或正式消费者激活。
 
-按[来源收尾](../../model/sources/decision-source-completion.md)隔离的 17 条旧映射不进入词表笔记、来源链接或外部映射表。导出因此不提供这些历史关系的浏览与跳转，查阅须回到决定隔离清单和 Git 历史；空表或缺边不表示此前没有引用。该损失不影响对象、标签、项目状态及其他关系的表示。24 个既有数组显示项目保留的成员和顺序，不能据此认定外部组完整或原文顺序一致。
+按[来源收尾](../../model/sources/决定-来源收尾.md)隔离的 17 条旧映射不进入词表笔记、来源链接或外部映射表。导出因此不提供这些历史关系的浏览与跳转，查阅须回到决定隔离清单和 Git 历史；空表或缺边不表示此前没有引用。该损失不影响对象、标签、项目状态及其他关系的表示。24 个既有数组显示项目保留的成员和顺序，不能据此认定外部组完整或原文顺序一致。
 
 ### 文档字段
 
@@ -267,7 +267,7 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 
 ## 术语表示
 
-本节按[术语实施范围](../../model/terminology/decision-term-infrastructure-scope.md)规定获准术语的单向应用表示，不改变应用无关词表语义。`data/vocab/terms.yaml` 和 `data/vocab/term-cutover-state.yaml` 必须同时存在且通过完整校验才被消费；仅有一个文件时拒绝加载。两者均不存在时只处理现行六份词表，不创建术语消费者状态。
+本节按[术语实施范围](../../model/terminology/决定-术语实施范围.md)规定获准术语的单向应用表示，不改变应用无关词表语义。`data/vocab/terms.yaml` 和 `data/vocab/term-cutover-state.yaml` 必须同时存在且通过完整校验才被消费；仅有一个文件时拒绝加载。两者均不存在时只处理现行六份词表，不创建术语消费者状态。
 
 | 来源字段 | Obsidian 表示 | 边界 |
 |---|---|---|
@@ -571,7 +571,7 @@ uv run python -m kb_obsidian.exporter \
 
 ## 词表刷新
 
-`apps/obsidian/` 中的工具提供显式 `refresh`，按[词表参考刷新](decision-obsidian-reference-refresh.md)及[工具归属](decision-obsidian-tool-location.md)更新既有 vault 的 `kb/` 与 `app/manifest.json`。初始化和独立导出仍只接受空目标；用户内容、配置、应用模板、视图和规则保持不变，派生报告另由 `report` 更新。
+`apps/obsidian/` 中的工具提供显式 `refresh`，按[词表参考刷新](决定-词表参考刷新.md)及[工具归属](决定-Obsidian%20工具归属.md)更新既有 vault 的 `kb/` 与 `app/manifest.json`。初始化和独立导出仍只接受空目标；用户内容、配置、应用模板、视图和规则保持不变，派生报告另由 `report` 更新。
 
 刷新验证旧清单版本、旧设计提交属于当前 Git 历史、旧输入哈希与该提交的字节一致；旧祖先快照使用其对应实现验证，不能先转换为新结构再声称核验原基线。随后再核对受管理写集，检查新词表对内容受控引用及显式 `kb/` Wikilink 的影响。Base 仅有 YAML 排版差异、原清单哈希能由生成模板证明且内容语义相同时，保留实际字节并记录其哈希；实质变化仍拒绝覆盖。
 
@@ -579,7 +579,7 @@ uv run python -m kb_obsidian.exporter \
 
 ### 书目迁移
 
-[参考文献分离](../../model/sources/decision-source-bibliography-separation.md)不扩大普通 refresh 写集。旧 `kb/entities/` 文献链接、`kb_references` 及相应派生来源，只能通过明确列出的单次迁移调整；正文普通资料链接无需书目准入。迁移清单逐文件说明目标、变换与保护范围，保持内容 UUID、标题、状态和无关正文，迁移前备份并在临时 vault 核对引用。
+[参考文献分离](../../model/sources/决定-参考文献分离.md)不扩大普通 refresh 写集。旧 `kb/entities/` 文献链接、`kb_references` 及相应派生来源，只能通过明确列出的单次迁移调整；正文普通资料链接无需书目准入。迁移清单逐文件说明目标、变换与保护范围，保持内容 UUID、标题、状态和无关正文，迁移前备份并在临时 vault 核对引用。
 
 书目拆分、临时验收、正式库同步和发版分别记录结果，不因新目录、模式或参考导出存在而宣称同步完成。旧格式不进入日常严格读取，不建立长期双格式兼容。
 
@@ -590,7 +590,7 @@ uv run python -m kb_obsidian.exporter \
 - 参考区以外的非空 vault 更新、自动回流、自动修复和社区插件增强继续后置。
 - 若未来需要 reproducible build 主张，另行界定 specified artifacts、source、environment 和 instructions，并取得 independent rebuild 证据。
 - 若未来需要 durability，另行设计 file 与 directory `fsync`、故障模型和恢复验证；不从当前 atomic visibility 推导。
-- TBX 只按[未生效草案](../../model/terminology/proposal-tbx-export.md)中的真实接收方条件重新进入设计。
+- TBX 只按[未生效草案](../../model/terminology/提案-术语交换.md)中的真实接收方条件重新进入设计。
 
 ## 权威来源
 
@@ -598,14 +598,14 @@ uv run python -m kb_obsidian.exporter \
 - [维护](../../governance/maintenance/设计-维护.md)：指标、阈值、单向触发、人工动作和消费者门禁。
 - [Application Profile](../shared/概念-Application%20Profile.md)：功能范围、模型引用、字段约束、使用指南、encoding 和 target binding 的分层。
 - [标识符](../../model/content/概念-标识符.md)：身份、名称、标题、路径、排序和时间的边界。
-- [内容单元标识符](../../model/content/decision-content-unit-identifiers.md)：无前缀 UUIDv4、唯一语境、碰撞处理、稳定路径和元数据检索决定。
+- [内容单元标识符](../../model/content/决定-内容单元标识符.md)：无前缀 UUIDv4、唯一语境、碰撞处理、稳定路径和元数据检索决定。
 - [Reproducible Builds](../../development/概念-Reproducible%20Builds.md)：确定性、独立重建、manifest、JCS、BagIt、atomic visibility 和 durability 的边界。
-- [应用约束与表示分层](../shared/decision-application-profile-boundary.md)：本 target 的已采纳职责、消费者、编辑效力和符合性边界。
-- [设计与应用分离](../shared/decision-form-independence.md)：应用无关模型与 target 分离、正式词表单向导出的现行决定。
-- [当前阶段](../../governance/decision-making/decision-current-stage-scope.md)：设计同步与正式激活的阶段边界。
-- [Obsidian 官方帮助阅读笔记](reading-obsidian-help.md)：vault、properties、links、aliases、accepted formats、Bases、Search、Quick Switcher、Backlinks、Graph、Bookmarks、Templates、Unique note creator 和 Web Clipper 的行为。
-- [DCMI Application Profiles 阅读笔记](../shared/reading-dcmi-application-profiles.md)：Application Profile 组件、`metadata crosswalk`、历史材料状态与项目边界。
-- [Reproducible Builds 阅读笔记](../../development/reading-reproducible-builds.md)：确定性与 reproducible build 的证据边界。
-- [BagIt 文件包格式阅读笔记](../../development/reading-rfc-8493.md)：项目 manifest 与 BagIt 的边界。
-- [RFC 8785 阅读笔记](../../development/reading-rfc-8785.md)：现行 JSON 参数与 JCS 条件的差异。
-- [Python 文件系统阅读笔记](../../development/reading-python-filesystem.md)：`os.replace()`、atomic visibility、`fsync` 与 durability 的边界。
+- [应用约束与表示分层](../shared/决定-应用约束与表示分层.md)：本 target 的已采纳职责、消费者、编辑效力和符合性边界。
+- [设计与应用分离](../shared/决定-设计与应用分离.md)：应用无关模型与 target 分离、正式词表单向导出的现行决定。
+- [当前阶段](../../governance/decision-making/决定-当前阶段.md)：设计同步与正式激活的阶段边界。
+- [Obsidian 官方帮助阅读笔记](阅读-Obsidian%20官方帮助.md)：vault、properties、links、aliases、accepted formats、Bases、Search、Quick Switcher、Backlinks、Graph、Bookmarks、Templates、Unique note creator 和 Web Clipper 的行为。
+- [DCMI Application Profiles 阅读笔记](../shared/阅读-DCMI%20Application%20Profiles.md)：Application Profile 组件、`metadata crosswalk`、历史材料状态与项目边界。
+- [Reproducible Builds 阅读笔记](../../development/阅读-Reproducible%20Builds.md)：确定性与 reproducible build 的证据边界。
+- [BagIt 文件包格式阅读笔记](../../development/阅读-BagIt%20文件包格式.md)：项目 manifest 与 BagIt 的边界。
+- [RFC 8785 阅读笔记](../../development/阅读-RFC%208785.md)：现行 JSON 参数与 JCS 条件的差异。
+- [Python 文件系统阅读笔记](../../development/阅读-Python%20文件系统.md)：`os.replace()`、atomic visibility、`fsync` 与 durability 的边界。

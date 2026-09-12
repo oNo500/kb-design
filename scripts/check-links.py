@@ -12,6 +12,8 @@ topic_migration = json.loads((root / 'work/plans/2026-09-12-docs-topic-files.jso
 relocations = {row['old']: row['new'] for row in topic_migration['files']}
 filename_migration = json.loads((root / 'work/plans/2026-09-12-docs-chinese-files.json').read_text())
 relocations.update({row['old']: row['new'] for row in filename_migration['files']})
+all_types_migration = json.loads((root / 'work/plans/2026-09-12-docs-all-types-files.json').read_text())
+relocations.update({row['old']: row['new'] for row in all_types_migration['files']})
 
 def current_path(path):
     seen = set()
@@ -28,6 +30,7 @@ historical = {'README.md'} | {
                        or row['old'] == 'vocab/CHANGELOG.md')
 }
 historical.update(current_path(row['new']) for row in topic_migration['files'] if row['role'] == 'history')
+historical.update(row['new'] for row in all_types_migration['files'] if row['kind'] == '决定')
 excluded_dirs = {'.git', '.venv', '.superpowers', '__pycache__', 'output', 'build'}
 files = []
 for directory, children, names in os.walk(root):

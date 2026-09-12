@@ -1,0 +1,534 @@
+{
+  "base_commit": "6ed1e9e0f28d2eb862b1cf564bf9ea365ae053c2",
+  "authorization": "2026-09-12 用户批准全部 docs 文档使用类型前缀和中文文件名",
+  "files": [
+    {
+      "old": "docs/README.md",
+      "new": "docs/索引-项目文档.md",
+      "kind": "索引",
+      "sha256": "e328ec9bdfa48e939a3b0d7b1a3a98549d66183f5a96dd134a1842025bd28631"
+    },
+    {
+      "old": "docs/applications/README.md",
+      "new": "docs/applications/索引-应用与工具.md",
+      "kind": "索引",
+      "sha256": "e912bc816272ce485765358565e92bd6fec16f7fd2132196aaefca142c070c9a"
+    },
+    {
+      "old": "docs/applications/obsidian/README.md",
+      "new": "docs/applications/obsidian/索引-Obsidian 适配.md",
+      "kind": "索引",
+      "sha256": "99a18f3532db9bbf4bf638b866122d26574752267a03ae8173b356d5e2aa5d4b"
+    },
+    {
+      "old": "docs/applications/obsidian/decision-obsidian-agent-entry.md",
+      "new": "docs/applications/obsidian/决定-终端访问.md",
+      "kind": "决定",
+      "sha256": "1fdf1d02c48870b8e3c6cbb16b0280d7c792b09c74f40a0c28fc2b6421b9b43e"
+    },
+    {
+      "old": "docs/applications/obsidian/decision-obsidian-base-sort-preferences.md",
+      "new": "docs/applications/obsidian/决定-视图排序.md",
+      "kind": "决定",
+      "sha256": "a491b3b4913606f1de4e18e24e542a953acb89df588c5d3556da2e79b43a59f6"
+    },
+    {
+      "old": "docs/applications/obsidian/decision-obsidian-reference-refresh.md",
+      "new": "docs/applications/obsidian/决定-词表参考刷新.md",
+      "kind": "决定",
+      "sha256": "91b4beb0dd789633d09f60a6fb11d3540727719d8938e4fe7ef0ef4b3fed6849"
+    },
+    {
+      "old": "docs/applications/obsidian/decision-obsidian-tool-location.md",
+      "new": "docs/applications/obsidian/决定-Obsidian 工具归属.md",
+      "kind": "决定",
+      "sha256": "0392a25f09505753ef8a9db0508f8ed292d359c3c0a7bea3051ba2b1678a35a0"
+    },
+    {
+      "old": "docs/applications/obsidian/reading-obsidian-help.md",
+      "new": "docs/applications/obsidian/阅读-Obsidian 官方帮助.md",
+      "kind": "阅读",
+      "sha256": "1860c795033667a8bcf718f9fe79568c3f58e0518e3e984224f58cf9e303bbb3"
+    },
+    {
+      "old": "docs/applications/shared/README.md",
+      "new": "docs/applications/shared/索引-共同适配要求.md",
+      "kind": "索引",
+      "sha256": "0ac6226376018320dc0e7421f89e435eedead4b099ba067823afc7301f56e817"
+    },
+    {
+      "old": "docs/applications/shared/decision-application-profile-boundary.md",
+      "new": "docs/applications/shared/决定-应用约束与表示分层.md",
+      "kind": "决定",
+      "sha256": "aa36db6a705977f2787c9e44de78c7635b1a48b149800d288060504eee08625c"
+    },
+    {
+      "old": "docs/applications/shared/decision-form-independence.md",
+      "new": "docs/applications/shared/决定-设计与应用分离.md",
+      "kind": "决定",
+      "sha256": "8c26c782071b2ad981e61bee22b41f7c308f330e9e206e00a19827c6fc6b7427"
+    },
+    {
+      "old": "docs/applications/shared/reading-dcmi-application-profiles.md",
+      "new": "docs/applications/shared/阅读-DCMI Application Profiles.md",
+      "kind": "阅读",
+      "sha256": "1102b22af7a2608f26cd809ea05e86efdbb29f3c073d5d462e6e8f3c794bf3b9"
+    },
+    {
+      "old": "docs/applications/vocab-preview/README.md",
+      "new": "docs/applications/vocab-preview/索引-词表预览.md",
+      "kind": "索引",
+      "sha256": "75f02220eb86e80645412d9aacefe5d8941268efa231e437bfa565de94ea78e3"
+    },
+    {
+      "old": "docs/applications/vocab-preview/decision-vocab-preview-location.md",
+      "new": "docs/applications/vocab-preview/决定-预览归属.md",
+      "kind": "决定",
+      "sha256": "d238754235e9e80d346f5ebbd1a42f7415ba16889e65b4c5d828b9b89e1aa85c"
+    },
+    {
+      "old": "docs/development/README.md",
+      "new": "docs/development/索引-工程开发.md",
+      "kind": "索引",
+      "sha256": "2c14a2ce5b86020c9a2798df3aaf90a294627bb05e752f419de7ed5b425001f5"
+    },
+    {
+      "old": "docs/development/decision-monorepo-layout.md",
+      "new": "docs/development/决定-仓库布局.md",
+      "kind": "决定",
+      "sha256": "5226daa39233f57dba16aea045a805cf7e78fb67b331e6cc2d93976b76de3a21"
+    },
+    {
+      "old": "docs/development/development.md",
+      "new": "docs/development/指南-开发.md",
+      "kind": "指南",
+      "sha256": "086983293a4022d6fa7b06b553653083d93ce4a9b8e1ab6e264e2ea4ac8f3726"
+    },
+    {
+      "old": "docs/development/reading-python-filesystem.md",
+      "new": "docs/development/阅读-Python 文件系统.md",
+      "kind": "阅读",
+      "sha256": "b53abcce746e951b38e021665b6b04d5b34b7d3e5ba04193c34a463082fca01e"
+    },
+    {
+      "old": "docs/development/reading-reproducible-builds.md",
+      "new": "docs/development/阅读-Reproducible Builds.md",
+      "kind": "阅读",
+      "sha256": "e3aee81e43f91895ab0b7895fda44a6c8dee77190d6f7e883448336a3b18d94e"
+    },
+    {
+      "old": "docs/development/reading-rfc-8493.md",
+      "new": "docs/development/阅读-BagIt 文件包格式.md",
+      "kind": "阅读",
+      "sha256": "79ea034109f0fe671aaaa0dcc265cd3c021b9b79073c1b797a6fae2cb13ac7ed"
+    },
+    {
+      "old": "docs/development/reading-rfc-8785.md",
+      "new": "docs/development/阅读-RFC 8785.md",
+      "kind": "阅读",
+      "sha256": "b65640cb27577a42ffe204a139a50fe01a062be03b3ceaada4de8ca5cb3cd317"
+    },
+    {
+      "old": "docs/glossary.md",
+      "new": "docs/参考-术语表.md",
+      "kind": "参考",
+      "sha256": "f322393f583b901113936b6d7adb80334633c39d80c794387b28909199532b2c"
+    },
+    {
+      "old": "docs/governance/README.md",
+      "new": "docs/governance/索引-项目治理.md",
+      "kind": "索引",
+      "sha256": "7a98fa4038e220eb07b975680ef6ef8647204399c17ce251b210d16c09f94529"
+    },
+    {
+      "old": "docs/governance/decision-making/README.md",
+      "new": "docs/governance/decision-making/索引-决策与方法.md",
+      "kind": "索引",
+      "sha256": "4f99267bebfe7adfd03a02420d667ab319c5a87eaaa8b4b418aa58cacc14fdb7"
+    },
+    {
+      "old": "docs/governance/decision-making/decision-current-stage-scope.md",
+      "new": "docs/governance/decision-making/决定-当前阶段.md",
+      "kind": "决定",
+      "sha256": "4d0f2e43434cd5f7f76d20d55c6c6435f4c44b3e81942c5dc77b36b008885258"
+    },
+    {
+      "old": "docs/governance/decision-making/decision-decision-rights-defaults.md",
+      "new": "docs/governance/decision-making/决定-决策权的首批边界.md",
+      "kind": "决定",
+      "sha256": "796ed978dec6846424d308004b425ba2b78c0ac3874ca7e5aa3c6a8a9576d3ac"
+    },
+    {
+      "old": "docs/governance/decision-making/decision-docs-topic-organization.md",
+      "new": "docs/governance/decision-making/决定-文档主题组织.md",
+      "kind": "决定",
+      "sha256": "35a509ce74a87c0bd558e6369c99649c3b4542e2163904d2671d0a65ea31511f"
+    },
+    {
+      "old": "docs/governance/decision-making/decision-document-filenames.md",
+      "new": "docs/governance/decision-making/决定-文档文件命名.md",
+      "kind": "决定",
+      "sha256": "555104b7bf22eaf135b1073a80e832cd19b69cafdf5b8c5b9e9369022439e7e9"
+    },
+    {
+      "old": "docs/governance/decision-making/decision-project-instructions-entry.md",
+      "new": "docs/governance/decision-making/决定-项目约定入口.md",
+      "kind": "决定",
+      "sha256": "23f4c11af2460cade062f4c761899bf4945a7bd16d1c081e4be1a2adb5fc20f8"
+    },
+    {
+      "old": "docs/governance/decision-making/decision-verification-effort.md",
+      "new": "docs/governance/decision-making/决定-验证投入.md",
+      "kind": "决定",
+      "sha256": "40e7656aa93e29e2022ca040836bbe0c4e5ae00bc6145828d25809af89d35430"
+    },
+    {
+      "old": "docs/governance/maintenance/README.md",
+      "new": "docs/governance/maintenance/索引-维护与版本.md",
+      "kind": "索引",
+      "sha256": "d2565128e0f65be6fb3f44597874530ab897f482eccb05bc8062c6375643ecc1"
+    },
+    {
+      "old": "docs/governance/writing/README.md",
+      "new": "docs/governance/writing/索引-写作.md",
+      "kind": "索引",
+      "sha256": "183bb7a6779e4b942fee990c3f4bfe5eb430489db9a4bca73629747b8185a195"
+    },
+    {
+      "old": "docs/governance/writing/proposal-entity-introductions.md",
+      "new": "docs/governance/writing/提案-实体介绍写作.md",
+      "kind": "提案",
+      "sha256": "3bf3fbd1f7826b5f7d39bf318422d7d3a2526bd90c35f61dd4d9c645b7433dbb"
+    },
+    {
+      "old": "docs/governance/writing/reading-writing-guides.md",
+      "new": "docs/governance/writing/阅读-写作规范.md",
+      "kind": "阅读",
+      "sha256": "76fcf8d092f938243e0ec918fb00281ffe9a60d38927f71f7b48ba690923a457"
+    },
+    {
+      "old": "docs/model/README.md",
+      "new": "docs/model/索引-知识模型.md",
+      "kind": "索引",
+      "sha256": "ffe1cb0ba6b52a9f6becad76e335ec736b124c86a961bee68973e0d5de0694c6"
+    },
+    {
+      "old": "docs/model/content/README.md",
+      "new": "docs/model/content/索引-内容模型.md",
+      "kind": "索引",
+      "sha256": "579dc2464a97cca2c6a9f05a4240dbecc862ad72166f2b44ec4be918ce89be6a"
+    },
+    {
+      "old": "docs/model/content/decision-content-unit-identifiers.md",
+      "new": "docs/model/content/决定-内容单元标识符.md",
+      "kind": "决定",
+      "sha256": "bf25d0d137572697c373912432f57634ecda36ff888cbc16eb9cd49daabd0125"
+    },
+    {
+      "old": "docs/model/content/reading-iso-15489.md",
+      "new": "docs/model/content/阅读-ISO 15489 文件管理标准.md",
+      "kind": "阅读",
+      "sha256": "886f2ef36bedb050b16f3daf4a1c90efbdbf8d7ee2a2453db656e28a116f0a7a"
+    },
+    {
+      "old": "docs/model/content/reading-metadata-standards.md",
+      "new": "docs/model/content/阅读-元数据标准.md",
+      "kind": "阅读",
+      "sha256": "d56542d28d763c439c8e70a29387d30089b66db5d1e35e9ac7e2c93f6768c935"
+    },
+    {
+      "old": "docs/model/content/reading-rfc-9562.md",
+      "new": "docs/model/content/阅读-RFC 9562.md",
+      "kind": "阅读",
+      "sha256": "b5b29972f695a110822f03d9009e411d0e543ea6b3a39b6fbf445bc6d978fe5a"
+    },
+    {
+      "old": "docs/model/entities/README.md",
+      "new": "docs/model/entities/索引-实体.md",
+      "kind": "索引",
+      "sha256": "4fc5f157da64f68c6e0bc954c98ed9d31b6c72ac820648b137af38705398e2b5"
+    },
+    {
+      "old": "docs/model/entities/decision-person-admission-clarification.md",
+      "new": "docs/model/entities/决定-公众人物边界.md",
+      "kind": "决定",
+      "sha256": "b6a606b4999038aecf6805142810f47d5f76536eb0db032c3cbf22841570e603"
+    },
+    {
+      "old": "docs/model/entities/proposal-entity-categories.md",
+      "new": "docs/model/entities/提案-实体类别职责.md",
+      "kind": "提案",
+      "sha256": "cf45be3303bfa286e7e8f0d2ac393278c5cfa898833471372993429a19c73fd6"
+    },
+    {
+      "old": "docs/model/entities/proposal-large-language-models.md",
+      "new": "docs/model/entities/提案-模型对象分层.md",
+      "kind": "提案",
+      "sha256": "969d491864ed6cb76933c9523f42ee0015a7c2e4ce7365889cc2cbad291ea1a7"
+    },
+    {
+      "old": "docs/model/sources/README.md",
+      "new": "docs/model/sources/索引-文献与来源.md",
+      "kind": "索引",
+      "sha256": "91142474532928ab11d45722c47e5acd2199befc30914c0f1cd19d8c6b4c314b"
+    },
+    {
+      "old": "docs/model/sources/decision-evidence-stage-boundary.md",
+      "new": "docs/model/sources/决定-证据阶段.md",
+      "kind": "决定",
+      "sha256": "4aaf802d171ec23b6a048545b50cc03fe3a49305e1ee27b5dafe87f1dd47ee98"
+    },
+    {
+      "old": "docs/model/sources/decision-source-bibliography-separation.md",
+      "new": "docs/model/sources/决定-参考文献分离.md",
+      "kind": "决定",
+      "sha256": "77a7b23e35d9b87b03f664d0748b2651d7c9220ca53a71e50f2c827b49244c11"
+    },
+    {
+      "old": "docs/model/sources/decision-source-completion.md",
+      "new": "docs/model/sources/决定-来源收尾.md",
+      "kind": "决定",
+      "sha256": "0f7544d51354282afd5961e5bc19e8a29102a42b1dccd8bce041c57c959819a1"
+    },
+    {
+      "old": "docs/model/sources/decision-source-data-batch.md",
+      "new": "docs/model/sources/决定-来源批次采纳.md",
+      "kind": "决定",
+      "sha256": "991cb8b79e9b327e6c5e51e03d3515785357361e01718ffc308aa49317c5561b"
+    },
+    {
+      "old": "docs/model/sources/decision-source-evidence-priority.md",
+      "new": "docs/model/sources/决定-来源核对取舍.md",
+      "kind": "决定",
+      "sha256": "44eb201753b161fe9d2fb48486bc41a781622c65d254417bb489e13f8f04f49d"
+    },
+    {
+      "old": "docs/model/sources/decision-source-execution-boundary.md",
+      "new": "docs/model/sources/决定-来源执行.md",
+      "kind": "决定",
+      "sha256": "c23e8491914c27a95d99d99f7b489ce1352752bc8e9fc75c0245869785b139f3"
+    },
+    {
+      "old": "docs/model/sources/decision-source-field-adoptions.md",
+      "new": "docs/model/sources/决定-来源字段采纳.md",
+      "kind": "决定",
+      "sha256": "ca41eb2fd032195d35432ca011ee3320377f9b21c0efdae0e6f8c8a5c83a9632"
+    },
+    {
+      "old": "docs/model/sources/decision-source-field-values.md",
+      "new": "docs/model/sources/决定-来源字段值.md",
+      "kind": "决定",
+      "sha256": "afd021c952817b482270f39e43faef9260fa2ce4bdda8d4fd297b0c6d1f1f4a5"
+    },
+    {
+      "old": "docs/model/sources/decision-source-governance-schema.md",
+      "new": "docs/model/sources/决定-来源模式.md",
+      "kind": "决定",
+      "sha256": "0bdf6dba6ada385ad48fdcd561e4f492142528fc5aa9aed661b33cf47d444b12"
+    },
+    {
+      "old": "docs/model/sources/decision-source-migration-policy.md",
+      "new": "docs/model/sources/决定-来源迁移.md",
+      "kind": "决定",
+      "sha256": "425702a87960ca1d24705537fe36e48af149901463cc195ceef204f8b6d58c6c"
+    },
+    {
+      "old": "docs/model/sources/decision-source-probe-policy.md",
+      "new": "docs/model/sources/决定-来源探测.md",
+      "kind": "决定",
+      "sha256": "aac97017d398cd87db33c3e1443c22508e7c1772cc66e2e2cec6924e861dd800"
+    },
+    {
+      "old": "docs/model/sources/decision-source-v2-field-contract.md",
+      "new": "docs/model/sources/决定-来源字段合同.md",
+      "kind": "决定",
+      "sha256": "807eacacf0d642ed951b1a43a8a9c4a4f1ab5e2ada1d841d58097227d666354d"
+    },
+    {
+      "old": "docs/model/sources/decision-source-validation-policy.md",
+      "new": "docs/model/sources/决定-来源校验.md",
+      "kind": "决定",
+      "sha256": "8d3ec01e7def0778e0f11b175a073e0869e566f4fae6d285d4d946831ab10418"
+    },
+    {
+      "old": "docs/model/sources/proposal-source-governance.md",
+      "new": "docs/model/sources/提案-来源治理.md",
+      "kind": "提案",
+      "sha256": "45a7abebb1e96e778d8ae6ad368175a615eb8008236dd6dd28961410fb73b577"
+    },
+    {
+      "old": "docs/model/sources/reading-w3c-prov.md",
+      "new": "docs/model/sources/阅读-W3C PROV.md",
+      "kind": "阅读",
+      "sha256": "c0cba160a32d1ba241cd4435ab0c367cc913c61d63d4551343209f97ad4a9c93"
+    },
+    {
+      "old": "docs/model/terminology/README.md",
+      "new": "docs/model/terminology/索引-术语.md",
+      "kind": "索引",
+      "sha256": "38ac4088e479cfa5622e8ea799f4e215060586fe17ca0d5e16b080c92b1a1ee8"
+    },
+    {
+      "old": "docs/model/terminology/decision-industry-translation-basis.md",
+      "new": "docs/model/terminology/决定-译名依据扩展.md",
+      "kind": "决定",
+      "sha256": "5311a4b356e22020d88368dfe7edb3328348903a373fe6d8e3a0ca40fcb500ac"
+    },
+    {
+      "old": "docs/model/terminology/decision-model-knowledge-translation.md",
+      "new": "docs/model/terminology/决定-模型知识译名.md",
+      "kind": "决定",
+      "sha256": "d04ed154a1000bb2fb40de812cdbd4a37795fd587cdec5f13d117ca24f516b6a"
+    },
+    {
+      "old": "docs/model/terminology/decision-model-translation-marker.md",
+      "new": "docs/model/terminology/决定-模型译名标记.md",
+      "kind": "决定",
+      "sha256": "37c181173f2ce15d619f17456e604ca08facb1a7466ae3dd2a5f204452b23daf"
+    },
+    {
+      "old": "docs/model/terminology/decision-source-term-complete-citations.md",
+      "new": "docs/model/terminology/决定-术语来源采纳.md",
+      "kind": "决定",
+      "sha256": "a6ed00cc81454e4ab389261d66404ea8f22f977d0201cdc7291df55f0580f3a5"
+    },
+    {
+      "old": "docs/model/terminology/decision-structured-label-basis.md",
+      "new": "docs/model/terminology/决定-语言依据结构.md",
+      "kind": "决定",
+      "sha256": "b83ac1009b227ba80588bb580bd2efd6bc8d36d9bb395006f3d8f6c2d7e3165f"
+    },
+    {
+      "old": "docs/model/terminology/decision-term-complete-publication.md",
+      "new": "docs/model/terminology/决定-术语发布条件.md",
+      "kind": "决定",
+      "sha256": "5e315e0c828c76146c205e7800629dfd407b68fe7a263a0cd09ca84a1d011de3"
+    },
+    {
+      "old": "docs/model/terminology/decision-term-complete-structure.md",
+      "new": "docs/model/terminology/决定-术语结构采纳.md",
+      "kind": "决定",
+      "sha256": "104828702f03d31362fc3cfa0c8033838a21e9242443f8acb877f2e3379fc006"
+    },
+    {
+      "old": "docs/model/terminology/decision-term-data-values.md",
+      "new": "docs/model/terminology/决定-术语具体值.md",
+      "kind": "决定",
+      "sha256": "be41150ace2c7827859846ca1a7d9f0e58949a55716109820ef9a84074766b73"
+    },
+    {
+      "old": "docs/model/terminology/decision-term-evidence-scope.md",
+      "new": "docs/model/terminology/决定-术语依据范围.md",
+      "kind": "决定",
+      "sha256": "030bb55a986ca032b7206f8427bcf87fcc77ec1871a51c89ed81845da3d04621"
+    },
+    {
+      "old": "docs/model/terminology/decision-term-infrastructure-scope.md",
+      "new": "docs/model/terminology/决定-术语实施范围.md",
+      "kind": "决定",
+      "sha256": "11beebec1bf272a53c925ea352f71194dc9f6ad127d6b56f2470a95784363a7e"
+    },
+    {
+      "old": "docs/model/terminology/decision-term-limited-definition-source-use.md",
+      "new": "docs/model/terminology/决定-限定定义许可.md",
+      "kind": "决定",
+      "sha256": "02bfefb621d0cc1c0d60891ae9c5a767ad63045305249e7a92f1d08db5ff0b77"
+    },
+    {
+      "old": "docs/model/terminology/decision-translation-reference-resources.md",
+      "new": "docs/model/terminology/决定-译名检索来源.md",
+      "kind": "决定",
+      "sha256": "7699bb544d412d65ba5d1aea5a0108194e989efce3bc47ddbaf82ea09e03ebb3"
+    },
+    {
+      "old": "docs/model/terminology/proposal-tbx-export.md",
+      "new": "docs/model/terminology/提案-术语交换.md",
+      "kind": "提案",
+      "sha256": "7f8efc1ca2dd6ac325b70c1e2f55c21d2bdccacc3519989a314aa8a552bd27dc"
+    },
+    {
+      "old": "docs/model/terminology/proposal-terminology-governance.md",
+      "new": "docs/model/terminology/提案-术语治理.md",
+      "kind": "提案",
+      "sha256": "2b4589c66fa931eb59e133b24e4491cd4fbdd4219c40a83fc62452ce05b45442"
+    },
+    {
+      "old": "docs/model/terminology/reading-terminology-standards.md",
+      "new": "docs/model/terminology/阅读-术语标准.md",
+      "kind": "阅读",
+      "sha256": "9689601a6a1c8260b7b42e2247de2253f2e9b7076d75387ac977beb6c69f0dcc"
+    },
+    {
+      "old": "docs/model/vocabulary/README.md",
+      "new": "docs/model/vocabulary/索引-主题词表.md",
+      "kind": "索引",
+      "sha256": "04d253dbdcea44424bf4ffe44b5ac5b5557e7e51f2d3786ff762fdafdd148693"
+    },
+    {
+      "old": "docs/model/vocabulary/decision-borrow-and-analyze.md",
+      "new": "docs/model/vocabulary/决定-原样复制与本地分析分层.md",
+      "kind": "决定",
+      "sha256": "3984f7ad4d2b1c5637daf5224dacd7e4d741d16236beefcb275771e977ed4550"
+    },
+    {
+      "old": "docs/model/vocabulary/decision-tree-by-discipline.md",
+      "new": "docs/model/vocabulary/决定-树按学科而非分面.md",
+      "kind": "决定",
+      "sha256": "8dc7e3ee305bd38be612521c19f4c9517ac8da159ca1c84d844fba3fb9d176b5"
+    },
+    {
+      "old": "docs/model/vocabulary/proposal-communication-scope.md",
+      "new": "docs/model/vocabulary/提案-传播学科范围.md",
+      "kind": "提案",
+      "sha256": "69e089d0ec104c5ce03f7c96431dc42af9ec380016d9a80df3bb7eda4b7ac50a"
+    },
+    {
+      "old": "docs/model/vocabulary/proposal-concept-groups.md",
+      "new": "docs/model/vocabulary/提案-概念组.md",
+      "kind": "提案",
+      "sha256": "6593f94f55102b21de74596b6d43d90132c8a23e28eed96187dcaebc59dd5ea8"
+    },
+    {
+      "old": "docs/model/vocabulary/proposal-division-characteristics.md",
+      "new": "docs/model/vocabulary/提案-划分特征.md",
+      "kind": "提案",
+      "sha256": "64e6b73a24c3865a43cb0d377001d6ffbee91112d0e141e7fd8fd95d4d8561bd"
+    },
+    {
+      "old": "docs/model/vocabulary/proposal-facet-field.md",
+      "new": "docs/model/vocabulary/提案-分面字段.md",
+      "kind": "提案",
+      "sha256": "84bd6bdc7becb441a0790feb59471f7e1543a605eb671772d88e00b12d113786"
+    },
+    {
+      "old": "docs/model/vocabulary/proposal-life-scope.md",
+      "new": "docs/model/vocabulary/提案-生活领域范围.md",
+      "kind": "提案",
+      "sha256": "4b11fab770b1680581d08aebf396a153035fcb3137b65bb46f1a026e576f1687"
+    },
+    {
+      "old": "docs/model/vocabulary/reading-gbt-13745.md",
+      "new": "docs/model/vocabulary/阅读-GB-T 13745-2009 学科分类清单.md",
+      "kind": "阅读",
+      "sha256": "b6c5572f8273b4da4714688ae83b5523408f2357baad9e20be718b96b05e4019"
+    },
+    {
+      "old": "docs/model/vocabulary/reading-iso-25964.md",
+      "new": "docs/model/vocabulary/阅读-ISO 25964 叙词表标准.md",
+      "kind": "阅读",
+      "sha256": "bb73f712124a7af934f6e97148cf538268017da01dc7fbc7d2cc49e5b4672fb0"
+    },
+    {
+      "old": "docs/model/vocabulary/reading-z39-19.md",
+      "new": "docs/model/vocabulary/阅读-ANSI-NISO Z39.19 受控词表指南.md",
+      "kind": "阅读",
+      "sha256": "e02ac9dcc3795cb92973c6e83082e0b3d4aed3d7bbfb25b41a55001a3b87e7ba"
+    },
+    {
+      "old": "docs/overview.md",
+      "new": "docs/概述-项目.md",
+      "kind": "概述",
+      "sha256": "f0ec1f162d18df9a7e276386b711626de826f6cc15bc506d847a5105eb39abcd"
+    }
+  ]
+}

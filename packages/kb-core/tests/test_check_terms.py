@@ -21,7 +21,7 @@ class CheckTermsTest(unittest.TestCase):
             "data/vocab",
         ):
             (self.root / directory).mkdir(parents=True)
-        (self.root / "docs" / "glossary.md").write_text(
+        (self.root / "docs" / "参考-术语表.md").write_text(
             """# 术语表 (Glossary)
 
 | 术语 | 英文 | 定义 | 出处 |
@@ -122,7 +122,7 @@ class CheckTermsTest(unittest.TestCase):
         self.assertIn("已登记首选项", candidates)
 
     def test_term_prefix_does_not_turn_a_registered_row_into_a_header(self):
-        glossary = self.root / "docs/glossary.md"
+        glossary = self.root / "docs/参考-术语表.md"
         glossary.write_text(
             glossary.read_text(encoding="utf-8")
             + "| 术语表 / 代码表 | list, pick list | 预先规定的列表 | fixture |\n",
@@ -137,7 +137,7 @@ class CheckTermsTest(unittest.TestCase):
         self.assertTrue({"术语表", "代码表"}.isdisjoint(candidates))
 
     def test_source_descriptions_are_not_registered_designations(self):
-        glossary = self.root / "docs/glossary.md"
+        glossary = self.root / "docs/参考-术语表.md"
         glossary.write_text(
             glossary.read_text(encoding="utf-8")
             + "\n## 引用的标准与文献\n\n| 名称 | 是什么 |\n|---|---|\n"

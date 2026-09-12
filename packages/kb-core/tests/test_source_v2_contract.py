@@ -102,7 +102,7 @@ class SourceV2ContractTests(unittest.TestCase):
 
     def test_q16_isolation_requires_exact_policy_and_forms_array_position(self):
         from kb_core.source_model import validate_source_documents, _front_matter
-        policy = _front_matter(Path(__file__).resolve().parents[3] / 'docs/model/sources/decision-source-migration-policy.md')
+        policy = _front_matter(Path(__file__).resolve().parents[3] / 'docs/model/sources/决定-来源迁移.md')
         decisions = {'source-approval': self.decision, policy['id']: policy}
         isolated = {'legacy_source_label': 'lom', 'state': 'isolated', 'decision': policy['id']}
         documents = copy.deepcopy(self.docs)
@@ -120,7 +120,7 @@ class SourceV2ContractTests(unittest.TestCase):
 
     def test_q16_migration_preserves_parent_and_members(self):
         from kb_core.source_model import _front_matter
-        policy_path = Path(__file__).resolve().parents[3] / 'docs/model/sources/decision-source-migration-policy.md'
+        policy_path = Path(__file__).resolve().parents[3] / 'docs/model/sources/决定-来源迁移.md'
         policy = _front_matter(policy_path)
         (self.root / 'docs/decisions/source-migration-policy.md').write_text(policy_path.read_text())
         with tempfile.TemporaryDirectory() as temporary:

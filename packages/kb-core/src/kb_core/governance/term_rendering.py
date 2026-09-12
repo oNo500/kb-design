@@ -207,7 +207,7 @@ def _layout_entry_lines(entry):
     # navigation target follows the approved documentation relocation.
     cells = [cell.replace(
         "](references/iso-25964.md)",
-        "](model/vocabulary/reading-iso-25964.md)",
+        "](model/vocabulary/阅读-ISO%2025964%20叙词表标准.md)",
     ) for cell in entry["cells"]]
     lines = ["- " + "｜".join(cells)]
     for key, title in (("meaning", "性质"), ("scope_note", "范围"),
