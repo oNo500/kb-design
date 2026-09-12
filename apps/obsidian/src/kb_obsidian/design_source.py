@@ -14,6 +14,7 @@ from typing import Any, Mapping
 import yaml
 from kb_core.governance.term_git import TermGitError, captured_previous_terms
 from kb_core.repository import project_root
+from kb_core.documentation import decision_paths, is_decision_path
 
 from .errors import ApplicationError
 
@@ -48,6 +49,7 @@ _IMPLEMENTATION_FILES = (
     "packages/kb-core/src/kb_core/build_source_index.py",
     "packages/kb-core/src/kb_core/label_adoptions.py",
     "packages/kb-core/src/kb_core/repository.py",
+    "packages/kb-core/src/kb_core/documentation.py",
     "packages/kb-core/src/kb_core/governance/__init__.py",
     "packages/kb-core/src/kb_core/governance/term_model.py",
     "packages/kb-core/src/kb_core/governance/term_git.py",
@@ -124,15 +126,13 @@ def default_design_root() -> Path:
 def _verify_snapshot_implementation(root: Path, commit: str) -> Mapping[str, bytes]:
     """Return selected implementation bytes only when Git and the worktree agree."""
     verified: dict[str, bytes] = {}
-    decision_paths = tuple(path for path in _git(root, "ls-tree", "-r", "--name-only", commit, "--", "docs/decisions").splitlines()
-                           if Path(path).parent.as_posix() == "docs/decisions"
-                           and (Path(path).match("source-*.md") or Path(path).match("term-*.md")))
+    selected_decisions = tuple(path for path in _git(root, "ls-tree", "-r", "--name-only", commit, "--", "docs").splitlines()
+                               if is_decision_path(path, ("source-*.md", "term-*.md")))
     actual_decisions = {
         path.relative_to(root).as_posix()
-        for pattern in ("source-*.md", "term-*.md")
-        for path in (root / "docs/decisions").glob(pattern)
+        for path in decision_paths(root / "docs", ("source-*.md", "term-*.md"))
     }
-    if actual_decisions != set(decision_paths):
+    if actual_decisions != set(selected_decisions):
         raise ApplicationError("source decision file set differs from commit")
     optional_paths = tuple(path for path in (
         "data/inputs/topics/label-adoptions.json", "data/vocab/source-obligations.yaml")
@@ -141,7 +141,7 @@ def _verify_snapshot_implementation(root: Path, commit: str) -> Mapping[str, byt
                        if (root / path).exists()}
     if actual_optional != set(optional_paths):
         raise ApplicationError("source support file set differs from commit")
-    for relative_path in (*_IMPLEMENTATION_FILES, *decision_paths, *optional_paths):
+    for relative_path in (*_IMPLEMENTATION_FILES, *selected_decisions, *optional_paths):
         try:
             current = (root / relative_path).read_bytes()
             committed = subprocess.run(
@@ -274,7 +274,7 @@ def load_design(root: Path) -> DesignSnapshot:
     # verified commit. The reader consumes these bytes, never a later disk read.
     support = _verify_snapshot_implementation(design_root, commit)
     captured.update({"_support:" + path: content for path, content in support.items()
-                     if path.startswith("docs/decisions/") or path.startswith("data/")
+                     if is_decision_path(path) or path.startswith("data/")
                      or (optional_present and path in _TERM_SCHEMA_FILES)})
     if optional_present:
         for relative_path in _TERM_SCHEMA_FILES:

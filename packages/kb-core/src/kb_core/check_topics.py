@@ -80,7 +80,7 @@ for e in entities.values():
 # basis
 selfcount = collections.Counter(); judged = collections.Counter()
 adoptions = load_adoptions(ROOT.parent.parent)
-accepted_decisions = _load_accepted_decisions(ROOT.parent.parent / 'docs/decisions')
+accepted_decisions = _load_accepted_decisions(ROOT.parent.parent / 'docs')
 for name, coll in [('entities', entities), ('topics', concepts)]:
     for x in coll.values():
         b = x.get('basis') or {}

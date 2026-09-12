@@ -243,7 +243,7 @@ def assemble_historical_reference_document(root, collection, document, inputs):
     from kb_core.source_model import collect_reference_uses, validate_references, _load_accepted_decisions, compile_decisions
     if inputs.get('schema_version') != 2 or not isinstance(inputs.get('records'), dict):
         raise ValueError('invalid v2 reference inputs')
-    decisions = compile_decisions(_load_accepted_decisions(Path(root) / 'docs/decisions'))
+    decisions = compile_decisions(_load_accepted_decisions(Path(root) / 'docs'))
     result = deepcopy(document)
     blockers = []
     seen = set()

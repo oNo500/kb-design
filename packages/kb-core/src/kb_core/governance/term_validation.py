@@ -721,11 +721,10 @@ def load_term_decision_sets(
     root: Path,
 ) -> tuple[dict[str, dict[str, object]], dict[str, dict[str, object]]]:
     """Load effective and historical decisions from one frontmatter capture."""
-    directory = root / "docs/decisions"
+    from kb_core.documentation import decision_paths
     documents = [
         _front_matter(path)
-        for pattern in ("term-*.md", "source-*.md")
-        for path in sorted(directory.glob(pattern))
+        for path in decision_paths(root / "docs", ("term-*.md", "source-*.md"))
     ]
     return (
         accepted_decisions_from_documents(documents),

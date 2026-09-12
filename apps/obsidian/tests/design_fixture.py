@@ -3,6 +3,7 @@ from __future__ import annotations
 import shutil
 import subprocess
 from pathlib import Path
+from kb_core.documentation import decision_paths
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[3]
@@ -25,6 +26,7 @@ IMPLEMENTATION_PATHS = (
     "packages/kb-core/src/kb_core/build_source_index.py",
     "packages/kb-core/src/kb_core/label_adoptions.py",
     "packages/kb-core/src/kb_core/repository.py",
+    "packages/kb-core/src/kb_core/documentation.py",
     "packages/kb-core/src/kb_core/governance/__init__.py",
     "packages/kb-core/src/kb_core/governance/term_model.py",
     "packages/kb-core/src/kb_core/governance/term_git.py",
@@ -42,7 +44,7 @@ def create_clean_design(destination: Path) -> tuple[Path, str]:
     """Copy current formal inputs and their reader into a clean temporary repository."""
     decisions = tuple(
         path.relative_to(REPOSITORY_ROOT).as_posix()
-        for path in (REPOSITORY_ROOT / "docs/decisions").glob("source-*.md")
+        for path in decision_paths(REPOSITORY_ROOT / "docs", ("source-*.md",))
     )
     support = tuple(path for path in ("data/inputs/topics/label-adoptions.json", "data/vocab/source-obligations.yaml")
                     if (REPOSITORY_ROOT / path).exists())

@@ -108,7 +108,7 @@ def _assemble_topics(ROOT):
                 add(slug(en3), zh3, en3, [c2], 'gbt-13745', {'source':'gbt-13745','id':tc,'rel':'exactMatch'}, translated=['en'])
 
     # ---------- 邻近主题的多层级 ----------
-    # 软件工程管理同时在 management 之下（docs/design/model/topics.md 邻近主题）
+    # 软件工程管理同时在 management 之下（docs/model/vocabulary/topics.md 邻近主题）
     sem = slug('Software Engineering Management')
     if sem in concepts and 'management' not in concepts[sem]['broader']:
         concepts[sem]['broader'].append('management')
@@ -173,7 +173,7 @@ def build_topics(root, reference_inputs=None):
             or migration.get('base_commit') != BIBLIOGRAPHY_BASE_COMMIT):
         raise ValueError('invalid bibliography generation migration')
     from kb_core.source_model import _load_accepted_decisions
-    decision = _load_accepted_decisions(root / 'docs/decisions').get(migration['decision'], {})
+    decision = _load_accepted_decisions(root / 'docs').get(migration['decision'], {})
     controls = [patch.get('value', {}) for answer in decision.get('answers', []) for patch in answer.get('patches', [])
                 if patch.get('identity') == '@control:bibliography' and patch.get('field') == 'migration']
     if decision.get('level') != 'L3' or not any(control.get('base_commit') == migration['base_commit']

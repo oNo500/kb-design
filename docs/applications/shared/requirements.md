@@ -1,0 +1,37 @@
+# 适配要求
+
+每种应用在 `docs/applications/` 中维护自己的适配设计。该文件按 [Application Profile](application-profile.md)方法组织应用约束，并引用适用的已采纳决定；它不把 target 的载体能力写回内容模型。
+
+## 语义约束
+
+每篇 target 文件必须覆盖以下上层职责。
+
+| 职责 | 必须回答 |
+|---|---|
+| `Functional Requirements` | 应用支持哪些功能、排除哪些功能，以及用什么边界判断消费者是否真实启用 |
+| `Domain Model` reference | 引用内容模型和其他应用无关设计中的对象、关系、字段语义、值域与生命周期，不在 target 内重新定义 |
+| field constraints | 规定字段基数、值来源、target type、reference form 和允许的 loss |
+| `Usage Guidelines` | 说明创建者或消费者在什么条件下使用字段，怎样选择值，怎样处理不能表达的约束 |
+| `Encoding Syntax Guidelines` | 说明整条记录进入 target syntax 的位置、结构和引用语法 |
+
+target binding 只能选择字段使用的 location、type 和 reference form，不得修改字段语义、基数、值域、稳定身份或对象关系。应用内部 field／property／path binding 不是 `metadata crosswalk`；词表之间的 `crosswalk` 仍按现行词表映射语义处理。
+
+## 表示要求
+
+以下问题是本项目对适配设计的操作检查。
+
+1. 每个字段落到应用的什么属性名或位置？
+2. 词表怎样导出到应用，例如标签、枚举或 `subjectScheme`？
+3. `subject`、`entities` 的引用在应用中怎样表达，例如链接或标签？
+4. 回流接口怎样保存来源上下文，识别字符串，与已有 `label` 匹配，完成概念判断，并统计引用次数？
+5. 应用无法表达的字段或约束怎样处理？
+
+具体路径、property、引用语法和界面能力只属于 target，留在该处是为了不把一个应用的表示选择写成所有应用的模型规则。
+
+## 导出合同
+
+导出 artifact contract 与 `Application Profile` 分开。前者只在语义选择完成后规定输入快照、byte serialization、order、quoting、newlines、file set、manifest、post-generation validation 和 publication，不得反向修改 target binding 或内容模型字段。
+
+## 回流条件
+
+回流得到的未解析字符串只交人工判断，不自动建立概念、关系或状态记录。target 文件、字段契约、应用代码、生成目录或浏览入口存在都不等于内容消费者已经启用；只有消费者实际读取真实内容字段或检索记录并提供可审计输入后，内容引用统计和回流才成立。

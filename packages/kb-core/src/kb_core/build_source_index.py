@@ -192,11 +192,9 @@ def visit_term_decisions(relative: Path, document: dict) -> List[Dict[str, str]]
 
 
 def visit_decisions(root: Path) -> List[Dict[str, str]]:
-    directory = root / "docs/decisions"
-    if not directory.exists():
-        return []
+    from kb_core.documentation import decision_paths
     rows = []
-    for path in sorted(directory.glob("source-*.md")):
+    for path in decision_paths(root / "docs", ("source-*.md",)):
         front = load_front_matter(path)
         if not front.get("id"):
             continue

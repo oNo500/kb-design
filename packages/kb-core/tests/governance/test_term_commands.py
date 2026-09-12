@@ -1,3 +1,4 @@
+from kb_core.documentation import decision_paths
 import copy
 import json
 import os
@@ -28,8 +29,8 @@ class TermCommandTests(unittest.TestCase):
             # Source and label grants belong to the copied vocabulary context;
             # real term record grants would require their entire approved batch.
             (root / "docs/decisions").mkdir(parents=True)
-            for path in (ROOT / "docs/decisions").glob("source-*.md"):
-                shutil.copy2(path, root / "docs/decisions" / path.name)
+            for path in decision_paths(ROOT / "docs", ("source-*.md",)):
+                shutil.copy2(path, root / "docs/decisions" / path.name.removeprefix("decision-"))
             shutil.copytree(ROOT / "data/inputs/topics", root / "data/inputs/topics")
             document = yaml.safe_load((ROOT / "tests/fixtures/terminology/valid/minimal-active.yaml").read_text())
             concept = document["concepts"][0]

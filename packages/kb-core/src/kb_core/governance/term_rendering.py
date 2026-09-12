@@ -203,7 +203,13 @@ def render_term_markdown(concept, bibliography_references, *, layout=None) -> st
 
 
 def _layout_entry_lines(entry):
-    lines = ["- " + "｜".join(entry["cells"])]
+    # The adopted layout keeps its historical value. Only the generated local
+    # navigation target follows the approved documentation relocation.
+    cells = [cell.replace(
+        "](references/iso-25964.md)",
+        "](model/vocabulary/reading-iso-25964.md)",
+    ) for cell in entry["cells"]]
+    lines = ["- " + "｜".join(cells)]
     for key, title in (("meaning", "性质"), ("scope_note", "范围"),
                        ("scope", "范围"), ("basis_note", "依据"),
                        ("verification", "核验"), ("display_notice", "说明")):

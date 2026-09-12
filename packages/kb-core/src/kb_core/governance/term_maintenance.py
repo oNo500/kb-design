@@ -248,11 +248,9 @@ def obligation_index(value):
 
 
 def decision_index(root: Path):
+    from kb_core.documentation import decision_paths
     result = {}
-    directory = root / "docs/decisions"
-    if not directory.exists():
-        return result
-    for path in sorted(directory.glob("*.md")):
+    for path in decision_paths(root / "docs"):
         lines = path.read_text(encoding="utf-8").splitlines()
         if not lines or lines[0] != "---":
             continue
@@ -288,7 +286,7 @@ def _index_entry(target_kind, target_id, reference_kind, file, record,
 def _decision_paths(decisions):
     if isinstance(decisions, Mapping):
         return {str(key): str(value) for key, value in decisions.items()}
-    return {str(value): "docs/decisions" for value in decisions}
+    return {str(value): "docs" for value in decisions}
 
 
 def current_basis_decisions(record):
@@ -503,7 +501,7 @@ def build_term_reference_index(document, obligations, decisions, *, layout=None,
                     continue
                 entries.append(_index_entry(
                     "concept", concept_id, "decision.declared_concept",
-                    decision_paths.get(decision_id, "docs/decisions"),
+                    decision_paths.get(decision_id, "docs"),
                     f"decision:{decision_id}",
                     f"answers[{answer_index}].patches[{patch_index}].identity", "declared",
                 ))
@@ -530,7 +528,7 @@ def build_term_reference_index(document, obligations, decisions, *, layout=None,
 
 def _decision_relation(kind, identity, state, record, field_path, decision_id,
                        decision_paths, file="data/vocab/terms.yaml"):
-    decision_file = decision_paths.get(decision_id, "docs/decisions")
+    decision_file = decision_paths.get(decision_id, "docs")
     return (
         _index_entry(
             "decision", decision_id, f"{kind}.decision", file, record,
@@ -547,7 +545,7 @@ def _target_file(kind, identity):
     if kind == "obligation":
         return "data/vocab/term-obligations.yaml"
     if kind == "decision":
-        return "docs/decisions"
+        return "docs"
     if kind == "generated_output":
         return identity
     return "data/vocab/terms.yaml"

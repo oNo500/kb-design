@@ -10,6 +10,7 @@ import unittest
 import yaml
 
 from kb_core.governance.term_validation import semantic_concept, semantic_project_basis_scope
+from kb_core.documentation import decision_paths
 from kb_obsidian.exporter import ExportError, build_content_files, build_manifest, load_repository
 
 from .test_source_v2_export import decision_bytes, documents_v2, fixture_inputs
@@ -211,7 +212,9 @@ def superseded_term_inputs(*, current_grant=True):
 
 
 def commit_inputs(root, inputs, message):
-    for path in (root / "docs/decisions").glob("term-*.md"):
+    # Replace the copied production grants with the synthetic snapshot's grants.
+    # Keeping their relocated copies would duplicate the fixture's policy IDs.
+    for path in decision_paths(root / "docs", ("source-*.md", "term-*.md")):
         path.unlink()
     for name, relative in {
         "topics": "data/vocab/topics.yaml",
@@ -228,7 +231,9 @@ def commit_inputs(root, inputs, message):
         (root / relative).write_bytes(inputs[name])
     for key, content in inputs.items():
         if key.startswith("_support:docs/decisions/"):
-            (root / key.removeprefix("_support:")).write_bytes(content)
+            target = root / key.removeprefix("_support:")
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(content)
     subprocess.run(["git", "-C", str(root), "add", "."], check=True)
     subprocess.run(["git", "-C", str(root), "commit", "--quiet", "-m", message], check=True)
 

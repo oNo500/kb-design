@@ -29,11 +29,11 @@ uv run kb-obsidian --help
 
 ## 术语表示
 
-应用按[术语实施结构](../../docs/decisions/term-complete-structure.md)读取可选术语输入。`data/vocab/terms.yaml` 与 `data/vocab/term-cutover-state.yaml` 必须共同存在或共同缺省；只存在一份会失败。存在时从同一干净 Git 快照捕获数据、决定、schema、布局和实现，并调用核心统一校验，核对具体记录、定义来源许可、项目依据、状态、引用及发布授权。
+应用按[术语实施结构](../../docs/model/terminology/decision-term-complete-structure.md)读取可选术语输入。`data/vocab/terms.yaml` 与 `data/vocab/term-cutover-state.yaml` 必须共同存在或共同缺省；只存在一份会失败。存在时从同一干净 Git 快照捕获数据、决定、schema、布局和实现，并调用核心统一校验，核对具体记录、定义来源许可、项目依据、状态、引用及发布授权。
 
 获准概念生成 `kb/terms/<tc-id>.md` 只读参考页；`tm-id` 形式不另建概念页。页内保存语言形式、定义、范围、依据性质和出处，manifest、链接与刷新检查识别术语路径。历史纠正标签只提供查找说明，不代表当前准用；项目依据与外部依据分别显示。术语页不成为内容主题，不建立委托或回流；模型标签没有独立术语概念时不创建该页。
 
-本批完整生成、同一干净隔离快照的临时导出与刷新、manifest、链接和内容保护验收已经通过。[术语发布](../../docs/decisions/term-complete-publication.md)与实际 state 已启用 157 个正式术语概念的只读参考消费，glossary 只读生成；内容消费者、委托与回流没有因此启用。两份术语输入共同缺省时导出六份词表与参考文献。刷新写集仍为 `kb/` 与 `app/manifest.json`；用户内容中的旧文献链接须经明确授权的一次性迁移调整，普通刷新不会代改。
+本批完整生成、同一干净隔离快照的临时导出与刷新、manifest、链接和内容保护验收已经通过。[术语发布](../../docs/model/terminology/decision-term-complete-publication.md)与实际 state 已启用 157 个正式术语概念的只读参考消费，glossary 只读生成；内容消费者、委托与回流没有因此启用。两份术语输入共同缺省时导出六份词表与参考文献。刷新写集仍为 `kb/` 与 `app/manifest.json`；用户内容中的旧文献链接须经明确授权的一次性迁移调整，普通刷新不会代改。
 
 ## 参考导出
 
@@ -72,13 +72,13 @@ obsidian vault=实际ID base:query path=app/views/content.base format=json
 
 调用方为热路径设 2 秒期限，超时仅串行重试一次；冷启动用独立期限。必须同时检查退出码、stderr、错误文本及预期输出，JSON 完整解析后才能消费，实际路径必须与批准目录相同。本机已观察到错误文本伴随退出码 0，不能只凭退出码继续。失败时停止后续写入，不切换到默认库。
 
-本项目没有新增原生 CLI 包装器，上述检查由调用方执行。新内容仍经过 `kb-obsidian new-content`；普通材料及正文修改服从任务授权，写后校验。AI 不直接更改内容 properties、稳定身份、状态或路径。详见[终端访问决定](../../docs/decisions/obsidian-agent-entry.md)。
+本项目没有新增原生 CLI 包装器，上述检查由调用方执行。新内容仍经过 `kb-obsidian new-content`；普通材料及正文修改服从任务授权，写后校验。AI 不直接更改内容 properties、稳定身份、状态或路径。详见[终端访问决定](../../docs/applications/obsidian/decision-obsidian-agent-entry.md)。
 
 ## 视图排序
 
 完整 vault 的 Base 表格允许按已有显示列排序，保留升序、降序、排序次序及清空排序；筛选、显示列和其他结构仍受管理。新建或刷新后的清单保存 Base 发布快照，后续排序不阻断内容建立和校验。旧库先运行 `refresh --dry-run` 核对，再执行 `refresh` 迁移；不会重写应用视图或撤销排序。
 
-新清单应由当前工具读取，旧版工具会拒绝新增快照字段。具体合同见[视图排序](../../docs/decisions/obsidian-base-sort-preferences.md)。
+新清单应由当前工具读取，旧版工具会拒绝新增快照字段。具体合同见[视图排序](../../docs/applications/obsidian/decision-obsidian-base-sort-preferences.md)。
 
 ## 内容建立
 
@@ -140,4 +140,4 @@ uv run kb-obsidian refresh
 
 应用不自动改写用户内容或配置，不自动返回、修复或切换任何内容。内容回流、自动修复、查询日志、社区插件和 Obsidian GUI 自动化未实现。Quick Switcher 的交互、Bases 的实际显示和视觉布局仍需在 Obsidian 中人工验收；解析 YAML、JSON 或 Base 文件只证明生成文件合同。
 
-默认 `output/obsidian/` 只是新的可用位置，本次迁移没有创建该 vault，也没有搬迁或刷新现有外部 `kb-vault`。来源 v2 数据已实施，首批术语参考消费已按 publication 启用；这不表示内容消费者启用，也不构成外部正式 vault 已更新或发版。相关决定见[仓库布局](../../docs/decisions/monorepo-layout.md)、[工具归属](../../docs/decisions/obsidian-tool-location.md)与[词表刷新](../../docs/decisions/obsidian-reference-refresh.md)。
+默认 `output/obsidian/` 只是新的可用位置，本次迁移没有创建该 vault，也没有搬迁或刷新现有外部 `kb-vault`。来源 v2 数据已实施，首批术语参考消费已按 publication 启用；这不表示内容消费者启用，也不构成外部正式 vault 已更新或发版。相关决定见[仓库布局](../../docs/development/decision-monorepo-layout.md)、[工具归属](../../docs/applications/obsidian/decision-obsidian-tool-location.md)与[词表刷新](../../docs/applications/obsidian/decision-obsidian-reference-refresh.md)。

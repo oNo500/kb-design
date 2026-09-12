@@ -39,7 +39,7 @@ uv run kb-core --help
 
 使用 `uv run kb-core <命令> --help` 查看参数。命令使用显式仓库根定位资源，不要求调用者先进入包目录。
 
-`check-sources` 要求显式传入 `--root`，来源 v2 数据与严格引用已按[来源收尾](../../docs/decisions/source-completion.md)实施。命令检查结构、引用及采纳范围，不自动启用正式义务或消费者。
+`check-sources` 要求显式传入 `--root`，来源 v2 数据与严格引用已按[来源收尾](../../docs/model/sources/decision-source-completion.md)实施。命令检查结构、引用及采纳范围，不自动启用正式义务或消费者。
 
 ## 离线证据
 
@@ -59,7 +59,7 @@ uv run kb-core prepare-source-evidence
 
 ## 术语入口
 
-术语结构与语言依据分别按[术语实施范围](../../docs/decisions/term-infrastructure-scope.md)和[术语依据范围](../../docs/decisions/term-evidence-scope.md)实施；完整记录、有限规则和布局分别见[术语具体采纳](../../docs/decisions/term-data-values.md)、[限定定义许可](../../docs/decisions/term-limited-definition-source-use.md)与[术语实施结构](../../docs/decisions/term-complete-structure.md)。`governance/term_validation.py` 为生成、维护与应用共用入口，分别核对 schema、来源、完整记录采纳、稳定身份、状态历史和发布授权。
+术语结构与语言依据分别按[术语实施范围](../../docs/model/terminology/decision-term-infrastructure-scope.md)和[术语依据范围](../../docs/model/terminology/decision-term-evidence-scope.md)实施；完整记录、有限规则和布局分别见[术语具体采纳](../../docs/model/terminology/decision-term-data-values.md)、[限定定义许可](../../docs/model/terminology/decision-term-limited-definition-source-use.md)与[术语实施结构](../../docs/model/terminology/decision-term-complete-structure.md)。`governance/term_validation.py` 为生成、维护与应用共用入口，分别核对 schema、来源、完整记录采纳、稳定身份、状态历史和发布授权。
 
 定义依据默认拒绝 de-facto／vendor；只有本批六个概念的完整 definition_source_permission 与同一概念的 L3 许可、record grant 精确匹配时例外放行，不改变来源 tier 或其他用途。project basis 只用于内容单元、断言、阈值的概念和定义，以及 assertion、threshold 两个既有英文形式，中文语言依据独立；其他缺外部依据的条目不能套用。
 
@@ -85,7 +85,7 @@ uv run kb-core build-terms build --design-root . \
 
 主题输入位于 `data/inputs/topics/`，`build-topics` 重建 `data/vocab/topics.yaml`。本批 157 个正式术语概念与 51 个新增来源已实施，publication 已完成规定验收并生效；这不构成发版。
 
-[术语发布](../../docs/decisions/term-complete-publication.md)与实际 state 已启用术语唯一编辑源及首批参考消费。terms 维护概念、定义和现行形式，`data/inputs/terminology/glossary-layout.yaml` 维护展示，glossary 是完整只读生成页；主题和载体模型标签继续由 topics／forms／adoptions 维护。没有 retained-glossary 编辑源，不把审计账本作为长期生产输入。
+[术语发布](../../docs/model/terminology/decision-term-complete-publication.md)与实际 state 已启用术语唯一编辑源及首批参考消费。terms 维护概念、定义和现行形式，`data/inputs/terminology/glossary-layout.yaml` 维护展示，glossary 是完整只读生成页；主题和载体模型标签继续由 topics／forms／adoptions 维护。没有 retained-glossary 编辑源，不把审计账本作为长期生产输入。
 
 迁移审计保留原行、旧值与去向；正式义务、委托、持久正式索引和 TBX 不因本批术语迁移启用。外部正式 vault 写入、合并与发版不在本轮条件式执行范围内。
 

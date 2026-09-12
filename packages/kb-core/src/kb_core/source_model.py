@@ -90,7 +90,7 @@ def validate_references(root: Path,
     return validate_reference_documents(
         _load_yaml(root / "data/references/bibliography.yaml"),
         _load_yaml(root / "data/vocab/sources.yaml"), references,
-        _load_accepted_decisions(root / "docs/decisions"),
+        _load_accepted_decisions(root / "docs"),
         ordinary_entities_document=_load_yaml(root / "data/vocab/entities.yaml"),
     )
 
@@ -193,8 +193,9 @@ def _front_matter(path: Path):
 
 
 def _load_accepted_decisions(directory: Path):
+    from kb_core.documentation import decision_paths
     return accepted_decisions_from_documents(
-        [_front_matter(path) for path in sorted(directory.glob("source-*.md"))]
+        [_front_matter(path) for path in decision_paths(directory, ("source-*.md",))]
     )
 
 
@@ -1405,7 +1406,7 @@ def validate_repository(root: Path, previous_root: Optional[Path] = None) -> Lis
     documents["bibliography"] = _load_yaml(root / "data/references/bibliography.yaml")
     obligation_path = root / "data/vocab/source-obligations.yaml"
     obligations_doc = _load_yaml(obligation_path) if obligation_path.exists() else None
-    issues = validate_source_documents(documents, _load_accepted_decisions(root / "docs/decisions"),
+    issues = validate_source_documents(documents, _load_accepted_decisions(root / "docs"),
                                        obligations_doc, load_adoptions(root))
     bibliography_doc = documents.get("bibliography", {})
     entities_doc = documents.get("entities", {})
@@ -1485,7 +1486,8 @@ def main(argv=None) -> int:
     if args.command == "write-schemas":
         write_schema_documents(args.directory)
         return 0
-    paths = sorted(args.directory.glob("source-*.md"))
+    from kb_core.documentation import decision_paths
+    paths = decision_paths(args.directory, ("source-*.md",))
     patches = load_decision_patches(paths)
     required = set(args.require.split(","))
     seen = {patch.qid for patch in patches}

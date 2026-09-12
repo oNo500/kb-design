@@ -7,11 +7,14 @@ import yaml
 root = pathlib.Path(__file__).resolve().parent.parent
 # Historical decisions and the frozen README retain their original path context.
 migration = json.loads((root / 'work/plans/2026-09-05-monorepo-files.json').read_text())
+topic_migration = json.loads((root / 'work/plans/2026-09-12-docs-topic-files.json').read_text())
+relocations = {row['old']: row['new'] for row in topic_migration['files']}
 historical = {'README.md'} | {
-    row['new'] for row in migration['files']
+    relocations.get(row['new'], row['new']) for row in migration['files']
     if row['new'] and (row['old'].startswith('design/decisions/')
                        or row['old'] == 'vocab/CHANGELOG.md')
 }
+historical.update(row['new'] for row in topic_migration['files'] if row['role'] == 'history')
 excluded_dirs = {'.git', '.venv', '.superpowers', '__pycache__', 'output', 'build'}
 files = []
 for directory, children, names in os.walk(root):
@@ -70,6 +73,15 @@ for p in files:
             if t.startswith(('http://', 'https://', 'mailto:')): continue
             path, _, anchor = t.partition('#')
             target = (p.parent / path).resolve() if path else p
+            # Saved execution records retain their original path context. Resolve
+            # only the explicit relocation, without rewriting historical text.
+            if path and p.relative_to(root).as_posix().startswith('work/'):
+                try:
+                    previous = target.relative_to(root).as_posix()
+                except ValueError:
+                    previous = None
+                if previous in relocations:
+                    target = root / relocations[previous]
             if path and not target.exists():
                 print(f'{p.relative_to(root)}:{n}: 文件不存在 {t}'); bad += 1; continue
             if anchor and target.suffix == '.md' and anchor not in headings.get(target, set()):

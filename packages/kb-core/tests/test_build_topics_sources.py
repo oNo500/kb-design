@@ -19,7 +19,7 @@ class BuildTopicsSourceTests(unittest.TestCase):
         frozen = yaml.safe_load((ROOT / 'data/vocab/topics.yaml').read_text())
         assembled = _assemble_topics(ROOT)
         inputs = load_reference_inputs(ROOT)['records']
-        decisions = _load_accepted_decisions(ROOT / 'docs/decisions')
+        decisions = _load_accepted_decisions(ROOT / 'docs')
         for section in ('arrays', 'concepts'):
             self.assertEqual([row['id'] for row in frozen[section]],
                              [row['id'] for row in assembled[section]])

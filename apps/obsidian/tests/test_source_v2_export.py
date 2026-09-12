@@ -68,7 +68,7 @@ def decision_bytes(decision):
 
 
 def migration_policy_bytes():
-    return (Path(__file__).resolve().parents[3] / "docs/decisions/source-migration-policy.md").read_bytes()
+    return (Path(__file__).resolve().parents[3] / "docs/model/sources/decision-source-migration-policy.md").read_bytes()
 
 
 def fixture_inputs(documents):

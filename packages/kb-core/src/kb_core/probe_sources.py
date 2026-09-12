@@ -194,7 +194,7 @@ def probe_due_endpoints(endpoints, previous, transport, today):
 
 def hash_formal_tree(root):
     digest = hashlib.sha256()
-    for directory in ("docs/design", "docs/decisions", "packages", "apps", "data", "schemas"):
+    for directory in ("docs", "packages", "apps", "data", "schemas"):
         formal_dir = root / directory
         if not formal_dir.exists():
             continue

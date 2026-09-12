@@ -10,6 +10,8 @@ from collections import defaultdict
 from collections.abc import Sequence
 from typing import Iterator, Mapping, Optional, Tuple
 
+from kb_core.documentation import document_role
+
 
 FENCE = re.compile(r"^\s*(`{3,}|~{3,})")
 INLINE_CODE = re.compile(r"`[^`]*`")
@@ -63,14 +65,8 @@ def classify_markdown_path(path):
         return "history"
     if value in {"AGENTS.md", "ARCHITECTURE.md", "docs/glossary.md"}:
         return "formal"
-    if value.startswith("docs/drafts/"):
-        return "draft"
-    if value.startswith("docs/decisions/"):
-        return "history"
-    if value.startswith("docs/references/"):
-        return "source"
     if value.startswith("docs/"):
-        return "formal"
+        return document_role(value)
     if value.startswith("work/"):
         return "audit"
     if value.startswith("data/"):

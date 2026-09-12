@@ -430,11 +430,8 @@ def _validate_record(
 
 
 def _support_paths(root):
-    paths = [
-        path
-        for pattern in ("source-*.md", "term-*.md")
-        for path in (pathlib.Path(root) / "docs/decisions").glob(pattern)
-    ]
+    from kb_core.documentation import decision_paths
+    paths = decision_paths(pathlib.Path(root) / "docs", ("source-*.md", "term-*.md"))
     paths.extend(pathlib.Path(root) / relative for relative in (
         "data/inputs/topics/label-adoptions.json", "data/vocab/source-obligations.yaml")
         if (pathlib.Path(root) / relative).exists())
