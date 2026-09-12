@@ -32,7 +32,7 @@
 
 ## 状态与依据
 
-概念工作流与术语管理状态分别判断。现行术语管理状态包括 `preferredTerm-admn-sts`、`admittedTerm-admn-sts`、`deprecatedTerm-admn-sts` 和 `supersededTerm-admn-sts`；历史形式保留不等于当前准用。状态合法不代表已取得转换或准入授权。
+概念工作流取 `candidate`、`active`、`deprecated`，与术语管理状态分别判断。现行术语管理状态包括 `preferredTerm-admn-sts`、`admittedTerm-admn-sts`、`deprecatedTerm-admn-sts` 和 `supersededTerm-admn-sts`；历史形式保留不等于当前准用。状态合法不代表已取得转换或准入授权。
 
 外部概念、定义、学科归属和语言形式分别核对。六个概念的限定定义依据按[限定定义许可](decision-term-limited-definition-source-use.md)逐项处理，不扩大为其他概念或来源的一般许可。
 
