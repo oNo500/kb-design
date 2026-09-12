@@ -12,11 +12,11 @@ kb-design 用于建立和维护个人知识体系的组织规则。它把内容�
 
 | 问题 | 对应设计 |
 |---|---|
-| 一条内容怎样获得稳定身份，并表达主题、类型与引用？ | [内容模型](model/content/content-model.md) |
+| 一条内容怎样获得稳定身份，并表达主题、类型与引用？ | [内容模型](model/content/设计-内容模型.md) |
 | 同一主题怎样统一表示，不同主题怎样建立层级与关联？ | [主题词表](model/vocabulary/README.md) |
-| 产品和组织的身份怎样与知识主题分开？ | [命名实体词表](model/entities/entities.md) |
-| 一个名称具体指什么，定义和译名凭什么采用？ | [术语数据库](model/terminology/terminology-database.md)、[术语表](glossary.md) |
-| 外部材料支持了哪个具体判断，谁能批准变更？ | [来源用途登记](model/sources/sources-registry.md)、[治理](governance/decision-making/governance-rules.md) |
+| 产品和组织的身份怎样与知识主题分开？ | [命名实体词表](model/entities/设计-命名实体词表.md) |
+| 一个名称具体指什么，定义和译名凭什么采用？ | [术语数据库](model/terminology/概念-术语数据库.md)、[术语表](glossary.md) |
+| 外部材料支持了哪个具体判断，谁能批准变更？ | [来源用途登记](model/sources/设计-来源用途登记.md)、[治理](governance/decision-making/设计-治理.md) |
 
 ## 项目范围
 
@@ -26,10 +26,10 @@ kb-design 用于建立和维护个人知识体系的组织规则。它把内容�
 
 ## 应用关系
 
-Obsidian 是当前知识库的承载工具，其属性、链接、文件和视图由[适配设计](applications/obsidian/obsidian.md)规定。词表预览则服务于仓库维护，读取工作区数据供查阅。
+Obsidian 是当前知识库的承载工具，其属性、链接、文件和视图由[适配设计](applications/obsidian/设计-Obsidian%20映射.md)规定。词表预览则服务于仓库维护，读取工作区数据供查阅。
 
 DITA 在现有内容模型中提供内容单元和文档类型的设计参照。它也可以成为未来的内容表示目标；采用这些参照不代表已经实现 DITA 输出。
 
 ## 阅读入口
 
-整体职责与数据流见[项目架构](architecture.md)，各主题设计见[文档首页](README.md)。需要了解某项选择的理由时，从相应设计进入概念、来源和决定；实施进度见[项目路线](../work/roadmap.md)。
+整体职责与数据流见[项目架构](设计-项目架构.md)，各主题设计见[文档首页](README.md)。需要了解某项选择的理由时，从相应设计进入概念、来源和决定；实施进度见[项目路线](../work/roadmap.md)。

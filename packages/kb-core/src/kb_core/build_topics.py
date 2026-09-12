@@ -108,7 +108,7 @@ def _assemble_topics(ROOT):
                 add(slug(en3), zh3, en3, [c2], 'gbt-13745', {'source':'gbt-13745','id':tc,'rel':'exactMatch'}, translated=['en'])
 
     # ---------- 邻近主题的多层级 ----------
-    # 软件工程管理同时在 management 之下（docs/model/vocabulary/topics.md 邻近主题）
+    # 软件工程管理同时在 management 之下（docs/model/vocabulary/设计-主题词表.md 邻近主题）
     sem = slug('Software Engineering Management')
     if sem in concepts and 'management' not in concepts[sem]['broader']:
         concepts[sem]['broader'].append('management')

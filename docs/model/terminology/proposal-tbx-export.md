@@ -6,7 +6,7 @@
 
 本草案只记录未来重新评估 TBX 的条件。它不选择 TBX 方言、版本或表示样式，不建立字段映射、损失报告、验证资源、导出命令或发布流程，也不授权创建 TBX 文件。
 
-TBX 的概念关系见[术语数据库](terminology-database.md)，已核官方材料和未读边界见[术语标准](reading-terminology-standards.md)。阅读这些材料不等于本库采用 TBX。
+TBX 的概念关系见[术语数据库](概念-术语数据库.md)，已核官方材料和未读边界见[术语标准](reading-terminology-standards.md)。阅读这些材料不等于本库采用 TBX。
 
 ## 当前价值
 

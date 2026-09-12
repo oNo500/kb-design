@@ -16,7 +16,7 @@
 | 人工智能结构 | `artificial-intelligence` 下已有 `machine-learning` 与 `natural-language-processing` | 现行结构机械支持多上位，但关系仍须决定 |
 | 深度学习 | 没有相应概念记录 | 不为补齐外部路径创建占位 |
 | 实体词表 | 61 个实体，没有模型家族或具体模型记录 | 现有软件产品不改作模型 |
-| 预留类别 | `docs/model/entities/entities.md` 预留 `large-language-model`，正式实例为 0 | 设计示例不等于实体记录或类别依据已复核 |
+| 预留类别 | `docs/model/entities/设计-命名实体词表.md` 预留 `large-language-model`，正式实例为 0 | 设计示例不等于实体记录或类别依据已复核 |
 | 关系能力 | 主题 `broader` 和实体 `subjects` 可多值；实体没有家族成员、版本或产品使用模型关系 | 能表达多值不批准语义关系 |
 | 生成路径 | 本地无实际派生的概念应省略 `source`，现行生成器却要求该字段 | 不用 `source: self` 绕过生成缺口 |
 
@@ -111,7 +111,7 @@
 
 ## 影响范围
 
-若推荐以后获准，可能影响 `docs/glossary.md`、`docs/model/vocabulary/topics.md`、`docs/model/vocabulary/hierarchy.md`、`docs/model/entities/entities.md`、主题生成输入与生成器、`data/vocab/topics.yaml`、`data/vocab/entities.yaml`、来源登记、schema、校验器以及内容和应用消费者。
+若推荐以后获准，可能影响 `docs/glossary.md`、`docs/model/vocabulary/设计-主题词表.md`、`docs/model/vocabulary/设计-层级结构.md`、`docs/model/entities/设计-命名实体词表.md`、主题生成输入与生成器、`data/vocab/topics.yaml`、`data/vocab/entities.yaml`、来源登记、schema、校验器以及内容和应用消费者。
 
 每一层都须单独建档和取证。类概念归属不向模型实体自动传播，模型归属不向产品或软件自动传播，组织归属也不向其全部对象传播。
 

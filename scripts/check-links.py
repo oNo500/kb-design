@@ -3,18 +3,31 @@
 import json, os, re, sys, pathlib, unicodedata
 
 import yaml
+from urllib.parse import unquote
 
 root = pathlib.Path(__file__).resolve().parent.parent
 # Historical decisions and the frozen README retain their original path context.
 migration = json.loads((root / 'work/plans/2026-09-05-monorepo-files.json').read_text())
 topic_migration = json.loads((root / 'work/plans/2026-09-12-docs-topic-files.json').read_text())
 relocations = {row['old']: row['new'] for row in topic_migration['files']}
+filename_migration = json.loads((root / 'work/plans/2026-09-12-docs-chinese-files.json').read_text())
+relocations.update({row['old']: row['new'] for row in filename_migration['files']})
+
+def current_path(path):
+    seen = set()
+    while path in relocations and relocations[path] != path:
+        if path in seen:
+            raise ValueError(f'循环文档迁移路径：{path}')
+        seen.add(path)
+        path = relocations[path]
+    return path
+
 historical = {'README.md'} | {
-    relocations.get(row['new'], row['new']) for row in migration['files']
+    current_path(row['new']) for row in migration['files']
     if row['new'] and (row['old'].startswith('design/decisions/')
                        or row['old'] == 'vocab/CHANGELOG.md')
 }
-historical.update(row['new'] for row in topic_migration['files'] if row['role'] == 'history')
+historical.update(current_path(row['new']) for row in topic_migration['files'] if row['role'] == 'history')
 excluded_dirs = {'.git', '.venv', '.superpowers', '__pycache__', 'output', 'build'}
 files = []
 for directory, children, names in os.walk(root):
@@ -72,6 +85,7 @@ for p in files:
             t = m.group(1)
             if t.startswith(('http://', 'https://', 'mailto:')): continue
             path, _, anchor = t.partition('#')
+            path = unquote(path)
             target = (p.parent / path).resolve() if path else p
             # Saved execution records retain their original path context. Resolve
             # only the explicit relocation, without rewriting historical text.
@@ -81,7 +95,7 @@ for p in files:
                 except ValueError:
                     previous = None
                 if previous in relocations:
-                    target = root / relocations[previous]
+                    target = root / current_path(previous)
             if path and not target.exists():
                 print(f'{p.relative_to(root)}:{n}: 文件不存在 {t}'); bad += 1; continue
             if anchor and target.suffix == '.md' and anchor not in headings.get(target, set()):

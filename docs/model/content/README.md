@@ -4,13 +4,13 @@
 
 ## 现行设计
 
-- [内容模型](content-model.md)
+- [内容模型](设计-内容模型.md)
 
 ## 概念解释
 
-- [标识符 (Identifier)](content-identifiers.md)
-- [元数据 (Metadata)](metadata.md)
-- [笔记的类型 (Note Types)](note-types.md)
+- [标识符 (Identifier)](概念-标识符.md)
+- [元数据 (Metadata)](概念-元数据.md)
+- [笔记的类型 (Note Types)](概念-笔记的类型.md)
 
 ## 设计依据
 

@@ -74,7 +74,7 @@ NCES 提供传播分类内的直接落点，IEEE PCS 证明对象宽于写作和
 
 ## 影响范围
 
-若推荐获准，可能影响 `docs/glossary.md`、`docs/model/vocabulary/topics.md`、`docs/model/vocabulary/hierarchy.md`、主题生成输入和 `data/vocab/topics.yaml`。DITA 实体的 `subjects` 是否收窄是独立 L2 归属判断；来源登记和用途是独立来源决定；内容模型与 6 个现行类型推荐保持不变。
+若推荐获准，可能影响 `docs/glossary.md`、`docs/model/vocabulary/设计-主题词表.md`、`docs/model/vocabulary/设计-层级结构.md`、主题生成输入和 `data/vocab/topics.yaml`。DITA 实体的 `subjects` 是否收窄是独立 L2 归属判断；来源登记和用途是独立来源决定；内容模型与 6 个现行类型推荐保持不变。
 
 CS2023 沟通知识单元保持现有身份、上位和范围。是否建立显式相关关系须另有消费者和关系依据，不与学科节点合并批准。
 
@@ -115,7 +115,7 @@ CS2023 沟通知识单元保持现有身份、上位和范围。是否建立显�
 
 ## 层级交接
 
-CS2023 最终材料、本地生成输入和正式主题输出都显示 Security 知识领域为 7 个知识单元；现行 `docs/model/vocabulary/hierarchy.md` 的相关表格和预览写成 8 个。该事实只交给 Task 3 的整体现行层级同步，不属于传播方案，不计入本草案的影响、开放决定或写集。
+CS2023 最终材料、本地生成输入和正式主题输出都显示 Security 知识领域为 7 个知识单元；现行 `docs/model/vocabulary/设计-层级结构.md` 的相关表格和预览写成 8 个。该事实只交给 Task 3 的整体现行层级同步，不属于传播方案，不计入本草案的影响、开放决定或写集。
 
 ## 开放决定
 

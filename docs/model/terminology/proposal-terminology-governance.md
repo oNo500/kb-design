@@ -4,7 +4,7 @@
 
 ## 草案边界
 
-本文以[术语数据库](terminology-database.md)为概念前置，说明术语概念、多语形式、依据、状态、委托和生成视图的职责。[术语实施范围](decision-term-infrastructure-scope.md)与[术语依据范围](decision-term-evidence-scope.md)已经采纳三层结构、领域与章节分离、模型译名生成、中文语言依据及应用合同；[术语实施结构](decision-term-complete-structure.md)进一步限定 project basis、完整布局及条件式 publication。
+本文以[术语数据库](概念-术语数据库.md)为概念前置，说明术语概念、多语形式、依据、状态、委托和生成视图的职责。[术语实施范围](decision-term-infrastructure-scope.md)与[术语依据范围](decision-term-evidence-scope.md)已经采纳三层结构、领域与章节分离、模型译名生成、中文语言依据及应用合同；[术语实施结构](decision-term-complete-structure.md)进一步限定 project basis、完整布局及条件式 publication。
 
 本批 157 个概念的名称、定义、形式与状态由[术语具体采纳](decision-term-data-values.md)覆盖，51 个新增来源由[术语来源采纳](decision-source-term-complete-citations.md)覆盖。六个概念另受[限定定义许可](decision-term-limited-definition-source-use.md)精确约束。完整生成和同一干净隔离快照的临时应用验收已经通过，[术语发布](decision-term-complete-publication.md)与实际 state 已启用 157 个正式概念、terms 唯一编辑源及首批术语参考消费。glossary 是只读生成页。
 
@@ -27,7 +27,7 @@
 
 术语数据只收入需要独立治理概念身份、多语形式或术语状态的记录，不默认复制主题词表、命名实体词表和枚举词表的全部标签。定义、适用学科、形式依据、跨语言概念对应和具体断言分别核对；其中一项有依据不能替代另一项。
 
-普通叙述、来源转录、文件路径、代码和值中的字符串不因出现而自动成为项目术语。候选、草案、`defer`、迁移分类、报告命中、示例和模式状态都不能替代[治理](../../governance/decision-making/governance-rules.md#准入对象)规定的准入依据。
+普通叙述、来源转录、文件路径、代码和值中的字符串不因出现而自动成为项目术语。候选、草案、`defer`、迁移分类、报告命中、示例和模式状态都不能替代[治理](../../governance/decision-making/设计-治理.md#准入对象)规定的准入依据。
 
 ## 记录层次
 
@@ -89,7 +89,7 @@ schema 与转换校验已要求同一概念、同一语言恰有一个优先术�
 
 ## 译名准入
 
-现行[治理译名规则](../../governance/decision-making/governance-rules.md#译名)及[术语依据范围](decision-term-evidence-scope.md)控制本批形式准入。每种语言分别保存形式依据，多语形式归入同一概念还须概念对应依据；不能由并列或机械翻译推导同义。
+现行[治理译名规则](../../governance/decision-making/设计-治理.md#译名)及[术语依据范围](decision-term-evidence-scope.md)控制本批形式准入。每种语言分别保存形式依据，多语形式归入同一概念还须概念对应依据；不能由并列或机械翻译推导同义。
 
 本草案保留以下外部对应证据的复核次序，不以它排除已采纳的中文模型第 5 级：同一权威双语条目；等同采用的标准条目逐项对应；同一权威主体对同一所指的两种用法；各单语合格依据与独立概念对应材料。采标元数据、修改采用、标准编号相近、搜索数量、拼写相似或长期正文使用只提供线索，不能单独批准译名。
 
@@ -177,7 +177,7 @@ publication/state 已在完整验收通过后写入，glossary 已生成并启�
 
 ## 决策权限
 
-本草案沿用[治理的决策权](../../governance/decision-making/governance-rules.md#决策权)，不扩大任何一级权限。采集材料、运行校验、生成报告或索引只能形成机械证据；术语准入、译名采用、概念对应、优先形式、管理状态、委托、废弃、替代和迁移去向仍按内容提案后由人决定。
+本草案沿用[治理的决策权](../../governance/decision-making/设计-治理.md#决策权)，不扩大任何一级权限。采集材料、运行校验、生成报告或索引只能形成机械证据；术语准入、译名采用、概念对应、优先形式、管理状态、委托、废弃、替代和迁移去向仍按内容提案后由人决定。
 
 范围、零自定例外、草案生效、非候选对象删除和发版只有人能决定。校验通过、存在决定字符串、迁移账本去向、生成器可运行或索引可定位均不提升权限；项目决定也不能补出缺失的外部依据。
 

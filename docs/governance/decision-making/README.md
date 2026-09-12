@@ -4,17 +4,18 @@
 
 ## 现行设计
 
-- [治理](governance-rules.md)
-- [方法登记](principles.md)
+- [治理](设计-治理.md)
+- [方法登记](设计-方法登记.md)
 
 ## 概念解释
 
-- [第一原理与设计理由 (First Principles and Design Rationale)](first-principles.md)
-- [治理 (Governance)](governance.md)
+- [第一原理与设计理由 (First Principles and Design Rationale)](概念-第一原理与设计理由.md)
+- [治理 (Governance)](概念-治理.md)
 
 ## 相关决定
 
 - [文档主题组织](decision-docs-topic-organization.md)
+- [文档文件命名](decision-document-filenames.md)
 
 决定保留形成时的正文与路径语境；现行规则结合后续具体采纳解释。
 

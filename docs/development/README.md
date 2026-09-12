@@ -8,7 +8,7 @@
 
 ## 概念解释
 
-- [Reproducible Builds](reproducible-builds.md)
+- [Reproducible Builds](概念-Reproducible%20Builds.md)
 
 ## 设计依据
 

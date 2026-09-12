@@ -4,11 +4,11 @@
 
 ## 现行设计
 
-- [适配要求](requirements.md)
+- [适配要求](设计-适配要求.md)
 
 ## 概念解释
 
-- [Application Profile](application-profile.md)
+- [Application Profile](概念-Application%20Profile.md)
 
 ## 设计依据
 

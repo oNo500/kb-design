@@ -4,11 +4,11 @@
 
 ## 现行设计
 
-- [术语设计](terminology.md)
+- [术语设计](设计-术语.md)
 
 ## 概念解释
 
-- [术语数据库 (Terminology Database)](terminology-database.md)
+- [术语数据库 (Terminology Database)](概念-术语数据库.md)
 
 ## 设计依据
 

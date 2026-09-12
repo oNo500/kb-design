@@ -4,7 +4,7 @@
 
 ## 现行设计
 
-- [Obsidian 映射](obsidian.md)
+- [Obsidian 映射](设计-Obsidian%20映射.md)
 
 ## 设计依据
 

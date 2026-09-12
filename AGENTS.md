@@ -1,6 +1,6 @@
 # kb-design 项目约定
 
-本文是 [写作规则](docs/governance/writing/writing.md)、[治理](docs/governance/decision-making/governance-rules.md)、[维护](docs/governance/maintenance/maintenance.md) 和[主题生成路径](docs/model/vocabulary/topics.md#生成路径)的会话摘要，每次会话加载；冲突时以各正文职责范围内的规则为准。
+本文是 [写作规则](docs/governance/writing/设计-写作规则.md)、[治理](docs/governance/decision-making/设计-治理.md)、[维护](docs/governance/maintenance/设计-维护.md) 和[主题生成路径](docs/model/vocabulary/设计-主题词表.md#生成路径)的会话摘要，每次会话加载；冲突时以各正文职责范围内的规则为准。
 
 ## 标题
 
@@ -26,7 +26,7 @@
 - **当前阶段零自定**：通常禁止 AI 主动形成或选定无准入依据的 designation；现已由人开放[模型知识译名](docs/model/terminology/decision-model-knowledge-translation.md)例外，仅允许为既有概念按译名第 5 级使用模型既有知识中的行业表达，并登记为模型判断、外部用法未核实。该例外不授权新建概念、类别或划分特征
 - 拟作项目术语而未登记的 designation 不得进入定稿。普通叙述、来源转录、文件路径、代码和值中的任意字符串不因出现而自动成为术语；候选、`defer`、草案、占位和示例不能替代形式依据与概念对应依据，也不能取得试用资格
 - 原翻译批次的离线范围保持；本次冻结登记的必要只读原文核对按[术语依据范围](docs/model/terminology/decision-term-evidence-scope.md)开放，不新增持久下载、OCR 或资料平台。译名第 4 级保留多个独立来源与概念对应要求；资料不足时可按已授权第 5 级登记模型判断。已有合格前级依据不被模型判断覆盖，实质含义冲突未解决时保留原名。名称、身份和状态的实际变更分别依具体采纳，不因生成或模式扩展自动发生
-- `basis.zh`／`basis.en` 使用[语言依据](docs/model/vocabulary/topics.md#语言依据)：外部等级与 `references`、第 5 级 `model`、第 6 级未采用原因、未重新分级的 `legacy` 分开。旧 `none` 不自动变第 6 级，旧 `self` 不自动变模型判断。模型输出关联 `data/inputs/topics/label-adoptions.json` 的采纳记录并显示“模型知识 · 第 5 级，外部用法未核实”；[本次批次授权](docs/model/terminology/decision-structured-label-basis.md#批次授权)只覆盖原有缺失中文及语言依据结构迁移，不改变身份、关系或状态
+- `basis.zh`／`basis.en` 使用[语言依据](docs/model/vocabulary/设计-主题词表.md#语言依据)：外部等级与 `references`、第 5 级 `model`、第 6 级未采用原因、未重新分级的 `legacy` 分开。旧 `none` 不自动变第 6 级，旧 `self` 不自动变模型判断。模型输出关联 `data/inputs/topics/label-adoptions.json` 的采纳记录并显示“模型知识 · 第 5 级，外部用法未核实”；[本次批次授权](docs/model/terminology/decision-structured-label-basis.md#批次授权)只覆盖原有缺失中文及语言依据结构迁移，不改变身份、关系或状态
 - 正式术语按[具体采纳](docs/model/terminology/decision-term-data-values.md)及[实施结构](docs/model/terminology/decision-term-complete-structure.md)管理。项目依据目前只批准内容单元、断言、阈值的概念和定义，以及 assertion、threshold 两个既有英文形式；须有有效 L3 完整记录、精确项目 scope 和历史。六条 de-facto 定义使用依[限定许可](docs/model/terminology/decision-term-limited-definition-source-use.md)逐对象、来源版本和具体值核对，不改变档级或放宽其他对象。历史退出名不作为当前准用形式，同名的其他合法对象不被全局删除
 
 ## 标点与间距
@@ -36,7 +36,7 @@
 
 ## 决策权
 
-按 [治理](docs/governance/decision-making/governance-rules.md) 的三级：不改规则且可逆的直接做；改规则、改结构、改文件布局、术语准入、归属判断、候选删除的先提案；范围、零自定例外的开放、决定的采纳与推翻、删除非候选对象、发版、草案生效、来源改档只有人能定。提案先给小节清单或改动说明，人回复后再动文件。提交说明标注级别 `[L1]` `[L2]` `[L3]`。
+按 [治理](docs/governance/decision-making/设计-治理.md) 的三级：不改规则且可逆的直接做；改规则、改结构、改文件布局、术语准入、归属判断、候选删除的先提案；范围、零自定例外的开放、决定的采纳与推翻、删除非候选对象、发版、草案生效、来源改档只有人能定。提案先给小节清单或改动说明，人回复后再动文件。提交说明标注级别 `[L1]` `[L2]` `[L3]`。
 
 ## 审查与测试
 
@@ -57,9 +57,9 @@
 
 ## 应用分层
 
-- [Application Profile](docs/applications/shared/application-profile.md)与 [Reproducible Builds](docs/development/reproducible-builds.md)是已登记方法；项目保留 English `Application Profile`，不采用未经核实的中文 designation
+- [Application Profile](docs/applications/shared/概念-Application%20Profile.md)与 [Reproducible Builds](docs/development/概念-Reproducible%20Builds.md)是已登记方法；项目保留 English `Application Profile`，不采用未经核实的中文 designation
 - 应用无关模型、`Application Profile` 的 target location／type／reference form／loss 语义选择、导出 artifact contract 的 byte serialization／file set／manifest／validation／publication 分开；后两者不得反向修改前者
-- field／property／path binding 不是 `metadata crosswalk`，不改变词表层 `crosswalk`；新 target 必须引用概念文、[方法登记](docs/governance/decision-making/principles.md)和适用的已采纳决定
+- field／property／path binding 不是 `metadata crosswalk`，不改变词表层 `crosswalk`；新 target 必须引用概念文、[方法登记](docs/governance/decision-making/设计-方法登记.md)和适用的已采纳决定
 - 生成文件与 Base 可以在 Obsidian 中编辑，但修改不回流、不取得项目效力；完整应用设计、target 文件或参考导出存在都不等于内容消费者启用
 - 当前只宣称同环境确定性、项目 manifest 完整性与成功目录替换的 atomic visibility；不宣称 DCAP、DCTAP、JCS、BagIt、reproducible build conformance 或 durability
 - 上述边界由[应用约束与表示分层](docs/applications/shared/decision-application-profile-boundary.md)固定；旧[设计与应用分离](docs/applications/shared/decision-form-independence.md)决定继续有效且不修改
@@ -82,14 +82,16 @@
 
 ## 文档组织
 
-- `docs/` 按内容、词表、实体、术语、来源、治理、应用与工程主题组织；项目入口见 [文档首页](docs/README.md)，整体职责见 [项目架构](docs/architecture.md)。
+- 概念解释文件使用 `概念-名称.md`，现行设计正文使用 `设计-名称.md`；名称取现有中文标题，项目明确保留的英文名称沿用原名。具体规则见[文件命名](docs/governance/writing/设计-写作规则.md#文件命名)。
+
+- `docs/` 按内容、词表、实体、术语、来源、治理、应用与工程主题组织；项目入口见 [文档首页](docs/README.md)，整体职责见 [项目架构](docs/设计-项目架构.md)。
 - 同一主题的概念与设计分别成文；`decision-`、`reading-`、`proposal-` 文件分别保留决定、阅读笔记和提案职责。前缀不授予效力，具体值仍按有效采纳核对。
 - 既有决定正文与数据中的历史路径不改写；当前位置见 [迁移清单](work/plans/2026-09-12-docs-topic-files.json)。新正文使用主题路径。
 
 ## 其他约定
 
-- 各主题目录中的概念解释文章另按 [概念文约定](docs/governance/writing/CONVENTIONS.md)
-- 全部政策见 [治理](docs/governance/decision-making/governance-rules.md)；来源分级见 [参考文献目录](docs/model/sources/bibliography.md)，复核按 [维护](docs/governance/maintenance/maintenance.md)
+- 各主题目录中的概念解释文章另按 [概念文约定](docs/governance/writing/设计-概念文写作约定.md)
+- 全部政策见 [治理](docs/governance/decision-making/设计-治理.md)；来源分级见 [参考文献目录](docs/model/sources/设计-参考文献目录.md)，复核按 [维护](docs/governance/maintenance/设计-维护.md)
 - 外部事实须核对原文后才提交；本阶段未取得的外部事实如实标为未核实。译名第 5 级按模型知识例外登记，不冒充已核外部事实；链接用 `[标题](url)`
 
 

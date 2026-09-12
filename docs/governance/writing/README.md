@@ -4,12 +4,12 @@
 
 ## 现行设计
 
-- [概念文写作约定](CONVENTIONS.md)
-- [写作规则](writing.md)
+- [概念文写作约定](设计-概念文写作约定.md)
+- [写作规则](设计-写作规则.md)
 
 ## 概念解释
 
-- [写作规范 (Writing Conventions)](writing-conventions.md)
+- [写作规范 (Writing Conventions)](概念-写作规范.md)
 
 ## 设计依据
 

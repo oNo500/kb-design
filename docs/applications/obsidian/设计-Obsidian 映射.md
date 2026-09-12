@@ -1,6 +1,6 @@
 # Obsidian 映射
 
-本文规定 Obsidian 作为 `kb-design` 首个完整落地应用层的 `Application Profile`。现行词表参考导出的 artifact contract 是上游物化子系统，`apps/obsidian/` 中的 `kb-obsidian` 工具从干净的设计提交消费其结果并建立完整 vault。本文按[内容模型](../../model/content/content-model.md)引用应用无关语义，再规定 Obsidian 的功能范围、对象职责、field binding、使用方式与具体表示；artifact contract 只负责把已经选定的正式词表表示物化为文件。分层依据见 [Application Profile](../shared/application-profile.md)、[Reproducible Builds](../../development/reproducible-builds.md)、[方法登记](../../governance/decision-making/principles.md)、[设计与应用分离](../shared/decision-form-independence.md)和[应用约束与表示分层](../shared/decision-application-profile-boundary.md)。
+本文规定 Obsidian 作为 `kb-design` 首个完整落地应用层的 `Application Profile`。现行词表参考导出的 artifact contract 是上游物化子系统，`apps/obsidian/` 中的 `kb-obsidian` 工具从干净的设计提交消费其结果并建立完整 vault。本文按[内容模型](../../model/content/设计-内容模型.md)引用应用无关语义，再规定 Obsidian 的功能范围、对象职责、field binding、使用方式与具体表示；artifact contract 只负责把已经选定的正式词表表示物化为文件。分层依据见 [Application Profile](../shared/概念-Application%20Profile.md)、[Reproducible Builds](../../development/概念-Reproducible%20Builds.md)、[方法登记](../../governance/decision-making/设计-方法登记.md)、[设计与应用分离](../shared/decision-form-independence.md)和[应用约束与表示分层](../shared/decision-application-profile-boundary.md)。
 
 ## 当前状态
 
@@ -29,7 +29,7 @@
 
 ## 模型边界
 
-本 target 引用[内容模型](../../model/content/content-model.md)的内容单元、字段语义、受控值、identifier 和生命周期，引用[主题词表设计](../../model/vocabulary/topics.md)、[命名实体词表设计](../../model/entities/entities.md)、[参考文献目录](../../model/sources/bibliography.md)、[来源用途登记](../../model/sources/sources-registry.md)和[层级结构](../../model/vocabulary/hierarchy.md)的正式对象、关系、多上位与数组规则，并按[维护](../../governance/maintenance/maintenance.md)保留指标、阈值、动作和决策权边界。
+本 target 引用[内容模型](../../model/content/设计-内容模型.md)的内容单元、字段语义、受控值、identifier 和生命周期，引用[主题词表设计](../../model/vocabulary/设计-主题词表.md)、[命名实体词表设计](../../model/entities/设计-命名实体词表.md)、[参考文献目录](../../model/sources/设计-参考文献目录.md)、[来源用途登记](../../model/sources/设计-来源用途登记.md)和[层级结构](../../model/vocabulary/设计-层级结构.md)的正式对象、关系、多上位与数组规则，并按[维护](../../governance/maintenance/设计-维护.md)保留指标、阈值、动作和决策权边界。
 
 `Application Profile` 只为既定对象选择 Obsidian location、type、reference form 和允许的 loss。field／property／path binding 是同一应用内部的表示规则，不是 `metadata crosswalk`；它不改变词表层 `crosswalk` 的现行含义，也不得修改应用无关字段的语义、基数、值域、稳定身份或对象关系。
 
@@ -156,13 +156,13 @@ identifier 规则已经由[内容单元标识符](../../model/content/decision-c
 
 `active` 内容因直接替代或确认过时转为 `deprecated`。直接替代且存在替代项时填写 `isReplacedBy`；确认过时且没有替代项时留空，并在正文首段说明原因。deprecated 内容保留原 identifier 和路径，不移入 Archive，也不删除。
 
-唯一删除例外是误建且没有任何引用的内容单元。删除须按[内容模型](../../model/content/content-model.md)的现行处置决定和[治理](../../governance/decision-making/governance-rules.md)的决策权执行；报告和校验器不能自动删除。
+唯一删除例外是误建且没有任何引用的内容单元。删除须按[内容模型](../../model/content/设计-内容模型.md)的现行处置决定和[治理](../../governance/decision-making/设计-治理.md)的决策权执行；报告和校验器不能自动删除。
 
 ## 身份规则
 
 内容路径是 `content/<uuidv4>.md`。`identifier` 和文件 stem 使用同一个符合 RFC 9562 标准文本表示的 UUIDv4：小写、保留连字符、不加对象前缀。唯一语境是一个知识库中的全部内容单元；建立时检查现有 identifier 和路径，重复时重新生成。一经写入且被引用后，identifier 和路径不随标题变化。
 
-[标识符](../../model/content/content-identifiers.md)区分身份、名称、标题、路径、排序信息和时间信息。UUIDv4 不从 Unique note creator、文件名、标题、名称翻译、拼音、时间戳或语言模型输出派生，也不充当密码、权限、真实性或完整性证明。路径包含 UUID 是 Obsidian 的确定性 binding，不把 path 与 identifier 重新定义为同一概念。
+[标识符](../../model/content/概念-标识符.md)区分身份、名称、标题、路径、排序信息和时间信息。UUIDv4 不从 Unique note creator、文件名、标题、名称翻译、拼音、时间戳或语言模型输出派生，也不充当密码、权限、真实性或完整性证明。路径包含 UUID 是 Obsidian 的确定性 binding，不把 path 与 identifier 重新定义为同一概念。
 
 ## 字段约束
 
@@ -206,7 +206,7 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 | `status` | `kb_status` Text | 始终表示项目生命周期，不受来源外部状态覆盖 |
 | `added` | `kb_added` Date | 原日期保存 |
 | `scope` | 正文“范围” | 原文保存，不生成 property |
-| `basis.zh`、`basis.en` | 正文“形式依据” | 按[语言依据](../../model/vocabulary/topics.md#语言依据)保存等级、来源、定位，或模型、日期、判断、授权与未核实声明；不改变语言 legacy 的性质 |
+| `basis.zh`、`basis.en` | 正文“形式依据” | 按[语言依据](../../model/vocabulary/设计-主题词表.md#语言依据)保存等级、来源、定位，或模型、日期、判断、授权与未核实声明；不改变语言 legacy 的性质 |
 | 外部 `basis.subjects` | 正文“外部依据”表 | 逐组保留 values 主题 Wikilinks、references 文献 Wikilinks、locator、checked；不把记录级依据乘成逐值独立证明 |
 | 其他外部 `basis` | 正文“外部依据”表 | 每条保存字段、文献 Wikilink、locator 与可选 checked；普通实体限定事实的直接依据保存 URL、locator 与真实 checked，不生成书目目标 |
 | `assertions.subjects`、`assertions.source` | 正文“项目判断”表 | 保存适用主题 Wikilinks、project_assertion、原 self 与审计定位；不产生外部依据链接 |
@@ -287,7 +287,7 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 
 ## 内容表示
 
-内容字段已经由 `kb-obsidian` 的建立器和只读校验器实现。建立器只负责新建时可安全取得的字段；其余字段可以由使用者编辑，并在校验时按下表检查。下表保留[内容模型](../../model/content/content-model.md)的 16 个字段、基数和值域，并规定创建、编辑、查询和失败行为。表中路径与 properties 是 target binding，不改变 identifier 发放规则，也不证明消费者已经读取真实内容。
+内容字段已经由 `kb-obsidian` 的建立器和只读校验器实现。建立器只负责新建时可安全取得的字段；其余字段可以由使用者编辑，并在校验时按下表检查。下表保留[内容模型](../../model/content/设计-内容模型.md)的 16 个字段、基数和值域，并规定创建、编辑、查询和失败行为。表中路径与 properties 是 target binding，不改变 identifier 发放规则，也不证明消费者已经读取真实内容。
 
 ### 内容字段
 
@@ -399,7 +399,7 @@ app/reports/ 带上下文线索
 
 报告写集只能位于 `app/reports/` 的本次临时目录和成功发布的报告集合。报告生成器不读取旧报告作为新结论输入，也不能写 `content/`、`indexes/`、`kb/`、`app/templates/`、`app/views/`、`app/rules/`、`.obsidian/` 或仓库正式编辑源。
 
-报告命中[维护](../../governance/maintenance/maintenance.md)阈值时，只能提出适用动作并给出位置与上下文。批准、废弃、删除、拆分、合并、找依据、复核来源、注明不覆盖和发版仍按[治理](../../governance/decision-making/governance-rules.md)的决策权执行。报告永远不能修改内容状态、词表状态、概念、关系、designation、来源、决定或发版状态。
+报告命中[维护](../../governance/maintenance/设计-维护.md)阈值时，只能提出适用动作并给出位置与上下文。批准、废弃、删除、拆分、合并、找依据、复核来源、注明不覆盖和发版仍按[治理](../../governance/decision-making/设计-治理.md)的决策权执行。报告永远不能修改内容状态、词表状态、概念、关系、designation、来源、决定或发版状态。
 
 ## 能力边界
 
@@ -594,12 +594,12 @@ uv run python -m kb_obsidian.exporter \
 
 ## 权威来源
 
-- [内容模型](../../model/content/content-model.md)：内容单元、16 个字段、基数、值域、生命周期和处置决定。
-- [维护](../../governance/maintenance/maintenance.md)：指标、阈值、单向触发、人工动作和消费者门禁。
-- [Application Profile](../shared/application-profile.md)：功能范围、模型引用、字段约束、使用指南、encoding 和 target binding 的分层。
-- [标识符](../../model/content/content-identifiers.md)：身份、名称、标题、路径、排序和时间的边界。
+- [内容模型](../../model/content/设计-内容模型.md)：内容单元、16 个字段、基数、值域、生命周期和处置决定。
+- [维护](../../governance/maintenance/设计-维护.md)：指标、阈值、单向触发、人工动作和消费者门禁。
+- [Application Profile](../shared/概念-Application%20Profile.md)：功能范围、模型引用、字段约束、使用指南、encoding 和 target binding 的分层。
+- [标识符](../../model/content/概念-标识符.md)：身份、名称、标题、路径、排序和时间的边界。
 - [内容单元标识符](../../model/content/decision-content-unit-identifiers.md)：无前缀 UUIDv4、唯一语境、碰撞处理、稳定路径和元数据检索决定。
-- [Reproducible Builds](../../development/reproducible-builds.md)：确定性、独立重建、manifest、JCS、BagIt、atomic visibility 和 durability 的边界。
+- [Reproducible Builds](../../development/概念-Reproducible%20Builds.md)：确定性、独立重建、manifest、JCS、BagIt、atomic visibility 和 durability 的边界。
 - [应用约束与表示分层](../shared/decision-application-profile-boundary.md)：本 target 的已采纳职责、消费者、编辑效力和符合性边界。
 - [设计与应用分离](../shared/decision-form-independence.md)：应用无关模型与 target 分离、正式词表单向导出的现行决定。
 - [当前阶段](../../governance/decision-making/decision-current-stage-scope.md)：设计同步与正式激活的阶段边界。

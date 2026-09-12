@@ -1,0 +1,216 @@
+{
+  "base_commit": "45f678d77026a2a7087e199b9192ed54c61106dc",
+  "authorization": "2026-09-12 用户批准概念与设计正文使用前缀和中文文件名",
+  "files": [
+    {
+      "old": "docs/applications/obsidian/obsidian.md",
+      "new": "docs/applications/obsidian/设计-Obsidian 映射.md",
+      "kind": "设计",
+      "sha256": "d0133c4b7a69792661bf649cabfbd604498519fe96f2cd9962ec347821ac9e2a"
+    },
+    {
+      "old": "docs/applications/shared/application-profile.md",
+      "new": "docs/applications/shared/概念-Application Profile.md",
+      "kind": "概念",
+      "sha256": "eeaac067e47b3522a9fd9264b19014c8b1952c98c7c6607ab033277b59647ff6"
+    },
+    {
+      "old": "docs/applications/shared/requirements.md",
+      "new": "docs/applications/shared/设计-适配要求.md",
+      "kind": "设计",
+      "sha256": "dc8e24b7aed91c1a95f1ded1f12447bbe5ceefb62cd3561d8b9b0a02ede17905"
+    },
+    {
+      "old": "docs/applications/vocab-preview/vocab-preview.md",
+      "new": "docs/applications/vocab-preview/设计-词表预览.md",
+      "kind": "设计",
+      "sha256": "5ed556dd6aa603ecf385200e24c0ec7587a86e1638e9e6e0536dde78ca4102bc"
+    },
+    {
+      "old": "docs/architecture.md",
+      "new": "docs/设计-项目架构.md",
+      "kind": "设计",
+      "sha256": "b479446cc32ffafba3ed77e540924be73cfd2d60f8681faebf27785fe041c300"
+    },
+    {
+      "old": "docs/development/reproducible-builds.md",
+      "new": "docs/development/概念-Reproducible Builds.md",
+      "kind": "概念",
+      "sha256": "a7a41c844395c50903e6d9e93f702927285ba376480f44950f790e70b92a8402"
+    },
+    {
+      "old": "docs/governance/decision-making/first-principles.md",
+      "new": "docs/governance/decision-making/概念-第一原理与设计理由.md",
+      "kind": "概念",
+      "sha256": "56504abd02043ae7462719235812e1f0ea98b341a5e3727e07f4d71856559e3c"
+    },
+    {
+      "old": "docs/governance/decision-making/governance-rules.md",
+      "new": "docs/governance/decision-making/设计-治理.md",
+      "kind": "设计",
+      "sha256": "24701107c92f489946d661d392c9ae711ba3492160c2734116fb55ca83804379"
+    },
+    {
+      "old": "docs/governance/decision-making/governance.md",
+      "new": "docs/governance/decision-making/概念-治理.md",
+      "kind": "概念",
+      "sha256": "7610b17914123f122a0198b6ed16f904d13815be1f58dba931175712283055de"
+    },
+    {
+      "old": "docs/governance/decision-making/principles.md",
+      "new": "docs/governance/decision-making/设计-方法登记.md",
+      "kind": "设计",
+      "sha256": "5b712563e98da3c96af9b77da8bd98f686f5a3daa9a76c0070b1e72a22d9f412"
+    },
+    {
+      "old": "docs/governance/maintenance/maintenance.md",
+      "new": "docs/governance/maintenance/设计-维护.md",
+      "kind": "设计",
+      "sha256": "5bd8dcd5ffa261c96e958608debfd4fe02ebadb21850193da34e67f06162d590"
+    },
+    {
+      "old": "docs/governance/maintenance/versioning.md",
+      "new": "docs/governance/maintenance/设计-词表版本.md",
+      "kind": "设计",
+      "sha256": "7eb16d419aae3aafb2f429ea3275f4e57bb195544eedca6633ef69295e1250b2"
+    },
+    {
+      "old": "docs/governance/writing/CONVENTIONS.md",
+      "new": "docs/governance/writing/设计-概念文写作约定.md",
+      "kind": "设计",
+      "sha256": "ab7bb263b5c651578ec61f6ed038373849fb0987ce034bf4146a8267d9a62211"
+    },
+    {
+      "old": "docs/governance/writing/writing-conventions.md",
+      "new": "docs/governance/writing/概念-写作规范.md",
+      "kind": "概念",
+      "sha256": "91392dcc8a2bfad4659efa53c7b3647251133bb50c4eb6a81966e3317b44c1ed"
+    },
+    {
+      "old": "docs/governance/writing/writing.md",
+      "new": "docs/governance/writing/设计-写作规则.md",
+      "kind": "设计",
+      "sha256": "0842f00ea74411b26d1b8d34113b1babb84af90efea2351e2605a9c5f7adf839"
+    },
+    {
+      "old": "docs/model/content/content-identifiers.md",
+      "new": "docs/model/content/概念-标识符.md",
+      "kind": "概念",
+      "sha256": "f74c28d95d76607ecfaea6bf79854b64f4b78ef1c91da73e9822cfa4d534a10e"
+    },
+    {
+      "old": "docs/model/content/content-model.md",
+      "new": "docs/model/content/设计-内容模型.md",
+      "kind": "设计",
+      "sha256": "f126624a728207e2c475201473f35dd22a9487d1a12603a00fac8e1a9a1f4d83"
+    },
+    {
+      "old": "docs/model/content/metadata.md",
+      "new": "docs/model/content/概念-元数据.md",
+      "kind": "概念",
+      "sha256": "1a5ab3fd7fa886ede85d04482fbbee4106bedd6449a182b1c69f356293340eaf"
+    },
+    {
+      "old": "docs/model/content/note-types.md",
+      "new": "docs/model/content/概念-笔记的类型.md",
+      "kind": "概念",
+      "sha256": "909b6b5d26e047245185987b195bcf7e1b1d647e88dfba95c9e3dcd196bfab3f"
+    },
+    {
+      "old": "docs/model/entities/entities.md",
+      "new": "docs/model/entities/设计-命名实体词表.md",
+      "kind": "设计",
+      "sha256": "5f3e2736d3912c917156bf939069a54a6ea106763b5a1db150cbd2e9aa7d0311"
+    },
+    {
+      "old": "docs/model/sources/bibliography.md",
+      "new": "docs/model/sources/设计-参考文献目录.md",
+      "kind": "设计",
+      "sha256": "eec427029318e967a7d7ca0509dc0c9fe3e4037d77a9e2995a6ad7d84af99324"
+    },
+    {
+      "old": "docs/model/sources/sources-registry.md",
+      "new": "docs/model/sources/设计-来源用途登记.md",
+      "kind": "设计",
+      "sha256": "3995ee9d1b4ebbecb06a4bcd988b1df17bd68ad5ef51837d8b1741a9f035fa8b"
+    },
+    {
+      "old": "docs/model/terminology/terminology-database.md",
+      "new": "docs/model/terminology/概念-术语数据库.md",
+      "kind": "概念",
+      "sha256": "8579b086c6fc705c9f774a09e958ef81c776172fd1ceecd41707b0463cb526b9"
+    },
+    {
+      "old": "docs/model/terminology/terminology.md",
+      "new": "docs/model/terminology/设计-术语.md",
+      "kind": "设计",
+      "sha256": "58c5667523073f220b807388189d8bc98d6e9deea2a4e50b85d4269eea40fdf3"
+    },
+    {
+      "old": "docs/model/vocabulary/body-of-knowledge.md",
+      "new": "docs/model/vocabulary/概念-知识体系.md",
+      "kind": "概念",
+      "sha256": "ff5d2e6dd9eb0763d9f0901edab5aece088beddb7ac116ee87c7372a61d9259a"
+    },
+    {
+      "old": "docs/model/vocabulary/classifying-new-subjects.md",
+      "new": "docs/model/vocabulary/概念-新主题的分类.md",
+      "kind": "概念",
+      "sha256": "dbb730739b55f4a18dbc78c46cd714c42f88abd41c2bfa62ea23a9ad1341bde9"
+    },
+    {
+      "old": "docs/model/vocabulary/concept-group.md",
+      "new": "docs/model/vocabulary/概念-概念组.md",
+      "kind": "概念",
+      "sha256": "964a030c586bc3e31223c9daa2ad0bec14d3c9c6aa036bc6c8e45c333cea53b2"
+    },
+    {
+      "old": "docs/model/vocabulary/controlled-vocabulary.md",
+      "new": "docs/model/vocabulary/概念-受控词表.md",
+      "kind": "概念",
+      "sha256": "0c98c79bd7b9ceb4baf6835fa0fba71b8bca8121c704f9604902a945683d33c3"
+    },
+    {
+      "old": "docs/model/vocabulary/facet.md",
+      "new": "docs/model/vocabulary/概念-分面.md",
+      "kind": "概念",
+      "sha256": "ef660a8a6975b143a728165366d9fa1d4e0036fb9a45d4384dde729a8a6845c0"
+    },
+    {
+      "old": "docs/model/vocabulary/hierarchy.md",
+      "new": "docs/model/vocabulary/设计-层级结构.md",
+      "kind": "设计",
+      "sha256": "ceb76a110e47d48b5ebf49c8587c46605dd05ee2c285805c6a1e012a61fd749f"
+    },
+    {
+      "old": "docs/model/vocabulary/knowledge-graph.md",
+      "new": "docs/model/vocabulary/概念-知识图谱.md",
+      "kind": "概念",
+      "sha256": "7e47e432019b7374c5b620f0192557041aa3db092db7c4e3ef9ecc5b13c84580"
+    },
+    {
+      "old": "docs/model/vocabulary/topics.md",
+      "new": "docs/model/vocabulary/设计-主题词表.md",
+      "kind": "设计",
+      "sha256": "8ffeb4577d6426a47e3e3936a359c3d105cc288a5b335865147b1434c0cc3307"
+    },
+    {
+      "old": "docs/model/vocabulary/vocabulary-construction.md",
+      "new": "docs/model/vocabulary/概念-词表的建设与维护.md",
+      "kind": "概念",
+      "sha256": "30efe5820741d7973c564893939fdd6154d4c47b518cc303f6c289e908b16141"
+    },
+    {
+      "old": "docs/model/vocabulary/vocabulary-hierarchy.md",
+      "new": "docs/model/vocabulary/概念-词表的层级.md",
+      "kind": "概念",
+      "sha256": "5b016dc798de1a63beb1af251d00723dc3ac4ee54c2305e099d1eee3e44c0a36"
+    },
+    {
+      "old": "docs/model/vocabulary/vocabulary-mapping.md",
+      "new": "docs/model/vocabulary/概念-词表映射.md",
+      "kind": "概念",
+      "sha256": "f400ee0ce700c813a943ee3567171a70667b1596b8eaa3a249c565f28a0fce0c"
+    }
+  ]
+}

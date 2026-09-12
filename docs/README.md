@@ -2,7 +2,7 @@
 
 kb-design 规定知识内容怎样描述、分类、引用和维护，并提供维护词表与应用这些规则的工具。知识内容本身保存在仓库外，项目文档说明它的组织依据、现行设计和应用边界。
 
-初次阅读从[项目概述](overview.md)开始，了解项目由来与范围；整体职责与工程关系见[项目架构](architecture.md)。具体设计按下表查找。
+初次阅读从[项目概述](overview.md)开始，了解项目由来与范围；整体职责与工程关系见[项目架构](设计-项目架构.md)。具体设计按下表查找。
 
 ## 知识模型
 
@@ -19,9 +19,9 @@ kb-design 规定知识内容怎样描述、分类、引用和维护，并提供�
 | 主题 | 主要问题 | 阅读入口 |
 |---|---|---|
 | 决策 | 谁能改变规则、采纳名称或批准状态？ | [治理](governance/decision-making/README.md) |
-| 方法 | 项目采用哪些方法，分别支持什么设计？ | [方法登记](governance/decision-making/principles.md) |
+| 方法 | 项目采用哪些方法，分别支持什么设计？ | [方法登记](governance/decision-making/设计-方法登记.md) |
 | 写作 | 文档怎样组织内容、使用名称和表达依据？ | [写作规则](governance/writing/README.md) |
-| 维护 | 什么变化需要复核，怎样保留历史和管理版本？ | [维护](governance/maintenance/README.md)、[词表版本](governance/maintenance/versioning.md) |
+| 维护 | 什么变化需要复核，怎样保留历史和管理版本？ | [维护](governance/maintenance/README.md)、[词表版本](governance/maintenance/设计-词表版本.md) |
 
 ## 应用与工具
 
