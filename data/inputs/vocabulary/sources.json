@@ -1,0 +1,28 @@
+{
+  "sources": [
+    {
+      "name": "IEEE",
+      "file": "../../../packages/kb-vocab/output/ieee-2025-resolved/vocabulary.ttl"
+    },
+    {
+      "name": "MSC2020",
+      "file": "../../../packages/kb-vocab/output/msc2020/vocabulary.ttl"
+    },
+    {
+      "name": "ERIC",
+      "file": "../../../packages/kb-vocab/output/eric-2025/vocabulary.ttl"
+    },
+    {
+      "name": "PhilPapers",
+      "file": "../../../packages/kb-vocab/output/philpapers-snapshot/vocabulary.ttl"
+    },
+    {
+      "name": "UNESCO",
+      "file": "../../../packages/kb-vocab/output/unesco-native/vocabulary.ttl"
+    },
+    {
+      "name": "Cognitive Atlas",
+      "file": "../../../packages/kb-vocab/output/cognitive-atlas-2026-09-13-reviewed/vocabulary.ttl"
+    }
+  ]
+}

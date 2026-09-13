@@ -1,0 +1,47 @@
+@prefix : <#> .
+@prefix skosmos: <http://purl.org/net/skosmos#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:config a skosmos:Configuration ;
+    skosmos:sparqlEndpoint <http://fuseki:3030/skosmos/sparql> ;
+    skosmos:sparqlDialect "JenaText" ;
+    skosmos:sparqlCollationEnabled false ;
+    skosmos:serviceName "Knowledge Vocabularies" ;
+    skosmos:languages (
+        [ rdfs:label "zh" ; rdf:value "zh-CN" ]
+        [ rdfs:label "en" ; rdf:value "en-GB" ]
+    ) ;
+    skosmos:searchResultsSize 20 ;
+    skosmos:sparqlTimeout 30 ;
+    skosmos:httpTimeout 10 ;
+    skosmos:templateCache "/tmp/skosmos-template-cache" ;
+    skosmos:globalPlugins () .
+
+:ieee a skosmos:Vocabulary, void:Dataset ;
+    dc:title "IEEE Thesaurus 2025 · Evaluation"@en,
+        "IEEE 叙词表 2025 · 评估数据"@zh ;
+    skosmos:shortName "IEEE" ;
+    void:uriSpace "urn:uuid:" ;
+    skosmos:language "en" ;
+    skosmos:defaultLanguage "en" ;
+    skosmos:showTopConcepts true ;
+    skosmos:fullAlphabeticalIndex true ;
+    void:sparqlEndpoint <http://fuseki:3030/skosmos/sparql> ;
+    skosmos:sparqlGraph <urn:kb-design:preview:ieee-2025> .
+
+:current a skosmos:Vocabulary, void:Dataset ;
+    dc:title "当前合并词表"@zh, "Current combined vocabulary"@en ;
+    skosmos:shortName "Current" ;
+    skosmos:mainConceptScheme <urn:kb-vocab:scheme:kb-design> ;
+    skosmos:groupClass skos:Collection ;
+    skosmos:conceptSchemesInHierarchy true ;
+    skosmos:language "en", "zh" ;
+    skosmos:defaultLanguage "en" ;
+    skosmos:showTopConcepts true ;
+    skosmos:fullAlphabeticalIndex true ;
+    void:sparqlEndpoint <http://fuseki:3030/skosmos/sparql> ;
+    skosmos:sparqlGraph <urn:kb-design:preview:current> .

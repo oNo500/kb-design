@@ -1,0 +1,295 @@
+# Vocabulary data specification v3. Open shapes preserve source extensions.
+@prefix p: <urn:kb:shacl:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix iso-thes: <http://purl.org/iso25964/skos-thes#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+p:Concept a sh:NodeShape ; sh:targetClass skos:Concept ; sh:nodeKind sh:IRI ;
+ sh:not [ sh:or ( [ sh:class skos:Collection ] [ sh:class skos:ConceptScheme ] ) ] ;
+ sh:property [ sh:path skos:inScheme ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ; sh:class skos:ConceptScheme ] ;
+ sh:property p:InheritedName ;
+ sh:property [ sh:path dcterms:isReplacedBy ; sh:nodeKind sh:IRI ; sh:class skos:Concept ] ;
+ sh:property [ sh:path dcterms:replaces ; sh:nodeKind sh:IRI ; sh:class skos:Concept ] .
+
+p:InheritedName a sh:PropertyShape ; sh:path skos:prefLabel ; sh:minCount 1 ;
+ sh:severity sh:Warning ; sh:message "Inherited record has no preferred label after language filtering." .
+
+p:Collection a sh:NodeShape ; sh:targetClass skos:Collection ; sh:nodeKind sh:IRI ;
+ sh:not [ sh:or ( [ sh:class skos:Concept ] [ sh:class skos:ConceptScheme ] ) ] ;
+ sh:property p:InheritedName ;
+ sh:property [ sh:path skos:inScheme ; sh:maxCount 1 ; sh:nodeKind sh:IRI ; sh:class skos:ConceptScheme ] ;
+ sh:property [ sh:path skos:broader ; sh:maxCount 0 ] ;
+ sh:property [ sh:path skos:narrower ; sh:maxCount 0 ] ;
+ sh:property [ sh:path skos:related ; sh:maxCount 0 ] .
+
+p:Scheme a sh:NodeShape ; sh:targetClass skos:ConceptScheme ; sh:nodeKind sh:IRI ;
+ sh:not [ sh:or ( [ sh:class skos:Concept ] [ sh:class skos:Collection ] ) ] ;
+ sh:property [ sh:path skos:prefLabel ; sh:minCount 1 ] ;
+ sh:property [ sh:path skos:scopeNote ; sh:minCount 1 ] .
+
+p:Task a sh:NodeShape ; sh:targetSubjectsOf dcterms:type ;
+ sh:or (
+  [ sh:not [ sh:property [ sh:path dcterms:type ; sh:hasValue "task" ] ] ]
+  [ sh:nodeKind sh:IRI ; sh:property [ sh:path rdf:type ; sh:hasValue rdfs:Resource ] ;
+    sh:property [ sh:path dcterms:identifier ; sh:minCount 1 ] ;
+    sh:property [ sh:path dcterms:source ; sh:minCount 1 ] ]
+ ) .
+# The executor selects exactly subjects carrying dcterms:type "task".
+p:TaskName a sh:NodeShape ; sh:property [ sh:path rdfs:label ; sh:minCount 1 ;
+ sh:minLength 1 ; sh:severity sh:Warning ; sh:message "Inherited task name is missing or empty." ] .
+
+# Only referenced resources having local subject triples are selected by the executor.
+p:LocalNote a sh:NodeShape ; sh:property [ sh:path rdf:value ; sh:minCount 1 ;
+ sh:severity sh:Warning ; sh:message "Local note has no text after language filtering." ] .
+
+p:LabelValue a sh:NodeShape ; sh:nodeKind sh:Literal ; sh:minLength 1 ;
+ sh:or ( [ sh:datatype xsd:string ] [ sh:languageIn ( "en" "zh" ) ] ) .
+p:TextValue a sh:NodeShape ; sh:nodeKind sh:Literal ; sh:minLength 1 .
+p:NoteValue a sh:NodeShape ; sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:node p:LabelValue ] ) .
+p:DateValue a sh:NodeShape ; sh:or ( [ sh:datatype xsd:date ] [ sh:datatype xsd:dateTime ] ) .
+
+p:prefLabel a sh:NodeShape ; sh:targetSubjectsOf skos:prefLabel ;
+ sh:property [ sh:path skos:prefLabel ; sh:node p:LabelValue ; sh:uniqueLang true ; sh:disjoint skos:altLabel ; sh:disjoint skos:hiddenLabel ] .
+
+p:altLabel a sh:NodeShape ; sh:targetSubjectsOf skos:altLabel ;
+ sh:property [ sh:path skos:altLabel ; sh:node p:LabelValue ; sh:disjoint skos:hiddenLabel ] .
+
+p:hiddenLabel a sh:NodeShape ; sh:targetSubjectsOf skos:hiddenLabel ;
+ sh:property [ sh:path skos:hiddenLabel ; sh:node p:LabelValue ] .
+
+p:definition a sh:NodeShape ; sh:targetSubjectsOf skos:definition ;
+ sh:property [ sh:path skos:definition ; sh:node p:NoteValue ] .
+
+p:scopeNote a sh:NodeShape ; sh:targetSubjectsOf skos:scopeNote ;
+ sh:property [ sh:path skos:scopeNote ; sh:node p:NoteValue ] .
+
+p:note a sh:NodeShape ; sh:targetSubjectsOf skos:note ;
+ sh:property [ sh:path skos:note ; sh:node p:NoteValue ] .
+
+p:editorialNote a sh:NodeShape ; sh:targetSubjectsOf skos:editorialNote ;
+ sh:property [ sh:path skos:editorialNote ; sh:node p:NoteValue ] .
+
+p:historyNote a sh:NodeShape ; sh:targetSubjectsOf skos:historyNote ;
+ sh:property [ sh:path skos:historyNote ; sh:node p:NoteValue ] .
+
+p:changeNote a sh:NodeShape ; sh:targetSubjectsOf skos:changeNote ;
+ sh:property [ sh:path skos:changeNote ; sh:node p:NoteValue ] .
+
+p:rdf_type a sh:NodeShape ; sh:targetSubjectsOf rdf:type ;
+ sh:property [ sh:path rdf:type ; sh:nodeKind sh:IRI ] .
+
+p:dcterms_isPartOf a sh:NodeShape ; sh:targetSubjectsOf dcterms:isPartOf ;
+ sh:property [ sh:path dcterms:isPartOf ; sh:nodeKind sh:IRI ] .
+
+p:dcterms_source a sh:NodeShape ; sh:targetSubjectsOf dcterms:source ;
+ sh:property [ sh:path dcterms:source ; sh:nodeKind sh:IRI ] .
+
+p:prov_wasDerivedFrom a sh:NodeShape ; sh:targetSubjectsOf prov:wasDerivedFrom ;
+ sh:property [ sh:path prov:wasDerivedFrom ; sh:nodeKind sh:IRI ] .
+
+p:dcterms_language a sh:NodeShape ; sh:targetSubjectsOf dcterms:language ;
+ sh:property [ sh:path dcterms:language ; sh:nodeKind sh:IRI ] .
+
+p:dcterms_format a sh:NodeShape ; sh:targetSubjectsOf dcterms:format ;
+ sh:property [ sh:path dcterms:format ; sh:nodeKind sh:IRI ] .
+
+p:dcterms_isRequiredBy a sh:NodeShape ; sh:targetSubjectsOf dcterms:isRequiredBy ;
+ sh:property [ sh:path dcterms:isRequiredBy ; sh:nodeKind sh:IRI ] .
+
+p:dcterms_license a sh:NodeShape ; sh:targetSubjectsOf dcterms:license ;
+ sh:property [ sh:path dcterms:license ; sh:nodeKind sh:IRI ] .
+
+p:dcterms_subject a sh:NodeShape ; sh:targetSubjectsOf dcterms:subject ;
+ sh:property [ sh:path dcterms:subject ; sh:nodeKind sh:IRI ] .
+
+p:dcterms_replaces a sh:NodeShape ; sh:targetSubjectsOf dcterms:replaces ;
+ sh:property [ sh:path dcterms:replaces ; sh:nodeKind sh:IRI ] .
+
+p:dcterms_isReplacedBy a sh:NodeShape ; sh:targetSubjectsOf dcterms:isReplacedBy ;
+ sh:property [ sh:path dcterms:isReplacedBy ; sh:nodeKind sh:IRI ] .
+
+p:owl_imports a sh:NodeShape ; sh:targetSubjectsOf owl:imports ;
+ sh:property [ sh:path owl:imports ; sh:nodeKind sh:IRI ] .
+
+p:skos_notation a sh:NodeShape ; sh:targetSubjectsOf skos:notation ;
+ sh:property [ sh:path skos:notation ; sh:node p:TextValue ] .
+
+p:dcterms_identifier a sh:NodeShape ; sh:targetSubjectsOf dcterms:identifier ;
+ sh:property [ sh:path dcterms:identifier ; sh:node p:TextValue ] .
+
+p:dcterms_type a sh:NodeShape ; sh:targetSubjectsOf dcterms:type ;
+ sh:property [ sh:path dcterms:type ; sh:node p:TextValue ] .
+
+p:dc_creator a sh:NodeShape ; sh:targetSubjectsOf dc:creator ;
+ sh:property [ sh:path dc:creator ; sh:node p:TextValue ] .
+
+p:dc_contributor a sh:NodeShape ; sh:targetSubjectsOf dc:contributor ;
+ sh:property [ sh:path dc:contributor ; sh:node p:TextValue ] .
+
+p:dc_publisher a sh:NodeShape ; sh:targetSubjectsOf dc:publisher ;
+ sh:property [ sh:path dc:publisher ; sh:node p:TextValue ] .
+
+p:dc_subject a sh:NodeShape ; sh:targetSubjectsOf dc:subject ;
+ sh:property [ sh:path dc:subject ; sh:node p:TextValue ] .
+
+p:owl_versionInfo a sh:NodeShape ; sh:targetSubjectsOf owl:versionInfo ;
+ sh:property [ sh:path owl:versionInfo ; sh:node p:TextValue ] .
+
+p:dcterms_title a sh:NodeShape ; sh:targetSubjectsOf dcterms:title ;
+ sh:property [ sh:path dcterms:title ; sh:node p:TextValue ] .
+
+p:dcterms_description a sh:NodeShape ; sh:targetSubjectsOf dcterms:description ;
+ sh:property [ sh:path dcterms:description ; sh:node p:TextValue ] .
+
+p:rdf_value a sh:NodeShape ; sh:targetSubjectsOf rdf:value ;
+ sh:property [ sh:path rdf:value ; sh:node p:TextValue ] .
+
+p:conformsTo a sh:NodeShape ; sh:targetSubjectsOf dcterms:conformsTo ;
+ sh:property [ sh:path dcterms:conformsTo ; sh:or ( [ sh:nodeKind sh:IRI ] [ sh:node p:TextValue ] ) ] .
+
+p:rights a sh:NodeShape ; sh:targetSubjectsOf dcterms:rights ;
+ sh:property [ sh:path dcterms:rights ; sh:or ( [ sh:nodeKind sh:IRI ] [ sh:node p:TextValue ] ) ] .
+
+p:rightsHolder a sh:NodeShape ; sh:targetSubjectsOf dcterms:rightsHolder ;
+ sh:property [ sh:path dcterms:rightsHolder ; sh:or ( [ sh:nodeKind sh:IRI ] [ sh:node p:TextValue ] ) ] .
+
+p:created a sh:NodeShape ; sh:targetSubjectsOf dcterms:created ;
+ sh:property [ sh:path dcterms:created ; sh:maxCount 1 ; sh:node p:DateValue ] .
+
+p:modified a sh:NodeShape ; sh:targetSubjectsOf dcterms:modified ;
+ sh:property [ sh:path dcterms:modified ; sh:maxCount 1 ; sh:node p:DateValue ] .
+
+p:deprecated a sh:NodeShape ; sh:targetSubjectsOf owl:deprecated ;
+ sh:property [ sh:path owl:deprecated ; sh:maxCount 1 ; sh:datatype xsd:boolean ] .
+
+p:broader a sh:NodeShape ; sh:targetSubjectsOf skos:broader ;
+ sh:property [ sh:path skos:broader ; sh:nodeKind sh:IRI ; sh:class skos:Concept ] .
+
+p:narrower a sh:NodeShape ; sh:targetSubjectsOf skos:narrower ;
+ sh:property [ sh:path skos:narrower ; sh:nodeKind sh:IRI ; sh:class skos:Concept ] .
+
+p:related a sh:NodeShape ; sh:targetSubjectsOf skos:related ;
+ sh:property [ sh:path skos:related ; sh:nodeKind sh:IRI ; sh:class skos:Concept ] .
+
+p:hasTopConcept a sh:NodeShape ; sh:targetSubjectsOf skos:hasTopConcept ;
+ sh:property [ sh:path skos:hasTopConcept ; sh:nodeKind sh:IRI ; sh:class skos:Concept ] .
+
+p:topConceptOf a sh:NodeShape ; sh:targetSubjectsOf skos:topConceptOf ;
+ sh:property [ sh:path skos:topConceptOf ; sh:maxCount 1 ; sh:nodeKind sh:IRI ; sh:class skos:ConceptScheme ] .
+
+p:member a sh:NodeShape ; sh:targetSubjectsOf skos:member ;
+ sh:property [ sh:path skos:member ; sh:nodeKind sh:IRI ; sh:or ( [ sh:class skos:Concept ] [ sh:class skos:Collection ] ) ] .
+
+p:subGroup a sh:NodeShape ; sh:targetSubjectsOf iso-thes:subGroup ;
+ sh:property [ sh:path iso-thes:subGroup ; sh:nodeKind sh:IRI ; sh:class skos:Collection ] .
+
+p:superGroup a sh:NodeShape ; sh:targetSubjectsOf iso-thes:superGroup ;
+ sh:property [ sh:path iso-thes:superGroup ; sh:nodeKind sh:IRI ; sh:class skos:Collection ] .
+
+p:exactMatch a sh:NodeShape ; sh:targetSubjectsOf skos:exactMatch ;
+ sh:property [ sh:path skos:exactMatch ; sh:nodeKind sh:IRI ; sh:not [ sh:or ( [ sh:class skos:ConceptScheme ] [ sh:class skos:Collection ] ) ] ] .
+
+p:closeMatch a sh:NodeShape ; sh:targetSubjectsOf skos:closeMatch ;
+ sh:property [ sh:path skos:closeMatch ; sh:nodeKind sh:IRI ; sh:not [ sh:or ( [ sh:class skos:ConceptScheme ] [ sh:class skos:Collection ] ) ] ] .
+
+p:broadMatch a sh:NodeShape ; sh:targetSubjectsOf skos:broadMatch ;
+ sh:property [ sh:path skos:broadMatch ; sh:nodeKind sh:IRI ; sh:not [ sh:or ( [ sh:class skos:ConceptScheme ] [ sh:class skos:Collection ] ) ] ] .
+
+p:narrowMatch a sh:NodeShape ; sh:targetSubjectsOf skos:narrowMatch ;
+ sh:property [ sh:path skos:narrowMatch ; sh:nodeKind sh:IRI ; sh:not [ sh:or ( [ sh:class skos:ConceptScheme ] [ sh:class skos:Collection ] ) ] ] .
+
+p:relatedMatch a sh:NodeShape ; sh:targetSubjectsOf skos:relatedMatch ;
+ sh:property [ sh:path skos:relatedMatch ; sh:nodeKind sh:IRI ; sh:not [ sh:or ( [ sh:class skos:ConceptScheme ] [ sh:class skos:Collection ] ) ] ] .
+
+# Generated nodes are supplied explicitly by the builder, without adding data types.
+p:GeneratedName a sh:NodeShape ;
+ sh:property [ sh:path skos:prefLabel ; sh:minCount 1 ; sh:nodeKind sh:Literal ;
+ sh:minLength 1 ; sh:languageIn ( "en" "zh" ) ] .
+p:GeneratedCollection a sh:NodeShape ;
+ sh:property [ sh:path skos:inScheme ; sh:minCount 1 ; sh:maxCount 1 ] .
+p:TaskLabelValue a sh:NodeShape ; sh:targetSubjectsOf rdfs:label ;
+ sh:property [ sh:path rdfs:label ; sh:nodeKind sh:Literal ;
+ sh:or ( [ sh:datatype xsd:string ] [ sh:languageIn ( "en" "zh" ) ] ) ] .
+
+p:Untagged_skos_prefLabel a sh:NodeShape ; sh:targetSubjectsOf skos:prefLabel ;
+ sh:property [ sh:path skos:prefLabel ; sh:severity sh:Warning ;
+ sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:languageIn ( "en" "zh" ) ] ) ;
+ sh:message "Source content has no supported language tag; no language is inferred." ] .
+
+p:Untagged_skos_altLabel a sh:NodeShape ; sh:targetSubjectsOf skos:altLabel ;
+ sh:property [ sh:path skos:altLabel ; sh:severity sh:Warning ;
+ sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:languageIn ( "en" "zh" ) ] ) ;
+ sh:message "Source content has no supported language tag; no language is inferred." ] .
+
+p:Untagged_skos_hiddenLabel a sh:NodeShape ; sh:targetSubjectsOf skos:hiddenLabel ;
+ sh:property [ sh:path skos:hiddenLabel ; sh:severity sh:Warning ;
+ sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:languageIn ( "en" "zh" ) ] ) ;
+ sh:message "Source content has no supported language tag; no language is inferred." ] .
+
+p:Untagged_skos_definition a sh:NodeShape ; sh:targetSubjectsOf skos:definition ;
+ sh:property [ sh:path skos:definition ; sh:severity sh:Warning ;
+ sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:languageIn ( "en" "zh" ) ] ) ;
+ sh:message "Source content has no supported language tag; no language is inferred." ] .
+
+p:Untagged_skos_scopeNote a sh:NodeShape ; sh:targetSubjectsOf skos:scopeNote ;
+ sh:property [ sh:path skos:scopeNote ; sh:severity sh:Warning ;
+ sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:languageIn ( "en" "zh" ) ] ) ;
+ sh:message "Source content has no supported language tag; no language is inferred." ] .
+
+p:Untagged_skos_note a sh:NodeShape ; sh:targetSubjectsOf skos:note ;
+ sh:property [ sh:path skos:note ; sh:severity sh:Warning ;
+ sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:languageIn ( "en" "zh" ) ] ) ;
+ sh:message "Source content has no supported language tag; no language is inferred." ] .
+
+p:Untagged_skos_editorialNote a sh:NodeShape ; sh:targetSubjectsOf skos:editorialNote ;
+ sh:property [ sh:path skos:editorialNote ; sh:severity sh:Warning ;
+ sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:languageIn ( "en" "zh" ) ] ) ;
+ sh:message "Source content has no supported language tag; no language is inferred." ] .
+
+p:Untagged_skos_historyNote a sh:NodeShape ; sh:targetSubjectsOf skos:historyNote ;
+ sh:property [ sh:path skos:historyNote ; sh:severity sh:Warning ;
+ sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:languageIn ( "en" "zh" ) ] ) ;
+ sh:message "Source content has no supported language tag; no language is inferred." ] .
+
+p:Untagged_skos_changeNote a sh:NodeShape ; sh:targetSubjectsOf skos:changeNote ;
+ sh:property [ sh:path skos:changeNote ; sh:severity sh:Warning ;
+ sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:languageIn ( "en" "zh" ) ] ) ;
+ sh:message "Source content has no supported language tag; no language is inferred." ] .
+
+p:Untagged_dcterms_description a sh:NodeShape ; sh:targetSubjectsOf dcterms:description ;
+ sh:property [ sh:path dcterms:description ; sh:severity sh:Warning ;
+ sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:languageIn ( "en" "zh" ) ] ) ;
+ sh:message "Source content has no supported language tag; no language is inferred." ] .
+
+p:Untagged_dcterms_title a sh:NodeShape ; sh:targetSubjectsOf dcterms:title ;
+ sh:property [ sh:path dcterms:title ; sh:severity sh:Warning ;
+ sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:languageIn ( "en" "zh" ) ] ) ;
+ sh:message "Source content has no supported language tag; no language is inferred." ] .
+
+p:Untagged_rdf_value a sh:NodeShape ; sh:targetSubjectsOf rdf:value ;
+ sh:property [ sh:path rdf:value ; sh:severity sh:Warning ;
+ sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:languageIn ( "en" "zh" ) ] ) ;
+ sh:message "Source content has no supported language tag; no language is inferred." ] .
+
+p:Untagged_rdfs_label a sh:NodeShape ; sh:targetSubjectsOf rdfs:label ;
+ sh:property [ sh:path rdfs:label ; sh:severity sh:Warning ;
+ sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:languageIn ( "en" "zh" ) ] ) ;
+ sh:message "Source content has no supported language tag; no language is inferred." ] .
+
+p:ConceptRelations a sh:NodeShape ;
+ sh:targetSubjectsOf skos:broader, skos:narrower, skos:related, skos:topConceptOf,
+ skos:exactMatch, skos:closeMatch, skos:broadMatch, skos:narrowMatch, skos:relatedMatch ;
+ sh:nodeKind sh:IRI ; sh:class skos:Concept .
+p:CollectionRelations a sh:NodeShape ;
+ sh:targetSubjectsOf skos:member, iso-thes:subGroup, iso-thes:superGroup ;
+ sh:nodeKind sh:IRI ; sh:class skos:Collection .
+p:SchemeRelations a sh:NodeShape ; sh:targetSubjectsOf skos:hasTopConcept ;
+ sh:nodeKind sh:IRI ; sh:class skos:ConceptScheme .
+p:LocalMappingTarget a sh:NodeShape ; sh:class skos:Concept .

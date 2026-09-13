@@ -1,0 +1,29 @@
+name: kb-skosmos
+services:
+  fuseki:
+    image: eclipse-temurin:21-jre@sha256:a80c51f2d09a3e7e00d521f1c817bbceb6b3be94109b4a784d46078099882dda
+    working_dir: /fuseki
+    command: ["java", "-Xms256m", "-Xmx1536m", "-jar", "/runtime/jena-fuseki-server-6.2.0.jar", "--config=/config/fuseki.ttl"]
+    ports:
+      - "127.0.0.1:9030:3030"
+    volumes:
+      - ./config/fuseki.ttl:/config/fuseki.ttl:ro
+      - ./output/runtime:/runtime:ro
+      - ./output/databases:/fuseki/databases
+    restart: unless-stopped
+  skosmos:
+    platform: linux/amd64
+    image: quay.io/natlibfi/skosmos:v3.4@sha256:4f9503f6a57e3c2b5ee73d7f224784ab45edeecac78c4a6ebd9edcdfefbb454b
+    ports:
+      - "127.0.0.1:9090:80"
+    volumes:
+      - ./config/skosmos.ttl:/var/www/html/config.ttl:ro
+      - ./overrides/tab-hierarchy.js:/var/www/html/resource/js/tab-hierarchy.js:ro
+      - ./overrides/navigation.js:/var/www/html/resource/js/kb-navigation.js:ro
+      - ./output/navigation:/var/www/html/resource/navigation:ro
+      - ./overrides/messages.zh.json:/var/www/html/resource/translations/messages.zh.json:ro
+      - ./custom-templates/landing-start:/var/www/html/custom-templates/landing-start:ro
+      - ./custom-templates/landing-end:/var/www/html/custom-templates/landing-end:ro
+    depends_on:
+      - fuseki
+    restart: unless-stopped

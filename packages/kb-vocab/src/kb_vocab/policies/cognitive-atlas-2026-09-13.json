@@ -1,0 +1,49 @@
+{
+  "id": "cognitive-atlas-2026-09-13-anomaly-exclusion",
+  "scope": "Evaluation conversion of this exact source only; no change to source records or formal vocabulary",
+  "source_json_sha256": "1416485a317ff60357188aab2b10b9e60d819c7e8493de26588d56f407006e6f",
+  "source_data_sha256": "4e445a739020b3d79a58dcf646fcfa960e2747b66d7c818a9dad326253607c11",
+  "rationale": {
+    "self_relation": "Official HTML and JSON both contain self KINDOF; omit from evaluation hierarchy. No replacement parent inferred.",
+    "missing_reciprocal": "attitude/Mindset API repeats parent directions; HTML presentations do not provide a consistent pair. Exclude both directions without selecting a replacement."
+  },
+  "evidence_snapshot": "packages/kb-sources/output/reviews/cognitive-anomalies/snapshots/cognitive-anomalies/bda47f5fbb23166eea2b489cd685d900a2ec0d5895e5b3515a5d1ac1d2f8e33e",
+  "exclusions": [
+    {
+      "source_id": "trm_4a3fd79d09947",
+      "field": "relationships",
+      "index": 0,
+      "reason": "missing_reciprocal"
+    },
+    {
+      "source_id": "trm_4a3fd79d09947",
+      "field": "relationships",
+      "index": 1,
+      "reason": "missing_reciprocal"
+    },
+    {
+      "source_id": "trm_BscVyjZu0vFu1",
+      "field": "relationships",
+      "index": 0,
+      "reason": "self_relation"
+    },
+    {
+      "source_id": "trm_BscVyjZu0vFu1",
+      "field": "relationships",
+      "index": 1,
+      "reason": "self_relation"
+    },
+    {
+      "source_id": "trm_o8gXkYlb58RBV",
+      "field": "relationships",
+      "index": 1,
+      "reason": "missing_reciprocal"
+    },
+    {
+      "source_id": "trm_o8gXkYlb58RBV",
+      "field": "relationships",
+      "index": 4,
+      "reason": "missing_reciprocal"
+    }
+  ]
+}

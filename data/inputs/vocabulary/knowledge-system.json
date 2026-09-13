@@ -1,0 +1,275 @@
+{
+  "schema_version": 2,
+  "catalog": "sources.json",
+  "sources": {
+    "Cognitive Atlas": "d42981d5a92e1f7e7159b0794d0a1fabc16e51c19ea9046de521fc711d8488c9",
+    "ERIC": "60a455cf20effe0e4cc9ac2b589e53dce06ee4e06ae23f2e290414cc251d64f7",
+    "IEEE": "70da06a0b06a5bdb3743e9f20282c1f7e9776c58676333849363850b5690ebe0",
+    "MSC2020": "6f8701bfb83e547a03dfeb580fd18667b95642cb8a983d117d5526744ff9daf0",
+    "PhilPapers": "4bc6979da8c23b9977acbbfb325237703793af9b94c459041f2c7818f0d994de",
+    "UNESCO": "3a1e4f0e96d9b48e3d5817e3c3fc26f51a27fae5f7f535dd0ba299b3a4c43ce6"
+  },
+  "domains": [
+    {
+      "id": "computer-science",
+      "label": {
+        "en": "Computer Science",
+        "zh": "计算机科学"
+      },
+      "whole_sources": [],
+      "branches": [
+        {
+          "source": "IEEE",
+          "uri": "urn:uuid:1b5c7cfd-6528-4899-bab0-f1b98cd817e9",
+          "mode": "inherit"
+        },
+        {
+          "source": "IEEE",
+          "uri": "urn:uuid:9c64587d-1140-492b-a043-3a696e0795c9",
+          "mode": "inherit"
+        },
+        {
+          "source": "IEEE",
+          "uri": "urn:uuid:987e633c-5aa1-4e4b-b5bc-e1025378c2d7",
+          "mode": "inherit"
+        },
+        {
+          "source": "IEEE",
+          "uri": "urn:uuid:96561411-5f68-4954-acd7-a7229b40daec",
+          "mode": "inherit"
+        },
+        {
+          "source": "MSC2020",
+          "uri": "urn:uuid:6ecf74db-772f-55f7-9e62-5d326fac5ad7",
+          "mode": "inherit"
+        }
+      ],
+      "uri": "urn:kb-vocab:group:computer-science",
+      "legacy_scheme": "urn:kb-vocab:scheme:computer-science"
+    },
+    {
+      "id": "mathematics",
+      "label": {
+        "en": "Mathematics",
+        "zh": "数学"
+      },
+      "whole_sources": [
+        "MSC2020"
+      ],
+      "branches": [],
+      "uri": "urn:kb-vocab:group:mathematics",
+      "legacy_scheme": "urn:kb-vocab:scheme:mathematics"
+    },
+    {
+      "id": "library-and-information-science",
+      "label": {
+        "en": "Library and Information Science",
+        "zh": "图书馆与信息科学"
+      },
+      "whole_sources": [],
+      "branches": [
+        {
+          "source": "UNESCO",
+          "uri": "http://vocabularies.unesco.org/thesaurus/mt5.05",
+          "mode": "inherit"
+        },
+        {
+          "source": "UNESCO",
+          "uri": "http://vocabularies.unesco.org/thesaurus/mt5.15",
+          "mode": "inherit"
+        },
+        {
+          "source": "UNESCO",
+          "uri": "http://vocabularies.unesco.org/thesaurus/mt5.25",
+          "mode": "inherit"
+        },
+        {
+          "source": "UNESCO",
+          "uri": "http://vocabularies.unesco.org/thesaurus/mt5.30",
+          "mode": "inherit"
+        },
+        {
+          "source": "UNESCO",
+          "uri": "http://vocabularies.unesco.org/thesaurus/mt5.35",
+          "mode": "inherit"
+        }
+      ],
+      "uri": "urn:kb-vocab:group:library-and-information-science",
+      "legacy_scheme": "urn:kb-vocab:scheme:library-and-information-science"
+    },
+    {
+      "id": "writing-studies",
+      "label": {
+        "en": "Writing Studies",
+        "zh": "写作研究"
+      },
+      "whole_sources": [],
+      "branches": [
+        {
+          "source": "ERIC",
+          "uri": "urn:uuid:9edd335a-9aa7-50c9-ad83-d71a532b3621",
+          "mode": "inherit"
+        },
+        {
+          "source": "ERIC",
+          "uri": "urn:uuid:2f8087cd-2d10-5c1a-9e13-8a305e7d8efa",
+          "mode": "inherit"
+        },
+        {
+          "source": "ERIC",
+          "uri": "urn:uuid:ba1b8069-afa9-5f00-aeea-de1b91caf7bd",
+          "mode": "inherit"
+        },
+        {
+          "source": "ERIC",
+          "uri": "urn:uuid:679c9f4c-a749-5519-8b3b-b42ce61a209d",
+          "mode": "inherit"
+        }
+      ],
+      "uri": "urn:kb-vocab:group:writing-studies",
+      "legacy_scheme": "urn:kb-vocab:scheme:writing-studies"
+    },
+    {
+      "id": "technical-communication",
+      "label": {
+        "en": "Technical Communication",
+        "zh": "技术传播"
+      },
+      "whole_sources": [],
+      "branches": [
+        {
+          "source": "IEEE",
+          "uri": "urn:uuid:2378836c-0304-408b-980b-327dda28b234",
+          "mode": "reference_only"
+        },
+        {
+          "source": "ERIC",
+          "uri": "urn:uuid:89bfcaf1-5095-5054-953d-94242a157dbf",
+          "mode": "inherit"
+        }
+      ],
+      "uri": "urn:kb-vocab:group:technical-communication",
+      "legacy_scheme": "urn:kb-vocab:scheme:technical-communication"
+    },
+    {
+      "id": "learning-sciences",
+      "label": {
+        "en": "Learning Sciences",
+        "zh": "学习科学"
+      },
+      "whole_sources": [],
+      "branches": [
+        {
+          "source": "ERIC",
+          "uri": "urn:uuid:a8bce974-703e-57d1-90fc-90aa95a45b83",
+          "mode": "inherit"
+        },
+        {
+          "source": "ERIC",
+          "uri": "urn:uuid:41b11ad9-63c5-5ea2-bbb9-4c48d89dfab2",
+          "mode": "inherit"
+        },
+        {
+          "source": "ERIC",
+          "uri": "urn:uuid:c05b7b38-9229-579a-a667-d3473584c4eb",
+          "mode": "inherit"
+        },
+        {
+          "source": "ERIC",
+          "uri": "urn:uuid:3365a612-d56b-5638-9d4a-042e4891b0bd",
+          "mode": "reference_only"
+        },
+        {
+          "source": "Cognitive Atlas",
+          "uri": "urn:uuid:af7c68b8-f8dc-4c57-abb1-836e7a4bba4a",
+          "mode": "inherit"
+        }
+      ],
+      "uri": "urn:kb-vocab:group:learning-sciences",
+      "legacy_scheme": "urn:kb-vocab:scheme:learning-sciences"
+    },
+    {
+      "id": "cognitive-science",
+      "label": {
+        "en": "Cognitive Science",
+        "zh": "认知科学"
+      },
+      "whole_sources": [
+        "Cognitive Atlas"
+      ],
+      "branches": [
+        {
+          "source": "ERIC",
+          "uri": "urn:uuid:be3e7267-ccc8-57b9-bbce-0e70d8d28353",
+          "mode": "inherit"
+        },
+        {
+          "source": "PhilPapers",
+          "uri": "urn:kb-vocab:philpapers:category:39",
+          "mode": "inherit"
+        }
+      ],
+      "uri": "urn:kb-vocab:group:cognitive-science",
+      "legacy_scheme": "urn:kb-vocab:scheme:cognitive-science"
+    },
+    {
+      "id": "philosophy",
+      "label": {
+        "en": "Philosophy",
+        "zh": "哲学"
+      },
+      "whole_sources": [],
+      "branches": [
+        {
+          "source": "PhilPapers",
+          "uri": "urn:kb-vocab:philpapers:category:10",
+          "mode": "inherit"
+        },
+        {
+          "source": "PhilPapers",
+          "uri": "urn:kb-vocab:philpapers:category:24",
+          "mode": "inherit"
+        },
+        {
+          "source": "PhilPapers",
+          "uri": "urn:kb-vocab:philpapers:category:36",
+          "mode": "inherit"
+        },
+        {
+          "source": "PhilPapers",
+          "uri": "urn:kb-vocab:philpapers:category:51",
+          "mode": "inherit"
+        },
+        {
+          "source": "PhilPapers",
+          "uri": "urn:kb-vocab:philpapers:category:58",
+          "mode": "inherit"
+        },
+        {
+          "source": "PhilPapers",
+          "uri": "urn:kb-vocab:philpapers:category:4",
+          "mode": "inherit"
+        }
+      ],
+      "uri": "urn:kb-vocab:group:philosophy",
+      "legacy_scheme": "urn:kb-vocab:scheme:philosophy"
+    }
+  ],
+  "languages": [
+    "en",
+    "zh"
+  ],
+  "shapes": "shapes.ttl",
+  "vocabulary": {
+    "uri": "urn:kb-vocab:scheme:kb-design",
+    "label": {
+      "en": "kb-design",
+      "zh": "kb-design"
+    },
+    "scope": {
+      "en": "Organizes the concepts inherited from the pinned sources for consistent subject indexing, browsing and retrieval. Concepts not yet assigned to a domain group remain included; knowledge articles are maintained separately.",
+      "zh": "汇集已锁定来源的概念，用于一致的主题标引、浏览和检索。尚未归入领域分组的概念仍收录，知识内容正文另行维护。"
+    },
+    "top_concepts": []
+  }
+}

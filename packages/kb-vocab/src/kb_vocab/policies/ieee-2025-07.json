@@ -1,0 +1,18 @@
+{
+  "id": "ieee-2025-07-indirect-rt",
+  "rule": "exclude_indirect_ancestor_rt",
+  "scope": "IEEE source SKOS evaluation projection only; not a semantic correction or formal project vocabulary adoption",
+  "authorized_on": "2026-09-13",
+  "authorization": "User authorized prompt low-impact conflict handling; preserve hierarchy, concept identities and original evidence.",
+  "source_sha256": "11339a03db52884977cd6cff15c322780af2041c1f85ab5726460443cef8451d",
+  "source_data_sha256": "07276f145473b0c54efd2ddcee78d9b9165a29fc0650b2ae1de8f041ae08324d",
+  "effect": "Do not additionally assert skos:related between indirect ancestor/descendant concepts. Retain source RT and hierarchy paths in ledger as excluded_by_policy, not pending individual review.",
+  "not_covered": [
+    "direct hierarchical/related overlap",
+    "changed source extraction",
+    "AND label groups",
+    "source alias anomalies",
+    "meaning or scope changes to concepts"
+  ],
+  "review_basis": "202 pairs are indirect; source checks and all-path grouping recorded in packages/kb-vocab/output/conflict-review/."
+}
