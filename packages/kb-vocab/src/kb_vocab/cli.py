@@ -41,6 +41,8 @@ def main(argv=None):
     activation.add_argument('--version',required=True)
     check=commands.add_parser('validate',help='supported SKOS checks and explicit-type profile')
     check.add_argument('file',type=Path)
+    context=commands.add_parser('label-context',help='read the exact context snapshot for a proposed label; does not approve it')
+    context.add_argument('file',type=Path);context.add_argument('uri')
     show=commands.add_parser('show',help='describe one concept by URI or exact label')
     show.add_argument('file',type=Path);show.add_argument('concept')
     find=commands.add_parser('find',help='search labels in the local graph')
@@ -79,7 +81,10 @@ def main(argv=None):
             result=import_ieee(args.source,args.output,identity_file=args.identities)
         else:
             graph=Graph().parse(data=args.file.read_text(),format='turtle',publicID=args.file.absolute().as_uri())
-            if args.command=='validate':result=validate_graph(graph)
+            if args.command=='label-context':
+                from kb_vocab.labels import label_context
+                result=label_context(graph,args.uri)
+            elif args.command=='validate':result=validate_graph(graph)
             elif args.command=='show':result=describe_concept(graph,args.concept)
             elif args.command=='find':
                 if args.limit<1:raise ValueError('limit must be positive')

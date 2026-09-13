@@ -29,6 +29,8 @@
     skosmos:language "en" ;
     skosmos:defaultLanguage "en" ;
     skosmos:showTopConcepts true ;
+    skosmos:showNotation false ;
+    skosmos:showNotationAsProperty true ;
     skosmos:fullAlphabeticalIndex true ;
     void:sparqlEndpoint <http://fuseki:3030/skosmos/sparql> ;
     skosmos:sparqlGraph <urn:kb-design:preview:ieee-2025> .
@@ -36,12 +38,31 @@
 :current a skosmos:Vocabulary, void:Dataset ;
     dc:title "当前合并词表"@zh, "Current combined vocabulary"@en ;
     skosmos:shortName "Current" ;
+    skosmos:vocabularyPlugins ("label-provenance") ;
     skosmos:mainConceptScheme <urn:kb-vocab:scheme:kb-design> ;
     skosmos:groupClass skos:Collection ;
     skosmos:conceptSchemesInHierarchy true ;
     skosmos:language "en", "zh" ;
     skosmos:defaultLanguage "en" ;
     skosmos:showTopConcepts true ;
+    skosmos:showNotation false ;
+    skosmos:showNotationAsProperty true ;
     skosmos:fullAlphabeticalIndex true ;
     void:sparqlEndpoint <http://fuseki:3030/skosmos/sparql> ;
     skosmos:sparqlGraph <urn:kb-design:preview:current> .
+
+:translated a skosmos:Vocabulary, void:Dataset ;
+    dc:title "AI 中文词表"@zh, "AI translated vocabulary"@en ;
+    skosmos:shortName "AI 中文" ;
+    skosmos:groupClass skos:Collection ;
+    skosmos:conceptSchemesInHierarchy true ;
+    skosmos:mainConceptScheme <urn:kb-vocab:scheme:kb-design> ;
+    skosmos:language "en", "zh" ;
+    skosmos:defaultLanguage "zh" ;
+    skosmos:showTopConcepts true ;
+    skosmos:showNotation false ;
+    skosmos:showNotationAsProperty true ;
+    skosmos:fullAlphabeticalIndex true ;
+    skosmos:vocabularyPlugins ("label-provenance") ;
+    void:sparqlEndpoint <http://fuseki:3030/skosmos/sparql> ;
+    skosmos:sparqlGraph <urn:kb-design:preview:translated> .

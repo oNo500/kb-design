@@ -21,6 +21,10 @@ services:
       - ./overrides/tab-hierarchy.js:/var/www/html/resource/js/tab-hierarchy.js:ro
       - ./overrides/navigation.js:/var/www/html/resource/js/kb-navigation.js:ro
       - ./output/navigation:/var/www/html/resource/navigation:ro
+      - ./output/labels:/var/www/html/resource/labels:ro
+      - ./output/translated/navigation:/var/www/html/resource/navigation-translated:ro
+      - ./output/translated/labels:/var/www/html/resource/labels-translated:ro
+      - ./plugins/label-provenance:/var/www/html/plugins/label-provenance:ro
       - ./overrides/messages.zh.json:/var/www/html/resource/translations/messages.zh.json:ro
       - ./custom-templates/landing-start:/var/www/html/custom-templates/landing-start:ro
       - ./custom-templates/landing-end:/var/www/html/custom-templates/landing-end:ro

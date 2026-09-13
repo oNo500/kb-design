@@ -1,0 +1,17 @@
+# 领域：哲学；PhilPapers 分类的临时机器输入。
+# 提供方：rookslog/sophotron 的缓存，非 PhilPapers 官方下载端点。
+# 原始采集日期及官方版本未知；仓库提交日期不作为词表版本。
+# 四字段：名称、ID、逗号分隔的父分类 ID、主要父分类 ID；根 ID 1 按官方合同省略。
+# 合同：https://philarchive.org/help/api/json.html
+# 用途：API key 到位前的分类分析；之后按 ID 核对官方增删及关系变化。
+# 不代表正式词表采纳；仓库代码许可不直接等于上游数据许可。
+schema_version: 1
+id: philpapers-taxonomy-snapshot
+title: PhilPapers taxonomy via sophotron
+version: "third-party commit 66c8e3579a6efa6b2b19d53b8fed43bdcb2d2945; upstream date unknown"
+files:
+  - id: categories
+    url: https://raw.githubusercontent.com/rookslog/sophotron/66c8e3579a6efa6b2b19d53b8fed43bdcb2d2945/data/categories.json
+    filename: categories.json
+    format: json
+    sha256: dd5557ce55949a135fc8cff6131153f7be7a3d3cd57df844d62e0f519a53ab3f

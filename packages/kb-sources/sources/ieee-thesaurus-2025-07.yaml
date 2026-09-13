@@ -1,0 +1,21 @@
+# 领域：Computing、Artificial Intelligence 及 IEEE 覆盖的工程技术。
+# 原始编制者：IEEE。文件封面为 July 2025，Version 1.04。
+# 用途：完整叙词表的离线评估依据；不表示本地分类已采纳。
+# 范围：完整 PDF 原文副本；不是 Taxonomy 层级摘要，也不是结构化词条导出。
+# 下载状态：2026-09-13 CLI 返回 HTTP 403；随后经 Chrome 下载原件。
+# 本地记录：output/manual/ieee-thesaurus-2025-07/acquisition.json（浏览器接收，不伪称 fetch 快照）。
+# 获取：manuals.plus 镜像；尚未与 IEEE 官方下载字节比对，不宣称最新版。
+# 官方入口：https://www.ieee.org/publications/services/thesaurus.html
+# 官方 PDF：https://www.ieee.org/content/dam/ieee-org/ieee/web/org/pubs/ieee-thesaurus.pdf
+# 2026-09-13 本机访问官方入口和 PDF 均返回 HTTP 202 空 HTML，未取得官方文件。
+# 文件标注许可：CC BY-NC-ND 4.0；原件原样保存。
+schema_version: 1
+id: ieee-thesaurus-2025-07
+title: IEEE Thesaurus
+version: July 2025 Version 1.04
+files:
+  - id: thesaurus
+    url: https://manuals.plus/m/11339a03db52884977cd6cff15c322780af2041c1f85ab5726460443cef8451d.pdf
+    filename: ieee-thesaurus-2025-07.pdf
+    format: pdf
+    sha256: 11339a03db52884977cd6cff15c322780af2041c1f85ab5726460443cef8451d

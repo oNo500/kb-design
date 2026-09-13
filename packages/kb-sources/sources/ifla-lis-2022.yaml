@@ -1,0 +1,14 @@
+# 领域：Library and Information Science。
+# 来源：International Federation of Library Associations and Institutions，2022。
+# 用途：核对专业教育的基础知识领域及范围。
+# 范围：完整英文指南；其基础领域说明不等于全部细粒度主题词表。
+# 官方入口：https://bslise.org/lis-education-guidelines/
+schema_version: 1
+id: ifla-lis-2022
+title: IFLA Guidelines for Professional Library and Information Science (LIS) Education Programmes
+version: "2022"
+files:
+  - id: guidelines
+    url: https://repository.ifla.org/bitstreams/dc5fa2c3-5536-49e1-b99a-ec20aab6ff66/download
+    filename: lis-guidelines-2022.pdf
+    format: pdf

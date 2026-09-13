@@ -1,0 +1,28 @@
+# 领域：Computer Science。
+# 来源：ACM、IEEE-CS、AAAI 联合编制的 CS2023。
+# 用途：保存计算机科学知识结构及相应原文，供后续提取和核对。
+# 范围：封面、知识模型、知识体系正文三份 PDF，以及完整报告 HTML。
+# 不包含全部分章 PDF，也不包含 HTML 引用的图片等外部资源。
+# version 表示请求的版本；PDF 与 HTML 的具体修订对应仍需原文核对。
+# 官方报告入口：https://csed.acm.org/final-report/
+schema_version: 1
+id: cs2023
+title: Computer Science Curricula 2023
+version: CS2023
+files:
+  - id: cover
+    url: https://csed.acm.org/wp-content/uploads/2024/04/0.-Cover-Page.pdf
+    filename: cover.pdf
+    format: pdf
+  - id: knowledge-model
+    url: https://csed.acm.org/wp-content/uploads/2024/04/1.3-Introduction-to-Knowledge-Model.pdf
+    filename: knowledge-model.pdf
+    format: pdf
+  - id: body-of-knowledge
+    url: https://csed.acm.org/wp-content/uploads/2024/04/3.1-Body-of-Knowledge-1.pdf
+    filename: body-of-knowledge.pdf
+    format: pdf
+  - id: full-report
+    url: https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm
+    filename: full-report.html
+    format: html

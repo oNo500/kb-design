@@ -1,0 +1,15 @@
+# 领域：Writing Studies。
+# 来源：Council of Writing Program Administrators，4.0，2026-03-04 通过。
+# 用途：取得写作知识领域、交叉领域及其说明，供结构参考。
+# 范围：完整 4.0 声明；原适用范围为大学初年写作，不代表全部写作研究。
+# 下载地址的 ver 参数不是出版版次，须核对 PDF 标题和通过日期。
+# 官方入口：https://wpacouncil.org/aws/CWPA/pt/sd/news_article/617348/_PARENT/layout_details/false
+schema_version: 1
+id: cwpa-writing-4-2026
+title: WPA Statement on the Five Knowledge Domains of First-Year Composition
+version: "4.0 (2026-03-04)"
+files:
+  - id: statement
+    url: https://www.wpacouncil.org/aws/CWPA/asset_manager/get_file/948056?ver=0
+    filename: writing-knowledge-domains-4.pdf
+    format: pdf

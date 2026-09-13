@@ -1,0 +1,15 @@
+# 领域：Technical Communication。
+# 来源：tekom Deutschland，Version 1，2018-04-18。
+# 用途：取得技术传播教学与考试视角的知识、能力和学习目标结构。
+# 范围：完整教学与考试视角 PDF；不宣称等同于现行网站框架或最新版本。
+# 本清单不拼接网站的过程视角与 PDF 的教学视角。
+# 官方入口：https://www.technical-communication.org/technical-writing/education-and-training/professional-competences-in-technical-communication
+schema_version: 1
+id: tekom-teaching-2018
+title: The Teaching and Exam-Oriented Perspective of the tekom Competence Framework
+version: "1 (2018-04-18)"
+files:
+  - id: framework
+    url: https://www.technical-communication.org/fileadmin/tekom.de/user_upload/tekom_2018-04-18_Competence-Framework-Teaching-Perspective_V1_en.pdf
+    filename: tekom-teaching-framework-v1.pdf
+    format: pdf

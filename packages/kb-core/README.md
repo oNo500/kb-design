@@ -1,6 +1,6 @@
 # 核心工程 (KB Core)
 
-`kb-core` 保存应用无关的数据生成、校验、来源与术语维护能力。它读取仓库中的正式数据、生成输入和 schema，不依赖 Obsidian 或其他具体应用。
+`kb-core` 保存应用无关的数据生成、校验、来源与术语维护能力。它读取仓库中的正式数据、生成输入和 schema，不依赖 Obsidian 或其他具体应用。主题生成由 [kb-topics](../../docs/development/设计-主题生成包.md) 持有；使用兼容生成入口时需同时安装该包，仓库 workspace 已统一配置。
 
 ## 环境准备
 
@@ -10,7 +10,7 @@
 uv sync --all-packages --locked
 ```
 
-仓库 `.python-version` 固定当前开发环境为 Python 3.13.5；根工程与两个成员包的最低版本为 Python 3.11。依赖由根 `uv.lock` 统一锁定。依赖已经缓存且需要离线工作时，可改用 `uv sync --all-packages --locked --offline`；本次迁移验证使用了离线模式。
+仓库 `.python-version` 固定当前开发环境为 Python 3.13.5；根工程与成员包的最低版本为 Python 3.11。依赖由根 `uv.lock` 统一锁定。依赖已经缓存且需要离线工作时，可改用 `uv sync --all-packages --locked --offline`；本次迁移验证使用了离线模式。
 
 ## 命令入口
 
@@ -24,7 +24,7 @@ uv run kb-core --help
 
 | 命令 | 职责 |
 |---|---|
-| `build-topics` | 从生成输入重建正式主题词表 |
+| `build-topics` | 兼容入口，转交独立的 `kb-topics` 包生成主题词表 |
 | `check-topics` | 校验正式主题词表及其关系 |
 | `check-terms` | 生成 Markdown designation 人工复核报告；读取经完整验权的正式术语登记 |
 | `check-sources` | 校验来源与引用结构 |

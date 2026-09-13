@@ -1,0 +1,16 @@
+# 领域：教育、学习、阅读与写作的主题组织。
+# 来源：美国教育部 ERIC 官方发布的完整叙词表，下载页 https://eric.ed.gov/?download。
+# 用途：取得描述词、同义词、范围说明和原有 BT／NT／RT／U／UF 等关系。
+# 范围：官方 ZIP 内含 ERICThesaurus2025.xml；不是 ERIC 文献元数据集合。
+# 版本：官方下载页说明 2025 年 1 月更新；XML 根节点没有独立版本属性。
+# 本来源不替代 CWPA、HPL 的教学内容或能力要求，不自动批准本地概念和关系。
+schema_version: 1
+id: eric-thesaurus
+title: ERIC Thesaurus
+version: January 2025
+files:
+  - id: thesaurus
+    url: https://eric.ed.gov/ERICThesaurus2025.zip
+    filename: ERICThesaurus2025.zip
+    format: zip
+    sha256: 6e5460976a29d07415aa387150e3a66fee2b17a07e7d019d2350fa20a6a839be

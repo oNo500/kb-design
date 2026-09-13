@@ -1,0 +1,2 @@
+# Shared Chinese labels. Add only explicitly adopted labels for existing URIs.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .

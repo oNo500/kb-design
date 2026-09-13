@@ -1,0 +1,14 @@
+# 原始编制者：IEEE。用途：完整旧版词表的原文核对参考；不替代待取得的新版。
+# 获取：研究者仓库的原文副本，固定 Git 提交；不是 IEEE 官方托管地址。
+# 尚未与官方原件逐字节比对，不声明为当前最新版或已采纳的本地分类。
+# 仓库：https://github.com/angelosalatino/ieee-taxonomy-thesaurus-rdf
+# 来源路径：source/ieee-thesaurus_2023.pdf
+schema_version: 1
+id: ieee-thesaurus-2023
+title: IEEE Thesaurus
+version: 2023 Version 1.02
+files:
+  - id: thesaurus
+    url: https://raw.githubusercontent.com/angelosalatino/ieee-taxonomy-thesaurus-rdf/43089caa37b2bd62912d6fa2cda9004cf944a29d/source/ieee-thesaurus_2023.pdf
+    filename: ieee-thesaurus-2023.pdf
+    format: pdf

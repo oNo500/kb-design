@@ -52,17 +52,28 @@ def navigation(raw):
     result['source_sha256']=sha(raw)
     return result
 
-def publish(output,graph,nav,receipt):
+def label_provenance(build,raw):
+    path=Path(build)/'label-provenance.json'
+    data=json.loads(path.read_bytes()) if path.exists() else {'schema_version':1,'records':[],'vocabulary_sha256':sha(raw)}
+    if data.get('schema_version')!=1 or not isinstance(data.get('records'),list) or data.get('vocabulary_sha256')!=sha(raw):
+        raise ValueError('Label provenance does not match this vocabulary snapshot')
+    return encode(data)
+
+def publish(output,graph,nav,receipt,labels=None):
     output=Path(output);navpath=output/'navigation/navigation.json';receiptpath=output/'sync-receipt.json'
+    labelpath=output/'labels/label-provenance.json'
+    if labels is None:labels=encode({'schema_version':1,'records':[],'vocabulary_sha256':receipt['source_sha256']})
     previous=fetch_or_put('GET')
-    saved={p:p.read_bytes() if p.exists() else None for p in (navpath,receiptpath)}
+    saved={p:p.read_bytes() if p.exists() else None for p in (navpath,receiptpath,labelpath)}
     write(output/'sync-status.json',encode({'state':'running','source_sha256':receipt['source_sha256']}))
     try:
         fetch_or_put('PUT',graph.serialize(format='turtle').encode())
         triples=verify_remote(graph)
         navraw=encode(nav);write(navpath,navraw)
         if navpath.read_bytes()!=navraw:raise ValueError('Navigation changed during synchronization')
-        complete={**receipt,'state':'complete','preview_triples':triples,'navigation_sha256':sha(navraw),
+        write(labelpath,labels)
+        if labelpath.read_bytes()!=labels:raise ValueError('Label evidence changed during synchronization')
+        complete={**receipt,'label_provenance_sha256':sha(labels),'state':'complete','preview_triples':triples,'navigation_sha256':sha(navraw),
                   'verified_at':datetime.now(timezone.utc).isoformat(),'graph_isomorphic':True}
         write(receiptpath,encode(complete))
         write(output/'sync-status.json',encode({'state':'complete','source_sha256':receipt['source_sha256']}))
@@ -85,10 +96,12 @@ def publish(output,graph,nav,receipt):
 def run(build,check=False):
     build=Path(build).resolve();_verify(build)
     raw=(build/'vocabulary.ttl').read_bytes()
+    labels=label_provenance(build,raw)
     receipt={'build':str(build),'build_id':build.name,'build_manifest_sha256':sha((build/'manifest.json').read_bytes()),
              'source_sha256':sha(raw),'sync_code_sha256':sha(Path(__file__).read_bytes()),
              'navigation_code_sha256':sha((APP/'build-navigation.py').read_bytes()),
-             'configuration_sha256':sha((APP/'config/skosmos.ttl').read_bytes()),'endpoint':ENDPOINT}
+             'configuration_sha256':sha((APP/'config/skosmos.ttl').read_bytes()),
+             'label_plugin_sha256':sha((APP/'plugins/label-provenance/labels.js').read_bytes()),'endpoint':ENDPOINT}
     graph=preview(raw)
     output=APP/'output';output.mkdir(exist_ok=True)
     lock=output/'.sync-lock'
@@ -103,9 +116,12 @@ def run(build,check=False):
             navraw=(output/'navigation/navigation.json').read_bytes()
             if sha(navraw)!=saved['navigation_sha256']:raise ValueError('Navigation hash mismatch')
             if json.loads(navraw).get('source_sha256')!=sha(raw):raise ValueError('Navigation source mismatch')
+            labelraw=(output/'labels/label-provenance.json').read_bytes()
+            if sha(labelraw)!=saved.get('label_provenance_sha256') or labelraw!=labels:
+                raise ValueError('Label provenance hash or source mismatch')
             verify_remote(graph)
             return dict(saved,live_verified=True)
-        return publish(output,graph,navigation(raw),receipt)
+        return publish(output,graph,navigation(raw),receipt,labels)
     finally:lock.rmdir()
 
 if __name__=='__main__':

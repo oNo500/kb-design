@@ -1,0 +1,20 @@
+# 领域：Philosophy。
+# 来源：Stanford Encyclopedia of Philosophy，Summer 2026 固定版。
+# 用途：取得版次说明和条目目录，建立可复核的材料范围。
+# 范围：固定版首页与完整条目目录；不抓取目录链接的正文或外部资源。
+# 字母顺序目录不是概念分类树，不自动生成上下位关系。
+# 后续条目应从同一固定版逐项列入清单，不混用持续更新的主站正文。
+# 使用条件：https://plato.stanford.edu/info.html#c
+schema_version: 1
+id: sep-summer-2026-outline
+title: Stanford Encyclopedia of Philosophy
+version: "Summer 2026"
+files:
+  - id: edition
+    url: https://plato.stanford.edu/archives/sum2026/
+    filename: edition.html
+    format: html
+  - id: contents
+    url: https://plato.stanford.edu/archives/sum2026/contents.html
+    filename: contents.html
+    format: html

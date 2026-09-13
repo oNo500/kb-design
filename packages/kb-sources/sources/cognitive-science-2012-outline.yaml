@@ -1,0 +1,21 @@
+# 领域：Cognitive Science。
+# 来源：Cambridge University Press，2012；编者 Keith Frankish、William M. Ramsey。
+# 用途：核对手册的范围、章节组织及编者对结构的说明。
+# 范围：仅接收目录、书名页与编者导言；不是全书。
+# 目录来自学术机构网站的扫描件，导言来自编者提供的下载链接。
+# 目录中的章节包含关系不自动成为本地概念的 broader 关系。
+# 书籍身份与章节清单可对照编者页面：
+# https://www.keithfrankish.com/handbook-of-cognitive-science/
+schema_version: 1
+id: cognitive-science-2012-outline
+title: The Cambridge Handbook of Cognitive Science
+version: "2012"
+files:
+  - id: contents-and-title-page
+    url: https://web.flu.cas.cz/scan/323537493.pdf
+    filename: contents-and-title-page.pdf
+    format: pdf
+  - id: introduction
+    url: https://keithfrankish.github.io/misc/CHCS_Introduction.pdf
+    filename: introduction.pdf
+    format: pdf

@@ -58,7 +58,7 @@ function startHierarchyApp () {
               document.head.appendChild(script)
             })
           }
-          const response = await fetch('resource/navigation/navigation.json', { cache: 'no-store' })
+          const response = await fetch(window.SKOSMOS.vocab === 'translated' ? 'resource/navigation-translated/navigation.json' : 'resource/navigation/navigation.json', { cache: 'no-store' })
           if (!response.ok) throw new Error('Navigation unavailable')
           this.currentNavigation = await response.json()
           this.hierarchy = window.KBNavigation.roots(this.currentNavigation, window.SKOSMOS.content_lang || 'en', window.SKOSMOS.uri)
@@ -73,7 +73,7 @@ function startHierarchyApp () {
         }
       },
       loadHierarchy () {
-        if (window.SKOSMOS.vocab === 'current') {
+        if (['current', 'translated'].includes(window.SKOSMOS.vocab)) {
           this.loadCurrentNavigation()
           return
         }
@@ -156,7 +156,7 @@ function startHierarchyApp () {
         }
       },
       loadChildren (concept) {
-        if (window.SKOSMOS.vocab === 'current' && this.currentNavigation) {
+        if (['current', 'translated'].includes(window.SKOSMOS.vocab) && this.currentNavigation) {
           if (!concept.children.length && concept.hasChildren) {
             concept.children = window.KBNavigation.children(this.currentNavigation, concept, window.SKOSMOS.content_lang || 'en')
           }

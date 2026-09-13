@@ -47,7 +47,7 @@ def _verify(version_dir):
     manifest_file=version_dir/'manifest.json'
     if manifest_file.is_symlink():raise ValueError('Manifest must not be a symlink')
     manifest=json.loads(manifest_file.read_bytes())
-    if manifest.get('schema_version') not in (1,2,3,4) or not isinstance(manifest.get('files'),dict):
+    if manifest.get('schema_version') not in (1,2,3,4,5) or not isinstance(manifest.get('files'),dict):
         raise ValueError('Unsupported build manifest')
     entries=manifest['files']
     required={'vocabulary.ttl','organization.ttl','coverage.json','provenance.json','report.json','validation.json','inputs/config.json','inputs/catalog.json'}
@@ -57,6 +57,10 @@ def _verify(version_dir):
         required|={'accounting.json','inputs/original-config.json','inputs/invocation-config.json','inputs/original-catalog.json'}
     if manifest['schema_version']>=4:
         required|={'version-diff.json','recovery/environment.json','recovery/requirements.txt','recovery/tool/pyproject.toml','recovery/restore.py','recovery/run.py'}
+    if manifest['schema_version']>=5:
+        required.add('label-provenance.json')
+        paths={'file':'labels.zh.ttl','adoptions':'label-adoptions.json','bibliography':'label-bibliography.yaml'}
+        required|={'inputs/'+paths[key] for key in manifest.get('inputs',{}).get('labels',{})}
     if not required.issubset(entries):raise ValueError('Build manifest is incomplete')
     actual=set()
     for path in version_dir.rglob('*'):
@@ -89,7 +93,9 @@ def _verify(version_dir):
     if manifest['schema_version']>=4:
         diff=json.loads((version_dir/'version-diff.json').read_bytes())
         if diff.get('baseline') is not None and diff.get('concepts',{}).get('removed')!=[]:
-            raise ValueError('Build has unresolved cross-version identity loss')
+            from .removal import validate_removal
+            config=json.loads((version_dir/'inputs/original-config.json').read_bytes())
+            validate_removal(diff,config.get('source_removal'),config['sources'])
     return report
 
 

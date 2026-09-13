@@ -1,0 +1,20 @@
+# 领域：Learning Sciences。
+# 来源：National Academies of Sciences, Engineering, and Medicine，2018。
+# 用途：核对报告范围、目录和总结，先作为知识结构参考。
+# 范围：Front Matter（含目录）与 Summary 两个公开 HTML 页面，不是全书。
+# 报告完整 PDF 的登录或访客下载由用户手动取得，当前清单不请求该入口。
+# 当前下载器不收集 HTML 附属资源；网页外壳更新也可能改变快照哈希。
+# DOI：https://doi.org/10.17226/24783
+schema_version: 1
+id: how-people-learn-ii-2018-outline
+title: "How People Learn II: Learners, Contexts, and Cultures"
+version: "2018"
+files:
+  - id: front-matter-and-contents
+    url: https://www.nationalacademies.org/read/24783/chapter/1
+    filename: front-matter-and-contents.html
+    format: html
+  - id: summary
+    url: https://www.nationalacademies.org/read/24783/chapter/2
+    filename: summary.html
+    format: html

@@ -77,7 +77,7 @@
 - `data/vocab/entities.yaml` 只保存软件、组织、编程语言等普通实体；设计文献唯一编辑源为 `data/references/bibliography.yaml`，不新增受控词表。用途的 reference 与依据的 reference 指向书目，registry 仍指向用途登记；旧决定与历史保留，只按列明机械映射解释原授权，不扩大权限。
 - 普通实体仅 basis.label、kind、urls、scope、vendor 可采用互斥的 url、locator、checked 官方事实依据；subjects、术语、映射不接受 URL 后备。正文参考链接无需书目准入，候选或未核材料不因迁移提升状态。Obsidian 文献参考输出到 `kb/references/`，entities 与 references 分别解析；普通刷新写集不扩张，旧内容引用使用明确写集的一次性迁移。
 
-- `data/vocab/topics.yaml` 是正式主题词表和确定性生成物，不直接编辑；修改 `data/inputs/topics/` 或核心生成实现，以 `uv run kb-core build-topics` 重建，再运行 `uv run kb-core check-topics`
+- `data/vocab/topics.yaml` 是正式主题词表和确定性生成物，不直接编辑；修改 `data/inputs/topics/` 或 `packages/kb-topics/` 中的生成实现，以 `uv run kb-topics` 重建，再运行 `uv run kb-core check-topics`。生成包依赖 `kb-core` 的共享校验能力，`uv run kb-core build-topics` 保留兼容入口，见[主题生成包](docs/development/设计-主题生成包.md)。
 - `data/vocab/terms.yaml` 是结构化术语概念、定义与现行名称的唯一编辑源；`docs/参考-术语表.md` 是只读生成页。布局、说明、符号与已批准历史名称展示在 `data/inputs/terminology/glossary-layout.yaml` 维护；模型标签仍属于主题生成输入、`data/vocab/forms.yaml` 与既有语言采纳记录。使用 `kb-core term-data` 校验和定位引用、`build-terms` 生成与核对；正文诊断不产生准入决定
 
 ## 文档组织
@@ -107,3 +107,4 @@
 - **内容先于篇数**：写作前明确读者的问题、相较原始资料新增的价值和文档类型；说不清楚就不建文章，不用泛泛建议冒充操作指南。
 - **组织依据明确**：优先使用现有主题、实体、文档类型和载体；索引明确收录范围和查找依据。模型不足先提出设计缺口，不临时创造分类。
 - **入库前审阅**：检查内容价值、类型符合性、组织合理性和元数据有效性，字段校验不能代替内容审阅。批量写作先完成一篇样稿及索引示例，经用户确认后再扩展。
+- **Library-First**：优先使用成熟的第三方库，不重复造轮子。引入新依赖前，必须确认社区维护活跃度、体积影响和安全记录。禁止为了"技术洁癖"而手写已有成熟实现的工具函数。

@@ -82,3 +82,9 @@ Fuseki 本机端点为 `http://127.0.0.1:9030/skosmos/sparql`；浏览网页不�
 node --test tests/navigation.test.cjs
 uv run --package kb-vocab python -m unittest discover -s tests
 ```
+
+## 译名依据
+
+`import-current.sh` 委托 `sync-current.py` 同步所选版本的词表、导航和 `label-provenance.json`，先验证构建清单与主文件哈希，再更新浏览副本。同步回执包含译名依据哈希；失败时与数据库、导航一起回滚。无补充译名的旧版本使用空依据集合，不保留旧版本的提示。
+
+插件通过 URI 关联补充中文，在名称附近显示依据性质，详情保留模型、日期、判断与授权；外部依据显示文献 ID 和定位。模型名称固定标明“外部用法未核实”。此插件不翻译、不采纳、不修改标签；依据获取失败会提示错误，使用现有 Skosmos 插件机制，不新增服务。

@@ -5,8 +5,10 @@ from pathlib import Path
 
 
 def _semantic_config(config):
-    return {key: value for key, value in config.items()
-            if key not in {'catalog', 'shapes', 'replay_origin'}}
+    result={key: value for key, value in config.items()
+            if key not in {'catalog', 'shapes', 'replay_origin','labels'}}
+    if 'labels' in config:result['labels']=sorted(config['labels'])
+    return result
 
 
 def configuration_origin(config_file: Path, config_raw: bytes, config: dict) -> bytes:
@@ -35,7 +37,7 @@ def configuration_origin(config_file: Path, config_raw: bytes, config: dict) -> 
 
 
 def write_replay_inputs(stage: Path, config_raw: bytes, catalog_raw: bytes,
-                        shapes_raw: bytes, sources: dict, origin_raw: bytes) -> dict:
+                        shapes_raw: bytes, sources: dict, origin_raw: bytes, label_raw=None) -> dict:
     """Write portable inputs; the caller copies pinned sources into sources/."""
     inputs = Path(stage) / 'inputs'
     inputs.mkdir(parents=True, exist_ok=True)
@@ -48,6 +50,11 @@ def write_replay_inputs(stage: Path, config_raw: bytes, catalog_raw: bytes,
     origin_sha = hashlib.sha256(origin_raw).hexdigest()
     config.update(catalog='catalog.json', shapes='shapes.ttl',
                   replay_origin={'file': 'original-config.json', 'sha256': origin_sha})
+    if 'labels' in config:
+        filenames={'file':'labels.zh.ttl','adoptions':'label-adoptions.json','bibliography':'label-bibliography.yaml'}
+        if set(label_raw or {})!=set(config['labels']):raise ValueError('Missing label replay inputs')
+        for key,raw in label_raw.items():(inputs/filenames[key]).write_bytes(raw)
+        config['labels']={key:filenames[key] for key in label_raw}
     catalog = {'sources': [
         {'name': name,
          'file': '../sources/' + hashlib.sha256(name.encode()).hexdigest()[:12] + '.ttl',

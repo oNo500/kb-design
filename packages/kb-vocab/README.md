@@ -1,10 +1,10 @@
 # 词表操作 (KB Vocab)
 
-`kb-vocab` 使用 RDFLib 导入、读取、查询、校验和组织 Turtle／SKOS 数据，独立于旧核心包。`build-system` 完整保存六份来源副本，按第 3 版规范生成一份自有词表和八个领域分组，直接执行规则，不运行人工审查或 AI 分析。跨来源对应审查是独立的可选能力。正式编辑、正式采纳、YAML 切换和应用同步尚未实施。
+`kb-vocab` 使用 RDFLib 导入、读取、查询、校验和组织 Turtle／SKOS 数据，独立于旧核心包。`build-system` 完整保存五份来源副本，按第 3 版规范生成一份自有词表和八个领域分组，直接执行规则，不运行人工审查或 AI 分析。跨来源对应审查是独立的可选能力。正式编辑、正式采纳和旧 YAML 切换尚未实施；Skosmos 浏览副本通过独立同步流程更新。
 
 ## 来源与结果
 
-[当前自有词表](../../output/vocabulary/current/index.md)提供稳定的数据入口；[独立来源入口](output/index.md)保留六份来源及查询状态。
+[当前自有词表](../../output/vocabulary/current/index.md)提供稳定的数据入口；[独立来源入口](output/index.md)保留五份来源及查询状态。
 
 | 来源 | 输入与当前结果 | 保留的限制 |
 |---|---|---|
@@ -13,7 +13,6 @@
 | [MSC2020](output/msc2020/index.md) | 官方 TSV；6,603 个概念、6,540 条直属层级、63 个顶层概念 | 原代码、名称和完整说明分开保留；交叉引用不自动变成语义关系 |
 | [ERIC](output/eric-2025/index.md) | 官方 XML／ZIP；4,578 个概念、6,527 个替代标签 | 692 条多目标同义记录、132 条停用记录及有问题的关系保留在账本；52 对 S27 冲突暂隔离 |
 | [PhilPapers](output/philpapers-snapshot/index.md) | 第三方 JSON；6,134 个概念、7,743 条直属层级 | 官方版本未知；主要父分类保留为来源元数据；一条空名称不补造 |
-| [UNESCO](output/unesco-native/index.md) | 官方原生 Turtle；4,500 个概念、95 个集合 | 来源原图保留；7 项 S13 标签冲突仍可核对，旧报告中的 780 项工具 profile 误限已在当前校验器纠正 |
 
 各行数字表示当前快照的处理结果，不证明领域覆盖完整或已正式采纳。知识覆盖文献 CS2023、IFLA、CWPA、tekom 暂缓处理。
 
@@ -36,10 +35,9 @@ uv run kb-vocab validate packages/kb-vocab/output/msc2020/vocabulary.ttl
 uv run kb-vocab import-msc SOURCE_FILE --output packages/kb-vocab/output/msc-new
 uv run kb-vocab import-eric SOURCE_FILE --output packages/kb-vocab/output/eric-new
 uv run kb-vocab import-philpapers SOURCE_FILE --output packages/kb-vocab/output/philpapers-new
-uv run kb-vocab import-unesco SOURCE_FILE --output packages/kb-vocab/output/unesco-new
 ```
 
-输入分别是 `MSC_2020.csv`（实际为 TSV、cp1252 编码）、`ERICThesaurus2025.zip` 或解压 XML、`categories.json`、UNESCO `.ttl`。相邻存在获取凭据时核对凭据及文件哈希；没有凭据时记录为 `local-file-only`，不声称已核实来源。
+输入分别是 `MSC_2020.csv`（实际为 TSV、cp1252 编码）、`ERICThesaurus2025.zip` 或解压 XML、`categories.json`。相邻存在获取凭据时核对凭据及文件哈希；没有凭据时记录为 `local-file-only`，不声称已核实来源。
 
 IEEE 和 Cognitive Atlas 使用已生成的来源转录：
 
@@ -86,7 +84,7 @@ uv run kb-vocab build-system \
 | 自动校验 | `validation.json`、`shacl-report.ttl`、`warnings.json` |
 | 来源及构建指纹 | `provenance.json`、`manifest.json`、`inputs/` 和 `sources/` |
 
-主图只保留英文、中文及合法语言变体的文字。未标语言的原值、代码、日期和标识保留，不自动猜测语言。六份来源原字节副本完整保留；来源 Scheme 元数据、旧 inScheme、旧顶层以及其他语言文字的去向逐项记录，不能声称主图仍包含全部原始三元组。
+主图只保留英文、中文及合法语言变体的文字。未标语言的原值、代码、日期和标识保留，不自动猜测语言。五份来源原字节副本完整保留；来源 Scheme 元数据、旧 inScheme、旧顶层以及其他语言文字的去向逐项记录，不能声称主图仍包含全部原始三元组。
 
 broader／narrower、related 对称关系以及已有来源分组互反关系由规则归一，不做领域含义判断。冗余的概念类别文字 concept 不再重复输出；任务标识 task 继续保留。历史、停用、替代和映射只保留有依据的值，缺少时省略，不制造新历史或语义决定。
 
@@ -128,7 +126,7 @@ uv run kb-vocab build-system \
 | ERIC | 原文中的准确首选名称 | 修改说明不换 ID；旧名称消失时停止，不猜测改名或删除 |
 | IEEE | 原文名称的哈希，不使用页内编号 | 条目重新编号不换 ID；旧名称消失时停止 |
 | Cognitive Atlas | 原有来源 ID | 新增记录允许；旧 ID 消失或概念与任务类型改变时停止 |
-| UNESCO、PhilPapers、MSC2020 | 继续沿用原生 IRI、分类 ID 或本版分类代码 | 不新增语义匹配规则 |
+| PhilPapers、MSC2020 | 继续沿用分类 ID 或本版分类代码 | 不新增语义匹配规则 |
 
 旧名称准确匹配只是已采用的工程对应规则，不证明定义变化必然保持同一含义。拆分、合并和无法明确判断的改名不自动处理。已批准的固定来源冲突规则仍受原指纹限制，不自动套用到新版。
 
@@ -173,7 +171,7 @@ ORDER BY ?parentLabel
 uv run kb-vocab query packages/kb-vocab/output/ieee-2025-resolved/vocabulary.ttl --query-file query.rq
 ```
 
-也支持 `--sparql 'SELECT …'`。仅允许本地 SELECT，拒绝 UPDATE、SERVICE 和 FROM。所有命令输出 JSON；执行失败或 `validate` 不通过时退出码为 1。UNESCO 导入成功仅表示原图已接入，其 `validation.valid` 仍为 `false`。独立安装后也可调用 `kb-vocab` 或 `python -m kb_vocab`。
+也支持 `--sparql 'SELECT …'`。仅允许本地 SELECT，拒绝 UPDATE、SERVICE 和 FROM。所有命令输出 JSON；执行失败或 `validate` 不通过时退出码为 1。独立安装后也可调用 `kb-vocab` 或 `python -m kb_vocab`。
 
 ## 对应审查
 
@@ -256,7 +254,6 @@ uv run kb-vocab review preview packages/kb-vocab/output/review-2026-09-13 --deci
 | MSC2020 | 固定本地命名空间、MSC2020 版次和原代码生成 UUIDv5；文件顺序及名称改变不改变该代码的 URI |
 | ERIC | 按 XML 内容哈希与原始名称生成 UUIDv5；快照变化后必须另外核对身份衔接 |
 | PhilPapers | 本地 URN 包含原分类 ID，不冒称官方概念 URI |
-| UNESCO | 保留官方 URI，不分配本地替代身份 |
 
 IEEE 同源重建示例：
 
@@ -283,15 +280,14 @@ MSC 保留原 `text` 和 `description`，即使不同代码同名也不合并。
 
 | 文件 | 内容 |
 |---|---|
-| `vocabulary.ttl` | 评估 RDF 图；UNESCO 为原生图的等价序列化 |
+| `vocabulary.ttl` | 评估 RDF 图 |
 | `mapping-ledger.json` | 来源记录、字段去向、映射与隔离原因；原生图接入不另造逐词映射 |
 | `report.json`、`validation.json` | 统计、限制、校验范围和问题 |
 | `manifest.json` | 输出文件哈希；具体来源和身份输入按导入器记录 |
 | `index.md` | 阅读入口 |
 | `source.json` | 四个结构化来源的获取依据；IEEE、Cognitive Atlas 依据在其清单及账本 |
-| `source-original.ttl` | UNESCO 输入的原始字节副本 |
 
-先完成来源读取、映射、校验与 Turtle 往返，再发布到新目录。UNESCO 明确保留带诊断的原图，不通过删除内容迎合本包 profile。输出不覆盖既有目录，不能写入已验证来源快照内；哈希一致不等于签名认证或正式采纳。
+先完成来源读取、映射、校验与 Turtle 往返，再发布到新目录。输出不覆盖既有目录，不能写入已验证来源快照内；哈希一致不等于签名认证或正式采纳。
 
 `output/` 是需要备份的持久评估数据，`build/` 是可清理试验材料，均由 Git 忽略。领域组织及完整词表构建已实现；正式主题词表的目标是 Turtle 唯一编辑格式、JSON-LD 按需派生，正式编辑源位置、YAML 切换和 JSON-LD 导出尚未实施。
 
@@ -310,3 +306,17 @@ uv run python -m unittest discover -s packages/kb-vocab/tests -v
 ```
 
 行为验证覆盖身份稳定与漂移拒绝、名称及关系映射、异常隔离、离线查询、来源篡改拒绝和失败不覆盖。真实来源结果另作记录与关系对账；通过校验不代表正式迁移或发布。
+
+## 中文标签
+
+当前 AI 展示翻译从英文基准提取任务，由 agent 分批翻译，再生成 translations.zh.ttl、vocabulary.multilingual.ttl 和批次元数据。它不经过旧的逐条采纳流程。命令见 [批量翻译脚本](scripts/README.md)，完整规则见 [中文标签设计](../../docs/model/vocabulary/设计-中文标签.md)。
+
+增量同步规则为：基准中不存在的对象退出当前中文产物，只翻译增量，已有译文按 URI 复用、不自动重译。该跨版本流程尚未完整实现，当前提取命令不能自动复用历史译文。
+
+原有 labels 配置、label-context 命令及 label-adoptions 接口保留兼容；其具体值匹配、上下文失效与书目核对规则见设计文档的“兼容接口”，不套用于快速 AI 批译。
+
+## 来源退出
+
+UNESCO 已按用户决定退出当前来源；下载清单、当前原件及独立来源产物已移除，自有词表与应用重新生成。其历史构建和诊断只作回溯材料，通用导入器不会自动启用该来源。图书馆与信息科学暂保留空分组。
+
+配置中的 `source_removal` 固定移除理由、来源指纹、旧主图指纹及被移除概念集合摘要，只允许这一次明确的删除范围；其他概念丢失仍被拒绝。该记录随构建归档，重放不依赖已退出的下载目录。

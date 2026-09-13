@@ -95,7 +95,13 @@ def _read_config(path):
     if not isinstance(config,dict) or config.get('schema_version')!=2:
         raise ValueError('Expected organization schema_version 2 for the single-vocabulary profile')
     allowed={'schema_version','catalog','sources','domains','vocabulary','languages','shapes'}
-    if set(config)-{'replay_origin'}!=allowed:raise ValueError('Missing or unknown organization configuration fields')
+    if set(config)-{'replay_origin','labels','source_removal'}!=allowed:raise ValueError('Missing or unknown organization configuration fields')
+    if 'labels' in config:
+        label_config=config['labels']
+        if (not isinstance(label_config,dict) or not {'file','adoptions'}<=set(label_config)
+                or set(label_config)-{'file','adoptions','bibliography'}
+                or any(not isinstance(value,str) or not value.strip() for value in label_config.values())):
+            raise ValueError('labels requires file, adoptions and optional bibliography paths')
     languages=config['languages']
     if not isinstance(languages,list) or len(languages)!=2 or set(languages)!={'en','zh'}:
         raise ValueError('The v3 output language policy is en and zh')
@@ -136,6 +142,8 @@ def build_system(config_file,output,previous_file=None):
     origin_raw=configuration_origin(config_file,config_raw,config);origin_hash=_sha(origin_raw)
     catalog=(config_file.parent/config['catalog']).absolute();catalog_raw=catalog.read_bytes()
     shapes_path=(config_file.parent/config['shapes']).absolute();shapes_raw=shapes_path.read_bytes()
+    label_paths={key:(config_file.parent/value).absolute() for key,value in config.get('labels',{}).items()}
+    label_raw={key:path.read_bytes() for key,path in label_paths.items()}
     sources=read_catalog(catalog)
     if set(sources)!=set(config['sources']):raise ValueError('Catalog must contain exactly the pinned source set')
     source_raw={};raw_graph=Graph()
@@ -200,6 +208,17 @@ def build_system(config_file,output,previous_file=None):
             migration.append({'old_scheme':domain['legacy_scheme'],'new_collection':str(group),'reason':'domain_scheme_restructured_as_group','concept_identities_changed':False})
         domain_data.append({'id':ident,'uri':str(group),'label':domain['label'],'members':members,'collections':collections,'overlay':overlay,'references':references})
     full=base+organization
+    from .labels import apply_labels
+    label_delta,label_provenance=apply_labels(full,label_raw.get('file',b''),
+        label_raw.get('adoptions',b'{"schema_version":1,"records":[]}'),label_raw.get('bibliography'))
+    full+=label_delta
+    for triple in label_delta:
+        if triple[0] in generated:
+            organization.add(triple)
+            if triple[0]==scheme:scheme_graph.add(triple)
+            for domain in domain_data:
+                if triple[0] in {scheme,URIRef(domain['uri'])}:domain['overlay'].add(triple)
+
     expected={URIRef(uri) for uri in index}
     if set(full.subjects(RDF.type,SKOS.Concept))!=expected:raise ValueError('Source concept identity set changed')
     if set(full.subjects(RDF.type,SKOS.ConceptScheme))!={scheme}:raise ValueError('Expected exactly one self vocabulary')
@@ -217,7 +236,8 @@ def build_system(config_file,output,previous_file=None):
     difference=compare_graphs(previous_graph,full)
     difference['baseline']={'sha256':_sha(previous_raw),'path':str(Path(previous_file).resolve())} if previous_raw is not None else None
     if previous_raw is not None and difference['concepts']['removed']:
-        raise ValueError('Cross-version identity loss blocks automatic publication: '+str(len(difference['concepts']['removed']))+' prior concepts missing; inspect with kb-vocab diff')
+        from .removal import validate_removal
+        validate_removal(difference,config.get('source_removal'),config['sources'])
     coverage=[{'uri':uri,'source':item['source'],'vocabulary':str(scheme),'domains':sorted(memberships[uri]),
                'status':'grouped' if memberships[uri] else 'ungrouped',
                'rules':{d:derivations[(uri,d)] for d in sorted(memberships[uri])}}
@@ -237,13 +257,15 @@ def build_system(config_file,output,previous_file=None):
             'languages':config['languages'],'filtered_languages':normalization['filtered_languages'],
             'introduced_validation_errors':[],'source_validation_errors':len(source_baseline['errors']),
             'validation_valid':True,'shacl_conforms':True,'shacl_warnings':len(profile['warnings']),
-            'ambiguous_label_groups':len(ambiguities),
+            'ambiguous_label_groups':len(ambiguities),'adopted_chinese_labels':len(label_delta),
             'scope':'Single self vocabulary with domain Collections. Full source concepts retained; changed/filtered source statements accounted separately. No invented history, semantic merge or full-domain completeness claim.'}
     output.parent.mkdir(parents=True,exist_ok=True);stage=Path(tempfile.mkdtemp(prefix='.system-',dir=output.parent))
     try:
         (stage/'sources').mkdir();(stage/'domains').mkdir();(stage/'inputs').mkdir()
         for name,raw in source_raw.items():(stage/'sources'/(_sha(name.encode())[:12]+'.ttl')).write_bytes(raw)
         full.serialize(stage/'vocabulary.ttl',format='turtle');organization.serialize(stage/'organization.ttl',format='turtle')
+        label_provenance['vocabulary_sha256']=_sha((stage/'vocabulary.ttl').read_bytes())
+        _write_json(stage/'label-provenance.json',label_provenance)
         domain_validation={}
         for domain in domain_data:
             view=_domain_graph(full,domain['members'],domain['collections'],domain['overlay'])
@@ -255,7 +277,7 @@ def build_system(config_file,output,previous_file=None):
         checked=validate_graph(leftover)
         if checked['errors']:raise ValueError('Ungrouped view has errors: '+_json(checked['errors'][:5]))
         leftover.serialize(stage/'unassigned.ttl',format='turtle')
-        replay=write_replay_inputs(stage,config_raw,catalog_raw,shapes_raw,sources,origin_raw)
+        replay=write_replay_inputs(stage,config_raw,catalog_raw,shapes_raw,sources,origin_raw,label_raw)
         _write_json(stage/'accounting.json',accounting)
         _write_json(stage/'version-diff.json',difference)
         if previous_raw is not None:(stage/'inputs/previous.ttl').write_bytes(previous_raw)
@@ -272,7 +294,7 @@ def build_system(config_file,output,previous_file=None):
         _write_json(stage/'warnings.json',{'shacl':profile['warnings'],'graph':validation['warnings'],'same_label_groups':ambiguities})
         source_manifest={name:{'path':s['path'],'base':s['base'],'sha256':s['sha256'],'copy':'sources/'+_sha(name.encode())[:12]+'.ttl'} for name,s in sources.items()}
         _write_json(stage/'provenance.json',{'sources':source_manifest,'organization_rules':'inputs/original-config.json','replay':replay,'statement_accounting':'accounting.json',
-                    'concept_accounting':'coverage.json','source_transformations':'transformation-ledger.jsonl',
+                    'concept_accounting':'coverage.json','label_evidence':'label-provenance.json','source_transformations':'transformation-ledger.jsonl',
                     'statement_evidence':'Unchanged source statements are identified by source graph + subject/predicate/object. Changed and derived statements have explicit ledger entries.'})
         restored=Graph().parse(stage/'vocabulary.ttl',format='turtle')
         if not isomorphic(full,restored):raise ValueError('Turtle round trip changed the graph')
@@ -287,20 +309,23 @@ def build_system(config_file,output,previous_file=None):
             '- [语言与转换统计](normalization.json)\n- [结构迁移](migration.json)\n- [自动校验](validation.json)\n- [警告](warnings.json)\n\n'
             +'\n'.join(rows)+'\n\n领域数量按 Collection 的 member 统计，分图中的外部引用上下文不自动成为本组成员；多个分组可以共享概念。\n\n'
             f'SHACL 无阻断错误，保留 {len(profile["warnings"])} 项来源缺项或兼容提示；同名标签提示 {len(ambiguities)} 组，不作自动合并或全量人工审查。\n\n'
-            '生成文字只保留中英文及其语言变体；未标语言的原值保留。六份来源字节副本完整保留，主图过滤和结构调整逐项记账，不再宣称主图包含全部原始三元组。\n'
+            '生成文字只保留中英文及其语言变体；未标语言的原值保留。当前配置的来源字节副本完整保留，主图过滤和结构调整逐项记账，不再宣称主图包含全部原始三元组。\n'
             '没有依据的历史、停用、替代及映射值不生成。数据生成不证明领域知识覆盖完整，也不自动切换旧 YAML 消费者。\n',encoding='utf-8')
         for name,raw in source_raw.items():
             if (stage/'sources'/(_sha(name.encode())[:12]+'.ttl')).read_bytes()!=raw:raise ValueError('Source copy changed')
         tool_files={path.name:_sha(path.read_bytes()) for path in Path(__file__).parent.glob('*.py')}
-        manifest={'schema_version':4,'recovery':recovery,'replay':replay,'specification_version':3,'tool':{'name':'kb-vocab','version':tool_version(),'code_sha256':tool_files},
+        manifest={'schema_version':5,'recovery':recovery,'replay':replay,'specification_version':3,'tool':{'name':'kb-vocab','version':tool_version(),'code_sha256':tool_files},
                   'inputs':{'config':{'path':str(config_file),'sha256':config_hash},'catalog':{'path':str(catalog),'sha256':_sha(catalog_raw)},
-                            'shapes':{'path':str(shapes_path),'sha256':_sha(shapes_raw)},'sources':source_manifest},
+                            'shapes':{'path':str(shapes_path),'sha256':_sha(shapes_raw)},'sources':source_manifest,
+                            'labels':{key:{'path':str(label_paths[key]),'sha256':_sha(raw)} for key,raw in label_raw.items()}},
                   'reproducibility':'Stable configured URIs and RDF graph equivalence; byte-identical serialization is not asserted',
                   'files':{str(path.relative_to(stage)):_sha(path.read_bytes()) for path in sorted(stage.rglob('*')) if path.is_file()}}
         _write_json(stage/'manifest.json',manifest)
         if (config_file.read_bytes()!=config_raw or catalog.read_bytes()!=catalog_raw or shapes_path.read_bytes()!=shapes_raw
                 or configuration_origin(config_file,config_raw,config)!=origin_raw):
             raise ValueError('Build inputs changed during generation')
+        if any(path.read_bytes()!=label_raw[key] for key,path in label_paths.items()):
+            raise ValueError('Label inputs changed during generation')
         if previous_file and Path(previous_file).read_bytes()!=previous_raw:raise ValueError('Previous version changed during generation')
         for name,source in sources.items():
             if _sha(Path(source['path']).read_bytes())!=source['sha256']:raise ValueError(f'Source changed before publication: {name}')

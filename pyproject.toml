@@ -8,13 +8,15 @@ dependencies = []
 package = false
 
 [tool.uv.workspace]
-members = ["packages/kb-core", "packages/kb-vocab", "apps/obsidian", "apps/vocab-preview"]
+members = ["packages/kb-core", "packages/kb-topics", "packages/kb-sources", "packages/kb-vocab", "apps/obsidian", "apps/vocab-preview"]
 
 [dependency-groups]
-dev = ["kb-core", "kb-vocab", "kb-obsidian", "kb-vocab-preview"]
+dev = ["kb-core", "kb-topics", "kb-sources", "kb-vocab", "kb-obsidian", "kb-vocab-preview"]
 
 [tool.uv.sources]
 kb-core = { workspace = true }
+kb-topics = { workspace = true }
+kb-sources = { workspace = true }
 kb-vocab = { workspace = true }
 kb-obsidian = { workspace = true }
 kb-vocab-preview = { workspace = true }

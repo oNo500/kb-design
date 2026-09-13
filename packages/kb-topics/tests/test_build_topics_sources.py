@@ -7,7 +7,7 @@ import tempfile
 import unittest
 
 import yaml
-from kb_core.build_topics import _assemble_topics, topic_output_path
+from kb_topics.build import _assemble_topics, topic_output_path
 from kb_core.apply_source_migration import REFERENCE_FIELDS, load_reference_inputs
 from kb_core.source_model import _load_accepted_decisions, decision_authorizes
 
@@ -42,10 +42,10 @@ class BuildTopicsSourceTests(unittest.TestCase):
         self.assertEqual(frozen['version'], assembled['version'])
 
     def test_output_cannot_target_formal_data_or_source_files(self):
-        for relative in ('data/vocab/entities.yaml', 'packages/kb-core/src/kb_core/build_topics.py'):
+        for relative in ('data/vocab/entities.yaml', 'packages/kb-topics/src/kb_topics/build.py'):
             target = ROOT / relative
             before = target.read_bytes()
-            result = subprocess.run([sys.executable, '-m', 'kb_core.build_topics', '--output', str(target)],
+            result = subprocess.run([sys.executable, '-m', 'kb_topics.build', '--output', str(target)],
                                     env={**os.environ, 'KB_DESIGN_ROOT': str(ROOT)}, text=True, capture_output=True)
             self.assertNotEqual(0, result.returncode)
             self.assertIn('output must', result.stderr)
@@ -74,7 +74,7 @@ class BuildTopicsSourceTests(unittest.TestCase):
             references = pathlib.Path(temporary) / 'empty-references.json'
             references.write_text('{"schema_version": 2, "records": {}}\n')
             completed = subprocess.run(
-                [sys.executable, '-m', 'kb_core.build_topics', '--output', str(output),
+                [sys.executable, '-m', 'kb_topics.build', '--output', str(output),
                  '--references', str(references)],
                 env={**os.environ, 'KB_DESIGN_ROOT': str(ROOT)},
                 text=True, capture_output=True)

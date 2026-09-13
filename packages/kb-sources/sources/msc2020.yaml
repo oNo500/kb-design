@@ -1,0 +1,16 @@
+# 领域：Mathematics。
+# 来源：Mathematical Reviews 与 zbMATH 共同发布的 MSC2020 官方结构化表格。
+# 主输入：官方文件名为 CSV，实际为制表符分隔，cp1252 编码，code/text/description 三列。
+# 用途：读取数学分类代码、名称与说明；不再以 PDF 分栏还原作为机器主输入。
+# 旧 PDF 快照仍保留供阅读及原文核对；不改正式词表或既有生成器。
+# 官网简介分类数量与表格行数尚未解释一致，不据下载成功宣称语义完整。
+# 官方入口：https://msc2020.org/
+schema_version: 1
+id: msc2020
+title: 2020 Mathematics Subject Classification
+version: MSC2020 official tabular export
+files:
+  - id: classification-data
+    url: https://msc2020.org/MSC_2020.csv
+    filename: MSC_2020.csv
+    format: tsv

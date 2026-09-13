@@ -1,0 +1,18 @@
+# 领域：认知科学；重点为认知概念、实验任务及其关系。
+# 官方入口：https://www.cognitiveatlas.org/api
+# 列表仅提供基本信息；fetch-cognitive-atlas 按列表 ID 获取全部详情。
+# 保留源 ID、定义、关系类型及方向；不自动映射为 SKOS broader。
+# API 无统一发布版号，以获取时间及各文件哈希固定；跨请求不保证事务快照。
+schema_version: 1
+id: cognitive-atlas
+title: Cognitive Atlas concepts and tasks
+version: "live API; version fixed by acquisition receipt"
+files:
+  - id: concepts
+    url: https://www.cognitiveatlas.org/api/v-alpha/concept
+    filename: concepts.json
+    format: json
+  - id: tasks
+    url: https://www.cognitiveatlas.org/api/v-alpha/task
+    filename: tasks.json
+    format: json

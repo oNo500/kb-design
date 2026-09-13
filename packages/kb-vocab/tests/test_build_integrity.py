@@ -79,3 +79,24 @@ class BuildIntegrityTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'identity loss'):
             build_versioned(self.path,root,'after')
         self.assertEqual((root/'current').resolve().name,'before')
+
+    def test_authorized_source_removal_is_exact_and_replayable(self):
+        from kb_vocab.removal import concept_digest
+        root=self.root/'published';build_versioned(self.path,root,'before')
+        baseline=(root/'current/vocabulary.ttl').read_bytes()
+        self.config['source_removal']={'source':'b','source_sha256':self.config['sources'].pop('b'),
+            'baseline_sha256':hashlib.sha256(baseline).hexdigest(),
+            'concepts_sha256':concept_digest(['urn:other']),'reason':'User requested removal of source b'}
+        self.config['domains'][0]['branches']=[r for r in self.config['domains'][0]['branches'] if r['source']!='b']
+        (self.root/'catalog.json').write_text(json.dumps({'sources':[{'name':'a','file':'a.ttl'}]}));self.save()
+        build_versioned(self.path,root,'after')
+        after=(root/'current').resolve()
+        diff=json.loads((after/'version-diff.json').read_bytes())
+        self.assertEqual(diff['concepts']['removed'],['urn:other'])
+        build_system(after/'inputs/config.json',self.root/'replayed-removal')
+        # The old exception cannot authorize another concept disappearing later.
+        source=self.root/'a.ttl';source.write_text(source.read_text().replace('urn:outside','urn:replacement'))
+        self.config['sources']['a']=hashlib.sha256(source.read_bytes()).hexdigest();self.save()
+        with self.assertRaisesRegex(ValueError,'identity loss'):
+            build_versioned(self.path,root,'unrelated-loss')
+        self.assertEqual((root/'current').resolve(),after)

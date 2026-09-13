@@ -1,0 +1,360 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "representation",
+    "adoption",
+    "source",
+    "extractor",
+    "page_count",
+    "body_pages",
+    "cover",
+    "entries",
+    "unassigned",
+    "input_lines"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "representation": {
+      "const": "ieee-source-transcription"
+    },
+    "adoption": {
+      "const": "not-adopted"
+    },
+    "source": {
+      "type": "object"
+    },
+    "extractor": {
+      "type": "object"
+    },
+    "page_count": {
+      "type": "integer",
+      "minimum": 3
+    },
+    "body_pages": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "cover": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "form",
+          "locator",
+          "name_fragments",
+          "relations"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "form": {
+            "enum": [
+              "preferred",
+              "nonpreferred"
+            ]
+          },
+          "locator": {
+            "type": "object",
+            "required": [
+              "page",
+              "column",
+              "bbox"
+            ],
+            "properties": {
+              "page": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "column": {
+                "enum": [
+                  1,
+                  2
+                ]
+              },
+              "bbox": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 4,
+                "maxItems": 4
+              }
+            },
+            "additionalProperties": false
+          },
+          "name_fragments": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "line_id",
+                "text",
+                "x",
+                "style",
+                "locator"
+              ],
+              "properties": {
+                "line_id": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "text": {
+                  "type": "string"
+                },
+                "x": {
+                  "type": "number"
+                },
+                "style": {
+                  "enum": [
+                    "preferred",
+                    "nonpreferred",
+                    "regular"
+                  ]
+                },
+                "locator": {
+                  "type": "object",
+                  "required": [
+                    "page",
+                    "column",
+                    "bbox"
+                  ],
+                  "properties": {
+                    "page": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "column": {
+                      "enum": [
+                        1,
+                        2
+                      ]
+                    },
+                    "bbox": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 4,
+                      "maxItems": 4
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "relations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "predicate",
+                "target",
+                "raw_target",
+                "source_group",
+                "connector_after",
+                "fragments"
+              ],
+              "properties": {
+                "predicate": {
+                  "enum": [
+                    "BT",
+                    "NT",
+                    "RT",
+                    "USE",
+                    "UF"
+                  ]
+                },
+                "target": {
+                  "type": "string"
+                },
+                "raw_target": {
+                  "type": "string"
+                },
+                "source_group": {
+                  "type": "string"
+                },
+                "connector_after": {
+                  "enum": [
+                    "AND",
+                    null
+                  ]
+                },
+                "fragments": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "line_id",
+                      "text",
+                      "x",
+                      "style",
+                      "locator"
+                    ],
+                    "properties": {
+                      "line_id": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "text": {
+                        "type": "string"
+                      },
+                      "x": {
+                        "type": "number"
+                      },
+                      "style": {
+                        "enum": [
+                          "preferred",
+                          "nonpreferred",
+                          "regular"
+                        ]
+                      },
+                      "locator": {
+                        "type": "object",
+                        "required": [
+                          "page",
+                          "column",
+                          "bbox"
+                        ],
+                        "properties": {
+                          "page": {
+                            "type": "integer",
+                            "minimum": 1
+                          },
+                          "column": {
+                            "enum": [
+                              1,
+                              2
+                            ]
+                          },
+                          "bbox": {
+                            "type": "array",
+                            "items": {
+                              "type": "number"
+                            },
+                            "minItems": 4,
+                            "maxItems": 4
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "unassigned": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "reason",
+          "fragment"
+        ],
+        "properties": {
+          "reason": {
+            "type": "string"
+          },
+          "entry_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "fragment": {
+            "type": "object",
+            "required": [
+              "line_id",
+              "text",
+              "x",
+              "style",
+              "locator"
+            ],
+            "properties": {
+              "line_id": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "text": {
+                "type": "string"
+              },
+              "x": {
+                "type": "number"
+              },
+              "style": {
+                "enum": [
+                  "preferred",
+                  "nonpreferred",
+                  "regular"
+                ]
+              },
+              "locator": {
+                "type": "object",
+                "required": [
+                  "page",
+                  "column",
+                  "bbox"
+                ],
+                "properties": {
+                  "page": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "column": {
+                    "enum": [
+                      1,
+                      2
+                    ]
+                  },
+                  "bbox": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 4,
+                    "maxItems": 4
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "input_lines": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "additionalProperties": false
+}

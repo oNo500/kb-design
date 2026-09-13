@@ -6,8 +6,7 @@
     "ERIC": "60a455cf20effe0e4cc9ac2b589e53dce06ee4e06ae23f2e290414cc251d64f7",
     "IEEE": "70da06a0b06a5bdb3743e9f20282c1f7e9776c58676333849363850b5690ebe0",
     "MSC2020": "6f8701bfb83e547a03dfeb580fd18667b95642cb8a983d117d5526744ff9daf0",
-    "PhilPapers": "4bc6979da8c23b9977acbbfb325237703793af9b94c459041f2c7818f0d994de",
-    "UNESCO": "3a1e4f0e96d9b48e3d5817e3c3fc26f51a27fae5f7f535dd0ba299b3a4c43ce6"
+    "PhilPapers": "4bc6979da8c23b9977acbbfb325237703793af9b94c459041f2c7818f0d994de"
   },
   "domains": [
     {
@@ -67,33 +66,7 @@
         "zh": "图书馆与信息科学"
       },
       "whole_sources": [],
-      "branches": [
-        {
-          "source": "UNESCO",
-          "uri": "http://vocabularies.unesco.org/thesaurus/mt5.05",
-          "mode": "inherit"
-        },
-        {
-          "source": "UNESCO",
-          "uri": "http://vocabularies.unesco.org/thesaurus/mt5.15",
-          "mode": "inherit"
-        },
-        {
-          "source": "UNESCO",
-          "uri": "http://vocabularies.unesco.org/thesaurus/mt5.25",
-          "mode": "inherit"
-        },
-        {
-          "source": "UNESCO",
-          "uri": "http://vocabularies.unesco.org/thesaurus/mt5.30",
-          "mode": "inherit"
-        },
-        {
-          "source": "UNESCO",
-          "uri": "http://vocabularies.unesco.org/thesaurus/mt5.35",
-          "mode": "inherit"
-        }
-      ],
+      "branches": [],
       "uri": "urn:kb-vocab:group:library-and-information-science",
       "legacy_scheme": "urn:kb-vocab:scheme:library-and-information-science"
     },
@@ -271,5 +244,17 @@
       "zh": "汇集已锁定来源的概念，用于一致的主题标引、浏览和检索。尚未归入领域分组的概念仍收录，知识内容正文另行维护。"
     },
     "top_concepts": []
+  },
+  "labels": {
+    "file": "labels.zh.ttl",
+    "adoptions": "label-adoptions.json",
+    "bibliography": "../../references/bibliography.yaml"
+  },
+  "source_removal": {
+    "source": "UNESCO",
+    "source_sha256": "3a1e4f0e96d9b48e3d5817e3c3fc26f51a27fae5f7f535dd0ba299b3a4c43ce6",
+    "baseline_sha256": "f3416caacd3b04ac108db5304c4d344b9ac767c671023e15f0067116acffa27e",
+    "concepts_sha256": "5e0494443e518350595d4adfff471021455b10f0ecb2e97ce43b7696e52df0ab",
+    "reason": "用户明确决定从自有词表及当前来源中移除 UNESCO；历史构建保留供回溯。"
   }
 }
