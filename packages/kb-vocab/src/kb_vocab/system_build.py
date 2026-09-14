@@ -95,7 +95,9 @@ def _read_config(path):
     if not isinstance(config,dict) or config.get('schema_version')!=2:
         raise ValueError('Expected organization schema_version 2 for the single-vocabulary profile')
     allowed={'schema_version','catalog','sources','domains','vocabulary','languages','shapes'}
-    if set(config)-{'replay_origin','labels','source_removal'}!=allowed:raise ValueError('Missing or unknown organization configuration fields')
+    if set(config)-{'replay_origin','labels','source_removal','local_edits','maintenance'}!=allowed:raise ValueError('Missing or unknown organization configuration fields')
+    if 'local_edits' in config and (not isinstance(config['local_edits'],str) or not config['local_edits'].strip()):raise ValueError('local_edits must name a file')
+    if 'maintenance' in config and not isinstance(config['maintenance'],dict):raise ValueError('maintenance must be a mapping')
     if 'labels' in config:
         label_config=config['labels']
         if (not isinstance(label_config,dict) or not {'file','adoptions'}<=set(label_config)
@@ -142,6 +144,8 @@ def build_system(config_file,output,previous_file=None):
     origin_raw=configuration_origin(config_file,config_raw,config);origin_hash=_sha(origin_raw)
     catalog=(config_file.parent/config['catalog']).absolute();catalog_raw=catalog.read_bytes()
     shapes_path=(config_file.parent/config['shapes']).absolute();shapes_raw=shapes_path.read_bytes()
+    edits_path=(config_file.parent/config['local_edits']).resolve() if 'local_edits' in config else None
+    edits_raw=edits_path.read_bytes() if edits_path else None
     label_paths={key:(config_file.parent/value).absolute() for key,value in config.get('labels',{}).items()}
     label_raw={key:path.read_bytes() for key,path in label_paths.items()}
     sources=read_catalog(catalog)
@@ -155,11 +159,14 @@ def build_system(config_file,output,previous_file=None):
             raise ValueError('Build output must be outside source directories')
         source_raw[name]=raw
         for triple in source['graph']:raw_graph.add(triple)
-    index=index_concepts(sources);source_baseline=validate_graph(raw_graph)
-    base,changes,normalization=normalize_sources(sources,config['languages'])
+    from .selection import select_sources,verify_selection
+    projected_sources,selection=select_sources(sources)
+    verify_selection(sources,projected_sources,selection)
+    index=index_concepts(projected_sources,allow_shared=True);source_baseline=validate_graph(raw_graph)
+    base,changes,normalization=normalize_sources(projected_sources,config['languages'])
     if not normalization['source_accounting_complete'] or not normalization['source_concepts_preserved']:
         raise ValueError('Normalization failed complete source accounting')
-    accounting=verify_normalization(sources,base,changes,config['languages'])
+    accounting=verify_normalization(projected_sources,base,changes,config['languages'])
     scheme=_iri(config['vocabulary']['uri']);generated={scheme}
     if any(raw_graph.triples((scheme,None,None))):raise ValueError('Vocabulary identity collides with a source')
     scheme_graph=Graph();scheme_graph.bind('skos',SKOS)
@@ -180,7 +187,7 @@ def build_system(config_file,output,previous_file=None):
         members=set();collections=set();references=[]
         for name in domain.get('whole_sources',[]):
             if name not in sources:raise ValueError(f'Unknown whole source: {name}')
-            g=sources[name]['graph'];selected=set(g.subjects(RDF.type,SKOS.Concept))
+            g=projected_sources[name]['graph'];selected=set(g.subjects(RDF.type,SKOS.Concept))
             members|=selected;collections|=set(g.subjects(RDF.type,SKOS.Collection))
             rule={'source':name,'mode':'whole_source'}
             for node in selected:derivations[(str(node),ident)].append(rule)
@@ -192,8 +199,8 @@ def build_system(config_file,output,previous_file=None):
             if not ((anchor,RDF.type,SKOS.Concept) in g or (anchor,RDF.type,SKOS.Collection) in g):
                 raise ValueError(f'Branch anchor is not a source Concept or Collection: {anchor}')
             if branch['mode']=='reference_only':references.append(branch);continue
-            reached=_closure(g,anchor);selected={n for n in reached if (n,RDF.type,SKOS.Concept) in g}
-            members|=selected;collections|={n for n in reached if (n,RDF.type,SKOS.Collection) in g}
+            reached=_closure(g,anchor);selected={n for n in reached if (n,RDF.type,SKOS.Concept) in projected_sources[name]['graph']}
+            members|=selected;collections|={n for n in reached if (n,RDF.type,SKOS.Collection) in projected_sources[name]['graph']}
             rule={'source':name,'mode':'branch','anchor':str(anchor)}
             for node in selected:derivations[(str(node),ident)].append(rule)
         overlay=scheme_graph+Graph();overlay.add((group,RDF.type,SKOS.Collection));overlay.add((group,SKOS.inScheme,scheme))
@@ -219,7 +226,63 @@ def build_system(config_file,output,previous_file=None):
             for domain in domain_data:
                 if triple[0] in {scheme,URIRef(domain['uri'])}:domain['overlay'].add(triple)
 
-    expected={URIRef(uri) for uri in index}
+    from .local_edits import apply as apply_edits, empty as empty_edits, EditConflict
+    maintenance=config.get('maintenance',{})
+    removed_source_nodes={URIRef(uri) for uri in maintenance.get('removed_source_nodes',[])}
+    source_reference_removals=[]
+    if removed_source_nodes:
+        if previous_raw is None or maintenance.get('baseline_sha256')!=_sha(previous_raw):
+            raise ValueError('Source withdrawal baseline differs')
+        if any((node,RDF.type,SKOS.Concept) in full or (node,RDF.type,SKOS.Collection) in full for node in removed_source_nodes):
+            raise ValueError('A withdrawn node is still supported by an active source')
+        source_reference_removals=[tuple(x.n3() for x in t) for t in full if t[0] in removed_source_nodes or t[2] in removed_source_nodes]
+        for node in removed_source_nodes:
+            full.remove((node,None,None));full.remove((None,None,node))
+    upstream=full+Graph()
+    edit_document=json.loads(edits_raw) if edits_raw else empty_edits()
+    full,local_effects=apply_edits(upstream,edit_document)
+    local_effects['source_reference_removals']=source_reference_removals
+    if local_effects['conflicts']:raise EditConflict(local_effects,upstream)
+    deleted={URIRef(uri) for uri in local_effects['deleted_nodes']}
+    created={URIRef(uri) for uri in local_effects['created_nodes']}
+    for node in created:
+        triple=(node,SKOS.inScheme,scheme)
+        if triple not in full:local_effects['added'].append(tuple(value.n3() for value in triple))
+        full.add(triple)
+    local_effects['added'].sort()
+    generated-=deleted;generated|=created
+    generated|={URIRef(p['subject']) for p in edit_document['patches'] if p.get('predicate')==str(SKOS.prefLabel) and URIRef(p['subject']) not in deleted}
+    scheme_graph=Graph()
+    for triple in full.triples((scheme,None,None)):scheme_graph.add(triple)
+    for triple in full.triples((None,SKOS.topConceptOf,scheme)):scheme_graph.add(triple)
+    for triple in list(organization):
+        if triple not in full:organization.remove(triple)
+    memberships.clear()
+    domain_data=[d for d in domain_data if URIRef(d['uri']) not in deleted]
+    for domain in domain_data:
+        group=URIRef(domain['uri'])
+        domain['members']=set(full.objects(group,SKOS.member)) & set(full.subjects(RDF.type,SKOS.Concept))
+        domain['collections']-=deleted
+        domain['overlay']=Graph()
+        for triple in full.triples((group,None,None)):domain['overlay'].add(triple)
+        for triple in domain['overlay']:organization.add(triple)
+        for node in domain['members']:memberships[str(node)].add(domain['id'])
+    label_provenance['records']=[r for r in label_provenance['records'] if (URIRef(r['uri']),URIRef(r['property']),Literal(r['label'],lang=r['language'])) in full]
+    local_labels=[]
+    for patch in edit_document['patches']:
+        node=URIRef(patch['subject'])
+        reasons=[e['reason'] for e in edit_document['history'] if patch['id'] in e['patches']]
+        from .local_edits import term as edit_term
+        fields=patch['fields'] if patch['op']=='create' else {patch['predicate']:patch['values']} if patch['op'] in {'set','add'} else {}
+        for predicate,values in fields.items():
+            p=URIRef(predicate)
+            if p not in (SKOS.prefLabel,SKOS.altLabel,SKOS.hiddenLabel):continue
+            for encoded in values:
+                value=edit_term(encoded)
+                if (node,p,value) in full and (node,p,value) not in upstream:
+                    local_labels.append({'uri':str(node),'property':str(p),'language':value.language or '', 'label':str(value),'edit_id':patch['id'],'reason':reasons[-1] if reasons else 'Local input'})
+    label_provenance['local_records']=local_labels
+    expected=({URIRef(uri) for uri in index}|{node for node in created if (node,RDF.type,SKOS.Concept) in full})-deleted
     if set(full.subjects(RDF.type,SKOS.Concept))!=expected:raise ValueError('Source concept identity set changed')
     if set(full.subjects(RDF.type,SKOS.ConceptScheme))!={scheme}:raise ValueError('Expected exactly one self vocabulary')
     for node in expected:
@@ -235,30 +298,36 @@ def build_system(config_file,output,previous_file=None):
     previous_graph=Graph().parse(data=previous_raw,format='turtle',publicID=Path(previous_file).resolve().as_uri()) if previous_raw is not None else Graph()
     difference=compare_graphs(previous_graph,full)
     difference['baseline']={'sha256':_sha(previous_raw),'path':str(Path(previous_file).resolve())} if previous_raw is not None else None
+    local_effects['selection_excluded_concepts']=selection['excluded_concepts']
     if previous_raw is not None and difference['concepts']['removed']:
         from .removal import validate_removal
-        validate_removal(difference,config.get('source_removal'),config['sources'])
-    coverage=[{'uri':uri,'source':item['source'],'vocabulary':str(scheme),'domains':sorted(memberships[uri]),
+        from .removal import validate_maintenance_removal
+        validate_maintenance_removal(difference,config,local_effects)
+    effective_index={uri:item for uri,item in index.items() if URIRef(uri) in expected}
+    for node in created:
+        if (node,RDF.type,SKOS.Concept) in full:effective_index[str(node)]={'source':'local','sources':[]}
+    coverage=[{'uri':uri,'source':item['source'],'sources':item.get('sources',[item['source']]),'vocabulary':str(scheme),'domains':sorted(memberships[uri]),
                'status':'grouped' if memberships[uri] else 'ungrouped',
-               'rules':{d:derivations[(uri,d)] for d in sorted(memberships[uri])}}
-              for uri,item in sorted(index.items())]
-    ungrouped={URIRef(row['uri']) for row in coverage if not row['domains']}
+               'rules':{d:derivations[(uri,d)] or [{'mode':'local_edit'}] for d in sorted(memberships[uri])}}
+              for uri,item in sorted(effective_index.items())]
+    coverage.extend({'uri':uri,'source':item['source'],'sources':item.get('sources',[item['source']]),'vocabulary':str(scheme),'domains':[],'status':'locally_excluded','rules':{}} for uri,item in sorted(index.items()) if URIRef(uri) not in expected)
+    ungrouped={URIRef(row['uri']) for row in coverage if not row['domains'] and URIRef(row['uri']) in expected}
     labels=defaultdict(set)
     for node in expected:
         for value in full.objects(node,SKOS.prefLabel):labels[((value.language or '').lower(),str(value).casefold())].add(str(node))
     ambiguities=[{'language':language,'normalized_label':label,'concepts':sorted(nodes)} for (language,label),nodes in sorted(labels.items()) if len(nodes)>1]
     summaries=[{'id':d['id'],'collection':d['uri'],'label':d['label'],'members':len(d['members']),
                 'source_collections':len(d['collections']),'reference_only':d['references']} for d in domain_data]
-    report={'specification_version':3,'source_concepts':len(index),'source_triples':len(raw_graph),'output_triples':len(full),
+    report={'specification_version':3,'source_concepts':len(set(raw_graph.subjects(RDF.type,SKOS.Concept))),'selected_source_concepts':len(index),'published_concepts':len(expected),'local_deleted_concepts':len(set(index)&set(local_effects['deleted_nodes'])),'source_triples':len(raw_graph),'output_triples':len(full),
             'self_vocabularies':1,'vocabulary':str(scheme),'domain_groups':len(domain_data),
-            'assigned_concepts':len(index)-len(ungrouped),'unassigned_concepts':len(ungrouped),
+            'assigned_concepts':len(expected)-len(ungrouped),'unassigned_concepts':len(ungrouped),
             'domains':summaries,'source_statements_preserved':all(t in full for t in raw_graph),
             'source_copies_preserved':True,'source_concepts_preserved':True,'source_accounting_complete':accounting['verified'],
             'languages':config['languages'],'filtered_languages':normalization['filtered_languages'],
             'introduced_validation_errors':[],'source_validation_errors':len(source_baseline['errors']),
             'validation_valid':True,'shacl_conforms':True,'shacl_warnings':len(profile['warnings']),
-            'ambiguous_label_groups':len(ambiguities),'adopted_chinese_labels':len(label_delta),
-            'scope':'Single self vocabulary with domain Collections. Full source concepts retained; changed/filtered source statements accounted separately. No invented history, semantic merge or full-domain completeness claim.'}
+            'ambiguous_label_groups':len(ambiguities),'adopted_chinese_labels':len(label_provenance['records']),
+            'scope':'Single self vocabulary with domain Collections. Selected source concepts retained in upstream.ttl; complete source snapshots and selection/local-edit ledgers are retained separately. No invented history, semantic merge or full-domain completeness claim.'}
     output.parent.mkdir(parents=True,exist_ok=True);stage=Path(tempfile.mkdtemp(prefix='.system-',dir=output.parent))
     try:
         (stage/'sources').mkdir();(stage/'domains').mkdir();(stage/'inputs').mkdir()
@@ -277,7 +346,10 @@ def build_system(config_file,output,previous_file=None):
         checked=validate_graph(leftover)
         if checked['errors']:raise ValueError('Ungrouped view has errors: '+_json(checked['errors'][:5]))
         leftover.serialize(stage/'unassigned.ttl',format='turtle')
-        replay=write_replay_inputs(stage,config_raw,catalog_raw,shapes_raw,sources,origin_raw,label_raw)
+        replay=write_replay_inputs(stage,config_raw,catalog_raw,shapes_raw,sources,origin_raw,label_raw,edits_raw)
+        upstream.serialize(stage/'upstream.ttl',format='turtle')
+        _write_json(stage/'local-effects.json',local_effects)
+        _write_json(stage/'source-selection.json',selection)
         _write_json(stage/'accounting.json',accounting)
         _write_json(stage/'version-diff.json',difference)
         if previous_raw is not None:(stage/'inputs/previous.ttl').write_bytes(previous_raw)
@@ -294,7 +366,7 @@ def build_system(config_file,output,previous_file=None):
         _write_json(stage/'warnings.json',{'shacl':profile['warnings'],'graph':validation['warnings'],'same_label_groups':ambiguities})
         source_manifest={name:{'path':s['path'],'base':s['base'],'sha256':s['sha256'],'copy':'sources/'+_sha(name.encode())[:12]+'.ttl'} for name,s in sources.items()}
         _write_json(stage/'provenance.json',{'sources':source_manifest,'organization_rules':'inputs/original-config.json','replay':replay,'statement_accounting':'accounting.json',
-                    'concept_accounting':'coverage.json','label_evidence':'label-provenance.json','source_transformations':'transformation-ledger.jsonl',
+                    'source_selection':'source-selection.json','concept_accounting':'coverage.json','label_evidence':'label-provenance.json','source_transformations':'transformation-ledger.jsonl',
                     'statement_evidence':'Unchanged source statements are identified by source graph + subject/predicate/object. Changed and derived statements have explicit ledger entries.'})
         restored=Graph().parse(stage/'vocabulary.ttl',format='turtle')
         if not isomorphic(full,restored):raise ValueError('Turtle round trip changed the graph')
@@ -303,7 +375,7 @@ def build_system(config_file,output,previous_file=None):
             title=domain['label'].get('zh',domain['label'].get('en',domain['id']))
             rows.append(f'| {title} | {domain["members"]:,} | [Turtle](domains/{domain["id"]}.ttl) |')
         (stage/'index.md').write_text('# 词表构建\n\n'
-            f'一份自有词表，{len(domain_data)} 个领域分组，{len(index):,} 个来源概念。全部概念属于自有词表；{len(ungrouped):,} 个概念尚未分组。\n\n'
+            f'一份自有词表，{len(domain_data)} 个领域分组，{len(expected):,} 个当前概念。全部概念属于自有词表；{len(ungrouped):,} 个概念尚未分组。\n\n'
             '- [完整词表](vocabulary.ttl)\n- [组织声明](organization.ttl)\n- [未分组数据](unassigned.ttl)\n'
             '- [逐概念对账](coverage.json)\n- [来源对应](provenance.json)\n- [字段转换记录](transformation-ledger.jsonl)\n'
             '- [语言与转换统计](normalization.json)\n- [结构迁移](migration.json)\n- [自动校验](validation.json)\n- [警告](warnings.json)\n\n'
@@ -314,7 +386,7 @@ def build_system(config_file,output,previous_file=None):
         for name,raw in source_raw.items():
             if (stage/'sources'/(_sha(name.encode())[:12]+'.ttl')).read_bytes()!=raw:raise ValueError('Source copy changed')
         tool_files={path.name:_sha(path.read_bytes()) for path in Path(__file__).parent.glob('*.py')}
-        manifest={'schema_version':5,'recovery':recovery,'replay':replay,'specification_version':3,'tool':{'name':'kb-vocab','version':tool_version(),'code_sha256':tool_files},
+        manifest={'schema_version':7,'recovery':recovery,'replay':replay,'specification_version':3,'tool':{'name':'kb-vocab','version':tool_version(),'code_sha256':tool_files},
                   'inputs':{'config':{'path':str(config_file),'sha256':config_hash},'catalog':{'path':str(catalog),'sha256':_sha(catalog_raw)},
                             'shapes':{'path':str(shapes_path),'sha256':_sha(shapes_raw)},'sources':source_manifest,
                             'labels':{key:{'path':str(label_paths[key]),'sha256':_sha(raw)} for key,raw in label_raw.items()}},
@@ -324,6 +396,7 @@ def build_system(config_file,output,previous_file=None):
         if (config_file.read_bytes()!=config_raw or catalog.read_bytes()!=catalog_raw or shapes_path.read_bytes()!=shapes_raw
                 or configuration_origin(config_file,config_raw,config)!=origin_raw):
             raise ValueError('Build inputs changed during generation')
+        if edits_path and edits_path.read_bytes()!=edits_raw:raise ValueError('Local edits changed during build')
         if any(path.read_bytes()!=label_raw[key] for key,path in label_paths.items()):
             raise ValueError('Label inputs changed during generation')
         if previous_file and Path(previous_file).read_bytes()!=previous_raw:raise ValueError('Previous version changed during generation')

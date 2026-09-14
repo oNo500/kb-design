@@ -6,8 +6,9 @@ from pathlib import Path
 
 def _semantic_config(config):
     result={key: value for key, value in config.items()
-            if key not in {'catalog', 'shapes', 'replay_origin','labels'}}
+            if key not in {'catalog', 'shapes', 'replay_origin','labels','local_edits'}}
     if 'labels' in config:result['labels']=sorted(config['labels'])
+    if 'local_edits' in config:result['local_edits']=True
     return result
 
 
@@ -37,7 +38,7 @@ def configuration_origin(config_file: Path, config_raw: bytes, config: dict) -> 
 
 
 def write_replay_inputs(stage: Path, config_raw: bytes, catalog_raw: bytes,
-                        shapes_raw: bytes, sources: dict, origin_raw: bytes, label_raw=None) -> dict:
+                        shapes_raw: bytes, sources: dict, origin_raw: bytes, label_raw=None, edits_raw=None) -> dict:
     """Write portable inputs; the caller copies pinned sources into sources/."""
     inputs = Path(stage) / 'inputs'
     inputs.mkdir(parents=True, exist_ok=True)
@@ -55,10 +56,15 @@ def write_replay_inputs(stage: Path, config_raw: bytes, catalog_raw: bytes,
         if set(label_raw or {})!=set(config['labels']):raise ValueError('Missing label replay inputs')
         for key,raw in label_raw.items():(inputs/filenames[key]).write_bytes(raw)
         config['labels']={key:filenames[key] for key in label_raw}
+    if 'local_edits' in config:
+        if edits_raw is None:raise ValueError('Missing local edit replay input')
+        (inputs/'local-edits.json').write_bytes(edits_raw)
+        config['local_edits']='local-edits.json'
     catalog = {'sources': [
         {'name': name,
          'file': '../sources/' + hashlib.sha256(name.encode()).hexdigest()[:12] + '.ttl',
-         'base': source.get('base') or Path(source['path']).resolve().as_uri()}
+         'base': source.get('base') or Path(source['path']).resolve().as_uri(),
+         **({'selection':source['selection']} if 'selection' in source else {})}
         for name, source in sorted(sources.items())]}
     for filename, raw in [('original-config.json', origin_raw),
                           ('invocation-config.json', config_raw),

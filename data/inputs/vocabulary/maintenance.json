@@ -1,0 +1,12 @@
+{
+  "applications": [
+    {
+      "directory": "../../../apps/skosmos",
+      "display": true,
+      "kind": "skosmos"
+    }
+  ],
+  "config": "knowledge-system.json",
+  "output": "../../../output/vocabulary",
+  "schema_version": 1
+}

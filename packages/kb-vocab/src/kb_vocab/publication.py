@@ -47,7 +47,7 @@ def _verify(version_dir):
     manifest_file=version_dir/'manifest.json'
     if manifest_file.is_symlink():raise ValueError('Manifest must not be a symlink')
     manifest=json.loads(manifest_file.read_bytes())
-    if manifest.get('schema_version') not in (1,2,3,4,5) or not isinstance(manifest.get('files'),dict):
+    if manifest.get('schema_version') not in (1,2,3,4,5,6,7) or not isinstance(manifest.get('files'),dict):
         raise ValueError('Unsupported build manifest')
     entries=manifest['files']
     required={'vocabulary.ttl','organization.ttl','coverage.json','provenance.json','report.json','validation.json','inputs/config.json','inputs/catalog.json'}
@@ -61,6 +61,11 @@ def _verify(version_dir):
         required.add('label-provenance.json')
         paths={'file':'labels.zh.ttl','adoptions':'label-adoptions.json','bibliography':'label-bibliography.yaml'}
         required|={'inputs/'+paths[key] for key in manifest.get('inputs',{}).get('labels',{})}
+    if manifest['schema_version']>=6:
+        required|={'upstream.ttl','local-effects.json'}
+        config=json.loads((version_dir/'inputs/original-config.json').read_bytes())
+        if 'local_edits' in config:required.add('inputs/local-edits.json')
+    if manifest['schema_version']>=7:required.add('source-selection.json')
     if not required.issubset(entries):raise ValueError('Build manifest is incomplete')
     actual=set()
     for path in version_dir.rglob('*'):
@@ -95,7 +100,17 @@ def _verify(version_dir):
         if diff.get('baseline') is not None and diff.get('concepts',{}).get('removed')!=[]:
             from .removal import validate_removal
             config=json.loads((version_dir/'inputs/original-config.json').read_bytes())
-            validate_removal(diff,config.get('source_removal'),config['sources'])
+            if manifest['schema_version']>=6:
+                from .removal import validate_maintenance_removal
+                validate_maintenance_removal(diff,config,json.loads((version_dir/'local-effects.json').read_bytes()))
+            else:validate_removal(diff,config.get('source_removal'),config['sources'])
+    if manifest['schema_version']>=6:
+        local=json.loads((version_dir/'local-effects.json').read_bytes())
+        if local.get('verified') is not True or local.get('conflicts')!=[]:raise ValueError('Build has unresolved local edits')
+    if manifest['schema_version']>=7:
+        selection=json.loads((version_dir/'source-selection.json').read_bytes())
+        if selection.get('verified') is not True or selection.get('excluded_concepts')!=local.get('selection_excluded_concepts'):
+            raise ValueError('Build has not passed source selection accounting')
     return report
 
 
@@ -121,7 +136,7 @@ def activate_version(root,build_id):
     with _lock(root):return _activate(root,build_id)
 
 
-def build_versioned(config_file,root,build_id=None):
+def build_versioned(config_file,root,build_id=None,*,before_activate=None):
     """Build completely before switching current. Failed builds leave it untouched."""
     build_id=_identifier(build_id or datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')+'-'+uuid4().hex[:8])
     root=_layout(root)
@@ -130,5 +145,6 @@ def build_versioned(config_file,root,build_id=None):
         previous=(root/'current').resolve() if (root/'current').is_symlink() else None
         if previous:_verify(previous)
         report=build_system(config_file,output,previous/'vocabulary.ttl' if previous else None)
+        if before_activate:before_activate()
         publication=_activate(root,build_id)
     return dict(report,publication=publication)

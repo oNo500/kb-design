@@ -1,24 +1,222 @@
 {
   "sources": [
     {
+      "file": "../../../packages/kb-vocab/output/ieee-2025-resolved/vocabulary.ttl",
       "name": "IEEE",
-      "file": "../../../packages/kb-vocab/output/ieee-2025-resolved/vocabulary.ttl"
+      "pipeline": {
+        "extract": {
+          "input": "../../../packages/kb-sources/output/manual/ieee-thesaurus-2025-07/acquisition.json",
+          "kind": "ieee-pdf"
+        },
+        "importer": "ieee",
+        "input": "../../../packages/kb-sources/output/ieee-thesaurus/2025-07/thesaurus.json"
+      },
+      "selection": {
+        "roots": [
+          "urn:uuid:1b5c7cfd-6528-4899-bab0-f1b98cd817e9",
+          "urn:uuid:9c64587d-1140-492b-a043-3a696e0795c9",
+          "urn:uuid:8dd56550-0053-4d89-b6c4-3a968ed2a447",
+          "urn:uuid:e231b395-7789-45ba-8215-a55737c9d3be",
+          "urn:uuid:e2f9e1ee-cde7-4f1f-8bd4-599c7ef6fe27",
+          "urn:uuid:449efdf1-b7e4-4f95-95bb-20d988a0b4dd",
+          "urn:uuid:a64efa11-3425-468f-bd7f-43a0e6b9aa37",
+          "urn:uuid:467ddafa-3cb7-4124-9df0-bbe7348bbbec",
+          "urn:uuid:ca225536-b8a3-4f0b-bb1d-39549aaaede7",
+          "urn:uuid:19e63a75-77ab-4563-b2d8-35467c52c55a",
+          "urn:uuid:51f36501-0f6d-473f-8e04-3d7417befd21",
+          "urn:uuid:d15ff2c9-c876-4878-9204-343b48e69122",
+          "urn:uuid:a5a8a767-c1f4-44c0-8527-3bb63d19298c",
+          "urn:uuid:0584923b-0206-45a1-858d-6e583183f8f1",
+          "urn:uuid:131a1cb5-dfb8-4dd1-8954-f7b597330b45",
+          "urn:uuid:6f60f956-762c-41f8-9d0a-3a860b806b68",
+          "urn:uuid:eee22a44-2790-46aa-8aa4-c89a070f3a9b",
+          "urn:uuid:aeffc959-b34f-4224-a66f-cc06a4551f2e",
+          "urn:uuid:b2775673-6891-4739-bf74-72b1b380fc1d",
+          "urn:uuid:61f3fbf8-5e8a-4fc5-acdf-73f6bbe043e9",
+          "urn:uuid:3e46bed7-2ad6-49d1-a65c-6328fc0e9d43",
+          "urn:uuid:29aae22d-8330-458f-85ea-d04973469f32",
+          "urn:uuid:101bc25d-05e6-45ac-8643-87c4c4043d28",
+          "urn:uuid:060cfd2a-7a8b-4c5d-acd9-8ae1f64d788d",
+          "urn:uuid:07be8a20-9306-4b0b-b4d8-0a337373be62",
+          "urn:uuid:afa833ef-e47e-4ffe-b763-f2ee4af1d24f",
+          "urn:uuid:03a31de7-9279-4041-8182-1a557c7a4fc1",
+          "urn:uuid:155bd721-c97a-4885-8f33-d8cb33220057",
+          "urn:uuid:46049abe-3125-4c44-bf70-4d77d16dfdae",
+          "urn:uuid:0d8bc6e2-d170-423c-8820-583595c8ffa3",
+          "urn:uuid:471221f9-030d-4326-a054-92a2a7b03631",
+          "urn:uuid:c3775ce5-a679-405f-8e0f-bd103bab589a",
+          "urn:uuid:11a2947e-9481-4d85-b060-f0cc56d3701d",
+          "urn:uuid:e7047245-6204-4f99-b7b7-12b90804e43a",
+          "urn:uuid:57dd3947-53fa-407d-8072-914b434a4c9a",
+          "urn:uuid:e595ef7d-1be1-43f0-ad40-d85238122a1a",
+          "urn:uuid:8ff89440-1315-4f8f-9028-3dcf03fcf82c",
+          "urn:uuid:11506f56-ec8e-4572-b425-0126016ae953",
+          "urn:uuid:cda5f93e-2cde-41e5-b11c-dbe05c502771",
+          "urn:uuid:b379ee89-cc7a-40ff-8494-8a5cf34fc482",
+          "urn:uuid:1379d42d-79ab-4440-97b9-c39f56308f38",
+          "urn:uuid:ddb59058-f282-4c27-9162-65b48d4f2821",
+          "urn:uuid:f99f635e-f728-4c40-98f0-f5db48ee33d0",
+          "urn:uuid:55984200-1ddb-456f-a185-21410ad2280f",
+          "urn:uuid:c26b4106-90bb-4de1-9508-6364f036a03e",
+          "urn:uuid:fdea1f98-d59b-4cc9-9ee6-4c8c4de3916f",
+          "urn:uuid:5cac6362-df3a-4277-9c45-b6efa961eba8",
+          "urn:uuid:9c4948e9-5286-4344-a88f-3bad315a9a37"
+        ],
+        "descendants": true,
+        "reason": "用户确认的计算机、AI、开发及认知与哲学支持范围；保留根概念及全部下位，按保留集合并集过滤，完整来源副本保留。"
+      }
     },
     {
+      "file": "../../../packages/kb-vocab/output/msc2020/vocabulary.ttl",
       "name": "MSC2020",
-      "file": "../../../packages/kb-vocab/output/msc2020/vocabulary.ttl"
+      "pipeline": {
+        "acquisition": {
+          "file_id": "classification-data",
+          "manifest": "../../../packages/kb-sources/sources/msc2020.yaml"
+        },
+        "importer": "msc",
+        "input": "../../../packages/kb-sources/output/sources/msc2020/ee4fad90c1b43037cebfd514841c3495b4ec76525662ccd29ad765508fb0ffa1/MSC_2020.csv"
+      },
+      "selection": {
+        "roots": [
+          "urn:uuid:e1c2dd37-9f63-5969-a893-e36b120e3c7a",
+          "urn:uuid:1ec72904-0724-56b5-ab53-70527638fb56",
+          "urn:uuid:d8c8ee95-9ebd-57f3-a590-8b6592797e5d",
+          "urn:uuid:b16b8a6e-0139-5d48-a33b-f8f98f5cb8db",
+          "urn:uuid:03895000-a052-5e10-809f-3acc3b4751ca",
+          "urn:uuid:6c3e1f78-3557-5e27-9e60-8456dfd46097",
+          "urn:uuid:6ecf74db-772f-55f7-9e62-5d326fac5ad7",
+          "urn:uuid:5fe379dd-f857-540a-ab7a-57061286831c",
+          "urn:uuid:8d77994f-7c40-523a-8123-57eb686fc8b3",
+          "urn:uuid:6444beaa-d6a2-56f0-ba2b-9ddffc2bb326",
+          "urn:uuid:8c19c167-06d1-5eea-8977-7ce8718dff89",
+          "urn:uuid:e3578ab2-cc41-569b-806a-44d9f8a03277",
+          "urn:uuid:bfa7d3bb-6a32-5903-94f3-0a2903b241da",
+          "urn:uuid:42fac9ec-7a4b-566e-b2ca-b90f302d7d4a",
+          "urn:uuid:e37f18a5-e108-5694-89cc-73371bb956f3",
+          "urn:uuid:360ff6a9-b925-55ff-8361-b711f842fcb2",
+          "urn:uuid:b9d6e66d-82d4-534d-aa62-c53a2f7f2667",
+          "urn:uuid:414cca37-d6f8-52cf-a982-5af96abcf44f",
+          "urn:uuid:77060195-070d-5aab-8fae-2179d51a1329",
+          "urn:uuid:7b3b4a76-420e-5ec0-87f5-b23719a9bf92",
+          "urn:uuid:a99033cd-c92a-5da5-a005-643489c1e7ad",
+          "urn:uuid:cb51ded8-ba60-5109-ac29-6fe3ad6e6683",
+          "urn:uuid:7823c525-a49e-5e21-8d4c-c26d76b6a1c5",
+          "urn:uuid:208a7423-e575-5d8a-a902-a7e128a5d062",
+          "urn:uuid:a4662286-d21f-5916-8413-4222a35afbc3",
+          "urn:uuid:5d5e8c75-bf56-59ed-82fc-c2410c7bf593",
+          "urn:uuid:c9d3965c-3827-5bdb-b5ab-f5deefbd1d84",
+          "urn:uuid:0ac8de3c-e1b8-5182-a5ed-50fbed7b7d48",
+          "urn:uuid:872f1a2f-ecf3-510b-85d2-ae2438a27183",
+          "urn:uuid:8bea8c6f-4c2f-54fd-acd5-83144ba4ccc4",
+          "urn:uuid:bdd5a647-6a90-5ee3-9636-f905c6d33c06",
+          "urn:uuid:942de34b-64d5-51ba-976d-538cac06801f",
+          "urn:uuid:77705ee8-ee33-5988-bbda-343308604cc8",
+          "urn:uuid:b4e7dbfe-795b-566f-beb5-4aa51316ba33",
+          "urn:uuid:649f66b9-60d5-53df-a39a-342276067892",
+          "urn:uuid:136a4bce-3f34-59b0-85b3-e7ab62f7203b",
+          "urn:uuid:306b9149-c714-5a91-8875-ca850e13956a",
+          "urn:uuid:d305ecad-83d9-5cf2-8b53-863ab7e39637",
+          "urn:uuid:140aa70f-beff-5894-a3fc-4ec040e704ce",
+          "urn:uuid:9e0a7cbd-e88b-5301-9c03-8a35beeecc90",
+          "urn:uuid:47f38f4b-7ab2-5684-b680-a23862b720cb",
+          "urn:uuid:9e9df16f-2017-5552-ad23-48916a18c59a",
+          "urn:uuid:9bb1b148-d65e-5204-8004-093b0ffafb33",
+          "urn:uuid:81ef35ed-5eea-508d-b2ed-b6d9900cee43",
+          "urn:uuid:da465561-dec2-5bfc-8f7f-c8d14e1960c2",
+          "urn:uuid:457b3d5d-2893-54e1-9573-74510304eaf9",
+          "urn:uuid:b9124b1f-c411-547e-b91f-3ef3fe5d9107",
+          "urn:uuid:4405c024-2dfa-5cde-a525-c9379e502473",
+          "urn:uuid:1932a326-e00c-5369-b0c5-42358a71a611",
+          "urn:uuid:a9c6b2c2-8d46-5bc7-9498-0bddd2f15ba3",
+          "urn:uuid:bb1b97ed-7cdc-5ef3-bd84-377598edf7dd",
+          "urn:uuid:c40ab431-013b-52ec-ac04-f12e96ae7bbf",
+          "urn:uuid:aab43dc3-fbf8-5dcc-919b-e209938ebc38",
+          "urn:uuid:3d8cc966-f8a0-5c9b-8f17-5440d4615028",
+          "urn:uuid:c40ce7e5-1b6f-5763-8255-134b1aac0bf9",
+          "urn:uuid:b3cae381-b0e9-5ae6-bd05-da11eda4bd11",
+          "urn:uuid:adc42fd4-4d00-5ec3-80cf-e8e78cc004b8",
+          "urn:uuid:5e85d4f3-5b44-54f3-bfd8-550394db5ec0",
+          "urn:uuid:10199801-1412-54c6-bf01-1ec7b3f05b10",
+          "urn:uuid:ed7c0241-f1e5-5d52-85cd-db5fa78d0115",
+          "urn:uuid:cb4f718a-df9a-5def-8493-fca5f6205441",
+          "urn:uuid:c9a70fe9-9e11-56a0-bd1b-3aa0390e4569",
+          "urn:uuid:2d955f17-671a-520f-971b-751a9fd36402",
+          "urn:uuid:c0c8253c-88fa-5879-b820-b36d62f3d058",
+          "urn:uuid:6e734432-8c85-5282-afd7-927506c31650",
+          "urn:uuid:993927ed-0bc9-5b90-b5c2-e16b3bcc2155",
+          "urn:uuid:c06c713d-348d-5b0f-a714-93abbc990b3b"
+        ],
+        "descendants": true,
+        "reason": "用户确认的计算机、AI、开发及认知与哲学支持范围；保留根概念及全部下位，按保留集合并集过滤，完整来源副本保留。"
+      }
     },
     {
+      "file": "../../../packages/kb-vocab/output/eric-2025/vocabulary.ttl",
       "name": "ERIC",
-      "file": "../../../packages/kb-vocab/output/eric-2025/vocabulary.ttl"
+      "pipeline": {
+        "acquisition": {
+          "file_id": "thesaurus",
+          "manifest": "../../../packages/kb-sources/sources/eric-thesaurus.yaml"
+        },
+        "importer": "eric",
+        "input": "../../../packages/kb-sources/output/sources/eric-thesaurus/f40a94c986ff396ef6c426236345cfac65d5ac0c44b5615fb116728df6b7924e/ERICThesaurus2025.zip"
+      },
+      "selection": {
+        "roots": [
+          "urn:uuid:2f8087cd-2d10-5c1a-9e13-8a305e7d8efa",
+          "urn:uuid:9edd335a-9aa7-50c9-ad83-d71a532b3621",
+          "urn:uuid:679c9f4c-a749-5519-8b3b-b42ce61a209d",
+          "urn:uuid:89bfcaf1-5095-5054-953d-94242a157dbf",
+          "urn:uuid:1b96f6e8-eddb-5a5a-a288-d5da93413f33",
+          "urn:uuid:e49eabb4-a8e2-5d21-a0c1-6f2b43030663",
+          "urn:uuid:a53166bb-db70-58c0-aeb6-704491a00d38",
+          "urn:uuid:6250b41e-c637-541a-99fe-ff84dc897068",
+          "urn:uuid:c05b7b38-9229-579a-a667-d3473584c4eb",
+          "urn:uuid:59c8c14a-173b-51ec-abab-9ae983e85ad9",
+          "urn:uuid:41b11ad9-63c5-5ea2-bbb9-4c48d89dfab2",
+          "urn:uuid:c30d1325-8e1d-5e30-b775-38655d872e25",
+          "urn:uuid:f9eb75d2-ac62-5962-a619-57789c381595",
+          "urn:uuid:2eda653c-b7bb-5fc3-8454-ee66f8cda6d0",
+          "urn:uuid:16d60769-d6f4-535c-a6ec-8b55eba56b2e"
+        ],
+        "descendants": true,
+        "reason": "用户明确选择这 15 个 ERIC 概念及其全部下位概念；其他 ERIC 概念不进入自有词表，原件和完整解析结果保留。"
+      }
     },
     {
+      "file": "../../../packages/kb-vocab/output/philpapers-snapshot/vocabulary.ttl",
       "name": "PhilPapers",
-      "file": "../../../packages/kb-vocab/output/philpapers-snapshot/vocabulary.ttl"
+      "pipeline": {
+        "acquisition": {
+          "file_id": "categories",
+          "manifest": "../../../packages/kb-sources/sources/philpapers-taxonomy-snapshot.yaml"
+        },
+        "importer": "philpapers",
+        "input": "../../../packages/kb-sources/output/sources/philpapers-taxonomy-snapshot/ac1c509a59842a7718e1bd27aa83b10fed173ff2601edc72f5f5d5f2de13fc4e/categories.json"
+      },
+      "selection": {
+        "roots": [
+          "urn:kb-vocab:philpapers:category:10",
+          "urn:kb-vocab:philpapers:category:24",
+          "urn:kb-vocab:philpapers:category:36",
+          "urn:kb-vocab:philpapers:category:51",
+          "urn:kb-vocab:philpapers:category:58"
+        ],
+        "descendants": true,
+        "reason": "用户确认的计算机、AI、开发及认知与哲学支持范围；保留根概念及全部下位，按保留集合并集过滤，完整来源副本保留。"
+      }
     },
     {
+      "file": "../../../packages/kb-vocab/output/cognitive-atlas-2026-09-13-reviewed/vocabulary.ttl",
       "name": "Cognitive Atlas",
-      "file": "../../../packages/kb-vocab/output/cognitive-atlas-2026-09-13-reviewed/vocabulary.ttl"
+      "pipeline": {
+        "acquisition": {
+          "manifest": "../../../packages/kb-sources/sources/cognitive-atlas.yaml"
+        },
+        "importer": "cognitive-atlas",
+        "input": "../../../packages/kb-sources/output/structures/cognitive-atlas-2026-09-13/source.json"
+      }
     }
   ]
 }

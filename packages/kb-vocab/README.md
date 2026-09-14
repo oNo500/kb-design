@@ -1,6 +1,41 @@
 # 词表操作 (KB Vocab)
 
-`kb-vocab` 使用 RDFLib 导入、读取、查询、校验和组织 Turtle／SKOS 数据，独立于旧核心包。`build-system` 完整保存五份来源副本，按第 3 版规范生成一份自有词表和八个领域分组，直接执行规则，不运行人工审查或 AI 分析。跨来源对应审查是独立的可选能力。正式编辑、正式采纳和旧 YAML 切换尚未实施；Skosmos 浏览副本通过独立同步流程更新。
+`kb-vocab` 使用 RDFLib 导入、读取、查询、校验和组织 Turtle／SKOS 数据，独立于旧核心包。`build-system` 完整保存五份来源副本，按第 3 版规范生成一份自有词表和八个领域分组，直接执行规则，不运行人工审查或 AI 分析。跨来源对应审查是独立的可选能力。来源同步和本地编辑通过统一维护入口执行；术语准入仍依现有规则，旧 YAML 消费者不自动切换。Skosmos 浏览副本通过独立同步流程更新。
+
+
+## 日常维护
+
+日常操作使用 `maintenance.json` 指定的工作区，默认文件位于仓库的 `data/inputs/vocabulary/`。维护规则见[词表维护设计](../../docs/model/vocabulary/设计-词表维护.md)。
+
+```bash
+# 来源清单增删或已有来源 Turtle 更新后，同步词表与已配置应用。
+uv run kb-vocab sync
+# 通过已登记的获取与转换流程刷新某个来源。
+uv run kb-vocab sync --refresh-source ERIC
+# 只应用本地编辑，不获取或解析原始来源材料。
+uv run kb-vocab sync --local
+uv run kb-vocab status
+uv run kb-vocab resume
+```
+
+`sources.json` 是来源选择入口；每项的 `file` 指向已有 Turtle，`pipeline` 可登记 `importer`、`input`、`acquisition` 或 `extract`。刷新复用 `kb-sources` 和本包现有适配器，下载受原获取清单指纹约束。IEEE 当前从已人工取得的 PDF 重新提取，不替用户绕过访问限制。`sync` 不需要手改组织配置中的来源指纹；旧 `build-system` 继续作为已固定输入的底层构建入口。
+
+例如准备一个编辑文件，以下 URI 和名称仅作格式示例，须换成实际编辑对象：
+
+```json
+[
+  {"op":"set","subject":"urn:example:concept","predicate":"skos:prefLabel","language":"en","values":["\"Updated name\"@en"]},
+  {"op":"remove","subject":"urn:example:group","predicate":"skos:member","values":["<urn:example:concept>"]}
+]
+```
+
+```bash
+uv run kb-vocab edit apply edits.json --reason "说明修改依据"
+uv run kb-vocab edit list
+uv run kb-vocab edit undo EDIT_ID --reason "撤销原因"
+```
+
+默认保存后从归档来源生成并同步应用；`--record-only` 只保存意图，便于分次编辑后统一生成。生成失败保留当前可用版本和待处理编辑。`status` 可区分记录修订与已发布修订。退出来源不会清空原件或历史构建，物理清理单独处理。
 
 ## 来源与结果
 
@@ -11,7 +46,7 @@
 | [IEEE](output/ieee-2025-resolved/index.md) | 原文提取 JSON；7,619 个概念、4,871 个替代标签 | 固定规则排除 202 对间接祖先 RT；59 组 AND 和两项名称异常继续隔离 |
 | [Cognitive Atlas](output/cognitive-atlas-2026-09-13-reviewed/index.md) | API 转录 JSON；918 个概念、857 个独立任务资源 | 1,422 条带实验条件的任务断言保留在账本 |
 | [MSC2020](output/msc2020/index.md) | 官方 TSV；6,603 个概念、6,540 条直属层级、63 个顶层概念 | 原代码、名称和完整说明分开保留；交叉引用不自动变成语义关系 |
-| [ERIC](output/eric-2025/index.md) | 官方 XML／ZIP；4,578 个概念、6,527 个替代标签 | 692 条多目标同义记录、132 条停用记录及有问题的关系保留在账本；52 对 S27 冲突暂隔离 |
+| [ERIC](output/eric-2025/index.md) | 官方 XML／ZIP；4,578 个完整来源概念；当前选择其中 44 个、6,527 个替代标签 | 692 条多目标同义记录、132 条停用记录及有问题的关系保留在账本；52 对 S27 冲突暂隔离 |
 | [PhilPapers](output/philpapers-snapshot/index.md) | 第三方 JSON；6,134 个概念、7,743 条直属层级 | 官方版本未知；主要父分类保留为来源元数据；一条空名称不补造 |
 
 各行数字表示当前快照的处理结果，不证明领域覆盖完整或已正式采纳。知识覆盖文献 CS2023、IFLA、CWPA、tekom 暂缓处理。
@@ -77,6 +112,7 @@ uv run kb-vocab build-system \
 | 概念与分组对账 | `coverage.json`：来源、唯一词表、分组和命中的规则 |
 | 字段转换 | `transformation-ledger.jsonl`：被归档、过滤、归一和派生的三元组及依据 |
 | 独立语句对账 | `accounting.json`：独立核对来源语句、转换记录和实际投影，不使用生成器计数代替证明 |
+| 本地编辑 | `upstream.ttl`、`inputs/local-edits.json`、`local-effects.json`：保留基线、编辑意图与实际变化 |
 | 版本差异 | `version-diff.json`：与上一版本比较的概念增删及逐节点字段变化；首次构建标明无基线 |
 | 环境恢复 | `recovery/`：实际工具代码、项目元数据、运行依赖版本、环境信息及恢复入口 |
 | 转换统计 | `normalization.json`：逐源去向数量、语言过滤和反向关系派生数量 |
@@ -115,7 +151,13 @@ uv run kb-vocab build-system \
 
 输出目录必须尚不存在。`inputs/original-config.json` 保存最初组织配置；`invocation-config.json` 保存本次调用配置；`original-catalog.json` 保存本次清单。可重放配置只调整文件位置，原配置摘要与领域、名称、语言及来源指纹必须一致。组织声明引用最初配置摘要，来源解析基准由清单的 `base` 保留。版本比较的上一份主图保存在 `inputs/previous.ttl`，首次构建没有该文件。
 
-独立对账核对来源语句、转换记录和实际投影，拒绝遗漏、伪造去向、重复派生和无依据新增值。构建清单版本 4 将对账、版本差异和环境恢复材料纳入文件哈希及切换门禁；旧构建仍按原合同支持回退。
+独立对账核对来源语句、转换记录和实际投影，拒绝遗漏、伪造去向、重复派生和无依据新增值。构建清单版本 7 将对账、版本差异和环境恢复材料纳入文件哈希及切换门禁；旧构建仍按原合同支持回退。
+
+## 来源筛选
+
+`sources.json` 的来源条目可增加 `selection`，例如 `{"roots":["完整概念 URI"],"descendants":true}`。规则在合并前执行，原始来源文件不裁剪。收录范围及三元组排除记录写入 `source-selection.json`；其他来源支持的共享身份保留，悬空关系不写入主图。
+
+当前各来源范围见[来源收录决定](../../docs/model/vocabulary/决定-来源收录范围.md)：IEEE 1,123、MSC2020 1,348、PhilPapers 6,066、Cognitive Atlas 918、ERIC 44，共 9,499 个概念。`source_concepts` 统计完整来源概念，`selected_source_concepts` 统计筛选结果，`published_concepts` 统计应用本地编辑后的主图。来源指纹与筛选规则分别记录；修改规则后运行 `sync` 即可，不需要重新下载或重新解析原件。
 
 ## 身份更新
 

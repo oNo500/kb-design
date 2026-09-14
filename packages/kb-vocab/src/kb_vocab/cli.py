@@ -13,6 +13,8 @@ from kb_vocab.validation import validate_graph
 def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__)
     commands=parser.add_subparsers(dest='command',required=True)
+    from kb_vocab.maintenance_cli import configure as configure_maintenance, execute as execute_maintenance
+    configure_maintenance(commands)
     from kb_vocab.review_cli import configure, execute
     configure(commands)
     importer=commands.add_parser('import-ieee',help='create a new evaluation projection; does not update formal data')
@@ -53,7 +55,9 @@ def main(argv=None):
     text.add_argument('--sparql');text.add_argument('--query-file',type=Path)
     args=parser.parse_args(argv)
     try:
-        if args.command == 'build-system':
+        if args.command in {'sync','status','resume','edit'}:
+            result=execute_maintenance(args)
+        elif args.command == 'build-system':
             from kb_vocab.system_build import build_system
             if args.output_root:
                 from kb_vocab.publication import build_versioned
@@ -92,6 +96,7 @@ def main(argv=None):
             else:
                 result=select_query(graph,args.sparql if args.sparql is not None else args.query_file.read_text())
         print(json.dumps(result,ensure_ascii=False,indent=2))
+        if args.command in {'sync','resume','edit'} and result.get('state') in {'failed','conflict','application-failed'}:return 1
         return 1 if args.command=='validate' and not result['valid'] else 0
     except (OSError,ValueError,KeyError,BadSyntax) as exc:
         print(json.dumps({'error':str(exc)},ensure_ascii=False),file=sys.stderr)

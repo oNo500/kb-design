@@ -18,3 +18,20 @@ def validate_removal(difference,authorization,active_sources):
         or authorization['concepts_sha256']!=concept_digest(removed)):
         raise ValueError('Cross-version identity loss is not covered by the exact source removal authorization')
     difference['authorized_source_removal']=authorization
+
+
+def validate_maintenance_removal(difference,config,effects):
+    removed=set(difference['concepts']['removed'])
+    if not removed:return
+    context=config.get('maintenance',{})
+    allowed=set(effects.get('deleted_nodes',[]))
+    allowed.update(effects.get('selection_excluded_concepts',[]))
+    if context:
+        if context.get('baseline_sha256')!=(difference.get('baseline') or {}).get('sha256'):
+            raise ValueError('Maintenance identity loss baseline differs')
+        allowed.update(context.get('removed_source_concepts',[]))
+        allowed.update(context.get('removed_local_nodes',[]))
+    if removed<=allowed:
+        difference['authorized_maintenance_removals']=sorted(removed)
+        return
+    validate_removal(difference,config.get('source_removal'),config['sources'])

@@ -55,7 +55,7 @@ def read_catalog(path):
             raise ValueError(f'Source {name} base must be an absolute IRI')
         graph = Graph().parse(data=raw, format='turtle', publicID=base)
         sources[name] = {'name': name, 'path': str(ttl), 'sha256': sha,
-                         'graph': graph, 'base': base}
+                         'graph': graph, 'base': base, **({'selection':entry['selection']} if 'selection' in entry else {})}
     return dict(sorted(sources.items()))
 
 
@@ -66,7 +66,7 @@ def _texts(graph, subject, predicates):
     return sorted(values, key=lambda item: (item['kind'], item['language'], item['value']))
 
 
-def index_concepts(sources):
+def index_concepts(sources, *, allow_shared=False):
     """Index explicit SKOS concepts without pruning unlabelled or retired ones."""
     index = {}
     for name, source in sorted(sources.items()):
@@ -75,10 +75,13 @@ def index_concepts(sources):
             if not isinstance(subject, URIRef):
                 raise ValueError(f'Source {name} has a concept without a stable URI: {subject}')
             uri = str(subject)
+            if uri in index and allow_shared:
+                index[uri]['sources'].append(name)
+                continue
             if uri in index:
                 raise ValueError(f'Concept URI occurs in multiple sources: {uri}')
             index[uri] = {
-                'source': name,
+                'source': name, 'sources':[name],
                 'labels': _texts(graph, subject, [(SKOS.prefLabel, 'prefLabel'),
                     (SKOS.altLabel, 'altLabel'), (SKOS.hiddenLabel, 'hiddenLabel')]),
                 'definitions': _texts(graph, subject, [(SKOS.definition, 'definition'),

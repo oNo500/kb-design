@@ -1,13 +1,14 @@
 /* Display shared label evidence without changing vocabulary labels or RDF. */
 (function (root) {
   function rowsFor(data, uri) {
+    const local = (data?.local_records || []).filter(row => row.uri === uri).map(row => ({label: row.label, language: row.language, kind: '本地名称', notice: '本地编辑 · 未据此认定外部依据或术语准入', detail: `${row.edit_id} · ${row.reason}`}));
     if (data?.schema_version === 2) {
       return data.labels.filter(row => row.uri === uri).map(row => {
         const batch = data.batches[row.batch];
         return {label: row.label, language: row.language, kind: '首选名',
           notice: `AI 翻译 · ${batch.model}，未核对权威中文术语`,
           detail: `批次 ${row.batch} · ${batch.agent} · ${batch.output_written_at}`};
-      });
+      }).concat(local);
     }
     if (!data || data.schema_version !== 1 || !Array.isArray(data.records)) throw new Error('Invalid label provenance');
     return data.records.filter(row => row.uri === uri && row.accept === true).map(row => ({
@@ -17,7 +18,7 @@
       detail: row.basis.level === 5
         ? `${row.basis.model.name} · ${row.basis.model.date}；${row.basis.model.rationale}；采纳依据：${row.basis.model.approval}`
         : row.basis.references.map(ref => `${ref.source}：${ref.locator}`).join('；')
-    }));
+    })).concat(local);
   }
   if (typeof module !== 'undefined') { module.exports = {rowsFor}; return; }
   let generation = 0;
