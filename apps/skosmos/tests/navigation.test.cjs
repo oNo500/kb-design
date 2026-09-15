@@ -21,3 +21,7 @@ test('empty schemes do not show an expansion arrow; missing labels fall back to 
  const nav=fixture();nav.schemes.s.members=[];nav.schemes.s.labels={};
  const scheme=roots(nav,'en')[0];assert.equal(scheme.hasChildren,false);assert.equal(scheme.label,'s');
 });
+test('declared top concepts do not promote unconnected members to top level', () => {
+ const nav=fixture();nav.schemes.s.explicit=true;nav.schemes.s.entries=['a'];nav.schemes.s.unconnected=['b'];
+ assert.deepEqual(children(nav,roots(nav,'en')[0],'en').map(n=>n.uri),['a']);
+});

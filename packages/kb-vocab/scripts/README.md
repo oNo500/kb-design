@@ -40,3 +40,13 @@ uv run --package kb-vocab python apps/skosmos/sync-translated.py RESULT
 ```
 
 [AI 中文词表](http://localhost:9090/translated/zh/?clang=zh)与英文基准浏览入口使用独立图，不覆盖原始 vocabulary.ttl。页面在名称附近展示批次模型与时间提示。
+
+## 层级诊断
+
+`audit-hierarchy.py` 读取构建版本及其归档来源，区分来源未记录父节点、父节点被过滤，以及未连接分支中的后代。输出只作诊断，不自动推断上位关系。
+
+```sh
+uv run --package kb-vocab python packages/kb-vocab/scripts/audit-hierarchy.py output/vocabulary/current --output NEW_REPORT_FILE
+```
+
+`NEW_REPORT_FILE` 替换为新的 JSON 报告路径，已有报告不覆盖。来源选择中的 `ancestors` 只能显式恢复有原关系依据的父节点，不会恢复父节点的全部下位分支。

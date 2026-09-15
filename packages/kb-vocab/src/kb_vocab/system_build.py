@@ -117,7 +117,7 @@ def _read_config(path):
     if not isinstance(domains,list) or not domains:raise ValueError('Configuration needs domain groups')
     ids=set();uris={vocab['uri']}
     for domain in domains:
-        if not isinstance(domain,dict) or set(domain)-{'id','uri','legacy_scheme','label','whole_sources','branches'}:
+        if not isinstance(domain,dict) or set(domain)-{'id','uri','legacy_scheme','label','whole_sources','branches','hierarchy'}:
             raise ValueError('Invalid or obsolete domain fields')
         ident=domain.get('id','')
         if not isinstance(ident,str) or not re.fullmatch('[a-z][a-z0-9-]*',ident) or ident in ids:
@@ -126,6 +126,15 @@ def _read_config(path):
         if uri in uris:raise ValueError('Vocabulary and group identities must be distinct')
         if domain.get('legacy_scheme')==uri:raise ValueError('Do not retype an old Scheme IRI as a Collection')
         uris.add(uri);_names(domain.get('label'),languages,'Group name')
+        if 'hierarchy' in domain:
+            hierarchy=domain['hierarchy']
+            if not isinstance(hierarchy,dict) or set(hierarchy)!={'uri','roots'} or not isinstance(hierarchy['roots'],list):
+                raise ValueError('Hierarchy requires a concept URI and explicit roots')
+            concept=str(_iri(hierarchy['uri']))
+            if concept in uris:raise ValueError('Domain concept identity must be distinct')
+            uris.add(concept)
+            for root in hierarchy['roots']:_iri(root)
+            if concept not in vocab['top_concepts']:raise ValueError('Domain concept must be a configured top concept')
         if not isinstance(domain.get('whole_sources',[]),list) or not isinstance(domain.get('branches',[]),list):
             raise ValueError('Domain source and branch rules must be lists')
     return raw,config
@@ -173,8 +182,12 @@ def build_system(config_file,output,previous_file=None):
     scheme_graph.add((scheme,RDF.type,SKOS.ConceptScheme))
     for language,text in config['vocabulary']['label'].items():scheme_graph.add((scheme,SKOS.prefLabel,Literal(text,lang=language)))
     for language,text in config['vocabulary']['scope'].items():scheme_graph.add((scheme,SKOS.scopeNote,Literal(text,lang=language)))
+    domain_concepts={_iri(d['hierarchy']['uri']) for d in config['domains'] if 'hierarchy' in d}
+    for node in domain_concepts:
+        if any(raw_graph.triples((node,None,None))):raise ValueError('Domain concept identity collides with a source')
+    generated|=domain_concepts
     tops={_iri(value) for value in config['vocabulary']['top_concepts']}
-    if not tops<={URIRef(uri) for uri in index}:raise ValueError('A configured top concept is not in the pinned sources')
+    if not tops<=({URIRef(uri) for uri in index}|domain_concepts):raise ValueError('A configured top concept is not in the pinned sources or domain concepts')
     for node in tops:
         scheme_graph.add((scheme,SKOS.hasTopConcept,node));scheme_graph.add((node,SKOS.topConceptOf,scheme))
     organization=scheme_graph+Graph()
@@ -210,6 +223,15 @@ def build_system(config_file,output,previous_file=None):
         overlay.add((group,PROV.wasDerivedFrom,URIRef('urn:sha256:'+origin_hash+'#domain/'+ident)))
         for node in members:
             memberships[str(node)].add(ident);overlay.add((group,SKOS.member,node))
+        if 'hierarchy' in domain:
+            concept=_iri(domain['hierarchy']['uri'])
+            overlay.add((concept,RDF.type,SKOS.Concept));overlay.add((concept,SKOS.inScheme,scheme))
+            for language,text in domain['label'].items():overlay.add((concept,SKOS.prefLabel,Literal(text,lang=language)))
+            overlay.add((concept,PROV.wasDerivedFrom,URIRef('urn:sha256:'+origin_hash+'#domain/'+ident)))
+            for value in domain['hierarchy']['roots']:
+                root=_iri(value)
+                if root not in members:raise ValueError(f'Hierarchy root is absent or outside domain group: {value}')
+                overlay.add((root,SKOS.broader,concept));overlay.add((concept,SKOS.narrower,root))
         for triple in overlay:organization.add(triple)
         if domain.get('legacy_scheme'):
             migration.append({'old_scheme':domain['legacy_scheme'],'new_collection':str(group),'reason':'domain_scheme_restructured_as_group','concept_identities_changed':False})
@@ -282,11 +304,16 @@ def build_system(config_file,output,previous_file=None):
                 if (node,p,value) in full and (node,p,value) not in upstream:
                     local_labels.append({'uri':str(node),'property':str(p),'language':value.language or '', 'label':str(value),'edit_id':patch['id'],'reason':reasons[-1] if reasons else 'Local input'})
     label_provenance['local_records']=local_labels
-    expected=({URIRef(uri) for uri in index}|{node for node in created if (node,RDF.type,SKOS.Concept) in full})-deleted
+    expected=({URIRef(uri) for uri in index}|domain_concepts|{node for node in created if (node,RDF.type,SKOS.Concept) in full})-deleted
     if set(full.subjects(RDF.type,SKOS.Concept))!=expected:raise ValueError('Source concept identity set changed')
     if set(full.subjects(RDF.type,SKOS.ConceptScheme))!={scheme}:raise ValueError('Expected exactly one self vocabulary')
     for node in expected:
         if set(full.objects(node,SKOS.inScheme))!={scheme}:raise ValueError('Concept lacks the unique self vocabulary')
+    for node in domain_concepts:
+        if node in deleted or set(full.objects(node,SKOS.topConceptOf))!={scheme} or (scheme,SKOS.hasTopConcept,node) not in full:
+            raise ValueError('Configured domain top concept was removed or changed')
+        if any(full.objects(node,SKOS.broader)) or any(full.subjects(SKOS.narrower,node)):
+            raise ValueError('Domain top concept cannot have a broader concept')
     if any(isinstance(value,Literal) and value.language and value.language.lower().split('-')[0] not in {'en','zh'} for _,_,value in full):
         raise ValueError('Unsupported language leaked into output')
     validation=validate_graph(full)
@@ -304,6 +331,7 @@ def build_system(config_file,output,previous_file=None):
         from .removal import validate_maintenance_removal
         validate_maintenance_removal(difference,config,local_effects)
     effective_index={uri:item for uri,item in index.items() if URIRef(uri) in expected}
+    for node in domain_concepts:effective_index[str(node)]={'source':'organization','sources':[]}
     for node in created:
         if (node,RDF.type,SKOS.Concept) in full:effective_index[str(node)]={'source':'local','sources':[]}
     coverage=[{'uri':uri,'source':item['source'],'sources':item.get('sources',[item['source']]),'vocabulary':str(scheme),'domains':sorted(memberships[uri]),

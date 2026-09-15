@@ -8,7 +8,7 @@ def select_sources(sources, *, audit=True):
         graph=source['graph'];concepts=set(graph.subjects(RDF.type,SKOS.Concept))
         policy=source.get('selection')
         if policy is None:kept[name]=concepts;excluded[name]=set();continue
-        if (not isinstance(policy,dict) or set(policy)-{'roots','descendants','reason'}
+        if (not isinstance(policy,dict) or set(policy)-{'roots','descendants','reason','ancestors'}
             or not isinstance(policy.get('roots'),list) or not policy['roots']
             or any(not isinstance(uri,str) for uri in policy['roots'])
             or len(set(policy['roots']))!=len(policy['roots']) or type(policy.get('descendants',True)) is not bool):
@@ -25,6 +25,19 @@ def select_sources(sources, *, audit=True):
                 if policy.get('descendants',True):
                     pending.extend(graph.subjects(SKOS.broader,node));pending.extend(graph.objects(node,SKOS.narrower))
             selected|=visited;root_counts[value]=len(visited)
+        ancestors=policy.get('ancestors',[])
+        if not isinstance(ancestors,list) or any(not isinstance(uri,str) for uri in ancestors) or len(set(ancestors))!=len(ancestors):
+            raise ValueError('Invalid explicit ancestors: '+name)
+        if ancestors:
+            parent_graph=Graph()
+            for child,parent in graph.subject_objects(SKOS.broader):parent_graph.add((child,SKOS.broader,parent))
+            for parent,child in graph.subject_objects(SKOS.narrower):parent_graph.add((child,SKOS.broader,parent))
+            available=set()
+            for node in selected:available.update(parent_graph.transitive_objects(node,SKOS.broader))
+            requested={URIRef(uri) for uri in ancestors}
+            if not requested<=(available & concepts)-selected:
+                raise ValueError('Explicit ancestor is absent, already selected, or unrelated to selected concepts: '+name)
+            selected|=requested
         kept[name]=selected;excluded[name]=concepts-selected;policies[name]=policy;roots_report[name]=root_counts
     raw_concepts=set().union(*(set(s['graph'].subjects(RDF.type,SKOS.Concept)) for s in sources.values()))
     selected_concepts=set().union(*kept.values());globally_excluded=raw_concepts-selected_concepts
@@ -46,7 +59,7 @@ def select_sources(sources, *, audit=True):
         by_source[name]=row
     return result,{'schema_version':1,'verified':True,'sources':by_source,
                    'excluded_concepts':sorted(map(str,globally_excluded)),
-                   'policy':'Keep declared roots and optional descendants only; do not follow ancestors or related links. Preserve shared identities supported by another selected source. Remove references to excluded concepts; preserve raw snapshots.'}
+                   'policy':'Keep declared roots, optional descendants, and explicitly listed source ancestors. Ancestors do not expand sibling branches. Never infer related links. Preserve shared identities supported by another selected source. Remove references to excluded concepts; preserve raw snapshots.'}
 
 
 def verify_selection(originals,projected,report):

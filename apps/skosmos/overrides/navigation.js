@@ -14,7 +14,7 @@
   function children(nav, node, lang) {
     const ctx = context(nav, node.isScheme ? node.uri : node.navScheme, lang);
     const scheme = nav.schemes[ctx.scheme];
-    const ids = node.isScheme ? [...scheme.entries, ...scheme.unconnected] : nav.nodes[node.uri].children.filter(id => ctx.members.has(id));
+    const ids = node.isScheme ? (scheme.explicit ? scheme.entries : [...scheme.entries, ...scheme.unconnected]) : nav.nodes[node.uri].children.filter(id => ctx.members.has(id));
     const path = node.isScheme ? [] : node.navPath;
     return ids.map(id => concept(ctx, id, path)).sort((a,b) => a.label.localeCompare(b.label, lang));
   }
@@ -23,14 +23,14 @@
       const node = {uri, label: label(scheme, lang, uri), isScheme: true, navScheme: uri, navPath: [],
         hasChildren: scheme.members.length > 0, children: [], isOpen: false,
         navigationNote: (scheme.explicit ? '已声明的顶层概念' : '浏览入口按本体系内关系排列，不代表来源指定顶层') +
-          (scheme.unconnected.length ? `；另列 ${scheme.unconnected.length} 个未连接成员` : '')};
+          (scheme.unconnected.length ? (scheme.explicit ? `；${scheme.unconnected.length} 个未连接概念可通过字母索引或检索查找` : `；另列 ${scheme.unconnected.length} 个未连接成员`) : '')};
       if (uri === selected) {
         node.isOpen = true; node.children = children(nav, node, lang);
       } else if (scheme.members.includes(selected)) {
         // Find one finite in-scheme path for revealing the selected concept.
         // All other polyhierarchical paths remain available through expansion.
         const members = new Set(scheme.members);
-        const entries = new Set([...scheme.entries, ...scheme.unconnected]);
+        const entries = new Set(scheme.explicit ? scheme.entries : [...scheme.entries, ...scheme.unconnected]);
         const queue = [[selected]], seen = new Set([selected]);
         let route;
         for (let i = 0; i < queue.length; i++) {

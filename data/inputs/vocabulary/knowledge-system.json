@@ -44,7 +44,15 @@
       },
       "legacy_scheme": "urn:kb-vocab:scheme:computer-science",
       "uri": "urn:kb-vocab:group:computer-science",
-      "whole_sources": []
+      "whole_sources": [],
+      "hierarchy": {
+        "uri": "urn:kb-vocab:domain:computer-science",
+        "roots": [
+          "urn:uuid:1b5c7cfd-6528-4899-bab0-f1b98cd817e9",
+          "urn:uuid:6ecf74db-772f-55f7-9e62-5d326fac5ad7",
+          "urn:uuid:9c64587d-1140-492b-a043-3a696e0795c9"
+        ]
+      }
     },
     {
       "branches": [],
@@ -57,7 +65,37 @@
       "uri": "urn:kb-vocab:group:mathematics",
       "whole_sources": [
         "MSC2020"
-      ]
+      ],
+      "hierarchy": {
+        "uri": "urn:kb-vocab:domain:mathematics",
+        "roots": [
+          "urn:uuid:03895000-a052-5e10-809f-3acc3b4751ca",
+          "urn:uuid:0ef87df6-e78a-5483-80cb-bc5738e3ca2c",
+          "urn:uuid:193596d4-8d5b-506a-941b-66ed5e7934f3",
+          "urn:uuid:1ec72904-0724-56b5-ab53-70527638fb56",
+          "urn:uuid:21be4542-436e-5ac6-81af-682d003d86b9",
+          "urn:uuid:443b925d-c33a-5957-8d12-d0df20b51f32",
+          "urn:uuid:57511a79-e35e-520b-af88-25b57a852cb8",
+          "urn:uuid:5fe379dd-f857-540a-ab7a-57061286831c",
+          "urn:uuid:6c3e1f78-3557-5e27-9e60-8456dfd46097",
+          "urn:uuid:6ecf74db-772f-55f7-9e62-5d326fac5ad7",
+          "urn:uuid:7201d5b2-9e75-5df8-b51c-813fec959ec9",
+          "urn:uuid:727d2914-65f8-5560-b9a8-2ceaeef4b213",
+          "urn:uuid:939fba52-0a77-5cd1-a705-07adda8044db",
+          "urn:uuid:a50ea31a-3863-573d-b8e7-1989eee41738",
+          "urn:uuid:a98f7595-9963-503d-ab64-a3136213b455",
+          "urn:uuid:ac232f86-a240-5924-b1e0-c556be5e88c5",
+          "urn:uuid:b0b26262-32d7-5a6d-8ed5-5c49c94ad5b0",
+          "urn:uuid:b16b8a6e-0139-5d48-a33b-f8f98f5cb8db",
+          "urn:uuid:b603215c-c110-5eea-a84b-c3f82c8c7902",
+          "urn:uuid:b94fb856-56d7-5c4a-a71f-7561cbc14877",
+          "urn:uuid:ce937391-050a-5e6e-a6ab-98f8e49f8600",
+          "urn:uuid:d8c8ee95-9ebd-57f3-a590-8b6592797e5d",
+          "urn:uuid:e1c2dd37-9f63-5969-a893-e36b120e3c7a",
+          "urn:uuid:e2ac8c3b-c309-5d0a-af28-e42d518feb81",
+          "urn:uuid:e7634ec0-5602-5f30-a6b5-b6f70f6ea030"
+        ]
+      }
     },
     {
       "branches": [],
@@ -68,7 +106,11 @@
       },
       "legacy_scheme": "urn:kb-vocab:scheme:library-and-information-science",
       "uri": "urn:kb-vocab:group:library-and-information-science",
-      "whole_sources": []
+      "whole_sources": [],
+      "hierarchy": {
+        "uri": "urn:kb-vocab:domain:library-and-information-science",
+        "roots": []
+      }
     },
     {
       "branches": [
@@ -100,7 +142,15 @@
       },
       "legacy_scheme": "urn:kb-vocab:scheme:writing-studies",
       "uri": "urn:kb-vocab:group:writing-studies",
-      "whole_sources": []
+      "whole_sources": [],
+      "hierarchy": {
+        "uri": "urn:kb-vocab:domain:writing-studies",
+        "roots": [
+          "urn:uuid:2f8087cd-2d10-5c1a-9e13-8a305e7d8efa",
+          "urn:uuid:679c9f4c-a749-5519-8b3b-b42ce61a209d",
+          "urn:uuid:9edd335a-9aa7-50c9-ad83-d71a532b3621"
+        ]
+      }
     },
     {
       "branches": [
@@ -122,7 +172,13 @@
       },
       "legacy_scheme": "urn:kb-vocab:scheme:technical-communication",
       "uri": "urn:kb-vocab:group:technical-communication",
-      "whole_sources": []
+      "whole_sources": [],
+      "hierarchy": {
+        "uri": "urn:kb-vocab:domain:technical-communication",
+        "roots": [
+          "urn:uuid:89bfcaf1-5095-5054-953d-94242a157dbf"
+        ]
+      }
     },
     {
       "branches": [
@@ -159,7 +215,15 @@
       },
       "legacy_scheme": "urn:kb-vocab:scheme:learning-sciences",
       "uri": "urn:kb-vocab:group:learning-sciences",
-      "whole_sources": []
+      "whole_sources": [],
+      "hierarchy": {
+        "uri": "urn:kb-vocab:domain:learning-sciences",
+        "roots": [
+          "urn:uuid:41b11ad9-63c5-5ea2-bbb9-4c48d89dfab2",
+          "urn:uuid:af7c68b8-f8dc-4c57-abb1-836e7a4bba4a",
+          "urn:uuid:c05b7b38-9229-579a-a667-d3473584c4eb"
+        ]
+      }
     },
     {
       "branches": [
@@ -183,7 +247,13 @@
       "uri": "urn:kb-vocab:group:cognitive-science",
       "whole_sources": [
         "Cognitive Atlas"
-      ]
+      ],
+      "hierarchy": {
+        "uri": "urn:kb-vocab:domain:cognitive-science",
+        "roots": [
+          "urn:kb-vocab:philpapers:category:39"
+        ]
+      }
     },
     {
       "branches": [
@@ -225,7 +295,17 @@
       },
       "legacy_scheme": "urn:kb-vocab:scheme:philosophy",
       "uri": "urn:kb-vocab:group:philosophy",
-      "whole_sources": []
+      "whole_sources": [],
+      "hierarchy": {
+        "uri": "urn:kb-vocab:domain:philosophy",
+        "roots": [
+          "urn:kb-vocab:philpapers:category:10",
+          "urn:kb-vocab:philpapers:category:24",
+          "urn:kb-vocab:philpapers:category:36",
+          "urn:kb-vocab:philpapers:category:51",
+          "urn:kb-vocab:philpapers:category:58"
+        ]
+      }
     }
   ],
   "languages": [
@@ -242,7 +322,16 @@
       "en": "Organizes the concepts inherited from the pinned sources for consistent subject indexing, browsing and retrieval. Concepts not yet assigned to a domain group remain included; knowledge articles are maintained separately.",
       "zh": "汇集已锁定来源的概念，用于一致的主题标引、浏览和检索。尚未归入领域分组的概念仍收录，知识内容正文另行维护。"
     },
-    "top_concepts": [],
+    "top_concepts": [
+      "urn:kb-vocab:domain:computer-science",
+      "urn:kb-vocab:domain:mathematics",
+      "urn:kb-vocab:domain:library-and-information-science",
+      "urn:kb-vocab:domain:writing-studies",
+      "urn:kb-vocab:domain:technical-communication",
+      "urn:kb-vocab:domain:learning-sciences",
+      "urn:kb-vocab:domain:cognitive-science",
+      "urn:kb-vocab:domain:philosophy"
+    ],
     "uri": "urn:kb-vocab:scheme:kb-design"
   },
   "labels": {

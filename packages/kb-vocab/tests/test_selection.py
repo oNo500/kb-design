@@ -4,6 +4,21 @@ from rdflib import Graph,RDF,SKOS,URIRef
 
 
 class SelectionTests(unittest.TestCase):
+    def test_explicit_ancestors_restore_paths_without_readmitting_sibling_branches(self):
+        from kb_vocab.selection import select_sources, verify_selection
+        graph=Graph().parse(data='''@prefix s:<http://www.w3.org/2004/02/skos/core#>.
+<urn:p> a s:Concept. <urn:a> a s:Concept;s:broader <urn:p>.
+<urn:b> a s:Concept;s:broader <urn:p>. <urn:other> a s:Concept.''',format='turtle')
+        source={'graph':graph,'sha256':'test','selection':{'roots':['urn:a'],'ancestors':['urn:p']}}
+        sources={'example':source}
+        selected,report=select_sources(sources)
+        result=selected['example']['graph']
+        self.assertEqual(set(result.subjects(RDF.type,SKOS.Concept)),{URIRef('urn:a'),URIRef('urn:p')})
+        self.assertIn((URIRef('urn:a'),SKOS.broader,URIRef('urn:p')),result)
+        self.assertTrue(verify_selection(sources,selected,report))
+        source['selection']['ancestors']=['urn:other']
+        with self.assertRaisesRegex(ValueError,'ancestor'):select_sources(sources)
+
     def test_descendants_exclude_ancestors_related_and_preserve_shared_identity(self):
         from kb_vocab.selection import select_sources
         a=Graph().parse(data='''@prefix s:<http://www.w3.org/2004/02/skos/core#>.

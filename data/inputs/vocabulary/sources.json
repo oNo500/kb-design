@@ -148,7 +148,36 @@
           "urn:uuid:c06c713d-348d-5b0f-a714-93abbc990b3b"
         ],
         "descendants": true,
-        "reason": "用户确认的计算机、AI、开发及认知与哲学支持范围；保留根概念及全部下位，按保留集合并集过滤，完整来源副本保留。"
+        "reason": "用户确认的计算机、AI、开发及认知与哲学支持范围；保留根概念及全部下位，按保留集合并集过滤，完整来源副本保留。 2026-09-15 经用户授权补齐可核对的来源路径，仅恢复 ancestors 列出的原有父节点，不恢复其其他后代。",
+        "ancestors": [
+          "urn:uuid:0ef87df6-e78a-5483-80cb-bc5738e3ca2c",
+          "urn:uuid:131dbaa8-c0e4-5221-abe1-76143bc8bbb9",
+          "urn:uuid:193596d4-8d5b-506a-941b-66ed5e7934f3",
+          "urn:uuid:21be4542-436e-5ac6-81af-682d003d86b9",
+          "urn:uuid:443b925d-c33a-5957-8d12-d0df20b51f32",
+          "urn:uuid:4a1b6903-1209-5f61-993e-f87b96a9dcab",
+          "urn:uuid:57511a79-e35e-520b-af88-25b57a852cb8",
+          "urn:uuid:5c7ec384-1216-55a1-802f-74fb8cec0e0b",
+          "urn:uuid:6a112691-3e09-5270-bd39-62ae30760648",
+          "urn:uuid:7201d5b2-9e75-5df8-b51c-813fec959ec9",
+          "urn:uuid:727d2914-65f8-5560-b9a8-2ceaeef4b213",
+          "urn:uuid:755c41ef-fba7-542d-a8bc-f3cbe3e41cb5",
+          "urn:uuid:85d107a3-85ba-59c3-a8ca-4872a03a203c",
+          "urn:uuid:8ad39c5b-6034-5c03-916d-39f3291c22ce",
+          "urn:uuid:939fba52-0a77-5cd1-a705-07adda8044db",
+          "urn:uuid:a50ea31a-3863-573d-b8e7-1989eee41738",
+          "urn:uuid:a98f7595-9963-503d-ab64-a3136213b455",
+          "urn:uuid:ac232f86-a240-5924-b1e0-c556be5e88c5",
+          "urn:uuid:b0b26262-32d7-5a6d-8ed5-5c49c94ad5b0",
+          "urn:uuid:b603215c-c110-5eea-a84b-c3f82c8c7902",
+          "urn:uuid:b94fb856-56d7-5c4a-a71f-7561cbc14877",
+          "urn:uuid:b98aedec-3a1d-5bad-8ca2-a39255d20f9d",
+          "urn:uuid:bd755b08-d82d-5dfd-bde1-80ef634d952b",
+          "urn:uuid:ce937391-050a-5e6e-a6ab-98f8e49f8600",
+          "urn:uuid:e2ac8c3b-c309-5d0a-af28-e42d518feb81",
+          "urn:uuid:e32fb4dc-82e2-510f-9ebd-308484fe3f67",
+          "urn:uuid:e7634ec0-5602-5f30-a6b5-b6f70f6ea030"
+        ]
       }
     },
     {
