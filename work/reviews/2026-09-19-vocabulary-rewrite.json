@@ -1,0 +1,348 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-19",
+  "authorization": "用户确认对词表整体设计和词表数据规范整篇重写，保留已采纳选择和有效约束，迁移历史及实现说明并同步必要引用；不改代码或数据。",
+  "source_commit": "4a6fbc25e6a0fe0219753829ce99bf72c1e28a4b",
+  "source_state": "本轮开始时的未提交工作区；旧正文含前轮修订，SHA-256 定位该状态，不冒称都来自 source_commit。",
+  "rewrites": [
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "source_sha256": "fd06fa0978266ac2bf3680365c02e3e4d334153c2fdffdf19576907554965929",
+      "sections": [
+        {
+          "source_heading": "整合方式",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#整合方式"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "关系与导航",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#对象体系",
+            "docs/model/vocabulary/设计-词表整体设计.md#关系与导航"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "标准采用",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#标准采用",
+            "docs/model/vocabulary/设计-词表整体设计.md#数据分层"
+          ],
+          "treatment": "标准职责与实际核读边界归入标准采用；业务对象与数据流转分别重建主线。"
+        },
+        {
+          "source_heading": "用途与验收",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#用途与验收"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "多语言组织",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#多语言组织"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "名称与版本",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#名称与版本"
+          ],
+          "treatment": "保留 UUIDv4 适用范围、初次对应、记录连续性、表达与角色区别、共用引用复核及历史单值规则。"
+        },
+        {
+          "source_heading": "映射与应用",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#映射与应用"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "来源更新",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#来源更新"
+          ],
+          "treatment": "保留三方比较与直接语义依赖；关系变化须核对选择闭包、领域挂接、导航及映射上下文。"
+        },
+        {
+          "source_heading": "译文复核",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#来源更新",
+            "docs/model/vocabulary/设计-中文标签.md#增量同步"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "规则归属",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#规则归属"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "验收与迁移",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#验收与迁移"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "材料限制",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#标准采用",
+            "docs/model/vocabulary/设计-词表资源与字段.md#依据与限制",
+            "docs/model/vocabulary/设计-多语言词表.md#标准依据"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        }
+      ]
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "source_sha256": "6c7f2188c0b621b2fb5a5089600d40153fd36a6cec20622a9038fb726c280c7a",
+      "sections": [
+        {
+          "source_heading": "适用范围",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#适用范围",
+            "work/reviews/2026-09-19-vocabulary-baseline.md#字段盘点"
+          ],
+          "treatment": "现行第 3 版合同与目标表示分开；旧 44 属性盘点作为历史，不再决定规范范围。"
+        },
+        {
+          "source_heading": "词表结构",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#词表结构",
+            "work/reviews/2026-09-19-vocabulary-baseline.md#词表范围"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "顶层组织",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#顶层组织",
+            "work/reviews/2026-09-19-vocabulary-baseline.md#顶层记录"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "节点类别",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#节点类别"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "通用约定",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#通用约定"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "值与数量",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#值与数量"
+          ],
+          "treatment": "数量及值类型约束保留；删除观察到最大上位数的临时例子，保留观察数不构成上限的规则。"
+        },
+        {
+          "source_heading": "语言范围",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#语言范围",
+            "docs/development/设计-词表工程能力.md#多语差异"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "名称规则",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#名称规则"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "概念字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#概念字段"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "分组字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#分组字段"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "词表字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#词表字段"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "来源兼容字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "任务字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#任务字段"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "辅助字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#辅助字段"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "关系维护",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#关系维护"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "依据记录",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#依据记录"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "历史与停用",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#历史与停用"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "映射字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#映射字段"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "扩展边界",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#扩展边界"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "校验分级",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#校验分级"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "结构迁移",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#交付与版本",
+            "work/reviews/2026-09-19-vocabulary-baseline.md#结构迁移"
+          ],
+          "treatment": "已完成的具体迁移叙述归档；稳定身份、不同资源类型的替代、元数据与成员对账保留为交付约束。"
+        },
+        {
+          "source_heading": "实现状态",
+          "destinations": [
+            "docs/development/设计-词表工程能力.md#已有实现",
+            "docs/development/设计-词表工程能力.md#校验覆盖",
+            "docs/development/设计-词表工程能力.md#维护缺口",
+            "work/reviews/2026-09-19-vocabulary-baseline.md#实现状态"
+          ],
+          "treatment": "旧数量及版本观察原文归档；有效的已有能力与未完成项在工程文按职责呈现，不据旧快照宣称当前状态。"
+        },
+        {
+          "source_heading": "多语差异",
+          "destinations": [
+            "docs/development/设计-词表工程能力.md#多语差异",
+            "work/reviews/2026-09-19-vocabulary-baseline.md#多语差异"
+          ],
+          "treatment": "有效约束保留，按新文档职责重写；重复解释由相应专题承担。"
+        },
+        {
+          "source_heading": "属性命名空间",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#属性命名空间"
+          ],
+          "treatment": "命名空间表不变；旧盘点前缀示例改为通用的 IRI 身份规则。"
+        }
+      ]
+    }
+  ],
+  "history_document": "work/reviews/2026-09-19-vocabulary-baseline.md",
+  "implementation_owner": "docs/development/设计-词表工程能力.md",
+  "anchor_migrations": {
+    "docs/model/vocabulary/设计-词表整体设计.md#译文复核": [
+      "docs/model/vocabulary/设计-词表整体设计.md#来源更新",
+      "docs/model/vocabulary/设计-中文标签.md#增量同步"
+    ],
+    "docs/model/vocabulary/设计-词表整体设计.md#材料限制": [
+      "docs/model/vocabulary/设计-词表整体设计.md#标准采用",
+      "docs/model/vocabulary/设计-词表资源与字段.md#依据与限制"
+    ],
+    "docs/model/vocabulary/设计-词表数据规范.md#实现状态": [
+      "docs/development/设计-词表工程能力.md#已有实现",
+      "docs/development/设计-词表工程能力.md#维护缺口"
+    ],
+    "docs/model/vocabulary/设计-词表数据规范.md#多语差异": [
+      "docs/development/设计-词表工程能力.md#多语差异"
+    ],
+    "docs/model/vocabulary/设计-词表数据规范.md#结构迁移": [
+      "docs/model/vocabulary/设计-词表数据规范.md#交付与版本",
+      "work/reviews/2026-09-19-vocabulary-baseline.md#结构迁移"
+    ]
+  },
+  "field_contracts": {
+    "source": "docs/model/vocabulary/设计-词表数据规范.md",
+    "groups": [
+      "词表字段",
+      "概念字段",
+      "分组字段",
+      "来源兼容字段",
+      "任务字段",
+      "辅助字段",
+      "映射字段"
+    ],
+    "preservation": "七组共 86 行资源字段的属性、基数、值类型及条件逐行保持不变；段落约束另按旧节去向核对。"
+  },
+  "semantic_checks": [
+    "来源收录、领域分组及内容使用分开",
+    "无来源或含义不同的本地概念仍可经具体采纳建立",
+    "名称初次登记、连续性、角色及版本规则保留",
+    "三方比较与直接依赖复核共同保留，不变成全量邻居重审",
+    "类型身份归属硬约束与来源缺名兼容例外分开",
+    "来源关系类型、反向表达及转换去向不丢失",
+    "当前单一主图归属不误用于来源联合图",
+    "停用保留旧身份、历史及引用，不自动重标引",
+    "未来 XL 表示不冒充第 3 版输入",
+    "已完成迁移、旧统计和代码缺口不作为现行规范条款"
+  ],
+  "preserved": [
+    "既有采纳决定正文",
+    "原整体提案历史",
+    "资源与字段中的 Turtle 实例",
+    "源代码、schema、依赖及正式数据",
+    "当前语种、来源范围、消费者和发版状态"
+  ],
+  "not_executed": [
+    "全量构建或运行时验证",
+    "生成器与校验器修改",
+    "词表或知识库写入",
+    "Git 提交或推送"
+  ]
+}

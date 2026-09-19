@@ -1,0 +1,4951 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-19",
+  "status": "审查完成；建议未采纳，设计正文未修改",
+  "scope": "六篇目标设计的语义及依据审查；不审查实现是否满足设计，不重新批准来源、术语或映射值。",
+  "authorization": "用户在逐条依据审查说明后回复“可以，继续”。",
+  "baseline": {
+    "head": "fd17ce4e97e6f309b2ece469226c597b6dd7aef2",
+    "documents": [
+      {
+        "path": "docs/model/vocabulary/设计-词表整体设计.md",
+        "sha256": "ca509b486ab8719d88253a2cd526d51c4bbf35889701ea818a0449c40278285b",
+        "lines": 187
+      },
+      {
+        "path": "docs/model/vocabulary/设计-词表数据规范.md",
+        "sha256": "400f5de344d6e113ee9b3d988b91615c1807abe57b3620ee900d8371a9234f49",
+        "lines": 357
+      },
+      {
+        "path": "docs/model/vocabulary/设计-词表资源与字段.md",
+        "sha256": "a0a90e126fe8794ba7934a9cc34c1d9fa42f846a7b15473f337766b2a7cc3845",
+        "lines": 156
+      },
+      {
+        "path": "docs/model/vocabulary/设计-多语言词表.md",
+        "sha256": "4e0afcdacec389adea5d73737ef72eff257716f0d016a8b2f782299c06e05dae",
+        "lines": 147
+      },
+      {
+        "path": "docs/model/vocabulary/设计-词表维护.md",
+        "sha256": "7eb5b76d21c220c8e55ac933d29f9866b3754f50576f0bbaaad89a28ffefdb98",
+        "lines": 110
+      },
+      {
+        "path": "docs/governance/maintenance/设计-词表版本.md",
+        "sha256": "7623a643b22d79404ee835cab45f1237e2ef38a8cf87074ccc5d80497f5a09ba",
+        "lines": 55
+      }
+    ]
+  },
+  "method": "核对规则含义、标准允许范围、项目需求和原论证；重复规则合并审查，字段行逐行关联依据和数量解释，小节清单用于覆盖定位。自动检查只核对位置、引用和未修改正文，不替代语义判断。",
+  "requirement_evidence": [
+    {
+      "source": "本会话用户明确需求",
+      "content": "获取已有词表用于知识库；可合并综合词表；希望独立维护术语名称及多语言；标准指引设计，实践问题须记录、研究和采纳后才能影响设计。"
+    },
+    {
+      "file": "AGENTS.md",
+      "section": "设计与实践、决策权",
+      "content": "标准与明确需求为依据；既有采纳有现行效力，但不构成免于依据审查的证明。"
+    },
+    {
+      "file": "docs/概述-项目.md",
+      "section": "项目由来、核心问题",
+      "content": "组织规则独立于现有知识和工具，服务个人知识组织与使用。"
+    }
+  ],
+  "standards": {
+    "RDF": {
+      "url": "https://www.w3.org/TR/rdf11-concepts/",
+      "sections": "§3.1–3.5、§4",
+      "use": "三元组、IRI、文字、空白节点和数据集；未据此规定应用基数。"
+    },
+    "SKOS": {
+      "url": "https://www.w3.org/TR/skos-reference/",
+      "sections": "§3–10、附录 B；S9、S13–14、S27、S35–37、S46、S48、S52、S55–57、S62",
+      "use": "核对类型、标签、关系、集合、映射和 XL；标准语义与项目完整性条件分开。"
+    },
+    "PRIMER": {
+      "url": "https://www.w3.org/TR/skos-primer/",
+      "sections": "§2、§3.1–3.2、§4.1–4.4、§5.3",
+      "use": "概念整合、名称、说明及复杂结构的方法说明，不冒称强制要求。"
+    },
+    "ISO-XSD": {
+      "url": "https://www.niso.org/schemas/iso25964/iso25964-1_v1.4.xsd",
+      "sections": "ThesaurusConceptStruct、ThesaurusTerm、ConceptGroupStruct、ThesaurusArrayStruct",
+      "sha256": "97e588d3a00604ac9b5ab2b842282342905caecf921cab8b18e3102decce9bf5",
+      "use": "本轮内存读取官方交换 schema：概念 PreferredTerm 至少一个；术语及概念日期可选单值；ConceptGroupLabel 必需，Array NodeLabel 可选。它不是 ISO 全文。"
+    },
+    "ISO-MODEL": {
+      "url": "https://www.niso.org/schemas/iso25964/schema-intro",
+      "sections": "Introduction、Possible Extensions",
+      "use": "模型用于交换；包含概念、组、数组，身份引用支持多上位和片段交换；不把 XML 结构当词表层级。"
+    },
+    "THES": {
+      "url": "https://www.dublincore.org/specifications/skos-thes/ns/",
+      "sections": "ConceptGroup、ThesaurusArray、superGroup、subGroup",
+      "use": "分组关系两端的专用类型、传递性、成员包含；数组与概念组互斥。此扩展不等于 ISO 全文。"
+    },
+    "DCMI": {
+      "url": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
+      "sections": "title、type、format、identifier、source、description、dates、relations",
+      "use": "逐字段核对意义与值域；不从标准属性名称推出项目必填或单值。"
+    },
+    "DC-LANG": {
+      "url": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/language/",
+      "sections": "Comment、Examples",
+      "use": "允许受控语言资源或 BCP 47 文字值，不能把 IRI-only 当成 DCMI 通用约束。"
+    },
+    "DC-TYPE": {
+      "url": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/type/",
+      "sections": "Comment",
+      "use": "建议受控值，并非只允许当前来源中的类别字符串。"
+    },
+    "5646": {
+      "url": "https://www.rfc-editor.org/rfc/rfc5646.html",
+      "sections": "§2.1、§2.2.9、§4.5",
+      "use": "标签语法、有效性、规范形式；不决定项目语种或译文正确性。"
+    },
+    "4647": {
+      "url": "https://www.rfc-editor.org/rfc/rfc4647.html",
+      "sections": "§3.3.1、§3.4、§3.4.1、§4.1",
+      "use": "筛选、Lookup 和默认行为；默认值由应用、协议或规范定义，英文不是 RFC 规定的默认语言。"
+    },
+    "IFLA": {
+      "url": "https://www.ifla.org/files/assets/hq/publications/professional-report/115.pdf",
+      "sections": "§3.2、§3.3.6；PDF 页 8–9、13–19 相关段落",
+      "sha256": "c88f95a294535039efc98628f2b5fad20b6a6f7553b1c4ec5ddba07d67ed43b9",
+      "use": "本轮在内存取得官方 PDF，核对对称与非对称结构及无等价项；不把方法选择等同 ISO 强制条款。"
+    },
+    "DWBP": {
+      "url": "https://www.w3.org/TR/dwbp/",
+      "sections": "BP5–11、BP15–16、BP27–30",
+      "use": "溯源、质量、版本、持久身份、采用适当形式化程度和反馈；具体实践方案不自动成为词表业务约束。"
+    },
+    "PROV": {
+      "url": "https://www.w3.org/TR/prov-o/",
+      "sections": "§3、§4",
+      "use": "实体、活动、责任者和派生；不规定每份记录必须是文件或使用某种哈希。"
+    },
+    "UUID": {
+      "url": "https://www.rfc-editor.org/rfc/rfc9562.html",
+      "sections": "§4、§5.4、§6",
+      "use": "UUID 和 URN 的标准化形式及算法选择；不证明所有词表名称必须使用 UUIDv4。"
+    },
+    "URI": {
+      "url": "https://www.w3.org/TR/cooluris/",
+      "sections": "§3–4、§6.1",
+      "use": "HTTP 发布场景的可解析 URI 指引；该文明确不覆盖非 HTTP URI 应用，不据此否定本地 URN。"
+    },
+    "SHACL": {
+      "url": "https://www.w3.org/TR/shacl/",
+      "sections": "§1.5、§2.1.4、§3.5–3.6、§4.2",
+      "use": "校验图、形状、报告与基数；项目放行不等于图满足全部标准语义。"
+    },
+    "TURTLE": {
+      "url": "https://www.w3.org/TR/turtle/",
+      "sections": "§2、§6",
+      "use": "前缀、三元组、列表与注释；不提供全部本体推理。"
+    },
+    "OWL": {
+      "url": "https://www.w3.org/TR/owl2-syntax/#Annotation_Properties",
+      "sections": "Annotation Properties",
+      "use": "停用和版本注释不是项目工作流状态或自动内容迁移许可。"
+    }
+  },
+  "rules": [
+    {
+      "id": "R01",
+      "rule": "资源、类型、属性和值的区分",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表资源与字段.md",
+          "line": 32,
+          "text": "C01 和 L01 是具体资源，`skos:Concept` 是类，`rdf:type` 是属性。类和属性也有自己的标识；“资源”是统称，不能据此把类型、字段和具体记录混成同一层。[类型声明](https://www.w3.org/TR/rdf-schema/#ch_type)"
+        }
+      ],
+      "standard_refs": [
+        "RDF",
+        "SKOS"
+      ],
+      "basis_kind": "标准要求",
+      "action": "保留",
+      "assessment": "资源是统称；类型和属性亦为有身份的资源，但职责不同。没有发现实现习惯替代模型。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R02",
+      "rule": "核心类型互斥及有序集合子类",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 30,
+          "text": "主要记录显式声明 `rdf:type`，可以保留其他不冲突的类型。Concept、ConceptScheme、Collection 与 Label 不兼作彼此；OrderedCollection 是 Collection 的子类。说明和列表可以使用空白节点，不为填满类型字段而新造类。[SKOS 类型](https://www.w3.org/TR/skos-reference/)、[SKOS-XL 类型](https://www.w3.org/TR/skos-reference/#xl)"
+        }
+      ],
+      "standard_refs": [
+        "SKOS"
+      ],
+      "basis_kind": "标准要求与项目要求",
+      "action": "保留",
+      "assessment": "类型互斥及子类来自标准；显式写出类型属于便于交换与校验的项目完整性要求。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R03",
+      "rule": "一份综合词表及主图唯一归属",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表整体设计.md",
+          "line": 41,
+          "text": "本项目采用一个自有 ConceptScheme 统一标识综合词表的收录范围，便于形成一致的范围声明与交付。SKOS 允许更一般的多体系表示，单一自有词表是项目选择；来源自己的体系及元数据仍独立保留。概念身份与浏览集合身份分开。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 82,
+          "text": "| `skos:inScheme` | 1 | 自有 ConceptScheme IRI | 自有主词表中的概念统一属于同一词表；分组成员用 Collection 的 member 表达，层级归属用概念间的 broader 表达，原来源归属在来源图及对账记录中保留 |"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "PRIMER"
+      ],
+      "basis_kind": "标准允许的项目选择",
+      "action": "保留",
+      "assessment": "用户明确要求综合词表。单一主图范围有独立用途理由，SKOS 允许；来源多重归属另存，未把项目限制冒充标准。原提案虽提及延续现状，结论仍可独立论证。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R04",
+      "rule": "来源、项目选择、交付及历史分开",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表整体设计.md",
+          "line": 27,
+          "text": "来源事实、项目选择和生成结果分别保存。数据沿下列职责流转，应用读取固定版本的产物。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 7,
+          "text": "合同适用于综合词表的主图、独立名称记录、映射及配套管理记录。来源图保留原词表及其版本；历史图保留当时描述。三者可以关联查询，但不能无差别合并为同一个待发布版本。"
+        }
+      ],
+      "standard_refs": [
+        "RDF",
+        "PROV",
+        "DWBP"
+      ],
+      "basis_kind": "有依据的项目设计",
+      "action": "保留",
+      "assessment": "支持来源可追溯、区分断言上下文及版本；不要求特定物理目录。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R05",
+      "rule": "同名不自动合并及按需整合",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表整体设计.md",
+          "line": 55,
+          "text": "采用统一收录、按需整合。导入不以全量消重或映射为前提；对照需求出现后，再比较定义、范围、关系和用途。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 51,
+          "text": "同名概念保持独立身份并诊断歧义；名称相同不证明语义相同。限定文字、缩写、词形与组合表达按依据保留，不统一改写为全称或小写。来源只有普通标签时，通过可追溯对应登记 XL 名称；普通标签只作为投影，不构成第二份独立编辑源。"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "PRIMER"
+      ],
+      "basis_kind": "有依据的项目设计",
+      "action": "保留",
+      "assessment": "名称不足以证明概念同一；先导入后按实际对应需求判断，符合获取已有词表用于知识库的需求。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R06",
+      "rule": "概念关系与浏览组织分开",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表整体设计.md",
+          "line": 69,
+          "text": "概念关系表达含义，来源结构保存原组织方式，集合提供浏览或交付范围。应用可以共同展示，数据中仍分别维护。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 145,
+          "text": "空组保留并提示，不自动补成员。集合不能作为概念上下位、相关或映射关系的端点；组间细分不自动等同嵌套 member，组代码也不与概念代码合并身份空间。"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "ISO-MODEL"
+      ],
+      "basis_kind": "标准语义与用途选择",
+      "action": "保留",
+      "assessment": "避免把集合成员、目录嵌套及共现当成概念层级。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R07",
+      "rule": "主要资源稳定 IRI及空白节点范围",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 28,
+          "text": "概念、词表、名称及需要持久引用的集合使用稳定 IRI。保留适用的来源身份；本地身份分配、修订与共享引用按[名称编辑](设计-词表维护.md#名称编辑)处理。名称文字、排序及目录位置不决定身份。"
+        }
+      ],
+      "standard_refs": [
+        "RDF",
+        "DWBP"
+      ],
+      "basis_kind": "有依据的项目选择",
+      "action": "保留",
+      "assessment": "可持续引用需要稳定可定位身份；RDF 仍允许空白节点，设计已保留说明和列表中的适用范围。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R08",
+      "rule": "新增名称固定 UUIDv4 URN",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表整体设计.md",
+          "line": 107,
+          "text": "为保证身份不依赖可变文字，本项目对新增本地名称一次性分配 `urn:uuid:` 加 UUIDv4，由导入、编辑和翻译共用的登记持续复用。此政策不改写概念、集合、内容单元或来源 URI。拼写或格式修订确认属于同一记录时保留身份；新增表达或另一语言形式另建名称；首选与别名互换只改变概念到名称的角色关系。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表维护.md",
+          "line": 57,
+          "text": "本地新增名称按已采纳身份政策一次性分配 `urn:uuid:` 加 UUIDv4 的 URI，以免身份依赖可变文字。首次分配与来源、编辑或译文记录共同保存；重试和重建复用既有分配。回退不删除分配历史，也不把 URI 再用于另一名称；每个版本固定适用的登记快照。"
+        }
+      ],
+      "standard_refs": [
+        "UUID",
+        "URI",
+        "DWBP"
+      ],
+      "basis_kind": "已采纳技术选择",
+      "action": "修订",
+      "assessment": "不依赖可变文字的身份要求有依据；UUIDv4 是成熟选项，但现有论证没有区分稳定身份要求与具体 URI 策略。不能据此认定 UUIDv4 错误。",
+      "recommendation": "保留既有身份；补 RFC 9562 依据，并把 UUIDv4 放到明确的身份策略中，说明本地分配与未来可解析发布的边界。",
+      "issue": "F08"
+    },
+    {
+      "id": "R09",
+      "rule": "来源名称身份保留及统一登记",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表整体设计.md",
+          "line": 105,
+          "text": "概念身份、名称身份及文字版本分别维护。保留来源名称标识；来源仅给文字时，初次登记保存来源概念、角色、完整文字值、语言及本地名称身份。之后的记录连续性须有依据，不能仅靠文字相似度匹配。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表维护.md",
+          "line": 45,
+          "text": "导入、人工编辑和翻译共用同一名称登记。内容由各自来源或编辑输入负责；登记保存身份与版本对应，不成为第二份术语编辑源。名称角色及完整语言标签按[多语言词表](设计-多语言词表.md)处理。"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "PROV",
+        "DWBP"
+      ],
+      "basis_kind": "有依据的项目设计",
+      "action": "保留",
+      "assessment": "同名 Label 不必同一资源；登记解决连续性和重复分配，不替代来源证据。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R10",
+      "rule": "文字修订、新表达、角色及历史分开",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表整体设计.md",
+          "line": 107,
+          "text": "为保证身份不依赖可变文字，本项目对新增本地名称一次性分配 `urn:uuid:` 加 UUIDv4，由导入、编辑和翻译共用的登记持续复用。此政策不改写概念、集合、内容单元或来源 URI。拼写或格式修订确认属于同一记录时保留身份；新增表达或另一语言形式另建名称；首选与别名互换只改变概念到名称的角色关系。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 118,
+          "text": "角色由概念到名称的 prefLabel、altLabel 或 hiddenLabel 关系表达，不写成名称的全局状态。不同语言表达分别登记身份；同一名称文字的历史版本不全部并入当前 `literalForm`。名称可以带说明、来源和日期，保留这些描述的原附着对象。[SKOS-XL §B.2–B.4](https://www.w3.org/TR/skos-reference/#xl)"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "RDF",
+        "DWBP"
+      ],
+      "basis_kind": "标准约束下的项目选择",
+      "action": "保留",
+      "assessment": "同一版本 Label 只有一个文字值；版本图与当前图隔离，才能保留同一身份的修改历史。ISO 正文对记录连续性的具体要求不据此宣布已核。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R11",
+      "rule": "语言首选唯一及标签角色互斥",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 49,
+          "text": "同一资源在每个完整语言标签下最多一个普通首选名，首选、别名和隐藏名的文字值集合两两不相交。项目另要求概念在同一完整标签下最多引用一个 XL 首选名称资源；不能用两个同文字 Label 规避该要求。[SKOS S13、S14](https://www.w3.org/TR/skos-reference/#labels)"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "5646"
+      ],
+      "basis_kind": "标准要求",
+      "action": "保留",
+      "assessment": "核对 S13、S14 及完整语言标签，不把中文所有变体合成一个语言值。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R12",
+      "rule": "每语言仅一个 XL 首选资源",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 49,
+          "text": "同一资源在每个完整语言标签下最多一个普通首选名，首选、别名和隐藏名的文字值集合两两不相交。项目另要求概念在同一完整标签下最多引用一个 XL 首选名称资源；不能用两个同文字 Label 规避该要求。[SKOS S13、S14](https://www.w3.org/TR/skos-reference/#labels)"
+        }
+      ],
+      "standard_refs": [
+        "SKOS"
+      ],
+      "basis_kind": "额外项目限制",
+      "action": "待核",
+      "assessment": "SKOS 的文字值唯一不等于 Label 身份唯一；两个不同 Label 可有同一 literalForm。尚缺支持额外资源唯一性的编辑需求及来源处理方案。",
+      "recommendation": "先补两个同文来源名称的场景，决定是否只约束首选文字，或保留资源唯一并明示选择与身份保留方法。",
+      "issue": "F09"
+    },
+    {
+      "id": "R13",
+      "rule": "本地概念有名与所有集合必名",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 83,
+          "text": "| `skosxl:prefLabel` | 1..n | Label IRI | 首选名称的维护入口；本地新增概念必须有名，来源缺名保留警告 |"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 127,
+          "text": "| `skos:prefLabel` | 1..n | 标签文字 | 分组名称，按名称规则；来源缺名保留警告 |"
+        }
+      ],
+      "standard_refs": [
+        "ISO-XSD",
+        "SKOS"
+      ],
+      "basis_kind": "标准模型参照与过度泛化",
+      "action": "修订",
+      "assessment": "公开 schema 支持概念有 PreferredTerm、ConceptGroup 有标签，但 Array 的 NodeLabel 可选。不能把所有 Collection 都当作必需命名的 ConceptGroup。",
+      "recommendation": "保留本地概念必名；分开概念组、数组和一般集合的标签要求，来源缺项另行处理。",
+      "issue": "F07"
+    },
+    {
+      "id": "R14",
+      "rule": "完整文字、词形、限定词及同名歧义",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 51,
+          "text": "同名概念保持独立身份并诊断歧义；名称相同不证明语义相同。限定文字、缩写、词形与组合表达按依据保留，不统一改写为全称或小写。来源只有普通标签时，通过可追溯对应登记 XL 名称；普通标签只作为投影，不构成第二份独立编辑源。"
+        }
+      ],
+      "standard_refs": [
+        "RDF",
+        "SKOS",
+        "IFLA"
+      ],
+      "basis_kind": "标准方法与项目保真要求",
+      "action": "保留",
+      "assessment": "不进行无依据的大小写、复数或全称统一；语言惯例和概念范围须分别判断。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R15",
+      "rule": "名称角色由概念到名称关系表达",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 118,
+          "text": "角色由概念到名称的 prefLabel、altLabel 或 hiddenLabel 关系表达，不写成名称的全局状态。不同语言表达分别登记身份；同一名称文字的历史版本不全部并入当前 `literalForm`。名称可以带说明、来源和日期，保留这些描述的原附着对象。[SKOS-XL §B.2–B.4](https://www.w3.org/TR/skos-reference/#xl)"
+        }
+      ],
+      "standard_refs": [
+        "SKOS"
+      ],
+      "basis_kind": "标准表示",
+      "action": "保留",
+      "assessment": "同一名称资源可有不同使用关系；角色不是 Label 全局状态。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R16",
+      "rule": "概念用 XL而词表集合用普通标签",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 70,
+          "text": "同一名称记录的文字修订、新表达及角色变动分别处理。不同语言表达登记不同名称身份；词表和集合名称继续采用普通 SKOS 标签。身份连续性、共享名称的引用影响及回退由维护和版本合同规定，不另设一套翻译专用身份登记。"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "THES"
+      ],
+      "basis_kind": "项目简化选择",
+      "action": "修订",
+      "assessment": "标准允许更广的 Label 使用，SKOS-Thes 也给出集合标签用 XL 的方式。独立维护概念名称能支撑本次用途，但保持旧普通合同本身不是排除其他对象的理由。",
+      "recommendation": "明确独立名称管理的对象范围与来源 XL 标签保留策略；普通标签可作默认方式，不写成标准的类型限制。",
+      "issue": "F09"
+    },
+    {
+      "id": "R17",
+      "rule": "说明保留附着对象及具体依据",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 151,
+          "text": "说明可以附着于概念、名称、集合或词表，须保持其所描述的对象。定义不因名称指向某概念就自动提升为概念定义；范围说明不自动成为定义。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 151,
+          "text": "说明可以附着于概念、名称、集合或词表，须保持其所描述的对象。定义不因名称指向某概念就自动提升为概念定义；范围说明不自动成为定义。"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "ISO-XSD",
+        "PROV"
+      ],
+      "basis_kind": "标准允许的项目保真要求",
+      "action": "保留",
+      "assessment": "ISO 交换模型的 Term Definition 与 SKOS 未限定说明主体的语义可兼容；不能自动把名称语境提升为概念定义。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R18",
+      "rule": "本地独立说明单一带语言正文",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 163,
+          "text": "| `rdf:value` | 本地独立说明为 1 | 一个带语言的正文值；来源已有多语或嵌套结构继续保留 |"
+        }
+      ],
+      "standard_refs": [
+        "RDF",
+        "SKOS",
+        "PROV"
+      ],
+      "basis_kind": "有理由的项目完整性要求",
+      "action": "保留",
+      "assessment": "单一正文便于每个语言版本独立引用和记录依据；这不是 rdf:value 原生基数。来源已有多语结构的保留例外已明确。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R19",
+      "rule": "元数据值类型沿用当前字段并集",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 72,
+          "text": "| `dcterms:language` | 0..n | IRI | 实际提供的语言标识，不代替每个名称的语言标签 |"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 300,
+          "text": "| `dcterms:type` | 0..n | 普通文字 | 来源类别信息，不冒充 RDF 类型或本地分类决定 |"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 288,
+          "text": "| `dc:creator` | 0..n | 普通文字 | 来源创建者名称，不自动成为自有词表创建者 |"
+        }
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DC-LANG",
+        "DC-TYPE"
+      ],
+      "basis_kind": "旧合同继承且缺少通用依据",
+      "action": "修订",
+      "assessment": "dcterms:language 官方明确允许资源或 BCP 47 文字；type 并非只能为来源类别字符串。若把表当完整通用入口，会排除合法来源值。",
+      "recommendation": "逐项区分标准值域、自有输出选择和来源原值；删除无理由的通用 IRI-only 或 literal-only 限制，不据此改写来源。",
+      "issue": "F02"
+    },
+    {
+      "id": "R20",
+      "rule": "日期可选单值及事件含义",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 257,
+          "text": "概念、名称、说明和集合可用 `dcterms:source` 关联来源，以 `prov:wasDerivedFrom` 表示实际派生；各为 `0..n` 个 IRI。创建和修改日期各 `0..1`，按事实填写。属性语义与具体依据分开，不要求每个节点重复同一整套证明。[PROV-O](https://www.w3.org/TR/prov-o/)"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 141,
+          "text": "| `dcterms:modified` | 0..1 | 日期值 | 来源分组的修改时间 |"
+        }
+      ],
+      "standard_refs": [
+        "DCMI",
+        "ISO-XSD"
+      ],
+      "basis_kind": "公开交换模型参照",
+      "action": "修订",
+      "assessment": "ISO 交换模型的概念和术语日期为可选单值，能支持本地记录设计；DCMI 不规定所有来源同一基数，来源记录与本地记录的时间对象仍需分开。 本轮还核到 ISO 交换 schema 的 date 类型为 xsd:date 与 xsd:dateTime 的联合，因此本地日期格式本身有公开模型参照，不能误判为纯实现习惯。",
+      "recommendation": "本地记录可保留单一创建和最近修改时间；不要把此基数无条件施加给所有来源日期。",
+      "issue": "F07"
+    },
+    {
+      "id": "R21",
+      "rule": "标题只能由首选标签派生",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 286,
+          "text": "| `dcterms:title` | 0..n | 标签文字或来源原有文字 | 来源标题保留；自有输出仅在兼容需要时从 prefLabel 派生同值标题，不独立维护 |"
+        }
+      ],
+      "standard_refs": [
+        "DCMI",
+        "SKOS"
+      ],
+      "basis_kind": "旧兼容策略上升为通用约束",
+      "action": "删除",
+      "assessment": "DCMI title 与 SKOS prefLabel 含义不同，没有标准要求二者相等。当前兼容需要可以支持某个输出映射，不能证明全局禁止独立标题。",
+      "recommendation": "从通用数据规范删除强制同值及唯一派生限制；具体应用确需复制时在其输出合同规定。示例中的同值标题本身仍合法。",
+      "issue": "F05"
+    },
+    {
+      "id": "R22",
+      "rule": "标识、分类代码和语言文字分开",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 108,
+          "text": "IRI、identifier 与 notation 分别表示对象身份、来源标识和分类代码，不因部分值相同全局合并。definition、scopeNote 与 description 的职责也分别保留；说明可用文字、资源或文献引用，不为了字符串接口删除说明对象。[SKOS 说明属性](https://www.w3.org/TR/skos-reference/#notes)"
+        }
+      ],
+      "standard_refs": [
+        "RDF",
+        "SKOS",
+        "DCMI"
+      ],
+      "basis_kind": "标准语义",
+      "action": "保留",
+      "assessment": "保留 notation 的数据类型及来源标识上下文，不把代码或名称当全局身份。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R23",
+      "rule": "来源元数据保持原对象及权利归属",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 282,
+          "text": "来源描述仍附着于原对象，不是所有自有节点都要填写的字段。自有词表只有在相应信息独立、明确时才能使用，不能汇总来源而自动取得其创建者、许可、格式或版本。"
+        }
+      ],
+      "standard_refs": [
+        "DCMI",
+        "PROV",
+        "DWBP"
+      ],
+      "basis_kind": "标准方法与来源保真",
+      "action": "保留",
+      "assessment": "不能因汇集数据而取得来源作者、许可、格式或更新时间；值类型问题另由 R19 处理。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R24",
+      "rule": "成员、词表归属及概念关系分开",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 137,
+          "text": "| `skos:member` | 0..n | Concept 或 Collection IRI | 普通集合的成员；有序集合按 memberList 派生，不表示上下位语义 |"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 143,
+          "text": "分组须能通过范围说明或结构化规则解释成员依据，不要求每个成员重复一段说明。自有领域成员引用本词表概念；嵌套子集合必须能在本次数据中定位。成员可进入多个组，不复制概念；来源组同名不证明组身份相同。"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "ISO-MODEL"
+      ],
+      "basis_kind": "标准语义与项目选择",
+      "action": "保留",
+      "assessment": "Collection 成员可为概念或集合；inScheme 不是 Concept 专用，组成员不产生 broader。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R25",
+      "rule": "数组和概念组的原结构保留",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表整体设计.md",
+          "line": 95,
+          "text": "来源数组须保留上层连接、节点标签、成员及顺序；概念组须保留分组依据和组间结构。若仅输出通用 Collection 视图，应说明未投影的信息及回查位置。节点标签不能冒充可标引概念，也不能因为字段可表达就自动采用全部来源扩展。[ISO 公开模型](https://www.niso.org/schemas/iso25964/schema-intro)"
+        }
+      ],
+      "standard_refs": [
+        "ISO-XSD",
+        "THES"
+      ],
+      "basis_kind": "公开模型依据",
+      "action": "保留",
+      "assessment": "数组、概念组、上层连接、顺序与节点标签职责不同；通用集合投影可能丢失信息，须明示。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R26",
+      "rule": "分组关系端点及推导",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 139,
+          "text": "| `iso-thes:subGroup` | 0..n | Collection IRI | 保留来源表达；自有细分需要输出时由已确定的 superGroup 关系派生，不转成概念层级 |"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 140,
+          "text": "| `iso-thes:superGroup` | 0..n | Collection IRI | 需要此种分组细分时的主要维护方向；不能仅凭类似名称就认定它与 member 完全相同 |"
+        }
+      ],
+      "standard_refs": [
+        "THES"
+      ],
+      "basis_kind": "标准扩展约束遗漏",
+      "action": "修订",
+      "assessment": "扩展的两端为 ConceptGroup，关系具有传递性和成员包含含义；ThesaurusArray 与 ConceptGroup 互斥。字段表只写 Collection 过宽。",
+      "recommendation": "补专用类型、成员包含、传递与逆关系条件；未选择该扩展的输出不接受这组属性作为普通集合关系。",
+      "issue": "F01"
+    },
+    {
+      "id": "R27",
+      "rule": "成员列表唯一、完整和有限",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 138,
+          "text": "| `skos:memberList` | 有序集合为 1 | RDF 列表 | 有限、完整、无循环；保存顺序，允许空列表 |"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "RDF"
+      ],
+      "basis_kind": "标准上限与项目完整性要求",
+      "action": "保留",
+      "assessment": "S35 提供功能性，S36 提供成员推导；显式一个列表及有限无环是可读取有序成员的项目要求，不称为全部原生完整性条件。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R28",
+      "rule": "新增层级环和自关联禁止",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 335,
+          "text": "项目另要求同语言最多引用一个首选名称资源，并阻止本地新增自关联和层级环。SKOS 并不普遍禁止所有环和自关联；既有来源异常按固定版本与具体三元组记录，新值不能自动继承旧豁免。跨概念同名、冗余祖先连接等先诊断和复核，不以字符串比较或删边算法自动处理。"
+        }
+      ],
+      "standard_refs": [
+        "SKOS"
+      ],
+      "basis_kind": "项目质量选择",
+      "action": "保留",
+      "assessment": "SKOS 不普遍禁止所有自关联和环；面向词表层级和检索的项目可以禁止新增，设计已注明来源与新增的区别。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R29",
+      "rule": "词表与自建集合范围说明必填",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 63,
+          "text": "| `skos:scopeNote` | 1..n | 说明值 | 明确收录范围、排除情况和使用边界；是项目的词表级要求，不强加给每个来源词表 |"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 131,
+          "text": "| `skos:scopeNote` | 自建 1..n；继承 0..n | 说明值 | 用途、成员纳入与排除、排序依据及相邻分组的区别；可以引用明确规则 |"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "DWBP"
+      ],
+      "basis_kind": "有理由的项目要求",
+      "action": "保留",
+      "assessment": "能解释收录及分组依据是明确项目需求；说明可引用规则，不要求每成员重复说明。不是 SKOS 原生必填。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R30",
+      "rule": "层级细分类的成立条件",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 183,
+          "text": "层级可表达种属、实例或符合条件的整体部分。来源明确给出细分时保留；仅有 BT／NT 时不猜细分，也不因 isPartOf 自动增加 broader。学科与研究对象、共现或目录嵌套都不能独自证明层级。[层级关系](概述-层级关系.md#成立条件)"
+        }
+      ],
+      "standard_refs": [
+        "ISO-XSD",
+        "SKOS"
+      ],
+      "basis_kind": "标准方向明确但业务原文核验有限",
+      "action": "待核",
+      "assessment": "SKOS broader 不细分全部层级类型；公开 ISO schema 可见 role，不能替代未完整核验的业务条款。尤其整体部分的适用条件不能仅以“符合条件”概括。",
+      "recommendation": "保留来源已明示类型；在核到业务原文之前，不把目录或一般 isPartOf 自动采纳为层级。补齐具体条件及来源定位。",
+      "issue": "U01"
+    },
+    {
+      "id": "R31",
+      "rule": "相关与层级互斥及不从共现推导",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 185,
+          "text": "related 与层级可达关系互斥。同级可以有明确的相关关系，但不能全部自动相连。层级环、自相关和集合循环按适用规则诊断；本地新增与固定来源异常分别处理，不冒称 SKOS 普遍禁止所有环或自关联。[相关关系](概述-相关关系.md#成立条件)"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "PRIMER"
+      ],
+      "basis_kind": "标准约束与内容判断",
+      "action": "保留",
+      "assessment": "S27 及关系说明支持互斥；共现不充分证明语义相关，需另有含义与用途判断。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R32",
+      "rule": "逆向表达及唯一维护事实",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 171,
+          "text": "主要维护方向与派生表达分别确定，不能建立两套互相独立的人工输入。"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "DCMI"
+      ],
+      "basis_kind": "标准语义下的项目编辑策略",
+      "action": "保留",
+      "assessment": "保持 inverse/symmetric 表达一致有标准基础；以 broader 等作为主要入口是防止重复冲突的选择，不拒绝来源反向表达。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R33",
+      "rule": "映射语义及精确映射互斥",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 203,
+          "text": "| `skos:exactMatch` | 0..n | Concept IRI | 在广泛检索应用中可高度确信互换的对应；具有传递性，不等于 owl:sameAs，不合并双方全部属性 |"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 331,
+          "text": "例如，同一对端点同时存在 `exactMatch` 与 `broadMatch`，违反 SKOS S46；经多条 `exactMatch` 推得的冲突同样需要发现。这里的等价推导只服务一致性检查，不是 `owl:sameAs`，不合并概念属性，也不产生新的映射使用许可。[SKOS 映射规则](https://www.w3.org/TR/skos-reference/#mapping)、[SKOS-XL](https://www.w3.org/TR/skos-reference/#xl)"
+        }
+      ],
+      "standard_refs": [
+        "SKOS"
+      ],
+      "basis_kind": "标准要求",
+      "action": "保留",
+      "assessment": "exact/close/宽窄/相关映射各有语义；S46 冲突及相应推导须检查，exactMatch 不等于 sameAs。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R34",
+      "rule": "映射版本、用途和方向记录",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 223,
+          "text": "| 使用方向 | 单向或明确批准的双向 | 表达应用允许怎样使用，不改变 RDF 属性本身的语义 |"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 224,
+          "text": "| 用途与范围 | 至少一个具体用途及覆盖范围 | 区分浏览参照、查询转换、标引转换等；不能跨用途默认为有效 |"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "PROV",
+        "DWBP"
+      ],
+      "basis_kind": "有理由的项目使用约束",
+      "action": "保留",
+      "assessment": "项目需要区分参照、查询及标引；应用许可与 RDF 逻辑语义不能混同。元数据不能使不满足 exactMatch 含义的关系变得合法。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R35",
+      "rule": "组合映射的 AND OR 与嵌套",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 231,
+          "text": "表达式中的 `AND`／`OR` 表示概念范围的交集／并集。转换成查询条件或标引动作时按具体用途解释，不能把并集对应直接理解成标引时任选其中一个词。"
+        }
+      ],
+      "standard_refs": [
+        "PRIMER",
+        "ISO-MODEL"
+      ],
+      "basis_kind": "已采纳逻辑要求但交换合同不足",
+      "action": "待核",
+      "assessment": "不把组合拆为独立 exactMatch 是合理保真要求；现有逻辑合同尚未选定成熟交换表示，不能宣称已经覆盖 ISO Part 2 的全部组合映射。",
+      "recommendation": "保留组合原文和不可错误投影的约束；待核对应标准/交换模型与实际消费语义后，决定具体表示。",
+      "issue": "U02"
+    },
+    {
+      "id": "R36",
+      "rule": "复合入口不当作多个别名",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 233,
+          "text": "组合表达保留运算含义：交集与并集的目标不能各自投影成多条 `exactMatch`。词表内部“一个入口须共同使用多个首选词”另记入口名称标识、至少两个目标首选名称、相应概念标识、共同使用条件、词表版本及依据与采纳；不能改成多条 `altLabel`，也不为这个入口虚构一个已收录概念。原始组合及来源依据必须保留，未经确定的 RDF 编码不进入普通 SKOS 映射输出。[复合表达](概述-复合词的处理.md#整体含义)、[对应表第 7 页](https://groups.niso.org/higherlogic/ws/public/download/12351/Correspondence%20ISO25964-SKOSXL-MADS-2013-12-11.pdf)"
+        }
+      ],
+      "standard_refs": [
+        "PRIMER",
+        "ISO-XSD"
+      ],
+      "basis_kind": "公开模型可支持的保真要求",
+      "action": "保留",
+      "assessment": "SplitNonPreferredTerm/组合等价与一般 altLabel 不同，保留原结构而不虚造概念。具体编码仍按 R35 待核。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R37",
+      "rule": "按需直接映射和不自动中转",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表整体设计.md",
+          "line": 115,
+          "text": "采用选择性直接映射，为实际需要的两端保存对应。每项映射固定源与目标词表及版本、概念范围、关系、依据、用途、允许方向和复核条件；详细合同见[映射记录](设计-词表数据规范.md#映射记录)。"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "PRIMER"
+      ],
+      "basis_kind": "有理由的项目选择",
+      "action": "保留",
+      "assessment": "用户需要整合已有词表，不要求全量概念合并或建设中介词表；按需对照避免无依据扩大对应。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R38",
+      "rule": "BCP 47 语法、登记及范围分开",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 36,
+          "text": "校验分别回答三个问题：标签是否符合语法、其登记内容是否有效、是否在项目允许范围内。RDF 要求语言标签符合 BCP 47 语法，不能把 RDF 可解析或前缀匹配当成 IANA 登记有效性证明。登记校验记录所用注册表日期和哈希；已有库能完成的解析与匹配不自行重写。[RDF 1.1 §3.3](https://www.w3.org/TR/rdf11-concepts/#section-Graph-Literal)、[RFC 5646 §2.2.9](https://www.rfc-editor.org/rfc/rfc5646.html#section-2.2.9)、[IANA 注册表](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)"
+        }
+      ],
+      "standard_refs": [
+        "5646",
+        "RDF"
+      ],
+      "basis_kind": "标准与项目范围区分",
+      "action": "保留",
+      "assessment": "语法可解析不证明登记有效，更不决定项目准用语言。固定注册表版本是可重复核对的项目办法。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R39",
+      "rule": "语言、文字系统、地区与规范化",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 25,
+          "text": "语言标签依 BCP 47，即 RFC 5646 与 RFC 4647；前者规定标签，后者规定匹配。语言、文字系统和地区是不同信息，不能互相替代。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 38,
+          "text": "新生成标签按明确的目标语言及适用规范形式登记；来源标签保留原始依据。大小写之外的标签替换、废弃子标签的 Preferred-Value 替换及文字规范化须有转换记录，不能借规范化自动改变收录范围或名称身份。未标语种的来源文字保留并提示，不能按文字外观补猜语言。[RFC 5646 §4.5](https://www.rfc-editor.org/rfc/rfc5646.html#section-4.5)"
+        }
+      ],
+      "standard_refs": [
+        "5646",
+        "4647"
+      ],
+      "basis_kind": "标准语义与来源保真",
+      "action": "保留",
+      "assessment": "不凭 zh 推断 Hans/Hant；比较与文字身份分开，来源转换留痕。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R40",
+      "rule": "语种和任务范围不由工具决定",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 16,
+          "text": "| 语言启用 | 分别明确收录、输出、翻译和消费范围，按相应权限采用；模型可表达不等于获准启用 |"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 19,
+          "text": "| 翻译范围 | 明确源语种、目标语种、字段和使用目的，不能以缺译为由自动扩展任务 |"
+        }
+      ],
+      "standard_refs": [
+        "IFLA",
+        "5646"
+      ],
+      "basis_kind": "用户范围与项目选择",
+      "action": "保留",
+      "assessment": "模型表达能力不自动启用语种，符合用户明确权限；来源保留与输出范围分别说明。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R41",
+      "rule": "跨语言概念对应及源语非权威",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 42,
+          "text": "把两个名称放在同一概念下，须核对它们在所采用范围内的含义及使用依据。语言不同本身既不要求新建概念，也不能证明可以共用概念。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 9,
+          "text": "语言是名称或说明的信息，RDF 不要求为每种语言建立一个 Concept 或专用语言资源。翻译所选的源语言也不天然取得概念裁决权。来源原文、项目采用及模型判断分别保留依据。"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "IFLA"
+      ],
+      "basis_kind": "标准方法与概念判断",
+      "action": "保留",
+      "assessment": "依据含义决定是否同一概念；不能让英语输入或字符串相似度裁决概念。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R42",
+      "rule": "允许缺译和非对称覆盖",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 21,
+          "text": "允许缺译和不强求对称是项目选择，服务于不同来源和不同完成程度的整合。IFLA §3.2、§3.3.6 提供结构与等价情况的比较，不替项目决定采用语言或要求所有译文齐备。[IFLA 指南](https://www.ifla.org/files/assets/hq/publications/professional-report/115.pdf)"
+        }
+      ],
+      "standard_refs": [
+        "IFLA",
+        "SKOS"
+      ],
+      "basis_kind": "官方方法支持的项目选择",
+      "action": "保留",
+      "assessment": "IFLA 对比对称与非对称，并给出无目标等价的保留方式；不强行造词或删除概念有明确依据。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R43",
+      "rule": "翻译记录和模型依据可追溯",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 66,
+          "text": "导入、人工编辑和翻译共用[名称登记](设计-词表维护.md#名称编辑)。译文记录至少关联所指对象、名称角色、源表达及版本、源语言、目标语言、译文、依据和责任者；概念名称另关联稳定的 Label IRI。模型只提供文字或判断，不自行决定概念身份、名称身份或语义采纳。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 85,
+          "text": "共用依据和执行信息可以按批记录，由单项引用；不得因此丢失某条译文的修订或适用性差异。模型译文记录实际模型和执行者，时间注明其含义；执行记录不能以推测补齐。复用及后续外部核验不改写原批次，也不提升整批译文的依据等级。"
+        }
+      ],
+      "standard_refs": [
+        "PROV",
+        "DWBP"
+      ],
+      "basis_kind": "有理由的项目设计",
+      "action": "保留",
+      "assessment": "明确源表达、版本、目标语言、执行者和证据；批次共用信息不抹去单条差异，不把模型输出冒充外部原文。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R44",
+      "rule": "译文保留与新版适用性分开",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 91,
+          "text": "保留译文记录与确认它适用于新版分别处理。已有译文不自动重译；需要修订时单独指定。下表的退出与失效条件优先于一般复用条件。"
+        }
+      ],
+      "standard_refs": [
+        "PROV",
+        "DWBP"
+      ],
+      "basis_kind": "有理由的项目版本策略",
+      "action": "保留",
+      "assessment": "用户已明确要求维护已有译文；记录事实与适用判断不同，文字变化本身不足以否定译文。它不是 ISO 统一规定的显示政策。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R45",
+      "rule": "退出失效优先与不按同名转移",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 91,
+          "text": "保留译文记录与确认它适用于新版分别处理。已有译文不自动重译；需要修订时单独指定。下表的退出与失效条件优先于一般复用条件。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 95,
+          "text": "| 原对象退出或 URI 改变 | 从新产物中退出旧对象的译文，保留历史；不按同名迁给新对象 |"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "DWBP"
+      ],
+      "basis_kind": "项目安全复用策略",
+      "action": "保留",
+      "assessment": "保留历史不等于继续有效；明确失效和身份变化不按名称自动迁移。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R46",
+      "rule": "每次从新基准重建多语言产物",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 107,
+          "text": "退出仅影响新生成的目标语言及多语言产物，不删除源描述、来源材料或历史批次。每次从固定的新源版本重建多语言产物，避免旧图只追加造成残留。"
+        }
+      ],
+      "standard_refs": [
+        "RDF",
+        "DWBP"
+      ],
+      "basis_kind": "实践算法继承",
+      "action": "删除",
+      "assessment": "避免旧数据残留是目标；全量重建只是达到目标的方式，合格的增量更新也可满足相同结果。未找到要求唯一采用重建的标准或需求依据。",
+      "recommendation": "删除通用设计中的强制重建方式，保留发布内容与所选版本一致、清理退出对象及可验证恢复的要求。",
+      "issue": "F04"
+    },
+    {
+      "id": "R47",
+      "rule": "筛选与单个名称选择分开",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 115,
+          "text": "| 按语言筛选名称 | RFC 4647 Basic Filtering | 使用明确的语言范围；`zh` 可匹配 `zh-Hans` 等扩展标签，筛选结果可以有多个 |"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 116,
+          "text": "| 选择单个显示名称 | RFC 4647 Lookup | 在该资源当前可展示的首选名中，依语言优先列表逐项查找；按标准缩短请求标签，不猜测更具体的文字系统或地区 |"
+        }
+      ],
+      "standard_refs": [
+        "4647"
+      ],
+      "basis_kind": "标准机制的明确采用",
+      "action": "保留",
+      "assessment": "Basic Filtering 返回集合，Lookup 返回单项；具体标签优先列表和标准回退实例正确。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R48",
+      "rule": "固定英文默认回退",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 117,
+          "text": "| 未匹配到名称 | 明确的默认处理 | 本项目默认先完成用户语言列表，再以 `en` 查找，仍无首选名则显示标识与缺名提示 |"
+        }
+      ],
+      "standard_refs": [
+        "4647"
+      ],
+      "basis_kind": "由当前批译继承的项目默认",
+      "action": "修订",
+      "assessment": "原决定写“保留英文回退”，确有已采纳来源；RFC 要求定义默认行为但不指定英语。尚未给出适用于整个未来多语言词表的独立需求理由。",
+      "recommendation": "通用设计要求声明并执行默认策略；英文作为当前消费配置保留，其他语种不自动套用。需调整原采纳中的适用范围。",
+      "issue": "F06"
+    },
+    {
+      "id": "R49",
+      "rule": "不改标签冒充回退、搜索返回概念身份",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 119,
+          "text": "项目的默认语言选择不来自 RFC。显示请求使用具体语言标签的有序列表；不使用通配范围挑选一个任意名称。多个同完整标签首选名是数据冲突，不能靠文件排序解决。返回名称保留实际语言标签；回退不改写标签，不把隐藏名当默认显示名。[RFC 4647 §3.3.1、§3.4、§3.4.1](https://www.rfc-editor.org/rfc/rfc4647.html#section-3)"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 129,
+          "text": "名称搜索可以使用首选名、别名和隐藏名，命中结果返回概念身份并说明匹配入口。语言匹配不证明名称同义，不自动执行简繁转换、概念合并或跨词表查询扩展；映射消费仍按[整体设计](设计-词表整体设计.md#映射与应用)检查用途和方向。待复核译文若按既有规则继续显示，适用性提示必须随名称一起提供。"
+        }
+      ],
+      "standard_refs": [
+        "4647",
+        "SKOS"
+      ],
+      "basis_kind": "标准方法与检索要求",
+      "action": "保留",
+      "assessment": "匹配不证明等价，也不改变文字语言；隐藏名可检索而不默认显示。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R50",
+      "rule": "术语接口保留身份与编辑权",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 133,
+          "text": "词表与术语库都区分概念及名称，但各自承担不同的采纳和编辑职责。对接须分别核对概念对应、完整语言标签、名称依据及状态，不能按同形文字合并身份或转移编辑权。[术语设计](../terminology/设计-术语.md)"
+        }
+      ],
+      "standard_refs": [
+        "RDF",
+        "5646"
+      ],
+      "basis_kind": "明确的项目治理要求",
+      "action": "保留",
+      "assessment": "语言精度和概念对应不能由同名或 XL 推定；用户已规定词表与正式术语职责，非实现偶然性。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R51",
+      "rule": "编辑、名称登记、审核和发布分工",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表维护.md",
+          "line": 11,
+          "text": "| 名称登记 | 维护来源名称与本地名称身份的连续对应 | 不决定译文正确性或接管术语准入 |"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表维护.md",
+          "line": 12,
+          "text": "| 审核与采纳 | 核对含义、用途、依据和授权，作出具体决定 | 不由生成器、相似度或字段合法性推导采纳 |"
+        }
+      ],
+      "standard_refs": [
+        "PROV",
+        "ISO-MODEL"
+      ],
+      "basis_kind": "有理由的项目流程",
+      "action": "保留",
+      "assessment": "责任、内容与身份分开，程序不自动取得采用权限；具体岗位名称并非标准强制。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R52",
+      "rule": "具体值变更与可追溯依据",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表维护.md",
+          "line": 19,
+          "text": "每项变更记录所指对象、适用版本、字段与前后值、原因、证据、责任者、时间及相应授权。新增和退出可以有一侧为空；来源原样继承或批次共同依据可以共用记录，不要求重复人工填写。"
+        }
+      ],
+      "standard_refs": [
+        "PROV",
+        "DWBP"
+      ],
+      "basis_kind": "有理由的项目记录要求",
+      "action": "保留",
+      "assessment": "版本、前后值、原因与授权支持恢复和核对；不要求每条原样继承重新人工审批。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R53",
+      "rule": "来源选择不等于内容删除",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表维护.md",
+          "line": 27,
+          "text": "筛选只改变来源对综合词表的贡献，保留完整来源快照及每项排除的去向。同一身份仍由其他来源支持时，不能仅因某份来源退出就删除；本地新增对象也不随来源退出而消失。关系或编辑依赖的对象不再收录时，须核对失效引用并处理冲突。"
+        }
+      ],
+      "standard_refs": [
+        "PROV",
+        "SKOS"
+      ],
+      "basis_kind": "有理由的项目整合策略",
+      "action": "保留",
+      "assessment": "来源范围、身份及具体贡献分别追溯，保留仍由其他来源支持的身份；不能把暂未收录冒称来源停用。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R54",
+      "rule": "强制三方值比较作为同步流程",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表维护.md",
+          "line": 63,
+          "text": "字段编辑保存编辑前的来源值、本地目标值和最新来源值，用三方值比较处理后续同步："
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表整体设计.md",
+          "line": 125,
+          "text": "新来源版本与原版本、本地编辑进行三方比较，兼容变化共同保留，不兼容变化报告冲突。差异同时按记录中的明确依赖定位受影响的名称、译文、映射及分组依据，保存原因与处理结果；不扩大为全部语义邻居的全量重审。"
+        }
+      ],
+      "standard_refs": [
+        "PROV",
+        "DWBP"
+      ],
+      "basis_kind": "从既有同步办法继承",
+      "action": "修订",
+      "assessment": "原提案明确在既有三方比较上补清单。保存基准、来源变化与本地意图有需求理由，但现有依据未论证为何所有同步必须采用这一实现方法。",
+      "recommendation": "目标保留不静默覆盖、冲突依据完整和语义依赖复核；三方比较作为实践方案。若要保留为设计方法，补适用条件与方法依据。",
+      "issue": "F03"
+    },
+    {
+      "id": "R55",
+      "rule": "字段兼容不代表语义兼容",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表维护.md",
+          "line": 67,
+          "text": "- 不同属性、不同语言以及不冲突的值增删可以共同保留。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表维护.md",
+          "line": 74,
+          "text": "三方比较之外，每次来源变化按[来源更新](设计-词表整体设计.md#来源更新)定位依赖：记录变更来源、直接受影响的名称、映射或分组依据，以及影响原因和处理结果。值相同可以支持按既定规则复用；值不同不能自动证明概念含义变化。"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "PROV"
+      ],
+      "basis_kind": "需要明确检查顺序的项目规则",
+      "action": "修订",
+      "assessment": "不同字段的修改仍可能共同违反标签互斥、映射或范围约束；仅值比较通过不足以直接发布。正文后段提到统一校验，但“直接通过”容易被独立采用。",
+      "recommendation": "明确自动合并只是候选结果，须再次通过整体一致性和所需语义复核；不把字段独立当成语义独立。",
+      "issue": "F03"
+    },
+    {
+      "id": "R56",
+      "rule": "按明确依赖复核及影响清单",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表整体设计.md",
+          "line": 125,
+          "text": "新来源版本与原版本、本地编辑进行三方比较，兼容变化共同保留，不兼容变化报告冲突。差异同时按记录中的明确依赖定位受影响的名称、译文、映射及分组依据，保存原因与处理结果；不扩大为全部语义邻居的全量重审。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表维护.md",
+          "line": 76,
+          "text": "受影响清单针对本次同步生成，不扩大为全部语义邻居的重审，也不自动建立持续复核义务。译文处理统一引用[增量同步](设计-多语言词表.md#增量同步)，不在本篇维护第二套英文变化判据。"
+        }
+      ],
+      "standard_refs": [
+        "PROV",
+        "DWBP"
+      ],
+      "basis_kind": "有理由的项目维护要求",
+      "action": "保留",
+      "assessment": "避免无边界全量重审，但前提是依赖记录覆盖所需语义；依赖缺失应报告，不能宣称所有影响已查清。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R57",
+      "rule": "退出、停用、合并和拆分分开",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表维护.md",
+          "line": 84,
+          "text": "| 本地停止收录 | 可从主图排除，并清理该次输出中失效的关系和成员 | 保存原标识、退出版本及收录决定；不能声称来源已停用该概念 |"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表维护.md",
+          "line": 88,
+          "text": "| 概念拆分 | 保存原概念与多个后继对象的区别和适用条件 | 旧引用继续指向原历史记录，不能默认任选一个后继，也不能自动扩展为全部后继 |"
+        }
+      ],
+      "standard_refs": [
+        "DWBP",
+        "DCMI",
+        "OWL"
+      ],
+      "basis_kind": "有理由的项目历史与引用策略",
+      "action": "保留",
+      "assessment": "缺失不是停用、替代不是等价，多后继不能自动任选；记录真实事件而不伪造来源结论。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R58",
+      "rule": "使用量或缺内容不自动删除",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 278,
+          "text": "没有内容、使用频率为零或未归入领域组，不是停用或删除依据。停止收录、来源退出、停用及合并拆分按[退出合同](设计-词表维护.md#概念退出)分别记录，旧引用按[历史读取](../../governance/maintenance/设计-词表版本.md#历史读取)处理；不新增混合所有效力的 status 字段。[OWL 停用注释](https://www.w3.org/TR/owl2-syntax/#Annotation_Properties)、[替代属性](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/isReplacedBy/)"
+        }
+      ],
+      "standard_refs": [
+        "DWBP"
+      ],
+      "basis_kind": "明确项目政策",
+      "action": "保留",
+      "assessment": "本库从组织范围建模，不能让现有内容反向缩减范围；此为用户治理选择，不冒充普遍标准删除政策。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R59",
+      "rule": "来源、词表和展示版本独立关联",
+      "locations": [
+        {
+          "file": "docs/governance/maintenance/设计-词表版本.md",
+          "line": 7,
+          "text": "来源、自有词表和语言展示分别标识版本，通过明确关联确定一次交付所用的数据。"
+        }
+      ],
+      "standard_refs": [
+        "DWBP",
+        "PROV"
+      ],
+      "basis_kind": "有理由的项目版本设计",
+      "action": "保留",
+      "assessment": "三者变化不同步，明确关联可避免混读；无须采用某种目录布局。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R60",
+      "rule": "不可变发布及版本化引用",
+      "locations": [
+        {
+          "file": "docs/governance/maintenance/设计-词表版本.md",
+          "line": 21,
+          "text": "已发布版本不得原地修改。即使只修订名称、范围说明或映射，形成新交付时仍须保留新版本及差异；新构建与治理发版分别满足其条件。版本号格式、存储目录、清单格式和校验算法由交付方案规定。"
+        },
+        {
+          "file": "docs/governance/maintenance/设计-词表版本.md",
+          "line": 30,
+          "text": "| 历史含义或关系论述 | 概念标识、所引词表或来源版本 | 读取指定版本，不用当前内容冒充历史描述 |"
+        }
+      ],
+      "standard_refs": [
+        "DWBP"
+      ],
+      "basis_kind": "标准最佳实践支持的选择",
+      "action": "保留",
+      "assessment": "BP7、8、11 支持版本与历史；引用含义必须定位当时描述，当前入口和固定版本不同。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R61",
+      "rule": "旧引用读取及失效提示",
+      "locations": [
+        {
+          "file": "docs/governance/maintenance/设计-词表版本.md",
+          "line": 37,
+          "text": "未指定版本时先查当前词表。保留停用记录时返回该记录及提示；当前不再收录时，通过发布记录定位最近一个包含该身份的历史版本，显示版本、已知退出原因及有依据的后继对象。无法唯一定位时列出可用版本，缺少原因时明确未记录，不按目录或名称猜测。"
+        },
+        {
+          "file": "docs/governance/maintenance/设计-词表版本.md",
+          "line": 39,
+          "text": "指定版本时只读取该版本；记录或版本不可获得时明确报告，不能静默改读当前版本。历史对象不自动恢复为可标引对象，多个后继也不默认展开成全部新标记。不同退出事件按[概念退出](../../model/vocabulary/设计-词表维护.md#概念退出)处理。"
+        }
+      ],
+      "standard_refs": [
+        "DWBP"
+      ],
+      "basis_kind": "有理由的项目读取策略",
+      "action": "保留",
+      "assessment": "保留稳定标识与缺失说明。最近包含版本是项目默认，应显示其历史性质而非冒充当前有效。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R62",
+      "rule": "回退保留后续身份与决定历史",
+      "locations": [
+        {
+          "file": "docs/governance/maintenance/设计-词表版本.md",
+          "line": 49,
+          "text": "回退选择完整既有版本及其相容展示，不拼接旧词表与新译文。回退不删除后续名称分配，不重用身份，不撤销后续采纳或改写历史决定；版本快照明确该版本实际包含的记录。"
+        }
+      ],
+      "standard_refs": [
+        "DWBP",
+        "PROV"
+      ],
+      "basis_kind": "有理由的项目一致性要求",
+      "action": "保留",
+      "assessment": "回退读取版本不等于抹除现实发生过的身份和决策；防止身份复用与历史失真。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R63",
+      "rule": "来源许可、原文与派生证据分开",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 255,
+          "text": "依据支持具体陈述，不能用“概念来自某来源”代替名称、定义或关系的证据。模型判断不填写虚构的外部原文位置；沿用[语言依据结构](../terminology/决定-语言依据结构.md)。原样继承和已有批次授权按各自规则留痕，不重新要求全量逐项审批。"
+        }
+      ],
+      "standard_refs": [
+        "PROV",
+        "DCMI",
+        "DWBP"
+      ],
+      "basis_kind": "标准方法与用户依据要求",
+      "action": "保留",
+      "assessment": "dcterms:source 与派生、具体值证据和采纳职责不同；来源总体身份不足以证明每条解释。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R64",
+      "rule": "管理记录强制文件位置和文件集",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 247,
+          "text": "| 来源版本 | 来源标识、获取地址或交付位置、原件位置 | 各一个引用或地址 |"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 268,
+          "text": "| 发布 | 输出文件与哈希、校验与转换记录 | 完整文件清单；可回查未投影字段、原件和转换理由 |"
+        }
+      ],
+      "standard_refs": [
+        "PROV",
+        "DWBP"
+      ],
+      "basis_kind": "文件交付方案进入通用模型",
+      "action": "修订",
+      "assessment": "可定位和可核对版本是目标，文件集及字节哈希是文件交付合同。应避免把未明确采用的存储方式写成所有来源或发布的必需形态。",
+      "recommendation": "目标规定可追溯的来源、版本和交付对象；文件位置、完整文件清单、字节哈希及算法移到相应交付合同。现有文件方案继续有效。",
+      "issue": "F10"
+    },
+    {
+      "id": "R65",
+      "rule": "统一校验范围及必要推导",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 317,
+          "text": "导入、编辑、映射采用、翻译及发布使用同一版本的适用规则。局部诊断只报告已检查的范围，不能代替完整发布校验。结果至少定位主体、属性、问题值、规则、输入版本和处理结论；材料不足时记录检查未完成，不以未发现错误冒充已验证。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 321,
+          "text": "标准语义检查同时考虑以下必要推导，不能只检查文件中显式出现的属性。推导用于临时校验视图，不改写来源事实、编辑输入或采纳记录；发布哪些派生表达仍按[关系维护](#关系维护)执行。"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "SHACL"
+      ],
+      "basis_kind": "标准语义与项目流程",
+      "action": "保留",
+      "assessment": "必须考虑选定规则的蕴涵，不能把调用 SHACL 等同全部一致性；图范围和入口一致是项目发布要求。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R66",
+      "rule": "仅新增错误阻断及来源异常豁免",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 341,
+          "text": "| 语法、类型、端点或一致性错误 | 新增或修改引入的错误阻止发布；旧版继续可用 |"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 343,
+          "text": "| 固定来源的历史异常 | 记录来源版本、具体陈述及处理决定；新数据不自动继承豁免 |"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "SHACL"
+      ],
+      "basis_kind": "旧基线放行思路与目标要求冲突",
+      "action": "修订",
+      "assessment": "新旧差异不能使原有 S46 等矛盾消失。原件保留、项目质量例外和有效发布图的标准一致性需有明确边界。当前措辞不足以判定旧标准错误能否进入有效主图。",
+      "recommendation": "分开原件诊断、项目完整性例外和标准语义矛盾；有效发布图的未解决标准矛盾不得只因是旧问题而算通过。受限产物须明确用途与状态。",
+      "issue": "F11"
+    },
+    {
+      "id": "R67",
+      "rule": "结构校验不证明内容与权限",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 347,
+          "text": "结构校验不证明语义正确、授权真实或知识覆盖完整。名称、定义、关系及映射的采用仍须对应依据；实际内容与检索样本按[用途与验收](设计-词表整体设计.md#用途与验收)检验使用效果。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表整体设计.md",
+          "line": 152,
+          "text": "验收围绕实际失败及影响保留独有证据，不能用文档、字段数量或解析成功代替语义和使用效果。"
+        }
+      ],
+      "standard_refs": [
+        "SKOS",
+        "SHACL",
+        "DWBP"
+      ],
+      "basis_kind": "标准方法与治理界限",
+      "action": "保留",
+      "assessment": "数据一致性不等于领域判断、依据真实、覆盖完整或拥有授权；验收必须报告范围。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R68",
+      "rule": "应用表示与词表语义分层",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表整体设计.md",
+          "line": 135,
+          "text": "失败和回退遵循[版本合同](../../governance/maintenance/设计-词表版本.md#发布与回退)。应用按 `Application Profile` 声明表示、允许损失及消费行为；来源不支持或未投影的信息须可追溯，不能由导出字段反向改变模型。"
+        }
+      ],
+      "standard_refs": [
+        "DWBP"
+      ],
+      "basis_kind": "已明确的项目架构要求",
+      "action": "保留",
+      "assessment": "应用参数、文件格式及加载结果不倒置词表含义；避免同一规则在多个消费者各自定义。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R69",
+      "rule": "问题记录经研究与采纳形成设计",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表整体设计.md",
+          "line": 148,
+          "text": "正式术语的准入与编辑权按[术语设计](../terminology/设计-术语.md)处理，词表名称不因采用 XL 而成为另一份术语库。实践中的问题须单独记录，经研究、标准核对及相应决定形成新设计；实现限制不直接改写上述要求。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表维护.md",
+          "line": 102,
+          "text": "编辑提交须能发现并发修改。失败重试只复用内容和依据仍相容的结果，不能重复分配身份或重复采用已经失效的决定。实践中无法满足的要求按问题记录与研究流程处理，不直接降低设计约束。"
+        }
+      ],
+      "standard_refs": [
+        "DWBP"
+      ],
+      "basis_kind": "用户明确规则",
+      "action": "保留",
+      "assessment": "来自用户刚确认的设计与实践关系；收集反馈不自动取得修改设计的权力。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R70",
+      "rule": "业务标准未核范围及符合性表述",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表整体设计.md",
+          "line": 187,
+          "text": "既有 ISO 阅读曾参考第三方 Part 1 文本及 Part 2 预览；Part 1 的多语言正文尚未完成权威版本逐条核验，Part 2 预览缺少印刷页 79–99。完整材料情况见[ISO 阅读记录](阅读-ISO%2025964%20叙词表标准.md)。未核条款保持未核，不能据目录、摘要或实现结果补写标准要求；本设计不作完整 ISO 符合性或无损转换声明。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-多语言词表.md",
+          "line": 147,
+          "text": "语言启用、允许缺译、英文默认回退、身份登记及翻译流程属于项目选择。ISO 25964-1 第 9 章尚未完成权威全文逐条核验，未核条款不作为新增规则的唯一依据；材料阅读边界统一见[标准依据](设计-词表整体设计.md#标准依据)。"
+        }
+      ],
+      "standard_refs": [
+        "ISO-MODEL",
+        "ISO-XSD"
+      ],
+      "basis_kind": "阅读边界",
+      "action": "待核",
+      "assessment": "公开模型及已核表示标准足以审查部分规则，不能补足 ISO 25964 全部业务条款、Part 2 组合映射及所有术语生命周期条件。",
+      "recommendation": "保留未核声明；凡只依赖未取得正文的具体要求维持待核，不用本地笔记或本次清单补成已核。",
+      "issue": "U03"
+    },
+    {
+      "id": "R71",
+      "rule": "Turtle示例及格式与推理区分",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表资源与字段.md",
+          "line": 75,
+          "text": "以下是可独立解析的 Turtle 文件，展示核心资源类型及常用字段，不包含每个可选字段。`example.org` 标识和内容仅作示例，不作为实际采纳依据。"
+        },
+        {
+          "file": "docs/model/vocabulary/设计-词表资源与字段.md",
+          "line": 71,
+          "text": "上下位、顶层归属、概念替代及相关关系各有确定的维护方向或对称语义；有序集合的成员列表可以投影为 member。程序须按[关系维护](设计-词表数据规范.md#关系维护)生成并校验这些表达，Turtle 解析器不会自动完成全部推导。输出中的语句排列不表示集合顺序。"
+        }
+      ],
+      "standard_refs": [
+        "TURTLE",
+        "RDF",
+        "SKOS"
+      ],
+      "basis_kind": "标准表示与说明示例",
+      "action": "保留",
+      "assessment": "示例为虚构表达，不批准真实概念；语法、类型、角色和示例集合结构可解释，title 同值仅可作为可选兼容示例。",
+      "recommendation": "保留现行设计含义，并保持标准条件与项目选择的区分。",
+      "issue": null
+    },
+    {
+      "id": "R72",
+      "rule": "名称联系的对称性与扩展用途",
+      "locations": [
+        {
+          "file": "docs/model/vocabulary/设计-词表数据规范.md",
+          "line": 116,
+          "text": "| `skosxl:labelRelation` | 0..n | Label IRI | 名称间的通用联系；单凭该属性不能区分缩写、全称或拼写变体 |"
+        }
+      ],
+      "standard_refs": [
+        "SKOS"
+      ],
+      "basis_kind": "标准语义说明不完整",
+      "action": "修订",
+      "assessment": "SKOS-XL S62 规定 labelRelation 对称，B.4 将其作为可细化扩展点；现有字段说明未体现这两点。它不能直接承担有方向的缩写等具体语义。",
+      "recommendation": "补足对称性与扩展用途；具体名称关系核对成熟属性或经采用的子属性，来源通用关系可以保留，不能用它兜底未确定关系。",
+      "issue": "F12"
+    }
+  ],
+  "field_rows": [
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 59,
+      "section": "词表字段",
+      "properties": [
+        "rdf:type"
+      ],
+      "original": "| `rdf:type` | 1..n | IRI | 包含 skos:ConceptScheme，不同时作为概念或集合 |",
+      "meaning_and_scope_rules": [
+        "R02",
+        "R07"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 60,
+      "section": "词表字段",
+      "properties": [
+        "skos:prefLabel"
+      ],
+      "original": "| `skos:prefLabel` | 1..n | 标签文字 | 自有词表规范名称的唯一维护入口 |",
+      "meaning_and_scope_rules": [
+        "R11",
+        "R13",
+        "R16"
+      ],
+      "standard_refs": [
+        "5646",
+        "ISO-XSD",
+        "SKOS",
+        "THES"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留",
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 61,
+      "section": "词表字段",
+      "properties": [
+        "skos:altLabel"
+      ],
+      "original": "| `skos:altLabel` | 0..n | 标签文字 | 词表的替代名称，遵守同一套语言及角色约束 |",
+      "meaning_and_scope_rules": [
+        "R11",
+        "R14",
+        "R16"
+      ],
+      "standard_refs": [
+        "5646",
+        "IFLA",
+        "RDF",
+        "SKOS",
+        "THES"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留",
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 62,
+      "section": "词表字段",
+      "properties": [
+        "skos:hiddenLabel"
+      ],
+      "original": "| `skos:hiddenLabel` | 0..n | 标签文字 | 词表的检索写法，不作为默认显示名称 |",
+      "meaning_and_scope_rules": [
+        "R11",
+        "R14",
+        "R49"
+      ],
+      "standard_refs": [
+        "4647",
+        "5646",
+        "IFLA",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 63,
+      "section": "词表字段",
+      "properties": [
+        "skos:scopeNote"
+      ],
+      "original": "| `skos:scopeNote` | 1..n | 说明值 | 明确收录范围、排除情况和使用边界；是项目的词表级要求，不强加给每个来源词表 |",
+      "meaning_and_scope_rules": [
+        "R17",
+        "R29"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "ISO-XSD",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 64,
+      "section": "词表字段",
+      "properties": [
+        "dcterms:description"
+      ],
+      "original": "| `dcterms:description` | 0..n | 标签文字或来源原有文字 | 补充用途或一般介绍，不重复抄写范围说明 |",
+      "meaning_and_scope_rules": [
+        "R17",
+        "R23"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "ISO-XSD",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 65,
+      "section": "词表字段",
+      "properties": [
+        "skos:note"
+      ],
+      "original": "| `skos:note` | 0..n | 说明值 | 不适合归入更具体说明属性的其他信息 |",
+      "meaning_and_scope_rules": [
+        "R17"
+      ],
+      "standard_refs": [
+        "ISO-XSD",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 66,
+      "section": "词表字段",
+      "properties": [
+        "skos:historyNote"
+      ],
+      "original": "| `skos:historyNote` | 0..n | 说明值 | 自有词表范围或组织原则的重要历史变化 |",
+      "meaning_and_scope_rules": [
+        "R10",
+        "R52",
+        "R60"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "PROV",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 67,
+      "section": "词表字段",
+      "properties": [
+        "skos:changeNote"
+      ],
+      "original": "| `skos:changeNote` | 0..n | 说明值 | 从版本及维护记录派生的具体变更说明 |",
+      "meaning_and_scope_rules": [
+        "R52",
+        "R60"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 68,
+      "section": "词表字段",
+      "properties": [
+        "skos:hasTopConcept"
+      ],
+      "original": "| `skos:hasTopConcept` | 0..n | Concept IRI | 自有顶层概念的主要维护入口，检查本词表成员资格；领域集合不是顶层概念 |",
+      "meaning_and_scope_rules": [
+        "R03",
+        "R32"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "PRIMER",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 69,
+      "section": "词表字段",
+      "properties": [
+        "dcterms:source"
+      ],
+      "original": "| `dcterms:source` | 0..n | IRI | 自有词表引用的来源资源，逐项采用范围仍由范围决定和依据记录说明 |",
+      "meaning_and_scope_rules": [
+        "R23",
+        "R63"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 70,
+      "section": "词表字段",
+      "properties": [
+        "dcterms:created"
+      ],
+      "original": "| `dcterms:created` | 0..1 | 日期值 | 自有词表建立时间，不继承为任一来源词表的创建时间 |",
+      "meaning_and_scope_rules": [
+        "R20"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "ISO-XSD"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 71,
+      "section": "词表字段",
+      "properties": [
+        "dcterms:modified"
+      ],
+      "original": "| `dcterms:modified` | 0..1 | 日期值 | 自有词表记录的修改时间，不等同于每次重建时间 |",
+      "meaning_and_scope_rules": [
+        "R20"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "ISO-XSD"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 72,
+      "section": "词表字段",
+      "properties": [
+        "dcterms:language"
+      ],
+      "original": "| `dcterms:language` | 0..n | IRI | 实际提供的语言标识，不代替每个名称的语言标签 |",
+      "meaning_and_scope_rules": [
+        "R19"
+      ],
+      "standard_refs": [
+        "DC-LANG",
+        "DC-TYPE",
+        "DCMI"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 73,
+      "section": "词表字段",
+      "properties": [
+        "owl:versionInfo"
+      ],
+      "original": "| `owl:versionInfo` | 0..n | 普通文字 | 自有词表版本说明；来源版本和生成工具版本分别记录 |",
+      "meaning_and_scope_rules": [
+        "R59",
+        "R60"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 81,
+      "section": "概念字段",
+      "properties": [
+        "rdf:type"
+      ],
+      "original": "| `rdf:type` | 1..n | IRI | 必须包含 `skos:Concept`；允许其他不冲突的来源类型 |",
+      "meaning_and_scope_rules": [
+        "R02",
+        "R07"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 82,
+      "section": "概念字段",
+      "properties": [
+        "skos:inScheme"
+      ],
+      "original": "| `skos:inScheme` | 1 | 自有 ConceptScheme IRI | 自有主词表中的概念统一属于同一词表；分组成员用 Collection 的 member 表达，层级归属用概念间的 broader 表达，原来源归属在来源图及对账记录中保留 |",
+      "meaning_and_scope_rules": [
+        "R03",
+        "R24"
+      ],
+      "standard_refs": [
+        "ISO-MODEL",
+        "PRIMER",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 83,
+      "section": "概念字段",
+      "properties": [
+        "skosxl:prefLabel"
+      ],
+      "original": "| `skosxl:prefLabel` | 1..n | Label IRI | 首选名称的维护入口；本地新增概念必须有名，来源缺名保留警告 |",
+      "meaning_and_scope_rules": [
+        "R11",
+        "R12",
+        "R13"
+      ],
+      "standard_refs": [
+        "5646",
+        "ISO-XSD",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留",
+        "修订",
+        "待核"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 84,
+      "section": "概念字段",
+      "properties": [
+        "skosxl:altLabel"
+      ],
+      "original": "| `skosxl:altLabel` | 0..n | Label IRI | 替代名称，不因此建立另一个概念 |",
+      "meaning_and_scope_rules": [
+        "R11",
+        "R14"
+      ],
+      "standard_refs": [
+        "5646",
+        "IFLA",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 85,
+      "section": "概念字段",
+      "properties": [
+        "skosxl:hiddenLabel"
+      ],
+      "original": "| `skosxl:hiddenLabel` | 0..n | Label IRI | 检索用写法，不作为默认显示首选名 |",
+      "meaning_and_scope_rules": [
+        "R11",
+        "R49"
+      ],
+      "standard_refs": [
+        "4647",
+        "5646",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 86,
+      "section": "概念字段",
+      "properties": [
+        "skos:notation"
+      ],
+      "original": "| `skos:notation` | 0..n | 普通文字 | 来源分类代码；保留数据类型与原值，不当作概念 URI |",
+      "meaning_and_scope_rules": [
+        "R22"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 87,
+      "section": "概念字段",
+      "properties": [
+        "dcterms:identifier"
+      ],
+      "original": "| `dcterms:identifier` | 0..n | 普通文字 | 来源或登记标识；不假定跨来源全局唯一 |",
+      "meaning_and_scope_rules": [
+        "R22"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 88,
+      "section": "概念字段",
+      "properties": [
+        "skos:definition"
+      ],
+      "original": "| `skos:definition` | 0..n | 说明值 | 定义或定义资源引用，不限定为一个字符串 |",
+      "meaning_and_scope_rules": [
+        "R17"
+      ],
+      "standard_refs": [
+        "ISO-XSD",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 89,
+      "section": "概念字段",
+      "properties": [
+        "skos:scopeNote"
+      ],
+      "original": "| `skos:scopeNote` | 0..n | 说明值 | 范围及使用说明，不自动升级为定义 |",
+      "meaning_and_scope_rules": [
+        "R17",
+        "R29"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "ISO-XSD",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 90,
+      "section": "概念字段",
+      "properties": [
+        "dcterms:description"
+      ],
+      "original": "| `dcterms:description` | 0..n | 标签文字或来源原有文字 | 一般描述；保留其与定义、范围说明的区别 |",
+      "meaning_and_scope_rules": [
+        "R17",
+        "R23"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "ISO-XSD",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 91,
+      "section": "概念字段",
+      "properties": [
+        "skos:note"
+      ],
+      "original": "| `skos:note` | 0..n | 说明值 | 一般说明，不自动确定更具体的说明类别 |",
+      "meaning_and_scope_rules": [
+        "R17"
+      ],
+      "standard_refs": [
+        "ISO-XSD",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 92,
+      "section": "概念字段",
+      "properties": [
+        "skos:editorialNote"
+      ],
+      "original": "| `skos:editorialNote` | 0..n | 说明值 | 编辑提醒，不代替历史、具体变更记录或采纳授权 |",
+      "meaning_and_scope_rules": [
+        "R17",
+        "R52"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "ISO-XSD",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 93,
+      "section": "概念字段",
+      "properties": [
+        "skos:historyNote"
+      ],
+      "original": "| `skos:historyNote` | 0..n | 说明值 | 名称、含义或使用范围的重要历史变化，帮助解释旧内容的标记 |",
+      "meaning_and_scope_rules": [
+        "R10",
+        "R52",
+        "R60"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "PROV",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 94,
+      "section": "概念字段",
+      "properties": [
+        "skos:changeNote"
+      ],
+      "original": "| `skos:changeNote` | 0..n | 说明值 | 细粒度维护变更；从结构化变更记录生成说明或引用，不重复维护第二份事件历史 |",
+      "meaning_and_scope_rules": [
+        "R52",
+        "R60"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 95,
+      "section": "概念字段",
+      "properties": [
+        "owl:deprecated"
+      ],
+      "original": "| `owl:deprecated` | 0..1 | xsd:boolean | 有明确依据时标记停用；缺少该属性不证明已经采纳或经过审查 |",
+      "meaning_and_scope_rules": [
+        "R57"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "OWL"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 96,
+      "section": "概念字段",
+      "properties": [
+        "dcterms:isReplacedBy"
+      ],
+      "original": "| `dcterms:isReplacedBy` | 0..n | Concept IRI | 旧概念指向替代概念，允许多个目标；不等于概念等价或自动重标引 |",
+      "meaning_and_scope_rules": [
+        "R57"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "OWL"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 97,
+      "section": "概念字段",
+      "properties": [
+        "dcterms:replaces"
+      ],
+      "original": "| `dcterms:replaces` | 0..n | Concept IRI | 替代概念指向旧概念的派生反向表达，不单独维护 |",
+      "meaning_and_scope_rules": [
+        "R32",
+        "R57"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "OWL",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 98,
+      "section": "概念字段",
+      "properties": [
+        "skos:broader"
+      ],
+      "original": "| `skos:broader` | 0..n | Concept IRI | 自有直接层级的主要维护方向，允许多父；来源反向边也须纳入归一与对账 |",
+      "meaning_and_scope_rules": [
+        "R30",
+        "R32"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "ISO-XSD",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留",
+        "待核"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 99,
+      "section": "概念字段",
+      "properties": [
+        "skos:narrower"
+      ],
+      "original": "| `skos:narrower` | 0..n | Concept IRI | 从上位关系派生的下位表达；编辑反向表达时同步修改同一条上位关系，不允许两套互相独立的值 |",
+      "meaning_and_scope_rules": [
+        "R30",
+        "R32"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "ISO-XSD",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留",
+        "待核"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 100,
+      "section": "概念字段",
+      "properties": [
+        "skos:related"
+      ],
+      "original": "| `skos:related` | 0..n | Concept IRI | 相关关系；不得与同一对概念的层级可达关系重叠 |",
+      "meaning_and_scope_rules": [
+        "R31"
+      ],
+      "standard_refs": [
+        "PRIMER",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 101,
+      "section": "概念字段",
+      "properties": [
+        "skos:topConceptOf"
+      ],
+      "original": "| `skos:topConceptOf` | 0..1 | 自有 ConceptScheme IRI | 由 hasTopConcept 派生的顶层归属；不能指向领域集合，不单独维护 |",
+      "meaning_and_scope_rules": [
+        "R03",
+        "R32"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "PRIMER",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 102,
+      "section": "概念字段",
+      "properties": [
+        "dcterms:isPartOf"
+      ],
+      "original": "| `dcterms:isPartOf` | 0..n | IRI | 部分关系；不自动改成 `broader`，不要求目标一定是概念 |",
+      "meaning_and_scope_rules": [
+        "R06",
+        "R23"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "ISO-MODEL",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 103,
+      "section": "概念字段",
+      "properties": [
+        "dcterms:source"
+      ],
+      "original": "| `dcterms:source` | 0..n | IRI | 引用来源资源；不能代替逐字段、逐关系的生成对账 |",
+      "meaning_and_scope_rules": [
+        "R23",
+        "R63"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 104,
+      "section": "概念字段",
+      "properties": [
+        "prov:wasDerivedFrom"
+      ],
+      "original": "| `prov:wasDerivedFrom` | 0..n | IRI | 派生依据，可关联来源页等资源；保留定位 |",
+      "meaning_and_scope_rules": [
+        "R23",
+        "R63"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 105,
+      "section": "概念字段",
+      "properties": [
+        "dcterms:created"
+      ],
+      "original": "| `dcterms:created` | 0..1 | 日期值 | 所描述概念记录的创建时间；来源与项目记录分别追溯，不以本次生成时间代替 |",
+      "meaning_and_scope_rules": [
+        "R20"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "ISO-XSD"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 106,
+      "section": "概念字段",
+      "properties": [
+        "dcterms:modified"
+      ],
+      "original": "| `dcterms:modified` | 0..1 | 日期值 | 所描述概念记录的修改时间；不以构建时间覆盖，也不代替变更原因 |",
+      "meaning_and_scope_rules": [
+        "R20"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "ISO-XSD"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 114,
+      "section": "名称字段",
+      "properties": [
+        "rdf:type"
+      ],
+      "original": "| `rdf:type` | 1..n | IRI | 包含 `skosxl:Label`，不兼作概念、词表或集合 |",
+      "meaning_and_scope_rules": [
+        "R02",
+        "R07"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 115,
+      "section": "名称字段",
+      "properties": [
+        "skosxl:literalForm"
+      ],
+      "original": "| `skosxl:literalForm` | 1 | 文字值 | 每个版本恰好一个；本地新增名称明确语言，来源未标语种保留诊断 |",
+      "meaning_and_scope_rules": [
+        "R10",
+        "R11"
+      ],
+      "standard_refs": [
+        "5646",
+        "DWBP",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 116,
+      "section": "名称字段",
+      "properties": [
+        "skosxl:labelRelation"
+      ],
+      "original": "| `skosxl:labelRelation` | 0..n | Label IRI | 名称间的通用联系；单凭该属性不能区分缩写、全称或拼写变体 |",
+      "meaning_and_scope_rules": [
+        "R72"
+      ],
+      "standard_refs": [
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 126,
+      "section": "集合字段",
+      "properties": [
+        "rdf:type"
+      ],
+      "original": "| `rdf:type` | 1..n | IRI | 包含 `skos:Collection` 或 `skos:OrderedCollection`；保留不冲突的来源类型 |",
+      "meaning_and_scope_rules": [
+        "R02",
+        "R07"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 127,
+      "section": "集合字段",
+      "properties": [
+        "skos:prefLabel"
+      ],
+      "original": "| `skos:prefLabel` | 1..n | 标签文字 | 分组名称，按名称规则；来源缺名保留警告 |",
+      "meaning_and_scope_rules": [
+        "R11",
+        "R13",
+        "R16"
+      ],
+      "standard_refs": [
+        "5646",
+        "ISO-XSD",
+        "SKOS",
+        "THES"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留",
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 128,
+      "section": "集合字段",
+      "properties": [
+        "skos:altLabel"
+      ],
+      "original": "| `skos:altLabel` | 0..n | 标签文字 | 分组的替代名称 |",
+      "meaning_and_scope_rules": [
+        "R11",
+        "R14",
+        "R16"
+      ],
+      "standard_refs": [
+        "5646",
+        "IFLA",
+        "RDF",
+        "SKOS",
+        "THES"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留",
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 129,
+      "section": "集合字段",
+      "properties": [
+        "skos:hiddenLabel"
+      ],
+      "original": "| `skos:hiddenLabel` | 0..n | 标签文字 | 分组的检索写法 |",
+      "meaning_and_scope_rules": [
+        "R11",
+        "R14",
+        "R49"
+      ],
+      "standard_refs": [
+        "4647",
+        "5646",
+        "IFLA",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 130,
+      "section": "集合字段",
+      "properties": [
+        "skos:notation"
+      ],
+      "original": "| `skos:notation` | 0..n | 普通文字 | 来源分组代码 |",
+      "meaning_and_scope_rules": [
+        "R22"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 131,
+      "section": "集合字段",
+      "properties": [
+        "skos:scopeNote"
+      ],
+      "original": "| `skos:scopeNote` | 自建 1..n；继承 0..n | 说明值 | 用途、成员纳入与排除、排序依据及相邻分组的区别；可以引用明确规则 |",
+      "meaning_and_scope_rules": [
+        "R17",
+        "R29"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "ISO-XSD",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 132,
+      "section": "集合字段",
+      "properties": [
+        "skos:historyNote"
+      ],
+      "original": "| `skos:historyNote` | 0..n | 说明值 | 分组范围的重要历史变化 |",
+      "meaning_and_scope_rules": [
+        "R10",
+        "R52",
+        "R60"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "PROV",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 133,
+      "section": "集合字段",
+      "properties": [
+        "skos:changeNote"
+      ],
+      "original": "| `skos:changeNote` | 0..n | 说明值 | 从维护记录派生的成员或结构变更说明 |",
+      "meaning_and_scope_rules": [
+        "R52",
+        "R60"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 134,
+      "section": "集合字段",
+      "properties": [
+        "dcterms:source"
+      ],
+      "original": "| `dcterms:source` | 0..n | IRI | 分组依据的来源资源，仍需在对账中明确采用的范围 |",
+      "meaning_and_scope_rules": [
+        "R23",
+        "R63"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 135,
+      "section": "集合字段",
+      "properties": [
+        "prov:wasDerivedFrom"
+      ],
+      "original": "| `prov:wasDerivedFrom` | 0..n | IRI | 分组或成员选择所依据的具体来源记录、规则或版本 |",
+      "meaning_and_scope_rules": [
+        "R23",
+        "R63"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 136,
+      "section": "集合字段",
+      "properties": [
+        "skos:inScheme"
+      ],
+      "original": "| `skos:inScheme` | 自有 1；继承 0..1 | ConceptScheme IRI | 自有集合关联唯一自有词表；来源原有归属另行保留 |",
+      "meaning_and_scope_rules": [
+        "R03",
+        "R24"
+      ],
+      "standard_refs": [
+        "ISO-MODEL",
+        "PRIMER",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 137,
+      "section": "集合字段",
+      "properties": [
+        "skos:member"
+      ],
+      "original": "| `skos:member` | 0..n | Concept 或 Collection IRI | 普通集合的成员；有序集合按 memberList 派生，不表示上下位语义 |",
+      "meaning_and_scope_rules": [
+        "R24",
+        "R27"
+      ],
+      "standard_refs": [
+        "ISO-MODEL",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 138,
+      "section": "集合字段",
+      "properties": [
+        "skos:memberList"
+      ],
+      "original": "| `skos:memberList` | 有序集合为 1 | RDF 列表 | 有限、完整、无循环；保存顺序，允许空列表 |",
+      "meaning_and_scope_rules": [
+        "R27"
+      ],
+      "standard_refs": [
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 139,
+      "section": "集合字段",
+      "properties": [
+        "iso-thes:subGroup"
+      ],
+      "original": "| `iso-thes:subGroup` | 0..n | Collection IRI | 保留来源表达；自有细分需要输出时由已确定的 superGroup 关系派生，不转成概念层级 |",
+      "meaning_and_scope_rules": [
+        "R26"
+      ],
+      "standard_refs": [
+        "THES"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 140,
+      "section": "集合字段",
+      "properties": [
+        "iso-thes:superGroup"
+      ],
+      "original": "| `iso-thes:superGroup` | 0..n | Collection IRI | 需要此种分组细分时的主要维护方向；不能仅凭类似名称就认定它与 member 完全相同 |",
+      "meaning_and_scope_rules": [
+        "R26"
+      ],
+      "standard_refs": [
+        "THES"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 141,
+      "section": "集合字段",
+      "properties": [
+        "dcterms:modified"
+      ],
+      "original": "| `dcterms:modified` | 0..1 | 日期值 | 来源分组的修改时间 |",
+      "meaning_and_scope_rules": [
+        "R20"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "ISO-XSD"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 155,
+      "section": "说明字段",
+      "properties": [
+        "skos:definition"
+      ],
+      "original": "| `skos:definition` | 0..n 个说明值 | 定义；来源附着于概念或名称时保留原位置 |",
+      "meaning_and_scope_rules": [
+        "R17"
+      ],
+      "standard_refs": [
+        "ISO-XSD",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 156,
+      "section": "说明字段",
+      "properties": [
+        "skos:scopeNote"
+      ],
+      "original": "| `skos:scopeNote` | 0..n 个说明值 | 使用范围；词表与自建集合按各自字段表必填 |",
+      "meaning_and_scope_rules": [
+        "R17",
+        "R29"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "ISO-XSD",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 157,
+      "section": "说明字段",
+      "properties": [
+        "skos:example"
+      ],
+      "original": "| `skos:example` | 0..n 个说明值 | 所解释对象的使用示例 |",
+      "meaning_and_scope_rules": [
+        "R17"
+      ],
+      "standard_refs": [
+        "ISO-XSD",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 158,
+      "section": "说明字段",
+      "properties": [
+        "skos:note"
+      ],
+      "original": "| `skos:note` | 0..n 个说明值 | 不适合归入更具体属性的说明 |",
+      "meaning_and_scope_rules": [
+        "R17"
+      ],
+      "standard_refs": [
+        "ISO-XSD",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 159,
+      "section": "说明字段",
+      "properties": [
+        "skos:editorialNote"
+      ],
+      "original": "| `skos:editorialNote` | 0..n 个说明值 | 编辑提醒，默认保留在管理输出 |",
+      "meaning_and_scope_rules": [
+        "R17",
+        "R52"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "ISO-XSD",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 160,
+      "section": "说明字段",
+      "properties": [
+        "skos:historyNote"
+      ],
+      "original": "| `skos:historyNote` | 0..n 个说明值 | 名称、含义或使用范围的重要历史 |",
+      "meaning_and_scope_rules": [
+        "R10",
+        "R52",
+        "R60"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "PROV",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 161,
+      "section": "说明字段",
+      "properties": [
+        "skos:changeNote"
+      ],
+      "original": "| `skos:changeNote` | 0..n 个说明值 | 具体变更，由维护记录派生说明或引用 |",
+      "meaning_and_scope_rules": [
+        "R52",
+        "R60"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 162,
+      "section": "说明字段",
+      "properties": [
+        "dcterms:description"
+      ],
+      "original": "| `dcterms:description` | 0..n 个文字值 | 一般描述，不替代定义或范围说明 |",
+      "meaning_and_scope_rules": [
+        "R17",
+        "R23"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "ISO-XSD",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 163,
+      "section": "说明字段",
+      "properties": [
+        "rdf:value"
+      ],
+      "original": "| `rdf:value` | 本地独立说明为 1 | 一个带语言的正文值；来源已有多语或嵌套结构继续保留 |",
+      "meaning_and_scope_rules": [
+        "R18"
+      ],
+      "standard_refs": [
+        "PROV",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 193,
+      "section": "派生表达",
+      "properties": [
+        "skos:prefLabel"
+      ],
+      "original": "| 概念的 `skos:prefLabel` | 语言文字，`1..n`；来源缺项另报 | XL 首选名称的文字值 |",
+      "meaning_and_scope_rules": [
+        "R11",
+        "R13",
+        "R32"
+      ],
+      "standard_refs": [
+        "5646",
+        "DCMI",
+        "ISO-XSD",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留",
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 194,
+      "section": "派生表达",
+      "properties": [
+        "skos:altLabel",
+        "skos:hiddenLabel"
+      ],
+      "original": "| 概念的 `skos:altLabel`、`skos:hiddenLabel` | 各 `0..n` 个语言文字 | 对应 XL 名称的文字值 |",
+      "meaning_and_scope_rules": [
+        "R11",
+        "R14",
+        "R16",
+        "R32",
+        "R49"
+      ],
+      "standard_refs": [
+        "4647",
+        "5646",
+        "DCMI",
+        "IFLA",
+        "RDF",
+        "SKOS",
+        "THES"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留",
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 195,
+      "section": "派生表达",
+      "properties": [
+        "skos:member"
+      ],
+      "original": "| 有序集合的 `skos:member` | 概念或集合标识，`0..n` | 成员列表 |",
+      "meaning_and_scope_rules": [
+        "R24",
+        "R27",
+        "R32"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "ISO-MODEL",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 203,
+      "section": "映射字段",
+      "properties": [
+        "skos:exactMatch"
+      ],
+      "original": "| `skos:exactMatch` | 0..n | Concept IRI | 在广泛检索应用中可高度确信互换的对应；具有传递性，不等于 owl:sameAs，不合并双方全部属性 |",
+      "meaning_and_scope_rules": [
+        "R33",
+        "R34"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 204,
+      "section": "映射字段",
+      "properties": [
+        "skos:closeMatch"
+      ],
+      "original": "| `skos:closeMatch` | 0..n | Concept IRI | 在部分检索应用中足够接近、可以互换的对应；不是“不确定”的占位值，不作传递推导 |",
+      "meaning_and_scope_rules": [
+        "R33",
+        "R34"
+      ],
+      "standard_refs": [
+        "DWBP",
+        "PROV",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 205,
+      "section": "映射字段",
+      "properties": [
+        "skos:broadMatch"
+      ],
+      "original": "| `skos:broadMatch` | 0..n | Concept IRI | 本端概念对应另一词表中更宽的概念，方向必须明确 |",
+      "meaning_and_scope_rules": [
+        "R33"
+      ],
+      "standard_refs": [
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 206,
+      "section": "映射字段",
+      "properties": [
+        "skos:narrowMatch"
+      ],
+      "original": "| `skos:narrowMatch` | 0..n | Concept IRI | 本端概念对应另一词表中更窄的概念；与 broadMatch 互反，不维护冲突的两套决定 |",
+      "meaning_and_scope_rules": [
+        "R33"
+      ],
+      "standard_refs": [
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 207,
+      "section": "映射字段",
+      "properties": [
+        "skos:relatedMatch"
+      ],
+      "original": "| `skos:relatedMatch` | 0..n | Concept IRI | 跨词表的相关对应，不代替等价或宽窄判断 |",
+      "meaning_and_scope_rules": [
+        "R33"
+      ],
+      "standard_refs": [
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 286,
+      "section": "来源兼容字段",
+      "properties": [
+        "dcterms:title"
+      ],
+      "original": "| `dcterms:title` | 0..n | 标签文字或来源原有文字 | 来源标题保留；自有输出仅在兼容需要时从 prefLabel 派生同值标题，不独立维护 |",
+      "meaning_and_scope_rules": [
+        "R21"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "删除"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 287,
+      "section": "来源兼容字段",
+      "properties": [
+        "dcterms:identifier"
+      ],
+      "original": "| `dcterms:identifier` | 0..n | 普通文字 | 发布者词表标识，不替代 IRI |",
+      "meaning_and_scope_rules": [
+        "R22"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "RDF",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 288,
+      "section": "来源兼容字段",
+      "properties": [
+        "dc:creator"
+      ],
+      "original": "| `dc:creator` | 0..n | 普通文字 | 来源创建者名称，不自动成为自有词表创建者 |",
+      "meaning_and_scope_rules": [
+        "R19",
+        "R23"
+      ],
+      "standard_refs": [
+        "DC-LANG",
+        "DC-TYPE",
+        "DCMI",
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留",
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 289,
+      "section": "来源兼容字段",
+      "properties": [
+        "dc:contributor"
+      ],
+      "original": "| `dc:contributor` | 0..n | 普通文字 | 来源贡献者名称 |",
+      "meaning_and_scope_rules": [
+        "R19",
+        "R23"
+      ],
+      "standard_refs": [
+        "DC-LANG",
+        "DC-TYPE",
+        "DCMI",
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留",
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 290,
+      "section": "来源兼容字段",
+      "properties": [
+        "dc:publisher"
+      ],
+      "original": "| `dc:publisher` | 0..n | 普通文字 | 来源发布者名称 |",
+      "meaning_and_scope_rules": [
+        "R19",
+        "R23"
+      ],
+      "standard_refs": [
+        "DC-LANG",
+        "DC-TYPE",
+        "DCMI",
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留",
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 291,
+      "section": "来源兼容字段",
+      "properties": [
+        "dc:subject"
+      ],
+      "original": "| `dc:subject` | 0..n | 普通文字 | 来源主题描述，不据此创建本地分类关系 |",
+      "meaning_and_scope_rules": [
+        "R19",
+        "R23"
+      ],
+      "standard_refs": [
+        "DC-LANG",
+        "DC-TYPE",
+        "DCMI",
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留",
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 292,
+      "section": "来源兼容字段",
+      "properties": [
+        "dcterms:conformsTo"
+      ],
+      "original": "| `dcterms:conformsTo` | 0..n | IRI；兼容来源原有文字 | 来源遵循标准的声明；自有新增声明须有实际依据 |",
+      "meaning_and_scope_rules": [
+        "R23"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 293,
+      "section": "来源兼容字段",
+      "properties": [
+        "dcterms:format"
+      ],
+      "original": "| `dcterms:format` | 0..n | IRI | 来源载体或格式的标识，不冒称当前自有输出格式 |",
+      "meaning_and_scope_rules": [
+        "R19",
+        "R23"
+      ],
+      "standard_refs": [
+        "DC-LANG",
+        "DC-TYPE",
+        "DCMI",
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留",
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 294,
+      "section": "来源兼容字段",
+      "properties": [
+        "dcterms:isRequiredBy"
+      ],
+      "original": "| `dcterms:isRequiredBy` | 0..n | IRI | 依赖该资源的对象，不作为概念层级 |",
+      "meaning_and_scope_rules": [
+        "R23"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 295,
+      "section": "来源兼容字段",
+      "properties": [
+        "dcterms:license"
+      ],
+      "original": "| `dcterms:license` | 0..n | IRI | 来源许可资源，不因转换擅自变更或当作整个自有词表的许可 |",
+      "meaning_and_scope_rules": [
+        "R23"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 296,
+      "section": "来源兼容字段",
+      "properties": [
+        "dcterms:replaces"
+      ],
+      "original": "| `dcterms:replaces` | 0..n | IRI | 来源资源的替代声明，区别于概念级替代，不跨对象种类混用 |",
+      "meaning_and_scope_rules": [
+        "R32",
+        "R57"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "OWL",
+        "SKOS"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 297,
+      "section": "来源兼容字段",
+      "properties": [
+        "dcterms:rights"
+      ],
+      "original": "| `dcterms:rights` | 0..n | 普通文字或有依据的权利声明 IRI | 来源权利说明 |",
+      "meaning_and_scope_rules": [
+        "R23"
+      ],
+      "standard_refs": [
+        "DCMI",
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 298,
+      "section": "来源兼容字段",
+      "properties": [
+        "dcterms:rightsHolder"
+      ],
+      "original": "| `dcterms:rightsHolder` | 0..n | IRI；兼容来源原有文字 | 来源权利持有者，不为转换名称而制造实体记录 |",
+      "meaning_and_scope_rules": [
+        "R19",
+        "R23"
+      ],
+      "standard_refs": [
+        "DC-LANG",
+        "DC-TYPE",
+        "DCMI",
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留",
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 299,
+      "section": "来源兼容字段",
+      "properties": [
+        "dcterms:subject"
+      ],
+      "original": "| `dcterms:subject` | 0..n | IRI | 来源明确引用的主题，与文字形式的 dc:subject 分开保留 |",
+      "meaning_and_scope_rules": [
+        "R19",
+        "R23"
+      ],
+      "standard_refs": [
+        "DC-LANG",
+        "DC-TYPE",
+        "DCMI",
+        "DWBP",
+        "PROV"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "保留",
+        "修订"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "line": 300,
+      "section": "来源兼容字段",
+      "properties": [
+        "dcterms:type"
+      ],
+      "original": "| `dcterms:type` | 0..n | 普通文字 | 来源类别信息，不冒充 RDF 类型或本地分类决定 |",
+      "meaning_and_scope_rules": [
+        "R19"
+      ],
+      "standard_refs": [
+        "DC-LANG",
+        "DC-TYPE",
+        "DCMI"
+      ],
+      "cardinality_note": "数值按所引用审查条目区分标准基数、公开交换模型参照和项目选择；不能只凭表中数量认定标准要求。",
+      "actions": [
+        "修订"
+      ]
+    }
+  ],
+  "section_coverage": [
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "heading": "用途与范围",
+      "start_line": 5,
+      "end_line": 12,
+      "rule_ids": [
+        "R03",
+        "R05",
+        "R58"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "heading": "标准采用",
+      "start_line": 13,
+      "end_line": 24,
+      "rule_ids": [
+        "R70"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "heading": "数据分层",
+      "start_line": 25,
+      "end_line": 38,
+      "rule_ids": [
+        "R04",
+        "R54",
+        "R64"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "heading": "对象体系",
+      "start_line": 39,
+      "end_line": 52,
+      "rule_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R24"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "heading": "整合方式",
+      "start_line": 53,
+      "end_line": 66,
+      "rule_ids": [
+        "R05",
+        "R37",
+        "R57"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "heading": "关系与导航",
+      "start_line": 67,
+      "end_line": 80,
+      "rule_ids": [
+        "R06",
+        "R25",
+        "R30",
+        "R31"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "heading": "用途与验收",
+      "start_line": 81,
+      "end_line": 96,
+      "rule_ids": [
+        "R25",
+        "R29",
+        "R67"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "heading": "多语言组织",
+      "start_line": 97,
+      "end_line": 102,
+      "rule_ids": [
+        "R40",
+        "R41",
+        "R42"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "heading": "名称与版本",
+      "start_line": 103,
+      "end_line": 112,
+      "rule_ids": [
+        "R08",
+        "R09",
+        "R10",
+        "R15"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "heading": "映射与应用",
+      "start_line": 113,
+      "end_line": 122,
+      "rule_ids": [
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "heading": "来源更新",
+      "start_line": 123,
+      "end_line": 130,
+      "rule_ids": [
+        "R44",
+        "R45",
+        "R54",
+        "R55",
+        "R56"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "heading": "发布与消费",
+      "start_line": 131,
+      "end_line": 136,
+      "rule_ids": [
+        "R59",
+        "R60",
+        "R64",
+        "R68"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "heading": "规则归属",
+      "start_line": 137,
+      "end_line": 149,
+      "rule_ids": [
+        "R68",
+        "R69"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "heading": "验收与迁移",
+      "start_line": 150,
+      "end_line": 162,
+      "rule_ids": [
+        "R67",
+        "R68"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "heading": "覆盖检查",
+      "start_line": 163,
+      "end_line": 173,
+      "rule_ids": [
+        "R58",
+        "R67"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "heading": "标准依据",
+      "start_line": 174,
+      "end_line": 187,
+      "rule_ids": [
+        "R70"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "适用范围",
+      "start_line": 5,
+      "end_line": 10,
+      "rule_ids": [
+        "R04",
+        "R23"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "标准与选择",
+      "start_line": 11,
+      "end_line": 23,
+      "rule_ids": [
+        "R02",
+        "R03",
+        "R13",
+        "R28",
+        "R29"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "通用约定",
+      "start_line": 24,
+      "end_line": 25,
+      "rule_ids": [
+        "R01",
+        "R07",
+        "R11"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "标识与类型",
+      "start_line": 26,
+      "end_line": 31,
+      "rule_ids": [
+        "R02",
+        "R07",
+        "R09"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "值与数量",
+      "start_line": 32,
+      "end_line": 44,
+      "rule_ids": [
+        "R07",
+        "R18",
+        "R19",
+        "R20",
+        "R22"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "语言与名称",
+      "start_line": 45,
+      "end_line": 52,
+      "rule_ids": [
+        "R05",
+        "R11",
+        "R12",
+        "R13",
+        "R14"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "词表字段",
+      "start_line": 53,
+      "end_line": 74,
+      "rule_ids": [
+        "R03",
+        "R11",
+        "R13",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R29"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "概念字段",
+      "start_line": 75,
+      "end_line": 109,
+      "rule_ids": [
+        "R02",
+        "R03",
+        "R11",
+        "R13",
+        "R17",
+        "R20",
+        "R22",
+        "R30",
+        "R31",
+        "R32",
+        "R57"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "名称字段",
+      "start_line": 110,
+      "end_line": 119,
+      "rule_ids": [
+        "R10",
+        "R12",
+        "R15",
+        "R16",
+        "R72"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "集合字段",
+      "start_line": 120,
+      "end_line": 148,
+      "rule_ids": [
+        "R13",
+        "R16",
+        "R20",
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R29"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "说明字段",
+      "start_line": 149,
+      "end_line": 168,
+      "rule_ids": [
+        "R17",
+        "R18",
+        "R20"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "关系维护",
+      "start_line": 169,
+      "end_line": 188,
+      "rule_ids": [
+        "R06",
+        "R28",
+        "R30",
+        "R31",
+        "R32"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "派生表达",
+      "start_line": 189,
+      "end_line": 196,
+      "rule_ids": [
+        "R11",
+        "R27",
+        "R32"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "映射字段",
+      "start_line": 197,
+      "end_line": 212,
+      "rule_ids": [
+        "R33",
+        "R34",
+        "R37"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "映射记录",
+      "start_line": 213,
+      "end_line": 238,
+      "rule_ids": [
+        "R34",
+        "R35",
+        "R36",
+        "R37"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "来源与依据",
+      "start_line": 239,
+      "end_line": 258,
+      "rule_ids": [
+        "R19",
+        "R20",
+        "R23",
+        "R52",
+        "R63",
+        "R64"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "维护记录",
+      "start_line": 259,
+      "end_line": 271,
+      "rule_ids": [
+        "R52",
+        "R59",
+        "R60",
+        "R63",
+        "R64"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "历史与停用",
+      "start_line": 272,
+      "end_line": 279,
+      "rule_ids": [
+        "R10",
+        "R57",
+        "R58",
+        "R60",
+        "R61"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "来源兼容字段",
+      "start_line": 280,
+      "end_line": 305,
+      "rule_ids": [
+        "R19",
+        "R21",
+        "R22",
+        "R23",
+        "R63"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "校验范围",
+      "start_line": 306,
+      "end_line": 318,
+      "rule_ids": [
+        "R65",
+        "R66",
+        "R67"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "标准一致性",
+      "start_line": 319,
+      "end_line": 336,
+      "rule_ids": [
+        "R02",
+        "R11",
+        "R26",
+        "R27",
+        "R28",
+        "R33",
+        "R65",
+        "R66",
+        "R72"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "校验分级",
+      "start_line": 337,
+      "end_line": 348,
+      "rule_ids": [
+        "R13",
+        "R65",
+        "R66",
+        "R67"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "交付与版本",
+      "start_line": 349,
+      "end_line": 354,
+      "rule_ids": [
+        "R59",
+        "R60",
+        "R62",
+        "R64",
+        "R68"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表数据规范.md",
+      "heading": "标准依据",
+      "start_line": 355,
+      "end_line": 357,
+      "rule_ids": [
+        "R70"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "heading": "标准与格式",
+      "start_line": 5,
+      "end_line": 21,
+      "rule_ids": [
+        "R01",
+        "R70",
+        "R71"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "heading": "记录结构",
+      "start_line": 22,
+      "end_line": 37,
+      "rule_ids": [
+        "R01",
+        "R02",
+        "R04",
+        "R07"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "heading": "资源类型",
+      "start_line": 38,
+      "end_line": 51,
+      "rule_ids": [
+        "R01",
+        "R02",
+        "R24"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "heading": "字段职责",
+      "start_line": 52,
+      "end_line": 66,
+      "rule_ids": [
+        "R01",
+        "R11",
+        "R15",
+        "R24",
+        "R26",
+        "R72"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "heading": "派生表达",
+      "start_line": 67,
+      "end_line": 72,
+      "rule_ids": [
+        "R11",
+        "R27",
+        "R32"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "heading": "完整实例",
+      "start_line": 73,
+      "end_line": 151,
+      "rule_ids": [
+        "R71"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "heading": "管理记录",
+      "start_line": 152,
+      "end_line": 156,
+      "rule_ids": [
+        "R34",
+        "R52",
+        "R63",
+        "R64"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-多语言词表.md",
+      "heading": "设计范围",
+      "start_line": 5,
+      "end_line": 10,
+      "rule_ids": [
+        "R05",
+        "R41"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-多语言词表.md",
+      "heading": "语言策略",
+      "start_line": 11,
+      "end_line": 22,
+      "rule_ids": [
+        "R40",
+        "R42"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-多语言词表.md",
+      "heading": "语言标记",
+      "start_line": 23,
+      "end_line": 39,
+      "rule_ids": [
+        "R38",
+        "R39"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-多语言词表.md",
+      "heading": "概念对应",
+      "start_line": 40,
+      "end_line": 52,
+      "rule_ids": [
+        "R14",
+        "R35",
+        "R41",
+        "R42"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-多语言词表.md",
+      "heading": "名称与说明",
+      "start_line": 53,
+      "end_line": 63,
+      "rule_ids": [
+        "R11",
+        "R16",
+        "R17",
+        "R38"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-多语言词表.md",
+      "heading": "编辑与依据",
+      "start_line": 64,
+      "end_line": 71,
+      "rule_ids": [
+        "R09",
+        "R10",
+        "R16",
+        "R43",
+        "R50"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-多语言词表.md",
+      "heading": "翻译流程",
+      "start_line": 72,
+      "end_line": 88,
+      "rule_ids": [
+        "R43",
+        "R44",
+        "R45"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-多语言词表.md",
+      "heading": "增量同步",
+      "start_line": 89,
+      "end_line": 108,
+      "rule_ids": [
+        "R44",
+        "R45",
+        "R46"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-多语言词表.md",
+      "heading": "匹配与显示",
+      "start_line": 109,
+      "end_line": 130,
+      "rule_ids": [
+        "R47",
+        "R48",
+        "R49"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-多语言词表.md",
+      "heading": "术语衔接",
+      "start_line": 131,
+      "end_line": 136,
+      "rule_ids": [
+        "R39",
+        "R50"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-多语言词表.md",
+      "heading": "校验要求",
+      "start_line": 137,
+      "end_line": 142,
+      "rule_ids": [
+        "R43",
+        "R65",
+        "R66",
+        "R67"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-多语言词表.md",
+      "heading": "标准依据",
+      "start_line": 143,
+      "end_line": 147,
+      "rule_ids": [
+        "R70"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表维护.md",
+      "heading": "维护职责",
+      "start_line": 5,
+      "end_line": 16,
+      "rule_ids": [
+        "R51",
+        "R63"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表维护.md",
+      "heading": "变更记录",
+      "start_line": 17,
+      "end_line": 22,
+      "rule_ids": [
+        "R10",
+        "R52"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表维护.md",
+      "heading": "来源选择",
+      "start_line": 23,
+      "end_line": 30,
+      "rule_ids": [
+        "R05",
+        "R53",
+        "R56"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表维护.md",
+      "heading": "编辑粒度",
+      "start_line": 31,
+      "end_line": 42,
+      "rule_ids": [
+        "R09",
+        "R32",
+        "R52",
+        "R57"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表维护.md",
+      "heading": "名称编辑",
+      "start_line": 43,
+      "end_line": 60,
+      "rule_ids": [
+        "R08",
+        "R09",
+        "R10",
+        "R12",
+        "R15",
+        "R16"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表维护.md",
+      "heading": "再同步规则",
+      "start_line": 61,
+      "end_line": 77,
+      "rule_ids": [
+        "R53",
+        "R54",
+        "R55",
+        "R56"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表维护.md",
+      "heading": "概念退出",
+      "start_line": 78,
+      "end_line": 95,
+      "rule_ids": [
+        "R57",
+        "R58",
+        "R61"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表维护.md",
+      "heading": "冲突处理",
+      "start_line": 96,
+      "end_line": 103,
+      "rule_ids": [
+        "R52",
+        "R54",
+        "R55",
+        "R56"
+      ]
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表维护.md",
+      "heading": "发布与恢复",
+      "start_line": 104,
+      "end_line": 110,
+      "rule_ids": [
+        "R59",
+        "R62",
+        "R65",
+        "R66",
+        "R68"
+      ]
+    },
+    {
+      "file": "docs/governance/maintenance/设计-词表版本.md",
+      "heading": "版本对象",
+      "start_line": 5,
+      "end_line": 16,
+      "rule_ids": [
+        "R59"
+      ]
+    },
+    {
+      "file": "docs/governance/maintenance/设计-词表版本.md",
+      "heading": "版本标识",
+      "start_line": 17,
+      "end_line": 22,
+      "rule_ids": [
+        "R60",
+        "R64"
+      ]
+    },
+    {
+      "file": "docs/governance/maintenance/设计-词表版本.md",
+      "heading": "引用方式",
+      "start_line": 23,
+      "end_line": 34,
+      "rule_ids": [
+        "R10",
+        "R60",
+        "R61"
+      ]
+    },
+    {
+      "file": "docs/governance/maintenance/设计-词表版本.md",
+      "heading": "历史读取",
+      "start_line": 35,
+      "end_line": 42,
+      "rule_ids": [
+        "R57",
+        "R61"
+      ]
+    },
+    {
+      "file": "docs/governance/maintenance/设计-词表版本.md",
+      "heading": "发布与回退",
+      "start_line": 43,
+      "end_line": 50,
+      "rule_ids": [
+        "R59",
+        "R60",
+        "R62",
+        "R65",
+        "R66"
+      ]
+    },
+    {
+      "file": "docs/governance/maintenance/设计-词表版本.md",
+      "heading": "变更记录",
+      "start_line": 51,
+      "end_line": 55,
+      "rule_ids": [
+        "R52",
+        "R60",
+        "R63"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "F01",
+      "title": "分组关系",
+      "classification": "标准语义缺口",
+      "priority": "P1",
+      "rule_ids": [
+        "R26"
+      ],
+      "summary": "采用扩展时必须同时满足其专用类型和关系语义，不能只搬入属性名。",
+      "status": "审查建议，未采纳、未修改设计",
+      "origin_evidence": [
+        {
+          "file": "docs/practices/vocabulary/设计-现行数据规范.md",
+          "line": 159,
+          "text": "| `iso-thes:superGroup` | 0..n | Collection IRI | 需要此种分组细分时的主要维护方向；不能仅凭类似名称就认定它与 member 完全相同 |"
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "title": "元数据类型",
+      "classification": "旧合同继承",
+      "priority": "P1",
+      "rule_ids": [
+        "R19"
+      ],
+      "summary": "把当前来源所用表示收紧为通用入口，会排除标准允许的其他来源表示。IRI 本身合法，问题是缺少理由的排他限制。",
+      "status": "审查建议，未采纳、未修改设计",
+      "origin_evidence": [
+        {
+          "file": "docs/practices/vocabulary/设计-现行数据规范.md",
+          "line": 101,
+          "text": "| `dcterms:language` | 0..n | IRI | 实际提供的中英文语言标识，与输出配置一致 |"
+        },
+        {
+          "file": "docs/practices/vocabulary/设计-现行数据规范.md",
+          "line": 136,
+          "text": "| `dcterms:type` | 0..n | 普通文字 | 仅兼容保留来源记录类别；不要求自有概念重复写 concept，不替代 RDF 类型或分面分类 |"
+        }
+      ]
+    },
+    {
+      "id": "F03",
+      "title": "同步方法",
+      "classification": "旧流程继承",
+      "priority": "P2",
+      "rule_ids": [
+        "R54",
+        "R55"
+      ],
+      "summary": "保留冲突保护与语义复核目标；不把值比较算法当成唯一设计方法，也不把字段独立当成语义独立。",
+      "status": "审查建议，未采纳、未修改设计",
+      "origin_evidence": [
+        {
+          "file": "docs/model/vocabulary/提案-词表整体设计.md",
+          "line": 108,
+          "text": "建议在既有三方值比较之外，增加按本次变化生成的受影响清单。值的差异只能发现变化，不能独自判断含义是否改变。"
+        }
+      ]
+    },
+    {
+      "id": "F04",
+      "title": "重建要求",
+      "classification": "旧流程继承",
+      "priority": "P2",
+      "rule_ids": [
+        "R46"
+      ],
+      "summary": "清除残留及版本一致是要求；每次重建是实现方案。",
+      "status": "审查建议，未采纳、未修改设计",
+      "origin_evidence": []
+    },
+    {
+      "id": "F05",
+      "title": "标题派生",
+      "classification": "兼容策略越界",
+      "priority": "P2",
+      "rule_ids": [
+        "R21"
+      ],
+      "summary": "删除全局强制同值要求，保留按应用需要生成兼容标题的能力。",
+      "status": "审查建议，未采纳、未修改设计",
+      "origin_evidence": [
+        {
+          "file": "docs/practices/vocabulary/设计-现行数据规范.md",
+          "line": 188,
+          "text": "| `dcterms:title` | 0..n | 标签文字或来源原有文字 | 来源标题保留；自有输出仅在兼容需要时从 prefLabel 派生同值标题，不独立维护 |"
+        }
+      ]
+    },
+    {
+      "id": "F06",
+      "title": "默认语言",
+      "classification": "阶段默认越界",
+      "priority": "P2",
+      "rule_ids": [
+        "R48"
+      ],
+      "summary": "英文可以保留为当前默认，但不能仅以当前英语基准为依据固化通用设计。",
+      "status": "审查建议，未采纳、未修改设计",
+      "origin_evidence": [
+        {
+          "file": "docs/model/vocabulary/决定-多语言词表.md",
+          "line": 13,
+          "text": "| 匹配与显示 | 语言筛选采用 Basic Filtering，单个名称选择采用 Lookup；完成请求列表后保留英文回退，仍无名称时显示标识及缺项 |"
+        }
+      ]
+    },
+    {
+      "id": "F07",
+      "title": "字段基数",
+      "classification": "对象范围不清",
+      "priority": "P2",
+      "rule_ids": [
+        "R13",
+        "R20"
+      ],
+      "summary": "概念组和数组不是同一种命名对象；本地记录日期约定也不能无条件约束所有来源。",
+      "status": "审查建议，未采纳、未修改设计",
+      "origin_evidence": [
+        {
+          "file": "docs/practices/vocabulary/设计-现行数据规范.md",
+          "line": 147,
+          "text": "| `skos:prefLabel` | 1..n | 标签文字 | 分组名称，按名称规则；来源缺名保留警告 |"
+        }
+      ]
+    },
+    {
+      "id": "F08",
+      "title": "标识策略",
+      "classification": "依据层次不足",
+      "priority": "P3",
+      "rule_ids": [
+        "R08"
+      ],
+      "summary": "UUIDv4 有成熟标准，不能判为错误或随意更换；需补独立技术选择与发布场景理由。",
+      "status": "审查建议，未采纳、未修改设计",
+      "origin_evidence": [
+        {
+          "file": "docs/model/vocabulary/提案-词表整体设计.md",
+          "line": 80,
+          "text": "本地名称 URI 建议使用 `urn:uuid:` 加 UUIDv4。它是拟议的新增名称身份政策，不改写现有概念、集合、内容单元或来源 URI。一次性登记和唯一性检查由实现承担；生成阶段不得用新文字重新计算名称身份。"
+        }
+      ]
+    },
+    {
+      "id": "F09",
+      "title": "名称约束",
+      "classification": "额外限制待论证",
+      "priority": "P2",
+      "rule_ids": [
+        "R12",
+        "R16"
+      ],
+      "summary": "唯一首选文字、唯一 Label 资源、哪些对象使用 XL 是三个问题。不能用普通标签时代的唯一性自动回答后两项。",
+      "status": "审查建议，未采纳、未修改设计",
+      "origin_evidence": []
+    },
+    {
+      "id": "F10",
+      "title": "交付记录",
+      "classification": "文件方案越界",
+      "priority": "P2",
+      "rule_ids": [
+        "R64"
+      ],
+      "summary": "逻辑版本和证据要求留在设计；文件位置、字节摘要与文件集放在明确采用的交付合同。",
+      "status": "审查建议，未采纳、未修改设计",
+      "origin_evidence": []
+    },
+    {
+      "id": "F11",
+      "title": "发布门槛",
+      "classification": "新旧错误边界不明",
+      "priority": "P1",
+      "rule_ids": [
+        "R66"
+      ],
+      "summary": "保留源文件不等于允许矛盾进入有效发布图；不能把增量无新增错误写成完整一致性。",
+      "status": "审查建议，未采纳、未修改设计",
+      "origin_evidence": [
+        {
+          "file": "docs/practices/vocabulary/设计-现行数据规范.md",
+          "line": 282,
+          "text": "| 结构与语义错误 | 非法主节点身份、不相容类型、关系端点错误、同语言多个首选名、标签互斥冲突、相关与层级冲突 | 本次生成新增时阻止发布，保留旧 `current` |"
+        }
+      ]
+    },
+    {
+      "id": "F12",
+      "title": "名称联系",
+      "classification": "标准语义缺口",
+      "priority": "P2",
+      "rule_ids": [
+        "R72"
+      ],
+      "summary": "补对称性和扩展用途，防止把通用联系误作有方向的业务关系。",
+      "status": "审查建议，未采纳、未修改设计",
+      "origin_evidence": []
+    }
+  ],
+  "counts": {
+    "rules": 72,
+    "actions": {
+      "保留": 54,
+      "修订": 12,
+      "待核": 4,
+      "删除": 2
+    },
+    "field_rows": 92,
+    "sections": 74,
+    "findings": 12
+  },
+  "limits": [
+    "ISO 25964 权威全文仍未完整取得；公开 schema、对应工件和 IFLA 指南不能冒充其全部业务条款。",
+    "R30 的部分层级条件、R35 的组合映射交换方案、R70 的未核正文保持待核；R12 的额外资源唯一性仍需项目需求论证。",
+    "标准允许多种方案不意味着项目不得收紧；本审查区分有理由的项目选择与未经论证的实现继承。",
+    "未把所有已采纳选择判为无效；修订及撤销仍须人按权限决定。",
+    "NISO 出版入口本轮可访问，全文下载入口未取得可用直链；未用本地 Z39.19 笔记充当本轮已核正文。"
+  ],
+  "not_executed": [
+    "修改六篇设计",
+    "修改已采纳决定",
+    "修改代码、schema 或数据",
+    "运行翻译或应用同步",
+    "提交或推送",
+    "购买标准或持久保存外部全文"
+  ],
+  "record_verification": {
+    "result": "passed",
+    "design_hashes_unchanged": 6,
+    "rules": 72,
+    "field_rows": 92,
+    "sections": 74,
+    "errors": [],
+    "limits": "这些校验只证明审查记录定位与范围完整、正文未改，不证明未核标准条款或设计已经通过全部标准核验。"
+  }
+}

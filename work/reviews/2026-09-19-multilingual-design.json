@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-19",
+  "authorization": "用户认可标准对照与文档分工，并明确询问词表整体设计和数据规范的同步；本轮仅修订文档，不改代码、数据或启用语言。",
+  "decision": "docs/model/vocabulary/决定-多语言词表.md",
+  "main_design": "docs/model/vocabulary/设计-多语言词表.md",
+  "source_commit": "4a6fbc25e6a0fe0219753829ce99bf72c1e28a4b",
+  "source_state": "本轮开始时的未提交工作区；各哈希定位所核旧文，不冒称均来自 source_commit。",
+  "changes": [
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "source_sha256": "4da59fbb745546afa5bdf3cd938651056097ea3d8c2a979edda821b1d9001e18",
+      "sections": [
+        {
+          "source_heading": "标准采用",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#标准依据"
+          ]
+        },
+        {
+          "source_heading": "名称与版本",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#名称与版本",
+            "docs/model/vocabulary/设计-多语言词表.md#名称与说明"
+          ]
+        },
+        {
+          "source_heading": "译文复核",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#译文复核",
+            "docs/model/vocabulary/设计-多语言词表.md#编辑与依据"
+          ]
+        },
+        {
+          "source_heading": "规则归属",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#规则归属"
+          ]
+        },
+        {
+          "source_heading": "验收与迁移",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#验收与迁移"
+          ]
+        }
+      ],
+      "treatment": "新增多语言组织，整体职责引用主文；原整合、身份、映射、版本和消费者边界保留。"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "source_sha256": "c9a4c392ebd9ddf39b2d2daa17c1381c5efcd85f227a6cef821852ca119ffc79",
+      "sections": [
+        {
+          "source_heading": "适用范围",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#适用范围"
+          ]
+        },
+        {
+          "source_heading": "语言范围",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#语言范围",
+            "docs/model/vocabulary/设计-多语言词表.md#语言标记"
+          ]
+        },
+        {
+          "source_heading": "名称规则",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#名称规则",
+            "docs/model/vocabulary/设计-多语言词表.md#概念对应"
+          ]
+        },
+        {
+          "source_heading": "实现状态",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#实现状态",
+            "docs/model/vocabulary/设计-词表数据规范.md#多语差异"
+          ]
+        }
+      ],
+      "treatment": "保留第 3 版合同与当前输入，补齐标签层次及实际代码差异，不把目标规则写成已实现。"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-中文标签.md",
+      "source_sha256": "79bb79742247e5dc801e735a70cf7d86b40254915a3f1a09cd418b2022c2e496",
+      "sections": [
+        {
+          "source_heading": "适用范围",
+          "destinations": [
+            "docs/model/vocabulary/设计-中文标签.md#适用范围",
+            "docs/model/vocabulary/设计-多语言词表.md#设计范围"
+          ]
+        },
+        {
+          "source_heading": "名称衔接",
+          "destinations": [
+            "docs/model/vocabulary/设计-中文标签.md#名称衔接",
+            "docs/model/vocabulary/设计-多语言词表.md#编辑与依据"
+          ]
+        },
+        {
+          "source_heading": "合并与展示",
+          "destinations": [
+            "docs/model/vocabulary/设计-中文标签.md#合并与展示",
+            "docs/model/vocabulary/设计-多语言词表.md#匹配与显示"
+          ]
+        },
+        {
+          "source_heading": "实现状态",
+          "destinations": [
+            "docs/model/vocabulary/设计-中文标签.md#实现状态",
+            "docs/model/vocabulary/设计-词表数据规范.md#多语差异"
+          ]
+        }
+      ],
+      "treatment": "通用职责移交多语言主文；保留当前英文输入、zh 输出、批次、复用、兼容接口与来源性质。"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "source_sha256": "cc476739075e039716361a91e4a3282cf7895e1258bc5a1fdde2665ab8009a06",
+      "sections": [
+        {
+          "source_heading": "标准与格式",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#标准依据",
+            "docs/model/vocabulary/设计-词表资源与字段.md#标准与格式"
+          ]
+        },
+        {
+          "source_heading": "通用约定",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#语言标记",
+            "docs/model/vocabulary/设计-词表资源与字段.md#通用约定"
+          ]
+        },
+        {
+          "source_heading": "名称字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#名称字段",
+            "docs/model/vocabulary/设计-多语言词表.md#概念对应"
+          ]
+        },
+        {
+          "source_heading": "依据与限制",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#依据与限制",
+            "docs/model/vocabulary/设计-多语言词表.md#标准依据"
+          ]
+        }
+      ],
+      "treatment": "字段表保留，补 BCP 47 及语言与名称关系的职责；Turtle 实例未修改。"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表维护.md",
+      "source_sha256": "cc1ac4bf0f6634772566a956c38305f2cb1fdf66994ecff54f283e4d8bc375a1",
+      "sections": [
+        {
+          "source_heading": "名称编辑",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表维护.md#名称编辑",
+            "docs/model/vocabulary/设计-多语言词表.md#编辑与依据"
+          ]
+        }
+      ],
+      "treatment": "多语名称共用既有登记；兼容编辑使用完整标签，不把 zh 当批量通配操作。"
+    },
+    {
+      "source": "docs/governance/maintenance/设计-词表版本.md",
+      "source_sha256": "654523fdd8311bc3f0fcdfb51b80e9b4ecb82dfe711157f087f1c8d2c40cf024",
+      "sections": [
+        {
+          "source_heading": "版本对象",
+          "destinations": [
+            "docs/governance/maintenance/设计-词表版本.md#版本对象",
+            "docs/model/vocabulary/设计-多语言词表.md#匹配与显示"
+          ]
+        }
+      ],
+      "treatment": "展示版本可以携带已选语言规则；当前仍为双语，不扩大产物范围。"
+    }
+  ],
+  "supporting_updates": [
+    "docs/model/vocabulary/索引-主题词表.md",
+    "docs/governance/decision-making/设计-方法登记.md",
+    "docs/model/terminology/设计-术语.md",
+    "AGENTS.md"
+  ],
+  "standards": [
+    {
+      "source": "https://www.iso.org/standard/53657.html",
+      "locations": [
+        "官方适用范围",
+        "NISO 公布的第 9 章和第 15 章主题及公开模型"
+      ],
+      "limit": "未完成第 9 章权威正文逐条核验；不据摘要补条款。"
+    },
+    {
+      "source": "https://www.ifla.org/files/assets/hq/publications/professional-report/115.pdf",
+      "edition": "2009, Professional Reports 115",
+      "pdf_pages": 30,
+      "locations": [
+        "§3.2",
+        "§3.3.6",
+        "§4 相关段落",
+        "术语表相关条目"
+      ],
+      "access": "官方 PDF 在内存中读取，未新增持久下载。"
+    },
+    {
+      "source": "https://www.w3.org/TR/skos-reference/",
+      "locations": [
+        "§5",
+        "附录 B"
+      ]
+    },
+    {
+      "source": "https://www.w3.org/TR/rdf11-concepts/#section-Graph-Literal",
+      "locations": [
+        "§3.3"
+      ]
+    },
+    {
+      "source": "https://www.rfc-editor.org/rfc/rfc5646.html",
+      "locations": [
+        "§2.1",
+        "§2.2.9",
+        "§4.5"
+      ]
+    },
+    {
+      "source": "https://www.rfc-editor.org/rfc/rfc4647.html",
+      "locations": [
+        "§3.3.1",
+        "§3.4",
+        "§3.4.1"
+      ]
+    },
+    {
+      "source": "https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry",
+      "locations": [
+        "Hans 与 Hant 等子标签登记"
+      ],
+      "limit": "未将注册表持久引入项目；实施登记校验时须固定实际使用版本。"
+    }
+  ],
+  "choice_scope": [
+    "来源全部语言保留，输出继续当前 en/zh 范围",
+    "允许缺译，不强求语言名称和结构齐备",
+    "语言筛选采用 Basic Filtering，单名选择采用 Lookup",
+    "默认 en 回退及缺名提示属于项目选择",
+    "当前批译 zh 和正式术语库语言值域保持",
+    "普通标签、XL 目标与正式术语编辑源区分"
+  ],
+  "code_fingerprints": {
+    "packages/kb-vocab/src/kb_vocab/normalization.py": "68c554caf954663edb5763f5ef900a71fa3e21ef7badf47fb93aabe6b616f4d8",
+    "packages/kb-vocab/src/kb_vocab/validation.py": "d8c9493cc8e563bd85bb94d13e4598c796efebbda1801e0f8ab31915bc317856",
+    "packages/kb-vocab/src/kb_vocab/shacl_validation.py": "1b9a53234fe29c53a744b43e35ce7d87a1bdc8556bec4b290a06853ead95b72b",
+    "packages/kb-vocab/src/kb_vocab/display.py": "16cbe8b80382a76674234f5c8f33b805dfd6d5176130d4cfc8852438d22353d2",
+    "packages/kb-vocab/scripts/extract-translation-tasks.py": "077cf0b79853c6a7800def3d6921f72193819fb95b892292c0ba48978e77e084",
+    "packages/kb-vocab/scripts/merge-translation-batch.py": "d4236a35b95ff115d78a9690f9ddb45647d6ceeeabc7c344524210f3d9d66200"
+  },
+  "observed_gaps": [
+    "当前过滤按语言标签首段执行，未形成完整 BCP 47 与 IANA 校验",
+    "翻译提取以任一 zh 标签判定已有中文，未按完整目标标签补缺",
+    "英语变体选择依现有排序，不是通用 Lookup",
+    "合并输出固定 zh；展示复用仍专门比较 en",
+    "XL 与统一语言匹配合同未完整接入"
+  ],
+  "preserved": [
+    "既有采纳决定和原整体提案",
+    "Turtle 完整实例",
+    "代码与 schema",
+    "来源、词表、术语及翻译数据",
+    "当前启用语言和消费者状态"
+  ],
+  "verification": [
+    "现行本地引用与锚点",
+    "新标题及格式",
+    "旧节去向与职责",
+    "已采纳设计与当前实现的分界",
+    "受保护正文、Turtle 实例及代码数据未变"
+  ]
+}

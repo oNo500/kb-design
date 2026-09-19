@@ -1,0 +1,635 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-19",
+  "source_commit": "4a6fbc25e6a0fe0219753829ce99bf72c1e28a4b",
+  "authorization": "用户要求删除不需要的提案，保留并合并有价值内容；本次仅整理文档，不采纳其中未决能力或范围。",
+  "changes": [
+    {
+      "source": "docs/model/vocabulary/提案-分面字段.md",
+      "source_sha256": "84bd6bdc7becb441a0790feb59471f7e1543a605eb671772d88e00b12d113786",
+      "disposition": "merged_and_removed",
+      "destination": "docs/model/vocabulary/提案-词表组织扩展.md",
+      "sections": [
+        {
+          "source_heading": "当前边界",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#适用范围",
+            "docs/model/vocabulary/提案-词表组织扩展.md#分面分类"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "对象职责",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#适用范围"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "真实触发",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#分面分类",
+            "docs/model/vocabulary/提案-词表组织扩展.md#试标与验收"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "样本资格",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#分面分类",
+            "docs/model/vocabulary/提案-词表组织扩展.md#试标与验收"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "外部依据",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#分面分类"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "试标过程",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#试标与验收"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "待定设计",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#分面分类",
+            "docs/model/vocabulary/提案-词表组织扩展.md#试标与验收"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "生效门禁",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#采纳范围"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "不采用后果",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#采纳范围"
+          ],
+          "disposition": "preserved_or_consolidated"
+        }
+      ]
+    },
+    {
+      "source": "docs/model/vocabulary/提案-划分特征.md",
+      "source_sha256": "9b98557c3da233a60c82988969f2727c115fa9eeafe47486d02ec3d8be299948",
+      "disposition": "merged_and_removed",
+      "destination": "docs/model/vocabulary/提案-词表组织扩展.md",
+      "sections": [
+        {
+          "source_heading": "当前边界",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#划分特征"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "对象职责",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#划分特征"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "依据分工",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#划分特征",
+            "docs/model/vocabulary/提案-词表组织扩展.md#采纳范围"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "真实触发",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#划分特征",
+            "docs/model/vocabulary/提案-词表组织扩展.md#试标与验收"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "试标证据",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#试标与验收"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "生命周期",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#划分特征",
+            "docs/model/vocabulary/提案-词表组织扩展.md#试标与验收"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "来源复核",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#划分特征"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "提案内容",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#划分特征",
+            "docs/model/vocabulary/提案-词表组织扩展.md#试标与验收"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "生效门禁",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#采纳范围"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "不采用后果",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#采纳范围"
+          ],
+          "disposition": "preserved_or_consolidated"
+        }
+      ]
+    },
+    {
+      "source": "docs/model/vocabulary/提案-概念组.md",
+      "source_sha256": "6593f94f55102b21de74596b6d43d90132c8a23e28eed96187dcaebc59dd5ea8",
+      "disposition": "merged_and_removed",
+      "destination": "docs/model/vocabulary/提案-词表组织扩展.md",
+      "sections": [
+        {
+          "source_heading": "当前状态",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#适用范围",
+            "docs/model/vocabulary/提案-词表组织扩展.md#手工概念组"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "对象边界",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#适用范围",
+            "docs/model/vocabulary/提案-词表组织扩展.md#手工概念组"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "真实触发",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#手工概念组",
+            "docs/model/vocabulary/提案-词表组织扩展.md#试标与验收"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "身份名称",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#手工概念组"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "成员依据",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#手工概念组"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "生命周期",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#手工概念组"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "生成边界",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#手工概念组",
+            "docs/model/vocabulary/提案-词表组织扩展.md#试标与验收"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "权限门禁",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#采纳范围"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "不采用后果",
+          "destinations": [
+            "docs/model/vocabulary/提案-词表组织扩展.md#采纳范围"
+          ],
+          "disposition": "preserved_or_consolidated"
+        }
+      ]
+    },
+    {
+      "source": "docs/model/vocabulary/提案-生活领域范围.md",
+      "source_sha256": "4b11fab770b1680581d08aebf396a153035fcb3137b65bb46f1a026e576f1687",
+      "disposition": "rewritten",
+      "destination": "docs/model/vocabulary/提案-生活领域范围.md",
+      "sections": [
+        {
+          "source_heading": "状态边界",
+          "destinations": [
+            "docs/model/vocabulary/提案-生活领域范围.md#范围问题",
+            "docs/model/vocabulary/提案-生活领域范围.md#待定事项"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "现行事实",
+          "destinations": [
+            "docs/model/vocabulary/提案-生活领域范围.md#范围问题",
+            "docs/model/vocabulary/提案-生活领域范围.md#待定事项"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "对象边界",
+          "destinations": [
+            "docs/model/vocabulary/提案-生活领域范围.md#范围问题"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "依据边界",
+          "destinations": [
+            "docs/model/vocabulary/提案-生活领域范围.md#资料与限制"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "方案比较",
+          "destinations": [
+            "docs/model/vocabulary/提案-生活领域范围.md#方案选择"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "推荐方案",
+          "destinations": [
+            "docs/model/vocabulary/提案-生活领域范围.md#方案选择"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "替代方案",
+          "destinations": [
+            "docs/model/vocabulary/提案-生活领域范围.md#方案选择"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "不采后果",
+          "destinations": [
+            "docs/model/vocabulary/提案-生活领域范围.md#方案选择"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "影响范围",
+          "destinations": [
+            "docs/model/vocabulary/提案-生活领域范围.md#待定事项"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "权限门禁",
+          "destinations": [
+            "docs/model/vocabulary/提案-生活领域范围.md#待定事项"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "生效条件",
+          "destinations": [
+            "docs/model/vocabulary/提案-生活领域范围.md#待定事项"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "错误代价",
+          "destinations": [
+            "docs/model/vocabulary/提案-生活领域范围.md#范围问题",
+            "docs/model/vocabulary/提案-生活领域范围.md#方案选择"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "开放决定",
+          "destinations": [
+            "docs/model/vocabulary/提案-生活领域范围.md#待定事项"
+          ],
+          "disposition": "preserved_or_consolidated"
+        }
+      ]
+    },
+    {
+      "source": "docs/model/vocabulary/提案-传播学科范围.md",
+      "source_sha256": "0da44143e2659562d3164db46b7b4af0aa48c690ec6e547cb3f648cad60b7a3a",
+      "disposition": "rewritten",
+      "destination": "docs/model/vocabulary/提案-传播学科范围.md",
+      "sections": [
+        {
+          "source_heading": "状态边界",
+          "destinations": [
+            "docs/model/vocabulary/提案-传播学科范围.md#对象区别",
+            "docs/model/vocabulary/提案-传播学科范围.md#资料与限制"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "现行事实",
+          "destinations": [
+            "docs/model/vocabulary/提案-传播学科范围.md#对象区别",
+            "docs/model/vocabulary/提案-传播学科范围.md#方案选择"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "依据边界",
+          "destinations": [
+            "docs/model/vocabulary/提案-传播学科范围.md#资料与限制"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "对象分层",
+          "destinations": [
+            "docs/model/vocabulary/提案-传播学科范围.md#对象区别"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "方案比较",
+          "destinations": [
+            "docs/model/vocabulary/提案-传播学科范围.md#方案选择"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "推荐方案",
+          "destinations": [
+            "docs/model/vocabulary/提案-传播学科范围.md#方案选择"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "替代方案",
+          "destinations": [
+            "docs/model/vocabulary/提案-传播学科范围.md#方案选择"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "不采后果",
+          "destinations": [
+            "docs/model/vocabulary/提案-传播学科范围.md#对象区别",
+            "docs/model/vocabulary/提案-传播学科范围.md#方案选择"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "影响范围",
+          "destinations": [
+            "docs/model/vocabulary/提案-传播学科范围.md#待定事项"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "权限门禁",
+          "destinations": [
+            "docs/model/vocabulary/提案-传播学科范围.md#待定事项"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "生效条件",
+          "destinations": [
+            "docs/model/vocabulary/提案-传播学科范围.md#待定事项"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "错误代价",
+          "destinations": [
+            "docs/model/vocabulary/提案-传播学科范围.md#对象区别",
+            "docs/model/vocabulary/提案-传播学科范围.md#方案选择"
+          ],
+          "disposition": "preserved_or_consolidated"
+        },
+        {
+          "source_heading": "层级交接",
+          "destinations": [],
+          "disposition": "removed_obsolete_handoff"
+        },
+        {
+          "source_heading": "开放决定",
+          "destinations": [
+            "docs/model/vocabulary/提案-传播学科范围.md#待定事项"
+          ],
+          "disposition": "preserved_or_consolidated"
+        }
+      ]
+    }
+  ],
+  "shared_rules": [
+    "docs/governance/decision-making/设计-治理.md#决策权",
+    "docs/model/vocabulary/设计-词表整体设计.md",
+    "docs/model/vocabulary/设计-层级结构.md#数组分组"
+  ],
+  "removed_context": [
+    "未重新核对的概念、数组、试标和消费者计数不再作为当前事实；历史版本留在 source_commit。",
+    "传播提案的 Security 数量交接已失效，当前层级文档已为 7；不保留 Task 3 会话交接。",
+    "旧的 DITA 后继版本状态、docs/drafts 路径和固定全树扩围预设不作为当前选择。"
+  ],
+  "retained_history": [
+    "docs/model/vocabulary/提案-词表整体设计.md"
+  ],
+  "unchanged_effect": [
+    "不修改正式词表、生成输入、代码或外部知识库。",
+    "不改变现行名称准入、数组约束、来源范围、草案状态和消费者权限。"
+  ],
+  "follow_up": {
+    "date": "2026-09-19",
+    "authorization": "用户在标准优先审查后回复“按照建议执行吧”；执行前说明仅整理文档，不改词表数据或提交 Git。",
+    "decision": "docs/model/vocabulary/决定-词表整体设计.md#提案处置",
+    "changes": [
+      {
+        "source": "docs/model/vocabulary/提案-词表组织扩展.md",
+        "source_sha256": "2cdc0f14ceddee687031b7f88d6fb2efc7ff927168cfc20175b0fc2f95ceea37",
+        "source_state": "前次整理后的未提交工作区文本；不是 source_commit 中的原始版本",
+        "disposition": "absorbed_and_removed",
+        "destination": "docs/model/vocabulary/设计-词表整体设计.md",
+        "sections": [
+          {
+            "source_heading": "适用范围",
+            "destinations": [
+              "docs/model/vocabulary/设计-词表整体设计.md#关系与导航",
+              "docs/model/vocabulary/设计-词表整体设计.md#用途与验收"
+            ],
+            "rationale": "组织对象区分归入设计；来源保留与本地具体采用分别处理。"
+          },
+          {
+            "source_heading": "分面分类",
+            "destinations": [
+              "docs/model/vocabulary/设计-词表整体设计.md#用途与验收",
+              "docs/model/vocabulary/设计-词表资源与字段.md#集合字段",
+              "docs/model/vocabulary/设计-主题词表.md#待定事项"
+            ],
+            "rationale": "保留类别与成员依据，具体分类暂缓；独立检索实验不作为统一前置。"
+          },
+          {
+            "source_heading": "划分特征",
+            "destinations": [
+              "docs/model/vocabulary/设计-词表整体设计.md#用途与验收",
+              "docs/model/vocabulary/设计-层级结构.md#数组分组"
+            ],
+            "rationale": "保留完整分析范围、属性依据、判据和未归组说明；既有数组约束及权限不变。"
+          },
+          {
+            "source_heading": "手工概念组",
+            "destinations": [
+              "docs/model/vocabulary/设计-词表资源与字段.md#集合字段",
+              "docs/model/vocabulary/设计-词表整体设计.md#用途与验收"
+            ],
+            "rationale": "保留身份、成员、表示、历史和消费边界；不要求其他方法无法取得相同成员，不预建通用状态机。"
+          },
+          {
+            "source_heading": "试标与验收",
+            "destinations": [
+              "docs/model/vocabulary/设计-词表整体设计.md#用途与验收"
+            ],
+            "rationale": "按浏览、分类或检索失败风险安排验收，不统一要求检索评测。"
+          },
+          {
+            "source_heading": "采纳范围",
+            "destinations": [
+              "docs/model/vocabulary/决定-词表整体设计.md#提案处置",
+              "docs/model/vocabulary/设计-主题词表.md#待定事项"
+            ],
+            "rationale": "具体能力和数据未采纳，按实际用途另行决定。"
+          }
+        ]
+      },
+      {
+        "source": "docs/model/vocabulary/提案-生活领域范围.md",
+        "source_sha256": "40609ec4d9129f8e3ae9bea290f8d2f3f744570a7f158b9f60d4ff4e45278e4e",
+        "source_state": "前次整理后的未提交工作区文本；不是 source_commit 中的原始版本",
+        "disposition": "deferred_and_removed",
+        "destination": "docs/model/vocabulary/设计-主题词表.md#待定事项",
+        "sections": [
+          {
+            "source_heading": "范围问题",
+            "destinations": [
+              "docs/model/vocabulary/设计-主题词表.md#待定事项"
+            ],
+            "rationale": "保留三类对象区别和现行排除，暂缓扩大。"
+          },
+          {
+            "source_heading": "方案选择",
+            "destinations": [
+              "docs/model/vocabulary/设计-主题词表.md#待定事项"
+            ],
+            "rationale": "保持范围；需要时分别决定，不预设生活共同根。"
+          },
+          {
+            "source_heading": "资料与限制",
+            "destinations": [
+              "docs/model/vocabulary/设计-主题词表.md#待定事项"
+            ],
+            "rationale": "保留五个研究入口和适用性限制，不据其直接采用结构。"
+          },
+          {
+            "source_heading": "待定事项",
+            "destinations": [
+              "docs/model/vocabulary/设计-主题词表.md#待定事项",
+              "docs/model/vocabulary/决定-词表整体设计.md#提案处置"
+            ],
+            "rationale": "保留范围、来源及具体采用的决定；重复的迁移和消费流程继续由现行治理约束。"
+          }
+        ]
+      },
+      {
+        "source": "docs/model/vocabulary/提案-传播学科范围.md",
+        "source_sha256": "fb088fb238f1e6badea681dcf118239ea284d0c2e94963acf86ae5f1e9bcb567",
+        "source_state": "前次整理后的未提交工作区文本；不是 source_commit 中的原始版本",
+        "disposition": "narrowed_and_renamed",
+        "destination": "docs/model/vocabulary/提案-技术传播覆盖.md",
+        "sections": [
+          {
+            "source_heading": "对象区别",
+            "destinations": [
+              "docs/model/vocabulary/提案-技术传播覆盖.md#现有依据",
+              "docs/model/vocabulary/提案-技术传播覆盖.md#覆盖判据"
+            ],
+            "rationale": "保留领域、写作、专业活动、产品信息和标准记录的区别，补当前 RDF 事实。"
+          },
+          {
+            "source_heading": "方案选择",
+            "destinations": [
+              "docs/model/vocabulary/提案-技术传播覆盖.md#方案选择"
+            ],
+            "rationale": "撤下默认新增传播学科下位的推荐，先核对现有表示和可复用概念。"
+          },
+          {
+            "source_heading": "资料与限制",
+            "destinations": [
+              "docs/model/vocabulary/提案-技术传播覆盖.md#覆盖判据"
+            ],
+            "rationale": "保留 NCES 09.0908 与 IEEE PCS 的范围材料；其余相邻主题资料不构成本次覆盖核对的必做项。"
+          },
+          {
+            "source_heading": "待定事项",
+            "destinations": [
+              "docs/model/vocabulary/提案-技术传播覆盖.md#待定事项"
+            ],
+            "rationale": "收窄为需求、覆盖对应和具体缺口处理；不附带批准 DITA、内容类型或现行层级变更。"
+          }
+        ]
+      }
+    ],
+    "removed_requirements": [
+      "所有分组一律要求独立人工检索评价集合",
+      "手工组必须证明分支、数组、分面及映射都无法提供相同集合",
+      "无具体用途时预建组及成员关系的完整生命周期状态",
+      "预先推荐完整传播学科成为 communication-studies 的本地下位"
+    ],
+    "evidence": {
+      "config": "data/inputs/vocabulary/knowledge-system.json",
+      "config_sha256": "e3a809bf2d8a08d23424c423dbfd580dea8a9d5f1d0ee65e9bbd08dcf01695ce",
+      "artifact": "output/vocabulary/current/vocabulary.ttl",
+      "artifact_sha256": "a43fee2961e2633bbca90c4643f8fc9b3574eece48c6c55bb09cee573d012d73",
+      "group": "urn:kb-vocab:group:technical-communication",
+      "members": [
+        "urn:uuid:89bfcaf1-5095-5054-953d-94242a157dbf"
+      ],
+      "scope_notes": [
+        "Membership follows the referenced source inheritance rules. Reference-only branches do not add members; complete domain coverage is not asserted.",
+        "本分组的成员由所引用的来源继承规则确定；仅作参考的分支不产生成员，分组不表示该领域已完整覆盖。"
+      ]
+    },
+    "history_resolution": "changes 中的 destinations 按当次中间文本解释；若路径被本次删除或改名，先按 follow_up.changes 的 source_heading 找到当前 destinations。既有决定及原整理记录不回写。",
+    "unchanged_effect": [
+      "正式词表数据、来源范围及领域挂接",
+      "名称准入与划分特征的零自定边界",
+      "已有数组约束",
+      "本地分类与手工组未启用",
+      "消费者及发版状态"
+    ]
+  }
+}

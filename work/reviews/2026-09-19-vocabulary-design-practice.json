@@ -1,0 +1,1556 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-19",
+  "authorization": "用户先要求只读影响清单，随后明确标准指引设计、问题经研究与采纳形成新设计，并要求“完成刚才没有完成的梳理”。本次执行此前提出的目标设计与实践分离方案。",
+  "source_commit": "fd17ce4e97e6f309b2ece469226c597b6dd7aef2",
+  "source_state": "基于未提交工作区；源文件 SHA-256 定位合并及规则更新之后的具体正文。",
+  "decision": "docs/development/决定-词表文档分层.md",
+  "changes": [
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "source_sha256": "9a629405096786b6ee3cf6df288a4920168d0a0c652bd5628cb9fc3b0ec29453",
+      "treatment": "目标整篇重写；字段合同独立，现行接口与阶段安排迁入实践。",
+      "sections": [
+        {
+          "source_heading": "用途与范围",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#用途与范围"
+          ]
+        },
+        {
+          "source_heading": "标准采用",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#标准采用"
+          ]
+        },
+        {
+          "source_heading": "数据分层",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#数据分层"
+          ]
+        },
+        {
+          "source_heading": "对象体系",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#对象体系"
+          ]
+        },
+        {
+          "source_heading": "整合方式",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#整合方式"
+          ]
+        },
+        {
+          "source_heading": "关系与导航",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#关系与导航"
+          ]
+        },
+        {
+          "source_heading": "用途与验收",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#用途与验收"
+          ]
+        },
+        {
+          "source_heading": "多语言组织",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#多语言组织"
+          ]
+        },
+        {
+          "source_heading": "名称与版本",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#名称与版本"
+          ]
+        },
+        {
+          "source_heading": "映射与应用",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#映射与应用"
+          ]
+        },
+        {
+          "source_heading": "来源更新",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#来源更新"
+          ]
+        },
+        {
+          "source_heading": "发布与消费",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#发布与消费"
+          ]
+        },
+        {
+          "source_heading": "规则归属",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#规则归属"
+          ]
+        },
+        {
+          "source_heading": "验收与迁移",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#验收与迁移"
+          ]
+        },
+        {
+          "source_heading": "覆盖检查",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#覆盖检查",
+            "docs/practices/vocabulary/设计-词表工程能力.md#建设安排"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "source_sha256": "30432738ba493a67bc9d2ce87186dc7756f3fc522e67f96b8560a88166f1187c",
+      "treatment": "目标整篇重写；字段合同独立，现行接口与阶段安排迁入实践。",
+      "sections": [
+        {
+          "source_heading": "适用范围",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#适用范围"
+          ]
+        },
+        {
+          "source_heading": "词表结构",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#词表结构"
+          ]
+        },
+        {
+          "source_heading": "节点类别",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#节点类别"
+          ]
+        },
+        {
+          "source_heading": "顶层组织",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#顶层组织"
+          ]
+        },
+        {
+          "source_heading": "通用约定",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#通用约定"
+          ]
+        },
+        {
+          "source_heading": "值与数量",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#值与数量"
+          ]
+        },
+        {
+          "source_heading": "语言范围",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#语言范围"
+          ]
+        },
+        {
+          "source_heading": "名称规则",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#名称规则"
+          ]
+        },
+        {
+          "source_heading": "词表字段",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#词表字段"
+          ]
+        },
+        {
+          "source_heading": "概念字段",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#概念字段"
+          ]
+        },
+        {
+          "source_heading": "分组字段",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#分组字段"
+          ]
+        },
+        {
+          "source_heading": "映射字段",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#映射字段"
+          ]
+        },
+        {
+          "source_heading": "来源兼容字段",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#来源兼容字段"
+          ]
+        },
+        {
+          "source_heading": "任务字段",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#任务字段"
+          ]
+        },
+        {
+          "source_heading": "辅助字段",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#辅助字段"
+          ]
+        },
+        {
+          "source_heading": "关系维护",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#关系维护"
+          ]
+        },
+        {
+          "source_heading": "依据记录",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#依据记录"
+          ]
+        },
+        {
+          "source_heading": "历史与停用",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#历史与停用"
+          ]
+        },
+        {
+          "source_heading": "校验分级",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#校验分级"
+          ]
+        },
+        {
+          "source_heading": "扩展边界",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#扩展边界"
+          ]
+        },
+        {
+          "source_heading": "交付与版本",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#交付与版本"
+          ]
+        },
+        {
+          "source_heading": "属性命名空间",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#属性命名空间"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "source_sha256": "88aefe3242d03d4f2617dae825b0a69d7caa6b671b0661d08bd8a5ce651f5825",
+      "treatment": "目标整篇重写；字段合同独立，现行接口与阶段安排迁入实践。",
+      "sections": [
+        {
+          "source_heading": "标准与格式",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#标准与格式"
+          ]
+        },
+        {
+          "source_heading": "记录结构",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#记录结构"
+          ]
+        },
+        {
+          "source_heading": "资源类型",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#资源类型"
+          ]
+        },
+        {
+          "source_heading": "采用原则",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#标准采用"
+          ]
+        },
+        {
+          "source_heading": "字段设计",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md"
+          ]
+        },
+        {
+          "source_heading": "通用约定",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#通用约定"
+          ]
+        },
+        {
+          "source_heading": "概念字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#概念字段"
+          ]
+        },
+        {
+          "source_heading": "名称字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#名称字段"
+          ]
+        },
+        {
+          "source_heading": "说明字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#说明字段"
+          ]
+        },
+        {
+          "source_heading": "集合字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#集合字段"
+          ]
+        },
+        {
+          "source_heading": "派生字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#派生表达"
+          ]
+        },
+        {
+          "source_heading": "完整实例",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#完整实例"
+          ]
+        },
+        {
+          "source_heading": "维护记录",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#维护记录"
+          ]
+        },
+        {
+          "source_heading": "来源与依据",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#来源与依据"
+          ]
+        },
+        {
+          "source_heading": "映射记录",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#映射记录"
+          ]
+        },
+        {
+          "source_heading": "采纳与发布",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#维护记录"
+          ]
+        },
+        {
+          "source_heading": "更新与兼容",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表维护.md#名称编辑"
+          ]
+        },
+        {
+          "source_heading": "名称身份",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表维护.md#名称编辑"
+          ]
+        },
+        {
+          "source_heading": "来源与引用",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表维护.md#再同步规则"
+          ]
+        },
+        {
+          "source_heading": "约束与校验",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#校验范围"
+          ]
+        },
+        {
+          "source_heading": "校验范围",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#校验范围"
+          ]
+        },
+        {
+          "source_heading": "检查分工",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#校验范围"
+          ]
+        },
+        {
+          "source_heading": "标准与选择",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#标准一致性"
+          ]
+        },
+        {
+          "source_heading": "使用评价",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#验收与迁移"
+          ]
+        },
+        {
+          "source_heading": "依据与限制",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#标准依据"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "docs/model/vocabulary/设计-多语言词表.md",
+      "source_sha256": "c92f79b77eabf6e1cb5a7b8bbe477c694a760da2573b6d960f0eaa349e96583a",
+      "treatment": "目标整篇重写；字段合同独立，现行接口与阶段安排迁入实践。",
+      "sections": [
+        {
+          "source_heading": "设计范围",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#设计范围"
+          ]
+        },
+        {
+          "source_heading": "语言策略",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#语言策略",
+            "docs/practices/vocabulary/设计-词表工程能力.md#中文批译"
+          ]
+        },
+        {
+          "source_heading": "语言标记",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#语言标记"
+          ]
+        },
+        {
+          "source_heading": "概念对应",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#概念对应"
+          ]
+        },
+        {
+          "source_heading": "名称与说明",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#名称与说明"
+          ]
+        },
+        {
+          "source_heading": "编辑与依据",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#编辑与依据"
+          ]
+        },
+        {
+          "source_heading": "翻译流程",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#翻译流程",
+            "docs/practices/vocabulary/设计-词表工程能力.md#中文批译"
+          ]
+        },
+        {
+          "source_heading": "翻译范围",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#翻译范围"
+          ]
+        },
+        {
+          "source_heading": "基准与产物",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#基准与产物"
+          ]
+        },
+        {
+          "source_heading": "名称衔接",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#编辑与依据"
+          ]
+        },
+        {
+          "source_heading": "增量同步",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#增量同步"
+          ]
+        },
+        {
+          "source_heading": "批次元数据",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#批次元数据"
+          ]
+        },
+        {
+          "source_heading": "合并与展示",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#合并与展示"
+          ]
+        },
+        {
+          "source_heading": "匹配与显示",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#匹配与显示"
+          ]
+        },
+        {
+          "source_heading": "术语衔接",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#术语衔接",
+            "docs/practices/vocabulary/设计-词表工程能力.md#中文批译"
+          ]
+        },
+        {
+          "source_heading": "兼容接口",
+          "destinations": [
+            "docs/practices/vocabulary/设计-现行数据规范.md#语言接口"
+          ]
+        },
+        {
+          "source_heading": "校验与状态",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#校验要求"
+          ]
+        },
+        {
+          "source_heading": "标准依据",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#标准依据"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表维护.md",
+      "source_sha256": "e6060848226fbbc20132a1d3fb8513de0ab68d7ef79a4182c042ca95f42fc082",
+      "treatment": "目标整篇重写；字段合同独立，现行接口与阶段安排迁入实践。",
+      "sections": [
+        {
+          "source_heading": "操作场景",
+          "destinations": [
+            "docs/practices/vocabulary/指南-词表工具链.md#日常同步"
+          ]
+        },
+        {
+          "source_heading": "数据职责",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#数据职责"
+          ]
+        },
+        {
+          "source_heading": "来源选择",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表维护.md#来源选择",
+            "docs/practices/vocabulary/设计-词表工程能力.md#来源选择"
+          ]
+        },
+        {
+          "source_heading": "编辑粒度",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表维护.md#编辑粒度",
+            "docs/practices/vocabulary/设计-词表工程能力.md#编辑粒度"
+          ]
+        },
+        {
+          "source_heading": "名称编辑",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表维护.md#名称编辑"
+          ]
+        },
+        {
+          "source_heading": "再同步规则",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表维护.md#再同步规则"
+          ]
+        },
+        {
+          "source_heading": "概念退出",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表维护.md#概念退出"
+          ]
+        },
+        {
+          "source_heading": "冲突处理",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表维护.md#冲突处理",
+            "docs/practices/vocabulary/设计-词表工程能力.md#冲突与恢复"
+          ]
+        },
+        {
+          "source_heading": "发布与恢复",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表维护.md#发布与恢复",
+            "docs/practices/vocabulary/设计-词表工程能力.md#冲突与恢复"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "docs/governance/maintenance/设计-词表版本.md",
+      "source_sha256": "ad79124008764da0736721fd651dc4c372f04905cbd9f7b7df32da4d3b37548a",
+      "treatment": "目标整篇重写；字段合同独立，现行接口与阶段安排迁入实践。",
+      "sections": [
+        {
+          "source_heading": "版本对象",
+          "destinations": [
+            "docs/governance/maintenance/设计-词表版本.md#版本对象"
+          ]
+        },
+        {
+          "source_heading": "版本标识",
+          "destinations": [
+            "docs/governance/maintenance/设计-词表版本.md#版本标识",
+            "docs/practices/vocabulary/设计-现行数据规范.md#版本接口"
+          ]
+        },
+        {
+          "source_heading": "引用方式",
+          "destinations": [
+            "docs/governance/maintenance/设计-词表版本.md#引用方式"
+          ]
+        },
+        {
+          "source_heading": "历史读取",
+          "destinations": [
+            "docs/governance/maintenance/设计-词表版本.md#历史读取"
+          ]
+        },
+        {
+          "source_heading": "发布与回退",
+          "destinations": [
+            "docs/governance/maintenance/设计-词表版本.md#发布与回退"
+          ]
+        },
+        {
+          "source_heading": "变更记录",
+          "destinations": [
+            "docs/governance/maintenance/设计-词表版本.md#变更记录",
+            "docs/practices/vocabulary/设计-现行数据规范.md#版本接口"
+          ]
+        },
+        {
+          "source_heading": "实现边界",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#维护缺口"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "docs/development/设计-词表工程能力.md",
+      "source_sha256": "eff2f1a653f78e6aab12fdc1b67b8f00b31b3bd5decbd48b37b499f8e498d9a4",
+      "treatment": "迁入实践目录；操作合同或 YAML 规则保留，更新相对引用。",
+      "sections": [
+        {
+          "source_heading": "能力分工",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#能力分工"
+          ]
+        },
+        {
+          "source_heading": "生成流程",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#生成流程"
+          ]
+        },
+        {
+          "source_heading": "输入与产物",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#输入与产物"
+          ]
+        },
+        {
+          "source_heading": "变更边界",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#变更边界"
+          ]
+        },
+        {
+          "source_heading": "依赖维护",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#依赖维护"
+          ]
+        },
+        {
+          "source_heading": "已有实现",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#已有实现"
+          ]
+        },
+        {
+          "source_heading": "校验覆盖",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#校验覆盖"
+          ]
+        },
+        {
+          "source_heading": "多语差异",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#多语差异"
+          ]
+        },
+        {
+          "source_heading": "维护缺口",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#维护缺口"
+          ]
+        },
+        {
+          "source_heading": "验收证据",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#验收证据"
+          ]
+        },
+        {
+          "source_heading": "相关文档",
+          "destinations": [
+            "docs/practices/vocabulary/设计-词表工程能力.md#相关文档"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "docs/development/指南-词表工具链.md",
+      "source_sha256": "03bc73f0c8f18e1f5757df29bea84e9c9e661e38abdc0988e791b52a32bab219",
+      "treatment": "迁入实践目录；操作合同或 YAML 规则保留，更新相对引用。",
+      "sections": [
+        {
+          "source_heading": "执行起点",
+          "destinations": [
+            "docs/practices/vocabulary/指南-词表工具链.md#执行起点"
+          ]
+        },
+        {
+          "source_heading": "准备与配置",
+          "destinations": [
+            "docs/practices/vocabulary/指南-词表工具链.md#准备与配置"
+          ]
+        },
+        {
+          "source_heading": "日常同步",
+          "destinations": [
+            "docs/practices/vocabulary/指南-词表工具链.md#日常同步"
+          ]
+        },
+        {
+          "source_heading": "本地编辑",
+          "destinations": [
+            "docs/practices/vocabulary/指南-词表工具链.md#本地编辑"
+          ]
+        },
+        {
+          "source_heading": "冲突与重试",
+          "destinations": [
+            "docs/practices/vocabulary/指南-词表工具链.md#冲突与重试"
+          ]
+        },
+        {
+          "source_heading": "来源准备",
+          "destinations": [
+            "docs/practices/vocabulary/指南-词表工具链.md#来源准备"
+          ]
+        },
+        {
+          "source_heading": "来源转换",
+          "destinations": [
+            "docs/practices/vocabulary/指南-词表工具链.md#来源转换"
+          ]
+        },
+        {
+          "source_heading": "独立构建",
+          "destinations": [
+            "docs/practices/vocabulary/指南-词表工具链.md#独立构建"
+          ]
+        },
+        {
+          "source_heading": "应用同步",
+          "destinations": [
+            "docs/practices/vocabulary/指南-词表工具链.md#应用同步"
+          ]
+        },
+        {
+          "source_heading": "归档重放",
+          "destinations": [
+            "docs/practices/vocabulary/指南-词表工具链.md#归档重放"
+          ]
+        },
+        {
+          "source_heading": "版本回退",
+          "destinations": [
+            "docs/practices/vocabulary/指南-词表工具链.md#版本回退"
+          ]
+        },
+        {
+          "source_heading": "查询与诊断",
+          "destinations": [
+            "docs/practices/vocabulary/指南-词表工具链.md#查询与诊断"
+          ]
+        },
+        {
+          "source_heading": "失败定位",
+          "destinations": [
+            "docs/practices/vocabulary/指南-词表工具链.md#失败定位"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "docs/model/vocabulary/设计-主题词表.md",
+      "source_sha256": "4128e67c425e311f7815e13ab79f804f0d32b197697f84c5bd06c6be5b511a95",
+      "treatment": "迁入实践目录；操作合同或 YAML 规则保留，更新相对引用。",
+      "sections": [
+        {
+          "source_heading": "词表总览",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#词表总览"
+          ]
+        },
+        {
+          "source_heading": "范围与用途",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#范围与用途"
+          ]
+        },
+        {
+          "source_heading": "覆盖范围",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#覆盖范围"
+          ]
+        },
+        {
+          "source_heading": "邻近主题",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#邻近主题"
+          ]
+        },
+        {
+          "source_heading": "排除范围",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#排除范围"
+          ]
+        },
+        {
+          "source_heading": "使用目的",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#使用目的"
+          ]
+        },
+        {
+          "source_heading": "生成路径",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#生成路径"
+          ]
+        },
+        {
+          "source_heading": "概念记录",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#概念记录"
+          ]
+        },
+        {
+          "source_heading": "语言依据",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#语言依据"
+          ]
+        },
+        {
+          "source_heading": "模型标记",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#模型标记"
+          ]
+        },
+        {
+          "source_heading": "采纳记录",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#采纳记录"
+          ]
+        },
+        {
+          "source_heading": "人读表示",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#人读表示"
+          ]
+        },
+        {
+          "source_heading": "生命周期",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#生命周期"
+          ]
+        },
+        {
+          "source_heading": "建设流程",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#建设流程"
+          ]
+        },
+        {
+          "source_heading": "校验规则",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#校验规则"
+          ]
+        },
+        {
+          "source_heading": "设计分工",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#设计分工"
+          ]
+        },
+        {
+          "source_heading": "待定事项",
+          "destinations": [
+            "docs/practices/vocabulary/设计-主题词表.md#待定事项"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "docs/model/vocabulary/设计-层级结构.md",
+      "source_sha256": "f990fcc4c36bfdcb5805a3ef812138d7434d2ebbc3e9debcf2c07a0b2658c7b5",
+      "treatment": "迁入实践目录；操作合同或 YAML 规则保留，更新相对引用。",
+      "sections": [
+        {
+          "source_heading": "结构规则",
+          "destinations": [
+            "docs/practices/vocabulary/设计-层级结构.md#结构规则"
+          ]
+        },
+        {
+          "source_heading": "树的性质",
+          "destinations": [
+            "docs/practices/vocabulary/设计-层级结构.md#树的性质"
+          ]
+        },
+        {
+          "source_heading": "结构复制",
+          "destinations": [
+            "docs/practices/vocabulary/设计-层级结构.md#结构复制"
+          ]
+        },
+        {
+          "source_heading": "数组分组",
+          "destinations": [
+            "docs/practices/vocabulary/设计-层级结构.md#数组分组"
+          ]
+        },
+        {
+          "source_heading": "节点标签",
+          "destinations": [
+            "docs/practices/vocabulary/设计-层级结构.md#节点标签"
+          ]
+        },
+        {
+          "source_heading": "来源接口",
+          "destinations": [
+            "docs/practices/vocabulary/设计-层级结构.md#来源接口"
+          ]
+        },
+        {
+          "source_heading": "结构来源",
+          "destinations": [
+            "docs/practices/vocabulary/设计-层级结构.md#结构来源"
+          ]
+        },
+        {
+          "source_heading": "顶层来源",
+          "destinations": [
+            "docs/practices/vocabulary/设计-层级结构.md#顶层来源"
+          ]
+        },
+        {
+          "source_heading": "计算机分支",
+          "destinations": [
+            "docs/practices/vocabulary/设计-层级结构.md#计算机分支"
+          ]
+        },
+        {
+          "source_heading": "图书情报学科",
+          "destinations": [
+            "docs/practices/vocabulary/设计-层级结构.md#图书情报学科"
+          ]
+        },
+        {
+          "source_heading": "其他学科来源",
+          "destinations": [
+            "docs/practices/vocabulary/设计-层级结构.md#其他学科来源"
+          ]
+        },
+        {
+          "source_heading": "结构预览",
+          "destinations": [
+            "docs/practices/vocabulary/设计-层级结构.md#结构预览"
+          ]
+        },
+        {
+          "source_heading": "重点分支",
+          "destinations": [
+            "docs/practices/vocabulary/设计-层级结构.md#重点分支"
+          ]
+        },
+        {
+          "source_heading": "人工智能",
+          "destinations": [
+            "docs/practices/vocabulary/设计-层级结构.md#人工智能"
+          ]
+        },
+        {
+          "source_heading": "编程语言",
+          "destinations": [
+            "docs/practices/vocabulary/设计-层级结构.md#编程语言"
+          ]
+        },
+        {
+          "source_heading": "待定事项",
+          "destinations": [
+            "docs/practices/vocabulary/设计-层级结构.md#待定事项"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "docs/model/vocabulary/索引-主题词表.md",
+      "source_sha256": "994d87d5a8f176154dddb9c165f83a59523127ea34526675df33bfc045d2d2bc",
+      "treatment": "索引区分目标设计、实践、标准阅读和决定。",
+      "sections": [
+        {
+          "source_heading": "学习主线",
+          "destinations": [
+            "docs/model/vocabulary/索引-主题词表.md#学习主线"
+          ]
+        },
+        {
+          "source_heading": "深入阅读",
+          "destinations": [
+            "docs/model/vocabulary/索引-主题词表.md#深入阅读"
+          ]
+        },
+        {
+          "source_heading": "当前数据规范",
+          "destinations": [
+            "docs/model/vocabulary/索引-主题词表.md#目标设计"
+          ]
+        },
+        {
+          "source_heading": "现行设计",
+          "destinations": [
+            "docs/model/vocabulary/索引-主题词表.md#项目实践"
+          ]
+        },
+        {
+          "source_heading": "相邻领域",
+          "destinations": [
+            "docs/model/vocabulary/索引-主题词表.md#相邻领域"
+          ]
+        },
+        {
+          "source_heading": "标准与资料",
+          "destinations": [
+            "docs/model/vocabulary/索引-主题词表.md#标准与资料"
+          ]
+        },
+        {
+          "source_heading": "相关决定",
+          "destinations": [
+            "docs/model/vocabulary/索引-主题词表.md#相关决定"
+          ]
+        },
+        {
+          "source_heading": "待议方案",
+          "destinations": [
+            "docs/model/vocabulary/索引-主题词表.md#待议方案"
+          ]
+        },
+        {
+          "source_heading": "维护与应用",
+          "destinations": [
+            "docs/model/vocabulary/索引-主题词表.md#应用衔接"
+          ]
+        }
+      ]
+    }
+  ],
+  "anchor_migrations": {
+    "docs/development/设计-词表工程能力.md": [
+      "docs/practices/vocabulary/设计-词表工程能力.md"
+    ],
+    "docs/development/指南-词表工具链.md": [
+      "docs/practices/vocabulary/指南-词表工具链.md"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md": [
+      "docs/practices/vocabulary/设计-主题词表.md"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md": [
+      "docs/practices/vocabulary/设计-层级结构.md"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#字段设计": [
+      "docs/model/vocabulary/设计-词表数据规范.md"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#通用约定": [
+      "docs/model/vocabulary/设计-词表数据规范.md#通用约定"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#概念字段": [
+      "docs/model/vocabulary/设计-词表数据规范.md#概念字段"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#名称字段": [
+      "docs/model/vocabulary/设计-词表数据规范.md#名称字段"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#说明字段": [
+      "docs/model/vocabulary/设计-词表数据规范.md#说明字段"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#集合字段": [
+      "docs/model/vocabulary/设计-词表数据规范.md#集合字段"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#派生字段": [
+      "docs/model/vocabulary/设计-词表数据规范.md#派生表达"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#来源与依据": [
+      "docs/model/vocabulary/设计-词表数据规范.md#来源与依据"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#映射记录": [
+      "docs/model/vocabulary/设计-词表数据规范.md#映射记录"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#采纳与发布": [
+      "docs/model/vocabulary/设计-词表数据规范.md#维护记录"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#校验范围": [
+      "docs/model/vocabulary/设计-词表数据规范.md#校验范围"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#检查分工": [
+      "docs/model/vocabulary/设计-词表数据规范.md#校验范围"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#标准与选择": [
+      "docs/model/vocabulary/设计-词表数据规范.md#标准一致性"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#管理记录": [
+      "docs/model/vocabulary/设计-词表数据规范.md#维护记录"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#名称身份": [
+      "docs/model/vocabulary/设计-词表维护.md#名称编辑"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#来源与引用": [
+      "docs/model/vocabulary/设计-词表维护.md#再同步规则"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#更新与兼容": [
+      "docs/model/vocabulary/设计-词表维护.md#名称编辑"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#约束与校验": [
+      "docs/model/vocabulary/设计-词表数据规范.md#校验范围"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#使用评价": [
+      "docs/model/vocabulary/设计-词表整体设计.md#验收与迁移"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#依据与限制": [
+      "docs/model/vocabulary/设计-词表整体设计.md#标准依据"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#采用原则": [
+      "docs/model/vocabulary/设计-词表整体设计.md#标准采用"
+    ],
+    "docs/model/vocabulary/设计-词表维护.md#操作场景": [
+      "docs/practices/vocabulary/指南-词表工具链.md#日常同步"
+    ],
+    "docs/model/vocabulary/设计-词表维护.md#数据职责": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#数据职责"
+    ],
+    "docs/model/vocabulary/设计-词表数据规范.md#节点类别": [
+      "docs/model/vocabulary/设计-词表数据规范.md#标识与类型"
+    ],
+    "docs/model/vocabulary/设计-词表数据规范.md#语言范围": [
+      "docs/model/vocabulary/设计-多语言词表.md#语言策略"
+    ],
+    "docs/model/vocabulary/设计-词表数据规范.md#名称规则": [
+      "docs/model/vocabulary/设计-词表数据规范.md#语言与名称"
+    ],
+    "docs/model/vocabulary/设计-词表数据规范.md#分组字段": [
+      "docs/model/vocabulary/设计-词表数据规范.md#集合字段"
+    ],
+    "docs/model/vocabulary/设计-词表数据规范.md#依据记录": [
+      "docs/model/vocabulary/设计-词表数据规范.md#来源与依据"
+    ],
+    "docs/model/vocabulary/设计-多语言词表.md#名称衔接": [
+      "docs/model/vocabulary/设计-多语言词表.md#编辑与依据"
+    ],
+    "docs/model/vocabulary/设计-多语言词表.md#兼容接口": [
+      "docs/practices/vocabulary/设计-现行数据规范.md#语言接口"
+    ],
+    "docs/model/vocabulary/设计-多语言词表.md#校验与状态": [
+      "docs/model/vocabulary/设计-多语言词表.md#校验要求"
+    ],
+    "docs/governance/maintenance/设计-词表版本.md#实现边界": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#维护缺口"
+    ],
+    "docs/model/vocabulary/设计-多语言词表.md#翻译范围": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#翻译范围"
+    ],
+    "docs/model/vocabulary/设计-多语言词表.md#基准与产物": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#基准与产物"
+    ],
+    "docs/model/vocabulary/设计-多语言词表.md#批次元数据": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#批次元数据"
+    ],
+    "docs/model/vocabulary/设计-多语言词表.md#合并与展示": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#合并与展示"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#维护记录": [
+      "docs/model/vocabulary/设计-词表数据规范.md#维护记录"
+    ],
+    "docs/model/vocabulary/设计-词表数据规范.md#词表结构": [
+      "docs/practices/vocabulary/设计-现行数据规范.md#词表结构"
+    ],
+    "docs/model/vocabulary/设计-词表数据规范.md#顶层组织": [
+      "docs/practices/vocabulary/设计-现行数据规范.md#顶层组织"
+    ],
+    "docs/model/vocabulary/设计-词表数据规范.md#任务字段": [
+      "docs/practices/vocabulary/设计-现行数据规范.md#任务字段"
+    ],
+    "docs/model/vocabulary/设计-词表数据规范.md#辅助字段": [
+      "docs/practices/vocabulary/设计-现行数据规范.md#辅助字段"
+    ],
+    "docs/model/vocabulary/设计-词表数据规范.md#扩展边界": [
+      "docs/practices/vocabulary/设计-现行数据规范.md#扩展边界"
+    ],
+    "docs/model/vocabulary/设计-词表数据规范.md#属性命名空间": [
+      "docs/practices/vocabulary/设计-现行数据规范.md#属性命名空间"
+    ],
+    "docs/model/vocabulary/索引-主题词表.md#当前数据规范": [
+      "docs/model/vocabulary/索引-主题词表.md#目标设计"
+    ],
+    "docs/model/vocabulary/索引-主题词表.md#现行设计": [
+      "docs/model/vocabulary/索引-主题词表.md#项目实践"
+    ],
+    "docs/model/vocabulary/索引-主题词表.md#维护与应用": [
+      "docs/model/vocabulary/索引-主题词表.md#应用衔接"
+    ],
+    "docs/development/设计-词表工程能力.md#能力分工": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#能力分工"
+    ],
+    "docs/development/设计-词表工程能力.md#生成流程": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#生成流程"
+    ],
+    "docs/development/设计-词表工程能力.md#输入与产物": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#输入与产物"
+    ],
+    "docs/development/设计-词表工程能力.md#变更边界": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#变更边界"
+    ],
+    "docs/development/设计-词表工程能力.md#依赖维护": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#依赖维护"
+    ],
+    "docs/development/设计-词表工程能力.md#已有实现": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#已有实现"
+    ],
+    "docs/development/设计-词表工程能力.md#校验覆盖": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#校验覆盖"
+    ],
+    "docs/development/设计-词表工程能力.md#多语差异": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#多语差异"
+    ],
+    "docs/development/设计-词表工程能力.md#维护缺口": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#维护缺口"
+    ],
+    "docs/development/设计-词表工程能力.md#验收证据": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#验收证据"
+    ],
+    "docs/development/设计-词表工程能力.md#相关文档": [
+      "docs/practices/vocabulary/设计-词表工程能力.md#相关文档"
+    ],
+    "docs/development/指南-词表工具链.md#执行起点": [
+      "docs/practices/vocabulary/指南-词表工具链.md#执行起点"
+    ],
+    "docs/development/指南-词表工具链.md#准备与配置": [
+      "docs/practices/vocabulary/指南-词表工具链.md#准备与配置"
+    ],
+    "docs/development/指南-词表工具链.md#日常同步": [
+      "docs/practices/vocabulary/指南-词表工具链.md#日常同步"
+    ],
+    "docs/development/指南-词表工具链.md#本地编辑": [
+      "docs/practices/vocabulary/指南-词表工具链.md#本地编辑"
+    ],
+    "docs/development/指南-词表工具链.md#冲突与重试": [
+      "docs/practices/vocabulary/指南-词表工具链.md#冲突与重试"
+    ],
+    "docs/development/指南-词表工具链.md#来源准备": [
+      "docs/practices/vocabulary/指南-词表工具链.md#来源准备"
+    ],
+    "docs/development/指南-词表工具链.md#来源转换": [
+      "docs/practices/vocabulary/指南-词表工具链.md#来源转换"
+    ],
+    "docs/development/指南-词表工具链.md#独立构建": [
+      "docs/practices/vocabulary/指南-词表工具链.md#独立构建"
+    ],
+    "docs/development/指南-词表工具链.md#应用同步": [
+      "docs/practices/vocabulary/指南-词表工具链.md#应用同步"
+    ],
+    "docs/development/指南-词表工具链.md#归档重放": [
+      "docs/practices/vocabulary/指南-词表工具链.md#归档重放"
+    ],
+    "docs/development/指南-词表工具链.md#版本回退": [
+      "docs/practices/vocabulary/指南-词表工具链.md#版本回退"
+    ],
+    "docs/development/指南-词表工具链.md#查询与诊断": [
+      "docs/practices/vocabulary/指南-词表工具链.md#查询与诊断"
+    ],
+    "docs/development/指南-词表工具链.md#失败定位": [
+      "docs/practices/vocabulary/指南-词表工具链.md#失败定位"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#词表总览": [
+      "docs/practices/vocabulary/设计-主题词表.md#词表总览"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#范围与用途": [
+      "docs/practices/vocabulary/设计-主题词表.md#范围与用途"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#覆盖范围": [
+      "docs/practices/vocabulary/设计-主题词表.md#覆盖范围"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#邻近主题": [
+      "docs/practices/vocabulary/设计-主题词表.md#邻近主题"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#排除范围": [
+      "docs/practices/vocabulary/设计-主题词表.md#排除范围"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#使用目的": [
+      "docs/practices/vocabulary/设计-主题词表.md#使用目的"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#生成路径": [
+      "docs/practices/vocabulary/设计-主题词表.md#生成路径"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#概念记录": [
+      "docs/practices/vocabulary/设计-主题词表.md#概念记录"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#语言依据": [
+      "docs/practices/vocabulary/设计-主题词表.md#语言依据"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#模型标记": [
+      "docs/practices/vocabulary/设计-主题词表.md#模型标记"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#采纳记录": [
+      "docs/practices/vocabulary/设计-主题词表.md#采纳记录"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#人读表示": [
+      "docs/practices/vocabulary/设计-主题词表.md#人读表示"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#生命周期": [
+      "docs/practices/vocabulary/设计-主题词表.md#生命周期"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#建设流程": [
+      "docs/practices/vocabulary/设计-主题词表.md#建设流程"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#校验规则": [
+      "docs/practices/vocabulary/设计-主题词表.md#校验规则"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#设计分工": [
+      "docs/practices/vocabulary/设计-主题词表.md#设计分工"
+    ],
+    "docs/model/vocabulary/设计-主题词表.md#待定事项": [
+      "docs/practices/vocabulary/设计-主题词表.md#待定事项"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md#结构规则": [
+      "docs/practices/vocabulary/设计-层级结构.md#结构规则"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md#树的性质": [
+      "docs/practices/vocabulary/设计-层级结构.md#树的性质"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md#结构复制": [
+      "docs/practices/vocabulary/设计-层级结构.md#结构复制"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md#数组分组": [
+      "docs/practices/vocabulary/设计-层级结构.md#数组分组"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md#节点标签": [
+      "docs/practices/vocabulary/设计-层级结构.md#节点标签"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md#来源接口": [
+      "docs/practices/vocabulary/设计-层级结构.md#来源接口"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md#结构来源": [
+      "docs/practices/vocabulary/设计-层级结构.md#结构来源"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md#顶层来源": [
+      "docs/practices/vocabulary/设计-层级结构.md#顶层来源"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md#计算机分支": [
+      "docs/practices/vocabulary/设计-层级结构.md#计算机分支"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md#图书情报学科": [
+      "docs/practices/vocabulary/设计-层级结构.md#图书情报学科"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md#其他学科来源": [
+      "docs/practices/vocabulary/设计-层级结构.md#其他学科来源"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md#结构预览": [
+      "docs/practices/vocabulary/设计-层级结构.md#结构预览"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md#重点分支": [
+      "docs/practices/vocabulary/设计-层级结构.md#重点分支"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md#人工智能": [
+      "docs/practices/vocabulary/设计-层级结构.md#人工智能"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md#编程语言": [
+      "docs/practices/vocabulary/设计-层级结构.md#编程语言"
+    ],
+    "docs/model/vocabulary/设计-层级结构.md#待定事项": [
+      "docs/practices/vocabulary/设计-层级结构.md#待定事项"
+    ]
+  },
+  "historical_contract_interpretation": {
+    "original": "docs/model/vocabulary/设计-词表数据规范.md",
+    "original_sha256": "30432738ba493a67bc9d2ce87186dc7756f3fc522e67f96b8560a88166f1187c",
+    "version": "第 3 版普通标签合同",
+    "current_location": "docs/practices/vocabulary/设计-现行数据规范.md",
+    "rule": "历史决定明确称第 3 版或运行合同时，按实践合同解释；原路径此后承载目标规范，不因相同锚点仍存在而改写原决定含义。"
+  },
+  "preserved_semantics": [
+    "单一自有词表与来源归属分开；主图唯一归属不强加给来源图。",
+    "XL 名称单一文字值、每完整语言标签的首选资源唯一、普通标签角色互斥及派生一致性。",
+    "新增本地名称一次性 UUIDv4 URI，导入、编辑、翻译共用登记；回退保留分配历史。",
+    "自建集合范围必填，自有集合唯一归属，有序集合恰好一个完整有限无环列表，来源数组与分组信息不能静默丢失。",
+    "本地独立说明一个带语言正文；来源多语、嵌套与原附着位置保留。",
+    "映射保留版本、用途、方向及组合语义；不自动传递应用许可，不把未确定填为 closeMatch。",
+    "译文记录与新版适用性分开；退出和已知失效优先，来源文字变化不自动重译，待复核保留依据与提示。",
+    "发布、消费、治理采纳与校验不同；旧引用、退出、历史版本及相容回退继续有明确要求。",
+    "第 3 版字段、旧语言接口和 YAML 规则继续有效；文档整理不触发数据、schema、语种或消费者切换。"
+  ],
+  "clarifications": [
+    "完整目标字段由目标数据规范统一维护；资源与字段不再用第 3 版加差异表规定目标。",
+    "目标翻译合同使用明确的源语种、目标语种和用途；当前英文到 zh 的批次范围留在实践，不扩大现有授权。",
+    "词表的普通 altLabel、hiddenLabel 在目标字段表显式列出，沿用已采用的普通标签角色规则；当前合同未扩展。",
+    "实践中的运行与能力描述沿用原核对日期及代码依据，本次没有重新执行获取、构建、批译、应用同步或全量回归。"
+  ],
+  "standards_review": [
+    {
+      "url": "https://www.w3.org/TR/skos-reference/",
+      "scope": "ConceptScheme 成员范围及类型、语言标签、XL 单值、关系与映射语义；区分标准要求与项目收紧约束。"
+    },
+    {
+      "url": "https://www.niso.org/schemas/iso25964/schema-intro",
+      "scope": "公开模型及来源结构表示的边界，不代替 ISO 全文。"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc4647.html",
+      "scope": "Lookup 的请求缩短、完成优先列表后的默认处理；英文回退属于项目选择。"
+    },
+    {
+      "url": "https://www.w3.org/TR/dwbp/",
+      "scope": "版本标识及历史方法；具体目录、文件格式和事务安排归实践。"
+    }
+  ],
+  "history_policy": "既有决定和已采纳提案保留原文；三份词表决定仅追加文档去向说明，旧审计文件不重写。",
+  "current_reference_updates": [
+    {
+      "file": "AGENTS.md",
+      "links_updated": 4
+    },
+    {
+      "file": "docs/development/索引-工程开发.md",
+      "links_updated": 2
+    },
+    {
+      "file": "docs/development/设计-主题生成包.md",
+      "links_updated": 1
+    },
+    {
+      "file": "docs/model/content/设计-内容模型.md",
+      "links_updated": 2
+    },
+    {
+      "file": "docs/model/sources/设计-来源用途登记.md",
+      "links_updated": 2
+    },
+    {
+      "file": "docs/model/sources/设计-参考文献目录.md",
+      "links_updated": 1
+    },
+    {
+      "file": "docs/model/vocabulary/概述-词表.md",
+      "links_updated": 2
+    },
+    {
+      "file": "docs/model/vocabulary/概念-受控词表.md",
+      "links_updated": 1
+    },
+    {
+      "file": "docs/model/vocabulary/索引-主题词表.md",
+      "links_updated": 6
+    },
+    {
+      "file": "docs/model/vocabulary/概念-词表映射.md",
+      "links_updated": 1
+    },
+    {
+      "file": "docs/model/vocabulary/阅读-GB-T 13745-2009 学科分类清单.md",
+      "links_updated": 1
+    },
+    {
+      "file": "docs/model/vocabulary/概念-词表的建设与维护.md",
+      "links_updated": 1
+    },
+    {
+      "file": "docs/model/entities/设计-命名实体词表.md",
+      "links_updated": 1
+    },
+    {
+      "file": "docs/applications/obsidian/设计-Obsidian 映射.md",
+      "links_updated": 3
+    },
+    {
+      "file": "docs/governance/decision-making/设计-治理.md",
+      "links_updated": 3
+    },
+    {
+      "file": "docs/governance/decision-making/设计-方法登记.md",
+      "links_updated": 5
+    },
+    {
+      "file": "docs/governance/maintenance/设计-维护.md",
+      "links_updated": 1
+    },
+    {
+      "file": "docs/practices/vocabulary/指南-词表工具链.md",
+      "links_updated": 3
+    },
+    {
+      "file": "docs/practices/vocabulary/设计-层级结构.md",
+      "links_updated": 4
+    },
+    {
+      "file": "docs/practices/vocabulary/设计-现行数据规范.md",
+      "links_updated": 8
+    },
+    {
+      "file": "docs/practices/vocabulary/设计-主题词表.md",
+      "links_updated": 8
+    },
+    {
+      "file": "docs/practices/vocabulary/设计-词表工程能力.md",
+      "links_updated": 4
+    },
+    {
+      "file": "packages/kb-vocab/README.md",
+      "links_updated": 1
+    }
+  ],
+  "out_of_scope": [
+    "代码",
+    "schema",
+    "正式数据",
+    "来源取得",
+    "翻译执行",
+    "应用或外部知识库同步",
+    "消费者启用",
+    "提交与推送"
+  ],
+  "verification": {
+    "result": "passed",
+    "metrics": {
+      "old_sections_mapped": 162,
+      "preserved_current_field_rows": 86,
+      "yaml_policy_documents_preserved": 2,
+      "turtle_examples_parsed": 1,
+      "operation_examples": "unchanged",
+      "implementation_status_sections_preserved": 4,
+      "protected_history": "three append-only decisions, adopted proposal, root README and agent rules preserved",
+      "audit_destinations_resolved": 370,
+      "current_local_links_checked": 697,
+      "target_runtime_dependencies": 0
+    },
+    "errors": [],
+    "scope": "逐节去向、旧合同及历史保护、目标与实践依赖、链接与锚点、Turtle 解析、代码数据写集；未进行构建、翻译或外部应用操作，不作完整 ISO 符合性声明。"
+  }
+}

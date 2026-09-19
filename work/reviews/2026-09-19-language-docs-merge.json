@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-19",
+  "authorization": "用户在同意将中文标签并入多语言词表的方案后回复“今可以并吧”；范围为文档合并、删除旧篇及更新引用。",
+  "source_commit": "4a6fbc25e6a0fe0219753829ce99bf72c1e28a4b",
+  "source_state": "合并前未提交工作区；源 SHA-256 定位实际旧文，不将其冒充 Git 提交版本。",
+  "changes": [
+    {
+      "source": "docs/model/vocabulary/设计-中文标签.md",
+      "source_sha256": "253dedbd47657c69457d876bd7fc3a2a5cfdd07d7598d66d341102b903014695",
+      "treatment": "删除独立文章；中文批译作为主文内的流程，旧逐项采纳接口保留独立小节。",
+      "sections": [
+        {
+          "source_heading": "适用范围",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#翻译范围",
+            "docs/model/vocabulary/设计-多语言词表.md#基准与产物",
+            "docs/model/vocabulary/设计-多语言词表.md#校验与状态"
+          ]
+        },
+        {
+          "source_heading": "基准与产物",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#基准与产物"
+          ]
+        },
+        {
+          "source_heading": "名称衔接",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#名称衔接"
+          ]
+        },
+        {
+          "source_heading": "增量同步",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#增量同步"
+          ]
+        },
+        {
+          "source_heading": "批次元数据",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#批次元数据"
+          ]
+        },
+        {
+          "source_heading": "合并与展示",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#合并与展示"
+          ]
+        },
+        {
+          "source_heading": "兼容接口",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#兼容接口"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "docs/model/vocabulary/设计-多语言词表.md",
+      "source_sha256": "c4a415df7f7ff4db58d616e559797510f6f986917427f3c45ca88250060ed290",
+      "treatment": "按通用语言规则、当前翻译流程、匹配与接口、校验及依据组织；重叠职责只保留一处。",
+      "sections": [
+        {
+          "source_heading": "设计范围",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#设计范围"
+          ]
+        },
+        {
+          "source_heading": "语言策略",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#语言策略"
+          ]
+        },
+        {
+          "source_heading": "语言标记",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#语言标记"
+          ]
+        },
+        {
+          "source_heading": "概念对应",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#概念对应"
+          ]
+        },
+        {
+          "source_heading": "名称与说明",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#名称与说明",
+            "docs/model/vocabulary/设计-多语言词表.md#翻译范围"
+          ]
+        },
+        {
+          "source_heading": "编辑与依据",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#编辑与依据",
+            "docs/model/vocabulary/设计-多语言词表.md#名称衔接"
+          ]
+        },
+        {
+          "source_heading": "匹配与显示",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#匹配与显示"
+          ]
+        },
+        {
+          "source_heading": "术语衔接",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#术语衔接"
+          ]
+        },
+        {
+          "source_heading": "校验与状态",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#校验与状态"
+          ]
+        },
+        {
+          "source_heading": "标准依据",
+          "destinations": [
+            "docs/model/vocabulary/设计-多语言词表.md#标准依据"
+          ]
+        }
+      ]
+    }
+  ],
+  "anchor_migrations": {
+    "docs/model/vocabulary/设计-中文标签.md": [
+      "docs/model/vocabulary/设计-多语言词表.md#翻译流程"
+    ],
+    "docs/model/vocabulary/设计-中文标签.md#适用范围": [
+      "docs/model/vocabulary/设计-多语言词表.md#翻译范围",
+      "docs/model/vocabulary/设计-多语言词表.md#基准与产物",
+      "docs/model/vocabulary/设计-多语言词表.md#校验与状态"
+    ],
+    "docs/model/vocabulary/设计-中文标签.md#基准与产物": [
+      "docs/model/vocabulary/设计-多语言词表.md#基准与产物"
+    ],
+    "docs/model/vocabulary/设计-中文标签.md#名称衔接": [
+      "docs/model/vocabulary/设计-多语言词表.md#名称衔接"
+    ],
+    "docs/model/vocabulary/设计-中文标签.md#增量同步": [
+      "docs/model/vocabulary/设计-多语言词表.md#增量同步"
+    ],
+    "docs/model/vocabulary/设计-中文标签.md#批次元数据": [
+      "docs/model/vocabulary/设计-多语言词表.md#批次元数据"
+    ],
+    "docs/model/vocabulary/设计-中文标签.md#合并与展示": [
+      "docs/model/vocabulary/设计-多语言词表.md#合并与展示"
+    ],
+    "docs/model/vocabulary/设计-中文标签.md#兼容接口": [
+      "docs/model/vocabulary/设计-多语言词表.md#兼容接口"
+    ]
+  },
+  "retained_contracts": [
+    {
+      "subject": "语言范围",
+      "destination": "docs/model/vocabulary/设计-多语言词表.md#语言策略",
+      "retained": "保留来源全部语言；自有中英文范围及允许缺译保持，未启用其他语言。"
+    },
+    {
+      "subject": "标签与匹配",
+      "destination": "docs/model/vocabulary/设计-多语言词表.md#语言标记",
+      "retained": "区分语法、注册表及项目范围；完整标签比较；筛选与 Lookup 分开，英文回退在请求列表之后。"
+    },
+    {
+      "subject": "概念与术语",
+      "destination": "docs/model/vocabulary/设计-多语言词表.md#概念对应",
+      "retained": "翻译不新建或合并概念，不自动造词；正式术语的身份、语言值域及编辑权独立。"
+    },
+    {
+      "subject": "当前批译",
+      "destination": "docs/model/vocabulary/设计-多语言词表.md#翻译范围",
+      "retained": "只补既有 Concept、Collection、ConceptScheme 缺失中文首选名，英文输入、目标 zh；仅用于展示。"
+    },
+    {
+      "subject": "基准与产物",
+      "destination": "docs/model/vocabulary/设计-多语言词表.md#基准与产物",
+      "retained": "固定基准版本及哈希；任务、译文增量、双语文件、批次依据分别承担原职责，不按文字或顺序复用。"
+    },
+    {
+      "subject": "名称登记",
+      "destination": "docs/model/vocabulary/设计-多语言词表.md#名称衔接",
+      "retained": "模型不分配 URI；概念名称使用统一登记，重试复用身份；词表与集合保留普通标签；整套回退保留身份历史。"
+    },
+    {
+      "subject": "译文适用性",
+      "destination": "docs/model/vocabulary/设计-多语言词表.md#增量同步",
+      "retained": "原七行条件及退出优先次序原样保留；基准中文不自动覆盖，历史与原依据保留，逐次重建新展示。"
+    },
+    {
+      "subject": "批次溯源",
+      "destination": "docs/model/vocabulary/设计-多语言词表.md#批次元数据",
+      "retained": "真实模型、agent、文件写入时间、输入输出哈希和基准按批保存；复用及后续核验不改写原记录。"
+    },
+    {
+      "subject": "合并与消费",
+      "destination": "docs/model/vocabulary/设计-多语言词表.md#合并与展示",
+      "retained": "核对任务及基准，保留原文不输出空中文或英文 @zh；同版本数据与依据成套，待复核明确提示，应用不自动切换。"
+    },
+    {
+      "subject": "兼容接口",
+      "destination": "docs/model/vocabulary/设计-多语言词表.md#兼容接口",
+      "retained": "旧标签、采纳 JSON 与书目接口保留；具体值与 original 上下文校验，不作为批次自动重译条件，依据等级及审查边界保持。"
+    },
+    {
+      "subject": "实现与标准边界",
+      "destination": "docs/model/vocabulary/设计-多语言词表.md#校验与状态",
+      "retained": "工程差异仍归工程能力；标准核读范围原样保留，无 ISO 完整符合性声明，无新实现声明。"
+    }
+  ],
+  "editorial_corrections": [
+    {
+      "source": "docs/model/vocabulary/设计-中文标签.md#兼容接口",
+      "change": "将 manifest 版本 5 改写为从第 5 版起，避免被读成当前版本号；未改变旧接口合同。",
+      "evidence": [
+        "packages/kb-vocab/src/kb_vocab/publication.py#L60",
+        "packages/kb-vocab/src/kb_vocab/system_build.py#L417"
+      ]
+    }
+  ],
+  "historical_observations": [
+    {
+      "source": "docs/model/vocabulary/设计-中文标签.md#基准与产物",
+      "text": "旧文记录本轮批译结果位于 packages/kb-vocab/output/translation-run/result/。",
+      "treatment": "移出通用设计并留此审计；本次未运行翻译或验证该目录的当前内容，不将历史运行路径定为稳定接口。"
+    }
+  ],
+  "current_references_updated": [
+    "AGENTS.md",
+    "docs/development/设计-词表工程能力.md",
+    "docs/model/vocabulary/设计-词表整体设计.md",
+    "docs/model/vocabulary/设计-词表维护.md",
+    "docs/model/vocabulary/索引-主题词表.md",
+    "packages/kb-vocab/README.md",
+    "packages/kb-vocab/scripts/README.md"
+  ],
+  "history_policy": {
+    "append_only": "docs/model/vocabulary/决定-多语言词表.md#文档合并",
+    "unchanged": [
+      "docs/model/vocabulary/决定-词表整体设计.md",
+      "docs/model/vocabulary/决定-词表维护约束.md",
+      "docs/model/vocabulary/提案-词表整体设计.md"
+    ],
+    "prior_audits": "旧审计记录不回写；原目的地已删除时按本次 anchor_migrations 继续解释。"
+  },
+  "scope": "仅文档；未修改代码、schema、正式数据、生成物、语言范围或消费者状态，未提交。",
+  "verification": {
+    "result": "passed",
+    "old_sections_mapped": 17,
+    "current_local_links": 229,
+    "historical_citations_resolved": 3,
+    "prior_audit_destinations_resolved": 198,
+    "policy_comparison": "unchanged standard sections, full incremental policy, XL table, name/note table, legacy interface",
+    "protected_documents": 6,
+    "decision": "original bytes preserved; append-only",
+    "implementation_changes": "README references only; no code or data changes",
+    "errors": [],
+    "method": "对照合并前快照核对各节去向与关键合同，校验现行本地链接和历次迁移记录，检查历史正文及代码数据写集。未运行翻译、构建、应用同步或测试套件。"
+  }
+}

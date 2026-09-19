@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-19",
+  "authorization": "用户在四项设计补充及过时实现说明的审查后回复“可以 更新吧”。",
+  "decision": "docs/model/vocabulary/决定-词表维护约束.md",
+  "source_commit": "4a6fbc25e6a0fe0219753829ce99bf72c1e28a4b",
+  "source_state": "修订前工作区；部分文档含前轮未提交变更，以下哈希不冒称均来自 source_commit。",
+  "rewrites": [
+    {
+      "source": "docs/governance/maintenance/设计-词表版本.md",
+      "source_sha256": "ed89dfc0304bb3c2966c4020740a924f5f7f4b598c1dc0ff59c8bb03da4dec9d",
+      "sections": [
+        {
+          "source_heading": "版本块",
+          "destinations": [
+            "docs/governance/maintenance/设计-词表版本.md#版本对象",
+            "docs/governance/maintenance/设计-词表版本.md#版本标识"
+          ],
+          "rationale": "保留日期版本及旧 YAML 字段；区分来源、自有词表和展示，不再以固定词表份数约束全部发布。"
+        },
+        {
+          "source_heading": "发版时机",
+          "destinations": [
+            "docs/governance/maintenance/设计-词表版本.md#发布与回退"
+          ],
+          "rationale": "保留人定发版，区分编辑、构建、入口切换和应用加载。"
+        },
+        {
+          "source_heading": "内容单元与版本",
+          "destinations": [
+            "docs/governance/maintenance/设计-词表版本.md#引用方式",
+            "docs/governance/maintenance/设计-词表版本.md#历史读取"
+          ],
+          "rationale": "取消稳定 ID 足以保证任意旧引用的概括，按普通主题、历史含义和名称用法读取。"
+        },
+        {
+          "source_heading": "变更记录",
+          "destinations": [
+            "docs/governance/maintenance/设计-词表版本.md#变更记录"
+          ],
+          "rationale": "保留 YAML CHANGELOG，只追加；补充 RDF 清单与差异的职责。"
+        },
+        {
+          "source_heading": "待定事项",
+          "destinations": [],
+          "rationale": "原节无正文，删除空节；未实现行为明确放入实现边界。"
+        }
+      ]
+    },
+    {
+      "source": "docs/development/设计-词表工程能力.md",
+      "source_sha256": "73ccdb51bd0d7c433b346745b186a908a92a0201ddaf7a530a1a22602e60bad6",
+      "sections": [
+        {
+          "source_heading": "能力分工",
+          "destinations": [
+            "docs/development/设计-词表工程能力.md#能力分工"
+          ],
+          "rationale": "保留职责，按当前代码修订能力边界。"
+        },
+        {
+          "source_heading": "输入与产物",
+          "destinations": [
+            "docs/development/设计-词表工程能力.md#输入与产物"
+          ],
+          "rationale": "保留职责，按当前代码修订能力边界。"
+        },
+        {
+          "source_heading": "变更边界",
+          "destinations": [
+            "docs/development/设计-词表工程能力.md#变更边界"
+          ],
+          "rationale": "保留职责，按当前代码修订能力边界。"
+        },
+        {
+          "source_heading": "依赖维护",
+          "destinations": [
+            "docs/development/设计-词表工程能力.md#依赖维护"
+          ],
+          "rationale": "保留职责，按当前代码修订能力边界。"
+        },
+        {
+          "source_heading": "维护缺口",
+          "destinations": [
+            "docs/development/设计-词表工程能力.md#已有实现",
+            "docs/development/设计-词表工程能力.md#维护缺口"
+          ],
+          "rationale": "身份复用、重放、环境、版本差异和应用阶段记录已存在，不再全部列为待建；保留统一校验、XL、引用及语义复核缺口。"
+        },
+        {
+          "source_heading": "验收证据",
+          "destinations": [
+            "docs/development/设计-词表工程能力.md#验收证据"
+          ],
+          "rationale": "保留历史观察的时间边界，补前轮内存样例结论；不把代码核对写成全量构建或运行中应用验收。"
+        },
+        {
+          "source_heading": "相关文档",
+          "destinations": [
+            "docs/development/设计-词表工程能力.md#相关文档"
+          ],
+          "rationale": "保留职责，按当前代码修订能力边界。"
+        }
+      ]
+    }
+  ],
+  "section_updates": [
+    {
+      "file": "docs/model/vocabulary/设计-词表整体设计.md",
+      "sections": [
+        "整合方式",
+        "名称与版本",
+        "来源更新",
+        "规则归属",
+        "验收与迁移"
+      ],
+      "treatment": "整体选择保留，指向唯一的维护、版本和校验职责；补跨入口失败及旧引用样本。"
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "sections": [
+        "采纳与发布",
+        "来源与引用",
+        "检查分工",
+        "标准与选择"
+      ],
+      "treatment": "发布记录关联规则版本；版本、退出和名称职责引用现行正文；检查分工与标准语义重写，补校验范围。"
+    },
+    {
+      "file": "docs/model/vocabulary/设计-词表维护.md",
+      "sections": [
+        "操作场景",
+        "编辑粒度",
+        "再同步规则",
+        "发布与恢复",
+        "实现差异"
+      ],
+      "treatment": "现有命令保留且明确当前能力；补名称编辑和概念退出，统一引用版本与校验规则；区分设计与实现。"
+    },
+    {
+      "file": "docs/model/vocabulary/设计-中文标签.md",
+      "sections": [
+        "基准与产物",
+        "合并与展示",
+        "实现状态"
+      ],
+      "treatment": "当前批次路径保留；补名称衔接，明确概念身份、名称身份、数据发布及应用加载分工。"
+    }
+  ],
+  "rule_destinations": {
+    "validation": "docs/model/vocabulary/设计-词表资源与字段.md#校验范围",
+    "version_reference": "docs/governance/maintenance/设计-词表版本.md#引用方式",
+    "exit": "docs/model/vocabulary/设计-词表维护.md#概念退出",
+    "label_edit": "docs/model/vocabulary/设计-词表维护.md#名称编辑",
+    "translation_label": "docs/model/vocabulary/设计-中文标签.md#名称衔接"
+  },
+  "evidence": {
+    "mapping_check": {
+      "source": "同任务前一轮只读审查的内存样例，本轮没有修改校验代码",
+      "fixture": "同端点 A skos:exactMatch B 与 A skos:broadMatch B",
+      "general_validation_valid": true,
+      "shacl_conforms": true,
+      "mapping_review_error": "skos.S46.exact_mapping_conflict",
+      "scope": "仅证明所测试入口的覆盖差异，不断言正式词表含有该冲突。"
+    },
+    "code_fingerprints": {
+      "packages/kb-vocab/src/kb_vocab/validation.py": "d8c9493cc8e563bd85bb94d13e4598c796efebbda1801e0f8ab31915bc317856",
+      "packages/kb-vocab/src/kb_vocab/shacl_validation.py": "1b9a53234fe29c53a744b43e35ce7d87a1bdc8556bec4b290a06853ead95b72b",
+      "packages/kb-vocab/src/kb_vocab/review.py": "b86e6a16edcfa60dd57d9433b046d1dab83e272cac6207098e53185d9a8fe604",
+      "packages/kb-vocab/src/kb_vocab/eric.py": "6e0214ee1dbd155ba251be2bc3864d1573c78ed4b847a4db72ed9c8f04b6b19e",
+      "packages/kb-vocab/src/kb_vocab/identity.py": "6160882724804f51aee8f16baeea4439b6580ce3298c1a6b08f8742a5dcdcd4d",
+      "packages/kb-vocab/src/kb_vocab/replay.py": "9acdf488aaa3d482e6df2c7511c9afcde831d63ba137f9d110b15400d9aa43fc",
+      "packages/kb-vocab/src/kb_vocab/environment.py": "0148f77bd0460d42bd27a5a817d90fc1112e5c79c4dfbeffe82e9a650a96881d",
+      "packages/kb-vocab/src/kb_vocab/version_diff.py": "bc09e46b1a278094a83893423464d038fb3ed2215d5c4fee9775048f36463895",
+      "packages/kb-vocab/src/kb_vocab/maintenance_apps.py": "c557dd1ccdb87ca97bad8304ef6fe7410d23016f06924e8dea86540fb5bc4e1b"
+    }
+  },
+  "preserved": [
+    "原整体采纳决定与原提案正文",
+    "资源与字段中的 Turtle 实例",
+    "正式词表、来源及生成配置",
+    "校验器、生成器、schema、工具锁文件",
+    "现有消费者、范围及发版状态"
+  ],
+  "removed_claims": [
+    "稳定 ID 足以保证任何版本的旧引用永远可解析",
+    "所有内容一概不需区分引用版本",
+    "词表不可能发生影响旧消费的变更",
+    "固定五份词表共用一个版本号适用于所有发布",
+    "身份复用、归档重放、环境和版本差异均尚未实现"
+  ],
+  "verification_scope": [
+    "现行链接及锚点",
+    "旧节去向及规则职责一致性",
+    "历史记录与 Turtle 实例未改",
+    "代码与正式数据无改动"
+  ],
+  "not_executed": [
+    "完整构建或归档恢复",
+    "应用同步或旧内容迁移",
+    "代码修复及新能力启用",
+    "Git 提交或推送"
+  ]
+}

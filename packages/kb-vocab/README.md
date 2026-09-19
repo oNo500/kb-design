@@ -335,7 +335,7 @@ MSC 保留原 `text` 和 `description`，即使不同代码同名也不合并。
 
 ## 校验范围
 
-节点与字段合同见[词表数据规范](../../docs/model/vocabulary/设计-词表数据规范.md)。该文覆盖当前字段并集，并单列中英文过滤、名称统一及 SHACL 的实现差距；下面描述的是目前代码实际提供的检查。
+节点与字段合同见[词表数据规范](../../docs/practices/vocabulary/设计-现行数据规范.md)。该文保存第 3 版字段与输入合同；实现差距见[工程能力](../../docs/practices/vocabulary/设计-词表工程能力.md)。下面描述目前代码实际提供的检查。
 
 当前检查概念与体系类别互斥、文字标签、同语言首选名唯一、标签属性互斥，以及相关关系与层级路径重叠。环和自相关作为质量警告，不自动删除；不宣称完整 SKOS conformance，也不判断领域知识正确性。
 
@@ -351,7 +351,7 @@ uv run python -m unittest discover -s packages/kb-vocab/tests -v
 
 ## 中文标签
 
-当前 AI 展示翻译从英文基准提取任务，由 agent 分批翻译，再生成 translations.zh.ttl、vocabulary.multilingual.ttl 和批次元数据。它不经过旧的逐条采纳流程。命令见 [批量翻译脚本](scripts/README.md)，完整规则见 [中文标签设计](../../docs/model/vocabulary/设计-中文标签.md)。
+当前 AI 展示翻译从英文基准提取任务，由 agent 分批翻译，再生成 translations.zh.ttl、vocabulary.multilingual.ttl 和批次元数据。它不经过旧的逐条采纳流程。命令见[批量翻译脚本](scripts/README.md)，批次接口见[中文批译](../../docs/practices/vocabulary/设计-词表工程能力.md#中文批译)，通用规则见[多语言词表](../../docs/model/vocabulary/设计-多语言词表.md)。
 
 增量同步规则为：基准中不存在的对象退出当前中文产物，只翻译增量，已有译文按 URI 复用、不自动重译。该跨版本流程尚未完整实现，当前提取命令不能自动复用历史译文。
 

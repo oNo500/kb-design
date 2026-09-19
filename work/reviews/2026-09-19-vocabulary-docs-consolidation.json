@@ -1,0 +1,492 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-19",
+  "authorization": "用户认可设计系列去重与过时内容审查建议后回复“可以执行吧”；仅整理文档、归档及必要引用。",
+  "source_commit": "4a6fbc25e6a0fe0219753829ce99bf72c1e28a4b",
+  "source_state": "修订前未提交工作区，源 SHA-256 定位实际旧文；已确认生成流程正文与该提交一致。",
+  "changes": [
+    {
+      "source": "docs/development/指南-词表工具链.md",
+      "source_sha256": "fb7a4258dd8931c0b2703c6777790fdcf6f630b2676f84f1f1fad963c32384e7",
+      "treatment": "整篇重写操作指南；核准命令和副作用边界，补同步、编辑、冲突及重放，撤下与当前代码不符的描述。",
+      "sections": [
+        {
+          "source_heading": "执行起点",
+          "destinations": [
+            "docs/development/指南-词表工具链.md#执行起点"
+          ]
+        },
+        {
+          "source_heading": "环境准备",
+          "destinations": [
+            "docs/development/指南-词表工具链.md#准备与配置"
+          ]
+        },
+        {
+          "source_heading": "来源获取",
+          "destinations": [
+            "docs/development/指南-词表工具链.md#来源准备"
+          ]
+        },
+        {
+          "source_heading": "解析分支",
+          "destinations": [
+            "docs/development/指南-词表工具链.md#来源准备"
+          ]
+        },
+        {
+          "source_heading": "来源转换",
+          "destinations": [
+            "docs/development/指南-词表工具链.md#来源转换"
+          ]
+        },
+        {
+          "source_heading": "输入配置",
+          "destinations": [
+            "docs/development/指南-词表工具链.md#准备与配置"
+          ]
+        },
+        {
+          "source_heading": "全量构建",
+          "destinations": [
+            "docs/development/指南-词表工具链.md#日常同步",
+            "docs/development/指南-词表工具链.md#独立构建",
+            "docs/development/指南-词表工具链.md#归档重放"
+          ]
+        },
+        {
+          "source_heading": "查询与诊断",
+          "destinations": [
+            "docs/development/指南-词表工具链.md#查询与诊断"
+          ]
+        },
+        {
+          "source_heading": "应用同步",
+          "destinations": [
+            "docs/development/指南-词表工具链.md#应用同步"
+          ]
+        },
+        {
+          "source_heading": "版本回退",
+          "destinations": [
+            "docs/development/指南-词表工具链.md#版本回退"
+          ]
+        },
+        {
+          "source_heading": "失败处理",
+          "destinations": [
+            "docs/development/指南-词表工具链.md#冲突与重试",
+            "docs/development/指南-词表工具链.md#失败定位"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表生成流程.md",
+      "source_sha256": "aadb515567fcac2935b265ecc302e64f5c0742c85460c6999af20d41db337b27",
+      "treatment": "删除被替代的独立文章；阶段与来源条件归入工程文，操作归指南，覆盖问题归整体设计。旧正文与本轮 HEAD 一致，可按原路径和提交取回。",
+      "sections": [
+        {
+          "source_heading": "领域与来源",
+          "destinations": [
+            "docs/development/设计-词表工程能力.md#生成流程",
+            "docs/model/vocabulary/设计-词表整体设计.md#用途与范围",
+            "docs/model/vocabulary/设计-词表整体设计.md#覆盖检查"
+          ]
+        },
+        {
+          "source_heading": "工程阶段",
+          "destinations": [
+            "docs/development/设计-词表工程能力.md#生成流程"
+          ]
+        },
+        {
+          "source_heading": "流程图",
+          "destinations": [
+            "docs/development/设计-词表工程能力.md#生成流程"
+          ]
+        },
+        {
+          "source_heading": "数据归属",
+          "destinations": [
+            "docs/development/设计-词表工程能力.md#输入与产物",
+            "docs/model/vocabulary/设计-词表整体设计.md#数据分层"
+          ]
+        },
+        {
+          "source_heading": "组织结果",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#词表结构",
+            "docs/model/vocabulary/设计-词表整体设计.md#关系与导航"
+          ]
+        },
+        {
+          "source_heading": "本地维护",
+          "destinations": [
+            "docs/development/指南-词表工具链.md#日常同步",
+            "docs/development/指南-词表工具链.md#本地编辑",
+            "docs/model/vocabulary/设计-词表维护.md"
+          ]
+        },
+        {
+          "source_heading": "校验与发布",
+          "destinations": [
+            "docs/development/设计-词表工程能力.md#校验覆盖",
+            "docs/development/指南-词表工具链.md#独立构建",
+            "docs/development/指南-词表工具链.md#归档重放"
+          ]
+        },
+        {
+          "source_heading": "覆盖检查",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表整体设计.md#覆盖检查"
+          ]
+        },
+        {
+          "source_heading": "当前基线",
+          "destinations": [
+            "docs/development/设计-词表工程能力.md#验收证据",
+            "work/reviews/2026-09-19-vocabulary-baseline.md#实现状态"
+          ]
+        },
+        {
+          "source_heading": "顶层组织",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#顶层组织"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "docs/development/计划-词表维护.md",
+      "source_sha256": "9d70858e14ae12dcf8ded86bb8020a1be3c7f808248dee22a666400da0481bd6",
+      "treatment": "原文件按字节原样移动至历史计划目录；归档日期不冒充原执行日期。",
+      "sections": [
+        {
+          "source_heading": "目标与范围",
+          "destinations": [
+            "work/archive/plans/2026-09-19-vocabulary-maintenance.md#目标与范围"
+          ]
+        },
+        {
+          "source_heading": "实施顺序",
+          "destinations": [
+            "work/archive/plans/2026-09-19-vocabulary-maintenance.md#实施顺序"
+          ]
+        },
+        {
+          "source_heading": "文件职责",
+          "destinations": [
+            "work/archive/plans/2026-09-19-vocabulary-maintenance.md#文件职责"
+          ]
+        },
+        {
+          "source_heading": "验收证据",
+          "destinations": [
+            "work/archive/plans/2026-09-19-vocabulary-maintenance.md#验收证据"
+          ]
+        },
+        {
+          "source_heading": "实施结果",
+          "destinations": [
+            "work/archive/plans/2026-09-19-vocabulary-maintenance.md#实施结果"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "source_sha256": "c8f4fdf9124b940a2fbf64785f106669d21e6be27421aed7a40fce85098b354f",
+      "treatment": "共同字段引用现行规范；保留目标独有的 XL、说明附着与单值、自有集合要求、有序列表及管理记录；Turtle 示例原样保留。",
+      "sections": [
+        {
+          "source_heading": "标准与格式",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#标准与格式"
+          ]
+        },
+        {
+          "source_heading": "记录结构",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#记录结构"
+          ]
+        },
+        {
+          "source_heading": "资源类型",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#资源类型"
+          ]
+        },
+        {
+          "source_heading": "采用原则",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#采用原则"
+          ]
+        },
+        {
+          "source_heading": "字段设计",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#字段设计"
+          ]
+        },
+        {
+          "source_heading": "通用约定",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#通用约定",
+            "docs/model/vocabulary/设计-词表数据规范.md#通用约定"
+          ]
+        },
+        {
+          "source_heading": "词表字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#通用约定",
+            "docs/model/vocabulary/设计-词表数据规范.md#词表字段",
+            "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段"
+          ]
+        },
+        {
+          "source_heading": "概念字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#概念字段",
+            "docs/model/vocabulary/设计-词表数据规范.md#概念字段",
+            "docs/model/vocabulary/设计-词表数据规范.md#关系维护"
+          ]
+        },
+        {
+          "source_heading": "名称字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#名称字段"
+          ]
+        },
+        {
+          "source_heading": "说明字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#说明字段"
+          ]
+        },
+        {
+          "source_heading": "集合字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#集合字段",
+            "docs/model/vocabulary/设计-词表数据规范.md#分组字段"
+          ]
+        },
+        {
+          "source_heading": "映射字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表数据规范.md#映射字段",
+            "docs/model/vocabulary/设计-词表资源与字段.md#映射记录"
+          ]
+        },
+        {
+          "source_heading": "派生字段",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#派生字段",
+            "docs/model/vocabulary/设计-词表数据规范.md#关系维护"
+          ]
+        },
+        {
+          "source_heading": "完整实例",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#完整实例"
+          ]
+        },
+        {
+          "source_heading": "维护记录",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#维护记录"
+          ]
+        },
+        {
+          "source_heading": "来源与依据",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#来源与依据"
+          ]
+        },
+        {
+          "source_heading": "映射记录",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#映射记录"
+          ]
+        },
+        {
+          "source_heading": "采纳与发布",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#采纳与发布"
+          ]
+        },
+        {
+          "source_heading": "更新与兼容",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#更新与兼容"
+          ]
+        },
+        {
+          "source_heading": "名称身份",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#名称身份"
+          ]
+        },
+        {
+          "source_heading": "来源与引用",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#来源与引用"
+          ]
+        },
+        {
+          "source_heading": "约束与校验",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#约束与校验"
+          ]
+        },
+        {
+          "source_heading": "校验范围",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#校验范围"
+          ]
+        },
+        {
+          "source_heading": "检查分工",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#检查分工"
+          ]
+        },
+        {
+          "source_heading": "标准与选择",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#标准与选择"
+          ]
+        },
+        {
+          "source_heading": "使用评价",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#使用评价"
+          ]
+        },
+        {
+          "source_heading": "依据与限制",
+          "destinations": [
+            "docs/model/vocabulary/设计-词表资源与字段.md#依据与限制"
+          ]
+        }
+      ]
+    }
+  ],
+  "state_relocations": [
+    {
+      "source": "docs/model/vocabulary/设计-词表维护.md#实现差异",
+      "destinations": [
+        "docs/development/设计-词表工程能力.md#维护缺口",
+        "docs/development/设计-词表工程能力.md#多语差异"
+      ]
+    },
+    {
+      "source": "docs/model/vocabulary/设计-中文标签.md#实现状态",
+      "destinations": [
+        "docs/development/设计-词表工程能力.md#多语差异",
+        "docs/development/设计-词表工程能力.md#维护缺口"
+      ]
+    },
+    {
+      "source": "docs/governance/maintenance/设计-词表版本.md#实现边界",
+      "destinations": [
+        "docs/development/设计-词表工程能力.md#已有实现",
+        "docs/development/设计-词表工程能力.md#维护缺口"
+      ],
+      "retained": "原节保留适用范围提示和指向现状的链接。"
+    }
+  ],
+  "anchor_migrations": {
+    "docs/development/指南-词表工具链.md#环境准备": [
+      "docs/development/指南-词表工具链.md#准备与配置"
+    ],
+    "docs/development/指南-词表工具链.md#来源获取": [
+      "docs/development/指南-词表工具链.md#来源准备"
+    ],
+    "docs/development/指南-词表工具链.md#解析分支": [
+      "docs/development/指南-词表工具链.md#来源准备"
+    ],
+    "docs/development/指南-词表工具链.md#输入配置": [
+      "docs/development/指南-词表工具链.md#准备与配置"
+    ],
+    "docs/development/指南-词表工具链.md#全量构建": [
+      "docs/development/指南-词表工具链.md#独立构建"
+    ],
+    "docs/development/指南-词表工具链.md#失败处理": [
+      "docs/development/指南-词表工具链.md#失败定位"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#词表字段": [
+      "docs/model/vocabulary/设计-词表数据规范.md#词表字段"
+    ],
+    "docs/model/vocabulary/设计-词表资源与字段.md#映射字段": [
+      "docs/model/vocabulary/设计-词表数据规范.md#映射字段"
+    ],
+    "docs/model/vocabulary/设计-词表维护.md#实现差异": [
+      "docs/development/设计-词表工程能力.md#维护缺口"
+    ],
+    "docs/model/vocabulary/设计-中文标签.md#实现状态": [
+      "docs/development/设计-词表工程能力.md#多语差异"
+    ],
+    "docs/model/vocabulary/设计-词表生成流程.md": [
+      "docs/development/设计-词表工程能力.md#生成流程"
+    ],
+    "docs/development/计划-词表维护.md": [
+      "work/archive/plans/2026-09-19-vocabulary-maintenance.md"
+    ]
+  },
+  "preserved_target_conditions": [
+    "独立名称 literalForm 每版本恰好一个值，三种 XL 角色数量及每完整标签首选唯一",
+    "说明仍区分概念、名称及集合的附着对象；本地新说明每条一个带语言正文，继承嵌套及多语保留",
+    "自建集合 scopeNote 至少一个，自有集合 inScheme 恰好一个，继承集合各有兼容数量",
+    "有序集合恰好一个有限、完整、无循环列表，允许空集合和空列表",
+    "节点标签不是可标引概念，数组与概念组的类型和上层结构不被通用 Collection 吞并",
+    "五种简单映射复用现行语义和端点，管理记录继续限制版本、用途与方向",
+    "派生 narrower、topConceptOf 的原值类型和数量由现行合同承担；XL 及 memberList 投影保留目标要求"
+  ],
+  "operational_corrections": [
+    "当前来源由清单决定，不固定为六份",
+    "ERIC、IEEE、Cognitive Atlas 可从已核旧来源输入复用身份，明确键缺失仍停止",
+    "包内重放配置与原配置分开，归档具备相应文件集时可搬动重建",
+    "sync --local 复用归档来源和组织配置；新组织或选择配置使用普通 sync",
+    "回退后应用读取选定历史版本，不用普通 sync 代替历史导入",
+    "单应用同步具备恢复尝试，跨应用及词表发布仍非共同事务"
+  ],
+  "command_verification": {
+    "method": "调用实际 argparse 解析后抛出专用异常，在命令处理体之前停止；未执行生成、获取、同步或恢复。",
+    "parsed_command_lines": 33,
+    "additional_checks": [
+      "workspace、record-only、expected-revision、no-apps 选项",
+      "编辑 JSON 与 N3 字面值解析"
+    ],
+    "source_review_only": [
+      "uv sync --all-packages --locked",
+      "归档 restore.py 的参数和环境约束"
+    ]
+  },
+  "code_fingerprints": {
+    "packages/kb-vocab/src/kb_vocab/cli.py": "4d688a4ce73c1b4e02eb093ba5e7aa7ca5666eaa7c8aaaa66b52e9ce7ed42316",
+    "packages/kb-vocab/src/kb_vocab/maintenance_cli.py": "5f79c899fd1d4681b3e858964a1ffd4788750a7b53f51321417a26f1198cf29d",
+    "packages/kb-vocab/src/kb_vocab/maintenance.py": "2f91324ff578d861a57fc48b1a90f6bd6531ff1757faccd65fa954a97ecb0854",
+    "packages/kb-vocab/src/kb_vocab/eric.py": "6e0214ee1dbd155ba251be2bc3864d1573c78ed4b847a4db72ed9c8f04b6b19e",
+    "packages/kb-vocab/src/kb_vocab/replay.py": "9acdf488aaa3d482e6df2c7511c9afcde831d63ba137f9d110b15400d9aa43fc",
+    "packages/kb-vocab/src/kb_vocab/environment.py": "0148f77bd0460d42bd27a5a817d90fc1112e5c79c4dfbeffe82e9a650a96881d",
+    "packages/kb-vocab/src/kb_vocab/local_edits.py": "c61cc8f6fc1062d384a106198c296f446e7d6a63e48e509618ab7e1245f6f18d",
+    "packages/kb-sources/src/kb_sources/cli.py": "0dfbf35135de21c5846800a40882a5117db456faa9501d726be170b9e772b271",
+    "apps/skosmos/sync-current.py": "2bcc2ef286816b6504275862cc225437fec44a169f7ac4c38032dc7145453f03",
+    "apps/skosmos/sync-translated.py": "18ef9ea27269556df8dd7221a4a12487627f36c3928951ff53b1bebd22c76752"
+  },
+  "preserved": [
+    "既有采纳决定与原提案",
+    "现行数据规范全文",
+    "完整 Turtle 示例",
+    "YAML 主题与层级的既有规则，仅补适用范围",
+    "维护计划原文",
+    "代码、schema、数据、语言与消费者状态"
+  ],
+  "not_executed": [
+    "完整构建、获取、同步或恢复",
+    "程序修复",
+    "正式数据或外部知识库写入",
+    "Git 提交或推送"
+  ]
+}

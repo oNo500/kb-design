@@ -1,26 +1,25 @@
-# ANSI/NISO Z39.19 受控词表指南
+# 受控词表指南 (ANSI/NISO Z39.19)
 
-阅读笔记。本文区分现行出版标准、当前修订项目和本次实际读到的正文，不把标准中的术语直接登记为本项目字段或状态。
+本文记录材料身份、原文位置及核读边界，供核对标准事实；项目规则的采用以相应决定为准。
 
 ## 材料身份
 
-- [NISO 出版页](https://www.niso.org/publications/ansiniso-z3919-2005-r2010)将材料标为 ANSI/NISO Z39.19-2005 (R2010)，英文标题为 *Guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies*，材料类型为 Standard，Publication Date 为 2010-05-13，DOI 为 [10.3789/ansi.niso.z39.19-2005R2010](https://doi.org/10.3789/ansi.niso.z39.19-2005R2010)。
-- 出版页的 PDF 链接最终进入 [NISO 项目出版页](https://groups.niso.org/higherlogic/ws/public/projects/46/publications)。该页把所列 PDF 说明为 2005 edition 经 2010 reaffirmation 后的 version of record；本次核对的完整 PDF 共 184 页。
-- [NISO Information Creation & Curation 页面](https://www.niso.org/topic-committees/information-creation-curation)在 Active Groups 中另列 “Revision of ANSI/NISO Z39.19-2005”。这是修订项目的状态线索，不是新标准正文。
-- 本文没有为该标准登记新的中文标准名；标题中的中文只用于识别这份阅读笔记。
+本记录采用 ANSI/NISO Z39.19-2005 (R2010)，英文题名为 Guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies。出版页标示日期 2010-05-13，DOI 为 10.3789/ansi.niso.z39.19-2005R2010；它面向单语受控词表。[NISO 出版页](https://www.niso.org/publications/ansiniso-z3919-2005-r2010)
+
+2026-09-19 从 NISO 官方地址取得并在内存核读的 PDF 共 184 页，原文身份与内容摘要记录在[核对记录](../../../work/reviews/2026-09-19-vocabulary-standard-boundary.json)。正文引用使用其印刷页码；没有把章节目录或本地转述当作已读正文。[官方 PDF](https://groups.niso.org/higherlogic/ws/public/download/12591/z39-19-2005r2010.pdf)
+
+标题中的中文用于识别阅读材料，不据此登记新的中文标准名称。
 
 ## 阅读范围
 
-核对日期为 2026-08-29。
+核读记录按日期区分，取得全文不等于逐条读完全文。
 
-| 材料 | 实际读到的位置 |
+| 日期 | 材料与实际核读范围 |
 |---|---|
-| NISO 出版页 | 标题、摘要、材料类型、发布日期、ISBN、DOI 和 PDF 入口 |
-| NISO 项目出版页 | 项目标题、Published 区、版本说明和 PDF 最终位置 |
-| 完整 PDF | 封面、前言、目录；5.3.5、5.4；11.1.1–11.1.8；11.3–11.3.2.2；11.4.4–11.4.5 |
-| NISO 修订状态页 | Active Groups 中的修订项目名称 |
+| 2026-08-29 | 出版页及项目出版页的身份、摘要、版本说明与入口；PDF 封面、前言、目录，§5.3.5、§5.4、§11.1.1–§11.1.8、§11.3–§11.3.2.2、§11.4.4–§11.4.5；修订状态页的项目名称 |
+| 2026-09-19 | 重新核对出版页；通过官方 PDF 逐段核读 §8.3–§8.3.4，印刷页 46–50，包括条件、编码、正反例及多上位说明 |
 
-以下条款事实均回到上述完整 PDF；出版页摘要和修订状态页不代替条款正文。
+既有选词与维护笔记保留原核读范围；本轮新增层级依据，不将没有重读的章节写成重新核验，也不据旧标准推定修订草案内容。
 
 ## 已核条款
 
@@ -36,7 +35,18 @@
 | 11.1.6 | Candidate Terms | candidate terms 也称 provisional terms，指尚未完成全部 acceptance procedures 的 proposed terms；这些词 should be marked，对象是在 term record 中加 special symbol 或 phrase。一旦 candidate term 获准成为 term，该 symbol 或 phrase must be deleted。与单一数据库相连的联机环境通常不向用户显示 candidate terms；其他环境 may be displayed。这里不把它转换成本项目状态。 |
 | 11.1.8 | Unassigned Terms | 建立层级时，尚未用于标引、但为补全层级且本身可能具有标引价值的词，正文说 frequently admitted into the controlled vocabulary。这里不把 unassigned 转换成本项目状态。 |
 
-11.1.7 已在本次打开，但它讨论核心领域与边缘领域的具体性取舍；本任务后续概念文不需要据此作断言，因此不把它列为采用依据。
+## 层级依据
+
+| 位置 | 核到的内容 | 使用边界 |
+|---|---|---|
+| §8.3，页 46–47 | 上下位须能按概念的基本类别作逻辑检验；区分种属、实例和整体部分，BT／NT 互反 | 学科与其研究对象不是同一种概念类别，不能仅凭研究联系建层级 |
+| §8.3.1，页 47–48 | 种属采用下位全部属于上位的检验；仙人掌与多肉植物是正例，与沙漠植物的部分重叠是反例 | 不能以常见共现或只适用于部分成员的事实代替范围包含 |
+| §8.3.2，页 48 | 实例连接一般类别与其具体实例 | 具体实例、种类和组成部分不能混同；专名本身不足以证明角色 |
+| §8.3.3，页 49 | 整体部分涉及概念内在包含，不依赖临时情境；列出身体系统、地理及组织结构等例子 | 例子不是穷尽列表，也不表示所有部件关系都可以用层级表示 |
+| §8.3.3.2，页 49 | 化油器可以属于汽车之外的机器，该词对采用相关关系 | 需与概念定义及下一节的多上位例子连读，不以父节点数量代替含义判断 |
+| §8.3.4，页 49–50 | 多上位可基于种属、整体部分或不同关系类型；钢琴、生物化学、头骨分别提供例子 | 逐条联系仍须有逻辑依据；无法解释的具体边界不靠自定统一阈值补齐 |
+
+以上为原文范围的转述。将这些业务判据用于本项目自有概念层级，是明确的采用选择；它不证明已核对 ISO 25964 全文，也不自动启用任何层级细分 RDF 扩展。项目条件见[层级判据](设计-词表数据规范.md#层级判据)。
 
 ## 维护依据
 
@@ -57,18 +67,14 @@
 
 ## 修订状态
 
-- 当前可核的出版标准仍是 NISO 出版页列出的 ANSI/NISO Z39.19-2005 (R2010)。
-- NISO 当前 Information Creation & Curation 页面另将其修订列为 Active Group。
-- 该当前页面未公开修订阶段编号、修订草案或计划完成日期；本次也没有取得可核对的新正文。因此本文不推测草案内容、发布时间或新旧条款对应关系。
+本记录引用的出版版本为 2005 版的 2010 年重申版。2026-08-29 曾在 NISO 页面观察到修订项目，但当时没有核到阶段编号、草案或完成日期；本轮未重新核验该项目状态。不能将这项历史观察称为修订版已出版，或以它替代当前采用正文。
 
 ## 适用边界
 
-现行正文面向 monolingual controlled vocabularies 的内容、显示、建设、测试、维护和管理。它可以为后续概念文说明 warrant、词表结构、建设方法、term record、verification、candidate terms、unassigned terms 及维护活动提供外部边界。
+该标准面向单语受控词表。已读章节可以支持结构、选词依据、层级判断及维护方法；跨语言对应、RDF 表示、项目审批和交换合同各按其实际依据处理。
 
-标准中的 candidate terms、unassigned terms、source(s)、history note 和责任记录保持其正文语境。是否在本项目采用同名状态或字段、由谁审批、采用什么阈值、怎样保留或删除，以及如何迁移既有记录，均须由后续治理设计决定。
+原文中的 candidate、unassigned、history note 等保持标准语境，不自动成为项目字段、状态、角色或阈值。§8.3 的业务条件也不等于 SKOS 的形式公理；来源转录与本地语义采用分别留痕。
 
 ## 未读范围
 
-- 除“阅读范围”列出的条款外，其余正文没有在本次逐项核读；尤其不以旧笔记中曾列过的条款代替重新核对。
-- 11.1.7 虽已打开，但未作为本任务后续断言的依据。
-- 当前修订项目没有公开的阶段编号、草案或计划完成日期；没有读取修订正文，也不据历史新闻推测当前进度。
+“阅读范围”之外的正文未在本记录中逐项核验；§11.1.7 虽已在既有阅读中打开，但未作为后续项目规则的采用依据。NISO 修订草案和未取得的 ISO 条款不据本记录补写。

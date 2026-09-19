@@ -1,0 +1,1037 @@
+{
+  "date": "2026-09-19",
+  "status": "completed",
+  "authorization": "用户确认一篇整体设计、三篇专题、一份数据规范和一篇示例的编排，回复“可以，开始干活吧”。",
+  "scope": [
+    "docs/model/vocabulary/设计-词表整体设计.md",
+    "docs/model/vocabulary/设计-词表数据规范.md",
+    "docs/model/vocabulary/设计-词表资源与字段.md",
+    "docs/model/vocabulary/设计-多语言词表.md",
+    "docs/model/vocabulary/设计-词表维护.md",
+    "docs/governance/maintenance/设计-词表版本.md",
+    "docs/model/vocabulary/索引-主题词表.md",
+    "docs/development/决定-词表文档分层.md"
+  ],
+  "baseline_head": "fd17ce4e97e6f309b2ece469226c597b6dd7aef2",
+  "sources": {
+    "docs/model/vocabulary/设计-词表整体设计.md": "bbb10369e3844c25d02060453ae35e0c6bef38618b04a4cf03d42c1b01b11d61",
+    "docs/model/vocabulary/设计-词表数据规范.md": "6577752fd41422be853c0df388205566f5cabf242a7964f5244bae70fe2c6931",
+    "docs/model/vocabulary/设计-词表资源与字段.md": "9d752a72b273d745956463d5eb776aeb6901642753c8d8d4842385ac3004b6c8",
+    "docs/model/vocabulary/设计-多语言词表.md": "ab5fa9ba69a9fca3234e3a764e050d4657210fc7a21d57e9fe211e1d88dc7e4a",
+    "docs/model/vocabulary/设计-词表维护.md": "d4cfa20f4a733fd872dad165560a1b81a4d0ee5790cb4311382a6cb03f690f0b",
+    "docs/governance/maintenance/设计-词表版本.md": "a8857fd462635e1356fc41d76b432ac85feb6e535616381d646479fd95de66c8"
+  },
+  "section_destinations": [
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "section": "用途与范围",
+      "line": 5,
+      "source_sha256": "2cefb3bcf5295057b82058403f87f78a268f917b5f2df37dcdbb23ccb9806020",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#用途与范围"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "section": "标准采用",
+      "line": 13,
+      "source_sha256": "869eee0bbfb395432ef355c79940fa377cc557e4672fa6f1e60950c07e41d5eb",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#标准采用"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "section": "数据分层",
+      "line": 25,
+      "source_sha256": "51f059a4708a0f8644a86e0d8760f9276ed511d7c27cc5fe118410079056ffce",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#数据分层"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "section": "对象体系",
+      "line": 39,
+      "source_sha256": "3371eeb045f2261577fb6505ef153ed1ac9cd3e9342c6130b0e6666c1866526d",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#对象体系"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "section": "整合方式",
+      "line": 53,
+      "source_sha256": "61204107453b7f5b66c7cfb4e98ab32cc1effbdd6f2268b7ec7a6c5b7fa3db53",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#整合方式"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "section": "关系与导航",
+      "line": 67,
+      "source_sha256": "5e84196ac9611114884504dce8e58d526d631978186a3d4297fa478b0088a000",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#关系与导航"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "section": "用途与验收",
+      "line": 81,
+      "source_sha256": "1752ccc03034f4f1fefabe2b94f6b70fd00031309e1286b2dad2bf440947f497",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#用途与验收"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "section": "多语言组织",
+      "line": 97,
+      "source_sha256": "c056144f46bf974cb41717b2da78df3dae436c902738a1e3db03a247fd1db54b",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#多语言组织",
+        "docs/model/vocabulary/设计-多语言词表.md#语言策略"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "section": "名称与版本",
+      "line": 103,
+      "source_sha256": "eeb4b7032c5d3a6b930e03ec520d258a45350695e96f1476f70969749efb3967",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#处理流程",
+        "docs/model/vocabulary/设计-词表数据规范.md#名称字段",
+        "docs/model/vocabulary/设计-词表数据规范.md#名称登记",
+        "docs/model/vocabulary/设计-词表维护.md#名称编辑",
+        "docs/governance/maintenance/设计-词表版本.md#引用方式"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "section": "映射与应用",
+      "line": 113,
+      "source_sha256": "f62d9321555939c5b566a713351a83f152d3072d7b788c188f28787065f04b81",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#映射与应用",
+        "docs/model/vocabulary/设计-词表数据规范.md#映射记录"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "section": "来源更新",
+      "line": 123,
+      "source_sha256": "9058d524dbad697e1586b6588583c7d44af217d2eca5eda4712ddef2cb812bec",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#处理流程",
+        "docs/model/vocabulary/设计-词表维护.md#来源更新",
+        "docs/model/vocabulary/设计-多语言词表.md#增量同步"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "section": "发布与消费",
+      "line": 131,
+      "source_sha256": "4a3c9b27ff4b8938aaa0309ce6874f2b3aefff89eeb4084d9b111df2cf37ea30",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#消费边界",
+        "docs/governance/maintenance/设计-词表版本.md#发布与回退",
+        "docs/model/vocabulary/设计-词表数据规范.md#校验范围"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "section": "规则归属",
+      "line": 139,
+      "source_sha256": "48f534cec4694faac1c8f63051a7bf826681e0ccb11416f7ad77eb96991dffb0",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#设计分工"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "section": "验收与迁移",
+      "line": 152,
+      "source_sha256": "a18d15f9a3a8e98701a8ebae4a3513c8882dfb6f5f82f164dddd58d6c52da6eb",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#验收与覆盖"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "section": "覆盖检查",
+      "line": 165,
+      "source_sha256": "a5f602a6a116ef0f0badc68b74ca67cb1fceefbcb1a74b60a9714380a64e4a4d",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#验收与覆盖"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表整体设计.md",
+      "section": "标准依据",
+      "line": 176,
+      "source_sha256": "7d0eb22e934ff8515dbb97dd89439c8784d40b4912aac04c47796bcde980437a",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#标准依据",
+        "docs/model/vocabulary/设计-词表整体设计.md#待定事项"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "适用范围",
+      "line": 5,
+      "source_sha256": "3722d59de41982c6693d6a84355f8b1e7d76cbe369e2e77b87682b4759e31aec",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#适用范围"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "标准与选择",
+      "line": 11,
+      "source_sha256": "907a1a09e6e453d79bede2a47a083f5d3b1fb06a103c00991599f53722e168c4",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#标准与选择"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "通用约定",
+      "line": 24,
+      "source_sha256": "36aced1a0570f955b21f24b55151b9d742da43d79ff3e1a3daecd9fc5192d137",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#通用约定"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "标识与类型",
+      "line": 26,
+      "source_sha256": "1e78fb1735f54cb3dacaecec1a83ec9fa560837134bf6ee722c9e18ff06e5714",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#标识与类型"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "值与数量",
+      "line": 32,
+      "source_sha256": "df1820adad0442d354902f0b623a059bd6b6ca5382a7e04e01543dcf9ee41e2c",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#值与数量"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "语言与名称",
+      "line": 46,
+      "source_sha256": "5a8275bb0d649607137890ffce3f7a7da423af30c88fc20c8f5212bf56824997",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#语言与名称"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "词表字段",
+      "line": 58,
+      "source_sha256": "ca46e7c02489cace0863feaf402ba1e2bcebc5affdf6fbdaef6e26e47cc2f154",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#词表字段"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "概念字段",
+      "line": 82,
+      "source_sha256": "c28a7c8bd7c8edd8c306f1c0544815021d5bdb83a70c32de1e6b01c354e33844",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#概念字段"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "名称字段",
+      "line": 117,
+      "source_sha256": "33805ad45dd60ccbcbb0569a288f498395241071a16fd61d6805ebb40bdfde77",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#名称字段"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "集合字段",
+      "line": 131,
+      "source_sha256": "968cd848923445d9bc9907d82d5825bb81c10e0317e38fc98b381d4323c0430f",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#集合字段"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "集合名称",
+      "line": 152,
+      "source_sha256": "cd2e743d1b3482ae94ce44b73f32b5d91c314d0139d15723875d4d8a9103dc71",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#集合名称"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "分组扩展",
+      "line": 158,
+      "source_sha256": "9b53fb3368dc239d345b39c4522600428311ea51ba6478073de13d89fd6c1a2d",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#分组扩展",
+        "docs/model/vocabulary/设计-词表数据规范.md#数组连接"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "说明字段",
+      "line": 170,
+      "source_sha256": "7259c1343d9d350afdc68c41d3ae9be61ecdd2b1cceae7ad751dd8e6df3589d6",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#说明字段"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "关系维护",
+      "line": 190,
+      "source_sha256": "08dd5b89e71177d62392a125fa1edfb94d16008f8aadee5d9f4926aa715eb509",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#关系约束"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "层级判据",
+      "line": 205,
+      "source_sha256": "b5e145375bf888afa6f3c69dee8b795922b3d31fe39451f7c5bb5a1974f8e15e",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#层级判据",
+        "docs/model/vocabulary/设计-词表数据规范.md#派生表达"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "派生表达",
+      "line": 225,
+      "source_sha256": "3cf790d2956edc8c711322f8f3d5dc93ccccb50036456063390ad82e07608066",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#派生表达"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "映射字段",
+      "line": 233,
+      "source_sha256": "f7adedde901e635b3df80392bdd516637a9f74deabc9db4de50e936a396fbb40",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#映射字段"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "映射记录",
+      "line": 249,
+      "source_sha256": "2aefda3688b6a044693596fae15abf9c73fb8faff01af4a298d11ec2fcf2a852",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#映射记录"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "组合材料",
+      "line": 268,
+      "source_sha256": "6600ff4c20298e1d93ec1a85446fbaaa1e165e2f0cd84778b2c49164d797426c",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#组合材料",
+        "docs/model/vocabulary/设计-词表整体设计.md#待定事项"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "来源与依据",
+      "line": 276,
+      "source_sha256": "d6f0ec7c0c533fccd753a9f841f30364b60c4a6b07feee94e29ec672f3672866",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#来源与依据"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "维护记录",
+      "line": 294,
+      "source_sha256": "bc4cf7644f598417b148595acadd3f1c83caad883c269db65e798787e2271699",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#维护记录"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "历史与停用",
+      "line": 307,
+      "source_sha256": "228a862e065ad7c61d96d6c30035a7007d79bc7ec136843f6d00a0949b0429b7",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#历史与停用",
+        "docs/model/vocabulary/设计-词表维护.md#概念退出",
+        "docs/governance/maintenance/设计-词表版本.md#历史读取"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "来源兼容字段",
+      "line": 315,
+      "source_sha256": "07d3db21bc723c1f3031162b59b3d8c07570608773a24d741fff6142d0312c2f",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "校验范围",
+      "line": 341,
+      "source_sha256": "fd0f42ff2920e3f6477d64870377ac64048ee1736ff23d03d7b7069b818aee58",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#校验范围"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "标准一致性",
+      "line": 354,
+      "source_sha256": "bf21093a8f4efee99a2c87a66e99295edc09f0c38b4af8f1c1e1f4e806f5b03b",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#标准一致性"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "校验分级",
+      "line": 370,
+      "source_sha256": "c9ea5eb9a5ab982f2a9630579459861f870377598aefa3095364ff2741aa5dda",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#校验分级"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "交付与版本",
+      "line": 384,
+      "source_sha256": "223c23761dd853ad3844cc3421999da400c8735258ebb90b112577b00ecd6b10",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#维护记录",
+        "docs/governance/maintenance/设计-词表版本.md#版本对象",
+        "docs/governance/maintenance/设计-词表版本.md#发布与回退"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "标准依据",
+      "line": 390,
+      "source_sha256": "e30a7b73801f56ba6394a23d9f8f5a45642a711364141aa12519bc59e6ef6f0f",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#标准依据"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表数据规范.md",
+      "section": "待核事项",
+      "line": 395,
+      "source_sha256": "a9df0719fbf47feef46b4f999138c53f72ac7ebdcf2e82810340315240200fca",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表整体设计.md#待定事项"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "section": "标准与格式",
+      "line": 5,
+      "source_sha256": "37eec6a3c5d0e76be8cfc54097eceb2b069693ab32ef3ff35831957036c39b95",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表资源与字段.md#标准与格式"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "section": "记录结构",
+      "line": 22,
+      "source_sha256": "40213d33f6ed68f971d0c65d05b5d598c6c13a39413bb0de979272928ac45586",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表资源与字段.md#记录结构"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "section": "资源类型",
+      "line": 38,
+      "source_sha256": "9ee22650e4cd0e0a2c934793b2c72a884a8d21e1750348143c007ca1b3914080",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表资源与字段.md#资源类型"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "section": "字段职责",
+      "line": 52,
+      "source_sha256": "a19411dadb5cf61d4fe0818fad1772bdf91738f2bbf3d27ace66e16b3e5b68a6",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表资源与字段.md#字段职责"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "section": "派生表达",
+      "line": 67,
+      "source_sha256": "2a964fa1ba8ac1a1cca32f4675b7c22b15eb6a882b4f9aaf515c0d0d2c414442",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表资源与字段.md#派生表达"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "section": "完整实例",
+      "line": 73,
+      "source_sha256": "e645c229e2e6c85d3bb8d1b7f7b3497bb5a08c322ca681d41ca3b10bf3f50933",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表资源与字段.md#完整实例"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表资源与字段.md",
+      "section": "管理记录",
+      "line": 161,
+      "source_sha256": "d5d9592dd1ca61050c31b32220f97dfda1857e6518e0b8997e5b592f3ea91332",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表资源与字段.md#管理记录"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-多语言词表.md",
+      "section": "设计范围",
+      "line": 5,
+      "source_sha256": "4a0a1ca3fb99600eeea79556bba40b7bb4e28117fa5e3cbe05103b01804313a4",
+      "destinations": [
+        "docs/model/vocabulary/设计-多语言词表.md#设计范围"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-多语言词表.md",
+      "section": "语言策略",
+      "line": 11,
+      "source_sha256": "fa3579acba7708ccf2ca7d65428d87a2ef84a6afdd7cc05887116d16c1347881",
+      "destinations": [
+        "docs/model/vocabulary/设计-多语言词表.md#语言策略"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-多语言词表.md",
+      "section": "语言标记",
+      "line": 23,
+      "source_sha256": "bbbcbbb9095def0a225bd793b8849c4c54b780159e9941e6502ddcfb7a221e68",
+      "destinations": [
+        "docs/model/vocabulary/设计-多语言词表.md#语言标记"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-多语言词表.md",
+      "section": "概念对应",
+      "line": 40,
+      "source_sha256": "77b08da05a658ae17eab0b640023276a1abfb035e8121cbc353e1a783ddef5e7",
+      "destinations": [
+        "docs/model/vocabulary/设计-多语言词表.md#概念对应"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-多语言词表.md",
+      "section": "名称与说明",
+      "line": 53,
+      "source_sha256": "0bd40feb8c4eaedd9cbe4833bde467997aeedb75308eeb019191f1b7a73d2d38",
+      "destinations": [
+        "docs/model/vocabulary/设计-多语言词表.md#名称与说明"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-多语言词表.md",
+      "section": "编辑与依据",
+      "line": 66,
+      "source_sha256": "db595f1bb3183c47707d7d86095b106db561f210cb8aeb6f68a5c56b284088b9",
+      "destinations": [
+        "docs/model/vocabulary/设计-多语言词表.md#翻译依据",
+        "docs/model/vocabulary/设计-词表数据规范.md#译文与复核",
+        "docs/model/vocabulary/设计-词表维护.md#名称编辑"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-多语言词表.md",
+      "section": "翻译流程",
+      "line": 76,
+      "source_sha256": "4fb4176a8df1dd1a358fc033aa93449a3a5fd9b7c5a3b492c94355a41a8e8d1e",
+      "destinations": [
+        "docs/model/vocabulary/设计-多语言词表.md#翻译流程",
+        "docs/model/vocabulary/设计-词表数据规范.md#译文与复核"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-多语言词表.md",
+      "section": "增量同步",
+      "line": 93,
+      "source_sha256": "59ddb901319bf8e9923192cb779e4b875427253786ad9ddfb874986b5438fdc7",
+      "destinations": [
+        "docs/model/vocabulary/设计-多语言词表.md#增量同步",
+        "docs/model/vocabulary/设计-词表维护.md#来源更新"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-多语言词表.md",
+      "section": "匹配与显示",
+      "line": 113,
+      "source_sha256": "6de003aa3ecb2afdc3db4bd6ed67bf9c488cb30b607a9af049330d2a4cb4baa2",
+      "destinations": [
+        "docs/model/vocabulary/设计-多语言词表.md#匹配与显示"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-多语言词表.md",
+      "section": "术语衔接",
+      "line": 135,
+      "source_sha256": "bd0a2f61f1de14954f418b187415a47e1d98afc3c0460098507c35190949d584",
+      "destinations": [
+        "docs/model/vocabulary/设计-多语言词表.md#术语衔接"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-多语言词表.md",
+      "section": "校验要求",
+      "line": 141,
+      "source_sha256": "b1c8f55b1c3de7cb9830efe300512f75f455c9de99f18ffaebd94a5b4945c2ce",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#校验范围",
+        "docs/model/vocabulary/设计-多语言词表.md#匹配与显示"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-多语言词表.md",
+      "section": "标准依据",
+      "line": 147,
+      "source_sha256": "869c52b4d1f646a1c1ed16d29d175e8fc8d9c1252d62904ee42d87da298f1151",
+      "destinations": [
+        "docs/model/vocabulary/设计-多语言词表.md#标准依据",
+        "docs/model/vocabulary/设计-词表整体设计.md#标准依据"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表维护.md",
+      "section": "维护职责",
+      "line": 5,
+      "source_sha256": "cf2d33cd0c0e43efe4ed1b1baf6673dc7aa360531c89a8481c52ff3f56d7dc06",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表维护.md#维护职责"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表维护.md",
+      "section": "变更记录",
+      "line": 17,
+      "source_sha256": "959027b8c4532c1e0f30d0bb8ad94d84197e2e938d4c7d7a3a49040c5389dd39",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表维护.md#变更记录",
+        "docs/model/vocabulary/设计-词表数据规范.md#维护记录"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表维护.md",
+      "section": "来源选择",
+      "line": 23,
+      "source_sha256": "f8d1c869b5dc6d49858f78417c8c100fd0a64495d2df72abf269b85ae2db0542",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表维护.md#来源选择"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表维护.md",
+      "section": "编辑粒度",
+      "line": 31,
+      "source_sha256": "16ca4a823701d5ac75850244664eec8b464a141911d7368a848b535e64c25e37",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表维护.md#编辑粒度"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表维护.md",
+      "section": "名称编辑",
+      "line": 43,
+      "source_sha256": "75d8d173f6265cff053cfbdf487298d0df38e3030122e67c7fce8b45dcdcc1c8",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表维护.md#名称编辑",
+        "docs/model/vocabulary/设计-词表数据规范.md#名称登记"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表维护.md",
+      "section": "标识策略",
+      "line": 64,
+      "source_sha256": "5613d57045432ebbcb181336d591183239642eb415a5850722b12f94c165d06d",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表维护.md#标识策略"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表维护.md",
+      "section": "再同步规则",
+      "line": 72,
+      "source_sha256": "85df061acae1f0cfe8df93ebe9a998e98f60dedf96c1cc8091b331040d194489",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表维护.md#来源更新"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表维护.md",
+      "section": "概念退出",
+      "line": 91,
+      "source_sha256": "41297426ac2c4153e6c1d2bd20b7ba6b653999f5d55d22341c3ebd224232f054",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表维护.md#概念退出",
+        "docs/model/vocabulary/设计-词表数据规范.md#维护记录"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表维护.md",
+      "section": "冲突处理",
+      "line": 109,
+      "source_sha256": "892dcda2eaeb5cfbac0a3b480e65c83e1974919e914ee6044f6c46410aa4d1f2",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表维护.md#冲突处理"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/model/vocabulary/设计-词表维护.md",
+      "section": "发布与恢复",
+      "line": 117,
+      "source_sha256": "1cee1b7a9180c754c2c6ba540d65ec128daf06f9e77940dd13fa0eeb159a2bd0",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表维护.md#发布交接",
+        "docs/governance/maintenance/设计-词表版本.md#发布与回退",
+        "docs/model/vocabulary/设计-词表数据规范.md#校验范围"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/governance/maintenance/设计-词表版本.md",
+      "section": "版本对象",
+      "line": 5,
+      "source_sha256": "b3bafb1a431efd4e53068ed0159f52e3fd45316adc5db8f1485bb165c4d332db",
+      "destinations": [
+        "docs/governance/maintenance/设计-词表版本.md#版本对象"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/governance/maintenance/设计-词表版本.md",
+      "section": "版本标识",
+      "line": 17,
+      "source_sha256": "e730efebb2957cb2bb65ec13986c140957dbdcdbf833ad4f67ecfb69f6853935",
+      "destinations": [
+        "docs/governance/maintenance/设计-词表版本.md#版本标识"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/governance/maintenance/设计-词表版本.md",
+      "section": "引用方式",
+      "line": 23,
+      "source_sha256": "f107485fdfe8ac0867615d68829aca9ac36e5897d302a84885921b1323a3111a",
+      "destinations": [
+        "docs/governance/maintenance/设计-词表版本.md#引用方式"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/governance/maintenance/设计-词表版本.md",
+      "section": "历史读取",
+      "line": 35,
+      "source_sha256": "1c3d8d49cb9544f4950b2f69321d21de4366ff4afce91ea8cf25a5ea552abb86",
+      "destinations": [
+        "docs/governance/maintenance/设计-词表版本.md#历史读取"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/governance/maintenance/设计-词表版本.md",
+      "section": "发布与回退",
+      "line": 43,
+      "source_sha256": "a3f1021fe20cfe4959a2a3bd7e37f9d1c1854f73876ad8cde612d467fcf88b3f",
+      "destinations": [
+        "docs/governance/maintenance/设计-词表版本.md#发布与回退"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    },
+    {
+      "source": "docs/governance/maintenance/设计-词表版本.md",
+      "section": "变更记录",
+      "line": 51,
+      "source_sha256": "8eaac56d8d4804048351ab7c0079e42f00d96b5016001ac835d7947e10156fee",
+      "destinations": [
+        "docs/model/vocabulary/设计-词表数据规范.md#维护记录",
+        "docs/model/vocabulary/设计-词表维护.md#变更记录",
+        "docs/governance/maintenance/设计-词表版本.md#发布与回退"
+      ],
+      "disposition": "按规则职责归位，保留独有条件及依据；摘要不独立维护细则"
+    }
+  ],
+  "constraints": [
+    "保留来源、概念及名称身份、语言策略、语义采纳、版本和退出规则",
+    "已有决定和审计正文保持，不修改数据、代码及实践合同",
+    "不新增 RDF 类型、属性、组合接口或语种授权",
+    "补齐已有管理要求的统一合同；未采纳的数组连接表示明确列为待定"
+  ],
+  "progress": [
+    "已固定本轮工作区基线和 80 个原小节去向",
+    "六篇按整体、专题、规范与示例编排完成，索引改为设计主线入口",
+    "名称登记、译文复核、退出及应用加载的既有要求已归入数据合同",
+    "历史决定追加编排采纳及迁移说明，原文保留",
+    "正在核对迁移完整性、链接、字段、示例和写入范围",
+    "原节去向、91 行 RDF 字段与关系表、七种译文复用情形、Turtle 文本和图、当前链接及写入边界核对通过"
+  ],
+  "findings": [
+    {
+      "issue": "名称编辑、来源更新、发布校验及历史规则重复维护",
+      "resolution": "将完整细则归数据规范、多语言、维护和版本负责章节；整体说明流程及衔接，示例用于解释",
+      "status": "resolved"
+    },
+    {
+      "issue": "整体来源材料直接要求哈希，与具体交付合同职责不一致",
+      "resolution": "整体改为版本及完整性依据；存储位置、字节摘要和文件集合由适用交付合同落实",
+      "status": "resolved"
+    },
+    {
+      "issue": "名称登记、译文、复核、退出及加载的信息散落在专题中",
+      "resolution": "统一汇入数据规范的名称登记、译文与复核、维护记录；明确对象、任务、源版本、名称身份、复核结论和交付版本的关联",
+      "status": "resolved_by_consolidating_existing_requirements"
+    },
+    {
+      "issue": "数组的上层连接只有保留要求，缺少自有完整表示合同",
+      "resolution": "明确来源保留及通用集合投影边界，列为待定；未自动采用属性",
+      "status": "open_design_choice"
+    },
+    {
+      "issue": "词表内复合等价与跨词表组合交换尚未选型",
+      "resolution": "保留简单映射与来源组合，未核定表示继续研究",
+      "status": "open_research"
+    },
+    {
+      "issue": "ISO 权威正文核读不完整",
+      "resolution": "保留实际已核范围，不扩大标准符合性声明",
+      "status": "open_evidence"
+    }
+  ],
+  "verification": {
+    "result": "passed",
+    "original_sections": 80,
+    "rdf_property_and_relation_rows_retained": 91,
+    "translation_cases_unchanged": true,
+    "turtle_bytes_unchanged": true,
+    "turtle_graph_isomorphic": true,
+    "current_local_links_checked": 174,
+    "prior_files_changed": [
+      "docs/development/决定-词表文档分层.md",
+      "docs/model/vocabulary/设计-多语言词表.md",
+      "docs/model/vocabulary/设计-词表整体设计.md",
+      "docs/governance/maintenance/设计-词表版本.md",
+      "docs/model/vocabulary/索引-主题词表.md",
+      "docs/model/vocabulary/设计-词表数据规范.md",
+      "docs/model/vocabulary/设计-词表维护.md",
+      "docs/model/vocabulary/设计-词表资源与字段.md"
+    ],
+    "protected_files_unchanged": true,
+    "head_and_staging_unchanged": true,
+    "failures": []
+  },
+  "anchor_redirects": {
+    "docs/model/vocabulary/设计-词表整体设计.md#名称与版本": "docs/model/vocabulary/设计-词表维护.md#名称编辑",
+    "docs/model/vocabulary/设计-词表整体设计.md#来源更新": "docs/model/vocabulary/设计-词表维护.md#来源更新",
+    "docs/model/vocabulary/设计-词表整体设计.md#发布与消费": "docs/model/vocabulary/设计-词表整体设计.md#消费边界",
+    "docs/model/vocabulary/设计-词表整体设计.md#规则归属": "docs/model/vocabulary/设计-词表整体设计.md#设计分工",
+    "docs/model/vocabulary/设计-词表整体设计.md#验收与迁移": "docs/model/vocabulary/设计-词表整体设计.md#验收与覆盖",
+    "docs/model/vocabulary/设计-词表整体设计.md#覆盖检查": "docs/model/vocabulary/设计-词表整体设计.md#验收与覆盖",
+    "docs/model/vocabulary/设计-词表数据规范.md#关系维护": "docs/model/vocabulary/设计-词表数据规范.md#关系约束",
+    "docs/model/vocabulary/设计-词表数据规范.md#交付与版本": "docs/model/vocabulary/设计-词表数据规范.md#维护记录",
+    "docs/model/vocabulary/设计-词表数据规范.md#待核事项": "docs/model/vocabulary/设计-词表整体设计.md#待定事项",
+    "docs/model/vocabulary/设计-多语言词表.md#编辑与依据": "docs/model/vocabulary/设计-多语言词表.md#翻译依据",
+    "docs/model/vocabulary/设计-多语言词表.md#校验要求": "docs/model/vocabulary/设计-词表数据规范.md#校验范围",
+    "docs/model/vocabulary/设计-词表维护.md#再同步规则": "docs/model/vocabulary/设计-词表维护.md#来源更新",
+    "docs/model/vocabulary/设计-词表维护.md#发布与恢复": "docs/model/vocabulary/设计-词表维护.md#发布交接",
+    "docs/governance/maintenance/设计-词表版本.md#变更记录": "docs/model/vocabulary/设计-词表数据规范.md#维护记录"
+  },
+  "reference_updates": [],
+  "rule_ownership": {
+    "整体设计": "用途、范围、对象职责、整合选择、全程衔接与验收范围",
+    "数据规范": "字段、关系约束、记录关联、校验及问题分级",
+    "多语言词表": "语言策略、概念对应、翻译、译文适用性、匹配与显示",
+    "词表维护": "收录、编辑、名称身份连续性、来源影响、冲突及退出处理",
+    "词表版本": "固定版本、引用、历史读取、发布及回退",
+    "词表资源与字段": "解释及 Turtle 实例，不独立维护第二套字段条件"
+  },
+  "after_sha256": {
+    "docs/model/vocabulary/设计-词表整体设计.md": "97d4d2c2a56dfe62bfd52fdf9a6d5a3bc73ed840749d7bc5b406ba94f4e72137",
+    "docs/model/vocabulary/设计-词表数据规范.md": "b48126675a851644e6615ccd69c75eb64892eaf0e69c21090d55f8541ff15967",
+    "docs/model/vocabulary/设计-词表资源与字段.md": "47ddf875760d4aea65fb107c41ca3cf14875983419f8d8f7a228ffae9575e9d1",
+    "docs/model/vocabulary/设计-多语言词表.md": "f6d7df564c00d6d1bf69fd71adaa12496726ff871f94ecf54a1d4f214e827978",
+    "docs/model/vocabulary/设计-词表维护.md": "f1bd6f2faff879398061ba8a2d088e85daff1911b22227e40e858f2321eb7b46",
+    "docs/governance/maintenance/设计-词表版本.md": "b00bdd521e96fe0bca858a004aaaf5163acd1775fc07e0961c02aca6e03627ef",
+    "docs/model/vocabulary/索引-主题词表.md": "ac55337f108af2132a143eb885bc3302e86e58bcf38a21357e59d2eccd7b1e5d",
+    "docs/development/决定-词表文档分层.md": "b473a8ba6b475c3acd6da54fc9014bc1deb03416728f48e5879f2d7d6d4d5fb6"
+  },
+  "semantic_review": [
+    {
+      "case": "同文首选名称来自不同来源",
+      "result": "字段规范按投影文字检查唯一性，独立 Label 保持身份；维护按具体 URI 编辑，显示可去重但保留依据链接。",
+      "evidence": [
+        "设计-词表数据规范.md#语言与名称",
+        "设计-词表维护.md#名称编辑",
+        "设计-多语言词表.md#匹配与显示"
+      ]
+    },
+    {
+      "case": "来源文字修订与含义变化",
+      "result": "来源更新定位明确依赖，七种译文复用条件保留，复核记录关联原译文与新源版本；已有失效结论优先于一般复用。",
+      "evidence": [
+        "设计-词表维护.md#来源更新",
+        "设计-多语言词表.md#增量同步",
+        "设计-词表数据规范.md#译文与复核"
+      ]
+    },
+    {
+      "case": "名称登记、译文、复核与交付",
+      "result": "统一关联任务、对象、名称身份、源表达版本及展示基准；职责、记录和版本要求分别有唯一负责章节。",
+      "evidence": [
+        "设计-词表数据规范.md#名称登记",
+        "设计-词表数据规范.md#译文与复核",
+        "设计-词表版本.md#版本对象"
+      ]
+    },
+    {
+      "case": "停止收录、来源缺失、停用和拆分",
+      "result": "事件分别保留；来源缺失不自动停用，拆分不默认选择后继，旧引用读取指定或可定位的历史版本。",
+      "evidence": [
+        "设计-词表维护.md#概念退出",
+        "设计-词表数据规范.md#维护记录",
+        "设计-词表版本.md#历史读取"
+      ]
+    },
+    {
+      "case": "发布失败与完整回退",
+      "result": "校验条件集中在规范；维护保留编辑意图，版本保留可用版本及实际加载记录，回退不重用身份或撤销后续决定。",
+      "evidence": [
+        "设计-词表数据规范.md#校验范围",
+        "设计-词表维护.md#发布交接",
+        "设计-词表版本.md#发布与回退"
+      ]
+    },
+    {
+      "case": "标准一致性与来源异常",
+      "result": "有效图中旧矛盾不得豁免；原件诊断、项目缺项例外和发布采用分别处理，多个专题只引用统一条件。",
+      "evidence": [
+        "设计-词表数据规范.md#标准一致性",
+        "设计-词表数据规范.md#校验分级"
+      ]
+    },
+    {
+      "case": "数组与组合的未定型表示",
+      "result": "来源保留要求和主图采用边界分开，未核定连接或组合表示不作为已完成合同，不增加 RDF 属性。",
+      "evidence": [
+        "设计-词表整体设计.md#待定事项",
+        "设计-词表数据规范.md#数组连接",
+        "设计-词表数据规范.md#组合材料"
+      ]
+    },
+    {
+      "case": "治理及实践边界",
+      "result": "不改变具体采纳、语种、来源范围、数据与消费者状态；原决定正文只追加编排记录，实践合同和既有审计保持。",
+      "evidence": [
+        "docs/development/决定-词表文档分层.md#专题编排",
+        "设计-词表整体设计.md#消费边界"
+      ]
+    }
+  ],
+  "verification_limits": [
+    "内容衔接由作者逐项审阅；机械检查不代替标准全文核验或实现验收",
+    "未运行代码回归、迁移、生成、发布或外部知识库同步",
+    "保留数组连接、组合交换及 ISO 材料未决事项，不宣称整套设计没有任何未来缺口"
+  ]
+}

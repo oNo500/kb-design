@@ -29,7 +29,7 @@
 
 ## 模型边界
 
-本 target 引用[内容模型](../../model/content/设计-内容模型.md)的内容单元、字段语义、受控值、identifier 和生命周期，引用[主题词表设计](../../model/vocabulary/设计-主题词表.md)、[命名实体词表设计](../../model/entities/设计-命名实体词表.md)、[参考文献目录](../../model/sources/设计-参考文献目录.md)、[来源用途登记](../../model/sources/设计-来源用途登记.md)和[层级结构](../../model/vocabulary/设计-层级结构.md)的正式对象、关系、多上位与数组规则，并按[维护](../../governance/maintenance/设计-维护.md)保留指标、阈值、动作和决策权边界。
+本 target 引用[内容模型](../../model/content/设计-内容模型.md)的内容单元、字段语义、受控值、identifier 和生命周期，引用[主题词表设计](../../practices/vocabulary/设计-主题词表.md)、[命名实体词表设计](../../model/entities/设计-命名实体词表.md)、[参考文献目录](../../model/sources/设计-参考文献目录.md)、[来源用途登记](../../model/sources/设计-来源用途登记.md)和[层级结构](../../practices/vocabulary/设计-层级结构.md)的正式对象、关系、多上位与数组规则，并按[维护](../../governance/maintenance/设计-维护.md)保留指标、阈值、动作和决策权边界。
 
 `Application Profile` 只为既定对象选择 Obsidian location、type、reference form 和允许的 loss。field／property／path binding 是同一应用内部的表示规则，不是 `metadata crosswalk`；它不改变词表层 `crosswalk` 的现行含义，也不得修改应用无关字段的语义、基数、值域、稳定身份或对象关系。
 
@@ -206,7 +206,7 @@ tag 不承担主题、实体、文档类型、体裁、生命周期或正式关�
 | `status` | `kb_status` Text | 始终表示项目生命周期，不受来源外部状态覆盖 |
 | `added` | `kb_added` Date | 原日期保存 |
 | `scope` | 正文“范围” | 原文保存，不生成 property |
-| `basis.zh`、`basis.en` | 正文“形式依据” | 按[语言依据](../../model/vocabulary/设计-主题词表.md#语言依据)保存等级、来源、定位，或模型、日期、判断、授权与未核实声明；不改变语言 legacy 的性质 |
+| `basis.zh`、`basis.en` | 正文“形式依据” | 按[语言依据](../../practices/vocabulary/设计-主题词表.md#语言依据)保存等级、来源、定位，或模型、日期、判断、授权与未核实声明；不改变语言 legacy 的性质 |
 | 外部 `basis.subjects` | 正文“外部依据”表 | 逐组保留 values 主题 Wikilinks、references 文献 Wikilinks、locator、checked；不把记录级依据乘成逐值独立证明 |
 | 其他外部 `basis` | 正文“外部依据”表 | 每条保存字段、文献 Wikilink、locator 与可选 checked；普通实体限定事实的直接依据保存 URL、locator 与真实 checked，不生成书目目标 |
 | `assertions.subjects`、`assertions.source` | 正文“项目判断”表 | 保存适用主题 Wikilinks、project_assertion、原 self 与审计定位；不产生外部依据链接 |

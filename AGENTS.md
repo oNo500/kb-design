@@ -1,6 +1,6 @@
 # kb-design 项目约定
 
-本文是 [写作规则](docs/governance/writing/设计-写作规则.md)、[治理](docs/governance/decision-making/设计-治理.md)、[维护](docs/governance/maintenance/设计-维护.md) 和[主题生成路径](docs/model/vocabulary/设计-主题词表.md#生成路径)的会话摘要，每次会话加载；冲突时以各正文职责范围内的规则为准。
+本文是 [写作规则](docs/governance/writing/设计-写作规则.md)、[治理](docs/governance/decision-making/设计-治理.md)、[维护](docs/governance/maintenance/设计-维护.md) 和[主题生成路径](docs/practices/vocabulary/设计-主题词表.md#生成路径)的会话摘要，每次会话加载；冲突时以各正文职责范围内的规则为准。
 
 ## 设计与实践
 
@@ -34,7 +34,7 @@
 - **当前阶段零自定**：通常禁止 AI 主动形成或选定无准入依据的 designation；现已由人开放[模型知识译名](docs/model/terminology/决定-模型知识译名.md)例外，仅允许为既有概念按译名第 5 级使用模型既有知识中的行业表达，并登记为模型判断、外部用法未核实。该例外不授权新建概念、类别或划分特征
 - 拟作项目术语而未登记的 designation 不得进入定稿。普通叙述、来源转录、文件路径、代码和值中的任意字符串不因出现而自动成为术语；候选、`defer`、草案、占位和示例不能替代形式依据与概念对应依据，也不能取得试用资格
 - 原翻译批次的离线范围保持；本次冻结登记的必要只读原文核对按[术语依据范围](docs/model/terminology/决定-术语依据范围.md)开放，不新增持久下载、OCR 或资料平台。译名第 4 级保留多个独立来源与概念对应要求；资料不足时可按已授权第 5 级登记模型判断。已有合格前级依据不被模型判断覆盖，实质含义冲突未解决时保留原名。名称、身份和状态的实际变更分别依具体采纳，不因生成或模式扩展自动发生
-- `basis.zh`／`basis.en` 使用[语言依据](docs/model/vocabulary/设计-主题词表.md#语言依据)：外部等级与 `references`、第 5 级 `model`、第 6 级未采用原因、未重新分级的 `legacy` 分开。旧 `none` 不自动变第 6 级，旧 `self` 不自动变模型判断。模型输出关联 `data/inputs/topics/label-adoptions.json` 的采纳记录并显示“模型知识 · 第 5 级，外部用法未核实”；[本次批次授权](docs/model/terminology/决定-语言依据结构.md#批次授权)只覆盖原有缺失中文及语言依据结构迁移，不改变身份、关系或状态
+- `basis.zh`／`basis.en` 使用[语言依据](docs/practices/vocabulary/设计-主题词表.md#语言依据)：外部等级与 `references`、第 5 级 `model`、第 6 级未采用原因、未重新分级的 `legacy` 分开。旧 `none` 不自动变第 6 级，旧 `self` 不自动变模型判断。模型输出关联 `data/inputs/topics/label-adoptions.json` 的采纳记录并显示“模型知识 · 第 5 级，外部用法未核实”；[本次批次授权](docs/model/terminology/决定-语言依据结构.md#批次授权)只覆盖原有缺失中文及语言依据结构迁移，不改变身份、关系或状态
 - 正式术语按[具体采纳](docs/model/terminology/决定-术语具体值.md)及[实施结构](docs/model/terminology/决定-术语结构采纳.md)管理。项目依据目前只批准内容单元、断言、阈值的概念和定义，以及 assertion、threshold 两个既有英文形式；须有有效 L3 完整记录、精确项目 scope 和历史。六条 de-facto 定义使用依[限定许可](docs/model/terminology/决定-限定定义许可.md)逐对象、来源版本和具体值核对，不改变档级或放宽其他对象。历史退出名不作为当前准用形式，同名的其他合法对象不被全局删除
 
 ## 标点与间距
@@ -82,6 +82,8 @@
 
 ## 编辑路径
 
+- RDF 综合词表按[整体设计采纳](docs/model/vocabulary/决定-词表整体设计.md)执行统一收录、按需整合和选择性直接映射；完整目标字段与统一校验见[数据规范](docs/model/vocabulary/设计-词表数据规范.md)，资源解释与 Turtle 示例见[资源与字段](docs/model/vocabulary/设计-词表资源与字段.md)。名称登记、译文适用性、概念退出及历史读取分别遵循维护、多语言和版本设计。现行合同与实施差距在[词表实践](docs/practices/vocabulary/索引-词表实践.md)维护，不因设计采纳改变数据、范围或消费者状态。字段语义、同步方法、默认语言及有效图校验按[规则修订](docs/model/vocabulary/决定-词表规则修订.md)执行；后续[标准边界](docs/model/vocabulary/决定-词表规则修订.md#标准边界)取消额外首选 Label 资源唯一限制、采用 NISO 层级判据，并撤下未核定的组合接口。组合交换方案及未核 ISO 材料继续研究，不自行补定义。
+- [多语言词表](docs/model/vocabulary/设计-多语言词表.md)统一语言策略、概念对应、名称、翻译及匹配；语言筛选采用 Basic Filtering，显示选择采用 Lookup，默认行为由消费方声明，英文仅为现行消费配置。当前中英文输出、英文输入与 `zh` 批译属于[现行实践](docs/practices/vocabulary/设计-词表工程能力.md#中文批译)；不得无依据地改标为 `zh-Hans`／`zh-Hant`，也不自动扩展语种或术语库值域。
 - `data/vocab/entities.yaml` 只保存软件、组织、编程语言等普通实体；设计文献唯一编辑源为 `data/references/bibliography.yaml`，不新增受控词表。用途的 reference 与依据的 reference 指向书目，registry 仍指向用途登记；旧决定与历史保留，只按列明机械映射解释原授权，不扩大权限。
 - 普通实体仅 basis.label、kind、urls、scope、vendor 可采用互斥的 url、locator、checked 官方事实依据；subjects、术语、映射不接受 URL 后备。正文参考链接无需书目准入，候选或未核材料不因迁移提升状态。Obsidian 文献参考输出到 `kb/references/`，entities 与 references 分别解析；普通刷新写集不扩张，旧内容引用使用明确写集的一次性迁移。
 
@@ -91,6 +93,8 @@
 ## 文档组织
 
 - docs 中所有 Markdown 文件使用“类型-名称.md”；类型包括概念、设计、决定、阅读、提案、索引、概述、指南和参考。名称使用已采用的中文标题，明确保留的英文名称沿用原名，见[文件命名](docs/governance/writing/设计-写作规则.md#文件命名)。
+
+- [词表整体设计](docs/model/vocabulary/设计-词表整体设计.md)维护完整方案；[词表数据规范](docs/model/vocabulary/设计-词表数据规范.md)完整规定目标字段和校验；[资源与字段](docs/model/vocabulary/设计-词表资源与字段.md)负责解释及示例。`docs/practices/vocabulary/` 保存现行第 3 版合同、YAML 主题及层级合同、工程实现与工具操作，入口见[词表实践](docs/practices/vocabulary/索引-词表实践.md)。历史计划与审查记录保持各自职责，位置和旧引用按[文档分层](docs/development/决定-词表文档分层.md)解释；文档分离不自动改变现行合同效力或执行迁移。
 
 - `docs/` 按内容、词表、实体、术语、来源、治理、应用与工程主题组织；项目入口见 [文档首页](docs/索引-项目文档.md)，整体职责见 [项目架构](docs/设计-项目架构.md)。
 - 同一主题的概念与设计分别成文；“决定-”“阅读-”“提案-” 文件分别保留决定、阅读笔记和提案职责。前缀不授予效力，具体值仍按有效采纳核对。
