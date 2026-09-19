@@ -1,0 +1,1168 @@
+{
+  "concepts": 2299,
+  "duplicate_chinese_names": {
+    "文档编制": [
+      {
+        "en": "Document preparation",
+        "id": "10010510"
+      },
+      {
+        "en": "Documentation",
+        "id": "10010913"
+      }
+    ],
+    "系统管理": [
+      {
+        "en": "System management",
+        "id": "10003507"
+      },
+      {
+        "en": "System administration",
+        "id": "10011697"
+      }
+    ],
+    "网威公司": [
+      {
+        "en": "Novell, Inc.",
+        "id": "10011224"
+      },
+      {
+        "en": "Novell, Inc",
+        "id": "10011587"
+      }
+    ],
+    "软件维护": [
+      {
+        "en": "Software maintenance",
+        "id": "10003505"
+      },
+      {
+        "en": "Maintaining software",
+        "id": "10011696"
+      }
+    ],
+    "量子计算": [
+      {
+        "en": "Quantum computing",
+        "id": "10010550"
+      },
+      {
+        "en": "Quantum computation",
+        "id": "10011726"
+      }
+    ]
+  },
+  "human_reviewed": 0,
+  "notes": [
+    {
+      "en": "Mathematics of computing",
+      "id": "10002950",
+      "note": "“计算数学”通常也指较窄的数值计算学科；未能可靠确定覆盖此分类完整范围的常用译名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Data anonymization and sanitization",
+      "id": "10003019",
+      "note": "安全语境的 sanitization 可能指数据清除或敏感信息移除；缺少范围说明，无法可靠选定译法，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Data streaming",
+      "id": "10003239",
+      "note": "时空系统语境下，未能可靠区分此处侧重数据流传输还是流式处理，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Spam detection",
+      "id": "10003266",
+      "note": "依 Web 搜索引擎语境指垃圾网页等垃圾信息，非仅垃圾邮件。",
+      "zh": "垃圾信息检测"
+    },
+    {
+      "en": "Site wrapping",
+      "id": "10003278",
+      "note": "依 Web 挖掘语境采用包装器相关用法，非网站视觉包装；模型判断，外部用法未核实。",
+      "zh": "网站包装"
+    },
+    {
+      "en": "Texting",
+      "id": "10003289",
+      "note": "依通信工具语境采用短信通信；原名也可泛指文字消息通信。",
+      "zh": "短信通信"
+    },
+    {
+      "en": "XPath",
+      "id": "10003312",
+      "note": "语言名称通常直接使用 XPath，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "XQuery",
+      "id": "10003313",
+      "note": "语言名称通常直接使用 XQuery，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Structure and multilingual text search",
+      "id": "10003381",
+      "note": "原名使用 Structure 而非 Structured，按原名保留结构表述；与下位结构化文本搜索的措辞差异待核。",
+      "zh": "结构与多语言文本搜索"
+    },
+    {
+      "en": "Heap (data structure)",
+      "id": "10003411",
+      "note": "按首选名称保留数据结构限定；其父级为记录存储方案，与通常所指堆文件存在语义疑点，未据此改写原名。",
+      "zh": "堆（数据结构）"
+    },
+    {
+      "en": "Hybrid storage layouts",
+      "id": "10003438",
+      "note": "范围注释将 PAX 展开为 Portable Archive Exchange，与关系存储语境存在疑点；仅翻译首选名称，未采纳该展开。",
+      "zh": "混合存储布局"
+    },
+    {
+      "en": "Secondary liability",
+      "id": "10003473",
+      "note": "依知识产权语境采用间接责任；具体法域及责任类型未明确。",
+      "zh": "间接责任"
+    },
+    {
+      "en": "Accreditation",
+      "id": "10003529",
+      "note": "按计算教育语境译为教育认证。",
+      "zh": "教育认证"
+    },
+    {
+      "en": "Information science education",
+      "id": "10003536",
+      "note": "采用信息科学中图书情报学领域常用译名；未核实该条学科范围。",
+      "zh": "情报学教育"
+    },
+    {
+      "en": "Network access control",
+      "id": "10003561",
+      "note": "该条位于技术政策分支，指网络访问政策层面的控制。",
+      "zh": "网络访问控制"
+    },
+    {
+      "en": "Offshoring",
+      "id": "10003572",
+      "note": "按业务向境外转移理解，不限定为外包。",
+      "zh": "离岸转移"
+    },
+    {
+      "en": "Reengineering",
+      "id": "10003573",
+      "note": "按计算与商业语境理解为业务流程再造。",
+      "zh": "业务流程再造"
+    },
+    {
+      "en": "Social engineering (social sciences)",
+      "id": "10003579",
+      "note": "保留原名的社会科学限定，避免与信息安全中的社会工程攻击混淆。",
+      "zh": "社会工程学（社会科学）"
+    },
+    {
+      "en": "Testing, certification and licensing",
+      "id": "10003585",
+      "note": "按职业资质语境将 testing 译为考试。",
+      "zh": "考试、认证与许可"
+    },
+    {
+      "en": "Combinatorics on words",
+      "id": "10003631",
+      "note": "words 按组合数学中的符号串理解。",
+      "zh": "词组合学"
+    },
+    {
+      "en": "Matroids and greedoids",
+      "id": "10003647",
+      "note": "greedoids 暂用模型知识中的贪婪拟阵译名，外部用法未核实。",
+      "zh": "拟阵与贪婪拟阵"
+    },
+    {
+      "en": "Max marginal computation",
+      "id": "10003669",
+      "note": "max marginal 指通过最大化消去其他变量得到的量，不指普通边缘概率求和。",
+      "zh": "最大边缘计算"
+    },
+    {
+      "en": "Calculus",
+      "id": "10003732",
+      "note": "按连续数学与数学分析的上位语境译为微积分；原分类另将 λ 演算列为子项，存在范围歧义。",
+      "zh": "微积分"
+    },
+    {
+      "en": "Timed and hybrid models",
+      "id": "10003765",
+      "note": "timed 按显式表示时间的计算模型理解。",
+      "zh": "时间模型与混合模型"
+    },
+    {
+      "en": "Formalisms",
+      "id": "10003767",
+      "note": "按形式语言与自动机理论语境理解为形式体系。",
+      "zh": "形式体系"
+    },
+    {
+      "en": "Transducers",
+      "id": "10003774",
+      "note": "按自动机语境译为转导器。",
+      "zh": "转导器"
+    },
+    {
+      "en": "Sparsification and spanners",
+      "id": "10010036",
+      "note": "图算法语境明确，但 spanners 的常见中文名称无法可靠确定，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Sketching and sampling",
+      "id": "10010057",
+      "note": "按流式算法语境将 sketching 理解为紧凑数据草图的构建。",
+      "zh": "草图构建与采样"
+    },
+    {
+      "en": "Program schemes",
+      "id": "10010129",
+      "note": "按程序理论中的 program schemes 理解，不指设计模式。",
+      "zh": "程序模式"
+    },
+    {
+      "en": "Abstraction and micro-operators",
+      "id": "10010211",
+      "note": "micro-operators 在搜索方法中的具体含义及惯用译名无法可靠确定，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Theory of mind",
+      "id": "10010218",
+      "note": "按认知科学中对他人心理状态的理解能力解释。",
+      "zh": "心理理论"
+    },
+    {
+      "en": "Object identification",
+      "id": "10010252",
+      "note": "与同级 Object recognition 的区分缺少范围说明，无法可靠确定 identification 的对应译名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Learning from critiques",
+      "id": "10010291",
+      "note": "critiques 在学习设置中的具体反馈形式不明确，不能可靠选定常见行业译名，保留原文。",
+      "zh": null
+    },
+    {
+      "en": "Bagging",
+      "id": "10010334",
+      "note": "模型知识译名；Bagging 也常直接使用英文名称。",
+      "zh": "自助聚合"
+    },
+    {
+      "en": "Agent / discrete models",
+      "id": "10010355",
+      "note": "按原文并列形式保留智能体模型与离散模型，未将两者视为同义。",
+      "zh": "智能体／离散模型"
+    },
+    {
+      "en": "Physical sciences and engineering",
+      "id": "10010432",
+      "note": "Physical sciences 按物质科学理解，区别于仅指物理学。",
+      "zh": "物质科学与工程"
+    },
+    {
+      "en": "Metabolomics / metabonomics",
+      "id": "10010452",
+      "note": "两个英文形式在中文中均常译作代谢组学；二者的使用区别未作外部核实。",
+      "zh": "代谢组学"
+    },
+    {
+      "en": "Soft intellectual property",
+      "id": "10010646",
+      "note": "按集成电路知识产权核语境译为软核；模型知识判断，外部用法未核实。",
+      "zh": "软核"
+    },
+    {
+      "en": "Reusable energy storage",
+      "id": "10010667",
+      "note": "原名 Reusable energy storage 的特定储能类别不能可靠确定，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Simulation and emulation",
+      "id": "10010725",
+      "note": "按硬件功能验证语境将 emulation 译为硬件仿真；模型知识判断，外部用法未核实。",
+      "zh": "仿真与硬件仿真"
+    },
+    {
+      "en": "Early-life failures and infant mortality",
+      "id": "10010765",
+      "note": "按硬件可靠性语境理解 infant mortality 为器件早期夭折失效；模型知识判断，外部用法未核实。",
+      "zh": "早期失效与夭折失效"
+    },
+    {
+      "en": "Bio-embedded electronics",
+      "id": "10010794",
+      "note": "Bio-embedded electronics 的嵌入对象及惯用中文名称不能可靠确定，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Surfacing",
+      "id": "10010847",
+      "note": "范围注释为寻找相关网站；无法可靠确认 Surfacing 在此语境的惯用中文名称，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Contextual software domains",
+      "id": "10010941",
+      "note": "Contextual 在此软件领域分类中的确切含义和惯用中文表达不确定，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Context specific languages",
+      "id": "10011050",
+      "note": "Context specific 在此语言分类中的含义不能仅凭父项确定，无法可靠选定惯用译名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Adobe Systems Incorporated",
+      "id": "10011154",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Macromedia",
+      "id": "10011155",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Advanced Information Systems",
+      "id": "10011156",
+      "note": "名称或缩写不足以确定具体公司及其中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "BEA Systems, Inc.",
+      "id": "10011166",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Borland Software Corporation",
+      "id": "10011169",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "CA Technologies",
+      "id": "10011170",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Cable & Wireless Worldwide",
+      "id": "10011171",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Commerce One",
+      "id": "10011182",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "DiamondCluster International, Inc.",
+      "id": "10011186",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "EIS, Inc.",
+      "id": "10011195",
+      "note": "名称或缩写不足以确定具体公司及其中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Forrester Research",
+      "id": "10011199",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Infusion",
+      "id": "10011206",
+      "note": "名称或缩写不足以确定具体公司及其中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Iona Technologies",
+      "id": "10011212",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "ITSS, Inc.",
+      "id": "10011213",
+      "note": "名称或缩写不足以确定具体公司及其中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "National Research Council",
+      "id": "10011222",
+      "note": "多个国家设有同名机构，输入未明确国家，保留原名以避免错配。",
+      "zh": null
+    },
+    {
+      "en": "Quest Software, Inc.",
+      "id": "10011231",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Rational Software Corporation",
+      "id": "10011232",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Research in Motion Limited",
+      "id": "10011233",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "RSA",
+      "id": "10011235",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "SAS Institute, Inc.",
+      "id": "10011236",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Telcordia Technologies",
+      "id": "10011244",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Virage Logic",
+      "id": "10011248",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Zilog, Inc.",
+      "id": "10011252",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "International Software Benchmarking Standards Group Limited",
+      "id": "10011265",
+      "note": "未能确信该组织的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Computer Press Association",
+      "id": "10011272",
+      "note": "未能确信该组织的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Computing Community Consortium",
+      "id": "10011273",
+      "note": "未能确信该组织的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "CSAB",
+      "id": "10011275",
+      "note": "未能确信该组织的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "TDWI",
+      "id": "10011277",
+      "note": "未能确信该组织的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "JISC",
+      "id": "10011286",
+      "note": "未能确信该组织的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Open Knowledge Society",
+      "id": "10011287",
+      "note": "未能确信该组织的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Linux Professional Institute",
+      "id": "10011291",
+      "note": "未能确信该组织的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Open Network Laboratory",
+      "id": "10011300",
+      "note": "未能确信该组织的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Operational Research Society",
+      "id": "10011302",
+      "note": "未能确信该组织的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "The Open Group",
+      "id": "10011321",
+      "note": "未能确信该组织的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Viewpoints Research Institute",
+      "id": "10011322",
+      "note": "未能确信该组织的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Electronic  Visualization Laboratory",
+      "id": "10011332",
+      "note": "未能确信该组织的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Personal Robots Group",
+      "id": "10011340",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Systems Research Center",
+      "id": "10011343",
+      "note": "未能确信该组织的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Test Technology Technical Council",
+      "id": "10011345",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "The Standish Group International, Inc.",
+      "id": "10011346",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Virtual University Enterprises",
+      "id": "10011348",
+      "note": "未能确信该公司原名称对应的通行中文名，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "A. van Wijngaarden",
+      "id": "10011351",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "Allen Kent",
+      "id": "10011357",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "Bill Millard",
+      "id": "10011370",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "Charles Tandy",
+      "id": "10011380",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "Edmund Callis Berkeley",
+      "id": "10011386",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "Elliot Irving Organick",
+      "id": "10011387",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "Gary McGraw",
+      "id": "10011388",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "Georg Scheutz",
+      "id": "10011389",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "H. D. Goode",
+      "id": "10011391",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "Herbert R. J. Grosch",
+      "id": "10011393",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "Robert R. Everett",
+      "id": "10011408",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "William C. Norris",
+      "id": "10011412",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "An'an Wang",
+      "id": "10011413",
+      "note": "原文拼写与常见的 An Wang 不同，不能仅凭模型知识确定对应王安，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "J. Richard Buchi",
+      "id": "10011417",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "Marian Smoluchowski",
+      "id": "10011420",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "Harvey M. Deitel",
+      "id": "10011433",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "Edvard Scheutz",
+      "id": "10011442",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "Harry H. Goode",
+      "id": "10011443",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "John R. Pasta",
+      "id": "10011444",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "Cyril W. Cleverdon",
+      "id": "10011447",
+      "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。",
+      "zh": null
+    },
+    {
+      "en": "ActionScript",
+      "id": "10011449",
+      "note": "编程语言或语言名称通常沿用原文，未采用中文译名。",
+      "zh": null
+    },
+    {
+      "en": "ActiveX",
+      "id": "10011450",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Photoshop",
+      "id": "10011452",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Ajax",
+      "id": "10011453",
+      "note": "技术缩写或名称通常沿用原文，保留原名，不将原文改标为中文。",
+      "zh": null
+    },
+    {
+      "en": "AppleScript",
+      "id": "10011454",
+      "note": "编程语言或语言名称通常沿用原文，未采用中文译名。",
+      "zh": null
+    },
+    {
+      "en": "AutoCAD",
+      "id": "10011455",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "BASIC",
+      "id": "10011456",
+      "note": "编程语言或语言名称通常沿用原文，未采用中文译名。",
+      "zh": null
+    },
+    {
+      "en": "Cell Broadband Engine",
+      "id": "10011458",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Datalog",
+      "id": "10011462",
+      "note": "编程语言或语言名称通常沿用原文，未采用中文译名。",
+      "zh": null
+    },
+    {
+      "en": "DB2",
+      "id": "10011463",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Dreamweaver",
+      "id": "10011465",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Eclipse",
+      "id": "10011468",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Excel",
+      "id": "10011470",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Internet Explorer",
+      "id": "10011473",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Chrome",
+      "id": "10011474",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Flickr",
+      "id": "10011476",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Fortran",
+      "id": "10011477",
+      "note": "编程语言或语言名称通常沿用原文，未采用中文译名。",
+      "zh": null
+    },
+    {
+      "en": "HP-UX",
+      "id": "10011484",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "InfiniBand",
+      "id": "10011485",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "iPhone",
+      "id": "10011486",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "iPod",
+      "id": "10011487",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "JavaScript",
+      "id": "10011490",
+      "note": "编程语言或语言名称通常沿用原文，未采用中文译名。",
+      "zh": null
+    },
+    {
+      "en": "JPEG",
+      "id": "10011491",
+      "note": "技术缩写或名称通常沿用原文，保留原名，不将原文改标为中文。",
+      "zh": null
+    },
+    {
+      "en": "JSP",
+      "id": "10011492",
+      "note": "技术缩写或名称通常沿用原文，保留原名，不将原文改标为中文。",
+      "zh": null
+    },
+    {
+      "en": "LAPACK",
+      "id": "10011493",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Linux",
+      "id": "10011494",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Lotus Notes",
+      "id": "10011495",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Macintosh",
+      "id": "10011497",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Mathematica",
+      "id": "10011498",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "MATLAB",
+      "id": "10011499",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "WiMAX",
+      "id": "10011501",
+      "note": "技术缩写或名称通常沿用原文，保留原名，不将原文改标为中文。",
+      "zh": null
+    },
+    {
+      "en": "MP3",
+      "id": "10011508",
+      "note": "技术缩写或名称通常沿用原文，保留原名，不将原文改标为中文。",
+      "zh": null
+    },
+    {
+      "en": "MS-DOS",
+      "id": "10011509",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "MySQL",
+      "id": "10011510",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "NetWare",
+      "id": "10011511",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "OpenMP",
+      "id": "10011512",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Outlook",
+      "id": "10011514",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "PowerPC",
+      "id": "10011517",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "PowerPoint",
+      "id": "10011518",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Prolog",
+      "id": "10011519",
+      "note": "编程语言或语言名称通常沿用原文，未采用中文译名。",
+      "zh": null
+    },
+    {
+      "en": "QuarkXPress",
+      "id": "10011520",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "QuickBooks",
+      "id": "10011521",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Quicken",
+      "id": "10011522",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "QuickTime",
+      "id": "10011523",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Ruby on Rails",
+      "id": "10011524",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Samba",
+      "id": "10011526",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "SharePoint",
+      "id": "10011527",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Simulink",
+      "id": "10011528",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Smalltalk",
+      "id": "10011529",
+      "note": "编程语言或语言名称通常沿用原文，未采用中文译名。",
+      "zh": null
+    },
+    {
+      "en": "Solaris",
+      "id": "10011532",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "SPARC",
+      "id": "10011533",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "SQL Server",
+      "id": "10011534",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Visual Basic",
+      "id": "10011541",
+      "note": "编程语言或语言名称通常沿用原文，未采用中文译名。",
+      "zh": null
+    },
+    {
+      "en": "VMware",
+      "id": "10011542",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "VoiceXML",
+      "id": "10011543",
+      "note": "技术缩写或名称通常沿用原文，保留原名，不将原文改标为中文。",
+      "zh": null
+    },
+    {
+      "en": "Wifi",
+      "id": "10011546",
+      "note": "技术缩写或名称通常沿用原文，保留原名，不将原文改标为中文。",
+      "zh": null
+    },
+    {
+      "en": "Windows",
+      "id": "10011548",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "WordNet",
+      "id": "10011550",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "X3D",
+      "id": "10011552",
+      "note": "技术缩写或名称通常沿用原文，保留原名，不将原文改标为中文。",
+      "zh": null
+    },
+    {
+      "en": "YouTube",
+      "id": "10011554",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "ZigBee",
+      "id": "10011555",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "FreeBSD",
+      "id": "10011558",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Myspace",
+      "id": "10011560",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Office",
+      "id": "10011563",
+      "note": "Office 可能指具体产品名称，输入未进一步限定，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "Skype",
+      "id": "10011564",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "VHDL",
+      "id": "10011567",
+      "note": "编程语言或语言名称通常沿用原文，未采用中文译名。",
+      "zh": null
+    },
+    {
+      "en": "ANSI C",
+      "id": "10011573",
+      "note": "编程语言或语言名称通常沿用原文，未采用中文译名。",
+      "zh": null
+    },
+    {
+      "en": "DSL",
+      "id": "10011576",
+      "note": "DSL 可指数字用户线路或领域特定语言，输入没有释义，保留缩写。",
+      "zh": null
+    },
+    {
+      "en": "DSM",
+      "id": "10011577",
+      "note": "DSM 可指多种不同技术，输入没有释义，保留缩写。",
+      "zh": null
+    },
+    {
+      "en": "Gmail",
+      "id": "10011579",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Haskell",
+      "id": "10011583",
+      "note": "编程语言或语言名称通常沿用原文，未采用中文译名。",
+      "zh": null
+    },
+    {
+      "en": "JAVA ME",
+      "id": "10011584",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "PlanetLab",
+      "id": "10011589",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "Pocket PC",
+      "id": "10011590",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "SELinux",
+      "id": "10011591",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "TMS320C",
+      "id": "10011593",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    },
+    {
+      "en": "CS1",
+      "id": "10011595",
+      "note": "CS1 是课程代号，仅凭名称和上位概念不能可靠确定其课程范围及对应中文名称，保留原名。",
+      "zh": null
+    },
+    {
+      "en": "iPad",
+      "id": "10011737",
+      "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。",
+      "zh": null
+    }
+  ],
+  "relations_unchanged": true,
+  "retained_original": 153,
+  "source_preserved": true,
+  "source_sha256": "6c1f3e618ec723ac64597209bf2ca551ae28bc1b70292a0b6a786612d12e406c",
+  "translated": 2146,
+  "vocabulary_sha256": "00657e9f196f1df183f58bb3fdc6604c57a95ec9774c7a1c84be99738b3f9b15"
+}

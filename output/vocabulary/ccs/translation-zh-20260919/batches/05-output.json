@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "10010259",
+    "zh": "有监督学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010260",
+    "zh": "无监督学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010261",
+    "zh": "强化学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010262",
+    "zh": "多任务学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010263",
+    "zh": "分类监督学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010264",
+    "zh": "回归监督学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010265",
+    "zh": "结构化输出",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010266",
+    "zh": "代价敏感学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010267",
+    "zh": "混合建模",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010268",
+    "zh": "主题建模",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010269",
+    "zh": "源分离",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010270",
+    "zh": "模体发现",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010271",
+    "zh": "降维与流形学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010272",
+    "zh": "序贯决策",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010273",
+    "zh": "逆强化学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010274",
+    "zh": "学徒学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010275",
+    "zh": "多智能体强化学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010276",
+    "zh": "对抗学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010277",
+    "zh": "迁移学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010278",
+    "zh": "终身机器学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010279",
+    "zh": "协变量偏移下的学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010282",
+    "zh": "学习设置",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010283",
+    "zh": "批量学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010284",
+    "zh": "在线学习设置",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010286",
+    "zh": "主动学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010289",
+    "zh": "半监督学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010290",
+    "zh": "从示范中学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010291",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "critiques 在学习设置中的具体反馈形式不明确，不能可靠选定常见行业译名，保留原文。"
+  },
+  {
+    "id": "10010292",
+    "zh": "从隐式反馈中学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010293",
+    "zh": "机器学习方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010294",
+    "zh": "神经网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010295",
+    "zh": "支持向量机",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010296",
+    "zh": "高斯过程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010297",
+    "zh": "逻辑学习与关系学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010298",
+    "zh": "归纳逻辑学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010299",
+    "zh": "统计关系学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010300",
+    "zh": "概率图模型中的学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010301",
+    "zh": "最大似然建模",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010302",
+    "zh": "最大熵建模",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010303",
+    "zh": "最大后验建模",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010304",
+    "zh": "混合模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010305",
+    "zh": "潜变量模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010306",
+    "zh": "贝叶斯网络模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010307",
+    "zh": "线性模型学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010308",
+    "zh": "感知机算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010309",
+    "zh": "分解方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010310",
+    "zh": "非负矩阵分解",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010311",
+    "zh": "因子分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010312",
+    "zh": "主成分分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010313",
+    "zh": "典型相关分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010314",
+    "zh": "规则学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010315",
+    "zh": "基于实例的学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010316",
+    "zh": "马尔可夫决策过程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010317",
+    "zh": "部分可观测马尔可夫决策过程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010318",
+    "zh": "随机博弈",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010319",
+    "zh": "潜在表示学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010320",
+    "zh": "深度信念网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010321",
+    "zh": "机器学习算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010327",
+    "zh": "马尔可夫决策过程的动态规划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010328",
+    "zh": "价值迭代",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010329",
+    "zh": "Q 学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010330",
+    "zh": "策略迭代",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010331",
+    "zh": "时序差分学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010332",
+    "zh": "近似动态规划方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010333",
+    "zh": "集成方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010334",
+    "zh": "自助聚合",
+    "decision": "translated",
+    "note": "模型知识译名；Bagging 也常直接使用英文名称。"
+  },
+  {
+    "id": "10010335",
+    "zh": "谱方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010336",
+    "zh": "特征选择",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010337",
+    "zh": "正则化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010339",
+    "zh": "交叉验证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010341",
+    "zh": "建模与仿真",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010342",
+    "zh": "模型开发与分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010343",
+    "zh": "建模方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010344",
+    "zh": "模型验证与确认",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010345",
+    "zh": "不确定性量化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010346",
+    "zh": "仿真理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010347",
+    "zh": "系统理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010348",
+    "zh": "网络科学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010349",
+    "zh": "仿真类型与技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010350",
+    "zh": "量子力学仿真",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010351",
+    "zh": "分子模拟",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010352",
+    "zh": "动画",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010353",
+    "zh": "稀有事件仿真",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010354",
+    "zh": "离散事件仿真",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010355",
+    "zh": "智能体／离散模型",
+    "decision": "translated",
+    "note": "按原文并列形式保留智能体模型与离散模型，未将两者视为同义。"
+  },
+  {
+    "id": "10010356",
+    "zh": "分布式仿真",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010357",
+    "zh": "连续仿真",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010358",
+    "zh": "连续模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010359",
+    "zh": "实时仿真",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010360",
+    "zh": "交互式仿真",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010361",
+    "zh": "多尺度系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010362",
+    "zh": "大规模并行与高性能仿真",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010363",
+    "zh": "数据同化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010364",
+    "zh": "科学可视化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010365",
+    "zh": "可视分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010366",
+    "zh": "仿真支持系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010367",
+    "zh": "仿真环境",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010368",
+    "zh": "仿真语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010369",
+    "zh": "仿真工具",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010370",
+    "zh": "仿真评估",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010371",
+    "zh": "计算机图形学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010372",
+    "zh": "渲染",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010373",
+    "zh": "光栅化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010374",
+    "zh": "光线追踪",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010375",
+    "zh": "非真实感渲染",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010376",
+    "zh": "反射率建模",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010377",
+    "zh": "可见性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010378",
+    "zh": "程序化动画",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010379",
+    "zh": "物理仿真",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010380",
+    "zh": "运动处理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010381",
+    "zh": "碰撞检测",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010382",
+    "zh": "图像操作",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010383",
+    "zh": "图像处理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010384",
+    "zh": "纹理映射",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010385",
+    "zh": "基于图像的渲染",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010386",
+    "zh": "抗锯齿",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010387",
+    "zh": "图形系统与接口",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010389",
+    "zh": "图形处理器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010391",
+    "zh": "图形输入设备",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010392",
+    "zh": "混合现实／增强现实",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010393",
+    "zh": "感知",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010394",
+    "zh": "图形文件格式",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010395",
+    "zh": "图像压缩",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010396",
+    "zh": "形状建模",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010397",
+    "zh": "网格模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010398",
+    "zh": "网格几何模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010399",
+    "zh": "参数曲线与曲面模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010400",
+    "zh": "基于点的模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010401",
+    "zh": "体积模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010402",
+    "zh": "形状分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010403",
+    "zh": "信息检索的新颖性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010405",
+    "zh": "应用计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010406",
+    "zh": "企业计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010411",
+    "zh": "企业应用集成",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010412",
+    "zh": "业务流程管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010413",
+    "zh": "业务流程建模",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010414",
+    "zh": "业务流程管理系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010415",
+    "zh": "业务流程监控",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010416",
+    "zh": "跨组织业务流程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010417",
+    "zh": "企业架构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010418",
+    "zh": "企业架构管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010419",
+    "zh": "企业架构框架",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010420",
+    "zh": "企业架构建模",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010421",
+    "zh": "面向服务的架构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010422",
+    "zh": "事件驱动架构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010423",
+    "zh": "业务规则",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010424",
+    "zh": "企业建模",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010425",
+    "zh": "企业本体、分类体系与词表",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010426",
+    "zh": "企业数据管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010427",
+    "zh": "参考模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010428",
+    "zh": "业务与 IT 对齐",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010429",
+    "zh": "IT 架构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010430",
+    "zh": "IT 治理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010431",
+    "zh": "企业计算基础设施",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010432",
+    "zh": "物质科学与工程",
+    "decision": "translated",
+    "note": "Physical sciences 按物质科学理解，区别于仅指物理学。"
+  },
+  {
+    "id": "10010433",
+    "zh": "航空航天",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010434",
+    "zh": "考古学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010435",
+    "zh": "天文学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010436",
+    "zh": "化学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010437",
+    "zh": "地球与大气科学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010438",
+    "zh": "环境科学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010439",
+    "zh": "工程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010440",
+    "zh": "计算机辅助设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010441",
+    "zh": "物理学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010442",
+    "zh": "数学与统计学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010443",
+    "zh": "电子学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010444",
+    "zh": "生命科学与医学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010446",
+    "zh": "消费者健康",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010447",
+    "zh": "医疗卫生信息系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010449",
+    "zh": "健康信息学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010450",
+    "zh": "生物信息学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010451",
+    "zh": "蛋白质组学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010452",
+    "zh": "代谢组学",
+    "decision": "translated",
+    "note": "两个英文形式在中文中均常译作代谢组学；二者的使用区别未作外部核实。"
+  },
+  {
+    "id": "10010454",
+    "zh": "转录组学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010455",
+    "zh": "法律、社会与行为科学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010456",
+    "zh": "人类学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010457",
+    "zh": "民族志",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010458",
+    "zh": "法律",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010459",
+    "zh": "心理学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010460",
+    "zh": "经济学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010461",
+    "zh": "社会学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010462",
+    "zh": "计算机取证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010463",
+    "zh": "监控机制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010464",
+    "zh": "调查技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010465",
+    "zh": "证据收集、存储与分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010466",
+    "zh": "网络取证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010467",
+    "zh": "系统取证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010468",
+    "zh": "数据恢复",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010469",
+    "zh": "艺术与人文学科",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010470",
+    "zh": "美术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010471",
+    "zh": "表演艺术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010472",
+    "zh": "建筑学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010473",
+    "zh": "语言翻译",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010474",
+    "zh": "媒体艺术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010475",
+    "zh": "声音与音乐计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010476",
+    "zh": "其他领域的计算机应用",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010477",
+    "zh": "出版",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010478",
+    "zh": "军事",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010479",
+    "zh": "地图学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010480",
+    "zh": "农业",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010481",
+    "zh": "运筹学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010482",
+    "zh": "工业与制造业",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010483",
+    "zh": "计算机辅助制造",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010484",
+    "zh": "决策分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010485",
+    "zh": "交通运输",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010486",
+    "zh": "指挥与控制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010487",
+    "zh": "预测",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010488",
+    "zh": "市场营销",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010489",
+    "zh": "教育",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010490",
+    "zh": "计算机辅助教学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010491",
+    "zh": "交互式学习环境",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010492",
+    "zh": "协作学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010493",
+    "zh": "学习管理系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010494",
+    "zh": "远程学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010495",
+    "zh": "电子学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010496",
+    "zh": "计算机管理教学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010497",
+    "zh": "文档管理与文本处理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010498",
+    "zh": "文档检索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010500",
+    "zh": "文档管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010501",
+    "zh": "文本编辑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010502",
+    "zh": "版本控制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010503",
+    "zh": "文档元数据",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010504",
+    "zh": "文档采集",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010505",
+    "zh": "文档分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010506",
+    "zh": "文档扫描",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010507",
+    "zh": "图形识别与解释",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010508",
+    "zh": "光学字符识别",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010509",
+    "zh": "在线手写识别",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010510",
+    "zh": "文档编制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010512",
+    "zh": "标记语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010513",
+    "zh": "标注",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010514",
+    "zh": "格式与记法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010515",
+    "zh": "多媒体／混合媒体创作",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010516",
+    "zh": "图像合成",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010517",
+    "zh": "脚本语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010518",
+    "zh": "时态数据",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010519",
+    "zh": "社交网站",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010520",
+    "zh": "计算机系统组织",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010521",
+    "zh": "体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010522",
+    "zh": "串行体系结构",
+    "decision": "translated",
+    "note": ""
+  }
+]

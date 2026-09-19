@@ -1,0 +1,4370 @@
+[
+  {
+    "id": "10011152",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011152",
+    "en": "Companies",
+    "source_language": "en",
+    "parents": [
+      "Proper nouns: People, technologies and companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011153",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011153",
+    "en": "Accenture",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011154",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011154",
+    "en": "Adobe Systems Incorporated",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011155",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011155",
+    "en": "Macromedia",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Was acquired by Adobe Systems."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011156",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011156",
+    "en": "Advanced Information Systems",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011158",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011158",
+    "en": "Agere Systems, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Merged into LSI corporation."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011159",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011159",
+    "en": "Agilent Technologies",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011160",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011160",
+    "en": "Alcatel-Lucent",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Formed from merger of Alcatel and Lucent Technologies."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011161",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011161",
+    "en": "AOL, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011162",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011162",
+    "en": "Apple, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011164",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011164",
+    "en": "AT&T",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011165",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011165",
+    "en": "BAE Systems",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Formed from merger of British Aerospace (Bae) and Marconi Electronic Systems (MES)."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011166",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011166",
+    "en": "BEA Systems, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Subsidiary of Oracle Corporation."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011167",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011167",
+    "en": "Blizzard Entertainment",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011168",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011168",
+    "en": "Blue Sky Studios",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Subsidiary of 20th Century Fox."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011169",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011169",
+    "en": "Borland Software Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Subsidiary of Micro Focus."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011170",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011170",
+    "en": "CA Technologies",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011171",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011171",
+    "en": "Cable & Wireless Worldwide",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011172",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011172",
+    "en": "Cadence Design Systems",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011174",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011174",
+    "en": "China Telecom Corporation Limited",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011176",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011176",
+    "en": "Cisco Systems, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011177",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011177",
+    "en": "Organizations",
+    "source_language": "en",
+    "parents": [
+      "Proper nouns: People, technologies and companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011178",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011178",
+    "en": "American Mathematical Society",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011179",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011179",
+    "en": "Association for Information Systems",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011181",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011181",
+    "en": "Citrix Systems, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011182",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011182",
+    "en": "Commerce One",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Acquired by Perfect Commerce."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011183",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011183",
+    "en": "Compaq Computer Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Subsidiary of Hewlett-Packard."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011184",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011184",
+    "en": "Defense Advanced Research Projects Agency",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011185",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011185",
+    "en": "Dell Computer Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011186",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011186",
+    "en": "DiamondCluster International, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Acquired by PricewaterhouseCoopers (PwC)."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011193",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011193",
+    "en": "Digital Equipment Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Acquired by Compaq."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011195",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011195",
+    "en": "EIS, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011196",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011196",
+    "en": "EMC Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011197",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011197",
+    "en": "Ericsson",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011198",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011198",
+    "en": "Ernst & Young",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011199",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011199",
+    "en": "Forrester Research",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011200",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011200",
+    "en": "Gartner Group",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011201",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011201",
+    "en": "General Dynamics",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011202",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011202",
+    "en": "General Electric",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011203",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011203",
+    "en": "Google Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011204",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011204",
+    "en": "Hewlett-Packard Company",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011205",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011205",
+    "en": "Infineon Technologies",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Spinoff of Siemens AG."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011206",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011206",
+    "en": "Infusion",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011207",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011207",
+    "en": "Intel Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011208",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011208",
+    "en": "International Business Machines Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011209",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011209",
+    "en": "International Data Corporation (IDC)",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011211",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011211",
+    "en": "Internet Corporation for Assigned Names and Numbers",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011212",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011212",
+    "en": "Iona Technologies",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Acquired by Progress Software Corporation."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011213",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011213",
+    "en": "ITSS, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011214",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011214",
+    "en": "Juniper Networks",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011215",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011215",
+    "en": "Lockheed Martin Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Merger between Lockheed Corporation and Martin Marietta,"
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011216",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011216",
+    "en": "McKinsey & Company",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011217",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011217",
+    "en": "Microsoft Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011218",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011218",
+    "en": "MIT Media Lab",
+    "source_language": "en",
+    "parents": [
+      "Massachusetts Institute of Technology"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011220",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011220",
+    "en": "National Academy of Sciences",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011221",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011221",
+    "en": "National Instruments Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011222",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011222",
+    "en": "National Research Council",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011223",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011223",
+    "en": "Nortel Networks Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011224",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011224",
+    "en": "Novell, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011226",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011226",
+    "en": "Oracle Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Acquired Sun Microsystems."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011227",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011227",
+    "en": "Sun Microsystems",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Acquired by Oracle Corporation."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011228",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011228",
+    "en": "Philips Semiconductors",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Became NXP Semiconductors."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011229",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011229",
+    "en": "NXP Semiconductors",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Used to be Philips Semiconductors."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011230",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011230",
+    "en": "Pixar Animation Studios",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Acquired by Disney."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011231",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011231",
+    "en": "Quest Software, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011232",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011232",
+    "en": "Rational Software Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Acquired by IBM."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011233",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011233",
+    "en": "Research in Motion Limited",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011235",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011235",
+    "en": "RSA",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Security division of EMC."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011236",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011236",
+    "en": "SAS Institute, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011237",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011237",
+    "en": "Sega Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011238",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011238",
+    "en": "Siemens AG",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011239",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011239",
+    "en": "Silicon Graphics, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Following bankruptcy liquidation, assets acquired by Rackable Systems."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011240",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011240",
+    "en": "SRI International",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011242",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011242",
+    "en": "Standard Performance Evaluation Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011243",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011243",
+    "en": "Taiwan Semiconductor Manufacturing Company, Limited",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011244",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011244",
+    "en": "Telcordia Technologies",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "To be acquired by Ericsson."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011245",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011245",
+    "en": "Texas Instruments Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011247",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011247",
+    "en": "Toshiba Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011248",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011248",
+    "en": "Virage Logic",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Acquired by Synopsys."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011249",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011249",
+    "en": "Xerox Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011250",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011250",
+    "en": "Yahoo! Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011252",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011252",
+    "en": "Zilog, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011260",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011260",
+    "en": "American Statistical Association",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011261",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011261",
+    "en": "Ames Research Center",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011262",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011262",
+    "en": "American National Standards Institute",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011263",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011263",
+    "en": "Apache Software Foundation",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011264",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011264",
+    "en": "Argonne National Laboratory",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011265",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011265",
+    "en": "International Software Benchmarking Standards Group Limited",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011266",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011266",
+    "en": "Brazilian Computer Society",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011267",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011267",
+    "en": "British Computer Society",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011269",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011269",
+    "en": "Clay Mathematics Institute",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011270",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011270",
+    "en": "Computer History Museum",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011271",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011271",
+    "en": "International Computer Music Association",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011272",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011272",
+    "en": "Computer Press Association",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011273",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011273",
+    "en": "Computing Community Consortium",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011274",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011274",
+    "en": "Computing Research Association",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011275",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011275",
+    "en": "CSAB",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [
+      "A member society of ABET, Inc."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011276",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011276",
+    "en": "Computer Science Teachers Association",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011277",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011277",
+    "en": "TDWI",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011278",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011278",
+    "en": "Eclipse Foundation",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011279",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011279",
+    "en": "Electronic Frontier Foundation",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011280",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011280",
+    "en": "European Telecommunications Standards Institute",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011281",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011281",
+    "en": "Free Software Foundation",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011282",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011282",
+    "en": "International Game Developers Association",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011283",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011283",
+    "en": "International Organization for Standardization",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011284",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011284",
+    "en": "ITU",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011285",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011285",
+    "en": "Isaac Newton Institute for Mathematical Sciences",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011286",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011286",
+    "en": "JISC",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011287",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011287",
+    "en": "Open Knowledge Society",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011288",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011288",
+    "en": "Langley Research Center",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011289",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011289",
+    "en": "Lawrence Berkeley National Laboratory",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011290",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011290",
+    "en": "Lawrence Livermore National Laboratory",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011291",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011291",
+    "en": "Linux Professional Institute",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011292",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011292",
+    "en": "London Mathematical Society",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011293",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011293",
+    "en": "Los Alamos National Laboratory",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011294",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011294",
+    "en": "Max Planck Institutes",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011296",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011296",
+    "en": "National Center for Education Statistics",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011297",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011297",
+    "en": "National Institute of Standards and Technology",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011298",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011298",
+    "en": "National Science Foundation",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011299",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011299",
+    "en": "Oak Ridge National Laboratory",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011300",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011300",
+    "en": "Open Network Laboratory",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011301",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011301",
+    "en": "OSGi Alliance",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011302",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011302",
+    "en": "Operational Research Society",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011303",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011303",
+    "en": "Open Source Initiative",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011306",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011306",
+    "en": "Pacific Northwest National Laboratory",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011307",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011307",
+    "en": "PARC",
+    "source_language": "en",
+    "parents": [
+      "Xerox Corporation"
+    ],
+    "scope_notes": [
+      "Subsidiary of Xerox; formerly Xerox PARC."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011308",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011308",
+    "en": "Joint Photographic Experts Group",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011309",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011309",
+    "en": "Moving Picture Experts Group",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011312",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011312",
+    "en": "Transaction Processing Performance Council",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011313",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011313",
+    "en": "Royal Statistical Society",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011314",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011314",
+    "en": "San Diego Supercomputer Center",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011316",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011316",
+    "en": "Semiconductor Industry Association",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011317",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011317",
+    "en": "Software Engineering Institute",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011318",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011318",
+    "en": "SLAC National Accelerator Laboratory",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011319",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011319",
+    "en": "Trusted Computing Group",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011320",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011320",
+    "en": "Computing Technology Industry Association",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011321",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011321",
+    "en": "The Open Group",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011322",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011322",
+    "en": "Viewpoints Research Institute",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011323",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011323",
+    "en": "Wikimedia Foundation, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011324",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011324",
+    "en": "World Intellectual Property Organization",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011325",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011325",
+    "en": "IBM Almaden Research Center",
+    "source_language": "en",
+    "parents": [
+      "International Business Machines Corporation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011327",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011327",
+    "en": "Charles Babbage Institute",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011328",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011328",
+    "en": "ABET, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011329",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011329",
+    "en": "Computing Accreditation Commission",
+    "source_language": "en",
+    "parents": [
+      "ABET, Inc."
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011330",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011330",
+    "en": "Courant Institute of Mathematical Sciences",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011332",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011332",
+    "en": "Electronic  Visualization Laboratory",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011333",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011333",
+    "en": "European Network and Information Security Agency",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011335",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011335",
+    "en": "Human Factors and Ergonomics Society",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011336",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011336",
+    "en": "Jet Propulsion Laboratory",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011337",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011337",
+    "en": "Massachusetts Institute of Technology",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011338",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011338",
+    "en": "National Academy of Engineering",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011339",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011339",
+    "en": "Patent and Trademark Office",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011340",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011340",
+    "en": "Personal Robots Group",
+    "source_language": "en",
+    "parents": [
+      "MIT Media Lab"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011341",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011341",
+    "en": "Sandia National Laboratories",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011342",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011342",
+    "en": "SANS Institute",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011343",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011343",
+    "en": "Systems Research Center",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [
+      "Merged with other corporate labs in 2002."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011344",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011344",
+    "en": "IEEE Computer Society",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011345",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011345",
+    "en": "Test Technology Technical Council",
+    "source_language": "en",
+    "parents": [
+      "IEEE Computer Society"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011346",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011346",
+    "en": "The Standish Group International, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011347",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011347",
+    "en": "The IBM Toronto Software Lab",
+    "source_language": "en",
+    "parents": [
+      "International Business Machines Corporation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011348",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011348",
+    "en": "Virtual University Enterprises",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011349",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011349",
+    "en": "World Wide Web Consortium",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011350",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011350",
+    "en": "People in computing",
+    "source_language": "en",
+    "parents": [
+      "Proper nouns: People, technologies and companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011351",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011351",
+    "en": "A. van Wijngaarden",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011352",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011352",
+    "en": "Ada Lovelace",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011353",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011353",
+    "en": "Alan Cooper",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011354",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011354",
+    "en": "Alan J. Perlis",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011355",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011355",
+    "en": "Alan Mathison Turing",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011357",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011357",
+    "en": "Allen Kent",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011358",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011358",
+    "en": "Allen Newell",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011361",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011361",
+    "en": "Andrew S. Grove",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011363",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011363",
+    "en": "Barbara Liskov",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011364",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011364",
+    "en": "Barry W. Boehm",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011367",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011367",
+    "en": "Bill Gates",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011369",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011369",
+    "en": "Bill Joy",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011370",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011370",
+    "en": "Bill Millard",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011371",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011371",
+    "en": "Bjarne Stroustrup",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011373",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011373",
+    "en": "Association for Computing Machinery",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011376",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011376",
+    "en": "Bruce Schneier",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011377",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011377",
+    "en": "C. A. R. Hoare",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011378",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011378",
+    "en": "Charles Babbage",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011380",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011380",
+    "en": "Charles Tandy",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011381",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011381",
+    "en": "Claude Elwood Shannon",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011382",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011382",
+    "en": "Clive Sinclair",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011384",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011384",
+    "en": "David Hilbert",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011385",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011385",
+    "en": "Donald Ervin Knuth",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011386",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011386",
+    "en": "Edmund Callis Berkeley",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011387",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011387",
+    "en": "Elliot Irving Organick",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011388",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011388",
+    "en": "Gary McGraw",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011389",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011389",
+    "en": "Georg Scheutz",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011390",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011390",
+    "en": "Grace Murray Hopper",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011391",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011391",
+    "en": "H. D. Goode",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011392",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011392",
+    "en": "Herbert A. Simon",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011393",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011393",
+    "en": "Herbert R. J. Grosch",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011394",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011394",
+    "en": "Herman Hollerith",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011395",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011395",
+    "en": "J. Presper Eckert",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011396",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011396",
+    "en": "J. H. Wilkinson",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011397",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011397",
+    "en": "Jay Wright Forrester",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011398",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011398",
+    "en": "John Vincent Atanasoff",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011400",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011400",
+    "en": "John Cocke",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011401",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011401",
+    "en": "John Sculley",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011402",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011402",
+    "en": "John Von Neumann",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011403",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011403",
+    "en": "John W. Mauchly",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011404",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011404",
+    "en": "Konrad Zuse",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011405",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011405",
+    "en": "Marvin Lee Minsky",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011406",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011406",
+    "en": "Maurice V. Wilkes",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011407",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011407",
+    "en": "Richard M. Karp",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011408",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011408",
+    "en": "Robert R. Everett",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011409",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011409",
+    "en": "Steve Jobs",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011410",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011410",
+    "en": "Thomas J. Watson",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011411",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011411",
+    "en": "Thomas Watson, Jr.",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011412",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011412",
+    "en": "William C. Norris",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011413",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011413",
+    "en": "An'an Wang",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011414",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011414",
+    "en": "David Sarnoff",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011415",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011415",
+    "en": "Douglas R. Hofstadter",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011416",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011416",
+    "en": "Herman H. Goldstine",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011417",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011417",
+    "en": "J. Richard Buchi",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011418",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011418",
+    "en": "Kazimierz Kuratowski",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011419",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011419",
+    "en": "Kurt Godel",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011420",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011420",
+    "en": "Marian Smoluchowski",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011421",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011421",
+    "en": "Stefan Banach",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011422",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011422",
+    "en": "Gordon Bell",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011423",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011423",
+    "en": "James Gosling",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011424",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011424",
+    "en": "John McCarthy",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011425",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011425",
+    "en": "Linus Torvalds",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011426",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011426",
+    "en": "Mark D. Weiser",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011427",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011427",
+    "en": "Peter J. Denning",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011428",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011428",
+    "en": "Peter Norton",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011429",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011429",
+    "en": "R. Milner",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011430",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011430",
+    "en": "Seymour Papert",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011431",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011431",
+    "en": "Alan Curtis Kay",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011432",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011432",
+    "en": "David Patterson",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011433",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011433",
+    "en": "Harvey M. Deitel",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011434",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011434",
+    "en": "Ivar Jacobson",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011435",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011435",
+    "en": "Jakob Nielsen",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011436",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011436",
+    "en": "Jim Blinn",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011437",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011437",
+    "en": "Jim Gray",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011438",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011438",
+    "en": "Jon Kleinberg",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011439",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011439",
+    "en": "Kent Beck",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011440",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011440",
+    "en": "Martin Fowler",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011441",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011441",
+    "en": "Vannevar Bush",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011442",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011442",
+    "en": "Edvard Scheutz",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011443",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011443",
+    "en": "Harry H. Goode",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011444",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011444",
+    "en": "John R. Pasta",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011445",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011445",
+    "en": "Technologies",
+    "source_language": "en",
+    "parents": [
+      "Proper nouns: People, technologies and companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011446",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011446",
+    "en": "Blaise Pascal",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011447",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011447",
+    "en": "Cyril W. Cleverdon",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011448",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011448",
+    "en": "Gene H. Golub",
+    "source_language": "en",
+    "parents": [
+      "People in computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011449",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011449",
+    "en": "ActionScript",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011450",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011450",
+    "en": "ActiveX",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011451",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011451",
+    "en": "Ada language",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011452",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011452",
+    "en": "Photoshop",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011453",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011453",
+    "en": "Ajax",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011454",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011454",
+    "en": "AppleScript",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011455",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011455",
+    "en": "AutoCAD",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011456",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011456",
+    "en": "BASIC",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011457",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011457",
+    "en": "Bluetooth",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011458",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011458",
+    "en": "Cell Broadband Engine",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011459",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011459",
+    "en": "CMOS",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011460",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011460",
+    "en": "CORBA",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011461",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011461",
+    "en": "Corel Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011462",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011462",
+    "en": "Datalog",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011463",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011463",
+    "en": "DB2",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011464",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011464",
+    "en": "DOS",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011465",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011465",
+    "en": "Dreamweaver",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011466",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011466",
+    "en": "DVDs",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011467",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011467",
+    "en": "eBay Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011468",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011468",
+    "en": "Eclipse",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011469",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011469",
+    "en": "Ethernet",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011470",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011470",
+    "en": "Excel",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011471",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011471",
+    "en": "CD-ROMs",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011472",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011472",
+    "en": "Facebook",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011473",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011473",
+    "en": "Internet Explorer",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011474",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011474",
+    "en": "Chrome",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011475",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011475",
+    "en": "Firefox",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011476",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011476",
+    "en": "Flickr",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011477",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011477",
+    "en": "Fortran",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011478",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011478",
+    "en": "Google Earth",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011479",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011479",
+    "en": "Google",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011480",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011480",
+    "en": "Google Maps",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011481",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011481",
+    "en": "Google Scholar",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011482",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011482",
+    "en": "GSM",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011483",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011483",
+    "en": "HDTV",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011484",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011484",
+    "en": "HP-UX",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011485",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011485",
+    "en": "InfiniBand",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011486",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011486",
+    "en": "iPhone",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011487",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011487",
+    "en": "iPod",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011488",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011488",
+    "en": "IPTV",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011489",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011489",
+    "en": "IPv6",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011490",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011490",
+    "en": "JavaScript",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011491",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011491",
+    "en": "JPEG",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011492",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011492",
+    "en": "JSP",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011493",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011493",
+    "en": "LAPACK",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011494",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011494",
+    "en": "Linux",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011495",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011495",
+    "en": "Lotus Notes",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011496",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011496",
+    "en": "Macintosh OS",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011497",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011497",
+    "en": "Macintosh",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011498",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011498",
+    "en": "Mathematica",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011499",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011499",
+    "en": "MATLAB",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011500",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011500",
+    "en": "Mobile IP",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011501",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011501",
+    "en": "WiMAX",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011502",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011502",
+    "en": "MODIS",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011503",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011503",
+    "en": "Motorola Solutions, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011504",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011504",
+    "en": "Motorola Mobility, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011505",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011505",
+    "en": "Motorola, Inc.",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "Split into Motorola Mobility and Motorola Solutions in 2011."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011506",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011506",
+    "en": "Mozilla Foundation",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011507",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011507",
+    "en": "Mozilla Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011508",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011508",
+    "en": "MP3",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011509",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011509",
+    "en": "MS-DOS",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011510",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011510",
+    "en": "MySQL",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011511",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011511",
+    "en": "NetWare",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011512",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011512",
+    "en": "OpenMP",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011513",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011513",
+    "en": "Oracle Database",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011514",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011514",
+    "en": "Outlook",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011515",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011515",
+    "en": "PDF",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011516",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011516",
+    "en": "Pentium",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011517",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011517",
+    "en": "PowerPC",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011518",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011518",
+    "en": "PowerPoint",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011519",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011519",
+    "en": "Prolog",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011520",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011520",
+    "en": "QuarkXPress",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011521",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011521",
+    "en": "QuickBooks",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011522",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011522",
+    "en": "Quicken",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011523",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011523",
+    "en": "QuickTime",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011524",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011524",
+    "en": "Ruby on Rails",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011525",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011525",
+    "en": "RISC processors",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011526",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011526",
+    "en": "Samba",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011527",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011527",
+    "en": "SharePoint",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011528",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011528",
+    "en": "Simulink",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011529",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011529",
+    "en": "Smalltalk",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011530",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011530",
+    "en": "Short Message Service",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011531",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011531",
+    "en": "SNMP",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011532",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011532",
+    "en": "Solaris",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011533",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011533",
+    "en": "SPARC",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011534",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011534",
+    "en": "SQL Server",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011535",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011535",
+    "en": "Secure Sockets Layer",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011536",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011536",
+    "en": "Transport Layer Security",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011537",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011537",
+    "en": "Twitter",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011538",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011538",
+    "en": "UMTS",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011539",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011539",
+    "en": "Usenet",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011540",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011540",
+    "en": "UWB",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011541",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011541",
+    "en": "Visual Basic",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011542",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011542",
+    "en": "VMware",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011543",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011543",
+    "en": "VoiceXML",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011545",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011545",
+    "en": "VRML",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011546",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011546",
+    "en": "Wifi",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011547",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011547",
+    "en": "Wikipedia",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011548",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011548",
+    "en": "Windows",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011549",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011549",
+    "en": "Windows environment",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011550",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011550",
+    "en": "WordNet",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011551",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011551",
+    "en": "X-Window",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011552",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011552",
+    "en": "X3D",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011553",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011553",
+    "en": "XILINX",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011554",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011554",
+    "en": "YouTube",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011555",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011555",
+    "en": "ZigBee",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011556",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011556",
+    "en": "Bell Labs",
+    "source_language": "en",
+    "parents": [
+      "Alcatel-Lucent"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011557",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011557",
+    "en": "HP Labs",
+    "source_language": "en",
+    "parents": [
+      "Hewlett-Packard Company"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011558",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011558",
+    "en": "FreeBSD",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011560",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011560",
+    "en": "Myspace",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011561",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011561",
+    "en": "Nokia Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011562",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011562",
+    "en": "NVIDIA Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011563",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011563",
+    "en": "Office",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011564",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011564",
+    "en": "Skype",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011565",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011565",
+    "en": "SONET",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011566",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011566",
+    "en": "Sony Corporation",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011567",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011567",
+    "en": "VHDL",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011568",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011568",
+    "en": "Yahoo! (portal)",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011569",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011569",
+    "en": "National Institutes of Health",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011570",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011570",
+    "en": "Object Management Group",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011571",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011571",
+    "en": "Federal Communications Commission",
+    "source_language": "en",
+    "parents": [
+      "Organizations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011572",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011572",
+    "en": "Business Process Execution Language",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011573",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011573",
+    "en": "ANSI C",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011574",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011574",
+    "en": "CDMA systems",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011575",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011575",
+    "en": "DNS (Domain Name System)",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011576",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011576",
+    "en": "DSL",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011577",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011577",
+    "en": "DSM",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011579",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011579",
+    "en": "Gmail",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011582",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011582",
+    "en": "IP Multimedia Subsystem",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011583",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011583",
+    "en": "Haskell",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011584",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011584",
+    "en": "JAVA ME",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011585",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011585",
+    "en": "MIMO Systems",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011586",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011586",
+    "en": "MSN (portal)",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011587",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011587",
+    "en": "Novell, Inc",
+    "source_language": "en",
+    "parents": [
+      "Companies"
+    ],
+    "scope_notes": [
+      "In 2011, became a wholly-owned subsidiary of Attachmate Group."
+    ],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011588",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011588",
+    "en": "OFDM System",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011589",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011589",
+    "en": "PlanetLab",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011590",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011590",
+    "en": "Pocket PC",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011591",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011591",
+    "en": "SELinux",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011592",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011592",
+    "en": "SIMD architectures",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011593",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011593",
+    "en": "TMS320C",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011594",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011594",
+    "en": "Unicode",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011597",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011597",
+    "en": "TREC",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011641",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011641",
+    "en": "Proper nouns: People, technologies and companies",
+    "source_language": "en",
+    "parents": [],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  },
+  {
+    "id": "10011737",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011737",
+    "en": "iPad",
+    "source_language": "en",
+    "parents": [
+      "Technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": true
+  }
+]

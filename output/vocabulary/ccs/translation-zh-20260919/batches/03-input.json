@@ -1,0 +1,2659 @@
+[
+  {
+    "id": "10003526",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003526",
+    "en": "History of computing theory",
+    "source_language": "en",
+    "parents": [
+      "History of computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003527",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003527",
+    "en": "Computing education",
+    "source_language": "en",
+    "parents": [
+      "Professional topics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003528",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003528",
+    "en": "Computational thinking",
+    "source_language": "en",
+    "parents": [
+      "Computing education"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003529",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003529",
+    "en": "Accreditation",
+    "source_language": "en",
+    "parents": [
+      "Computing education"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003530",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003530",
+    "en": "Model curricula",
+    "source_language": "en",
+    "parents": [
+      "Computing education"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003531",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003531",
+    "en": "Computing education programs",
+    "source_language": "en",
+    "parents": [
+      "Computing education"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003532",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003532",
+    "en": "Information systems education",
+    "source_language": "en",
+    "parents": [
+      "Computing education programs"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003533",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003533",
+    "en": "Computer science education",
+    "source_language": "en",
+    "parents": [
+      "Computing education programs"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003534",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003534",
+    "en": "Computer engineering education",
+    "source_language": "en",
+    "parents": [
+      "Computing education programs"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003535",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003535",
+    "en": "Information technology education",
+    "source_language": "en",
+    "parents": [
+      "Computing education programs"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003536",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003536",
+    "en": "Information science education",
+    "source_language": "en",
+    "parents": [
+      "Computing education programs"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003537",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003537",
+    "en": "Computational science and engineering education",
+    "source_language": "en",
+    "parents": [
+      "Computing education programs"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003538",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003538",
+    "en": "Informal education",
+    "source_language": "en",
+    "parents": [
+      "Computing education"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003539",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003539",
+    "en": "Computing literacy",
+    "source_language": "en",
+    "parents": [
+      "Computing education"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003540",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003540",
+    "en": "Student assessment",
+    "source_language": "en",
+    "parents": [
+      "Computing education"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003541",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003541",
+    "en": "K-12 education",
+    "source_language": "en",
+    "parents": [
+      "Computing education"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003542",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003542",
+    "en": "Adult education",
+    "source_language": "en",
+    "parents": [
+      "Computing education"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003543",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003543",
+    "en": "Codes of ethics",
+    "source_language": "en",
+    "parents": [
+      "Computing profession"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003544",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003544",
+    "en": "Commerce policy",
+    "source_language": "en",
+    "parents": [
+      "Computing / technology policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003545",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003545",
+    "en": "Taxation",
+    "source_language": "en",
+    "parents": [
+      "Commerce policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003548",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003548",
+    "en": "Transborder data flow",
+    "source_language": "en",
+    "parents": [
+      "Commerce policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003549",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003549",
+    "en": "Antitrust and competition",
+    "source_language": "en",
+    "parents": [
+      "Commerce policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003550",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003550",
+    "en": "Electronic commerce",
+    "source_language": "en",
+    "parents": [
+      "Applied computing",
+      "Web applications"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003551",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003551",
+    "en": "Digital cash",
+    "source_language": "en",
+    "parents": [
+      "Electronic commerce"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003552",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003552",
+    "en": "E-commerce infrastructure",
+    "source_language": "en",
+    "parents": [
+      "Contextual software domains",
+      "Electronic commerce"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003553",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003553",
+    "en": "Electronic data interchange",
+    "source_language": "en",
+    "parents": [
+      "Electronic commerce"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003554",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003554",
+    "en": "Electronic funds transfer",
+    "source_language": "en",
+    "parents": [
+      "Electronic commerce"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003555",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003555",
+    "en": "Online shopping",
+    "source_language": "en",
+    "parents": [
+      "Electronic commerce"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003556",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003556",
+    "en": "Online banking",
+    "source_language": "en",
+    "parents": [
+      "Electronic commerce"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003557",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003557",
+    "en": "Secure online transactions",
+    "source_language": "en",
+    "parents": [
+      "Electronic commerce"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003558",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003558",
+    "en": "Consumer products",
+    "source_language": "en",
+    "parents": [
+      "Operations research"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003559",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003559",
+    "en": "Open source model",
+    "source_language": "en",
+    "parents": [
+      "Collaboration in software development"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003560",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003560",
+    "en": "Broadband access",
+    "source_language": "en",
+    "parents": [
+      "Network access control"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003561",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003561",
+    "en": "Network access control",
+    "source_language": "en",
+    "parents": [
+      "Computing / technology policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003562",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003562",
+    "en": "Net neutrality",
+    "source_language": "en",
+    "parents": [
+      "Network access control"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003563",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003563",
+    "en": "Network access restrictions",
+    "source_language": "en",
+    "parents": [
+      "Network access control"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003564",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003564",
+    "en": "Age-based restrictions",
+    "source_language": "en",
+    "parents": [
+      "Network access restrictions"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003565",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003565",
+    "en": "Acceptable use policy restrictions",
+    "source_language": "en",
+    "parents": [
+      "Network access restrictions"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003566",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003566",
+    "en": "Universal access",
+    "source_language": "en",
+    "parents": [
+      "Network access control"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003567",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003567",
+    "en": "Computing and business",
+    "source_language": "en",
+    "parents": [
+      "Professional topics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003568",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003568",
+    "en": "Employment issues",
+    "source_language": "en",
+    "parents": [
+      "Computing and business",
+      "Computing profession"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003569",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003569",
+    "en": "Automation",
+    "source_language": "en",
+    "parents": [
+      "Computing and business"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003570",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003570",
+    "en": "Computer supported cooperative work",
+    "source_language": "en",
+    "parents": [
+      "Collaborative and social computing theory, concepts and paradigms",
+      "Computing and business"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003571",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003571",
+    "en": "Economic impact",
+    "source_language": "en",
+    "parents": [
+      "Computing and business"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003572",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003572",
+    "en": "Offshoring",
+    "source_language": "en",
+    "parents": [
+      "Computing and business"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003573",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003573",
+    "en": "Reengineering",
+    "source_language": "en",
+    "parents": [
+      "Computing and business"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003574",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003574",
+    "en": "Computer crime",
+    "source_language": "en",
+    "parents": [
+      "Computing / technology policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003575",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003575",
+    "en": "Financial crime",
+    "source_language": "en",
+    "parents": [
+      "Computer crime"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003578",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003578",
+    "en": "Malware / spyware crime",
+    "source_language": "en",
+    "parents": [
+      "Computer crime"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003579",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003579",
+    "en": "Social engineering (social sciences)",
+    "source_language": "en",
+    "parents": [
+      "Collaborative and social computing theory, concepts and paradigms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003580",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003580",
+    "en": "Computing profession",
+    "source_language": "en",
+    "parents": [
+      "Professional topics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003581",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003581",
+    "en": "Funding",
+    "source_language": "en",
+    "parents": [
+      "Computing profession"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003583",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003583",
+    "en": "Computing occupations",
+    "source_language": "en",
+    "parents": [
+      "Computing profession"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003584",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003584",
+    "en": "Computing organizations",
+    "source_language": "en",
+    "parents": [
+      "Computing profession"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003585",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003585",
+    "en": "Testing, certification and licensing",
+    "source_language": "en",
+    "parents": [
+      "Computing profession"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003587",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003587",
+    "en": "Assistive technologies",
+    "source_language": "en",
+    "parents": [
+      "Computing profession"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003588",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003588",
+    "en": "Government technology policy",
+    "source_language": "en",
+    "parents": [
+      "Computing / technology policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003589",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003589",
+    "en": "Governmental regulations",
+    "source_language": "en",
+    "parents": [
+      "Commerce policy",
+      "Government technology policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003590",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003590",
+    "en": "Voting / election technologies",
+    "source_language": "en",
+    "parents": [
+      "Computing in government"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003592",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003592",
+    "en": "Import / export controls",
+    "source_language": "en",
+    "parents": [
+      "Government technology policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003596",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003596",
+    "en": "Online auctions",
+    "source_language": "en",
+    "parents": [
+      "Electronic commerce"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003597",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003597",
+    "en": "Open source software",
+    "source_language": "en",
+    "parents": [
+      "Collaborative and social computing systems and tools"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003599",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003599",
+    "en": "Hardware security implementation",
+    "source_language": "en",
+    "parents": [
+      "Security in hardware"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003600",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003600",
+    "en": "Cyberwarfare",
+    "source_language": "en",
+    "parents": [
+      "Military"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003602",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003602",
+    "en": "Medical information policy",
+    "source_language": "en",
+    "parents": [
+      "Computing / technology policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003603",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003603",
+    "en": "Medical records",
+    "source_language": "en",
+    "parents": [
+      "Medical information policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003604",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003604",
+    "en": "Personal health records",
+    "source_language": "en",
+    "parents": [
+      "Medical information policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003605",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003605",
+    "en": "Genetic information",
+    "source_language": "en",
+    "parents": [
+      "Medical information policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003606",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003606",
+    "en": "Patient privacy",
+    "source_language": "en",
+    "parents": [
+      "Medical information policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003607",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003607",
+    "en": "Health information exchanges",
+    "source_language": "en",
+    "parents": [
+      "Medical information policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003608",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003608",
+    "en": "Medical technologies",
+    "source_language": "en",
+    "parents": [
+      "Medical information policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003609",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003609",
+    "en": "Remote medicine",
+    "source_language": "en",
+    "parents": [
+      "Medical technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003611",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003611",
+    "en": "Race and ethnicity",
+    "source_language": "en",
+    "parents": [
+      "User characteristics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003612",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003612",
+    "en": "Religious orientation",
+    "source_language": "en",
+    "parents": [
+      "User characteristics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003613",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003613",
+    "en": "Gender",
+    "source_language": "en",
+    "parents": [
+      "User characteristics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003614",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003614",
+    "en": "Sexual orientation",
+    "source_language": "en",
+    "parents": [
+      "User characteristics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003616",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003616",
+    "en": "People with disabilities",
+    "source_language": "en",
+    "parents": [
+      "User characteristics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003618",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003618",
+    "en": "Geographic characteristics",
+    "source_language": "en",
+    "parents": [
+      "User characteristics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003619",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003619",
+    "en": "Cultural characteristics",
+    "source_language": "en",
+    "parents": [
+      "User characteristics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003623",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003623",
+    "en": "Data provenance",
+    "source_language": "en",
+    "parents": [
+      "Data model extensions",
+      "Database theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003624",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003624",
+    "en": "Discrete mathematics",
+    "source_language": "en",
+    "parents": [
+      "Mathematics of computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003625",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003625",
+    "en": "Combinatorics",
+    "source_language": "en",
+    "parents": [
+      "Discrete mathematics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003626",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003626",
+    "en": "Combinatoric problems",
+    "source_language": "en",
+    "parents": [
+      "Combinatorics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003627",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003627",
+    "en": "Permutations and combinations",
+    "source_language": "en",
+    "parents": [
+      "Combinatorics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003628",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003628",
+    "en": "Combinatorial algorithms",
+    "source_language": "en",
+    "parents": [
+      "Combinatorics",
+      "Symbolic and algebraic algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003629",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003629",
+    "en": "Generating functions",
+    "source_language": "en",
+    "parents": [
+      "Combinatorics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003630",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003630",
+    "en": "Combinatorial optimization",
+    "source_language": "en",
+    "parents": [
+      "Combinatorics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003631",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003631",
+    "en": "Combinatorics on words",
+    "source_language": "en",
+    "parents": [
+      "Combinatorics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003632",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003632",
+    "en": "Enumeration",
+    "source_language": "en",
+    "parents": [
+      "Combinatorics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003633",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003633",
+    "en": "Graph theory",
+    "source_language": "en",
+    "parents": [
+      "Discrete mathematics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003634",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003634",
+    "en": "Trees",
+    "source_language": "en",
+    "parents": [
+      "Graph theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003635",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003635",
+    "en": "Graph algorithms analysis",
+    "source_language": "en",
+    "parents": [
+      "Design and analysis of algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003636",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003636",
+    "en": "Approximation algorithms analysis",
+    "source_language": "en",
+    "parents": [
+      "Design and analysis of algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003637",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003637",
+    "en": "Hypergraphs",
+    "source_language": "en",
+    "parents": [
+      "Graph theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003638",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003638",
+    "en": "Random graphs",
+    "source_language": "en",
+    "parents": [
+      "Graph theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003639",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003639",
+    "en": "Graph coloring",
+    "source_language": "en",
+    "parents": [
+      "Graph theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003640",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003640",
+    "en": "Paths and connectivity problems",
+    "source_language": "en",
+    "parents": [
+      "Graph theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003641",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003641",
+    "en": "Graph enumeration",
+    "source_language": "en",
+    "parents": [
+      "Graph theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003642",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003642",
+    "en": "Matchings and factors",
+    "source_language": "en",
+    "parents": [
+      "Graph theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003643",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003643",
+    "en": "Graphs and surfaces",
+    "source_language": "en",
+    "parents": [
+      "Graph theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003644",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003644",
+    "en": "Network flows",
+    "source_language": "en",
+    "parents": [
+      "Graph algorithms analysis",
+      "Graph theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003645",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003645",
+    "en": "Spectra of graphs",
+    "source_language": "en",
+    "parents": [
+      "Graph theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003646",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003646",
+    "en": "Extremal graph theory",
+    "source_language": "en",
+    "parents": [
+      "Graph theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003647",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003647",
+    "en": "Matroids and greedoids",
+    "source_language": "en",
+    "parents": [
+      "Graph theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003648",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003648",
+    "en": "Probability and statistics",
+    "source_language": "en",
+    "parents": [
+      "Mathematics of computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003649",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003649",
+    "en": "Probabilistic representations",
+    "source_language": "en",
+    "parents": [
+      "Probability and statistics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003650",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003650",
+    "en": "Bayesian networks",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic representations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003651",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003651",
+    "en": "Markov networks",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic representations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003652",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003652",
+    "en": "Factor graphs",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic representations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003653",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003653",
+    "en": "Decision diagrams",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic representations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003654",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003654",
+    "en": "Equational models",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic representations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003655",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003655",
+    "en": "Causal networks",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic representations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003656",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003656",
+    "en": "Stochastic differential equations",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic representations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003657",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003657",
+    "en": "Nonparametric representations",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic representations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003658",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003658",
+    "en": "Kernel density estimators",
+    "source_language": "en",
+    "parents": [
+      "Nonparametric representations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003659",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003659",
+    "en": "Spline models",
+    "source_language": "en",
+    "parents": [
+      "Nonparametric representations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003660",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003660",
+    "en": "Classification and regression trees",
+    "source_language": "en",
+    "parents": [
+      "Machine learning approaches"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003661",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003661",
+    "en": "Bayesian nonparametric models",
+    "source_language": "en",
+    "parents": [
+      "Nonparametric representations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003662",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003662",
+    "en": "Probabilistic inference problems",
+    "source_language": "en",
+    "parents": [
+      "Probability and statistics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003663",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003663",
+    "en": "Maximum likelihood estimation",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic inference problems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003664",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003664",
+    "en": "Bayesian computation",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic inference problems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003665",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003665",
+    "en": "Computing most probable explanation",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic inference problems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003666",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003666",
+    "en": "Hypothesis testing and confidence interval computation",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic inference problems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003667",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003667",
+    "en": "Density estimation",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic inference problems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003668",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003668",
+    "en": "Quantile regression",
+    "source_language": "en",
+    "parents": [
+      "Density estimation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003669",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003669",
+    "en": "Max marginal computation",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic inference problems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003670",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003670",
+    "en": "Probabilistic reasoning algorithms",
+    "source_language": "en",
+    "parents": [
+      "Probability and statistics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003671",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003671",
+    "en": "Probabilistic algorithms",
+    "source_language": "en",
+    "parents": [
+      "Probability and statistics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003673",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003673",
+    "en": "Variable elimination",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic reasoning algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003674",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003674",
+    "en": "Loopy belief propagation",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic reasoning algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003675",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003675",
+    "en": "Variational methods",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic reasoning algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003676",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003676",
+    "en": "Expectation maximization",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic reasoning algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003677",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003677",
+    "en": "Markov-chain Monte Carlo methods",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic reasoning algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003678",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003678",
+    "en": "Gibbs sampling",
+    "source_language": "en",
+    "parents": [
+      "Markov-chain Monte Carlo methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003679",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003679",
+    "en": "Metropolis-Hastings algorithm",
+    "source_language": "en",
+    "parents": [
+      "Markov-chain Monte Carlo methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003680",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003680",
+    "en": "Simulated annealing",
+    "source_language": "en",
+    "parents": [
+      "Markov-chain Monte Carlo methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003681",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003681",
+    "en": "Markov-chain Monte Carlo convergence measures",
+    "source_language": "en",
+    "parents": [
+      "Markov-chain Monte Carlo methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003682",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003682",
+    "en": "Sequential Monte Carlo methods",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic reasoning algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003683",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003683",
+    "en": "Kalman filters and hidden Markov models",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic reasoning algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003684",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003684",
+    "en": "Resampling methods",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic reasoning algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003685",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003685",
+    "en": "Bootstrapping",
+    "source_language": "en",
+    "parents": [
+      "Resampling methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003686",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003686",
+    "en": "Jackknifing",
+    "source_language": "en",
+    "parents": [
+      "Resampling methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003687",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003687",
+    "en": "Random number generation",
+    "source_language": "en",
+    "parents": [
+      "Probabilistic reasoning algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003688",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003688",
+    "en": "Statistical paradigms",
+    "source_language": "en",
+    "parents": [
+      "Probability and statistics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003689",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003689",
+    "en": "Queueing theory",
+    "source_language": "en",
+    "parents": [
+      "Statistical paradigms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003690",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003690",
+    "en": "Contingency table analysis",
+    "source_language": "en",
+    "parents": [
+      "Statistical paradigms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003691",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003691",
+    "en": "Regression analysis",
+    "source_language": "en",
+    "parents": [
+      "Statistical paradigms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003692",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003692",
+    "en": "Robust regression",
+    "source_language": "en",
+    "parents": [
+      "Regression analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003693",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003693",
+    "en": "Time series analysis",
+    "source_language": "en",
+    "parents": [
+      "Statistical paradigms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003694",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003694",
+    "en": "Survival analysis",
+    "source_language": "en",
+    "parents": [
+      "Statistical paradigms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003695",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003695",
+    "en": "Renewal theory",
+    "source_language": "en",
+    "parents": [
+      "Statistical paradigms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003696",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003696",
+    "en": "Dimensionality reduction",
+    "source_language": "en",
+    "parents": [
+      "Statistical paradigms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003697",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003697",
+    "en": "Cluster analysis",
+    "source_language": "en",
+    "parents": [
+      "Statistical paradigms",
+      "Unsupervised learning"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003698",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003698",
+    "en": "Statistical graphics",
+    "source_language": "en",
+    "parents": [
+      "Statistical paradigms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003699",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003699",
+    "en": "Exploratory data analysis",
+    "source_language": "en",
+    "parents": [
+      "Statistical paradigms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003700",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003700",
+    "en": "Stochastic processes",
+    "source_language": "en",
+    "parents": [
+      "Probability and statistics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003701",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003701",
+    "en": "Markov processes",
+    "source_language": "en",
+    "parents": [
+      "Stochastic processes"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003702",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003702",
+    "en": "Nonparametric statistics",
+    "source_language": "en",
+    "parents": [
+      "Probability and statistics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003703",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003703",
+    "en": "Distribution functions",
+    "source_language": "en",
+    "parents": [
+      "Probability and statistics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003704",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003704",
+    "en": "Multivariate statistics",
+    "source_language": "en",
+    "parents": [
+      "Probability and statistics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003705",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003705",
+    "en": "Mathematical software",
+    "source_language": "en",
+    "parents": [
+      "Mathematics of computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003707",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003707",
+    "en": "Solvers",
+    "source_language": "en",
+    "parents": [
+      "Mathematical software"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003708",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003708",
+    "en": "Statistical software",
+    "source_language": "en",
+    "parents": [
+      "Mathematical software"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003712",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003712",
+    "en": "Information theory",
+    "source_language": "en",
+    "parents": [
+      "Mathematics of computing"
+    ],
+    "scope_notes": [
+      "Not to be confused with information science."
+    ],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003713",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003713",
+    "en": "Coding theory",
+    "source_language": "en",
+    "parents": [
+      "Information theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003714",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003714",
+    "en": "Mathematical analysis",
+    "source_language": "en",
+    "parents": [
+      "Mathematics of computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003715",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003715",
+    "en": "Numerical analysis",
+    "source_language": "en",
+    "parents": [
+      "Mathematical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003716",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003716",
+    "en": "Mathematical optimization",
+    "source_language": "en",
+    "parents": [
+      "Design and analysis of algorithms",
+      "Mathematical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003717",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003717",
+    "en": "Computation of transforms",
+    "source_language": "en",
+    "parents": [
+      "Numerical analysis"
+    ],
+    "scope_notes": [
+      "Historic 1998 term has \"eg fast Fourier transform\".  This should be considered for a potential child term, but has been added as an equivalent initially."
+    ],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003718",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003718",
+    "en": "Computations in finite fields",
+    "source_language": "en",
+    "parents": [
+      "Numerical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003719",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003719",
+    "en": "Computations on matrices",
+    "source_language": "en",
+    "parents": [
+      "Numerical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003720",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003720",
+    "en": "Computations on polynomials",
+    "source_language": "en",
+    "parents": [
+      "Numerical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003721",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003721",
+    "en": "Number-theoretic computations",
+    "source_language": "en",
+    "parents": [
+      "Numerical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003722",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003722",
+    "en": "Interpolation",
+    "source_language": "en",
+    "parents": [
+      "Numerical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003724",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003724",
+    "en": "Numerical differentiation",
+    "source_language": "en",
+    "parents": [
+      "Numerical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003725",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003725",
+    "en": "Interval arithmetic",
+    "source_language": "en",
+    "parents": [
+      "Numerical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003726",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003726",
+    "en": "Arbitrary-precision arithmetic",
+    "source_language": "en",
+    "parents": [
+      "Numerical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003727",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003727",
+    "en": "Differential equations",
+    "source_language": "en",
+    "parents": [
+      "Mathematical analysis"
+    ],
+    "scope_notes": [
+      "Not to be confused with difference equation."
+    ],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003728",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003728",
+    "en": "Ordinary differential equations",
+    "source_language": "en",
+    "parents": [
+      "Differential equations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003729",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003729",
+    "en": "Partial differential equations",
+    "source_language": "en",
+    "parents": [
+      "Differential equations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003730",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003730",
+    "en": "Differential algebraic equations",
+    "source_language": "en",
+    "parents": [
+      "Differential equations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003731",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003731",
+    "en": "Differential variational inequalities",
+    "source_language": "en",
+    "parents": [
+      "Differential equations"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003732",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003732",
+    "en": "Calculus",
+    "source_language": "en",
+    "parents": [
+      "Continuous mathematics",
+      "Mathematical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003733",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003733",
+    "en": "Lambda calculus",
+    "source_language": "en",
+    "parents": [
+      "Calculus",
+      "Computability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003734",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003734",
+    "en": "Differential calculus",
+    "source_language": "en",
+    "parents": [
+      "Calculus"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003735",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003735",
+    "en": "Integral calculus",
+    "source_language": "en",
+    "parents": [
+      "Calculus"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003736",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003736",
+    "en": "Functional analysis",
+    "source_language": "en",
+    "parents": [
+      "Mathematical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003737",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003737",
+    "en": "Approximation",
+    "source_language": "en",
+    "parents": [
+      "Functional analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003738",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003738",
+    "en": "Integral equations",
+    "source_language": "en",
+    "parents": [
+      "Mathematical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003739",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003739",
+    "en": "Nonlinear equations",
+    "source_language": "en",
+    "parents": [
+      "Mathematical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003740",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003740",
+    "en": "Quadrature",
+    "source_language": "en",
+    "parents": [
+      "Mathematical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003741",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003741",
+    "en": "Continuous mathematics",
+    "source_language": "en",
+    "parents": [
+      "Mathematics of computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003742",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003742",
+    "en": "Topology",
+    "source_language": "en",
+    "parents": [
+      "Continuous mathematics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003743",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003743",
+    "en": "Point-set topology",
+    "source_language": "en",
+    "parents": [
+      "Topology"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003744",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003744",
+    "en": "Algebraic topology",
+    "source_language": "en",
+    "parents": [
+      "Topology"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003745",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003745",
+    "en": "Geometric topology",
+    "source_language": "en",
+    "parents": [
+      "Topology"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003746",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003746",
+    "en": "Continuous functions",
+    "source_language": "en",
+    "parents": [
+      "Continuous mathematics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003747",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003747",
+    "en": "Gröbner bases and other special bases",
+    "source_language": "en",
+    "parents": [
+      "Computations on polynomials"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003748",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003748",
+    "en": "Automatic differentiation",
+    "source_language": "en",
+    "parents": [
+      "Numerical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003749",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003749",
+    "en": "Mesh generation",
+    "source_language": "en",
+    "parents": [
+      "Numerical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003750",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003750",
+    "en": "Discretization",
+    "source_language": "en",
+    "parents": [
+      "Numerical analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003751",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003751",
+    "en": "Software engineering education",
+    "source_language": "en",
+    "parents": [
+      "Computing education programs"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003752",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003752",
+    "en": "Theory of computation",
+    "source_language": "en",
+    "parents": [],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003753",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003753",
+    "en": "Models of computation",
+    "source_language": "en",
+    "parents": [
+      "Theory of computation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003754",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003754",
+    "en": "Computability",
+    "source_language": "en",
+    "parents": [
+      "Models of computation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003755",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003755",
+    "en": "Turing machines",
+    "source_language": "en",
+    "parents": [
+      "Computability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003756",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003756",
+    "en": "Recursive functions",
+    "source_language": "en",
+    "parents": [
+      "Computability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003757",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003757",
+    "en": "Probabilistic computation",
+    "source_language": "en",
+    "parents": [
+      "Models of computation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003758",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003758",
+    "en": "Quantum computation theory",
+    "source_language": "en",
+    "parents": [
+      "Models of computation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003759",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003759",
+    "en": "Interactive computation",
+    "source_language": "en",
+    "parents": [
+      "Models of computation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003760",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003760",
+    "en": "Streaming models",
+    "source_language": "en",
+    "parents": [
+      "Models of computation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003761",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003761",
+    "en": "Concurrency",
+    "source_language": "en",
+    "parents": [
+      "Models of computation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003762",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003762",
+    "en": "Parallel computing models",
+    "source_language": "en",
+    "parents": [
+      "Concurrency"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003763",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003763",
+    "en": "Distributed computing models",
+    "source_language": "en",
+    "parents": [
+      "Concurrency"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003764",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003764",
+    "en": "Process calculi",
+    "source_language": "en",
+    "parents": [
+      "Concurrency"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003765",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003765",
+    "en": "Timed and hybrid models",
+    "source_language": "en",
+    "parents": [
+      "Models of computation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003766",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003766",
+    "en": "Formal languages and automata theory",
+    "source_language": "en",
+    "parents": [
+      "Theory of computation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003767",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003767",
+    "en": "Formalisms",
+    "source_language": "en",
+    "parents": [
+      "Formal languages and automata theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003768",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003768",
+    "en": "Algebraic language theory",
+    "source_language": "en",
+    "parents": [
+      "Formalisms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003769",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003769",
+    "en": "Rewrite systems",
+    "source_language": "en",
+    "parents": [
+      "Formalisms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003770",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003770",
+    "en": "Automata over infinite objects",
+    "source_language": "en",
+    "parents": [
+      "Formal languages and automata theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003771",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003771",
+    "en": "Grammars and context-free languages",
+    "source_language": "en",
+    "parents": [
+      "Formal languages and automata theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003772",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003772",
+    "en": "Tree languages",
+    "source_language": "en",
+    "parents": [
+      "Formal languages and automata theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003773",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003773",
+    "en": "Automata extensions",
+    "source_language": "en",
+    "parents": [
+      "Formal languages and automata theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003774",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003774",
+    "en": "Transducers",
+    "source_language": "en",
+    "parents": [
+      "Automata extensions"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003775",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003775",
+    "en": "Quantitative automata",
+    "source_language": "en",
+    "parents": [
+      "Automata extensions"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003776",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003776",
+    "en": "Regular languages",
+    "source_language": "en",
+    "parents": [
+      "Formal languages and automata theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003777",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003777",
+    "en": "Computational complexity and cryptography",
+    "source_language": "en",
+    "parents": [
+      "Theory of computation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003778",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003778",
+    "en": "Complexity classes",
+    "source_language": "en",
+    "parents": [
+      "Computational complexity and cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003779",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003779",
+    "en": "Problems, reductions and completeness",
+    "source_language": "en",
+    "parents": [
+      "Computational complexity and cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003780",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003780",
+    "en": "Communication complexity",
+    "source_language": "en",
+    "parents": [
+      "Computational complexity and cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003781",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003781",
+    "en": "Circuit complexity",
+    "source_language": "en",
+    "parents": [
+      "Computational complexity and cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003782",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003782",
+    "en": "Oracles and decision trees",
+    "source_language": "en",
+    "parents": [
+      "Computational complexity and cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003783",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003783",
+    "en": "Algebraic complexity theory",
+    "source_language": "en",
+    "parents": [
+      "Computational complexity and cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003784",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003784",
+    "en": "Quantum complexity theory",
+    "source_language": "en",
+    "parents": [
+      "Computational complexity and cryptography",
+      "Quantum computation theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003785",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003785",
+    "en": "Proof complexity",
+    "source_language": "en",
+    "parents": [
+      "Computational complexity and cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003786",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003786",
+    "en": "Interactive proof systems",
+    "source_language": "en",
+    "parents": [
+      "Computational complexity and cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003787",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003787",
+    "en": "Complexity theory and logic",
+    "source_language": "en",
+    "parents": [
+      "Computational complexity and cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003788",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003788",
+    "en": "Cryptographic primitives",
+    "source_language": "en",
+    "parents": [
+      "Computational complexity and cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003789",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003789",
+    "en": "Cryptographic protocols",
+    "source_language": "en",
+    "parents": [
+      "Computational complexity and cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  }
+]

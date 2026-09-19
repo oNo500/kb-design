@@ -1,0 +1,12 @@
+{
+  "bytes": 1247560,
+  "download_url": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml",
+  "source": {
+    "commit": "48644c2ed653833115515c5e59bf2cb2452f1830",
+    "path": "ACMComputingClassificationSystemSKOSTaxonomy.xml",
+    "repository": "https://github.com/cli99/acm-ccs",
+    "sha256": "ab090f3fd490d167d040c076f4069e75d916fb0693506e7f2aa650f1f82e6f57",
+    "upstream_data_license": "not verified",
+    "upstream_download_origin": "not established by repository README"
+  }
+}

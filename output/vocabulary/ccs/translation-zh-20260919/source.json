@@ -1,0 +1,18 @@
+{
+  "input": "/Users/xiu/code/kb-design/output/vocabulary/ccs/build-48644c2ed653/vocabulary.ttl",
+  "sha256": "6c1f3e618ec723ac64597209bf2ca551ae28bc1b70292a0b6a786612d12e406c",
+  "scope": "Concept skos:prefLabel only",
+  "target_language": "zh",
+  "count": 2299,
+  "batch_counts": [
+    240,
+    240,
+    240,
+    240,
+    240,
+    240,
+    240,
+    227,
+    392
+  ]
+}

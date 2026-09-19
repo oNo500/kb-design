@@ -1,0 +1,5237 @@
+{
+  "triples": 18755,
+  "subjects": 2300,
+  "resources": [
+    {
+      "type": "Collection",
+      "shape": "urn:kb-vocab-shacl:resource:Collection",
+      "label": "集合",
+      "status": "no_objects",
+      "objects": 0,
+      "fields": [
+        {
+          "field": "http://purl.org/dc/elements/1.1/contributor",
+          "name": "dc:contributor",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_contributor"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/creator",
+          "name": "dc:creator",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_creator"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/publisher",
+          "name": "dc:publisher",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_publisher"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/subject",
+          "name": "dc:subject",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_subject"
+          ],
+          "description": [
+            "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/conformsTo",
+          "name": "dcterms:conformsTo",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_conformsTo"
+          ],
+          "description": [
+            "0..n；标准引用及来源原有表述；自有符合性声明须有明确对象和证据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/created",
+          "name": "dcterms:created",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_dcterms_created",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_created"
+          ],
+          "description": [
+            "本地各 0..1；来源不统一收紧；本地记录时间与来源时间分别保留，不能只因多个值就任取一个",
+            "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/description",
+          "name": "dcterms:description",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_description",
+            "urn:kb-vocab-shacl:field:Notes_dcterms_description"
+          ],
+          "description": [
+            "0..n 个文字值；一般描述，不替代定义或范围说明"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/format",
+          "name": "dcterms:format",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_format"
+          ],
+          "description": [
+            "0..n；格式、介质或尺寸的资源引用或文字，如媒体类型字符串；不冒称自有输出的格式"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/identifier",
+          "name": "dcterms:identifier",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_identifier",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_identifier"
+          ],
+          "description": [
+            "0..n；来源标识文字及原类型，不替代资源 IRI"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/isRequiredBy",
+          "name": "dcterms:isRequiredBy",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_isRequiredBy"
+          ],
+          "description": [
+            "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/language",
+          "name": "dcterms:language",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_language"
+          ],
+          "description": [
+            "0..n；受控语言资源或 BCP 47 文字值；资源级语言声明不代替每条名称的标签"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/license",
+          "name": "dcterms:license",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_license"
+          ],
+          "description": [
+            "0..n；优先引用许可文档；无法使用 URI 时可保留能识别许可的文字，不擅自变更许可"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/modified",
+          "name": "dcterms:modified",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_dcterms_modified",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_modified"
+          ],
+          "description": [
+            "本地各 0..1；来源不统一收紧；本地记录时间与来源时间分别保留，不能只因多个值就任取一个",
+            "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/replaces",
+          "name": "dcterms:replaces",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_replaces"
+          ],
+          "description": [
+            "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/rights",
+          "name": "dcterms:rights",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_rights"
+          ],
+          "description": [
+            "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/rightsHolder",
+          "name": "dcterms:rightsHolder",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_rightsHolder"
+          ],
+          "description": [
+            "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/source",
+          "name": "dcterms:source",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_dcterms_source",
+            "urn:kb-vocab-shacl:field:Collection_dcterms_source",
+            "urn:kb-vocab-shacl:field:Evidence_dcterms_source"
+          ],
+          "description": [
+            "0..n；来源与实际派生引用，保持原附着对象。",
+            "各 0..n；来源及实际派生，关联成员选择或转换依据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/subject",
+          "name": "dcterms:subject",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_subject"
+          ],
+          "description": [
+            "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/title",
+          "name": "dcterms:title",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_title",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_title"
+          ],
+          "description": [
+            "0..n；标题文字及原语言；与首选标签可同值也可不同，按实际含义保存，不强制相互派生"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/type",
+          "name": "dcterms:type",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_type"
+          ],
+          "description": [
+            "0..n；类别资源引用或文字；保留已有受控类型，不用类别字符串代替 rdf:type 或本地分类决定"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/iso25964/skos-thes#subGroup",
+          "name": "iso-thes:subGroup",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_iso_thes_subGroup"
+          ],
+          "description": [
+            "0..n；主体也须为 ConceptGroup；具有传递性，是 superGroup 的逆关系"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/iso25964/skos-thes#superGroup",
+          "name": "iso-thes:superGroup",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_iso_thes_superGroup"
+          ],
+          "description": [
+            "0..n；主体也须为 ConceptGroup；具有传递性，子组成员包含于上组"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "name": "rdf:type",
+          "shapes": [
+            "urn:kb-vocab-shacl:DeclaredCollectionType",
+            "urn:kb-vocab-shacl:field:Collection_rdf_type"
+          ],
+          "description": [
+            "1..n；包含 Collection 或 OrderedCollection；采用扩展时保留其专用类型"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2000/01/rdf-schema#label",
+          "name": "rdfs:label",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_rdfs_label",
+            "urn:kb-vocab-shacl:field:Collection_rdfs_label"
+          ],
+          "description": [
+            "0..n；保留来源的组名称或节点标签；不能据此推断概念首选名"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#imports",
+          "name": "owl:imports",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_owl_imports"
+          ],
+          "description": [
+            "0..n；允许保留来源的导入声明；读取时不自动加载外部图。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#versionInfo",
+          "name": "owl:versionInfo",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_owl_versionInfo"
+          ],
+          "description": [
+            "0..n；来源版本说明，不覆盖自有词表或工具版本"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#altLabel",
+          "name": "skos:altLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:AlternativeLiteral",
+            "urn:kb-vocab-shacl:field:Collection_skos_altLabel"
+          ],
+          "description": [
+            "各 0..n；分别为替代名和检索写法，不改变成员或层级"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#changeNote",
+          "name": "skos:changeNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_changeNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_changeNote"
+          ],
+          "description": [
+            "0..n 个说明值；具体变更，由维护记录派生说明或引用",
+            "各 0..n；范围历史及由维护记录派生的具体变更"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#definition",
+          "name": "skos:definition",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_definition"
+          ],
+          "description": [
+            "0..n 个说明值；定义；来源附着于概念或名称时保留原位置"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#editorialNote",
+          "name": "skos:editorialNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_editorialNote"
+          ],
+          "description": [
+            "0..n 个说明值；编辑提醒，默认保留在管理输出"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#example",
+          "name": "skos:example",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_example"
+          ],
+          "description": [
+            "0..n 个说明值；所解释对象的使用示例"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#hiddenLabel",
+          "name": "skos:hiddenLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:HiddenLiteral",
+            "urn:kb-vocab-shacl:field:Collection_skos_hiddenLabel"
+          ],
+          "description": [
+            "各 0..n；分别为替代名和检索写法，不改变成员或层级"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#historyNote",
+          "name": "skos:historyNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_historyNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_historyNote"
+          ],
+          "description": [
+            "0..n 个说明值；名称、含义或使用范围的重要历史",
+            "各 0..n；范围历史及由维护记录派生的具体变更"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#inScheme",
+          "name": "skos:inScheme",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_inScheme"
+          ],
+          "description": [
+            "自有 1；继承 0..1；自有集合关联唯一自有词表；来源图的原归属不受此限"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#member",
+          "name": "skos:member",
+          "shapes": [
+            "urn:kb-vocab-shacl:CollectionMembers",
+            "urn:kb-vocab-shacl:field:Collection_skos_member"
+          ],
+          "description": [
+            "0..n；普通集合成员；有序集合按列表投影，不表示概念上下位"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#memberList",
+          "name": "skos:memberList",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_memberList"
+          ],
+          "description": [
+            "有序集合为 1；有限、完整、无循环，允许空列表；显式列表是项目完整性要求"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#notation",
+          "name": "skos:notation",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_skos_notation",
+            "urn:kb-vocab-shacl:field:Collection_skos_notation"
+          ],
+          "description": [
+            "0..n；来源分组代码，不与概念代码合并身份"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#note",
+          "name": "skos:note",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_note"
+          ],
+          "description": [
+            "0..n 个说明值；不适合归入更具体属性的说明"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#prefLabel",
+          "name": "skos:prefLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:PreferredLiteral",
+            "urn:kb-vocab-shacl:field:Collection_skos_prefLabel"
+          ],
+          "description": [
+            "0..n；一般集合和数组可缺名；概念组的名称要求见下文，可直接维护或从 XL 投影"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#scopeNote",
+          "name": "skos:scopeNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_scopeNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_scopeNote"
+          ],
+          "description": [
+            "0..n 个说明值；使用范围；词表与自建集合按各自字段表必填",
+            "自建 1..n；继承 0..n；用途、成员纳入与排除、排序依据；可引用明确的组织规则"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#altLabel",
+          "name": "skosxl:altLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_altLabel",
+            "urn:kb-vocab-shacl:field:Collection_skosxl_altLabel"
+          ],
+          "description": [
+            "0..n；按用途采用独立名称时填写，并提供普通标签投影。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#hiddenLabel",
+          "name": "skosxl:hiddenLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_hiddenLabel",
+            "urn:kb-vocab-shacl:field:Collection_skosxl_hiddenLabel"
+          ],
+          "description": [
+            "0..n；按用途采用独立名称时填写，并提供普通标签投影。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#prefLabel",
+          "name": "skosxl:prefLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_prefLabel",
+            "urn:kb-vocab-shacl:field:Collection_skosxl_prefLabel"
+          ],
+          "description": [
+            "0..n；按用途采用独立名称时填写，并提供普通标签投影。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/ns/prov#wasDerivedFrom",
+          "name": "prov:wasDerivedFrom",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_prov_wasDerivedFrom",
+            "urn:kb-vocab-shacl:field:Collection_prov_wasDerivedFrom",
+            "urn:kb-vocab-shacl:field:Evidence_prov_wasDerivedFrom"
+          ],
+          "description": [
+            "0..n；来源与实际派生引用，保持原附着对象。",
+            "各 0..n；来源及实际派生，关联成员选择或转换依据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        }
+      ]
+    },
+    {
+      "type": "Concept",
+      "shape": "urn:kb-vocab-shacl:resource:Concept",
+      "label": "概念",
+      "status": "counted",
+      "objects": 2299,
+      "fields": [
+        {
+          "field": "http://purl.org/dc/elements/1.1/contributor",
+          "name": "dc:contributor",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_contributor"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/creator",
+          "name": "dc:creator",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_creator"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/publisher",
+          "name": "dc:publisher",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_publisher"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/subject",
+          "name": "dc:subject",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_subject"
+          ],
+          "description": [
+            "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/conformsTo",
+          "name": "dcterms:conformsTo",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_conformsTo"
+          ],
+          "description": [
+            "0..n；标准引用及来源原有表述；自有符合性声明须有明确对象和证据"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/created",
+          "name": "dcterms:created",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Concept_dcterms_created",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_created"
+          ],
+          "description": [
+            "本地 0..1；来源按原值；所描述概念记录的创建时间；来源与项目记录分别追溯，不以本次生成时间代替",
+            "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/description",
+          "name": "dcterms:description",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_description",
+            "urn:kb-vocab-shacl:field:Concept_dcterms_description",
+            "urn:kb-vocab-shacl:field:Notes_dcterms_description"
+          ],
+          "description": [
+            "0..n 个文字值；一般描述，不替代定义或范围说明",
+            "0..n；一般描述；保留其与定义、范围说明的区别"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/format",
+          "name": "dcterms:format",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_format"
+          ],
+          "description": [
+            "0..n；格式、介质或尺寸的资源引用或文字，如媒体类型字符串；不冒称自有输出的格式"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/identifier",
+          "name": "dcterms:identifier",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_identifier",
+            "urn:kb-vocab-shacl:field:Concept_dcterms_identifier",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_identifier"
+          ],
+          "description": [
+            "0..n；来源或登记标识；不假定跨来源全局唯一",
+            "0..n；来源标识文字及原类型，不替代资源 IRI"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/isPartOf",
+          "name": "dcterms:isPartOf",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_dcterms_isPartOf",
+            "urn:kb-vocab-shacl:field:Concept_dcterms_isPartOf"
+          ],
+          "description": [
+            "0..n；部分关系；不自动改成 `broader`，不要求目标一定是概念"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/isReplacedBy",
+          "name": "dcterms:isReplacedBy",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Concept_dcterms_isReplacedBy"
+          ],
+          "description": [
+            "0..n；旧概念指向替代概念，允许多个目标；不等于概念等价或自动重标引"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/isRequiredBy",
+          "name": "dcterms:isRequiredBy",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_isRequiredBy"
+          ],
+          "description": [
+            "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/language",
+          "name": "dcterms:language",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_language"
+          ],
+          "description": [
+            "0..n；受控语言资源或 BCP 47 文字值；资源级语言声明不代替每条名称的标签"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/license",
+          "name": "dcterms:license",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_license"
+          ],
+          "description": [
+            "0..n；优先引用许可文档；无法使用 URI 时可保留能识别许可的文字，不擅自变更许可"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/modified",
+          "name": "dcterms:modified",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Concept_dcterms_modified",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_modified"
+          ],
+          "description": [
+            "本地 0..1；来源按原值；所描述概念记录的修改时间；不以构建时间覆盖，也不代替变更原因",
+            "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/replaces",
+          "name": "dcterms:replaces",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Concept_dcterms_replaces",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_replaces"
+          ],
+          "description": [
+            "0..n；替代概念指向旧概念的派生反向表达，不单独维护",
+            "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/rights",
+          "name": "dcterms:rights",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_rights"
+          ],
+          "description": [
+            "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/rightsHolder",
+          "name": "dcterms:rightsHolder",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_rightsHolder"
+          ],
+          "description": [
+            "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/source",
+          "name": "dcterms:source",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_dcterms_source",
+            "urn:kb-vocab-shacl:field:Concept_dcterms_source",
+            "urn:kb-vocab-shacl:field:Evidence_dcterms_source"
+          ],
+          "description": [
+            "0..n；引用来源资源；不能代替逐字段、逐关系的生成对账",
+            "0..n；来源与实际派生引用，保持原附着对象。"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/subject",
+          "name": "dcterms:subject",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_subject"
+          ],
+          "description": [
+            "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/title",
+          "name": "dcterms:title",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_title",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_title"
+          ],
+          "description": [
+            "0..n；标题文字及原语言；与首选标签可同值也可不同，按实际含义保存，不强制相互派生"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/type",
+          "name": "dcterms:type",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_type"
+          ],
+          "description": [
+            "0..n；类别资源引用或文字；保留已有受控类型，不用类别字符串代替 rdf:type 或本地分类决定"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "name": "rdf:type",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Concept_rdf_type"
+          ],
+          "description": [
+            "1..n；必须包含 `skos:Concept`；允许其他不冲突的来源类型"
+          ],
+          "present": 2299,
+          "absent": 0,
+          "empty_values": 0,
+          "statements": 2299
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#deprecated",
+          "name": "owl:deprecated",
+          "shapes": [
+            "urn:kb-vocab-shacl:DeprecatedValue",
+            "urn:kb-vocab-shacl:field:Concept_owl_deprecated"
+          ],
+          "description": [
+            "0..1；有明确依据时标记停用；缺少该属性不证明已经采纳或经过审查"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#imports",
+          "name": "owl:imports",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_owl_imports"
+          ],
+          "description": [
+            "0..n；允许保留来源的导入声明；读取时不自动加载外部图。"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#versionInfo",
+          "name": "owl:versionInfo",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_owl_versionInfo"
+          ],
+          "description": [
+            "0..n；来源版本说明，不覆盖自有词表或工具版本"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#altLabel",
+          "name": "skos:altLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:AlternativeLiteral",
+            "urn:kb-vocab-shacl:field:Concept_skos_altLabel"
+          ],
+          "description": [
+            "由 XL 名称派生；由对应 XL 名称投影；统计保留旧词表已有的普通标签。"
+          ],
+          "present": 1860,
+          "absent": 439,
+          "empty_values": 0,
+          "statements": 6787
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#broadMatch",
+          "name": "skos:broadMatch",
+          "shapes": [
+            "urn:kb-vocab-shacl:MappingTarget_broadMatch",
+            "urn:kb-vocab-shacl:field:Concept_skos_broadMatch"
+          ],
+          "description": [
+            "0..n；本端概念对应另一词表中更宽的概念，方向必须明确"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#broader",
+          "name": "skos:broader",
+          "shapes": [
+            "urn:kb-vocab-shacl:ConceptTarget_broader",
+            "urn:kb-vocab-shacl:field:Concept_skos_broader"
+          ],
+          "description": [
+            "0..n；自有直接层级的主要维护方向，允许多父；来源反向边也须纳入归一与对账"
+          ],
+          "present": 2285,
+          "absent": 14,
+          "empty_values": 0,
+          "statements": 2390
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#changeNote",
+          "name": "skos:changeNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Concept_skos_changeNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_changeNote"
+          ],
+          "description": [
+            "0..n 个说明值；具体变更，由维护记录派生说明或引用",
+            "0..n；细粒度维护变更；从结构化变更记录生成说明或引用，不重复维护第二份事件历史"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "name": "skos:closeMatch",
+          "shapes": [
+            "urn:kb-vocab-shacl:MappingTarget_closeMatch",
+            "urn:kb-vocab-shacl:field:Concept_skos_closeMatch"
+          ],
+          "description": [
+            "0..n；在部分检索应用中足够接近、可以互换的对应；不是“不确定”的占位值，不作传递推导"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#definition",
+          "name": "skos:definition",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Concept_skos_definition",
+            "urn:kb-vocab-shacl:field:Notes_skos_definition"
+          ],
+          "description": [
+            "0..n 个说明值；定义；来源附着于概念或名称时保留原位置",
+            "0..n；定义或定义资源引用，不限定为一个字符串"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#editorialNote",
+          "name": "skos:editorialNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Concept_skos_editorialNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_editorialNote"
+          ],
+          "description": [
+            "0..n 个说明值；编辑提醒，默认保留在管理输出",
+            "0..n；编辑提醒，不代替历史、具体变更记录或采纳授权"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "name": "skos:exactMatch",
+          "shapes": [
+            "urn:kb-vocab-shacl:MappingTarget_exactMatch",
+            "urn:kb-vocab-shacl:field:Concept_skos_exactMatch"
+          ],
+          "description": [
+            "0..n；在广泛检索应用中可高度确信互换的对应；具有传递性，不等于 owl:sameAs，不合并双方全部属性"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#example",
+          "name": "skos:example",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_example"
+          ],
+          "description": [
+            "0..n 个说明值；所解释对象的使用示例"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#hiddenLabel",
+          "name": "skos:hiddenLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:HiddenLiteral",
+            "urn:kb-vocab-shacl:field:Concept_skos_hiddenLabel"
+          ],
+          "description": [
+            "由 XL 名称派生；由对应 XL 名称投影；统计保留旧词表已有的普通标签。"
+          ],
+          "present": 14,
+          "absent": 2285,
+          "empty_values": 0,
+          "statements": 27
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#historyNote",
+          "name": "skos:historyNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Concept_skos_historyNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_historyNote"
+          ],
+          "description": [
+            "0..n 个说明值；名称、含义或使用范围的重要历史",
+            "0..n；名称、含义或使用范围的重要历史变化，帮助解释旧内容的标记"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#inScheme",
+          "name": "skos:inScheme",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Concept_skos_inScheme"
+          ],
+          "description": [
+            "1；自有主词表中的概念统一属于同一词表；分组成员用 Collection 的 member 表达，层级归属用概念间的 broader 表达，原来源归属在来源图及对账记录中保留"
+          ],
+          "present": 2299,
+          "absent": 0,
+          "empty_values": 0,
+          "statements": 2299
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#narrowMatch",
+          "name": "skos:narrowMatch",
+          "shapes": [
+            "urn:kb-vocab-shacl:MappingTarget_narrowMatch",
+            "urn:kb-vocab-shacl:field:Concept_skos_narrowMatch"
+          ],
+          "description": [
+            "0..n；本端概念对应另一词表中更窄的概念；与 broadMatch 互反，不维护冲突的两套决定"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#narrower",
+          "name": "skos:narrower",
+          "shapes": [
+            "urn:kb-vocab-shacl:ConceptTarget_narrower",
+            "urn:kb-vocab-shacl:field:Concept_skos_narrower"
+          ],
+          "description": [
+            "0..n；从上位关系派生的下位表达；编辑反向表达时同步修改同一条上位关系，不允许两套互相独立的值"
+          ],
+          "present": 417,
+          "absent": 1882,
+          "empty_values": 0,
+          "statements": 2390
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#notation",
+          "name": "skos:notation",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_skos_notation",
+            "urn:kb-vocab-shacl:field:Concept_skos_notation"
+          ],
+          "description": [
+            "0..n；来源分类代码；保留数据类型与原值，不当作概念 URI"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#note",
+          "name": "skos:note",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Concept_skos_note",
+            "urn:kb-vocab-shacl:field:Notes_skos_note"
+          ],
+          "description": [
+            "0..n 个说明值；不适合归入更具体属性的说明",
+            "0..n；一般说明，不自动确定更具体的说明类别"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#prefLabel",
+          "name": "skos:prefLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:PreferredLiteral",
+            "urn:kb-vocab-shacl:field:Concept_skos_prefLabel"
+          ],
+          "description": [
+            "由 XL 名称派生；由对应 XL 名称投影；统计保留旧词表已有的普通标签。"
+          ],
+          "present": 2299,
+          "absent": 0,
+          "empty_values": 0,
+          "statements": 2299
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#related",
+          "name": "skos:related",
+          "shapes": [
+            "urn:kb-vocab-shacl:ConceptTarget_related",
+            "urn:kb-vocab-shacl:field:Concept_skos_related"
+          ],
+          "description": [
+            "0..n；相关关系；不得与同一对概念的层级可达关系重叠"
+          ],
+          "present": 134,
+          "absent": 2165,
+          "empty_values": 0,
+          "statements": 192
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#relatedMatch",
+          "name": "skos:relatedMatch",
+          "shapes": [
+            "urn:kb-vocab-shacl:MappingTarget_relatedMatch",
+            "urn:kb-vocab-shacl:field:Concept_skos_relatedMatch"
+          ],
+          "description": [
+            "0..n；跨词表的相关对应，不代替等价或宽窄判断"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#scopeNote",
+          "name": "skos:scopeNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Concept_skos_scopeNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_scopeNote"
+          ],
+          "description": [
+            "0..n 个说明值；使用范围；词表与自建集合按各自字段表必填",
+            "0..n；范围及使用说明，不自动升级为定义"
+          ],
+          "present": 41,
+          "absent": 2258,
+          "empty_values": 0,
+          "statements": 41
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+          "name": "skos:topConceptOf",
+          "shapes": [
+            "urn:kb-vocab-shacl:TopTarget_topConceptOf",
+            "urn:kb-vocab-shacl:field:Concept_skos_topConceptOf"
+          ],
+          "description": [
+            "0..1；由 hasTopConcept 派生的顶层归属；不能指向领域集合，不单独维护"
+          ],
+          "present": 14,
+          "absent": 2285,
+          "empty_values": 0,
+          "statements": 14
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#altLabel",
+          "name": "skosxl:altLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_altLabel",
+            "urn:kb-vocab-shacl:field:Concept_skosxl_altLabel"
+          ],
+          "description": [
+            "0..n；替代名称，不因此建立另一个概念"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#hiddenLabel",
+          "name": "skosxl:hiddenLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_hiddenLabel",
+            "urn:kb-vocab-shacl:field:Concept_skosxl_hiddenLabel"
+          ],
+          "description": [
+            "0..n；检索用写法，不作为默认显示首选名"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#prefLabel",
+          "name": "skosxl:prefLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_prefLabel",
+            "urn:kb-vocab-shacl:field:Concept_skosxl_prefLabel"
+          ],
+          "description": [
+            "1..n；首选名称的维护入口；本地新增概念必须有名，来源缺名保留警告"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/ns/prov#wasDerivedFrom",
+          "name": "prov:wasDerivedFrom",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_prov_wasDerivedFrom",
+            "urn:kb-vocab-shacl:field:Concept_prov_wasDerivedFrom",
+            "urn:kb-vocab-shacl:field:Evidence_prov_wasDerivedFrom"
+          ],
+          "description": [
+            "0..n；来源与实际派生引用，保持原附着对象。",
+            "0..n；派生依据，可关联来源页等资源；保留定位"
+          ],
+          "present": 0,
+          "absent": 2299,
+          "empty_values": 0,
+          "statements": 0
+        }
+      ]
+    },
+    {
+      "type": "ConceptGroup",
+      "shape": "urn:kb-vocab-shacl:resource:ConceptGroup",
+      "label": "概念组",
+      "status": "no_objects",
+      "objects": 0,
+      "fields": [
+        {
+          "field": "http://purl.org/dc/elements/1.1/contributor",
+          "name": "dc:contributor",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_contributor"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/creator",
+          "name": "dc:creator",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_creator"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/publisher",
+          "name": "dc:publisher",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_publisher"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/subject",
+          "name": "dc:subject",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_subject"
+          ],
+          "description": [
+            "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/conformsTo",
+          "name": "dcterms:conformsTo",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_conformsTo"
+          ],
+          "description": [
+            "0..n；标准引用及来源原有表述；自有符合性声明须有明确对象和证据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/created",
+          "name": "dcterms:created",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_dcterms_created",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_created"
+          ],
+          "description": [
+            "本地各 0..1；来源不统一收紧；本地记录时间与来源时间分别保留，不能只因多个值就任取一个",
+            "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/description",
+          "name": "dcterms:description",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_description",
+            "urn:kb-vocab-shacl:field:Notes_dcterms_description"
+          ],
+          "description": [
+            "0..n 个文字值；一般描述，不替代定义或范围说明"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/format",
+          "name": "dcterms:format",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_format"
+          ],
+          "description": [
+            "0..n；格式、介质或尺寸的资源引用或文字，如媒体类型字符串；不冒称自有输出的格式"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/identifier",
+          "name": "dcterms:identifier",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_identifier",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_identifier"
+          ],
+          "description": [
+            "0..n；来源标识文字及原类型，不替代资源 IRI"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/isRequiredBy",
+          "name": "dcterms:isRequiredBy",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_isRequiredBy"
+          ],
+          "description": [
+            "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/language",
+          "name": "dcterms:language",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_language"
+          ],
+          "description": [
+            "0..n；受控语言资源或 BCP 47 文字值；资源级语言声明不代替每条名称的标签"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/license",
+          "name": "dcterms:license",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_license"
+          ],
+          "description": [
+            "0..n；优先引用许可文档；无法使用 URI 时可保留能识别许可的文字，不擅自变更许可"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/modified",
+          "name": "dcterms:modified",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_dcterms_modified",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_modified"
+          ],
+          "description": [
+            "本地各 0..1；来源不统一收紧；本地记录时间与来源时间分别保留，不能只因多个值就任取一个",
+            "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/replaces",
+          "name": "dcterms:replaces",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_replaces"
+          ],
+          "description": [
+            "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/rights",
+          "name": "dcterms:rights",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_rights"
+          ],
+          "description": [
+            "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/rightsHolder",
+          "name": "dcterms:rightsHolder",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_rightsHolder"
+          ],
+          "description": [
+            "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/source",
+          "name": "dcterms:source",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_dcterms_source",
+            "urn:kb-vocab-shacl:field:Collection_dcterms_source",
+            "urn:kb-vocab-shacl:field:Evidence_dcterms_source"
+          ],
+          "description": [
+            "0..n；来源与实际派生引用，保持原附着对象。",
+            "各 0..n；来源及实际派生，关联成员选择或转换依据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/subject",
+          "name": "dcterms:subject",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_subject"
+          ],
+          "description": [
+            "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/title",
+          "name": "dcterms:title",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_title",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_title"
+          ],
+          "description": [
+            "0..n；标题文字及原语言；与首选标签可同值也可不同，按实际含义保存，不强制相互派生"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/type",
+          "name": "dcterms:type",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_type"
+          ],
+          "description": [
+            "0..n；类别资源引用或文字；保留已有受控类型，不用类别字符串代替 rdf:type 或本地分类决定"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/iso25964/skos-thes#subGroup",
+          "name": "iso-thes:subGroup",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_iso_thes_subGroup"
+          ],
+          "description": [
+            "0..n；主体也须为 ConceptGroup；具有传递性，是 superGroup 的逆关系"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/iso25964/skos-thes#superGroup",
+          "name": "iso-thes:superGroup",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_iso_thes_superGroup"
+          ],
+          "description": [
+            "0..n；主体也须为 ConceptGroup；具有传递性，子组成员包含于上组"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "name": "rdf:type",
+          "shapes": [
+            "urn:kb-vocab-shacl:DeclaredCollectionType",
+            "urn:kb-vocab-shacl:field:Collection_rdf_type",
+            "urn:kb-vocab-shacl:field:ConceptGroup_rdf_type"
+          ],
+          "description": [
+            "1..n；保留所采用扩展的专用类型。",
+            "1..n；包含 Collection 或 OrderedCollection；采用扩展时保留其专用类型"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2000/01/rdf-schema#label",
+          "name": "rdfs:label",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_rdfs_label",
+            "urn:kb-vocab-shacl:field:Collection_rdfs_label"
+          ],
+          "description": [
+            "0..n；保留来源的组名称或节点标签；不能据此推断概念首选名"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#imports",
+          "name": "owl:imports",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_owl_imports"
+          ],
+          "description": [
+            "0..n；允许保留来源的导入声明；读取时不自动加载外部图。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#versionInfo",
+          "name": "owl:versionInfo",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_owl_versionInfo"
+          ],
+          "description": [
+            "0..n；来源版本说明，不覆盖自有词表或工具版本"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#altLabel",
+          "name": "skos:altLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:AlternativeLiteral",
+            "urn:kb-vocab-shacl:field:Collection_skos_altLabel"
+          ],
+          "description": [
+            "各 0..n；分别为替代名和检索写法，不改变成员或层级"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#changeNote",
+          "name": "skos:changeNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_changeNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_changeNote"
+          ],
+          "description": [
+            "0..n 个说明值；具体变更，由维护记录派生说明或引用",
+            "各 0..n；范围历史及由维护记录派生的具体变更"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#definition",
+          "name": "skos:definition",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_definition"
+          ],
+          "description": [
+            "0..n 个说明值；定义；来源附着于概念或名称时保留原位置"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#editorialNote",
+          "name": "skos:editorialNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_editorialNote"
+          ],
+          "description": [
+            "0..n 个说明值；编辑提醒，默认保留在管理输出"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#example",
+          "name": "skos:example",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_example"
+          ],
+          "description": [
+            "0..n 个说明值；所解释对象的使用示例"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#hiddenLabel",
+          "name": "skos:hiddenLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:HiddenLiteral",
+            "urn:kb-vocab-shacl:field:Collection_skos_hiddenLabel"
+          ],
+          "description": [
+            "各 0..n；分别为替代名和检索写法，不改变成员或层级"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#historyNote",
+          "name": "skos:historyNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_historyNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_historyNote"
+          ],
+          "description": [
+            "0..n 个说明值；名称、含义或使用范围的重要历史",
+            "各 0..n；范围历史及由维护记录派生的具体变更"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#inScheme",
+          "name": "skos:inScheme",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_inScheme"
+          ],
+          "description": [
+            "自有 1；继承 0..1；自有集合关联唯一自有词表；来源图的原归属不受此限"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#member",
+          "name": "skos:member",
+          "shapes": [
+            "urn:kb-vocab-shacl:CollectionMembers",
+            "urn:kb-vocab-shacl:field:Collection_skos_member"
+          ],
+          "description": [
+            "0..n；普通集合成员；有序集合按列表投影，不表示概念上下位"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#memberList",
+          "name": "skos:memberList",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_memberList"
+          ],
+          "description": [
+            "有序集合为 1；有限、完整、无循环，允许空列表；显式列表是项目完整性要求"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#notation",
+          "name": "skos:notation",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_skos_notation",
+            "urn:kb-vocab-shacl:field:Collection_skos_notation"
+          ],
+          "description": [
+            "0..n；来源分组代码，不与概念代码合并身份"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#note",
+          "name": "skos:note",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_note"
+          ],
+          "description": [
+            "0..n 个说明值；不适合归入更具体属性的说明"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#prefLabel",
+          "name": "skos:prefLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:PreferredLiteral",
+            "urn:kb-vocab-shacl:field:Collection_skos_prefLabel"
+          ],
+          "description": [
+            "0..n；一般集合和数组可缺名；概念组的名称要求见下文，可直接维护或从 XL 投影"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#scopeNote",
+          "name": "skos:scopeNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_scopeNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_scopeNote"
+          ],
+          "description": [
+            "0..n 个说明值；使用范围；词表与自建集合按各自字段表必填",
+            "自建 1..n；继承 0..n；用途、成员纳入与排除、排序依据；可引用明确的组织规则"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#altLabel",
+          "name": "skosxl:altLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_altLabel",
+            "urn:kb-vocab-shacl:field:Collection_skosxl_altLabel"
+          ],
+          "description": [
+            "0..n；按用途采用独立名称时填写，并提供普通标签投影。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#hiddenLabel",
+          "name": "skosxl:hiddenLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_hiddenLabel",
+            "urn:kb-vocab-shacl:field:Collection_skosxl_hiddenLabel"
+          ],
+          "description": [
+            "0..n；按用途采用独立名称时填写，并提供普通标签投影。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#prefLabel",
+          "name": "skosxl:prefLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_prefLabel",
+            "urn:kb-vocab-shacl:field:Collection_skosxl_prefLabel"
+          ],
+          "description": [
+            "0..n；按用途采用独立名称时填写，并提供普通标签投影。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/ns/prov#wasDerivedFrom",
+          "name": "prov:wasDerivedFrom",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_prov_wasDerivedFrom",
+            "urn:kb-vocab-shacl:field:Collection_prov_wasDerivedFrom",
+            "urn:kb-vocab-shacl:field:Evidence_prov_wasDerivedFrom"
+          ],
+          "description": [
+            "0..n；来源与实际派生引用，保持原附着对象。",
+            "各 0..n；来源及实际派生，关联成员选择或转换依据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        }
+      ]
+    },
+    {
+      "type": "ConceptScheme",
+      "shape": "urn:kb-vocab-shacl:resource:ConceptScheme",
+      "label": "词表",
+      "status": "counted",
+      "objects": 1,
+      "fields": [
+        {
+          "field": "http://purl.org/dc/elements/1.1/contributor",
+          "name": "dc:contributor",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_contributor"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/creator",
+          "name": "dc:creator",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_creator"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/publisher",
+          "name": "dc:publisher",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_publisher"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/subject",
+          "name": "dc:subject",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_subject"
+          ],
+          "description": [
+            "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/conformsTo",
+          "name": "dcterms:conformsTo",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_conformsTo"
+          ],
+          "description": [
+            "0..n；标准引用及来源原有表述；自有符合性声明须有明确对象和证据"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/created",
+          "name": "dcterms:created",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:ConceptScheme_dcterms_created",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_created"
+          ],
+          "description": [
+            "0..1；自有词表建立时间，不继承为任一来源词表的创建时间",
+            "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/description",
+          "name": "dcterms:description",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_description",
+            "urn:kb-vocab-shacl:field:ConceptScheme_dcterms_description",
+            "urn:kb-vocab-shacl:field:Notes_dcterms_description"
+          ],
+          "description": [
+            "0..n 个文字值；一般描述，不替代定义或范围说明",
+            "0..n；补充用途或一般介绍，不重复抄写范围说明"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/format",
+          "name": "dcterms:format",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_format"
+          ],
+          "description": [
+            "0..n；格式、介质或尺寸的资源引用或文字，如媒体类型字符串；不冒称自有输出的格式"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/identifier",
+          "name": "dcterms:identifier",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_identifier",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_identifier"
+          ],
+          "description": [
+            "0..n；来源标识文字及原类型，不替代资源 IRI"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/isRequiredBy",
+          "name": "dcterms:isRequiredBy",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_isRequiredBy"
+          ],
+          "description": [
+            "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/language",
+          "name": "dcterms:language",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:ConceptScheme_dcterms_language",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_language"
+          ],
+          "description": [
+            "0..n；受控语言资源或 BCP 47 文字值；资源级语言声明不代替每条名称的标签",
+            "0..n；实际提供的语言，不代替每个名称的语言标签；两种表示均须能解释其所指"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/license",
+          "name": "dcterms:license",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_license"
+          ],
+          "description": [
+            "0..n；优先引用许可文档；无法使用 URI 时可保留能识别许可的文字，不擅自变更许可"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/modified",
+          "name": "dcterms:modified",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:ConceptScheme_dcterms_modified",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_modified"
+          ],
+          "description": [
+            "0..1；自有词表记录的修改时间，不等同于每次重建时间",
+            "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/replaces",
+          "name": "dcterms:replaces",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_replaces"
+          ],
+          "description": [
+            "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/rights",
+          "name": "dcterms:rights",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_rights"
+          ],
+          "description": [
+            "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/rightsHolder",
+          "name": "dcterms:rightsHolder",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_rightsHolder"
+          ],
+          "description": [
+            "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/source",
+          "name": "dcterms:source",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_dcterms_source",
+            "urn:kb-vocab-shacl:field:ConceptScheme_dcterms_source",
+            "urn:kb-vocab-shacl:field:Evidence_dcterms_source"
+          ],
+          "description": [
+            "0..n；来源与实际派生引用，保持原附着对象。",
+            "0..n；自有词表引用的来源资源，逐项采用范围仍由范围决定和依据记录说明"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/subject",
+          "name": "dcterms:subject",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_subject"
+          ],
+          "description": [
+            "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/title",
+          "name": "dcterms:title",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_title",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_title"
+          ],
+          "description": [
+            "0..n；标题文字及原语言；与首选标签可同值也可不同，按实际含义保存，不强制相互派生"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://purl.org/dc/terms/type",
+          "name": "dcterms:type",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_type"
+          ],
+          "description": [
+            "0..n；类别资源引用或文字；保留已有受控类型，不用类别字符串代替 rdf:type 或本地分类决定"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "name": "rdf:type",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:ConceptScheme_rdf_type"
+          ],
+          "description": [
+            "1..n；包含 skos:ConceptScheme，不同时作为概念或集合"
+          ],
+          "present": 1,
+          "absent": 0,
+          "empty_values": 0,
+          "statements": 1
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#imports",
+          "name": "owl:imports",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_owl_imports"
+          ],
+          "description": [
+            "0..n；允许保留来源的导入声明；读取时不自动加载外部图。"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#versionInfo",
+          "name": "owl:versionInfo",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:ConceptScheme_owl_versionInfo",
+            "urn:kb-vocab-shacl:field:Metadata_owl_versionInfo"
+          ],
+          "description": [
+            "0..n；来源版本说明，不覆盖自有词表或工具版本",
+            "0..n；自有词表版本说明；来源版本和生成工具版本分别记录"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#altLabel",
+          "name": "skos:altLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:AlternativeLiteral",
+            "urn:kb-vocab-shacl:field:ConceptScheme_skos_altLabel"
+          ],
+          "description": [
+            "0..n；词表的替代名称，遵守同一套语言及角色约束"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#changeNote",
+          "name": "skos:changeNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:ConceptScheme_skos_changeNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_changeNote"
+          ],
+          "description": [
+            "0..n 个说明值；具体变更，由维护记录派生说明或引用",
+            "0..n；从版本及维护记录派生的具体变更说明"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#definition",
+          "name": "skos:definition",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_definition"
+          ],
+          "description": [
+            "0..n 个说明值；定义；来源附着于概念或名称时保留原位置"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#editorialNote",
+          "name": "skos:editorialNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_editorialNote"
+          ],
+          "description": [
+            "0..n 个说明值；编辑提醒，默认保留在管理输出"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#example",
+          "name": "skos:example",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_example"
+          ],
+          "description": [
+            "0..n 个说明值；所解释对象的使用示例"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#hasTopConcept",
+          "name": "skos:hasTopConcept",
+          "shapes": [
+            "urn:kb-vocab-shacl:TopTarget_hasTopConcept",
+            "urn:kb-vocab-shacl:field:ConceptScheme_skos_hasTopConcept"
+          ],
+          "description": [
+            "0..n；自有顶层概念的主要维护入口，检查本词表成员资格；领域集合不是顶层概念"
+          ],
+          "present": 1,
+          "absent": 0,
+          "empty_values": 0,
+          "statements": 14
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#hiddenLabel",
+          "name": "skos:hiddenLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:HiddenLiteral",
+            "urn:kb-vocab-shacl:field:ConceptScheme_skos_hiddenLabel"
+          ],
+          "description": [
+            "0..n；词表的检索写法，不作为默认显示名称"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#historyNote",
+          "name": "skos:historyNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:ConceptScheme_skos_historyNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_historyNote"
+          ],
+          "description": [
+            "0..n 个说明值；名称、含义或使用范围的重要历史",
+            "0..n；自有词表范围或组织原则的重要历史变化"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#note",
+          "name": "skos:note",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:ConceptScheme_skos_note",
+            "urn:kb-vocab-shacl:field:Notes_skos_note"
+          ],
+          "description": [
+            "0..n 个说明值；不适合归入更具体属性的说明",
+            "0..n；不适合归入更具体说明属性的其他信息"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#prefLabel",
+          "name": "skos:prefLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:PreferredLiteral",
+            "urn:kb-vocab-shacl:field:ConceptScheme_skos_prefLabel"
+          ],
+          "description": [
+            "1..n；自有词表的首选名称；直接维护或由所采用的 XL 名称投影"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#scopeNote",
+          "name": "skos:scopeNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:ConceptScheme_skos_scopeNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_scopeNote"
+          ],
+          "description": [
+            "0..n 个说明值；使用范围；词表与自建集合按各自字段表必填",
+            "1..n；明确收录范围、排除情况和使用边界；是项目的词表级要求，不强加给每个来源词表"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#altLabel",
+          "name": "skosxl:altLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_altLabel",
+            "urn:kb-vocab-shacl:field:ConceptScheme_skosxl_altLabel"
+          ],
+          "description": [
+            "0..n；按用途采用独立名称时填写，并提供普通标签投影。"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#hiddenLabel",
+          "name": "skosxl:hiddenLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_hiddenLabel",
+            "urn:kb-vocab-shacl:field:ConceptScheme_skosxl_hiddenLabel"
+          ],
+          "description": [
+            "0..n；按用途采用独立名称时填写，并提供普通标签投影。"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#prefLabel",
+          "name": "skosxl:prefLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_prefLabel",
+            "urn:kb-vocab-shacl:field:ConceptScheme_skosxl_prefLabel"
+          ],
+          "description": [
+            "0..n；按用途采用独立名称时填写，并提供普通标签投影。"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        },
+        {
+          "field": "http://www.w3.org/ns/prov#wasDerivedFrom",
+          "name": "prov:wasDerivedFrom",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_prov_wasDerivedFrom",
+            "urn:kb-vocab-shacl:field:Evidence_prov_wasDerivedFrom"
+          ],
+          "description": [
+            "0..n；来源与实际派生引用，保持原附着对象。"
+          ],
+          "present": 0,
+          "absent": 1,
+          "empty_values": 0,
+          "statements": 0
+        }
+      ]
+    },
+    {
+      "type": "Label",
+      "shape": "urn:kb-vocab-shacl:resource:Label",
+      "label": "名称",
+      "status": "no_objects",
+      "objects": 0,
+      "fields": [
+        {
+          "field": "http://purl.org/dc/elements/1.1/contributor",
+          "name": "dc:contributor",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_contributor"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/creator",
+          "name": "dc:creator",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_creator"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/publisher",
+          "name": "dc:publisher",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_publisher"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/subject",
+          "name": "dc:subject",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_subject"
+          ],
+          "description": [
+            "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/conformsTo",
+          "name": "dcterms:conformsTo",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_conformsTo"
+          ],
+          "description": [
+            "0..n；标准引用及来源原有表述；自有符合性声明须有明确对象和证据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/created",
+          "name": "dcterms:created",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_created"
+          ],
+          "description": [
+            "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/description",
+          "name": "dcterms:description",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_description",
+            "urn:kb-vocab-shacl:field:Notes_dcterms_description"
+          ],
+          "description": [
+            "0..n 个文字值；一般描述，不替代定义或范围说明"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/format",
+          "name": "dcterms:format",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_format"
+          ],
+          "description": [
+            "0..n；格式、介质或尺寸的资源引用或文字，如媒体类型字符串；不冒称自有输出的格式"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/identifier",
+          "name": "dcterms:identifier",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_identifier",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_identifier"
+          ],
+          "description": [
+            "0..n；来源标识文字及原类型，不替代资源 IRI"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/isRequiredBy",
+          "name": "dcterms:isRequiredBy",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_isRequiredBy"
+          ],
+          "description": [
+            "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/language",
+          "name": "dcterms:language",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_language"
+          ],
+          "description": [
+            "0..n；受控语言资源或 BCP 47 文字值；资源级语言声明不代替每条名称的标签"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/license",
+          "name": "dcterms:license",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_license"
+          ],
+          "description": [
+            "0..n；优先引用许可文档；无法使用 URI 时可保留能识别许可的文字，不擅自变更许可"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/modified",
+          "name": "dcterms:modified",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_modified"
+          ],
+          "description": [
+            "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/replaces",
+          "name": "dcterms:replaces",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_replaces"
+          ],
+          "description": [
+            "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/rights",
+          "name": "dcterms:rights",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_rights"
+          ],
+          "description": [
+            "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/rightsHolder",
+          "name": "dcterms:rightsHolder",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_rightsHolder"
+          ],
+          "description": [
+            "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/source",
+          "name": "dcterms:source",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_dcterms_source",
+            "urn:kb-vocab-shacl:field:Evidence_dcterms_source"
+          ],
+          "description": [
+            "0..n；来源与实际派生引用，保持原附着对象。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/subject",
+          "name": "dcterms:subject",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_subject"
+          ],
+          "description": [
+            "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/title",
+          "name": "dcterms:title",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_title",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_title"
+          ],
+          "description": [
+            "0..n；标题文字及原语言；与首选标签可同值也可不同，按实际含义保存，不强制相互派生"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/type",
+          "name": "dcterms:type",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_type"
+          ],
+          "description": [
+            "0..n；类别资源引用或文字；保留已有受控类型，不用类别字符串代替 rdf:type 或本地分类决定"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "name": "rdf:type",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Label_rdf_type"
+          ],
+          "description": [
+            "1..n；包含 `skosxl:Label`，不兼作概念、词表或集合"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#imports",
+          "name": "owl:imports",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_owl_imports"
+          ],
+          "description": [
+            "0..n；允许保留来源的导入声明；读取时不自动加载外部图。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#versionInfo",
+          "name": "owl:versionInfo",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_owl_versionInfo"
+          ],
+          "description": [
+            "0..n；来源版本说明，不覆盖自有词表或工具版本"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#changeNote",
+          "name": "skos:changeNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_changeNote"
+          ],
+          "description": [
+            "0..n 个说明值；具体变更，由维护记录派生说明或引用"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#definition",
+          "name": "skos:definition",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_definition"
+          ],
+          "description": [
+            "0..n 个说明值；定义；来源附着于概念或名称时保留原位置"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#editorialNote",
+          "name": "skos:editorialNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_editorialNote"
+          ],
+          "description": [
+            "0..n 个说明值；编辑提醒，默认保留在管理输出"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#example",
+          "name": "skos:example",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_example"
+          ],
+          "description": [
+            "0..n 个说明值；所解释对象的使用示例"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#historyNote",
+          "name": "skos:historyNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_historyNote"
+          ],
+          "description": [
+            "0..n 个说明值；名称、含义或使用范围的重要历史"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#note",
+          "name": "skos:note",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_note"
+          ],
+          "description": [
+            "0..n 个说明值；不适合归入更具体属性的说明"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#scopeNote",
+          "name": "skos:scopeNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_scopeNote"
+          ],
+          "description": [
+            "0..n 个说明值；使用范围；词表与自建集合按各自字段表必填"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#labelRelation",
+          "name": "skosxl:labelRelation",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Label_skosxl_labelRelation"
+          ],
+          "description": [
+            "0..n；连接两个名称的对称关系，作为具体名称关系的扩展点"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#literalForm",
+          "name": "skosxl:literalForm",
+          "shapes": [
+            "urn:kb-vocab-shacl:LabelLiteralForm",
+            "urn:kb-vocab-shacl:field:Label_skosxl_literalForm"
+          ],
+          "description": [
+            "1；每个版本恰好一个；本地新增名称明确语言，来源未标语种保留诊断"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/ns/prov#wasDerivedFrom",
+          "name": "prov:wasDerivedFrom",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_prov_wasDerivedFrom",
+            "urn:kb-vocab-shacl:field:Evidence_prov_wasDerivedFrom"
+          ],
+          "description": [
+            "0..n；来源与实际派生引用，保持原附着对象。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        }
+      ]
+    },
+    {
+      "type": "Note",
+      "shape": "urn:kb-vocab-shacl:resource:Note",
+      "label": "独立说明",
+      "status": "scope_required",
+      "objects": null,
+      "fields": [
+        {
+          "field": "http://purl.org/dc/elements/1.1/contributor",
+          "name": "dc:contributor",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_contributor"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/creator",
+          "name": "dc:creator",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_creator"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/publisher",
+          "name": "dc:publisher",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_publisher"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/subject",
+          "name": "dc:subject",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_subject"
+          ],
+          "description": [
+            "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/conformsTo",
+          "name": "dcterms:conformsTo",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_conformsTo"
+          ],
+          "description": [
+            "0..n；标准引用及来源原有表述；自有符合性声明须有明确对象和证据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/created",
+          "name": "dcterms:created",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_created"
+          ],
+          "description": [
+            "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/format",
+          "name": "dcterms:format",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_format"
+          ],
+          "description": [
+            "0..n；格式、介质或尺寸的资源引用或文字，如媒体类型字符串；不冒称自有输出的格式"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/identifier",
+          "name": "dcterms:identifier",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_identifier",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_identifier"
+          ],
+          "description": [
+            "0..n；来源标识文字及原类型，不替代资源 IRI"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/isRequiredBy",
+          "name": "dcterms:isRequiredBy",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_isRequiredBy"
+          ],
+          "description": [
+            "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/language",
+          "name": "dcterms:language",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_language"
+          ],
+          "description": [
+            "0..n；受控语言资源或 BCP 47 文字值；资源级语言声明不代替每条名称的标签"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/license",
+          "name": "dcterms:license",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_license"
+          ],
+          "description": [
+            "0..n；优先引用许可文档；无法使用 URI 时可保留能识别许可的文字，不擅自变更许可"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/modified",
+          "name": "dcterms:modified",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_modified"
+          ],
+          "description": [
+            "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/replaces",
+          "name": "dcterms:replaces",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_replaces"
+          ],
+          "description": [
+            "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/rights",
+          "name": "dcterms:rights",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_rights"
+          ],
+          "description": [
+            "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/rightsHolder",
+          "name": "dcterms:rightsHolder",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_rightsHolder"
+          ],
+          "description": [
+            "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/source",
+          "name": "dcterms:source",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_dcterms_source",
+            "urn:kb-vocab-shacl:field:Evidence_dcterms_source"
+          ],
+          "description": [
+            "0..n；来源与实际派生引用，保持原附着对象。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/subject",
+          "name": "dcterms:subject",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_subject"
+          ],
+          "description": [
+            "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/title",
+          "name": "dcterms:title",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_title",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_title"
+          ],
+          "description": [
+            "0..n；标题文字及原语言；与首选标签可同值也可不同，按实际含义保存，不强制相互派生"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/type",
+          "name": "dcterms:type",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_type"
+          ],
+          "description": [
+            "0..n；类别资源引用或文字；保留已有受控类型，不用类别字符串代替 rdf:type 或本地分类决定"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value",
+          "name": "rdf:value",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Note_rdf_value"
+          ],
+          "description": [
+            "本地独立说明为 1；一个带语言的正文值；来源已有多语或嵌套结构继续保留"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#imports",
+          "name": "owl:imports",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_owl_imports"
+          ],
+          "description": [
+            "0..n；允许保留来源的导入声明；读取时不自动加载外部图。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#versionInfo",
+          "name": "owl:versionInfo",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_owl_versionInfo"
+          ],
+          "description": [
+            "0..n；来源版本说明，不覆盖自有词表或工具版本"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/ns/prov#wasDerivedFrom",
+          "name": "prov:wasDerivedFrom",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_prov_wasDerivedFrom",
+            "urn:kb-vocab-shacl:field:Evidence_prov_wasDerivedFrom"
+          ],
+          "description": [
+            "0..n；来源与实际派生引用，保持原附着对象。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        }
+      ]
+    },
+    {
+      "type": "OrderedCollection",
+      "shape": "urn:kb-vocab-shacl:resource:OrderedCollection",
+      "label": "有序集合",
+      "status": "no_objects",
+      "objects": 0,
+      "fields": [
+        {
+          "field": "http://purl.org/dc/elements/1.1/contributor",
+          "name": "dc:contributor",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_contributor"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/creator",
+          "name": "dc:creator",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_creator"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/publisher",
+          "name": "dc:publisher",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_publisher"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/subject",
+          "name": "dc:subject",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_subject"
+          ],
+          "description": [
+            "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/conformsTo",
+          "name": "dcterms:conformsTo",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_conformsTo"
+          ],
+          "description": [
+            "0..n；标准引用及来源原有表述；自有符合性声明须有明确对象和证据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/created",
+          "name": "dcterms:created",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_dcterms_created",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_created"
+          ],
+          "description": [
+            "本地各 0..1；来源不统一收紧；本地记录时间与来源时间分别保留，不能只因多个值就任取一个",
+            "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/description",
+          "name": "dcterms:description",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_description",
+            "urn:kb-vocab-shacl:field:Notes_dcterms_description"
+          ],
+          "description": [
+            "0..n 个文字值；一般描述，不替代定义或范围说明"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/format",
+          "name": "dcterms:format",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_format"
+          ],
+          "description": [
+            "0..n；格式、介质或尺寸的资源引用或文字，如媒体类型字符串；不冒称自有输出的格式"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/identifier",
+          "name": "dcterms:identifier",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_identifier",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_identifier"
+          ],
+          "description": [
+            "0..n；来源标识文字及原类型，不替代资源 IRI"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/isRequiredBy",
+          "name": "dcterms:isRequiredBy",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_isRequiredBy"
+          ],
+          "description": [
+            "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/language",
+          "name": "dcterms:language",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_language"
+          ],
+          "description": [
+            "0..n；受控语言资源或 BCP 47 文字值；资源级语言声明不代替每条名称的标签"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/license",
+          "name": "dcterms:license",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_license"
+          ],
+          "description": [
+            "0..n；优先引用许可文档；无法使用 URI 时可保留能识别许可的文字，不擅自变更许可"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/modified",
+          "name": "dcterms:modified",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_dcterms_modified",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_modified"
+          ],
+          "description": [
+            "本地各 0..1；来源不统一收紧；本地记录时间与来源时间分别保留，不能只因多个值就任取一个",
+            "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/replaces",
+          "name": "dcterms:replaces",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_replaces"
+          ],
+          "description": [
+            "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/rights",
+          "name": "dcterms:rights",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_rights"
+          ],
+          "description": [
+            "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/rightsHolder",
+          "name": "dcterms:rightsHolder",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_rightsHolder"
+          ],
+          "description": [
+            "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/source",
+          "name": "dcterms:source",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_dcterms_source",
+            "urn:kb-vocab-shacl:field:Collection_dcterms_source",
+            "urn:kb-vocab-shacl:field:Evidence_dcterms_source"
+          ],
+          "description": [
+            "0..n；来源与实际派生引用，保持原附着对象。",
+            "各 0..n；来源及实际派生，关联成员选择或转换依据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/subject",
+          "name": "dcterms:subject",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_subject"
+          ],
+          "description": [
+            "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/title",
+          "name": "dcterms:title",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_title",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_title"
+          ],
+          "description": [
+            "0..n；标题文字及原语言；与首选标签可同值也可不同，按实际含义保存，不强制相互派生"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/type",
+          "name": "dcterms:type",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_type"
+          ],
+          "description": [
+            "0..n；类别资源引用或文字；保留已有受控类型，不用类别字符串代替 rdf:type 或本地分类决定"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/iso25964/skos-thes#subGroup",
+          "name": "iso-thes:subGroup",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_iso_thes_subGroup"
+          ],
+          "description": [
+            "0..n；主体也须为 ConceptGroup；具有传递性，是 superGroup 的逆关系"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/iso25964/skos-thes#superGroup",
+          "name": "iso-thes:superGroup",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_iso_thes_superGroup"
+          ],
+          "description": [
+            "0..n；主体也须为 ConceptGroup；具有传递性，子组成员包含于上组"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "name": "rdf:type",
+          "shapes": [
+            "urn:kb-vocab-shacl:DeclaredCollectionType",
+            "urn:kb-vocab-shacl:field:Collection_rdf_type",
+            "urn:kb-vocab-shacl:field:OrderedCollection_rdf_type"
+          ],
+          "description": [
+            "1..n；保留所采用扩展的专用类型。",
+            "1..n；包含 Collection 或 OrderedCollection；采用扩展时保留其专用类型"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2000/01/rdf-schema#label",
+          "name": "rdfs:label",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_rdfs_label",
+            "urn:kb-vocab-shacl:field:Collection_rdfs_label"
+          ],
+          "description": [
+            "0..n；保留来源的组名称或节点标签；不能据此推断概念首选名"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#imports",
+          "name": "owl:imports",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_owl_imports"
+          ],
+          "description": [
+            "0..n；允许保留来源的导入声明；读取时不自动加载外部图。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#versionInfo",
+          "name": "owl:versionInfo",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_owl_versionInfo"
+          ],
+          "description": [
+            "0..n；来源版本说明，不覆盖自有词表或工具版本"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#altLabel",
+          "name": "skos:altLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:AlternativeLiteral",
+            "urn:kb-vocab-shacl:field:Collection_skos_altLabel"
+          ],
+          "description": [
+            "各 0..n；分别为替代名和检索写法，不改变成员或层级"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#changeNote",
+          "name": "skos:changeNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_changeNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_changeNote"
+          ],
+          "description": [
+            "0..n 个说明值；具体变更，由维护记录派生说明或引用",
+            "各 0..n；范围历史及由维护记录派生的具体变更"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#definition",
+          "name": "skos:definition",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_definition"
+          ],
+          "description": [
+            "0..n 个说明值；定义；来源附着于概念或名称时保留原位置"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#editorialNote",
+          "name": "skos:editorialNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_editorialNote"
+          ],
+          "description": [
+            "0..n 个说明值；编辑提醒，默认保留在管理输出"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#example",
+          "name": "skos:example",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_example"
+          ],
+          "description": [
+            "0..n 个说明值；所解释对象的使用示例"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#hiddenLabel",
+          "name": "skos:hiddenLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:HiddenLiteral",
+            "urn:kb-vocab-shacl:field:Collection_skos_hiddenLabel"
+          ],
+          "description": [
+            "各 0..n；分别为替代名和检索写法，不改变成员或层级"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#historyNote",
+          "name": "skos:historyNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_historyNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_historyNote"
+          ],
+          "description": [
+            "0..n 个说明值；名称、含义或使用范围的重要历史",
+            "各 0..n；范围历史及由维护记录派生的具体变更"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#inScheme",
+          "name": "skos:inScheme",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_inScheme"
+          ],
+          "description": [
+            "自有 1；继承 0..1；自有集合关联唯一自有词表；来源图的原归属不受此限"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#member",
+          "name": "skos:member",
+          "shapes": [
+            "urn:kb-vocab-shacl:CollectionMembers",
+            "urn:kb-vocab-shacl:field:Collection_skos_member"
+          ],
+          "description": [
+            "0..n；普通集合成员；有序集合按列表投影，不表示概念上下位"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#memberList",
+          "name": "skos:memberList",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_memberList",
+            "urn:kb-vocab-shacl:field:OrderedCollection_skos_memberList"
+          ],
+          "description": [
+            "1；有序集合须明确提供一个 RDF 列表，空列表也允许。",
+            "有序集合为 1；有限、完整、无循环，允许空列表；显式列表是项目完整性要求"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#notation",
+          "name": "skos:notation",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_skos_notation",
+            "urn:kb-vocab-shacl:field:Collection_skos_notation"
+          ],
+          "description": [
+            "0..n；来源分组代码，不与概念代码合并身份"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#note",
+          "name": "skos:note",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_note"
+          ],
+          "description": [
+            "0..n 个说明值；不适合归入更具体属性的说明"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#prefLabel",
+          "name": "skos:prefLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:PreferredLiteral",
+            "urn:kb-vocab-shacl:field:Collection_skos_prefLabel"
+          ],
+          "description": [
+            "0..n；一般集合和数组可缺名；概念组的名称要求见下文，可直接维护或从 XL 投影"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#scopeNote",
+          "name": "skos:scopeNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_scopeNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_scopeNote"
+          ],
+          "description": [
+            "0..n 个说明值；使用范围；词表与自建集合按各自字段表必填",
+            "自建 1..n；继承 0..n；用途、成员纳入与排除、排序依据；可引用明确的组织规则"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#altLabel",
+          "name": "skosxl:altLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_altLabel",
+            "urn:kb-vocab-shacl:field:Collection_skosxl_altLabel"
+          ],
+          "description": [
+            "0..n；按用途采用独立名称时填写，并提供普通标签投影。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#hiddenLabel",
+          "name": "skosxl:hiddenLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_hiddenLabel",
+            "urn:kb-vocab-shacl:field:Collection_skosxl_hiddenLabel"
+          ],
+          "description": [
+            "0..n；按用途采用独立名称时填写，并提供普通标签投影。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#prefLabel",
+          "name": "skosxl:prefLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_prefLabel",
+            "urn:kb-vocab-shacl:field:Collection_skosxl_prefLabel"
+          ],
+          "description": [
+            "0..n；按用途采用独立名称时填写，并提供普通标签投影。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/ns/prov#wasDerivedFrom",
+          "name": "prov:wasDerivedFrom",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_prov_wasDerivedFrom",
+            "urn:kb-vocab-shacl:field:Collection_prov_wasDerivedFrom",
+            "urn:kb-vocab-shacl:field:Evidence_prov_wasDerivedFrom"
+          ],
+          "description": [
+            "0..n；来源与实际派生引用，保持原附着对象。",
+            "各 0..n；来源及实际派生，关联成员选择或转换依据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        }
+      ]
+    },
+    {
+      "type": "ThesaurusArray",
+      "shape": "urn:kb-vocab-shacl:resource:ThesaurusArray",
+      "label": "数组",
+      "status": "no_objects",
+      "objects": 0,
+      "fields": [
+        {
+          "field": "http://purl.org/dc/elements/1.1/contributor",
+          "name": "dc:contributor",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_contributor"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/creator",
+          "name": "dc:creator",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_creator"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/publisher",
+          "name": "dc:publisher",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_publisher"
+          ],
+          "description": [
+            "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/elements/1.1/subject",
+          "name": "dc:subject",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dc_subject"
+          ],
+          "description": [
+            "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/conformsTo",
+          "name": "dcterms:conformsTo",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_conformsTo"
+          ],
+          "description": [
+            "0..n；标准引用及来源原有表述；自有符合性声明须有明确对象和证据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/created",
+          "name": "dcterms:created",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_dcterms_created",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_created"
+          ],
+          "description": [
+            "本地各 0..1；来源不统一收紧；本地记录时间与来源时间分别保留，不能只因多个值就任取一个",
+            "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/description",
+          "name": "dcterms:description",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_description",
+            "urn:kb-vocab-shacl:field:Notes_dcterms_description"
+          ],
+          "description": [
+            "0..n 个文字值；一般描述，不替代定义或范围说明"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/format",
+          "name": "dcterms:format",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_format"
+          ],
+          "description": [
+            "0..n；格式、介质或尺寸的资源引用或文字，如媒体类型字符串；不冒称自有输出的格式"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/identifier",
+          "name": "dcterms:identifier",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_identifier",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_identifier"
+          ],
+          "description": [
+            "0..n；来源标识文字及原类型，不替代资源 IRI"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/isRequiredBy",
+          "name": "dcterms:isRequiredBy",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_isRequiredBy"
+          ],
+          "description": [
+            "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/language",
+          "name": "dcterms:language",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_language"
+          ],
+          "description": [
+            "0..n；受控语言资源或 BCP 47 文字值；资源级语言声明不代替每条名称的标签"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/license",
+          "name": "dcterms:license",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_license"
+          ],
+          "description": [
+            "0..n；优先引用许可文档；无法使用 URI 时可保留能识别许可的文字，不擅自变更许可"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/modified",
+          "name": "dcterms:modified",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_dcterms_modified",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_modified"
+          ],
+          "description": [
+            "本地各 0..1；来源不统一收紧；本地记录时间与来源时间分别保留，不能只因多个值就任取一个",
+            "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/replaces",
+          "name": "dcterms:replaces",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_replaces"
+          ],
+          "description": [
+            "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/rights",
+          "name": "dcterms:rights",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_rights"
+          ],
+          "description": [
+            "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/rightsHolder",
+          "name": "dcterms:rightsHolder",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_rightsHolder"
+          ],
+          "description": [
+            "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/source",
+          "name": "dcterms:source",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_dcterms_source",
+            "urn:kb-vocab-shacl:field:Collection_dcterms_source",
+            "urn:kb-vocab-shacl:field:Evidence_dcterms_source"
+          ],
+          "description": [
+            "0..n；来源与实际派生引用，保持原附着对象。",
+            "各 0..n；来源及实际派生，关联成员选择或转换依据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/subject",
+          "name": "dcterms:subject",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_subject"
+          ],
+          "description": [
+            "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/title",
+          "name": "dcterms:title",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_dcterms_title",
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_title"
+          ],
+          "description": [
+            "0..n；标题文字及原语言；与首选标签可同值也可不同，按实际含义保存，不强制相互派生"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/dc/terms/type",
+          "name": "dcterms:type",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_dcterms_type"
+          ],
+          "description": [
+            "0..n；类别资源引用或文字；保留已有受控类型，不用类别字符串代替 rdf:type 或本地分类决定"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/iso25964/skos-thes#subGroup",
+          "name": "iso-thes:subGroup",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_iso_thes_subGroup"
+          ],
+          "description": [
+            "0..n；主体也须为 ConceptGroup；具有传递性，是 superGroup 的逆关系"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://purl.org/iso25964/skos-thes#superGroup",
+          "name": "iso-thes:superGroup",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_iso_thes_superGroup"
+          ],
+          "description": [
+            "0..n；主体也须为 ConceptGroup；具有传递性，子组成员包含于上组"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "name": "rdf:type",
+          "shapes": [
+            "urn:kb-vocab-shacl:DeclaredCollectionType",
+            "urn:kb-vocab-shacl:field:Collection_rdf_type",
+            "urn:kb-vocab-shacl:field:ThesaurusArray_rdf_type"
+          ],
+          "description": [
+            "1..n；保留所采用扩展的专用类型。",
+            "1..n；包含 Collection 或 OrderedCollection；采用扩展时保留其专用类型"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2000/01/rdf-schema#label",
+          "name": "rdfs:label",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_rdfs_label",
+            "urn:kb-vocab-shacl:field:Collection_rdfs_label"
+          ],
+          "description": [
+            "0..n；保留来源的组名称或节点标签；不能据此推断概念首选名"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#imports",
+          "name": "owl:imports",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_owl_imports"
+          ],
+          "description": [
+            "0..n；允许保留来源的导入声明；读取时不自动加载外部图。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2002/07/owl#versionInfo",
+          "name": "owl:versionInfo",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Metadata_owl_versionInfo"
+          ],
+          "description": [
+            "0..n；来源版本说明，不覆盖自有词表或工具版本"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#altLabel",
+          "name": "skos:altLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:AlternativeLiteral",
+            "urn:kb-vocab-shacl:field:Collection_skos_altLabel"
+          ],
+          "description": [
+            "各 0..n；分别为替代名和检索写法，不改变成员或层级"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#changeNote",
+          "name": "skos:changeNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_changeNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_changeNote"
+          ],
+          "description": [
+            "0..n 个说明值；具体变更，由维护记录派生说明或引用",
+            "各 0..n；范围历史及由维护记录派生的具体变更"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#definition",
+          "name": "skos:definition",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_definition"
+          ],
+          "description": [
+            "0..n 个说明值；定义；来源附着于概念或名称时保留原位置"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#editorialNote",
+          "name": "skos:editorialNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_editorialNote"
+          ],
+          "description": [
+            "0..n 个说明值；编辑提醒，默认保留在管理输出"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#example",
+          "name": "skos:example",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_example"
+          ],
+          "description": [
+            "0..n 个说明值；所解释对象的使用示例"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#hiddenLabel",
+          "name": "skos:hiddenLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:HiddenLiteral",
+            "urn:kb-vocab-shacl:field:Collection_skos_hiddenLabel"
+          ],
+          "description": [
+            "各 0..n；分别为替代名和检索写法，不改变成员或层级"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#historyNote",
+          "name": "skos:historyNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_historyNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_historyNote"
+          ],
+          "description": [
+            "0..n 个说明值；名称、含义或使用范围的重要历史",
+            "各 0..n；范围历史及由维护记录派生的具体变更"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#inScheme",
+          "name": "skos:inScheme",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_inScheme"
+          ],
+          "description": [
+            "自有 1；继承 0..1；自有集合关联唯一自有词表；来源图的原归属不受此限"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#member",
+          "name": "skos:member",
+          "shapes": [
+            "urn:kb-vocab-shacl:CollectionMembers",
+            "urn:kb-vocab-shacl:field:Collection_skos_member"
+          ],
+          "description": [
+            "0..n；普通集合成员；有序集合按列表投影，不表示概念上下位"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#memberList",
+          "name": "skos:memberList",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_memberList"
+          ],
+          "description": [
+            "有序集合为 1；有限、完整、无循环，允许空列表；显式列表是项目完整性要求"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#notation",
+          "name": "skos:notation",
+          "shapes": [
+            "urn:kb-vocab-shacl:TextMetadata_skos_notation",
+            "urn:kb-vocab-shacl:field:Collection_skos_notation"
+          ],
+          "description": [
+            "0..n；来源分组代码，不与概念代码合并身份"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#note",
+          "name": "skos:note",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Notes_skos_note"
+          ],
+          "description": [
+            "0..n 个说明值；不适合归入更具体属性的说明"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#prefLabel",
+          "name": "skos:prefLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:PreferredLiteral",
+            "urn:kb-vocab-shacl:field:Collection_skos_prefLabel"
+          ],
+          "description": [
+            "0..n；一般集合和数组可缺名；概念组的名称要求见下文，可直接维护或从 XL 投影"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2004/02/skos/core#scopeNote",
+          "name": "skos:scopeNote",
+          "shapes": [
+            "urn:kb-vocab-shacl:field:Collection_skos_scopeNote",
+            "urn:kb-vocab-shacl:field:Notes_skos_scopeNote"
+          ],
+          "description": [
+            "0..n 个说明值；使用范围；词表与自建集合按各自字段表必填",
+            "自建 1..n；继承 0..n；用途、成员纳入与排除、排序依据；可引用明确的组织规则"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#altLabel",
+          "name": "skosxl:altLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_altLabel",
+            "urn:kb-vocab-shacl:field:Collection_skosxl_altLabel"
+          ],
+          "description": [
+            "0..n；按用途采用独立名称时填写，并提供普通标签投影。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#hiddenLabel",
+          "name": "skosxl:hiddenLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_hiddenLabel",
+            "urn:kb-vocab-shacl:field:Collection_skosxl_hiddenLabel"
+          ],
+          "description": [
+            "0..n；按用途采用独立名称时填写，并提供普通标签投影。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/2008/05/skos-xl#prefLabel",
+          "name": "skosxl:prefLabel",
+          "shapes": [
+            "urn:kb-vocab-shacl:XLReference_prefLabel",
+            "urn:kb-vocab-shacl:field:Collection_skosxl_prefLabel"
+          ],
+          "description": [
+            "0..n；按用途采用独立名称时填写，并提供普通标签投影。"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        },
+        {
+          "field": "http://www.w3.org/ns/prov#wasDerivedFrom",
+          "name": "prov:wasDerivedFrom",
+          "shapes": [
+            "urn:kb-vocab-shacl:ResourceEvidence_prov_wasDerivedFrom",
+            "urn:kb-vocab-shacl:field:Collection_prov_wasDerivedFrom",
+            "urn:kb-vocab-shacl:field:Evidence_prov_wasDerivedFrom"
+          ],
+          "description": [
+            "0..n；来源与实际派生引用，保持原附着对象。",
+            "各 0..n；来源及实际派生，关联成员选择或转换依据"
+          ],
+          "present": null,
+          "absent": null,
+          "empty_values": null,
+          "statements": null
+        }
+      ]
+    }
+  ],
+  "fields": [
+    {
+      "field": "http://purl.org/dc/elements/1.1/contributor",
+      "name": "dc:contributor",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/elements/1.1/creator",
+      "name": "dc:creator",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/elements/1.1/publisher",
+      "name": "dc:publisher",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/elements/1.1/subject",
+      "name": "dc:subject",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/conformsTo",
+      "name": "dcterms:conformsTo",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/created",
+      "name": "dcterms:created",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/description",
+      "name": "dcterms:description",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/format",
+      "name": "dcterms:format",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/identifier",
+      "name": "dcterms:identifier",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/isPartOf",
+      "name": "dcterms:isPartOf",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/isReplacedBy",
+      "name": "dcterms:isReplacedBy",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/isRequiredBy",
+      "name": "dcterms:isRequiredBy",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/language",
+      "name": "dcterms:language",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/license",
+      "name": "dcterms:license",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/modified",
+      "name": "dcterms:modified",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/replaces",
+      "name": "dcterms:replaces",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/rights",
+      "name": "dcterms:rights",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/rightsHolder",
+      "name": "dcterms:rightsHolder",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/source",
+      "name": "dcterms:source",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/subject",
+      "name": "dcterms:subject",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/title",
+      "name": "dcterms:title",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/dc/terms/type",
+      "name": "dcterms:type",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/iso25964/skos-thes#subGroup",
+      "name": "iso-thes:subGroup",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://purl.org/iso25964/skos-thes#superGroup",
+      "name": "iso-thes:superGroup",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "name": "rdf:type",
+      "present_subjects": 2300,
+      "statements": 2300
+    },
+    {
+      "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value",
+      "name": "rdf:value",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2000/01/rdf-schema#label",
+      "name": "rdfs:label",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2002/07/owl#deprecated",
+      "name": "owl:deprecated",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2002/07/owl#imports",
+      "name": "owl:imports",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2002/07/owl#versionInfo",
+      "name": "owl:versionInfo",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#altLabel",
+      "name": "skos:altLabel",
+      "present_subjects": 1860,
+      "statements": 6787
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#broadMatch",
+      "name": "skos:broadMatch",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#broader",
+      "name": "skos:broader",
+      "present_subjects": 2285,
+      "statements": 2390
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#changeNote",
+      "name": "skos:changeNote",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#closeMatch",
+      "name": "skos:closeMatch",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#definition",
+      "name": "skos:definition",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#editorialNote",
+      "name": "skos:editorialNote",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#exactMatch",
+      "name": "skos:exactMatch",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#example",
+      "name": "skos:example",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#hasTopConcept",
+      "name": "skos:hasTopConcept",
+      "present_subjects": 1,
+      "statements": 14
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#hiddenLabel",
+      "name": "skos:hiddenLabel",
+      "present_subjects": 14,
+      "statements": 27
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#historyNote",
+      "name": "skos:historyNote",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#inScheme",
+      "name": "skos:inScheme",
+      "present_subjects": 2299,
+      "statements": 2299
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#member",
+      "name": "skos:member",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#memberList",
+      "name": "skos:memberList",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#narrowMatch",
+      "name": "skos:narrowMatch",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#narrower",
+      "name": "skos:narrower",
+      "present_subjects": 417,
+      "statements": 2390
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#notation",
+      "name": "skos:notation",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#note",
+      "name": "skos:note",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "name": "skos:prefLabel",
+      "present_subjects": 2299,
+      "statements": 2299
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#related",
+      "name": "skos:related",
+      "present_subjects": 134,
+      "statements": 192
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#relatedMatch",
+      "name": "skos:relatedMatch",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#scopeNote",
+      "name": "skos:scopeNote",
+      "present_subjects": 41,
+      "statements": 41
+    },
+    {
+      "field": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+      "name": "skos:topConceptOf",
+      "present_subjects": 14,
+      "statements": 14
+    },
+    {
+      "field": "http://www.w3.org/2008/05/skos-xl#altLabel",
+      "name": "skosxl:altLabel",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2008/05/skos-xl#hiddenLabel",
+      "name": "skosxl:hiddenLabel",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2008/05/skos-xl#labelRelation",
+      "name": "skosxl:labelRelation",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2008/05/skos-xl#literalForm",
+      "name": "skosxl:literalForm",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/2008/05/skos-xl#prefLabel",
+      "name": "skosxl:prefLabel",
+      "present_subjects": 0,
+      "statements": 0
+    },
+    {
+      "field": "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "name": "prov:wasDerivedFrom",
+      "present_subjects": 0,
+      "statements": 0
+    }
+  ],
+  "conditions": [
+    {
+      "shape": "urn:kb-vocab-shacl:LocalCollection",
+      "name": "自建集合的完整性要求",
+      "resource_types": [
+        "Collection",
+        "ConceptGroup",
+        "OrderedCollection",
+        "ThesaurusArray"
+      ],
+      "scope_status": "unspecified",
+      "selected_objects": null,
+      "validation_executed": false
+    },
+    {
+      "shape": "urn:kb-vocab-shacl:LocalConcept",
+      "name": "本地新增概念的完整性要求",
+      "resource_types": [
+        "Concept"
+      ],
+      "scope_status": "unspecified",
+      "selected_objects": null,
+      "validation_executed": false
+    },
+    {
+      "shape": "urn:kb-vocab-shacl:LocalConceptGroup",
+      "name": "本地概念组的名称要求",
+      "resource_types": [
+        "ConceptGroup"
+      ],
+      "scope_status": "unspecified",
+      "selected_objects": null,
+      "validation_executed": false
+    },
+    {
+      "shape": "urn:kb-vocab-shacl:LocalDates",
+      "name": "本地记录日期要求，不强加给来源日期",
+      "resource_types": [
+        "Collection",
+        "Concept",
+        "ConceptGroup",
+        "ConceptScheme",
+        "Label",
+        "Note",
+        "OrderedCollection",
+        "ThesaurusArray"
+      ],
+      "scope_status": "unspecified",
+      "selected_objects": null,
+      "validation_executed": false
+    },
+    {
+      "shape": "urn:kb-vocab-shacl:LocalLabel",
+      "name": "本地新增名称的语言要求",
+      "resource_types": [
+        "Label"
+      ],
+      "scope_status": "unspecified",
+      "selected_objects": null,
+      "validation_executed": false
+    },
+    {
+      "shape": "urn:kb-vocab-shacl:LocalNote",
+      "name": "本地独立说明的完整性要求",
+      "resource_types": [
+        "Note"
+      ],
+      "scope_status": "unspecified",
+      "selected_objects": null,
+      "validation_executed": false
+    }
+  ],
+  "unclassified_subjects": [],
+  "untyped_subjects": [],
+  "run": {
+    "input": "/Users/xiu/code/kb-design/output/vocabulary/sources/ccs-2012/cli99-48644c2ed653/ccs-2012.ttl",
+    "input_sha256": "4f15bf7993696d41465ec75a278c07cdbda717e3bc90115ad4d00de1ae1c4bbf",
+    "elapsed_seconds": 0.37095291703008115,
+    "shape_files": {
+      "structure.ttl": "e576fb8c381f7516433c08c2de152f1b4bc0e90df418ef24a01b75b083692c4d",
+      "skos.ttl": "e4f2f09279e85b487449fecd6745dbdc72770d1d2ffba095360172a836eebe96",
+      "skos-xl.ttl": "a89b4b2104c23c8b859347d6cdcc482d23c457de0d31c7e5d6df36e15321140e",
+      "skos-thes.ttl": "f31366f46bf6e12d1d062bf90b20f5394f20d84c57e372cc5b03f4b1c143fc16",
+      "metadata.ttl": "06f70187ded90472dcc2b3b5ecb845574447f026ce90d08e40a307f764bd16b6",
+      "profile.ttl": "07b03516e1dc6d8c7719b5dc8bbf7d7efc1febd58ea4c102669402104264985f"
+    },
+    "shacl_validation_executed": false
+  }
+}

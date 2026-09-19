@@ -1,0 +1,5 @@
+{
+  "pyshacl": "0.31.0",
+  "rdflib": "7.6.0",
+  "kb-vocab-shacl": "0.1.0"
+}

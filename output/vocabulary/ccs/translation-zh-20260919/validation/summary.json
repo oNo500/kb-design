@@ -1,0 +1,31 @@
+{
+  "conforms": true,
+  "generated_label_scope": "英文原构建名称登记与本次中文名称登记的并集，全部明确指定为 LocalLabel",
+  "human_semantic_review": false,
+  "input_sha256": "00657e9f196f1df183f58bb3fdc6604c57a95ec9774c7a1c84be99738b3f9b15",
+  "other_local_conditions_executed": false,
+  "profiles": {
+    "structure": {
+      "by_rule": {},
+      "conforms": true,
+      "local_label_targets": 11260,
+      "results": 0,
+      "seconds": 25.865,
+      "shapes_sha256": "4d50b6e5d3a11998df96475796bfceed5e3c8815f1c243912679a4759e24b787"
+    },
+    "target": {
+      "by_rule": {},
+      "conforms": true,
+      "local_label_targets": 11260,
+      "results": 0,
+      "seconds": 413.865,
+      "shapes_sha256": "eba412791a5273fbd760b09f50061d42387f90c38ad3acdce6a6c9255452d367"
+    }
+  },
+  "seconds": 439.74,
+  "versions": {
+    "kb-vocab-shacl": "0.1.0",
+    "pyshacl": "0.31.0",
+    "rdflib": "7.6.0"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "allow_infos": false,
+  "allow_warnings": false,
+  "conforms": true,
+  "inference": "none",
+  "input_sha256": "6c1f3e618ec723ac64597209bf2ca551ae28bc1b70292a0b6a786612d12e406c",
+  "other_local_conditions_executed": false,
+  "profiles": {
+    "structure": {
+      "by_rule": [],
+      "by_severity": {},
+      "conforms": true,
+      "local_label_targets": 9114,
+      "results": 0,
+      "seconds": 21.374,
+      "shapes_sha256": "13c2882f484e0779735e19aea935b111efc87ce607fa0a7b209fcddc882833d7",
+      "status": "completed"
+    },
+    "target": {
+      "by_rule": [],
+      "by_severity": {},
+      "conforms": true,
+      "local_label_targets": 9114,
+      "results": 0,
+      "seconds": 353.099,
+      "shapes_sha256": "c01e3f192f0e8522256c51d31041ccfebf713abee8923b6e010471c91009326e",
+      "status": "completed"
+    }
+  },
+  "seconds": 375.342,
+  "semantic_review_executed": false,
+  "versions": {
+    "kb-vocab-ccs": "0.1.0",
+    "kb-vocab-shacl": "0.1.0",
+    "pyshacl": "0.31.0",
+    "rdflib": "7.6.0"
+  }
+}

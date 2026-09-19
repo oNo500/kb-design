@@ -1,0 +1,410 @@
+{
+  "fetched_at": "2026-09-19T13:51:34.059525+00:00",
+  "requests": [
+    {
+      "letter": "3",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=3&output=json",
+      "sha256": "85c25c6806b21b4541d30b12c5bf055d99cca204872dd3c330971b0aefeb00fe",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "3"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 25
+      }
+    },
+    {
+      "letter": "a",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=a&output=json",
+      "sha256": "61b5137f8930c3aedcfa38e1ab9d4e4b90b4de2beb8717faef8a9427d547278e",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "a"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 541
+      }
+    },
+    {
+      "letter": "b",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=b&output=json",
+      "sha256": "fb9ceaea7da9d8356f6625475e1dcd5702ebc795766ec7ddc0101c9c130025a7",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "b"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 247
+      }
+    },
+    {
+      "letter": "c",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=c&output=json",
+      "sha256": "c33d420a94a5e59caa0b97b3fb51c120c44d6d6f9d45fa596f693e814be649cd",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "c"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 858
+      }
+    },
+    {
+      "letter": "d",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=d&output=json",
+      "sha256": "b97043537c0d15384ed95c872c39338e463a0f617100bd2bf62c65e2587489e4",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "d"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 639
+      }
+    },
+    {
+      "letter": "e",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=e&output=json",
+      "sha256": "54e8a6f799bc032189deeeb97e22a40bb0fe0cf08ca971af4feab6540e54114e",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "e"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 517
+      }
+    },
+    {
+      "letter": "f",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=f&output=json",
+      "sha256": "52869f810f1a363f42c7e7477641bd388397514c2b0dfa368a2d494b2ede845a",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "f"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 217
+      }
+    },
+    {
+      "letter": "g",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=g&output=json",
+      "sha256": "4167a9f9449267fb6f7ce597695bad2c936bf1d223519eba83e5460238d78cf2",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "g"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 220
+      }
+    },
+    {
+      "letter": "h",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=h&output=json",
+      "sha256": "773c32aa0f06b245160b114555a2159cf15bbaa8ce9906df2a6f3e0ca4f96969",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "h"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 305
+      }
+    },
+    {
+      "letter": "i",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=i&output=json",
+      "sha256": "7fdaa2ef1440b0484c7e617fe98e0fc0af3da33626ca40649e9adea739a3c1f2",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "i"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 507
+      }
+    },
+    {
+      "letter": "j",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=j&output=json",
+      "sha256": "363616326ccd88d8e1c035795076f8ee34f1c762fda4bcb002faf58a05168272",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "j"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 74
+      }
+    },
+    {
+      "letter": "k",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=k&output=json",
+      "sha256": "e72d3b91436a24220d13f05b46bbfe5d1353434418d0bdbb085477aac123c42e",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "k"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 37
+      }
+    },
+    {
+      "letter": "l",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=l&output=json",
+      "sha256": "17012dc513c39791dd665237a97e137cfcd14d674f6ca4047892e3452c08c0a2",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "l"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 183
+      }
+    },
+    {
+      "letter": "m",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=m&output=json",
+      "sha256": "85e26f7fe9fadf787ca2c70a6fc03c2faa2fb2e4f28b6fa0ac2576a0932c2cc7",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "m"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 737
+      }
+    },
+    {
+      "letter": "n",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=n&output=json",
+      "sha256": "f22a68ed0669294ec38885f95bb9683634087e60438ba63adb353ee474bec7ab",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "n"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 427
+      }
+    },
+    {
+      "letter": "o",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=o&output=json",
+      "sha256": "419d8ba79c5fba8b1fad7050c28e00aeb07b8fe7d1dbf5a83b238a235c1a3ecf",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "o"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 283
+      }
+    },
+    {
+      "letter": "p",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=p&output=json",
+      "sha256": "f86e885fbd7ab3a55ad59ccf97ac03e911a3090c253e5a8c79c6a948d9aad802",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "p"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 582
+      }
+    },
+    {
+      "letter": "q",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=q&output=json",
+      "sha256": "8c4d8881999ed537e06bc904c357a4076c32aab856aa6a3b429b5b084a0b33b3",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "q"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 105
+      }
+    },
+    {
+      "letter": "r",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=r&output=json",
+      "sha256": "2a3251a31e20996c5bf79d6fb482f0b371e43a4007db488efd67ace71b5ec638",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "r"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 417
+      }
+    },
+    {
+      "letter": "s",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=s&output=json",
+      "sha256": "d5ef4f1fd2ca71282d0f5c035488ccf6fecdfe38c5ccae3977f581ab6f817afd",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "s"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 1101
+      }
+    },
+    {
+      "letter": "t",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=t&output=json",
+      "sha256": "8c17786a32b23b26e6ebb617f728737fbdb48e21b55c7b11dda9a8f9c1ccf864",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "t"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 365
+      }
+    },
+    {
+      "letter": "u",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=u&output=json",
+      "sha256": "4c051b2d2011eac303b8a94a75e62d6a6bbb53773bf7c863f9ddb36d4670f65b",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "u"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 157
+      }
+    },
+    {
+      "letter": "v",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=v&output=json",
+      "sha256": "7c7d9dcc46186066b70db6b389709ed819dc1ce7745032daecb78b494038f62b",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "v"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 307
+      }
+    },
+    {
+      "letter": "w",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=w&output=json",
+      "sha256": "31967204ab73bf7df9a8e7c103d3b15a3b2dd49d9485b85564a56b7686b3c34f",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "w"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 217
+      }
+    },
+    {
+      "letter": "x",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=x&output=json",
+      "sha256": "d6dcb06e48a179daee4abe65a3870bac2c9c1df31184f57ae82f9d05b060c8d4",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "x"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 18
+      }
+    },
+    {
+      "letter": "y",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=y&output=json",
+      "sha256": "88c7353895249e950c7c36fdfa587c8804dc05589fcbc389bb67b1e1b9876a48",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "y"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 21
+      }
+    },
+    {
+      "letter": "z",
+      "url": "https://vocabularyserver.com/acm/12/services.php?task=letter&arg=z&output=json",
+      "sha256": "78e5f8f781a7efecf85e73d096fc0f08b0ea80e36cccee20215f6aa07e6c76cd",
+      "resume": {
+        "status": "available",
+        "param": {
+          "task": "letter",
+          "arg": "z"
+        },
+        "web_service_version": "2.1",
+        "version": "TemaTres 3.6.1",
+        "cant_result": 4
+      }
+    }
+  ]
+}

@@ -1,0 +1,2507 @@
+[
+  {
+    "id": "10011070",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011070",
+    "en": "Application specific development environments",
+    "source_language": "en",
+    "parents": [
+      "Development frameworks and environments"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011071",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011071",
+    "en": "Software configuration management and version control systems",
+    "source_language": "en",
+    "parents": [
+      "Software notations and tools"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011072",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011072",
+    "en": "Software libraries and repositories",
+    "source_language": "en",
+    "parents": [
+      "Software notations and tools"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011073",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011073",
+    "en": "Software maintenance tools",
+    "source_language": "en",
+    "parents": [
+      "Software notations and tools"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011074",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011074",
+    "en": "Software creation and management",
+    "source_language": "en",
+    "parents": [
+      "Software and its engineering"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011075",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011075",
+    "en": "Designing software",
+    "source_language": "en",
+    "parents": [
+      "Software creation and management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011076",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011076",
+    "en": "Requirements analysis",
+    "source_language": "en",
+    "parents": [
+      "Designing software"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011077",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011077",
+    "en": "Software design engineering",
+    "source_language": "en",
+    "parents": [
+      "Designing software"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011078",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011078",
+    "en": "Software design tradeoffs",
+    "source_language": "en",
+    "parents": [
+      "Designing software"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011079",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011079",
+    "en": "Software implementation planning",
+    "source_language": "en",
+    "parents": [
+      "Designing software"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011080",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011080",
+    "en": "Software design techniques",
+    "source_language": "en",
+    "parents": [
+      "Software implementation planning"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011081",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011081",
+    "en": "Software development process management",
+    "source_language": "en",
+    "parents": [
+      "Software creation and management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011082",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011082",
+    "en": "Software development methods",
+    "source_language": "en",
+    "parents": [
+      "Software development process management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011083",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011083",
+    "en": "Agile software development",
+    "source_language": "en",
+    "parents": [
+      "Software development methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011084",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011084",
+    "en": "Capability Maturity Model",
+    "source_language": "en",
+    "parents": [
+      "Software development methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011085",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011085",
+    "en": "Waterfall model",
+    "source_language": "en",
+    "parents": [
+      "Software development methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011086",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011086",
+    "en": "Spiral model",
+    "source_language": "en",
+    "parents": [
+      "Software development methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011087",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011087",
+    "en": "V-model",
+    "source_language": "en",
+    "parents": [
+      "Software development methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011088",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011088",
+    "en": "Design patterns",
+    "source_language": "en",
+    "parents": [
+      "Software development methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011091",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011091",
+    "en": "Risk management",
+    "source_language": "en",
+    "parents": [
+      "Software development process management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011092",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011092",
+    "en": "Software development techniques",
+    "source_language": "en",
+    "parents": [
+      "Software creation and management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011093",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011093",
+    "en": "Object oriented development",
+    "source_language": "en",
+    "parents": [
+      "Software development techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011094",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011094",
+    "en": "Flowcharts",
+    "source_language": "en",
+    "parents": [
+      "Software development techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011096",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011096",
+    "en": "Reusability",
+    "source_language": "en",
+    "parents": [
+      "Software development techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011097",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011097",
+    "en": "Software product lines",
+    "source_language": "en",
+    "parents": [
+      "Reusability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011099",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011099",
+    "en": "Software verification and validation",
+    "source_language": "en",
+    "parents": [
+      "Software creation and management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011100",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011100",
+    "en": "Operational analysis",
+    "source_language": "en",
+    "parents": [
+      "Software verification and validation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011101",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011101",
+    "en": "Checkpoint / restart",
+    "source_language": "en",
+    "parents": [
+      "Software fault tolerance"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011102",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011102",
+    "en": "Software defect analysis",
+    "source_language": "en",
+    "parents": [
+      "Software verification and validation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011103",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011103",
+    "en": "Software testing and debugging",
+    "source_language": "en",
+    "parents": [
+      "Software defect analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011104",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011104",
+    "en": "Fault tree analysis",
+    "source_language": "en",
+    "parents": [
+      "Software verification and validation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011105",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011105",
+    "en": "Process validation",
+    "source_language": "en",
+    "parents": [
+      "Software verification and validation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011106",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011106",
+    "en": "Walkthroughs",
+    "source_language": "en",
+    "parents": [
+      "Process validation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011107",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011107",
+    "en": "Pair programming",
+    "source_language": "en",
+    "parents": [
+      "Process validation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011108",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011108",
+    "en": "Use cases",
+    "source_language": "en",
+    "parents": [
+      "Process validation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011109",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011109",
+    "en": "Acceptance testing",
+    "source_language": "en",
+    "parents": [
+      "Process validation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011110",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011110",
+    "en": "Traceability",
+    "source_language": "en",
+    "parents": [
+      "Process validation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011111",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011111",
+    "en": "Software post-development issues",
+    "source_language": "en",
+    "parents": [
+      "Software creation and management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011112",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011112",
+    "en": "Backup procedures",
+    "source_language": "en",
+    "parents": [
+      "Software post-development issues"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011113",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011113",
+    "en": "Software evolution",
+    "source_language": "en",
+    "parents": [
+      "Software post-development issues"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011114",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011114",
+    "en": "Software safety",
+    "source_language": "en",
+    "parents": [
+      "Extra-functional properties"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011116",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011116",
+    "en": "Tightly coupled architectures",
+    "source_language": "en",
+    "parents": [
+      "Software architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011117",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011117",
+    "en": "Space-based architectures",
+    "source_language": "en",
+    "parents": [
+      "Software architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011119",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011119",
+    "en": "Abstraction",
+    "source_language": "en",
+    "parents": [
+      "Logic",
+      "Program reasoning"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011120",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011120",
+    "en": "Distributed systems organizing principles",
+    "source_language": "en",
+    "parents": [
+      "Software system structures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011121",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011121",
+    "en": "Contextual design",
+    "source_language": "en",
+    "parents": [
+      "Interaction design process and methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011122",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011122",
+    "en": "Document types",
+    "source_language": "en",
+    "parents": [
+      "General and reference"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011123",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011123",
+    "en": "Cross-computing tools and techniques",
+    "source_language": "en",
+    "parents": [
+      "General and reference"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011124",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011124",
+    "en": "Metrics",
+    "source_language": "en",
+    "parents": [
+      "Cross-computing tools and techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011130",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011130",
+    "en": "Evaluation",
+    "source_language": "en",
+    "parents": [
+      "Cross-computing tools and techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011131",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011131",
+    "en": "Experimentation",
+    "source_language": "en",
+    "parents": [
+      "Cross-computing tools and techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011133",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011133",
+    "en": "Estimation",
+    "source_language": "en",
+    "parents": [
+      "Cross-computing tools and techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011134",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011134",
+    "en": "Collaboration in software development",
+    "source_language": "en",
+    "parents": [
+      "Software creation and management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011135",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011135",
+    "en": "Programming teams",
+    "source_language": "en",
+    "parents": [
+      "Collaboration in software development"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011136",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011136",
+    "en": "Discrete optimization",
+    "source_language": "en",
+    "parents": [
+      "Mathematical optimization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011137",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011137",
+    "en": "Network optimization",
+    "source_language": "en",
+    "parents": [
+      "Discrete optimization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011138",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011138",
+    "en": "Continuous optimization",
+    "source_language": "en",
+    "parents": [
+      "Mathematical optimization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011139",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011139",
+    "en": "Quadratic programming",
+    "source_language": "en",
+    "parents": [
+      "Continuous optimization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011140",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011140",
+    "en": "Nonconvex optimization",
+    "source_language": "en",
+    "parents": [
+      "Continuous optimization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011141",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011141",
+    "en": "Mixed discrete-continuous optimization",
+    "source_language": "en",
+    "parents": [
+      "Mathematical optimization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011142",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011142",
+    "en": "Middleware business process managers",
+    "source_language": "en",
+    "parents": [
+      "Middleware for databases"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011143",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011143",
+    "en": "Hypertext languages",
+    "source_language": "en",
+    "parents": [
+      "Markup languages"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011147",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011147",
+    "en": "Ontologies",
+    "source_language": "en",
+    "parents": [
+      "Document representation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011148",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011148",
+    "en": "Dictionaries",
+    "source_language": "en",
+    "parents": [
+      "Document representation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011149",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011149",
+    "en": "Thesauri",
+    "source_language": "en",
+    "parents": [
+      "Document representation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011150",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011150",
+    "en": "Privacy protections",
+    "source_language": "en",
+    "parents": [
+      "Human and societal aspects of security and privacy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011187",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011187",
+    "en": "Personal computers and PC applications",
+    "source_language": "en",
+    "parents": [
+      "Computers in other domains"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011188",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011188",
+    "en": "Word processors",
+    "source_language": "en",
+    "parents": [
+      "Personal computers and PC applications"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011189",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011189",
+    "en": "Spreadsheets",
+    "source_language": "en",
+    "parents": [
+      "Personal computers and PC applications"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011190",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011190",
+    "en": "Computer games",
+    "source_language": "en",
+    "parents": [
+      "Personal computers and PC applications"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011191",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011191",
+    "en": "Microcomputers",
+    "source_language": "en",
+    "parents": [
+      "Personal computers and PC applications"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011192",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011192",
+    "en": "Verification by model checking",
+    "source_language": "en",
+    "parents": [
+      "Logic"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011194",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011194",
+    "en": "Regret bounds",
+    "source_language": "en",
+    "parents": [
+      "Machine learning theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011253",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011253",
+    "en": "Computational advertising theory",
+    "source_language": "en",
+    "parents": [
+      "Algorithmic game theory and mechanism design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011254",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011254",
+    "en": "Algorithm design techniques",
+    "source_language": "en",
+    "parents": [
+      "Design and analysis of algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011255",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011255",
+    "en": "Backtracking",
+    "source_language": "en",
+    "parents": [
+      "Algorithm design techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011256",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011256",
+    "en": "Branch-and-bound",
+    "source_language": "en",
+    "parents": [
+      "Algorithm design techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011257",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011257",
+    "en": "Divide and conquer",
+    "source_language": "en",
+    "parents": [
+      "Algorithm design techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011258",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011258",
+    "en": "Dynamic programming",
+    "source_language": "en",
+    "parents": [
+      "Algorithm design techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011259",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011259",
+    "en": "Preconditioning",
+    "source_language": "en",
+    "parents": [
+      "Algorithm design techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011295",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011295",
+    "en": "Scene anomaly detection",
+    "source_language": "en",
+    "parents": [
+      "Computer vision tasks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011304",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011304",
+    "en": "Active learning settings",
+    "source_language": "en",
+    "parents": [
+      "Learning settings"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011305",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011305",
+    "en": "Semi-supervised learning settings",
+    "source_language": "en",
+    "parents": [
+      "Learning settings"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011310",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011310",
+    "en": "Simulation by animation",
+    "source_language": "en",
+    "parents": [
+      "Simulation types and techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011311",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011311",
+    "en": "Semantics",
+    "source_language": "en",
+    "parents": [
+      "Formal language definitions"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011559",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011559",
+    "en": "Global positioning systems",
+    "source_language": "en",
+    "parents": [
+      "Spatial-temporal systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011581",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011581",
+    "en": "Internet telephony",
+    "source_language": "en",
+    "parents": [
+      "Telecommunications"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011595",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011595",
+    "en": "CS1",
+    "source_language": "en",
+    "parents": [
+      "Computer science education"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011598",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011598",
+    "en": "Block and stream ciphers",
+    "source_language": "en",
+    "parents": [
+      "Symmetric cryptography and hash functions"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011600",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011600",
+    "en": "Hash functions and message authentication codes",
+    "source_language": "en",
+    "parents": [
+      "Symmetric cryptography and hash functions"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011602",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011602",
+    "en": "Digital signatures",
+    "source_language": "en",
+    "parents": [
+      "Public key (asymmetric) techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011607",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011607",
+    "en": "Database activity monitoring",
+    "source_language": "en",
+    "parents": [
+      "Database and storage security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011608",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011608",
+    "en": "Information flow control",
+    "source_language": "en",
+    "parents": [
+      "Systems security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011610",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011610",
+    "en": "Denial-of-service attacks",
+    "source_language": "en",
+    "parents": [
+      "Network security",
+      "Systems security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011611",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011611",
+    "en": "Spoofing attacks",
+    "source_language": "en",
+    "parents": [
+      "Social engineering attacks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011612",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011612",
+    "en": "Phishing",
+    "source_language": "en",
+    "parents": [
+      "Social engineering attacks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011617",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011617",
+    "en": "Firewalls",
+    "source_language": "en",
+    "parents": [
+      "Network security",
+      "Systems security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011618",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011618",
+    "en": "Graphical / visual passwords",
+    "source_language": "en",
+    "parents": [
+      "Authentication"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011619",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011619",
+    "en": "Multi-factor authentication",
+    "source_language": "en",
+    "parents": [
+      "Authentication"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011621",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011621",
+    "en": "Hardware-based security protocols",
+    "source_language": "en",
+    "parents": [
+      "Hardware security implementation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011633",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011633",
+    "en": "Penetration testing",
+    "source_language": "en",
+    "parents": [
+      "Vulnerability management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011634",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011634",
+    "en": "Vulnerability management",
+    "source_language": "en",
+    "parents": [
+      "Systems security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011635",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011635",
+    "en": "Vulnerability scanners",
+    "source_language": "en",
+    "parents": [
+      "Vulnerability management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011642",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011642",
+    "en": "Cognitive radios",
+    "source_language": "en",
+    "parents": [
+      "Wireless access points, base stations and infrastructure"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011643",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011643",
+    "en": "Network topology types",
+    "source_language": "en",
+    "parents": [
+      "Network structure"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011644",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011644",
+    "en": "Point-to-point networks",
+    "source_language": "en",
+    "parents": [
+      "Network topology types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011645",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011645",
+    "en": "Bus networks",
+    "source_language": "en",
+    "parents": [
+      "Network topology types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011646",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011646",
+    "en": "Star networks",
+    "source_language": "en",
+    "parents": [
+      "Network topology types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011647",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011647",
+    "en": "Ring networks",
+    "source_language": "en",
+    "parents": [
+      "Network topology types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011648",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011648",
+    "en": "Token ring networks",
+    "source_language": "en",
+    "parents": [
+      "Ring networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011649",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011649",
+    "en": "Fiber distributed data interface (FDDI)",
+    "source_language": "en",
+    "parents": [
+      "Ring networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011650",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011650",
+    "en": "Mesh networks",
+    "source_language": "en",
+    "parents": [
+      "Network topology types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011651",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011651",
+    "en": "Hybrid networks",
+    "source_language": "en",
+    "parents": [
+      "Network topology types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011655",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011655",
+    "en": "Network File System (NFS) protocol",
+    "source_language": "en",
+    "parents": [
+      "Network protocols"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011657",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011657",
+    "en": "Network adapters",
+    "source_language": "en",
+    "parents": [
+      "End nodes"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011659",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011659",
+    "en": "Repeaters",
+    "source_language": "en",
+    "parents": [
+      "Physical links"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011660",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011660",
+    "en": "Network servers",
+    "source_language": "en",
+    "parents": [
+      "End nodes"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011661",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011661",
+    "en": "Wireless local area networks",
+    "source_language": "en",
+    "parents": [
+      "Wireless access networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011662",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011662",
+    "en": "Wireless personal area networks",
+    "source_language": "en",
+    "parents": [
+      "Wireless access networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011663",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011663",
+    "en": "Wireless mesh networks",
+    "source_language": "en",
+    "parents": [
+      "Mesh networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011666",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011666",
+    "en": "Touch screens",
+    "source_language": "en",
+    "parents": [
+      "Interaction devices",
+      "Tactile and hand-based interfaces"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011667",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011667",
+    "en": "Scanners",
+    "source_language": "en",
+    "parents": [
+      "Communication hardware, interfaces and storage"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011668",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011668",
+    "en": "Mobile ad hoc networks",
+    "source_language": "en",
+    "parents": [
+      "Ad hoc networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011669",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011669",
+    "en": "Wireless devices",
+    "source_language": "en",
+    "parents": [
+      "Communication hardware, interfaces and storage"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011670",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011670",
+    "en": "Wireless integrated network sensors",
+    "source_language": "en",
+    "parents": [
+      "Communication hardware, interfaces and storage"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011671",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011671",
+    "en": "Latent Dirichlet allocation",
+    "source_language": "en",
+    "parents": [
+      "Factorization methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011672",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011672",
+    "en": "Network performance analysis",
+    "source_language": "en",
+    "parents": [
+      "Network performance evaluation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011673",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011673",
+    "en": "Design",
+    "source_language": "en",
+    "parents": [
+      "Cross-computing tools and techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011674",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011674",
+    "en": "Performance",
+    "source_language": "en",
+    "parents": [
+      "Cross-computing tools and techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011675",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011675",
+    "en": "Validation",
+    "source_language": "en",
+    "parents": [
+      "Cross-computing tools and techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011676",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011676",
+    "en": "Verification",
+    "source_language": "en",
+    "parents": [
+      "Cross-computing tools and techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011677",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011677",
+    "en": "Operations scheduling",
+    "source_language": "en",
+    "parents": [
+      "High-level and register-transfer level synthesis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011678",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011678",
+    "en": "Process synchronization",
+    "source_language": "en",
+    "parents": [
+      "Process management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011679",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011679",
+    "en": "Real-time systems software",
+    "source_language": "en",
+    "parents": [
+      "Software system structures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011680",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011680",
+    "en": "Organizing principles for web applications",
+    "source_language": "en",
+    "parents": [
+      "Distributed systems organizing principles"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011681",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011681",
+    "en": "3-tier architectures",
+    "source_language": "en",
+    "parents": [
+      "Software architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011682",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011682",
+    "en": "Abstraction, modeling and modularity",
+    "source_language": "en",
+    "parents": [
+      "Software system structures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011683",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011683",
+    "en": "Access protection",
+    "source_language": "en",
+    "parents": [
+      "Correctness"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011685",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011685",
+    "en": "Database interoperability",
+    "source_language": "en",
+    "parents": [
+      "Database theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011686",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011686",
+    "en": "Mathematical software performance",
+    "source_language": "en",
+    "parents": [
+      "Mathematical software"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011687",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011687",
+    "en": "Software usability",
+    "source_language": "en",
+    "parents": [
+      "Extra-functional properties"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011688",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011688",
+    "en": "Parsers",
+    "source_language": "en",
+    "parents": [
+      "Compilers"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011689",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011689",
+    "en": "Document scripting languages",
+    "source_language": "en",
+    "parents": [
+      "Document preparation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011690",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011690",
+    "en": "Specification languages",
+    "source_language": "en",
+    "parents": [
+      "System description languages"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011691",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011691",
+    "en": "Error handling and recovery",
+    "source_language": "en",
+    "parents": [
+      "Software development techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011692",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011692",
+    "en": "Formal software verification",
+    "source_language": "en",
+    "parents": [
+      "Software verification and validation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011693",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011693",
+    "en": "Empirical software validation",
+    "source_language": "en",
+    "parents": [
+      "Software verification and validation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011694",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011694",
+    "en": "Interface design prototyping",
+    "source_language": "en",
+    "parents": [
+      "Interaction design process and methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011695",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011695",
+    "en": "Software version control",
+    "source_language": "en",
+    "parents": [
+      "Software post-development issues"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011696",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011696",
+    "en": "Maintaining software",
+    "source_language": "en",
+    "parents": [
+      "Software post-development issues"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011697",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011697",
+    "en": "System administration",
+    "source_language": "en",
+    "parents": [
+      "Software post-development issues"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011698",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011698",
+    "en": "Online auctions policy",
+    "source_language": "en",
+    "parents": [
+      "Commerce policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011699",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011699",
+    "en": "Presentation of retrieval results",
+    "source_language": "en",
+    "parents": [
+      "Evaluation of retrieval results"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011700",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011700",
+    "en": "Searching with auxiliary databases",
+    "source_language": "en",
+    "parents": [
+      "Search engine architectures and scalability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011702",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011702",
+    "en": "Side-channel analysis and countermeasures",
+    "source_language": "en",
+    "parents": [
+      "Hardware attacks and countermeasures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011703",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011703",
+    "en": "Usability in security and privacy",
+    "source_language": "en",
+    "parents": [
+      "Human and societal aspects of security and privacy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011704",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011704",
+    "en": "Network measurement",
+    "source_language": "en",
+    "parents": [
+      "Network performance evaluation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011705",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011705",
+    "en": "Packet-switching networks",
+    "source_language": "en",
+    "parents": [
+      "Network types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011707",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011707",
+    "en": "Wireframes",
+    "source_language": "en",
+    "parents": [
+      "Systems and tools for interaction design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011709",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011709",
+    "en": "Consumer products policy",
+    "source_language": "en",
+    "parents": [
+      "Commerce policy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011710",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011710",
+    "en": "Data structures and algorithms for data management",
+    "source_language": "en",
+    "parents": [
+      "Database theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011711",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011711",
+    "en": "Database query processing and optimization (theory)",
+    "source_language": "en",
+    "parents": [
+      "Database theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011712",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011712",
+    "en": "Business intelligence",
+    "source_language": "en",
+    "parents": [
+      "Business process management",
+      "Retrieval tasks and goals"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011713",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011713",
+    "en": "High-level language architectures",
+    "source_language": "en",
+    "parents": [
+      "Other architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011714",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011714",
+    "en": "Special purpose systems",
+    "source_language": "en",
+    "parents": [
+      "Other architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011715",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011715",
+    "en": "Electro-mechanical devices",
+    "source_language": "en",
+    "parents": [
+      "Communication hardware, interfaces and storage"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011716",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011716",
+    "en": "Reconfigurable logic applications",
+    "source_language": "en",
+    "parents": [
+      "Reconfigurable logic and FPGAs"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011717",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011717",
+    "en": "Analog and mixed-signal circuit synthesis",
+    "source_language": "en",
+    "parents": [
+      "Analog and mixed-signal circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011718",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011718",
+    "en": "Hard and soft IP",
+    "source_language": "en",
+    "parents": [
+      "Design reuse and communication-based design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011719",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011719",
+    "en": "Switching devices power issues",
+    "source_language": "en",
+    "parents": [
+      "Power estimation and optimization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011720",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011720",
+    "en": "Interconnect power issues",
+    "source_language": "en",
+    "parents": [
+      "Power estimation and optimization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011721",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011721",
+    "en": "Circuits power issues",
+    "source_language": "en",
+    "parents": [
+      "Power estimation and optimization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011722",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011722",
+    "en": "Chip-level power issues",
+    "source_language": "en",
+    "parents": [
+      "Power estimation and optimization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011723",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011723",
+    "en": "Platform power issues",
+    "source_language": "en",
+    "parents": [
+      "Power estimation and optimization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011724",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011724",
+    "en": "Enterprise level and data centers power issues",
+    "source_language": "en",
+    "parents": [
+      "Power estimation and optimization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011726",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011726",
+    "en": "Quantum computation",
+    "source_language": "en",
+    "parents": [
+      "Quantum technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011727",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011727",
+    "en": "Quantum communication and cryptography",
+    "source_language": "en",
+    "parents": [
+      "Quantum computation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011728",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011728",
+    "en": "Quantum error correction and fault tolerance",
+    "source_language": "en",
+    "parents": [
+      "Quantum computation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011729",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011729",
+    "en": "Quantum dots and cellular automata",
+    "source_language": "en",
+    "parents": [
+      "Quantum technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011730",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011730",
+    "en": "Online social networks",
+    "source_language": "en",
+    "parents": [
+      "Overlay and other logical network structures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011731",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011731",
+    "en": "Enterprise interoperability",
+    "source_language": "en",
+    "parents": [
+      "Enterprise computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011732",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011732",
+    "en": "Information integration and interoperability",
+    "source_language": "en",
+    "parents": [
+      "Enterprise interoperability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011733",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011733",
+    "en": "Data integration",
+    "source_language": "en",
+    "parents": [
+      "Database theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011734",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011734",
+    "en": "Logic and databases",
+    "source_language": "en",
+    "parents": [
+      "Database theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011735",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011735",
+    "en": "Theory of database privacy and security",
+    "source_language": "en",
+    "parents": [
+      "Database theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011736",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011736",
+    "en": "Incomplete, inconsistent, and uncertain databases",
+    "source_language": "en",
+    "parents": [
+      "Database theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011738",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011738",
+    "en": "Accessibility",
+    "source_language": "en",
+    "parents": [
+      "Human-centered computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011739",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011739",
+    "en": "Network privacy and anonymity",
+    "source_language": "en",
+    "parents": [
+      "Network properties"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011740",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011740",
+    "en": "Type theory",
+    "source_language": "en",
+    "parents": [
+      "Logic"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011741",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011741",
+    "en": "Hoare logic",
+    "source_language": "en",
+    "parents": [
+      "Logic"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011742",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011742",
+    "en": "Separation logic",
+    "source_language": "en",
+    "parents": [
+      "Logic"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011743",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011743",
+    "en": "Fault-tolerant network topologies",
+    "source_language": "en",
+    "parents": [
+      "Dependable and fault-tolerant systems and networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011744",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011744",
+    "en": "Virtual worlds training simulations",
+    "source_language": "en",
+    "parents": [
+      "Virtual worlds software"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011745",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011745",
+    "en": "Public key encryption",
+    "source_language": "en",
+    "parents": [
+      "Public key (asymmetric) techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011746",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011746",
+    "en": "Hardware reverse engineering",
+    "source_language": "en",
+    "parents": [
+      "Intellectual property",
+      "Security in hardware"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011747",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011747",
+    "en": "File system security",
+    "source_language": "en",
+    "parents": [
+      "Systems security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011748",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011748",
+    "en": "Empirical studies in HCI",
+    "source_language": "en",
+    "parents": [
+      "Human computer interaction (HCI)"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011749",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011749",
+    "en": "Laboratory experiments",
+    "source_language": "en",
+    "parents": [
+      "HCI design and evaluation methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011750",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011750",
+    "en": "Field studies",
+    "source_language": "en",
+    "parents": [
+      "HCI design and evaluation methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011751",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011751",
+    "en": "Collaborative interaction",
+    "source_language": "en",
+    "parents": [
+      "Interaction paradigms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011752",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011752",
+    "en": "Haptic devices",
+    "source_language": "en",
+    "parents": [
+      "Interaction devices",
+      "Tactile and hand-based interfaces"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011753",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011753",
+    "en": "Text input",
+    "source_language": "en",
+    "parents": [
+      "Interaction techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011754",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011754",
+    "en": "Pointing",
+    "source_language": "en",
+    "parents": [
+      "Interaction techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011755",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011755",
+    "en": "Gestural input",
+    "source_language": "en",
+    "parents": [
+      "Interaction techniques"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011756",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011756",
+    "en": "User interface programming",
+    "source_language": "en",
+    "parents": [
+      "Interactive systems and tools"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011757",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011757",
+    "en": "User interface toolkits",
+    "source_language": "en",
+    "parents": [
+      "Interactive systems and tools"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011758",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011758",
+    "en": "Interaction design theory, concepts and paradigms",
+    "source_language": "en",
+    "parents": [
+      "Interaction design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011759",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011759",
+    "en": "Empirical studies in interaction design",
+    "source_language": "en",
+    "parents": [
+      "Interaction design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011760",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011760",
+    "en": "Systems and tools for interaction design",
+    "source_language": "en",
+    "parents": [
+      "Interaction design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011761",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011761",
+    "en": "Social media",
+    "source_language": "en",
+    "parents": [
+      "Collaborative and social computing theory, concepts and paradigms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011762",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011762",
+    "en": "Empirical studies in collaborative and social computing",
+    "source_language": "en",
+    "parents": [
+      "Collaborative and social computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011763",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011763",
+    "en": "Ethnographic studies",
+    "source_language": "en",
+    "parents": [
+      "Collaborative and social computing design and evaluation methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011764",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011764",
+    "en": "Collaborative and social computing devices",
+    "source_language": "en",
+    "parents": [
+      "Collaborative and social computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011765",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011765",
+    "en": "Synchronous editors",
+    "source_language": "en",
+    "parents": [
+      "Collaborative and social computing systems and tools"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011766",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011766",
+    "en": "Asynchronous editors",
+    "source_language": "en",
+    "parents": [
+      "Collaborative and social computing systems and tools"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011767",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011767",
+    "en": "Empirical studies in ubiquitous and mobile computing",
+    "source_language": "en",
+    "parents": [
+      "Ubiquitous and mobile computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011768",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011768",
+    "en": "Visualization theory, concepts and paradigms",
+    "source_language": "en",
+    "parents": [
+      "Visualization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011769",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011769",
+    "en": "Empirical studies in visualization",
+    "source_language": "en",
+    "parents": [
+      "Visualization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011770",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011770",
+    "en": "Visualization design and evaluation methods",
+    "source_language": "en",
+    "parents": [
+      "Visualization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011771",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011771",
+    "en": "Visualization toolkits",
+    "source_language": "en",
+    "parents": [
+      "Visualization systems and tools"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011772",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011772",
+    "en": "Accessibility theory, concepts and paradigms",
+    "source_language": "en",
+    "parents": [
+      "Accessibility"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011773",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011773",
+    "en": "Empirical studies in accessibility",
+    "source_language": "en",
+    "parents": [
+      "Accessibility"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011774",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011774",
+    "en": "Accessibility design and evaluation methods",
+    "source_language": "en",
+    "parents": [
+      "Accessibility"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011775",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011775",
+    "en": "Accessibility technologies",
+    "source_language": "en",
+    "parents": [
+      "Accessibility"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011776",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011776",
+    "en": "Accessibility systems and tools",
+    "source_language": "en",
+    "parents": [
+      "Accessibility"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011777",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011777",
+    "en": "Concurrent computing methodologies",
+    "source_language": "en",
+    "parents": [
+      "Computing methodologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10011778",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011778",
+    "en": "Concurrent algorithms",
+    "source_language": "en",
+    "parents": [
+      "Concurrent computing methodologies",
+      "Design and analysis of algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  }
+]

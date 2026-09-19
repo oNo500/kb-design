@@ -1,0 +1,14 @@
+{
+  "source_url": "https://dl.acm.org/pb-assets/dl_ccs/acm_ccs2012-1626988337597.xml",
+  "resolved_url": "https://dl.acm.org/pb-assets/dl_ccs/acm_ccs2012-1626988337597.xml",
+  "retrieved_at": "2026-09-19T13:14:52.656203+00:00",
+  "sha256": "49f7911725537408517d00a3a7fef2ab5600777a9e1c1b79d9a0925b868dc045",
+  "bytes": 613931,
+  "http_last_modified": "Thu, 22 Jul 2021 21:12:17 GMT",
+  "etag": null,
+  "content_type": "text/xml;charset=UTF-8",
+  "status": "evaluation_only",
+  "official_version_name": "CCS 2012",
+  "license_verification": "not verified",
+  "formal_adoption": false
+}

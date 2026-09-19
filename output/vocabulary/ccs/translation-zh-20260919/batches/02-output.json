@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "10003243",
+    "zh": "专家系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003244",
+    "zh": "数据分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003245",
+    "zh": "移动信息处理系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003246",
+    "zh": "过程控制系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003247",
+    "zh": "信号处理系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003248",
+    "zh": "数字信号处理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003249",
+    "zh": "波束成形",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003250",
+    "zh": "降噪",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003251",
+    "zh": "多媒体信息系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003253",
+    "zh": "多媒体数据库",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003254",
+    "zh": "超文本／超媒体",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003255",
+    "zh": "多媒体流传输",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003256",
+    "zh": "多媒体内容创作",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003258",
+    "zh": "大型多人在线游戏",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003259",
+    "zh": "供应链管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003260",
+    "zh": "万维网",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003261",
+    "zh": "Web 搜索与信息发现",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003262",
+    "zh": "网页抓取",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003263",
+    "zh": "Web 搜索引擎",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003264",
+    "zh": "Web 索引",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003265",
+    "zh": "网页与网站排序",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003266",
+    "zh": "垃圾信息检测",
+    "decision": "translated",
+    "note": "依 Web 搜索引擎语境指垃圾网页等垃圾信息，非仅垃圾邮件。"
+  },
+  {
+    "id": "10003267",
+    "zh": "内容排序",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003268",
+    "zh": "排序",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003269",
+    "zh": "协同过滤",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003270",
+    "zh": "社交推荐",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003271",
+    "zh": "个性化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003272",
+    "zh": "在线广告",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003273",
+    "zh": "付费搜索广告",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003274",
+    "zh": "内容匹配广告",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003275",
+    "zh": "展示广告",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003276",
+    "zh": "社交广告",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003277",
+    "zh": "Web 挖掘",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003278",
+    "zh": "网站包装",
+    "decision": "translated",
+    "note": "依 Web 挖掘语境采用包装器相关用法，非网站视觉包装；模型判断，外部用法未核实。"
+  },
+  {
+    "id": "10003279",
+    "zh": "数据抽取与集成",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003280",
+    "zh": "Web 日志分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003281",
+    "zh": "流量分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003282",
+    "zh": "Web 应用",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003286",
+    "zh": "互联网通信工具",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003287",
+    "zh": "电子邮件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003288",
+    "zh": "博客",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003289",
+    "zh": "短信通信",
+    "decision": "translated",
+    "note": "依通信工具语境采用短信通信；原名也可泛指文字消息通信。"
+  },
+  {
+    "id": "10003290",
+    "zh": "聊天",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003291",
+    "zh": "网络会议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003292",
+    "zh": "社交网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003293",
+    "zh": "社会网络分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003296",
+    "zh": "众包",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003297",
+    "zh": "答案排序",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003298",
+    "zh": "信任",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003299",
+    "zh": "激励机制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003300",
+    "zh": "Web 界面",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003301",
+    "zh": "维基",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003302",
+    "zh": "浏览器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003303",
+    "zh": "混搭应用",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003304",
+    "zh": "Web 服务",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003305",
+    "zh": "简单对象访问协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003306",
+    "zh": "RESTful Web 服务",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003307",
+    "zh": "Web 服务描述语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003308",
+    "zh": "统一描述、发现与集成",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003309",
+    "zh": "Web 数据描述语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003310",
+    "zh": "可扩展标记语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003312",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "语言名称通常直接使用 XPath，保留原名。"
+  },
+  {
+    "id": "10003313",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "语言名称通常直接使用 XQuery，保留原名。"
+  },
+  {
+    "id": "10003314",
+    "zh": "资源描述框架",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003315",
+    "zh": "语义网描述语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003316",
+    "zh": "Web 本体语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003317",
+    "zh": "信息检索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003318",
+    "zh": "文档表示",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003319",
+    "zh": "文档结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003320",
+    "zh": "文档主题模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003321",
+    "zh": "内容分析与特征选择",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003323",
+    "zh": "数据编码与规范化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003324",
+    "zh": "文档集合模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003325",
+    "zh": "信息检索查询处理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003326",
+    "zh": "查询表示",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003327",
+    "zh": "查询意图",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003328",
+    "zh": "查询日志分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003329",
+    "zh": "查询建议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003330",
+    "zh": "查询重构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003331",
+    "zh": "用户与交互式检索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003332",
+    "zh": "用户模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003333",
+    "zh": "任务模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003334",
+    "zh": "用户研究",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003336",
+    "zh": "搜索界面",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003337",
+    "zh": "协同搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003338",
+    "zh": "检索模型与排序",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003339",
+    "zh": "排序聚合",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003340",
+    "zh": "概率检索模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003341",
+    "zh": "语言模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003342",
+    "zh": "相似性度量",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003343",
+    "zh": "排序学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003344",
+    "zh": "组合、融合与联邦搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003345",
+    "zh": "信息检索多样性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003346",
+    "zh": "数据库 Top-k 检索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003347",
+    "zh": "检索任务与目标",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003348",
+    "zh": "问答",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003349",
+    "zh": "文档过滤",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003350",
+    "zh": "推荐系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003351",
+    "zh": "数据挖掘",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003352",
+    "zh": "信息抽取",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003353",
+    "zh": "情感分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003354",
+    "zh": "专家搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003355",
+    "zh": "近重复与抄袭检测",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003356",
+    "zh": "聚类与分类",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003357",
+    "zh": "自动摘要",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003359",
+    "zh": "检索结果评价",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003360",
+    "zh": "测试集",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003361",
+    "zh": "相关性评价",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003362",
+    "zh": "检索效果",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003363",
+    "zh": "检索效率",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003365",
+    "zh": "搜索引擎架构与可扩展性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003366",
+    "zh": "搜索引擎索引",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003367",
+    "zh": "搜索索引压缩",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003368",
+    "zh": "分布式检索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003369",
+    "zh": "对等网络检索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003370",
+    "zh": "移动设备上的检索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003371",
+    "zh": "专门信息检索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003376",
+    "zh": "社会化标注",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003381",
+    "zh": "结构与多语言文本搜索",
+    "decision": "translated",
+    "note": "原名使用 Structure 而非 Structured，按原名保留结构表述；与下位结构化文本搜索的措辞差异待核。"
+  },
+  {
+    "id": "10003382",
+    "zh": "结构化文本搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003383",
+    "zh": "数学检索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003384",
+    "zh": "化学与生物化学检索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003385",
+    "zh": "多语言与跨语言检索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003386",
+    "zh": "多媒体与多模态检索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003387",
+    "zh": "图像搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003388",
+    "zh": "视频搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003389",
+    "zh": "语音／音频搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003390",
+    "zh": "音乐检索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003392",
+    "zh": "数字图书馆与档案馆",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003393",
+    "zh": "企业搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003394",
+    "zh": "桌面搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003398",
+    "zh": "查询算子",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003399",
+    "zh": "联邦数据库",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003400",
+    "zh": "数据库中间件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003401",
+    "zh": "数据库 Web 服务器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003402",
+    "zh": "应用服务器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003403",
+    "zh": "对象关系映射工具",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003405",
+    "zh": "数据联邦工具",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003406",
+    "zh": "数据复制工具",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003407",
+    "zh": "分布式事务监控器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003408",
+    "zh": "消息队列",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003409",
+    "zh": "服务总线",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003410",
+    "zh": "企业应用集成工具",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003411",
+    "zh": "堆（数据结构）",
+    "decision": "translated",
+    "note": "按首选名称保留数据结构限定；其父级为记录存储方案，与通常所指堆文件存在语义疑点，未据此改写原名。"
+  },
+  {
+    "id": "10003412",
+    "zh": "散列文件组织",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003413",
+    "zh": "索引文件组织",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003414",
+    "zh": "链表",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003415",
+    "zh": "B 树",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003416",
+    "zh": "虚拟节点",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003417",
+    "zh": "索引节点",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003418",
+    "zh": "基于区段的文件结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003419",
+    "zh": "槽式页",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003420",
+    "zh": "页内空间管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003421",
+    "zh": "页间空闲空间管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003422",
+    "zh": "定长属性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003423",
+    "zh": "变长属性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003424",
+    "zh": "记录中的空值",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003425",
+    "zh": "查询规划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003426",
+    "zh": "连接算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003427",
+    "zh": "数据加锁",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003428",
+    "zh": "事务日志记录",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003429",
+    "zh": "数据库恢复",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003434",
+    "zh": "关系存储",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003435",
+    "zh": "水平分区",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003436",
+    "zh": "垂直分区",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003437",
+    "zh": "列式存储",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003438",
+    "zh": "混合存储布局",
+    "decision": "translated",
+    "note": "范围注释将 PAX 展开为 Portable Archive Exchange，与关系存储语境存在疑点；仅翻译首选名称，未采纳该展开。"
+  },
+  {
+    "id": "10003439",
+    "zh": "压缩策略",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003442",
+    "zh": "企业应用",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003443",
+    "zh": "关联规则",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003444",
+    "zh": "聚类",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003445",
+    "zh": "最近邻搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003446",
+    "zh": "数据流挖掘",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003447",
+    "zh": "计算广告",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003449",
+    "zh": "声誉系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003450",
+    "zh": "数据访问方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003451",
+    "zh": "数据布局",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003452",
+    "zh": "闪存",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003453",
+    "zh": "相变存储器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003456",
+    "zh": "社会与职业主题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003457",
+    "zh": "职业主题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003458",
+    "zh": "计算产业",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003459",
+    "zh": "计算标准、RFC 与指南",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003460",
+    "zh": "行业统计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003461",
+    "zh": "计算机制造",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003462",
+    "zh": "计算／技术政策",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003463",
+    "zh": "知识产权",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003464",
+    "zh": "著作权",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003465",
+    "zh": "软件逆向工程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003466",
+    "zh": "专利",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003467",
+    "zh": "商标",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003469",
+    "zh": "互联网治理／域名",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003470",
+    "zh": "许可",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003471",
+    "zh": "条约",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003472",
+    "zh": "数据库保护法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003473",
+    "zh": "间接责任",
+    "decision": "translated",
+    "note": "依知识产权语境采用间接责任；具体法域及责任类型未明确。"
+  },
+  {
+    "id": "10003475",
+    "zh": "身份盗用",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003477",
+    "zh": "隐私政策",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003479",
+    "zh": "生物特征识别",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003480",
+    "zh": "内容审查",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003481",
+    "zh": "色情内容",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003482",
+    "zh": "仇恨言论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003483",
+    "zh": "政治言论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003484",
+    "zh": "技术与内容审查",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003486",
+    "zh": "内容审查过滤器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003487",
+    "zh": "监视",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003488",
+    "zh": "政府监视",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003489",
+    "zh": "企业监视",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003490",
+    "zh": "计算与信息系统管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003491",
+    "zh": "项目与人员管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003492",
+    "zh": "项目管理技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003493",
+    "zh": "项目人员配置",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003494",
+    "zh": "系统规划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003495",
+    "zh": "系统分析与设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003496",
+    "zh": "系统开发",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003497",
+    "zh": "计算机与信息系统培训",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003498",
+    "zh": "实施管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003499",
+    "zh": "硬件选型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003500",
+    "zh": "计算设备管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003502",
+    "zh": "定价与资源分配",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003503",
+    "zh": "软件管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003505",
+    "zh": "软件维护",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003506",
+    "zh": "软件选型与适配",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003507",
+    "zh": "系统管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003508",
+    "zh": "集中化／分散化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003509",
+    "zh": "技术审计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003510",
+    "zh": "质量保证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003511",
+    "zh": "网络运营",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003512",
+    "zh": "文件系统管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003514",
+    "zh": "信息系统经济学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003516",
+    "zh": "存储恢复策略",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003517",
+    "zh": "存储架构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003518",
+    "zh": "存储网络架构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003519",
+    "zh": "分布式存储",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003520",
+    "zh": "存储管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003521",
+    "zh": "计算史",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003522",
+    "zh": "历史人物",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003523",
+    "zh": "硬件史",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003524",
+    "zh": "软件史",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003525",
+    "zh": "编程语言史",
+    "decision": "translated",
+    "note": ""
+  }
+]

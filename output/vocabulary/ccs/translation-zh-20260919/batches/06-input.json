@@ -1,0 +1,2656 @@
+[
+  {
+    "id": "10010523",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010523",
+    "en": "Reduced instruction set computing",
+    "source_language": "en",
+    "parents": [
+      "Serial architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010524",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010524",
+    "en": "Complex instruction set computing",
+    "source_language": "en",
+    "parents": [
+      "Serial architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010525",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010525",
+    "en": "Superscalar architectures",
+    "source_language": "en",
+    "parents": [
+      "Serial architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010526",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010526",
+    "en": "Pipeline computing",
+    "source_language": "en",
+    "parents": [
+      "Serial architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010527",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010527",
+    "en": "Stack machines",
+    "source_language": "en",
+    "parents": [
+      "Serial architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010528",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010528",
+    "en": "Parallel architectures",
+    "source_language": "en",
+    "parents": [
+      "Architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010529",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010529",
+    "en": "Very long instruction word",
+    "source_language": "en",
+    "parents": [
+      "Parallel architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010530",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010530",
+    "en": "Interconnection architectures",
+    "source_language": "en",
+    "parents": [
+      "Parallel architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010531",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010531",
+    "en": "Multiple instruction, multiple data",
+    "source_language": "en",
+    "parents": [
+      "Parallel architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010532",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010532",
+    "en": "Cellular architectures",
+    "source_language": "en",
+    "parents": [
+      "Parallel architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010533",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010533",
+    "en": "Multiple instruction, single data",
+    "source_language": "en",
+    "parents": [
+      "Parallel architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010534",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010534",
+    "en": "Single instruction, multiple data",
+    "source_language": "en",
+    "parents": [
+      "Parallel architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010535",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010535",
+    "en": "Systolic arrays",
+    "source_language": "en",
+    "parents": [
+      "Parallel architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010536",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010536",
+    "en": "Multicore architectures",
+    "source_language": "en",
+    "parents": [
+      "Parallel architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010537",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010537",
+    "en": "Distributed architectures",
+    "source_language": "en",
+    "parents": [
+      "Architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010538",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010538",
+    "en": "Client-server architectures",
+    "source_language": "en",
+    "parents": [
+      "Distributed architectures",
+      "Distributed systems organizing principles"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010539",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010539",
+    "en": "n-tier architectures",
+    "source_language": "en",
+    "parents": [
+      "Distributed architectures",
+      "Software architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010540",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010540",
+    "en": "Peer-to-peer architectures",
+    "source_language": "en",
+    "parents": [
+      "Distributed architectures",
+      "Software architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010541",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010541",
+    "en": "Grid computing",
+    "source_language": "en",
+    "parents": [
+      "Distributed architectures",
+      "Distributed systems organizing principles"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010542",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010542",
+    "en": "Other architectures",
+    "source_language": "en",
+    "parents": [
+      "Architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010543",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010543",
+    "en": "Reconfigurable computing",
+    "source_language": "en",
+    "parents": [
+      "Other architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010544",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010544",
+    "en": "Analog computers",
+    "source_language": "en",
+    "parents": [
+      "Other architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010545",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010545",
+    "en": "Data flow architectures",
+    "source_language": "en",
+    "parents": [
+      "Other architectures",
+      "Software architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010546",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010546",
+    "en": "Heterogeneous (hybrid) systems",
+    "source_language": "en",
+    "parents": [
+      "Other architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010548",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010548",
+    "en": "Self-organizing autonomic computing",
+    "source_language": "en",
+    "parents": [
+      "Other architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010549",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010549",
+    "en": "Optical computing",
+    "source_language": "en",
+    "parents": [
+      "Other architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010550",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010550",
+    "en": "Quantum computing",
+    "source_language": "en",
+    "parents": [
+      "Other architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010551",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010551",
+    "en": "Molecular computing",
+    "source_language": "en",
+    "parents": [
+      "Other architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010553",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010553",
+    "en": "Embedded and cyber-physical systems",
+    "source_language": "en",
+    "parents": [
+      "Computer systems organization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010554",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010554",
+    "en": "Robotics",
+    "source_language": "en",
+    "parents": [
+      "Embedded and cyber-physical systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010555",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010555",
+    "en": "Robotic components",
+    "source_language": "en",
+    "parents": [
+      "Robotics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010556",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010556",
+    "en": "Robotic control",
+    "source_language": "en",
+    "parents": [
+      "Robotics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010557",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010557",
+    "en": "Robotic autonomy",
+    "source_language": "en",
+    "parents": [
+      "Robotics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010558",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010558",
+    "en": "External interfaces for robotics",
+    "source_language": "en",
+    "parents": [
+      "Robotics"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010559",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010559",
+    "en": "Sensors and actuators",
+    "source_language": "en",
+    "parents": [
+      "Communication hardware, interfaces and storage",
+      "Embedded and cyber-physical systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010560",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010560",
+    "en": "System on a chip",
+    "source_language": "en",
+    "parents": [
+      "Design reuse and communication-based design",
+      "Embedded and cyber-physical systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010561",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010561",
+    "en": "Firmware",
+    "source_language": "en",
+    "parents": [
+      "Embedded systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010562",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010562",
+    "en": "Embedded systems",
+    "source_language": "en",
+    "parents": [
+      "Embedded and cyber-physical systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010563",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010563",
+    "en": "Embedded hardware",
+    "source_language": "en",
+    "parents": [
+      "Embedded systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010564",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010564",
+    "en": "Embedded software",
+    "source_language": "en",
+    "parents": [
+      "Embedded systems",
+      "Software system structures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010570",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010570",
+    "en": "Real-time systems",
+    "source_language": "en",
+    "parents": [
+      "Computer systems organization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010571",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010571",
+    "en": "Real-time operating systems",
+    "source_language": "en",
+    "parents": [
+      "Real-time systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010572",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010572",
+    "en": "Real-time languages",
+    "source_language": "en",
+    "parents": [
+      "Real-time systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010573",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010573",
+    "en": "Real-time system specification",
+    "source_language": "en",
+    "parents": [
+      "Real-time systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010574",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010574",
+    "en": "Real-time system architecture",
+    "source_language": "en",
+    "parents": [
+      "Real-time systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010575",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010575",
+    "en": "Dependable and fault-tolerant systems and networks",
+    "source_language": "en",
+    "parents": [
+      "Computer systems organization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010577",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010577",
+    "en": "Reliability",
+    "source_language": "en",
+    "parents": [
+      "Cross-computing tools and techniques",
+      "Dependable and fault-tolerant systems and networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010578",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010578",
+    "en": "Availability",
+    "source_language": "en",
+    "parents": [
+      "Dependable and fault-tolerant systems and networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010579",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010579",
+    "en": "Maintainability and maintenance",
+    "source_language": "en",
+    "parents": [
+      "Dependable and fault-tolerant systems and networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010580",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010580",
+    "en": "Processors and memory architectures",
+    "source_language": "en",
+    "parents": [
+      "Dependable and fault-tolerant systems and networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010581",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010581",
+    "en": "Secondary storage organization",
+    "source_language": "en",
+    "parents": [
+      "Dependable and fault-tolerant systems and networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010582",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010582",
+    "en": "Ad hoc networks",
+    "source_language": "en",
+    "parents": [
+      "Network types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010583",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010583",
+    "en": "Hardware",
+    "source_language": "en",
+    "parents": [],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010584",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010584",
+    "en": "Printed circuit boards",
+    "source_language": "en",
+    "parents": [
+      "Hardware"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010585",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010585",
+    "en": "Electromagnetic interference and compatibility",
+    "source_language": "en",
+    "parents": [
+      "Printed circuit boards"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010586",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010586",
+    "en": "Thermal issues",
+    "source_language": "en",
+    "parents": [
+      "Power and energy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010587",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010587",
+    "en": "PCB design and layout",
+    "source_language": "en",
+    "parents": [
+      "Printed circuit boards"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010588",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010588",
+    "en": "Communication hardware, interfaces and storage",
+    "source_language": "en",
+    "parents": [
+      "Hardware"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010590",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010590",
+    "en": "Buses and high-speed links",
+    "source_language": "en",
+    "parents": [
+      "Communication hardware, interfaces and storage"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010591",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010591",
+    "en": "Displays and imagers",
+    "source_language": "en",
+    "parents": [
+      "Communication hardware, interfaces and storage",
+      "Interaction devices"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010592",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010592",
+    "en": "External storage",
+    "source_language": "en",
+    "parents": [
+      "Communication hardware, interfaces and storage"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010593",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010593",
+    "en": "Networking hardware",
+    "source_language": "en",
+    "parents": [
+      "Communication hardware, interfaces and storage"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010594",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010594",
+    "en": "Printers",
+    "source_language": "en",
+    "parents": [
+      "Communication hardware, interfaces and storage"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010595",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010595",
+    "en": "Sensor applications and deployments",
+    "source_language": "en",
+    "parents": [
+      "Communication hardware, interfaces and storage"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010596",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010596",
+    "en": "Sensor devices and platforms",
+    "source_language": "en",
+    "parents": [
+      "Communication hardware, interfaces and storage"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010597",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010597",
+    "en": "Sound-based input / output",
+    "source_language": "en",
+    "parents": [
+      "Communication hardware, interfaces and storage",
+      "Interaction devices"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010598",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010598",
+    "en": "Tactile and hand-based interfaces",
+    "source_language": "en",
+    "parents": [
+      "Communication hardware, interfaces and storage"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010600",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010600",
+    "en": "Integrated circuits",
+    "source_language": "en",
+    "parents": [
+      "Hardware"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010601",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010601",
+    "en": "3D integrated circuits",
+    "source_language": "en",
+    "parents": [
+      "Integrated circuits",
+      "Very large scale integration design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010602",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010602",
+    "en": "Interconnect",
+    "source_language": "en",
+    "parents": [
+      "Integrated circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010603",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010603",
+    "en": "Input / output circuits",
+    "source_language": "en",
+    "parents": [
+      "Interconnect"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010604",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010604",
+    "en": "Metallic interconnect",
+    "source_language": "en",
+    "parents": [
+      "Interconnect"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010605",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010605",
+    "en": "Photonic and optical interconnect",
+    "source_language": "en",
+    "parents": [
+      "Interconnect"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010606",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010606",
+    "en": "Radio frequency and wireless interconnect",
+    "source_language": "en",
+    "parents": [
+      "Interconnect"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010607",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010607",
+    "en": "Semiconductor memory",
+    "source_language": "en",
+    "parents": [
+      "Integrated circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010608",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010608",
+    "en": "Dynamic memory",
+    "source_language": "en",
+    "parents": [
+      "Semiconductor memory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010609",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010609",
+    "en": "Static memory",
+    "source_language": "en",
+    "parents": [
+      "Semiconductor memory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010610",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010610",
+    "en": "Non-volatile memory",
+    "source_language": "en",
+    "parents": [
+      "Semiconductor memory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010611",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010611",
+    "en": "Read-only memory",
+    "source_language": "en",
+    "parents": [
+      "Semiconductor memory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010612",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010612",
+    "en": "Digital switches",
+    "source_language": "en",
+    "parents": [
+      "Integrated circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010613",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010613",
+    "en": "Transistors",
+    "source_language": "en",
+    "parents": [
+      "Digital switches"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010614",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010614",
+    "en": "Logic families",
+    "source_language": "en",
+    "parents": [
+      "Digital switches"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010615",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010615",
+    "en": "Logic circuits",
+    "source_language": "en",
+    "parents": [
+      "Integrated circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010616",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010616",
+    "en": "Arithmetic and datapath circuits",
+    "source_language": "en",
+    "parents": [
+      "Logic circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010617",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010617",
+    "en": "Asynchronous circuits",
+    "source_language": "en",
+    "parents": [
+      "Logic circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010618",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010618",
+    "en": "Combinational circuits",
+    "source_language": "en",
+    "parents": [
+      "Logic circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010619",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010619",
+    "en": "Design modules and hierarchy",
+    "source_language": "en",
+    "parents": [
+      "Logic circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010620",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010620",
+    "en": "Finite state machines",
+    "source_language": "en",
+    "parents": [
+      "Logic circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010621",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010621",
+    "en": "Sequential circuits",
+    "source_language": "en",
+    "parents": [
+      "Logic circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010622",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010622",
+    "en": "Abstract machines",
+    "source_language": "en",
+    "parents": [
+      "Models of computation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010624",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010624",
+    "en": "Quantum communication complexity",
+    "source_language": "en",
+    "parents": [
+      "Quantum computation theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010625",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010625",
+    "en": "Quantum query complexity",
+    "source_language": "en",
+    "parents": [
+      "Quantum computation theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010626",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010626",
+    "en": "Quantum information theory",
+    "source_language": "en",
+    "parents": [
+      "Quantum computation theory"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010628",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010628",
+    "en": "Reconfigurable logic and FPGAs",
+    "source_language": "en",
+    "parents": [
+      "Integrated circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010629",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010629",
+    "en": "Hardware accelerators",
+    "source_language": "en",
+    "parents": [
+      "Reconfigurable logic and FPGAs"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010630",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010630",
+    "en": "High-speed input / output",
+    "source_language": "en",
+    "parents": [
+      "Reconfigurable logic and FPGAs"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010631",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010631",
+    "en": "Programmable logic elements",
+    "source_language": "en",
+    "parents": [
+      "Reconfigurable logic and FPGAs"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010632",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010632",
+    "en": "Programmable interconnect",
+    "source_language": "en",
+    "parents": [
+      "Reconfigurable logic and FPGAs"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010633",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010633",
+    "en": "Very large scale integration design",
+    "source_language": "en",
+    "parents": [
+      "Hardware"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010634",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010634",
+    "en": "Analog and mixed-signal circuits",
+    "source_language": "en",
+    "parents": [
+      "Very large scale integration design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010635",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010635",
+    "en": "Data conversion",
+    "source_language": "en",
+    "parents": [
+      "Analog and mixed-signal circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010636",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010636",
+    "en": "Clock generation and timing",
+    "source_language": "en",
+    "parents": [
+      "Analog and mixed-signal circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010637",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010637",
+    "en": "Analog and mixed-signal circuit optimization",
+    "source_language": "en",
+    "parents": [
+      "Analog and mixed-signal circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010638",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010638",
+    "en": "Radio frequency and wireless circuits",
+    "source_language": "en",
+    "parents": [
+      "Analog and mixed-signal circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010639",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010639",
+    "en": "Wireline communication",
+    "source_language": "en",
+    "parents": [
+      "Analog and mixed-signal circuits"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010640",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010640",
+    "en": "Application-specific VLSI designs",
+    "source_language": "en",
+    "parents": [
+      "Very large scale integration design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010641",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010641",
+    "en": "Application specific integrated circuits",
+    "source_language": "en",
+    "parents": [
+      "Application-specific VLSI designs"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010642",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010642",
+    "en": "Application specific instruction set processors",
+    "source_language": "en",
+    "parents": [
+      "Application-specific VLSI designs"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010643",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010643",
+    "en": "Application specific processors",
+    "source_language": "en",
+    "parents": [
+      "Application-specific VLSI designs"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010645",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010645",
+    "en": "Design reuse and communication-based design",
+    "source_language": "en",
+    "parents": [
+      "Very large scale integration design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010646",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010646",
+    "en": "Soft intellectual property",
+    "source_language": "en",
+    "parents": [
+      "Intellectual property"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010648",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010648",
+    "en": "Platform-based design",
+    "source_language": "en",
+    "parents": [
+      "Design reuse and communication-based design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010649",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010649",
+    "en": "Design rules",
+    "source_language": "en",
+    "parents": [
+      "Very large scale integration design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010650",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010650",
+    "en": "Economics of chip design and manufacturing",
+    "source_language": "en",
+    "parents": [
+      "Very large scale integration design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010651",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010651",
+    "en": "Full-custom circuits",
+    "source_language": "en",
+    "parents": [
+      "Very large scale integration design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010652",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010652",
+    "en": "VLSI design manufacturing considerations",
+    "source_language": "en",
+    "parents": [
+      "Very large scale integration design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010653",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010653",
+    "en": "On-chip resource management",
+    "source_language": "en",
+    "parents": [
+      "Very large scale integration design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010654",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010654",
+    "en": "On-chip sensors",
+    "source_language": "en",
+    "parents": [
+      "Very large scale integration design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010655",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010655",
+    "en": "Standard cell libraries",
+    "source_language": "en",
+    "parents": [
+      "Very large scale integration design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010656",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010656",
+    "en": "VLSI packaging",
+    "source_language": "en",
+    "parents": [
+      "Very large scale integration design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010657",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010657",
+    "en": "Die and wafer stacking",
+    "source_language": "en",
+    "parents": [
+      "VLSI packaging"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010658",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010658",
+    "en": "Input / output styles",
+    "source_language": "en",
+    "parents": [
+      "VLSI packaging"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010659",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010659",
+    "en": "VLSI system specification and constraints",
+    "source_language": "en",
+    "parents": [
+      "Very large scale integration design"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010660",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010660",
+    "en": "Multi-chip modules",
+    "source_language": "en",
+    "parents": [
+      "VLSI packaging"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010661",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010661",
+    "en": "Package-level interconnect",
+    "source_language": "en",
+    "parents": [
+      "VLSI packaging"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010662",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010662",
+    "en": "Power and energy",
+    "source_language": "en",
+    "parents": [
+      "Hardware"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010663",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010663",
+    "en": "Energy generation and storage",
+    "source_language": "en",
+    "parents": [
+      "Power and energy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010664",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010664",
+    "en": "Batteries",
+    "source_language": "en",
+    "parents": [
+      "Energy generation and storage"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010665",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010665",
+    "en": "Fuel-based energy",
+    "source_language": "en",
+    "parents": [
+      "Energy generation and storage"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010666",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010666",
+    "en": "Renewable energy",
+    "source_language": "en",
+    "parents": [
+      "Energy generation and storage"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010667",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010667",
+    "en": "Reusable energy storage",
+    "source_language": "en",
+    "parents": [
+      "Energy generation and storage"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010668",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010668",
+    "en": "Energy distribution",
+    "source_language": "en",
+    "parents": [
+      "Power and energy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010669",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010669",
+    "en": "Energy metering",
+    "source_language": "en",
+    "parents": [
+      "Energy distribution"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010670",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010670",
+    "en": "Power conversion",
+    "source_language": "en",
+    "parents": [
+      "Energy distribution"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010671",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010671",
+    "en": "Power networks",
+    "source_language": "en",
+    "parents": [
+      "Energy distribution"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010672",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010672",
+    "en": "Smart grid",
+    "source_language": "en",
+    "parents": [
+      "Energy distribution"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010673",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010673",
+    "en": "Impact on the environment",
+    "source_language": "en",
+    "parents": [
+      "Power and energy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010674",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010674",
+    "en": "Power estimation and optimization",
+    "source_language": "en",
+    "parents": [
+      "Power and energy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010678",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010678",
+    "en": "Temperature monitoring",
+    "source_language": "en",
+    "parents": [
+      "Thermal issues"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010679",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010679",
+    "en": "Temperature simulation and estimation",
+    "source_language": "en",
+    "parents": [
+      "Thermal issues"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010680",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010680",
+    "en": "Temperature control",
+    "source_language": "en",
+    "parents": [
+      "Thermal issues"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010681",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010681",
+    "en": "Temperature optimization",
+    "source_language": "en",
+    "parents": [
+      "Thermal issues"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010682",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010682",
+    "en": "Electronic design automation",
+    "source_language": "en",
+    "parents": [
+      "Hardware"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010684",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010684",
+    "en": "High-level and register-transfer level synthesis",
+    "source_language": "en",
+    "parents": [
+      "Electronic design automation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010685",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010685",
+    "en": "Datapath optimization",
+    "source_language": "en",
+    "parents": [
+      "High-level and register-transfer level synthesis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010686",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010686",
+    "en": "Hardware-software codesign",
+    "source_language": "en",
+    "parents": [
+      "High-level and register-transfer level synthesis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010687",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010687",
+    "en": "Resource binding and sharing",
+    "source_language": "en",
+    "parents": [
+      "High-level and register-transfer level synthesis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010688",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010688",
+    "en": "Scheduling",
+    "source_language": "en",
+    "parents": [
+      "Process management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010689",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010689",
+    "en": "Hardware description languages and compilation",
+    "source_language": "en",
+    "parents": [
+      "Electronic design automation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010690",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010690",
+    "en": "Logic synthesis",
+    "source_language": "en",
+    "parents": [
+      "Electronic design automation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010691",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010691",
+    "en": "Combinational synthesis",
+    "source_language": "en",
+    "parents": [
+      "Logic synthesis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010692",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010692",
+    "en": "Circuit optimization",
+    "source_language": "en",
+    "parents": [
+      "Logic synthesis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010693",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010693",
+    "en": "Sequential synthesis",
+    "source_language": "en",
+    "parents": [
+      "Logic synthesis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010694",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010694",
+    "en": "Technology-mapping",
+    "source_language": "en",
+    "parents": [
+      "Logic synthesis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010695",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010695",
+    "en": "Transistor-level synthesis",
+    "source_language": "en",
+    "parents": [
+      "Logic synthesis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010696",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010696",
+    "en": "Modeling and parameter extraction",
+    "source_language": "en",
+    "parents": [
+      "Electronic design automation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010697",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010697",
+    "en": "Physical design (EDA)",
+    "source_language": "en",
+    "parents": [
+      "Electronic design automation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010698",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010698",
+    "en": "Clock-network synthesis",
+    "source_language": "en",
+    "parents": [
+      "Physical design (EDA)"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010699",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010699",
+    "en": "Packaging",
+    "source_language": "en",
+    "parents": [
+      "Physical design (EDA)"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010700",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010700",
+    "en": "Partitioning and floorplanning",
+    "source_language": "en",
+    "parents": [
+      "Physical design (EDA)"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010701",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010701",
+    "en": "Placement",
+    "source_language": "en",
+    "parents": [
+      "Physical design (EDA)"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010702",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010702",
+    "en": "Physical synthesis",
+    "source_language": "en",
+    "parents": [
+      "Physical design (EDA)"
+    ],
+    "scope_notes": [
+      "Sizing, buffering"
+    ],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010703",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010703",
+    "en": "Power grid design",
+    "source_language": "en",
+    "parents": [
+      "Physical design (EDA)"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010704",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010704",
+    "en": "Wire routing",
+    "source_language": "en",
+    "parents": [
+      "Physical design (EDA)"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010705",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010705",
+    "en": "Timing analysis",
+    "source_language": "en",
+    "parents": [
+      "Electronic design automation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010706",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010706",
+    "en": "Electrical-level simulation",
+    "source_language": "en",
+    "parents": [
+      "Timing analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010707",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010707",
+    "en": "Model-order reduction",
+    "source_language": "en",
+    "parents": [
+      "Timing analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010708",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010708",
+    "en": "Compact delay models",
+    "source_language": "en",
+    "parents": [
+      "Timing analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010709",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010709",
+    "en": "Static timing analysis",
+    "source_language": "en",
+    "parents": [
+      "Timing analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010710",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010710",
+    "en": "Statistical timing analysis",
+    "source_language": "en",
+    "parents": [
+      "Timing analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010711",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010711",
+    "en": "Transition-based timing analysis",
+    "source_language": "en",
+    "parents": [
+      "Timing analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010712",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010712",
+    "en": "Methodologies for EDA",
+    "source_language": "en",
+    "parents": [
+      "Electronic design automation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010713",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010713",
+    "en": "Best practices for EDA",
+    "source_language": "en",
+    "parents": [
+      "Methodologies for EDA"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010714",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010714",
+    "en": "Design databases for EDA",
+    "source_language": "en",
+    "parents": [
+      "Methodologies for EDA"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010715",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010715",
+    "en": "Software tools for EDA",
+    "source_language": "en",
+    "parents": [
+      "Methodologies for EDA"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010717",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010717",
+    "en": "Hardware validation",
+    "source_language": "en",
+    "parents": [
+      "Hardware"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010721",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010721",
+    "en": "Functional verification",
+    "source_language": "en",
+    "parents": [
+      "Hardware validation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010722",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010722",
+    "en": "Coverage metrics",
+    "source_language": "en",
+    "parents": [
+      "Functional verification"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010723",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010723",
+    "en": "Equivalence checking",
+    "source_language": "en",
+    "parents": [
+      "Functional verification"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010724",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010724",
+    "en": "Semi-formal verification",
+    "source_language": "en",
+    "parents": [
+      "Functional verification"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010725",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010725",
+    "en": "Simulation and emulation",
+    "source_language": "en",
+    "parents": [
+      "Functional verification"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010726",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010726",
+    "en": "Transaction-level verification",
+    "source_language": "en",
+    "parents": [
+      "Functional verification"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010727",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010727",
+    "en": "Theorem proving and SAT solving",
+    "source_language": "en",
+    "parents": [
+      "Functional verification"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010728",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010728",
+    "en": "Physical verification",
+    "source_language": "en",
+    "parents": [
+      "Hardware validation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010729",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010729",
+    "en": "Design rule checking",
+    "source_language": "en",
+    "parents": [
+      "Physical verification"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010730",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010730",
+    "en": "Layout-versus-schematics",
+    "source_language": "en",
+    "parents": [
+      "Physical verification"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010731",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010731",
+    "en": "Power and thermal analysis",
+    "source_language": "en",
+    "parents": [
+      "Physical verification"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010732",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010732",
+    "en": "Timing analysis and sign-off",
+    "source_language": "en",
+    "parents": [
+      "Physical verification"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010733",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010733",
+    "en": "Post-manufacture validation and debug",
+    "source_language": "en",
+    "parents": [
+      "Hardware validation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010734",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010734",
+    "en": "Bug detection, localization and diagnosis",
+    "source_language": "en",
+    "parents": [
+      "Post-manufacture validation and debug"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010735",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010735",
+    "en": "Bug fixing (hardware)",
+    "source_language": "en",
+    "parents": [
+      "Post-manufacture validation and debug"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010736",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010736",
+    "en": "Design for debug",
+    "source_language": "en",
+    "parents": [
+      "Post-manufacture validation and debug"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010737",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010737",
+    "en": "Hardware test",
+    "source_language": "en",
+    "parents": [
+      "Hardware"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010738",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010738",
+    "en": "Analog, mixed-signal and radio frequency test",
+    "source_language": "en",
+    "parents": [
+      "Hardware test"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010739",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010739",
+    "en": "Board- and system-level test",
+    "source_language": "en",
+    "parents": [
+      "Hardware test"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010740",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010740",
+    "en": "Defect-based test",
+    "source_language": "en",
+    "parents": [
+      "Hardware test"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010741",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010741",
+    "en": "Built-in self-test",
+    "source_language": "en",
+    "parents": [
+      "Design for testability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010742",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010742",
+    "en": "Online test and diagnostics",
+    "source_language": "en",
+    "parents": [
+      "Design for testability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010743",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010743",
+    "en": "Test data compression",
+    "source_language": "en",
+    "parents": [
+      "Design for testability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010744",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010744",
+    "en": "Design for testability",
+    "source_language": "en",
+    "parents": [
+      "Hardware test"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010745",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010745",
+    "en": "Fault models and test metrics",
+    "source_language": "en",
+    "parents": [
+      "Hardware test"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010746",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010746",
+    "en": "Memory test and repair",
+    "source_language": "en",
+    "parents": [
+      "Hardware test"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010747",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010747",
+    "en": "Hardware reliability screening",
+    "source_language": "en",
+    "parents": [
+      "Hardware test"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010748",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010748",
+    "en": "Test-pattern generation and fault simulation",
+    "source_language": "en",
+    "parents": [
+      "Hardware test"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010749",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010749",
+    "en": "Testing with distributed and parallel systems",
+    "source_language": "en",
+    "parents": [
+      "Hardware test"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010750",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010750",
+    "en": "Robustness",
+    "source_language": "en",
+    "parents": [
+      "Hardware"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010751",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010751",
+    "en": "Fault tolerance",
+    "source_language": "en",
+    "parents": [
+      "Robustness"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010752",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010752",
+    "en": "Error detection and error correction",
+    "source_language": "en",
+    "parents": [
+      "Fault tolerance",
+      "Network reliability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010753",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010753",
+    "en": "Failure prediction",
+    "source_language": "en",
+    "parents": [
+      "Fault tolerance"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010754",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010754",
+    "en": "Failure recovery, maintenance and self-repair",
+    "source_language": "en",
+    "parents": [
+      "Fault tolerance"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010755",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010755",
+    "en": "Redundancy",
+    "source_language": "en",
+    "parents": [
+      "Dependable and fault-tolerant systems and networks",
+      "Fault tolerance"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010756",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010756",
+    "en": "Self-checking mechanisms",
+    "source_language": "en",
+    "parents": [
+      "Fault tolerance"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010757",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010757",
+    "en": "System-level fault tolerance",
+    "source_language": "en",
+    "parents": [
+      "Fault tolerance"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010758",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010758",
+    "en": "Design for manufacturability",
+    "source_language": "en",
+    "parents": [
+      "Robustness"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010759",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010759",
+    "en": "Process variations",
+    "source_language": "en",
+    "parents": [
+      "Design for manufacturability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010760",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010760",
+    "en": "Yield and cost modeling",
+    "source_language": "en",
+    "parents": [
+      "Design for manufacturability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010761",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010761",
+    "en": "Yield and cost optimization",
+    "source_language": "en",
+    "parents": [
+      "Design for manufacturability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010762",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010762",
+    "en": "Hardware reliability",
+    "source_language": "en",
+    "parents": [
+      "Robustness"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010763",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010763",
+    "en": "Aging of circuits and systems",
+    "source_language": "en",
+    "parents": [
+      "Hardware reliability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010764",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010764",
+    "en": "Circuit hardening",
+    "source_language": "en",
+    "parents": [
+      "Hardware reliability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010765",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010765",
+    "en": "Early-life failures and infant mortality",
+    "source_language": "en",
+    "parents": [
+      "Hardware reliability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010766",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010766",
+    "en": "Process, voltage and temperature variations",
+    "source_language": "en",
+    "parents": [
+      "Hardware reliability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010767",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010767",
+    "en": "Signal integrity and noise analysis",
+    "source_language": "en",
+    "parents": [
+      "Hardware reliability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010768",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010768",
+    "en": "Transient errors and upsets",
+    "source_language": "en",
+    "parents": [
+      "Hardware reliability"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010769",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010769",
+    "en": "Safety critical systems",
+    "source_language": "en",
+    "parents": [
+      "Robustness"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010777",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010777",
+    "en": "Hardware attacks and countermeasures",
+    "source_language": "en",
+    "parents": [
+      "Security in hardware"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010779",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010779",
+    "en": "Malicious design modifications",
+    "source_language": "en",
+    "parents": [
+      "Hardware attacks and countermeasures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010786",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010786",
+    "en": "Emerging technologies",
+    "source_language": "en",
+    "parents": [
+      "Hardware"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010787",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010787",
+    "en": "Analysis and design of emerging devices and systems",
+    "source_language": "en",
+    "parents": [
+      "Emerging technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010788",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010788",
+    "en": "Emerging architectures",
+    "source_language": "en",
+    "parents": [
+      "Analysis and design of emerging devices and systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010789",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010789",
+    "en": "Emerging languages and compilers",
+    "source_language": "en",
+    "parents": [
+      "Analysis and design of emerging devices and systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010790",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010790",
+    "en": "Emerging simulation",
+    "source_language": "en",
+    "parents": [
+      "Analysis and design of emerging devices and systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010791",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010791",
+    "en": "Emerging tools and methodologies",
+    "source_language": "en",
+    "parents": [
+      "Analysis and design of emerging devices and systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010792",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010792",
+    "en": "Biology-related information processing",
+    "source_language": "en",
+    "parents": [
+      "Emerging technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010794",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010794",
+    "en": "Bio-embedded electronics",
+    "source_language": "en",
+    "parents": [
+      "Biology-related information processing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010798",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010798",
+    "en": "Neural systems",
+    "source_language": "en",
+    "parents": [
+      "Biology-related information processing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010799",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010799",
+    "en": "Circuit substrates",
+    "source_language": "en",
+    "parents": [
+      "Emerging technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010800",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010800",
+    "en": "III-V compounds",
+    "source_language": "en",
+    "parents": [
+      "Circuit substrates"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010801",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010801",
+    "en": "Carbon based electronics",
+    "source_language": "en",
+    "parents": [
+      "Circuit substrates"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10010802",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10010802",
+    "en": "Cellular neural networks",
+    "source_language": "en",
+    "parents": [
+      "Circuit substrates"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  }
+]

@@ -1,0 +1,1364 @@
+[
+  {
+    "id": "10011070",
+    "zh": "面向特定应用的开发环境",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011071",
+    "zh": "软件配置管理与版本控制系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011072",
+    "zh": "软件库与仓库",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011073",
+    "zh": "软件维护工具",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011074",
+    "zh": "软件创建与管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011075",
+    "zh": "软件设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011076",
+    "zh": "需求分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011077",
+    "zh": "软件设计工程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011078",
+    "zh": "软件设计权衡",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011079",
+    "zh": "软件实现规划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011080",
+    "zh": "软件设计技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011081",
+    "zh": "软件开发过程管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011082",
+    "zh": "软件开发方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011083",
+    "zh": "敏捷软件开发",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011084",
+    "zh": "能力成熟度模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011085",
+    "zh": "瀑布模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011086",
+    "zh": "螺旋模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011087",
+    "zh": "V 模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011088",
+    "zh": "设计模式",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011091",
+    "zh": "风险管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011092",
+    "zh": "软件开发技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011093",
+    "zh": "面向对象开发",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011094",
+    "zh": "流程图",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011096",
+    "zh": "可复用性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011097",
+    "zh": "软件产品线",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011099",
+    "zh": "软件验证与确认",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011100",
+    "zh": "运行分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011101",
+    "zh": "检查点与重启",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011102",
+    "zh": "软件缺陷分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011103",
+    "zh": "软件测试与调试",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011104",
+    "zh": "故障树分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011105",
+    "zh": "过程确认",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011106",
+    "zh": "走查",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011107",
+    "zh": "结对编程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011108",
+    "zh": "用例",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011109",
+    "zh": "验收测试",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011110",
+    "zh": "可追溯性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011111",
+    "zh": "软件开发后期问题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011112",
+    "zh": "备份规程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011113",
+    "zh": "软件演化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011114",
+    "zh": "软件安全性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011116",
+    "zh": "紧耦合架构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011117",
+    "zh": "基于空间的架构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011119",
+    "zh": "抽象",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011120",
+    "zh": "分布式系统组织原则",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011121",
+    "zh": "情境设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011122",
+    "zh": "文档类型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011123",
+    "zh": "跨计算领域的工具与技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011124",
+    "zh": "度量指标",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011130",
+    "zh": "评估",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011131",
+    "zh": "实验",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011133",
+    "zh": "估计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011134",
+    "zh": "软件开发协作",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011135",
+    "zh": "编程团队",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011136",
+    "zh": "离散优化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011137",
+    "zh": "网络优化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011138",
+    "zh": "连续优化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011139",
+    "zh": "二次规划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011140",
+    "zh": "非凸优化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011141",
+    "zh": "离散与连续混合优化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011142",
+    "zh": "中间件业务流程管理器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011143",
+    "zh": "超文本语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011147",
+    "zh": "本体",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011148",
+    "zh": "词典",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011149",
+    "zh": "叙词表",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011150",
+    "zh": "隐私保护",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011187",
+    "zh": "个人计算机及其应用",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011188",
+    "zh": "文字处理软件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011189",
+    "zh": "电子表格",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011190",
+    "zh": "计算机游戏",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011191",
+    "zh": "微型计算机",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011192",
+    "zh": "模型检测验证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011194",
+    "zh": "遗憾界",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011253",
+    "zh": "计算广告理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011254",
+    "zh": "算法设计技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011255",
+    "zh": "回溯法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011256",
+    "zh": "分支定界法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011257",
+    "zh": "分治法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011258",
+    "zh": "动态规划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011259",
+    "zh": "预条件处理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011295",
+    "zh": "场景异常检测",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011304",
+    "zh": "主动学习设置",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011305",
+    "zh": "半监督学习设置",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011310",
+    "zh": "动画仿真",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011311",
+    "zh": "语义",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011559",
+    "zh": "全球定位系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011581",
+    "zh": "网络电话",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011595",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "CS1 是课程代号，仅凭名称和上位概念不能可靠确定其课程范围及对应中文名称，保留原名。"
+  },
+  {
+    "id": "10011598",
+    "zh": "分组密码与流密码",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011600",
+    "zh": "哈希函数与消息认证码",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011602",
+    "zh": "数字签名",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011607",
+    "zh": "数据库活动监控",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011608",
+    "zh": "信息流控制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011610",
+    "zh": "拒绝服务攻击",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011611",
+    "zh": "欺骗攻击",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011612",
+    "zh": "网络钓鱼",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011617",
+    "zh": "防火墙",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011618",
+    "zh": "图形与视觉密码",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011619",
+    "zh": "多因素认证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011621",
+    "zh": "基于硬件的安全协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011633",
+    "zh": "渗透测试",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011634",
+    "zh": "漏洞管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011635",
+    "zh": "漏洞扫描器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011642",
+    "zh": "认知无线电",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011643",
+    "zh": "网络拓扑类型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011644",
+    "zh": "点对点网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011645",
+    "zh": "总线型网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011646",
+    "zh": "星型网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011647",
+    "zh": "环型网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011648",
+    "zh": "令牌环网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011649",
+    "zh": "光纤分布式数据接口",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011650",
+    "zh": "网状网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011651",
+    "zh": "混合网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011655",
+    "zh": "网络文件系统协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011657",
+    "zh": "网络适配器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011659",
+    "zh": "中继器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011660",
+    "zh": "网络服务器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011661",
+    "zh": "无线局域网",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011662",
+    "zh": "无线个域网",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011663",
+    "zh": "无线网状网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011666",
+    "zh": "触摸屏",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011667",
+    "zh": "扫描仪",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011668",
+    "zh": "移动自组织网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011669",
+    "zh": "无线设备",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011670",
+    "zh": "无线集成网络传感器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011671",
+    "zh": "潜在狄利克雷分配",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011672",
+    "zh": "网络性能分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011673",
+    "zh": "设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011674",
+    "zh": "性能",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011675",
+    "zh": "确认",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011676",
+    "zh": "验证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011677",
+    "zh": "操作调度",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011678",
+    "zh": "进程同步",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011679",
+    "zh": "实时系统软件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011680",
+    "zh": "Web 应用组织原则",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011681",
+    "zh": "三层架构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011682",
+    "zh": "抽象、建模与模块化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011683",
+    "zh": "访问保护",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011685",
+    "zh": "数据库互操作性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011686",
+    "zh": "数学软件性能",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011687",
+    "zh": "软件易用性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011688",
+    "zh": "语法分析器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011689",
+    "zh": "文档脚本语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011690",
+    "zh": "规约语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011691",
+    "zh": "错误处理与恢复",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011692",
+    "zh": "形式化软件验证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011693",
+    "zh": "实证软件确认",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011694",
+    "zh": "界面设计原型制作",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011695",
+    "zh": "软件版本控制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011696",
+    "zh": "软件维护",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011697",
+    "zh": "系统管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011698",
+    "zh": "在线拍卖政策",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011699",
+    "zh": "检索结果展示",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011700",
+    "zh": "借助辅助数据库的搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011702",
+    "zh": "侧信道分析与对策",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011703",
+    "zh": "安全与隐私中的易用性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011704",
+    "zh": "网络测量",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011705",
+    "zh": "分组交换网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011707",
+    "zh": "线框图",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011709",
+    "zh": "消费品政策",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011710",
+    "zh": "数据管理的数据结构与算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011711",
+    "zh": "数据库查询处理与优化理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011712",
+    "zh": "商业智能",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011713",
+    "zh": "高级语言体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011714",
+    "zh": "专用系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011715",
+    "zh": "机电设备",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011716",
+    "zh": "可重构逻辑应用",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011717",
+    "zh": "模拟与混合信号电路综合",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011718",
+    "zh": "硬 IP 核与软 IP 核",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011719",
+    "zh": "开关器件功耗问题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011720",
+    "zh": "互连功耗问题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011721",
+    "zh": "电路功耗问题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011722",
+    "zh": "芯片级功耗问题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011723",
+    "zh": "平台功耗问题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011724",
+    "zh": "企业级与数据中心功耗问题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011726",
+    "zh": "量子计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011727",
+    "zh": "量子通信与密码学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011728",
+    "zh": "量子纠错与容错",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011729",
+    "zh": "量子点与元胞自动机",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011730",
+    "zh": "在线社交网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011731",
+    "zh": "企业互操作性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011732",
+    "zh": "信息集成与互操作性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011733",
+    "zh": "数据集成",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011734",
+    "zh": "逻辑与数据库",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011735",
+    "zh": "数据库隐私与安全理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011736",
+    "zh": "不完整、不一致与不确定数据库",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011738",
+    "zh": "无障碍",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011739",
+    "zh": "网络隐私与匿名性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011740",
+    "zh": "类型论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011741",
+    "zh": "霍尔逻辑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011742",
+    "zh": "分离逻辑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011743",
+    "zh": "容错网络拓扑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011744",
+    "zh": "虚拟世界训练仿真",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011745",
+    "zh": "公钥加密",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011746",
+    "zh": "硬件逆向工程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011747",
+    "zh": "文件系统安全",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011748",
+    "zh": "人机交互实证研究",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011749",
+    "zh": "实验室实验",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011750",
+    "zh": "实地研究",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011751",
+    "zh": "协作交互",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011752",
+    "zh": "触觉设备",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011753",
+    "zh": "文本输入",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011754",
+    "zh": "指向",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011755",
+    "zh": "手势输入",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011756",
+    "zh": "用户界面编程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011757",
+    "zh": "用户界面工具包",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011758",
+    "zh": "交互设计理论、概念与范式",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011759",
+    "zh": "交互设计实证研究",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011760",
+    "zh": "交互设计系统与工具",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011761",
+    "zh": "社交媒体",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011762",
+    "zh": "协同计算与社会计算实证研究",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011763",
+    "zh": "民族志研究",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011764",
+    "zh": "协同计算与社会计算设备",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011765",
+    "zh": "同步编辑器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011766",
+    "zh": "异步编辑器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011767",
+    "zh": "普适计算与移动计算实证研究",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011768",
+    "zh": "可视化理论、概念与范式",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011769",
+    "zh": "可视化实证研究",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011770",
+    "zh": "可视化设计与评估方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011771",
+    "zh": "可视化工具包",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011772",
+    "zh": "无障碍理论、概念与范式",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011773",
+    "zh": "无障碍实证研究",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011774",
+    "zh": "无障碍设计与评估方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011775",
+    "zh": "无障碍技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011776",
+    "zh": "无障碍系统与工具",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011777",
+    "zh": "并发计算方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011778",
+    "zh": "并发算法",
+    "decision": "translated",
+    "note": ""
+  }
+]

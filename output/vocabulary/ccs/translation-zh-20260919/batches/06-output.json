@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "10010523",
+    "zh": "精简指令集计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010524",
+    "zh": "复杂指令集计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010525",
+    "zh": "超标量体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010526",
+    "zh": "流水线计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010527",
+    "zh": "栈式计算机",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010528",
+    "zh": "并行体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010529",
+    "zh": "超长指令字",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010530",
+    "zh": "互连体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010531",
+    "zh": "多指令流多数据流",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010532",
+    "zh": "元胞体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010533",
+    "zh": "多指令流单数据流",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010534",
+    "zh": "单指令流多数据流",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010535",
+    "zh": "脉动阵列",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010536",
+    "zh": "多核体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010537",
+    "zh": "分布式体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010538",
+    "zh": "客户端—服务器体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010539",
+    "zh": "多层体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010540",
+    "zh": "对等体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010541",
+    "zh": "网格计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010542",
+    "zh": "其他体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010543",
+    "zh": "可重构计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010544",
+    "zh": "模拟计算机",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010545",
+    "zh": "数据流体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010546",
+    "zh": "异构（混合）系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010548",
+    "zh": "自组织自主计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010549",
+    "zh": "光计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010550",
+    "zh": "量子计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010551",
+    "zh": "分子计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010553",
+    "zh": "嵌入式系统与信息物理系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010554",
+    "zh": "机器人学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010555",
+    "zh": "机器人组件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010556",
+    "zh": "机器人控制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010557",
+    "zh": "机器人自主性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010558",
+    "zh": "机器人外部接口",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010559",
+    "zh": "传感器与执行器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010560",
+    "zh": "片上系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010561",
+    "zh": "固件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010562",
+    "zh": "嵌入式系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010563",
+    "zh": "嵌入式硬件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010564",
+    "zh": "嵌入式软件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010570",
+    "zh": "实时系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010571",
+    "zh": "实时操作系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010572",
+    "zh": "实时语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010573",
+    "zh": "实时系统规约",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010574",
+    "zh": "实时系统体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010575",
+    "zh": "可信赖与容错的系统和网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010577",
+    "zh": "可靠性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010578",
+    "zh": "可用性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010579",
+    "zh": "可维护性与维护",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010580",
+    "zh": "处理器与存储器体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010581",
+    "zh": "辅助存储组织",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010582",
+    "zh": "自组织网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010583",
+    "zh": "硬件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010584",
+    "zh": "印制电路板",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010585",
+    "zh": "电磁干扰与电磁兼容",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010586",
+    "zh": "热问题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010587",
+    "zh": "印制电路板设计与布局",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010588",
+    "zh": "通信硬件、接口与存储",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010590",
+    "zh": "总线与高速链路",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010591",
+    "zh": "显示器与成像器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010592",
+    "zh": "外部存储",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010593",
+    "zh": "网络硬件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010594",
+    "zh": "打印机",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010595",
+    "zh": "传感器应用与部署",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010596",
+    "zh": "传感器设备与平台",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010597",
+    "zh": "声音输入输出",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010598",
+    "zh": "触觉与手部交互接口",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010600",
+    "zh": "集成电路",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010601",
+    "zh": "三维集成电路",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010602",
+    "zh": "互连",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010603",
+    "zh": "输入输出电路",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010604",
+    "zh": "金属互连",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010605",
+    "zh": "光子互连与光互连",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010606",
+    "zh": "射频与无线互连",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010607",
+    "zh": "半导体存储器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010608",
+    "zh": "动态存储器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010609",
+    "zh": "静态存储器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010610",
+    "zh": "非易失性存储器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010611",
+    "zh": "只读存储器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010612",
+    "zh": "数字开关",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010613",
+    "zh": "晶体管",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010614",
+    "zh": "逻辑电路系列",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010615",
+    "zh": "逻辑电路",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010616",
+    "zh": "算术与数据通路电路",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010617",
+    "zh": "异步电路",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010618",
+    "zh": "组合电路",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010619",
+    "zh": "设计模块与层次结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010620",
+    "zh": "有限状态机",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010621",
+    "zh": "时序电路",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010622",
+    "zh": "抽象机",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010624",
+    "zh": "量子通信复杂性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010625",
+    "zh": "量子查询复杂性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010626",
+    "zh": "量子信息论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010628",
+    "zh": "可重构逻辑与现场可编程门阵列",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010629",
+    "zh": "硬件加速器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010630",
+    "zh": "高速输入输出",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010631",
+    "zh": "可编程逻辑单元",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010632",
+    "zh": "可编程互连",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010633",
+    "zh": "超大规模集成电路设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010634",
+    "zh": "模拟与混合信号电路",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010635",
+    "zh": "数据转换",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010636",
+    "zh": "时钟生成与定时",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010637",
+    "zh": "模拟与混合信号电路优化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010638",
+    "zh": "射频与无线电路",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010639",
+    "zh": "有线通信",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010640",
+    "zh": "专用超大规模集成电路设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010641",
+    "zh": "专用集成电路",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010642",
+    "zh": "专用指令集处理器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010643",
+    "zh": "专用处理器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010645",
+    "zh": "设计复用与基于通信的设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010646",
+    "zh": "软核",
+    "decision": "translated",
+    "note": "按集成电路知识产权核语境译为软核；模型知识判断，外部用法未核实。"
+  },
+  {
+    "id": "10010648",
+    "zh": "基于平台的设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010649",
+    "zh": "设计规则",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010650",
+    "zh": "芯片设计与制造经济学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010651",
+    "zh": "全定制电路",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010652",
+    "zh": "超大规模集成电路设计的制造考虑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010653",
+    "zh": "片上资源管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010654",
+    "zh": "片上传感器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010655",
+    "zh": "标准单元库",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010656",
+    "zh": "超大规模集成电路封装",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010657",
+    "zh": "裸片与晶圆堆叠",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010658",
+    "zh": "输入输出方式",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010659",
+    "zh": "超大规模集成电路系统规约与约束",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010660",
+    "zh": "多芯片模块",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010661",
+    "zh": "封装级互连",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010662",
+    "zh": "功率与能量",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010663",
+    "zh": "能源生成与储存",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010664",
+    "zh": "电池",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010665",
+    "zh": "燃料能源",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010666",
+    "zh": "可再生能源",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010667",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "原名 Reusable energy storage 的特定储能类别不能可靠确定，保留原名。"
+  },
+  {
+    "id": "10010668",
+    "zh": "能源分配",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010669",
+    "zh": "能源计量",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010670",
+    "zh": "电能转换",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010671",
+    "zh": "电力网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010672",
+    "zh": "智能电网",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010673",
+    "zh": "环境影响",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010674",
+    "zh": "功耗估算与优化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010678",
+    "zh": "温度监测",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010679",
+    "zh": "温度仿真与估算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010680",
+    "zh": "温度控制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010681",
+    "zh": "温度优化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010682",
+    "zh": "电子设计自动化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010684",
+    "zh": "高层次综合与寄存器传输级综合",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010685",
+    "zh": "数据通路优化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010686",
+    "zh": "软硬件协同设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010687",
+    "zh": "资源绑定与共享",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010688",
+    "zh": "调度",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010689",
+    "zh": "硬件描述语言与编译",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010690",
+    "zh": "逻辑综合",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010691",
+    "zh": "组合逻辑综合",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010692",
+    "zh": "电路优化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010693",
+    "zh": "时序逻辑综合",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010694",
+    "zh": "工艺映射",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010695",
+    "zh": "晶体管级综合",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010696",
+    "zh": "建模与参数提取",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010697",
+    "zh": "物理设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010698",
+    "zh": "时钟网络综合",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010699",
+    "zh": "封装",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010700",
+    "zh": "划分与布图规划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010701",
+    "zh": "布局",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010702",
+    "zh": "物理综合",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010703",
+    "zh": "电源网络设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010704",
+    "zh": "布线",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010705",
+    "zh": "时序分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010706",
+    "zh": "电气级仿真",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010707",
+    "zh": "模型降阶",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010708",
+    "zh": "紧凑延迟模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010709",
+    "zh": "静态时序分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010710",
+    "zh": "统计时序分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010711",
+    "zh": "基于信号跳变的时序分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010712",
+    "zh": "电子设计自动化方法学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010713",
+    "zh": "电子设计自动化最佳实践",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010714",
+    "zh": "电子设计自动化设计数据库",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010715",
+    "zh": "电子设计自动化软件工具",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010717",
+    "zh": "硬件确认",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010721",
+    "zh": "功能验证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010722",
+    "zh": "覆盖率指标",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010723",
+    "zh": "等价性检查",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010724",
+    "zh": "半形式化验证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010725",
+    "zh": "仿真与硬件仿真",
+    "decision": "translated",
+    "note": "按硬件功能验证语境将 emulation 译为硬件仿真；模型知识判断，外部用法未核实。"
+  },
+  {
+    "id": "10010726",
+    "zh": "事务级验证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010727",
+    "zh": "定理证明与可满足性求解",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010728",
+    "zh": "物理验证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010729",
+    "zh": "设计规则检查",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010730",
+    "zh": "版图与原理图一致性检查",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010731",
+    "zh": "功耗与热分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010732",
+    "zh": "时序分析与签核",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010733",
+    "zh": "制造后确认与调试",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010734",
+    "zh": "缺陷检测、定位与诊断",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010735",
+    "zh": "硬件缺陷修复",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010736",
+    "zh": "可调试性设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010737",
+    "zh": "硬件测试",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010738",
+    "zh": "模拟、混合信号与射频测试",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010739",
+    "zh": "板级与系统级测试",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010740",
+    "zh": "基于缺陷的测试",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010741",
+    "zh": "内建自测试",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010742",
+    "zh": "在线测试与诊断",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010743",
+    "zh": "测试数据压缩",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010744",
+    "zh": "可测试性设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010745",
+    "zh": "故障模型与测试指标",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010746",
+    "zh": "存储器测试与修复",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010747",
+    "zh": "硬件可靠性筛选",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010748",
+    "zh": "测试模式生成与故障仿真",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010749",
+    "zh": "利用分布式与并行系统的测试",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010750",
+    "zh": "鲁棒性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010751",
+    "zh": "容错",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010752",
+    "zh": "错误检测与纠正",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010753",
+    "zh": "失效预测",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010754",
+    "zh": "失效恢复、维护与自修复",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010755",
+    "zh": "冗余",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010756",
+    "zh": "自检机制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010757",
+    "zh": "系统级容错",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010758",
+    "zh": "可制造性设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010759",
+    "zh": "工艺偏差",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010760",
+    "zh": "成品率与成本建模",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010761",
+    "zh": "成品率与成本优化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010762",
+    "zh": "硬件可靠性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010763",
+    "zh": "电路与系统老化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010764",
+    "zh": "电路加固",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010765",
+    "zh": "早期失效与夭折失效",
+    "decision": "translated",
+    "note": "按硬件可靠性语境理解 infant mortality 为器件早期夭折失效；模型知识判断，外部用法未核实。"
+  },
+  {
+    "id": "10010766",
+    "zh": "工艺、电压与温度变化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010767",
+    "zh": "信号完整性与噪声分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010768",
+    "zh": "瞬态错误与翻转",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010769",
+    "zh": "安全关键系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010777",
+    "zh": "硬件攻击与对策",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010779",
+    "zh": "恶意设计修改",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010786",
+    "zh": "新兴技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010787",
+    "zh": "新兴器件与系统的分析和设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010788",
+    "zh": "新兴体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010789",
+    "zh": "新兴语言与编译器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010790",
+    "zh": "新兴仿真技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010791",
+    "zh": "新兴工具与方法学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010792",
+    "zh": "生物相关信息处理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010794",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "Bio-embedded electronics 的嵌入对象及惯用中文名称不能可靠确定，保留原名。"
+  },
+  {
+    "id": "10010798",
+    "zh": "神经系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010799",
+    "zh": "电路衬底",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010800",
+    "zh": "III-V 族化合物",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010801",
+    "zh": "碳基电子学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010802",
+    "zh": "细胞神经网络",
+    "decision": "translated",
+    "note": ""
+  }
+]

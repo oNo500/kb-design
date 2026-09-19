@@ -1,0 +1,15 @@
+{
+  "errors": [],
+  "preferred_terms_observed": 2299,
+  "preferred_labels_observed": 2299,
+  "aliases_observed": 6814,
+  "term_label_conflicts": [],
+  "cran_labels_not_observed": [],
+  "tematres_labels_not_in_cran": [],
+  "enumeration_scope": "Latin alphabet, numerical index and dot index; includes all 2299 CRAN preferred labels. Direct fetchAlt may expose additional forms outside this index.",
+  "extra_direct_alias_sample": {
+    "term_id": "527",
+    "label": "λ-calculus",
+    "present_in_letter_index": false
+  }
+}

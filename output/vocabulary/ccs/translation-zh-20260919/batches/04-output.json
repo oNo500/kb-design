@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "10003790",
+    "zh": "逻辑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003791",
+    "zh": "模型检测",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003792",
+    "zh": "证明论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003793",
+    "zh": "模态逻辑与时序逻辑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003794",
+    "zh": "自动推理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003795",
+    "zh": "约束编程与逻辑编程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003796",
+    "zh": "构造性数学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003797",
+    "zh": "描述逻辑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003798",
+    "zh": "等式逻辑与重写",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003799",
+    "zh": "有限模型论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003800",
+    "zh": "高阶逻辑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003801",
+    "zh": "线性逻辑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003806",
+    "zh": "程序逻辑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003808",
+    "zh": "调度算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003809",
+    "zh": "算法设计与分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003810",
+    "zh": "装填与覆盖问题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003811",
+    "zh": "路由与网络设计问题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003812",
+    "zh": "设施选址与聚类",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003813",
+    "zh": "舍入技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003814",
+    "zh": "随机逼近",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003815",
+    "zh": "数值近似算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003817",
+    "zh": "MapReduce 算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003824",
+    "zh": "自组织",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010031",
+    "zh": "数据结构设计与分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010032",
+    "zh": "模式匹配",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010033",
+    "zh": "排序与查找",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010034",
+    "zh": "前驱查询",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010035",
+    "zh": "单元探测模型与下界",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010036",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "图算法语境明确，但 spanners 的常见中文名称无法可靠确定，保留原名。"
+  },
+  {
+    "id": "10010037",
+    "zh": "最短路径",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010038",
+    "zh": "动态图算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010040",
+    "zh": "次模优化与多态体",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010041",
+    "zh": "线性规划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010042",
+    "zh": "半定规划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010043",
+    "zh": "凸优化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010044",
+    "zh": "拟凸规划与单峰性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010045",
+    "zh": "整数规划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010046",
+    "zh": "随机控制与优化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010047",
+    "zh": "在线算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010048",
+    "zh": "在线学习算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010049",
+    "zh": "缓存与分页算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010050",
+    "zh": "k 服务器算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010051",
+    "zh": "对手模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010052",
+    "zh": "参数化复杂度与精确算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010053",
+    "zh": "固定参数可解性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010054",
+    "zh": "W 层次",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010055",
+    "zh": "流式算法、次线性时间算法与近线性时间算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010056",
+    "zh": "布隆过滤器与哈希",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010057",
+    "zh": "草图构建与采样",
+    "decision": "translated",
+    "note": "按流式算法语境将 sketching 理解为紧凑数据草图的构建。"
+  },
+  {
+    "id": "10010058",
+    "zh": "下界与信息复杂度",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010059",
+    "zh": "随机顺序与鲁棒通信复杂度",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010060",
+    "zh": "最近邻算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010061",
+    "zh": "随机性、几何与离散结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010062",
+    "zh": "伪随机性与去随机化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010063",
+    "zh": "计算几何",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010064",
+    "zh": "随机组合结构生成",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010065",
+    "zh": "随机游走与马尔可夫链",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010066",
+    "zh": "扩展图与随机性提取器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010067",
+    "zh": "纠错码",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010068",
+    "zh": "随机投影与度量嵌入",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010069",
+    "zh": "随机网络模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010070",
+    "zh": "面向应用领域的理论与算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010071",
+    "zh": "机器学习理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010072",
+    "zh": "样本复杂度与泛化界",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010073",
+    "zh": "布尔函数学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010074",
+    "zh": "无监督学习与聚类",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010075",
+    "zh": "核方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010076",
+    "zh": "提升方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010077",
+    "zh": "贝叶斯分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010078",
+    "zh": "归纳推断",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010079",
+    "zh": "在线学习理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010082",
+    "zh": "多智能体学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010083",
+    "zh": "学习模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010084",
+    "zh": "查询学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010085",
+    "zh": "结构化预测",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010086",
+    "zh": "分子序列分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010087",
+    "zh": "计算生物学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010088",
+    "zh": "基因与调控元件识别",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010089",
+    "zh": "分子进化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010090",
+    "zh": "计算转录组学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010091",
+    "zh": "生物网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010092",
+    "zh": "测序与基因分型技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010093",
+    "zh": "基因组学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010094",
+    "zh": "群体遗传学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010095",
+    "zh": "系统生物学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010096",
+    "zh": "成像",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010097",
+    "zh": "计算蛋白质组学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010098",
+    "zh": "分子结构生物学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010099",
+    "zh": "算法博弈论与机制设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010100",
+    "zh": "算法博弈论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010101",
+    "zh": "算法机制设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010102",
+    "zh": "博弈论中的解概念",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010103",
+    "zh": "均衡的精确计算与近似计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010104",
+    "zh": "均衡质量",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010105",
+    "zh": "博弈中的收敛与学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010106",
+    "zh": "市场均衡",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010107",
+    "zh": "计算定价与拍卖",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010108",
+    "zh": "博弈表示及其复杂度",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010109",
+    "zh": "网络博弈",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010110",
+    "zh": "网络形成",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010111",
+    "zh": "数据库理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010112",
+    "zh": "数据建模",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010113",
+    "zh": "数据库查询语言原理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010114",
+    "zh": "数据库约束理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010117",
+    "zh": "互操作性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010120",
+    "zh": "不完整数据",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010124",
+    "zh": "语义与推理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010125",
+    "zh": "程序构造",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010126",
+    "zh": "控制原语",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010127",
+    "zh": "函数式构造",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010128",
+    "zh": "面向对象构造",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010129",
+    "zh": "程序模式",
+    "decision": "translated",
+    "note": "按程序理论中的 program schemes 理解，不指设计模式。"
+  },
+  {
+    "id": "10010130",
+    "zh": "类型结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010131",
+    "zh": "程序语义",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010132",
+    "zh": "代数语义",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010133",
+    "zh": "指称语义",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010134",
+    "zh": "操作语义",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010135",
+    "zh": "公理语义",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010136",
+    "zh": "动作语义",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010137",
+    "zh": "范畴语义",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010138",
+    "zh": "程序推理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010139",
+    "zh": "不变式",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010140",
+    "zh": "程序规约",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010141",
+    "zh": "前置条件与后置条件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010142",
+    "zh": "程序验证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010143",
+    "zh": "程序分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010144",
+    "zh": "断言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010145",
+    "zh": "语法分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010146",
+    "zh": "基于图的数据库模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010147",
+    "zh": "计算方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010148",
+    "zh": "符号与代数运算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010149",
+    "zh": "符号与代数算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010150",
+    "zh": "代数算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010151",
+    "zh": "非代数算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010152",
+    "zh": "符号微积分算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010153",
+    "zh": "精确算术算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010154",
+    "zh": "符号与数值混合方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010155",
+    "zh": "离散微积分算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010156",
+    "zh": "数论算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010157",
+    "zh": "方程与不等式求解算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010158",
+    "zh": "线性代数算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010159",
+    "zh": "定理证明算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010160",
+    "zh": "布尔代数算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010161",
+    "zh": "优化算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010162",
+    "zh": "计算机代数系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010163",
+    "zh": "专用代数系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010164",
+    "zh": "数学对象表示",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010165",
+    "zh": "精确数表示",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010166",
+    "zh": "数学函数表示",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010167",
+    "zh": "布尔函数表示",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010168",
+    "zh": "多项式表示",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010169",
+    "zh": "并行计算方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010170",
+    "zh": "并行算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010171",
+    "zh": "共享内存算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010172",
+    "zh": "分布式算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010173",
+    "zh": "向量算法与流式算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010174",
+    "zh": "大规模并行算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010175",
+    "zh": "并行编程语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010177",
+    "zh": "分布式编程语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010178",
+    "zh": "人工智能",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010179",
+    "zh": "自然语言处理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010180",
+    "zh": "机器翻译",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010181",
+    "zh": "篇章、对话与语用",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010182",
+    "zh": "自然语言生成",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010183",
+    "zh": "语音识别",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010184",
+    "zh": "词汇语义",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010185",
+    "zh": "音系学与形态学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010186",
+    "zh": "语言资源",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010187",
+    "zh": "知识表示与推理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010188",
+    "zh": "语义网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010189",
+    "zh": "非单调推理、缺省推理与信念修正",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010190",
+    "zh": "概率推理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010191",
+    "zh": "模糊性与模糊逻辑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010192",
+    "zh": "因果推理与诊断",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010193",
+    "zh": "时序推理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010194",
+    "zh": "认知机器人学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010195",
+    "zh": "本体工程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010196",
+    "zh": "逻辑编程与回答集编程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010197",
+    "zh": "空间推理与物理推理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010198",
+    "zh": "信念与知识推理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010199",
+    "zh": "规划与调度",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010200",
+    "zh": "确定性动作规划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010201",
+    "zh": "不确定性下的规划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010202",
+    "zh": "多智能体规划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010203",
+    "zh": "基于抽象与泛化的规划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010204",
+    "zh": "机器人规划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010205",
+    "zh": "搜索方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010206",
+    "zh": "启发式函数构造",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010207",
+    "zh": "离散空间搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010208",
+    "zh": "连续空间搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010209",
+    "zh": "随机化搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010210",
+    "zh": "博弈树搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010211",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "micro-operators 在搜索方法中的具体含义及惯用译名无法可靠确定，保留原名。"
+  },
+  {
+    "id": "10010212",
+    "zh": "部分可观测条件下的搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010213",
+    "zh": "控制方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010214",
+    "zh": "计算控制理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010215",
+    "zh": "运动路径规划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010216",
+    "zh": "人工智能的哲学与理论基础",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010217",
+    "zh": "认知科学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010218",
+    "zh": "心理理论",
+    "decision": "translated",
+    "note": "按认知科学中对他人心理状态的理解能力解释。"
+  },
+  {
+    "id": "10010219",
+    "zh": "分布式人工智能",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010220",
+    "zh": "多智能体系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010221",
+    "zh": "智能体",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010222",
+    "zh": "移动智能体",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010223",
+    "zh": "合作与协调",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010224",
+    "zh": "计算机视觉",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010225",
+    "zh": "计算机视觉任务",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010226",
+    "zh": "图像与视频采集",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010227",
+    "zh": "场景理解",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010228",
+    "zh": "活动识别与理解",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010229",
+    "zh": "异常检测",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010230",
+    "zh": "视频摘要",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010231",
+    "zh": "基于视觉内容的索引与检索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010232",
+    "zh": "视觉检测",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010233",
+    "zh": "机器人视觉",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010234",
+    "zh": "相机标定",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010235",
+    "zh": "对极几何",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010236",
+    "zh": "计算摄影",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010237",
+    "zh": "高光谱成像",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010238",
+    "zh": "动作捕捉",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010239",
+    "zh": "三维成像",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010240",
+    "zh": "计算机视觉表示",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010241",
+    "zh": "图像表示",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010242",
+    "zh": "形状表示",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010243",
+    "zh": "外观与纹理表示",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010244",
+    "zh": "层次表示",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010245",
+    "zh": "计算机视觉问题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010246",
+    "zh": "兴趣点与显著区域检测",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010247",
+    "zh": "图像分割",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010248",
+    "zh": "视频分割",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010249",
+    "zh": "形状推断",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010250",
+    "zh": "目标检测",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010251",
+    "zh": "目标识别",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010252",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "与同级 Object recognition 的区分缺少范围说明，无法可靠确定 identification 的对应译名，保留原名。"
+  },
+  {
+    "id": "10010253",
+    "zh": "跟踪",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010254",
+    "zh": "重建",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010255",
+    "zh": "匹配",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010256",
+    "zh": "主动视觉",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010257",
+    "zh": "机器学习",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010258",
+    "zh": "学习范式",
+    "decision": "translated",
+    "note": ""
+  }
+]

@@ -1,0 +1,2654 @@
+[
+  {
+    "id": "10002944",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002944",
+    "en": "General and reference",
+    "source_language": "en",
+    "parents": [],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002945",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002945",
+    "en": "Surveys and overviews",
+    "source_language": "en",
+    "parents": [
+      "Document types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002946",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002946",
+    "en": "Reference works",
+    "source_language": "en",
+    "parents": [
+      "Document types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002947",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002947",
+    "en": "General conference proceedings",
+    "source_language": "en",
+    "parents": [
+      "Document types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002948",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002948",
+    "en": "Biographies",
+    "source_language": "en",
+    "parents": [
+      "Document types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002949",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002949",
+    "en": "General literature",
+    "source_language": "en",
+    "parents": [
+      "Document types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002950",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002950",
+    "en": "Mathematics of computing",
+    "source_language": "en",
+    "parents": [],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002951",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002951",
+    "en": "Information systems",
+    "source_language": "en",
+    "parents": [],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002952",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002952",
+    "en": "Data management systems",
+    "source_language": "en",
+    "parents": [
+      "Information systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002953",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002953",
+    "en": "Database design and models",
+    "source_language": "en",
+    "parents": [
+      "Data management systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002955",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002955",
+    "en": "Relational database model",
+    "source_language": "en",
+    "parents": [
+      "Database design and models"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002956",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002956",
+    "en": "Hierarchical data models",
+    "source_language": "en",
+    "parents": [
+      "Graph-based database models"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002958",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002958",
+    "en": "Semi-structured data",
+    "source_language": "en",
+    "parents": [
+      "Data model extensions"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002959",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002959",
+    "en": "Entity relationship models",
+    "source_language": "en",
+    "parents": [
+      "Database design and models"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002971",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002971",
+    "en": "Data structures",
+    "source_language": "en",
+    "parents": [
+      "Data management systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002974",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002974",
+    "en": "Multidimensional range search",
+    "source_language": "en",
+    "parents": [
+      "Data access methods"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002975",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002975",
+    "en": "Data compression",
+    "source_language": "en",
+    "parents": [
+      "Data layout",
+      "Data structures design and analysis"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002976",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002976",
+    "en": "Data encryption",
+    "source_language": "en",
+    "parents": [
+      "Data layout"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002978",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002978",
+    "en": "Security and privacy",
+    "source_language": "en",
+    "parents": [],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002979",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002979",
+    "en": "Cryptography",
+    "source_language": "en",
+    "parents": [
+      "Security and privacy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002980",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002980",
+    "en": "Key management",
+    "source_language": "en",
+    "parents": [
+      "Cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002981",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002981",
+    "en": "Public key (asymmetric) techniques",
+    "source_language": "en",
+    "parents": [
+      "Cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002982",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002982",
+    "en": "Symmetric cryptography and hash functions",
+    "source_language": "en",
+    "parents": [
+      "Cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002983",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002983",
+    "en": "Cryptanalysis and other attacks",
+    "source_language": "en",
+    "parents": [
+      "Cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002984",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002984",
+    "en": "Information-theoretic techniques",
+    "source_language": "en",
+    "parents": [
+      "Cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002985",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002985",
+    "en": "Mathematical foundations of cryptography",
+    "source_language": "en",
+    "parents": [
+      "Cryptography"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002986",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002986",
+    "en": "Formal methods and theory of security",
+    "source_language": "en",
+    "parents": [
+      "Security and privacy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002987",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002987",
+    "en": "Trust frameworks",
+    "source_language": "en",
+    "parents": [
+      "Formal methods and theory of security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002988",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002988",
+    "en": "Security requirements",
+    "source_language": "en",
+    "parents": [
+      "Formal methods and theory of security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002989",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002989",
+    "en": "Formal security models",
+    "source_language": "en",
+    "parents": [
+      "Formal methods and theory of security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002990",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002990",
+    "en": "Logic and verification",
+    "source_language": "en",
+    "parents": [
+      "Formal methods and theory of security",
+      "Logic"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002991",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002991",
+    "en": "Security services",
+    "source_language": "en",
+    "parents": [
+      "Security and privacy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002992",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002992",
+    "en": "Authentication",
+    "source_language": "en",
+    "parents": [
+      "Security services"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002993",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002993",
+    "en": "Access control",
+    "source_language": "en",
+    "parents": [
+      "Security services"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002994",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002994",
+    "en": "Pseudonymity, anonymity and untraceability",
+    "source_language": "en",
+    "parents": [
+      "Security services"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002995",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002995",
+    "en": "Privacy-preserving protocols",
+    "source_language": "en",
+    "parents": [
+      "Security services"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002996",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002996",
+    "en": "Digital rights management",
+    "source_language": "en",
+    "parents": [
+      "Intellectual property",
+      "Security services"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002997",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002997",
+    "en": "Intrusion/anomaly detection and malware mitigation",
+    "source_language": "en",
+    "parents": [
+      "Security and privacy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002998",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002998",
+    "en": "Malware and its mitigation",
+    "source_language": "en",
+    "parents": [
+      "Intrusion/anomaly detection and malware mitigation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10002999",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10002999",
+    "en": "Intrusion detection systems",
+    "source_language": "en",
+    "parents": [
+      "Intrusion/anomaly detection and malware mitigation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003000",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003000",
+    "en": "Social engineering attacks",
+    "source_language": "en",
+    "parents": [
+      "Computer crime",
+      "Intrusion/anomaly detection and malware mitigation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003001",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003001",
+    "en": "Security in hardware",
+    "source_language": "en",
+    "parents": [
+      "Security and privacy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003002",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003002",
+    "en": "Tamper-proof and tamper-resistant designs",
+    "source_language": "en",
+    "parents": [
+      "Security in hardware"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003003",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003003",
+    "en": "Embedded systems security",
+    "source_language": "en",
+    "parents": [
+      "Security in hardware"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003006",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003006",
+    "en": "Systems security",
+    "source_language": "en",
+    "parents": [
+      "Security and privacy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003007",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003007",
+    "en": "Operating systems security",
+    "source_language": "en",
+    "parents": [
+      "Systems security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003008",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003008",
+    "en": "Mobile platform security",
+    "source_language": "en",
+    "parents": [
+      "Operating systems security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003009",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003009",
+    "en": "Trusted computing",
+    "source_language": "en",
+    "parents": [
+      "Operating systems security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003010",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003010",
+    "en": "Virtualization and security",
+    "source_language": "en",
+    "parents": [
+      "Operating systems security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003011",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003011",
+    "en": "Browser security",
+    "source_language": "en",
+    "parents": [
+      "Systems security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003013",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003013",
+    "en": "Distributed systems security",
+    "source_language": "en",
+    "parents": [
+      "Systems security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003014",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003014",
+    "en": "Network security",
+    "source_language": "en",
+    "parents": [
+      "Network properties",
+      "Security and privacy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003015",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003015",
+    "en": "Security protocols",
+    "source_language": "en",
+    "parents": [
+      "Network security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003016",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003016",
+    "en": "Web protocol security",
+    "source_language": "en",
+    "parents": [
+      "Network security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003017",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003017",
+    "en": "Mobile and wireless security",
+    "source_language": "en",
+    "parents": [
+      "Network security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003018",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003018",
+    "en": "Database and storage security",
+    "source_language": "en",
+    "parents": [
+      "Security and privacy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003019",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003019",
+    "en": "Data anonymization and sanitization",
+    "source_language": "en",
+    "parents": [
+      "Database and storage security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003020",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003020",
+    "en": "Management and querying of encrypted data",
+    "source_language": "en",
+    "parents": [
+      "Database and storage security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003021",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003021",
+    "en": "Information accountability and usage control",
+    "source_language": "en",
+    "parents": [
+      "Database and storage security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003022",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003022",
+    "en": "Software and application security",
+    "source_language": "en",
+    "parents": [
+      "Security and privacy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003023",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003023",
+    "en": "Software security engineering",
+    "source_language": "en",
+    "parents": [
+      "Software and application security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003026",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003026",
+    "en": "Web application security",
+    "source_language": "en",
+    "parents": [
+      "Software and application security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003027",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003027",
+    "en": "Social network security and privacy",
+    "source_language": "en",
+    "parents": [
+      "Software and application security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003028",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003028",
+    "en": "Domain-specific security and privacy architectures",
+    "source_language": "en",
+    "parents": [
+      "Software and application security"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003029",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003029",
+    "en": "Human and societal aspects of security and privacy",
+    "source_language": "en",
+    "parents": [
+      "Security and privacy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003031",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003031",
+    "en": "Economics of security and privacy",
+    "source_language": "en",
+    "parents": [
+      "Human and societal aspects of security and privacy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003032",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003032",
+    "en": "Social aspects of security and privacy",
+    "source_language": "en",
+    "parents": [
+      "Human and societal aspects of security and privacy"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003033",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003033",
+    "en": "Networks",
+    "source_language": "en",
+    "parents": [],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003034",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003034",
+    "en": "Network architectures",
+    "source_language": "en",
+    "parents": [
+      "Networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003035",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003035",
+    "en": "Network design principles",
+    "source_language": "en",
+    "parents": [
+      "Network architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003036",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003036",
+    "en": "Layering",
+    "source_language": "en",
+    "parents": [
+      "Network design principles"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003037",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003037",
+    "en": "Naming and addressing",
+    "source_language": "en",
+    "parents": [
+      "Network design principles",
+      "Network services"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003038",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003038",
+    "en": "Programming interfaces",
+    "source_language": "en",
+    "parents": [
+      "Network architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003039",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003039",
+    "en": "Network protocols",
+    "source_language": "en",
+    "parents": [
+      "Networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003040",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003040",
+    "en": "Network protocol design",
+    "source_language": "en",
+    "parents": [
+      "Network protocols"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003041",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003041",
+    "en": "Protocol correctness",
+    "source_language": "en",
+    "parents": [
+      "Network protocols"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003042",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003042",
+    "en": "Protocol testing and verification",
+    "source_language": "en",
+    "parents": [
+      "Protocol correctness"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003043",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003043",
+    "en": "Formal specifications",
+    "source_language": "en",
+    "parents": [
+      "Protocol correctness"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003044",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003044",
+    "en": "Link-layer protocols",
+    "source_language": "en",
+    "parents": [
+      "Network protocols"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003045",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003045",
+    "en": "Network layer protocols",
+    "source_language": "en",
+    "parents": [
+      "Network protocols"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003046",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003046",
+    "en": "Routing protocols",
+    "source_language": "en",
+    "parents": [
+      "Network layer protocols"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003047",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003047",
+    "en": "Signaling protocols",
+    "source_language": "en",
+    "parents": [
+      "Network layer protocols"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003048",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003048",
+    "en": "Transport protocols",
+    "source_language": "en",
+    "parents": [
+      "Network protocols"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003049",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003049",
+    "en": "Session protocols",
+    "source_language": "en",
+    "parents": [
+      "Network protocols"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003050",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003050",
+    "en": "Presentation protocols",
+    "source_language": "en",
+    "parents": [
+      "Network protocols"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003051",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003051",
+    "en": "Application layer protocols",
+    "source_language": "en",
+    "parents": [
+      "Network protocols"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003052",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003052",
+    "en": "Peer-to-peer protocols",
+    "source_language": "en",
+    "parents": [
+      "Application layer protocols"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003053",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003053",
+    "en": "OAM protocols",
+    "source_language": "en",
+    "parents": [
+      "Network protocols"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003054",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003054",
+    "en": "Time synchronization protocols",
+    "source_language": "en",
+    "parents": [
+      "OAM protocols"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003055",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003055",
+    "en": "Network policy",
+    "source_language": "en",
+    "parents": [
+      "OAM protocols"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003056",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003056",
+    "en": "Cross-layer protocols",
+    "source_language": "en",
+    "parents": [
+      "Network protocols"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003058",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003058",
+    "en": "Network components",
+    "source_language": "en",
+    "parents": [
+      "Networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003059",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003059",
+    "en": "Intermediate nodes",
+    "source_language": "en",
+    "parents": [
+      "Network components"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003060",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003060",
+    "en": "Routers",
+    "source_language": "en",
+    "parents": [
+      "Intermediate nodes"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003061",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003061",
+    "en": "Bridges and switches",
+    "source_language": "en",
+    "parents": [
+      "Intermediate nodes"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003062",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003062",
+    "en": "Physical links",
+    "source_language": "en",
+    "parents": [
+      "Network components"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003063",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003063",
+    "en": "Middle boxes / network appliances",
+    "source_language": "en",
+    "parents": [
+      "Network components"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003064",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003064",
+    "en": "End nodes",
+    "source_language": "en",
+    "parents": [
+      "Network components"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003065",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003065",
+    "en": "Wireless access points, base stations and infrastructure",
+    "source_language": "en",
+    "parents": [
+      "Network components"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003066",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003066",
+    "en": "Logical nodes",
+    "source_language": "en",
+    "parents": [
+      "Network components"
+    ],
+    "scope_notes": [
+      "Other suggested items to go in this category: Virtual routers; all AS related studies."
+    ],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003067",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003067",
+    "en": "Network domains",
+    "source_language": "en",
+    "parents": [
+      "Logical nodes"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003068",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003068",
+    "en": "Network algorithms",
+    "source_language": "en",
+    "parents": [
+      "Networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003069",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003069",
+    "en": "Data path algorithms",
+    "source_language": "en",
+    "parents": [
+      "Network algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003070",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003070",
+    "en": "Packet classification",
+    "source_language": "en",
+    "parents": [
+      "Data path algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003071",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003071",
+    "en": "Deep packet inspection",
+    "source_language": "en",
+    "parents": [
+      "Data path algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003072",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003072",
+    "en": "Packet scheduling",
+    "source_language": "en",
+    "parents": [
+      "Data path algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003073",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003073",
+    "en": "Control path algorithms",
+    "source_language": "en",
+    "parents": [
+      "Network algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003074",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003074",
+    "en": "Network resources allocation",
+    "source_language": "en",
+    "parents": [
+      "Control path algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003075",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003075",
+    "en": "Network control algorithms",
+    "source_language": "en",
+    "parents": [
+      "Control path algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003076",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003076",
+    "en": "Traffic engineering algorithms",
+    "source_language": "en",
+    "parents": [
+      "Control path algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003077",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003077",
+    "en": "Network design and planning algorithms",
+    "source_language": "en",
+    "parents": [
+      "Control path algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003078",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003078",
+    "en": "Network economics",
+    "source_language": "en",
+    "parents": [
+      "Network algorithms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003079",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003079",
+    "en": "Network performance evaluation",
+    "source_language": "en",
+    "parents": [
+      "Networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003080",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003080",
+    "en": "Network performance modeling",
+    "source_language": "en",
+    "parents": [
+      "Network performance evaluation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003081",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003081",
+    "en": "Network simulations",
+    "source_language": "en",
+    "parents": [
+      "Network performance evaluation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003082",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003082",
+    "en": "Network experimentation",
+    "source_language": "en",
+    "parents": [
+      "Network performance evaluation"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003083",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003083",
+    "en": "Network properties",
+    "source_language": "en",
+    "parents": [
+      "Networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003084",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003084",
+    "en": "Network range",
+    "source_language": "en",
+    "parents": [
+      "Network properties"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003085",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003085",
+    "en": "Short-range networks",
+    "source_language": "en",
+    "parents": [
+      "Network range"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003086",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003086",
+    "en": "Local area networks",
+    "source_language": "en",
+    "parents": [
+      "Network range"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003087",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003087",
+    "en": "Metropolitan area networks",
+    "source_language": "en",
+    "parents": [
+      "Network range"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003088",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003088",
+    "en": "Wide area networks",
+    "source_language": "en",
+    "parents": [
+      "Network range"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003089",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003089",
+    "en": "Very long-range networks",
+    "source_language": "en",
+    "parents": [
+      "Network range"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003090",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003090",
+    "en": "Network structure",
+    "source_language": "en",
+    "parents": [
+      "Network properties"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003091",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003091",
+    "en": "Topology analysis and generation",
+    "source_language": "en",
+    "parents": [
+      "Network structure"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003092",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003092",
+    "en": "Physical topologies",
+    "source_language": "en",
+    "parents": [
+      "Network structure"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003093",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003093",
+    "en": "Logical / virtual topologies",
+    "source_language": "en",
+    "parents": [
+      "Network structure"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003094",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003094",
+    "en": "Network dynamics",
+    "source_language": "en",
+    "parents": [
+      "Network properties"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003095",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003095",
+    "en": "Network reliability",
+    "source_language": "en",
+    "parents": [
+      "Network properties"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003097",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003097",
+    "en": "Network mobility",
+    "source_language": "en",
+    "parents": [
+      "Network properties"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003098",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003098",
+    "en": "Network manageability",
+    "source_language": "en",
+    "parents": [
+      "Network properties"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003099",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003099",
+    "en": "Network services",
+    "source_language": "en",
+    "parents": [
+      "Networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003100",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003100",
+    "en": "Cloud computing",
+    "source_language": "en",
+    "parents": [
+      "Distributed architectures",
+      "Distributed systems organizing principles",
+      "Network services"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003101",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003101",
+    "en": "Location based services",
+    "source_language": "en",
+    "parents": [
+      "Network services",
+      "Spatial-temporal systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003102",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003102",
+    "en": "Programmable networks",
+    "source_language": "en",
+    "parents": [
+      "Network services"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003103",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003103",
+    "en": "In-network processing",
+    "source_language": "en",
+    "parents": [
+      "Network services"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003104",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003104",
+    "en": "Network management",
+    "source_language": "en",
+    "parents": [
+      "Network services"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003105",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003105",
+    "en": "Network monitoring",
+    "source_language": "en",
+    "parents": [
+      "Network services"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003106",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003106",
+    "en": "Network types",
+    "source_language": "en",
+    "parents": [
+      "Networks"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003107",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003107",
+    "en": "Network on chip",
+    "source_language": "en",
+    "parents": [
+      "Design reuse and communication-based design",
+      "Network types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003108",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003108",
+    "en": "Home networks",
+    "source_language": "en",
+    "parents": [
+      "Network types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003109",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003109",
+    "en": "Storage area networks",
+    "source_language": "en",
+    "parents": [
+      "Network types",
+      "Storage network architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003110",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003110",
+    "en": "Data center networks",
+    "source_language": "en",
+    "parents": [
+      "Network types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003111",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003111",
+    "en": "Wired access networks",
+    "source_language": "en",
+    "parents": [
+      "Network types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003112",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003112",
+    "en": "Cyber-physical networks",
+    "source_language": "en",
+    "parents": [
+      "Network types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003113",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003113",
+    "en": "Mobile networks",
+    "source_language": "en",
+    "parents": [
+      "Network types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003114",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003114",
+    "en": "Overlay and other logical network structures",
+    "source_language": "en",
+    "parents": [
+      "Network types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003115",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003115",
+    "en": "Peer-to-peer networks",
+    "source_language": "en",
+    "parents": [
+      "Overlay and other logical network structures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003116",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003116",
+    "en": "World Wide Web (network structure)",
+    "source_language": "en",
+    "parents": [
+      "Overlay and other logical network structures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003118",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003118",
+    "en": "Social media networks",
+    "source_language": "en",
+    "parents": [
+      "Overlay and other logical network structures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003119",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003119",
+    "en": "Wireless access networks",
+    "source_language": "en",
+    "parents": [
+      "Network types"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003120",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003120",
+    "en": "Human-centered computing",
+    "source_language": "en",
+    "parents": [],
+    "scope_notes": [
+      "related to but distinct from human-computer interaction"
+    ],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003121",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003121",
+    "en": "Human computer interaction (HCI)",
+    "source_language": "en",
+    "parents": [
+      "Human-centered computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003122",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003122",
+    "en": "HCI design and evaluation methods",
+    "source_language": "en",
+    "parents": [
+      "Human computer interaction (HCI)"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003123",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003123",
+    "en": "Interaction design",
+    "source_language": "en",
+    "parents": [
+      "Human-centered computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003124",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003124",
+    "en": "Interaction paradigms",
+    "source_language": "en",
+    "parents": [
+      "Human computer interaction (HCI)"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003125",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003125",
+    "en": "Interaction devices",
+    "source_language": "en",
+    "parents": [
+      "Human computer interaction (HCI)"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003126",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003126",
+    "en": "HCI theory, concepts and models",
+    "source_language": "en",
+    "parents": [
+      "Human computer interaction (HCI)"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003128",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003128",
+    "en": "Interaction techniques",
+    "source_language": "en",
+    "parents": [
+      "Human computer interaction (HCI)"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003129",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003129",
+    "en": "Interactive systems and tools",
+    "source_language": "en",
+    "parents": [
+      "Human computer interaction (HCI)"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003130",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003130",
+    "en": "Collaborative and social computing",
+    "source_language": "en",
+    "parents": [
+      "Human-centered computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003131",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003131",
+    "en": "Collaborative and social computing theory, concepts and paradigms",
+    "source_language": "en",
+    "parents": [
+      "Collaborative and social computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003134",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003134",
+    "en": "Collaborative and social computing design and evaluation methods",
+    "source_language": "en",
+    "parents": [
+      "Collaborative and social computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003138",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003138",
+    "en": "Ubiquitous and mobile computing",
+    "source_language": "en",
+    "parents": [
+      "Human-centered computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003139",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003139",
+    "en": "Ubiquitous and mobile computing theory, concepts and paradigms",
+    "source_language": "en",
+    "parents": [
+      "Ubiquitous and mobile computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003140",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003140",
+    "en": "Ubiquitous and mobile computing systems and tools",
+    "source_language": "en",
+    "parents": [
+      "Ubiquitous and mobile computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003141",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003141",
+    "en": "Ubiquitous and mobile devices",
+    "source_language": "en",
+    "parents": [
+      "Ubiquitous and mobile computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003142",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003142",
+    "en": "Ubiquitous and mobile computing design and evaluation methods",
+    "source_language": "en",
+    "parents": [
+      "Ubiquitous and mobile computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003145",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003145",
+    "en": "Visualization",
+    "source_language": "en",
+    "parents": [
+      "Human-centered computing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003146",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003146",
+    "en": "Visualization techniques",
+    "source_language": "en",
+    "parents": [
+      "Visualization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003147",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003147",
+    "en": "Visualization application domains",
+    "source_language": "en",
+    "parents": [
+      "Visualization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003151",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003151",
+    "en": "Visualization systems and tools",
+    "source_language": "en",
+    "parents": [
+      "Visualization"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003152",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003152",
+    "en": "Information storage systems",
+    "source_language": "en",
+    "parents": [
+      "Information systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003153",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003153",
+    "en": "Information storage technologies",
+    "source_language": "en",
+    "parents": [
+      "Information storage systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003155",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003155",
+    "en": "Magnetic disks",
+    "source_language": "en",
+    "parents": [
+      "Information storage technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003156",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003156",
+    "en": "Magnetic tapes",
+    "source_language": "en",
+    "parents": [
+      "Information storage technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003157",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003157",
+    "en": "Optical / magneto-optical disks",
+    "source_language": "en",
+    "parents": [
+      "Information storage technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003158",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003158",
+    "en": "Storage class memory",
+    "source_language": "en",
+    "parents": [
+      "Information storage technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003159",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003159",
+    "en": "Disk arrays",
+    "source_language": "en",
+    "parents": [
+      "Information storage technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003160",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003160",
+    "en": "Tape libraries",
+    "source_language": "en",
+    "parents": [
+      "Information storage technologies"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003161",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003161",
+    "en": "Record storage systems",
+    "source_language": "en",
+    "parents": [
+      "Information storage systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003162",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003162",
+    "en": "Record storage alternatives",
+    "source_language": "en",
+    "parents": [
+      "Record storage systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003163",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003163",
+    "en": "Directory structures",
+    "source_language": "en",
+    "parents": [
+      "Record storage systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003164",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003164",
+    "en": "Block / page strategies",
+    "source_language": "en",
+    "parents": [
+      "Record storage systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003165",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003165",
+    "en": "Record layout alternatives",
+    "source_language": "en",
+    "parents": [
+      "Record storage systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003166",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003166",
+    "en": "Storage replication",
+    "source_language": "en",
+    "parents": [
+      "Information storage systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003167",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003167",
+    "en": "Mirroring",
+    "source_language": "en",
+    "parents": [
+      "Storage replication"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003168",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003168",
+    "en": "RAID",
+    "source_language": "en",
+    "parents": [
+      "Storage replication"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003171",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003171",
+    "en": "Point-in-time copies",
+    "source_language": "en",
+    "parents": [
+      "Storage replication"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003172",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003172",
+    "en": "Remote replication",
+    "source_language": "en",
+    "parents": [
+      "Storage replication"
+    ],
+    "scope_notes": [
+      "For disaster recovery."
+    ],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003174",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003174",
+    "en": "Direct attached storage",
+    "source_language": "en",
+    "parents": [
+      "Storage network architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003175",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003175",
+    "en": "Network attached storage",
+    "source_language": "en",
+    "parents": [
+      "Storage network architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003176",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003176",
+    "en": "Cloud based storage",
+    "source_language": "en",
+    "parents": [
+      "Storage architectures"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003180",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003180",
+    "en": "Hierarchical storage management",
+    "source_language": "en",
+    "parents": [
+      "Storage management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003181",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003181",
+    "en": "Storage virtualization",
+    "source_language": "en",
+    "parents": [
+      "Storage management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003182",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003182",
+    "en": "Information lifecycle management",
+    "source_language": "en",
+    "parents": [
+      "Storage management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003183",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003183",
+    "en": "Deduplication",
+    "source_language": "en",
+    "parents": [
+      "Information integration"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003184",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003184",
+    "en": "Version management",
+    "source_language": "en",
+    "parents": [
+      "Storage management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003185",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003185",
+    "en": "Storage power management",
+    "source_language": "en",
+    "parents": [
+      "Storage management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003186",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003186",
+    "en": "Thin provisioning",
+    "source_language": "en",
+    "parents": [
+      "Storage management"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003189",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003189",
+    "en": "Record and block layout",
+    "source_language": "en",
+    "parents": [
+      "Data layout"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003190",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003190",
+    "en": "Database management system engines",
+    "source_language": "en",
+    "parents": [
+      "Data management systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003191",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003191",
+    "en": "DBMS engine architectures",
+    "source_language": "en",
+    "parents": [
+      "Database management system engines"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003192",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003192",
+    "en": "Database query processing",
+    "source_language": "en",
+    "parents": [
+      "Database management system engines"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003193",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003193",
+    "en": "Database transaction processing",
+    "source_language": "en",
+    "parents": [
+      "Database management system engines"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003194",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003194",
+    "en": "Record and buffer management",
+    "source_language": "en",
+    "parents": [
+      "Database management system engines"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003195",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003195",
+    "en": "Parallel and distributed DBMSs",
+    "source_language": "en",
+    "parents": [
+      "Database management system engines"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003197",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003197",
+    "en": "Query languages",
+    "source_language": "en",
+    "parents": [
+      "Data management systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003201",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003201",
+    "en": "Triggers and rules",
+    "source_language": "en",
+    "parents": [
+      "Database management system engines"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003202",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003202",
+    "en": "Abstract data types",
+    "source_language": "en",
+    "parents": [
+      "Language features"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003205",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003205",
+    "en": "Database views",
+    "source_language": "en",
+    "parents": [
+      "Database management system engines"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003206",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003206",
+    "en": "Integrity checking",
+    "source_language": "en",
+    "parents": [
+      "Database management system engines"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003208",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003208",
+    "en": "Data streams",
+    "source_language": "en",
+    "parents": [
+      "Data model extensions"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003210",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003210",
+    "en": "Query optimization",
+    "source_language": "en",
+    "parents": [
+      "Database query processing"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003212",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003212",
+    "en": "Database administration",
+    "source_language": "en",
+    "parents": [
+      "Data management systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003213",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003213",
+    "en": "Database utilities and tools",
+    "source_language": "en",
+    "parents": [
+      "Database administration"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003214",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003214",
+    "en": "Database performance evaluation",
+    "source_language": "en",
+    "parents": [
+      "Database administration"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003215",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003215",
+    "en": "Extraction, transformation and loading",
+    "source_language": "en",
+    "parents": [
+      "Information integration"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003216",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003216",
+    "en": "Autonomous database administration",
+    "source_language": "en",
+    "parents": [
+      "Database administration"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003217",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003217",
+    "en": "Data exchange",
+    "source_language": "en",
+    "parents": [
+      "Database theory",
+      "Information integration"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003218",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003218",
+    "en": "Data cleaning",
+    "source_language": "en",
+    "parents": [
+      "Data mining",
+      "Information integration"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003219",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003219",
+    "en": "Information integration",
+    "source_language": "en",
+    "parents": [
+      "Data management systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003221",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003221",
+    "en": "Wrappers (data mining)",
+    "source_language": "en",
+    "parents": [
+      "Information integration"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003222",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003222",
+    "en": "Mediators and data integration",
+    "source_language": "en",
+    "parents": [
+      "Information integration"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003223",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003223",
+    "en": "Entity resolution",
+    "source_language": "en",
+    "parents": [
+      "Information integration"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003224",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003224",
+    "en": "Data dictionaries",
+    "source_language": "en",
+    "parents": [
+      "Database administration"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003227",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003227",
+    "en": "Information systems applications",
+    "source_language": "en",
+    "parents": [
+      "Information systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003228",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003228",
+    "en": "Enterprise information systems",
+    "source_language": "en",
+    "parents": [
+      "Enterprise computing",
+      "Information systems applications"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003229",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003229",
+    "en": "Intranets",
+    "source_language": "en",
+    "parents": [
+      "Enterprise information systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003230",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003230",
+    "en": "Extranets",
+    "source_language": "en",
+    "parents": [
+      "Enterprise information systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003232",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003232",
+    "en": "Enterprise resource planning",
+    "source_language": "en",
+    "parents": [
+      "Enterprise information systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003233",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003233",
+    "en": "Collaborative and social computing systems and tools",
+    "source_language": "en",
+    "parents": [
+      "Collaborative and social computing",
+      "Information systems applications"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003234",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003234",
+    "en": "Social content sharing",
+    "source_language": "en",
+    "parents": [
+      "Collaborative and social computing theory, concepts and paradigms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003235",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003235",
+    "en": "Collaborative content creation",
+    "source_language": "en",
+    "parents": [
+      "Collaborative and social computing theory, concepts and paradigms"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003236",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003236",
+    "en": "Spatial-temporal systems",
+    "source_language": "en",
+    "parents": [
+      "Information systems applications"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003237",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003237",
+    "en": "Geographic information systems",
+    "source_language": "en",
+    "parents": [
+      "Spatial-temporal systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003238",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003238",
+    "en": "Sensor networks",
+    "source_language": "en",
+    "parents": [
+      "Cyber-physical networks",
+      "Embedded and cyber-physical systems",
+      "Spatial-temporal systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003239",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003239",
+    "en": "Data streaming",
+    "source_language": "en",
+    "parents": [
+      "Spatial-temporal systems"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003241",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003241",
+    "en": "Decision support systems",
+    "source_language": "en",
+    "parents": [
+      "Information systems applications"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  },
+  {
+    "id": "10003242",
+    "iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10003242",
+    "en": "Data warehouses",
+    "source_language": "en",
+    "parents": [
+      "Decision support systems",
+      "Information integration"
+    ],
+    "scope_notes": [],
+    "proper_noun_branch": false
+  }
+]

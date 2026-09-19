@@ -1,0 +1,25 @@
+{
+  "adapter_version": "0.1.0",
+  "config_sha256": "ba574ab79da881aadaadae14d020fdc535be4134524a732fcacde16f9cce1d7f",
+  "counts": {
+    "concepts": 2299,
+    "output_triples": 46099,
+    "source_triples": 18755,
+    "top_concepts": 14,
+    "xl_labels": 9114
+  },
+  "files": {
+    "adaptations.json": "8b562a90abdb1bcec0f454ba4255dd0c62efdab71ec72be2628d3005ba709545",
+    "adapted.xml": "b2b258b82a264bdcde954942d6224d4722fb3ff2c2d02638fa6c10a8d3f0b0e0",
+    "config.json": "ba574ab79da881aadaadae14d020fdc535be4134524a732fcacde16f9cce1d7f",
+    "source.ttl": "d3f849efbe53340f473edb950299d100da054fbbd5718d0d11a3f3497e5193e1",
+    "source.xml": "ab090f3fd490d167d040c076f4069e75d916fb0693506e7f2aa650f1f82e6f57",
+    "vocabulary.ttl": "6c1f3e618ec723ac64597209bf2ca551ae28bc1b70292a0b6a786612d12e406c"
+  },
+  "format_version": 1,
+  "pipeline_activated": false,
+  "shacl_validation_executed": false,
+  "source_sha256": "ab090f3fd490d167d040c076f4069e75d916fb0693506e7f2aa650f1f82e6f57",
+  "source_statements_preserved": true,
+  "turtle_roundtrip_isomorphic": true
+}

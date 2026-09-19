@@ -1,0 +1,54 @@
+{
+  "source_sha256": "49f7911725537408517d00a3a7fef2ab5600777a9e1c1b79d9a0925b868dc045",
+  "converted_at": "2026-09-19T13:37:38.105273+00:00",
+  "base_uri_for_relative_identifiers": "https://dl.acm.org/pb-assets/dl_ccs/acm_ccs2012-1626988337597.xml",
+  "language_attribute_changes": 2113,
+  "language_source": "original lang=en attribute, not inferred from text",
+  "concept_records": 2113,
+  "concept_schemes": 1,
+  "top_concepts": 13,
+  "narrower_edges": 2100,
+  "broader_edges": 2100,
+  "depth_counts": {
+    "1": 13,
+    "2": 84,
+    "3": 543,
+    "4": 1087,
+    "5": 353,
+    "6": 33
+  },
+  "max_depth": 6,
+  "rdf_triples": 8453,
+  "unique_identifier_last_segments": 1928,
+  "identifier_segments_merged": false,
+  "properties": {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": 2114,
+    "http://www.w3.org/2004/02/skos/core#broader": 2100,
+    "http://www.w3.org/2004/02/skos/core#hasTopConcept": 13,
+    "http://www.w3.org/2004/02/skos/core#narrower": 2100,
+    "http://www.w3.org/2004/02/skos/core#prefLabel": 2113,
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": 13
+  },
+  "checks": {
+    "original_unchanged": true,
+    "only_declared_byte_adaptation": true,
+    "xml_records_match_rdf": true,
+    "all_hierarchy_endpoints_present": true,
+    "broader_narrower_inverse": true,
+    "all_records_reachable": true,
+    "turtle_roundtrip_isomorphic": true
+  },
+  "libraries": {
+    "rdflib": "7.6.0",
+    "defusedxml": "0.7.1"
+  },
+  "status": "evaluation_only",
+  "formal_adoption": false,
+  "files": {
+    "acm-ccs2012.adapted.xml": "6634587c63ef3c0579cf280d82b04796454dcc78347de4fc1fdc7cefad844e91",
+    "ccs-2012.ttl": "eeac55a4526d1bc1aaf6498df5a7c6ba76c61a57934994edf080b411764c3c6a",
+    "source-records.json": "9c76157f76d554f74e2869df6d21378a21ff29f8c16580b81d87e01c334ec77f",
+    "大纲.txt": "6a1a855cd066fd0a82719f307fdb6f00b61cf18101250d5153548d6fc0174fd4",
+    "完整分类树.txt": "059ea4c67757bccb6eb11a3de1b515f88b56346ce24806afc540b6ea0d70140d"
+  }
+}

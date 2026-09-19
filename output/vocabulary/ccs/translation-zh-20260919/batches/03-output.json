@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "10003526",
+    "zh": "计算理论史",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003527",
+    "zh": "计算教育",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003528",
+    "zh": "计算思维",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003529",
+    "zh": "教育认证",
+    "decision": "translated",
+    "note": "按计算教育语境译为教育认证。"
+  },
+  {
+    "id": "10003530",
+    "zh": "示范课程体系",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003531",
+    "zh": "计算教育项目",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003532",
+    "zh": "信息系统教育",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003533",
+    "zh": "计算机科学教育",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003534",
+    "zh": "计算机工程教育",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003535",
+    "zh": "信息技术教育",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003536",
+    "zh": "情报学教育",
+    "decision": "translated",
+    "note": "采用信息科学中图书情报学领域常用译名；未核实该条学科范围。"
+  },
+  {
+    "id": "10003537",
+    "zh": "计算科学与工程教育",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003538",
+    "zh": "非正式教育",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003539",
+    "zh": "计算素养",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003540",
+    "zh": "学生评价",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003541",
+    "zh": "K-12 教育",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003542",
+    "zh": "成人教育",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003543",
+    "zh": "伦理准则",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003544",
+    "zh": "商业政策",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003545",
+    "zh": "税收",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003548",
+    "zh": "跨境数据流动",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003549",
+    "zh": "反垄断与竞争",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003550",
+    "zh": "电子商务",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003551",
+    "zh": "数字现金",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003552",
+    "zh": "电子商务基础设施",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003553",
+    "zh": "电子数据交换",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003554",
+    "zh": "电子资金转账",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003555",
+    "zh": "网上购物",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003556",
+    "zh": "网上银行",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003557",
+    "zh": "安全在线交易",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003558",
+    "zh": "消费品",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003559",
+    "zh": "开源模式",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003560",
+    "zh": "宽带接入",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003561",
+    "zh": "网络访问控制",
+    "decision": "translated",
+    "note": "该条位于技术政策分支，指网络访问政策层面的控制。"
+  },
+  {
+    "id": "10003562",
+    "zh": "网络中立性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003563",
+    "zh": "网络访问限制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003564",
+    "zh": "年龄限制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003565",
+    "zh": "可接受使用政策限制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003566",
+    "zh": "普遍接入",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003567",
+    "zh": "计算与商业",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003568",
+    "zh": "就业问题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003569",
+    "zh": "自动化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003570",
+    "zh": "计算机支持的协同工作",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003571",
+    "zh": "经济影响",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003572",
+    "zh": "离岸转移",
+    "decision": "translated",
+    "note": "按业务向境外转移理解，不限定为外包。"
+  },
+  {
+    "id": "10003573",
+    "zh": "业务流程再造",
+    "decision": "translated",
+    "note": "按计算与商业语境理解为业务流程再造。"
+  },
+  {
+    "id": "10003574",
+    "zh": "计算机犯罪",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003575",
+    "zh": "金融犯罪",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003578",
+    "zh": "恶意软件与间谍软件犯罪",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003579",
+    "zh": "社会工程学（社会科学）",
+    "decision": "translated",
+    "note": "保留原名的社会科学限定，避免与信息安全中的社会工程攻击混淆。"
+  },
+  {
+    "id": "10003580",
+    "zh": "计算行业",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003581",
+    "zh": "资助",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003583",
+    "zh": "计算职业",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003584",
+    "zh": "计算领域组织",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003585",
+    "zh": "考试、认证与许可",
+    "decision": "translated",
+    "note": "按职业资质语境将 testing 译为考试。"
+  },
+  {
+    "id": "10003587",
+    "zh": "辅助技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003588",
+    "zh": "政府技术政策",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003589",
+    "zh": "政府法规",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003590",
+    "zh": "投票与选举技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003592",
+    "zh": "进出口管制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003596",
+    "zh": "在线拍卖",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003597",
+    "zh": "开源软件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003599",
+    "zh": "硬件安全实现",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003600",
+    "zh": "网络战",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003602",
+    "zh": "医疗信息政策",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003603",
+    "zh": "医疗记录",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003604",
+    "zh": "个人健康记录",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003605",
+    "zh": "遗传信息",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003606",
+    "zh": "患者隐私",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003607",
+    "zh": "健康信息交换",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003608",
+    "zh": "医疗技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003609",
+    "zh": "远程医疗",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003611",
+    "zh": "种族与族裔",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003612",
+    "zh": "宗教取向",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003613",
+    "zh": "性别",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003614",
+    "zh": "性取向",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003616",
+    "zh": "残障人士",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003618",
+    "zh": "地理特征",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003619",
+    "zh": "文化特征",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003623",
+    "zh": "数据溯源",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003624",
+    "zh": "离散数学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003625",
+    "zh": "组合数学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003626",
+    "zh": "组合问题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003627",
+    "zh": "排列与组合",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003628",
+    "zh": "组合算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003629",
+    "zh": "生成函数",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003630",
+    "zh": "组合优化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003631",
+    "zh": "词组合学",
+    "decision": "translated",
+    "note": "words 按组合数学中的符号串理解。"
+  },
+  {
+    "id": "10003632",
+    "zh": "枚举",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003633",
+    "zh": "图论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003634",
+    "zh": "树",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003635",
+    "zh": "图算法分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003636",
+    "zh": "近似算法分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003637",
+    "zh": "超图",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003638",
+    "zh": "随机图",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003639",
+    "zh": "图着色",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003640",
+    "zh": "路径与连通性问题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003641",
+    "zh": "图枚举",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003642",
+    "zh": "匹配与因子",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003643",
+    "zh": "图与曲面",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003644",
+    "zh": "网络流",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003645",
+    "zh": "图的谱",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003646",
+    "zh": "极值图论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003647",
+    "zh": "拟阵与贪婪拟阵",
+    "decision": "translated",
+    "note": "greedoids 暂用模型知识中的贪婪拟阵译名，外部用法未核实。"
+  },
+  {
+    "id": "10003648",
+    "zh": "概率与统计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003649",
+    "zh": "概率表示",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003650",
+    "zh": "贝叶斯网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003651",
+    "zh": "马尔可夫网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003652",
+    "zh": "因子图",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003653",
+    "zh": "决策图",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003654",
+    "zh": "方程模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003655",
+    "zh": "因果网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003656",
+    "zh": "随机微分方程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003657",
+    "zh": "非参数表示",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003658",
+    "zh": "核密度估计量",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003659",
+    "zh": "样条模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003660",
+    "zh": "分类与回归树",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003661",
+    "zh": "贝叶斯非参数模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003662",
+    "zh": "概率推断问题",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003663",
+    "zh": "最大似然估计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003664",
+    "zh": "贝叶斯计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003665",
+    "zh": "最可能解释计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003666",
+    "zh": "假设检验与置信区间计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003667",
+    "zh": "密度估计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003668",
+    "zh": "分位数回归",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003669",
+    "zh": "最大边缘计算",
+    "decision": "translated",
+    "note": "max marginal 指通过最大化消去其他变量得到的量，不指普通边缘概率求和。"
+  },
+  {
+    "id": "10003670",
+    "zh": "概率推理算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003671",
+    "zh": "概率算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003673",
+    "zh": "变量消元",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003674",
+    "zh": "有环置信传播",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003675",
+    "zh": "变分方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003676",
+    "zh": "期望最大化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003677",
+    "zh": "马尔可夫链蒙特卡洛方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003678",
+    "zh": "吉布斯采样",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003679",
+    "zh": "梅特罗波利斯－黑斯廷斯算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003680",
+    "zh": "模拟退火",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003681",
+    "zh": "马尔可夫链蒙特卡洛收敛度量",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003682",
+    "zh": "序贯蒙特卡洛方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003683",
+    "zh": "卡尔曼滤波器与隐马尔可夫模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003684",
+    "zh": "重采样方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003685",
+    "zh": "自助法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003686",
+    "zh": "刀切法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003687",
+    "zh": "随机数生成",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003688",
+    "zh": "统计范式",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003689",
+    "zh": "排队论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003690",
+    "zh": "列联表分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003691",
+    "zh": "回归分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003692",
+    "zh": "稳健回归",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003693",
+    "zh": "时间序列分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003694",
+    "zh": "生存分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003695",
+    "zh": "更新理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003696",
+    "zh": "降维",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003697",
+    "zh": "聚类分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003698",
+    "zh": "统计图形",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003699",
+    "zh": "探索性数据分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003700",
+    "zh": "随机过程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003701",
+    "zh": "马尔可夫过程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003702",
+    "zh": "非参数统计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003703",
+    "zh": "分布函数",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003704",
+    "zh": "多元统计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003705",
+    "zh": "数学软件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003707",
+    "zh": "求解器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003708",
+    "zh": "统计软件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003712",
+    "zh": "信息论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003713",
+    "zh": "编码理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003714",
+    "zh": "数学分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003715",
+    "zh": "数值分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003716",
+    "zh": "数学优化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003717",
+    "zh": "变换计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003718",
+    "zh": "有限域计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003719",
+    "zh": "矩阵计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003720",
+    "zh": "多项式计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003721",
+    "zh": "数论计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003722",
+    "zh": "插值",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003724",
+    "zh": "数值微分",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003725",
+    "zh": "区间算术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003726",
+    "zh": "任意精度算术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003727",
+    "zh": "微分方程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003728",
+    "zh": "常微分方程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003729",
+    "zh": "偏微分方程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003730",
+    "zh": "微分代数方程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003731",
+    "zh": "微分变分不等式",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003732",
+    "zh": "微积分",
+    "decision": "translated",
+    "note": "按连续数学与数学分析的上位语境译为微积分；原分类另将 λ 演算列为子项，存在范围歧义。"
+  },
+  {
+    "id": "10003733",
+    "zh": "λ 演算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003734",
+    "zh": "微分学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003735",
+    "zh": "积分学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003736",
+    "zh": "泛函分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003737",
+    "zh": "逼近",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003738",
+    "zh": "积分方程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003739",
+    "zh": "非线性方程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003740",
+    "zh": "数值求积",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003741",
+    "zh": "连续数学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003742",
+    "zh": "拓扑学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003743",
+    "zh": "点集拓扑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003744",
+    "zh": "代数拓扑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003745",
+    "zh": "几何拓扑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003746",
+    "zh": "连续函数",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003747",
+    "zh": "格罗布纳基与其他特殊基",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003748",
+    "zh": "自动微分",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003749",
+    "zh": "网格生成",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003750",
+    "zh": "离散化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003751",
+    "zh": "软件工程教育",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003752",
+    "zh": "计算理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003753",
+    "zh": "计算模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003754",
+    "zh": "可计算性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003755",
+    "zh": "图灵机",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003756",
+    "zh": "递归函数",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003757",
+    "zh": "概率计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003758",
+    "zh": "量子计算理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003759",
+    "zh": "交互式计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003760",
+    "zh": "流式计算模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003761",
+    "zh": "并发",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003762",
+    "zh": "并行计算模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003763",
+    "zh": "分布式计算模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003764",
+    "zh": "进程演算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003765",
+    "zh": "时间模型与混合模型",
+    "decision": "translated",
+    "note": "timed 按显式表示时间的计算模型理解。"
+  },
+  {
+    "id": "10003766",
+    "zh": "形式语言与自动机理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003767",
+    "zh": "形式体系",
+    "decision": "translated",
+    "note": "按形式语言与自动机理论语境理解为形式体系。"
+  },
+  {
+    "id": "10003768",
+    "zh": "代数语言理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003769",
+    "zh": "重写系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003770",
+    "zh": "无限对象上的自动机",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003771",
+    "zh": "文法与上下文无关语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003772",
+    "zh": "树语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003773",
+    "zh": "自动机扩展",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003774",
+    "zh": "转导器",
+    "decision": "translated",
+    "note": "按自动机语境译为转导器。"
+  },
+  {
+    "id": "10003775",
+    "zh": "定量自动机",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003776",
+    "zh": "正则语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003777",
+    "zh": "计算复杂性与密码学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003778",
+    "zh": "复杂性类",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003779",
+    "zh": "问题、归约与完全性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003780",
+    "zh": "通信复杂性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003781",
+    "zh": "电路复杂性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003782",
+    "zh": "预言机与决策树",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003783",
+    "zh": "代数复杂性理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003784",
+    "zh": "量子复杂性理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003785",
+    "zh": "证明复杂性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003786",
+    "zh": "交互式证明系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003787",
+    "zh": "复杂性理论与逻辑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003788",
+    "zh": "密码原语",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003789",
+    "zh": "密码协议",
+    "decision": "translated",
+    "note": ""
+  }
+]

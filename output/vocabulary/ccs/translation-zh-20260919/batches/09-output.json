@@ -1,0 +1,2354 @@
+[
+  {
+    "id": "10011152",
+    "zh": "公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011153",
+    "zh": "埃森哲",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011154",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011155",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011156",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "名称或缩写不足以确定具体公司及其中文名，保留原名。"
+  },
+  {
+    "id": "10011158",
+    "zh": "杰尔系统公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011159",
+    "zh": "安捷伦科技",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011160",
+    "zh": "阿尔卡特朗讯",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011161",
+    "zh": "美国在线",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011162",
+    "zh": "苹果公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011164",
+    "zh": "美国电话电报公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011165",
+    "zh": "英国宇航系统公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011166",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011167",
+    "zh": "暴雪娱乐",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011168",
+    "zh": "蓝天工作室",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011169",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011170",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011171",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011172",
+    "zh": "楷登电子",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011174",
+    "zh": "中国电信股份有限公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011176",
+    "zh": "思科系统公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011177",
+    "zh": "组织",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011178",
+    "zh": "美国数学学会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011179",
+    "zh": "信息系统协会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011181",
+    "zh": "思杰系统公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011182",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011183",
+    "zh": "康柏电脑公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011184",
+    "zh": "美国国防高级研究计划局",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011185",
+    "zh": "戴尔电脑公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011186",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011193",
+    "zh": "数字设备公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011195",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "名称或缩写不足以确定具体公司及其中文名，保留原名。"
+  },
+  {
+    "id": "10011196",
+    "zh": "易安信公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011197",
+    "zh": "爱立信",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011198",
+    "zh": "安永",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011199",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011200",
+    "zh": "高德纳集团",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011201",
+    "zh": "通用动力",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011202",
+    "zh": "通用电气",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011203",
+    "zh": "谷歌公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011204",
+    "zh": "惠普公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011205",
+    "zh": "英飞凌科技",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011206",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "名称或缩写不足以确定具体公司及其中文名，保留原名。"
+  },
+  {
+    "id": "10011207",
+    "zh": "英特尔公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011208",
+    "zh": "国际商业机器公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011209",
+    "zh": "国际数据公司（IDC）",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011211",
+    "zh": "互联网名称与数字地址分配机构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011212",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011213",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "名称或缩写不足以确定具体公司及其中文名，保留原名。"
+  },
+  {
+    "id": "10011214",
+    "zh": "瞻博网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011215",
+    "zh": "洛克希德·马丁公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011216",
+    "zh": "麦肯锡公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011217",
+    "zh": "微软公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011218",
+    "zh": "麻省理工学院媒体实验室",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011220",
+    "zh": "美国国家科学院",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011221",
+    "zh": "美国国家仪器公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011222",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "多个国家设有同名机构，输入未明确国家，保留原名以避免错配。"
+  },
+  {
+    "id": "10011223",
+    "zh": "北电网络公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011224",
+    "zh": "网威公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011226",
+    "zh": "甲骨文公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011227",
+    "zh": "太阳微系统公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011228",
+    "zh": "飞利浦半导体",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011229",
+    "zh": "恩智浦半导体",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011230",
+    "zh": "皮克斯动画工作室",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011231",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011232",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011233",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011235",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011236",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011237",
+    "zh": "世嘉公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011238",
+    "zh": "西门子股份公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011239",
+    "zh": "硅图公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011240",
+    "zh": "斯坦福国际研究所",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011242",
+    "zh": "标准性能评估公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011243",
+    "zh": "台湾积体电路制造股份有限公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011244",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011245",
+    "zh": "德州仪器公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011247",
+    "zh": "东芝公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011248",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011249",
+    "zh": "施乐公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011250",
+    "zh": "雅虎公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011252",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011260",
+    "zh": "美国统计协会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011261",
+    "zh": "艾姆斯研究中心",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011262",
+    "zh": "美国国家标准学会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011263",
+    "zh": "Apache 软件基金会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011264",
+    "zh": "阿贡国家实验室",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011265",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该组织的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011266",
+    "zh": "巴西计算机学会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011267",
+    "zh": "英国计算机学会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011269",
+    "zh": "克雷数学研究所",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011270",
+    "zh": "计算机历史博物馆",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011271",
+    "zh": "国际计算机音乐协会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011272",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该组织的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011273",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该组织的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011274",
+    "zh": "计算研究协会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011275",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该组织的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011276",
+    "zh": "计算机科学教师协会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011277",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该组织的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011278",
+    "zh": "Eclipse 基金会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011279",
+    "zh": "电子前沿基金会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011280",
+    "zh": "欧洲电信标准协会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011281",
+    "zh": "自由软件基金会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011282",
+    "zh": "国际游戏开发者协会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011283",
+    "zh": "国际标准化组织",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011284",
+    "zh": "国际电信联盟",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011285",
+    "zh": "艾萨克·牛顿数学科学研究所",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011286",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该组织的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011287",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该组织的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011288",
+    "zh": "兰利研究中心",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011289",
+    "zh": "劳伦斯伯克利国家实验室",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011290",
+    "zh": "劳伦斯利弗莫尔国家实验室",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011291",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该组织的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011292",
+    "zh": "伦敦数学学会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011293",
+    "zh": "洛斯阿拉莫斯国家实验室",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011294",
+    "zh": "马克斯·普朗克研究所",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011296",
+    "zh": "美国国家教育统计中心",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011297",
+    "zh": "美国国家标准与技术研究院",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011298",
+    "zh": "美国国家科学基金会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011299",
+    "zh": "橡树岭国家实验室",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011300",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该组织的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011301",
+    "zh": "OSGi 联盟",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011302",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该组织的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011303",
+    "zh": "开放源代码促进会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011306",
+    "zh": "太平洋西北国家实验室",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011307",
+    "zh": "帕洛阿尔托研究中心",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011308",
+    "zh": "联合图像专家组",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011309",
+    "zh": "动态图像专家组",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011312",
+    "zh": "事务处理性能委员会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011313",
+    "zh": "皇家统计学会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011314",
+    "zh": "圣迭戈超级计算中心",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011316",
+    "zh": "半导体行业协会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011317",
+    "zh": "软件工程研究所",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011318",
+    "zh": "SLAC 国家加速器实验室",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011319",
+    "zh": "可信计算组织",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011320",
+    "zh": "美国计算机行业协会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011321",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该组织的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011322",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该组织的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011323",
+    "zh": "维基媒体基金会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011324",
+    "zh": "世界知识产权组织",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011325",
+    "zh": "IBM 阿尔马登研究中心",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011327",
+    "zh": "查尔斯·巴贝奇研究所",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011328",
+    "zh": "美国工程与技术鉴定委员会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011329",
+    "zh": "计算机认证委员会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011330",
+    "zh": "柯朗数学科学研究所",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011332",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该组织的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011333",
+    "zh": "欧洲网络与信息安全局",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011335",
+    "zh": "人因与工效学学会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011336",
+    "zh": "喷气推进实验室",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011337",
+    "zh": "麻省理工学院",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011338",
+    "zh": "美国国家工程院",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011339",
+    "zh": "美国专利商标局",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011340",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011341",
+    "zh": "桑迪亚国家实验室",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011342",
+    "zh": "SANS 研究所",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011343",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该组织的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011344",
+    "zh": "IEEE 计算机学会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011345",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011346",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011347",
+    "zh": "IBM 多伦多软件实验室",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011348",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该公司原名称对应的通行中文名，保留原名。"
+  },
+  {
+    "id": "10011349",
+    "zh": "万维网联盟",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011350",
+    "zh": "计算机领域人物",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011351",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011352",
+    "zh": "阿达·洛夫莱斯",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011353",
+    "zh": "艾伦·库珀",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011354",
+    "zh": "艾伦·佩利",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011355",
+    "zh": "艾伦·麦席森·图灵",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011357",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011358",
+    "zh": "艾伦·纽厄尔",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011361",
+    "zh": "安德鲁·格鲁夫",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011363",
+    "zh": "芭芭拉·利斯科夫",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011364",
+    "zh": "巴里·勃姆",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011367",
+    "zh": "比尔·盖茨",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011369",
+    "zh": "比尔·乔伊",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011370",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011371",
+    "zh": "比雅尼·斯特劳斯特鲁普",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011373",
+    "zh": "美国计算机协会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011376",
+    "zh": "布鲁斯·施奈尔",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011377",
+    "zh": "查尔斯·安东尼·理查德·霍尔",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011378",
+    "zh": "查尔斯·巴贝奇",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011380",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011381",
+    "zh": "克劳德·艾尔伍德·香农",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011382",
+    "zh": "克莱夫·辛克莱",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011384",
+    "zh": "大卫·希尔伯特",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011385",
+    "zh": "高德纳",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011386",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011387",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011388",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011389",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011390",
+    "zh": "格蕾丝·穆雷·霍珀",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011391",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011392",
+    "zh": "赫伯特·西蒙",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011393",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011394",
+    "zh": "赫尔曼·何乐礼",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011395",
+    "zh": "约翰·普雷斯珀·埃克特",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011396",
+    "zh": "詹姆斯·威尔金森",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011397",
+    "zh": "杰伊·赖特·福雷斯特",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011398",
+    "zh": "约翰·文森特·阿塔纳索夫",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011400",
+    "zh": "约翰·科克",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011401",
+    "zh": "约翰·斯卡利",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011402",
+    "zh": "约翰·冯·诺依曼",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011403",
+    "zh": "约翰·莫克利",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011404",
+    "zh": "康拉德·楚泽",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011405",
+    "zh": "马文·明斯基",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011406",
+    "zh": "莫里斯·威尔克斯",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011407",
+    "zh": "理查德·卡普",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011408",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011409",
+    "zh": "史蒂夫·乔布斯",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011410",
+    "zh": "托马斯·沃森",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011411",
+    "zh": "小托马斯·沃森",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011412",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011413",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "原文拼写与常见的 An Wang 不同，不能仅凭模型知识确定对应王安，保留原名。"
+  },
+  {
+    "id": "10011414",
+    "zh": "大卫·萨尔诺夫",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011415",
+    "zh": "侯世达",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011416",
+    "zh": "赫尔曼·戈德斯坦",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011417",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011418",
+    "zh": "卡齐米日·库拉托夫斯基",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011419",
+    "zh": "库尔特·哥德尔",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011420",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011421",
+    "zh": "斯特凡·巴拿赫",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011422",
+    "zh": "戈登·贝尔",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011423",
+    "zh": "詹姆斯·高斯林",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011424",
+    "zh": "约翰·麦卡锡",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011425",
+    "zh": "林纳斯·托瓦兹",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011426",
+    "zh": "马克·韦瑟",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011427",
+    "zh": "彼得·丹宁",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011428",
+    "zh": "彼得·诺顿",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011429",
+    "zh": "罗宾·米尔纳",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011430",
+    "zh": "西摩·派普特",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011431",
+    "zh": "艾伦·凯",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011432",
+    "zh": "大卫·帕特森",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011433",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011434",
+    "zh": "伊瓦尔·雅各布森",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011435",
+    "zh": "雅各布·尼尔森",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011436",
+    "zh": "吉姆·布林",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011437",
+    "zh": "吉姆·格雷",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011438",
+    "zh": "乔恩·克莱因伯格",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011439",
+    "zh": "肯特·贝克",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011440",
+    "zh": "马丁·福勒",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011441",
+    "zh": "万尼瓦尔·布什",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011442",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011443",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011444",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011445",
+    "zh": "技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011446",
+    "zh": "布莱兹·帕斯卡",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011447",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "未能确信该人物的通行中文译名，保留原名，不新造音译。"
+  },
+  {
+    "id": "10011448",
+    "zh": "吉恩·戈卢布",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011449",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "编程语言或语言名称通常沿用原文，未采用中文译名。"
+  },
+  {
+    "id": "10011450",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011451",
+    "zh": "Ada 语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011452",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011453",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术缩写或名称通常沿用原文，保留原名，不将原文改标为中文。"
+  },
+  {
+    "id": "10011454",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "编程语言或语言名称通常沿用原文，未采用中文译名。"
+  },
+  {
+    "id": "10011455",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011456",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "编程语言或语言名称通常沿用原文，未采用中文译名。"
+  },
+  {
+    "id": "10011457",
+    "zh": "蓝牙",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011458",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011459",
+    "zh": "互补金属氧化物半导体",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011460",
+    "zh": "公共对象请求代理体系结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011461",
+    "zh": "科立尔公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011462",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "编程语言或语言名称通常沿用原文，未采用中文译名。"
+  },
+  {
+    "id": "10011463",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011464",
+    "zh": "磁盘操作系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011465",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011466",
+    "zh": "数字多功能光盘",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011467",
+    "zh": "亿贝公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011468",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011469",
+    "zh": "以太网",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011470",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011471",
+    "zh": "只读光盘",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011472",
+    "zh": "脸书",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011473",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011474",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011475",
+    "zh": "火狐",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011476",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011477",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "编程语言或语言名称通常沿用原文，未采用中文译名。"
+  },
+  {
+    "id": "10011478",
+    "zh": "谷歌地球",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011479",
+    "zh": "谷歌",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011480",
+    "zh": "谷歌地图",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011481",
+    "zh": "谷歌学术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011482",
+    "zh": "全球移动通信系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011483",
+    "zh": "高清电视",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011484",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011485",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011486",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011487",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011488",
+    "zh": "网络协议电视",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011489",
+    "zh": "互联网协议第六版",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011490",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "编程语言或语言名称通常沿用原文，未采用中文译名。"
+  },
+  {
+    "id": "10011491",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术缩写或名称通常沿用原文，保留原名，不将原文改标为中文。"
+  },
+  {
+    "id": "10011492",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术缩写或名称通常沿用原文，保留原名，不将原文改标为中文。"
+  },
+  {
+    "id": "10011493",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011494",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011495",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011496",
+    "zh": "Macintosh 操作系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011497",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011498",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011499",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011500",
+    "zh": "移动 IP",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011501",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术缩写或名称通常沿用原文，保留原名，不将原文改标为中文。"
+  },
+  {
+    "id": "10011502",
+    "zh": "中分辨率成像光谱仪",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011503",
+    "zh": "摩托罗拉解决方案公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011504",
+    "zh": "摩托罗拉移动公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011505",
+    "zh": "摩托罗拉公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011506",
+    "zh": "Mozilla 基金会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011507",
+    "zh": "Mozilla 公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011508",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术缩写或名称通常沿用原文，保留原名，不将原文改标为中文。"
+  },
+  {
+    "id": "10011509",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011510",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011511",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011512",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011513",
+    "zh": "甲骨文数据库",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011514",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011515",
+    "zh": "便携式文档格式",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011516",
+    "zh": "奔腾",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011517",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011518",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011519",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "编程语言或语言名称通常沿用原文，未采用中文译名。"
+  },
+  {
+    "id": "10011520",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011521",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011522",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011523",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011524",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011525",
+    "zh": "精简指令集处理器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011526",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011527",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011528",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011529",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "编程语言或语言名称通常沿用原文，未采用中文译名。"
+  },
+  {
+    "id": "10011530",
+    "zh": "短消息服务",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011531",
+    "zh": "简单网络管理协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011532",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011533",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011534",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011535",
+    "zh": "安全套接层",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011536",
+    "zh": "传输层安全",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011537",
+    "zh": "推特",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011538",
+    "zh": "通用移动通信系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011539",
+    "zh": "用户网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011540",
+    "zh": "超宽带",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011541",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "编程语言或语言名称通常沿用原文，未采用中文译名。"
+  },
+  {
+    "id": "10011542",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011543",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术缩写或名称通常沿用原文，保留原名，不将原文改标为中文。"
+  },
+  {
+    "id": "10011545",
+    "zh": "虚拟现实建模语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011546",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术缩写或名称通常沿用原文，保留原名，不将原文改标为中文。"
+  },
+  {
+    "id": "10011547",
+    "zh": "维基百科",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011548",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011549",
+    "zh": "Windows 环境",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011550",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011551",
+    "zh": "X 窗口系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011552",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术缩写或名称通常沿用原文，保留原名，不将原文改标为中文。"
+  },
+  {
+    "id": "10011553",
+    "zh": "赛灵思",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011554",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011555",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011556",
+    "zh": "贝尔实验室",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011557",
+    "zh": "惠普实验室",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011558",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011560",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011561",
+    "zh": "诺基亚公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011562",
+    "zh": "英伟达公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011563",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "Office 可能指具体产品名称，输入未进一步限定，保留原名。"
+  },
+  {
+    "id": "10011564",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011565",
+    "zh": "同步光网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011566",
+    "zh": "索尼公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011567",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "编程语言或语言名称通常沿用原文，未采用中文译名。"
+  },
+  {
+    "id": "10011568",
+    "zh": "雅虎（门户网站）",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011569",
+    "zh": "美国国立卫生研究院",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011570",
+    "zh": "对象管理组织",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011571",
+    "zh": "美国联邦通信委员会",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011572",
+    "zh": "业务流程执行语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011573",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "编程语言或语言名称通常沿用原文，未采用中文译名。"
+  },
+  {
+    "id": "10011574",
+    "zh": "码分多址系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011575",
+    "zh": "域名系统（DNS）",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011576",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "DSL 可指数字用户线路或领域特定语言，输入没有释义，保留缩写。"
+  },
+  {
+    "id": "10011577",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "DSM 可指多种不同技术，输入没有释义，保留缩写。"
+  },
+  {
+    "id": "10011579",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011582",
+    "zh": "IP 多媒体子系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011583",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "编程语言或语言名称通常沿用原文，未采用中文译名。"
+  },
+  {
+    "id": "10011584",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011585",
+    "zh": "多输入多输出系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011586",
+    "zh": "MSN（门户网站）",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011587",
+    "zh": "网威公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011588",
+    "zh": "正交频分复用系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011589",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011590",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011591",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011592",
+    "zh": "单指令多数据架构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011593",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  },
+  {
+    "id": "10011594",
+    "zh": "统一码",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011597",
+    "zh": "文本检索会议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011641",
+    "zh": "专有名词：人物、技术和公司",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011737",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "技术、产品或项目名称通常沿用原文，未能确信适用的通行中文名。"
+  }
+]

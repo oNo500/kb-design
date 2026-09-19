@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "10002944",
+    "zh": "综合与参考资料",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002945",
+    "zh": "综述与概览",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002946",
+    "zh": "参考工具书",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002947",
+    "zh": "综合性会议论文集",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002948",
+    "zh": "传记",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002949",
+    "zh": "综合文献",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002950",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "“计算数学”通常也指较窄的数值计算学科；未能可靠确定覆盖此分类完整范围的常用译名，保留原名。"
+  },
+  {
+    "id": "10002951",
+    "zh": "信息系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002952",
+    "zh": "数据管理系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002953",
+    "zh": "数据库设计与模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002955",
+    "zh": "关系数据库模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002956",
+    "zh": "层次数据模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002958",
+    "zh": "半结构化数据",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002959",
+    "zh": "实体关系模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002971",
+    "zh": "数据结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002974",
+    "zh": "多维范围搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002975",
+    "zh": "数据压缩",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002976",
+    "zh": "数据加密",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002978",
+    "zh": "安全与隐私",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002979",
+    "zh": "密码学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002980",
+    "zh": "密钥管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002981",
+    "zh": "公钥（非对称）技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002982",
+    "zh": "对称密码与散列函数",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002983",
+    "zh": "密码分析与其他攻击",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002984",
+    "zh": "信息论技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002985",
+    "zh": "密码学的数学基础",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002986",
+    "zh": "安全形式化方法与理论",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002987",
+    "zh": "信任框架",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002988",
+    "zh": "安全需求",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002989",
+    "zh": "形式化安全模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002990",
+    "zh": "逻辑与验证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002991",
+    "zh": "安全服务",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002992",
+    "zh": "身份认证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002993",
+    "zh": "访问控制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002994",
+    "zh": "假名性、匿名性与不可追踪性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002995",
+    "zh": "隐私保护协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002996",
+    "zh": "数字版权管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002997",
+    "zh": "入侵与异常检测及恶意软件缓解",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002998",
+    "zh": "恶意软件及其缓解",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10002999",
+    "zh": "入侵检测系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003000",
+    "zh": "社会工程攻击",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003001",
+    "zh": "硬件安全",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003002",
+    "zh": "防篡改与抗篡改设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003003",
+    "zh": "嵌入式系统安全",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003006",
+    "zh": "系统安全",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003007",
+    "zh": "操作系统安全",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003008",
+    "zh": "移动平台安全",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003009",
+    "zh": "可信计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003010",
+    "zh": "虚拟化与安全",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003011",
+    "zh": "浏览器安全",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003013",
+    "zh": "分布式系统安全",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003014",
+    "zh": "网络安全",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003015",
+    "zh": "安全协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003016",
+    "zh": "Web 协议安全",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003017",
+    "zh": "移动与无线安全",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003018",
+    "zh": "数据库与存储安全",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003019",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "安全语境的 sanitization 可能指数据清除或敏感信息移除；缺少范围说明，无法可靠选定译法，保留原名。"
+  },
+  {
+    "id": "10003020",
+    "zh": "加密数据的管理与查询",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003021",
+    "zh": "信息问责与使用控制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003022",
+    "zh": "软件与应用安全",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003023",
+    "zh": "软件安全工程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003026",
+    "zh": "Web 应用安全",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003027",
+    "zh": "社交网络安全与隐私",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003028",
+    "zh": "领域专用安全与隐私架构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003029",
+    "zh": "安全与隐私的人类和社会因素",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003031",
+    "zh": "安全与隐私经济学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003032",
+    "zh": "安全与隐私的社会因素",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003033",
+    "zh": "网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003034",
+    "zh": "网络架构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003035",
+    "zh": "网络设计原则",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003036",
+    "zh": "分层",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003037",
+    "zh": "命名与寻址",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003038",
+    "zh": "编程接口",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003039",
+    "zh": "网络协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003040",
+    "zh": "网络协议设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003041",
+    "zh": "协议正确性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003042",
+    "zh": "协议测试与验证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003043",
+    "zh": "形式化规约",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003044",
+    "zh": "链路层协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003045",
+    "zh": "网络层协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003046",
+    "zh": "路由协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003047",
+    "zh": "信令协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003048",
+    "zh": "传输协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003049",
+    "zh": "会话协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003050",
+    "zh": "表示协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003051",
+    "zh": "应用层协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003052",
+    "zh": "对等协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003053",
+    "zh": "操作、管理和维护协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003054",
+    "zh": "时间同步协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003055",
+    "zh": "网络策略",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003056",
+    "zh": "跨层协议",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003058",
+    "zh": "网络组件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003059",
+    "zh": "中间节点",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003060",
+    "zh": "路由器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003061",
+    "zh": "网桥与交换机",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003062",
+    "zh": "物理链路",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003063",
+    "zh": "中间盒与网络设备",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003064",
+    "zh": "端节点",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003065",
+    "zh": "无线接入点、基站与基础设施",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003066",
+    "zh": "逻辑节点",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003067",
+    "zh": "网络域",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003068",
+    "zh": "网络算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003069",
+    "zh": "数据路径算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003070",
+    "zh": "分组分类",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003071",
+    "zh": "深度包检测",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003072",
+    "zh": "分组调度",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003073",
+    "zh": "控制路径算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003074",
+    "zh": "网络资源分配",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003075",
+    "zh": "网络控制算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003076",
+    "zh": "流量工程算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003077",
+    "zh": "网络设计与规划算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003078",
+    "zh": "网络经济学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003079",
+    "zh": "网络性能评估",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003080",
+    "zh": "网络性能建模",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003081",
+    "zh": "网络仿真",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003082",
+    "zh": "网络实验",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003083",
+    "zh": "网络特性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003084",
+    "zh": "网络覆盖范围",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003085",
+    "zh": "短距离网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003086",
+    "zh": "局域网",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003087",
+    "zh": "城域网",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003088",
+    "zh": "广域网",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003089",
+    "zh": "超远距离网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003090",
+    "zh": "网络结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003091",
+    "zh": "拓扑分析与生成",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003092",
+    "zh": "物理拓扑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003093",
+    "zh": "逻辑与虚拟拓扑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003094",
+    "zh": "网络动态性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003095",
+    "zh": "网络可靠性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003097",
+    "zh": "网络移动性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003098",
+    "zh": "网络可管理性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003099",
+    "zh": "网络服务",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003100",
+    "zh": "云计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003101",
+    "zh": "基于位置的服务",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003102",
+    "zh": "可编程网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003103",
+    "zh": "网内处理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003104",
+    "zh": "网络管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003105",
+    "zh": "网络监控",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003106",
+    "zh": "网络类型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003107",
+    "zh": "片上网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003108",
+    "zh": "家庭网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003109",
+    "zh": "存储区域网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003110",
+    "zh": "数据中心网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003111",
+    "zh": "有线接入网",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003112",
+    "zh": "信息物理网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003113",
+    "zh": "移动网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003114",
+    "zh": "覆盖网络与其他逻辑网络结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003115",
+    "zh": "对等网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003116",
+    "zh": "万维网（网络结构）",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003118",
+    "zh": "社交媒体网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003119",
+    "zh": "无线接入网",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003120",
+    "zh": "以人为中心的计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003121",
+    "zh": "人机交互",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003122",
+    "zh": "人机交互设计与评估方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003123",
+    "zh": "交互设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003124",
+    "zh": "交互范式",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003125",
+    "zh": "交互设备",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003126",
+    "zh": "人机交互理论、概念与模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003128",
+    "zh": "交互技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003129",
+    "zh": "交互系统与工具",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003130",
+    "zh": "协同与社会计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003131",
+    "zh": "协同与社会计算理论、概念与范式",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003134",
+    "zh": "协同与社会计算设计与评估方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003138",
+    "zh": "普适与移动计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003139",
+    "zh": "普适与移动计算理论、概念与范式",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003140",
+    "zh": "普适与移动计算系统与工具",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003141",
+    "zh": "普适与移动设备",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003142",
+    "zh": "普适与移动计算设计与评估方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003145",
+    "zh": "可视化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003146",
+    "zh": "可视化技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003147",
+    "zh": "可视化应用领域",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003151",
+    "zh": "可视化系统与工具",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003152",
+    "zh": "信息存储系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003153",
+    "zh": "信息存储技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003155",
+    "zh": "磁盘",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003156",
+    "zh": "磁带",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003157",
+    "zh": "光盘与磁光盘",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003158",
+    "zh": "存储级内存",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003159",
+    "zh": "磁盘阵列",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003160",
+    "zh": "磁带库",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003161",
+    "zh": "记录存储系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003162",
+    "zh": "记录存储方案",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003163",
+    "zh": "目录结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003164",
+    "zh": "块与页策略",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003165",
+    "zh": "记录布局方案",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003166",
+    "zh": "存储复制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003167",
+    "zh": "镜像",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003168",
+    "zh": "独立磁盘冗余阵列",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003171",
+    "zh": "时间点副本",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003172",
+    "zh": "远程复制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003174",
+    "zh": "直连存储",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003175",
+    "zh": "网络附加存储",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003176",
+    "zh": "云存储",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003180",
+    "zh": "分层存储管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003181",
+    "zh": "存储虚拟化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003182",
+    "zh": "信息生命周期管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003183",
+    "zh": "数据去重",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003184",
+    "zh": "版本管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003185",
+    "zh": "存储电源管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003186",
+    "zh": "精简配置",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003189",
+    "zh": "记录与块布局",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003190",
+    "zh": "数据库管理系统引擎",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003191",
+    "zh": "数据库管理系统引擎架构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003192",
+    "zh": "数据库查询处理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003193",
+    "zh": "数据库事务处理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003194",
+    "zh": "记录与缓冲区管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003195",
+    "zh": "并行与分布式数据库管理系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003197",
+    "zh": "查询语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003201",
+    "zh": "触发器与规则",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003202",
+    "zh": "抽象数据类型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003205",
+    "zh": "数据库视图",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003206",
+    "zh": "完整性检查",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003208",
+    "zh": "数据流",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003210",
+    "zh": "查询优化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003212",
+    "zh": "数据库管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003213",
+    "zh": "数据库实用程序与工具",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003214",
+    "zh": "数据库性能评估",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003215",
+    "zh": "抽取、转换与加载",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003216",
+    "zh": "自治数据库管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003217",
+    "zh": "数据交换",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003218",
+    "zh": "数据清洗",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003219",
+    "zh": "信息集成",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003221",
+    "zh": "包装器（数据挖掘）",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003222",
+    "zh": "中介器与数据集成",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003223",
+    "zh": "实体解析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003224",
+    "zh": "数据字典",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003227",
+    "zh": "信息系统应用",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003228",
+    "zh": "企业信息系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003229",
+    "zh": "企业内部网",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003230",
+    "zh": "企业外部网",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003232",
+    "zh": "企业资源计划",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003233",
+    "zh": "协同与社会计算系统与工具",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003234",
+    "zh": "社交内容共享",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003235",
+    "zh": "协同内容创作",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003236",
+    "zh": "时空系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003237",
+    "zh": "地理信息系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003238",
+    "zh": "传感器网络",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003239",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "时空系统语境下，未能可靠区分此处侧重数据流传输还是流式处理，保留原名。"
+  },
+  {
+    "id": "10003241",
+    "zh": "决策支持系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10003242",
+    "zh": "数据仓库",
+    "decision": "translated",
+    "note": ""
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "batches.json": "bdc85cd702d1d363fde6b8518f225421d4df5fd3ed96a96e2075ef9234a18359",
+    "name-registry.json": "67bb9608d5c33470890934fd44c92ea40328dea784125a66edb73a5c3bd27d71",
+    "preview.html": "dad5c3f3f54bc1f4dd3bf0c384942bb0b393fb8089166b9929eec304f461ba97",
+    "summary.json": "311040b2e14839cf83630bf0f2044b27abdba6022ce309a94d1f782a98bdbc04",
+    "translations.json": "66eb24f167cdb6d178680504ad217e404dc5ad07e6a46558e3966af11029c398",
+    "vocabulary.multilingual.ttl": "00657e9f196f1df183f58bb3fdc6604c57a95ec9774c7a1c84be99738b3f9b15"
+  },
+  "formal_publication": false,
+  "generator_sha256": "72f3d81253e3b3e333888fea4b16669f3f2fb9b6ecaf72db1bd5897b359c36fc",
+  "input_sha256": "6c1f3e618ec723ac64597209bf2ca551ae28bc1b70292a0b6a786612d12e406c",
+  "shacl_validation_executed": false,
+  "translation_task": "ccs-2012-zh-once-20260919"
+}

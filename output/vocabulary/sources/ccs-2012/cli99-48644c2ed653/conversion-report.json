@@ -1,0 +1,51 @@
+{
+  "concepts": 2299,
+  "concept_schemes": 1,
+  "top_concepts": 14,
+  "triples": 18755,
+  "xml_property_occurrences": {
+    "http://purl.org/dc/elements/1.1/title": 1,
+    "http://purl.org/dc/elements/1.1/date": 1,
+    "http://www.w3.org/2004/02/skos/core#hasTopConcept": 14,
+    "http://www.w3.org/2004/02/skos/core#prefLabel": 2299,
+    "http://www.w3.org/2004/02/skos/core#altLabel": 6787,
+    "http://www.w3.org/2004/02/skos/core#inScheme": 2299,
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": 14,
+    "http://www.w3.org/2004/02/skos/core#narrower": 2390,
+    "http://www.w3.org/2004/02/skos/core#broader": 2390,
+    "http://www.w3.org/2004/02/skos/core#related": 192,
+    "http://www.w3.org/2004/02/skos/core#scopeNote": 41,
+    "http://www.w3.org/2004/02/skos/core#hiddenLabel": 27
+  },
+  "rdf_property_statements": {
+    "http://www.w3.org/2004/02/skos/core#narrower": 2390,
+    "http://www.w3.org/2004/02/skos/core#inScheme": 2299,
+    "http://www.w3.org/2004/02/skos/core#altLabel": 6787,
+    "http://www.w3.org/2004/02/skos/core#prefLabel": 2299,
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": 2300,
+    "http://www.w3.org/2004/02/skos/core#broader": 2390,
+    "http://www.w3.org/2004/02/skos/core#related": 192,
+    "http://www.w3.org/2004/02/skos/core#hiddenLabel": 27,
+    "http://www.w3.org/2004/02/skos/core#scopeNote": 41,
+    "http://www.w3.org/2004/02/skos/core#hasTopConcept": 14,
+    "http://purl.org/dc/elements/1.1/title": 1,
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": 14,
+    "http://purl.org/dc/elements/1.1/date": 1
+  },
+  "source_xml_matches_adapted_graph": true,
+  "turtle_roundtrip_isomorphic": true,
+  "dangling_relations": [],
+  "missing_broader_inverse": [],
+  "hierarchy_cycles": [],
+  "unreachable_concepts": [],
+  "multiple_parent_concepts": 98,
+  "base_iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml",
+  "base_policy": "Pinned source document URL resolves source fragment IDs; snapshot identifiers, not official persistent concept IRIs.",
+  "iri_adaptations": {
+    "http://totem.semedica.com/taxonomy/The ACM Computing Classification System (CCS)": "http://totem.semedica.com/taxonomy/The%20ACM%20Computing%20Classification%20System%20(CCS)"
+  },
+  "source_sha256": "ab090f3fd490d167d040c076f4069e75d916fb0693506e7f2aa650f1f82e6f57",
+  "turtle_sha256": "4f15bf7993696d41465ec75a278c07cdbda717e3bc90115ad4d00de1ae1c4bbf",
+  "semantic_quality_reviewed": false,
+  "pipeline_activated": false
+}

@@ -1,0 +1,84 @@
+{
+  "conforms": false,
+  "profile": "target",
+  "seconds": 79.38,
+  "source": "/Users/xiu/code/kb-design/output/vocabulary/sources/ccs-2012/cli99-48644c2ed653/ccs-2012.ttl",
+  "source_sha256": "4f15bf7993696d41465ec75a278c07cdbda717e3bc90115ad4d00de1ae1c4bbf",
+  "shapes_sha256": "a50cfd7cc565bb6ff975cdd2ad8f9d00c7f9c0fe6b13aaa2209ec55257b1ef3c",
+  "inference": "none",
+  "conditional_targets_added": false,
+  "results": 9115,
+  "by_severity": {
+    "http://www.w3.org/ns/shacl#Violation": 9115
+  },
+  "by_rule": [
+    {
+      "rule": "urn:kb-vocab-shacl:ConceptXLNames",
+      "severity": "http://www.w3.org/ns/shacl#Violation",
+      "count": 9113,
+      "focus_nodes": 2299,
+      "samples": [
+        {
+          "sourceShape": "urn:kb-vocab-shacl:ConceptXLNames",
+          "sourceConstraintComponent": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "resultSeverity": "http://www.w3.org/ns/shacl#Violation",
+          "focusNode": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011297",
+          "resultPath": "http://www.w3.org/2004/02/skos/core#altLabel",
+          "value": "national bureau of standards",
+          "messages": [
+            "概念普通标签须有对应的 XL 名称记录"
+          ]
+        },
+        {
+          "sourceShape": "urn:kb-vocab-shacl:ConceptXLNames",
+          "sourceConstraintComponent": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "resultSeverity": "http://www.w3.org/ns/shacl#Violation",
+          "focusNode": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011297",
+          "resultPath": "http://www.w3.org/2004/02/skos/core#altLabel",
+          "value": "nbs",
+          "messages": [
+            "概念普通标签须有对应的 XL 名称记录"
+          ]
+        }
+      ]
+    },
+    {
+      "rule": "urn:kb-vocab-shacl:SchemeName",
+      "severity": "http://www.w3.org/ns/shacl#Violation",
+      "count": 1,
+      "focus_nodes": 1,
+      "samples": [
+        {
+          "sourceShape": "urn:kb-vocab-shacl:SchemeName",
+          "sourceConstraintComponent": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "resultSeverity": "http://www.w3.org/ns/shacl#Violation",
+          "focusNode": "http://totem.semedica.com/taxonomy/The%20ACM%20Computing%20Classification%20System%20(CCS)",
+          "resultPath": "nb53d2587945d4b31beb82742fdab7982b147",
+          "value": null,
+          "messages": [
+            "自有词表需要首选名称"
+          ]
+        }
+      ]
+    },
+    {
+      "rule": "urn:kb-vocab-shacl:SchemeScope",
+      "severity": "http://www.w3.org/ns/shacl#Violation",
+      "count": 1,
+      "focus_nodes": 1,
+      "samples": [
+        {
+          "sourceShape": "urn:kb-vocab-shacl:SchemeScope",
+          "sourceConstraintComponent": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "resultSeverity": "http://www.w3.org/ns/shacl#Violation",
+          "focusNode": "http://totem.semedica.com/taxonomy/The%20ACM%20Computing%20Classification%20System%20(CCS)",
+          "resultPath": "http://www.w3.org/2004/02/skos/core#scopeNote",
+          "value": null,
+          "messages": [
+            "自有词表需要范围说明"
+          ]
+        }
+      ]
+    }
+  ]
+}

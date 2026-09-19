@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "10010803",
+    "zh": "柔性与可印刷电路",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010804",
+    "zh": "超导电路",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010805",
+    "zh": "机电系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010806",
+    "zh": "微机电系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010807",
+    "zh": "纳机电系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010808",
+    "zh": "新兴接口",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010809",
+    "zh": "内存与高密度存储",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010810",
+    "zh": "新兴光学与光子技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010811",
+    "zh": "可逆逻辑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010812",
+    "zh": "等离激元学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010813",
+    "zh": "量子技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010815",
+    "zh": "单电子器件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010816",
+    "zh": "隧穿器件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010817",
+    "zh": "自旋电子学与磁性技术",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010818",
+    "zh": "网状数据模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010819",
+    "zh": "物理数据模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010820",
+    "zh": "数据模型扩展",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010821",
+    "zh": "不确定性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010822",
+    "zh": "关系数据库查询语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010823",
+    "zh": "结构化查询语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010824",
+    "zh": "XML 查询语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010825",
+    "zh": "非关系型引擎查询语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010826",
+    "zh": "调用级接口",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010827",
+    "zh": "MapReduce 语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010828",
+    "zh": "数据扫描",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010829",
+    "zh": "点查询",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010830",
+    "zh": "一维范围搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010831",
+    "zh": "邻近搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010832",
+    "zh": "分布式数据库事务",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010833",
+    "zh": "分布式数据锁定",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010834",
+    "zh": "死锁",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010835",
+    "zh": "分布式数据库恢复",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010836",
+    "zh": "键值存储",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010837",
+    "zh": "基于 MapReduce 的系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010838",
+    "zh": "关系型并行与分布式数据库管理系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010839",
+    "zh": "授权",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010840",
+    "zh": "内存数据库引擎",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010841",
+    "zh": "联机分析处理引擎",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010842",
+    "zh": "数据流管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010843",
+    "zh": "联机分析处理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010846",
+    "zh": "深网",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010847",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "范围注释为寻找相关网站；无法可靠确认 Surfacing 在此语境的惯用中文名称，保留原名。"
+  },
+  {
+    "id": "10010848",
+    "zh": "搜索结果去重",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010849",
+    "zh": "服务发现与接口",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010850",
+    "zh": "对抗性检索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010851",
+    "zh": "链接与共被引分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010852",
+    "zh": "特定环境下的检索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010853",
+    "zh": "Web 与社交媒体搜索",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010854",
+    "zh": "可用性测试",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010855",
+    "zh": "启发式评估",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010856",
+    "zh": "走查评估",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010858",
+    "zh": "用户界面设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010859",
+    "zh": "以用户为中心的设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010860",
+    "zh": "交互设计过程与方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010862",
+    "zh": "命令行界面",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010865",
+    "zh": "图形用户界面",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010866",
+    "zh": "虚拟现实",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010868",
+    "zh": "基于 Web 的交互",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010869",
+    "zh": "听觉反馈",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010870",
+    "zh": "自然语言界面",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010872",
+    "zh": "键盘",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010873",
+    "zh": "指点设备",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010876",
+    "zh": "软件原型开发",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010877",
+    "zh": "以活动为中心的设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010878",
+    "zh": "快速应用开发",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010883",
+    "zh": "基于场景的设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010885",
+    "zh": "用户界面管理系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010887",
+    "zh": "地理可视化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010889",
+    "zh": "矩形树图",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010890",
+    "zh": "双曲树",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010891",
+    "zh": "热力图",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010892",
+    "zh": "图绘制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010893",
+    "zh": "树状图",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010894",
+    "zh": "分支图",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010895",
+    "zh": "智能手机",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010896",
+    "zh": "交互式白板",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010897",
+    "zh": "移动电话",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010898",
+    "zh": "移动设备",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010899",
+    "zh": "便携式媒体播放器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010900",
+    "zh": "个人数字助理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010901",
+    "zh": "掌上游戏机",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010902",
+    "zh": "电子书阅读器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010903",
+    "zh": "平板电脑",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010904",
+    "zh": "普适计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010905",
+    "zh": "移动计算",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010906",
+    "zh": "环境智能",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010910",
+    "zh": "社会导航",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010911",
+    "zh": "参与式设计",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010912",
+    "zh": "实证研究",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010913",
+    "zh": "文档编制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010914",
+    "zh": "断言检查",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010915",
+    "zh": "不一致数据",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010916",
+    "zh": "测量",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010917",
+    "zh": "图算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010918",
+    "zh": "近似算法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010919",
+    "zh": "分布式计算方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010920",
+    "zh": "超文本与超媒体创作",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010921",
+    "zh": "可持续性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010922",
+    "zh": "社会化标注系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010923",
+    "zh": "信息可视化",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010924",
+    "zh": "公共互联网",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010925",
+    "zh": "数据中心",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010926",
+    "zh": "计算平台",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010927",
+    "zh": "用户特征",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010928",
+    "zh": "男性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010929",
+    "zh": "女性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010930",
+    "zh": "年龄",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010931",
+    "zh": "儿童",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010932",
+    "zh": "老年人",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010933",
+    "zh": "青少年",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010934",
+    "zh": "计算基因组学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010935",
+    "zh": "遗传学",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010936",
+    "zh": "政府中的计算应用",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010938",
+    "zh": "电子政务",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010940",
+    "zh": "软件组织与属性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010941",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "Contextual 在此软件领域分类中的确切含义和惯用中文表达不确定，保留原名。"
+  },
+  {
+    "id": "10010942",
+    "zh": "软件基础设施",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010943",
+    "zh": "解释器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010944",
+    "zh": "中间件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010945",
+    "zh": "面向消息的中间件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010946",
+    "zh": "反射式中间件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010947",
+    "zh": "嵌入式中间件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010948",
+    "zh": "虚拟机",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010949",
+    "zh": "操作系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010950",
+    "zh": "内存管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010951",
+    "zh": "虚拟内存",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010952",
+    "zh": "主存",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010953",
+    "zh": "分配与释放策略",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010954",
+    "zh": "垃圾回收",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010955",
+    "zh": "分布式内存",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010956",
+    "zh": "辅助存储",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010957",
+    "zh": "进程管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010958",
+    "zh": "多线程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010959",
+    "zh": "多处理、多道程序设计与多任务",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010960",
+    "zh": "管程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010961",
+    "zh": "同步",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010962",
+    "zh": "互斥",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010963",
+    "zh": "并发控制",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010964",
+    "zh": "电源管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010965",
+    "zh": "通信管理",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010966",
+    "zh": "缓冲",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010967",
+    "zh": "输入与输出",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010968",
+    "zh": "消息传递",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010969",
+    "zh": "虚拟世界软件",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010970",
+    "zh": "交互式游戏",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010971",
+    "zh": "软件系统结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010972",
+    "zh": "软件架构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010973",
+    "zh": "协作通信进程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010974",
+    "zh": "分层系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010975",
+    "zh": "发布订阅与基于事件的架构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010976",
+    "zh": "电子黑板",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010978",
+    "zh": "模拟器与解释器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010979",
+    "zh": "面向对象架构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010980",
+    "zh": "软件系统模型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010981",
+    "zh": "Petri 网",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010982",
+    "zh": "状态系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010983",
+    "zh": "实体关系建模",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010984",
+    "zh": "模型驱动的软件工程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010985",
+    "zh": "特征交互",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010986",
+    "zh": "大规模并行系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010988",
+    "zh": "电信",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010989",
+    "zh": "航空电子",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010990",
+    "zh": "社会技术系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010991",
+    "zh": "超大规模系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010992",
+    "zh": "软件功能属性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010993",
+    "zh": "正确性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010994",
+    "zh": "功能性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010995",
+    "zh": "实时可调度性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010996",
+    "zh": "一致性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010997",
+    "zh": "完备性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010998",
+    "zh": "形式化方法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10010999",
+    "zh": "软件验证",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011000",
+    "zh": "自动静态分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011001",
+    "zh": "动态分析",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011002",
+    "zh": "软件性能",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011003",
+    "zh": "非功能属性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011004",
+    "zh": "软件可靠性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011005",
+    "zh": "软件容错",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011006",
+    "zh": "软件表示法与工具",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011007",
+    "zh": "软件及其工程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011008",
+    "zh": "通用编程语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011009",
+    "zh": "语言类型",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011010",
+    "zh": "命令式语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011011",
+    "zh": "面向对象语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011012",
+    "zh": "函数式语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011014",
+    "zh": "并发编程语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011015",
+    "zh": "约束与逻辑语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011016",
+    "zh": "数据流语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011017",
+    "zh": "领域专用语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011018",
+    "zh": "设计语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011019",
+    "zh": "可扩展语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011020",
+    "zh": "汇编语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011021",
+    "zh": "多范式语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011022",
+    "zh": "超高级语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011023",
+    "zh": "专用应用语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011024",
+    "zh": "语言特性",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011025",
+    "zh": "多态",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011026",
+    "zh": "继承",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011027",
+    "zh": "控制结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011028",
+    "zh": "数据类型与结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011029",
+    "zh": "类与对象",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011031",
+    "zh": "模块与包",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011032",
+    "zh": "约束",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011033",
+    "zh": "递归",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011034",
+    "zh": "并发编程结构",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011035",
+    "zh": "过程、函数与子程序",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011036",
+    "zh": "模式",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011037",
+    "zh": "协程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011038",
+    "zh": "框架",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011039",
+    "zh": "形式化语言定义",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011040",
+    "zh": "语法",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011041",
+    "zh": "编译器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011042",
+    "zh": "增量编译器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011043",
+    "zh": "可重定向编译器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011044",
+    "zh": "即时编译器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011045",
+    "zh": "动态编译器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011046",
+    "zh": "翻译程序编写系统与编译器生成器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011047",
+    "zh": "源代码生成",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011048",
+    "zh": "运行时环境",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011049",
+    "zh": "预处理器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011050",
+    "zh": null,
+    "decision": "retain_original",
+    "note": "Context specific 在此语言分类中的含义不能仅凭父项确定，无法可靠选定惯用译名，保留原名。"
+  },
+  {
+    "id": "10011051",
+    "zh": "API 语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011052",
+    "zh": "图形用户界面语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011053",
+    "zh": "窗口管理器",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011054",
+    "zh": "命令与控制语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011055",
+    "zh": "宏语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011056",
+    "zh": "示例编程",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011057",
+    "zh": "基于状态的定义",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011058",
+    "zh": "可视化语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011059",
+    "zh": "接口定义语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011060",
+    "zh": "系统描述语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011061",
+    "zh": "统一建模语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011062",
+    "zh": "架构描述语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011063",
+    "zh": "系统建模语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011064",
+    "zh": "编排语言",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011065",
+    "zh": "集成框架",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011066",
+    "zh": "开发框架与环境",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011067",
+    "zh": "面向对象框架",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011068",
+    "zh": "软件即服务编排系统",
+    "decision": "translated",
+    "note": ""
+  },
+  {
+    "id": "10011069",
+    "zh": "集成与可视化开发环境",
+    "decision": "translated",
+    "note": ""
+  }
+]
