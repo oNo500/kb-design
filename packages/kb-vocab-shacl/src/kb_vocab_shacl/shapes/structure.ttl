@@ -1,0 +1,1058 @@
+@prefix resource: <urn:kb-vocab-shacl:resource:> .
+@prefix common: <urn:kb-vocab-shacl:common:> .
+@prefix field: <urn:kb-vocab-shacl:field:> .
+@prefix rule: <urn:kb-vocab-shacl:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix iso-thes: <http://purl.org/iso25964/skos-thes#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# 完整资源结构：从 resource:Concept 等入口查看字段；sh:node 引用共同字段。
+# sh:property 关联字段，sh:path 指定属性；可选字段也必须在此列出。
+# 统计与结构校验都读取 read_shapes("structure")，无需另一份字段清单。
+# 共享约束用 rule: 引用已有定义；加载器补齐定义，并只保留资源入口的检查目标。
+# dcterms:relation 关联需明确对象后才执行的条件规则，不自动启用这些规则。
+# 数据中的空字符串算字段已出现，是否合规由后续校验判断。
+
+# resource:ConceptScheme：字段入口。
+resource:ConceptScheme a sh:NodeShape ; sh:nodeKind sh:IRI ; sh:name "词表"@zh ;
+    sh:targetClass skos:ConceptScheme ;
+    sh:targetSubjectsOf skos:hasTopConcept ;
+    sh:targetObjectsOf skos:inScheme, skos:topConceptOf ;
+    sh:node common:Metadata, common:Evidence, common:Notes ;
+    sh:property field:ConceptScheme_rdf_type,
+        field:ConceptScheme_skos_prefLabel,
+        rule:PreferredLiteral,
+        field:ConceptScheme_skos_altLabel,
+        rule:AlternativeLiteral,
+        field:ConceptScheme_skos_hiddenLabel,
+        rule:HiddenLiteral,
+        field:ConceptScheme_skos_scopeNote,
+        field:ConceptScheme_dcterms_description,
+        rule:TextMetadata_dcterms_description,
+        field:ConceptScheme_skos_note,
+        field:ConceptScheme_skos_historyNote,
+        field:ConceptScheme_skos_changeNote,
+        field:ConceptScheme_skos_hasTopConcept,
+        rule:TopTarget_hasTopConcept,
+        field:ConceptScheme_dcterms_source,
+        rule:ResourceEvidence_dcterms_source,
+        field:ConceptScheme_dcterms_created,
+        field:ConceptScheme_dcterms_modified,
+        field:ConceptScheme_dcterms_language,
+        field:ConceptScheme_owl_versionInfo,
+        field:ConceptScheme_skosxl_prefLabel,
+        rule:XLReference_prefLabel,
+        field:ConceptScheme_skosxl_altLabel,
+        rule:XLReference_altLabel,
+        field:ConceptScheme_skosxl_hiddenLabel,
+        rule:XLReference_hiddenLabel ;
+    dcterms:relation rule:LocalDates .
+
+# resource:Concept：字段入口。
+resource:Concept a sh:NodeShape ; sh:nodeKind sh:IRI ; sh:name "概念"@zh ;
+    sh:targetClass skos:Concept ;
+    sh:targetSubjectsOf skos:broader, skos:narrower, skos:related, skos:broaderTransitive, skos:narrowerTransitive, skos:topConceptOf ;
+    sh:targetObjectsOf skos:broader, skos:narrower, skos:related, skos:broaderTransitive, skos:narrowerTransitive, skos:hasTopConcept ;
+    sh:node common:Metadata, common:Evidence, common:Notes ;
+    sh:property field:Concept_rdf_type,
+        field:Concept_skos_inScheme,
+        field:Concept_skosxl_prefLabel,
+        rule:XLReference_prefLabel,
+        field:Concept_skosxl_altLabel,
+        rule:XLReference_altLabel,
+        field:Concept_skosxl_hiddenLabel,
+        rule:XLReference_hiddenLabel,
+        field:Concept_skos_notation,
+        rule:TextMetadata_skos_notation,
+        field:Concept_dcterms_identifier,
+        rule:TextMetadata_dcterms_identifier,
+        field:Concept_skos_definition,
+        field:Concept_skos_scopeNote,
+        field:Concept_dcterms_description,
+        rule:TextMetadata_dcterms_description,
+        field:Concept_skos_note,
+        field:Concept_skos_editorialNote,
+        field:Concept_skos_historyNote,
+        field:Concept_skos_changeNote,
+        field:Concept_owl_deprecated,
+        rule:DeprecatedValue,
+        field:Concept_dcterms_isReplacedBy,
+        field:Concept_dcterms_replaces,
+        field:Concept_skos_broader,
+        rule:ConceptTarget_broader,
+        field:Concept_skos_narrower,
+        rule:ConceptTarget_narrower,
+        field:Concept_skos_related,
+        rule:ConceptTarget_related,
+        field:Concept_skos_topConceptOf,
+        rule:TopTarget_topConceptOf,
+        field:Concept_dcterms_isPartOf,
+        rule:ResourceEvidence_dcterms_isPartOf,
+        field:Concept_dcterms_source,
+        rule:ResourceEvidence_dcterms_source,
+        field:Concept_prov_wasDerivedFrom,
+        rule:ResourceEvidence_prov_wasDerivedFrom,
+        field:Concept_dcterms_created,
+        field:Concept_dcterms_modified,
+        field:Concept_skos_exactMatch,
+        rule:MappingTarget_exactMatch,
+        field:Concept_skos_closeMatch,
+        rule:MappingTarget_closeMatch,
+        field:Concept_skos_broadMatch,
+        rule:MappingTarget_broadMatch,
+        field:Concept_skos_narrowMatch,
+        rule:MappingTarget_narrowMatch,
+        field:Concept_skos_relatedMatch,
+        rule:MappingTarget_relatedMatch,
+        field:Concept_skos_prefLabel,
+        rule:PreferredLiteral,
+        field:Concept_skos_altLabel,
+        rule:AlternativeLiteral,
+        field:Concept_skos_hiddenLabel,
+        rule:HiddenLiteral ;
+    dcterms:relation rule:LocalDates, rule:LocalConcept .
+
+# resource:Label：字段入口。
+resource:Label a sh:NodeShape ; sh:nodeKind sh:IRI ; sh:name "名称"@zh ;
+    sh:targetClass skosxl:Label ;
+    # 同时选中通过 XL 属性使用的名称，漏写类型也要统计和校验。
+    sh:targetSubjectsOf skosxl:literalForm, skosxl:labelRelation ;
+    sh:targetObjectsOf skosxl:prefLabel, skosxl:altLabel, skosxl:hiddenLabel, skosxl:labelRelation ;
+    sh:node common:Metadata, common:Evidence, common:Notes ;
+    sh:property field:Label_rdf_type,
+        field:Label_skosxl_literalForm,
+        rule:LabelLiteralForm,
+        field:Label_skosxl_labelRelation ;
+    dcterms:relation rule:LocalDates, rule:LocalLabel .
+
+# resource:Collection：字段入口。
+resource:Collection a sh:NodeShape ; sh:nodeKind sh:IRI ; sh:name "集合"@zh ;
+    sh:targetClass skos:Collection, skos:OrderedCollection, iso-thes:ConceptGroup, iso-thes:ThesaurusArray ;
+    sh:targetSubjectsOf skos:member, skos:memberList, iso-thes:superGroup, iso-thes:subGroup ;
+    sh:targetObjectsOf iso-thes:superGroup, iso-thes:subGroup ;
+    sh:node common:Metadata, common:Evidence, common:Notes ;
+    sh:property field:Collection_rdf_type,
+        field:Collection_skos_prefLabel,
+        rule:PreferredLiteral,
+        field:Collection_skos_altLabel,
+        rule:AlternativeLiteral,
+        field:Collection_skos_hiddenLabel,
+        rule:HiddenLiteral,
+        field:Collection_rdfs_label,
+        rule:TextMetadata_rdfs_label,
+        field:Collection_skos_notation,
+        rule:TextMetadata_skos_notation,
+        field:Collection_skos_scopeNote,
+        field:Collection_skos_historyNote,
+        field:Collection_skos_changeNote,
+        field:Collection_dcterms_source,
+        rule:ResourceEvidence_dcterms_source,
+        field:Collection_prov_wasDerivedFrom,
+        rule:ResourceEvidence_prov_wasDerivedFrom,
+        field:Collection_skos_inScheme,
+        field:Collection_skos_member,
+        rule:CollectionMembers,
+        field:Collection_skos_memberList,
+        field:Collection_iso_thes_subGroup,
+        field:Collection_iso_thes_superGroup,
+        field:Collection_dcterms_created,
+        field:Collection_dcterms_modified,
+        field:Collection_skosxl_prefLabel,
+        rule:XLReference_prefLabel,
+        field:Collection_skosxl_altLabel,
+        rule:XLReference_altLabel,
+        field:Collection_skosxl_hiddenLabel,
+        rule:XLReference_hiddenLabel,
+        rule:DeclaredCollectionType ;
+    dcterms:relation rule:LocalDates, rule:LocalCollection .
+
+# resource:OrderedCollection：字段入口。
+resource:OrderedCollection a sh:NodeShape ; sh:nodeKind sh:IRI ; sh:name "有序集合"@zh ;
+    sh:targetClass skos:OrderedCollection ;
+    sh:targetSubjectsOf skos:memberList ;
+    sh:node resource:Collection ;
+    sh:property field:OrderedCollection_rdf_type,
+        field:OrderedCollection_skos_memberList .
+
+# resource:ConceptGroup：字段入口。
+resource:ConceptGroup a sh:NodeShape ; sh:nodeKind sh:IRI ; sh:name "概念组"@zh ;
+    sh:targetClass iso-thes:ConceptGroup ;
+    sh:targetSubjectsOf iso-thes:superGroup, iso-thes:subGroup ;
+    sh:targetObjectsOf iso-thes:superGroup, iso-thes:subGroup ;
+    sh:node resource:Collection ;
+    sh:property field:ConceptGroup_rdf_type ;
+    dcterms:relation rule:LocalConceptGroup, rule:LocalCollection .
+
+# resource:ThesaurusArray：字段入口。
+resource:ThesaurusArray a sh:NodeShape ; sh:nodeKind sh:IRI ; sh:name "数组"@zh ;
+    sh:targetClass iso-thes:ThesaurusArray ;
+    sh:node resource:Collection ;
+    sh:property field:ThesaurusArray_rdf_type .
+
+# resource:Note：字段入口。
+resource:Note a sh:NodeShape ; sh:name "独立说明"@zh ;
+    sh:node common:Metadata, common:Evidence ;
+    sh:property field:Note_rdf_value ;
+    dcterms:relation rule:LocalDates, rule:LocalNote .
+
+# common:Metadata：字段入口。
+common:Metadata a sh:NodeShape ;
+    sh:property field:Metadata_dcterms_title,
+        rule:TextMetadata_dcterms_title,
+        field:Metadata_dcterms_identifier,
+        rule:TextMetadata_dcterms_identifier,
+        field:Metadata_dc_creator,
+        field:Metadata_dc_contributor,
+        field:Metadata_dc_publisher,
+        field:Metadata_dc_subject,
+        field:Metadata_dcterms_subject,
+        field:Metadata_dcterms_type,
+        field:Metadata_dcterms_format,
+        field:Metadata_dcterms_conformsTo,
+        field:Metadata_dcterms_language,
+        field:Metadata_dcterms_isRequiredBy,
+        field:Metadata_dcterms_replaces,
+        field:Metadata_dcterms_license,
+        field:Metadata_dcterms_rights,
+        field:Metadata_dcterms_rightsHolder,
+        field:Metadata_dcterms_created,
+        field:Metadata_dcterms_modified,
+        field:Metadata_owl_versionInfo,
+        field:Metadata_owl_imports .
+
+# common:Notes：字段入口。
+common:Notes a sh:NodeShape ;
+    sh:property field:Notes_skos_definition,
+        field:Notes_skos_scopeNote,
+        field:Notes_skos_example,
+        field:Notes_skos_note,
+        field:Notes_skos_editorialNote,
+        field:Notes_skos_historyNote,
+        field:Notes_skos_changeNote,
+        field:Notes_dcterms_description,
+        rule:TextMetadata_dcterms_description .
+
+# common:Evidence：字段入口。
+common:Evidence a sh:NodeShape ;
+    sh:property field:Evidence_dcterms_source,
+        rule:ResourceEvidence_dcterms_source,
+        field:Evidence_prov_wasDerivedFrom,
+        rule:ResourceEvidence_prov_wasDerivedFrom .
+
+# 四种名称文字路径共用同一个非空约束；不导入耗时的关系查询。
+rule:PreferredLiteral sh:node rule:NonemptyNameValue .
+rule:AlternativeLiteral sh:node rule:NonemptyNameValue .
+rule:HiddenLiteral sh:node rule:NonemptyNameValue .
+rule:LabelLiteralForm sh:node rule:NonemptyNameValue .
+
+# 以下为字段定义；同一路径的共同约束与对象专用约束同时适用。
+
+# dcterms:title：0..n。
+field:Metadata_dcterms_title a sh:PropertyShape ;
+    sh:path dcterms:title ;
+    sh:name "dcterms:title" ;
+    sh:description "0..n；标题文字及原语言；与首选标签可同值也可不同，按实际含义保存，不强制相互派生"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dcterms:identifier：0..n。
+field:Metadata_dcterms_identifier a sh:PropertyShape ;
+    sh:path dcterms:identifier ;
+    sh:name "dcterms:identifier" ;
+    sh:description "0..n；来源标识文字及原类型，不替代资源 IRI"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dc:creator：各 0..n。
+field:Metadata_dc_creator a sh:PropertyShape ;
+    sh:path dc:creator ;
+    sh:name "dc:creator" ;
+    sh:description "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dc:contributor：各 0..n。
+field:Metadata_dc_contributor a sh:PropertyShape ;
+    sh:path dc:contributor ;
+    sh:name "dc:contributor" ;
+    sh:description "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dc:publisher：各 0..n。
+field:Metadata_dc_publisher a sh:PropertyShape ;
+    sh:path dc:publisher ;
+    sh:name "dc:publisher" ;
+    sh:description "各 0..n；来源中的文字或资源引用；分别说明创建者、贡献者和发布者，不自动转成自有元数据"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dc:subject：各 0..n。
+field:Metadata_dc_subject a sh:PropertyShape ;
+    sh:path dc:subject ;
+    sh:name "dc:subject" ;
+    sh:description "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dcterms:subject：各 0..n。
+field:Metadata_dcterms_subject a sh:PropertyShape ;
+    sh:path dcterms:subject ;
+    sh:name "dcterms:subject" ;
+    sh:description "各 0..n；主题文字或资源引用；优先保留已有受控身份，不据此自动建立本地概念关系"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dcterms:type：0..n。
+field:Metadata_dcterms_type a sh:PropertyShape ;
+    sh:path dcterms:type ;
+    sh:name "dcterms:type" ;
+    sh:description "0..n；类别资源引用或文字；保留已有受控类型，不用类别字符串代替 rdf:type 或本地分类决定"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dcterms:format：0..n。
+field:Metadata_dcterms_format a sh:PropertyShape ;
+    sh:path dcterms:format ;
+    sh:name "dcterms:format" ;
+    sh:description "0..n；格式、介质或尺寸的资源引用或文字，如媒体类型字符串；不冒称自有输出的格式"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dcterms:conformsTo：0..n。
+field:Metadata_dcterms_conformsTo a sh:PropertyShape ;
+    sh:path dcterms:conformsTo ;
+    sh:name "dcterms:conformsTo" ;
+    sh:description "0..n；标准引用及来源原有表述；自有符合性声明须有明确对象和证据"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dcterms:language：0..n。
+field:Metadata_dcterms_language a sh:PropertyShape ;
+    sh:path dcterms:language ;
+    sh:name "dcterms:language" ;
+    sh:description "0..n；受控语言资源或 BCP 47 文字值；资源级语言声明不代替每条名称的标签"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dcterms:isRequiredBy：各 0..n。
+field:Metadata_dcterms_isRequiredBy a sh:PropertyShape ;
+    sh:path dcterms:isRequiredBy ;
+    sh:name "dcterms:isRequiredBy" ;
+    sh:description "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dcterms:replaces：各 0..n。
+field:Metadata_dcterms_replaces a sh:PropertyShape ;
+    sh:path dcterms:replaces ;
+    sh:name "dcterms:replaces" ;
+    sh:description "各 0..n；按属性含义保留所指资源；来源文档替代与概念替代分别解释"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dcterms:license：0..n。
+field:Metadata_dcterms_license a sh:PropertyShape ;
+    sh:path dcterms:license ;
+    sh:name "dcterms:license" ;
+    sh:description "0..n；优先引用许可文档；无法使用 URI 时可保留能识别许可的文字，不擅自变更许可"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dcterms:rights：各 0..n。
+field:Metadata_dcterms_rights a sh:PropertyShape ;
+    sh:path dcterms:rights ;
+    sh:name "dcterms:rights" ;
+    sh:description "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dcterms:rightsHolder：各 0..n。
+field:Metadata_dcterms_rightsHolder a sh:PropertyShape ;
+    sh:path dcterms:rightsHolder ;
+    sh:name "dcterms:rightsHolder" ;
+    sh:description "各 0..n；分别为权利声明和权利持有者；保留资源引用或能识别对象的文字，不为格式统一造实体"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dcterms:created：来源各 0..n。
+field:Metadata_dcterms_created a sh:PropertyShape ;
+    sh:path dcterms:created ;
+    sh:name "dcterms:created" ;
+    sh:description "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# dcterms:modified：来源各 0..n。
+field:Metadata_dcterms_modified a sh:PropertyShape ;
+    sh:path dcterms:modified ;
+    sh:name "dcterms:modified" ;
+    sh:description "来源各 0..n；保留原主体、版本、数量及时间精度；本地记录按独立日期约定处理"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# owl:versionInfo：0..n。
+field:Metadata_owl_versionInfo a sh:PropertyShape ;
+    sh:path owl:versionInfo ;
+    sh:name "owl:versionInfo" ;
+    sh:description "0..n；来源版本说明，不覆盖自有词表或工具版本"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# owl:imports：0..n。
+field:Metadata_owl_imports a sh:PropertyShape ;
+    sh:path owl:imports ;
+    sh:name "owl:imports" ;
+    sh:description "0..n；允许保留来源的导入声明；读取时不自动加载外部图。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" .
+
+# skos:definition：0..n 个说明值。
+field:Notes_skos_definition a sh:PropertyShape ;
+    sh:path skos:definition ;
+    sh:name "skos:definition" ;
+    sh:description "0..n 个说明值；定义；来源附着于概念或名称时保留原位置"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#说明字段" .
+
+# skos:scopeNote：0..n 个说明值。
+field:Notes_skos_scopeNote a sh:PropertyShape ;
+    sh:path skos:scopeNote ;
+    sh:name "skos:scopeNote" ;
+    sh:description "0..n 个说明值；使用范围；词表与自建集合按各自字段表必填"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#说明字段" .
+
+# skos:example：0..n 个说明值。
+field:Notes_skos_example a sh:PropertyShape ;
+    sh:path skos:example ;
+    sh:name "skos:example" ;
+    sh:description "0..n 个说明值；所解释对象的使用示例"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#说明字段" .
+
+# skos:note：0..n 个说明值。
+field:Notes_skos_note a sh:PropertyShape ;
+    sh:path skos:note ;
+    sh:name "skos:note" ;
+    sh:description "0..n 个说明值；不适合归入更具体属性的说明"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#说明字段" .
+
+# skos:editorialNote：0..n 个说明值。
+field:Notes_skos_editorialNote a sh:PropertyShape ;
+    sh:path skos:editorialNote ;
+    sh:name "skos:editorialNote" ;
+    sh:description "0..n 个说明值；编辑提醒，默认保留在管理输出"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#说明字段" .
+
+# skos:historyNote：0..n 个说明值。
+field:Notes_skos_historyNote a sh:PropertyShape ;
+    sh:path skos:historyNote ;
+    sh:name "skos:historyNote" ;
+    sh:description "0..n 个说明值；名称、含义或使用范围的重要历史"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#说明字段" .
+
+# skos:changeNote：0..n 个说明值。
+field:Notes_skos_changeNote a sh:PropertyShape ;
+    sh:path skos:changeNote ;
+    sh:name "skos:changeNote" ;
+    sh:description "0..n 个说明值；具体变更，由维护记录派生说明或引用"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#说明字段" .
+
+# dcterms:description：0..n 个文字值。
+field:Notes_dcterms_description a sh:PropertyShape ;
+    sh:path dcterms:description ;
+    sh:name "dcterms:description" ;
+    sh:description "0..n 个文字值；一般描述，不替代定义或范围说明"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#说明字段" .
+
+# dcterms:source：0..n。
+field:Evidence_dcterms_source a sh:PropertyShape ;
+    sh:path dcterms:source ;
+    sh:name "dcterms:source" ;
+    sh:description "0..n；来源与实际派生引用，保持原附着对象。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源与依据" .
+
+# prov:wasDerivedFrom：0..n。
+field:Evidence_prov_wasDerivedFrom a sh:PropertyShape ;
+    sh:path prov:wasDerivedFrom ;
+    sh:name "prov:wasDerivedFrom" ;
+    sh:description "0..n；来源与实际派生引用，保持原附着对象。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源与依据" .
+
+# rdf:type：1..n。
+field:ConceptScheme_rdf_type a sh:PropertyShape ;
+    sh:path rdf:type ;
+    sh:name "rdf:type" ;
+    sh:description "1..n；包含 skos:ConceptScheme，不同时作为概念或集合"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" ;
+    sh:nodeKind sh:IRI ; sh:minCount 1 ; sh:hasValue skos:ConceptScheme .
+
+# skos:prefLabel：1..n。
+field:ConceptScheme_skos_prefLabel a sh:PropertyShape ;
+    sh:path skos:prefLabel ;
+    sh:name "skos:prefLabel" ;
+    sh:description "1..n；自有词表的首选名称；直接维护或由所采用的 XL 名称投影"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" ;
+    sh:minCount 1 .
+
+# skos:altLabel：0..n。
+field:ConceptScheme_skos_altLabel a sh:PropertyShape ;
+    sh:path skos:altLabel ;
+    sh:name "skos:altLabel" ;
+    sh:description "0..n；词表的替代名称，遵守同一套语言及角色约束"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" .
+
+# skos:hiddenLabel：0..n。
+field:ConceptScheme_skos_hiddenLabel a sh:PropertyShape ;
+    sh:path skos:hiddenLabel ;
+    sh:name "skos:hiddenLabel" ;
+    sh:description "0..n；词表的检索写法，不作为默认显示名称"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" .
+
+# skos:scopeNote：1..n。
+field:ConceptScheme_skos_scopeNote a sh:PropertyShape ;
+    sh:path skos:scopeNote ;
+    sh:name "skos:scopeNote" ;
+    sh:description "1..n；明确收录范围、排除情况和使用边界；是项目的词表级要求，不强加给每个来源词表"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" ;
+    sh:minCount 1 .
+
+# dcterms:description：0..n。
+field:ConceptScheme_dcterms_description a sh:PropertyShape ;
+    sh:path dcterms:description ;
+    sh:name "dcterms:description" ;
+    sh:description "0..n；补充用途或一般介绍，不重复抄写范围说明"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" .
+
+# skos:note：0..n。
+field:ConceptScheme_skos_note a sh:PropertyShape ;
+    sh:path skos:note ;
+    sh:name "skos:note" ;
+    sh:description "0..n；不适合归入更具体说明属性的其他信息"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" .
+
+# skos:historyNote：0..n。
+field:ConceptScheme_skos_historyNote a sh:PropertyShape ;
+    sh:path skos:historyNote ;
+    sh:name "skos:historyNote" ;
+    sh:description "0..n；自有词表范围或组织原则的重要历史变化"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" .
+
+# skos:changeNote：0..n。
+field:ConceptScheme_skos_changeNote a sh:PropertyShape ;
+    sh:path skos:changeNote ;
+    sh:name "skos:changeNote" ;
+    sh:description "0..n；从版本及维护记录派生的具体变更说明"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" .
+
+# skos:hasTopConcept：0..n。
+field:ConceptScheme_skos_hasTopConcept a sh:PropertyShape ;
+    sh:path skos:hasTopConcept ;
+    sh:name "skos:hasTopConcept" ;
+    sh:description "0..n；自有顶层概念的主要维护入口，检查本词表成员资格；领域集合不是顶层概念"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" .
+
+# dcterms:source：0..n。
+field:ConceptScheme_dcterms_source a sh:PropertyShape ;
+    sh:path dcterms:source ;
+    sh:name "dcterms:source" ;
+    sh:description "0..n；自有词表引用的来源资源，逐项采用范围仍由范围决定和依据记录说明"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" .
+
+# dcterms:created：0..1。
+field:ConceptScheme_dcterms_created a sh:PropertyShape ;
+    sh:path dcterms:created ;
+    sh:name "dcterms:created" ;
+    sh:description "0..1；自有词表建立时间，不继承为任一来源词表的创建时间"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" .
+
+# dcterms:modified：0..1。
+field:ConceptScheme_dcterms_modified a sh:PropertyShape ;
+    sh:path dcterms:modified ;
+    sh:name "dcterms:modified" ;
+    sh:description "0..1；自有词表记录的修改时间，不等同于每次重建时间"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" .
+
+# dcterms:language：0..n。
+field:ConceptScheme_dcterms_language a sh:PropertyShape ;
+    sh:path dcterms:language ;
+    sh:name "dcterms:language" ;
+    sh:description "0..n；实际提供的语言，不代替每个名称的语言标签；两种表示均须能解释其所指"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" .
+
+# owl:versionInfo：0..n。
+field:ConceptScheme_owl_versionInfo a sh:PropertyShape ;
+    sh:path owl:versionInfo ;
+    sh:name "owl:versionInfo" ;
+    sh:description "0..n；自有词表版本说明；来源版本和生成工具版本分别记录"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" ;
+    sh:nodeKind sh:Literal .
+
+# skosxl:prefLabel：0..n。
+field:ConceptScheme_skosxl_prefLabel a sh:PropertyShape ;
+    sh:path skosxl:prefLabel ;
+    sh:name "skosxl:prefLabel" ;
+    sh:description "0..n；按用途采用独立名称时填写，并提供普通标签投影。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" .
+
+# skosxl:altLabel：0..n。
+field:ConceptScheme_skosxl_altLabel a sh:PropertyShape ;
+    sh:path skosxl:altLabel ;
+    sh:name "skosxl:altLabel" ;
+    sh:description "0..n；按用途采用独立名称时填写，并提供普通标签投影。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" .
+
+# skosxl:hiddenLabel：0..n。
+field:ConceptScheme_skosxl_hiddenLabel a sh:PropertyShape ;
+    sh:path skosxl:hiddenLabel ;
+    sh:name "skosxl:hiddenLabel" ;
+    sh:description "0..n；按用途采用独立名称时填写，并提供普通标签投影。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" .
+
+
+# rdf:type：1..n。
+field:Concept_rdf_type a sh:PropertyShape ;
+    sh:path rdf:type ;
+    sh:name "rdf:type" ;
+    sh:description "1..n；必须包含 `skos:Concept`；允许其他不冲突的来源类型"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" ;
+    sh:nodeKind sh:IRI ; sh:minCount 1 ; sh:hasValue skos:Concept .
+
+# skos:inScheme：1。
+field:Concept_skos_inScheme a sh:PropertyShape ;
+    sh:path skos:inScheme ;
+    sh:name "skos:inScheme" ;
+    sh:description "1；自有主词表中的概念统一属于同一词表；分组成员用 Collection 的 member 表达，层级归属用概念间的 broader 表达，原来源归属在来源图及对账记录中保留"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" ;
+    sh:nodeKind sh:IRI ; sh:class skos:ConceptScheme ; sh:maxCount 1 ; sh:minCount 1 .
+
+# skosxl:prefLabel：1..n。
+field:Concept_skosxl_prefLabel a sh:PropertyShape ;
+    sh:path skosxl:prefLabel ;
+    sh:name "skosxl:prefLabel" ;
+    sh:description "1..n；首选名称的维护入口；本地新增概念必须有名，来源缺名保留警告"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# skosxl:altLabel：0..n。
+field:Concept_skosxl_altLabel a sh:PropertyShape ;
+    sh:path skosxl:altLabel ;
+    sh:name "skosxl:altLabel" ;
+    sh:description "0..n；替代名称，不因此建立另一个概念"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# skosxl:hiddenLabel：0..n。
+field:Concept_skosxl_hiddenLabel a sh:PropertyShape ;
+    sh:path skosxl:hiddenLabel ;
+    sh:name "skosxl:hiddenLabel" ;
+    sh:description "0..n；检索用写法，不作为默认显示首选名"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# skos:notation：0..n。
+field:Concept_skos_notation a sh:PropertyShape ;
+    sh:path skos:notation ;
+    sh:name "skos:notation" ;
+    sh:description "0..n；来源分类代码；保留数据类型与原值，不当作概念 URI"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# dcterms:identifier：0..n。
+field:Concept_dcterms_identifier a sh:PropertyShape ;
+    sh:path dcterms:identifier ;
+    sh:name "dcterms:identifier" ;
+    sh:description "0..n；来源或登记标识；不假定跨来源全局唯一"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# skos:definition：0..n。
+field:Concept_skos_definition a sh:PropertyShape ;
+    sh:path skos:definition ;
+    sh:name "skos:definition" ;
+    sh:description "0..n；定义或定义资源引用，不限定为一个字符串"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# skos:scopeNote：0..n。
+field:Concept_skos_scopeNote a sh:PropertyShape ;
+    sh:path skos:scopeNote ;
+    sh:name "skos:scopeNote" ;
+    sh:description "0..n；范围及使用说明，不自动升级为定义"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# dcterms:description：0..n。
+field:Concept_dcterms_description a sh:PropertyShape ;
+    sh:path dcterms:description ;
+    sh:name "dcterms:description" ;
+    sh:description "0..n；一般描述；保留其与定义、范围说明的区别"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# skos:note：0..n。
+field:Concept_skos_note a sh:PropertyShape ;
+    sh:path skos:note ;
+    sh:name "skos:note" ;
+    sh:description "0..n；一般说明，不自动确定更具体的说明类别"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# skos:editorialNote：0..n。
+field:Concept_skos_editorialNote a sh:PropertyShape ;
+    sh:path skos:editorialNote ;
+    sh:name "skos:editorialNote" ;
+    sh:description "0..n；编辑提醒，不代替历史、具体变更记录或采纳授权"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# skos:historyNote：0..n。
+field:Concept_skos_historyNote a sh:PropertyShape ;
+    sh:path skos:historyNote ;
+    sh:name "skos:historyNote" ;
+    sh:description "0..n；名称、含义或使用范围的重要历史变化，帮助解释旧内容的标记"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# skos:changeNote：0..n。
+field:Concept_skos_changeNote a sh:PropertyShape ;
+    sh:path skos:changeNote ;
+    sh:name "skos:changeNote" ;
+    sh:description "0..n；细粒度维护变更；从结构化变更记录生成说明或引用，不重复维护第二份事件历史"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# owl:deprecated：0..1。
+field:Concept_owl_deprecated a sh:PropertyShape ;
+    sh:path owl:deprecated ;
+    sh:name "owl:deprecated" ;
+    sh:description "0..1；有明确依据时标记停用；缺少该属性不证明已经采纳或经过审查"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# dcterms:isReplacedBy：0..n。
+field:Concept_dcterms_isReplacedBy a sh:PropertyShape ;
+    sh:path dcterms:isReplacedBy ;
+    sh:name "dcterms:isReplacedBy" ;
+    sh:description "0..n；旧概念指向替代概念，允许多个目标；不等于概念等价或自动重标引"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" ;
+    sh:nodeKind sh:IRI .
+
+# dcterms:replaces：0..n。
+field:Concept_dcterms_replaces a sh:PropertyShape ;
+    sh:path dcterms:replaces ;
+    sh:name "dcterms:replaces" ;
+    sh:description "0..n；替代概念指向旧概念的派生反向表达，不单独维护"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" ;
+    sh:nodeKind sh:IRI .
+
+# skos:broader：0..n。
+field:Concept_skos_broader a sh:PropertyShape ;
+    sh:path skos:broader ;
+    sh:name "skos:broader" ;
+    sh:description "0..n；自有直接层级的主要维护方向，允许多父；来源反向边也须纳入归一与对账"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# skos:narrower：0..n。
+field:Concept_skos_narrower a sh:PropertyShape ;
+    sh:path skos:narrower ;
+    sh:name "skos:narrower" ;
+    sh:description "0..n；从上位关系派生的下位表达；编辑反向表达时同步修改同一条上位关系，不允许两套互相独立的值"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# skos:related：0..n。
+field:Concept_skos_related a sh:PropertyShape ;
+    sh:path skos:related ;
+    sh:name "skos:related" ;
+    sh:description "0..n；相关关系；不得与同一对概念的层级可达关系重叠"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# skos:topConceptOf：0..1。
+field:Concept_skos_topConceptOf a sh:PropertyShape ;
+    sh:path skos:topConceptOf ;
+    sh:name "skos:topConceptOf" ;
+    sh:description "0..1；由 hasTopConcept 派生的顶层归属；不能指向领域集合，不单独维护"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" ;
+    sh:maxCount 1 .
+
+# dcterms:isPartOf：0..n。
+field:Concept_dcterms_isPartOf a sh:PropertyShape ;
+    sh:path dcterms:isPartOf ;
+    sh:name "dcterms:isPartOf" ;
+    sh:description "0..n；部分关系；不自动改成 `broader`，不要求目标一定是概念"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# dcterms:source：0..n。
+field:Concept_dcterms_source a sh:PropertyShape ;
+    sh:path dcterms:source ;
+    sh:name "dcterms:source" ;
+    sh:description "0..n；引用来源资源；不能代替逐字段、逐关系的生成对账"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# prov:wasDerivedFrom：0..n。
+field:Concept_prov_wasDerivedFrom a sh:PropertyShape ;
+    sh:path prov:wasDerivedFrom ;
+    sh:name "prov:wasDerivedFrom" ;
+    sh:description "0..n；派生依据，可关联来源页等资源；保留定位"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# dcterms:created：本地 0..1；来源按原值。
+field:Concept_dcterms_created a sh:PropertyShape ;
+    sh:path dcterms:created ;
+    sh:name "dcterms:created" ;
+    sh:description "本地 0..1；来源按原值；所描述概念记录的创建时间；来源与项目记录分别追溯，不以本次生成时间代替"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# dcterms:modified：本地 0..1；来源按原值。
+field:Concept_dcterms_modified a sh:PropertyShape ;
+    sh:path dcterms:modified ;
+    sh:name "dcterms:modified" ;
+    sh:description "本地 0..1；来源按原值；所描述概念记录的修改时间；不以构建时间覆盖，也不代替变更原因"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# skos:exactMatch：0..n。
+field:Concept_skos_exactMatch a sh:PropertyShape ;
+    sh:path skos:exactMatch ;
+    sh:name "skos:exactMatch" ;
+    sh:description "0..n；在广泛检索应用中可高度确信互换的对应；具有传递性，不等于 owl:sameAs，不合并双方全部属性"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#映射字段" .
+
+# skos:closeMatch：0..n。
+field:Concept_skos_closeMatch a sh:PropertyShape ;
+    sh:path skos:closeMatch ;
+    sh:name "skos:closeMatch" ;
+    sh:description "0..n；在部分检索应用中足够接近、可以互换的对应；不是“不确定”的占位值，不作传递推导"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#映射字段" .
+
+# skos:broadMatch：0..n。
+field:Concept_skos_broadMatch a sh:PropertyShape ;
+    sh:path skos:broadMatch ;
+    sh:name "skos:broadMatch" ;
+    sh:description "0..n；本端概念对应另一词表中更宽的概念，方向必须明确"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#映射字段" .
+
+# skos:narrowMatch：0..n。
+field:Concept_skos_narrowMatch a sh:PropertyShape ;
+    sh:path skos:narrowMatch ;
+    sh:name "skos:narrowMatch" ;
+    sh:description "0..n；本端概念对应另一词表中更窄的概念；与 broadMatch 互反，不维护冲突的两套决定"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#映射字段" .
+
+# skos:relatedMatch：0..n。
+field:Concept_skos_relatedMatch a sh:PropertyShape ;
+    sh:path skos:relatedMatch ;
+    sh:name "skos:relatedMatch" ;
+    sh:description "0..n；跨词表的相关对应，不代替等价或宽窄判断"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#映射字段" .
+
+# skos:prefLabel：由 XL 名称派生。
+field:Concept_skos_prefLabel a sh:PropertyShape ;
+    sh:path skos:prefLabel ;
+    sh:name "skos:prefLabel" ;
+    sh:description "由 XL 名称派生；由对应 XL 名称投影；统计保留旧词表已有的普通标签。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# skos:altLabel：由 XL 名称派生。
+field:Concept_skos_altLabel a sh:PropertyShape ;
+    sh:path skos:altLabel ;
+    sh:name "skos:altLabel" ;
+    sh:description "由 XL 名称派生；由对应 XL 名称投影；统计保留旧词表已有的普通标签。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# skos:hiddenLabel：由 XL 名称派生。
+field:Concept_skos_hiddenLabel a sh:PropertyShape ;
+    sh:path skos:hiddenLabel ;
+    sh:name "skos:hiddenLabel" ;
+    sh:description "由 XL 名称派生；由对应 XL 名称投影；统计保留旧词表已有的普通标签。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+
+# rdf:type：1..n。
+field:Label_rdf_type a sh:PropertyShape ;
+    sh:path rdf:type ;
+    sh:name "rdf:type" ;
+    sh:description "1..n；包含 `skosxl:Label`，不兼作概念、词表或集合"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#名称字段" ;
+    sh:nodeKind sh:IRI ; sh:minCount 1 ; sh:hasValue skosxl:Label .
+
+# skosxl:literalForm：1。
+field:Label_skosxl_literalForm a sh:PropertyShape ;
+    sh:path skosxl:literalForm ;
+    sh:name "skosxl:literalForm" ;
+    sh:description "1；每个版本恰好一个；本地新增名称明确语言，来源未标语种保留诊断"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#名称字段" .
+
+# skosxl:labelRelation：0..n。
+field:Label_skosxl_labelRelation a sh:PropertyShape ;
+    sh:path skosxl:labelRelation ;
+    sh:name "skosxl:labelRelation" ;
+    sh:description "0..n；连接两个名称的对称关系，作为具体名称关系的扩展点"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#名称字段" ;
+    sh:nodeKind sh:IRI ; sh:class skosxl:Label .
+
+
+# rdf:type：1..n。
+field:Collection_rdf_type a sh:PropertyShape ;
+    sh:path rdf:type ;
+    sh:name "rdf:type" ;
+    sh:description "1..n；包含 Collection 或 OrderedCollection；采用扩展时保留其专用类型"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:nodeKind sh:IRI ; sh:minCount 1 .
+
+# skos:prefLabel：0..n。
+field:Collection_skos_prefLabel a sh:PropertyShape ;
+    sh:path skos:prefLabel ;
+    sh:name "skos:prefLabel" ;
+    sh:description "0..n；一般集合和数组可缺名；概念组的名称要求见下文，可直接维护或从 XL 投影"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .
+
+# skos:altLabel：各 0..n。
+field:Collection_skos_altLabel a sh:PropertyShape ;
+    sh:path skos:altLabel ;
+    sh:name "skos:altLabel" ;
+    sh:description "各 0..n；分别为替代名和检索写法，不改变成员或层级"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .
+
+# skos:hiddenLabel：各 0..n。
+field:Collection_skos_hiddenLabel a sh:PropertyShape ;
+    sh:path skos:hiddenLabel ;
+    sh:name "skos:hiddenLabel" ;
+    sh:description "各 0..n；分别为替代名和检索写法，不改变成员或层级"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .
+
+# rdfs:label：0..n。
+field:Collection_rdfs_label a sh:PropertyShape ;
+    sh:path rdfs:label ;
+    sh:name "rdfs:label" ;
+    sh:description "0..n；保留来源的组名称或节点标签；不能据此推断概念首选名"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .
+
+# skos:notation：0..n。
+field:Collection_skos_notation a sh:PropertyShape ;
+    sh:path skos:notation ;
+    sh:name "skos:notation" ;
+    sh:description "0..n；来源分组代码，不与概念代码合并身份"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .
+
+# skos:scopeNote：自建 1..n；继承 0..n。
+field:Collection_skos_scopeNote a sh:PropertyShape ;
+    sh:path skos:scopeNote ;
+    sh:name "skos:scopeNote" ;
+    sh:description "自建 1..n；继承 0..n；用途、成员纳入与排除、排序依据；可引用明确的组织规则"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .
+
+# skos:historyNote：各 0..n。
+field:Collection_skos_historyNote a sh:PropertyShape ;
+    sh:path skos:historyNote ;
+    sh:name "skos:historyNote" ;
+    sh:description "各 0..n；范围历史及由维护记录派生的具体变更"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .
+
+# skos:changeNote：各 0..n。
+field:Collection_skos_changeNote a sh:PropertyShape ;
+    sh:path skos:changeNote ;
+    sh:name "skos:changeNote" ;
+    sh:description "各 0..n；范围历史及由维护记录派生的具体变更"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .
+
+# dcterms:source：各 0..n。
+field:Collection_dcterms_source a sh:PropertyShape ;
+    sh:path dcterms:source ;
+    sh:name "dcterms:source" ;
+    sh:description "各 0..n；来源及实际派生，关联成员选择或转换依据"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .
+
+# prov:wasDerivedFrom：各 0..n。
+field:Collection_prov_wasDerivedFrom a sh:PropertyShape ;
+    sh:path prov:wasDerivedFrom ;
+    sh:name "prov:wasDerivedFrom" ;
+    sh:description "各 0..n；来源及实际派生，关联成员选择或转换依据"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .
+
+# skos:inScheme：自有 1；继承 0..1。
+field:Collection_skos_inScheme a sh:PropertyShape ;
+    sh:path skos:inScheme ;
+    sh:name "skos:inScheme" ;
+    sh:description "自有 1；继承 0..1；自有集合关联唯一自有词表；来源图的原归属不受此限"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:nodeKind sh:IRI ; sh:class skos:ConceptScheme ; sh:maxCount 1 .
+
+# skos:member：0..n。
+field:Collection_skos_member a sh:PropertyShape ;
+    sh:path skos:member ;
+    sh:name "skos:member" ;
+    sh:description "0..n；普通集合成员；有序集合按列表投影，不表示概念上下位"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:nodeKind sh:IRI .
+
+# skos:memberList：有序集合为 1。
+field:Collection_skos_memberList a sh:PropertyShape ;
+    sh:path skos:memberList ;
+    sh:name "skos:memberList" ;
+    sh:description "有序集合为 1；有限、完整、无循环，允许空列表；显式列表是项目完整性要求"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:nodeKind sh:BlankNodeOrIRI .
+
+# iso-thes:subGroup：0..n。
+field:Collection_iso_thes_subGroup a sh:PropertyShape ;
+    sh:path iso-thes:subGroup ;
+    sh:name "iso-thes:subGroup" ;
+    sh:description "0..n；主体也须为 ConceptGroup；具有传递性，是 superGroup 的逆关系"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:nodeKind sh:IRI ; sh:class iso-thes:ConceptGroup .
+
+# iso-thes:superGroup：0..n。
+field:Collection_iso_thes_superGroup a sh:PropertyShape ;
+    sh:path iso-thes:superGroup ;
+    sh:name "iso-thes:superGroup" ;
+    sh:description "0..n；主体也须为 ConceptGroup；具有传递性，子组成员包含于上组"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:nodeKind sh:IRI ; sh:class iso-thes:ConceptGroup .
+
+# dcterms:created：本地各 0..1；来源不统一收紧。
+field:Collection_dcterms_created a sh:PropertyShape ;
+    sh:path dcterms:created ;
+    sh:name "dcterms:created" ;
+    sh:description "本地各 0..1；来源不统一收紧；本地记录时间与来源时间分别保留，不能只因多个值就任取一个"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .
+
+# dcterms:modified：本地各 0..1；来源不统一收紧。
+field:Collection_dcterms_modified a sh:PropertyShape ;
+    sh:path dcterms:modified ;
+    sh:name "dcterms:modified" ;
+    sh:description "本地各 0..1；来源不统一收紧；本地记录时间与来源时间分别保留，不能只因多个值就任取一个"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .
+
+# skosxl:prefLabel：0..n。
+field:Collection_skosxl_prefLabel a sh:PropertyShape ;
+    sh:path skosxl:prefLabel ;
+    sh:name "skosxl:prefLabel" ;
+    sh:description "0..n；按用途采用独立名称时填写，并提供普通标签投影。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .
+
+# skosxl:altLabel：0..n。
+field:Collection_skosxl_altLabel a sh:PropertyShape ;
+    sh:path skosxl:altLabel ;
+    sh:name "skosxl:altLabel" ;
+    sh:description "0..n；按用途采用独立名称时填写，并提供普通标签投影。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .
+
+# skosxl:hiddenLabel：0..n。
+field:Collection_skosxl_hiddenLabel a sh:PropertyShape ;
+    sh:path skosxl:hiddenLabel ;
+    sh:name "skosxl:hiddenLabel" ;
+    sh:description "0..n；按用途采用独立名称时填写，并提供普通标签投影。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .
+
+
+# rdf:type：1..n。
+field:OrderedCollection_rdf_type a sh:PropertyShape ;
+    sh:path rdf:type ;
+    sh:name "rdf:type" ;
+    sh:description "1..n；保留所采用扩展的专用类型。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:hasValue skos:OrderedCollection .
+
+# skos:memberList：1。
+field:OrderedCollection_skos_memberList a sh:PropertyShape ;
+    sh:path skos:memberList ;
+    sh:name "skos:memberList" ;
+    sh:description "1；有序集合须明确提供一个 RDF 列表，空列表也允许。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:BlankNodeOrIRI .
+
+# rdf:type：1..n。
+field:ConceptGroup_rdf_type a sh:PropertyShape ;
+    sh:path rdf:type ;
+    sh:name "rdf:type" ;
+    sh:description "1..n；保留所采用扩展的专用类型。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:hasValue iso-thes:ConceptGroup .
+
+# rdf:type：1..n。
+field:ThesaurusArray_rdf_type a sh:PropertyShape ;
+    sh:path rdf:type ;
+    sh:name "rdf:type" ;
+    sh:description "1..n；保留所采用扩展的专用类型。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:hasValue iso-thes:ThesaurusArray .
+
+# rdf:value：本地独立说明为 1。
+field:Note_rdf_value a sh:PropertyShape ;
+    sh:path rdf:value ;
+    sh:name "rdf:value" ;
+    sh:description "本地独立说明为 1；一个带语言的正文值；来源已有多语或嵌套结构继续保留"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#说明字段" .

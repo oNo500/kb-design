@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "https://github.com/cli99/acm-ccs",
+    "commit": "48644c2ed653833115515c5e59bf2cb2452f1830",
+    "path": "ACMComputingClassificationSystemSKOSTaxonomy.xml",
+    "sha256": "ab090f3fd490d167d040c076f4069e75d916fb0693506e7f2aa650f1f82e6f57",
+    "upstream_download_origin": "not established by repository README",
+    "upstream_data_license": "not verified"
+  },
+  "identity_base_iri": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml",
+  "scheme": {
+    "name": {
+      "value": "The ACM Computing Classification System (CCS)",
+      "language": "en"
+    },
+    "scope_note": {
+      "value": "收录计算机领域的分类主题，以及人物、技术、公司和组织名称。",
+      "language": "zh"
+    },
+    "basis": "用户在本任务中批准采用来源标题并补充上述范围说明；范围说明为本地编写，不冒充来源原文。"
+  }
+}

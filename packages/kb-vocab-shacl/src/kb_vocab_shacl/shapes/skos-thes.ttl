@@ -1,0 +1,35 @@
+@prefix rule: <urn:kb-vocab-shacl:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix iso: <http://purl.org/iso25964/skos-thes#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# SKOS-Thes 分组扩展：ConceptGroup 是概念组，ThesaurusArray 是数组。
+# 两者都是集合，但不能兼作彼此；组间关系只能连接概念组。
+# 数组上层连接和复合等价尚未采纳，不在这里补造规则。
+# 通用字段读法见 skos-xl.ttl。
+
+# 概念组及组关系的两端都不能同时是数组。
+rule:GroupArrayDisjoint a sh:NodeShape ;
+    sh:name "概念组及其细分端点不能同时是数组"@zh ;
+    sh:message "概念组及其细分端点不能同时是数组"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.dublincore.org/specifications/skos-thes/ns/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#分组扩展" ;
+    sh:targetClass iso:ConceptGroup ; sh:targetSubjectsOf iso:superGroup, iso:subGroup ; sh:targetObjectsOf iso:superGroup, iso:subGroup ; sh:not [ sh:class iso:ThesaurusArray ] .
+
+# superGroup / subGroup 连接概念组；不能用来组织概念、词表或名称。
+rule:GroupEndpointType a sh:NodeShape ;
+    sh:name "概念组关系的端点不能兼作概念、词表或名称"@zh ;
+    sh:message "概念组关系的端点不能兼作概念、词表或名称"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.dublincore.org/specifications/skos-thes/ns/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#分组扩展" ;
+    sh:targetSubjectsOf iso:superGroup, iso:subGroup ; sh:targetObjectsOf iso:superGroup, iso:subGroup ; sh:not [ sh:or ( [ sh:class skos:Concept ] [ sh:class skos:ConceptScheme ] [ sh:class xl:Label ] ) ] .

@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kb-vocab-rdf-preview"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = ["rdflib>=7.1,<8"]
+
+[project.scripts]
+kb-vocab-rdf-preview = "kb_vocab_rdf_preview.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+kb_vocab_rdf_preview = ["template.html"]

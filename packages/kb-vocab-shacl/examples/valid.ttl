@@ -1,0 +1,21 @@
+@prefix ex: <https://example.org/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xl: <http://www.w3.org/2008/05/skos-xl#> .
+
+# 仅用于验证结构，不表示实际词表采用。
+ex:scheme a skos:ConceptScheme ;
+    skos:prefLabel "示例词表"@zh ;
+    skos:scopeNote "演示一个概念及同文不同身份的名称。"@zh .
+
+ex:concept a skos:Concept ;
+    skos:inScheme ex:scheme ;
+    xl:prefLabel ex:name1, ex:name2 ;
+    skos:prefLabel "人工智能"@zh .
+
+ex:name1 a xl:Label ; xl:literalForm "人工智能"@zh .
+ex:name2 a xl:Label ; xl:literalForm "人工智能"@zh .
+
+ex:group a skos:Collection ;
+    skos:inScheme ex:scheme ;
+    skos:scopeNote "演示不要求名称的普通集合。"@zh ;
+    skos:member ex:concept .

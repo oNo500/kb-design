@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>词表分类树</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#252b35;background:#f7f8fa;color-scheme:light}
+body{max-width:1000px;margin:0 auto;padding:44px 24px 80px}
+header{margin-bottom:24px} .eyebrow{font-size:12px;color:#6d7683;letter-spacing:.12em}h1{font-size:24px;font-weight:600;line-height:1.5;margin:10px 0}#meta{color:#707987;font-size:14px}
+main{background:white;border:1px solid #e1e5eb;border-radius:10px;padding:14px 12px}
+ul{list-style:none;margin:0;padding:0}ul ul{margin-left:20px;border-left:1px solid #e8ebf0;padding-left:10px}
+summary,.leaf{padding:8px 10px;border-radius:5px;line-height:1.45;overflow-wrap:anywhere;font-size:15px}
+summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:8px}summary::-webkit-details-marker{display:none}summary:before{content:'▸';color:#8893a3;width:12px;flex-shrink:0}details[open]>summary:before{content:'▾'}
+summary:hover{background:#f0f4f9}summary:focus-visible{outline:2px solid #4778c7;outline-offset:-2px}.leaf{padding-left:30px}.leaf:before{content:'·';color:#a8b1be;margin-right:10px}
+.count{font-size:12px;color:#8490a1;margin-left:4px}.hint{font-size:12px;color:#86909e;margin-left:8px}.empty{padding:20px;color:#6d7683}
+@media(max-width:600px){body{padding:24px 12px}h1{font-size:20px}main{padding:10px 4px}ul ul{margin-left:12px;padding-left:5px}}
+</style>
+</head>
+<body>
+<header><div class="eyebrow">词表 · 分类树</div><h1 id="title"></h1><div id="meta"></div></header>
+<main><ul id="tree"></ul></main>
+<script id="data" type="application/json">__TREE_DATA__</script>
+<script>
+const data=JSON.parse(document.getElementById('data').textContent);
+document.getElementById('title').textContent=data.title;
+document.title=data.title+' · 分类树';
+document.getElementById('meta').textContent=data.count.toLocaleString()+' 个概念 · 点击箭头展开分类';
+function branch(id,ancestors){
+  const node=data.nodes[id],li=document.createElement('li');
+  const cycle=ancestors.has(id);
+  if(cycle || !node.children.length){
+    const row=document.createElement('div');row.className='leaf';row.textContent=node.label;row.title=id;
+    if(cycle){const hint=document.createElement('span');hint.className='hint';hint.textContent='循环引用，停止展开';row.append(hint);}
+    li.append(row);return li;
+  }
+  const detail=document.createElement('details'),summary=document.createElement('summary');
+  const name=document.createElement('span');name.textContent=node.label;summary.append(name);summary.title=id;
+  const count=document.createElement('span');count.className='count';count.textContent=node.children.length;summary.append(count);
+  detail.append(summary);li.append(detail);
+  let loaded=false;
+  detail.addEventListener('toggle',()=>{
+    if(!detail.open || loaded)return;
+    loaded=true;const list=document.createElement('ul');const path=new Set(ancestors);path.add(id);
+    for(const child of node.children)list.append(branch(child,path));
+    detail.append(list);
+  });
+  return li;
+}
+const tree=document.getElementById('tree');
+for(const id of data.roots){
+  const item=branch(id,new Set());
+  if(data.extra_roots.includes(id))item.title='该部分没有可达的顶层入口，作为补充浏览入口显示';
+  tree.append(item);
+}
+if(!data.roots.length){const empty=document.createElement('li');empty.className='empty';empty.textContent='没有声明为 skos:Concept 的概念。';tree.append(empty);}
+</script>
+</body>
+</html>

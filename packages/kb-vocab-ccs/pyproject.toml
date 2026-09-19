@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kb-vocab-ccs"
+version = "0.1.0"
+description = "Reproducible CCS source adaptation and vocabulary validation"
+requires-python = ">=3.11"
+dependencies = [
+    "rdflib>=7.1,<8",
+    "defusedxml>=0.7.1,<1",
+    "pyshacl>=0.30,<0.32",
+    "kb-vocab-shacl",
+]
+
+[project.scripts]
+kb-vocab-ccs = "kb_vocab_ccs.cli:main"
+
+[tool.uv.sources]
+kb-vocab-shacl = { workspace = true }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+kb_vocab_ccs = ["config/*.json"]

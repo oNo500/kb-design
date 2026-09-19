@@ -1,0 +1,16 @@
+@prefix ex: <https://example.org/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xl: <http://www.w3.org/2008/05/skos-xl#> .
+
+# 有意制造同语言首选文字冲突，仅用于负向验证。
+ex:scheme a skos:ConceptScheme ;
+    skos:prefLabel "示例词表"@zh ;
+    skos:scopeNote "演示两个不同的中文首选文字。"@zh .
+
+ex:concept a skos:Concept ;
+    skos:inScheme ex:scheme ;
+    xl:prefLabel ex:name1, ex:name2 ;
+    skos:prefLabel "人工智能"@zh, "机器智能"@zh .
+
+ex:name1 a xl:Label ; xl:literalForm "人工智能"@zh .
+ex:name2 a xl:Label ; xl:literalForm "机器智能"@zh .

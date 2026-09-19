@@ -14,7 +14,10 @@ members = [
     "kb-sources",
     "kb-topics",
     "kb-vocab",
+    "kb-vocab-ccs",
     "kb-vocab-preview",
+    "kb-vocab-rdf-preview",
+    "kb-vocab-shacl",
 ]
 
 [[package]]
@@ -424,7 +427,10 @@ dev = [
     { name = "kb-sources" },
     { name = "kb-topics" },
     { name = "kb-vocab" },
+    { name = "kb-vocab-ccs" },
     { name = "kb-vocab-preview" },
+    { name = "kb-vocab-rdf-preview" },
+    { name = "kb-vocab-shacl" },
 ]
 
 [package.metadata]
@@ -436,7 +442,10 @@ dev = [
     { name = "kb-sources", editable = "packages/kb-sources" },
     { name = "kb-topics", editable = "packages/kb-topics" },
     { name = "kb-vocab", editable = "packages/kb-vocab" },
+    { name = "kb-vocab-ccs", editable = "packages/kb-vocab-ccs" },
     { name = "kb-vocab-preview", editable = "apps/vocab-preview" },
+    { name = "kb-vocab-rdf-preview", editable = "apps/vocab-rdf-preview" },
+    { name = "kb-vocab-shacl", editable = "packages/kb-vocab-shacl" },
 ]
 
 [[package]]
@@ -512,6 +521,25 @@ requires-dist = [
 ]
 
 [[package]]
+name = "kb-vocab-ccs"
+version = "0.1.0"
+source = { editable = "packages/kb-vocab-ccs" }
+dependencies = [
+    { name = "defusedxml" },
+    { name = "kb-vocab-shacl" },
+    { name = "pyshacl" },
+    { name = "rdflib" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "defusedxml", specifier = ">=0.7.1,<1" },
+    { name = "kb-vocab-shacl", editable = "packages/kb-vocab-shacl" },
+    { name = "pyshacl", specifier = ">=0.30,<0.32" },
+    { name = "rdflib", specifier = ">=7.1,<8" },
+]
+
+[[package]]
 name = "kb-vocab-preview"
 version = "0.1.0"
 source = { editable = "apps/vocab-preview" }
@@ -525,6 +553,28 @@ requires-dist = [
     { name = "kb-core", editable = "packages/kb-core" },
     { name = "pyyaml", specifier = ">=6,<7" },
 ]
+
+[[package]]
+name = "kb-vocab-rdf-preview"
+version = "0.1.0"
+source = { editable = "apps/vocab-rdf-preview" }
+dependencies = [
+    { name = "rdflib" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "rdflib", specifier = ">=7.1,<8" }]
+
+[[package]]
+name = "kb-vocab-shacl"
+version = "0.1.0"
+source = { editable = "packages/kb-vocab-shacl" }
+dependencies = [
+    { name = "rdflib" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "rdflib", specifier = ">=7.1,<8" }]
 
 [[package]]
 name = "owlrl"

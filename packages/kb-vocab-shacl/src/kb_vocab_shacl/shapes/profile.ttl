@@ -1,0 +1,637 @@
+@prefix rule: <urn:kb-vocab-shacl:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix iso: <http://purl.org/iso25964/skos-thes#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# 项目要求：检查选定版本的一份自有词表，不能混入全部来源和历史版本。
+# 以下规则来自已采纳设计，不把项目的必填要求说成 SKOS 的通用要求。
+# 通用字段读法见 skos-xl.ttl。Local* 规则须由调用方明确指定检查对象。
+# sh:property 引用字段规则；sh:nodeKind 限定 IRI、文字等形式；sh:class 限定资源类型。
+# sh:sparql 处理多条关系的联合检查；查询中的 $this 是当前被检查的资源。
+# 路径中 / 表示依次查找，| 表示任选一种关系，^ 表示反向，+ 表示连续一步或多步。
+
+# 子组的每个成员，也必须明确列在所有上组中；连续多级上组一起检查。
+rule:GroupMemberInclusion a sh:NodeShape ;
+    sh:name "子组成员必须包含于所有上组的成员中"@zh ;
+    sh:message "子组成员必须包含于所有上组的成员中"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.dublincore.org/specifications/skos-thes/ns/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#分组扩展" ;
+    sh:targetSubjectsOf iso:superGroup ; sh:targetObjectsOf iso:subGroup ;
+    sh:sparql [ sh:select """
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX iso: <http://purl.org/iso25964/skos-thes#>
+SELECT DISTINCT $this ?value WHERE {
+    $this (iso:superGroup|^iso:subGroup)+ ?parent .
+    $this skos:member ?value .
+    FILTER NOT EXISTS { ?parent skos:member ?value }
+}
+    """ ] .
+
+# 整个输入只允许一份自有词表。Dataset 是校验焦点，不会写入词表数据。
+rule:SingleScheme a sh:NodeShape ;
+    sh:name "最终主图必须恰好包含一个自有概念体系"@zh ;
+    sh:message "最终主图必须恰好包含一个自有概念体系"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#标准与选择" ;
+    sh:targetNode rule:Dataset ;
+    sh:sparql [ sh:select """
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX iso: <http://purl.org/iso25964/skos-thes#>
+SELECT DISTINCT $this WHERE { {
+    FILTER NOT EXISTS { ?s a skos:ConceptScheme }
+} UNION {
+    ?s a skos:ConceptScheme . ?other a skos:ConceptScheme . FILTER(?s != ?other)
+} }
+    """ ] .
+
+# 主要对象使用 IRI，并显式写出类型；这里不证明该 IRI 在历史中一直稳定。
+rule:ConceptIdentity a sh:NodeShape ;
+    sh:name "概念使用稳定 IRI"@zh ;
+    sh:message "概念使用稳定 IRI"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#标识与类型" ;
+    sh:targetClass skos:Concept ;
+    sh:targetSubjectsOf skos:broader, skos:narrower, skos:related, skos:broaderTransitive, skos:narrowerTransitive, skos:topConceptOf ;
+    sh:targetObjectsOf skos:broader, skos:narrower, skos:related, skos:broaderTransitive, skos:narrowerTransitive, skos:hasTopConcept ;
+    sh:nodeKind sh:IRI ;
+    sh:property rule:DeclaredConceptType .
+
+rule:SchemeIdentity a sh:NodeShape ;
+    sh:name "概念体系使用稳定 IRI"@zh ;
+    sh:message "概念体系使用稳定 IRI"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" ;
+    sh:targetClass skos:ConceptScheme ;
+    sh:targetSubjectsOf skos:hasTopConcept ;
+    sh:targetObjectsOf skos:inScheme, skos:topConceptOf ;
+    sh:nodeKind sh:IRI ;
+    sh:property rule:DeclaredSchemeType .
+
+# 每个主图概念恰好属于一个自有词表，不能缺失或同时属于两份。
+rule:ConceptSchemeMembership a sh:PropertyShape ;
+    sh:name "主图概念必须属于唯一自有词表"@zh ;
+    sh:message "主图概念必须属于唯一自有词表"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" ;
+    sh:targetClass skos:Concept ; sh:path skos:inScheme ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ; sh:class skos:ConceptScheme .
+
+# 词表自身需要名称和范围说明；有范围说明不等于内容已经充分。
+rule:SchemeName a sh:PropertyShape ;
+    sh:name "自有词表需要首选名称"@zh ;
+    sh:message "自有词表需要首选名称"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" ;
+    sh:targetClass skos:ConceptScheme ; sh:path [ sh:alternativePath ( skos:prefLabel ( xl:prefLabel xl:literalForm ) ) ] ; sh:minCount 1 .
+
+rule:SchemeScope a sh:PropertyShape ;
+    sh:name "自有词表需要范围说明"@zh ;
+    sh:message "自有词表需要范围说明"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" ;
+    sh:targetClass skos:ConceptScheme ; sh:path skos:scopeNote ; sh:minCount 1 .
+
+# 名称即使漏写类型，也会从 XL 引用中被选中，继续检查 IRI 和类型声明。
+rule:LabelIdentity a sh:NodeShape ;
+    sh:name "主图独立名称使用 IRI 并明确声明 Label 类型"@zh ;
+    sh:message "主图独立名称使用 IRI 并明确声明 Label 类型"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#名称字段" ;
+    sh:targetClass xl:Label ; sh:targetSubjectsOf xl:literalForm, xl:labelRelation ; sh:targetObjectsOf xl:prefLabel, xl:altLabel, xl:hiddenLabel, xl:labelRelation ; sh:nodeKind sh:IRI ; sh:class xl:Label ;
+    sh:property rule:DeclaredLabelType .
+
+# 三种 XL 名称引用分别检查：目标必须是有类型描述的 Label IRI。
+rule:XLReference_prefLabel a sh:PropertyShape ;
+    sh:name "XL 名称引用指向明确的 Label 记录"@zh ;
+    sh:message "XL 名称引用指向明确的 Label 记录"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#名称字段" ;
+    sh:targetSubjectsOf xl:prefLabel ; sh:path xl:prefLabel ; sh:nodeKind sh:IRI ; sh:class xl:Label .
+
+rule:XLReference_altLabel a sh:PropertyShape ;
+    sh:name "XL 名称引用指向明确的 Label 记录"@zh ;
+    sh:message "XL 名称引用指向明确的 Label 记录"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#名称字段" ;
+    sh:targetSubjectsOf xl:altLabel ; sh:path xl:altLabel ; sh:nodeKind sh:IRI ; sh:class xl:Label .
+
+rule:XLReference_hiddenLabel a sh:PropertyShape ;
+    sh:name "XL 名称引用指向明确的 Label 记录"@zh ;
+    sh:message "XL 名称引用指向明确的 Label 记录"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#名称字段" ;
+    sh:targetSubjectsOf xl:hiddenLabel ; sh:path xl:hiddenLabel ; sh:nodeKind sh:IRI ; sh:class xl:Label .
+
+# 从普通名称反查 XL：概念的每个普通标签都应有相同角色、相同文字的名称记录。
+rule:ConceptXLNames a sh:NodeShape ;
+    sh:name "概念普通标签须有对应的 XL 名称记录"@zh ;
+    sh:message "概念普通标签须有对应的 XL 名称记录"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#语言与名称" ;
+    sh:targetClass skos:Concept ;
+    sh:sparql [ sh:select """
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX iso: <http://purl.org/iso25964/skos-thes#>
+SELECT DISTINCT $this ?path ?value WHERE {
+    $this ?path ?value .
+    FILTER(?path IN (skos:prefLabel, skos:altLabel, skos:hiddenLabel))
+    FILTER NOT EXISTS {
+        $this ?xlRole ?label . ?label xl:literalForm ?value .
+        FILTER((?path = skos:prefLabel && ?xlRole = xl:prefLabel) ||
+               (?path = skos:altLabel && ?xlRole = xl:altLabel) ||
+               (?path = skos:hiddenLabel && ?xlRole = xl:hiddenLabel))
+    }
+}
+    """ ] .
+
+# 从 XL 反查普通名称：名称记录的文字必须出现在对应的普通标签中。
+rule:XLProjection a sh:NodeShape ;
+    sh:name "采用的 XL 名称必须提供对应普通标签投影"@zh ;
+    sh:message "采用的 XL 名称必须提供对应普通标签投影"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#派生表达" ;
+    sh:targetSubjectsOf xl:prefLabel, xl:altLabel, xl:hiddenLabel ;
+    sh:sparql [ sh:select """
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX iso: <http://purl.org/iso25964/skos-thes#>
+SELECT DISTINCT $this ?path ?value WHERE {
+    $this ?xlRole ?label . ?label xl:literalForm ?value .
+    FILTER(?xlRole IN (xl:prefLabel, xl:altLabel, xl:hiddenLabel))
+    BIND(IF(?xlRole = xl:prefLabel, skos:prefLabel,
+            IF(?xlRole = xl:altLabel, skos:altLabel, skos:hiddenLabel)) AS ?path)
+    FILTER NOT EXISTS { $this ?path ?value }
+}
+    """ ] .
+
+# 来源概念缺名保留警告；本地新增概念的必名要求另由 LocalConcept 检查。
+rule:MissingConceptName a sh:PropertyShape ;
+    sh:name "概念缺少首选名称；来源缺项保留并核对"@zh ;
+    sh:message "概念缺少首选名称；来源缺项保留并核对"@zh ;
+    sh:severity sh:Warning ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" ;
+    sh:targetClass skos:Concept ; sh:path [ sh:alternativePath ( skos:prefLabel ( xl:prefLabel xl:literalForm ) ) ] ; sh:minCount 1 .
+
+# 文字长度至少为 1，不能用空字符串代替缺项。
+rule:NonemptyLabels a sh:PropertyShape ;
+    sh:name "名称文字不能为空"@zh ;
+    sh:message "名称文字不能为空"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#值与数量" ;
+    sh:targetSubjectsOf skos:prefLabel, skos:altLabel, skos:hiddenLabel, xl:literalForm ; sh:path [ sh:alternativePath ( skos:prefLabel skos:altLabel skos:hiddenLabel xl:literalForm ) ] ; sh:node rule:NonemptyNameValue .
+
+# 非空条件只定义一次；整体规则和资源结构的各个名称字段共同引用。
+rule:NonemptyNameValue a sh:NodeShape ;
+    sh:minLength 1 ; sh:severity sh:Violation ;
+    sh:name "名称文字非空"@zh ;
+    sh:message "名称文字不能为空。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#值与数量" .
+
+# 下面三组规则分别检查 broader、narrower、related 的主体和目标。
+# 主体规则引用字段规则；各条规则的严重等级独立设置。
+rule:ConceptEndpoint_broader a sh:NodeShape ;
+    sh:name "概念关系主体须明确为 Concept"@zh ;
+    sh:message "概念关系主体须明确为 Concept"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" ;
+    sh:targetSubjectsOf skos:broader ; sh:class skos:Concept ; sh:property rule:ConceptTarget_broader .
+
+rule:ConceptTarget_broader a sh:PropertyShape ;
+    sh:name "概念关系目标须为可定位的 Concept IRI"@zh ;
+    sh:message "概念关系目标须为可定位的 Concept IRI"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" ;
+    sh:path skos:broader ; sh:nodeKind sh:IRI ; sh:class skos:Concept .
+
+rule:ConceptEndpoint_narrower a sh:NodeShape ;
+    sh:name "概念关系主体须明确为 Concept"@zh ;
+    sh:message "概念关系主体须明确为 Concept"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" ;
+    sh:targetSubjectsOf skos:narrower ; sh:class skos:Concept ; sh:property rule:ConceptTarget_narrower .
+
+rule:ConceptTarget_narrower a sh:PropertyShape ;
+    sh:name "概念关系目标须为可定位的 Concept IRI"@zh ;
+    sh:message "概念关系目标须为可定位的 Concept IRI"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" ;
+    sh:path skos:narrower ; sh:nodeKind sh:IRI ; sh:class skos:Concept .
+
+rule:ConceptEndpoint_related a sh:NodeShape ;
+    sh:name "概念关系主体须明确为 Concept"@zh ;
+    sh:message "概念关系主体须明确为 Concept"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" ;
+    sh:targetSubjectsOf skos:related ; sh:class skos:Concept ; sh:property rule:ConceptTarget_related .
+
+rule:ConceptTarget_related a sh:PropertyShape ;
+    sh:name "概念关系目标须为可定位的 Concept IRI"@zh ;
+    sh:message "概念关系目标须为可定位的 Concept IRI"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" ;
+    sh:path skos:related ; sh:nodeKind sh:IRI ; sh:class skos:Concept .
+
+# 五种映射的目标先检查 IRI；外部概念的完整描述和版本由限定来源上下文核对。
+rule:MappingTarget_exactMatch a sh:PropertyShape ;
+    sh:name "映射端点使用 IRI；外部端点类型另由限定来源上下文核对"@zh ;
+    sh:message "映射端点使用 IRI；外部端点类型另由限定来源上下文核对"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#映射字段" ;
+    sh:targetSubjectsOf skos:exactMatch ; sh:path skos:exactMatch ; sh:nodeKind sh:IRI .
+
+rule:MappingTarget_closeMatch a sh:PropertyShape ;
+    sh:name "映射端点使用 IRI；外部端点类型另由限定来源上下文核对"@zh ;
+    sh:message "映射端点使用 IRI；外部端点类型另由限定来源上下文核对"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#映射字段" ;
+    sh:targetSubjectsOf skos:closeMatch ; sh:path skos:closeMatch ; sh:nodeKind sh:IRI .
+
+rule:MappingTarget_broadMatch a sh:PropertyShape ;
+    sh:name "映射端点使用 IRI；外部端点类型另由限定来源上下文核对"@zh ;
+    sh:message "映射端点使用 IRI；外部端点类型另由限定来源上下文核对"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#映射字段" ;
+    sh:targetSubjectsOf skos:broadMatch ; sh:path skos:broadMatch ; sh:nodeKind sh:IRI .
+
+rule:MappingTarget_narrowMatch a sh:PropertyShape ;
+    sh:name "映射端点使用 IRI；外部端点类型另由限定来源上下文核对"@zh ;
+    sh:message "映射端点使用 IRI；外部端点类型另由限定来源上下文核对"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#映射字段" ;
+    sh:targetSubjectsOf skos:narrowMatch ; sh:path skos:narrowMatch ; sh:nodeKind sh:IRI .
+
+rule:MappingTarget_relatedMatch a sh:PropertyShape ;
+    sh:name "映射端点使用 IRI；外部端点类型另由限定来源上下文核对"@zh ;
+    sh:message "映射端点使用 IRI；外部端点类型另由限定来源上下文核对"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#映射字段" ;
+    sh:targetSubjectsOf skos:relatedMatch ; sh:path skos:relatedMatch ; sh:nodeKind sh:IRI .
+
+# hasTopConcept 从词表指向概念；topConceptOf 从概念指向词表。
+rule:TopTarget_hasTopConcept a sh:PropertyShape ;
+    sh:name "顶层关系指向相应概念或概念体系"@zh ;
+    sh:message "顶层关系指向相应概念或概念体系"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" ;
+    sh:targetSubjectsOf skos:hasTopConcept ; sh:path skos:hasTopConcept ; sh:nodeKind sh:IRI ; sh:class skos:Concept .
+
+rule:TopTarget_topConceptOf a sh:PropertyShape ;
+    sh:name "顶层关系指向相应概念或概念体系"@zh ;
+    sh:message "顶层关系指向相应概念或概念体系"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" ;
+    sh:targetSubjectsOf skos:topConceptOf ; sh:path skos:topConceptOf ; sh:nodeKind sh:IRI ; sh:class skos:ConceptScheme .
+
+# 被词表指定为顶层的概念，必须同时用 inScheme 声明属于这份词表。
+rule:TopMembership a sh:NodeShape ;
+    sh:name "指定顶层必须是该词表成员"@zh ;
+    sh:message "指定顶层必须是该词表成员"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" ;
+    sh:targetSubjectsOf skos:hasTopConcept ;
+    sh:sparql [ sh:select """
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX iso: <http://purl.org/iso25964/skos-thes#>
+SELECT $this ?value WHERE {
+    $this skos:hasTopConcept ?value . FILTER NOT EXISTS { ?value skos:inScheme $this }
+}
+    """ ] .
+
+# 集合需要独立 IRI；也检查只使用成员或组关系、却漏写类型的对象。
+rule:CollectionIdentity a sh:NodeShape ;
+    sh:name "主图持久集合使用 IRI"@zh ;
+    sh:message "主图持久集合使用 IRI"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:targetClass skos:Collection, skos:OrderedCollection, iso:ConceptGroup, iso:ThesaurusArray ;
+    sh:targetSubjectsOf skos:member, skos:memberList, iso:superGroup, iso:subGroup ;
+    sh:targetObjectsOf iso:superGroup, iso:subGroup ;
+    sh:nodeKind sh:IRI ; sh:property rule:DeclaredCollectionType .
+
+# 继承的集合可缺少归属；自建集合的必填归属由 LocalCollection 检查。
+rule:CollectionMembership a sh:PropertyShape ;
+    sh:name "主图集合至多关联一个自有词表"@zh ;
+    sh:message "主图集合至多关联一个自有词表"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:targetClass skos:Collection, skos:OrderedCollection, iso:ConceptGroup, iso:ThesaurusArray ; sh:path skos:inScheme ; sh:maxCount 1 ; sh:nodeKind sh:IRI ; sh:class skos:ConceptScheme .
+
+# 成员必须能在供检数据中识别为概念或集合，不能只是一个未描述的 IRI。
+rule:CollectionMembers a sh:PropertyShape ;
+    sh:name "集合成员须为可定位的概念或集合"@zh ;
+    sh:message "集合成员须为可定位的概念或集合"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:targetClass skos:Collection, skos:OrderedCollection, iso:ConceptGroup, iso:ThesaurusArray ; sh:path skos:member ; sh:nodeKind sh:IRI ; sh:or ( [ sh:class skos:Concept ] [ sh:class skos:Collection ] [ sh:class skos:OrderedCollection ] [ sh:class iso:ConceptGroup ] [ sh:class iso:ThesaurusArray ] ) .
+
+# 空集合只给 Info 提示，不自动删除，也不替它补成员。
+rule:EmptyCollection a sh:PropertyShape ;
+    sh:name "集合当前没有成员，保留为空集合"@zh ;
+    sh:message "集合当前没有成员，保留为空集合"@zh ;
+    sh:severity sh:Info ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:targetClass skos:Collection, skos:OrderedCollection, iso:ConceptGroup, iso:ThesaurusArray ; sh:path skos:member ; sh:minCount 1 .
+
+# 有序集合必须明确提供一个 RDF 列表；空列表 rdf:nil 也算一个列表。
+rule:OrderedListRequired a sh:PropertyShape ;
+    sh:name "有序集合必须明确提供一个成员列表"@zh ;
+    sh:message "有序集合必须明确提供一个成员列表"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:targetClass skos:OrderedCollection ; sh:path skos:memberList ; sh:minCount 1 ; sh:maxCount 1 .
+
+# 顺着 rdf:rest 逐项检查：节点形式、first / rest 缺项、多值和循环。
+# 列表应最终到达 rdf:nil；rdf:nil 自身不能再有 first / rest。
+rule:OrderedListStructure a sh:NodeShape ;
+    sh:name "成员列表必须完整、有限、无循环并以 rdf:nil 结束"@zh ;
+    sh:message "成员列表必须完整、有限、无循环并以 rdf:nil 结束"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:targetClass skos:OrderedCollection ; sh:targetSubjectsOf skos:memberList ;
+    sh:sparql [ sh:select """
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX iso: <http://purl.org/iso25964/skos-thes#>
+SELECT DISTINCT $this ?path WHERE {
+    # 报告集合和出错字段，不复制循环列表本身，避免生成报告时陷入递归。
+    BIND(skos:memberList AS ?path)
+    $this skos:memberList ?head .
+    {
+        ?head rdf:rest* ?value . FILTER(?value != rdf:nil)
+        FILTER(!isBlank(?value) && !isIRI(?value))
+    } UNION {
+        ?head rdf:rest* ?value . FILTER(?value != rdf:nil)
+        FILTER NOT EXISTS { ?value rdf:first ?item }
+    } UNION {
+        ?head rdf:rest* ?value . FILTER(?value != rdf:nil)
+        FILTER NOT EXISTS { ?value rdf:rest ?next }
+    } UNION {
+        ?head rdf:rest* ?value . ?value rdf:first ?a, ?b . FILTER(?a != ?b)
+    } UNION {
+        ?head rdf:rest* ?value . ?value rdf:rest ?a, ?b . FILTER(?a != ?b)
+    } UNION {
+        ?head rdf:rest* ?value . ?value rdf:rest+ ?value .
+    } UNION {
+        ?head rdf:rest* rdf:nil . rdf:nil (rdf:first|rdf:rest) ?value .
+    }
+}
+    """ ] .
+
+# 顺着列表收集成员，与 skos:member 的值集合比较；两边都不能多出或漏掉成员。
+rule:OrderedMembersProjection a sh:PropertyShape ;
+    sh:name "有序集合的 member 必须与列表成员投影一致"@zh ;
+    sh:message "有序集合的 member 必须与列表成员投影一致"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#派生表达" ;
+    sh:targetClass skos:OrderedCollection ; sh:path ( skos:memberList [ sh:zeroOrMorePath rdf:rest ] rdf:first ) ; sh:equals skos:member .
+
+# 以下 Local* 不自动选对象，须按 COVERAGE.md 的示例设置 sh:targetNode。
+# 它们用于明确的本地记录，避免把来源缺项全当成本地错误。
+rule:LocalConcept a sh:NodeShape ;
+    sh:name "本地新增概念的完整性要求"@zh ;
+    sh:message "本地新增概念的完整性要求"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" ;
+    sh:property rule:LocalConceptName .
+
+rule:LocalConceptName a sh:PropertyShape ;
+    sh:name "本地新增概念必须具有 XL 首选名称"@zh ;
+    sh:message "本地新增概念必须具有 XL 首选名称"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" ;
+    sh:path xl:prefLabel ; sh:minCount 1 .
+
+rule:LocalCollection a sh:NodeShape ;
+    sh:name "自建集合的完整性要求"@zh ;
+    sh:message "自建集合的完整性要求"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:property rule:LocalCollectionScope, rule:LocalCollectionScheme .
+
+rule:LocalCollectionScope a sh:PropertyShape ;
+    sh:name "自建集合必须说明范围或引用组织依据"@zh ;
+    sh:message "自建集合必须说明范围或引用组织依据"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:path skos:scopeNote ; sh:minCount 1 .
+
+rule:LocalCollectionScheme a sh:PropertyShape ;
+    sh:name "自有集合必须关联唯一词表"@zh ;
+    sh:message "自有集合必须关联唯一词表"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" ;
+    sh:path skos:inScheme ; sh:minCount 1 ; sh:maxCount 1 ; sh:class skos:ConceptScheme .
+
+rule:LocalConceptGroup a sh:NodeShape ;
+    sh:name "本地概念组的名称要求"@zh ;
+    sh:message "本地概念组的名称要求"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合名称" ;
+    sh:property rule:LocalGroupName .
+
+rule:LocalGroupName a sh:PropertyShape ;
+    sh:name "本地概念组必须有明确名称"@zh ;
+    sh:message "本地概念组必须有明确名称"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合名称" ;
+    sh:path [ sh:alternativePath ( skos:prefLabel ( xl:prefLabel xl:literalForm ) ) ] ; sh:minCount 1 .
+
+rule:LocalLabel a sh:NodeShape ;
+    sh:name "本地新增名称的语言要求"@zh ;
+    sh:message "本地新增名称的语言要求"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#名称字段" ;
+    sh:property rule:LocalLabelLanguage .
+
+rule:LocalLabelLanguage a sh:PropertyShape ;
+    sh:name "本地新增名称必须明确语言"@zh ;
+    sh:message "本地新增名称必须明确语言"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#名称字段" ;
+    sh:path xl:literalForm ; sh:datatype rdf:langString .
+
+rule:LocalNote a sh:NodeShape ;
+    sh:name "本地独立说明的完整性要求"@zh ;
+    sh:message "本地独立说明的完整性要求"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#说明字段" ;
+    sh:property rule:LocalNoteBody .
+
+rule:LocalNoteBody a sh:PropertyShape ;
+    sh:name "本地独立说明恰好有一个带语言的正文"@zh ;
+    sh:message "本地独立说明恰好有一个带语言的正文"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#说明字段" ;
+    sh:path rdf:value ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype rdf:langString .
+
+# 日期只检查格式和数量；创建或修改是否真实发生，仍需对应记录作证。
+rule:LocalDates a sh:NodeShape ;
+    sh:name "本地记录日期要求，不强加给来源日期"@zh ;
+    sh:message "本地记录日期要求，不强加给来源日期"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源与依据" ;
+    sh:property rule:LocalCreated, rule:LocalModified .
+
+rule:LocalCreated a sh:PropertyShape ;
+    sh:name "本地日期为可选单值 date 或 dateTime"@zh ;
+    sh:message "本地日期为可选单值 date 或 dateTime"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源与依据" ;
+    sh:path dcterms:created ; sh:maxCount 1 ; sh:or ( [ sh:datatype xsd:date ] [ sh:datatype xsd:dateTime ] ) .
+
+rule:LocalModified a sh:PropertyShape ;
+    sh:name "本地日期为可选单值 date 或 dateTime"@zh ;
+    sh:message "本地日期为可选单值 date 或 dateTime"@zh ;
+    sh:severity sh:Violation ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源与依据" ;
+    sh:path dcterms:modified ; sh:maxCount 1 ; sh:or ( [ sh:datatype xsd:date ] [ sh:datatype xsd:dateTime ] ) .
+# 显式表示要求：记录中必须实际写出类型；推导出的类型不能替代这个字段。
+rule:MainTypeIRI a sh:PropertyShape ;
+    sh:targetClass skos:Concept, skos:ConceptScheme, skos:Collection,
+        skos:OrderedCollection, xl:Label, iso:ConceptGroup, iso:ThesaurusArray ;
+    sh:path rdf:type ; sh:nodeKind sh:IRI ;
+    sh:severity sh:Violation ;
+    sh:name "主要记录的类型使用 IRI"@zh ;
+    sh:message "主要记录的类型声明须使用 IRI。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#标识与类型" .
+
+rule:DeclaredGroupEndpoints a sh:NodeShape ;
+    sh:targetSubjectsOf iso:superGroup, iso:subGroup ;
+    sh:targetObjectsOf iso:superGroup, iso:subGroup ;
+    sh:nodeKind sh:IRI ; sh:class iso:ConceptGroup ;
+    sh:severity sh:Violation ;
+    sh:name "主图分组细分的专用类型"@zh ;
+    sh:message "采用分组扩展的端点须保留 ConceptGroup 专用类型和 IRI。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#分组扩展" ;
+    sh:property rule:DeclaredGroupType .
+
+# 替代引用只检查 IRI；是否确为后继概念、历史是否可读，另行核对。
+rule:ReplacementIdentity a sh:PropertyShape ;
+    sh:targetClass skos:Concept ;
+    sh:path [ sh:alternativePath ( dcterms:isReplacedBy dcterms:replaces ) ] ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Violation ;
+    sh:name "概念替代对象的标识"@zh ;
+    sh:message "概念替代对象须使用 IRI；外部或历史描述由指定上下文核对。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+# 未标语言只给警告，不根据文字外观猜测 zh 或 en。
+rule:MissingNameLanguage a sh:NodeShape ;
+    sh:targetSubjectsOf skos:prefLabel, skos:altLabel, skos:hiddenLabel, xl:literalForm ;
+    sh:severity sh:Warning ;
+    sh:name "名称语言缺项"@zh ;
+    sh:message "名称未标语言；保留原值并核对，不推断或补写语言。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#语言与名称" ;
+    sh:sparql [ sh:select """
+        PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+        PREFIX xl: <http://www.w3.org/2008/05/skos-xl#>
+        SELECT DISTINCT $this ?path ?value WHERE {
+            $this ?path ?value .
+            FILTER(?path IN (skos:prefLabel, skos:altLabel, skos:hiddenLabel, xl:literalForm))
+            FILTER(isLiteral(?value) && LANG(?value) = "")
+        }
+    """ ] .
+# 质量提示：自相关、层级环和集合循环需要复核，不一律判为 SKOS 错误。
+# 最终数据不能说明问题何时产生；是否本次引入，要另比对历史版本。
+rule:SelfRelatedDiagnostic a sh:NodeShape ;
+    sh:targetSubjectsOf skos:related ; sh:severity sh:Warning ;
+    sh:name "自相关复核"@zh ;
+    sh:message "存在自相关；核对来源、用途及变更依据。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#层级判据" ;
+    sh:sparql [ sh:select """
+        PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+        SELECT $this ?path WHERE {
+            $this skos:related $this . BIND(skos:related AS ?path)
+        }
+    """ ] .
+
+rule:HierarchyCycleDiagnostic a sh:NodeShape ;
+    sh:targetClass skos:Concept ; sh:severity sh:Warning ;
+    sh:name "层级环复核"@zh ;
+    sh:message "存在层级环；区分来源异常和本地引入，新增判断需要版本依据。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#层级判据" ;
+    sh:sparql [ sh:select """
+        PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+        SELECT $this ?path WHERE {
+            $this (skos:broader|^skos:narrower|skos:broadMatch|^skos:narrowMatch|skos:broaderTransitive|^skos:narrowerTransitive)+ $this .
+            BIND(skos:broader AS ?path)
+        }
+    """ ] .
+
+rule:CollectionCycleDiagnostic a sh:NodeShape ;
+    sh:targetClass skos:Collection, skos:OrderedCollection, iso:ConceptGroup, iso:ThesaurusArray ;
+    sh:severity sh:Warning ; sh:name "集合循环复核"@zh ;
+    sh:message "存在集合成员循环；核对来源和组织用途。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#层级判据" ;
+    sh:sparql [ sh:select """
+        PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+        SELECT $this ?path WHERE {
+            $this skos:member+ $this . BIND(skos:member AS ?path)
+        }
+    """ ] .
+
+# 下面的 hasValue 要求 rdf:type 中实际包含指定类型；仍允许其他不冲突的类型。
+rule:DeclaredConceptType a sh:PropertyShape ;
+    sh:path rdf:type ; sh:hasValue skos:Concept ;
+    sh:severity sh:Violation ; sh:name "显式类型声明"@zh ;
+    sh:message "目标记录须直接声明 skos:Concept 类型；子类推导不替代该字段要求。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" .
+
+rule:DeclaredSchemeType a sh:PropertyShape ;
+    sh:path rdf:type ; sh:hasValue skos:ConceptScheme ;
+    sh:severity sh:Violation ; sh:name "显式类型声明"@zh ;
+    sh:message "目标记录须直接声明 skos:ConceptScheme 类型；子类推导不替代该字段要求。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#词表字段" .
+
+rule:DeclaredLabelType a sh:PropertyShape ;
+    sh:path rdf:type ; sh:hasValue xl:Label ;
+    sh:severity sh:Violation ; sh:name "显式类型声明"@zh ;
+    sh:message "目标记录须直接声明 xl:Label 类型；子类推导不替代该字段要求。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#名称字段" .
+
+rule:DeclaredGroupType a sh:PropertyShape ;
+    sh:path rdf:type ; sh:hasValue iso:ConceptGroup ;
+    sh:severity sh:Violation ; sh:name "显式类型声明"@zh ;
+    sh:message "目标记录须直接声明 iso:ConceptGroup 类型；子类推导不替代该字段要求。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#分组扩展" .
+
+# Collection 或 OrderedCollection 至少直接声明一种；扩展类型不能替代基础类型。
+rule:DeclaredCollectionType a sh:PropertyShape ;
+    sh:path rdf:type ;
+    sh:qualifiedValueShape [ sh:in (skos:Collection skos:OrderedCollection) ] ;
+    sh:qualifiedMinCount 1 ;
+    sh:severity sh:Violation ; sh:name "显式集合类型"@zh ;
+    sh:message "目标集合须直接声明 skos:Collection 或 skos:OrderedCollection；扩展类型不替代该字段要求。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .
+
+# 只要采用 memberList，就需要明确声明 OrderedCollection。
+rule:DeclaredOrderedCollectionType a sh:PropertyShape ;
+    sh:targetClass skos:OrderedCollection ; sh:targetSubjectsOf skos:memberList ;
+    sh:path rdf:type ; sh:hasValue skos:OrderedCollection ;
+    sh:severity sh:Violation ; sh:name "显式有序集合类型"@zh ;
+    sh:message "采用成员列表的目标集合须直接声明 skos:OrderedCollection。"@zh ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .

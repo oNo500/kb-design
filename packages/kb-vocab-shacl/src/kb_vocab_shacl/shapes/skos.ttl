@@ -1,0 +1,176 @@
+@prefix rule: <urn:kb-vocab-shacl:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix iso: <http://purl.org/iso25964/skos-thes#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# SKOS 基础检查：类型、名称和关系冲突。通用字段读法见 skos-xl.ttl。
+
+# 类型识别助手：除显式类型，也识别下面列出的属性所隐含的类型。
+# 例如，使用 skos:member 的主语是集合，即使它没有写 rdf:type。
+# 这些助手供后面的规则调用，不单独选对象，也不向词表补写类型。
+# sh:or 表示任选其一；sh:not 表示不能满足；inversePath 表示反向找关系。
+# 概念：按已声明类型，或概念关系、顶层关系中的位置识别。
+rule:AsConcept a sh:NodeShape ; sh:or (
+    [ sh:class skos:Concept ]
+    [ sh:property [ sh:path [ sh:alternativePath ( skos:semanticRelation skos:mappingRelation skos:broader skos:narrower skos:related skos:broaderTransitive skos:narrowerTransitive skos:exactMatch skos:closeMatch skos:broadMatch skos:narrowMatch skos:relatedMatch [ sh:inversePath skos:semanticRelation ] [ sh:inversePath skos:mappingRelation ] [ sh:inversePath skos:broader ] [ sh:inversePath skos:narrower ] [ sh:inversePath skos:related ] [ sh:inversePath skos:broaderTransitive ] [ sh:inversePath skos:narrowerTransitive ] [ sh:inversePath skos:exactMatch ] [ sh:inversePath skos:closeMatch ] [ sh:inversePath skos:broadMatch ] [ sh:inversePath skos:narrowMatch ] [ sh:inversePath skos:relatedMatch ] skos:topConceptOf [ sh:inversePath skos:hasTopConcept ] ) ] ; sh:minCount 1 ] ]
+) .
+# 词表：按类型，或 inScheme 等关系指向的对象识别。
+rule:AsScheme a sh:NodeShape ; sh:or (
+    [ sh:class skos:ConceptScheme ]
+    [ sh:property [ sh:path [ sh:alternativePath ( skos:hasTopConcept [ sh:inversePath skos:inScheme ] [ sh:inversePath skos:topConceptOf ] ) ] ; sh:minCount 1 ] ]
+) .
+# 集合：按集合类型，或成员、列表、概念组关系识别。
+rule:AsCollection a sh:NodeShape ; sh:or (
+    [ sh:class skos:Collection ] [ sh:class skos:OrderedCollection ]
+    [ sh:class iso:ConceptGroup ] [ sh:class iso:ThesaurusArray ]
+    [ sh:property [ sh:path [ sh:alternativePath ( skos:member skos:memberList iso:superGroup iso:subGroup [ sh:inversePath iso:superGroup ] [ sh:inversePath iso:subGroup ] ) ] ; sh:minCount 1 ] ]
+) .
+# 名称：按 Label 类型，或文字值、名称引用等关系识别。
+rule:AsLabel a sh:NodeShape ; sh:or (
+    [ sh:class xl:Label ]
+    [ sh:property [ sh:path [ sh:alternativePath ( xl:literalForm xl:labelRelation [ sh:inversePath xl:labelRelation ] [ sh:inversePath xl:prefLabel ] [ sh:inversePath xl:altLabel ] [ sh:inversePath xl:hiddenLabel ] ) ] ; sh:minCount 1 ] ]
+) .
+
+# 同一资源不能既是词表，又是概念、集合或名称。
+rule:ConceptSchemeDisjoint a sh:NodeShape ;
+    sh:name "概念与概念体系不能兼作彼此"@zh ;
+    sh:message "概念与概念体系不能兼作彼此"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/skos-reference/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#标识与类型" ;
+    sh:targetClass skos:ConceptScheme ; sh:targetSubjectsOf skos:hasTopConcept ; sh:targetObjectsOf skos:inScheme, skos:topConceptOf ; sh:not [ sh:or ( rule:AsConcept rule:AsCollection rule:AsLabel ) ] .
+
+# 集合用来组织成员，不能兼作成员所代表的概念。
+rule:CollectionTypeDisjoint a sh:NodeShape ;
+    sh:name "集合不能兼作概念或概念体系"@zh ;
+    sh:message "集合不能兼作概念或概念体系"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/skos-reference/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#标识与类型" ;
+    sh:targetClass skos:Collection, skos:OrderedCollection, iso:ConceptGroup, iso:ThesaurusArray ; sh:targetSubjectsOf skos:member, skos:memberList ; sh:not [ sh:or ( rule:AsConcept rule:AsScheme rule:AsLabel ) ] .
+
+# 普通名称的三种角色都必须使用文字；下面分别检查首选、替代和隐藏标签。
+rule:PreferredLiteral a sh:PropertyShape ;
+    sh:name "普通标签必须是带语言或不带语言的文字"@zh ;
+    sh:message "普通标签必须是带语言或不带语言的文字"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/skos-reference/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#语言与名称" ;
+    sh:targetSubjectsOf skos:prefLabel ; sh:path skos:prefLabel ; sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) .
+
+rule:AlternativeLiteral a sh:PropertyShape ;
+    sh:name "普通标签必须是带语言或不带语言的文字"@zh ;
+    sh:message "普通标签必须是带语言或不带语言的文字"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/skos-reference/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#语言与名称" ;
+    sh:targetSubjectsOf skos:altLabel ; sh:path skos:altLabel ; sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) .
+
+rule:HiddenLiteral a sh:PropertyShape ;
+    sh:name "普通标签必须是带语言或不带语言的文字"@zh ;
+    sh:message "普通标签必须是带语言或不带语言的文字"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/skos-reference/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#语言与名称" ;
+    sh:targetSubjectsOf skos:hiddenLabel ; sh:path skos:hiddenLabel ; sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) .
+
+# 合并普通标签和 XL 名称的文字后，按完整语言标签检查首选文字是否冲突。
+# 两个 Label 都写“人工智能”@zh 可以通过；同一概念再首选“机器智能”@zh 则冲突。
+rule:PreferredTextUnique a sh:PropertyShape ;
+    sh:name "同一完整语言标签只能有一个不同的首选文字"@zh ;
+    sh:message "同一完整语言标签只能有一个不同的首选文字"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/skos-reference/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#语言与名称" ;
+    sh:targetSubjectsOf skos:prefLabel, skos:altLabel, skos:hiddenLabel, xl:prefLabel, xl:altLabel, xl:hiddenLabel ; sh:path [ sh:alternativePath ( skos:prefLabel ( xl:prefLabel xl:literalForm ) ) ] ; sh:uniqueLang true .
+
+# 比较文字值而非 Label 标识，防止换一个名称记录后绕过角色互斥。
+rule:LabelRoleDisjoint a sh:NodeShape ;
+    sh:name "首选名、别名与隐藏名的文字集合必须互斥"@zh ;
+    sh:message "首选名、别名与隐藏名的文字集合必须互斥"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/skos-reference/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#语言与名称" ;
+    sh:targetSubjectsOf skos:prefLabel, skos:altLabel, skos:hiddenLabel, xl:prefLabel, xl:altLabel, xl:hiddenLabel ;
+    sh:sparql [ sh:select """
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX iso: <http://purl.org/iso25964/skos-thes#>
+SELECT DISTINCT $this ?value WHERE { {
+    $this (skos:prefLabel|xl:prefLabel/xl:literalForm) ?value .
+    $this (skos:altLabel|xl:altLabel/xl:literalForm|skos:hiddenLabel|xl:hiddenLabel/xl:literalForm) ?value .
+} UNION {
+    $this (skos:altLabel|xl:altLabel/xl:literalForm) ?value .
+    $this (skos:hiddenLabel|xl:hiddenLabel/xl:literalForm) ?value .
+} }
+    """ ] .
+
+# 上下位、相关、映射等概念关系，两端不能是集合、词表或名称。
+rule:SemanticEndpointType a sh:NodeShape ;
+    sh:name "概念关系端点不能同时是集合、名称或概念体系"@zh ;
+    sh:message "概念关系端点不能同时是集合、名称或概念体系"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/skos-reference/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#关系约束" ;
+    sh:targetSubjectsOf skos:broader, skos:narrower, skos:related, skos:broaderTransitive, skos:narrowerTransitive, skos:exactMatch, skos:closeMatch, skos:broadMatch, skos:narrowMatch, skos:relatedMatch ; sh:targetObjectsOf skos:broader, skos:narrower, skos:related, skos:broaderTransitive, skos:narrowerTransitive, skos:exactMatch, skos:closeMatch, skos:broadMatch, skos:narrowMatch, skos:relatedMatch ; sh:targetSubjectsOf skos:topConceptOf, skos:semanticRelation, skos:mappingRelation ; sh:targetObjectsOf skos:hasTopConcept, skos:semanticRelation, skos:mappingRelation ; sh:not [ sh:or ( rule:AsCollection rule:AsScheme rule:AsLabel ) ] .
+
+# 例如 A 上位于 B、B 上位于 C，则 A 与 C 不能又是相关关系。
+# 同时识别正向、反向和所列映射属性；不只检查直接的一条边。
+rule:RelatedHierarchyConflict a sh:NodeShape ;
+    sh:name "相关关系不能与同一对概念的层级可达关系重叠"@zh ;
+    sh:message "相关关系不能与同一对概念的层级可达关系重叠"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/skos-reference/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#标准一致性" ;
+    sh:targetClass skos:Concept ; sh:targetSubjectsOf skos:related, skos:relatedMatch ; sh:targetObjectsOf skos:related, skos:relatedMatch ;
+    sh:sparql [ sh:select """
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX iso: <http://purl.org/iso25964/skos-thes#>
+SELECT DISTINCT $this ?value WHERE {
+    $this (skos:related|^skos:related|skos:relatedMatch|^skos:relatedMatch) ?value .
+    $this (skos:broader|^skos:narrower|skos:broaderTransitive|^skos:narrowerTransitive|skos:broadMatch|^skos:narrowMatch)+ ?value .
+}
+    """ ] .
+
+# 精确映射可反向、可连续推导；推导后的同一对对象也要检查宽窄及相关映射冲突。
+# closeMatch 不作同样的连续推导。
+rule:ExactMappingConflict a sh:NodeShape ;
+    sh:name "精确映射不能与相同端点的宽窄或相关映射并存"@zh ;
+    sh:message "精确映射不能与相同端点的宽窄或相关映射并存"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/skos-reference/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#标准一致性" ;
+    sh:targetSubjectsOf skos:exactMatch ; sh:targetObjectsOf skos:exactMatch ;
+    sh:sparql [ sh:select """
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX iso: <http://purl.org/iso25964/skos-thes#>
+SELECT DISTINCT $this ?value WHERE {
+    $this (skos:exactMatch|^skos:exactMatch)+ ?value .
+    $this (skos:broadMatch|^skos:broadMatch|skos:narrowMatch|^skos:narrowMatch|skos:relatedMatch|^skos:relatedMatch) ?value .
+}
+    """ ] .
+
+# 成员允许是概念或集合；若已能确定它是词表或名称，则类型冲突。
+rule:MemberValueType a sh:NodeShape ;
+    sh:targetObjectsOf skos:member ;
+    sh:not [ sh:or ( rule:AsScheme rule:AsLabel ) ] ;
+    sh:severity sh:Violation ; sh:name "集合成员类型互斥"@zh ;
+    sh:message "集合成员不能兼作概念体系或名称。"@zh ;
+    dcterms:source <https://www.w3.org/TR/skos-reference/#collections> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#集合字段" .

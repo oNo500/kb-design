@@ -1,0 +1,71 @@
+@prefix rule: <urn:kb-vocab-shacl:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix iso: <http://purl.org/iso25964/skos-thes#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# 名称记录：检查文字值、类型和名称角色。
+# 建议从本文件开始阅读；下面第一条规则示范常用字段。
+# @prefix 声明缩写；a 表示 rdf:type；分号继续描述同一资源，句号结束这组陈述。
+# rule: 是本包规则名前缀；skos:、xl: 引用标准中的类型和属性；sh: 描述校验要求。
+# NodeShape 检查整个资源；PropertyShape 检查该资源某个字段的值。
+# targetClass 按类型选对象；targetSubjectsOf / targetObjectsOf 按关系的主语 / 宾语选对象。
+# name / message 是报告文字；source / comment 记录标准和设计依据。
+# severity 设置等级：Violation 错误，Warning 警告，Info 提示。
+
+# 一个 Label 保存一个文字值；不同 Label 可以保存相同文字，不因此合并身份。
+rule:LabelLiteralForm a sh:PropertyShape ;
+    sh:name "每个名称记录必须恰好有一个文字值"@zh ;
+    sh:message "每个名称记录必须恰好有一个文字值"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/skos-reference/#xl> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#名称字段" ;
+    sh:targetClass xl:Label ;                 # 检查所有声明为 Label 的名称记录。
+    sh:targetSubjectsOf xl:literalForm, xl:labelRelation ;
+    sh:targetObjectsOf xl:prefLabel, xl:altLabel, xl:hiddenLabel, xl:labelRelation ;
+    # 上面两个 target 也选中通过属性使用的名称，避免漏写类型后逃过检查。
+    sh:path xl:literalForm ;                 # 检查名称的文字值。
+    sh:minCount 1 ;                          # 至少一个，不能缺失。
+    sh:maxCount 1 ;                          # 至多一个，不能存多个历史写法。
+    sh:or (                                 # 满足以下任一类型即可。
+        [ sh:datatype xsd:string ]           # 不带语言的文字，如 "AI"。
+        [ sh:datatype rdf:langString ]       # 带语言的文字，如 "人工智能"@zh。
+    ) .
+
+# 名称是独立记录，不能同时拿来表示概念、词表或集合。
+rule:LabelTypeDisjoint a sh:NodeShape ;
+    sh:name "名称记录不能兼作概念、词表或集合"@zh ;
+    sh:message "名称记录不能兼作概念、词表或集合"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/skos-reference/#xl> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#名称字段" ;
+    sh:targetClass xl:Label ; sh:targetSubjectsOf xl:literalForm, xl:labelRelation ; sh:targetObjectsOf xl:prefLabel, xl:altLabel, xl:hiddenLabel, xl:labelRelation ; sh:not [ sh:or ( rule:AsConcept rule:AsScheme rule:AsCollection ) ] .
+
+# 同一资源不能把同一个 Label 同时用作首选名、别名或隐藏名。
+# 不同资源各自使用同一个 Label，不由本条禁止。
+rule:XLRoleDisjoint a sh:NodeShape ;
+    sh:name "同一资源不能在互斥角色中引用同一名称记录"@zh ;
+    sh:message "同一资源不能在互斥角色中引用同一名称记录"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/skos-reference/#xl> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#语言与名称" ;
+    sh:targetSubjectsOf xl:prefLabel, xl:altLabel, xl:hiddenLabel ;
+    sh:sparql [ sh:select """
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX iso: <http://purl.org/iso25964/skos-thes#>
+SELECT DISTINCT $this ?value WHERE { {
+    $this xl:prefLabel ?value . $this (xl:altLabel|xl:hiddenLabel) ?value .
+} UNION {
+    $this xl:altLabel ?value . $this xl:hiddenLabel ?value .
+} }
+    """ ] .

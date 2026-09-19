@@ -1,0 +1,101 @@
+@prefix rule: <urn:kb-vocab-shacl:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix iso: <http://purl.org/iso25964/skos-thes#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# 元数据检查：这里按项目字段要求检查值类型，不判断内容是否真实。
+# Literal 是文字等字面值；BlankNodeOrIRI 是资源引用，可用空白节点或 IRI。
+# 通用字段读法见 skos-xl.ttl。
+
+# 标题用文字保存，保留原语言和数据类型。
+rule:TextMetadata_dcterms_title a sh:PropertyShape ;
+    sh:name "元数据的值类型须符合字段职责"@zh ;
+    sh:message "元数据的值类型须符合字段职责"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.dublincore.org/specifications/dublin-core/dcmi-terms/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" ;
+    sh:targetSubjectsOf dcterms:title ; sh:path dcterms:title ; sh:nodeKind sh:Literal .
+
+# 一般描述用文字保存；这里不判断它是否重复了定义。
+rule:TextMetadata_dcterms_description a sh:PropertyShape ;
+    sh:name "元数据的值类型须符合字段职责"@zh ;
+    sh:message "元数据的值类型须符合字段职责"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.dublincore.org/specifications/dublin-core/dcmi-terms/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" ;
+    sh:targetSubjectsOf dcterms:description ; sh:path dcterms:description ; sh:nodeKind sh:Literal .
+
+# 来源标识用字面值保存，不把它当作资源 IRI。
+rule:TextMetadata_dcterms_identifier a sh:PropertyShape ;
+    sh:name "元数据的值类型须符合字段职责"@zh ;
+    sh:message "元数据的值类型须符合字段职责"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.dublincore.org/specifications/dublin-core/dcmi-terms/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" ;
+    sh:targetSubjectsOf dcterms:identifier ; sh:path dcterms:identifier ; sh:nodeKind sh:Literal .
+
+# 分类代码保留原字面值及数据类型，不据此合并概念。
+rule:TextMetadata_skos_notation a sh:PropertyShape ;
+    sh:name "元数据的值类型须符合字段职责"@zh ;
+    sh:message "元数据的值类型须符合字段职责"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/skos-reference/#notations> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" ;
+    sh:targetSubjectsOf skos:notation ; sh:path skos:notation ; sh:nodeKind sh:Literal .
+
+# 来源节点标签用字面值保存，不自动变成概念首选名。
+rule:TextMetadata_rdfs_label a sh:PropertyShape ;
+    sh:name "元数据的值类型须符合字段职责"@zh ;
+    sh:message "元数据的值类型须符合字段职责"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/rdf-schema/#ch_label> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" ;
+    sh:targetSubjectsOf rdfs:label ; sh:path rdfs:label ; sh:nodeKind sh:Literal .
+
+# source 指向来源资源，不在这个字段直接填写一段说明。
+rule:ResourceEvidence_dcterms_source a sh:PropertyShape ;
+    sh:name "元数据的值类型须符合字段职责"@zh ;
+    sh:message "元数据的值类型须符合字段职责"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.dublincore.org/specifications/dublin-core/dcmi-terms/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" ;
+    sh:targetSubjectsOf dcterms:source ; sh:path dcterms:source ; sh:nodeKind sh:BlankNodeOrIRI .
+
+# wasDerivedFrom 指向派生依据；本条只检查引用形式。
+rule:ResourceEvidence_prov_wasDerivedFrom a sh:PropertyShape ;
+    sh:name "元数据的值类型须符合字段职责"@zh ;
+    sh:message "元数据的值类型须符合字段职责"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/prov-o/#wasDerivedFrom> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" ;
+    sh:targetSubjectsOf prov:wasDerivedFrom ; sh:path prov:wasDerivedFrom ; sh:nodeKind sh:BlankNodeOrIRI .
+
+# isPartOf 指向所属资源，不要求该资源一定是概念。
+rule:ResourceEvidence_dcterms_isPartOf a sh:PropertyShape ;
+    sh:name "元数据的值类型须符合字段职责"@zh ;
+    sh:message "元数据的值类型须符合字段职责"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.dublincore.org/specifications/dublin-core/dcmi-terms/> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#来源兼容字段" ;
+    sh:targetSubjectsOf dcterms:isPartOf ; sh:path dcterms:isPartOf ; sh:nodeKind sh:BlankNodeOrIRI .
+
+# 停用标记可省略；填写时至多一个布尔值。没有标记不代表已经批准。
+rule:DeprecatedValue a sh:PropertyShape ;
+    sh:name "停用标记须为一个布尔值"@zh ;
+    sh:message "停用标记须为一个布尔值"@zh ;
+    sh:severity sh:Violation ;
+    dcterms:source <https://www.w3.org/TR/owl2-syntax/#Annotation_Properties> ;
+    rdfs:comment "docs/model/vocabulary/设计-词表数据规范.md#概念字段" ;
+    sh:targetSubjectsOf owl:deprecated ; sh:path owl:deprecated ; sh:maxCount 1 ; sh:datatype xsd:boolean .
+
+
+# 来源说明可以保留 XML 文字、多语正文及嵌套资源，不统一限制为一个字符串。
+# 本地独立说明的正文要求见 profile.ttl 的 LocalNoteBody，须明确指定对象。
