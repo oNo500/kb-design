@@ -27,6 +27,77 @@
 
 [仓库 README](https://github.com/cli99/acm-ccs/blob/48644c2ed653833115515c5e59bf2cb2452f1830/README.md) 的参考链接指向解析库，没有说明 XML 最初的下载地址。上游获取链和数据许可仍未核实；不能把代码许可当作数据许可。来源选择由用户在本任务中确认。
 
+## 处理流程
+
+下图包含本次实际执行的一次性翻译和分流。默认 build 只做格式与结构适配，完整保留来源概念；翻译由本次脚本执行，分流由 partition 按已确认清单执行。
+
+```text
+GitHub 固定版本 XML
+      │
+      下载
+      │
+ 核对哈希并缓存原件
+      │
+CCS 原始词表
+      │
+ 格式与 SKOS-XL 适配
+      │
+ 脚本提取英文首选名称及分类语境
+      │
+ 一次性批量翻译（疑难项保留原名）
+      │
+ 保存译文、执行者、批次及名称登记
+      │
+ 合并中英文名称并校验
+      │
+      ├─ 13 个学科分支 ───────────→ 概念词表
+      │
+      └─ 专名分支
+            │
+         逐项判断
+            │
+         处理清单
+            │
+         人工确认
+            │
+         脚本处理（保留已有中英文名称）
+            ├─ 保留概念 ─────────→ 概念词表
+            ├─ 建立实体 ─────────→ 实体记录
+            ├─ 两者保留 ─────────→ 概念词表＋实体记录
+            └─ 尚未确定 ─────────→ 保留原样，待处理
+```
+
+“两者保留”用于同时需要主题标引和对象事实管理的情形：概念记录组织相关资料，实体记录保存官网、开发商等属性，两者分别维护身份并关联。原件始终保留；后续修改处理清单，再由脚本生成。
+
+中文是本次模型初译，未经人工复核；分流不会重新翻译。译文与批次记录见[中文初译说明](../../output/vocabulary/ccs/translation-zh-20260919/说明.md)。最终维护概念词表和实体词表，翻译输入及原分流输入只作重建和追溯材料。
+
+## 分流操作
+
+当前分流结果位于 `output/vocabulary/ccs/partitioned-20260921-rdf/`：`concepts.ttl` 保存 2,053 个概念，`entities.ttl` 保存 302 条实体记录。56 项同时保留概念与实体，48 个未决条目保留原样。其他文件是输入快照、处理对应和审计记录，不作为第三份词表维护。
+
+处理清单的编辑源是 `data/inputs/ccs/routing.json`，每项只维护来源 ID、处理方式和实体类别；来源版本与 `confirmed` 在清单级记录。判断说明在同目录 `routing-notes.json`，只是建议依据，不是已核实的实体事实。
+
+```sh
+# 阅读现有中文词表和处理建议，校验完整性并生成可读清单。
+uv run kb-vocab-ccs review output/vocabulary/ccs/translation-zh-20260919/result/vocabulary.multilingual.ttl --plan data/inputs/ccs/routing.json --output build/ccs-review
+
+# 人工确认清单、将其 confirmed 记为 true 后才可执行。
+uv run kb-vocab-ccs partition output/vocabulary/ccs/translation-zh-20260919/result/vocabulary.multilingual.ttl --plan data/inputs/ccs/routing.json --output output/vocabulary/ccs/partitioned
+
+# 对新概念图单独校验；生成成功不等于校验通过。
+uv run kb-vocab-ccs check output/vocabulary/ccs/partitioned/concepts.ttl --output build/ccs-partition-check
+```
+
+省略 review 的 `--plan` 会提取一份全部为 pending 的清单，不自动判断实体性质。未确认、输入版本变化、重复或遗漏条目、未采用类别都会阻止分流。
+
+`partition` 的两份词表输出为 `concepts.ttl` 和 `entities.ttl`；`routing.json`、`entity-audit.json`、输入快照、清单、移除陈述及哈希仅作处理和审计记录。实体标识按来源概念稳定分配；不同来源编号不自动合并为同一实体。已有中英文名称随记录保留，不重新翻译。
+
+实体采用已有 kind 对应的 Wikidata 类 IRI 作为 `rdf:type`，用 SKOS／SKOS-XL 保存名称；这是本包的 RDF 表示绑定，不是到 Wikidata 个体的身份映射，也不把实体声明为 `skos:Concept`。名称记录保留来源 Label 的派生引用及初译提示；来源条目用 `rdfs:seeAlso` 提供回查入口。
+
+分流确认和事实核实分别记录，不再把实体一律标成 candidate。实体的独立 RDF 输出不等于已导入现行 `entities.yaml`，也不代替事实核对及人员收录条件。`routing.json` 只说明哪个来源条目生成了哪个实体，不声明 sameAs、exactMatch 或已采纳的主题专指关系。
+
+转为实体的条目从概念输出移除，其入边和出边一并留档，不重新挂接下级；若会改变 pending 条目的关系则停止。分组节点是否另作导航、候选实体的事实补全及正式登记分别处理，不能因本命令运行成功视为完成。
+
 ## 使用命令
 
 在仓库根目录执行。以下每个输出目录必须尚不存在；重复运行时改用新目录，例如 `run-2`。
@@ -76,6 +147,7 @@ uv run kb-vocab-ccs check output/vocabulary/ccs/run-1 --output build/ccs-check-1
 | `src/kb_vocab_ccs/config/ccs.json` | 默认来源提交、哈希、身份基准、标题、范围说明和采纳依据 |
 | `storage.py` | 配置读取、来源缓存和新目录写入 |
 | `adapter.py` | XML／RDF 转换、XL 适配及确定性输出 |
+| `routing.py` | 清单完整性、确认门禁及概念／实体分流 |
 | `validation.py` | 共享结构统计、SHACL 调用和报告 |
 | `cli.py` | 命令入口 |
 | `tests/` | 数据保真、身份稳定、写入保护、统计范围及失败退出行为 |

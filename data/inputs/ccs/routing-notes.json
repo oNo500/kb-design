@@ -1,0 +1,2750 @@
+{
+  "basis": "逐项名称与来源语境核对，模型判断；未逐项核实外部实体事实。",
+  "items": [
+    {
+      "action": "concept",
+      "en": "Companies",
+      "kind": null,
+      "reason": "来源的组织节点，不建立实体；保留不表示认定为学科域。",
+      "source_id": "10011152"
+    },
+    {
+      "action": "entity",
+      "en": "Accenture",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011153"
+    },
+    {
+      "action": "entity",
+      "en": "Adobe Systems Incorporated",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011154"
+    },
+    {
+      "action": "entity",
+      "en": "Macromedia",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011155"
+    },
+    {
+      "action": "pending",
+      "en": "Advanced Information Systems",
+      "kind": null,
+      "reason": "身份、缩写或来源重复有疑点，暂不建立实体，也不自动合并。",
+      "source_id": "10011156"
+    },
+    {
+      "action": "entity",
+      "en": "Agere Systems, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011158"
+    },
+    {
+      "action": "entity",
+      "en": "Agilent Technologies",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011159"
+    },
+    {
+      "action": "entity",
+      "en": "Alcatel-Lucent",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011160"
+    },
+    {
+      "action": "entity",
+      "en": "AOL, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011161"
+    },
+    {
+      "action": "entity",
+      "en": "Apple, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011162"
+    },
+    {
+      "action": "entity",
+      "en": "AT&T",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011164"
+    },
+    {
+      "action": "entity",
+      "en": "BAE Systems",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011165"
+    },
+    {
+      "action": "entity",
+      "en": "BEA Systems, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011166"
+    },
+    {
+      "action": "entity",
+      "en": "Blizzard Entertainment",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011167"
+    },
+    {
+      "action": "entity",
+      "en": "Blue Sky Studios",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011168"
+    },
+    {
+      "action": "entity",
+      "en": "Borland Software Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011169"
+    },
+    {
+      "action": "entity",
+      "en": "CA Technologies",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011170"
+    },
+    {
+      "action": "entity",
+      "en": "Cable & Wireless Worldwide",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011171"
+    },
+    {
+      "action": "entity",
+      "en": "Cadence Design Systems",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011172"
+    },
+    {
+      "action": "entity",
+      "en": "China Telecom Corporation Limited",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011174"
+    },
+    {
+      "action": "entity",
+      "en": "Cisco Systems, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011176"
+    },
+    {
+      "action": "concept",
+      "en": "Organizations",
+      "kind": null,
+      "reason": "来源的组织节点，不建立实体；保留不表示认定为学科域。",
+      "source_id": "10011177"
+    },
+    {
+      "action": "entity",
+      "en": "American Mathematical Society",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011178"
+    },
+    {
+      "action": "entity",
+      "en": "Association for Information Systems",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011179"
+    },
+    {
+      "action": "entity",
+      "en": "Citrix Systems, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011181"
+    },
+    {
+      "action": "entity",
+      "en": "Commerce One",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011182"
+    },
+    {
+      "action": "entity",
+      "en": "Compaq Computer Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011183"
+    },
+    {
+      "action": "entity",
+      "en": "Defense Advanced Research Projects Agency",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011184"
+    },
+    {
+      "action": "entity",
+      "en": "Dell Computer Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011185"
+    },
+    {
+      "action": "entity",
+      "en": "DiamondCluster International, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011186"
+    },
+    {
+      "action": "entity",
+      "en": "Digital Equipment Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011193"
+    },
+    {
+      "action": "pending",
+      "en": "EIS, Inc.",
+      "kind": null,
+      "reason": "身份、缩写或来源重复有疑点，暂不建立实体，也不自动合并。",
+      "source_id": "10011195"
+    },
+    {
+      "action": "entity",
+      "en": "EMC Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011196"
+    },
+    {
+      "action": "entity",
+      "en": "Ericsson",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011197"
+    },
+    {
+      "action": "entity",
+      "en": "Ernst & Young",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011198"
+    },
+    {
+      "action": "entity",
+      "en": "Forrester Research",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011199"
+    },
+    {
+      "action": "entity",
+      "en": "Gartner Group",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011200"
+    },
+    {
+      "action": "entity",
+      "en": "General Dynamics",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011201"
+    },
+    {
+      "action": "entity",
+      "en": "General Electric",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011202"
+    },
+    {
+      "action": "entity",
+      "en": "Google Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011203"
+    },
+    {
+      "action": "entity",
+      "en": "Hewlett-Packard Company",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011204"
+    },
+    {
+      "action": "entity",
+      "en": "Infineon Technologies",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011205"
+    },
+    {
+      "action": "pending",
+      "en": "Infusion",
+      "kind": null,
+      "reason": "身份、缩写或来源重复有疑点，暂不建立实体，也不自动合并。",
+      "source_id": "10011206"
+    },
+    {
+      "action": "entity",
+      "en": "Intel Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011207"
+    },
+    {
+      "action": "entity",
+      "en": "International Business Machines Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011208"
+    },
+    {
+      "action": "entity",
+      "en": "International Data Corporation (IDC)",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011209"
+    },
+    {
+      "action": "entity",
+      "en": "Internet Corporation for Assigned Names and Numbers",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011211"
+    },
+    {
+      "action": "entity",
+      "en": "Iona Technologies",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011212"
+    },
+    {
+      "action": "pending",
+      "en": "ITSS, Inc.",
+      "kind": null,
+      "reason": "身份、缩写或来源重复有疑点，暂不建立实体，也不自动合并。",
+      "source_id": "10011213"
+    },
+    {
+      "action": "entity",
+      "en": "Juniper Networks",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011214"
+    },
+    {
+      "action": "entity",
+      "en": "Lockheed Martin Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011215"
+    },
+    {
+      "action": "entity",
+      "en": "McKinsey & Company",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011216"
+    },
+    {
+      "action": "entity",
+      "en": "Microsoft Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011217"
+    },
+    {
+      "action": "entity",
+      "en": "MIT Media Lab",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011218"
+    },
+    {
+      "action": "entity",
+      "en": "National Academy of Sciences",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011220"
+    },
+    {
+      "action": "entity",
+      "en": "National Instruments Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011221"
+    },
+    {
+      "action": "pending",
+      "en": "National Research Council",
+      "kind": null,
+      "reason": "身份、缩写或来源重复有疑点，暂不建立实体，也不自动合并。",
+      "source_id": "10011222"
+    },
+    {
+      "action": "entity",
+      "en": "Nortel Networks Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011223"
+    },
+    {
+      "action": "pending",
+      "en": "Novell, Inc.",
+      "kind": null,
+      "reason": "身份、缩写或来源重复有疑点，暂不建立实体，也不自动合并。",
+      "source_id": "10011224"
+    },
+    {
+      "action": "entity",
+      "en": "Oracle Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011226"
+    },
+    {
+      "action": "entity",
+      "en": "Sun Microsystems",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011227"
+    },
+    {
+      "action": "entity",
+      "en": "Philips Semiconductors",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011228"
+    },
+    {
+      "action": "entity",
+      "en": "NXP Semiconductors",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011229"
+    },
+    {
+      "action": "entity",
+      "en": "Pixar Animation Studios",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011230"
+    },
+    {
+      "action": "entity",
+      "en": "Quest Software, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011231"
+    },
+    {
+      "action": "entity",
+      "en": "Rational Software Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011232"
+    },
+    {
+      "action": "entity",
+      "en": "Research in Motion Limited",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011233"
+    },
+    {
+      "action": "pending",
+      "en": "RSA",
+      "kind": null,
+      "reason": "身份、缩写或来源重复有疑点，暂不建立实体，也不自动合并。",
+      "source_id": "10011235"
+    },
+    {
+      "action": "entity",
+      "en": "SAS Institute, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011236"
+    },
+    {
+      "action": "entity",
+      "en": "Sega Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011237"
+    },
+    {
+      "action": "entity",
+      "en": "Siemens AG",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011238"
+    },
+    {
+      "action": "entity",
+      "en": "Silicon Graphics, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011239"
+    },
+    {
+      "action": "entity",
+      "en": "SRI International",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011240"
+    },
+    {
+      "action": "entity",
+      "en": "Standard Performance Evaluation Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011242"
+    },
+    {
+      "action": "entity",
+      "en": "Taiwan Semiconductor Manufacturing Company, Limited",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011243"
+    },
+    {
+      "action": "entity",
+      "en": "Telcordia Technologies",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011244"
+    },
+    {
+      "action": "entity",
+      "en": "Texas Instruments Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011245"
+    },
+    {
+      "action": "entity",
+      "en": "Toshiba Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011247"
+    },
+    {
+      "action": "entity",
+      "en": "Virage Logic",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011248"
+    },
+    {
+      "action": "entity",
+      "en": "Xerox Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011249"
+    },
+    {
+      "action": "entity",
+      "en": "Yahoo! Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011250"
+    },
+    {
+      "action": "entity",
+      "en": "Zilog, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011252"
+    },
+    {
+      "action": "entity",
+      "en": "American Statistical Association",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011260"
+    },
+    {
+      "action": "entity",
+      "en": "Ames Research Center",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011261"
+    },
+    {
+      "action": "entity",
+      "en": "American National Standards Institute",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011262"
+    },
+    {
+      "action": "entity",
+      "en": "Apache Software Foundation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011263"
+    },
+    {
+      "action": "entity",
+      "en": "Argonne National Laboratory",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011264"
+    },
+    {
+      "action": "entity",
+      "en": "International Software Benchmarking Standards Group Limited",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011265"
+    },
+    {
+      "action": "entity",
+      "en": "Brazilian Computer Society",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011266"
+    },
+    {
+      "action": "entity",
+      "en": "British Computer Society",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011267"
+    },
+    {
+      "action": "entity",
+      "en": "Clay Mathematics Institute",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011269"
+    },
+    {
+      "action": "entity",
+      "en": "Computer History Museum",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011270"
+    },
+    {
+      "action": "entity",
+      "en": "International Computer Music Association",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011271"
+    },
+    {
+      "action": "entity",
+      "en": "Computer Press Association",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011272"
+    },
+    {
+      "action": "entity",
+      "en": "Computing Community Consortium",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011273"
+    },
+    {
+      "action": "entity",
+      "en": "Computing Research Association",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011274"
+    },
+    {
+      "action": "entity",
+      "en": "CSAB",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011275"
+    },
+    {
+      "action": "entity",
+      "en": "Computer Science Teachers Association",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011276"
+    },
+    {
+      "action": "entity",
+      "en": "TDWI",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011277"
+    },
+    {
+      "action": "entity",
+      "en": "Eclipse Foundation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011278"
+    },
+    {
+      "action": "entity",
+      "en": "Electronic Frontier Foundation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011279"
+    },
+    {
+      "action": "entity",
+      "en": "European Telecommunications Standards Institute",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011280"
+    },
+    {
+      "action": "entity",
+      "en": "Free Software Foundation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011281"
+    },
+    {
+      "action": "entity",
+      "en": "International Game Developers Association",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011282"
+    },
+    {
+      "action": "entity",
+      "en": "International Organization for Standardization",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011283"
+    },
+    {
+      "action": "entity",
+      "en": "ITU",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011284"
+    },
+    {
+      "action": "entity",
+      "en": "Isaac Newton Institute for Mathematical Sciences",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011285"
+    },
+    {
+      "action": "entity",
+      "en": "JISC",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011286"
+    },
+    {
+      "action": "entity",
+      "en": "Open Knowledge Society",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011287"
+    },
+    {
+      "action": "entity",
+      "en": "Langley Research Center",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011288"
+    },
+    {
+      "action": "entity",
+      "en": "Lawrence Berkeley National Laboratory",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011289"
+    },
+    {
+      "action": "entity",
+      "en": "Lawrence Livermore National Laboratory",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011290"
+    },
+    {
+      "action": "entity",
+      "en": "Linux Professional Institute",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011291"
+    },
+    {
+      "action": "entity",
+      "en": "London Mathematical Society",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011292"
+    },
+    {
+      "action": "entity",
+      "en": "Los Alamos National Laboratory",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011293"
+    },
+    {
+      "action": "pending",
+      "en": "Max Planck Institutes",
+      "kind": null,
+      "reason": "身份、缩写或来源重复有疑点，暂不建立实体，也不自动合并。",
+      "source_id": "10011294"
+    },
+    {
+      "action": "entity",
+      "en": "National Center for Education Statistics",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011296"
+    },
+    {
+      "action": "entity",
+      "en": "National Institute of Standards and Technology",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011297"
+    },
+    {
+      "action": "entity",
+      "en": "National Science Foundation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011298"
+    },
+    {
+      "action": "entity",
+      "en": "Oak Ridge National Laboratory",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011299"
+    },
+    {
+      "action": "pending",
+      "en": "Open Network Laboratory",
+      "kind": null,
+      "reason": "身份、缩写或来源重复有疑点，暂不建立实体，也不自动合并。",
+      "source_id": "10011300"
+    },
+    {
+      "action": "entity",
+      "en": "OSGi Alliance",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011301"
+    },
+    {
+      "action": "entity",
+      "en": "Operational Research Society",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011302"
+    },
+    {
+      "action": "entity",
+      "en": "Open Source Initiative",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011303"
+    },
+    {
+      "action": "entity",
+      "en": "Pacific Northwest National Laboratory",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011306"
+    },
+    {
+      "action": "entity",
+      "en": "PARC",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011307"
+    },
+    {
+      "action": "entity",
+      "en": "Joint Photographic Experts Group",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011308"
+    },
+    {
+      "action": "entity",
+      "en": "Moving Picture Experts Group",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011309"
+    },
+    {
+      "action": "entity",
+      "en": "Transaction Processing Performance Council",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011312"
+    },
+    {
+      "action": "entity",
+      "en": "Royal Statistical Society",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011313"
+    },
+    {
+      "action": "entity",
+      "en": "San Diego Supercomputer Center",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011314"
+    },
+    {
+      "action": "entity",
+      "en": "Semiconductor Industry Association",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011316"
+    },
+    {
+      "action": "entity",
+      "en": "Software Engineering Institute",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011317"
+    },
+    {
+      "action": "entity",
+      "en": "SLAC National Accelerator Laboratory",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011318"
+    },
+    {
+      "action": "entity",
+      "en": "Trusted Computing Group",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011319"
+    },
+    {
+      "action": "entity",
+      "en": "Computing Technology Industry Association",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011320"
+    },
+    {
+      "action": "entity",
+      "en": "The Open Group",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011321"
+    },
+    {
+      "action": "entity",
+      "en": "Viewpoints Research Institute",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011322"
+    },
+    {
+      "action": "entity",
+      "en": "Wikimedia Foundation, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011323"
+    },
+    {
+      "action": "entity",
+      "en": "World Intellectual Property Organization",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011324"
+    },
+    {
+      "action": "entity",
+      "en": "IBM Almaden Research Center",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011325"
+    },
+    {
+      "action": "entity",
+      "en": "Charles Babbage Institute",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011327"
+    },
+    {
+      "action": "entity",
+      "en": "ABET, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011328"
+    },
+    {
+      "action": "entity",
+      "en": "Computing Accreditation Commission",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011329"
+    },
+    {
+      "action": "entity",
+      "en": "Courant Institute of Mathematical Sciences",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011330"
+    },
+    {
+      "action": "entity",
+      "en": "Electronic  Visualization Laboratory",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011332"
+    },
+    {
+      "action": "entity",
+      "en": "European Network and Information Security Agency",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011333"
+    },
+    {
+      "action": "entity",
+      "en": "Human Factors and Ergonomics Society",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011335"
+    },
+    {
+      "action": "entity",
+      "en": "Jet Propulsion Laboratory",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011336"
+    },
+    {
+      "action": "entity",
+      "en": "Massachusetts Institute of Technology",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011337"
+    },
+    {
+      "action": "entity",
+      "en": "National Academy of Engineering",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011338"
+    },
+    {
+      "action": "entity",
+      "en": "Patent and Trademark Office",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011339"
+    },
+    {
+      "action": "entity",
+      "en": "Personal Robots Group",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011340"
+    },
+    {
+      "action": "entity",
+      "en": "Sandia National Laboratories",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011341"
+    },
+    {
+      "action": "entity",
+      "en": "SANS Institute",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011342"
+    },
+    {
+      "action": "pending",
+      "en": "Systems Research Center",
+      "kind": null,
+      "reason": "身份、缩写或来源重复有疑点，暂不建立实体，也不自动合并。",
+      "source_id": "10011343"
+    },
+    {
+      "action": "entity",
+      "en": "IEEE Computer Society",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011344"
+    },
+    {
+      "action": "entity",
+      "en": "Test Technology Technical Council",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011345"
+    },
+    {
+      "action": "entity",
+      "en": "The Standish Group International, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011346"
+    },
+    {
+      "action": "entity",
+      "en": "The IBM Toronto Software Lab",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011347"
+    },
+    {
+      "action": "entity",
+      "en": "Virtual University Enterprises",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011348"
+    },
+    {
+      "action": "entity",
+      "en": "World Wide Web Consortium",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011349"
+    },
+    {
+      "action": "concept",
+      "en": "People in computing",
+      "kind": null,
+      "reason": "来源的组织节点，不建立实体；保留不表示认定为学科域。",
+      "source_id": "10011350"
+    },
+    {
+      "action": "entity",
+      "en": "A. van Wijngaarden",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011351"
+    },
+    {
+      "action": "entity",
+      "en": "Ada Lovelace",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011352"
+    },
+    {
+      "action": "entity",
+      "en": "Alan Cooper",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011353"
+    },
+    {
+      "action": "entity",
+      "en": "Alan J. Perlis",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011354"
+    },
+    {
+      "action": "entity",
+      "en": "Alan Mathison Turing",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011355"
+    },
+    {
+      "action": "entity",
+      "en": "Allen Kent",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011357"
+    },
+    {
+      "action": "entity",
+      "en": "Allen Newell",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011358"
+    },
+    {
+      "action": "entity",
+      "en": "Andrew S. Grove",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011361"
+    },
+    {
+      "action": "entity",
+      "en": "Barbara Liskov",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011363"
+    },
+    {
+      "action": "entity",
+      "en": "Barry W. Boehm",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011364"
+    },
+    {
+      "action": "entity",
+      "en": "Bill Gates",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011367"
+    },
+    {
+      "action": "entity",
+      "en": "Bill Joy",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011369"
+    },
+    {
+      "action": "entity",
+      "en": "Bill Millard",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011370"
+    },
+    {
+      "action": "entity",
+      "en": "Bjarne Stroustrup",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011371"
+    },
+    {
+      "action": "entity",
+      "en": "Association for Computing Machinery",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011373"
+    },
+    {
+      "action": "entity",
+      "en": "Bruce Schneier",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011376"
+    },
+    {
+      "action": "entity",
+      "en": "C. A. R. Hoare",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011377"
+    },
+    {
+      "action": "entity",
+      "en": "Charles Babbage",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011378"
+    },
+    {
+      "action": "entity",
+      "en": "Charles Tandy",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011380"
+    },
+    {
+      "action": "entity",
+      "en": "Claude Elwood Shannon",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011381"
+    },
+    {
+      "action": "entity",
+      "en": "Clive Sinclair",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011382"
+    },
+    {
+      "action": "entity",
+      "en": "David Hilbert",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011384"
+    },
+    {
+      "action": "entity",
+      "en": "Donald Ervin Knuth",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011385"
+    },
+    {
+      "action": "entity",
+      "en": "Edmund Callis Berkeley",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011386"
+    },
+    {
+      "action": "entity",
+      "en": "Elliot Irving Organick",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011387"
+    },
+    {
+      "action": "entity",
+      "en": "Gary McGraw",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011388"
+    },
+    {
+      "action": "entity",
+      "en": "Georg Scheutz",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011389"
+    },
+    {
+      "action": "entity",
+      "en": "Grace Murray Hopper",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011390"
+    },
+    {
+      "action": "pending",
+      "en": "H. D. Goode",
+      "kind": null,
+      "reason": "身份、缩写或来源重复有疑点，暂不建立实体，也不自动合并。",
+      "source_id": "10011391"
+    },
+    {
+      "action": "entity",
+      "en": "Herbert A. Simon",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011392"
+    },
+    {
+      "action": "entity",
+      "en": "Herbert R. J. Grosch",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011393"
+    },
+    {
+      "action": "entity",
+      "en": "Herman Hollerith",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011394"
+    },
+    {
+      "action": "entity",
+      "en": "J. Presper Eckert",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011395"
+    },
+    {
+      "action": "entity",
+      "en": "J. H. Wilkinson",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011396"
+    },
+    {
+      "action": "entity",
+      "en": "Jay Wright Forrester",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011397"
+    },
+    {
+      "action": "entity",
+      "en": "John Vincent Atanasoff",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011398"
+    },
+    {
+      "action": "entity",
+      "en": "John Cocke",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011400"
+    },
+    {
+      "action": "entity",
+      "en": "John Sculley",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011401"
+    },
+    {
+      "action": "entity",
+      "en": "John Von Neumann",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011402"
+    },
+    {
+      "action": "entity",
+      "en": "John W. Mauchly",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011403"
+    },
+    {
+      "action": "entity",
+      "en": "Konrad Zuse",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011404"
+    },
+    {
+      "action": "entity",
+      "en": "Marvin Lee Minsky",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011405"
+    },
+    {
+      "action": "entity",
+      "en": "Maurice V. Wilkes",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011406"
+    },
+    {
+      "action": "entity",
+      "en": "Richard M. Karp",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011407"
+    },
+    {
+      "action": "entity",
+      "en": "Robert R. Everett",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011408"
+    },
+    {
+      "action": "entity",
+      "en": "Steve Jobs",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011409"
+    },
+    {
+      "action": "entity",
+      "en": "Thomas J. Watson",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011410"
+    },
+    {
+      "action": "entity",
+      "en": "Thomas Watson, Jr.",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011411"
+    },
+    {
+      "action": "entity",
+      "en": "William C. Norris",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011412"
+    },
+    {
+      "action": "pending",
+      "en": "An'an Wang",
+      "kind": null,
+      "reason": "身份、缩写或来源重复有疑点，暂不建立实体，也不自动合并。",
+      "source_id": "10011413"
+    },
+    {
+      "action": "entity",
+      "en": "David Sarnoff",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011414"
+    },
+    {
+      "action": "entity",
+      "en": "Douglas R. Hofstadter",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011415"
+    },
+    {
+      "action": "entity",
+      "en": "Herman H. Goldstine",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011416"
+    },
+    {
+      "action": "entity",
+      "en": "J. Richard Buchi",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011417"
+    },
+    {
+      "action": "entity",
+      "en": "Kazimierz Kuratowski",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011418"
+    },
+    {
+      "action": "entity",
+      "en": "Kurt Godel",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011419"
+    },
+    {
+      "action": "entity",
+      "en": "Marian Smoluchowski",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011420"
+    },
+    {
+      "action": "entity",
+      "en": "Stefan Banach",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011421"
+    },
+    {
+      "action": "entity",
+      "en": "Gordon Bell",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011422"
+    },
+    {
+      "action": "entity",
+      "en": "James Gosling",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011423"
+    },
+    {
+      "action": "entity",
+      "en": "John McCarthy",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011424"
+    },
+    {
+      "action": "entity",
+      "en": "Linus Torvalds",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011425"
+    },
+    {
+      "action": "entity",
+      "en": "Mark D. Weiser",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011426"
+    },
+    {
+      "action": "entity",
+      "en": "Peter J. Denning",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011427"
+    },
+    {
+      "action": "entity",
+      "en": "Peter Norton",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011428"
+    },
+    {
+      "action": "entity",
+      "en": "R. Milner",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011429"
+    },
+    {
+      "action": "entity",
+      "en": "Seymour Papert",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011430"
+    },
+    {
+      "action": "entity",
+      "en": "Alan Curtis Kay",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011431"
+    },
+    {
+      "action": "entity",
+      "en": "David Patterson",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011432"
+    },
+    {
+      "action": "entity",
+      "en": "Harvey M. Deitel",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011433"
+    },
+    {
+      "action": "entity",
+      "en": "Ivar Jacobson",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011434"
+    },
+    {
+      "action": "entity",
+      "en": "Jakob Nielsen",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011435"
+    },
+    {
+      "action": "entity",
+      "en": "Jim Blinn",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011436"
+    },
+    {
+      "action": "entity",
+      "en": "Jim Gray",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011437"
+    },
+    {
+      "action": "entity",
+      "en": "Jon Kleinberg",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011438"
+    },
+    {
+      "action": "entity",
+      "en": "Kent Beck",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011439"
+    },
+    {
+      "action": "entity",
+      "en": "Martin Fowler",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011440"
+    },
+    {
+      "action": "entity",
+      "en": "Vannevar Bush",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011441"
+    },
+    {
+      "action": "entity",
+      "en": "Edvard Scheutz",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011442"
+    },
+    {
+      "action": "pending",
+      "en": "Harry H. Goode",
+      "kind": null,
+      "reason": "身份、缩写或来源重复有疑点，暂不建立实体，也不自动合并。",
+      "source_id": "10011443"
+    },
+    {
+      "action": "entity",
+      "en": "John R. Pasta",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011444"
+    },
+    {
+      "action": "concept",
+      "en": "Technologies",
+      "kind": null,
+      "reason": "来源的组织节点，不建立实体；保留不表示认定为学科域。",
+      "source_id": "10011445"
+    },
+    {
+      "action": "entity",
+      "en": "Blaise Pascal",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011446"
+    },
+    {
+      "action": "entity",
+      "en": "Cyril W. Cleverdon",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011447"
+    },
+    {
+      "action": "entity",
+      "en": "Gene H. Golub",
+      "kind": "person",
+      "reason": "候选人物记录；正式收录仍需按人员规则核对公开身份及适用范围，本清单不提供该证明。",
+      "source_id": "10011448"
+    },
+    {
+      "action": "both",
+      "en": "ActionScript",
+      "kind": "programming-language",
+      "reason": "既有资料主题与具体语言对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011449"
+    },
+    {
+      "action": "concept",
+      "en": "ActiveX",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011450"
+    },
+    {
+      "action": "both",
+      "en": "Ada language",
+      "kind": "programming-language",
+      "reason": "既有资料主题与具体语言对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011451"
+    },
+    {
+      "action": "both",
+      "en": "Photoshop",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011452"
+    },
+    {
+      "action": "concept",
+      "en": "Ajax",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011453"
+    },
+    {
+      "action": "both",
+      "en": "AppleScript",
+      "kind": "programming-language",
+      "reason": "既有资料主题与具体语言对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011454"
+    },
+    {
+      "action": "both",
+      "en": "AutoCAD",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011455"
+    },
+    {
+      "action": "both",
+      "en": "BASIC",
+      "kind": "programming-language",
+      "reason": "既有资料主题与具体语言对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011456"
+    },
+    {
+      "action": "concept",
+      "en": "Bluetooth",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011457"
+    },
+    {
+      "action": "pending",
+      "en": "Cell Broadband Engine",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011458"
+    },
+    {
+      "action": "concept",
+      "en": "CMOS",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011459"
+    },
+    {
+      "action": "concept",
+      "en": "CORBA",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011460"
+    },
+    {
+      "action": "entity",
+      "en": "Corel Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011461"
+    },
+    {
+      "action": "both",
+      "en": "Datalog",
+      "kind": "programming-language",
+      "reason": "既有资料主题与具体语言对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011462"
+    },
+    {
+      "action": "both",
+      "en": "DB2",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011463"
+    },
+    {
+      "action": "both",
+      "en": "DOS",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011464"
+    },
+    {
+      "action": "both",
+      "en": "Dreamweaver",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011465"
+    },
+    {
+      "action": "concept",
+      "en": "DVDs",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011466"
+    },
+    {
+      "action": "entity",
+      "en": "eBay Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011467"
+    },
+    {
+      "action": "both",
+      "en": "Eclipse",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011468"
+    },
+    {
+      "action": "concept",
+      "en": "Ethernet",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011469"
+    },
+    {
+      "action": "both",
+      "en": "Excel",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011470"
+    },
+    {
+      "action": "concept",
+      "en": "CD-ROMs",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011471"
+    },
+    {
+      "action": "pending",
+      "en": "Facebook",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011472"
+    },
+    {
+      "action": "both",
+      "en": "Internet Explorer",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011473"
+    },
+    {
+      "action": "both",
+      "en": "Chrome",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011474"
+    },
+    {
+      "action": "both",
+      "en": "Firefox",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011475"
+    },
+    {
+      "action": "pending",
+      "en": "Flickr",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011476"
+    },
+    {
+      "action": "both",
+      "en": "Fortran",
+      "kind": "programming-language",
+      "reason": "既有资料主题与具体语言对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011477"
+    },
+    {
+      "action": "both",
+      "en": "Google Earth",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011478"
+    },
+    {
+      "action": "pending",
+      "en": "Google",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011479"
+    },
+    {
+      "action": "pending",
+      "en": "Google Maps",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011480"
+    },
+    {
+      "action": "pending",
+      "en": "Google Scholar",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011481"
+    },
+    {
+      "action": "concept",
+      "en": "GSM",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011482"
+    },
+    {
+      "action": "concept",
+      "en": "HDTV",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011483"
+    },
+    {
+      "action": "both",
+      "en": "HP-UX",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011484"
+    },
+    {
+      "action": "pending",
+      "en": "InfiniBand",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011485"
+    },
+    {
+      "action": "pending",
+      "en": "iPhone",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011486"
+    },
+    {
+      "action": "pending",
+      "en": "iPod",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011487"
+    },
+    {
+      "action": "concept",
+      "en": "IPTV",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011488"
+    },
+    {
+      "action": "concept",
+      "en": "IPv6",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011489"
+    },
+    {
+      "action": "both",
+      "en": "JavaScript",
+      "kind": "programming-language",
+      "reason": "既有资料主题与具体语言对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011490"
+    },
+    {
+      "action": "concept",
+      "en": "JPEG",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011491"
+    },
+    {
+      "action": "concept",
+      "en": "JSP",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011492"
+    },
+    {
+      "action": "both",
+      "en": "LAPACK",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011493"
+    },
+    {
+      "action": "both",
+      "en": "Linux",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011494"
+    },
+    {
+      "action": "both",
+      "en": "Lotus Notes",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011495"
+    },
+    {
+      "action": "both",
+      "en": "Macintosh OS",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011496"
+    },
+    {
+      "action": "pending",
+      "en": "Macintosh",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011497"
+    },
+    {
+      "action": "both",
+      "en": "Mathematica",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011498"
+    },
+    {
+      "action": "both",
+      "en": "MATLAB",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011499"
+    },
+    {
+      "action": "concept",
+      "en": "Mobile IP",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011500"
+    },
+    {
+      "action": "concept",
+      "en": "WiMAX",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011501"
+    },
+    {
+      "action": "pending",
+      "en": "MODIS",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011502"
+    },
+    {
+      "action": "entity",
+      "en": "Motorola Solutions, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011503"
+    },
+    {
+      "action": "entity",
+      "en": "Motorola Mobility, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011504"
+    },
+    {
+      "action": "entity",
+      "en": "Motorola, Inc.",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011505"
+    },
+    {
+      "action": "entity",
+      "en": "Mozilla Foundation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011506"
+    },
+    {
+      "action": "entity",
+      "en": "Mozilla Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011507"
+    },
+    {
+      "action": "concept",
+      "en": "MP3",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011508"
+    },
+    {
+      "action": "both",
+      "en": "MS-DOS",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011509"
+    },
+    {
+      "action": "both",
+      "en": "MySQL",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011510"
+    },
+    {
+      "action": "both",
+      "en": "NetWare",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011511"
+    },
+    {
+      "action": "concept",
+      "en": "OpenMP",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011512"
+    },
+    {
+      "action": "both",
+      "en": "Oracle Database",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011513"
+    },
+    {
+      "action": "both",
+      "en": "Outlook",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011514"
+    },
+    {
+      "action": "concept",
+      "en": "PDF",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011515"
+    },
+    {
+      "action": "pending",
+      "en": "Pentium",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011516"
+    },
+    {
+      "action": "pending",
+      "en": "PowerPC",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011517"
+    },
+    {
+      "action": "both",
+      "en": "PowerPoint",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011518"
+    },
+    {
+      "action": "both",
+      "en": "Prolog",
+      "kind": "programming-language",
+      "reason": "既有资料主题与具体语言对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011519"
+    },
+    {
+      "action": "both",
+      "en": "QuarkXPress",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011520"
+    },
+    {
+      "action": "both",
+      "en": "QuickBooks",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011521"
+    },
+    {
+      "action": "both",
+      "en": "Quicken",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011522"
+    },
+    {
+      "action": "both",
+      "en": "QuickTime",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011523"
+    },
+    {
+      "action": "both",
+      "en": "Ruby on Rails",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011524"
+    },
+    {
+      "action": "concept",
+      "en": "RISC processors",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011525"
+    },
+    {
+      "action": "both",
+      "en": "Samba",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011526"
+    },
+    {
+      "action": "both",
+      "en": "SharePoint",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011527"
+    },
+    {
+      "action": "both",
+      "en": "Simulink",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011528"
+    },
+    {
+      "action": "both",
+      "en": "Smalltalk",
+      "kind": "programming-language",
+      "reason": "既有资料主题与具体语言对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011529"
+    },
+    {
+      "action": "concept",
+      "en": "Short Message Service",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011530"
+    },
+    {
+      "action": "concept",
+      "en": "SNMP",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011531"
+    },
+    {
+      "action": "both",
+      "en": "Solaris",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011532"
+    },
+    {
+      "action": "pending",
+      "en": "SPARC",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011533"
+    },
+    {
+      "action": "both",
+      "en": "SQL Server",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011534"
+    },
+    {
+      "action": "concept",
+      "en": "Secure Sockets Layer",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011535"
+    },
+    {
+      "action": "concept",
+      "en": "Transport Layer Security",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011536"
+    },
+    {
+      "action": "pending",
+      "en": "Twitter",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011537"
+    },
+    {
+      "action": "concept",
+      "en": "UMTS",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011538"
+    },
+    {
+      "action": "pending",
+      "en": "Usenet",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011539"
+    },
+    {
+      "action": "concept",
+      "en": "UWB",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011540"
+    },
+    {
+      "action": "both",
+      "en": "Visual Basic",
+      "kind": "programming-language",
+      "reason": "既有资料主题与具体语言对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011541"
+    },
+    {
+      "action": "pending",
+      "en": "VMware",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011542"
+    },
+    {
+      "action": "both",
+      "en": "VoiceXML",
+      "kind": "programming-language",
+      "reason": "既有资料主题与具体语言对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011543"
+    },
+    {
+      "action": "both",
+      "en": "VRML",
+      "kind": "programming-language",
+      "reason": "既有资料主题与具体语言对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011545"
+    },
+    {
+      "action": "concept",
+      "en": "Wifi",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011546"
+    },
+    {
+      "action": "pending",
+      "en": "Wikipedia",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011547"
+    },
+    {
+      "action": "both",
+      "en": "Windows",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011548"
+    },
+    {
+      "action": "pending",
+      "en": "Windows environment",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011549"
+    },
+    {
+      "action": "pending",
+      "en": "WordNet",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011550"
+    },
+    {
+      "action": "both",
+      "en": "X-Window",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011551"
+    },
+    {
+      "action": "concept",
+      "en": "X3D",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011552"
+    },
+    {
+      "action": "pending",
+      "en": "XILINX",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011553"
+    },
+    {
+      "action": "pending",
+      "en": "YouTube",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011554"
+    },
+    {
+      "action": "concept",
+      "en": "ZigBee",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011555"
+    },
+    {
+      "action": "entity",
+      "en": "Bell Labs",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011556"
+    },
+    {
+      "action": "entity",
+      "en": "HP Labs",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011557"
+    },
+    {
+      "action": "both",
+      "en": "FreeBSD",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011558"
+    },
+    {
+      "action": "pending",
+      "en": "Myspace",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011560"
+    },
+    {
+      "action": "entity",
+      "en": "Nokia Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011561"
+    },
+    {
+      "action": "entity",
+      "en": "NVIDIA Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011562"
+    },
+    {
+      "action": "both",
+      "en": "Office",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011563"
+    },
+    {
+      "action": "both",
+      "en": "Skype",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011564"
+    },
+    {
+      "action": "concept",
+      "en": "SONET",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011565"
+    },
+    {
+      "action": "entity",
+      "en": "Sony Corporation",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011566"
+    },
+    {
+      "action": "both",
+      "en": "VHDL",
+      "kind": "programming-language",
+      "reason": "既有资料主题与具体语言对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011567"
+    },
+    {
+      "action": "pending",
+      "en": "Yahoo! (portal)",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011568"
+    },
+    {
+      "action": "entity",
+      "en": "National Institutes of Health",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011569"
+    },
+    {
+      "action": "entity",
+      "en": "Object Management Group",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011570"
+    },
+    {
+      "action": "entity",
+      "en": "Federal Communications Commission",
+      "kind": "organization",
+      "reason": "名称与来源语境支持组织候选；正式登记需核对具体身份，不继承来源层级为组织隶属关系。",
+      "source_id": "10011571"
+    },
+    {
+      "action": "both",
+      "en": "Business Process Execution Language",
+      "kind": "programming-language",
+      "reason": "既有资料主题与具体语言对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011572"
+    },
+    {
+      "action": "both",
+      "en": "ANSI C",
+      "kind": "programming-language",
+      "reason": "既有资料主题与具体语言对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011573"
+    },
+    {
+      "action": "concept",
+      "en": "CDMA systems",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011574"
+    },
+    {
+      "action": "concept",
+      "en": "DNS (Domain Name System)",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011575"
+    },
+    {
+      "action": "pending",
+      "en": "DSL",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011576"
+    },
+    {
+      "action": "pending",
+      "en": "DSM",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011577"
+    },
+    {
+      "action": "pending",
+      "en": "Gmail",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011579"
+    },
+    {
+      "action": "concept",
+      "en": "IP Multimedia Subsystem",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011582"
+    },
+    {
+      "action": "both",
+      "en": "Haskell",
+      "kind": "programming-language",
+      "reason": "既有资料主题与具体语言对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011583"
+    },
+    {
+      "action": "pending",
+      "en": "JAVA ME",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011584"
+    },
+    {
+      "action": "concept",
+      "en": "MIMO Systems",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011585"
+    },
+    {
+      "action": "pending",
+      "en": "MSN (portal)",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011586"
+    },
+    {
+      "action": "pending",
+      "en": "Novell, Inc",
+      "kind": null,
+      "reason": "身份、缩写或来源重复有疑点，暂不建立实体，也不自动合并。",
+      "source_id": "10011587"
+    },
+    {
+      "action": "concept",
+      "en": "OFDM System",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011588"
+    },
+    {
+      "action": "pending",
+      "en": "PlanetLab",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011589"
+    },
+    {
+      "action": "pending",
+      "en": "Pocket PC",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011590"
+    },
+    {
+      "action": "both",
+      "en": "SELinux",
+      "kind": "software",
+      "reason": "既有资料主题与具体软件对象均有管理用途；建议分别保留身份。",
+      "source_id": "10011591"
+    },
+    {
+      "action": "concept",
+      "en": "SIMD architectures",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011592"
+    },
+    {
+      "action": "pending",
+      "en": "TMS320C",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011593"
+    },
+    {
+      "action": "concept",
+      "en": "Unicode",
+      "kind": null,
+      "reason": "当前按技术、方法、协议或格式主题保留；尚不单建具体对象记录。",
+      "source_id": "10011594"
+    },
+    {
+      "action": "pending",
+      "en": "TREC",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011597"
+    },
+    {
+      "action": "concept",
+      "en": "Proper nouns: People, technologies and companies",
+      "kind": null,
+      "reason": "来源的组织节点，不建立实体；保留不表示认定为学科域。",
+      "source_id": "10011641"
+    },
+    {
+      "action": "pending",
+      "en": "iPad",
+      "kind": null,
+      "reason": "涉及产品、平台、服务、资源或歧义缩写；需明确对象及已采用的实体类别。",
+      "source_id": "10011737"
+    }
+  ],
+  "status": "proposal"
+}

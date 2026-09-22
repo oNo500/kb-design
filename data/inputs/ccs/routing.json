@@ -1,0 +1,1975 @@
+{
+  "confirmation": {
+    "at": "2026-09-21T00:43:17.326972+00:00",
+    "by": "user",
+    "instruction": "执行吧",
+    "scope": "确认现有392项处理清单，生成概念词表和302条实体候选记录；不批准正式实体入库。"
+  },
+  "confirmed": true,
+  "format_version": 1,
+  "input_sha256": "00657e9f196f1df183f58bb3fdc6604c57a95ec9774c7a1c84be99738b3f9b15",
+  "items": [
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011152"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011153"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011154"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011155"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011156"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011158"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011159"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011160"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011161"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011162"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011164"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011165"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011166"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011167"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011168"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011169"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011170"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011171"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011172"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011174"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011176"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011177"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011178"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011179"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011181"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011182"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011183"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011184"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011185"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011186"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011193"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011195"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011196"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011197"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011198"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011199"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011200"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011201"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011202"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011203"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011204"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011205"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011206"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011207"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011208"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011209"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011211"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011212"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011213"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011214"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011215"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011216"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011217"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011218"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011220"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011221"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011222"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011223"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011224"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011226"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011227"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011228"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011229"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011230"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011231"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011232"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011233"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011235"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011236"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011237"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011238"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011239"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011240"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011242"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011243"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011244"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011245"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011247"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011248"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011249"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011250"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011252"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011260"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011261"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011262"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011263"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011264"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011265"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011266"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011267"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011269"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011270"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011271"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011272"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011273"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011274"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011275"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011276"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011277"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011278"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011279"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011280"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011281"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011282"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011283"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011284"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011285"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011286"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011287"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011288"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011289"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011290"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011291"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011292"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011293"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011294"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011296"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011297"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011298"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011299"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011300"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011301"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011302"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011303"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011306"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011307"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011308"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011309"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011312"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011313"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011314"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011316"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011317"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011318"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011319"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011320"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011321"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011322"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011323"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011324"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011325"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011327"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011328"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011329"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011330"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011332"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011333"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011335"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011336"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011337"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011338"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011339"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011340"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011341"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011342"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011343"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011344"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011345"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011346"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011347"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011348"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011349"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011350"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011351"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011352"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011353"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011354"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011355"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011357"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011358"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011361"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011363"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011364"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011367"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011369"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011370"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011371"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011373"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011376"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011377"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011378"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011380"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011381"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011382"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011384"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011385"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011386"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011387"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011388"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011389"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011390"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011391"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011392"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011393"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011394"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011395"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011396"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011397"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011398"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011400"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011401"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011402"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011403"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011404"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011405"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011406"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011407"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011408"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011409"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011410"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011411"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011412"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011413"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011414"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011415"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011416"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011417"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011418"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011419"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011420"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011421"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011422"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011423"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011424"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011425"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011426"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011427"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011428"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011429"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011430"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011431"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011432"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011433"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011434"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011435"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011436"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011437"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011438"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011439"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011440"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011441"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011442"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011443"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011444"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011445"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011446"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011447"
+    },
+    {
+      "action": "entity",
+      "kind": "person",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011448"
+    },
+    {
+      "action": "both",
+      "kind": "programming-language",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011449"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011450"
+    },
+    {
+      "action": "both",
+      "kind": "programming-language",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011451"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011452"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011453"
+    },
+    {
+      "action": "both",
+      "kind": "programming-language",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011454"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011455"
+    },
+    {
+      "action": "both",
+      "kind": "programming-language",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011456"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011457"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011458"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011459"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011460"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011461"
+    },
+    {
+      "action": "both",
+      "kind": "programming-language",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011462"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011463"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011464"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011465"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011466"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011467"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011468"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011469"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011470"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011471"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011472"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011473"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011474"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011475"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011476"
+    },
+    {
+      "action": "both",
+      "kind": "programming-language",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011477"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011478"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011479"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011480"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011481"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011482"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011483"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011484"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011485"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011486"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011487"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011488"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011489"
+    },
+    {
+      "action": "both",
+      "kind": "programming-language",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011490"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011491"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011492"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011493"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011494"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011495"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011496"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011497"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011498"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011499"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011500"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011501"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011502"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011503"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011504"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011505"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011506"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011507"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011508"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011509"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011510"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011511"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011512"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011513"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011514"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011515"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011516"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011517"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011518"
+    },
+    {
+      "action": "both",
+      "kind": "programming-language",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011519"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011520"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011521"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011522"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011523"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011524"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011525"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011526"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011527"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011528"
+    },
+    {
+      "action": "both",
+      "kind": "programming-language",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011529"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011530"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011531"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011532"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011533"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011534"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011535"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011536"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011537"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011538"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011539"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011540"
+    },
+    {
+      "action": "both",
+      "kind": "programming-language",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011541"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011542"
+    },
+    {
+      "action": "both",
+      "kind": "programming-language",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011543"
+    },
+    {
+      "action": "both",
+      "kind": "programming-language",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011545"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011546"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011547"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011548"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011549"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011550"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011551"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011552"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011553"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011554"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011555"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011556"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011557"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011558"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011560"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011561"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011562"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011563"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011564"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011565"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011566"
+    },
+    {
+      "action": "both",
+      "kind": "programming-language",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011567"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011568"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011569"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011570"
+    },
+    {
+      "action": "entity",
+      "kind": "organization",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011571"
+    },
+    {
+      "action": "both",
+      "kind": "programming-language",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011572"
+    },
+    {
+      "action": "both",
+      "kind": "programming-language",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011573"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011574"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011575"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011576"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011577"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011579"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011582"
+    },
+    {
+      "action": "both",
+      "kind": "programming-language",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011583"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011584"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011585"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011586"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011587"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011588"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011589"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011590"
+    },
+    {
+      "action": "both",
+      "kind": "software",
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011591"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011592"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011593"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011594"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011597"
+    },
+    {
+      "action": "concept",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011641"
+    },
+    {
+      "action": "pending",
+      "kind": null,
+      "source_id": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011737"
+    }
+  ],
+  "root": "https://raw.githubusercontent.com/cli99/acm-ccs/48644c2ed653833115515c5e59bf2cb2452f1830/ACMComputingClassificationSystemSKOSTaxonomy.xml#10011641",
+  "source_xml_sha256": "ab090f3fd490d167d040c076f4069e75d916fb0693506e7f2aa650f1f82e6f57"
+}
