@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "lists.html",
+      "format": "html",
+      "id": "lists",
+      "url": "https://developers.google.com/style/lists"
+    }
+  ],
+  "id": "lists",
+  "schema_version": 1,
+  "title": "lists",
+  "version": "live-web-snapshot"
+}

@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "css-text.html",
+      "format": "html",
+      "id": "css-text",
+      "url": "https://www.w3.org/TR/css-text-3/"
+    }
+  ],
+  "id": "css-text",
+  "schema_version": 1,
+  "title": "CSS Text Module Level 3",
+  "version": "live-web-snapshot"
+}

@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "html-grouping.html",
+      "format": "html",
+      "id": "html-grouping",
+      "url": "https://html.spec.whatwg.org/multipage/grouping-content.html"
+    }
+  ],
+  "id": "html-grouping",
+  "schema_version": 1,
+  "title": "HTML Standard — Grouping content",
+  "version": "living-standard-snapshot"
+}

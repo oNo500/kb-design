@@ -1,0 +1,3003 @@
+{
+  "augmentations": [
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The heading level is equal to the number of # characters in the opening sequence.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(71)",
+          "source": "commonmark"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:sample:heading",
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The heading level is equal to the number of # characters in the opening sequence.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(71)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:sample:heading:markup-scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "CommonMark 的 ATX 标题使用一至六个未转义的井号确定标题层级；这是已有标题概念的一种表示规则。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "A sequence of non-blank lines that cannot be interpreted as other kinds of blocks forms a paragraph .",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(220)",
+          "source": "commonmark"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:sample:paragraph",
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "A sequence of non-blank lines that cannot be interpreted as other kinds of blocks forms a paragraph .",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(220)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:sample:paragraph:markup-scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "CommonMark 的 paragraph 是由不能解析为其他块的连续非空行形成的语法块。该解析口径补充表示条件，不取代本记录已有的写作段落定义。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "A list is a sequence of one or more list items of the same type .",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(325)",
+          "source": "commonmark"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:list",
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "A list is a sequence of one or more list items of the same type .",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(325)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:list:markup-scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "CommonMark 的列表由同类型的一个或多个列表项组成；列表项之间可有空行。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "A list is an ordered list if its constituent list items begin with ordered list markers",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(327)",
+          "source": "commonmark"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:ordered-list",
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "A list is an ordered list if its constituent list items begin with ordered list markers",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(327)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:ordered-list:markup-scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "CommonMark 以 ordered list marker 起始的列表项构成 ordered list；这是有序列表的一种源文本表示。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "a bullet list if its constituent list items begin with bullet list markers .",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(327)",
+          "source": "commonmark"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:unordered-list",
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "a bullet list if its constituent list items begin with bullet list markers .",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(327)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:unordered-list:markup-scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "CommonMark 以 bullet list marker 起始的列表项构成 bullet list；这是无序列表的一种源文本表示。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The dl element represents an association list consisting of zero or more name-value groups (a description list).",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(34)",
+          "source": "html-grouping"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:description-list",
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The dl element represents an association list consisting of zero or more name-value groups (a description list).",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(34)",
+              "source": "html-grouping"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:description-list:markup-scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "HTML 的 dl 采用名称与值组成的关联列表模型，一个组可含多个名称及多个值；这是 HTML 的表示语义，较本记录目前的术语与描述用途更广。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "A table is an arrangement of data with rows and columns, consisting of a single header row",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(202) > p:nth-of-type(2)",
+          "source": "gfm"
+        },
+        {
+          "quote": "Block-level elements cannot be inserted in a table.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(202) > p:nth-of-type(3)",
+          "source": "gfm"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:table",
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "A table is an arrangement of data with rows and columns, consisting of a single header row",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(202) > p:nth-of-type(2)",
+              "source": "gfm"
+            },
+            {
+              "quote": "Block-level elements cannot be inserted in a table.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(202) > p:nth-of-type(3)",
+              "source": "gfm"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:table:markup-scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "GFM 的 table 扩展以一行表头、分隔行及零行或多行数据表示表格；单元格解析行内内容，不支持直接置入块级元素。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "consisting of a single header row",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(202) > p:nth-of-type(2)",
+          "source": "gfm"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:table-header",
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "consisting of a single header row",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(202) > p:nth-of-type(2)",
+              "source": "gfm"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:table-header:markup-scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "GFM 的 table 表示只有一行表头；这一表示能力不改变已有表头概念包含行表头和列表头的语义。"
+        }
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "represents stress emphasis of its contents.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(6)",
+          "source": "html-text"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:emphasis",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:emphasis:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "强调"
+        },
+        {
+          "id": "urn:kb-vocab-writing:emphasis:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Emphasis"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "represents stress emphasis of its contents.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(6)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:emphasis:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "通过在文本中施加重音而强调其内容；在 HTML 中由 em 元素表达。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The placement of stress emphasis changes the meaning of the sentence.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(8)",
+              "source": "html-text"
+            },
+            {
+              "quote": "isn't a generic \"italics\" element.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(12) > p:nth-of-type(1)",
+              "source": "html-text"
+            },
+            {
+              "quote": "isn't intended to convey importance;",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(12) > p:nth-of-type(2)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:emphasis:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "这里采用 HTML 的 stress emphasis 语义。它不是一般的斜体形式，也不用于表达重要性；重音的位置可以改变句意。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Text wrapped with one * or _ will be wrapped with an HTML <em> tag;",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > blockquote:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:emphasis:commonmark-representation",
+          "kind": "scope",
+          "language": "zh",
+          "text": "CommonMark 将星号或下划线包围的强调文本表示为 em；双重标记表示为 strong。具体定界符组合还受该规范解析规则约束。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "represents strong importance, seriousness, or urgency for its contents.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(9)",
+          "source": "html-text"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:strong-importance",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:strong-importance:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "重要性"
+        },
+        {
+          "id": "urn:kb-vocab-writing:strong-importance:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Strong importance"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "represents strong importance, seriousness, or urgency for its contents.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(9)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:strong-importance:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "文本内容所具有的强烈重要性、严重性或紧迫性；在 HTML 中由 strong 元素表达。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Changing the importance of a piece of text",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(15)",
+              "source": "html-text"
+            },
+            {
+              "quote": "double * ’s or _ ’s will be wrapped with an HTML <strong> tag.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > blockquote:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:strong-importance:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "改变文本的重要性不改变句意。CommonMark 的 strong emphasis 使用 strong 表示，不能仅按粗体外观理解。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The mark element represents a run of text in one document marked or highlighted for reference purposes, due to its relevance in another context.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(90)",
+          "source": "html-text"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:marked-text",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:marked-text:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "标记文本"
+        },
+        {
+          "id": "urn:kb-vocab-writing:marked-text:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Marked text"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The mark element represents a run of text in one document marked or highlighted for reference purposes, due to its relevance in another context.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(90)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:marked-text:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "因与另一语境相关而为参考目的加以标记或突出显示的一段文本；在 HTML 中由 mark 元素表达。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "it indicates a highlight that was not originally present",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(90)",
+              "source": "html-text"
+            },
+            {
+              "quote": "due to its likely relevance to the user's current activity.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(90)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:marked-text:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "在引用文字中可表示引用者后来增加的突出标记；在正文中可表示与读者当前活动相关的内容。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Strikethrough text is any text wrapped in a matching pair of one or two tildes",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(487) > p:nth-of-type(2)",
+          "source": "gfm"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:strikethrough",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:strikethrough:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "删除线"
+        },
+        {
+          "id": "urn:kb-vocab-writing:strikethrough:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Strikethrough"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Strikethrough text is any text wrapped in a matching pair of one or two tildes",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(487) > p:nth-of-type(2)",
+              "source": "gfm"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:strikethrough:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "GFM 扩展中，由成对的一或两个波浪号包围文本而形成的文字标记。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "<p><del>Hi</del> Hello, <del>there</del> world!</p>",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(487) > div:nth-of-type(1) > div:nth-of-type(3) > pre:nth-of-type(1)",
+              "source": "gfm"
+            },
+            {
+              "quote": "The s element represents contents that are no longer accurate or no longer relevant.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(21)",
+              "source": "html-text"
+            },
+            {
+              "quote": "The s element is not appropriate when indicating document edits;",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(22)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:strikethrough:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "本记录限定为 GFM 的 strikethrough 标记；该规范示例输出 del。HTML 的 s 表示不再准确或相关的内容，del 表示从文档删除，两者不能因为视觉形式相同而混同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The ins element represents an addition to the document.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(2)",
+          "source": "html-edits"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:insertion",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:insertion:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "插入"
+        },
+        {
+          "id": "urn:kb-vocab-writing:insertion:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Insertion"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The ins element represents an addition to the document.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(2)",
+              "source": "html-edits"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:insertion:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "向文档中添加内容的编辑；在 HTML 中由 ins 元素表示。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The cite attribute may be used",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(6)",
+              "source": "html-edits"
+            },
+            {
+              "quote": "The datetime attribute may be used",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(8)",
+              "source": "html-edits"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:insertion:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "HTML 的 ins 与 del 可以记录编辑的说明链接和编辑日期时间；这些属性表达编辑信息。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The del element represents a removal from the document.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(4)",
+          "source": "html-edits"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:deletion",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:deletion:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "删除"
+        },
+        {
+          "id": "urn:kb-vocab-writing:deletion:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Deletion"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The del element represents a removal from the document.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(4)",
+              "source": "html-edits"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:deletion:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "从文档中移除内容的编辑；在 HTML 中由 del 元素表示。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The s element represents contents that are no longer accurate or no longer relevant.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(21)",
+              "source": "html-text"
+            },
+            {
+              "quote": "to mark a span of text as having been removed from a document, use the del element.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(22)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:deletion:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "删除编辑不同于内容不再准确或相关；HTML 将后者交由 s 表达。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The blockquote element represents a section that is quoted from another source.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(12)",
+          "source": "html-grouping"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:block-quotation",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:block-quotation:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "块引用"
+        },
+        {
+          "id": "urn:kb-vocab-writing:block-quotation:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Block quotation"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The blockquote element represents a section that is quoted from another source.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(12)",
+              "source": "html-grouping"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:block-quotation:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "作为独立部分呈现的、引用自另一来源的内容；HTML 的 blockquote 元素表达这种引用。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The q element represents some phrasing content quoted from another source.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(27)",
+          "source": "html-text"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:inline-quotation",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:inline-quotation:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "行内引用"
+        },
+        {
+          "id": "urn:kb-vocab-writing:inline-quotation:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Inline quotation"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The q element represents some phrasing content quoted from another source.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(27)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:inline-quotation:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "在段内文字层次引用自另一来源的内容；在 HTML 中由 q 元素表达。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Content inside a q element must be quoted from another source",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(29)",
+              "source": "html-text"
+            },
+            {
+              "quote": "A citation is not a quote",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(25)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:inline-quotation:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "引用内容来自另一来源；HTML 的 cite 元素表达作品标题，不用于标记被引用的话语。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "represents a hyperlink (a hypertext anchor) labeled by its contents.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(1)",
+          "source": "html-text"
+        },
+        {
+          "quote": "a link destination (the URI that is the link destination)",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(468)",
+          "source": "commonmark"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:hyperlink",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:hyperlink:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "超链接"
+        },
+        {
+          "id": "urn:kb-vocab-writing:hyperlink:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Hyperlink"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "represents a hyperlink (a hypertext anchor) labeled by its contents.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(1)",
+              "source": "html-text"
+            },
+            {
+              "quote": "a link destination (the URI that is the link destination)",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(468)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:hyperlink:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "由内容作为标签、指向指定目标的超文本链接；HTML 中带 href 属性的 a 元素表达这种链接。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "A link contains link text (the visible text), a link destination (the URI that is the link destination), and optionally a link title .",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(468)",
+          "source": "commonmark"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:link-text",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:link-text:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "链接文字"
+        },
+        {
+          "id": "urn:kb-vocab-writing:link-text:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Link text"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "A link contains link text (the visible text), a link destination (the URI that is the link destination), and optionally a link title .",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(468)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:link-text:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "链接中可见的文字部分。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "A link contains link text (the visible text), a link destination (the URI that is the link destination), and optionally a link title .",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(468)",
+          "source": "commonmark"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:link-destination",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:link-destination:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "链接目标"
+        },
+        {
+          "id": "urn:kb-vocab-writing:link-destination:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Link destination"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "A link contains link text (the visible text), a link destination (the URI that is the link destination), and optionally a link title .",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(468)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:link-destination:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "链接指向的 URI。"
+        }
+      ]
+    },
+    {
+      "broader": [
+        {
+          "evidence": [
+            {
+              "quote": "In inline links the destination and title are given immediately after the link text.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(468)",
+              "source": "commonmark"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:hyperlink"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "In inline links the destination and title are given immediately after the link text.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(468)",
+          "source": "commonmark"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:inline-link",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:inline-link:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "行内链接"
+        },
+        {
+          "id": "urn:kb-vocab-writing:inline-link:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Inline link"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "In inline links the destination and title are given immediately after the link text.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(468)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:inline-link:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "在链接文字之后紧接着给出目标及可选标题的 Markdown 链接形式。"
+        }
+      ]
+    },
+    {
+      "broader": [
+        {
+          "evidence": [
+            {
+              "quote": "In reference links the destination and title are defined elsewhere in the document.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(468)",
+              "source": "commonmark"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:hyperlink"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "In reference links the destination and title are defined elsewhere in the document.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(468)",
+          "source": "commonmark"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:reference-link",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:reference-link:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "引用式链接"
+        },
+        {
+          "id": "urn:kb-vocab-writing:reference-link:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Reference link"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "In reference links the destination and title are defined elsewhere in the document.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(468)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:reference-link:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "在文档其他位置定义链接目标及标题的 Markdown 链接形式。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "In reference links the destination and title are defined elsewhere in the document.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(468)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:reference-link:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "这里的 reference 指链接目标的间接定义，不等于学术引用、脚注或参考文档类型。"
+        }
+      ]
+    },
+    {
+      "broader": [
+        {
+          "evidence": [
+            {
+              "quote": "They are parsed as links, with the URL or email address as the link label.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(552)",
+              "source": "commonmark"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:hyperlink"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "Autolink s are absolute URIs and email addresses inside < and > .",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(552)",
+          "source": "commonmark"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:autolink",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:autolink:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "自动链接"
+        },
+        {
+          "id": "urn:kb-vocab-writing:autolink:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Autolink"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Autolink s are absolute URIs and email addresses inside < and > .",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(552)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:autolink:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "CommonMark 中将尖括号内的绝对 URI 或电子邮件地址解析为链接，并使用该地址作为链接标签的形式。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "GFM enables the autolink extension",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(616) > p:nth-of-type(1)",
+              "source": "gfm"
+            },
+            {
+              "quote": "without requiring the use of < and to > to delimit them",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(616) > p:nth-of-type(2)",
+              "source": "gfm"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:autolink:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "GFM 的 autolink 扩展在更多条件下识别链接，包括部分没有尖括号的地址；这属于方言扩展。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "A code span begins with a backtick string and ends with a backtick string of equal length.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(361)",
+          "source": "commonmark"
+        },
+        {
+          "quote": "The contents of the code span are the characters between these two backtick strings, normalized in the following ways:",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(361)",
+          "source": "commonmark"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:code-span",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:code-span:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "代码片段"
+        },
+        {
+          "id": "urn:kb-vocab-writing:code-span:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Code span"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "A code span begins with a backtick string and ends with a backtick string of equal length.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(361)",
+              "source": "commonmark"
+            },
+            {
+              "quote": "The contents of the code span are the characters between these two backtick strings, normalized in the following ways:",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(361)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:code-span:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "由长度相同的起止反引号串包围、在段内表示代码的 CommonMark 结构；内容取两串反引号之间的字符并按规范进行归一化。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "normalized in the following ways:",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(361)",
+              "source": "commonmark"
+            },
+            {
+              "quote": "This could be an XML element name, a filename, a computer program, or any other string that a computer would recognize.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(61)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:code-span:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "这是 CommonMark 的 code span，不保证保留输入的每个空白字符。HTML 的 code 所表示的计算机可识别字符串也可包括文件名或元素名。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The following example shows how a block of code could be marked up using the pre and code elements.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(69) > p:nth-of-type(1)",
+          "source": "html-text"
+        },
+        {
+          "quote": "structural elements like paragraphs, block quotations, lists, headings, rules, and code blocks.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(51)",
+          "source": "commonmark"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:code-block",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:code-block:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "代码块"
+        },
+        {
+          "id": "urn:kb-vocab-writing:code-block:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Code block"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The following example shows how a block of code could be marked up using the pre and code elements.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(69) > p:nth-of-type(1)",
+              "source": "html-text"
+            },
+            {
+              "quote": "structural elements like paragraphs, block quotations, lists, headings, rules, and code blocks.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(51)",
+              "source": "commonmark"
+            },
+            {
+              "quote": "The content of a code fence is treated as literal text, not parsed as inlines.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(133)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:code-block:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "在文档块层次承载代码或其他按字面处理的文本的结构。HTML 可将 code 放在 pre 内表示一块代码；CommonMark 的围栏内容按字面文本处理。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The content of a code fence is treated as literal text, not parsed as inlines.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(133)",
+              "source": "commonmark"
+            },
+            {
+              "quote": "The pre element represents a block of preformatted text, in which structure is represented by typographic conventions rather than by elements.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(6)",
+              "source": "html-grouping"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:code-block:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "Markdown 代码块也用于按字面保留内容；预格式文本不限于计算机代码，不能仅因内容放在代码块中就认定其主题属于编程。"
+        }
+      ]
+    },
+    {
+      "broader": [
+        {
+          "evidence": [
+            {
+              "quote": "A code fence is a sequence of at least three consecutive backtick characters",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(128)",
+              "source": "commonmark"
+            },
+            {
+              "quote": "A fenced code block begins with a code fence",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(128)",
+              "source": "commonmark"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:code-block"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "A code fence is a sequence of at least three consecutive backtick characters",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(128)",
+          "source": "commonmark"
+        },
+        {
+          "quote": "A fenced code block begins with a code fence",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(128)",
+          "source": "commonmark"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:fenced-code-block",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:fenced-code-block:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "围栏代码块"
+        },
+        {
+          "id": "urn:kb-vocab-writing:fenced-code-block:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Fenced code block"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "A code fence is a sequence of at least three consecutive backtick characters",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(128)",
+              "source": "commonmark"
+            },
+            {
+              "quote": "A fenced code block begins with a code fence",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(128)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:fenced-code-block:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "以至少三个连续反引号或波浪号构成的代码围栏开始的 CommonMark 代码块。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The content of a code fence is treated as literal text, not parsed as inlines.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(133)",
+              "source": "commonmark"
+            },
+            {
+              "quote": "However, this spec does not mandate any particular treatment of the info string .",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(133)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:fenced-code-block:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "围栏内容按字面文本处理，不进行行内解析。info string 的首词通常用于指明代码语言，但规范不强制某种处理方式。"
+        }
+      ]
+    },
+    {
+      "broader": [
+        {
+          "evidence": [
+            {
+              "quote": "An indented code block is composed of one or more indented chunks separated by blank lines.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(116)",
+              "source": "commonmark"
+            },
+            {
+              "quote": "The contents of the code block are the literal contents of the lines",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(116)",
+              "source": "commonmark"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:code-block"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "An indented code block is composed of one or more indented chunks separated by blank lines.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(116)",
+          "source": "commonmark"
+        },
+        {
+          "quote": "The contents of the code block are the literal contents of the lines",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(116)",
+          "source": "commonmark"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:indented-code-block",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:indented-code-block:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "缩进代码块"
+        },
+        {
+          "id": "urn:kb-vocab-writing:indented-code-block:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Indented code block"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "An indented code block is composed of one or more indented chunks separated by blank lines.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(116)",
+              "source": "commonmark"
+            },
+            {
+              "quote": "The contents of the code block are the literal contents of the lines",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(116)",
+              "source": "commonmark"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:indented-code-block:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "由一个或多个缩进片段组成的 CommonMark 代码块；片段中的非空行至少缩进四个空格，块内容去除四个缩进空格后按字面保留。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The pre element represents a block of preformatted text, in which structure is represented by typographic conventions rather than by elements.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(6)",
+          "source": "html-grouping"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:preformatted-text",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:preformatted-text:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "预格式文本"
+        },
+        {
+          "id": "urn:kb-vocab-writing:preformatted-text:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Preformatted text"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The pre element represents a block of preformatted text, in which structure is represented by typographic conventions rather than by elements.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(6)",
+              "source": "html-grouping"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:preformatted-text:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "通过排版约定而不是子元素表达内部结构的一块文本；HTML 的 pre 元素用于表示这种内容。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The var element represents a variable.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(64)",
+          "source": "html-text"
+        },
+        {
+          "quote": "or just be a term used as a placeholder in prose.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(64)",
+          "source": "html-text"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:variable",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:variable:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "变量"
+        },
+        {
+          "id": "urn:kb-vocab-writing:variable:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Variable"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The var element represents a variable.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(64)",
+              "source": "html-text"
+            },
+            {
+              "quote": "or just be a term used as a placeholder in prose.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(64)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:variable:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "在数学表达式、程序或文字中代表变量、常量标识符、物理量、函数参数或占位项的文字；HTML 的 var 元素表达这些用途。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The samp element represents sample or quoted output from another program or computing system.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(66)",
+          "source": "html-text"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:sample-output",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:sample-output:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "程序输出"
+        },
+        {
+          "id": "urn:kb-vocab-writing:sample-output:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Sample output"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The samp element represents sample or quoted output from another program or computing system.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(66)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:sample-output:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "来自另一程序或计算系统的示例输出或引用输出；HTML 的 samp 元素表达这种内容。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The kbd element represents user input",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(69)",
+          "source": "html-text"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:user-input",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:user-input:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "用户输入"
+        },
+        {
+          "id": "urn:kb-vocab-writing:user-input:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "User input"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The kbd element represents user input",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(69)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:user-input:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "用户向系统提供的输入内容；HTML 的 kbd 通常表示键盘输入，也可表示语音命令等输入。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "There are two options for delimiting a math expression inline with your text.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(4)",
+          "source": "github-math"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:inline-mathematical-expression",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:inline-mathematical-expression:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "行内公式"
+        },
+        {
+          "id": "urn:kb-vocab-writing:inline-mathematical-expression:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Inline mathematical expression"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "There are two options for delimiting a math expression inline with your text.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(4)",
+              "source": "github-math"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:inline-mathematical-expression:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "与正文文字位于同一行内的数学表达式。GitHub 支持在正文中以特定定界符表示这种公式。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "GitHub supports LaTeX formatted math within Markdown.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "source": "github-math"
+            },
+            {
+              "quote": "GitHub's math rendering capability uses MathJax;",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "source": "github-math"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:inline-mathematical-expression:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "这里记录 GitHub 的数学扩展；其数学渲染使用 MathJax，并支持 LaTeX 格式。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "To add a math expression as a block, start a new line and delimit the expression with two dollar symbols $$ .",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(7)",
+          "source": "github-math"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:display-mathematical-expression",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:display-mathematical-expression:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "独立公式"
+        },
+        {
+          "id": "urn:kb-vocab-writing:display-mathematical-expression:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Display mathematical expression"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "To add a math expression as a block, start a new line and delimit the expression with two dollar symbols $$ .",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(7)",
+              "source": "github-math"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:display-mathematical-expression:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "单独作为一块内容显示的数学表达式；GitHub 可用另起一行的双美元符号界定。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "GitHub's math rendering capability uses MathJax;",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "source": "github-math"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:display-mathematical-expression:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "这是 GitHub 提供的数学表示能力；其渲染使用 MathJax。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The hr element represents a paragraph -level thematic break",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(4)",
+          "source": "html-grouping"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:thematic-break",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:thematic-break:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "主题分隔"
+        },
+        {
+          "id": "urn:kb-vocab-writing:thematic-break:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Thematic break"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The hr element represents a paragraph -level thematic break",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(4)",
+              "source": "html-grouping"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:thematic-break:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "段落层次上的主题转换，例如故事场景变化或一节内部转向另一个主题；HTML 的 hr 可表达这种分隔。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The hr element does not affect the document's outline .",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(5)",
+              "source": "html-grouping"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:thematic-break:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "本记录采用文档内容中的主题转换语义；不把水平线外观本身作为定义。HTML 的 hr 不改变文档大纲。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The li element represents a list item.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(31)",
+          "source": "html-grouping"
+        },
+        {
+          "quote": "the element is an item of the parent element's list",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(31)",
+          "source": "html-grouping"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:list-item",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:list-item:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "列表项"
+        },
+        {
+          "id": "urn:kb-vocab-writing:list-item:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "List item"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The li element represents a list item.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(31)",
+              "source": "html-grouping"
+            },
+            {
+              "quote": "the element is an item of the parent element's list",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(31)",
+              "source": "html-grouping"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:list-item:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "构成列表的一个项目；在 HTML 中，li 的父元素为 ol、ul 或 menu 时，它是相应列表中的项。"
+        }
+      ]
+    },
+    {
+      "broader": [
+        {
+          "evidence": [
+            {
+              "quote": "You can create a nested list by indenting one or more list items below another item.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(49)",
+              "source": "github-format"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:list"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "You can create a nested list by indenting one or more list items below another item.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(49)",
+          "source": "github-format"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:nested-list",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:nested-list:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "嵌套列表"
+        },
+        {
+          "id": "urn:kb-vocab-writing:nested-list:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Nested list"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "You can create a nested list by indenting one or more list items below another item.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(49)",
+              "source": "github-format"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:nested-list:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "位于另一个列表项之内的列表；Markdown 可通过在该项下缩进后续列表项来表示。"
+        }
+      ]
+    },
+    {
+      "broader": [
+        {
+          "evidence": [
+            {
+              "quote": "A task list item is a list item where the first block in it is a paragraph",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(276) > p:nth-of-type(2)",
+              "source": "gfm"
+            },
+            {
+              "quote": "the task list item marker is replaced with a semantic checkbox element;",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(276) > p:nth-of-type(4)",
+              "source": "gfm"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:list-item"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "A task list item is a list item where the first block in it is a paragraph",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(276) > p:nth-of-type(2)",
+          "source": "gfm"
+        },
+        {
+          "quote": "the task list item marker is replaced with a semantic checkbox element;",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(276) > p:nth-of-type(4)",
+          "source": "gfm"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:task-list-item",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:task-list-item:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "任务列表项"
+        },
+        {
+          "id": "urn:kb-vocab-writing:task-list-item:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Task list item"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "A task list item is a list item where the first block in it is a paragraph",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(276) > p:nth-of-type(2)",
+              "source": "gfm"
+            },
+            {
+              "quote": "the task list item marker is replaced with a semantic checkbox element;",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(276) > p:nth-of-type(4)",
+              "source": "gfm"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:task-list-item:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "GFM 扩展中的列表项，其首个块是以任务标记开头的段落；该标记在显示时转换为具有语义的复选框。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "If the character between the brackets is a whitespace character, the checkbox is unchecked. Otherwise, the checkbox is checked.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(276) > p:nth-of-type(5)",
+              "source": "gfm"
+            },
+            {
+              "quote": "This spec does not define how the checkbox elements are interacted with:",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(276) > p:nth-of-type(6)",
+              "source": "gfm"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:task-list-item:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "规范区分勾选与未勾选的标记，但不规定复选框必须允许交互。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The figcaption element represents a caption or legend for the rest of the contents of the figcaption element's parent figure element, if any.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(49)",
+          "source": "html-grouping"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:figure-caption",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:figure-caption:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "图注"
+        },
+        {
+          "id": "urn:kb-vocab-writing:figure-caption:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Figure caption"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The figcaption element represents a caption or legend for the rest of the contents of the figcaption element's parent figure element, if any.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(49)",
+              "source": "html-grouping"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:figure-caption:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "说明同一 figure 中其余内容的 caption 或 legend；在 HTML 中由 figcaption 表示。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The figure element represents some flow content , optionally with a caption, that is self-contained",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(44)",
+              "source": "html-grouping"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:figure-caption:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "HTML 的 figure 可承载自包含且通常作为整体引用的内容；这里的图注不只限定于位图图片。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "You can write a footnote right after your reference to the footnote, and the footnote will still render at the bottom of the Markdown.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(11) > p:nth-of-type(2)",
+          "source": "github-format"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:footnote",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:footnote:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "脚注"
+        },
+        {
+          "id": "urn:kb-vocab-writing:footnote:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Footnote"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "You can write a footnote right after your reference to the footnote, and the footnote will still render at the bottom of the Markdown.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(11) > p:nth-of-type(2)",
+              "source": "github-format"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:footnote:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "由正文中的脚注引用关联的附注；在 GitHub 的 Markdown 呈现中，注释正文显示在文档底部。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The position of a footnote in your Markdown does not influence where the footnote will be rendered.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(11) > p:nth-of-type(2)",
+              "source": "github-format"
+            },
+            {
+              "quote": "Footnotes are not supported in wikis.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(11) > p:nth-of-type(2)",
+              "source": "github-format"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:footnote:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "脚注在源文件中的位置不决定最终呈现位置；GitHub wiki 不支持该脚注功能。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Here is a simple footnote[^1].",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(18)",
+          "source": "github-format"
+        },
+        {
+          "quote": "[^1]: My reference.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(18)",
+          "source": "github-format"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:footnote-reference",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:footnote-reference:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "脚注引用"
+        },
+        {
+          "id": "urn:kb-vocab-writing:footnote-reference:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Footnote reference"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Here is a simple footnote[^1].",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(18)",
+              "source": "github-format"
+            },
+            {
+              "quote": "[^1]: My reference.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(18)",
+              "source": "github-format"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:footnote-reference:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "正文中指向相应脚注的标记；GitHub 的示例使用带编号的方括号语法，将正文标记与注释正文关联。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Alerts , also sometimes known as callouts or admonitions , are a Markdown extension based on the blockquote syntax",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(83)",
+          "source": "github-format"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:alert",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:alert:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "提示块"
+        },
+        {
+          "id": "urn:kb-vocab-writing:alert:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Alert"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Alerts , also sometimes known as callouts or admonitions , are a Markdown extension based on the blockquote syntax",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(83)",
+              "source": "github-format"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:alert:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "GitHub 中基于块引用语法、用于突出关键信息的 Markdown 扩展；来源也称其为 callout 或 admonition。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "On GitHub, they are displayed with distinctive colors and icons to indicate the significance of the content.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(83)",
+              "source": "github-format"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:alert:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "本记录限定为 GitHub 文档中的提示块，不将其名称自动等同于其他平台的提示类型或动态通知。"
+        }
+      ]
+    },
+    {
+      "broader": [
+        {
+          "evidence": [
+            {
+              "quote": "Five types of alerts are available:",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(85)",
+              "source": "github-format"
+            },
+            {
+              "quote": "Useful information that users should know, even when skimming content.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+              "source": "github-format"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:alert"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "Useful information that users should know, even when skimming content.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+          "source": "github-format"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:note-admonition",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:note-admonition:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "说明"
+        },
+        {
+          "id": "urn:kb-vocab-writing:note-admonition:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Note"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Useful information that users should know, even when skimming content.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+              "source": "github-format"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:note-admonition:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "向读者提供即使略读时也应知道的有用信息。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Five types of alerts are available:",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(85)",
+              "source": "github-format"
+            },
+            {
+              "quote": "Useful information that users should know, even when skimming content.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+              "source": "github-format"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:note-admonition:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "本记录限定为 GitHub 提示块的对应类型。"
+        }
+      ]
+    },
+    {
+      "broader": [
+        {
+          "evidence": [
+            {
+              "quote": "Five types of alerts are available:",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(85)",
+              "source": "github-format"
+            },
+            {
+              "quote": "Helpful advice for doing things better or more easily.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+              "source": "github-format"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:alert"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "Helpful advice for doing things better or more easily.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+          "source": "github-format"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:tip-admonition",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:tip-admonition:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "提示"
+        },
+        {
+          "id": "urn:kb-vocab-writing:tip-admonition:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Tip"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Helpful advice for doing things better or more easily.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+              "source": "github-format"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:tip-admonition:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "帮助读者更好或更容易完成事项的建议。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Five types of alerts are available:",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(85)",
+              "source": "github-format"
+            },
+            {
+              "quote": "Helpful advice for doing things better or more easily.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+              "source": "github-format"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:tip-admonition:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "本记录限定为 GitHub 提示块的对应类型。"
+        }
+      ]
+    },
+    {
+      "broader": [
+        {
+          "evidence": [
+            {
+              "quote": "Five types of alerts are available:",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(85)",
+              "source": "github-format"
+            },
+            {
+              "quote": "Key information users need to know to achieve their goal.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+              "source": "github-format"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:alert"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "Key information users need to know to achieve their goal.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+          "source": "github-format"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:important-admonition",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:important-admonition:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "重要信息"
+        },
+        {
+          "id": "urn:kb-vocab-writing:important-admonition:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Important"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Key information users need to know to achieve their goal.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+              "source": "github-format"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:important-admonition:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "读者达成目标所需要知道的关键信息。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Five types of alerts are available:",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(85)",
+              "source": "github-format"
+            },
+            {
+              "quote": "Key information users need to know to achieve their goal.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+              "source": "github-format"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:important-admonition:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "本记录限定为 GitHub 提示块的对应类型。"
+        }
+      ]
+    },
+    {
+      "broader": [
+        {
+          "evidence": [
+            {
+              "quote": "Five types of alerts are available:",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(85)",
+              "source": "github-format"
+            },
+            {
+              "quote": "Urgent info that needs immediate user attention to avoid problems.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+              "source": "github-format"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:alert"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "Urgent info that needs immediate user attention to avoid problems.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+          "source": "github-format"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:warning-admonition",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:warning-admonition:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "警告"
+        },
+        {
+          "id": "urn:kb-vocab-writing:warning-admonition:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Warning"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Urgent info that needs immediate user attention to avoid problems.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+              "source": "github-format"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:warning-admonition:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "为避免问题而需要读者立即注意的紧急信息。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Five types of alerts are available:",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(85)",
+              "source": "github-format"
+            },
+            {
+              "quote": "Urgent info that needs immediate user attention to avoid problems.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+              "source": "github-format"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:warning-admonition:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "本记录限定为 GitHub 提示块的对应类型。"
+        }
+      ]
+    },
+    {
+      "broader": [
+        {
+          "evidence": [
+            {
+              "quote": "Five types of alerts are available:",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(85)",
+              "source": "github-format"
+            },
+            {
+              "quote": "Advises about risks or negative outcomes of certain actions.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+              "source": "github-format"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:alert"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "Advises about risks or negative outcomes of certain actions.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+          "source": "github-format"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:caution-admonition",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:caution-admonition:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "注意"
+        },
+        {
+          "id": "urn:kb-vocab-writing:caution-admonition:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Caution"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Advises about risks or negative outcomes of certain actions.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+              "source": "github-format"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:caution-admonition:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "说明特定操作可能带来的风险或不利后果的信息。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Five types of alerts are available:",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(85)",
+              "source": "github-format"
+            },
+            {
+              "quote": "Advises about risks or negative outcomes of certain actions.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > pre:nth-of-type(19)",
+              "source": "github-format"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:caution-admonition:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "本记录限定为 GitHub 提示块的对应类型。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The abbr element represents an abbreviation or acronym, optionally with its expansion.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(37)",
+          "source": "html-text"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:abbreviation",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:abbreviation:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "缩略语"
+        },
+        {
+          "id": "urn:kb-vocab-writing:abbreviation:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Abbreviation"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The abbr element represents an abbreviation or acronym, optionally with its expansion.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(37)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:abbreviation:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "可与完整展开形式相联系的缩略表达；HTML 的 abbr 元素表示 abbreviation 或 acronym，并可附带展开形式。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The abbr element represents an abbreviation or acronym, optionally with its expansion.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(37)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:abbreviation:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "本记录记录 HTML 所承载的缩略表达，不将 acronym、initialism 或简称之间的术语边界重新划定。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "the sub element represents a subscript.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(73)",
+          "source": "html-text"
+        },
+        {
+          "quote": "the subscript that identifies the variable in a family of variables:",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(82) > p:nth-of-type(1)",
+          "source": "html-text"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:subscript",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:subscript:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "下标"
+        },
+        {
+          "id": "urn:kb-vocab-writing:subscript:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Subscript"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "the sub element represents a subscript.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(73)",
+              "source": "html-text"
+            },
+            {
+              "quote": "the subscript that identifies the variable in a family of variables:",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(82) > p:nth-of-type(1)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:subscript:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "具有特定意义的下标文字；例如在变量中标识变量族的某个成员。HTML 使用 sub 表达。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "These elements must be used only to mark up typographical conventions with specific meanings, not for typographical presentation for presentation's sake.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(74)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:subscript:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "HTML 要求 sub 和 sup 用于具有具体意义的排版约定，不用于纯装饰性的文字位置变化。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The sup element represents a superscript",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(73)",
+          "source": "html-text"
+        },
+        {
+          "quote": "superscripts are part of the typographical conventions for some abbreviations.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(75)",
+          "source": "html-text"
+        },
+        {
+          "quote": "Mathematical expressions often use subscripts and superscripts.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(77)",
+          "source": "html-text"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:superscript",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:superscript:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "上标"
+        },
+        {
+          "id": "urn:kb-vocab-writing:superscript:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Superscript"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The sup element represents a superscript",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(73)",
+              "source": "html-text"
+            },
+            {
+              "quote": "superscripts are part of the typographical conventions for some abbreviations.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(75)",
+              "source": "html-text"
+            },
+            {
+              "quote": "Mathematical expressions often use subscripts and superscripts.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(77)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:superscript:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "具有特定意义的上标文字；例如部分语言缩写中的排版约定或数学表达式中的上标。HTML 使用 sup 表达。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "These elements must be used only to mark up typographical conventions with specific meanings, not for typographical presentation for presentation's sake.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(74)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:superscript:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "HTML 要求 sub 和 sup 用于具有具体意义的排版约定，不用于纯装饰性的文字位置变化。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The dfn element represents the defining instance of a term.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(33)",
+          "source": "html-text"
+        },
+        {
+          "quote": "must also contain the definition(s) for the term given by the dfn element.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(33)",
+          "source": "html-text"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:defining-instance",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:defining-instance:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Defining instance"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The dfn element represents the defining instance of a term.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(33)",
+              "source": "html-text"
+            },
+            {
+              "quote": "must also contain the definition(s) for the term given by the dfn element.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(33)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:defining-instance:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "一个术语在包含其定义的语境中的定义性出现；HTML 的 dfn 标记该出现，最近的段落、描述列表组或节还必须包含该术语的定义。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Ruby annotations are short runs of text presented alongside base text, primarily used in East Asian typography as a guide for pronunciation or to include other annotations.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(41)",
+          "source": "html-text"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:ruby-annotation",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:ruby-annotation:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Ruby annotation"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "Ruby annotations are short runs of text presented alongside base text, primarily used in East Asian typography as a guide for pronunciation or to include other annotations.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(41)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:ruby-annotation:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "在基础文字旁呈现的短文字，主要用于东亚排版中的读音提示，也可提供其他注释。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "or to include other annotations.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(41)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:ruby-annotation:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "这里的 ruby annotation 不限于读音提示，也可包含其他注释。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "The small element represents side comments such as small print.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(16)",
+          "source": "html-text"
+        },
+        {
+          "quote": "Small print typically features disclaimers, caveats, legal restrictions, or copyrights.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(17)",
+          "source": "html-text"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:side-comment",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:side-comment:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "附注"
+        },
+        {
+          "id": "urn:kb-vocab-writing:side-comment:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Side comment"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "The small element represents side comments such as small print.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(16)",
+              "source": "html-text"
+            },
+            {
+              "quote": "Small print typically features disclaimers, caveats, legal restrictions, or copyrights.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(17)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:side-comment:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "附带说明，例如免责声明、使用限制或版权等 small print；HTML 的 small 元素表示这类内容。"
+        },
+        {
+          "applicability": "根据所列来源归纳的中文说明，非官方译文；适用范围由正文及来源限定，不自动成为项目规则。",
+          "evidence": [
+            {
+              "quote": "does not \"de-emphasize\" or lower the importance of text",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(18)",
+              "source": "html-text"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:side-comment:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "small 不表示降低原有 em 或 strong 文本的重要性，也不能仅按字号大小理解。"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "key": "文本标记与语义",
+      "members": [
+        "urn:kb-vocab-writing:emphasis",
+        "urn:kb-vocab-writing:strong-importance",
+        "urn:kb-vocab-writing:marked-text",
+        "urn:kb-vocab-writing:strikethrough",
+        "urn:kb-vocab-writing:insertion",
+        "urn:kb-vocab-writing:deletion",
+        "urn:kb-vocab-writing:block-quotation",
+        "urn:kb-vocab-writing:inline-quotation",
+        "urn:kb-vocab-writing:hyperlink",
+        "urn:kb-vocab-writing:link-text",
+        "urn:kb-vocab-writing:link-destination",
+        "urn:kb-vocab-writing:inline-link",
+        "urn:kb-vocab-writing:reference-link",
+        "urn:kb-vocab-writing:autolink",
+        "urn:kb-vocab-writing:code-span",
+        "urn:kb-vocab-writing:code-block",
+        "urn:kb-vocab-writing:fenced-code-block",
+        "urn:kb-vocab-writing:indented-code-block",
+        "urn:kb-vocab-writing:preformatted-text",
+        "urn:kb-vocab-writing:variable",
+        "urn:kb-vocab-writing:sample-output",
+        "urn:kb-vocab-writing:user-input",
+        "urn:kb-vocab-writing:inline-mathematical-expression",
+        "urn:kb-vocab-writing:display-mathematical-expression",
+        "urn:kb-vocab-writing:thematic-break",
+        "urn:kb-vocab-writing:list-item",
+        "urn:kb-vocab-writing:nested-list",
+        "urn:kb-vocab-writing:task-list-item",
+        "urn:kb-vocab-writing:figure-caption",
+        "urn:kb-vocab-writing:footnote",
+        "urn:kb-vocab-writing:footnote-reference",
+        "urn:kb-vocab-writing:alert",
+        "urn:kb-vocab-writing:note-admonition",
+        "urn:kb-vocab-writing:tip-admonition",
+        "urn:kb-vocab-writing:important-admonition",
+        "urn:kb-vocab-writing:warning-admonition",
+        "urn:kb-vocab-writing:caution-admonition",
+        "urn:kb-vocab-writing:abbreviation",
+        "urn:kb-vocab-writing:subscript",
+        "urn:kb-vocab-writing:superscript",
+        "urn:kb-vocab-writing:defining-instance",
+        "urn:kb-vocab-writing:ruby-annotation",
+        "urn:kb-vocab-writing:side-comment"
+      ]
+    }
+  ],
+  "source_language_labels": [
+    "urn:kb-vocab-writing:emphasis:label:en",
+    "urn:kb-vocab-writing:strong-importance:label:en",
+    "urn:kb-vocab-writing:strikethrough:label:en",
+    "urn:kb-vocab-writing:hyperlink:label:en",
+    "urn:kb-vocab-writing:link-text:label:en",
+    "urn:kb-vocab-writing:link-destination:label:en",
+    "urn:kb-vocab-writing:inline-link:label:en",
+    "urn:kb-vocab-writing:reference-link:label:en",
+    "urn:kb-vocab-writing:autolink:label:en",
+    "urn:kb-vocab-writing:code-span:label:en",
+    "urn:kb-vocab-writing:code-block:label:en",
+    "urn:kb-vocab-writing:fenced-code-block:label:en",
+    "urn:kb-vocab-writing:indented-code-block:label:en",
+    "urn:kb-vocab-writing:preformatted-text:label:en",
+    "urn:kb-vocab-writing:variable:label:en",
+    "urn:kb-vocab-writing:user-input:label:en",
+    "urn:kb-vocab-writing:thematic-break:label:en",
+    "urn:kb-vocab-writing:list-item:label:en",
+    "urn:kb-vocab-writing:nested-list:label:en",
+    "urn:kb-vocab-writing:task-list-item:label:en",
+    "urn:kb-vocab-writing:footnote:label:en",
+    "urn:kb-vocab-writing:alert:label:en",
+    "urn:kb-vocab-writing:note-admonition:label:en",
+    "urn:kb-vocab-writing:tip-admonition:label:en",
+    "urn:kb-vocab-writing:important-admonition:label:en",
+    "urn:kb-vocab-writing:warning-admonition:label:en",
+    "urn:kb-vocab-writing:caution-admonition:label:en",
+    "urn:kb-vocab-writing:abbreviation:label:en",
+    "urn:kb-vocab-writing:subscript:label:en",
+    "urn:kb-vocab-writing:superscript:label:en",
+    "urn:kb-vocab-writing:defining-instance:label:en",
+    "urn:kb-vocab-writing:ruby-annotation:label:en",
+    "urn:kb-vocab-writing:side-comment:label:en"
+  ],
+  "unresolved": [
+    {
+      "evidence": [
+        {
+          "quote": "The s element represents contents that are no longer accurate or no longer relevant.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(21)",
+          "source": "html-text"
+        }
+      ],
+      "issue": "已在 strikethrough 与 deletion 的范围说明保留 HTML s 的不再准确或不再相关语义；未为 s 的整个语义范围选定独立通用概念名称。",
+      "topic": "内容失效"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:defining-instance",
+      "evidence": [
+        {
+          "quote": "The dfn element represents the defining instance of a term.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(33)",
+          "source": "html-text"
+        },
+        {
+          "quote": "must also contain the definition(s) for the term given by the dfn element.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(33)",
+          "source": "html-text"
+        }
+      ],
+      "issue": "未为此来源语义确定可靠的惯用中文名称；保留英文 preferred label。",
+      "language": "zh"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:ruby-annotation",
+      "evidence": [
+        {
+          "quote": "Ruby annotations are short runs of text presented alongside base text, primarily used in East Asian typography as a guide for pronunciation or to include other annotations.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(41)",
+          "source": "html-text"
+        }
+      ],
+      "issue": "未为此来源语义确定可靠的惯用中文名称；保留英文 preferred label。",
+      "language": "zh"
+    }
+  ]
+}

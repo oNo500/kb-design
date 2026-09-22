@@ -1,0 +1,1844 @@
+{
+  "concepts": [
+    {
+      "id": "urn:kb-vocab-writing:writing",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:writing:label:zh",
+          "role": "preferred",
+          "text": "写作",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:writing:label:en",
+          "role": "preferred",
+          "text": "Writing (Composition)",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "eric-writing",
+          "selector": "#details > div > div:nth-of-type(1) > div:nth-of-type(2)",
+          "quote": "Organization and expression of ideas or information using written language"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:writing:definition",
+          "kind": "definition",
+          "text": "使用书面语言组织和表达思想或信息的活动。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "eric-writing",
+              "selector": "#details > div > div:nth-of-type(1) > div:nth-of-type(2)",
+              "quote": "Organization and expression of ideas or information using written language"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:writing:scope:1",
+          "kind": "scope",
+          "text": "本项采用 ERIC 叙词表 Writing (Composition) 的范围说明。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "eric-writing",
+              "selector": "#details > div > div:nth-of-type(1) > div:nth-of-type(2)",
+              "quote": "Organization and expression of ideas or information using written language"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:tutorial",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:tutorial:label:zh",
+          "role": "preferred",
+          "text": "教程",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:tutorial:label:en",
+          "role": "preferred",
+          "text": "Tutorial",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "tutorials",
+          "selector": "#tutorials > p:nth-of-type(1)",
+          "quote": "A tutorial is an experience that takes place under the guidance of a tutor. A tutorial is always learning-oriented ."
+        },
+        {
+          "source": "tutorials",
+          "selector": "#tutorials > p:nth-of-type(2)",
+          "quote": "A tutorial is a practical activity , in which the student learns by doing something meaningful, towards some achievable goal."
+        },
+        {
+          "source": "tutorials",
+          "selector": "#tutorials > p:nth-of-type(3)",
+          "quote": "A tutorial serves the user’s acquisition of skills and knowledge - their study."
+        },
+        {
+          "source": "tutorials",
+          "selector": "#tutorials > p:nth-of-type(4)",
+          "quote": "A tutorial in other words is a lesson."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:tutorial:definition",
+          "kind": "definition",
+          "text": "在指导下通过完成有意义的实践活动来获得知识与技能的学习体验；在文档中表现为引导学习者完成该体验的课程。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "tutorials",
+              "selector": "#tutorials > p:nth-of-type(1)",
+              "quote": "A tutorial is an experience that takes place under the guidance of a tutor. A tutorial is always learning-oriented ."
+            },
+            {
+              "source": "tutorials",
+              "selector": "#tutorials > p:nth-of-type(2)",
+              "quote": "A tutorial is a practical activity , in which the student learns by doing something meaningful, towards some achievable goal."
+            },
+            {
+              "source": "tutorials",
+              "selector": "#tutorials > p:nth-of-type(3)",
+              "quote": "A tutorial serves the user’s acquisition of skills and knowledge - their study."
+            },
+            {
+              "source": "tutorials",
+              "selector": "#tutorials > p:nth-of-type(4)",
+              "quote": "A tutorial in other words is a lesson."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:tutorial:scope:1",
+          "kind": "scope",
+          "text": "本项采用 Diátaxis 面向实践者需求的文档类型划分；该框架将教程、操作指南、参考文档和解释性文档区分为四类。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "diataxis-foundations",
+              "selector": "#serving-needs > p:nth-of-type(4)",
+              "quote": "the tutorials, how-to guides, reference and explanation of Diátaxis are a complete enumeration of the types of documentation that serve practitioners in a craft."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:tutorial:guidance:2",
+          "kind": "guidance",
+          "text": "让学习者执行能够获得可见结果的具体任务，并在步骤中说明预期结果。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "tutorials",
+              "selector": "#key-principles > p:nth-of-type(5)",
+              "quote": "Give your learner things to do , through which they can learn."
+            },
+            {
+              "source": "tutorials",
+              "selector": "#deliver-visible-results-early-and-often > p:nth-of-type(2)",
+              "quote": "Every step the learner follows should produce a comprehensible result, however small."
+            },
+            {
+              "source": "tutorials",
+              "selector": "#maintain-a-narrative-of-the-expected > p:nth-of-type(2)",
+              "quote": "Show the user actual example output, or even the exact expected output."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:how-to-guide",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:how-to-guide:label:zh",
+          "role": "preferred",
+          "text": "操作指南",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:how-to-guide:label:en",
+          "role": "preferred",
+          "text": "How-to guide",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "how-to-guides",
+          "selector": "#how-to-guides > p:nth-of-type(1)",
+          "quote": "How-to guides are directions that guide the reader through a problem or towards a result. How-to guides are goal-oriented ."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:how-to-guide:definition",
+          "kind": "definition",
+          "text": "引导读者解决具体问题或实现结果的指引，服务于读者完成实际工作。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "how-to-guides",
+              "selector": "#how-to-guides > p:nth-of-type(1)",
+              "quote": "How-to guides are directions that guide the reader through a problem or towards a result. How-to guides are goal-oriented ."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:how-to-guide:scope:1",
+          "kind": "scope",
+          "text": "本项采用 Diátaxis 面向实践者需求的文档类型划分；该框架将教程、操作指南、参考文档和解释性文档区分为四类。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "diataxis-foundations",
+              "selector": "#serving-needs > p:nth-of-type(4)",
+              "quote": "the tutorials, how-to guides, reference and explanation of Diátaxis are a complete enumeration of the types of documentation that serve practitioners in a craft."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:how-to-guide:guidance:2",
+          "kind": "guidance",
+          "text": "围绕读者要完成的任务组织内容；实际情况需要判断或分支时，不把指南强行简化成单一线性步骤。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "how-to-guides",
+              "selector": "#how-to-guides-addressed-to-problems > aside:nth-of-type(2) > p",
+              "quote": "How-to guides are about goals, projects and problems, not about tools."
+            },
+            {
+              "source": "how-to-guides",
+              "selector": "#what-how-to-guides-are-not > p:nth-of-type(2)",
+              "quote": "The sequences of action in a how-to guide sometimes need to fork and overlap, and they have multiple entry and exit-points."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:reference-documentation",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:reference-documentation:label:zh",
+          "role": "preferred",
+          "text": "参考文档",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:reference-documentation:label:en",
+          "role": "preferred",
+          "text": "Reference",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "reference",
+          "selector": "#reference > p:nth-of-type(1)",
+          "quote": "Reference guides are technical descriptions of the machinery and how to operate it. Reference material is information-oriented ."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:reference-documentation:definition",
+          "kind": "definition",
+          "text": "面向信息查阅，描述产品、系统或工具本身及其操作方式的技术资料。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "reference",
+              "selector": "#reference > p:nth-of-type(1)",
+              "quote": "Reference guides are technical descriptions of the machinery and how to operate it. Reference material is information-oriented ."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:reference-documentation:scope:1",
+          "kind": "scope",
+          "text": "本项采用 Diátaxis 面向实践者需求的文档类型划分；该框架将教程、操作指南、参考文档和解释性文档区分为四类。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "diataxis-foundations",
+              "selector": "#serving-needs > p:nth-of-type(4)",
+              "quote": "the tutorials, how-to guides, reference and explanation of Diátaxis are a complete enumeration of the types of documentation that serve practitioners in a craft."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:reference-documentation:guidance:2",
+          "kind": "guidance",
+          "text": "以中立、准确的方式描述对象，并采用读者熟悉的一致结构；需要教学、任务指引或解释时使用相应文档的链接。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "reference",
+              "selector": "#describe-and-only-describe > p:nth-of-type(1)",
+              "quote": "Neutral description is the key imperative of technical reference."
+            },
+            {
+              "source": "reference",
+              "selector": "#adopt-standard-patterns > p:nth-of-type(1)",
+              "quote": "Reference material is useful when it is consistent."
+            },
+            {
+              "source": "reference",
+              "selector": "#describe-and-only-describe > p:nth-of-type(3)",
+              "quote": "Instead, link to how-to guides, explanation and introductory tutorials."
+            },
+            {
+              "source": "reference",
+              "selector": "#describe-and-only-describe > p:nth-of-type(2)",
+              "quote": "technical reference, which instead demands accuracy, precision, completeness and clarity."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:explanation-documentation",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:explanation-documentation:label:zh",
+          "role": "preferred",
+          "text": "解释性文档",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:explanation-documentation:label:en",
+          "role": "preferred",
+          "text": "Explanation",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "explanation",
+          "selector": "#explanation > p:nth-of-type(1)",
+          "quote": "Explanation is a discursive treatment of a subject, that permits reflection . Explanation is understanding-oriented ."
+        },
+        {
+          "source": "explanation",
+          "selector": "#explanation > p:nth-of-type(2)",
+          "quote": "Explanation deepens and broadens the reader’s understanding of a subject."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:explanation-documentation:definition",
+          "kind": "definition",
+          "text": "通过讨论一个主题，为反思提供材料并加深读者理解的文档。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "explanation",
+              "selector": "#explanation > p:nth-of-type(1)",
+              "quote": "Explanation is a discursive treatment of a subject, that permits reflection . Explanation is understanding-oriented ."
+            },
+            {
+              "source": "explanation",
+              "selector": "#explanation > p:nth-of-type(2)",
+              "quote": "Explanation deepens and broadens the reader’s understanding of a subject."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:explanation-documentation:scope:1",
+          "kind": "scope",
+          "text": "本项采用 Diátaxis 面向实践者需求的文档类型划分；该框架将教程、操作指南、参考文档和解释性文档区分为四类。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "diataxis-foundations",
+              "selector": "#serving-needs > p:nth-of-type(4)",
+              "quote": "the tutorials, how-to guides, reference and explanation of Diátaxis are a complete enumeration of the types of documentation that serve practitioners in a craft."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:explanation-documentation:guidance:2",
+          "kind": "guidance",
+          "text": "说明背景和上下文、形成现状的原因及其影响，并建立有助于理解的联系。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "explanation",
+              "selector": "#provide-context > p",
+              "quote": "Provide background and context in your explanation : explain why things are so - design decisions, historical reasons, technical constraints - draw implications, mention specific examples."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:audience",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:audience:label:zh",
+          "role": "preferred",
+          "text": "读者",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:audience:label:en",
+          "role": "preferred",
+          "text": "Audience",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "audience",
+          "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(7)",
+          "quote": "Begin by identifying your audience's role (s)."
+        },
+        {
+          "source": "audience",
+          "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(10)",
+          "quote": "Roles, by themselves, are insufficient for defining an audience. That is, you must also consider your audience's proximity to the knowledge."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:audience:definition",
+          "kind": "definition",
+          "text": "文档所面向的人群，其角色以及对相关知识的熟悉程度构成确定读者范围的依据。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(7)",
+              "quote": "Begin by identifying your audience's role (s)."
+            },
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(10)",
+              "quote": "Roles, by themselves, are insufficient for defining an audience. That is, you must also consider your audience's proximity to the knowledge."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:audience:guidance:1",
+          "kind": "guidance",
+          "text": "确定读者时，同时考虑其角色、专业背景、项目熟悉程度，以及距离上次接触相关知识的时间。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(7)",
+              "quote": "Begin by identifying your audience's role (s)."
+            },
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(10)",
+              "quote": "Roles, by themselves, are insufficient for defining an audience. That is, you must also consider your audience's proximity to the knowledge."
+            },
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(11)",
+              "quote": "Time also affects proximity."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:audience-needs",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:audience-needs:label:zh",
+          "role": "preferred",
+          "text": "读者需求",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:audience-needs:label:en",
+          "role": "preferred",
+          "text": "Audience needs",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "audience",
+          "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > blockquote:nth-of-type(1) > p",
+          "quote": "good documentation = knowledge and skills your audience needs to do a task − your audience's current knowledge and skills"
+        },
+        {
+          "source": "audience",
+          "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(13)",
+          "quote": "Write down a list of everything your target audience needs to learn to accomplish goals."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:audience-needs:definition",
+          "kind": "definition",
+          "text": "读者为完成目标或任务需要获得的知识、技能或信息。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > blockquote:nth-of-type(1) > p",
+              "quote": "good documentation = knowledge and skills your audience needs to do a task − your audience's current knowledge and skills"
+            },
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(13)",
+              "quote": "Write down a list of everything your target audience needs to learn to accomplish goals."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:audience-needs:guidance:1",
+          "kind": "guidance",
+          "text": "列明读者阅读后需要完成的任务；对设计说明等文档，列明读者需要了解的信息。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(15)",
+              "quote": "If you are writing a design spec, then your list should focus on information your target audience should learn rather than on mastering specific tasks."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:prior-knowledge",
+          "evidence": [
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > blockquote:nth-of-type(1) > p",
+              "quote": "good documentation = knowledge and skills your audience needs to do a task − your audience's current knowledge and skills"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:prior-knowledge",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:prior-knowledge:label:zh",
+          "role": "preferred",
+          "text": "已有知识",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:prior-knowledge:label:en",
+          "role": "preferred",
+          "text": "Prior knowledge",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "audience",
+          "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > blockquote:nth-of-type(1) > p",
+          "quote": "good documentation = knowledge and skills your audience needs to do a task − your audience's current knowledge and skills"
+        },
+        {
+          "source": "audience",
+          "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(4)",
+          "quote": "make sure your document provides the information that your audience needs but doesn't already have."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:prior-knowledge:definition",
+          "kind": "definition",
+          "text": "读者阅读文档之前已经掌握、因而可以作为理解起点的知识与技能。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > blockquote:nth-of-type(1) > p",
+              "quote": "good documentation = knowledge and skills your audience needs to do a task − your audience's current knowledge and skills"
+            },
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(4)",
+              "quote": "make sure your document provides the information that your audience needs but doesn't already have."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:prior-knowledge:scope:1",
+          "kind": "scope",
+          "text": "此处包含与任务相关的已有技能；同一角色的读者不一定具有相同的知识背景。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(9)",
+              "quote": "Writing would be so much easier if everyone in the same role shared exactly the same knowledge. Unfortunately, knowledge within the same role quickly diverges."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:audience-analysis",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:audience-analysis:label:zh",
+          "role": "preferred",
+          "text": "读者分析",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:audience-analysis:label:en",
+          "role": "preferred",
+          "text": "Audience analysis",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "audience",
+          "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(7)",
+          "quote": "Begin by identifying your audience's role (s)."
+        },
+        {
+          "source": "audience",
+          "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(10)",
+          "quote": "Roles, by themselves, are insufficient for defining an audience. That is, you must also consider your audience's proximity to the knowledge."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:audience-analysis:definition",
+          "kind": "definition",
+          "text": "识别目标读者的角色与相关知识状况，以明确文档所面向人群的分析。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(7)",
+              "quote": "Begin by identifying your audience's role (s)."
+            },
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(10)",
+              "quote": "Roles, by themselves, are insufficient for defining an audience. That is, you must also consider your audience's proximity to the knowledge."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:audience-analysis:example:1",
+          "kind": "example",
+          "text": "Google 的示例通过目标读者的角色、已知 API、开发环境经验及需要复习的知识来描述读者。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > blockquote:nth-of-type(2) > p:nth-of-type(1)",
+              "quote": "The target audience for Project Zylmon falls into the following roles:"
+            },
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > blockquote:nth-of-type(2) > ul:nth-of-type(2) > li:nth-of-type(1)",
+              "quote": "My target audience already knows the Zyljeune APIs, which are somewhat similar to the Zylmon APIs."
+            },
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > blockquote:nth-of-type(2) > ul:nth-of-type(2) > li:nth-of-type(2)",
+              "quote": "My target audience knows C++, but has not typically built C++ programs in the new Winged Victory development environment."
+            },
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > blockquote:nth-of-type(2) > ul:nth-of-type(2) > li:nth-of-type(3)",
+              "quote": "My target audience took linear algebra in university, but many members of the team need a refresher on matrix multiplication."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:audience",
+          "evidence": [
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(7)",
+              "quote": "Begin by identifying your audience's role (s)."
+            },
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(10)",
+              "quote": "Roles, by themselves, are insufficient for defining an audience. That is, you must also consider your audience's proximity to the knowledge."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:curse-of-knowledge",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:curse-of-knowledge:label:zh",
+          "role": "preferred",
+          "text": "知识诅咒",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:curse-of-knowledge:label:en",
+          "role": "preferred",
+          "text": "Curse of knowledge",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "audience",
+          "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(20)",
+          "quote": "Experts often suffer from the curse of knowledge , which means that their expert understanding of a topic ruins their explanations to newcomers."
+        },
+        {
+          "source": "audience",
+          "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(20)",
+          "quote": "As experts, it is easy to forget that novices don’t know what you already know."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:curse-of-knowledge:definition",
+          "kind": "definition",
+          "text": "熟悉某一主题的人容易忽略新手尚未具备的知识，导致说明包含读者无法理解的隐含前提。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(20)",
+              "quote": "Experts often suffer from the curse of knowledge , which means that their expert understanding of a topic ruins their explanations to newcomers."
+            },
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(20)",
+              "quote": "As experts, it is easy to forget that novices don’t know what you already know."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:cultural-neutrality",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:cultural-neutrality:label:zh",
+          "role": "preferred",
+          "text": "文化中立",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:cultural-neutrality:label:en",
+          "role": "preferred",
+          "text": "Cultural neutrality",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "audience",
+          "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(23)",
+          "quote": "Keep your writing culturally neutral. Do not require readers to understand the intricacies of NASCAR, cricket, or sumo in order to understand how a piece of software works."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:cultural-neutrality:definition",
+          "kind": "definition",
+          "text": "在面向跨文化读者的技术写作中，使理解内容不依赖特定文化背景知识的表达取向。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(23)",
+              "quote": "Keep your writing culturally neutral. Do not require readers to understand the intricacies of NASCAR, cricket, or sumo in order to understand how a piece of software works."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:cultural-neutrality:guidance:1",
+          "kind": "guidance",
+          "text": "面向国际读者时，避免把文化特定的比喻或习语作为理解内容的前提；以直接说明替代可能造成歧义的表达。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "audience",
+              "selector": "#main-content > devsite-content > article > div:nth-of-type(3) > p:nth-of-type(25)",
+              "quote": "However, if you are writing for an international audience, then replace that idiom with this task is done ."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:plain-language",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:plain-language:label:zh",
+          "role": "preferred",
+          "text": "简明语言",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:plain-language:label:en",
+          "role": "preferred",
+          "text": "Plain language",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "plain-language",
+          "selector": "#Governing > div > ul > li:nth-of-type(1)",
+          "quote": "Readers get what they need (relevant)"
+        },
+        {
+          "source": "plain-language",
+          "selector": "#Governing > div > ul > li:nth-of-type(2)",
+          "quote": "Readers can easily find what they need (findable)"
+        },
+        {
+          "source": "plain-language",
+          "selector": "#Governing > div > ul > li:nth-of-type(3)",
+          "quote": "Readers can easily understand what they find (understandable)"
+        },
+        {
+          "source": "plain-language",
+          "selector": "#Governing > div > ul > li:nth-of-type(4)",
+          "quote": "Readers can easily use the information (usable)"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:plain-language:definition",
+          "kind": "definition",
+          "text": "以读者需求为中心，使读者获得所需信息，并能够容易地查找、理解和使用信息的语言与文档表达方式。",
+          "language": "zh",
+          "applicability": "依据国际简明语言联合会对 ISO 24495-1 的介绍归纳，非官方译文；未据此宣称逐条核对 ISO 标准原文。",
+          "evidence": [
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > ul > li:nth-of-type(1)",
+              "quote": "Readers get what they need (relevant)"
+            },
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > ul > li:nth-of-type(2)",
+              "quote": "Readers can easily find what they need (findable)"
+            },
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > ul > li:nth-of-type(3)",
+              "quote": "Readers can easily understand what they find (understandable)"
+            },
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > ul > li:nth-of-type(4)",
+              "quote": "Readers can easily use the information (usable)"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:plain-language:scope:1",
+          "kind": "scope",
+          "text": "该原则不限于英语，也涉及内容结构、查找、理解和使用等问题，不能仅用词语是否简单来判断。",
+          "language": "zh",
+          "applicability": "依据国际简明语言联合会对 ISO 24495-1 的介绍归纳，非官方译文；未据此宣称逐条核对 ISO 标准原文。",
+          "evidence": [
+            {
+              "source": "plain-language",
+              "selector": "#post-2369 > div > div > div > body > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(3) > div > p:nth-of-type(4)",
+              "quote": "the standard is language neutral. So it works in most languages and across all sectors."
+            },
+            {
+              "source": "plain-language",
+              "selector": "#post-2369 > div > div > div > body > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(3) > div > p:nth-of-type(7)",
+              "quote": "These cover a variety of language issues (such as the content’s structure, findability, understandability, and usability) but only 7% focus on word choice ."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:relevance",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:relevance:label:zh",
+          "role": "preferred",
+          "text": "相关性",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:relevance:label:en",
+          "role": "preferred",
+          "text": "Relevant",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "plain-language",
+          "selector": "#Governing > div > ul > li:nth-of-type(1)",
+          "quote": "Readers get what they need (relevant)"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:relevance:definition",
+          "kind": "definition",
+          "text": "读者能够获得自己所需要的信息。",
+          "language": "zh",
+          "applicability": "依据国际简明语言联合会对 ISO 24495-1 的介绍归纳，非官方译文；未据此宣称逐条核对 ISO 标准原文。",
+          "evidence": [
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > ul > li:nth-of-type(1)",
+              "quote": "Readers get what they need (relevant)"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:relevance:scope:1",
+          "kind": "scope",
+          "text": "此处限定为简明语言原则中对读者与信息关系的要求。",
+          "language": "zh",
+          "applicability": "依据国际简明语言联合会对 ISO 24495-1 的介绍归纳，非官方译文；未据此宣称逐条核对 ISO 标准原文。",
+          "evidence": [
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > p:nth-of-type(2)",
+              "quote": "These 4 four principles in the standard give details on what methods you can use to write a plain language document:"
+            },
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > ul > li:nth-of-type(1)",
+              "quote": "Readers get what they need (relevant)"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:plain-language",
+          "evidence": [
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > p:nth-of-type(2)",
+              "quote": "These 4 four principles in the standard give details on what methods you can use to write a plain language document:"
+            },
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > ul > li:nth-of-type(1)",
+              "quote": "Readers get what they need (relevant)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:findability",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:findability:label:zh",
+          "role": "preferred",
+          "text": "可查找性",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:findability:label:en",
+          "role": "preferred",
+          "text": "Findability",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "plain-language",
+          "selector": "#Governing > div > ul > li:nth-of-type(2)",
+          "quote": "Readers can easily find what they need (findable)"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:findability:definition",
+          "kind": "definition",
+          "text": "读者能够容易地找到自己所需要的信息。",
+          "language": "zh",
+          "applicability": "依据国际简明语言联合会对 ISO 24495-1 的介绍归纳，非官方译文；未据此宣称逐条核对 ISO 标准原文。",
+          "evidence": [
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > ul > li:nth-of-type(2)",
+              "quote": "Readers can easily find what they need (findable)"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:findability:scope:1",
+          "kind": "scope",
+          "text": "此处限定为简明语言原则中对读者与信息关系的要求。",
+          "language": "zh",
+          "applicability": "依据国际简明语言联合会对 ISO 24495-1 的介绍归纳，非官方译文；未据此宣称逐条核对 ISO 标准原文。",
+          "evidence": [
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > p:nth-of-type(2)",
+              "quote": "These 4 four principles in the standard give details on what methods you can use to write a plain language document:"
+            },
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > ul > li:nth-of-type(2)",
+              "quote": "Readers can easily find what they need (findable)"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:plain-language",
+          "evidence": [
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > p:nth-of-type(2)",
+              "quote": "These 4 four principles in the standard give details on what methods you can use to write a plain language document:"
+            },
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > ul > li:nth-of-type(2)",
+              "quote": "Readers can easily find what they need (findable)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:understandability",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:understandability:label:zh",
+          "role": "preferred",
+          "text": "可理解性",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:understandability:label:en",
+          "role": "preferred",
+          "text": "Understandability",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "plain-language",
+          "selector": "#Governing > div > ul > li:nth-of-type(3)",
+          "quote": "Readers can easily understand what they find (understandable)"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:understandability:definition",
+          "kind": "definition",
+          "text": "读者能够容易地理解自己找到的信息。",
+          "language": "zh",
+          "applicability": "依据国际简明语言联合会对 ISO 24495-1 的介绍归纳，非官方译文；未据此宣称逐条核对 ISO 标准原文。",
+          "evidence": [
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > ul > li:nth-of-type(3)",
+              "quote": "Readers can easily understand what they find (understandable)"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:understandability:scope:1",
+          "kind": "scope",
+          "text": "此处限定为简明语言原则中对读者与信息关系的要求。",
+          "language": "zh",
+          "applicability": "依据国际简明语言联合会对 ISO 24495-1 的介绍归纳，非官方译文；未据此宣称逐条核对 ISO 标准原文。",
+          "evidence": [
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > p:nth-of-type(2)",
+              "quote": "These 4 four principles in the standard give details on what methods you can use to write a plain language document:"
+            },
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > ul > li:nth-of-type(3)",
+              "quote": "Readers can easily understand what they find (understandable)"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:plain-language",
+          "evidence": [
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > p:nth-of-type(2)",
+              "quote": "These 4 four principles in the standard give details on what methods you can use to write a plain language document:"
+            },
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > ul > li:nth-of-type(3)",
+              "quote": "Readers can easily understand what they find (understandable)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:usability",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:usability:label:zh",
+          "role": "preferred",
+          "text": "可用性",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:usability:label:en",
+          "role": "preferred",
+          "text": "Usability",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "plain-language",
+          "selector": "#Governing > div > ul > li:nth-of-type(4)",
+          "quote": "Readers can easily use the information (usable)"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:usability:definition",
+          "kind": "definition",
+          "text": "读者能够容易地使用所获得的信息。",
+          "language": "zh",
+          "applicability": "依据国际简明语言联合会对 ISO 24495-1 的介绍归纳，非官方译文；未据此宣称逐条核对 ISO 标准原文。",
+          "evidence": [
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > ul > li:nth-of-type(4)",
+              "quote": "Readers can easily use the information (usable)"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:usability:scope:1",
+          "kind": "scope",
+          "text": "此处限定为简明语言原则中对读者与信息关系的要求。",
+          "language": "zh",
+          "applicability": "依据国际简明语言联合会对 ISO 24495-1 的介绍归纳，非官方译文；未据此宣称逐条核对 ISO 标准原文。",
+          "evidence": [
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > p:nth-of-type(2)",
+              "quote": "These 4 four principles in the standard give details on what methods you can use to write a plain language document:"
+            },
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > ul > li:nth-of-type(4)",
+              "quote": "Readers can easily use the information (usable)"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:plain-language",
+          "evidence": [
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > p:nth-of-type(2)",
+              "quote": "These 4 four principles in the standard give details on what methods you can use to write a plain language document:"
+            },
+            {
+              "source": "plain-language",
+              "selector": "#Governing > div > ul > li:nth-of-type(4)",
+              "quote": "Readers can easily use the information (usable)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:voice",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:voice:label:en",
+          "role": "preferred",
+          "text": "Voice",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "ms-voice",
+          "selector": "#main > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(6) > p:nth-of-type(1)",
+          "quote": "There’s what we say, our message. And there’s how we say it, our voice."
+        },
+        {
+          "source": "ms-voice",
+          "selector": "#main > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(6) > p:nth-of-type(2)",
+          "quote": "The Microsoft voice is how we talk to people. It’s the interplay of personality, substance, tone, and style."
+        },
+        {
+          "source": "ms-voice",
+          "selector": "#main > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(6) > p:nth-of-type(3)",
+          "quote": "Though our voice is constant regardless of who we’re talking to or what we’re saying, we adapt our tone—from serious to empathetic to lighthearted—to fit the context and the customer's state of mind."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:voice:definition",
+          "kind": "definition",
+          "text": "Microsoft 品牌表达中持续体现的说话方式，由个性、内容、语气和风格共同形成；其语气可以随情境和读者状态调整。",
+          "language": "zh",
+          "applicability": "根据 Microsoft 写作指南归纳，适用于该指南的品牌表达语境，非通用风格标准或官方译文。",
+          "evidence": [
+            {
+              "source": "ms-voice",
+              "selector": "#main > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(6) > p:nth-of-type(1)",
+              "quote": "There’s what we say, our message. And there’s how we say it, our voice."
+            },
+            {
+              "source": "ms-voice",
+              "selector": "#main > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(6) > p:nth-of-type(2)",
+              "quote": "The Microsoft voice is how we talk to people. It’s the interplay of personality, substance, tone, and style."
+            },
+            {
+              "source": "ms-voice",
+              "selector": "#main > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(6) > p:nth-of-type(3)",
+              "quote": "Though our voice is constant regardless of who we’re talking to or what we’re saying, we adapt our tone—from serious to empathetic to lighthearted—to fit the context and the customer's state of mind."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:voice:scope:1",
+          "kind": "scope",
+          "text": "Voice 在这里指持续的表达特征；Microsoft 关于亲切、清晰及乐于帮助的要求属于其品牌指南。",
+          "language": "zh",
+          "applicability": "根据 Microsoft 写作指南归纳，适用于该指南的品牌表达语境，非通用风格标准或官方译文。",
+          "evidence": [
+            {
+              "source": "ms-voice",
+              "selector": "#main > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(6) > p:nth-of-type(3)",
+              "quote": "Though our voice is constant regardless of who we’re talking to or what we’re saying, we adapt our tone—from serious to empathetic to lighthearted—to fit the context and the customer's state of mind."
+            },
+            {
+              "source": "ms-voice",
+              "selector": "#main > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(6) > p:nth-of-type(6)",
+              "quote": "Talking to our customers in a way that’s warm and relaxed, crisp and clear, and ready to lend a hand reflects our commitment to empowering people to achieve more."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:voice:guidance:2",
+          "kind": "guidance",
+          "text": "Microsoft 建议把文本读出声，检查其是否像友好的对话。",
+          "language": "zh",
+          "applicability": "根据 Microsoft 写作指南归纳，适用于该指南的品牌表达语境，非通用风格标准或官方译文。",
+          "evidence": [
+            {
+              "source": "ms-top-ten",
+              "selector": "#main > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(6) > p:nth-of-type(4)",
+              "quote": "Write like you speak. Read your text aloud. Avoid jargon and overly complex or technical language. It should sound like a friendly conversation."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:tone",
+          "evidence": [
+            {
+              "source": "ms-voice",
+              "selector": "#main > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(6) > p:nth-of-type(3)",
+              "quote": "Though our voice is constant regardless of who we’re talking to or what we’re saying, we adapt our tone—from serious to empathetic to lighthearted—to fit the context and the customer's state of mind."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:tone",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:tone:label:zh",
+          "role": "preferred",
+          "text": "语气",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:tone:label:en",
+          "role": "preferred",
+          "text": "Tone",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "ms-voice",
+          "selector": "#main > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(6) > p:nth-of-type(3)",
+          "quote": "Though our voice is constant regardless of who we’re talking to or what we’re saying, we adapt our tone—from serious to empathetic to lighthearted—to fit the context and the customer's state of mind."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:tone:definition",
+          "kind": "definition",
+          "text": "在具体表达中随情境和读者状态而调整的情感态度，例如严肃、体恤或轻松。",
+          "language": "zh",
+          "applicability": "根据 Microsoft 写作指南归纳，适用于该指南的品牌表达语境，非通用风格标准或官方译文。",
+          "evidence": [
+            {
+              "source": "ms-voice",
+              "selector": "#main > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(6) > p:nth-of-type(3)",
+              "quote": "Though our voice is constant regardless of who we’re talking to or what we’re saying, we adapt our tone—from serious to empathetic to lighthearted—to fit the context and the customer's state of mind."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:tone:guidance:1",
+          "kind": "guidance",
+          "text": "按具体情境及读者当时的状态调整语气。",
+          "language": "zh",
+          "applicability": "根据 Microsoft 写作指南归纳，适用于该指南的品牌表达语境，非通用风格标准或官方译文。",
+          "evidence": [
+            {
+              "source": "ms-voice",
+              "selector": "#main > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(6) > p:nth-of-type(3)",
+              "quote": "Though our voice is constant regardless of who we’re talking to or what we’re saying, we adapt our tone—from serious to empathetic to lighthearted—to fit the context and the customer's state of mind."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:architecture-decision-record",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:architecture-decision-record:label:zh",
+          "role": "preferred",
+          "text": "架构决策记录",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:architecture-decision-record:label:en",
+          "role": "preferred",
+          "text": "Architecture decision record",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "adr",
+          "selector": "#post-content > p:nth-of-type(7)",
+          "quote": "An architecture decision record is a short text file in a format similar to an Alexandrian pattern."
+        },
+        {
+          "source": "adr",
+          "selector": "#post-content > p:nth-of-type(7)",
+          "quote": "Each record describes a set of forces and a single decision in response to those forces."
+        },
+        {
+          "source": "adr",
+          "selector": "#post-content > p:nth-of-type(6)",
+          "quote": "We will keep a collection of records for \"architecturally significant\" decisions: those that affect the structure, non-functional characteristics, dependencies, interfaces, or construction techniques."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:architecture-decision-record:definition",
+          "kind": "definition",
+          "text": "围绕一项具有架构意义的决策，记录其所回应的背景因素及决策内容的简短文本。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "adr",
+              "selector": "#post-content > p:nth-of-type(7)",
+              "quote": "An architecture decision record is a short text file in a format similar to an Alexandrian pattern."
+            },
+            {
+              "source": "adr",
+              "selector": "#post-content > p:nth-of-type(7)",
+              "quote": "Each record describes a set of forces and a single decision in response to those forces."
+            },
+            {
+              "source": "adr",
+              "selector": "#post-content > p:nth-of-type(6)",
+              "quote": "We will keep a collection of records for \"architecturally significant\" decisions: those that affect the structure, non-functional characteristics, dependencies, interfaces, or construction techniques."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:architecture-decision-record:scope:1",
+          "kind": "scope",
+          "text": "本项采用 Michael Nygard 所述的软件架构决策记录方法。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "adr",
+              "selector": "#post-content > p:nth-of-type(7)",
+              "quote": "An architecture decision record is a short text file in a format similar to an Alexandrian pattern."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:architecture-decision-record:guidance:2",
+          "kind": "guidance",
+          "text": "记录背景、决策、状态和后果，并保留被后续决策取代的旧记录及其替代关系。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "adr",
+              "selector": "#post-content > p:nth-of-type(14)",
+              "quote": "Context This section describes the forces at play, including technological, political, social, and project local."
+            },
+            {
+              "source": "adr",
+              "selector": "#post-content > p:nth-of-type(15)",
+              "quote": "Decision This section describes our response to these forces."
+            },
+            {
+              "source": "adr",
+              "selector": "#post-content > p:nth-of-type(16)",
+              "quote": "Status A decision may be \"proposed\" if the project stakeholders haven't agreed with it yet, or \"accepted\" once it is agreed."
+            },
+            {
+              "source": "adr",
+              "selector": "#post-content > p:nth-of-type(17)",
+              "quote": "Consequences This section describes the resulting context, after applying the decision."
+            },
+            {
+              "source": "adr",
+              "selector": "#post-content > p:nth-of-type(11)",
+              "quote": "If a decision is reversed, we will keep the old one around, but mark it as superseded."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:postmortem",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:postmortem:label:zh",
+          "role": "preferred",
+          "text": "故障复盘",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:postmortem:label:en",
+          "role": "preferred",
+          "text": "Postmortem",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "postmortem",
+          "selector": "#content > p:nth-of-type(3)",
+          "quote": "A postmortem is a written record of an incident, its impact, the actions taken to mitigate or resolve it, the root cause(s), and the follow-up actions to prevent the incident from recurring."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:postmortem:definition",
+          "kind": "definition",
+          "text": "记录故障事件、影响、缓解或解决行动、根本原因，以及预防再次发生的后续行动的书面材料。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "postmortem",
+              "selector": "#content > p:nth-of-type(3)",
+              "quote": "A postmortem is a written record of an incident, its impact, the actions taken to mitigate or resolve it, the root cause(s), and the follow-up actions to prevent the incident from recurring."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:postmortem:scope:1",
+          "kind": "scope",
+          "text": "此处采用 Google SRE 对故障复盘记录的说明。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "postmortem",
+              "selector": "#content > p:nth-of-type(3)",
+              "quote": "A postmortem is a written record of an incident, its impact, the actions taken to mitigate or resolve it, the root cause(s), and the follow-up actions to prevent the incident from recurring."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:postmortem:guidance:2",
+          "kind": "guidance",
+          "text": "通过记录和理解致因，制定有效预防行动，降低同类事件再次发生的概率或影响。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "postmortem",
+              "selector": "#content > p:nth-of-type(4)",
+              "quote": "The primary goals of writing a postmortem are to ensure that the incident is documented, that all contributing root cause(s) are well understood, and, especially, that effective preventive actions are put in place to reduce the likelihood and/or impact of recurrence."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:blameless-postmortem",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:blameless-postmortem:label:zh",
+          "role": "preferred",
+          "text": "无责复盘",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:blameless-postmortem:label:en",
+          "role": "preferred",
+          "text": "Blameless postmortem",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "postmortem",
+          "selector": "#content > p:nth-of-type(6)",
+          "quote": "For a postmortem to be truly blameless, it must focus on identifying the contributing causes of the incident without indicting any individual or team for bad or inappropriate behavior."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:blameless-postmortem:definition",
+          "kind": "definition",
+          "text": "把注意力放在事件致因上，而不指责个人或团队行为的故障复盘方式。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "postmortem",
+              "selector": "#content > p:nth-of-type(6)",
+              "quote": "For a postmortem to be truly blameless, it must focus on identifying the contributing causes of the incident without indicting any individual or team for bad or inappropriate behavior."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:blameless-postmortem:guidance:1",
+          "kind": "guidance",
+          "text": "从参与者当时掌握的信息出发调查系统和流程如何影响判断，并将发现用于改进预防措施。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "postmortem",
+              "selector": "#content > p:nth-of-type(6)",
+              "quote": "A blamelessly written postmortem assumes that everyone involved in an incident had good intentions and did the right thing with the information they had."
+            },
+            {
+              "source": "postmortem",
+              "selector": "#content > p:nth-of-type(7)",
+              "quote": "When postmortems shift from allocating blame to investigating the systematic reasons why an individual or team had incomplete or incorrect information, effective prevention plans can be put in place."
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:postmortem",
+          "evidence": [
+            {
+              "source": "postmortem",
+              "selector": "#content > p:nth-of-type(6)",
+              "quote": "For a postmortem to be truly blameless, it must focus on identifying the contributing causes of the incident without indicting any individual or team for bad or inappropriate behavior."
+            }
+          ]
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:evergreen-notes",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:evergreen-notes:label:zh",
+          "role": "preferred",
+          "text": "常青笔记",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:evergreen-notes:label:en",
+          "role": "preferred",
+          "text": "Evergreen notes",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "evergreen-notes",
+          "selector": "#root > div > div > div > div > div > div > div > div > div > div > p:nth-of-type(1)",
+          "quote": "Evergreen notes are written and organized to evolve, contribute, and accumulate over time, across projects."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:evergreen-notes:definition",
+          "kind": "definition",
+          "text": "通过写作和组织方式支持长期演化、持续贡献与跨项目积累的笔记。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "evergreen-notes",
+              "selector": "#root > div > div > div > div > div > div > div > div > div > div > p:nth-of-type(1)",
+              "quote": "Evergreen notes are written and organized to evolve, contribute, and accumulate over time, across projects."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:evergreen-notes:scope:1",
+          "kind": "scope",
+          "text": "本项采用 Andy Matuschak 对 evergreen notes 的阐述。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "evergreen-notes",
+              "selector": "#root > div > div > div > div > div > div > div > div > div > div > p:nth-of-type(1)",
+              "quote": "Evergreen notes are written and organized to evolve, contribute, and accumulate over time, across projects."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:evergreen-notes:guidance:2",
+          "kind": "guidance",
+          "text": "作者建议笔记围绕概念组织并建立密集链接；这些是该笔记实践的建议。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "evergreen-notes",
+              "selector": "#root > div > div > div > div > div > div > div > div > div > div > ul:nth-of-type(1) > li:nth-of-type(2)",
+              "quote": "Evergreen notes should be concept-oriented"
+            },
+            {
+              "source": "evergreen-notes",
+              "selector": "#root > div > div > div > div > div > div > div > div > div > div > ul:nth-of-type(1) > li:nth-of-type(3)",
+              "quote": "Evergreen notes should be densely linked"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:cornell-note-taking-system",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:cornell-note-taking-system:label:zh",
+          "role": "preferred",
+          "text": "康奈尔笔记法",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:cornell-note-taking-system:label:en",
+          "role": "preferred",
+          "text": "Cornell Note-Taking System",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "cornell-notes",
+          "selector": "#post-1037 > div > p:nth-of-type(12)",
+          "quote": "The Cornell Note-Taking System was originally developed by Cornell education professor, Walter Pauk."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:cornell-note-taking-system:scope:1",
+          "kind": "scope",
+          "text": "由康奈尔大学教育学教授 Walter Pauk 开发，并在 How to Study in College 中介绍的笔记方法。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "cornell-notes",
+              "selector": "#post-1037 > div > p:nth-of-type(12)",
+              "quote": "The Cornell Note-Taking System was originally developed by Cornell education professor, Walter Pauk."
+            },
+            {
+              "source": "cornell-notes",
+              "selector": "#post-1037 > div > p:nth-of-type(12)",
+              "quote": "Prof. Pauk outlined this effective note-taking method in his book, How to Study in College (1)."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    }
+  ],
+  "groups": [
+    {
+      "key": "文档类型",
+      "members": [
+        "urn:kb-vocab-writing:tutorial",
+        "urn:kb-vocab-writing:how-to-guide",
+        "urn:kb-vocab-writing:reference-documentation",
+        "urn:kb-vocab-writing:explanation-documentation"
+      ]
+    },
+    {
+      "key": "内容与目的",
+      "members": [
+        "urn:kb-vocab-writing:writing",
+        "urn:kb-vocab-writing:tutorial",
+        "urn:kb-vocab-writing:how-to-guide",
+        "urn:kb-vocab-writing:reference-documentation",
+        "urn:kb-vocab-writing:explanation-documentation",
+        "urn:kb-vocab-writing:audience",
+        "urn:kb-vocab-writing:audience-needs",
+        "urn:kb-vocab-writing:prior-knowledge",
+        "urn:kb-vocab-writing:audience-analysis",
+        "urn:kb-vocab-writing:curse-of-knowledge",
+        "urn:kb-vocab-writing:cultural-neutrality",
+        "urn:kb-vocab-writing:plain-language",
+        "urn:kb-vocab-writing:relevance",
+        "urn:kb-vocab-writing:findability",
+        "urn:kb-vocab-writing:understandability",
+        "urn:kb-vocab-writing:usability",
+        "urn:kb-vocab-writing:architecture-decision-record",
+        "urn:kb-vocab-writing:postmortem",
+        "urn:kb-vocab-writing:blameless-postmortem",
+        "urn:kb-vocab-writing:evergreen-notes",
+        "urn:kb-vocab-writing:cornell-note-taking-system"
+      ]
+    },
+    {
+      "key": "风格与语气",
+      "members": [
+        "urn:kb-vocab-writing:cultural-neutrality",
+        "urn:kb-vocab-writing:voice",
+        "urn:kb-vocab-writing:tone"
+      ]
+    },
+    {
+      "key": "质量与修改",
+      "members": [
+        "urn:kb-vocab-writing:architecture-decision-record",
+        "urn:kb-vocab-writing:blameless-postmortem",
+        "urn:kb-vocab-writing:curse-of-knowledge",
+        "urn:kb-vocab-writing:evergreen-notes",
+        "urn:kb-vocab-writing:findability",
+        "urn:kb-vocab-writing:plain-language",
+        "urn:kb-vocab-writing:postmortem",
+        "urn:kb-vocab-writing:relevance",
+        "urn:kb-vocab-writing:understandability",
+        "urn:kb-vocab-writing:usability"
+      ]
+    }
+  ],
+  "source_language_labels": [],
+  "unresolved": [
+    {
+      "source": "cornell-notes",
+      "concept": "urn:kb-vocab-writing:cornell-note-taking-system",
+      "reason": "当前 HTML 正文只说明名称、创始者和教学入口；笔记区、提示区、总结区及具体操作主要指向视频或模块，本次未读取，故不据记忆补写定义和步骤。"
+    },
+    {
+      "source": "eric-writing",
+      "reason": "仅对 Writing (Composition) 使用现有 Scope Note；相关词和下位词清单本身不支持为其成员生成定义。"
+    },
+    {
+      "source": "plain-language",
+      "reason": "概念和四原则依据 IPLF 对 ISO 24495-1 的公开介绍归纳；标准原文定义及完整符合性要求未在本次范围内核对。"
+    },
+    {
+      "source": "ms-voice",
+      "concept": "urn:kb-vocab-writing:voice",
+      "reason": "Voice 的中文译名未决。来源将 style 列为形成 voice 的组成因素，不能直接采用“写作风格”作为 Voice 的同义名称；当前仅保留 English Voice 首选名称。"
+    }
+  ]
+}

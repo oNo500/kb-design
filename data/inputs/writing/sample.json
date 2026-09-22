@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "approved": false,
+  "approval": null,
+  "source_lock_sha256": "b2880d917d52c71695424f4974638134738fd0962ddfc794be5310f56d4029cf",
+  "scheme": {
+    "id": "urn:kb-vocab-writing:sample",
+    "label": {
+      "text": "写作词表审阅小样",
+      "language": "zh"
+    },
+    "scope": {
+      "text": "收集标题、段落、简洁与冗余相关的来源说明，用于检查词表表示；概念定义、中文名称依据和关系尚待审阅。",
+      "language": "zh"
+    },
+    "top_concepts": []
+  },
+  "concepts": [
+    {
+      "id": "urn:kb-vocab-writing:sample:heading",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:sample:heading:label:zh",
+          "role": "preferred",
+          "text": "标题",
+          "language": "zh"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "headings",
+          "selector": "#heading-and-title-text + p",
+          "quote": "Write document titles based on the primary purpose of the document."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:sample:heading:guidance",
+          "kind": "guidance",
+          "text": "Write document titles based on the primary purpose of the document.",
+          "language": "en",
+          "applicability": "Source advice for English technical documentation; not automatically a project rule.",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": "#heading-and-title-text + p",
+              "quote": "Write document titles based on the primary purpose of the document."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:sample:paragraph",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:sample:paragraph:label:zh",
+          "role": "preferred",
+          "text": "段落",
+          "language": "zh"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "paragraphs",
+          "selector": "#focus_each_paragraph_on_a_single_topic",
+          "quote": "Focus each paragraph on a single topic"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:sample:paragraph:guidance",
+          "kind": "guidance",
+          "text": "Focus each paragraph on a single topic",
+          "language": "en",
+          "applicability": "Source advice for English technical documentation; not automatically a project rule.",
+          "evidence": [
+            {
+              "source": "paragraphs",
+              "selector": "#focus_each_paragraph_on_a_single_topic",
+              "quote": "Focus each paragraph on a single topic"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:sample:conciseness",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:sample:conciseness:label:zh",
+          "role": "preferred",
+          "text": "简洁",
+          "language": "zh"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "short-sentences",
+          "selector": "#focus_each_sentence_on_a_single_idea",
+          "quote": "Focus each sentence on a single idea"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:sample:conciseness:guidance",
+          "kind": "guidance",
+          "text": "Focus each sentence on a single idea",
+          "language": "en",
+          "applicability": "Source advice for English technical documentation; not automatically a project rule.",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": "#focus_each_sentence_on_a_single_idea",
+              "quote": "Focus each sentence on a single idea"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:sample:redundancy",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:sample:redundancy:label:zh",
+          "role": "preferred",
+          "text": "冗余",
+          "language": "zh"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "short-sentences",
+          "selector": "#eliminate_or_reduce_extraneous_words",
+          "quote": "Eliminate or reduce extraneous words"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:sample:redundancy:guidance",
+          "kind": "guidance",
+          "text": "Eliminate or reduce extraneous words",
+          "language": "en",
+          "applicability": "Source advice for English technical documentation; not automatically a project rule.",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": "#eliminate_or_reduce_extraneous_words",
+              "quote": "Eliminate or reduce extraneous words"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    }
+  ],
+  "collections": []
+}

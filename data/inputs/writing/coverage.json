@@ -1,0 +1,607 @@
+{
+  "broader_relations": 30,
+  "collections": 10,
+  "concepts": 312,
+  "expansion": {
+    "added_concepts": 213,
+    "augmented_concepts": [
+      "urn:kb-vocab-writing:description-list",
+      "urn:kb-vocab-writing:list",
+      "urn:kb-vocab-writing:ordered-list",
+      "urn:kb-vocab-writing:proofreading",
+      "urn:kb-vocab-writing:relevance",
+      "urn:kb-vocab-writing:sample:heading",
+      "urn:kb-vocab-writing:sample:paragraph",
+      "urn:kb-vocab-writing:sample:redundancy",
+      "urn:kb-vocab-writing:table",
+      "urn:kb-vocab-writing:table-header",
+      "urn:kb-vocab-writing:unordered-list"
+    ],
+    "baseline_file": "output/vocabulary/writing/full-20260922-final/input.json",
+    "baseline_sha256": "e8a13723abda8f29b4a1045906f4089246745c90cd713453ab452d211b01e558",
+    "preserved_concepts": 99,
+    "section_sha256": {
+      "cognition": "b5ea36a939797abfe80bb51c7f901557695643ad1ebfa337873d68454bb03186",
+      "discourse": "8c42c1c494c9bfc18031b1d377662cb969beb3284e6283ddbb56224d838f1a41",
+      "markup": "5668ef0a517470518779e7be0dbbb729d4ba71a6d155ffd86d67bb355867a970",
+      "presentation": "7c2750fbda9535ea418b789155a228b606b67afa94a67870c71d561d48cf3263",
+      "rhetoric": "50edc92e0ca96e80fddc55cff8d3c6d0b048fff33472511d1aa99ca05778e6e1"
+    },
+    "semantic_review_fixes": [
+      "修正 RST Otherwise 的阻止方向，补齐两个情境尚未实现。",
+      "RST Volitional Cause/Result 保留可能性及行动或情境范围。",
+      "撤下块引用、行内引用到严格逐字引语的未充分支持层级。",
+      "不将保留英文的名称复制并标为中文。"
+    ]
+  },
+  "group_counts": {
+    "交际与语义": 19,
+    "内容与目的": 37,
+    "文本标记与语义": 43,
+    "文档类型": 4,
+    "文章组织": 71,
+    "版式与呈现": 66,
+    "语言表达": 47,
+    "质量与修改": 25,
+    "阅读与认知": 16,
+    "风格与语气": 12
+  },
+  "labels": 596,
+  "no_chinese_preferred": [
+    "urn:kb-vocab-writing:antimetabole",
+    "urn:kb-vocab-writing:argument-backing",
+    "urn:kb-vocab-writing:argument-warrant",
+    "urn:kb-vocab-writing:asyndeton",
+    "urn:kb-vocab-writing:chiasmus",
+    "urn:kb-vocab-writing:defining-instance",
+    "urn:kb-vocab-writing:known-new-contract",
+    "urn:kb-vocab-writing:leetspeak",
+    "urn:kb-vocab-writing:polysyndeton",
+    "urn:kb-vocab-writing:rhetorical-antithesis",
+    "urn:kb-vocab-writing:rst-antithesis",
+    "urn:kb-vocab-writing:rst-enablement",
+    "urn:kb-vocab-writing:rst-joint",
+    "urn:kb-vocab-writing:rst-justify",
+    "urn:kb-vocab-writing:rst-multinuclear-restatement",
+    "urn:kb-vocab-writing:rst-non-volitional-cause",
+    "urn:kb-vocab-writing:rst-non-volitional-result",
+    "urn:kb-vocab-writing:rst-otherwise",
+    "urn:kb-vocab-writing:rst-solutionhood",
+    "urn:kb-vocab-writing:rst-unconditional",
+    "urn:kb-vocab-writing:rst-unless",
+    "urn:kb-vocab-writing:rst-volitional-cause",
+    "urn:kb-vocab-writing:rst-volitional-result",
+    "urn:kb-vocab-writing:ruby-annotation",
+    "urn:kb-vocab-writing:signpost",
+    "urn:kb-vocab-writing:soft-wrap-break",
+    "urn:kb-vocab-writing:soft-wrap-opportunity",
+    "urn:kb-vocab-writing:voice"
+  ],
+  "no_definition": [
+    "urn:kb-vocab-writing:cornell-note-taking-system"
+  ],
+  "related_pairs": 98,
+  "resolved": [
+    {
+      "previous": {
+        "detail": {
+          "reason": "指定快照对校对有明确描述，也提供删减词语、改写语态和合并句子的方法，但没有足够正文依据确定 revision 或 editing 的完整概念范围及二者与校对的关系；本批不把它们与 proofreading 合并。",
+          "sources": [
+            "purdue-proofreading",
+            "purdue-conciseness",
+            "short-sentences"
+          ],
+          "topic": "文字修订与编辑"
+        },
+        "section": "language"
+      },
+      "resolution": "新增 revision、editing 及原 proofreading 的范围补充，依据 unc-revising 与 unc-editing。"
+    },
+    {
+      "previous": {
+        "detail": {
+          "reason": "分配的来源中未找到足以界定图例概念及其符号对应关系的正文；HTML legend 元素不能直接当成一般图例概念，暂不建概念。",
+          "source": "coga; wcag22; wai-symbols",
+          "term": "Legend / 图例"
+        },
+        "section": "presentation"
+      },
+      "resolution": "补充 adobe-reading 或 vega-legend 原文，新增限定为排印/数据可视化语境的概念，保留领域边界。"
+    },
+    {
+      "previous": {
+        "detail": {
+          "label": "Readability",
+          "reason": "reading-level 来源讨论阅读水平及各语言的可读性评估，但未给出足以与 Legibility、Understandability 稳定区分的通用定义；不把该词直接当作 Reading level 的同义标签。",
+          "source": "reading-level"
+        },
+        "section": "cognition"
+      },
+      "resolution": "补充 adobe-reading 或 vega-legend 原文，新增限定为排印/数据可视化语境的概念，保留领域边界。"
+    },
+    {
+      "previous": {
+        "detail": {
+          "label": "Legibility",
+          "reason": "已分配来源缺少可支持独立定义和与 Readability 边界的明确原文，不用日常近义解释补造定义。",
+          "source": "reading-level"
+        },
+        "section": "cognition"
+      },
+      "resolution": "补充 adobe-reading 或 vega-legend 原文，新增限定为排印/数据可视化语境的概念，保留领域边界。"
+    }
+  ],
+  "source_documents_collected": 82,
+  "statements": {
+    "definition": 311,
+    "editorial": 2,
+    "example": 6,
+    "guidance": 88,
+    "scope": 194
+  },
+  "unresolved": [
+    {
+      "detail": {
+        "evidence": [
+          {
+            "quote": "The s element represents contents that are no longer accurate or no longer relevant.",
+            "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(21)",
+            "source": "html-text"
+          }
+        ],
+        "issue": "已在 strikethrough 与 deletion 的范围说明保留 HTML s 的不再准确或不再相关语义；未为 s 的整个语义范围选定独立通用概念名称。",
+        "topic": "内容失效"
+      },
+      "section": "markup"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:defining-instance",
+        "evidence": [
+          {
+            "quote": "The dfn element represents the defining instance of a term.",
+            "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(33)",
+            "source": "html-text"
+          },
+          {
+            "quote": "must also contain the definition(s) for the term given by the dfn element.",
+            "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(33)",
+            "source": "html-text"
+          }
+        ],
+        "issue": "未为此来源语义确定可靠的惯用中文名称；保留英文 preferred label。",
+        "language": "zh"
+      },
+      "section": "markup"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:ruby-annotation",
+        "evidence": [
+          {
+            "quote": "Ruby annotations are short runs of text presented alongside base text, primarily used in East Asian typography as a guide for pronunciation or to include other annotations.",
+            "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(41)",
+            "source": "html-text"
+          }
+        ],
+        "issue": "未为此来源语义确定可靠的惯用中文名称；保留英文 preferred label。",
+        "language": "zh"
+      },
+      "section": "markup"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:soft-wrap-break",
+        "reason": "中文名称未定，当前无充分依据采用中文译名；仅保留英文名称，不以英文形式充作中文标签。",
+        "source": "css-text",
+        "term": "Soft wrap break"
+      },
+      "section": "presentation"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:soft-wrap-opportunity",
+        "reason": "中文名称未定，当前无充分依据采用中文译名；仅保留英文名称，不以英文形式充作中文标签。",
+        "source": "css-text",
+        "term": "Soft wrap opportunity"
+      },
+      "section": "presentation"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:leetspeak",
+        "reason": "中文名称未定，当前无充分依据采用中文译名；仅保留英文名称，不以英文形式充作中文标签。",
+        "source": "wai-symbols",
+        "term": "Leetspeak"
+      },
+      "section": "presentation"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:rhetorical-antithesis",
+        "issue": "尚未核定与该来源定义准确对应的惯用中文名称，保留英文首选标签；中文定义解释其含义。",
+        "language": "zh",
+        "source": "rhetoric-antithesis"
+      },
+      "section": "rhetoric"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:chiasmus",
+        "issue": "尚未核定与该来源定义准确对应的惯用中文名称，保留英文首选标签；中文定义解释其含义。",
+        "language": "zh",
+        "source": "rhetoric-schemes"
+      },
+      "section": "rhetoric"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:antimetabole",
+        "issue": "尚未核定与该来源定义准确对应的惯用中文名称，保留英文首选标签；中文定义解释其含义。",
+        "language": "zh",
+        "source": "rhetoric-schemes"
+      },
+      "section": "rhetoric"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:asyndeton",
+        "issue": "尚未核定与该来源定义准确对应的惯用中文名称，保留英文首选标签；中文定义解释其含义。",
+        "language": "zh",
+        "source": "rhetoric-schemes"
+      },
+      "section": "rhetoric"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:polysyndeton",
+        "issue": "尚未核定与该来源定义准确对应的惯用中文名称，保留英文首选标签；中文定义解释其含义。",
+        "language": "zh",
+        "source": "rhetoric-repetition"
+      },
+      "section": "rhetoric"
+    },
+    {
+      "detail": {
+        "issue": "本轮分配来源明确界定 Sequencing，包括事件顺序与步骤顺序；没有取得独立 Process analysis 的充分定义，因此只收录 Sequencing，不把名称直接当作其同义词。",
+        "source": "reasoning-strategies",
+        "term": "Process analysis"
+      },
+      "section": "rhetoric"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:rst-antithesis",
+        "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+      },
+      "section": "discourse"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:rst-enablement",
+        "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+      },
+      "section": "discourse"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:rst-justify",
+        "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+      },
+      "section": "discourse"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:rst-non-volitional-cause",
+        "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+      },
+      "section": "discourse"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:rst-non-volitional-result",
+        "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+      },
+      "section": "discourse"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:rst-otherwise",
+        "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+      },
+      "section": "discourse"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:rst-solutionhood",
+        "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+      },
+      "section": "discourse"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:rst-unconditional",
+        "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+      },
+      "section": "discourse"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:rst-unless",
+        "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+      },
+      "section": "discourse"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:rst-volitional-cause",
+        "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+      },
+      "section": "discourse"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:rst-volitional-result",
+        "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+      },
+      "section": "discourse"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:rst-joint",
+        "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+      },
+      "section": "discourse"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:rst-multinuclear-restatement",
+        "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+      },
+      "section": "discourse"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:known-new-contract",
+        "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+      },
+      "section": "discourse"
+    },
+    {
+      "detail": {
+        "label": "What is said (Grice)",
+        "reason": "relevance-theory 中有关 Grice 所说内容的论述属于作者解释与比较，未给出本次可直接建立独立概念的完整定义；已用 Explicature 与 Conversational implicature 保留理论语境，未把两者强行等同。",
+        "source": "relevance-theory"
+      },
+      "section": "cognition"
+    },
+    {
+      "detail": {
+        "label": "Cognitive load",
+        "reason": "替代教学说明可支持认知负荷理论，研究正文可支持具体负荷类型；未据其不完整的总述另造一般 Cognitive load 的独立定义。原 Sweller 2019 锁定快照为挑战页，不能引用。",
+        "source": "signaling-overlap-study"
+      },
+      "section": "cognition"
+    },
+    {
+      "detail": {
+        "label": "Element interactivity",
+        "reason": "替代研究将元素交互与内容复杂性、已有知识相联系，但未给出本次可据以独立建条目的充分定义；不把研究讨论或参考文献标题当定义。",
+        "source": "signaling-overlap-study"
+      },
+      "section": "cognition"
+    },
+    {
+      "detail": {
+        "label": "Split-attention effect",
+        "reason": "替代研究仅在参考文献中出现 split-attention；正文无可独立定位的概念定义。原 Sweller 2019 快照为挑战页，不能引用。",
+        "source": "signaling-overlap-study"
+      },
+      "section": "cognition"
+    },
+    {
+      "detail": {
+        "label": "Coherence principle (multimedia learning)",
+        "reason": "替代研究正文没有足够完整的本原则定义；仅出现名称、机制提及或参考文献时不据此建条目，也不改写既有段落连贯性或多余词语定义。",
+        "source": "signaling-overlap-study"
+      },
+      "section": "cognition"
+    },
+    {
+      "detail": {
+        "label": "Redundancy principle (multimedia learning)",
+        "reason": "替代研究正文没有足够完整的本原则定义；仅出现名称、机制提及或参考文献时不据此建条目，也不改写既有段落连贯性或多余词语定义。",
+        "source": "signaling-overlap-study"
+      },
+      "section": "cognition"
+    },
+    {
+      "detail": {
+        "label": "Spatial contiguity principle",
+        "reason": "替代研究正文没有足够完整的本原则定义；仅出现名称、机制提及或参考文献时不据此建条目，也不改写既有段落连贯性或多余词语定义。",
+        "source": "signaling-overlap-study"
+      },
+      "section": "cognition"
+    },
+    {
+      "detail": {
+        "label": "Temporal contiguity principle",
+        "reason": "替代研究正文没有足够完整的本原则定义；仅出现名称、机制提及或参考文献时不据此建条目，也不改写既有段落连贯性或多余词语定义。",
+        "source": "signaling-overlap-study"
+      },
+      "section": "cognition"
+    },
+    {
+      "detail": {
+        "label": "Germane cognitive load",
+        "reason": "替代研究采用三类负荷的操作框架，部分机制措辞还需核对；本次没有锁定可用于比较理论版本的原作者全文，因此不把该分类提升为统一定义。",
+        "source": "signaling-overlap-study"
+      },
+      "section": "cognition"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:cornell-note-taking-system",
+        "reason": "当前 HTML 正文只说明名称、创始者和教学入口；笔记区、提示区、总结区及具体操作主要指向视频或模块，本次未读取，故不据记忆补写定义和步骤。",
+        "source": "cornell-notes"
+      },
+      "section": "purpose"
+    },
+    {
+      "detail": {
+        "reason": "仅对 Writing (Composition) 使用现有 Scope Note；相关词和下位词清单本身不支持为其成员生成定义。",
+        "source": "eric-writing"
+      },
+      "section": "purpose"
+    },
+    {
+      "detail": {
+        "reason": "概念和四原则依据 IPLF 对 ISO 24495-1 的公开介绍归纳；标准原文定义及完整符合性要求未在本次范围内核对。",
+        "source": "plain-language"
+      },
+      "section": "purpose"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:voice",
+        "reason": "Voice 的中文译名未决。来源将 style 列为形成 voice 的组成因素，不能直接采用“写作风格”作为 Voice 的同义名称；当前仅保留 English Voice 首选名称。",
+        "source": "ms-voice"
+      },
+      "section": "purpose"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:signpost",
+        "issue": "尚未核实 Signpost 在本写作语境中的惯用中文名称；当前仅保留英文首选标签。",
+        "language": "zh"
+      },
+      "section": "structure"
+    },
+    {
+      "detail": {
+        "reason": "words 来源以 acronym 统称 TTN、OGS 和 HTML，未说明 acronym、initialism 与其他 abbreviation 的形式和发音边界；本批不建立这些形式之间的上下位分类。",
+        "sources": [
+          "words"
+        ],
+        "topic": "缩略形式的分类"
+      },
+      "section": "language"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:glyph",
+        "evidence": [
+          {
+            "quote": "A symbol of identifiable abstraction, depending on no specific design.",
+            "selector": "tr[id=\"term.glyph\"] > td:nth-of-type(5) > p[lang=\"en\"]",
+            "source": "clreq"
+          },
+          {
+            "quote": "字母、文字或符号在书写、印刷上的形体。",
+            "selector": "tr[id=\"term.glyph\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+            "source": "clreq"
+          }
+        ],
+        "issue": "clreq 词汇表同一行的 glyph 英文定义称其为不依赖具体设计的抽象符号，中文定义则描述书写、印刷上的形体。此条采用源中文定义，不将两种定义自动认定为等价；差异尚未核实。"
+      },
+      "section": "layout"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:argument-warrant",
+        "issue": "中文惯用名称尚未核定，保留英文；中文定义解释其作用。"
+      },
+      "section": "argumentation"
+    },
+    {
+      "detail": {
+        "concept": "urn:kb-vocab-writing:argument-backing",
+        "issue": "中文惯用名称尚未核定，保留英文；中文定义解释其作用。"
+      },
+      "section": "argumentation"
+    }
+  ],
+  "used_source_documents": [
+    "active-voice",
+    "adobe-reading",
+    "adr",
+    "argumentative-essay",
+    "audience",
+    "brainstorming",
+    "clear-sentences",
+    "clreq",
+    "coga",
+    "commonmark",
+    "cornell-notes",
+    "css-decoration",
+    "css-fonts",
+    "css-text",
+    "diataxis-foundations",
+    "drafting-revision",
+    "eric-writing",
+    "evergreen-notes",
+    "explanation",
+    "gfm",
+    "github-format",
+    "github-math",
+    "headings",
+    "how-to-guides",
+    "html-edits",
+    "html-grouping",
+    "html-text",
+    "known-new",
+    "large-docs",
+    "lists",
+    "manchester-caution",
+    "ms-top-ten",
+    "ms-voice",
+    "narrative-strategies",
+    "nsw-cognitive-load",
+    "nsw-learning",
+    "paragraphs",
+    "plain-language",
+    "postmortem",
+    "purdue-conciseness",
+    "purdue-paragraphs",
+    "purdue-proofreading",
+    "purdue-quoting",
+    "reading-level",
+    "reasoning-strategies",
+    "reference",
+    "relevance-theory",
+    "rhetoric-anaphora",
+    "rhetoric-antithesis",
+    "rhetoric-climax",
+    "rhetoric-ellipsis",
+    "rhetoric-epistrophe",
+    "rhetoric-erotema",
+    "rhetoric-hyperbole",
+    "rhetoric-irony",
+    "rhetoric-litotes",
+    "rhetoric-metaphor",
+    "rhetoric-metonymy",
+    "rhetoric-parallelism",
+    "rhetoric-personification",
+    "rhetoric-repetition",
+    "rhetoric-schemes",
+    "rhetoric-simile",
+    "rhetoric-synecdoche",
+    "rhetoric-tropes",
+    "rhetorical-strategies",
+    "rst-introduction",
+    "rst-relations",
+    "short-sentences",
+    "signaling-overlap-study",
+    "tables",
+    "toulmin",
+    "tutorials",
+    "unc-editing",
+    "unc-revising",
+    "unc-style",
+    "unicode-emoji",
+    "vega-legend",
+    "wai-symbols",
+    "wcag22",
+    "words"
+  ]
+}

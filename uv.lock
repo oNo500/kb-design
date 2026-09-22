@@ -18,6 +18,7 @@ members = [
     "kb-vocab-preview",
     "kb-vocab-rdf-preview",
     "kb-vocab-shacl",
+    "kb-vocab-writing",
 ]
 
 [[package]]
@@ -431,6 +432,7 @@ dev = [
     { name = "kb-vocab-preview" },
     { name = "kb-vocab-rdf-preview" },
     { name = "kb-vocab-shacl" },
+    { name = "kb-vocab-writing" },
 ]
 
 [package.metadata]
@@ -446,6 +448,7 @@ dev = [
     { name = "kb-vocab-preview", editable = "apps/vocab-preview" },
     { name = "kb-vocab-rdf-preview", editable = "apps/vocab-rdf-preview" },
     { name = "kb-vocab-shacl", editable = "packages/kb-vocab-shacl" },
+    { name = "kb-vocab-writing", editable = "packages/kb-vocab-writing" },
 ]
 
 [[package]]
@@ -575,6 +578,29 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [{ name = "rdflib", specifier = ">=7.1,<8" }]
+
+[[package]]
+name = "kb-vocab-writing"
+version = "0.1.0"
+source = { editable = "packages/kb-vocab-writing" }
+dependencies = [
+    { name = "beautifulsoup4" },
+    { name = "jsonschema" },
+    { name = "kb-sources" },
+    { name = "kb-vocab-shacl" },
+    { name = "pyshacl" },
+    { name = "rdflib" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "beautifulsoup4", specifier = ">=4.14,<5" },
+    { name = "jsonschema", specifier = "==4.23.0" },
+    { name = "kb-sources", editable = "packages/kb-sources" },
+    { name = "kb-vocab-shacl", editable = "packages/kb-vocab-shacl" },
+    { name = "pyshacl", specifier = ">=0.30,<0.32" },
+    { name = "rdflib", specifier = ">=7.1,<8" },
+]
 
 [[package]]
 name = "owlrl"

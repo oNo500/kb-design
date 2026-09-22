@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "cornell-notes.html",
+      "format": "html",
+      "id": "cornell-notes",
+      "url": "https://lsc.cornell.edu/how-to-study/taking-notes/cornell-note-taking-system/"
+    }
+  ],
+  "id": "cornell-notes",
+  "schema_version": 1,
+  "title": "cornell-notes",
+  "version": "live-web-snapshot"
+}

@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "self-editing.html",
+      "format": "html",
+      "id": "self-editing",
+      "url": "https://developers.google.com/tech-writing/two/self-editing"
+    }
+  ],
+  "id": "self-editing",
+  "schema_version": 1,
+  "title": "self-editing",
+  "version": "live-web-snapshot"
+}

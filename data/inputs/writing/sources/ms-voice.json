@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "ms-voice.html",
+      "format": "html",
+      "id": "ms-voice",
+      "url": "https://learn.microsoft.com/en-us/style-guide/brand-voice-above-all-simple-human"
+    }
+  ],
+  "id": "ms-voice",
+  "schema_version": 1,
+  "title": "ms-voice",
+  "version": "live-web-snapshot"
+}

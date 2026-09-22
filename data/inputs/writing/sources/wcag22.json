@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "wcag22.html",
+      "format": "html",
+      "id": "wcag22",
+      "url": "https://www.w3.org/TR/WCAG22/"
+    }
+  ],
+  "id": "wcag22",
+  "schema_version": 1,
+  "title": "Web Content Accessibility Guidelines 2.2",
+  "version": "2.2"
+}

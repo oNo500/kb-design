@@ -1,0 +1,2303 @@
+{
+  "concepts": [
+    {
+      "id": "urn:kb-vocab-writing:cooperative-principle",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:cooperative-principle:label:zh",
+          "role": "preferred",
+          "text": "合作原则",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:cooperative-principle:label:en",
+          "role": "preferred",
+          "text": "Co-operative Principle",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+          "quote": "Grice described these expectations in terms of a Co-operative Principle"
+        },
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(47)",
+          "quote": "the co-operative communicator’s willingness to provide any required information is taken for granted"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:cooperative-principle:definition",
+          "kind": "definition",
+          "text": "在 Grice 的会话解释框架中，听者期待交际者按交谈需要作出贡献，并依据与真实性、信息量、相关性和清晰性有关的准则理解其意图的原则。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）对 Grice 的转述归纳，未将本条表述冒充 Grice 原文；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+              "quote": "Grice described these expectations in terms of a Co-operative Principle"
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(47)",
+              "quote": "the co-operative communicator’s willingness to provide any required information is taken for granted"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:cooperative-principle:scope:1",
+          "kind": "scope",
+          "text": "此处呈现 Wilson 与 Sperber 对 Grice 的说明。关联理论继承意图识别的推理思路，但质疑合作原则及准则对所有交际的必要性。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）对 Grice 的转述归纳，未将本条表述冒充 Grice 原文；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+              "quote": "question several other aspects of his account, including the need for a Co-operative Principle and maxims"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:maxim-of-quality",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:maxim-of-quality:label:zh",
+          "role": "preferred",
+          "text": "质的准则",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:maxim-of-quality:label:en",
+          "role": "preferred",
+          "text": "Maxim of Quality",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+          "quote": "Quality (truthfulness)"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:maxim-of-quality:definition",
+          "kind": "definition",
+          "text": "Grice 会话框架中关于真实性的准则，构成听者据以解释说话者意图的期待。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）对 Grice 的转述归纳，未将本条表述冒充 Grice 原文；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+              "quote": "Quality (truthfulness)"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:maxim-of-quality:scope:1",
+          "kind": "scope",
+          "text": "本条只归纳本次综述明确说明的方面，不据此扩写 Grice 各条子准则，也不把它设为所有写作体裁必须遵循的规则。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）对 Grice 的转述归纳，未将本条表述冒充 Grice 原文；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+              "quote": "Grice described these expectations in terms of a Co-operative Principle"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:cooperative-principle",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+              "quote": "Grice described these expectations in terms of a Co-operative Principle"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:maxim-of-quantity",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:maxim-of-quantity:label:zh",
+          "role": "preferred",
+          "text": "量的准则",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:maxim-of-quantity:label:en",
+          "role": "preferred",
+          "text": "Maxim of Quantity",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+          "quote": "Quantity (informativeness)"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:maxim-of-quantity:definition",
+          "kind": "definition",
+          "text": "Grice 会话框架中关于信息量的准则，构成听者据以解释说话者意图的期待。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）对 Grice 的转述归纳，未将本条表述冒充 Grice 原文；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+              "quote": "Quantity (informativeness)"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:maxim-of-quantity:scope:1",
+          "kind": "scope",
+          "text": "本条只归纳本次综述明确说明的方面，不据此扩写 Grice 各条子准则，也不把它设为所有写作体裁必须遵循的规则。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）对 Grice 的转述归纳，未将本条表述冒充 Grice 原文；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+              "quote": "Grice described these expectations in terms of a Co-operative Principle"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:cooperative-principle",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+              "quote": "Grice described these expectations in terms of a Co-operative Principle"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:maxim-of-relation",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:maxim-of-relation:label:zh",
+          "role": "preferred",
+          "text": "关系准则",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:maxim-of-relation:label:en",
+          "role": "preferred",
+          "text": "Maxim of Relation",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+          "quote": "Relation (relevance)"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:maxim-of-relation:definition",
+          "kind": "definition",
+          "text": "Grice 会话框架中关于相关性的准则，构成听者据以解释说话者意图的期待。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）对 Grice 的转述归纳，未将本条表述冒充 Grice 原文；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+              "quote": "Relation (relevance)"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:maxim-of-relation:scope:1",
+          "kind": "scope",
+          "text": "本条只归纳本次综述明确说明的方面，不据此扩写 Grice 各条子准则，也不把它设为所有写作体裁必须遵循的规则。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）对 Grice 的转述归纳，未将本条表述冒充 Grice 原文；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+              "quote": "Grice described these expectations in terms of a Co-operative Principle"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:cooperative-principle",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+              "quote": "Grice described these expectations in terms of a Co-operative Principle"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:maxim-of-manner",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:maxim-of-manner:label:zh",
+          "role": "preferred",
+          "text": "方式准则",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:maxim-of-manner:label:en",
+          "role": "preferred",
+          "text": "Maxim of Manner",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+          "quote": "Manner (clarity)"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:maxim-of-manner:definition",
+          "kind": "definition",
+          "text": "Grice 会话框架中关于表达的清晰性的准则，构成听者据以解释说话者意图的期待。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）对 Grice 的转述归纳，未将本条表述冒充 Grice 原文；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+              "quote": "Manner (clarity)"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:maxim-of-manner:scope:1",
+          "kind": "scope",
+          "text": "本条只归纳本次综述明确说明的方面，不据此扩写 Grice 各条子准则，也不把它设为所有写作体裁必须遵循的规则。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）对 Grice 的转述归纳，未将本条表述冒充 Grice 原文；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+              "quote": "Grice described these expectations in terms of a Co-operative Principle"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:cooperative-principle",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+              "quote": "Grice described these expectations in terms of a Co-operative Principle"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:relevance-theory",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:relevance-theory:label:zh",
+          "role": "preferred",
+          "text": "关联理论",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:relevance-theory:label:en",
+          "role": "preferred",
+          "text": "Relevance theory",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+          "quote": "The central claim of relevance theory is that the expectations of relevance raised by an utterance"
+        },
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(140)",
+          "quote": "Relevance theory is a cognitive psychological theory."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:relevance-theory:definition",
+          "kind": "definition",
+          "text": "把话语理解视为认知推理过程，借助话语所引发的关联期待解释听者如何识别说话者意义的理论。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(5)",
+              "quote": "The central claim of relevance theory is that the expectations of relevance raised by an utterance"
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(140)",
+              "quote": "Relevance theory is a cognitive psychological theory."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:relevance-theory:scope:1",
+          "kind": "scope",
+          "text": "这是具有可检验推论的认知心理理论；本条采用 Wilson 与 Sperber（2004）说明的版本。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(140)",
+              "quote": "Like other psychological theories, it has testable consequences"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:relevance-theoretic-relevance",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:relevance-theoretic-relevance:label:zh",
+          "role": "preferred",
+          "text": "关联",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:relevance-theoretic-relevance:label:en",
+          "role": "preferred",
+          "text": "Relevance",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(8)",
+          "quote": "an input is relevant to an individual when its processing in a context of available assumptions yields a positive cognitive effect"
+        },
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(11)",
+          "quote": "relevance may be assessed in terms of cognitive effects and processing effort"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:relevance-theoretic-relevance:definition",
+          "kind": "definition",
+          "text": "在关联理论中，输入在个体可用假设的语境中产生积极认知效果的性质；其程度随效果和处理努力而比较。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(8)",
+              "quote": "an input is relevant to an individual when its processing in a context of available assumptions yields a positive cognitive effect"
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(11)",
+              "quote": "relevance may be assessed in terms of cognitive effects and processing effort"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:relevance-theoretic-relevance:scope:1",
+          "kind": "scope",
+          "text": "此处属于关联理论，不同于简明语言中读者获得所需信息的要求。作者采用比较性而非绝对数值性说明，不提供可直接计算的文章价值比值。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(20)",
+              "quote": "This characterisation of relevance is comparative rather than quantitative"
+            },
+            {
+              "source": "plain-language",
+              "selector": "[id=\"Governing\"] > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Readers get what they need (relevant)"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:positive-cognitive-effect",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:positive-cognitive-effect:label:zh",
+          "role": "preferred",
+          "text": "积极认知效果",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:positive-cognitive-effect:label:en",
+          "role": "preferred",
+          "text": "Positive cognitive effect",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(8)",
+          "quote": "A positive cognitive effect is a worthwhile difference to the individual’s representation of the world"
+        },
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(9)",
+          "quote": "Other types of cognitive effect include the strengthening, revision or abandonment of available assumptions"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:positive-cognitive-effect:definition",
+          "kind": "definition",
+          "text": "输入的处理使个体对世界的表征发生有价值的变化，例如获得真实结论，或加强、修正、放弃已有假设。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(8)",
+              "quote": "A positive cognitive effect is a worthwhile difference to the individual’s representation of the world"
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(9)",
+              "quote": "Other types of cognitive effect include the strengthening, revision or abandonment of available assumptions"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:positive-cognitive-effect:scope:1",
+          "kind": "scope",
+          "text": "关联理论区分认知效果和积极认知效果；错误结论也可能是认知效果，但不属于这里的积极效果。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(8)",
+              "quote": "False conclusions are not worth having. They are cognitive effects, but not positive ones"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:processing-effort",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:processing-effort:label:zh",
+          "role": "preferred",
+          "text": "处理努力",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:processing-effort:label:en",
+          "role": "preferred",
+          "text": "Processing effort",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(11)",
+          "quote": "the greater the effort of perception, memory and inference required"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:processing-effort:definition",
+          "kind": "definition",
+          "text": "个体处理输入时在感知、记忆和推理方面付出的认知努力。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(11)",
+              "quote": "the greater the effort of perception, memory and inference required"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:processing-effort:scope:1",
+          "kind": "scope",
+          "text": "在其他条件相同的情况下，关联理论把较高处理努力与较低关联程度联系起来；这里不是字数或阅读时间的直接替代指标。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(11)",
+              "quote": "the greater the processing effort required, the less relevant the input will be"
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(143)",
+              "quote": "relevance theory does not provide an absolute measure of mental effort or cognitive effect"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:informative-intention",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:informative-intention:label:zh",
+          "role": "preferred",
+          "text": "信息意图",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:informative-intention:label:en",
+          "role": "preferred",
+          "text": "Informative intention",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(30)",
+          "quote": "The intention to inform an audience of something."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:informative-intention:definition",
+          "kind": "definition",
+          "text": "使受众获知某事的意图。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(30)",
+              "quote": "The intention to inform an audience of something."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:informative-intention:scope:1",
+          "kind": "scope",
+          "text": "关联理论将其与让受众识别这一信息意图的交际意图区分。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(32)",
+              "quote": "The intention to inform the audience of one’s informative intention."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:communicative-intention",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:communicative-intention:label:zh",
+          "role": "preferred",
+          "text": "交际意图",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:communicative-intention:label:en",
+          "role": "preferred",
+          "text": "Communicative intention",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(32)",
+          "quote": "The intention to inform the audience of one’s informative intention."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:communicative-intention:definition",
+          "kind": "definition",
+          "text": "使受众获知交际者的信息意图的意图。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(32)",
+              "quote": "The intention to inform the audience of one’s informative intention."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:communicative-intention:scope:1",
+          "kind": "scope",
+          "text": "受众识别信息意图即可形成理解；理解与相信所传达的内容仍有区别。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(33)",
+              "quote": "There is a gap between understanding and believing."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:ostensive-inferential-communication",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:ostensive-inferential-communication:label:zh",
+          "role": "preferred",
+          "text": "明示推理交际",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:ostensive-inferential-communication:label:en",
+          "role": "preferred",
+          "text": "Ostensive-inferential communication",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(34)",
+          "quote": "ostensive-inferential communication involves the use of an ostensive stimulus"
+        },
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(26)",
+          "quote": "Inferential communication is not just a matter of intending to affect the thoughts of an audience"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:ostensive-inferential-communication:definition",
+          "kind": "definition",
+          "text": "交际者使用明示刺激引起注意、指向自己的意义，使受众通过推理识别其信息意图的交际。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(34)",
+              "quote": "ostensive-inferential communication involves the use of an ostensive stimulus"
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(26)",
+              "quote": "Inferential communication is not just a matter of intending to affect the thoughts of an audience"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:ostensive-inferential-communication:scope:1",
+          "kind": "scope",
+          "text": "本条采用作者同时区分信息意图与交际意图的简化表述；既适用于语言交际，也涉及非语言的明示。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(30)",
+              "quote": "The intention to inform an audience of something."
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(32)",
+              "quote": "The intention to inform the audience of one’s informative intention."
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(325)",
+              "quote": "This is the simpler of two characterisations of ostensive-inferential communication"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:contextual-assumptions",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:contextual-assumptions:label:zh",
+          "role": "preferred",
+          "text": "语境假设",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:contextual-assumptions:label:en",
+          "role": "preferred",
+          "text": "Contextual assumptions",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(48)",
+          "quote": "All this requires an appropriate set of contextual assumptions, which the hearer must also supply."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:contextual-assumptions:definition",
+          "kind": "definition",
+          "text": "听者在解释话语时调用或补充、用于消歧和推断说话者意义的一组假设。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(48)",
+              "quote": "All this requires an appropriate set of contextual assumptions, which the hearer must also supply."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:contextual-assumptions:scope:1",
+          "kind": "scope",
+          "text": "此处限定为关联理论话语解释中的假设，不把语境等同于文字邻近位置或仅指物理环境。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(8)",
+              "quote": "When is an input relevant?"
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(48)",
+              "quote": "All this requires an appropriate set of contextual assumptions, which the hearer must also supply."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:contextual-implication",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:contextual-implication:label:zh",
+          "role": "preferred",
+          "text": "语境蕴含",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:contextual-implication:label:en",
+          "role": "preferred",
+          "text": "Contextual implication",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(9)",
+          "quote": "a conclusion deducible from the input and the context together, but from neither input nor context alone"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:contextual-implication:definition",
+          "kind": "definition",
+          "text": "由输入与语境共同推出、而不能仅由输入或仅由语境推出的结论。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(9)",
+              "quote": "a conclusion deducible from the input and the context together, but from neither input nor context alone"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:explicature",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:explicature:label:zh",
+          "role": "preferred",
+          "text": "显义",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:explicature:label:en",
+          "role": "preferred",
+          "text": "Explicature",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(332)",
+          "quote": "By ‘explicitly communicated content’ (or explicature), we mean a proposition recovered by a combination of decoding and inference"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:explicature:definition",
+          "kind": "definition",
+          "text": "通过解码和推理共同恢复的、明确传达的命题，可作为进一步推导语境蕴含及其他认知效果的前提。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(332)",
+              "quote": "By ‘explicitly communicated content’ (or explicature), we mean a proposition recovered by a combination of decoding and inference"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:explicature:scope:1",
+          "kind": "scope",
+          "text": "这是关联理论对明确内容的说明，不直接等同于语言编码内容，也不借此统一 Grice 的所说内容与其他语用理论的划分。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(57)",
+              "quote": "even the explicitly communicated content of an utterance goes well beyond what is linguistically encoded"
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(57)",
+              "quote": "Grice talked of his Co-operative Principle and maxims mainly in connection with the recovery of implicatures"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:conversational-implicature",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:conversational-implicature:label:zh",
+          "role": "preferred",
+          "text": "会话含义",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:conversational-implicature:label:en",
+          "role": "preferred",
+          "text": "Conversational implicature",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(131)",
+          "quote": "his rational reconstruction of how conversational implicatures are derived"
+        },
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(132)",
+          "quote": "He said that P; he could not have done this unless he thought that Q;"
+        },
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(57)",
+          "quote": "the “secondary” processes involved in the recovery of implicatures"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:conversational-implicature:definition",
+          "kind": "definition",
+          "text": "听者根据所说内容、交际者意图及交谈期待推断出的含义；对这类含义的恢复与明确内容的恢复有区别。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）对 Grice 的转述归纳，未将本条表述冒充 Grice 原文；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(131)",
+              "quote": "his rational reconstruction of how conversational implicatures are derived"
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(132)",
+              "quote": "He said that P; he could not have done this unless he thought that Q;"
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(57)",
+              "quote": "the “secondary” processes involved in the recovery of implicatures"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:conversational-implicature:scope:1",
+          "kind": "scope",
+          "text": "本条采用 Wilson 与 Sperber 对 Grice 推理框架的转述；关联理论另以隐含前提、隐含结论及其与显义的关系分析理解过程。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）对 Grice 的转述归纳，未将本条表述冒充 Grice 原文；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(61)",
+              "quote": "Constructing an appropriate hypothesis about the intended contextual assumptions"
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(62)",
+              "quote": "Constructing an appropriate hypothesis about the intended contextual implications"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:cognitive-principle-of-relevance",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:cognitive-principle-of-relevance:label:zh",
+          "role": "preferred",
+          "text": "认知关联原则",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:cognitive-principle-of-relevance:label:en",
+          "role": "preferred",
+          "text": "Cognitive Principle of Relevance",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(23)",
+          "quote": "Human cognition tends to be geared to the maximisation of relevance."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:cognitive-principle-of-relevance:definition",
+          "kind": "definition",
+          "text": "人类认知趋向于最大化关联的理论原则。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(23)",
+              "quote": "Human cognition tends to be geared to the maximisation of relevance."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:cognitive-principle-of-relevance:scope:1",
+          "kind": "scope",
+          "text": "这是关联理论关于认知倾向的主张，不是要求读者或作者计算一个最大值的操作规范。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(21)",
+              "quote": "Relevance theory claims that humans do have an automatic tendency to maximise relevance"
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(20)",
+              "quote": "This characterisation of relevance is comparative rather than quantitative"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:communicative-principle-of-relevance",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:communicative-principle-of-relevance:label:zh",
+          "role": "preferred",
+          "text": "交际关联原则",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:communicative-principle-of-relevance:label:en",
+          "role": "preferred",
+          "text": "Communicative Principle of Relevance",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(37)",
+          "quote": "Every ostensive stimulus conveys a presumption of its own optimal relevance."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:communicative-principle-of-relevance:definition",
+          "kind": "definition",
+          "text": "每个明示刺激都传达关于其自身最佳关联的预期的理论原则。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(37)",
+              "quote": "Every ostensive stimulus conveys a presumption of its own optimal relevance."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:communicative-principle-of-relevance:scope:1",
+          "kind": "scope",
+          "text": "此原则针对明示推理交际；交际者可能出错或欺骗，预期的出现不保证实际解释真实。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(35)",
+              "quote": "which applies specifically to ostensive-inferential communication"
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(53)",
+              "quote": "Since comprehension is a non-demonstrative inference process, this hypothesis may well be false"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:optimal-relevance",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:optimal-relevance:label:zh",
+          "role": "preferred",
+          "text": "最佳关联",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:optimal-relevance:label:en",
+          "role": "preferred",
+          "text": "Optimal relevance",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(42)",
+          "quote": "It is relevant enough to be worth the audience’s processing effort;"
+        },
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(43)",
+          "quote": "It is the most relevant one compatible with communicator’s abilities and preferences."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:optimal-relevance:definition",
+          "kind": "definition",
+          "text": "明示刺激足以值得受众投入处理努力，且在交际者能力与偏好允许的范围内具有最高关联。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(42)",
+              "quote": "It is relevant enough to be worth the audience’s processing effort;"
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(43)",
+              "quote": "It is the most relevant one compatible with communicator’s abilities and preferences."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:optimal-relevance:scope:1",
+          "kind": "scope",
+          "text": "本项包含交际者能够且愿意提供刺激的限制，不等同于不受条件限制的最大信息量。",
+          "language": "zh",
+          "applicability": "依据 Wilson 与 Sperber（2004）的关联理论综述归纳；中文为模型译写，外部中文用法未核实，不是写作规范。",
+          "evidence": [
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(46)",
+              "quote": "the communicator is WILLING AND ABLE to produce"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:reading-level",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:reading-level:label:zh",
+          "role": "preferred",
+          "text": "阅读水平",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:reading-level:label:en",
+          "role": "preferred",
+          "text": "Reading level",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "reading-level",
+          "selector": "[id=\"intent\"] > p:nth-of-type(2)",
+          "quote": "Text difficulty is described in terms of the level of education required to read the text."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:reading-level:definition",
+          "kind": "definition",
+          "text": "为阅读文本所需要的阅读能力水平；在 WCAG 相关说明中用所需教育水平描述文本难度。",
+          "language": "zh",
+          "applicability": "依据 WCAG 2.2 及其说明中的 Web 可访问性语境归纳；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "reading-level",
+              "selector": "[id=\"intent\"] > p:nth-of-type(2)",
+              "quote": "Text difficulty is described in terms of the level of education required to read the text."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:reading-level:scope:1",
+          "kind": "scope",
+          "text": "这里用于判断是否应提供补充内容或较易读版本，不以这一要求禁止面向专业读者的复杂文本。",
+          "language": "zh",
+          "applicability": "依据 WCAG 2.2 及其说明中的 Web 可访问性语境归纳；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "reading-level",
+              "selector": "[id=\"intent\"] > p:nth-of-type(3)",
+              "quote": "Difficult or complex text may be appropriate for most members of the intended audience"
+            },
+            {
+              "source": "wcag22",
+              "selector": "[id=\"reading-level\"] > p:nth-of-type(2)",
+              "quote": "When text requires reading ability more advanced than the lower secondary education level"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:text-decoding",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:text-decoding:label:zh",
+          "role": "preferred",
+          "text": "文字解码",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:text-decoding:label:en",
+          "role": "preferred",
+          "text": "Decoding",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "reading-level",
+          "selector": "[id=\"intent\"] > p:nth-of-type(4)",
+          "quote": "recognize written or printed words and associate them with the correct sounds. This is called \"decoding\" the text."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:text-decoding:definition",
+          "kind": "definition",
+          "text": "识别书写或印刷文字并将其与正确语音联系起来的过程。",
+          "language": "zh",
+          "applicability": "依据 WCAG 2.2 及其说明中的 Web 可访问性语境归纳；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "reading-level",
+              "selector": "[id=\"intent\"] > p:nth-of-type(4)",
+              "quote": "recognize written or printed words and associate them with the correct sounds. This is called \"decoding\" the text."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:text-decoding:scope:1",
+          "kind": "scope",
+          "text": "本条采用 W3C Reading Level 说明中的阅读过程语境，不等同于关联理论对语言编码意义的解码。",
+          "language": "zh",
+          "applicability": "依据 WCAG 2.2 及其说明中的 Web 可访问性语境归纳；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "reading-level",
+              "selector": "[id=\"intent\"] > p:nth-of-type(4)",
+              "quote": "recognize written or printed words and associate them with the correct sounds. This is called \"decoding\" the text."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:web-accessibility",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:web-accessibility:label:zh",
+          "role": "preferred",
+          "text": "Web 可访问性",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:web-accessibility:label:en",
+          "role": "preferred",
+          "text": "Web accessibility",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "wcag22",
+          "selector": "[id=\"background-on-wcag-2\"] > p:nth-of-type(1)",
+          "quote": "Accessibility involves a wide range of disabilities"
+        },
+        {
+          "source": "coga",
+          "selector": "[id=\"working-with-users-with-cognitive-and-learning-disabilities\"] > p:nth-of-type(4)",
+          "quote": "if someone cannot use the content or design without help because of their disability, then the content is not accessible for them."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:web-accessibility:definition",
+          "kind": "definition",
+          "text": "使残障人士能够使用 Web 内容的特性，涉及视觉、听觉、身体、语言、认知和学习等不同障碍所带来的使用需要。",
+          "language": "zh",
+          "applicability": "依据 WCAG 2.2 及其说明中的 Web 可访问性语境归纳；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "[id=\"background-on-wcag-2\"] > p:nth-of-type(1)",
+              "quote": "Accessibility involves a wide range of disabilities"
+            },
+            {
+              "source": "coga",
+              "selector": "[id=\"working-with-users-with-cognitive-and-learning-disabilities\"] > p:nth-of-type(4)",
+              "quote": "if someone cannot use the content or design without help because of their disability, then the content is not accessible for them."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:web-accessibility:scope:1",
+          "kind": "scope",
+          "text": "不能由一般可用性或某一类用户的成功使用直接推断对所有障碍情况都可访问。COGA 的目标与模式是 WCAG 以外的补充指导，不是 WCAG 合规的必需条件。",
+          "language": "zh",
+          "applicability": "依据 WCAG 2.2 及其说明中的 Web 可访问性语境归纳；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "[id=\"background-on-wcag-2\"] > p:nth-of-type(1)",
+              "quote": "they are not able to address the needs of people with all types, degrees, and combinations of disability"
+            },
+            {
+              "source": "coga",
+              "selector": "[id=\"introduction_for_usable\"] > p:nth-of-type(5)",
+              "quote": "Following this guidance is not required for conformance to WCAG."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:meaningful-sequence",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:meaningful-sequence:label:zh",
+          "role": "preferred",
+          "text": "有意义的顺序",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:meaningful-sequence:label:en",
+          "role": "preferred",
+          "text": "Meaningful sequence",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "wcag22",
+          "selector": "[id=\"meaningful-sequence\"] > p:nth-of-type(2)",
+          "quote": "When the sequence in which content is presented affects its meaning, a correct reading sequence can be programmatically determined"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:meaningful-sequence:definition",
+          "kind": "definition",
+          "text": "当内容的呈现顺序影响意义时，要求正确阅读顺序能够被程序确定的 Web 可访问性成功准则。",
+          "language": "zh",
+          "applicability": "依据 WCAG 2.2 及其说明中的 Web 可访问性语境归纳；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "[id=\"meaningful-sequence\"] > p:nth-of-type(2)",
+              "quote": "When the sequence in which content is presented affects its meaning, a correct reading sequence can be programmatically determined"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:meaningful-sequence:scope:1",
+          "kind": "scope",
+          "text": "本条指 WCAG 2.2 同名成功准则，而不是一切文章必须遵守的固定结构顺序。",
+          "language": "zh",
+          "applicability": "依据 WCAG 2.2 及其说明中的 Web 可访问性语境归纳；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "[id=\"meaningful-sequence\"] > p:nth-of-type(2)",
+              "quote": "When the sequence in which content is presented affects its meaning, a correct reading sequence can be programmatically determined"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:info-and-relationships",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:info-and-relationships:label:zh",
+          "role": "preferred",
+          "text": "信息与关系",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:info-and-relationships:label:en",
+          "role": "preferred",
+          "text": "Info and relationships",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "wcag22",
+          "selector": "[id=\"info-and-relationships\"] > p:nth-of-type(2)",
+          "quote": "and relationships conveyed through presentation can be programmatically determined or are available in text."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:info-and-relationships:definition",
+          "kind": "definition",
+          "text": "要求由呈现传达的信息、结构和关系能够被程序确定或以文本提供的 Web 可访问性成功准则。",
+          "language": "zh",
+          "applicability": "依据 WCAG 2.2 及其说明中的 Web 可访问性语境归纳；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "[id=\"info-and-relationships\"] > p:nth-of-type(2)",
+              "quote": "and relationships conveyed through presentation can be programmatically determined or are available in text."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:info-and-relationships:scope:1",
+          "kind": "scope",
+          "text": "本条指 WCAG 2.2 同名成功准则。视觉呈现所表达的关系是其对象，不据此定义知识模型的所有关系类型。",
+          "language": "zh",
+          "applicability": "依据 WCAG 2.2 及其说明中的 Web 可访问性语境归纳；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "[id=\"info-and-relationships\"] > p:nth-of-type(2)",
+              "quote": "and relationships conveyed through presentation can be programmatically determined or are available in text."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:supplemental-content",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:supplemental-content:label:zh",
+          "role": "preferred",
+          "text": "补充内容",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:supplemental-content:label:en",
+          "role": "preferred",
+          "text": "Supplemental content",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "wcag22",
+          "selector": "[id=\"terms\"] > dd:nth-of-type(85) > p:nth-of-type(1)",
+          "quote": "additional content that illustrates or clarifies the primary content"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:supplemental-content:definition",
+          "kind": "definition",
+          "text": "用于说明或澄清主要内容的附加内容。",
+          "language": "zh",
+          "applicability": "依据 WCAG 2.2 及其说明中的 Web 可访问性语境归纳；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "[id=\"terms\"] > dd:nth-of-type(85) > p:nth-of-type(1)",
+              "quote": "additional content that illustrates or clarifies the primary content"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:supplemental-content:scope:1",
+          "kind": "scope",
+          "text": "采用 WCAG 的定义；可包括音频版本、复杂过程的插图，或概括研究主要结果与建议的段落。",
+          "language": "zh",
+          "applicability": "依据 WCAG 2.2 及其说明中的 Web 可访问性语境归纳；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "[id=\"terms\"] > dd:nth-of-type(85)",
+              "quote": "additional content that illustrates or clarifies the primary content"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:cognitive-load-theory",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:cognitive-load-theory:label:zh",
+          "role": "preferred",
+          "text": "认知负荷理论",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:cognitive-load-theory:label:en",
+          "role": "preferred",
+          "text": "Cognitive load theory",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "nsw-cognitive-load",
+          "selector": "[id=\"text-cfc5ec2fe9\"] > p:nth-of-type(2)",
+          "quote": "Cognitive load theory uses knowledge of the human brain to design teaching strategies that will maximise learning."
+        },
+        {
+          "source": "nsw-cognitive-load",
+          "selector": "[id=\"text-cfc5ec2fe9\"] > p:nth-of-type(2)",
+          "quote": "Cognitive load theory is about optimising the load on students’ working memories"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:cognitive-load-theory:definition",
+          "kind": "definition",
+          "text": "利用有关人类信息加工与记忆的知识，通过优化学生工作记忆所承担的负荷指导教学设计的理论。",
+          "language": "zh",
+          "applicability": "依据澳大利亚新南威尔士州教育部门的教学说明归纳，适用于该来源的课堂教学语境；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "nsw-cognitive-load",
+              "selector": "[id=\"text-cfc5ec2fe9\"] > p:nth-of-type(2)",
+              "quote": "Cognitive load theory uses knowledge of the human brain to design teaching strategies that will maximise learning."
+            },
+            {
+              "source": "nsw-cognitive-load",
+              "selector": "[id=\"text-cfc5ec2fe9\"] > p:nth-of-type(2)",
+              "quote": "Cognitive load theory is about optimising the load on students’ working memories"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:cognitive-load-theory:scope:1",
+          "kind": "scope",
+          "text": "本条根据教育部门的实践说明整理，不据此把课堂教学策略直接设为所有文章体裁的写作规则。",
+          "language": "zh",
+          "applicability": "依据澳大利亚新南威尔士州教育部门的教学说明归纳，适用于该来源的课堂教学语境；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "nsw-cognitive-load",
+              "selector": "[id=\"text-cfc5ec2fe9\"] > p:nth-of-type(1)",
+              "quote": "It is intended to be a practical resource, and uses examples from the NSW syllabuses"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:working-memory",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:working-memory:label:zh",
+          "role": "preferred",
+          "text": "工作记忆",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:working-memory:label:en",
+          "role": "preferred",
+          "text": "Working memory",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "nsw-learning",
+          "selector": "[id=\"text-ba846f8ca8\"] > p:nth-of-type(10)",
+          "quote": "working memory is very limited - it holds and processes small amounts of information for a short time."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:working-memory:definition",
+          "kind": "definition",
+          "text": "短时间内保持和加工少量信息的记忆系统。",
+          "language": "zh",
+          "applicability": "依据澳大利亚新南威尔士州教育部门的教学说明归纳，适用于该来源的课堂教学语境；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "nsw-learning",
+              "selector": "[id=\"text-ba846f8ca8\"] > p:nth-of-type(10)",
+              "quote": "working memory is very limited - it holds and processes small amounts of information for a short time."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:working-memory:scope:1",
+          "kind": "scope",
+          "text": "本条采用教学说明中的功能性解释，不把少量信息换算成所有读者共同适用的固定字数或项目数。",
+          "language": "zh",
+          "applicability": "依据澳大利亚新南威尔士州教育部门的教学说明归纳，适用于该来源的课堂教学语境；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "nsw-learning",
+              "selector": "[id=\"text-b02723310e\"] > ol:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Working memory is where we hold small amounts of information for a very short time."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:cognitive-overload",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:cognitive-overload:label:zh",
+          "role": "preferred",
+          "text": "认知超负荷",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:cognitive-overload:label:en",
+          "role": "preferred",
+          "text": "Cognitive overload",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "nsw-learning",
+          "selector": "[id=\"text-ba846f8ca8\"] > p:nth-of-type(12)",
+          "quote": "Cognitive overload happens when the amount of information we’re working with exceeds the capacity of our working memory."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:cognitive-overload:definition",
+          "kind": "definition",
+          "text": "正在加工的信息量超过工作记忆容量的情况。",
+          "language": "zh",
+          "applicability": "依据澳大利亚新南威尔士州教育部门的教学说明归纳，适用于该来源的课堂教学语境；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "nsw-learning",
+              "selector": "[id=\"text-ba846f8ca8\"] > p:nth-of-type(12)",
+              "quote": "Cognitive overload happens when the amount of information we’re working with exceeds the capacity of our working memory."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:cognitive-overload:scope:1",
+          "kind": "scope",
+          "text": "本条指加工需求与工作记忆容量的关系，不把篇幅长直接等同于超负荷。",
+          "language": "zh",
+          "applicability": "依据澳大利亚新南威尔士州教育部门的教学说明归纳，适用于该来源的课堂教学语境；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "nsw-learning",
+              "selector": "[id=\"text-ba846f8ca8\"] > p:nth-of-type(12)",
+              "quote": "Cognitive overload happens when the amount of information we’re working with exceeds the capacity of our working memory."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:intrinsic-cognitive-load",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:intrinsic-cognitive-load:label:zh",
+          "role": "preferred",
+          "text": "内在认知负荷",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:intrinsic-cognitive-load:label:en",
+          "role": "preferred",
+          "text": "Intrinsic cognitive load",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "signaling-overlap-study",
+          "selector": "[id=\"sec1\"] > p:nth-of-type(8)",
+          "quote": "Intrinsic— triggered by the learning content (ICL)"
+        },
+        {
+          "source": "signaling-overlap-study",
+          "selector": "[id=\"sec29\"] > p:nth-of-type(4)",
+          "quote": "Theoretically, ICL depends on the interactivity of content and learners’ prior knowledge"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:intrinsic-cognitive-load:definition",
+          "kind": "definition",
+          "text": "由学习内容触发，并与内容中元素的相互作用及学习者已有知识有关的认知负荷。",
+          "language": "zh",
+          "applicability": "依据 Désiron、Endres 与 Schneider（2026）研究正文的理论说明归纳；该文直接实验对象是软件视频教程，不冒称已核对其所引全部原始理论文献；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"sec1\"] > p:nth-of-type(8)",
+              "quote": "Intrinsic— triggered by the learning content (ICL)"
+            },
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"sec29\"] > p:nth-of-type(4)",
+              "quote": "Theoretically, ICL depends on the interactivity of content and learners’ prior knowledge"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:intrinsic-cognitive-load:scope:1",
+          "kind": "scope",
+          "text": "该研究报告的内在负荷变化来自主观评价，作者认为可能反映感知复杂性降低，未据此证明客观内容复杂性改变。",
+          "language": "zh",
+          "applicability": "依据 Désiron、Endres 与 Schneider（2026）研究正文的理论说明归纳；该文直接实验对象是软件视频教程，不冒称已核对其所引全部原始理论文献；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"sec29\"] > p:nth-of-type(4)",
+              "quote": "this pattern likely reflects a reduction in perceived complexity rather than objective complexity"
+            },
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"sec29\"] > p:nth-of-type(9)",
+              "quote": "our inferences about cognitive load rely on subjective ratings"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:extraneous-cognitive-load",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:extraneous-cognitive-load:label:zh",
+          "role": "preferred",
+          "text": "外在认知负荷",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:extraneous-cognitive-load:label:en",
+          "role": "preferred",
+          "text": "Extraneous cognitive load",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "signaling-overlap-study",
+          "selector": "[id=\"sec1\"] > p:nth-of-type(8)",
+          "quote": "extraneous— depending on the design (ECL)"
+        },
+        {
+          "source": "signaling-overlap-study",
+          "selector": "[id=\"sec29\"] > p:nth-of-type(2)",
+          "quote": "thereby reducing nonessential processing and search and lowering extraneous demands"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:extraneous-cognitive-load:definition",
+          "kind": "definition",
+          "text": "依赖教学呈现设计、与学习者进行非必要加工和搜索等活动有关的认知负荷。",
+          "language": "zh",
+          "applicability": "依据 Désiron、Endres 与 Schneider（2026）研究正文的理论说明归纳；该文直接实验对象是软件视频教程，不冒称已核对其所引全部原始理论文献；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"sec1\"] > p:nth-of-type(8)",
+              "quote": "extraneous— depending on the design (ECL)"
+            },
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"sec29\"] > p:nth-of-type(2)",
+              "quote": "thereby reducing nonessential processing and search and lowering extraneous demands"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:extraneous-cognitive-load:scope:1",
+          "kind": "scope",
+          "text": "这里采用研究中的教学设计语境；负荷评价依赖主观量表，不能据此直接给普通文章计算外在负荷数值。",
+          "language": "zh",
+          "applicability": "依据 Désiron、Endres 与 Schneider（2026）研究正文的理论说明归纳；该文直接实验对象是软件视频教程，不冒称已核对其所引全部原始理论文献；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"sec29\"] > p:nth-of-type(9)",
+              "quote": "our inferences about cognitive load rely on subjective ratings"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:expertise-reversal-effect",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:expertise-reversal-effect:label:zh",
+          "role": "preferred",
+          "text": "专家反转效应",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:expertise-reversal-effect:label:en",
+          "role": "preferred",
+          "text": "Expertise reversal effect",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "signaling-overlap-study",
+          "selector": "[id=\"sec29\"] > p:nth-of-type(8)",
+          "quote": "guidance beneficial for novices can become redundant—or even detrimental—for more knowledgeable learners"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:expertise-reversal-effect:definition",
+          "kind": "definition",
+          "text": "对新手有帮助的指导随着学习者知识增加而成为冗余、甚至产生不利影响的效应。",
+          "language": "zh",
+          "applicability": "依据 Désiron、Endres 与 Schneider（2026）研究正文的理论说明归纳；该文直接实验对象是软件视频教程，不冒称已核对其所引全部原始理论文献；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"sec29\"] > p:nth-of-type(8)",
+              "quote": "guidance beneficial for novices can become redundant—or even detrimental—for more knowledgeable learners"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:expertise-reversal-effect:scope:1",
+          "kind": "scope",
+          "text": "本条依据研究讨论中对既有理论的说明，不能把该软件视频实验本身说成已检验所有熟练程度上的反转。",
+          "language": "zh",
+          "applicability": "依据 Désiron、Endres 与 Schneider（2026）研究正文的理论说明归纳；该文直接实验对象是软件视频教程，不冒称已核对其所引全部原始理论文献；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"sec29\"] > p:nth-of-type(8)",
+              "quote": "future work should therefore stratify by prior knowledge or adapt signaling dynamically"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:cognitive-redundancy-effect",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:cognitive-redundancy-effect:label:zh",
+          "role": "preferred",
+          "text": "冗余效应",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:cognitive-redundancy-effect:label:en",
+          "role": "preferred",
+          "text": "Redundancy effect",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "signaling-overlap-study",
+          "selector": "[id=\"sec1\"] > p:nth-of-type(17)",
+          "quote": "a redundancy effect occurs when learning is lower with the redundant information than without it."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:cognitive-redundancy-effect:definition",
+          "kind": "definition",
+          "text": "呈现冗余信息时的学习表现低于不呈现该信息时的效应。",
+          "language": "zh",
+          "applicability": "依据 Désiron、Endres 与 Schneider（2026）研究正文的理论说明归纳；该文直接实验对象是软件视频教程，不冒称已核对其所引全部原始理论文献；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"sec1\"] > p:nth-of-type(17)",
+              "quote": "a redundancy effect occurs when learning is lower with the redundant information than without it."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:cognitive-redundancy-effect:scope:1",
+          "kind": "scope",
+          "text": "重复出现本身不足以判定冗余效应；本研究的软件视频教程中，与任务相关界面内容整合的重复提示反而改善了学习结果，构成适用边界。",
+          "language": "zh",
+          "applicability": "依据 Désiron、Endres 与 Schneider（2026）研究正文的理论说明归纳；该文直接实验对象是软件视频教程，不冒称已核对其所引全部原始理论文献；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"sec29\"] > p:nth-of-type(8)",
+              "quote": "Although increasing signaling redundancy improved outcomes in our software video tutorial context"
+            },
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"h1\"] > p:nth-of-type(1)",
+              "quote": "content redundancy introduced through spatially integrated signaling does not hinder learning"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:signaling-principle",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:signaling-principle:label:zh",
+          "role": "preferred",
+          "text": "信号提示原则",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:signaling-principle:label:en",
+          "role": "preferred",
+          "text": "Signaling principle",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "signaling-overlap-study",
+          "selector": "[id=\"sec1\"] > p:nth-of-type(6)",
+          "quote": "Mayer describes the signaling principle as"
+        },
+        {
+          "source": "signaling-overlap-study",
+          "selector": "[id=\"sec1\"] > p:nth-of-type(10)",
+          "quote": "signals as a means of highlighting corresponding verbal and visual representations"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:signaling-principle:definition",
+          "kind": "definition",
+          "text": "在多媒体学习材料中突出必要内容、帮助学习者识别相关表征和引导注意的设计原则。",
+          "language": "zh",
+          "applicability": "依据 Désiron、Endres 与 Schneider（2026）研究正文的理论说明归纳；该文直接实验对象是软件视频教程，不冒称已核对其所引全部原始理论文献；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"sec1\"] > p:nth-of-type(6)",
+              "quote": "Mayer describes the signaling principle as"
+            },
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"sec1\"] > p:nth-of-type(10)",
+              "quote": "signals as a means of highlighting corresponding verbal and visual representations"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:signaling-principle:scope:1",
+          "kind": "scope",
+          "text": "本条根据论文对 Mayer 与 van Gog 的转述整理，未冒称逐页核对两者原著。效果受学习者已有知识、媒介、提示方式及任务情境限制，不能推出所有文字材料都应增加提示。",
+          "language": "zh",
+          "applicability": "依据 Désiron、Endres 与 Schneider（2026）研究正文的理论说明归纳；该文直接实验对象是软件视频教程，不冒称已核对其所引全部原始理论文献；中文为模型译写，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"sec29\"] > p:nth-of-type(8)",
+              "quote": "guidance beneficial for novices can become redundant—or even detrimental—for more knowledgeable learners"
+            },
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"sec29\"] > p:nth-of-type(8)",
+              "quote": "its cognitive and metacognitive effects may vary depending on cue characteristics and modality"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    }
+  ],
+  "augmentations": [
+    {
+      "id": "urn:kb-vocab-writing:relevance",
+      "evidence": [
+        {
+          "source": "plain-language",
+          "selector": "[id=\"Governing\"] > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+          "quote": "Readers get what they need (relevant)"
+        },
+        {
+          "source": "relevance-theory",
+          "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(20)",
+          "quote": "This characterisation of relevance is comparative rather than quantitative"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:relevance:scope:extension-cognition",
+          "kind": "scope",
+          "text": "本记录继续表示简明语言原则中读者获得所需信息的要求；关联理论中的关联另以积极认知效果和处理努力说明，不因英文词形相同而视为同一理论概念。",
+          "language": "zh",
+          "applicability": "结合原简明语言来源与 Wilson、Sperber（2004）作概念消歧；中文为模型归纳，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "plain-language",
+              "selector": "[id=\"Governing\"] > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Readers get what they need (relevant)"
+            },
+            {
+              "source": "relevance-theory",
+              "selector": "[id=\"post-93\"] > div:nth-of-type(3) > p:nth-of-type(20)",
+              "quote": "This characterisation of relevance is comparative rather than quantitative"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:sample:redundancy",
+      "evidence": [
+        {
+          "quote": "Many sentences contain filler—textual junk food that consumes space without nourishing the reader.",
+          "selector": ".devsite-article-body > p:nth-of-type(13)",
+          "source": "short-sentences"
+        },
+        {
+          "quote": "Shorten the following sentences without changing their meaning:",
+          "selector": ".devsite-article-body > p:nth-of-type(18)",
+          "source": "short-sentences"
+        },
+        {
+          "source": "signaling-overlap-study",
+          "selector": "[id=\"sec1\"] > p:nth-of-type(17)",
+          "quote": "a redundancy effect occurs when learning is lower with the redundant information than without it."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:sample:redundancy:scope:extension-cognition",
+          "kind": "scope",
+          "text": "本记录继续限定为可删减或改写的多余词语；认知负荷研究中的冗余效应以有无冗余信息时的学习表现比较界定，不能仅因词语或信息重复出现就判定发生该效应。",
+          "language": "zh",
+          "applicability": "依据原技术写作来源与 Désiron、Endres、Schneider（2026）对认知负荷研究的说明作消歧；中文为模型归纳，外部中文用法未核实。",
+          "evidence": [
+            {
+              "quote": "Many sentences contain filler—textual junk food that consumes space without nourishing the reader.",
+              "selector": ".devsite-article-body > p:nth-of-type(13)",
+              "source": "short-sentences"
+            },
+            {
+              "quote": "Shorten the following sentences without changing their meaning:",
+              "selector": ".devsite-article-body > p:nth-of-type(18)",
+              "source": "short-sentences"
+            },
+            {
+              "source": "signaling-overlap-study",
+              "selector": "[id=\"sec1\"] > p:nth-of-type(17)",
+              "quote": "a redundancy effect occurs when learning is lower with the redundant information than without it."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    }
+  ],
+  "groups": [
+    {
+      "key": "交际与语义",
+      "members": [
+        "urn:kb-vocab-writing:cooperative-principle",
+        "urn:kb-vocab-writing:maxim-of-quality",
+        "urn:kb-vocab-writing:maxim-of-quantity",
+        "urn:kb-vocab-writing:maxim-of-relation",
+        "urn:kb-vocab-writing:maxim-of-manner",
+        "urn:kb-vocab-writing:relevance-theory",
+        "urn:kb-vocab-writing:relevance-theoretic-relevance",
+        "urn:kb-vocab-writing:positive-cognitive-effect",
+        "urn:kb-vocab-writing:processing-effort",
+        "urn:kb-vocab-writing:informative-intention",
+        "urn:kb-vocab-writing:communicative-intention",
+        "urn:kb-vocab-writing:ostensive-inferential-communication",
+        "urn:kb-vocab-writing:contextual-assumptions",
+        "urn:kb-vocab-writing:contextual-implication",
+        "urn:kb-vocab-writing:explicature",
+        "urn:kb-vocab-writing:conversational-implicature",
+        "urn:kb-vocab-writing:cognitive-principle-of-relevance",
+        "urn:kb-vocab-writing:communicative-principle-of-relevance",
+        "urn:kb-vocab-writing:optimal-relevance"
+      ]
+    },
+    {
+      "key": "阅读与认知",
+      "members": [
+        "urn:kb-vocab-writing:reading-level",
+        "urn:kb-vocab-writing:text-decoding",
+        "urn:kb-vocab-writing:web-accessibility",
+        "urn:kb-vocab-writing:meaningful-sequence",
+        "urn:kb-vocab-writing:info-and-relationships",
+        "urn:kb-vocab-writing:supplemental-content",
+        "urn:kb-vocab-writing:cognitive-load-theory",
+        "urn:kb-vocab-writing:working-memory",
+        "urn:kb-vocab-writing:cognitive-overload",
+        "urn:kb-vocab-writing:intrinsic-cognitive-load",
+        "urn:kb-vocab-writing:extraneous-cognitive-load",
+        "urn:kb-vocab-writing:expertise-reversal-effect",
+        "urn:kb-vocab-writing:cognitive-redundancy-effect",
+        "urn:kb-vocab-writing:signaling-principle"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "label": "Readability",
+      "reason": "reading-level 来源讨论阅读水平及各语言的可读性评估，但未给出足以与 Legibility、Understandability 稳定区分的通用定义；不把该词直接当作 Reading level 的同义标签。",
+      "source": "reading-level"
+    },
+    {
+      "label": "Legibility",
+      "reason": "已分配来源缺少可支持独立定义和与 Readability 边界的明确原文，不用日常近义解释补造定义。",
+      "source": "reading-level"
+    },
+    {
+      "label": "What is said (Grice)",
+      "reason": "relevance-theory 中有关 Grice 所说内容的论述属于作者解释与比较，未给出本次可直接建立独立概念的完整定义；已用 Explicature 与 Conversational implicature 保留理论语境，未把两者强行等同。",
+      "source": "relevance-theory"
+    },
+    {
+      "label": "Cognitive load",
+      "reason": "替代教学说明可支持认知负荷理论，研究正文可支持具体负荷类型；未据其不完整的总述另造一般 Cognitive load 的独立定义。原 Sweller 2019 锁定快照为挑战页，不能引用。",
+      "source": "signaling-overlap-study"
+    },
+    {
+      "label": "Element interactivity",
+      "reason": "替代研究将元素交互与内容复杂性、已有知识相联系，但未给出本次可据以独立建条目的充分定义；不把研究讨论或参考文献标题当定义。",
+      "source": "signaling-overlap-study"
+    },
+    {
+      "label": "Split-attention effect",
+      "reason": "替代研究仅在参考文献中出现 split-attention；正文无可独立定位的概念定义。原 Sweller 2019 快照为挑战页，不能引用。",
+      "source": "signaling-overlap-study"
+    },
+    {
+      "label": "Coherence principle (multimedia learning)",
+      "reason": "替代研究正文没有足够完整的本原则定义；仅出现名称、机制提及或参考文献时不据此建条目，也不改写既有段落连贯性或多余词语定义。",
+      "source": "signaling-overlap-study"
+    },
+    {
+      "label": "Redundancy principle (multimedia learning)",
+      "reason": "替代研究正文没有足够完整的本原则定义；仅出现名称、机制提及或参考文献时不据此建条目，也不改写既有段落连贯性或多余词语定义。",
+      "source": "signaling-overlap-study"
+    },
+    {
+      "label": "Spatial contiguity principle",
+      "reason": "替代研究正文没有足够完整的本原则定义；仅出现名称、机制提及或参考文献时不据此建条目，也不改写既有段落连贯性或多余词语定义。",
+      "source": "signaling-overlap-study"
+    },
+    {
+      "label": "Temporal contiguity principle",
+      "reason": "替代研究正文没有足够完整的本原则定义；仅出现名称、机制提及或参考文献时不据此建条目，也不改写既有段落连贯性或多余词语定义。",
+      "source": "signaling-overlap-study"
+    },
+    {
+      "label": "Germane cognitive load",
+      "reason": "替代研究采用三类负荷的操作框架，部分机制措辞还需核对；本次没有锁定可用于比较理论版本的原作者全文，因此不把该分类提升为统一定义。",
+      "source": "signaling-overlap-study"
+    }
+  ],
+  "source_language_labels": [
+    "urn:kb-vocab-writing:cooperative-principle:label:en",
+    "urn:kb-vocab-writing:relevance-theory:label:en",
+    "urn:kb-vocab-writing:relevance-theoretic-relevance:label:en",
+    "urn:kb-vocab-writing:positive-cognitive-effect:label:en",
+    "urn:kb-vocab-writing:processing-effort:label:en",
+    "urn:kb-vocab-writing:informative-intention:label:en",
+    "urn:kb-vocab-writing:communicative-intention:label:en",
+    "urn:kb-vocab-writing:ostensive-inferential-communication:label:en",
+    "urn:kb-vocab-writing:contextual-assumptions:label:en",
+    "urn:kb-vocab-writing:contextual-implication:label:en",
+    "urn:kb-vocab-writing:explicature:label:en",
+    "urn:kb-vocab-writing:conversational-implicature:label:en",
+    "urn:kb-vocab-writing:cognitive-principle-of-relevance:label:en",
+    "urn:kb-vocab-writing:communicative-principle-of-relevance:label:en",
+    "urn:kb-vocab-writing:optimal-relevance:label:en",
+    "urn:kb-vocab-writing:reading-level:label:en",
+    "urn:kb-vocab-writing:text-decoding:label:en",
+    "urn:kb-vocab-writing:web-accessibility:label:en",
+    "urn:kb-vocab-writing:meaningful-sequence:label:en",
+    "urn:kb-vocab-writing:info-and-relationships:label:en",
+    "urn:kb-vocab-writing:supplemental-content:label:en",
+    "urn:kb-vocab-writing:cognitive-load-theory:label:en",
+    "urn:kb-vocab-writing:working-memory:label:en",
+    "urn:kb-vocab-writing:cognitive-overload:label:en",
+    "urn:kb-vocab-writing:intrinsic-cognitive-load:label:en",
+    "urn:kb-vocab-writing:extraneous-cognitive-load:label:en",
+    "urn:kb-vocab-writing:expertise-reversal-effect:label:en",
+    "urn:kb-vocab-writing:cognitive-redundancy-effect:label:en",
+    "urn:kb-vocab-writing:signaling-principle:label:en"
+  ]
+}

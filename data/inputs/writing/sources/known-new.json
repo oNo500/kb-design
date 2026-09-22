@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "known-new.html",
+      "format": "html",
+      "id": "known-new",
+      "url": "https://writingcenter.gmu.edu/writing-resources/grammar-style/improving-cohesion-the-known-new-contract"
+    }
+  ],
+  "id": "known-new",
+  "schema_version": 1,
+  "title": "GMU Writing Center — Known/New Contract",
+  "version": "live-web-snapshot"
+}

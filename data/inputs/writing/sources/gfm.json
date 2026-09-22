@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "gfm.html",
+      "format": "html",
+      "id": "gfm",
+      "url": "https://github.github.com/gfm/"
+    }
+  ],
+  "id": "gfm",
+  "schema_version": 1,
+  "title": "GitHub Flavored Markdown Specification",
+  "version": "0.29-gfm"
+}

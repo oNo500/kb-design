@@ -1,0 +1,2749 @@
+{
+  "concepts": [
+    {
+      "id": "urn:kb-vocab-writing:metaphor",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:metaphor:label:zh",
+          "role": "preferred",
+          "text": "隐喻",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:metaphor:label:en",
+          "role": "preferred",
+          "text": "Metaphor",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-metaphor",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+          "quote": "A comparison made by referring to one thing as another."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:metaphor:definition",
+          "kind": "definition",
+          "text": "把一事物说成另一事物来构成比较的修辞手法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-metaphor",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "A comparison made by referring to one thing as another."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:simile",
+          "evidence": [
+            {
+              "source": "rhetoric-metaphor",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(6) > td:nth-of-type(2)",
+              "quote": "Like a metaphor, a simile involves making a comparison (except it does so explicitly)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:simile",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:simile:label:zh",
+          "role": "preferred",
+          "text": "明喻",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:simile:label:en",
+          "role": "preferred",
+          "text": "Simile",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-simile",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+          "quote": "An explicit comparison, often (but not necessarily) employing \"like\" or \"as.\""
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:simile:definition",
+          "kind": "definition",
+          "text": "以明确表达的比较把一个事物与另一个事物相联系的修辞手法；英语中常用但并非必须使用 like 或 as。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-simile",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "An explicit comparison, often (but not necessarily) employing \"like\" or \"as.\""
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:metonymy",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:metonymy:label:zh",
+          "role": "preferred",
+          "text": "换喻",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:metonymy:label:en",
+          "role": "preferred",
+          "text": "Metonymy",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-metonymy",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+          "quote": "Reference to something or someone by naming one of its attributes."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:metonymy:definition",
+          "kind": "definition",
+          "text": "通过称说某事物或人的一种属性来指代该事物或人的修辞手法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-metonymy",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "Reference to something or someone by naming one of its attributes."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:synecdoche",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:synecdoche:label:zh",
+          "role": "preferred",
+          "text": "提喻",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:synecdoche:label:en",
+          "role": "preferred",
+          "text": "Synecdoche",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-synecdoche",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+          "quote": "A whole is represented by naming one of its parts (genus named for species), or vice versa (species named for genus)."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:synecdoche:definition",
+          "kind": "definition",
+          "text": "以部分名称表示整体，或反向以整体名称表示部分的修辞手法；来源也将属与种的名称替用包括在内。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-synecdoche",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "A whole is represented by naming one of its parts (genus named for species), or vice versa (species named for genus)."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:synecdoche:scope",
+          "kind": "scope",
+          "text": "本记录沿用来源的整体、部分及属、种替用范围；名称相近的 Metonymy 另按属性指代的定义处理。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-synecdoche",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "A whole is represented by naming one of its parts"
+            },
+            {
+              "source": "rhetoric-metonymy",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "Reference to something or someone by naming one of its attributes."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:personification",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:personification:label:zh",
+          "role": "preferred",
+          "text": "拟人",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:personification:label:en",
+          "role": "preferred",
+          "text": "Personification",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-personification",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(2) > td:nth-of-type(2)",
+          "quote": "Reference to abstractions or inanimate objects as though they had human qualities or abilities."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:personification:definition",
+          "kind": "definition",
+          "text": "把抽象事物或无生命对象说成具有人类品质或能力的修辞手法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-personification",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(2) > td:nth-of-type(2)",
+              "quote": "Reference to abstractions or inanimate objects as though they had human qualities or abilities."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:hyperbole",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:hyperbole:label:zh",
+          "role": "preferred",
+          "text": "夸张",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:hyperbole:label:en",
+          "role": "preferred",
+          "text": "Hyperbole",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-hyperbole",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+          "quote": "Rhetorical exaggeration."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:hyperbole:definition",
+          "kind": "definition",
+          "text": "在修辞表达中有意夸大的手法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-hyperbole",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "Rhetorical exaggeration."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:litotes",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:litotes:label:zh",
+          "role": "preferred",
+          "text": "曲言",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:litotes:label:en",
+          "role": "preferred",
+          "text": "Litotes",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-litotes",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+          "quote": "Deliberate understatement, especially when expressing a thought by denying its opposite."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:litotes:definition",
+          "kind": "definition",
+          "text": "有意减弱表达程度的修辞手法，尤其包括通过否定反面来表达一个意思。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-litotes",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "Deliberate understatement, especially when expressing a thought by denying its opposite."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:verbal-irony",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:verbal-irony:label:zh",
+          "role": "preferred",
+          "text": "反语",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:verbal-irony:label:en",
+          "role": "preferred",
+          "text": "Irony",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-irony",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+          "quote": "Speaking in such a way as to imply the contrary of what one says"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:verbal-irony:definition",
+          "kind": "definition",
+          "text": "通过所说的话暗示与其字面表达相反意思的修辞手法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-irony",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "Speaking in such a way as to imply the contrary of what one says"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:verbal-irony:scope",
+          "kind": "scope",
+          "text": "本记录限定于话语暗示与所说内容相反意思的修辞用法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-irony",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "Speaking in such a way as to imply the contrary of what one says"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:rhetorical-parallelism",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-parallelism:label:zh",
+          "role": "preferred",
+          "text": "平行结构",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-parallelism:label:en",
+          "role": "preferred",
+          "text": "Parallelism",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-parallelism",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(2) > td:nth-of-type(2)",
+          "quote": "Similarity of structure in a pair or series of related words, phrases, or clauses."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-parallelism:definition",
+          "kind": "definition",
+          "text": "相关词语、短语或分句成对或成系列地采用相似结构的表达方式。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-parallelism",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(2) > td:nth-of-type(2)",
+              "quote": "Similarity of structure in a pair or series of related words, phrases, or clauses."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-parallelism:scope",
+          "kind": "scope",
+          "text": "范围包括成对或成系列的词语、短语和分句的结构相似，不限于特定数量或某一种中文辞格。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-parallelism",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(2) > td:nth-of-type(2)",
+              "quote": "Similarity of structure in a pair or series of related words, phrases, or clauses."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-parallelism:guidance",
+          "kind": "guidance",
+          "text": "可以在连续句子中使用平行形式，帮助建立段落连贯性。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+              "quote": "Successive sentences can be constructed in parallel form"
+            },
+            {
+              "source": "purdue-paragraphs",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(5)",
+              "quote": "You can help create coherence in your paragraphs by creating logical bridges and verbal bridges."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:paragraph-coherence",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+              "quote": "Successive sentences can be constructed in parallel form"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:rhetorical-antithesis",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-antithesis:label:en",
+          "role": "preferred",
+          "text": "Antithesis",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-antithesis",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+          "quote": "Juxtaposition of contrasting words or ideas (often, although not always, in parallel structure)."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-antithesis:definition",
+          "kind": "definition",
+          "text": "把相反或相对的词语或观点并置的修辞手法，常采用但不必采用平行结构。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-antithesis",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "Juxtaposition of contrasting words or ideas (often, although not always, in parallel structure)."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:rhetorical-climax",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-climax:label:zh",
+          "role": "preferred",
+          "text": "层递",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-climax:label:en",
+          "role": "preferred",
+          "text": "Climax",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-climax",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+          "quote": "Generally, the arrangement of words, phrases, or clauses in an order of increasing importance, often in parallel structure."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-climax:definition",
+          "kind": "definition",
+          "text": "按重要性递增的顺序排列词语、短语或分句的修辞手法，常采用平行结构。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-climax",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "Generally, the arrangement of words, phrases, or clauses in an order of increasing importance, often in parallel structure."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-climax:scope",
+          "kind": "scope",
+          "text": "本记录采用来源对 Climax 的一般用法，即重要性递增的排列；叙事中情节张力的最高点是另一语境。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-climax",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "Generally, the arrangement of words, phrases, or clauses in an order of increasing importance"
+            },
+            {
+              "source": "narrative-strategies",
+              "selector": "[id=\"list-00003\"] > li:nth-of-type(4)",
+              "quote": "the point of highest level of interest and emotional response in a narrative."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-climax:editorial",
+          "kind": "editorial",
+          "text": "同一来源还记录较窄用法：在连续分句或句子中多次把前句末词移至后句开头；本概念定义采用其一般用法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-climax",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "More specifically, climax is the repetition of the last word of one clause or sentence at the beginning of the next"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:rhetorical-ellipsis",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-ellipsis:label:zh",
+          "role": "preferred",
+          "text": "省略",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-ellipsis:label:en",
+          "role": "preferred",
+          "text": "Ellipsis",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-ellipsis",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+          "quote": "Omission of a word or short phrase easily understood in context."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-ellipsis:definition",
+          "kind": "definition",
+          "text": "省去可以根据上下文容易理解的词语或短语的表达手法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-ellipsis",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "Omission of a word or short phrase easily understood in context."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-ellipsis:scope",
+          "kind": "scope",
+          "text": "这里指省去能由上下文补足的词语，不是名为 ellipsis 的标点符号。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-ellipsis",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "Omission of a word or short phrase easily understood in context."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:rhetorical-question",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-question:label:zh",
+          "role": "preferred",
+          "text": "修辞问句",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-question:label:en",
+          "role": "preferred",
+          "text": "Rhetorical question",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-erotema",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(1) > td:nth-of-type(1)",
+          "quote": "any question asked for a purpose other than to obtain the information the question asks"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-question:definition",
+          "kind": "definition",
+          "text": "以获取问句所询问信息之外的目的提出的问题。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-erotema",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(1) > td:nth-of-type(1)",
+              "quote": "any question asked for a purpose other than to obtain the information the question asks"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-question:scope",
+          "kind": "scope",
+          "text": "按来源的宽定义，范围由提问目的决定，包括表达看法或情绪等用法；不限定为期待否定答案的问句。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-erotema",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(1) > td:nth-of-type(1)",
+              "quote": "any question asked for a purpose other than to obtain the information the question asks"
+            },
+            {
+              "source": "rhetoric-erotema",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(1) > td:nth-of-type(1)",
+              "quote": "an accusation or an expression of feeling than a realistic request for information."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:rhetorical-anaphora",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-anaphora:label:zh",
+          "role": "preferred",
+          "text": "首语重复",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-anaphora:label:en",
+          "role": "preferred",
+          "text": "Anaphora",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-anaphora",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+          "quote": "Repetition of the same word or group of words at the beginning of successive clauses, sentences, or lines."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-anaphora:definition",
+          "kind": "definition",
+          "text": "在连续的分句、句子或行的开头重复同一词语或词组的修辞手法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-anaphora",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "Repetition of the same word or group of words at the beginning of successive clauses, sentences, or lines."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-anaphora:scope",
+          "kind": "scope",
+          "text": "此处只记录修辞学中连续单位开头的词语重复，不记录语言学中的回指关系。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-anaphora",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "Repetition of the same word or group of words at the beginning of successive clauses, sentences, or lines."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:rhetorical-epistrophe",
+          "evidence": [
+            {
+              "source": "rhetoric-anaphora",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(6) > td:nth-of-type(2)",
+              "quote": "The opposite of anaphora."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:rhetorical-epistrophe",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-epistrophe:label:zh",
+          "role": "preferred",
+          "text": "尾语重复",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-epistrophe:label:en",
+          "role": "preferred",
+          "text": "Epistrophe",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-epistrophe",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+          "quote": "Ending a series of lines, phrases, clauses, or sentences with the same word or words."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-epistrophe:definition",
+          "kind": "definition",
+          "text": "以同一词语或词组结束一系列行、短语、分句或句子的修辞手法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-epistrophe",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+              "quote": "Ending a series of lines, phrases, clauses, or sentences with the same word or words."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:rhetorical-repetition",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-repetition:label:zh",
+          "role": "preferred",
+          "text": "反复",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-repetition:label:en",
+          "role": "preferred",
+          "text": "Repetition",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-repetition",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(1) > td:nth-of-type(1) > p:nth-of-type(1)",
+          "quote": "Repetition is a major rhetorical strategy for producing emphasis, clarity, amplification, or emotional effect."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-repetition:definition",
+          "kind": "definition",
+          "text": "通过重复语言或思想材料产生强调、清晰、展开或情感效果的修辞策略。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-repetition",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(1) > td:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "Repetition is a major rhetorical strategy for producing emphasis, clarity, amplification, or emotional effect."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-repetition:scope",
+          "kind": "scope",
+          "text": "来源区分声音、词语、短语和分句以及思想层面的重复；本记录不将所有重复都判为多余表达。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-repetition",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(1) > td:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Repetition of letters, syllables, sounds"
+            },
+            {
+              "source": "rhetoric-repetition",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(1) > td:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Repetition of words"
+            },
+            {
+              "source": "rhetoric-repetition",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(1) > td:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Repetition of clauses and phrases"
+            },
+            {
+              "source": "rhetoric-repetition",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(1) > td:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Repetition of ideas"
+            },
+            {
+              "source": "rhetoric-repetition",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(1) > td:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "producing emphasis, clarity, amplification, or emotional effect."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-repetition:guidance",
+          "kind": "guidance",
+          "text": "在多个句子中复现关键词，可以帮助建立段落连贯性。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > ul:nth-of-type(2) > li:nth-of-type(1)",
+              "quote": "Key words can be repeated in several sentences"
+            },
+            {
+              "source": "purdue-paragraphs",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(5)",
+              "quote": "You can help create coherence in your paragraphs by creating logical bridges and verbal bridges."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:paragraph-coherence",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > ul:nth-of-type(2) > li:nth-of-type(1)",
+              "quote": "Key words can be repeated in several sentences"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:anadiplosis",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:anadiplosis:label:zh",
+          "role": "preferred",
+          "text": "顶真",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:anadiplosis:label:en",
+          "role": "preferred",
+          "text": "Anadiplosis",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-repetition",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(2) > td:nth-of-type(1) > ul:nth-of-type(3) > li:nth-of-type(1) > li:nth-of-type(1)",
+          "quote": "The repetition of the last word of one clause or sentence at the beginning of the next."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:anadiplosis:definition",
+          "kind": "definition",
+          "text": "在下一分句或句子的开头重复前一分句或句子最后一个词的修辞手法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-repetition",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(2) > td:nth-of-type(1) > ul:nth-of-type(3) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "The repetition of the last word of one clause or sentence at the beginning of the next."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:chiasmus",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:chiasmus:label:en",
+          "role": "preferred",
+          "text": "Chiasmus",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-schemes",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+          "quote": "Repetition of grammatical structures in reverse order in successive phrases or clauses"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:chiasmus:definition",
+          "kind": "definition",
+          "text": "在相邻短语或分句中以相反顺序重复语法结构的修辞手法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-schemes",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Repetition of grammatical structures in reverse order in successive phrases or clauses"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:chiasmus:scope",
+          "kind": "scope",
+          "text": "来源以语法结构的逆序重复界定 Chiasmus，另以词语的逆序重复界定 Antimetabole；本记录保留二者。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-schemes",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Repetition of grammatical structures in reverse order in successive phrases or clauses"
+            },
+            {
+              "source": "rhetoric-schemes",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Repetition of words, in successive clauses, in reverse grammatical order."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:antimetabole",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:antimetabole:label:en",
+          "role": "preferred",
+          "text": "Antimetabole",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-schemes",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+          "quote": "Repetition of words, in successive clauses, in reverse grammatical order."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:antimetabole:definition",
+          "kind": "definition",
+          "text": "在相邻分句中以相反的语法次序重复词语的修辞手法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-schemes",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Repetition of words, in successive clauses, in reverse grammatical order."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:rhetorical-apposition",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-apposition:label:zh",
+          "role": "preferred",
+          "text": "同位",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-apposition:label:en",
+          "role": "preferred",
+          "text": "Apposition",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-schemes",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+          "quote": "Addition of an adjacent, coordinate, explanatory element."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-apposition:definition",
+          "kind": "definition",
+          "text": "添加一个相邻、同位且起解释作用的成分的表达方式。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-schemes",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Addition of an adjacent, coordinate, explanatory element."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:rhetorical-parenthesis",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-parenthesis:label:zh",
+          "role": "preferred",
+          "text": "插入语",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-parenthesis:label:en",
+          "role": "preferred",
+          "text": "Parenthesis",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-schemes",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+          "quote": "Insertion of a verbal unit that interrupts normal syntactical flow."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-parenthesis:definition",
+          "kind": "definition",
+          "text": "插入一个打断通常句法行进的语言单位的表达手法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-schemes",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Insertion of a verbal unit that interrupts normal syntactical flow."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-parenthesis:scope",
+          "kind": "scope",
+          "text": "这里指语言单位插入正常句法行进的现象，不以是否使用圆括号作为定义。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-schemes",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Insertion of a verbal unit that interrupts normal syntactical flow."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:anastrophe",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:anastrophe:label:zh",
+          "role": "preferred",
+          "text": "倒装",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:anastrophe:label:en",
+          "role": "preferred",
+          "text": "Anastrophe",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-schemes",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+          "quote": "Inversion of natural word order."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:anastrophe:definition",
+          "kind": "definition",
+          "text": "颠倒通常词序的修辞手法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-schemes",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Inversion of natural word order."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:asyndeton",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:asyndeton:label:en",
+          "role": "preferred",
+          "text": "Asyndeton",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-schemes",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+          "quote": "Omission of conjunctions between a series of clauses."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:asyndeton:definition",
+          "kind": "definition",
+          "text": "省去一系列分句之间连接词的修辞手法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-schemes",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Omission of conjunctions between a series of clauses."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:polysyndeton",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:polysyndeton:label:en",
+          "role": "preferred",
+          "text": "Polysyndeton",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-repetition",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(2) > td:nth-of-type(1) > ul:nth-of-type(3) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+          "quote": "Employing many conjunctions between clauses."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:polysyndeton:definition",
+          "kind": "definition",
+          "text": "在分句之间使用多个连接词的修辞手法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-repetition",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(2) > td:nth-of-type(1) > ul:nth-of-type(3) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Employing many conjunctions between clauses."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:oxymoron",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:oxymoron:label:zh",
+          "role": "preferred",
+          "text": "矛盾修辞",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:oxymoron:label:en",
+          "role": "preferred",
+          "text": "Oxymoron",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-tropes",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+          "quote": "Placing two ordinarily opposing terms adjacent to one another. A compressed paradox."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:oxymoron:definition",
+          "kind": "definition",
+          "text": "把通常相互对立的两个词语紧邻放置的修辞手法，构成压缩的悖论表达。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-tropes",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Placing two ordinarily opposing terms adjacent to one another. A compressed paradox."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:rhetorical-paradox",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-paradox:label:zh",
+          "role": "preferred",
+          "text": "悖论",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-paradox:label:en",
+          "role": "preferred",
+          "text": "Paradox",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-tropes",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+          "quote": "An apparently contradictory statement that contains a measure of truth."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-paradox:definition",
+          "kind": "definition",
+          "text": "表面上相互矛盾却含有一定真实意味的陈述。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-tropes",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "An apparently contradictory statement that contains a measure of truth."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-paradox:scope",
+          "kind": "scope",
+          "text": "本记录限定于修辞表达中表面矛盾而含有真实意味的陈述。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-tropes",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > li:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "An apparently contradictory statement that contains a measure of truth."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:anthypophora",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:anthypophora:label:zh",
+          "role": "preferred",
+          "text": "设问",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:anthypophora:label:en",
+          "role": "preferred",
+          "text": "Anthypophora",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetoric-erotema",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(1) > td:nth-of-type(1) > p:nth-of-type(1) > p:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+          "quote": "A figure of reasoning in which one asks and then immediately answers one's own questions."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:anthypophora:definition",
+          "kind": "definition",
+          "text": "先提出问题并立即自行回答，以展开推理的修辞手法。",
+          "language": "zh",
+          "applicability": "依据 Silva Rhetoricae 的修辞学说明归纳，适用其英语及古典修辞教学语境；中文为模型译写，非官方译文。",
+          "evidence": [
+            {
+              "source": "rhetoric-erotema",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(3) > tr:nth-of-type(1) > td:nth-of-type(1) > p:nth-of-type(1) > p:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "A figure of reasoning in which one asks and then immediately answers one's own questions."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:definition-development",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:definition-development:label:zh",
+          "role": "preferred",
+          "text": "定义",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:definition-development:label:en",
+          "role": "preferred",
+          "text": "Definition",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "reasoning-strategies",
+          "selector": "[id=\"list-00002\"] > li:nth-of-type(6)",
+          "quote": "to illustrate to readers an idea, word, or expression, allowing you to explain a unique meaning of a topic through details and analysis."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:definition-development:definition",
+          "kind": "definition",
+          "text": "通过细节和分析阐明一个观念、词语或表达的含义的展开方式。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"list-00002\"] > li:nth-of-type(6)",
+              "quote": "to illustrate to readers an idea, word, or expression, allowing you to explain a unique meaning of a topic through details and analysis."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:definition-development:scope",
+          "kind": "scope",
+          "text": "本记录是写作中借助细节和分析阐明含义的展开方式；不是词表记录中承载定义文本的 definition 字段。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"list-00002\"] > li:nth-of-type(6)",
+              "quote": "to illustrate to readers an idea, word, or expression, allowing you to explain a unique meaning of a topic through details and analysis."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:definition-development:guidance",
+          "kind": "guidance",
+          "text": "可以从词典释义入手，再说明主题在具体讨论中的特殊或延伸含义。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"para-00053\"]",
+              "quote": "Definition paragraphs often begin by noting the dictionary definition (denotation) of the topic and then illustrating and explaining its unique or extended meaning."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:example-development",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:example-development:label:zh",
+          "role": "preferred",
+          "text": "举例说明",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:example-development:label:en",
+          "role": "preferred",
+          "text": "Examples and illustrations",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "purdue-paragraphs",
+          "selector": "[id=\"content__main\"] > section:nth-of-type(1) > ul:nth-of-type(3) > li:nth-of-type(1)",
+          "quote": "Use examples and illustrations"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:example-development:definition",
+          "kind": "definition",
+          "text": "用例子和说明性实例展开段落主题的方式。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > ul:nth-of-type(3) > li:nth-of-type(1)",
+              "quote": "Use examples and illustrations"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:example-development:scope",
+          "kind": "scope",
+          "text": "本记录限于段落展开中使用例子和说明性实例的方法，不把实例自动视作充分证明总体结论的证据。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > ul:nth-of-type(3) > li:nth-of-type(1)",
+              "quote": "Use examples and illustrations"
+            },
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(3)",
+              "quote": "Inductive reasoning must be based on a sufficient amount of reliable evidence."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:comparison-and-contrast",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:comparison-and-contrast:label:zh",
+          "role": "preferred",
+          "text": "比较与对照",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:comparison-and-contrast:label:en",
+          "role": "preferred",
+          "text": "Compare and contrast",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "reasoning-strategies",
+          "selector": "[id=\"list-00002\"] > li:nth-of-type(4)",
+          "quote": "to examine the similarities and/or differences of subjects in order to explain a specific point about their similarity or difference"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:comparison-and-contrast:definition",
+          "kind": "definition",
+          "text": "考察对象之间的相似处或差异，以说明有关这种相似或差异的具体观点的展开方式。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"list-00002\"] > li:nth-of-type(4)",
+              "quote": "to examine the similarities and/or differences of subjects in order to explain a specific point about their similarity or difference"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:comparison-and-contrast:guidance",
+          "kind": "guidance",
+          "text": "比较可以作为整篇的主要结构，也可以与描写、叙述或顺序组织在同一篇文章中结合。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"para-00004\"]",
+              "quote": "Writers of essays and other formal papers usually support their ideas by using more than one reasoning strategy."
+            },
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"para-00004\"]",
+              "quote": "within comparison and contrast, they may include description"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:explanatory-analogy",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:explanatory-analogy:label:zh",
+          "role": "preferred",
+          "text": "类比",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:explanatory-analogy:label:en",
+          "role": "preferred",
+          "text": "Analogy",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "reasoning-strategies",
+          "selector": "[id=\"list-00002\"] > li:nth-of-type(1)",
+          "quote": "to explain to readers a subject with which they are unfamiliar by comparing a specific trait or traits with those of a more familiar subject."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:explanatory-analogy:definition",
+          "kind": "definition",
+          "text": "将读者不熟悉的对象的特定特征与较熟悉对象的特征比较，以帮助解释前者的展开方式。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"list-00002\"] > li:nth-of-type(1)",
+              "quote": "to explain to readers a subject with which they are unfamiliar by comparing a specific trait or traits with those of a more familiar subject."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:explanatory-analogy:scope",
+          "kind": "scope",
+          "text": "本记录限定于以熟悉对象帮助解释陌生对象的类比，不将其作为所有类比推理的定义。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"list-00002\"] > li:nth-of-type(1)",
+              "quote": "to explain to readers a subject with which they are unfamiliar by comparing a specific trait or traits with those of a more familiar subject."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:explanatory-analogy:guidance",
+          "kind": "guidance",
+          "text": "可以先提出两个对象的比较，再解释或分析相关相似点。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"para-00017\"]",
+              "quote": "Analogy paragraphs often begin with a statement of comparison between two unlike subjects, followed by reasons, explanations, or analyses of their similarities."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:classification-development",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:classification-development:label:zh",
+          "role": "preferred",
+          "text": "分类",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:classification-development:label:en",
+          "role": "preferred",
+          "text": "Classification",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "reasoning-strategies",
+          "selector": "[id=\"para-00079\"]",
+          "quote": "Classification paragraphs identify individual items and place them in a larger group"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:classification-development:definition",
+          "kind": "definition",
+          "text": "辨识个别项目并将其归入较大组别的展开方式。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"para-00079\"]",
+              "quote": "Classification paragraphs identify individual items and place them in a larger group"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:classification-development:scope",
+          "kind": "scope",
+          "text": "此处为写作展开策略：由个别项目归入较大组别；Division 则从较大组别或整体展开其部分。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"para-00079\"]",
+              "quote": "Classification paragraphs identify individual items and place them in a larger group"
+            },
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"para-00079\"]",
+              "quote": "Division paragraphs break a large group or a single unit into smaller parts."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:division-development",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"para-00079\"]",
+              "quote": "Classification paragraphs identify individual items and place them in a larger group; and (2) Division paragraphs break a large group or a single unit into smaller parts."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:division-development",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:division-development:label:zh",
+          "role": "preferred",
+          "text": "划分",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:division-development:label:en",
+          "role": "preferred",
+          "text": "Division",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "reasoning-strategies",
+          "selector": "[id=\"para-00079\"]",
+          "quote": "Division paragraphs break a large group or a single unit into smaller parts."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:division-development:definition",
+          "kind": "definition",
+          "text": "把较大组别或单一整体分成较小部分来展开说明的方式。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"para-00079\"]",
+              "quote": "Division paragraphs break a large group or a single unit into smaller parts."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:division-development:scope",
+          "kind": "scope",
+          "text": "此处为写作中展开一个组别或整体的部分的策略，不作为受控词表分类体系或 SKOS 层级规则的定义。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"para-00079\"]",
+              "quote": "Division paragraphs break a large group or a single unit into smaller parts."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:cause-effect-development",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:cause-effect-development:label:zh",
+          "role": "preferred",
+          "text": "因果分析",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:cause-effect-development:label:en",
+          "role": "preferred",
+          "text": "Cause-and-effect",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "reasoning-strategies",
+          "selector": "[id=\"list-00002\"] > li:nth-of-type(2)",
+          "quote": "to provide a clear understanding of the relationship between an event or situation and/or what happened because of it, why it occurred, and what might continue to happen."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:cause-effect-development:definition",
+          "kind": "definition",
+          "text": "通过解释事件或情况的原因、结果及可能的后续影响来说明它们之间关系的展开方式。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"list-00002\"] > li:nth-of-type(2)",
+              "quote": "to provide a clear understanding of the relationship between an event or situation and/or what happened because of it, why it occurred, and what might continue to happen."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:cause-effect-development:guidance",
+          "kind": "guidance",
+          "text": "可以先写原因再写结果，也可以先写结果再解释原因。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"para-00022\"]",
+              "quote": "Paragraphs explaining cause-and-effect often begin in one of these two ways:"
+            },
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"para-00022\"]",
+              "quote": "an explanation of the effect(s), followed by an explanation of the cause(s) that led to the effect(s)."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:cause-effect-development:guidance-causation",
+          "kind": "guidance",
+          "text": "不要仅凭一个事件发生在另一个之后就认定两者存在因果关系。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(12)",
+              "quote": "if 'A' occurred after 'B' then 'B' must have caused 'A.'"
+            },
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(7)",
+              "quote": "These are some common errors in reasoning that will undermine the logic of your argument."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:sequencing",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:sequencing:label:zh",
+          "role": "preferred",
+          "text": "顺序组织",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:sequencing:label:en",
+          "role": "preferred",
+          "text": "Sequencing",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "reasoning-strategies",
+          "selector": "[id=\"list-00022\"] > li:nth-of-type(7)",
+          "quote": "relating information in the order in which something happened or in which steps should be followed."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:sequencing:definition",
+          "kind": "definition",
+          "text": "按事件发生的顺序或应遵循的步骤顺序陈述信息的方式。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"list-00022\"] > li:nth-of-type(7)",
+              "quote": "relating information in the order in which something happened or in which steps should be followed."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:sequencing:scope",
+          "kind": "scope",
+          "text": "来源同时包括按事件发生顺序和按应遵循的步骤顺序组织信息；本记录不把步骤组织扩写为来源未定义的独立 Process analysis。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"list-00022\"] > li:nth-of-type(7)",
+              "quote": "relating information in the order in which something happened or in which steps should be followed."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:problem-solution-development",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:problem-solution-development:label:zh",
+          "role": "preferred",
+          "text": "问题与解决",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:problem-solution-development:label:en",
+          "role": "preferred",
+          "text": "Problem-and-solution",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "reasoning-strategies",
+          "selector": "[id=\"list-00002\"] > li:nth-of-type(5)",
+          "quote": "to indicate a predicament or difficulty and suggest ways to deal with or eliminate it."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:problem-solution-development:definition",
+          "kind": "definition",
+          "text": "指出困境或困难，并提出处理或消除它的方法的展开方式。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"list-00002\"] > li:nth-of-type(5)",
+              "quote": "to indicate a predicament or difficulty and suggest ways to deal with or eliminate it."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:problem-solution-development:guidance",
+          "kind": "guidance",
+          "text": "可以先说明问题再解释解决办法，也可以先说明办法再指出使其必要的问题。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"para-00044\"]",
+              "quote": "You can develop a problem-and-solution paragraph in one of two ways:"
+            },
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"para-00044\"]",
+              "quote": "identify the problem, and then explain a way to solve it;"
+            },
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"para-00044\"]",
+              "quote": "explain the solution to a problem, and then identify the problem(s) that necessitated it."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:inductive-reasoning",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:inductive-reasoning:label:zh",
+          "role": "preferred",
+          "text": "归纳推理",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:inductive-reasoning:label:en",
+          "role": "preferred",
+          "text": "Inductive reasoning",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetorical-strategies",
+          "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(3)",
+          "quote": "Inductive reasoning takes a specific representative case or facts and then draws generalizations or conclusions from them."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:inductive-reasoning:definition",
+          "kind": "definition",
+          "text": "从具体且有代表性的案例或事实出发，得出概括或结论的推理方式。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(3)",
+              "quote": "Inductive reasoning takes a specific representative case or facts and then draws generalizations or conclusions from them."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:inductive-reasoning:guidance",
+          "kind": "guidance",
+          "text": "概括须基于足量且可靠的证据，采用的事实应公允地代表所讨论的总体或情形。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(3)",
+              "quote": "Inductive reasoning must be based on a sufficient amount of reliable evidence."
+            },
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(3)",
+              "quote": "the facts you draw on must fairly represent the larger situation or population."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:deductive-reasoning",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:deductive-reasoning:label:zh",
+          "role": "preferred",
+          "text": "演绎推理",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:deductive-reasoning:label:en",
+          "role": "preferred",
+          "text": "Deductive reasoning",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetorical-strategies",
+          "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(5)",
+          "quote": "Deductive reasoning begins with a generalization and then applies it to a specific case."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:deductive-reasoning:definition",
+          "kind": "definition",
+          "text": "从一般性陈述出发，将其应用于具体个案的推理方式。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(5)",
+              "quote": "Deductive reasoning begins with a generalization and then applies it to a specific case."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:deductive-reasoning:scope",
+          "kind": "scope",
+          "text": "本记录采用来源对论证写作中由一般到个别的教学说明。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(5)",
+              "quote": "Deductive reasoning begins with a generalization and then applies it to a specific case."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:deductive-reasoning:guidance",
+          "kind": "guidance",
+          "text": "在写作论证中，应检查作为出发点的一般性陈述是否有充分且可靠的证据支持。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(5)",
+              "quote": "The generalization you start with must have been based on a sufficient amount of reliable evidence."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:logos",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:logos:label:zh",
+          "role": "preferred",
+          "text": "理性诉求",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:logos:label:en",
+          "role": "preferred",
+          "text": "Logos",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetorical-strategies",
+          "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(2)",
+          "quote": "Logos or the appeal to reason relies on logic or reason."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:logos:definition",
+          "kind": "definition",
+          "text": "依靠逻辑或理性支持论证的修辞诉求。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(2)",
+              "quote": "Logos or the appeal to reason relies on logic or reason."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:inductive-reasoning",
+          "evidence": [
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(2)",
+              "quote": "Logos often depends on the use of inductive or deductive reasoning."
+            }
+          ]
+        },
+        {
+          "target": "urn:kb-vocab-writing:deductive-reasoning",
+          "evidence": [
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(2)",
+              "quote": "Logos often depends on the use of inductive or deductive reasoning."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:ethos",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:ethos:label:zh",
+          "role": "preferred",
+          "text": "信誉诉求",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:ethos:label:en",
+          "role": "preferred",
+          "text": "Ethos",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetorical-strategies",
+          "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(28)",
+          "quote": "Ethos or the ethical appeal is based on the character, credibility, or reliability of the writer."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:ethos:definition",
+          "kind": "definition",
+          "text": "以作者的品格、可信度或可靠性为依据的修辞诉求。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(28)",
+              "quote": "Ethos or the ethical appeal is based on the character, credibility, or reliability of the writer."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:ethos:guidance",
+          "kind": "guidance",
+          "text": "使用可靠来源并正确引证；准确陈述反方立场。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Use only credible, reliable sources to build your argument and cite those sources properly."
+            },
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+              "quote": "Respect the reader by stating the opposing position accurately."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:pathos",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:pathos:label:zh",
+          "role": "preferred",
+          "text": "情感诉求",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:pathos:label:en",
+          "role": "preferred",
+          "text": "Pathos",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "rhetorical-strategies",
+          "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(29)",
+          "quote": "appeals to an audience's needs, values, and emotional sensibilities."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:pathos:definition",
+          "kind": "definition",
+          "text": "诉诸读者的需要、价值观和情感感受的修辞策略。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(29)",
+              "quote": "appeals to an audience's needs, values, and emotional sensibilities."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:pathos:guidance",
+          "kind": "guidance",
+          "text": "情感诉求应支持当前主张，不应用来转移争论焦点、歪曲主题或恐吓读者。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(31)",
+              "quote": "Only use an emotional appeal if it truly supports the claim you are making"
+            },
+            {
+              "source": "rhetorical-strategies",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(31)",
+              "quote": "An argument should never use emotion to misrepresent the topic or frighten people."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:narration",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:narration:label:zh",
+          "role": "preferred",
+          "text": "叙述",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:narration:label:en",
+          "role": "preferred",
+          "text": "Narration",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "reasoning-strategies",
+          "selector": "[id=\"list-00022\"] > li:nth-of-type(4)",
+          "quote": "telling a story or relating events."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:narration:definition",
+          "kind": "definition",
+          "text": "讲述故事或叙说事件的表达方式。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"list-00022\"] > li:nth-of-type(4)",
+              "quote": "telling a story or relating events."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:description",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:description:label:zh",
+          "role": "preferred",
+          "text": "描写",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:description:label:en",
+          "role": "preferred",
+          "text": "Description",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "reasoning-strategies",
+          "selector": "[id=\"list-00022\"] > li:nth-of-type(2)",
+          "quote": "writing in which the author attempts to depict certain characteristics of a person, place, or object."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:description:definition",
+          "kind": "definition",
+          "text": "描绘人物、地点或对象某些特征的写作方式。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"list-00022\"] > li:nth-of-type(2)",
+              "quote": "writing in which the author attempts to depict certain characteristics of a person, place, or object."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:description:guidance",
+          "kind": "guidance",
+          "text": "通过留意具体细节与视觉、听觉、嗅觉、味觉或触觉印象描写对象。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"list-00022\"] > li:nth-of-type(2)",
+              "quote": "Writers describe their subjects by carefully noting details and sensory impressions"
+            },
+            {
+              "source": "reasoning-strategies",
+              "selector": "[id=\"list-00022\"] > li:nth-of-type(2)",
+              "quote": "what the subject looks, sounds, smells, tastes, or feels like."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:anecdote",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:anecdote:label:zh",
+          "role": "preferred",
+          "text": "轶事",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:anecdote:label:en",
+          "role": "preferred",
+          "text": "Anecdotes",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "narrative-strategies",
+          "selector": "[id=\"list-00003\"] > li:nth-of-type(1)",
+          "quote": "a short, interesting story or event told to demonstrate a point or amuse the audience."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:anecdote:definition",
+          "kind": "definition",
+          "text": "为说明观点或使读者感到有趣而讲述的简短故事或事件。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "narrative-strategies",
+              "selector": "[id=\"list-00003\"] > li:nth-of-type(1)",
+              "quote": "a short, interesting story or event told to demonstrate a point or amuse the audience."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:flashback",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:flashback:label:zh",
+          "role": "preferred",
+          "text": "倒叙",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:flashback:label:en",
+          "role": "preferred",
+          "text": "Flashback",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "narrative-strategies",
+          "selector": "[id=\"list-00003\"] > li:nth-of-type(10)",
+          "quote": "a scene that interrupts the chronological order of the main narrative to return to a scene from an earlier time."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:flashback:definition",
+          "kind": "definition",
+          "text": "打断主要叙述的时间顺序，转而呈现较早时期场景的叙事手法。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "narrative-strategies",
+              "selector": "[id=\"list-00003\"] > li:nth-of-type(10)",
+              "quote": "a scene that interrupts the chronological order of the main narrative to return to a scene from an earlier time."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:foreshadowing",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:foreshadowing:label:zh",
+          "role": "preferred",
+          "text": "伏笔",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:foreshadowing:label:en",
+          "role": "preferred",
+          "text": "Foreshadowing",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "narrative-strategies",
+          "selector": "[id=\"list-00003\"] > li:nth-of-type(11)",
+          "quote": "hints of what is to come in the text."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:foreshadowing:definition",
+          "kind": "definition",
+          "text": "在文本中暗示后续将出现内容的叙事手法。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "narrative-strategies",
+              "selector": "[id=\"list-00003\"] > li:nth-of-type(11)",
+              "quote": "hints of what is to come in the text."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:narrative-point-of-view",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:narrative-point-of-view:label:zh",
+          "role": "preferred",
+          "text": "叙事视角",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:narrative-point-of-view:label:en",
+          "role": "preferred",
+          "text": "Point of view",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "narrative-strategies",
+          "selector": "[id=\"list-00003\"] > li:nth-of-type(14)",
+          "quote": "the perspective from which a narrative is told."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:narrative-point-of-view:definition",
+          "kind": "definition",
+          "text": "叙述故事时所采用的观察和讲述角度。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "narrative-strategies",
+              "selector": "[id=\"list-00003\"] > li:nth-of-type(14)",
+              "quote": "the perspective from which a narrative is told."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:narrative-point-of-view:scope",
+          "kind": "scope",
+          "text": "本记录是叙事的讲述视角；来源特别指出回忆录和个人叙述通常使用第一人称视角。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "narrative-strategies",
+              "selector": "[id=\"list-00003\"] > li:nth-of-type(14)",
+              "quote": "Memoirs and personal narratives usually use the first-person point of view, or tell the story through the eyes of the narrator."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:vivid-details",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:vivid-details:label:zh",
+          "role": "preferred",
+          "text": "生动细节",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:vivid-details:label:en",
+          "role": "preferred",
+          "text": "Vivid details",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "narrative-strategies",
+          "selector": "[id=\"list-00003\"] > li:nth-of-type(20)",
+          "quote": "sensory language and detailed descriptions that help readers gain a deeper and fuller understanding of ideas and events in the narrative."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:vivid-details:definition",
+          "kind": "definition",
+          "text": "帮助读者更深入、完整地理解叙述中的观念和事件的感官语言及细致描写。",
+          "language": "zh",
+          "applicability": "依据所引高校写作教学材料归纳；中文为模型译写，非官方译文，不自动成为项目写作规则。",
+          "evidence": [
+            {
+              "source": "narrative-strategies",
+              "selector": "[id=\"list-00003\"] > li:nth-of-type(20)",
+              "quote": "sensory language and detailed descriptions that help readers gain a deeper and fuller understanding of ideas and events in the narrative."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    }
+  ],
+  "augmentations": [],
+  "groups": [
+    {
+      "key": "语言表达",
+      "members": [
+        "urn:kb-vocab-writing:metaphor",
+        "urn:kb-vocab-writing:simile",
+        "urn:kb-vocab-writing:metonymy",
+        "urn:kb-vocab-writing:synecdoche",
+        "urn:kb-vocab-writing:personification",
+        "urn:kb-vocab-writing:hyperbole",
+        "urn:kb-vocab-writing:litotes",
+        "urn:kb-vocab-writing:verbal-irony",
+        "urn:kb-vocab-writing:rhetorical-parallelism",
+        "urn:kb-vocab-writing:rhetorical-antithesis",
+        "urn:kb-vocab-writing:rhetorical-climax",
+        "urn:kb-vocab-writing:rhetorical-ellipsis",
+        "urn:kb-vocab-writing:rhetorical-question",
+        "urn:kb-vocab-writing:rhetorical-anaphora",
+        "urn:kb-vocab-writing:rhetorical-epistrophe",
+        "urn:kb-vocab-writing:rhetorical-repetition",
+        "urn:kb-vocab-writing:anadiplosis",
+        "urn:kb-vocab-writing:chiasmus",
+        "urn:kb-vocab-writing:antimetabole",
+        "urn:kb-vocab-writing:rhetorical-apposition",
+        "urn:kb-vocab-writing:rhetorical-parenthesis",
+        "urn:kb-vocab-writing:anastrophe",
+        "urn:kb-vocab-writing:asyndeton",
+        "urn:kb-vocab-writing:polysyndeton",
+        "urn:kb-vocab-writing:oxymoron",
+        "urn:kb-vocab-writing:rhetorical-paradox",
+        "urn:kb-vocab-writing:anthypophora"
+      ]
+    },
+    {
+      "key": "文章组织",
+      "members": [
+        "urn:kb-vocab-writing:definition-development",
+        "urn:kb-vocab-writing:example-development",
+        "urn:kb-vocab-writing:comparison-and-contrast",
+        "urn:kb-vocab-writing:explanatory-analogy",
+        "urn:kb-vocab-writing:classification-development",
+        "urn:kb-vocab-writing:division-development",
+        "urn:kb-vocab-writing:cause-effect-development",
+        "urn:kb-vocab-writing:sequencing",
+        "urn:kb-vocab-writing:problem-solution-development",
+        "urn:kb-vocab-writing:narration",
+        "urn:kb-vocab-writing:description",
+        "urn:kb-vocab-writing:anecdote",
+        "urn:kb-vocab-writing:flashback",
+        "urn:kb-vocab-writing:foreshadowing",
+        "urn:kb-vocab-writing:narrative-point-of-view",
+        "urn:kb-vocab-writing:vivid-details"
+      ]
+    },
+    {
+      "key": "内容与目的",
+      "members": [
+        "urn:kb-vocab-writing:inductive-reasoning",
+        "urn:kb-vocab-writing:deductive-reasoning",
+        "urn:kb-vocab-writing:logos",
+        "urn:kb-vocab-writing:ethos",
+        "urn:kb-vocab-writing:pathos"
+      ]
+    },
+    {
+      "key": "风格与语气",
+      "members": [
+        "urn:kb-vocab-writing:metaphor",
+        "urn:kb-vocab-writing:simile",
+        "urn:kb-vocab-writing:hyperbole",
+        "urn:kb-vocab-writing:litotes",
+        "urn:kb-vocab-writing:verbal-irony",
+        "urn:kb-vocab-writing:ethos",
+        "urn:kb-vocab-writing:pathos"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "concept": "urn:kb-vocab-writing:rhetorical-antithesis",
+      "language": "zh",
+      "issue": "尚未核定与该来源定义准确对应的惯用中文名称，保留英文首选标签；中文定义解释其含义。",
+      "source": "rhetoric-antithesis"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:chiasmus",
+      "language": "zh",
+      "issue": "尚未核定与该来源定义准确对应的惯用中文名称，保留英文首选标签；中文定义解释其含义。",
+      "source": "rhetoric-schemes"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:antimetabole",
+      "language": "zh",
+      "issue": "尚未核定与该来源定义准确对应的惯用中文名称，保留英文首选标签；中文定义解释其含义。",
+      "source": "rhetoric-schemes"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:asyndeton",
+      "language": "zh",
+      "issue": "尚未核定与该来源定义准确对应的惯用中文名称，保留英文首选标签；中文定义解释其含义。",
+      "source": "rhetoric-schemes"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:polysyndeton",
+      "language": "zh",
+      "issue": "尚未核定与该来源定义准确对应的惯用中文名称，保留英文首选标签；中文定义解释其含义。",
+      "source": "rhetoric-repetition"
+    },
+    {
+      "term": "Process analysis",
+      "issue": "本轮分配来源明确界定 Sequencing，包括事件顺序与步骤顺序；没有取得独立 Process analysis 的充分定义，因此只收录 Sequencing，不把名称直接当作其同义词。",
+      "source": "reasoning-strategies"
+    }
+  ],
+  "source_language_labels": []
+}

@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "ms-top-ten.html",
+      "format": "html",
+      "id": "ms-top-ten",
+      "url": "https://learn.microsoft.com/en-us/style-guide/top-10-tips-style-voice"
+    }
+  ],
+  "id": "ms-top-ten",
+  "schema_version": 1,
+  "title": "ms-top-ten",
+  "version": "live-web-snapshot"
+}

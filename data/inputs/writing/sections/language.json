@@ -1,0 +1,1671 @@
+{
+  "concepts": [
+    {
+      "id": "urn:kb-vocab-writing:terminology-consistency",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:terminology-consistency:label:zh",
+          "role": "preferred",
+          "text": "术语一致性",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:terminology-consistency:label:en",
+          "role": "preferred",
+          "text": "Consistent terminology",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "words",
+          "selector": ".devsite-article-body > p:nth-of-type(6)",
+          "quote": "apply the same unambiguous word or term consistently throughout your document"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:terminology-consistency:definition",
+          "kind": "definition",
+          "text": "同一文档中对同一对象持续使用同一个明确的词或术语。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(6)",
+              "quote": "apply the same unambiguous word or term consistently throughout your document"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:terminology-consistency:guidance",
+          "kind": "guidance",
+          "text": "选定名称后保持一致；若采用简称，在引入完整名称时明确给出简称，再在后文使用。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(6)",
+              "quote": "apply the same unambiguous word or term consistently throughout your document"
+            },
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(8)",
+              "quote": "when introducing a long-winded concept name or product name, you may also specify a shortened version of that name"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:acronym",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:acronym:label:zh",
+          "role": "preferred",
+          "text": "首字母缩略语",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:acronym:label:en",
+          "role": "preferred",
+          "text": "Acronym",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "words",
+          "selector": ".devsite-article-body > p:nth-of-type(9)",
+          "quote": "spell out the full term, and then put the acronym in parentheses"
+        },
+        {
+          "source": "words",
+          "selector": ".devsite-article-body > p:nth-of-type(12)",
+          "quote": "readers must mentally expand recently learned acronyms to the full term"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:acronym:definition",
+          "kind": "definition",
+          "text": "由完整术语缩成、可在说明其对应全称后代替全称使用的名称形式；本记录采用来源中 acronym 的用法。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(9)",
+              "quote": "spell out the full term, and then put the acronym in parentheses"
+            },
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(12)",
+              "quote": "readers must mentally expand recently learned acronyms to the full term"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:acronym:scope",
+          "kind": "scope",
+          "text": "来源把 TTN 和 HTML 作为 acronym 的例子；本记录不据此细分 acronym 与 initialism 的发音或构词类别。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > blockquote:nth-of-type(3) > p:nth-of-type(1)",
+              "quote": "Telekinetic Tactile Network ( TTN )"
+            },
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(13)",
+              "quote": "Many web developers, for example, have forgotten what HTML expands to."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:acronym:guidance",
+          "kind": "guidance",
+          "text": "不熟悉的缩略语首次出现时先给出全称，再把缩略语放在括号内；后文不要在缩略语和全称间无说明地来回切换。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(9)",
+              "quote": "spell out the full term, and then put the acronym in parentheses"
+            },
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(11)",
+              "quote": "Do not cycle back-and-forth between the acronym and the expanded version in the same document."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:acronym:guidance-2",
+          "kind": "guidance",
+          "text": "只出现少数几次时避免另设缩略语；当缩略语显著短于全称且会在文档中多次出现时，再考虑采用。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > ul:nth-of-type(2) > li:nth-of-type(1)",
+              "quote": "Don't define acronyms that would only be used a few times."
+            },
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > ul:nth-of-type(2) > li:nth-of-type(2)",
+              "quote": "Do define acronyms that meet both of the following criteria: The acronym is significantly shorter than the full term. The acronym appears many times in the document."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:shortened-name",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:shortened-name:label:zh",
+          "role": "preferred",
+          "text": "简称",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:shortened-name:label:en",
+          "role": "preferred",
+          "text": "Shortened name",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "words",
+          "selector": ".devsite-article-body > p:nth-of-type(8)",
+          "quote": "when introducing a long-winded concept name or product name, you may also specify a shortened version of that name"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:shortened-name:definition",
+          "kind": "definition",
+          "text": "与一个较长的概念名称或产品名称对应、可在明确对应后用于后文的较短名称。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(8)",
+              "quote": "when introducing a long-winded concept name or product name, you may also specify a shortened version of that name"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:shortened-name:guidance",
+          "kind": "guidance",
+          "text": "第一次引入长名称时同时说明简称，以后保持一致使用。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(8)",
+              "quote": "when introducing a long-winded concept name or product name, you may also specify a shortened version of that name"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:terminology-consistency",
+          "evidence": [
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(8)",
+              "quote": "when introducing a long-winded concept name or product name, you may also specify a shortened version of that name"
+            },
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(6)",
+              "quote": "apply the same unambiguous word or term consistently throughout your document"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:pronoun",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:pronoun:label:zh",
+          "role": "preferred",
+          "text": "代词",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:pronoun:label:en",
+          "role": "preferred",
+          "text": "Pronoun",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "words",
+          "selector": ".devsite-article-body > p:nth-of-type(17)",
+          "quote": "Many pronouns point to a previously introduced noun."
+        },
+        {
+          "source": "words",
+          "selector": ".devsite-article-body > p:nth-of-type(19)",
+          "quote": "The following pronouns cause the most confusion in technical documentation:"
+        },
+        {
+          "source": "words",
+          "selector": ".devsite-article-body > p:nth-of-type(22)",
+          "quote": "Consider two additional problem pronouns:"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:pronoun:definition",
+          "kind": "definition",
+          "text": "在本来源讨论的用法中，用来指向前文已引入名词的词。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(17)",
+              "quote": "Many pronouns point to a previously introduced noun."
+            },
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(19)",
+              "quote": "The following pronouns cause the most confusion in technical documentation:"
+            },
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(22)",
+              "quote": "Consider two additional problem pronouns:"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:pronoun:scope",
+          "kind": "scope",
+          "text": "本记录仅覆盖该课程讨论的名词回指，不把所有代词的语法功能归结为回指。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(17)",
+              "quote": "Many pronouns point to a previously introduced noun."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:pronoun:guidance",
+          "kind": "guidance",
+          "text": "先引入名词，再使用代词，并让二者尽量接近；若中间引入了另一个名词，应考虑重复原名词以避免歧义。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > ul:nth-of-type(3) > li:nth-of-type(1)",
+              "quote": "Only use a pronoun after you've introduced the noun; never use the pronoun before you've introduced the noun."
+            },
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > ul:nth-of-type(3) > li:nth-of-type(2)",
+              "quote": "Place the pronoun as close as possible to the referring noun."
+            },
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > ul:nth-of-type(3) > li:nth-of-type(3)",
+              "quote": "If you introduce a second noun between your noun and your pronoun, reuse your noun instead of using a pronoun."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:ambiguous-pronoun",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:ambiguous-pronoun:label:zh",
+          "role": "preferred",
+          "text": "指代不明的代词",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:ambiguous-pronoun:label:en",
+          "role": "preferred",
+          "text": "Ambiguous pronoun",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "words",
+          "selector": ".devsite-article-body > p:nth-of-type(23)",
+          "quote": "This could refer to the user ID, to running the process, or to all of these:"
+        },
+        {
+          "source": "words",
+          "selector": ".devsite-article-body > p:nth-of-type(20)",
+          "quote": "does It refer to Python or to C++?"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:ambiguous-pronoun:definition",
+          "kind": "definition",
+          "text": "在上下文中可能指向多个不同对象、使读者无法确定所指的代词。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(23)",
+              "quote": "This could refer to the user ID, to running the process, or to all of these:"
+            },
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(20)",
+              "quote": "does It refer to Python or to C++?"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:ambiguous-pronoun:guidance",
+          "kind": "guidance",
+          "text": "当 this 或 that 的指向不明确时，用对应名词替换，或紧接其后补上名词。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(24)",
+              "quote": "avoid using this or that in ways where it's not clear what they refer to."
+            },
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > ul:nth-of-type(6) > li:nth-of-type(1)",
+              "quote": "Replace this or that with the appropriate noun."
+            },
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > ul:nth-of-type(6) > li:nth-of-type(2)",
+              "quote": "Place a noun immediately after this or that ."
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:pronoun",
+          "evidence": [
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(23)",
+              "quote": "This could refer to the user ID, to running the process, or to all of these:"
+            },
+            {
+              "source": "words",
+              "selector": ".devsite-article-body > p:nth-of-type(17)",
+              "quote": "Many pronouns point to a previously introduced noun."
+            }
+          ]
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:active-voice",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:active-voice:label:zh",
+          "role": "preferred",
+          "text": "主动语态",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:active-voice:label:en",
+          "role": "preferred",
+          "text": "Active voice",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "active-voice",
+          "selector": ".devsite-article-body > p:nth-of-type(5)",
+          "quote": "In an active voice sentence, an actor acts on a target."
+        },
+        {
+          "source": "active-voice",
+          "selector": ".devsite-article-body > blockquote:nth-of-type(1) > p:nth-of-type(1)",
+          "quote": "Active Voice Sentence = actor + verb + target"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:active-voice:definition",
+          "kind": "definition",
+          "text": "在该课程的简单句模型中，施事者对动作对象执行动作，典型排列为施事者、动词、动作对象。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > p:nth-of-type(5)",
+              "quote": "In an active voice sentence, an actor acts on a target."
+            },
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > blockquote:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "Active Voice Sentence = actor + verb + target"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:active-voice:scope",
+          "kind": "scope",
+          "text": "本记录描述英文句子中动词及施事关系的语法语态；来源用简单句公式作教学说明。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > p:nth-of-type(5)",
+              "quote": "In an active voice sentence, an actor acts on a target."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:active-voice:guidance",
+          "kind": "guidance",
+          "text": "来源建议技术文档大部分句子采用主动语态，让读者更容易辨认谁做了什么。该建议不等于禁止被动语态。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > p:nth-of-type(26)",
+              "quote": "Use the active voice most of the time. Use the passive voice sparingly."
+            },
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > p:nth-of-type(10)",
+              "quote": "Good sentences in technical documentation identify who is doing what to whom."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:passive-voice",
+          "evidence": [
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > p:nth-of-type(26)",
+              "quote": "Use the active voice most of the time. Use the passive voice sparingly."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:passive-voice",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:passive-voice:label:zh",
+          "role": "preferred",
+          "text": "被动语态",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:passive-voice:label:en",
+          "role": "preferred",
+          "text": "Passive voice",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "active-voice",
+          "selector": ".devsite-article-body > p:nth-of-type(6)",
+          "quote": "A passive voice sentence reverses the formula."
+        },
+        {
+          "source": "active-voice",
+          "selector": ".devsite-article-body > blockquote:nth-of-type(2) > p:nth-of-type(1)",
+          "quote": "Passive Voice Sentence = target + verb + actor"
+        },
+        {
+          "source": "active-voice",
+          "selector": ".devsite-article-body > p:nth-of-type(9)",
+          "quote": "Some passive voice sentences omit an actor."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:passive-voice:definition",
+          "kind": "definition",
+          "text": "在该课程的简单句模型中，动作对象位于施事者之前，典型排列为动作对象、动词、施事者；施事者也可能省略。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > p:nth-of-type(6)",
+              "quote": "A passive voice sentence reverses the formula."
+            },
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > blockquote:nth-of-type(2) > p:nth-of-type(1)",
+              "quote": "Passive Voice Sentence = target + verb + actor"
+            },
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > p:nth-of-type(9)",
+              "quote": "Some passive voice sentences omit an actor."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:passive-voice:scope",
+          "kind": "scope",
+          "text": "本记录描述英语语法中的被动语态，不能仅凭句子未明写施事者就判定为被动。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > p:nth-of-type(17)",
+              "quote": "Sentences that start with an imperative verb are typically in active voice, even though they don't explicitly mention an actor."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:passive-voice:guidance",
+          "kind": "guidance",
+          "text": "检查省略施事者是否让读者不得不猜测动作由谁执行；若造成不清楚，可改为明确写出施事者的主动表达。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > ul:nth-of-type(9) > li:nth-of-type(3)",
+              "quote": "Some passive voice sentences omit an actor altogether, which forces the reader to guess the actor's identity."
+            },
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > p:nth-of-type(26)",
+              "quote": "Use the active voice most of the time. Use the passive voice sparingly."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:active-voice",
+          "evidence": [
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > p:nth-of-type(26)",
+              "quote": "Use the active voice most of the time. Use the passive voice sparingly."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:imperative-sentence",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:imperative-sentence:label:zh",
+          "role": "preferred",
+          "text": "祈使句",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:imperative-sentence:label:en",
+          "role": "preferred",
+          "text": "Imperative sentence",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "active-voice",
+          "selector": ".devsite-article-body > p:nth-of-type(16)",
+          "quote": "An imperative verb is a command."
+        },
+        {
+          "source": "active-voice",
+          "selector": ".devsite-article-body > p:nth-of-type(17)",
+          "quote": "sentences that start with an imperative verb imply an actor. The implied actor is you ."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:imperative-sentence:definition",
+          "kind": "definition",
+          "text": "以祈使动词表达命令或操作要求、通常隐含受指令者 you 作为施事者的句子。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > p:nth-of-type(16)",
+              "quote": "An imperative verb is a command."
+            },
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > p:nth-of-type(17)",
+              "quote": "sentences that start with an imperative verb imply an actor. The implied actor is you ."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:imperative-sentence:guidance",
+          "kind": "guidance",
+          "text": "操作要求可用祈使动词开头。不要因为英语祈使句省略了 you，就把它判成被动语态。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > p:nth-of-type(16)",
+              "quote": "Many items in numbered lists start with imperative verbs."
+            },
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > p:nth-of-type(17)",
+              "quote": "Sentences that start with an imperative verb are typically in active voice, even though they don't explicitly mention an actor."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:active-voice",
+          "evidence": [
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > p:nth-of-type(17)",
+              "quote": "sentences that start with an imperative verb imply an actor. The implied actor is you ."
+            },
+            {
+              "source": "active-voice",
+              "selector": ".devsite-article-body > p:nth-of-type(17)",
+              "quote": "Sentences that start with an imperative verb are typically in active voice, even though they don't explicitly mention an actor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:strong-verb",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:strong-verb:label:zh",
+          "role": "preferred",
+          "text": "强动词",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:strong-verb:label:en",
+          "role": "preferred",
+          "text": "Strong verb",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clear-sentences",
+          "selector": ".devsite-article-body > p:nth-of-type(5)",
+          "quote": "choose precise, strong, specific verbs. Reduce imprecise, weak, or generic verbs"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:strong-verb:definition",
+          "kind": "definition",
+          "text": "在该写作课程中，指能准确、具体表达动作的动词，与含糊或过于通用的动词相对。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "clear-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(5)",
+              "quote": "choose precise, strong, specific verbs. Reduce imprecise, weak, or generic verbs"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:strong-verb:scope",
+          "kind": "scope",
+          "text": "这里的 strong 描述写作选词的具体性，不讨论语言学中按词形变化划分的强变化动词。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "clear-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(5)",
+              "quote": "choose precise, strong, specific verbs. Reduce imprecise, weak, or generic verbs"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:strong-verb:guidance",
+          "kind": "guidance",
+          "text": "优先使用准确、具体的动词；检查 occur、happen 和 be 的形式是否掩盖了动作或施事者，但不要求删除所有 be。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "clear-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(5)",
+              "quote": "choose precise, strong, specific verbs. Reduce imprecise, weak, or generic verbs"
+            },
+            {
+              "source": "clear-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(7)",
+              "quote": "a form of be is sometimes the best choice of verb, so don't feel that you have to eliminate every form of be from your writing."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:sample:conciseness",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:sample:conciseness:label:zh",
+          "role": "preferred",
+          "text": "简洁",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:sample:conciseness:label:en",
+          "role": "preferred",
+          "text": "Concision",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "purdue-conciseness",
+          "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(1)",
+          "quote": "Concise writing does not always have the fewest words, but it always uses the strongest ones."
+        },
+        {
+          "source": "purdue-conciseness",
+          "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(1)",
+          "quote": "Words and phrases should be deliberately chosen for the work they are doing."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:sample:conciseness:definition",
+          "kind": "definition",
+          "text": "用能够有效表达意思的词语组织文字，使每个词承担必要作用；不等同于单纯追求最少字数。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；来自 Purdue OWL 的英文写作指导，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "purdue-conciseness",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "Concise writing does not always have the fewest words, but it always uses the strongest ones."
+            },
+            {
+              "source": "purdue-conciseness",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "Words and phrases should be deliberately chosen for the work they are doing."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:sample:conciseness:guidance",
+          "kind": "guidance",
+          "text": "逐词检查它是否对句子提供重要且独有的信息；没有足够作用的词可删去或替换。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；来自 Purdue OWL 的英文写作指导，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "purdue-conciseness",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(12)",
+              "quote": "Check every word to make sure that it is providing something important and unique to a sentence."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:sample:conciseness:guidance-2",
+          "kind": "guidance",
+          "text": "英文技术写作中，每句集中表达一个意思；句内偏离主要意思的内容可拆成另外的句子。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(6)",
+              "quote": "Focus each sentence on a single idea, thought, or concept."
+            },
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(23)",
+              "quote": "Do the subordinate clauses in a sentence extend the single idea or do they branch off into a separate idea? If the latter, consider dividing the offending subordinate clause(s) into separate sentences."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:sample:redundancy",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:sample:redundancy:label:zh",
+          "role": "preferred",
+          "text": "冗余",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:sample:redundancy:label:en",
+          "role": "preferred",
+          "text": "Extraneous words",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "short-sentences",
+          "selector": ".devsite-article-body > p:nth-of-type(13)",
+          "quote": "Many sentences contain filler—textual junk food that consumes space without nourishing the reader."
+        },
+        {
+          "source": "short-sentences",
+          "selector": ".devsite-article-body > p:nth-of-type(18)",
+          "quote": "Shorten the following sentences without changing their meaning:"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:sample:redundancy:definition",
+          "kind": "definition",
+          "text": "占用文字篇幅却未给读者增加必要信息、可在不改变原意的情况下删减或改写的词语。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(13)",
+              "quote": "Many sentences contain filler—textual junk food that consumes space without nourishing the reader."
+            },
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(18)",
+              "quote": "Shorten the following sentences without changing their meaning:"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:sample:redundancy:scope",
+          "kind": "scope",
+          "text": "本记录范围限定为来源讨论的多余词语和臃肿表达，不扩展到信息论冗余或所有重复修辞。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(13)",
+              "quote": "Many sentences contain filler—textual junk food that consumes space without nourishing the reader."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:sample:redundancy:guidance",
+          "kind": "guidance",
+          "text": "删减或替换无必要作用的词组，例如用一个准确动词代替绕行的动词短语，并保持原意。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(16)",
+              "quote": "The phrase provides a detailed description of reduces to the verb describes"
+            },
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(18)",
+              "quote": "Shorten the following sentences without changing their meaning:"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:sample:conciseness",
+          "evidence": [
+            {
+              "source": "purdue-conciseness",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "Writers often fill sentences with weak or unnecessary words that can be deleted or replaced."
+            },
+            {
+              "source": "purdue-conciseness",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "Concise writing does not always have the fewest words, but it always uses the strongest ones."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:clause",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:clause:label:zh",
+          "role": "preferred",
+          "text": "分句",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:clause:label:en",
+          "role": "preferred",
+          "text": "Clause",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "short-sentences",
+          "selector": ".devsite-article-body > p:nth-of-type(19)",
+          "quote": "A clause is an independent logical fragment of a sentence, which contains an actor and an action."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:clause:definition",
+          "kind": "definition",
+          "text": "在该课程的教学描述中，句内包含施事者和动作、表达一段逻辑内容的语法片段。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(19)",
+              "quote": "A clause is an independent logical fragment of a sentence, which contains an actor and an action."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:clause:scope",
+          "kind": "scope",
+          "text": "本记录保留来源用于英文技术写作教学的简化描述，不把 independent logical fragment 解释为每个分句都能独立成句。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(19)",
+              "quote": "A clause is an independent logical fragment of a sentence, which contains an actor and an action."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:main-clause",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:main-clause:label:zh",
+          "role": "preferred",
+          "text": "主句",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:main-clause:label:en",
+          "role": "preferred",
+          "text": "Main clause",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "short-sentences",
+          "selector": ".devsite-article-body > p:nth-of-type(20)",
+          "quote": "Subordinate clauses modify the idea in the main clause."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:main-clause:definition",
+          "kind": "definition",
+          "text": "表达句子主要意思、其意思可由从句修饰的分句。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(20)",
+              "quote": "Subordinate clauses modify the idea in the main clause."
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:clause",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(19)",
+              "quote": "A clause is an independent logical fragment of a sentence, which contains an actor and an action."
+            },
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > ul:nth-of-type(4)",
+              "quote": "A main clause Zero or more subordinate clauses"
+            }
+          ]
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:subordinate-clause",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:subordinate-clause:label:zh",
+          "role": "preferred",
+          "text": "从句",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:subordinate-clause:label:en",
+          "role": "preferred",
+          "text": "Subordinate clause",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "short-sentences",
+          "selector": ".devsite-article-body > p:nth-of-type(20)",
+          "quote": "Subordinate clauses modify the idea in the main clause."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:subordinate-clause:definition",
+          "kind": "definition",
+          "text": "在该课程的描述中，对主句意思加以修饰的分句。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(20)",
+              "quote": "Subordinate clauses modify the idea in the main clause."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:subordinate-clause:guidance",
+          "kind": "guidance",
+          "text": "修订时检查从句是否继续说明主句的同一个意思；若引入了另一个意思，可考虑另起一句。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(23)",
+              "quote": "Do the subordinate clauses in a sentence extend the single idea or do they branch off into a separate idea? If the latter, consider dividing the offending subordinate clause(s) into separate sentences."
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:clause",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(19)",
+              "quote": "A clause is an independent logical fragment of a sentence, which contains an actor and an action."
+            },
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > ul:nth-of-type(4)",
+              "quote": "A main clause Zero or more subordinate clauses"
+            }
+          ]
+        }
+      ],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:main-clause",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(20)",
+              "quote": "Subordinate clauses modify the idea in the main clause."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:essential-subordinate-clause",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:essential-subordinate-clause:label:zh",
+          "role": "preferred",
+          "text": "限制性从句",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:essential-subordinate-clause:label:en",
+          "role": "preferred",
+          "text": "Essential subordinate clause",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "short-sentences",
+          "selector": ".devsite-article-body > p:nth-of-type(26)",
+          "quote": "In the United States, reserve which for nonessential subordinate clauses, and use that for an essential subordinate clause that the sentence can't live without."
+        },
+        {
+          "source": "short-sentences",
+          "selector": ".devsite-article-body > p:nth-of-type(27)",
+          "quote": "the following sentence requires don't involve linear algebra"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:essential-subordinate-clause:definition",
+          "kind": "definition",
+          "text": "提供句子表达所必需限定内容、不能在保留原意的同时直接省略的从句。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(26)",
+              "quote": "In the United States, reserve which for nonessential subordinate clauses, and use that for an essential subordinate clause that the sentence can't live without."
+            },
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(27)",
+              "quote": "the following sentence requires don't involve linear algebra"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:essential-subordinate-clause:scope",
+          "kind": "scope",
+          "text": "本记录限于来源讲解 that 与 which 时采用的必要与非必要从句区分；其用词建议明确面向美国英语语境。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(26)",
+              "quote": "In the United States, reserve which for nonessential subordinate clauses, and use that for an essential subordinate clause that the sentence can't live without."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:essential-subordinate-clause:guidance",
+          "kind": "guidance",
+          "text": "按该来源的美式英语建议，用 that 引出必要从句，并且不在 that 前加逗号。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(26)",
+              "quote": "In the United States, reserve which for nonessential subordinate clauses, and use that for an essential subordinate clause that the sentence can't live without."
+            },
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(29)",
+              "quote": "Place a comma before which ; do not place a comma before that ."
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:subordinate-clause",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(26)",
+              "quote": "In the United States, reserve which for nonessential subordinate clauses, and use that for an essential subordinate clause that the sentence can't live without."
+            }
+          ]
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:nonessential-subordinate-clause",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:nonessential-subordinate-clause:label:zh",
+          "role": "preferred",
+          "text": "非限制性从句",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:nonessential-subordinate-clause:label:en",
+          "role": "preferred",
+          "text": "Nonessential subordinate clause",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "short-sentences",
+          "selector": ".devsite-article-body > p:nth-of-type(26)",
+          "quote": "In the United States, reserve which for nonessential subordinate clauses, and use that for an essential subordinate clause that the sentence can't live without."
+        },
+        {
+          "source": "short-sentences",
+          "selector": ".devsite-article-body > p:nth-of-type(26)",
+          "quote": "the sentence can survive without Guido van Rossum invented"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:nonessential-subordinate-clause:definition",
+          "kind": "definition",
+          "text": "提供补充内容、去掉后句子仍保有主要意思的从句。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(26)",
+              "quote": "In the United States, reserve which for nonessential subordinate clauses, and use that for an essential subordinate clause that the sentence can't live without."
+            },
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(26)",
+              "quote": "the sentence can survive without Guido van Rossum invented"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:nonessential-subordinate-clause:scope",
+          "kind": "scope",
+          "text": "本记录限于来源讲解 that 与 which 时采用的必要与非必要从句区分；其用词建议明确面向美国英语语境。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(26)",
+              "quote": "In the United States, reserve which for nonessential subordinate clauses, and use that for an essential subordinate clause that the sentence can't live without."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:nonessential-subordinate-clause:guidance",
+          "kind": "guidance",
+          "text": "按该来源的美式英语建议，用 which 引出非必要从句，并在 which 前加逗号。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；适用范围为英文技术文档，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(26)",
+              "quote": "In the United States, reserve which for nonessential subordinate clauses, and use that for an essential subordinate clause that the sentence can't live without."
+            },
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(29)",
+              "quote": "Place a comma before which ; do not place a comma before that ."
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:subordinate-clause",
+          "evidence": [
+            {
+              "source": "short-sentences",
+              "selector": ".devsite-article-body > p:nth-of-type(26)",
+              "quote": "In the United States, reserve which for nonessential subordinate clauses, and use that for an essential subordinate clause that the sentence can't live without."
+            }
+          ]
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:proofreading",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:proofreading:label:zh",
+          "role": "preferred",
+          "text": "校对",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:proofreading:label:en",
+          "role": "preferred",
+          "text": "Proofreading",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "purdue-proofreading",
+          "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(1)",
+          "quote": "Think of proofreading as a process of looking for any inconsistencies and grammatical errors as well as style and spelling issues."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:proofreading:definition",
+          "kind": "definition",
+          "text": "检查文字中的不一致、语法错误、文体问题和拼写问题的过程。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；来自 Purdue OWL 的英文写作指导，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "purdue-proofreading",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "Think of proofreading as a process of looking for any inconsistencies and grammatical errors as well as style and spelling issues."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:proofreading:guidance",
+          "kind": "guidance",
+          "text": "完成初稿后留出一段间隔，再缓慢、仔细地阅读；根据以往常犯错误准备检查清单，并可在文档中搜索这些错误。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；来自 Purdue OWL 的英文写作指导，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "purdue-proofreading",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "This will allow you to approach proofreading with fresh eyes."
+            },
+            {
+              "source": "purdue-proofreading",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(2) > li:nth-of-type(1)",
+              "quote": "Read slowly and carefully to give your eyes enough time to spot errors."
+            },
+            {
+              "source": "purdue-proofreading",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
+              "quote": "Have a list of what to look for."
+            },
+            {
+              "source": "purdue-proofreading",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(2) > li:nth-of-type(3)",
+              "quote": "Use the search in document function of the computer to look for common errors from your list."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:proofreading:guidance-2",
+          "kind": "guidance",
+          "text": "可从文末开始逐句检查，使注意力落在句子本身；完成自行修正后请其他读者再检查遗漏的问题。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；来自 Purdue OWL 的英文写作指导，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "purdue-proofreading",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(2) > li:nth-of-type(4)",
+              "quote": "Read individual sentences one at a time starting from the end of the paper rather than the beginning."
+            },
+            {
+              "source": "purdue-proofreading",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(3) > li:nth-of-type(1)",
+              "quote": "A new reader will be able to help you catch mistakes that you might have overlooked."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:reading-aloud",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:reading-aloud:label:zh",
+          "role": "preferred",
+          "text": "朗读",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:reading-aloud:label:en",
+          "role": "preferred",
+          "text": "Reading aloud",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "purdue-proofreading",
+          "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(2) > li:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(1)",
+          "quote": "Reading a paper aloud encourages you to read each word and can help you notice small mistakes."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:reading-aloud:definition",
+          "kind": "definition",
+          "text": "把书面文字读出声的阅读方式；在该来源中用于辅助检查文字问题。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；来自 Purdue OWL 的英文写作指导，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "purdue-proofreading",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(2) > li:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Reading a paper aloud encourages you to read each word and can help you notice small mistakes."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:reading-aloud:guidance",
+          "kind": "guidance",
+          "text": "校对时读出声，留意句子连接不当、衔接别扭或默读时不易注意到的语法和组织问题；可自己朗读或请他人朗读。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；来自 Purdue OWL 的英文写作指导，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "purdue-proofreading",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(2) > li:nth-of-type(2)",
+              "quote": "Reading aloud helps you to notice run-on sentences, awkward transitions, and other grammatical and organization issues that you may not notice when reading silently."
+            },
+            {
+              "source": "purdue-proofreading",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(2) > li:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Reading a paper aloud encourages you to read each word and can help you notice small mistakes."
+            },
+            {
+              "source": "purdue-proofreading",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(2) > li:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3)",
+              "quote": "Have a friend read your paper aloud while you don’t read along."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:proofreading",
+          "evidence": [
+            {
+              "source": "purdue-proofreading",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(2) > li:nth-of-type(2)",
+              "quote": "Read aloud . Reading aloud helps you to notice run-on sentences, awkward transitions, and other grammatical and organization issues that you may not notice when reading silently."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:sentence-combining",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:sentence-combining:label:zh",
+          "role": "preferred",
+          "text": "句子合并",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:sentence-combining:label:en",
+          "role": "preferred",
+          "text": "Sentence combining",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "purdue-conciseness",
+          "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(19)",
+          "quote": "Some information does not require a full sentence, and can easily be inserted into another sentence without losing any of its value."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:sentence-combining:definition",
+          "kind": "definition",
+          "text": "把不必单独成句的信息并入另一个句子，同时保留原有信息价值的改写方式。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；来自 Purdue OWL 的英文写作指导，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "purdue-conciseness",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(19)",
+              "quote": "Some information does not require a full sentence, and can easily be inserted into another sentence without losing any of its value."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:sentence-combining:guidance",
+          "kind": "guidance",
+          "text": "判断信息是否需要独立成句；若并入另一句不会损失信息价值，可合并以使表达简洁。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文；来自 Purdue OWL 的英文写作指导，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "purdue-conciseness",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(19)",
+              "quote": "Some information does not require a full sentence, and can easily be inserted into another sentence without losing any of its value."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:sample:conciseness",
+          "evidence": [
+            {
+              "source": "purdue-conciseness",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(19)",
+              "quote": "Some information does not require a full sentence, and can easily be inserted into another sentence without losing any of its value."
+            },
+            {
+              "source": "purdue-conciseness",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "Concise writing does not always have the fewest words, but it always uses the strongest ones."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "key": "语言表达",
+      "members": [
+        "urn:kb-vocab-writing:terminology-consistency",
+        "urn:kb-vocab-writing:acronym",
+        "urn:kb-vocab-writing:shortened-name",
+        "urn:kb-vocab-writing:pronoun",
+        "urn:kb-vocab-writing:ambiguous-pronoun",
+        "urn:kb-vocab-writing:active-voice",
+        "urn:kb-vocab-writing:passive-voice",
+        "urn:kb-vocab-writing:imperative-sentence",
+        "urn:kb-vocab-writing:strong-verb",
+        "urn:kb-vocab-writing:sample:conciseness",
+        "urn:kb-vocab-writing:sample:redundancy",
+        "urn:kb-vocab-writing:clause",
+        "urn:kb-vocab-writing:main-clause",
+        "urn:kb-vocab-writing:subordinate-clause",
+        "urn:kb-vocab-writing:essential-subordinate-clause",
+        "urn:kb-vocab-writing:nonessential-subordinate-clause",
+        "urn:kb-vocab-writing:sentence-combining"
+      ]
+    },
+    {
+      "key": "质量与修改",
+      "members": [
+        "urn:kb-vocab-writing:terminology-consistency",
+        "urn:kb-vocab-writing:ambiguous-pronoun",
+        "urn:kb-vocab-writing:sample:conciseness",
+        "urn:kb-vocab-writing:sample:redundancy",
+        "urn:kb-vocab-writing:proofreading",
+        "urn:kb-vocab-writing:reading-aloud",
+        "urn:kb-vocab-writing:sentence-combining"
+      ]
+    }
+  ],
+  "source_language_labels": [],
+  "unresolved": [
+    {
+      "topic": "文字修订与编辑",
+      "reason": "指定快照对校对有明确描述，也提供删减词语、改写语态和合并句子的方法，但没有足够正文依据确定 revision 或 editing 的完整概念范围及二者与校对的关系；本批不把它们与 proofreading 合并。",
+      "sources": [
+        "purdue-proofreading",
+        "purdue-conciseness",
+        "short-sentences"
+      ]
+    },
+    {
+      "topic": "缩略形式的分类",
+      "reason": "words 来源以 acronym 统称 TTN、OGS 和 HTML，未说明 acronym、initialism 与其他 abbreviation 的形式和发音边界；本批不建立这些形式之间的上下位分类。",
+      "sources": [
+        "words"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,420 @@
+{
+  "concepts": [
+    {
+      "id": "urn:kb-vocab-writing:toulmin-model",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:toulmin-model:label:zh",
+          "role": "preferred",
+          "text": "图尔敏论证模型",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:toulmin-model:label:en",
+          "role": "preferred",
+          "text": "Toulmin method",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "toulmin",
+          "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(1)",
+          "quote": "six component parts"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:toulmin-model:definition",
+          "kind": "definition",
+          "text": "把论证区分为主张、论据、连接两者的推断前提，以及可选的限定、反驳和补充支持等成分的分析方法。",
+          "language": "zh",
+          "applicability": "依据 Purdue OWL 的论证写作介绍归纳；不是术语标准或官方中文译文。",
+          "evidence": [
+            {
+              "source": "toulmin",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "six component parts"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:argument-claim",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:argument-claim:label:zh",
+          "role": "preferred",
+          "text": "论证主张",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:argument-claim:label:en",
+          "role": "preferred",
+          "text": "Claim",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "toulmin",
+          "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(2)",
+          "quote": "A claim is"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:argument-claim:definition",
+          "kind": "definition",
+          "text": "作者希望通过论证向读者证明的主张。",
+          "language": "zh",
+          "applicability": "依据 Purdue OWL 的论证写作介绍归纳；不是术语标准或官方中文译文。",
+          "evidence": [
+            {
+              "source": "toulmin",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(2)",
+              "quote": "A claim is"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:toulmin-model",
+          "evidence": [
+            {
+              "source": "toulmin",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(2)",
+              "quote": "A claim is"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:argument-grounds",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:argument-grounds:label:zh",
+          "role": "preferred",
+          "text": "论据",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:argument-grounds:label:en",
+          "role": "preferred",
+          "text": "Grounds",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "toulmin",
+          "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(3)",
+          "quote": "evidence and facts"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:argument-grounds:definition",
+          "kind": "definition",
+          "text": "用于支持论证主张的证据和事实。",
+          "language": "zh",
+          "applicability": "依据 Purdue OWL 的论证写作介绍归纳；不是术语标准或官方中文译文。",
+          "evidence": [
+            {
+              "source": "toulmin",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(3)",
+              "quote": "evidence and facts"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:toulmin-model",
+          "evidence": [
+            {
+              "source": "toulmin",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(3)",
+              "quote": "evidence and facts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:argument-warrant",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:argument-warrant:label:en",
+          "role": "preferred",
+          "text": "Warrant",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "toulmin",
+          "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(4)",
+          "quote": "links the grounds"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:argument-warrant:definition",
+          "kind": "definition",
+          "text": "连接论据与主张的推断前提，可以明示，也可以隐含在论证中。",
+          "language": "zh",
+          "applicability": "依据 Purdue OWL 的论证写作介绍归纳；不是术语标准或官方中文译文。",
+          "evidence": [
+            {
+              "source": "toulmin",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(4)",
+              "quote": "links the grounds"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:toulmin-model",
+          "evidence": [
+            {
+              "source": "toulmin",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(4)",
+              "quote": "links the grounds"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:argument-qualifier",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:argument-qualifier:label:zh",
+          "role": "preferred",
+          "text": "限定语",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:argument-qualifier:label:en",
+          "role": "preferred",
+          "text": "Qualifier",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "toulmin",
+          "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(14)",
+          "quote": "may not be true"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:argument-qualifier:definition",
+          "kind": "definition",
+          "text": "表明主张并非在所有情形下成立的限定表达。",
+          "language": "zh",
+          "applicability": "依据 Purdue OWL 的论证写作介绍归纳；不是术语标准或官方中文译文。",
+          "evidence": [
+            {
+              "source": "toulmin",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(14)",
+              "quote": "may not be true"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:toulmin-model",
+          "evidence": [
+            {
+              "source": "toulmin",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(14)",
+              "quote": "may not be true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:argument-rebuttal",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:argument-rebuttal:label:zh",
+          "role": "preferred",
+          "text": "反驳",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:argument-rebuttal:label:en",
+          "role": "preferred",
+          "text": "Rebuttal",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "toulmin",
+          "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(15)",
+          "quote": "another valid view"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:argument-rebuttal:definition",
+          "kind": "definition",
+          "text": "按本来源对图尔敏模型的介绍，指论证中承认另一种合理看法的成分。",
+          "language": "zh",
+          "applicability": "依据 Purdue OWL 的论证写作介绍归纳；不是术语标准或官方中文译文。",
+          "evidence": [
+            {
+              "source": "toulmin",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(15)",
+              "quote": "another valid view"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:toulmin-model",
+          "evidence": [
+            {
+              "source": "toulmin",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(15)",
+              "quote": "another valid view"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:argument-backing",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:argument-backing:label:en",
+          "role": "preferred",
+          "text": "Backing",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "toulmin",
+          "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(13)",
+          "quote": "additional support"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:argument-backing:definition",
+          "kind": "definition",
+          "text": "对连接论据与主张的推断前提提供额外支持的材料，例如支持该前提的具体例证。",
+          "language": "zh",
+          "applicability": "依据 Purdue OWL 的论证写作介绍归纳；不是术语标准或官方中文译文。",
+          "evidence": [
+            {
+              "source": "toulmin",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(13)",
+              "quote": "additional support"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:toulmin-model",
+          "evidence": [
+            {
+              "source": "toulmin",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(13)",
+              "quote": "additional support"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:argumentative-essay",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:argumentative-essay:label:zh",
+          "role": "preferred",
+          "text": "议论文",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:argumentative-essay:label:en",
+          "role": "preferred",
+          "text": "Argumentative essay",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "argumentative-essay",
+          "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(1)",
+          "quote": "establish a position"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:argumentative-essay:definition",
+          "kind": "definition",
+          "text": "围绕一个论题开展调查，收集和评价证据，并形成与支持立场的文章。",
+          "language": "zh",
+          "applicability": "依据 Purdue OWL 的论证写作介绍归纳；不是术语标准或官方中文译文。",
+          "evidence": [
+            {
+              "source": "argumentative-essay",
+              "selector": "[id=\"content__main\"] > section:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "establish a position"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    }
+  ],
+  "groups": [
+    {
+      "key": "内容与目的",
+      "members": [
+        "urn:kb-vocab-writing:toulmin-model",
+        "urn:kb-vocab-writing:argument-claim",
+        "urn:kb-vocab-writing:argument-grounds",
+        "urn:kb-vocab-writing:argument-warrant",
+        "urn:kb-vocab-writing:argument-qualifier",
+        "urn:kb-vocab-writing:argument-rebuttal",
+        "urn:kb-vocab-writing:argument-backing",
+        "urn:kb-vocab-writing:argumentative-essay"
+      ]
+    }
+  ],
+  "source_language_labels": [],
+  "unresolved": [
+    {
+      "concept": "urn:kb-vocab-writing:argument-warrant",
+      "issue": "中文惯用名称尚未核定，保留英文；中文定义解释其作用。"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:argument-backing",
+      "issue": "中文惯用名称尚未核定，保留英文；中文定义解释其作用。"
+    }
+  ]
+}

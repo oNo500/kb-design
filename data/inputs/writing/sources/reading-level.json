@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "reading-level.html",
+      "format": "html",
+      "id": "reading-level",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/reading-level.html"
+    }
+  ],
+  "id": "reading-level",
+  "schema_version": 1,
+  "title": "Understanding SC 3.1.5 Reading Level",
+  "version": "live-web-snapshot"
+}

@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "clreq.html",
+      "format": "html",
+      "id": "clreq",
+      "url": "https://www.w3.org/TR/clreq/"
+    }
+  ],
+  "id": "clreq",
+  "schema_version": 1,
+  "title": "clreq",
+  "version": "live-web-snapshot"
+}

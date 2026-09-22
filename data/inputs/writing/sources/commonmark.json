@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "commonmark.html",
+      "format": "html",
+      "id": "commonmark",
+      "url": "https://spec.commonmark.org/0.31.2/"
+    }
+  ],
+  "id": "commonmark",
+  "schema_version": 1,
+  "title": "CommonMark Specification",
+  "version": "0.31.2"
+}

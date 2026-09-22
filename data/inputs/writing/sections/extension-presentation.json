@@ -1,0 +1,2515 @@
+{
+  "concepts": [
+    {
+      "id": "urn:kb-vocab-writing:font-weight",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:font-weight:label:zh",
+          "role": "preferred",
+          "text": "字重",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:font-weight:label:en",
+          "role": "preferred",
+          "text": "Font weight",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "css-fonts",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(25)",
+          "quote": "The font-weight property specifies the weight of glyphs in the font, their degree of blackness, or stroke thickness."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:font-weight:definition",
+          "kind": "definition",
+          "text": "字形的黑度或笔画粗细；CSS 用 font-weight 属性指定这种字重。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Fonts Module Level 4 归纳的中文说明，非官方译文；对象是 CSS 字体呈现及匹配，不自动赋予文本语义。",
+          "evidence": [
+            {
+              "source": "css-fonts",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(25)",
+              "quote": "The font-weight property specifies the weight of glyphs in the font, their degree of blackness, or stroke thickness."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:font-weight:scope",
+          "kind": "scope",
+          "text": "CSS 的字重标尺是相对的，较大值对应的字面不能显得更轻；字体内部的字重名称映射不能直接代替 CSS 的映射。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Fonts Module Level 4 归纳的中文说明，非官方译文；对象是 CSS 字体呈现及匹配，不自动赋予文本语义。",
+          "evidence": [
+            {
+              "source": "css-fonts",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(28)",
+              "quote": "The scale is relative, so a face with a larger weight value must never appear lighter."
+            },
+            {
+              "source": "css-fonts",
+              "selector": "#font-weight-numeric-values > dd:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "those mappings within the font are disregarded in CSS."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:bold",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:bold:label:zh",
+          "role": "preferred",
+          "text": "粗体",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:bold:label:en",
+          "role": "preferred",
+          "text": "Bold",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "css-fonts",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(31)",
+          "quote": "In general, bold weights map to faces with heavier weights"
+        },
+        {
+          "source": "css-fonts",
+          "selector": "#font-weight-numeric-values > dd:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+          "quote": "700 - Bold"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:bold:definition",
+          "kind": "definition",
+          "text": "具有较重笔画的字体呈现形式；在 CSS 字重标尺中，bold 对应 700。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Fonts Module Level 4 归纳的中文说明，非官方译文；对象是 CSS 字体呈现及匹配，不自动赋予文本语义。",
+          "evidence": [
+            {
+              "source": "css-fonts",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(31)",
+              "quote": "In general, bold weights map to faces with heavier weights"
+            },
+            {
+              "source": "css-fonts",
+              "selector": "#font-weight-numeric-values > dd:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "700 - Bold"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:bold:scope",
+          "kind": "scope",
+          "text": "本记录采用 CSS 的字体呈现含义，bold 指定字重，不以该属性直接定义文本的重要性。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Fonts Module Level 4 归纳的中文说明，非官方译文；对象是 CSS 字体呈现及匹配，不自动赋予文本语义。",
+          "evidence": [
+            {
+              "source": "css-fonts",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(25)",
+              "quote": "The font-weight property specifies the weight of glyphs in the font, their degree of blackness, or stroke thickness."
+            },
+            {
+              "source": "css-fonts",
+              "selector": "#font-weight-numeric-values > dd:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "700 - Bold"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:font-weight",
+          "evidence": [
+            {
+              "source": "css-fonts",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(25)",
+              "quote": "The font-weight property specifies the weight of glyphs in the font, their degree of blackness, or stroke thickness."
+            },
+            {
+              "source": "css-fonts",
+              "selector": "#font-weight-numeric-values > dd:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "700 - Bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:italic",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:italic:label:zh",
+          "role": "preferred",
+          "text": "斜体",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:italic:label:en",
+          "role": "preferred",
+          "text": "Italic",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "css-fonts",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(40)",
+          "quote": "Italic forms are generally cursive in nature while oblique faces are typically sloped versions of the regular face."
+        },
+        {
+          "source": "css-fonts",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(40)",
+          "quote": "The font-style property allows italic or oblique faces to be selected."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:italic:definition",
+          "kind": "definition",
+          "text": "通常具有草写性质的字体形式；CSS 的 font-style 可选择这种形式。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Fonts Module Level 4 归纳的中文说明，非官方译文；对象是 CSS 字体呈现及匹配，不自动赋予文本语义。",
+          "evidence": [
+            {
+              "source": "css-fonts",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(40)",
+              "quote": "Italic forms are generally cursive in nature while oblique faces are typically sloped versions of the regular face."
+            },
+            {
+              "source": "css-fonts",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(40)",
+              "quote": "The font-style property allows italic or oblique faces to be selected."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:italic:guidance",
+          "kind": "guidance",
+          "text": "当所用文字体系的斜体字形与常规字形明显不同时，应采用实际的斜体字型；CSS Fonts 提醒，不宜依赖人工倾斜来代替这些字形。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Fonts Module Level 4 归纳的中文说明，非官方译文；对象是 CSS 字体呈现及匹配，不自动赋予文本语义。",
+          "evidence": [
+            {
+              "source": "css-fonts",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(48)",
+              "quote": "synthesized approaches might not be suitable for scripts like Cyrillic, where italic forms are very different in shape."
+            },
+            {
+              "source": "css-fonts",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(48)",
+              "quote": "It is always better to use an actual italic font rather than rely on a synthetic version."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:oblique",
+          "evidence": [
+            {
+              "source": "css-fonts",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(40)",
+              "quote": "Italic forms are generally cursive in nature while oblique faces are typically sloped versions of the regular face."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:oblique",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:oblique:label:zh",
+          "role": "preferred",
+          "text": "倾斜体",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:oblique:label:en",
+          "role": "preferred",
+          "text": "Oblique",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "css-fonts",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(40)",
+          "quote": "Italic forms are generally cursive in nature while oblique faces are typically sloped versions of the regular face."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:oblique:definition",
+          "kind": "definition",
+          "text": "通常保持常规字体基本形式、呈倾斜状态的字体形式；不同于通常带有草写性质的 italic。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Fonts Module Level 4 归纳的中文说明，非官方译文；对象是 CSS 字体呈现及匹配，不自动赋予文本语义。",
+          "evidence": [
+            {
+              "source": "css-fonts",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(40)",
+              "quote": "Italic forms are generally cursive in nature while oblique faces are typically sloped versions of the regular face."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:oblique:scope",
+          "kind": "scope",
+          "text": "几何倾斜可以合成 oblique 的外观，但不能保证实际倾斜体所保留的视觉笔画粗细。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Fonts Module Level 4 归纳的中文说明，非官方译文；对象是 CSS 字体呈现及匹配，不自动赋予文本语义。",
+          "evidence": [
+            {
+              "source": "css-fonts",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(46)",
+              "quote": "this is not equivalent to a true oblique, in which optical stroke thicknesses are properly preserved despite the slant."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:oblique:guidance",
+          "kind": "guidance",
+          "text": "来源建议优先采用实际倾斜体，而非合成的倾斜外观。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Fonts Module Level 4 归纳的中文说明，非官方译文；对象是 CSS 字体呈现及匹配，不自动赋予文本语义。",
+          "evidence": [
+            {
+              "source": "css-fonts",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(46)",
+              "quote": "It is always better to use an actual oblique font rather than rely on a synthetic version."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:text-decoration",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:text-decoration:label:zh",
+          "role": "preferred",
+          "text": "文本装饰",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:text-decoration:label:en",
+          "role": "preferred",
+          "text": "Text decoration",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "css-decoration",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+          "quote": "This module contains the features of CSS relating to text decoration, such as underlines, text shadows, and emphasis marks."
+        },
+        {
+          "source": "css-decoration",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(3)",
+          "quote": "CSS Levels 1 and 2 only defined very basic line decorations (underlines, overlines, and strike-throughs)"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:text-decoration:definition",
+          "kind": "definition",
+          "text": "附加在文本呈现上的装饰效果，包括装饰线、文字阴影和着重标记等。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Decoration Module Level 3 归纳的中文说明，非官方译文；对象是 CSS 视觉装饰。",
+          "evidence": [
+            {
+              "source": "css-decoration",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+              "quote": "This module contains the features of CSS relating to text decoration, such as underlines, text shadows, and emphasis marks."
+            },
+            {
+              "source": "css-decoration",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(3)",
+              "quote": "CSS Levels 1 and 2 only defined very basic line decorations (underlines, overlines, and strike-throughs)"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:underline",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:underline:label:zh",
+          "role": "preferred",
+          "text": "下划线",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:underline:label:en",
+          "role": "preferred",
+          "text": "Underline",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "css-decoration",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > dl:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1)",
+          "quote": "Each line of text is underlined."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:underline:definition",
+          "kind": "definition",
+          "text": "画在每行文字下侧的装饰线。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Decoration Module Level 3 归纳的中文说明，非官方译文；对象是 CSS 视觉装饰。",
+          "evidence": [
+            {
+              "source": "css-decoration",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > dl:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1)",
+              "quote": "Each line of text is underlined."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:underline:scope",
+          "kind": "scope",
+          "text": "这里的上下位置需要结合书写方向理解；在竖排中，text-underline-position 可以使下划线和上划线互换所在侧。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Decoration Module Level 3 归纳的中文说明，非官方译文；对象是 CSS 视觉装饰。",
+          "evidence": [
+            {
+              "source": "css-decoration",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(17)",
+              "quote": "In vertical writing modes , text-underline-position can cause the underline and overline to switch sides."
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:text-decoration",
+          "evidence": [
+            {
+              "source": "css-decoration",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(3)",
+              "quote": "CSS Levels 1 and 2 only defined very basic line decorations (underlines, overlines, and strike-throughs)"
+            }
+          ]
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:overline",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:overline:label:zh",
+          "role": "preferred",
+          "text": "上划线",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:overline:label:en",
+          "role": "preferred",
+          "text": "Overline",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "css-decoration",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > dl:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1)",
+          "quote": "Each line of text has a line over it (i.e. on the opposite side from an underline)."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:overline:definition",
+          "kind": "definition",
+          "text": "画在每行文字上侧、与下划线相对一侧的装饰线。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Decoration Module Level 3 归纳的中文说明，非官方译文；对象是 CSS 视觉装饰。",
+          "evidence": [
+            {
+              "source": "css-decoration",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > dl:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1)",
+              "quote": "Each line of text has a line over it (i.e. on the opposite side from an underline)."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:overline:scope",
+          "kind": "scope",
+          "text": "这里的上下位置需要结合书写方向理解；在竖排中，text-underline-position 可以使下划线和上划线互换所在侧。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Decoration Module Level 3 归纳的中文说明，非官方译文；对象是 CSS 视觉装饰。",
+          "evidence": [
+            {
+              "source": "css-decoration",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(17)",
+              "quote": "In vertical writing modes , text-underline-position can cause the underline and overline to switch sides."
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:text-decoration",
+          "evidence": [
+            {
+              "source": "css-decoration",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(3)",
+              "quote": "CSS Levels 1 and 2 only defined very basic line decorations (underlines, overlines, and strike-throughs)"
+            }
+          ]
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:line-through",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:line-through:label:zh",
+          "role": "preferred",
+          "text": "删除线",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:line-through:label:en",
+          "role": "preferred",
+          "text": "Line-through",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "css-decoration",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > dl:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1)",
+          "quote": "Each line of text has a line through the middle."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:line-through:definition",
+          "kind": "definition",
+          "text": "穿过每行文字中部的装饰线。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Decoration Module Level 3 归纳的中文说明，非官方译文；对象是 CSS 视觉装饰。",
+          "evidence": [
+            {
+              "source": "css-decoration",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > dl:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1)",
+              "quote": "Each line of text has a line through the middle."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:line-through:scope",
+          "kind": "scope",
+          "text": "本记录只描述装饰线的几何呈现；文本删除所需的内容语义需另由相应标记规定。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Decoration Module Level 3 归纳的中文说明，非官方译文；对象是 CSS 视觉装饰。",
+          "evidence": [
+            {
+              "source": "css-decoration",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > dl:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1)",
+              "quote": "Each line of text has a line through the middle."
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:text-decoration",
+          "evidence": [
+            {
+              "source": "css-decoration",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(3)",
+              "quote": "CSS Levels 1 and 2 only defined very basic line decorations (underlines, overlines, and strike-throughs)"
+            }
+          ]
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:text-shadow",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:text-shadow:label:zh",
+          "role": "preferred",
+          "text": "文字阴影",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:text-shadow:label:en",
+          "role": "preferred",
+          "text": "Text shadow",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "css-decoration",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(47)",
+          "quote": "This property accepts a comma-separated list of shadow effects to be applied to the text of the element."
+        },
+        {
+          "source": "css-decoration",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(47)",
+          "quote": "Each layer shadows the element’s text and all its text decorations (composited together)."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:text-shadow:definition",
+          "kind": "definition",
+          "text": "施加于元素文字及其文本装饰的阴影效果；CSS 可将多个阴影效果分层叠加。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Decoration Module Level 3 归纳的中文说明，非官方译文；对象是 CSS 视觉装饰。",
+          "evidence": [
+            {
+              "source": "css-decoration",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(47)",
+              "quote": "This property accepts a comma-separated list of shadow effects to be applied to the text of the element."
+            },
+            {
+              "source": "css-decoration",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(47)",
+              "quote": "Each layer shadows the element’s text and all its text decorations (composited together)."
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:text-decoration",
+          "evidence": [
+            {
+              "source": "css-decoration",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+              "quote": "This module contains the features of CSS relating to text decoration, such as underlines, text shadows, and emphasis marks."
+            }
+          ]
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:visual-hierarchy",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:visual-hierarchy:label:zh",
+          "role": "preferred",
+          "text": "视觉层级",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:visual-hierarchy:label:en",
+          "role": "preferred",
+          "text": "Visual hierarchy",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "coga",
+          "selector": "#what-to-do-0 > ul:nth-of-type(1) > li:nth-of-type(4)",
+          "quote": "visual hierarchy (arrangement of elements to show the order of importance)."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:visual-hierarchy:definition",
+          "kind": "definition",
+          "text": "通过元素的排列展示重要性顺序的呈现关系。",
+          "language": "zh",
+          "applicability": "根据 W3C COGA 指南归纳的中文说明，非官方译文；其设计建议用于支持有认知和学习障碍的读者，不作为 WCAG 成功准则。",
+          "evidence": [
+            {
+              "source": "coga",
+              "selector": "#what-to-do-0 > ul:nth-of-type(1) > li:nth-of-type(4)",
+              "quote": "visual hierarchy (arrangement of elements to show the order of importance)."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:visual-hierarchy:guidance",
+          "kind": "guidance",
+          "text": "在页面上形成清楚的视觉层级，使读者能够理解菜单和内容结构。",
+          "language": "zh",
+          "applicability": "根据 W3C COGA 指南归纳的中文说明，非官方译文；其设计建议用于支持有认知和学习障碍的读者，不作为 WCAG 成功准则。",
+          "evidence": [
+            {
+              "source": "coga",
+              "selector": "#getting-started > ol:nth-of-type(1) > li:nth-of-type(2)",
+              "quote": "Create an obvious visual hierarchy in the page."
+            },
+            {
+              "source": "coga",
+              "selector": "#how-it-helps-7 > p:nth-of-type(1)",
+              "quote": "Users often become confused and lost when they do not understand the visual hierarchy of the site, menus, and structure."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:visual-grouping",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:visual-grouping:label:zh",
+          "role": "preferred",
+          "text": "视觉分组",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:visual-grouping:label:en",
+          "role": "preferred",
+          "text": "Grouping",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "coga",
+          "selector": "#how-it-helps-8 > p:nth-of-type(4)",
+          "quote": "Grouping information using a border or color shading makes it easier for people to identify groups."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:visual-grouping:definition",
+          "kind": "definition",
+          "text": "利用边框、色块等视觉线索把相关信息呈现为可辨认的一组。",
+          "language": "zh",
+          "applicability": "根据 W3C COGA 指南归纳的中文说明，非官方译文；其设计建议用于支持有认知和学习障碍的读者，不作为 WCAG 成功准则。",
+          "evidence": [
+            {
+              "source": "coga",
+              "selector": "#how-it-helps-8 > p:nth-of-type(4)",
+              "quote": "Grouping information using a border or color shading makes it easier for people to identify groups."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:visual-grouping:guidance",
+          "kind": "guidance",
+          "text": "控件与其作用区域的边界和分组应清楚；当控件无法放在其作用区域时，用边框等视觉线索说明对应关系，并通过用户测试核实。",
+          "language": "zh",
+          "applicability": "根据 W3C COGA 指南归纳的中文说明，非官方译文；其设计建议用于支持有认知和学习障碍的读者，不作为 WCAG 成功准则。",
+          "evidence": [
+            {
+              "source": "coga",
+              "selector": "#how-it-helps-4 > p:nth-of-type(2)",
+              "quote": "Having a border or other visual cue around the controls and the relevant section can help make it more understandable."
+            },
+            {
+              "source": "coga",
+              "selector": "#how-it-helps-4 > p:nth-of-type(2)",
+              "quote": "Testing is essential when the controls cannot be in the area they affect."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:layout-white-space",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:layout-white-space:label:zh",
+          "role": "preferred",
+          "text": "留白",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:layout-white-space:label:en",
+          "role": "preferred",
+          "text": "White space",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "coga",
+          "selector": "#what-to-do-21 > p:nth-of-type(1)",
+          "quote": "Put white space around objects and text, including boxes, paragraph headings, and content, so that each section is clearly separated."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:layout-white-space:definition",
+          "kind": "definition",
+          "text": "页面中对象、文字和内容区域周围用于分隔它们的空白空间。",
+          "language": "zh",
+          "applicability": "根据 W3C COGA 指南归纳的中文说明，非官方译文；其设计建议用于支持有认知和学习障碍的读者，不作为 WCAG 成功准则。",
+          "evidence": [
+            {
+              "source": "coga",
+              "selector": "#what-to-do-21 > p:nth-of-type(1)",
+              "quote": "Put white space around objects and text, including boxes, paragraph headings, and content, so that each section is clearly separated."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:layout-white-space:guidance",
+          "kind": "guidance",
+          "text": "允许读者按需要调整对象与文字周围的留白；避免留白过多，以致重要内容被推到必须滚动才可见的位置。",
+          "language": "zh",
+          "applicability": "根据 W3C COGA 指南归纳的中文说明，非官方译文；其设计建议用于支持有认知和学习障碍的读者，不作为 WCAG 成功准则。",
+          "evidence": [
+            {
+              "source": "coga",
+              "selector": "#more-details-17 > p:nth-of-type(2)",
+              "quote": "Allow for the ability to easily adjust white space around objects and text"
+            },
+            {
+              "source": "coga",
+              "selector": "#more-details-17 > p:nth-of-type(2)",
+              "quote": "Do not add so much white space that important content cannot be seen above the scroll."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:visual-divider",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:visual-divider:label:zh",
+          "role": "preferred",
+          "text": "视觉分隔",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:visual-divider:label:en",
+          "role": "preferred",
+          "text": "Divider",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "coga",
+          "selector": "#more-details-2 > ul:nth-of-type(1) > li:nth-of-type(3)",
+          "quote": "Examples of clear dividers include high contrast borders or white space. A change in background color can be a clear divider if the contrast is strong enough."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:visual-divider:definition",
+          "kind": "definition",
+          "text": "使页面区域彼此分开的视觉线索，可采用边框、留白或对比充分的背景色变化。",
+          "language": "zh",
+          "applicability": "根据 W3C COGA 指南归纳的中文说明，非官方译文；其设计建议用于支持有认知和学习障碍的读者，不作为 WCAG 成功准则。",
+          "evidence": [
+            {
+              "source": "coga",
+              "selector": "#more-details-2 > ul:nth-of-type(1) > li:nth-of-type(3)",
+              "quote": "Examples of clear dividers include high contrast borders or white space. A change in background color can be a clear divider if the contrast is strong enough."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:layout-white-space",
+          "evidence": [
+            {
+              "source": "coga",
+              "selector": "#more-details-2 > ul:nth-of-type(1) > li:nth-of-type(3)",
+              "quote": "Examples of clear dividers include high contrast borders or white space."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:use-of-color",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:use-of-color:label:zh",
+          "role": "preferred",
+          "text": "色彩运用",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:use-of-color:label:en",
+          "role": "preferred",
+          "text": "Use of color",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "wcag22",
+          "selector": "#use-of-color > p:nth-of-type(2)",
+          "quote": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:use-of-color:definition",
+          "kind": "definition",
+          "text": "使用颜色作为视觉手段，传达信息、指示动作、提示响应或区分视觉元素。",
+          "language": "zh",
+          "applicability": "根据 WCAG 2.2 归纳的中文说明，非官方译文；定义、成功准则及注释按各自性质使用。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "#use-of-color > p:nth-of-type(2)",
+              "quote": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:use-of-color:guidance",
+          "kind": "guidance",
+          "text": "WCAG 2.2 的成功准则 1.4.1 要求，不能只靠颜色完成上述信息传达和区分。",
+          "language": "zh",
+          "applicability": "根据 WCAG 2.2 归纳的中文说明，非官方译文；定义、成功准则及注释按各自性质使用。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "#use-of-color > p:nth-of-type(2)",
+              "quote": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:background-color",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:background-color:label:zh",
+          "role": "preferred",
+          "text": "背景色",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:background-color:label:en",
+          "role": "preferred",
+          "text": "Background color",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "wcag22",
+          "selector": "#issue-container-generatedID-94 > p:nth-of-type(1)",
+          "quote": "Background color is the specified color of content over which the text is to be rendered in normal usage."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:background-color:definition",
+          "kind": "definition",
+          "text": "在通常使用情形中，文字所覆盖内容的指定颜色。",
+          "language": "zh",
+          "applicability": "根据 WCAG 2.2 归纳的中文说明，非官方译文；定义、成功准则及注释按各自性质使用。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "#issue-container-generatedID-94 > p:nth-of-type(1)",
+              "quote": "Background color is the specified color of content over which the text is to be rendered in normal usage."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:background-color:guidance",
+          "kind": "guidance",
+          "text": "WCAG 的对比度说明要求文字色与背景色配合指定，否则用户的默认颜色未知，无法评估是否具有足够对比度。",
+          "language": "zh",
+          "applicability": "根据 WCAG 2.2 归纳的中文说明，非官方译文；定义、成功准则及注释按各自性质使用。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "#issue-container-generatedID-94 > p:nth-of-type(1)",
+              "quote": "It is a failure if no background color is specified when the text color is specified, because the user's default background color is unknown and cannot be evaluated for sufficient contrast."
+            },
+            {
+              "source": "wcag22",
+              "selector": "#issue-container-generatedID-94 > p:nth-of-type(1)",
+              "quote": "For the same reason, it is a failure if no text color is specified when a background color is specified."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:background-color:example",
+          "kind": "example",
+          "text": "背景色变化在对比充分时，可以作为内容区域之间的清楚分隔。",
+          "language": "zh",
+          "applicability": "根据 W3C COGA 指南归纳的中文说明，非官方译文；其设计建议用于支持有认知和学习障碍的读者，不作为 WCAG 成功准则。",
+          "evidence": [
+            {
+              "source": "coga",
+              "selector": "#more-details-2 > ul:nth-of-type(1) > li:nth-of-type(3)",
+              "quote": "A change in background color can be a clear divider if the contrast is strong enough."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:contrast-ratio",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:contrast-ratio:label:zh",
+          "role": "preferred",
+          "text": "对比度",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:contrast-ratio:label:en",
+          "role": "preferred",
+          "text": "Contrast ratio",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "wcag22",
+          "selector": "#terms > dd:nth-of-type(20) > p:nth-of-type(1)",
+          "quote": "(L1 + 0.05) / (L2 + 0.05), where"
+        },
+        {
+          "source": "wcag22",
+          "selector": "#terms > dd:nth-of-type(20) > ul:nth-of-type(1) > li:nth-of-type(1)",
+          "quote": "L1 is the relative luminance of the lighter of the colors"
+        },
+        {
+          "source": "wcag22",
+          "selector": "#terms > dd:nth-of-type(20) > ul:nth-of-type(1) > li:nth-of-type(2)",
+          "quote": "L2 is the relative luminance of the darker of the colors."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:contrast-ratio:definition",
+          "kind": "definition",
+          "text": "WCAG 用较亮颜色与较暗颜色的相对亮度计算的比值，公式为 (L1 + 0.05) / (L2 + 0.05)。",
+          "language": "zh",
+          "applicability": "根据 WCAG 2.2 归纳的中文说明，非官方译文；定义、成功准则及注释按各自性质使用。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "#terms > dd:nth-of-type(20) > p:nth-of-type(1)",
+              "quote": "(L1 + 0.05) / (L2 + 0.05), where"
+            },
+            {
+              "source": "wcag22",
+              "selector": "#terms > dd:nth-of-type(20) > ul:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "L1 is the relative luminance of the lighter of the colors"
+            },
+            {
+              "source": "wcag22",
+              "selector": "#terms > dd:nth-of-type(20) > ul:nth-of-type(1) > li:nth-of-type(2)",
+              "quote": "L2 is the relative luminance of the darker of the colors."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:contrast-ratio:scope",
+          "kind": "scope",
+          "text": "这里采用 WCAG 的计算定义，范围为 1:1 至 21:1；文字对比度按正常使用时文字实际显示在其上的指定背景计算。",
+          "language": "zh",
+          "applicability": "根据 WCAG 2.2 归纳的中文说明，非官方译文；定义、成功准则及注释按各自性质使用。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "#issue-container-generatedID-91 > p:nth-of-type(1)",
+              "quote": "Contrast ratios can range from 1 to 21 (commonly written 1:1 to 21:1)."
+            },
+            {
+              "source": "wcag22",
+              "selector": "#issue-container-generatedID-93 > p:nth-of-type(1)",
+              "quote": "contrast is measured with respect to the specified background over which the text is rendered in normal usage."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:background-color",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "#issue-container-generatedID-93 > p:nth-of-type(1)",
+              "quote": "contrast is measured with respect to the specified background over which the text is rendered in normal usage."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:space-character",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:space-character:label:zh",
+          "role": "preferred",
+          "text": "空格字符",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:space-character:label:en",
+          "role": "preferred",
+          "text": "Space",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "commonmark",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(24)",
+          "quote": "A space is U+0020 ."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:space-character:definition",
+          "kind": "definition",
+          "text": "CommonMark 中代码点为 U+0020 的字符。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CommonMark 规范归纳的中文说明，非官方译文；仅适用于该语法，不泛化为所有 Markdown 方言。",
+          "evidence": [
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(24)",
+              "quote": "A space is U+0020 ."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:tab-character",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:tab-character:label:zh",
+          "role": "preferred",
+          "text": "制表符",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:tab-character:label:en",
+          "role": "preferred",
+          "text": "Tab",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "commonmark",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(23)",
+          "quote": "A tab is U+0009 ."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:tab-character:definition",
+          "kind": "definition",
+          "text": "CommonMark 中代码点为 U+0009 的字符。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CommonMark 规范归纳的中文说明，非官方译文；仅适用于该语法，不泛化为所有 Markdown 方言。",
+          "evidence": [
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(23)",
+              "quote": "A tab is U+0009 ."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:tab-character:scope",
+          "kind": "scope",
+          "text": "CommonMark 不把文本行中的制表符普遍展开为空格；在空格参与定义块结构的语境中，制表符才按每 4 个字符一个制表位的效果解释。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CommonMark 规范归纳的中文说明，非官方译文；仅适用于该语法，不泛化为所有 Markdown 方言。",
+          "evidence": [
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(28)",
+              "quote": "Tabs in lines are not expanded to spaces ."
+            },
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(28)",
+              "quote": "tabs behave as if they were replaced by spaces with a tab stop of 4 characters."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:blank-line",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:blank-line:label:zh",
+          "role": "preferred",
+          "text": "空行",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:blank-line:label:en",
+          "role": "preferred",
+          "text": "Blank line",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "commonmark",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(19)",
+          "quote": "A line containing no characters, or a line containing only spaces ( U+0020 ) or tabs ( U+0009 ), is called a blank line ."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:blank-line:definition",
+          "kind": "definition",
+          "text": "不含字符，或仅含空格 U+0020 与制表符 U+0009 的一行。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CommonMark 规范归纳的中文说明，非官方译文；仅适用于该语法，不泛化为所有 Markdown 方言。",
+          "evidence": [
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(19)",
+              "quote": "A line containing no characters, or a line containing only spaces ( U+0020 ) or tabs ( U+0009 ), is called a blank line ."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:blank-line:scope",
+          "kind": "scope",
+          "text": "此定义按源文本的字符组成判断，不把渲染后的所有视觉间距都视为空行。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CommonMark 规范归纳的中文说明，非官方译文；仅适用于该语法，不泛化为所有 Markdown 方言。",
+          "evidence": [
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(19)",
+              "quote": "A line containing no characters, or a line containing only spaces ( U+0020 ) or tabs ( U+0009 ), is called a blank line ."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:line-ending",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:line-ending:label:zh",
+          "role": "preferred",
+          "text": "行结束符",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:line-ending:label:en",
+          "role": "preferred",
+          "text": "Line ending",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "commonmark",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(18)",
+          "quote": "A line ending is a line feed ( U+000A ), a carriage return ( U+000D ) not followed by a line feed, or a carriage return and a following line feed."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:line-ending:definition",
+          "kind": "definition",
+          "text": "CommonMark 中结束源文本行的 LF、单独 CR 或 CR 后紧接 LF 的序列。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CommonMark 规范归纳的中文说明，非官方译文；仅适用于该语法，不泛化为所有 Markdown 方言。",
+          "evidence": [
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(18)",
+              "quote": "A line ending is a line feed ( U+000A ), a carriage return ( U+000D ) not followed by a line feed, or a carriage return and a following line feed."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:unicode-whitespace-character",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:unicode-whitespace-character:label:zh",
+          "role": "preferred",
+          "text": "Unicode 空白字符",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:unicode-whitespace-character:label:en",
+          "role": "preferred",
+          "text": "Unicode whitespace character",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "commonmark",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(21)",
+          "quote": "A Unicode whitespace character is a character in the Unicode Zs general category, or a tab ( U+0009 ), line feed ( U+000A ), form feed ( U+000C ), or carriage return ( U+000D )."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:unicode-whitespace-character:definition",
+          "kind": "definition",
+          "text": "CommonMark 所采用的字符集合：Unicode Zs 类字符，以及制表符、换行符、换页符和回车符。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CommonMark 规范归纳的中文说明，非官方译文；仅适用于该语法，不泛化为所有 Markdown 方言。",
+          "evidence": [
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(21)",
+              "quote": "A Unicode whitespace character is a character in the Unicode Zs general category, or a tab ( U+0009 ), line feed ( U+000A ), form feed ( U+000C ), or carriage return ( U+000D )."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:unicode-whitespace-character:scope",
+          "kind": "scope",
+          "text": "这是 CommonMark 对该名称的集合定义；CSS 文档空白处理默认涉及的集合为 U+0020、U+0009 和段分隔，不应把两者直接视作同一集合。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Module Level 3 归纳的中文说明，非官方译文；限定于 CSS 文本处理和行布局。",
+          "evidence": [
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(53)",
+              "quote": "white space processing in CSS affects only the document white space characters : spaces (U+0020), tabs (U+0009), and segment breaks ."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:white-space-collapsing",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:white-space-collapsing:label:zh",
+          "role": "preferred",
+          "text": "空白折叠",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:white-space-collapsing:label:en",
+          "role": "preferred",
+          "text": "White space collapsing",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "css-text",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > dl:nth-of-type(2) > dt:nth-of-type(1) > dd:nth-of-type(1)",
+          "quote": "collapse sequences of white space into a single character (or in some cases , no character)."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:white-space-collapsing:definition",
+          "kind": "definition",
+          "text": "在排版处理时，把连续空白缩并为一个字符，或在规定情形下消除的处理。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Module Level 3 归纳的中文说明，非官方译文；限定于 CSS 文本处理和行布局。",
+          "evidence": [
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > dl:nth-of-type(2) > dt:nth-of-type(1) > dd:nth-of-type(1)",
+              "quote": "collapse sequences of white space into a single character (or in some cases , no character)."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:white-space-collapsing:scope",
+          "kind": "scope",
+          "text": "CSS 文档空白处理通常只影响空格、制表符和段分隔；空白是否折叠与文本是否允许自动折行是分别受控制的事项。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Module Level 3 归纳的中文说明，非官方译文；限定于 CSS 文本处理和行布局。",
+          "evidence": [
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(53)",
+              "quote": "white space processing in CSS affects only the document white space characters : spaces (U+0020), tabs (U+0009), and segment breaks ."
+            },
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "whether and how white space is collapsed"
+            },
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "whether lines may wrap at unforced soft wrap opportunities"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:preserved-white-space",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:preserved-white-space:label:zh",
+          "role": "preferred",
+          "text": "保留空白",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:preserved-white-space:label:en",
+          "role": "preferred",
+          "text": "Preserved white space",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "css-text",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(38)",
+          "quote": "White space that was not removed or collapsed due to white space processing is called preserved white space ."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:preserved-white-space:definition",
+          "kind": "definition",
+          "text": "未因空白处理而移除或折叠的空白。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Module Level 3 归纳的中文说明，非官方译文；限定于 CSS 文本处理和行布局。",
+          "evidence": [
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(38)",
+              "quote": "White space that was not removed or collapsed due to white space processing is called preserved white space ."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:preserved-white-space:scope",
+          "kind": "scope",
+          "text": "保留空白不自动等于禁止折行：CSS 的 pre-wrap 保留空白，同时允许自动折行。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Module Level 3 归纳的中文说明，非官方译文；限定于 CSS 文本处理和行布局。",
+          "evidence": [
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > dl:nth-of-type(2) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1) > dt:nth-of-type(1) > dd:nth-of-type(1)",
+              "quote": "Like pre , this value preserves white space ; but like normal , it allows wrapping ."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:white-space-collapsing",
+          "evidence": [
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(38)",
+              "quote": "White space that was not removed or collapsed due to white space processing is called preserved white space ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:text-wrapping",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:text-wrapping:label:zh",
+          "role": "preferred",
+          "text": "自动折行",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:text-wrapping:label:en",
+          "role": "preferred",
+          "text": "Wrapping",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "css-text",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+          "quote": "when the UA creates unforced line breaks in order to fit the content within the measure"
+        },
+        {
+          "source": "css-text",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(63)",
+          "quote": "Wrapping is only performed at an allowed break point, called a soft wrap opportunity ."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:text-wrapping:definition",
+          "kind": "definition",
+          "text": "用户代理为使内容适合可用行宽，在允许位置自动把内容折到下一行的排版行为。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Module Level 3 归纳的中文说明，非官方译文；限定于 CSS 文本处理和行布局。",
+          "evidence": [
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+              "quote": "when the UA creates unforced line breaks in order to fit the content within the measure"
+            },
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(63)",
+              "quote": "Wrapping is only performed at an allowed break point, called a soft wrap opportunity ."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:text-wrapping:scope",
+          "kind": "scope",
+          "text": "可用的折行位置受内容语言、书写系统和 CSS 属性影响，不能把英文空格分词习惯视为所有语言的统一规则。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Module Level 3 归纳的中文说明，非官方译文；限定于 CSS 文本处理和行布局。",
+          "evidence": [
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(63)",
+              "quote": "Valid soft wrap opportunities depend on the content language and writing system, as well as on CSS properties that control them."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:line-break",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:line-break:label:zh",
+          "role": "preferred",
+          "text": "断行",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:line-break:label:en",
+          "role": "preferred",
+          "text": "Line break",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "css-text",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+          "quote": "When inline-level content is laid out into lines, it is broken across line boxes. Such a break is called a line break ."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:line-break:definition",
+          "kind": "definition",
+          "text": "行内内容排入不同行框时形成的行间断点。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Module Level 3 归纳的中文说明，非官方译文；限定于 CSS 文本处理和行布局。",
+          "evidence": [
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+              "quote": "When inline-level content is laid out into lines, it is broken across line boxes. Such a break is called a line break ."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:forced-line-break",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:forced-line-break:label:zh",
+          "role": "preferred",
+          "text": "强制断行",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:forced-line-break:label:en",
+          "role": "preferred",
+          "text": "Forced line break",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "css-text",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+          "quote": "When a line is broken due to explicit line-breaking controls (such as a preserved newline character), or due to the start or end of a block, it is a forced line break ."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:forced-line-break:definition",
+          "kind": "definition",
+          "text": "因明确的断行控制（例如被保留的换行字符），或因块的开始、结束而产生的断行。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Module Level 3 归纳的中文说明，非官方译文；限定于 CSS 文本处理和行布局。",
+          "evidence": [
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+              "quote": "When a line is broken due to explicit line-breaking controls (such as a preserved newline character), or due to the start or end of a block, it is a forced line break ."
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:line-break",
+          "evidence": [
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+              "quote": "When a line is broken due to explicit line-breaking controls (such as a preserved newline character), or due to the start or end of a block, it is a forced line break ."
+            }
+          ]
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:soft-wrap-break",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:soft-wrap-break:label:en",
+          "role": "preferred",
+          "text": "Soft wrap break",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "css-text",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+          "quote": "When a line is broken due to content wrapping"
+        },
+        {
+          "source": "css-text",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+          "quote": "when the UA creates unforced line breaks in order to fit the content within the measure"
+        },
+        {
+          "source": "css-text",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+          "quote": "it is a soft wrap break ."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:soft-wrap-break:definition",
+          "kind": "definition",
+          "text": "为使内容适合行宽而由自动折行产生的非强制断行。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Module Level 3 归纳的中文说明，非官方译文；限定于 CSS 文本处理和行布局。",
+          "evidence": [
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+              "quote": "When a line is broken due to content wrapping"
+            },
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+              "quote": "when the UA creates unforced line breaks in order to fit the content within the measure"
+            },
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+              "quote": "it is a soft wrap break ."
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:line-break",
+          "evidence": [
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+              "quote": "When a line is broken due to content wrapping"
+            },
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+              "quote": "it is a soft wrap break ."
+            }
+          ]
+        }
+      ],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:text-wrapping",
+          "evidence": [
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+              "quote": "When a line is broken due to content wrapping"
+            },
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(62)",
+              "quote": "it is a soft wrap break ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:soft-wrap-opportunity",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:soft-wrap-opportunity:label:en",
+          "role": "preferred",
+          "text": "Soft wrap opportunity",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "css-text",
+          "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(63)",
+          "quote": "Wrapping is only performed at an allowed break point, called a soft wrap opportunity ."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:soft-wrap-opportunity:definition",
+          "kind": "definition",
+          "text": "允许发生自动折行的位置。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CSS Text Module Level 3 归纳的中文说明，非官方译文；限定于 CSS 文本处理和行布局。",
+          "evidence": [
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(63)",
+              "quote": "Wrapping is only performed at an allowed break point, called a soft wrap opportunity ."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:text-wrapping",
+          "evidence": [
+            {
+              "source": "css-text",
+              "selector": "html:nth-of-type(1) > head:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(63)",
+              "quote": "Wrapping is only performed at an allowed break point, called a soft wrap opportunity ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:soft-line-break",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:soft-line-break:label:zh",
+          "role": "preferred",
+          "text": "软换行",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:soft-line-break:label:en",
+          "role": "preferred",
+          "text": "Soft line break",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "commonmark",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(609)",
+          "quote": "A regular line ending (not in a code span or HTML tag) that is not preceded by two or more spaces or a backslash is parsed as a softbreak ."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:soft-line-break:definition",
+          "kind": "definition",
+          "text": "CommonMark 中不在代码跨度或 HTML 标签内，且前面没有两个以上空格或反斜杠的普通行结束符所形成的语法项。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CommonMark 规范归纳的中文说明，非官方译文；仅适用于该语法，不泛化为所有 Markdown 方言。",
+          "evidence": [
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(609)",
+              "quote": "A regular line ending (not in a code span or HTML tag) that is not preceded by two or more spaces or a backslash is parsed as a softbreak ."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:soft-line-break:scope",
+          "kind": "scope",
+          "text": "CommonMark 允许把软换行渲染为 HTML 源码中的行结束符或空格，因此这一源文本语法项不保证显示成新的一行，也不同于排版时按行宽产生的自动折行断点。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CommonMark 规范归纳的中文说明，非官方译文；仅适用于该语法，不泛化为所有 Markdown 方言。",
+          "evidence": [
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(611)",
+              "quote": "A conforming parser may render a soft line break in HTML either as a line ending or as a space."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:line-ending",
+          "evidence": [
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(609)",
+              "quote": "A regular line ending (not in a code span or HTML tag) that is not preceded by two or more spaces or a backslash is parsed as a softbreak ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:hard-line-break",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:hard-line-break:label:zh",
+          "role": "preferred",
+          "text": "硬换行",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:hard-line-break:label:en",
+          "role": "preferred",
+          "text": "Hard line break",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "commonmark",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(608)",
+          "quote": "Hard line breaks are for separating inline content within a block."
+        },
+        {
+          "source": "commonmark",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(601)",
+          "quote": "a hard line break (rendered in HTML as a <br /> tag)"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:hard-line-break:definition",
+          "kind": "definition",
+          "text": "CommonMark 中用于在同一块内分隔行内内容、渲染为 HTML br 元素的显式换行语法。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CommonMark 规范归纳的中文说明，非官方译文；仅适用于该语法，不泛化为所有 Markdown 方言。",
+          "evidence": [
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(608)",
+              "quote": "Hard line breaks are for separating inline content within a block."
+            },
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(601)",
+              "quote": "a hard line break (rendered in HTML as a <br /> tag)"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:hard-line-break:guidance",
+          "kind": "guidance",
+          "text": "在适用的行内语境中，可在行结束符前写两个或更多空格，或使用更容易看出的反斜杠；这些写法不在段落或其他块元素的末尾产生硬换行。",
+          "language": "zh",
+          "applicability": "根据锁定版本 CommonMark 规范归纳的中文说明，非官方译文；仅适用于该语法，不泛化为所有 Markdown 方言。",
+          "evidence": [
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(601)",
+              "quote": "A line ending (not in a code span or HTML tag) that is preceded by two or more spaces and does not occur at the end of a block is parsed as a hard line break"
+            },
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(602)",
+              "quote": "For a more visible alternative, a backslash before the line ending may be used instead of two or more spaces:"
+            },
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(608)",
+              "quote": "Neither syntax for hard line breaks works at the end of a paragraph or other block element:"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:line-ending",
+          "evidence": [
+            {
+              "source": "commonmark",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > p:nth-of-type(601)",
+              "quote": "A line ending (not in a code span or HTML tag) that is preceded by two or more spaces and does not occur at the end of a block is parsed as a hard line break"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:emoji",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:emoji:label:zh",
+          "role": "preferred",
+          "text": "绘文字",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:emoji:label:en",
+          "role": "preferred",
+          "text": "Emoji",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "unicode-emoji",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > blockquote:nth-of-type(2) > p:nth-of-type(1)",
+          "quote": "A colorful pictograph that can be used inline in text."
+        },
+        {
+          "source": "unicode-emoji",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > blockquote:nth-of-type(2) > p:nth-of-type(1)",
+          "quote": "Internally the representation is either (a) an image, (b) an encoded character, or (c) a sequence of encoded characters."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:emoji:definition",
+          "kind": "definition",
+          "text": "可嵌入文本使用的彩色图形符号；内部可表示为图像、已编码字符或已编码字符序列。",
+          "language": "zh",
+          "applicability": "根据锁定版本 Unicode Emoji 技术标准归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "unicode-emoji",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > blockquote:nth-of-type(2) > p:nth-of-type(1)",
+              "quote": "A colorful pictograph that can be used inline in text."
+            },
+            {
+              "source": "unicode-emoji",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > blockquote:nth-of-type(2) > p:nth-of-type(1)",
+              "quote": "Internally the representation is either (a) an image, (b) an encoded character, or (c) a sequence of encoded characters."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:emoji:scope",
+          "kind": "scope",
+          "text": "emoji 可为短消息补充情感、语气线索，也可能有意保留歧义；Unicode 指出，它们没有足以代替书面语言的语法与词汇。",
+          "language": "zh",
+          "applicability": "根据锁定版本 Unicode Emoji 技术标准归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "unicode-emoji",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(8)",
+              "quote": "Emoji do not have the grammar or vocabulary to substitute for written language."
+            },
+            {
+              "source": "unicode-emoji",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(8)",
+              "quote": "In social media, emoji make up for the lack of gestures, facial expressions, and intonation that are found in speech."
+            },
+            {
+              "source": "unicode-emoji",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(8)",
+              "quote": "They also add useful ambiguity to messages"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:emoji:guidance",
+          "kind": "guidance",
+          "text": "应让文本替代与 emoji 在当前语境中的用途对应；内置名称可能与作者想表达的意思不同。",
+          "language": "zh",
+          "applicability": "根据 W3C WAI 的 HTML 技术 H86 归纳的中文说明，非官方译文；示例技术不等于唯一合规实现。",
+          "evidence": [
+            {
+              "source": "wai-symbols",
+              "selector": "#description > p:nth-of-type(1)",
+              "quote": "Emojis come with their own pre-defined names that might not always match what the author is intending to communicate."
+            },
+            {
+              "source": "wai-symbols",
+              "selector": "#procedure > ol:nth-of-type(1) > li:nth-of-type(2)",
+              "quote": "Check that each emoji has a text alternative that serves an equivalent purpose."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:emoticon",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:emoticon:label:zh",
+          "role": "preferred",
+          "text": "字符表情",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:emoticon:label:en",
+          "role": "preferred",
+          "text": "Emoticon",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "unicode-emoji",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > blockquote:nth-of-type(2) > p:nth-of-type(2)",
+          "quote": "A series of text characters (typically punctuation or symbols) that is meant to represent a facial expression or gesture"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:emoticon:definition",
+          "kind": "definition",
+          "text": "以一串文字字符（通常为标点或符号）表示面部表情或动作的形式。",
+          "language": "zh",
+          "applicability": "根据锁定版本 Unicode Emoji 技术标准归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "unicode-emoji",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > blockquote:nth-of-type(2) > p:nth-of-type(2)",
+              "quote": "A series of text characters (typically punctuation or symbols) that is meant to represent a facial expression or gesture"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:emoticon:scope",
+          "kind": "scope",
+          "text": "本记录采用字符序列的窄义；Unicode 也记录了包括面部表情和动作 emoji 的广义用法。字符表情不必只用 ASCII 字符。",
+          "language": "zh",
+          "applicability": "根据锁定版本 Unicode Emoji 技术标准归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "unicode-emoji",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > blockquote:nth-of-type(2) > p:nth-of-type(2)",
+              "quote": "in a broader sense, also includes emoji for facial expressions and gestures."
+            },
+            {
+              "source": "unicode-emoji",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(26)",
+              "quote": "Emoticons predate Unicode and emoji , but were later adapted to include Unicode characters."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:emoticon:guidance",
+          "kind": "guidance",
+          "text": "WAI H86 建议，在可行时使用表示情绪的词语或适合的 emoji；使用字符表情时提供文本替代，以免逐字符朗读造成混淆。",
+          "language": "zh",
+          "applicability": "根据 W3C WAI 的 HTML 技术 H86 归纳的中文说明，非官方译文；示例技术不等于唯一合规实现。",
+          "evidence": [
+            {
+              "source": "wai-symbols",
+              "selector": "#description > p:nth-of-type(2)",
+              "quote": "Because emoticons are made from many text characters, they can be confusing for screen reader users."
+            },
+            {
+              "source": "wai-symbols",
+              "selector": "#description > p:nth-of-type(2)",
+              "quote": "When possible it is better simply to use a word like \"smile\" or a suitable emoji instead of an emoticon."
+            },
+            {
+              "source": "wai-symbols",
+              "selector": "#description > p:nth-of-type(2)",
+              "quote": "If emoticons are used they should have a text alternative."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:emoji",
+          "evidence": [
+            {
+              "source": "unicode-emoji",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(30)",
+              "quote": "Often implementations allow emoticons to be used to input emoji."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:ascii-art",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:ascii-art:label:zh",
+          "role": "preferred",
+          "text": "ASCII 字符画",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:ascii-art:label:en",
+          "role": "preferred",
+          "text": "ASCII art",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "wai-symbols",
+          "selector": "#description > p:nth-of-type(3)",
+          "quote": "ASCII characters were arranged to form pictures, pictures of text, or graphs."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:ascii-art:definition",
+          "kind": "definition",
+          "text": "通过排列 ASCII 字符构成图画、文字图像或图形的表达形式。",
+          "language": "zh",
+          "applicability": "根据 W3C WAI 的 HTML 技术 H86 归纳的中文说明，非官方译文；示例技术不等于唯一合规实现。",
+          "evidence": [
+            {
+              "source": "wai-symbols",
+              "selector": "#description > p:nth-of-type(3)",
+              "quote": "ASCII characters were arranged to form pictures, pictures of text, or graphs."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:ascii-art:guidance",
+          "kind": "guidance",
+          "text": "使用 ASCII 字符画时，应提供说明图画内容的文本；若未把它标记为图像，H86 还建议提供跳过字符画的链接。",
+          "language": "zh",
+          "applicability": "根据 W3C WAI 的 HTML 技术 H86 归纳的中文说明，非官方译文；示例技术不等于唯一合规实现。",
+          "evidence": [
+            {
+              "source": "wai-symbols",
+              "selector": "#description > p:nth-of-type(3)",
+              "quote": "If ASCII art is used, it should also have a text explanation of what the picture is."
+            },
+            {
+              "source": "wai-symbols",
+              "selector": "#description > p:nth-of-type(3)",
+              "quote": "if the ASCII picture isn't marked up as an image using ARIA , that there is a link to skip over the art"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:text-alternative",
+          "evidence": [
+            {
+              "source": "wai-symbols",
+              "selector": "#description > p:nth-of-type(3)",
+              "quote": "If ASCII art is used, it should also have a text explanation of what the picture is."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:leetspeak",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:leetspeak:label:en",
+          "role": "preferred",
+          "text": "Leetspeak",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "wai-symbols",
+          "selector": "#description > p:nth-of-type(4)",
+          "quote": "Leetspeak uses various combinations of characters, including numerals and special characters, to replace standard characters."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:leetspeak:definition",
+          "kind": "definition",
+          "text": "用数字、特殊字符等的组合替代通常书写字符的网络表达形式。",
+          "language": "zh",
+          "applicability": "根据 W3C WAI 的 HTML 技术 H86 归纳的中文说明，非官方译文；示例技术不等于唯一合规实现。",
+          "evidence": [
+            {
+              "source": "wai-symbols",
+              "selector": "#description > p:nth-of-type(4)",
+              "quote": "Leetspeak uses various combinations of characters, including numerals and special characters, to replace standard characters."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:leetspeak:guidance",
+          "kind": "guidance",
+          "text": "WAI H86 指出，Leetspeak 往往无法通过屏幕阅读器理解，需要提供文本替代，以满足非文本内容的相关要求。",
+          "language": "zh",
+          "applicability": "根据 W3C WAI 的 HTML 技术 H86 归纳的中文说明，非官方译文；示例技术不等于唯一合规实现。",
+          "evidence": [
+            {
+              "source": "wai-symbols",
+              "selector": "#description > p:nth-of-type(4)",
+              "quote": "Leet is often incomprehensible to people using screen readers, and therefore requires a text alternative"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:icon",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:icon:label:zh",
+          "role": "preferred",
+          "text": "图标",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:icon:label:en",
+          "role": "preferred",
+          "text": "Icon",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "coga",
+          "selector": "#summary-find > p:nth-of-type(1)",
+          "quote": "Use a clear and easy-to-follow layout with visual cues, such as icons."
+        },
+        {
+          "source": "coga",
+          "selector": "#what-to-do-5 > p:nth-of-type(1)",
+          "quote": "Add familiar icons, images, and symbols to important content such as controls and section headings."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:icon:definition",
+          "kind": "definition",
+          "text": "与内容或控件相联系、提供识别或导航线索的视觉符号。",
+          "language": "zh",
+          "applicability": "根据 W3C COGA 指南归纳的中文说明，非官方译文；其设计建议用于支持有认知和学习障碍的读者，不作为 WCAG 成功准则。",
+          "evidence": [
+            {
+              "source": "coga",
+              "selector": "#summary-find > p:nth-of-type(1)",
+              "quote": "Use a clear and easy-to-follow layout with visual cues, such as icons."
+            },
+            {
+              "source": "coga",
+              "selector": "#what-to-do-5 > p:nth-of-type(1)",
+              "quote": "Add familiar icons, images, and symbols to important content such as controls and section headings."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:icon:guidance",
+          "kind": "guidance",
+          "text": "选择读者熟悉、清楚且无歧义的图标；使每个图标表达单一含义并紧邻相关内容。",
+          "language": "zh",
+          "applicability": "根据 W3C COGA 指南归纳的中文说明，非官方译文；其设计建议用于支持有认知和学习障碍的读者，不作为 WCAG 成功准则。",
+          "evidence": [
+            {
+              "source": "coga",
+              "selector": "#more-details-3 > ul:nth-of-type(1) > li:nth-of-type(1)",
+              "quote": "Use clear and unambiguous icons or symbols that are easy to see and enlarge."
+            },
+            {
+              "source": "coga",
+              "selector": "#what-to-do-5 > p:nth-of-type(1)",
+              "quote": "Each icon or symbol should convey a single meaning and be next to the content it relates to."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:text-alternative",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:text-alternative:label:zh",
+          "role": "preferred",
+          "text": "文本替代",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:text-alternative:label:en",
+          "role": "preferred",
+          "text": "Text alternative",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "wcag22",
+          "selector": "#terms > dd:nth-of-type(90) > p:nth-of-type(1)",
+          "quote": "Text that is programmatically associated with non-text content or referred to from text that is programmatically associated with non-text content."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:text-alternative:definition",
+          "kind": "definition",
+          "text": "与非文本内容以程序可确定的方式关联的文本，或由这类关联文本指向的文本。",
+          "language": "zh",
+          "applicability": "根据 WCAG 2.2 归纳的中文说明，非官方译文；定义、成功准则及注释按各自性质使用。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "#terms > dd:nth-of-type(90) > p:nth-of-type(1)",
+              "quote": "Text that is programmatically associated with non-text content or referred to from text that is programmatically associated with non-text content."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:text-alternative:example",
+          "kind": "example",
+          "text": "图表后的一段文字可以描述图表，而图表的简短文本替代说明后面有完整描述。",
+          "language": "zh",
+          "applicability": "根据 WCAG 2.2 归纳的中文说明，非官方译文；定义、成功准则及注释按各自性质使用。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "#example-34 > p:nth-of-type(1)",
+              "quote": "An image of a chart is described in text in the paragraph after the chart."
+            },
+            {
+              "source": "wcag22",
+              "selector": "#example-34 > p:nth-of-type(1)",
+              "quote": "The short text alternative for the chart indicates that a description follows."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:images-of-text",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:images-of-text:label:zh",
+          "role": "preferred",
+          "text": "文字图像",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:images-of-text:label:en",
+          "role": "preferred",
+          "text": "Images of text",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "wcag22",
+          "selector": "#terms > dd:nth-of-type(34) > p:nth-of-type(1)",
+          "quote": "text that has been rendered in a non-text form (e.g., an image) in order to achieve a particular visual effect"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:images-of-text:definition",
+          "kind": "definition",
+          "text": "为获得特定视觉效果而以图像等非文本形式呈现的文字。",
+          "language": "zh",
+          "applicability": "根据 WCAG 2.2 归纳的中文说明，非官方译文；定义、成功准则及注释按各自性质使用。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "#terms > dd:nth-of-type(34) > p:nth-of-type(1)",
+              "quote": "text that has been rendered in a non-text form (e.g., an image) in order to achieve a particular visual effect"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:images-of-text:scope",
+          "kind": "scope",
+          "text": "不包括本身含有大量其他视觉内容的图片中附带出现的文字。",
+          "language": "zh",
+          "applicability": "根据 WCAG 2.2 归纳的中文说明，非官方译文；定义、成功准则及注释按各自性质使用。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "#issue-container-generatedID-107 > p:nth-of-type(1)",
+              "quote": "This does not include text that is part of a picture that contains significant other visual content."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:images-of-text:guidance",
+          "kind": "guidance",
+          "text": "当使用的技术能实现所需视觉呈现时，WCAG 2.2 的成功准则 1.4.5 原则上要求用文本传达信息；具体仍需核对其可定制和必要性例外。",
+          "language": "zh",
+          "applicability": "根据 WCAG 2.2 归纳的中文说明，非官方译文；定义、成功准则及注释按各自性质使用。",
+          "evidence": [
+            {
+              "source": "wcag22",
+              "selector": "#images-of-text > p:nth-of-type(2)",
+              "quote": "If the technologies being used can achieve the visual presentation, text is used to convey information rather than images of text except for the following:"
+            },
+            {
+              "source": "wcag22",
+              "selector": "#images-of-text > dl:nth-of-type(1) > dd:nth-of-type(1)",
+              "quote": "The image of text can be visually customized to the user's requirements;"
+            },
+            {
+              "source": "wcag22",
+              "selector": "#images-of-text > dl:nth-of-type(1) > dd:nth-of-type(2)",
+              "quote": "A particular presentation of text is essential to the information being conveyed."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    }
+  ],
+  "augmentations": [],
+  "groups": [
+    {
+      "key": "版式与呈现",
+      "members": [
+        "urn:kb-vocab-writing:font-weight",
+        "urn:kb-vocab-writing:bold",
+        "urn:kb-vocab-writing:italic",
+        "urn:kb-vocab-writing:oblique",
+        "urn:kb-vocab-writing:text-decoration",
+        "urn:kb-vocab-writing:underline",
+        "urn:kb-vocab-writing:overline",
+        "urn:kb-vocab-writing:line-through",
+        "urn:kb-vocab-writing:text-shadow",
+        "urn:kb-vocab-writing:visual-hierarchy",
+        "urn:kb-vocab-writing:visual-grouping",
+        "urn:kb-vocab-writing:layout-white-space",
+        "urn:kb-vocab-writing:visual-divider",
+        "urn:kb-vocab-writing:use-of-color",
+        "urn:kb-vocab-writing:background-color",
+        "urn:kb-vocab-writing:contrast-ratio",
+        "urn:kb-vocab-writing:space-character",
+        "urn:kb-vocab-writing:tab-character",
+        "urn:kb-vocab-writing:blank-line",
+        "urn:kb-vocab-writing:line-ending",
+        "urn:kb-vocab-writing:unicode-whitespace-character",
+        "urn:kb-vocab-writing:white-space-collapsing",
+        "urn:kb-vocab-writing:preserved-white-space",
+        "urn:kb-vocab-writing:text-wrapping",
+        "urn:kb-vocab-writing:line-break",
+        "urn:kb-vocab-writing:forced-line-break",
+        "urn:kb-vocab-writing:soft-wrap-break",
+        "urn:kb-vocab-writing:soft-wrap-opportunity",
+        "urn:kb-vocab-writing:soft-line-break",
+        "urn:kb-vocab-writing:hard-line-break",
+        "urn:kb-vocab-writing:emoji",
+        "urn:kb-vocab-writing:emoticon",
+        "urn:kb-vocab-writing:ascii-art",
+        "urn:kb-vocab-writing:leetspeak",
+        "urn:kb-vocab-writing:icon",
+        "urn:kb-vocab-writing:text-alternative",
+        "urn:kb-vocab-writing:images-of-text"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "term": "Legend / 图例",
+      "source": "coga; wcag22; wai-symbols",
+      "reason": "分配的来源中未找到足以界定图例概念及其符号对应关系的正文；HTML legend 元素不能直接当成一般图例概念，暂不建概念。"
+    },
+    {
+      "term": "Soft wrap break",
+      "concept": "urn:kb-vocab-writing:soft-wrap-break",
+      "source": "css-text",
+      "reason": "中文名称未定，当前无充分依据采用中文译名；仅保留英文名称，不以英文形式充作中文标签。"
+    },
+    {
+      "term": "Soft wrap opportunity",
+      "concept": "urn:kb-vocab-writing:soft-wrap-opportunity",
+      "source": "css-text",
+      "reason": "中文名称未定，当前无充分依据采用中文译名；仅保留英文名称，不以英文形式充作中文标签。"
+    },
+    {
+      "term": "Leetspeak",
+      "concept": "urn:kb-vocab-writing:leetspeak",
+      "source": "wai-symbols",
+      "reason": "中文名称未定，当前无充分依据采用中文译名；仅保留英文名称，不以英文形式充作中文标签。"
+    }
+  ],
+  "source_language_labels": []
+}

@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kb-vocab-writing"
+version = "0.1.0"
+description = "Source-backed writing vocabulary collection and RDF formatting"
+requires-python = ">=3.11"
+dependencies = ["kb-sources", "kb-vocab-shacl", "rdflib>=7.1,<8", "jsonschema==4.23.0", "beautifulsoup4>=4.14,<5", "pyshacl>=0.30,<0.32"]
+
+[project.scripts]
+kb-vocab-writing = "kb_vocab_writing.cli:main"
+
+[tool.uv.sources]
+kb-sources = { workspace = true }
+kb-vocab-shacl = { workspace = true }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+kb_vocab_writing = ["schemas/*.json"]

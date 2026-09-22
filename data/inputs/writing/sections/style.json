@@ -1,0 +1,173 @@
+{
+  "concepts": [
+    {
+      "id": "urn:kb-vocab-writing:writing-style",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:writing-style:label:zh",
+          "role": "preferred",
+          "text": "写作风格",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:writing-style:label:en",
+          "role": "preferred",
+          "text": "Writing style",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "unc-style",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > p:nth-of-type(2)",
+          "quote": "reactions to writing style"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:writing-style:definition",
+          "kind": "definition",
+          "text": "通过措辞、句子表达及语气等选择体现出来的写作方式；合适与否取决于读者、学科和写作情境。",
+          "language": "zh",
+          "applicability": "根据 UNC Writing Center 对学术写作的说明归纳，不把特定学科的风格偏好当作通用语法规定。",
+          "evidence": [
+            {
+              "source": "unc-style",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > p:nth-of-type(2)",
+              "quote": "reactions to writing style"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:word-choice",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:word-choice:label:zh",
+          "role": "preferred",
+          "text": "措辞",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:word-choice:label:en",
+          "role": "preferred",
+          "text": "Word choice",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "unc-style",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > p:nth-of-type(2)",
+          "quote": "word choice"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:word-choice:definition",
+          "kind": "definition",
+          "text": "在表达意思时选择具体词语的做法，影响文字的准确、直接程度及读者的理解。",
+          "language": "zh",
+          "applicability": "根据 UNC Writing Center 对学术写作的说明归纳，不把特定学科的风格偏好当作通用语法规定。",
+          "evidence": [
+            {
+              "source": "unc-style",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > p:nth-of-type(2)",
+              "quote": "word choice"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:writing-style",
+          "evidence": [
+            {
+              "source": "unc-style",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > p:nth-of-type(2)",
+              "quote": "word choice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:nominalization",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:nominalization:label:zh",
+          "role": "preferred",
+          "text": "名词化",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:nominalization:label:en",
+          "role": "preferred",
+          "text": "Nominalization",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "unc-style",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > ol:nth-of-type(3) > li:nth-of-type(2)",
+          "quote": "making verbs and adjectives into nouns"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:nominalization:definition",
+          "kind": "definition",
+          "text": "把动词或形容词转换成名词的语言表达过程。",
+          "language": "zh",
+          "applicability": "根据 UNC Writing Center 对学术写作的说明归纳，不把特定学科的风格偏好当作通用语法规定。",
+          "evidence": [
+            {
+              "source": "unc-style",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > ol:nth-of-type(3) > li:nth-of-type(2)",
+              "quote": "making verbs and adjectives into nouns"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:nominalization:guidance",
+          "kind": "guidance",
+          "text": "名词化并非一律错误；当它掩盖动作、使表达过度抽象时，可改回动词或形容词。",
+          "language": "zh",
+          "applicability": "学术写作中的修订建议；须按句子的实际作用判断。",
+          "evidence": [
+            {
+              "source": "unc-style",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > ol:nth-of-type(3) > li:nth-of-type(2)",
+              "quote": "making verbs and adjectives into nouns"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    }
+  ],
+  "groups": [
+    {
+      "key": "风格与语气",
+      "members": [
+        "urn:kb-vocab-writing:writing-style",
+        "urn:kb-vocab-writing:word-choice"
+      ]
+    },
+    {
+      "key": "语言表达",
+      "members": [
+        "urn:kb-vocab-writing:word-choice",
+        "urn:kb-vocab-writing:nominalization"
+      ]
+    }
+  ],
+  "source_language_labels": [],
+  "unresolved": []
+}

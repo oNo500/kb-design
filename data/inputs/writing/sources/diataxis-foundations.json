@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "diataxis-foundations.html",
+      "format": "html",
+      "id": "diataxis-foundations",
+      "url": "https://diataxis.fr/foundations/"
+    }
+  ],
+  "id": "diataxis-foundations",
+  "schema_version": 1,
+  "title": "diataxis-foundations",
+  "version": "live-web-snapshot"
+}

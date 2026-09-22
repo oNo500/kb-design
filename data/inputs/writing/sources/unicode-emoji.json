@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "unicode-emoji.html",
+      "format": "html",
+      "id": "unicode-emoji",
+      "url": "https://www.unicode.org/reports/tr51/"
+    }
+  ],
+  "id": "unicode-emoji",
+  "schema_version": 1,
+  "title": "Unicode Emoji",
+  "version": "live-web-snapshot"
+}

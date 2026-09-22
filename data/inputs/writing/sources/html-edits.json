@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "html-edits.html",
+      "format": "html",
+      "id": "html-edits",
+      "url": "https://html.spec.whatwg.org/multipage/edits.html"
+    }
+  ],
+  "id": "html-edits",
+  "schema_version": 1,
+  "title": "HTML Standard — Edits",
+  "version": "living-standard-snapshot"
+}

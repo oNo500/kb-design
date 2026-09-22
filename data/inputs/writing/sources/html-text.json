@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "html-text.html",
+      "format": "html",
+      "id": "html-text",
+      "url": "https://html.spec.whatwg.org/multipage/text-level-semantics.html"
+    }
+  ],
+  "id": "html-text",
+  "schema_version": 1,
+  "title": "HTML Standard — Text-level semantics",
+  "version": "living-standard-snapshot"
+}

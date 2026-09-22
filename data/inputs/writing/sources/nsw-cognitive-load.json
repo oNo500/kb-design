@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "nsw-cognitive-load.html",
+      "format": "html",
+      "id": "nsw-cognitive-load",
+      "url": "https://education.nsw.gov.au/about-us/education-data-and-research/cese/publications/practical-guides-for-educators/cognitive-load-theory-in-practice.html"
+    }
+  ],
+  "id": "nsw-cognitive-load",
+  "schema_version": 1,
+  "title": "NSW Education — Cognitive load theory in practice",
+  "version": "live-web-snapshot"
+}

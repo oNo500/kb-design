@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "vega-legend.html",
+      "format": "html",
+      "id": "vega-legend",
+      "url": "https://vega.github.io/vega-lite/docs/legend.html"
+    }
+  ],
+  "id": "vega-legend",
+  "schema_version": 1,
+  "title": "Vega-Lite — Legend",
+  "version": "live-web-snapshot"
+}

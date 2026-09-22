@@ -1,0 +1,18 @@
+# 本清单只授权程序取得公开材料用于写作词表小样，不批准其中概念或建议为项目规则。
+schema_version: 1
+id: google-writing-sample
+title: Google technical writing sample sources
+version: live-web-snapshot
+files:
+  - id: headings
+    url: https://developers.google.com/style/headings
+    filename: headings.html
+    format: html
+  - id: paragraphs
+    url: https://developers.google.com/tech-writing/one/paragraphs
+    filename: paragraphs.html
+    format: html
+  - id: short-sentences
+    url: https://developers.google.com/tech-writing/one/short-sentences
+    filename: short-sentences.html
+    format: html

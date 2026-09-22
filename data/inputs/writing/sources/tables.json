@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "tables.html",
+      "format": "html",
+      "id": "tables",
+      "url": "https://developers.google.com/style/tables"
+    }
+  ],
+  "id": "tables",
+  "schema_version": 1,
+  "title": "tables",
+  "version": "live-web-snapshot"
+}

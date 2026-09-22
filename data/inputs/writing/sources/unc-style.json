@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "unc-style.html",
+      "format": "html",
+      "id": "unc-style",
+      "url": "https://writingcenter.unc.edu/tips-and-tools/style/"
+    }
+  ],
+  "id": "unc-style",
+  "schema_version": 1,
+  "title": "Style — UNC Writing Center",
+  "version": "live-web-snapshot"
+}

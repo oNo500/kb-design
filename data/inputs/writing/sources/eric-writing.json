@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "eric-writing.html",
+      "format": "html",
+      "id": "eric-writing",
+      "url": "https://eric.ed.gov/default.aspx?ti=Writing+%28Composition%29"
+    }
+  ],
+  "id": "eric-writing",
+  "schema_version": 1,
+  "title": "eric-writing",
+  "version": "live-web-snapshot"
+}

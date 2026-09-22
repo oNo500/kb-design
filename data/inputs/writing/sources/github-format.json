@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "github-format.html",
+      "format": "html",
+      "id": "github-format",
+      "url": "https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax"
+    }
+  ],
+  "id": "github-format",
+  "schema_version": 1,
+  "title": "GitHub — Basic writing and formatting syntax",
+  "version": "live-web-snapshot"
+}

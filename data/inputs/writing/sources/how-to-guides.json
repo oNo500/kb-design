@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "how-to-guides.html",
+      "format": "html",
+      "id": "how-to-guides",
+      "url": "https://diataxis.fr/how-to-guides/"
+    }
+  ],
+  "id": "how-to-guides",
+  "schema_version": 1,
+  "title": "how-to-guides",
+  "version": "live-web-snapshot"
+}

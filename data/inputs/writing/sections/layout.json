@@ -1,0 +1,1643 @@
+{
+  "concepts": [
+    {
+      "id": "urn:kb-vocab-writing:typeface",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:typeface:label:zh",
+          "role": "preferred",
+          "text": "字体",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:typeface:label:en",
+          "role": "preferred",
+          "text": "typeface",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.typeface\"] > td:nth-of-type(2)",
+          "quote": "字体"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.typeface\"] > td:nth-of-type(4)",
+          "quote": "typeface"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:typeface:definition",
+          "kind": "definition",
+          "text": "字母、文字或符号的一组集合，一个字体通常有一贯的笔画与字形风格，用于印刷或屏幕渲染中。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，适用于该来源的排版语境。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.typeface\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "字母、文字或符号的一组集合，一个字体通常有一贯的笔画与字形风格，用于印刷或屏幕渲染中。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:font",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:font:label:zh",
+          "role": "preferred",
+          "text": "字型",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:font:label:en",
+          "role": "preferred",
+          "text": "font",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.font\"] > td:nth-of-type(2)",
+          "quote": "字型"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.font\"] > td:nth-of-type(4)",
+          "quote": "font"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:font:definition",
+          "kind": "definition",
+          "text": "具有相同基本设计的字形图像集合，现多与字体混用。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，省略其标准转引括注；未直接核对所引标准原文。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.font\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "具有相同基本设计的字形图像集合(GB/T 16964.1-1997, 3.6)，现多与字体混用。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:typeface",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.font\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "具有相同基本设计的字形图像集合(GB/T 16964.1-1997, 3.6)，现多与字体混用。"
+            }
+          ]
+        },
+        {
+          "target": "urn:kb-vocab-writing:glyph",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.font\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "具有相同基本设计的字形图像集合(GB/T 16964.1-1997, 3.6)，现多与字体混用。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:glyph",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:glyph:label:zh",
+          "role": "preferred",
+          "text": "字形",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:glyph:label:en",
+          "role": "preferred",
+          "text": "glyph",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.glyph\"] > td:nth-of-type(2)",
+          "quote": "字形"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.glyph\"] > td:nth-of-type(4)",
+          "quote": "glyph"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:glyph:definition",
+          "kind": "definition",
+          "text": "字母、文字或符号在书写、印刷上的形体。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，适用于该来源的排版语境。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.glyph\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "字母、文字或符号在书写、印刷上的形体。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:type-size",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:type-size:label:zh",
+          "role": "preferred",
+          "text": "字号",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:type-size:label:en",
+          "role": "preferred",
+          "text": "type size",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.type-size\"] > td:nth-of-type(2)",
+          "quote": "字号"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.type-size\"] > td:nth-of-type(4)",
+          "quote": "type size"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:type-size:definition",
+          "kind": "definition",
+          "text": "区别单个字符大小的表示方法。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，省略其标准转引括注；未直接核对所引标准原文。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.type-size\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "区别单个字符大小的表示方法。(GB 9851.2-2008, 3.3)"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:tracking",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:tracking:label:zh",
+          "role": "preferred",
+          "text": "字距",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:tracking:label:en",
+          "role": "preferred",
+          "text": "tracking",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.tracking\"] > td:nth-of-type(2)",
+          "quote": "字距"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.tracking\"] > td:nth-of-type(4)",
+          "quote": "tracking"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:tracking:definition",
+          "kind": "definition",
+          "text": "字符之间的空隙。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，适用于该来源的排版语境。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.tracking\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "字符之间的空隙。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:line-gap",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:line-gap:label:zh",
+          "role": "preferred",
+          "text": "行距",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:line-gap:label:en",
+          "role": "preferred",
+          "text": "line gap",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "#id53 > p:nth-of-type(2)",
+          "quote": "行与行之间的空白（行距）"
+        },
+        {
+          "source": "clreq",
+          "selector": "#id37 > p[lang=\"en\"]",
+          "quote": "Line gap"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:line-gap:definition",
+          "kind": "definition",
+          "text": "行与行之间的空白。",
+          "language": "zh",
+          "applicability": "根据 clreq 中文正文提炼的定义。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "#id53 > p:nth-of-type(2)",
+              "quote": "行与行之间的空白（行距）"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:line-gap:calculation",
+          "kind": "scope",
+          "text": "当配置的文字尺寸全部相同时，行高等于字型大小与行距之和。",
+          "language": "zh",
+          "applicability": "根据 clreq 中文正文与公式归纳的中文说明。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "#n010 > div:nth-of-type(2) > p[lang=\"zh-hans\"]",
+              "quote": "指定版心的方法中，有着不以行距，而是依 行高 来设定的方法。行高就是彼此邻接的两行之基准点间的距离。基准点依照处理方式而会有所不同。比如，在直排时可以行左右的中央线为基准点，横排时可以行上下的中央线为基准点。当配置的文字全部尺寸相同时，有着以下关系："
+            },
+            {
+              "source": "clreq",
+              "selector": "#id54 > p[lang=\"zh-hans\"]",
+              "quote": "行高=字型大小÷2+行距+字型大小÷2=字型大小+行距"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:line-height",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "#id54 > p[lang=\"zh-hans\"]",
+              "quote": "行高=字型大小÷2+行距+字型大小÷2=字型大小+行距"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:line-height",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:line-height:label:zh",
+          "role": "preferred",
+          "text": "行高",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:line-height:label:en",
+          "role": "preferred",
+          "text": "line height",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.line-height\"] > td:nth-of-type(2)",
+          "quote": "行高"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.line-height\"] > td:nth-of-type(4)",
+          "quote": "line height"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:line-height:definition",
+          "kind": "definition",
+          "text": "一行的高度，西文里通常指基线到基线的距离。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，适用于该来源的排版语境。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.line-height\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "一行的高度，西文里通常指基线到基线的距离。"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:line-height:measurement",
+          "kind": "scope",
+          "text": "在 clreq 的基本版式说明中，行高是相邻两行基准点之间的距离，基准点依处理方式而定。",
+          "language": "zh",
+          "applicability": "根据 clreq 中文正文归纳的适用说明。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "#n010 > div:nth-of-type(2) > p[lang=\"zh-hans\"]",
+              "quote": "指定版心的方法中，有着不以行距，而是依 行高 来设定的方法。行高就是彼此邻接的两行之基准点间的距离。基准点依照处理方式而会有所不同。比如，在直排时可以行左右的中央线为基准点，横排时可以行上下的中央线为基准点。当配置的文字全部尺寸相同时，有着以下关系："
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:line-length",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:line-length:label:zh",
+          "role": "preferred",
+          "text": "行长",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:line-length:label:en",
+          "role": "preferred",
+          "text": "line length",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "#id43 > p[lang=\"zh-hans\"]",
+          "quote": "一行的字数（即行长）"
+        },
+        {
+          "source": "clreq",
+          "selector": "#id43 > p[lang=\"en\"]",
+          "quote": "line length (the number of characters per line)"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:line-length:definition",
+          "kind": "definition",
+          "text": "一行的长度；在 clreq 所述中文基本版式中，以一行的字数表示。",
+          "language": "zh",
+          "applicability": "根据 clreq 中英文正文归纳的中文说明。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "#id43 > p[lang=\"zh-hans\"]",
+              "quote": "一行的字数（即行长）"
+            },
+            {
+              "source": "clreq",
+              "selector": "#id52 > p:nth-of-type(2)",
+              "quote": "一行的行长应为字型大小的整数倍，各行的位置尽可能头尾对齐。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:first-line-indent",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:first-line-indent:label:zh",
+          "role": "preferred",
+          "text": "段首缩排",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:first-line-indent:label:en",
+          "role": "preferred",
+          "text": "First-line indents",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "#x6-2-1-1-first-line-indents > span[lang=\"zh-hans\"]",
+          "quote": "段首缩排"
+        },
+        {
+          "source": "clreq",
+          "selector": "#x6-2-1-1-first-line-indents > span[lang=\"en\"]",
+          "quote": "First-line indents"
+        },
+        {
+          "source": "clreq",
+          "selector": "#first_line_indents > p:nth-of-type(2)",
+          "quote": "为使不同的文本形成意义上的区隔、构成段落，呈现上，会使用断行以标示一个段落的起始，同时也会在段落首行加上空白进行缩排（也称为缩进），原则上以文本的汉字大小作为缩排单位，主要呈现方法如下。"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:first-line-indent:definition",
+          "kind": "definition",
+          "text": "在段落首行加上空白，使首行起始位置向后移动的排版处理。",
+          "language": "zh",
+          "applicability": "根据 clreq 中文正文归纳的定义；来源也将缩排称为缩进。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "#first_line_indents > p:nth-of-type(2)",
+              "quote": "为使不同的文本形成意义上的区隔、构成段落，呈现上，会使用断行以标示一个段落的起始，同时也会在段落首行加上空白进行缩排（也称为缩进），原则上以文本的汉字大小作为缩排单位，主要呈现方法如下。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:paragraph-indent",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:paragraph-indent:label:zh",
+          "role": "preferred",
+          "text": "段落缩排",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:paragraph-indent:label:en",
+          "role": "preferred",
+          "text": "Paragraph Indent",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "#x6-2-1-2-paragraph-indent > span[lang=\"zh-hans\"]",
+          "quote": "段落缩排"
+        },
+        {
+          "source": "clreq",
+          "selector": "#x6-2-1-2-paragraph-indent > span[lang=\"en\"]",
+          "quote": "Paragraph Indent"
+        },
+        {
+          "source": "clreq",
+          "selector": "#line_start_indent_of_paragraphs > p[lang=\"zh-hans\"]",
+          "quote": "段落缩排是指将版心（单栏排版时）以及栏的范围（多栏排版时）由行首侧以指定的量，将文字开始位置向后移动的处理。此种缩排方式多应用于段落内或段落间引用文章、诗词及标题等。"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:paragraph-indent:definition",
+          "kind": "definition",
+          "text": "将版心（单栏排版时）或栏的范围（多栏排版时）内的文字开始位置，从行首侧按指定的量向后移动的处理。",
+          "language": "zh",
+          "applicability": "根据 clreq 中文正文归纳的定义。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "#line_start_indent_of_paragraphs > p[lang=\"zh-hans\"]",
+              "quote": "段落缩排是指将版心（单栏排版时）以及栏的范围（多栏排版时）由行首侧以指定的量，将文字开始位置向后移动的处理。此种缩排方式多应用于段落内或段落间引用文章、诗词及标题等。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:alignment",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:alignment:label:zh",
+          "role": "preferred",
+          "text": "对齐方式",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:alignment:label:en",
+          "role": "preferred",
+          "text": "alignment",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.alignment\"] > td:nth-of-type(2)",
+          "quote": "对齐方式"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.alignment\"] > td:nth-of-type(4)",
+          "quote": "alignment"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:alignment:definition",
+          "kind": "definition",
+          "text": "对字、行等各种元素的分布进行整理的方法。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，适用于该来源的排版语境。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.alignment\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "对字、行等各种元素的分布进行整理的方法。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:justified-alignment",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:justified-alignment:label:zh",
+          "role": "preferred",
+          "text": "两端对齐",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:justified-alignment:label:en",
+          "role": "preferred",
+          "text": "justified alignment",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.justified-alignment\"] > td:nth-of-type(2)",
+          "quote": "两端对齐"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.justified-alignment\"] > td:nth-of-type(4)",
+          "quote": "justified alignment"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:justified-alignment:definition",
+          "kind": "definition",
+          "text": "一种段落每行的行首行尾分别对齐的排版方式。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，适用于该来源的排版语境。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.justified-alignment\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "一种段落每行的行首行尾分别对齐的排版方式。"
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:alignment",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.justified-alignment\"] > td:nth-of-type(5) > p[lang=\"en\"]",
+              "quote": "The alignment method to align on both the left and right ends of each line of one paragraph text."
+            }
+          ]
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:line-breaking-rules",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:line-breaking-rules:label:zh",
+          "role": "preferred",
+          "text": "行首行尾禁则",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:line-breaking-rules:label:en",
+          "role": "preferred",
+          "text": "prohibition rules for line start/end",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.line-breaking-rules\"] > td:nth-of-type(2)",
+          "quote": "行首行尾禁则"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.line-breaking-rules\"] > td:nth-of-type(4)",
+          "quote": "prohibition rules for line start/end"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:line-breaking-rules:definition",
+          "kind": "definition",
+          "text": "不同的标点依其性质，不得出现于行首或行尾的排版规则。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，适用于该来源的排版语境。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.line-breaking-rules\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "不同的标点依其性质，不得出现于行首或行尾的排版规则。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:unbreakable-punctuation",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:unbreakable-punctuation:label:zh",
+          "role": "preferred",
+          "text": "符号分离禁则",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:unbreakable-punctuation:label:en",
+          "role": "preferred",
+          "text": "prohibition rules for unbreakable punctuation",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.unbreakable\"] > td:nth-of-type(2)",
+          "quote": "符号分离禁则"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.unbreakable\"] > td:nth-of-type(4)",
+          "quote": "prohibition rules for unbreakable punctuation"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:unbreakable-punctuation:definition",
+          "kind": "definition",
+          "text": "特定的符号里不得加入空隙的原则。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，适用于该来源的排版语境。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.unbreakable\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "特定的符号里不得加入空隙的原则。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:mixed-text-composition",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:mixed-text-composition:label:zh",
+          "role": "preferred",
+          "text": "中、西文混排处理",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:mixed-text-composition:label:en",
+          "role": "preferred",
+          "text": "Chinese and Western mixed text composition",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.mixed-text-composition\"] > td:nth-of-type(2)",
+          "quote": "中、西文混排处理"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.mixed-text-composition\"] > td:nth-of-type(4)",
+          "quote": "Chinese and Western mixed text composition"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:mixed-text-composition:definition",
+          "kind": "definition",
+          "text": "在中文文本中，包含部分西文时的处理方式。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义；将源文中混用的繁体字改为简体字。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.mixed-text-composition\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "在中文文本中，包含部分西文時的處理方式。"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:mixed-text-composition:horizontal-spacing",
+          "kind": "guidance",
+          "text": "在来源所述横排语境中，汉字与西文字母、数字之间可使用不多于四分之一个汉字宽的字距或空白；西文、数字位于行首或行尾时不加入该空白。",
+          "language": "zh",
+          "applicability": "根据 clreq 中文正文归纳的排版建议，不等同于输入半角空格的要求。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "#mixed_text_composition_in_horizontal_writing_mode > p:nth-of-type(2)",
+              "quote": "横排时，西文字母使用比例字体； 阿拉伯数字 则常用比例字体或等宽字体。原则上，汉字与西文字母、数字间使用不多于四分之一个汉字宽的字距或空白。但西文、数字出现在行首或行尾时，则无须加入空白。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:tracking",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "#mixed_text_composition_in_horizontal_writing_mode > p:nth-of-type(2)",
+              "quote": "横排时，西文字母使用比例字体； 阿拉伯数字 则常用比例字体或等宽字体。原则上，汉字与西文字母、数字间使用不多于四分之一个汉字宽的字距或空白。但西文、数字出现在行首或行尾时，则无须加入空白。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:punctuation-compression",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:punctuation-compression:label:zh",
+          "role": "preferred",
+          "text": "标点符号挤压",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:punctuation-compression:label:en",
+          "role": "preferred",
+          "text": "compression rules for adjacent punctuation marks",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.punctuation-compression\"] > td:nth-of-type(2)",
+          "quote": "标点符号挤压"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.punctuation-compression\"] > td:nth-of-type(4)",
+          "quote": "compression rules for adjacent punctuation marks"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:punctuation-compression:definition",
+          "kind": "definition",
+          "text": "对位于行首、行尾或连续存在标点符号的富余空间进行调整的排版方式。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，适用于该来源的排版语境。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.punctuation-compression\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "对位于行首、行尾或连续存在标点符号的富余空间进行调整的排版方式。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:line-breaking-rules",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "#prohibition_rules_for_line_start_end > p:nth-of-type(8)",
+              "quote": "在处理禁则之前，应优先按照排版风格处理 6.3.2 Punctuation Width Adjustment 标点符号的宽度调整 標點符號的寬度調整 ，因为标点挤压处理会影响换行位置。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:hanging-punctuation",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:hanging-punctuation:label:zh",
+          "role": "preferred",
+          "text": "行尾点号悬挂",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:hanging-punctuation:label:en",
+          "role": "preferred",
+          "text": "hanging punctuation marks for line end",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.hanging-punctuation\"] > td:nth-of-type(2)",
+          "quote": "行尾点号悬挂"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.hanging-punctuation\"] > td:nth-of-type(4)",
+          "quote": "hanging punctuation marks for line end"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:hanging-punctuation:definition",
+          "kind": "definition",
+          "text": "将行尾的点号悬挂于版心之外的排版方式。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，适用于该来源的排版语境。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.hanging-punctuation\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "将行尾的点号悬挂于版心之外的排版方式。"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:hanging-punctuation:usage",
+          "kind": "scope",
+          "text": "clreq 说明，绝大多数中文出版物没有悬挂行尾点号的惯例；该文将它作为行首禁则处理的延伸加以说明。",
+          "language": "zh",
+          "applicability": "根据 clreq 中文正文归纳的适用说明，不作为普遍排版要求。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "#hanging_punctuation_marks_at_line_end > p:nth-of-type(2)",
+              "quote": "绝大多数的中文出版物没有悬挂行尾点号的惯例。参考 日文排版 的做法，点号悬挂是行首标点禁则处理方式的延伸，可以避免文字及点号在前后行的移动，甚而导致前行字距不一的问题。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:solid-setting",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:solid-setting:label:zh",
+          "role": "preferred",
+          "text": "密排",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:solid-setting:label:en",
+          "role": "preferred",
+          "text": "solid setting",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.solid-setting\"] > td:nth-of-type(2)",
+          "quote": "密排"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.solid-setting\"] > td:nth-of-type(4)",
+          "quote": "solid setting"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:solid-setting:definition",
+          "kind": "definition",
+          "text": "将文字依其外框紧密排列的排版方式。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，适用于该来源的排版语境。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.solid-setting\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "将文字依其外框紧密排列的排版方式。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:loose-setting",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:loose-setting:label:zh",
+          "role": "preferred",
+          "text": "疏排",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:loose-setting:label:en",
+          "role": "preferred",
+          "text": "Loose setting",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.loose-setting\"] > td:nth-of-type(2)",
+          "quote": "疏排"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.loose-setting\"] > td:nth-of-type(4)",
+          "quote": "Loose setting"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:loose-setting:definition",
+          "kind": "definition",
+          "text": "于各字之间加入均匀空白的排版方式。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，适用于该来源的排版语境。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.loose-setting\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "于各字之间加入均匀空白的排版方式。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:tracking",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.loose-setting\"] > td:nth-of-type(5) > p[lang=\"en\"]",
+              "quote": "Text setting with extra even inter-character spacing in addition to the default spacing between characters, achieved by applying positive tracking to the text."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:reduced-inter-character-spacing",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:reduced-inter-character-spacing:label:zh",
+          "role": "preferred",
+          "text": "紧排",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:reduced-inter-character-spacing:label:en",
+          "role": "preferred",
+          "text": "reduced inter-character spacing",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.reduced-inter-character-spacing\"] > td:nth-of-type(2)",
+          "quote": "紧排"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.reduced-inter-character-spacing\"] > td:nth-of-type(4)",
+          "quote": "reduced inter-character spacing"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:reduced-inter-character-spacing:definition",
+          "kind": "definition",
+          "text": "减少字距，使文字外框一部分重叠的排版方式。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，适用于该来源的排版语境。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.reduced-inter-character-spacing\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "减少字距，使文字外框一部分重叠的排版方式。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:tracking",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.reduced-inter-character-spacing\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "减少字距，使文字外框一部分重叠的排版方式。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:line-adjustment",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:line-adjustment:label:zh",
+          "role": "preferred",
+          "text": "行内调整",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:line-adjustment:label:en",
+          "role": "preferred",
+          "text": "line adjustment",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.line-adjustment\"] > td:nth-of-type(2)",
+          "quote": "行内调整"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.line-adjustment\"] > td:nth-of-type(4)",
+          "quote": "line adjustment"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:line-adjustment:definition",
+          "kind": "definition",
+          "text": "通过挤压或拉伸预先定义的可调整空间，将段落中每行（最后一行除外）首尾对齐的方法。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，适用于该来源的排版语境。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.line-adjustment\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "通过挤压或拉伸预先定义的可调整空间，将段落中每行（最后一行除外）首尾对齐的方法。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:fullwidth",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:fullwidth:label:zh",
+          "role": "preferred",
+          "text": "全角",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:fullwidth:label:en",
+          "role": "preferred",
+          "text": "fullwidth",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.fullwidth\"] > td:nth-of-type(2)",
+          "quote": "全角"
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.fullwidth\"] > td:nth-of-type(4)",
+          "quote": "fullwidth"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:fullwidth:definition",
+          "kind": "definition",
+          "text": "排字的一种相对度量单位，宽度等于所使用的字号，用做排版宽度水平方向的度量。",
+          "language": "zh",
+          "applicability": "采用 clreq 词汇表中文定义，适用于该来源的排版语境。",
+          "evidence": [
+            {
+              "source": "clreq",
+              "selector": "tr[id=\"term.fullwidth\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+              "quote": "排字的一种相对度量单位，宽度等于所使用的字号，用做排版宽度水平方向的度量。"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:list",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:list:label:zh",
+          "role": "preferred",
+          "text": "列表",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:list:label:en",
+          "role": "preferred",
+          "text": "list",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "lists",
+          "selector": "section#list-or-table > p:nth-of-type(1)",
+          "quote": "Tables and lists are both ways to present a set of similarly structured items."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:list:definition",
+          "kind": "definition",
+          "text": "以条目形式呈现一组结构相似项目的形式。",
+          "language": "zh",
+          "applicability": "根据 Google 文档风格指南归纳的中文说明，非官方译文；中文名称采用模型既有知识中的行业表达，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "lists",
+              "selector": "section#list-or-table > p:nth-of-type(1)",
+              "quote": "Tables and lists are both ways to present a set of similarly structured items."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:ordered-list",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:ordered-list:label:zh",
+          "role": "preferred",
+          "text": "有序列表",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:ordered-list:label:en",
+          "role": "preferred",
+          "text": "Numbered list",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "lists",
+          "selector": "#types > table > tr:nth-of-type(2) > td:nth-of-type(1)",
+          "quote": "Numbered list"
+        },
+        {
+          "source": "lists",
+          "selector": "#types > table > tr:nth-of-type(2) > td:nth-of-type(2) > p:nth-of-type(1)",
+          "quote": "A set of items where the sequence is significant, such as ordered steps, phases, or priorities. The following is an example of a numbered list:"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:ordered-list:definition",
+          "kind": "definition",
+          "text": "项目顺序具有意义的列表，例如依次执行的步骤、阶段或优先次序。",
+          "language": "zh",
+          "applicability": "根据 Google 文档风格指南译写的中文说明，非官方译文；中文名称采用模型既有知识中的行业表达，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "lists",
+              "selector": "#types > table > tr:nth-of-type(2) > td:nth-of-type(2) > p:nth-of-type(1)",
+              "quote": "A set of items where the sequence is significant, such as ordered steps, phases, or priorities. The following is an example of a numbered list:"
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:list",
+          "evidence": [
+            {
+              "source": "lists",
+              "selector": "#types > p",
+              "quote": "Choose one of the following list styles. The following table includes common ways to present lists in our documentation:"
+            },
+            {
+              "source": "lists",
+              "selector": "#types > table > tr:nth-of-type(2) > td:nth-of-type(1)",
+              "quote": "Numbered list"
+            },
+            {
+              "source": "lists",
+              "selector": "#types > table > tr:nth-of-type(2) > td:nth-of-type(2) > p:nth-of-type(1)",
+              "quote": "A set of items where the sequence is significant, such as ordered steps, phases, or priorities. The following is an example of a numbered list:"
+            }
+          ]
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:unordered-list",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:unordered-list:label:zh",
+          "role": "preferred",
+          "text": "无序列表",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:unordered-list:label:en",
+          "role": "preferred",
+          "text": "Bulleted list",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "lists",
+          "selector": "#types > table > tr:nth-of-type(3) > td:nth-of-type(1)",
+          "quote": "Bulleted list"
+        },
+        {
+          "source": "lists",
+          "selector": "#types > table > tr:nth-of-type(3) > td:nth-of-type(2) > p:nth-of-type(1)",
+          "quote": "A set of items that's not a sequence, such as a set of nonsequential options or examples. Make sure it's clear whether or not every item is required. The following is an example of a bulleted list:"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:unordered-list:definition",
+          "kind": "definition",
+          "text": "项目不构成先后序列的列表，例如不按顺序排列的选项或示例。",
+          "language": "zh",
+          "applicability": "根据 Google 文档风格指南译写的中文说明，非官方译文；中文名称采用模型既有知识中的行业表达，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "lists",
+              "selector": "#types > table > tr:nth-of-type(3) > td:nth-of-type(2) > p:nth-of-type(1)",
+              "quote": "A set of items that's not a sequence, such as a set of nonsequential options or examples. Make sure it's clear whether or not every item is required. The following is an example of a bulleted list:"
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:list",
+          "evidence": [
+            {
+              "source": "lists",
+              "selector": "#types > p",
+              "quote": "Choose one of the following list styles. The following table includes common ways to present lists in our documentation:"
+            },
+            {
+              "source": "lists",
+              "selector": "#types > table > tr:nth-of-type(3) > td:nth-of-type(1)",
+              "quote": "Bulleted list"
+            },
+            {
+              "source": "lists",
+              "selector": "#types > table > tr:nth-of-type(3) > td:nth-of-type(2) > p:nth-of-type(1)",
+              "quote": "A set of items that's not a sequence, such as a set of nonsequential options or examples. Make sure it's clear whether or not every item is required. The following is an example of a bulleted list:"
+            }
+          ]
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:description-list",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:description-list:label:zh",
+          "role": "preferred",
+          "text": "描述列表",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:description-list:label:en",
+          "role": "preferred",
+          "text": "Description list",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "lists",
+          "selector": "#types > table > tr:nth-of-type(4) > td:nth-of-type(1)",
+          "quote": "Description list"
+        },
+        {
+          "source": "lists",
+          "selector": "#types > table > tr:nth-of-type(4) > td:nth-of-type(2) > p:nth-of-type(1)",
+          "quote": "A set of terms, each with a description, definition, or explanation. Use this type of list if you want to draw attention to two or more terms (such as a glossary). The following is an example of a description list:"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:description-list:definition",
+          "kind": "definition",
+          "text": "由术语及其描述、定义或解释组成的列表。",
+          "language": "zh",
+          "applicability": "根据 Google 文档风格指南译写的中文说明，非官方译文；中文名称采用模型既有知识中的行业表达，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "lists",
+              "selector": "#types > table > tr:nth-of-type(4) > td:nth-of-type(2) > p:nth-of-type(1)",
+              "quote": "A set of terms, each with a description, definition, or explanation. Use this type of list if you want to draw attention to two or more terms (such as a glossary). The following is an example of a description list:"
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:list",
+          "evidence": [
+            {
+              "source": "lists",
+              "selector": "#types > p",
+              "quote": "Choose one of the following list styles. The following table includes common ways to present lists in our documentation:"
+            },
+            {
+              "source": "lists",
+              "selector": "#types > table > tr:nth-of-type(4) > td:nth-of-type(1)",
+              "quote": "Description list"
+            },
+            {
+              "source": "lists",
+              "selector": "#types > table > tr:nth-of-type(4) > td:nth-of-type(2) > p:nth-of-type(1)",
+              "quote": "A set of terms, each with a description, definition, or explanation. Use this type of list if you want to draw attention to two or more terms (such as a glossary). The following is an example of a description list:"
+            }
+          ]
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:table",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:table:label:zh",
+          "role": "preferred",
+          "text": "表格",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:table:label:en",
+          "role": "preferred",
+          "text": "table",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "tables",
+          "selector": "section#list-or-table > ul > li:nth-of-type(5)",
+          "quote": "Use tables only to present two-dimensional data—that is, material that semantically makes sense to display in rows and columns."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:table:definition",
+          "kind": "definition",
+          "text": "按行和列组织呈现二维数据的形式；数据在语义上适合按这两个维度排列。",
+          "language": "zh",
+          "applicability": "根据 Google 文档风格指南归纳的中文说明，非官方译文；中文名称采用模型既有知识中的行业表达，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "tables",
+              "selector": "section#list-or-table > ul > li:nth-of-type(5)",
+              "quote": "Use tables only to present two-dimensional data—that is, material that semantically makes sense to display in rows and columns."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:table-header",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:table-header:label:zh",
+          "role": "preferred",
+          "text": "表头",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:table-header:label:en",
+          "role": "preferred",
+          "text": "table header",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "tables",
+          "selector": "section#table-formatting > ul > li:nth-of-type(2)",
+          "quote": "Don't apply a visual style such as a different font, font color, or background color to convey a header row or column by itself. Use the th element to semantically mark up headers in tables."
+        },
+        {
+          "source": "tables",
+          "selector": "section#table-column-heads > ul > li:nth-of-type(4)",
+          "quote": "Use table headings for the first column and the first row only. Use the th element ."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:table-header:definition",
+          "kind": "definition",
+          "text": "表格中用于标识行或列内容的单元格。",
+          "language": "zh",
+          "applicability": "根据 Google 文档风格指南及其表格示例归纳的中文说明，非官方译文；中文名称采用模型既有知识中的行业表达，外部中文用法未核实。",
+          "evidence": [
+            {
+              "source": "tables",
+              "selector": "section#table-formatting > ul > li:nth-of-type(2)",
+              "quote": "Don't apply a visual style such as a different font, font color, or background color to convey a header row or column by itself. Use the th element to semantically mark up headers in tables."
+            },
+            {
+              "source": "tables",
+              "selector": "section#list-or-table > table > tr:nth-of-type(1)",
+              "quote": "Item type Example How to present"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:table-header:semantic-markup",
+          "kind": "guidance",
+          "text": "在 HTML 表格中，用 th 元素表达表头语义，不仅依靠字体、文字颜色或背景颜色来表示表头。",
+          "language": "zh",
+          "applicability": "根据 Google 文档风格指南译写的操作建议，非官方译文。",
+          "evidence": [
+            {
+              "source": "tables",
+              "selector": "section#table-formatting > ul > li:nth-of-type(2)",
+              "quote": "Don't apply a visual style such as a different font, font color, or background color to convey a header row or column by itself. Use the th element to semantically mark up headers in tables."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:table",
+          "evidence": [
+            {
+              "source": "tables",
+              "selector": "section#table-formatting > ul > li:nth-of-type(2)",
+              "quote": "Don't apply a visual style such as a different font, font color, or background color to convey a header row or column by itself. Use the th element to semantically mark up headers in tables."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "key": "版式与呈现",
+      "members": [
+        "urn:kb-vocab-writing:typeface",
+        "urn:kb-vocab-writing:font",
+        "urn:kb-vocab-writing:glyph",
+        "urn:kb-vocab-writing:type-size",
+        "urn:kb-vocab-writing:tracking",
+        "urn:kb-vocab-writing:line-gap",
+        "urn:kb-vocab-writing:line-height",
+        "urn:kb-vocab-writing:line-length",
+        "urn:kb-vocab-writing:first-line-indent",
+        "urn:kb-vocab-writing:paragraph-indent",
+        "urn:kb-vocab-writing:alignment",
+        "urn:kb-vocab-writing:justified-alignment",
+        "urn:kb-vocab-writing:line-breaking-rules",
+        "urn:kb-vocab-writing:unbreakable-punctuation",
+        "urn:kb-vocab-writing:mixed-text-composition",
+        "urn:kb-vocab-writing:punctuation-compression",
+        "urn:kb-vocab-writing:hanging-punctuation",
+        "urn:kb-vocab-writing:solid-setting",
+        "urn:kb-vocab-writing:loose-setting",
+        "urn:kb-vocab-writing:reduced-inter-character-spacing",
+        "urn:kb-vocab-writing:line-adjustment",
+        "urn:kb-vocab-writing:fullwidth",
+        "urn:kb-vocab-writing:list",
+        "urn:kb-vocab-writing:ordered-list",
+        "urn:kb-vocab-writing:unordered-list",
+        "urn:kb-vocab-writing:description-list",
+        "urn:kb-vocab-writing:table",
+        "urn:kb-vocab-writing:table-header"
+      ]
+    }
+  ],
+  "source_language_labels": [
+    "urn:kb-vocab-writing:typeface:label:zh",
+    "urn:kb-vocab-writing:font:label:zh",
+    "urn:kb-vocab-writing:glyph:label:zh",
+    "urn:kb-vocab-writing:type-size:label:zh",
+    "urn:kb-vocab-writing:tracking:label:zh",
+    "urn:kb-vocab-writing:line-gap:label:zh",
+    "urn:kb-vocab-writing:line-height:label:zh",
+    "urn:kb-vocab-writing:line-length:label:zh",
+    "urn:kb-vocab-writing:first-line-indent:label:zh",
+    "urn:kb-vocab-writing:paragraph-indent:label:zh",
+    "urn:kb-vocab-writing:alignment:label:zh",
+    "urn:kb-vocab-writing:justified-alignment:label:zh",
+    "urn:kb-vocab-writing:line-breaking-rules:label:zh",
+    "urn:kb-vocab-writing:unbreakable-punctuation:label:zh",
+    "urn:kb-vocab-writing:mixed-text-composition:label:zh",
+    "urn:kb-vocab-writing:punctuation-compression:label:zh",
+    "urn:kb-vocab-writing:hanging-punctuation:label:zh",
+    "urn:kb-vocab-writing:solid-setting:label:zh",
+    "urn:kb-vocab-writing:loose-setting:label:zh",
+    "urn:kb-vocab-writing:reduced-inter-character-spacing:label:zh",
+    "urn:kb-vocab-writing:line-adjustment:label:zh",
+    "urn:kb-vocab-writing:fullwidth:label:zh"
+  ],
+  "unresolved": [
+    {
+      "concept": "urn:kb-vocab-writing:glyph",
+      "issue": "clreq 词汇表同一行的 glyph 英文定义称其为不依赖具体设计的抽象符号，中文定义则描述书写、印刷上的形体。此条采用源中文定义，不将两种定义自动认定为等价；差异尚未核实。",
+      "evidence": [
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.glyph\"] > td:nth-of-type(5) > p[lang=\"en\"]",
+          "quote": "A symbol of identifiable abstraction, depending on no specific design."
+        },
+        {
+          "source": "clreq",
+          "selector": "tr[id=\"term.glyph\"] > td:nth-of-type(5) > p[lang=\"zh-hans\"]",
+          "quote": "字母、文字或符号在书写、印刷上的形体。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "explanation.html",
+      "format": "html",
+      "id": "explanation",
+      "url": "https://diataxis.fr/explanation/"
+    }
+  ],
+  "id": "explanation",
+  "schema_version": 1,
+  "title": "explanation",
+  "version": "live-web-snapshot"
+}

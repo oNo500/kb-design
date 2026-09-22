@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "coga.html",
+      "format": "html",
+      "id": "coga",
+      "url": "https://www.w3.org/TR/coga-usable/"
+    }
+  ],
+  "id": "coga",
+  "schema_version": 1,
+  "title": "Making Content Usable for People with Cognitive and Learning Disabilities",
+  "version": "working-group-note-2021"
+}

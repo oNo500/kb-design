@@ -1,0 +1,395 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "approved": {
+      "type": "boolean"
+    },
+    "approval": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "by": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "reference": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "content_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "required": [
+            "by",
+            "reference",
+            "content_sha256"
+          ]
+        }
+      ]
+    },
+    "source_lock_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "scheme": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "format": "uri"
+        },
+        "label": {
+          "$ref": "#/$defs/value"
+        },
+        "scope": {
+          "$ref": "#/$defs/value"
+        },
+        "top_concepts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S",
+            "format": "uri"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "scope",
+        "top_concepts"
+      ]
+    },
+    "concepts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/concept"
+      },
+      "minItems": 1
+    },
+    "collections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/collection"
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "schema_version",
+    "approved",
+    "approval",
+    "source_lock_sha256",
+    "scheme",
+    "concepts",
+    "collections"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "value": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "language": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z]+(?:-[A-Za-z0-9]+)*$"
+        }
+      },
+      "required": [
+        "text",
+        "language"
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "selector": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "source",
+        "selector",
+        "quote"
+      ]
+    },
+    "label": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "format": "uri"
+        },
+        "role": {
+          "enum": [
+            "preferred",
+            "alternative",
+            "hidden"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "language": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z]+(?:-[A-Za-z0-9]+)*$"
+        },
+        "basis": {
+          "$ref": "#/$defs/basis"
+        }
+      },
+      "required": [
+        "id",
+        "role",
+        "text",
+        "language"
+      ]
+    },
+    "statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "format": "uri"
+        },
+        "kind": {
+          "enum": [
+            "definition",
+            "scope",
+            "guidance",
+            "example",
+            "editorial"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "language": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z]+(?:-[A-Za-z0-9]+)*$"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        },
+        "applicability": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "basis": {
+          "$ref": "#/$defs/basis"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "text",
+        "language",
+        "evidence"
+      ]
+    },
+    "relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "target": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "format": "uri"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "target",
+        "evidence"
+      ]
+    },
+    "concept": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "format": "uri"
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/label"
+          },
+          "minItems": 1
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        },
+        "statements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/statement"
+          },
+          "minItems": 0
+        },
+        "broader": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relation"
+          },
+          "minItems": 0
+        },
+        "related": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relation"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "labels",
+        "evidence",
+        "statements",
+        "broader",
+        "related"
+      ]
+    },
+    "collection": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "format": "uri"
+        },
+        "label": {
+          "$ref": "#/$defs/value"
+        },
+        "scope": {
+          "$ref": "#/$defs/value"
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S",
+            "format": "uri"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "scope",
+        "members"
+      ]
+    },
+    "basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "executor",
+        "model_version",
+        "recorded_at",
+        "note"
+      ],
+      "properties": {
+        "method": {
+          "enum": [
+            "source",
+            "model",
+            "user"
+          ]
+        },
+        "executor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

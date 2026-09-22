@@ -1,0 +1,1581 @@
+{
+  "concepts": [
+    {
+      "id": "urn:kb-vocab-writing:sample:heading",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:sample:heading:label:zh",
+          "role": "preferred",
+          "text": "标题",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:sample:heading:label:en",
+          "role": "preferred",
+          "text": "Heading",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "headings",
+          "selector": "#heading-and-title-text + p",
+          "quote": "Write section headings based on the type of content that's in the section."
+        },
+        {
+          "source": "headings",
+          "selector": ".devsite-article-body > p:nth-of-type(1)",
+          "quote": "Use descriptive headings and titles because they help a reader navigate their browser and the page."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:sample:heading:definition",
+          "kind": "definition",
+          "text": "用于标识文档章节或部分的文字，帮助读者识别内容并定位阅读位置。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": "#heading-and-title-text + p",
+              "quote": "Write section headings based on the type of content that's in the section."
+            },
+            {
+              "source": "headings",
+              "selector": ".devsite-article-body > p:nth-of-type(1)",
+              "quote": "Use descriptive headings and titles because they help a reader navigate their browser and the page."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:sample:heading:guidance",
+          "kind": "guidance",
+          "text": "按所在部分的内容拟写标题；标题应能描述内容，并与其他标题区分。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": "#heading-and-title-text + p",
+              "quote": "Write section headings based on the type of content that's in the section."
+            },
+            {
+              "source": "headings",
+              "selector": ".devsite-article-body > p:nth-of-type(1)",
+              "quote": "Use descriptive headings and titles because they help a reader navigate their browser and the page."
+            },
+            {
+              "source": "headings",
+              "selector": ".devsite-article-body > p:nth-of-type(1)",
+              "quote": "It's easier to jump between pages and sections of a page if the headings and titles are unique."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:sample:heading:guidance-content",
+          "kind": "guidance",
+          "text": "标题之后应有正文；在较高层标题下提供简短说明，再进入下一级部分。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": "#capitalization > ul:nth-of-type(3) > li:nth-of-type(4) > p",
+              "quote": "Don't use empty headings . Make sure headings are followed by content."
+            },
+            {
+              "source": "large-docs",
+              "selector": "#provide_text_under_each_heading + p",
+              "quote": "Most readers appreciate at least a brief introduction under each heading to provide some context."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:document-navigation",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": ".devsite-article-body > p:nth-of-type(1)",
+              "quote": "Use descriptive headings and titles because they help a reader navigate their browser and the page."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:document-title",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:document-title:label:zh",
+          "role": "preferred",
+          "text": "文档标题",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:document-title:label:en",
+          "role": "preferred",
+          "text": "Document title",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "headings",
+          "selector": "#heading-and-title-text + p",
+          "quote": "Write document titles based on the primary purpose of the document."
+        },
+        {
+          "source": "headings",
+          "selector": "#title-phrasing + p + p",
+          "quote": "the page title might be Create and start VM instances , with section headings Create a VM and Start a VM ."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:document-title:definition",
+          "kind": "definition",
+          "text": "标识整篇文档并反映其主要目的的名称。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": "#heading-and-title-text + p",
+              "quote": "Write document titles based on the primary purpose of the document."
+            },
+            {
+              "source": "headings",
+              "selector": "#title-phrasing + p + p",
+              "quote": "the page title might be Create and start VM instances , with section headings Create a VM and Start a VM ."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:document-title:guidance",
+          "kind": "guidance",
+          "text": "根据文档的主要目的拟定标题；一个页面中的章节标题应各自指向章节内容，避免重复整篇标题。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": "#heading-and-title-text + p",
+              "quote": "Write document titles based on the primary purpose of the document."
+            },
+            {
+              "source": "headings",
+              "selector": "#title-phrasing + p + p",
+              "quote": "the page title might be Create and start VM instances , with section headings Create a VM and Start a VM ."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:document-title:guidance-page-title",
+          "kind": "guidance",
+          "text": "在 Google 的文档页面约定中，每页使用一个一级标题，并使其在文档集合中具有唯一性。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": "#title-phrasing + p",
+              "quote": "Use a unique level-1 heading ( h1 ) for each page in a set of documents and only use a level-1 heading once on a page."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:document-title:example",
+          "kind": "example",
+          "text": "介绍创建和启动虚拟机的页面可题为“创建和启动虚拟机实例”，下设“创建虚拟机”和“启动虚拟机”两个标题。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": "#title-phrasing + p + p",
+              "quote": "the page title might be Create and start VM instances , with section headings Create a VM and Start a VM ."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:sample:heading",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": "#title-phrasing + p + p",
+              "quote": "the page title might be Create and start VM instances , with section headings Create a VM and Start a VM ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:task-based-heading",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:task-based-heading:label:zh",
+          "role": "preferred",
+          "text": "任务型标题",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:task-based-heading:label:en",
+          "role": "preferred",
+          "text": "Task-based heading",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "large-docs",
+          "selector": "#prefer_task-based_headings + p",
+          "quote": "Choose a heading that describes the task your reader is working on."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:task-based-heading:definition",
+          "kind": "definition",
+          "text": "以读者要完成的任务为表述对象的标题。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#prefer_task-based_headings + p",
+              "quote": "Choose a heading that describes the task your reader is working on."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:task-based-heading:guidance",
+          "kind": "guidance",
+          "text": "Google 的英文技术文档建议以动词原形开始任务型标题。该语法建议适用于英文标题。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": ".devsite-article-body > table:nth-of-type(1) > tbody > tr:nth-of-type(1) > td:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "For a task-based heading, start with a bare infinitive , also known as a plain form or base form verb."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:task-based-heading:scope",
+          "kind": "scope",
+          "text": "任务型标题可以与概念型标题出现在同一篇文档中，各节按实际内容选择表述方式。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": "#mixed-heading-styles + p",
+              "quote": "If a single document includes both task-based and conceptual sections, then use the appropriate phrasing for each section's heading."
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:sample:heading",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#prefer_task-based_headings + p",
+              "quote": "Choose a heading that describes the task your reader is working on."
+            },
+            {
+              "source": "headings",
+              "selector": "#mixed-heading-styles + p",
+              "quote": "If a single document includes both task-based and conceptual sections, then use the appropriate phrasing for each section's heading."
+            }
+          ]
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:conceptual-heading",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:conceptual-heading:label:zh",
+          "role": "preferred",
+          "text": "概念型标题",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:conceptual-heading:label:en",
+          "role": "preferred",
+          "text": "Conceptual heading",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "headings",
+          "selector": ".devsite-article-body > table:nth-of-type(1) > tbody > tr:nth-of-type(2) > td:nth-of-type(1) > p:nth-of-type(1)",
+          "quote": "For a conceptual or non-task-based heading, use a noun phrase that doesn't start with an -ing verb."
+        },
+        {
+          "source": "headings",
+          "selector": "#mixed-heading-styles + p",
+          "quote": "If a single document includes both task-based and conceptual sections, then use the appropriate phrasing for each section's heading."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:conceptual-heading:definition",
+          "kind": "definition",
+          "text": "以概念或非任务性内容为表述对象的标题。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": ".devsite-article-body > table:nth-of-type(1) > tbody > tr:nth-of-type(2) > td:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "For a conceptual or non-task-based heading, use a noun phrase that doesn't start with an -ing verb."
+            },
+            {
+              "source": "headings",
+              "selector": "#mixed-heading-styles + p",
+              "quote": "If a single document includes both task-based and conceptual sections, then use the appropriate phrasing for each section's heading."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:conceptual-heading:guidance",
+          "kind": "guidance",
+          "text": "Google 的英文技术文档建议采用名词短语，并避免以 -ing 动词形式起首。该语法建议适用于英文标题。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": ".devsite-article-body > table:nth-of-type(1) > tbody > tr:nth-of-type(2) > td:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "For a conceptual or non-task-based heading, use a noun phrase that doesn't start with an -ing verb."
+            }
+          ]
+        }
+      ],
+      "broader": [
+        {
+          "target": "urn:kb-vocab-writing:sample:heading",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": ".devsite-article-body > table:nth-of-type(1) > tbody > tr:nth-of-type(2) > td:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "For a conceptual or non-task-based heading, use a noun phrase that doesn't start with an -ing verb."
+            },
+            {
+              "source": "headings",
+              "selector": "#mixed-heading-styles + p",
+              "quote": "If a single document includes both task-based and conceptual sections, then use the appropriate phrasing for each section's heading."
+            }
+          ]
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:heading-hierarchy",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:heading-hierarchy:label:zh",
+          "role": "preferred",
+          "text": "标题层级",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:heading-hierarchy:label:en",
+          "role": "preferred",
+          "text": "Heading hierarchy",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "headings",
+          "selector": "#capitalization > ul:nth-of-type(3) > li:nth-of-type(2)",
+          "quote": "Use heading tags to structure your content hierarchically"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:heading-hierarchy:definition",
+          "kind": "definition",
+          "text": "通过不同级别的标题表达内容之间层次关系的结构。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": "#capitalization > ul:nth-of-type(3) > li:nth-of-type(2)",
+              "quote": "Use heading tags to structure your content hierarchically"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:heading-hierarchy:guidance",
+          "kind": "guidance",
+          "text": "按内容的层次使用标题级别，不跳过中间级别。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": "#capitalization > ul:nth-of-type(3) > li:nth-of-type(2)",
+              "quote": "Use heading tags to structure your content hierarchically"
+            },
+            {
+              "source": "headings",
+              "selector": "#capitalization > ul:nth-of-type(3) > li:nth-of-type(3)",
+              "quote": "Don't skip levels of the heading hierarchy."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:sample:heading",
+          "evidence": [
+            {
+              "source": "headings",
+              "selector": "#capitalization > ul:nth-of-type(3) > li:nth-of-type(2)",
+              "quote": "Use heading tags to structure your content hierarchically"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:outline",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:outline:label:zh",
+          "role": "preferred",
+          "text": "大纲",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:outline:label:en",
+          "role": "preferred",
+          "text": "Outline",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "large-docs",
+          "selector": "#outline_a_document + p",
+          "quote": "Starting with a structured, high-level outline can help you group topics and determine where more detail is needed."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:outline:definition",
+          "kind": "definition",
+          "text": "在较高层次安排和组织文档主题的结构化提纲，用于确定各部分及需要展开之处。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#outline_a_document + p",
+              "quote": "Starting with a structured, high-level outline can help you group topics and determine where more detail is needed."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:outline:guidance",
+          "kind": "guidance",
+          "text": "起草正文前用大纲调整主题安排，使每一项聚焦一个概念或一项具体任务。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#outline_a_document + p",
+              "quote": "The outline helps you move topics around before you get down to writing."
+            },
+            {
+              "source": "large-docs",
+              "selector": "#outline_a_document + p + p + ul > li:nth-of-type(2)",
+              "quote": "Limit each step of your outline to describing a concept or completing a specific task."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:outline:guidance-collaboration",
+          "kind": "guidance",
+          "text": "多人参与写作或审阅时，在起草前向参与者共享大纲。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#outline_a_document + p + p + ul > li:nth-of-type(5)",
+              "quote": "Before you start drafting, share the outline with your contributors."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:document-navigation",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#heading_exercise + p",
+              "quote": "Often, a clear and well-organized table of contents or outline acts like a map that helps your users navigate the functionality of your tool."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:introduction",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:introduction:label:zh",
+          "role": "preferred",
+          "text": "引言",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:introduction:label:en",
+          "role": "preferred",
+          "text": "Introduction",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "large-docs",
+          "selector": "#introduce_a_document + p",
+          "quote": "To set the ground rules for your users, we recommend providing an introduction that includes the following information:"
+        },
+        {
+          "source": "large-docs",
+          "selector": "#introduce_a_document + p + ul",
+          "quote": "What the document covers. What prior knowledge you expect readers to have. What the document doesn't cover."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:introduction:definition",
+          "kind": "definition",
+          "text": "为读者交代文档将讨论什么、阅读所需基础及未涵盖内容的开篇说明。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#introduce_a_document + p",
+              "quote": "To set the ground rules for your users, we recommend providing an introduction that includes the following information:"
+            },
+            {
+              "source": "large-docs",
+              "selector": "#introduce_a_document + p + ul",
+              "quote": "What the document covers. What prior knowledge you expect readers to have. What the document doesn't cover."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:introduction:guidance",
+          "kind": "guidance",
+          "text": "引言交代覆盖范围、预期已有知识和排除内容；完成初稿后，核对全文是否符合引言建立的预期。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#introduce_a_document + p + ul",
+              "quote": "What the document covers. What prior knowledge you expect readers to have. What the document doesn't cover."
+            },
+            {
+              "source": "large-docs",
+              "selector": ".devsite-article-body > p:nth-of-type(15)",
+              "quote": "After you've completed the first draft, check your entire document against the expectations you set in your overview."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:document-scope",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#introduce_a_document + p + ul",
+              "quote": "What the document covers. What prior knowledge you expect readers to have. What the document doesn't cover."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:document-scope",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:document-scope:label:zh",
+          "role": "preferred",
+          "text": "文档范围",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:document-scope:label:en",
+          "role": "preferred",
+          "text": "Document scope",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "large-docs",
+          "selector": "#introduce_a_document + p + ul",
+          "quote": "What the document covers. What prior knowledge you expect readers to have. What the document doesn't cover."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:document-scope:definition",
+          "kind": "definition",
+          "text": "文档所涵盖和不涵盖的内容边界。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#introduce_a_document + p + ul",
+              "quote": "What the document covers. What prior knowledge you expect readers to have. What the document doesn't cover."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:document-scope:guidance",
+          "kind": "guidance",
+          "text": "在引言中说明纳入与排除的内容，并在初稿完成后检查正文与所声明范围是否一致。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#introduce_a_document + p",
+              "quote": "To set the ground rules for your users, we recommend providing an introduction that includes the following information:"
+            },
+            {
+              "source": "large-docs",
+              "selector": "#introduce_a_document + p + ul",
+              "quote": "What the document covers. What prior knowledge you expect readers to have. What the document doesn't cover."
+            },
+            {
+              "source": "large-docs",
+              "selector": ".devsite-article-body > p:nth-of-type(15)",
+              "quote": "After you've completed the first draft, check your entire document against the expectations you set in your overview."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:document-navigation",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:document-navigation:label:zh",
+          "role": "preferred",
+          "text": "文档导航",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:document-navigation:label:en",
+          "role": "preferred",
+          "text": "Document navigation",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "large-docs",
+          "selector": "#add_navigation + p",
+          "quote": "Providing navigation and signposting for your readers ensures they can find what they are looking for and the information they need to get unstuck."
+        },
+        {
+          "source": "large-docs",
+          "selector": "#add_navigation + p + p + ul",
+          "quote": "headings and subheadings that help users understand the subject"
+        },
+        {
+          "source": "large-docs",
+          "selector": "#add_navigation + p + p + ul",
+          "quote": "links to related resources or more in-depth information links to what to learn next"
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:document-navigation:definition",
+          "kind": "definition",
+          "text": "帮助读者在文档中定位所需信息，并找到相关或后续内容的组织和指引安排。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#add_navigation + p",
+              "quote": "Providing navigation and signposting for your readers ensures they can find what they are looking for and the information they need to get unstuck."
+            },
+            {
+              "source": "large-docs",
+              "selector": "#add_navigation + p + p + ul",
+              "quote": "links to related resources or more in-depth information links to what to learn next"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:document-navigation:guidance",
+          "kind": "guidance",
+          "text": "通过有逻辑的内容展开、标题、目录，以及相关资料和后续学习链接支持读者查找信息。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#add_navigation + p + p + ul",
+              "quote": "headings and subheadings that help users understand the subject"
+            },
+            {
+              "source": "large-docs",
+              "selector": "#add_navigation + p + p + ul > li:nth-of-type(4)",
+              "quote": "a table of contents menu that shows users where they are in the document"
+            },
+            {
+              "source": "large-docs",
+              "selector": "#add_navigation + p + p + ul",
+              "quote": "links to related resources or more in-depth information links to what to learn next"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:signpost",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#add_navigation + p",
+              "quote": "Providing navigation and signposting for your readers ensures they can find what they are looking for and the information they need to get unstuck."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:table-of-contents",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:table-of-contents:label:zh",
+          "role": "preferred",
+          "text": "目录",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:table-of-contents:label:en",
+          "role": "preferred",
+          "text": "Table of contents",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "large-docs",
+          "selector": "#add_navigation + p + p + ul > li:nth-of-type(4)",
+          "quote": "a table of contents menu that shows users where they are in the document"
+        },
+        {
+          "source": "large-docs",
+          "selector": "#heading_exercise + p",
+          "quote": "Often, a clear and well-organized table of contents or outline acts like a map that helps your users navigate the functionality of your tool."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:table-of-contents:definition",
+          "kind": "definition",
+          "text": "列示文档组织并帮助读者识别所在位置的导航内容。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#add_navigation + p + p + ul > li:nth-of-type(4)",
+              "quote": "a table of contents menu that shows users where they are in the document"
+            },
+            {
+              "source": "large-docs",
+              "selector": "#heading_exercise + p",
+              "quote": "Often, a clear and well-organized table of contents or outline acts like a map that helps your users navigate the functionality of your tool."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:table-of-contents:scope",
+          "kind": "scope",
+          "text": "此处根据技术文档中的内容目录归纳。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#add_navigation + p + p + ul > li:nth-of-type(4)",
+              "quote": "a table of contents menu that shows users where they are in the document"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:table-of-contents:guidance",
+          "kind": "guidance",
+          "text": "使目录中的主题安排清楚、有序，让读者能据此定位需要的内容。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#heading_exercise + p",
+              "quote": "Often, a clear and well-organized table of contents or outline acts like a map that helps your users navigate the functionality of your tool."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:document-navigation",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#add_navigation + p + p + ul > li:nth-of-type(4)",
+              "quote": "a table of contents menu that shows users where they are in the document"
+            },
+            {
+              "source": "large-docs",
+              "selector": "#heading_exercise + p",
+              "quote": "Often, a clear and well-organized table of contents or outline acts like a map that helps your users navigate the functionality of your tool."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:progressive-disclosure",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:progressive-disclosure:label:zh",
+          "role": "preferred",
+          "text": "渐进披露",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:progressive-disclosure:label:en",
+          "role": "preferred",
+          "text": "Progressive disclosure",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "large-docs",
+          "selector": "#disclose_information_progressively + p",
+          "quote": "Readers are more likely to be receptive to longer documents that progressively disclose new information to them when they need it."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:progressive-disclosure:definition",
+          "kind": "definition",
+          "text": "随读者的阅读进展和信息需求逐步引入新信息的呈现方式。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#disclose_information_progressively + p",
+              "quote": "Readers are more likely to be receptive to longer documents that progressively disclose new information to them when they need it."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:progressive-disclosure:guidance",
+          "kind": "guidance",
+          "text": "把新概念放在依赖它们的操作说明附近；从简单示例和操作开始，再引入更复杂的技术。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#disclose_information_progressively + p + ul > li:nth-of-type(1)",
+              "quote": "Where possible, try introducing new terminology and concepts near the instructions that rely on them."
+            },
+            {
+              "source": "large-docs",
+              "selector": "#disclose_information_progressively + p + ul > li:nth-of-type(4)",
+              "quote": "Start with simple examples and instructions, and add progressively more interesting and complicated techniques."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:progressive-disclosure:example",
+          "kind": "example",
+          "text": "表单教程先说明如何处理文本回答，再介绍多项选择、图片和其他回答形式。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#disclose_information_progressively + p + ul > li:nth-of-type(4)",
+              "quote": "in a tutorial for creating forms, start by explaining how to handle text responses, and then introduce other techniques to handle multiple choice, images, and other response types."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:progressive-disclosure:scope",
+          "kind": "scope",
+          "text": "此处讨论文档中的信息组织方式。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "large-docs",
+              "selector": "#disclose_information_progressively + p",
+              "quote": "Readers are more likely to be receptive to longer documents that progressively disclose new information to them when they need it."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:sample:paragraph",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:sample:paragraph:label:zh",
+          "role": "preferred",
+          "text": "段落",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:sample:paragraph:label:en",
+          "role": "preferred",
+          "text": "Paragraph",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "purdue-paragraphs",
+          "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(1)",
+          "quote": "A paragraph is a collection of related sentences dealing with a single topic."
+        },
+        {
+          "source": "paragraphs",
+          "selector": "#focus_each_paragraph_on_a_single_topic + p",
+          "quote": "A paragraph should represent an independent unit of logic. Restrict each paragraph to the current topic."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:sample:paragraph:definition",
+          "kind": "definition",
+          "text": "围绕单一主题组织起来的一组相互关联的句子。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(1)",
+              "quote": "A paragraph is a collection of related sentences dealing with a single topic."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:sample:paragraph:guidance",
+          "kind": "guidance",
+          "text": "将每段组织为相对独立的逻辑单元；开始讨论新的观点时另起一段。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "paragraphs",
+              "selector": "#focus_each_paragraph_on_a_single_topic + p",
+              "quote": "A paragraph should represent an independent unit of logic. Restrict each paragraph to the current topic."
+            },
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(4) > li:nth-of-type(1)",
+              "quote": "When you begin a new idea or point. New ideas should always start in new paragraphs."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:sample:paragraph:guidance-development",
+          "kind": "guidance",
+          "text": "组织段落时说明要传达什么、为什么值得了解，以及读者如何使用这些知识或判断论点成立。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "paragraphs",
+              "selector": "#answer_what_why_and_how + p + ol",
+              "quote": "What are you trying to tell your reader? Why is it important for the reader to know this? How should the reader use this knowledge? Alternatively, how should the reader know your point to be true?"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:sample:paragraph:editorial",
+          "kind": "editorial",
+          "text": "来源的段落长度建议具有语境：Google 技术写作课程认为读者通常接受三至五句的段落；Purdue 提醒过短的段落可能展开不足，并说明展开程度取决于写作目的。这些建议不构成统一句数规则。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "paragraphs",
+              "selector": "#dont_make_paragraphs_too_long_or_too_short + p",
+              "quote": "Readers generally welcome paragraphs containing three to five sentences"
+            },
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(9)",
+              "quote": "writers should be wary of paragraphs that only have two or three sentences."
+            },
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(9)",
+              "quote": "this varies from paragraph to paragraph, depending on the author's purpose"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    },
+    {
+      "id": "urn:kb-vocab-writing:topic-sentence",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:topic-sentence:label:zh",
+          "role": "preferred",
+          "text": "主题句",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:topic-sentence:label:en",
+          "role": "preferred",
+          "text": "Topic sentence",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "purdue-paragraphs",
+          "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(8)",
+          "quote": "A topic sentence is a sentence that indicates in a general way what idea or thesis the paragraph is going to deal with."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:topic-sentence:definition",
+          "kind": "definition",
+          "text": "概括表明一个段落将讨论的观点或论题的句子。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(8)",
+              "quote": "A topic sentence is a sentence that indicates in a general way what idea or thesis the paragraph is going to deal with."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:topic-sentence:scope",
+          "kind": "scope",
+          "text": "主题句可出现在段首、段尾或中间；其位置不属于定义条件。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(8)",
+              "quote": "topic sentences can occur anywhere in the paragraph (as the first sentence, the last sentence, or somewhere in the middle)"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:topic-sentence:guidance",
+          "kind": "guidance",
+          "text": "在适合用段首句引出主题的段落中，让开头直接建立段落的中心意思。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "paragraphs",
+              "selector": "#write_a_great_opening_sentence + p + p",
+              "quote": "Good opening sentences establish the paragraph's central point."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:topic-sentence:example",
+          "kind": "example",
+          "text": "介绍循环的段落以“循环多次运行同一段代码”开头，使读者先明确本段讨论循环。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "paragraphs",
+              "selector": ".devsite-article-body > blockquote:nth-of-type(2) > p",
+              "quote": "A loop runs the same block of code multiple times."
+            },
+            {
+              "source": "paragraphs",
+              "selector": ".devsite-article-body > p:nth-of-type(6)",
+              "quote": "The preceding opening sentence establishes the theme of the paragraph as an introduction to loops."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:sample:paragraph",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(8)",
+              "quote": "A topic sentence is a sentence that indicates in a general way what idea or thesis the paragraph is going to deal with."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:paragraph-unity",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:paragraph-unity:label:zh",
+          "role": "preferred",
+          "text": "段落统一性",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:paragraph-unity:label:en",
+          "role": "preferred",
+          "text": "Unity",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "purdue-paragraphs",
+          "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(4)",
+          "quote": "The entire paragraph should concern itself with a single focus."
+        },
+        {
+          "source": "purdue-paragraphs",
+          "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(4)",
+          "quote": "If it begins with one focus or major point of discussion, it should not end with another or wander within different ideas."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:paragraph-unity:definition",
+          "kind": "definition",
+          "text": "整个段落始终围绕同一中心展开的性质。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(4)",
+              "quote": "The entire paragraph should concern itself with a single focus."
+            },
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(4)",
+              "quote": "If it begins with one focus or major point of discussion, it should not end with another or wander within different ideas."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:paragraph-unity:guidance",
+          "kind": "guidance",
+          "text": "修订时移走或删除与当前主题没有直接关系的句子，避免段落转向另一个中心。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "paragraphs",
+              "selector": "#focus_each_paragraph_on_a_single_topic + p",
+              "quote": "When revising, ruthlessly delete (or move to another paragraph) any sentence that doesn't directly relate to the current topic."
+            },
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(4)",
+              "quote": "If it begins with one focus or major point of discussion, it should not end with another or wander within different ideas."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:sample:paragraph",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(3)",
+              "quote": "a paragraph should contain each of the following: Unity, Coherence, A Topic Sentence, and Adequate Development."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:paragraph-coherence",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:paragraph-coherence:label:zh",
+          "role": "preferred",
+          "text": "段落连贯性",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:paragraph-coherence:label:en",
+          "role": "preferred",
+          "text": "Coherence",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "purdue-paragraphs",
+          "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(5)",
+          "quote": "Coherence is the trait that makes the paragraph easily understandable to a reader."
+        },
+        {
+          "source": "purdue-paragraphs",
+          "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(5)",
+          "quote": "You can help create coherence in your paragraphs by creating logical bridges and verbal bridges."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:paragraph-coherence:definition",
+          "kind": "definition",
+          "text": "段内观点通过逻辑及语言联系连成读者容易理解的整体的性质。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(5)",
+              "quote": "Coherence is the trait that makes the paragraph easily understandable to a reader."
+            },
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(5)",
+              "quote": "You can help create coherence in your paragraphs by creating logical bridges and verbal bridges."
+            },
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(1)",
+              "quote": "The same idea of a topic is carried over from sentence to sentence Successive sentences can be constructed in parallel form"
+            },
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(2)",
+              "quote": "Key words can be repeated in several sentences Synonymous words can be repeated in several sentences Pronouns can refer to nouns in previous sentences Transition words can be used to link ideas from different sentences"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:paragraph-coherence:guidance",
+          "kind": "guidance",
+          "text": "使同一观点在句子之间延续；按需要使用平行句式、关键词复现、同义词、代词或过渡词建立联系。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(1)",
+              "quote": "The same idea of a topic is carried over from sentence to sentence Successive sentences can be constructed in parallel form"
+            },
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(2)",
+              "quote": "Key words can be repeated in several sentences Synonymous words can be repeated in several sentences Pronouns can refer to nouns in previous sentences Transition words can be used to link ideas from different sentences"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:sample:paragraph",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(3)",
+              "quote": "a paragraph should contain each of the following: Unity, Coherence, A Topic Sentence, and Adequate Development."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:paragraph-development",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:paragraph-development:label:zh",
+          "role": "preferred",
+          "text": "段落展开",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:paragraph-development:label:en",
+          "role": "preferred",
+          "text": "Paragraph development",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "purdue-paragraphs",
+          "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(9)",
+          "quote": "The topic (which is introduced by the topic sentence) should be discussed fully and adequately."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:paragraph-development:definition",
+          "kind": "definition",
+          "text": "围绕段落主题进行充分讨论和说明的过程。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(9)",
+              "quote": "The topic (which is introduced by the topic sentence) should be discussed fully and adequately."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:paragraph-development:guidance",
+          "kind": "guidance",
+          "text": "可用例子、事实与数据支撑主题，也可通过比较、原因与后果分析展开讨论。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(3)",
+              "quote": "Use examples and illustrations Cite data (facts, statistics, evidence, details, and others)"
+            },
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > ul:nth-of-type(3)",
+              "quote": "Compare and contrast Evaluate causes and reasons Examine effects and consequences Analyze the topic Describe the topic"
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:paragraph-development:scope",
+          "kind": "scope",
+          "text": "充分程度取决于段落和写作目的。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(9)",
+              "quote": "this varies from paragraph to paragraph, depending on the author's purpose"
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:sample:paragraph",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(3)",
+              "quote": "a paragraph should contain each of the following: Unity, Coherence, A Topic Sentence, and Adequate Development."
+            }
+          ]
+        },
+        {
+          "target": "urn:kb-vocab-writing:topic-sentence",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(9)",
+              "quote": "The topic (which is introduced by the topic sentence) should be discussed fully and adequately."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:transition",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:transition:label:zh",
+          "role": "preferred",
+          "text": "过渡",
+          "language": "zh"
+        },
+        {
+          "id": "urn:kb-vocab-writing:transition:label:en",
+          "role": "preferred",
+          "text": "Transition",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "purdue-paragraphs",
+          "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(13)",
+          "quote": "Transitions are usually one or several sentences that \"transition\" from one idea to the next."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:transition:definition",
+          "kind": "definition",
+          "text": "把讨论从一个观点衔接到下一个观点的一句或数句文字。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(13)",
+              "quote": "Transitions are usually one or several sentences that \"transition\" from one idea to the next."
+            }
+          ]
+        },
+        {
+          "id": "urn:kb-vocab-writing:transition:guidance",
+          "kind": "guidance",
+          "text": "在合适的段落结尾设置过渡，使相邻段落顺畅衔接。",
+          "language": "zh",
+          "applicability": "根据所引来源整理的写作说明，非官方译文，不自动成为项目规则。",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(13)",
+              "quote": "Transitions can be used at the end of most paragraphs to help the paragraphs flow one into the next."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": [
+        {
+          "target": "urn:kb-vocab-writing:sample:paragraph",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(13)",
+              "quote": "Transitions can be used at the end of most paragraphs to help the paragraphs flow one into the next."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urn:kb-vocab-writing:signpost",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:signpost:label:en",
+          "role": "preferred",
+          "text": "Signpost",
+          "language": "en"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "purdue-paragraphs",
+          "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(12)",
+          "quote": "Signposts are internal aids to assist readers; they usually consist of several sentences or a paragraph outlining what the article has covered and where the article will be going."
+        }
+      ],
+      "statements": [
+        {
+          "id": "urn:kb-vocab-writing:signpost:definition",
+          "kind": "definition",
+          "text": "文章内部帮助读者了解论述进展的提示文字，通常以数句或一个段落回顾已谈内容并提示后续内容。",
+          "language": "zh",
+          "applicability": "根据来源归纳的中文说明，非官方译文。",
+          "evidence": [
+            {
+              "source": "purdue-paragraphs",
+              "selector": "#content__main > section:nth-of-type(1) > p:nth-of-type(12)",
+              "quote": "Signposts are internal aids to assist readers; they usually consist of several sentences or a paragraph outlining what the article has covered and where the article will be going."
+            }
+          ]
+        }
+      ],
+      "broader": [],
+      "related": []
+    }
+  ],
+  "groups": [
+    {
+      "key": "文章组织",
+      "members": [
+        "urn:kb-vocab-writing:sample:heading",
+        "urn:kb-vocab-writing:document-title",
+        "urn:kb-vocab-writing:task-based-heading",
+        "urn:kb-vocab-writing:conceptual-heading",
+        "urn:kb-vocab-writing:heading-hierarchy",
+        "urn:kb-vocab-writing:outline",
+        "urn:kb-vocab-writing:introduction",
+        "urn:kb-vocab-writing:document-scope",
+        "urn:kb-vocab-writing:document-navigation",
+        "urn:kb-vocab-writing:table-of-contents",
+        "urn:kb-vocab-writing:progressive-disclosure",
+        "urn:kb-vocab-writing:sample:paragraph",
+        "urn:kb-vocab-writing:topic-sentence",
+        "urn:kb-vocab-writing:paragraph-unity",
+        "urn:kb-vocab-writing:paragraph-coherence",
+        "urn:kb-vocab-writing:paragraph-development",
+        "urn:kb-vocab-writing:transition",
+        "urn:kb-vocab-writing:signpost"
+      ]
+    }
+  ],
+  "source_language_labels": [],
+  "unresolved": [
+    {
+      "concept": "urn:kb-vocab-writing:signpost",
+      "language": "zh",
+      "issue": "尚未核实 Signpost 在本写作语境中的惯用中文名称；当前仅保留英文首选标签。"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "github-math.html",
+      "format": "html",
+      "id": "github-math",
+      "url": "https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions"
+    }
+  ],
+  "id": "github-math",
+  "schema_version": 1,
+  "title": "GitHub — Writing mathematical expressions",
+  "version": "live-web-snapshot"
+}

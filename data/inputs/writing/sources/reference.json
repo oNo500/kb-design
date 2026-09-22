@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "reference.html",
+      "format": "html",
+      "id": "reference",
+      "url": "https://diataxis.fr/reference/"
+    }
+  ],
+  "id": "reference",
+  "schema_version": 1,
+  "title": "reference",
+  "version": "live-web-snapshot"
+}

@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "nsw-learning.html",
+      "format": "html",
+      "id": "nsw-learning",
+      "url": "https://education.nsw.gov.au/teaching-and-learning/curriculum/explicit-teaching/how-learning-happens"
+    }
+  ],
+  "id": "nsw-learning",
+  "schema_version": 1,
+  "title": "NSW Education — Understanding how learning happens",
+  "version": "live-web-snapshot"
+}

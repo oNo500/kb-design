@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "filename": "words.html",
+      "format": "html",
+      "id": "words",
+      "url": "https://developers.google.com/tech-writing/one/words"
+    }
+  ],
+  "id": "words",
+  "schema_version": 1,
+  "title": "words",
+  "version": "live-web-snapshot"
+}

@@ -1,0 +1,3465 @@
+{
+  "augmentations": [
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Proofreading is the final stage of the editing process",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > p:nth-of-type(11)",
+          "source": "unc-editing"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:proofreading",
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "editing and proofreading are two different stages of the revision process.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > p:nth-of-type(2)",
+              "source": "unc-editing"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:editing"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "补充 UNC 写作教学语境，不改写既有来源定义。",
+          "evidence": [
+            {
+              "quote": "Proofreading is the final stage of the editing process",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > p:nth-of-type(11)",
+              "source": "unc-editing"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:proofreading:scope:unc-editing",
+          "kind": "scope",
+          "language": "zh",
+          "text": "UNC 将校对描述为关注拼写、语法和标点等表层错误的阶段，区别于论点、证据和组织层面的修订。"
+        }
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+          "source": "rst-introduction"
+        },
+        {
+          "quote": "RST offers an explanation of the coherence of texts.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5)",
+          "source": "rst-introduction"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rhetorical-structure-theory",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-structure-theory:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "修辞结构理论"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rhetorical-structure-theory:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Rhetorical Structure Theory"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            },
+            {
+              "quote": "RST offers an explanation of the coherence of texts.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5)",
+              "source": "rst-introduction"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rhetorical-structure-theory:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "通过文本片段之间的关系及核心、附属等结构，描述文本各部分作用和整体连贯性的理论。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            },
+            {
+              "quote": "RST offers an explanation of the coherence of texts.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5)",
+              "source": "rst-introduction"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rhetorical-structure-theory:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "此处指 Mann、Thompson 等发展的 RST；分析者依据定义判断作者意图，不把分析结果当作作者已确认的事实。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Antithesis on N: W has positive regard for N N and S are in contrast (see the Contrast relation); because of the incompatibility that arises from the contrast, one cannot have positive regard for both of those situations; comprehending S and the incompatibility between the situations increases R's positive regard for N R's positive regard for N is increased",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-antithesis",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-antithesis:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Antithesis"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Antithesis on N: W has positive regard for N N and S are in contrast (see the Contrast relation); because of the incompatibility that arises from the contrast, one cannot have positive regard for both of those situations; comprehending S and the incompatibility between the situations increases R's positive regard for N R's positive regard for N is increased",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-antithesis:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "两个情境形成不可兼容的对照，理解附属内容及该不兼容性，会增加读者对作者偏好的核心内容的认可。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Antithesis on N: W has positive regard for N N and S are in contrast (see the Contrast relation); because of the incompatibility that arises from the contrast, one cannot have positive regard for both of those situations; comprehending S and the incompatibility between the situations increases R's positive regard for N R's positive regard for N is increased",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-antithesis:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Background on N: R won't comprehend N sufficiently before reading text of S S increases the ability of R to comprehend an element in N R's ability to comprehend N increases",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(4)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-background",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-background:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "背景"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-background:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Background"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Background on N: R won't comprehend N sufficiently before reading text of S S increases the ability of R to comprehend an element in N R's ability to comprehend N increases",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(4)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-background:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "附属内容提供理解核心内容所需的背景，使读者更充分地理解核心内容。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Background on N: R won't comprehend N sufficiently before reading text of S S increases the ability of R to comprehend an element in N R's ability to comprehend N increases",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(4)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-background:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Concession on N: W has positive regard for N on S: W is not claiming that S does not hold; W acknowledges a potential or apparent incompatibility between N and S; recognizing the compatibility between N and S increases R's positive regard for N R's positive regard for N is increased",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(5)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-concession",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-concession:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "让步"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-concession:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Concession"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Concession on N: W has positive regard for N on S: W is not claiming that S does not hold; W acknowledges a potential or apparent incompatibility between N and S; recognizing the compatibility between N and S increases R's positive regard for N R's positive regard for N is increased",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(5)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-concession:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "作者承认一个看似与核心立场不相容的情境，同时说明二者可以兼容，从而增强读者对核心立场的认可。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Concession on N: W has positive regard for N on S: W is not claiming that S does not hold; W acknowledges a potential or apparent incompatibility between N and S; recognizing the compatibility between N and S increases R's positive regard for N R's positive regard for N is increased",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(5)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-concession:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Enablement on N: presents an action by R (including accepting an offer), unrealized with respect to the context of N R comprehending S increases R's potential ability to perform the action in N R's potential ability to perform the action in N increases",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(6)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-enablement",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-enablement:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Enablement"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Enablement on N: presents an action by R (including accepting an offer), unrealized with respect to the context of N R comprehending S increases R's potential ability to perform the action in N R's potential ability to perform the action in N increases",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(6)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-enablement:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "附属内容使读者更有能力完成核心内容所提出、尚未执行的行动。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Enablement on N: presents an action by R (including accepting an offer), unrealized with respect to the context of N R comprehending S increases R's potential ability to perform the action in N R's potential ability to perform the action in N increases",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(6)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-enablement:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Evidence on N: R might not believe N to a degree satisfactory to W on S: R believes S or will find it credible R's comprehending S increases R's belief of N R's belief of N is increased",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(7)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-evidence",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-evidence:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "证据"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-evidence:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Evidence"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Evidence on N: R might not believe N to a degree satisfactory to W on S: R believes S or will find it credible R's comprehending S increases R's belief of N R's belief of N is increased",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(7)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-evidence:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "附属内容被读者相信或视为可信，其理解增加读者对核心主张的相信程度。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Evidence on N: R might not believe N to a degree satisfactory to W on S: R believes S or will find it credible R's comprehending S increases R's belief of N R's belief of N is increased",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(7)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-evidence:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Justify none R's comprehending S increases R's readiness to accept W's right to present N R's readiness to accept W's right to present N is increased",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(8)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-justify",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-justify:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Justify"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Justify none R's comprehending S increases R's readiness to accept W's right to present N R's readiness to accept W's right to present N is increased",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(8)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-justify:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "附属内容使读者更愿意接受作者提出核心内容的正当性。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Justify none R's comprehending S increases R's readiness to accept W's right to present N R's readiness to accept W's right to present N is increased",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(8)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-justify:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Motivation on N: N is an action in which R is the actor (including accepting an offer), unrealized with respect to the context of N Comprehending S increases R's desire to perform action in N R's desire to perform action in N is increased",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(9)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-motivation",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-motivation:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "动机"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-motivation:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Motivation"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Motivation on N: N is an action in which R is the actor (including accepting an offer), unrealized with respect to the context of N Comprehending S increases R's desire to perform action in N R's desire to perform action in N is increased",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(9)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-motivation:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "附属内容增强读者执行核心内容所提出、尚未执行的行动的愿望。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Motivation on N: N is an action in which R is the actor (including accepting an offer), unrealized with respect to the context of N Comprehending S increases R's desire to perform action in N R's desire to perform action in N is increased",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(9)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-motivation:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Preparation none S precedes N in the text; S tends to make R more ready, interested or oriented for reading N R is more ready, interested or oriented for reading N",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(10)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-preparation",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-preparation:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "准备"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-preparation:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Preparation"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Preparation none S precedes N in the text; S tends to make R more ready, interested or oriented for reading N R is more ready, interested or oriented for reading N",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(10)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-preparation:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "先出现的附属内容，使读者更有准备、更感兴趣或更容易进入随后核心内容的阅读。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Preparation none S precedes N in the text; S tends to make R more ready, interested or oriented for reading N R is more ready, interested or oriented for reading N",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(10)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-preparation:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Restatement none on N + S: S restates N, where S and N are of comparable bulk; N is more central to W's purposes than S is. R recognizes S as a restatement of N",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(11)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-restatement",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-restatement:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "重述"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-restatement:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Restatement"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Restatement none on N + S: S restates N, where S and N are of comparable bulk; N is more central to W's purposes than S is. R recognizes S as a restatement of N",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(11)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-restatement:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "附属内容以大致相当的篇幅重新表达核心内容，而核心内容对作者目的更重要。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Restatement none on N + S: S restates N, where S and N are of comparable bulk; N is more central to W's purposes than S is. R recognizes S as a restatement of N",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(11)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-restatement:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Summary on N: N must be more than one unit S presents a restatement of the content of N, that is shorter in bulk R recognizes S as a shorter restatement of N",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(12)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-summary",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-summary:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "摘要"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-summary:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Summary"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Summary on N: N must be more than one unit S presents a restatement of the content of N, that is shorter in bulk R recognizes S as a shorter restatement of N",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(12)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-summary:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "附属内容以较短篇幅重新表达由多个单元组成的核心内容。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Summary on N: N must be more than one unit S presents a restatement of the content of N, that is shorter in bulk R recognizes S as a shorter restatement of N",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(12)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-summary:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Circumstance on S: S is not unrealized S sets a framework in the subject matter within which R is intended to interpret N R recognizes that S provides the framework for interpreting N",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(3)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-circumstance",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-circumstance:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "情境"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-circumstance:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Circumstance"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Circumstance on S: S is not unrealized S sets a framework in the subject matter within which R is intended to interpret N R recognizes that S provides the framework for interpreting N",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(3)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-circumstance:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "附属内容提供用于解释核心情境的背景框架，例如有关时间或处境。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Circumstance on S: S is not unrealized S sets a framework in the subject matter within which R is intended to interpret N R recognizes that S provides the framework for interpreting N",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(3)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-circumstance:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Condition on S: S presents a hypothetical, future, or otherwise unrealized situation (relative to the situational context of S) Realization of N depends on realization of S R recognizes how the realization of N depends on the realization of S",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(4)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-condition",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-condition:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "条件"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-condition:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Condition"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Condition on S: S presents a hypothetical, future, or otherwise unrealized situation (relative to the situational context of S) Realization of N depends on realization of S R recognizes how the realization of N depends on the realization of S",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(4)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-condition:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "核心情境的实现依赖于附属内容描述的假设、将来或尚未实现的情境。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Condition on S: S presents a hypothetical, future, or otherwise unrealized situation (relative to the situational context of S) Realization of N depends on realization of S R recognizes how the realization of N depends on the realization of S",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(4)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-condition:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Elaboration none S presents additional detail about the situation or some element of subject matter which is presented in N or inferentially accessible in N in one or more of the ways listed below. In the list, if N presents the first member of any pair, then S includes the second: set :: member abstraction :: instance whole :: part process :: step object :: attribute generalization :: specific R recognizes S as providing additional detail for N. R identifies the element of subject matter for which detail is provided.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(5)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-elaboration",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-elaboration:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "阐述"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-elaboration:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Elaboration"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Elaboration none S presents additional detail about the situation or some element of subject matter which is presented in N or inferentially accessible in N in one or more of the ways listed below. In the list, if N presents the first member of any pair, then S includes the second: set :: member abstraction :: instance whole :: part process :: step object :: attribute generalization :: specific R recognizes S as providing additional detail for N. R identifies the element of subject matter for which detail is provided.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(5)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-elaboration:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "附属内容增加核心情境或其某个要素的细节，例如整体与部分、抽象与实例、过程与步骤。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Elaboration none S presents additional detail about the situation or some element of subject matter which is presented in N or inferentially accessible in N in one or more of the ways listed below. In the list, if N presents the first member of any pair, then S includes the second: set :: member abstraction :: instance whole :: part process :: step object :: attribute generalization :: specific R recognizes S as providing additional detail for N. R identifies the element of subject matter for which detail is provided.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(5)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-elaboration:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Evaluation none on N + S: S relates N to degree of W's positive regard toward N. R recognizes that S assesses N and recognizes the value it assigns",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(6)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-evaluation",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-evaluation:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "评价"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-evaluation:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Evaluation"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Evaluation none on N + S: S relates N to degree of W's positive regard toward N. R recognizes that S assesses N and recognizes the value it assigns",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(6)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-evaluation:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "附属内容依据作者的态度评价核心情境，读者能够识别所赋予的评价。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Evaluation none on N + S: S relates N to degree of W's positive regard toward N. R recognizes that S assesses N and recognizes the value it assigns",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(6)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-evaluation:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Interpretation none on N + S: S relates N to a framework of ideas not involved in N itself and not concerned with W's positive regard R recognizes that S relates N to a framework of ideas not involved in the knowledge presented in N itself",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(7)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-interpretation",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-interpretation:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "解释"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-interpretation:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Interpretation"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Interpretation none on N + S: S relates N to a framework of ideas not involved in N itself and not concerned with W's positive regard R recognizes that S relates N to a framework of ideas not involved in the knowledge presented in N itself",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(7)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-interpretation:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "附属内容把核心情境放入其自身未直接涉及的观念框架中加以解释。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Interpretation none on N + S: S relates N to a framework of ideas not involved in N itself and not concerned with W's positive regard R recognizes that S relates N to a framework of ideas not involved in the knowledge presented in N itself",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(7)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-interpretation:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Means on N: an activity S presents a method or instrument which tends to make realization of N more likely R recognizes that the method or instrument in S tends to make realization of N more likely",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(8)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-means",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-means:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "手段"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-means:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Means"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Means on N: an activity S presents a method or instrument which tends to make realization of N more likely R recognizes that the method or instrument in S tends to make realization of N more likely",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(8)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-means:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "附属内容给出有助于实现核心活动的方法或工具。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Means on N: an activity S presents a method or instrument which tends to make realization of N more likely R recognizes that the method or instrument in S tends to make realization of N more likely",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(8)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-means:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Non-volitional Cause on N: N is not a volitional action S, by means other than motivating a volitional action, caused N; without the presentation of S, R might not know the particular cause of the situation; a presentation of N is more central than S to W's purposes in putting forth the N-S combination. R recognizes S as a cause of N",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(9)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-non-volitional-cause",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-non-volitional-cause:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Non-volitional Cause"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Non-volitional Cause on N: N is not a volitional action S, by means other than motivating a volitional action, caused N; without the presentation of S, R might not know the particular cause of the situation; a presentation of N is more central than S to W's purposes in putting forth the N-S combination. R recognizes S as a cause of N",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(9)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-non-volitional-cause:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "附属情境在并非激发有意行动的意义上造成核心情境，读者由此识别核心情境的原因。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Non-volitional Cause on N: N is not a volitional action S, by means other than motivating a volitional action, caused N; without the presentation of S, R might not know the particular cause of the situation; a presentation of N is more central than S to W's purposes in putting forth the N-S combination. R recognizes S as a cause of N",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(9)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-non-volitional-cause:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Non-volitional Result on S: S is not a volitional action N caused S; presentation of N is more central to W's purposes in putting forth the N-S combination than is the presentation of S. R recognizes that N could have caused the situation in S",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(10)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-non-volitional-result",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-non-volitional-result:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Non-volitional Result"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Non-volitional Result on S: S is not a volitional action N caused S; presentation of N is more central to W's purposes in putting forth the N-S combination than is the presentation of S. R recognizes that N could have caused the situation in S",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(10)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-non-volitional-result:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "核心情境造成并非有意行动的附属结果，读者由此识别其结果关系。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Non-volitional Result on S: S is not a volitional action N caused S; presentation of N is more central to W's purposes in putting forth the N-S combination than is the presentation of S. R recognizes that N could have caused the situation in S",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(10)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-non-volitional-result:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Otherwise on N: N is an unrealized situation on S: S is an unrealized situation realization of N prevents realization of S R recognizes the dependency relation of prevention between the realization of N and the realization of S",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(11)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-otherwise",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-otherwise:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Otherwise"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Otherwise on N: N is an unrealized situation on S: S is an unrealized situation realization of N prevents realization of S R recognizes the dependency relation of prevention between the realization of N and the realization of S",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(11)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-otherwise:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "核心情境的实现会阻止附属情境实现；两个情境在当前语境中均尚未实现，读者识别这种阻止关系。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Otherwise on N: N is an unrealized situation on S: S is an unrealized situation realization of N prevents realization of S R recognizes the dependency relation of prevention between the realization of N and the realization of S",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(11)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-otherwise:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Purpose on N: N is an activity; on S: S is a situation that is unrealized S is to be realized through the activity in N R recognizes that the activity in N is initiated in order to realize S",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(12)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-purpose",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-purpose:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "目的"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-purpose:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Purpose"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Purpose on N: N is an activity; on S: S is a situation that is unrealized S is to be realized through the activity in N R recognizes that the activity in N is initiated in order to realize S",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(12)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-purpose:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "核心活动是为了实现附属内容描述的、尚未实现的情境而进行的。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Purpose on N: N is an activity; on S: S is a situation that is unrealized S is to be realized through the activity in N R recognizes that the activity in N is initiated in order to realize S",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(12)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-purpose:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Solutionhood on S: S presents a problem N is a solution to the problem presented in S; R recognizes N as a solution to the problem presented in S",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(13)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-solutionhood",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-solutionhood:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Solutionhood"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Solutionhood on S: S presents a problem N is a solution to the problem presented in S; R recognizes N as a solution to the problem presented in S",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(13)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-solutionhood:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "核心内容提供对附属内容所表达的问题、请求或需要的解决。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Solutionhood on S: S presents a problem N is a solution to the problem presented in S; R recognizes N as a solution to the problem presented in S",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(13)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-solutionhood:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Unconditional on S: S conceivably could affect the realization of N N does not depend on S R recognizes that N does not depend on S",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(14)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-unconditional",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-unconditional:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Unconditional"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Unconditional on S: S conceivably could affect the realization of N N does not depend on S R recognizes that N does not depend on S",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(14)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-unconditional:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "附属情境看起来可能影响核心情境，但核心情境的实现并不依赖它。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Unconditional on S: S conceivably could affect the realization of N N does not depend on S R recognizes that N does not depend on S",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(14)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-unconditional:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Unless none S affects the realization of N; N is realized provided that S is not realized R recognizes that N is realized provided that S is not realized",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(15)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-unless",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-unless:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Unless"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Unless none S affects the realization of N; N is realized provided that S is not realized R recognizes that N is realized provided that S is not realized",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(15)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-unless:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "核心情境在附属情境不成立时实现，读者识别这一依赖关系。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Unless none S affects the realization of N; N is realized provided that S is not realized R recognizes that N is realized provided that S is not realized",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(15)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-unless:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Volitional Cause on N: N is a volitional action or else a situation that could have arisen from a volitional action S could have caused the agent of the volitional action in N to perform that action; without the presentation of S, R might not regard the action as motivated or know the particular motivation; N is more central to W's purposes in putting forth the N-S combination than S is. R recognizes S as a cause for the volitional action in N",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(16)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-volitional-cause",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-volitional-cause:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Volitional Cause"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Volitional Cause on N: N is a volitional action or else a situation that could have arisen from a volitional action S could have caused the agent of the volitional action in N to perform that action; without the presentation of S, R might not regard the action as motivated or know the particular motivation; N is more central to W's purposes in putting forth the N-S combination than S is. R recognizes S as a cause for the volitional action in N",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(16)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-volitional-cause:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "附属情境可能促使行动者作出核心内容中的有意行动；核心也可以是由有意行动产生的情境，读者识别这种可能的动因。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Volitional Cause on N: N is a volitional action or else a situation that could have arisen from a volitional action S could have caused the agent of the volitional action in N to perform that action; without the presentation of S, R might not regard the action as motivated or know the particular motivation; N is more central to W's purposes in putting forth the N-S combination than S is. R recognizes S as a cause for the volitional action in N",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(16)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-volitional-cause:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Volitional Result on S: S is a volitional action or a situation that could have arisen from a volitional action N could have caused S; presentation of N is more central to W's purposes than is presentation of S; R recognizes that N could be a cause for the action or situation in S",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(17)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-volitional-result",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-volitional-result:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Volitional Result"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Volitional Result on S: S is a volitional action or a situation that could have arisen from a volitional action N could have caused S; presentation of N is more central to W's purposes than is presentation of S; R recognizes that N could be a cause for the action or situation in S",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(17)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-volitional-result:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "核心情境可能导致附属内容中的有意行动或由这种行动产生的情境，读者识别这种可能的因果联系。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Volitional Result on S: S is a volitional action or a situation that could have arisen from a volitional action N could have caused S; presentation of N is more central to W's purposes than is presentation of S; R recognizes that N could be a cause for the action or situation in S",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(2) > tbody:nth-of-type(1) > tr:nth-of-type(17)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-volitional-result:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Conjunction The items are conjoined to form a unit in which each item plays a comparable role R recognizes that the linked items are conjoined",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(3)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-conjunction",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-conjunction:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "合取"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-conjunction:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Conjunction"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Conjunction The items are conjoined to form a unit in which each item plays a comparable role R recognizes that the linked items are conjoined",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(3)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-conjunction:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "多个文本部分以相当的地位连接为一个单元。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Conjunction The items are conjoined to form a unit in which each item plays a comparable role R recognizes that the linked items are conjoined",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(3)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-conjunction:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Contrast No more than two nuclei; the situations in these two nuclei are (a) comprehended as the same in many respects (b) comprehended as differing in a few respects and (c) compared with respect to one or more of these differences R recognizes the comparability and the difference(s) yielded by the comparison is being made",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(4)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-contrast",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-contrast:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "对照"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-contrast:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Contrast"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Contrast No more than two nuclei; the situations in these two nuclei are (a) comprehended as the same in many respects (b) comprehended as differing in a few respects and (c) compared with respect to one or more of these differences R recognizes the comparability and the difference(s) yielded by the comparison is being made",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(4)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-contrast:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "两个核心情境在多方面相似、在某些方面不同，文本按其中的差异进行比较。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Contrast No more than two nuclei; the situations in these two nuclei are (a) comprehended as the same in many respects (b) comprehended as differing in a few respects and (c) compared with respect to one or more of these differences R recognizes the comparability and the difference(s) yielded by the comparison is being made",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(4)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-contrast:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Disjunction An item presents a (not necessarily exclusive) alternative for the other(s) R recognizes that the linked items are alternatives",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(5)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-disjunction",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-disjunction:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "析取"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-disjunction:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Disjunction"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Disjunction An item presents a (not necessarily exclusive) alternative for the other(s) R recognizes that the linked items are alternatives",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(5)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-disjunction:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "多个部分提供彼此可选的方案，这种选择不必相互排斥。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Disjunction An item presents a (not necessarily exclusive) alternative for the other(s) R recognizes that the linked items are alternatives",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(5)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-disjunction:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Joint None none",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(6)",
+          "source": "rst-relations"
+        },
+        {
+          "quote": "These are called multinuclear relations.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(14) > p:nth-of-type(1) > p:nth-of-type(3)",
+          "source": "rst-introduction"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-joint",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-joint:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Joint"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Joint None none",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(6)",
+              "source": "rst-relations"
+            },
+            {
+              "quote": "These are called multinuclear relations.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(14) > p:nth-of-type(1) > p:nth-of-type(3)",
+              "source": "rst-introduction"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-joint:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "把多个文本部分连接起来而不附加该关系表中其他专门条件的多核关系。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Joint None none",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(6)",
+              "source": "rst-relations"
+            },
+            {
+              "quote": "These are called multinuclear relations.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(14) > p:nth-of-type(1) > p:nth-of-type(3)",
+              "source": "rst-introduction"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-joint:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "List An item comparable to others linked to it by the List relation R recognizes the comparability of linked items",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(7)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-list",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-list:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "列举"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-list:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "List"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "List An item comparable to others linked to it by the List relation R recognizes the comparability of linked items",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(7)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-list:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "多个文本部分中的项目彼此具有可比性，读者识别这些项目之间的可比关系。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "List An item comparable to others linked to it by the List relation R recognizes the comparability of linked items",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(7)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-list:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Multinuclear Restatement An item is primarily a reexpression of one linked to it; the items are of comparable importance to the purposes of W R recognizes the reexpression by the linked items",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(8)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-multinuclear-restatement",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-multinuclear-restatement:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Multinuclear Restatement"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Multinuclear Restatement An item is primarily a reexpression of one linked to it; the items are of comparable importance to the purposes of W R recognizes the reexpression by the linked items",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(8)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-multinuclear-restatement:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "多个对作者目的同样重要的文本部分，主要在重新表达彼此的内容。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Multinuclear Restatement An item is primarily a reexpression of one linked to it; the items are of comparable importance to the purposes of W R recognizes the reexpression by the linked items",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(8)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-multinuclear-restatement:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Sequence There is a succession relationship between the situations in the nuclei R recognizes the succession relationships among the nuclei.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(9)",
+          "source": "rst-relations"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:rst-sequence",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:rst-sequence:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "顺序"
+        },
+        {
+          "id": "urn:kb-vocab-writing:rst-sequence:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Sequence"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "RST is intended to describe texts, rather than the processes of creating or reading and understanding them.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "rst-introduction"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:rhetorical-structure-theory"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Sequence There is a succession relationship between the situations in the nuclei R recognizes the succession relationships among the nuclei.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(9)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-sequence:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "多个核心情境之间具有前后相继关系，读者能够识别这种先后联系。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Sequence There is a succession relationship between the situations in the nuclei R recognizes the succession relationships among the nuclei.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > table:nth-of-type(2) > tr:nth-of-type(1) > td:nth-of-type(5) > table:nth-of-type(3) > tbody:nth-of-type(1) > tr:nth-of-type(9)",
+              "source": "rst-relations"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:rst-sequence:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为所引 RST 关系定义。它描述文本片段之间的作用，既不是 SKOS 上下位关系，也不与同名的修辞手法、呈现形式或一般写作动作自动等同。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "It is an ongoing process of rethinking the paper",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > p:nth-of-type(3)",
+          "source": "unc-revising"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:revision",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:revision:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "修订"
+        },
+        {
+          "id": "urn:kb-vocab-writing:revision:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Revision"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "It is an ongoing process of rethinking the paper",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > p:nth-of-type(3)",
+              "source": "unc-revising"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:revision:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "从新的、批判性的角度重新审视文章，包括重想论点、复核证据、明确目的、重组呈现和改进表达。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "It is an ongoing process of rethinking the paper",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > p:nth-of-type(3)",
+              "source": "unc-revising"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:revision:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "采用 UNC 对 revision 的写作过程说明，范围不限于修改拼写和标点。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Revision doesn’t necessarily mean rewriting the whole paper.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > p:nth-of-type(9)",
+              "source": "unc-revising"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:revision:guidance",
+          "kind": "guidance",
+          "language": "zh",
+          "text": "同时检查论点、证据、组织和读者是否能理解；修订可以涉及增补、删减或重排内容。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Editing is what you begin doing as soon as you finish your first draft.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > p:nth-of-type(3)",
+          "source": "unc-editing"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:editing",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:editing:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "编辑"
+        },
+        {
+          "id": "urn:kb-vocab-writing:editing:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Editing"
+        }
+      ],
+      "related": [
+        {
+          "evidence": [
+            {
+              "quote": "Well, that’s a part of revision called editing.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > p:nth-of-type(5)",
+              "source": "unc-revising"
+            }
+          ],
+          "target": "urn:kb-vocab-writing:revision"
+        }
+      ],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Editing is what you begin doing as soon as you finish your first draft.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > p:nth-of-type(3)",
+              "source": "unc-editing"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:editing:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "仔细重读并调整草稿的内容、组织和措辞，检查段落衔接及证据对论点的支持。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Editing is what you begin doing as soon as you finish your first draft.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > p:nth-of-type(3)",
+              "source": "unc-editing"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:editing:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为写作修改中的 editing，不指出版机构的全部编辑工作；UNC 资料中的编辑与修订范围有交叠。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Quotations must be identical to the original",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > article:nth-of-type(1) > article:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(3)",
+          "source": "purdue-quoting"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:quotation",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:quotation:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "引语"
+        },
+        {
+          "id": "urn:kb-vocab-writing:quotation:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Quotation"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Quotations must be identical to the original",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > article:nth-of-type(1) > article:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(3)",
+              "source": "purdue-quoting"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:quotation:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "逐字采用来源中的一段原话，并保留其原有文字表达。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Quotations must be identical to the original",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > article:nth-of-type(1) > article:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(3)",
+              "source": "purdue-quoting"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:quotation:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "这里是采用原话的写作方式，不与引用块、文献条目或链接形式自动等同。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "They must match the source document word for word and must be attributed to the original author.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > article:nth-of-type(1) > article:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(3)",
+              "source": "purdue-quoting"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:quotation:guidance",
+          "kind": "guidance",
+          "language": "zh",
+          "text": "使用原话时注明原作者；引用应有具体作用，不能以来源原话堆积代替自己的论述。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Paraphrasing involves putting a passage from source material into your own words.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > article:nth-of-type(1) > article:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(4)",
+          "source": "purdue-quoting"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:paraphrase",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:paraphrase:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "转述"
+        },
+        {
+          "id": "urn:kb-vocab-writing:paraphrase:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Paraphrase"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Paraphrasing involves putting a passage from source material into your own words.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > article:nth-of-type(1) > article:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(4)",
+              "source": "purdue-quoting"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:paraphrase:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "用自己的措辞重新表达来源中的一段内容。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Paraphrasing involves putting a passage from source material into your own words.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > article:nth-of-type(1) > article:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(4)",
+              "source": "purdue-quoting"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:paraphrase:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为转述来源材料，不指任意文本重写或 RST Restatement 关系。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "A paraphrase must also be attributed to the original source.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > article:nth-of-type(1) > article:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(4)",
+              "source": "purdue-quoting"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:paraphrase:guidance",
+          "kind": "guidance",
+          "language": "zh",
+          "text": "转述虽然改变措辞，仍需注明原来源。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Summarizing involves putting the main idea(s) into your own words, including only the main point(s).",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > article:nth-of-type(1) > article:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(5)",
+          "source": "purdue-quoting"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:summary",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:summary:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "摘要"
+        },
+        {
+          "id": "urn:kb-vocab-writing:summary:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Summary"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Summarizing involves putting the main idea(s) into your own words, including only the main point(s).",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > article:nth-of-type(1) > article:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(5)",
+              "source": "purdue-quoting"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:summary:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "用自己的措辞概括来源材料的主要意思，保留要点而显著缩短篇幅。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Summarizing involves putting the main idea(s) into your own words, including only the main point(s).",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > article:nth-of-type(1) > article:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(5)",
+              "source": "purdue-quoting"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:summary:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "这里是概括来源内容的写作产物或方式，不与 RST Summary 文本关系自动合并。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "it is necessary to attribute summarized ideas to the original source.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > article:nth-of-type(1) > article:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(5)",
+              "source": "purdue-quoting"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:summary:guidance",
+          "kind": "guidance",
+          "language": "zh",
+          "text": "概括他人的观点仍需注明来源。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "devices for lessening the strength of a statement or claim are known as hedging devices",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+          "source": "manchester-caution"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:hedging-devices",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:hedging-devices:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "模糊限制语"
+        },
+        {
+          "id": "urn:kb-vocab-writing:hedging-devices:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Hedging devices"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "devices for lessening the strength of a statement or claim are known as hedging devices",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "source": "manchester-caution"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:hedging-devices:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "用来减弱陈述或主张强度、使表达与知识的不确定性相适应的语言手段。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "devices for lessening the strength of a statement or claim are known as hedging devices",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "source": "manchester-caution"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:hedging-devices:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "采用学术写作中的 hedging 语境；不把必要的不确定性限定一律视为冗余，也不要求对所有事实无条件弱化。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "a quality that allows readers to see how ideas connect from one sentence to another.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(2)",
+          "source": "known-new"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:cohesion",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:cohesion:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "衔接"
+        },
+        {
+          "id": "urn:kb-vocab-writing:cohesion:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Cohesion"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "a quality that allows readers to see how ideas connect from one sentence to another.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(2)",
+              "source": "known-new"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:cohesion:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "使读者能够识别相邻句子之间观点联系的文本性质。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "a quality that allows readers to see how ideas connect from one sentence to another.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(2)",
+              "source": "known-new"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:cohesion:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "采用 GMU 句间信息衔接语境，与既有段落整体连贯性相关但不据名称合并。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "ideas that you have already mentioned or concepts you can reasonably assume your reader is already familiar with.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > ul:nth-of-type(3) > li:nth-of-type(1)",
+          "source": "known-new"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:known-information",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:known-information:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "已知信息"
+        },
+        {
+          "id": "urn:kb-vocab-writing:known-information:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Known information"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "ideas that you have already mentioned or concepts you can reasonably assume your reader is already familiar with.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > ul:nth-of-type(3) > li:nth-of-type(1)",
+              "source": "known-new"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:known-information:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "已经在文章中提及，或者作者可以合理认为读者已熟悉的信息。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "ideas that you have already mentioned or concepts you can reasonably assume your reader is already familiar with.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > ul:nth-of-type(3) > li:nth-of-type(1)",
+              "source": "known-new"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:known-information:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "相对于特定读者及当前文本位置判断，不等于客观世界中早已存在的信息。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "put the newest, most unfamiliar information.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > ul:nth-of-type(3) > li:nth-of-type(2)",
+          "source": "known-new"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:new-information",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:new-information:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "新信息"
+        },
+        {
+          "id": "urn:kb-vocab-writing:new-information:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "New information"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "put the newest, most unfamiliar information.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > ul:nth-of-type(3) > li:nth-of-type(2)",
+              "source": "known-new"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:new-information:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "在当前句子中对读者新出现或较不熟悉的信息。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "put the newest, most unfamiliar information.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > ul:nth-of-type(3) > li:nth-of-type(2)",
+              "source": "known-new"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:new-information:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "相对于读者知识和已读文本判断，不等于最新发布的新闻或发现。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "readers comprehend ideas most easily when familiar (“known”) information is located at the beginning of sentences, and unfamiliar (“new”) information is located toward the end of sentences.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(3)",
+          "source": "known-new"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:known-new-contract",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:known-new-contract:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Known/New Contract"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "readers comprehend ideas most easily when familiar (“known”) information is located at the beginning of sentences, and unfamiliar (“new”) information is located toward the end of sentences.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(3)",
+              "source": "known-new"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:known-new-contract:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "将读者熟悉的信息放在句子开头，并在其后引入新信息以帮助句间联系的组织方法。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "readers comprehend ideas most easily when familiar (“known”) information is located at the beginning of sentences, and unfamiliar (“new”) information is located toward the end of sentences.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(3)",
+              "source": "known-new"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:known-new-contract:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "来自 GMU 的英语写作教学指导；不作为所有中文句子的强制顺序。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Before putting complete sentences on a page, take some time to think about the rhetorical situation for your writing, gather your thoughts, and consider how you might arrange your ideas.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+          "source": "drafting-revision"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:prewriting",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:prewriting:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "写前准备"
+        },
+        {
+          "id": "urn:kb-vocab-writing:prewriting:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Prewriting"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Before putting complete sentences on a page, take some time to think about the rhetorical situation for your writing, gather your thoughts, and consider how you might arrange your ideas.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+              "source": "drafting-revision"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:prewriting:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "在形成完整句子之前考虑写作情境、汇集想法并思考如何安排内容的准备活动。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Before putting complete sentences on a page, take some time to think about the rhetorical situation for your writing, gather your thoughts, and consider how you might arrange your ideas.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+              "source": "drafting-revision"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:prewriting:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "采用 OpenStax 写作教学范围；过程可以往返，不规定所有作者遵循一次性的固定阶段。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "drafting, or putting words into a document.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+          "source": "drafting-revision"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:drafting",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:drafting:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "起草"
+        },
+        {
+          "id": "urn:kb-vocab-writing:drafting:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Drafting"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "drafting, or putting words into a document.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+              "source": "drafting-revision"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:drafting:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "把想法写成文档文字、形成可进一步修改的草稿的活动。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "drafting, or putting words into a document.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+              "source": "drafting-revision"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:drafting:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "采用 OpenStax 写作过程语境；起草不是必须一次完成的线性阶段。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "A peer review occurs when someone at your level (a peer) offers an evaluation of your writing.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > p:nth-of-type(1)",
+          "source": "drafting-revision"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:peer-review-writing",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:peer-review-writing:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "同伴互评"
+        },
+        {
+          "id": "urn:kb-vocab-writing:peer-review-writing:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Peer review"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "A peer review occurs when someone at your level (a peer) offers an evaluation of your writing.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "drafting-revision"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:peer-review-writing:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "由与作者处于相近学习阶段的同伴评价草稿并提供反馈的写作活动。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "A peer review occurs when someone at your level (a peer) offers an evaluation of your writing.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > p:nth-of-type(1)",
+              "source": "drafting-revision"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:peer-review-writing:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定课堂写作中的同伴互评，不等同学术出版的同行评审。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "You can make changes that affect the piece as a whole; such changes are often called global revisions.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+          "source": "drafting-revision"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:global-revision",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:global-revision:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "全局修订"
+        },
+        {
+          "id": "urn:kb-vocab-writing:global-revision:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Global revisions"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "You can make changes that affect the piece as a whole; such changes are often called global revisions.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+              "source": "drafting-revision"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:global-revision:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "影响整篇文章的内容、组织或整体效果的修改。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "You can make changes that affect the piece as a whole; such changes are often called global revisions.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+              "source": "drafting-revision"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:global-revision:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定写作修订层面，与局部词句修改区分。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "You can also make changes that affect only the meaning of a sentence or a word; these changes can be called local revisions.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+          "source": "drafting-revision"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:local-revision",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:local-revision:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "局部修订"
+        },
+        {
+          "id": "urn:kb-vocab-writing:local-revision:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Local revisions"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "You can also make changes that affect only the meaning of a sentence or a word; these changes can be called local revisions.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+              "source": "drafting-revision"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:local-revision:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "只影响某个句子或词语意义的修改。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "You can also make changes that affect only the meaning of a sentence or a word; these changes can be called local revisions.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+              "source": "drafting-revision"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:local-revision:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "采用 OpenStax 当前页面的 local revisions 范围，不等同全部校对活动。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "Brainstorming is a technique used to create a number of topic ideas and eventually narrow the choices down to one topic.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+          "source": "brainstorming"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:brainstorming",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:brainstorming:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "头脑风暴"
+        },
+        {
+          "id": "urn:kb-vocab-writing:brainstorming:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Brainstorming"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Brainstorming is a technique used to create a number of topic ideas and eventually narrow the choices down to one topic.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "source": "brainstorming"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:brainstorming:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "产生多个主题想法并逐步缩小选择，或把具体主题分解为子主题的构思方法。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "Brainstorming is a technique used to create a number of topic ideas and eventually narrow the choices down to one topic.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "source": "brainstorming"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:brainstorming:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "采用写作选题与构思语境；来源也用于把主题拆为子主题，不要求一定由多人集体完成。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "legibility (based on the font, this is how easy it is to read type and distinguish between individual characters)",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(11)",
+          "source": "adobe-reading"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:legibility",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:legibility:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "可辨识性"
+        },
+        {
+          "id": "urn:kb-vocab-writing:legibility:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Legibility"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "legibility (based on the font, this is how easy it is to read type and distinguish between individual characters)",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(11)",
+              "source": "adobe-reading"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:legibility:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "由字体字形影响的文字辨认和区分各个字符的容易程度。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "legibility (based on the font, this is how easy it is to read type and distinguish between individual characters)",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(11)",
+              "source": "adobe-reading"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:legibility:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "限定为 Adobe 字体设计作者讨论的 Web 界面排印语境；不与语言理解或阅读水平自动合并。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "readability (the overall use of type and typesetting)",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(11)",
+          "source": "adobe-reading"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:typographic-readability",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:typographic-readability:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "可读性"
+        },
+        {
+          "id": "urn:kb-vocab-writing:typographic-readability:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Readability"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "readability (the overall use of type and typesetting)",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(11)",
+              "source": "adobe-reading"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:typographic-readability:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "在字体及整体排版安排共同作用下阅读成篇文字的容易程度。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "readability (the overall use of type and typesetting)",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(11)",
+              "source": "adobe-reading"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:typographic-readability:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "此记录采用排印设计语境，不声称涵盖语言学可读性公式、阅读教育水平或内容理解的全部定义。"
+        }
+      ]
+    },
+    {
+      "broader": [],
+      "evidence": [
+        {
+          "quote": "legends aid interpretation of scales with ranges such as colors, shapes and sizes.",
+          "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1)",
+          "source": "vega-legend"
+        }
+      ],
+      "id": "urn:kb-vocab-writing:legend",
+      "labels": [
+        {
+          "id": "urn:kb-vocab-writing:legend:label:zh",
+          "language": "zh",
+          "role": "preferred",
+          "text": "图例"
+        },
+        {
+          "id": "urn:kb-vocab-writing:legend:label:en",
+          "language": "en",
+          "role": "preferred",
+          "text": "Legend"
+        }
+      ],
+      "related": [],
+      "statements": [
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "legends aid interpretation of scales with ranges such as colors, shapes and sizes.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1)",
+              "source": "vega-legend"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:legend:definition",
+          "kind": "definition",
+          "language": "zh",
+          "text": "把颜色、形状、大小等视觉编码与其所对应的数据范围或取值联系起来的解释性引导。"
+        },
+        {
+          "applicability": "依据所列来源翻译或归纳；模型整理，非官方中文译文。",
+          "evidence": [
+            {
+              "quote": "legends aid interpretation of scales with ranges such as colors, shapes and sizes.",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1)",
+              "source": "vega-legend"
+            }
+          ],
+          "id": "urn:kb-vocab-writing:legend:scope",
+          "kind": "scope",
+          "language": "zh",
+          "text": "采用数据可视化中的图例语境；不与 HTML 表单分组标题 legend 元素或 figure 的一般图注自动等同。"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "key": "文章组织",
+      "members": [
+        "urn:kb-vocab-writing:rhetorical-structure-theory",
+        "urn:kb-vocab-writing:rst-antithesis",
+        "urn:kb-vocab-writing:rst-background",
+        "urn:kb-vocab-writing:rst-concession",
+        "urn:kb-vocab-writing:rst-enablement",
+        "urn:kb-vocab-writing:rst-evidence",
+        "urn:kb-vocab-writing:rst-justify",
+        "urn:kb-vocab-writing:rst-motivation",
+        "urn:kb-vocab-writing:rst-preparation",
+        "urn:kb-vocab-writing:rst-restatement",
+        "urn:kb-vocab-writing:rst-summary",
+        "urn:kb-vocab-writing:rst-circumstance",
+        "urn:kb-vocab-writing:rst-condition",
+        "urn:kb-vocab-writing:rst-elaboration",
+        "urn:kb-vocab-writing:rst-evaluation",
+        "urn:kb-vocab-writing:rst-interpretation",
+        "urn:kb-vocab-writing:rst-means",
+        "urn:kb-vocab-writing:rst-non-volitional-cause",
+        "urn:kb-vocab-writing:rst-non-volitional-result",
+        "urn:kb-vocab-writing:rst-otherwise",
+        "urn:kb-vocab-writing:rst-purpose",
+        "urn:kb-vocab-writing:rst-solutionhood",
+        "urn:kb-vocab-writing:rst-unconditional",
+        "urn:kb-vocab-writing:rst-unless",
+        "urn:kb-vocab-writing:rst-volitional-cause",
+        "urn:kb-vocab-writing:rst-volitional-result",
+        "urn:kb-vocab-writing:rst-conjunction",
+        "urn:kb-vocab-writing:rst-contrast",
+        "urn:kb-vocab-writing:rst-disjunction",
+        "urn:kb-vocab-writing:rst-joint",
+        "urn:kb-vocab-writing:rst-list",
+        "urn:kb-vocab-writing:rst-multinuclear-restatement",
+        "urn:kb-vocab-writing:rst-sequence",
+        "urn:kb-vocab-writing:cohesion",
+        "urn:kb-vocab-writing:known-information",
+        "urn:kb-vocab-writing:new-information",
+        "urn:kb-vocab-writing:known-new-contract"
+      ]
+    },
+    {
+      "key": "质量与修改",
+      "members": [
+        "urn:kb-vocab-writing:revision",
+        "urn:kb-vocab-writing:editing",
+        "urn:kb-vocab-writing:prewriting",
+        "urn:kb-vocab-writing:drafting",
+        "urn:kb-vocab-writing:peer-review-writing",
+        "urn:kb-vocab-writing:global-revision",
+        "urn:kb-vocab-writing:local-revision",
+        "urn:kb-vocab-writing:brainstorming"
+      ]
+    },
+    {
+      "key": "内容与目的",
+      "members": [
+        "urn:kb-vocab-writing:quotation",
+        "urn:kb-vocab-writing:paraphrase",
+        "urn:kb-vocab-writing:summary"
+      ]
+    },
+    {
+      "key": "语言表达",
+      "members": [
+        "urn:kb-vocab-writing:hedging-devices"
+      ]
+    },
+    {
+      "key": "阅读与认知",
+      "members": [
+        "urn:kb-vocab-writing:legibility",
+        "urn:kb-vocab-writing:typographic-readability"
+      ]
+    },
+    {
+      "key": "版式与呈现",
+      "members": [
+        "urn:kb-vocab-writing:legend"
+      ]
+    }
+  ],
+  "source_language_labels": [],
+  "unresolved": [
+    {
+      "concept": "urn:kb-vocab-writing:rst-antithesis",
+      "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:rst-enablement",
+      "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:rst-justify",
+      "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:rst-non-volitional-cause",
+      "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:rst-non-volitional-result",
+      "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:rst-otherwise",
+      "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:rst-solutionhood",
+      "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:rst-unconditional",
+      "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:rst-unless",
+      "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:rst-volitional-cause",
+      "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:rst-volitional-result",
+      "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:rst-joint",
+      "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:rst-multinuclear-restatement",
+      "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+    },
+    {
+      "concept": "urn:kb-vocab-writing:known-new-contract",
+      "issue": "中文惯用译名未核定，保留英文名称与中文说明。"
+    }
+  ]
+}
