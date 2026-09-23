@@ -16,7 +16,7 @@ from markdown_it import MarkdownIt
 from rdflib import Literal
 
 from .common import ContractError, digest, safe_relative
-from .layout import KIND_DIRECTORIES, PARA_ROOTS, VOCABULARY
+from .layout import KIND_DIRECTORIES, PARA_ROOTS, RESOURCES, VOCABULARY
 from .naming import filename_stem, path_key
 from .storage import inspect, safe_path, vault_lock
 
@@ -468,7 +468,7 @@ def _wikilink(record: dict) -> str:
 
 def new_content(vault: Path, *, title: str, type_id: str, genre_id: str,
                 subjects: list[str], entities=(), references=(), form=None,
-                level=None, language=None, folder: str = "resources",
+                level=None, language=None, folder: str = RESOURCES,
                 state_root: Path | None = None) -> dict:
     """Create one validated draft without selecting by label or overwriting a note."""
     if (not isinstance(title, str) or not title.strip() or title != title.strip()
@@ -481,7 +481,7 @@ def new_content(vault: Path, *, title: str, type_id: str, genre_id: str,
     safe_relative(folder)
     parts = folder.split("/")
     if parts[0] not in PARA_ROOTS or any(filename_stem(part) != part for part in parts):
-        raise ContractError("文章目录须位于 projects、areas、resources 或 archives；目录名用小写与中划线")
+        raise ContractError("文章目录须位于 " + "、".join(PARA_ROOTS) + "；目录名用小写与中划线")
     vault = Path(vault).absolute()
     with vault_lock(vault, state_root=state_root):
         state = inspect(vault, state_root=state_root)

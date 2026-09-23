@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kb-obsidian-rdf"
-version = "0.2.0.dev0"
+version = "0.3.0.dev0"
 description = "RDF vocabulary lookup and article metadata support for Obsidian"
 requires-python = ">=3.11"
 dependencies = ["rdflib>=7.1,<8", "PyYAML>=6,<7", "pyshacl>=0.30,<1", "kb-vocab-shacl", "markdown-it-py>=4,<5"]

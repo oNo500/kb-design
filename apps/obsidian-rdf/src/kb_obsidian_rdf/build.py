@@ -15,7 +15,9 @@ import yaml
 
 from kb_vocab_shacl import read_shapes
 from .common import ContractError, Delivery, digest, json_bytes, reference_path, safe_relative
-from .layout import KIND_DIRECTORIES, PARA_ROOTS, VOCABULARY, MANIFEST_VERSION
+from .layout import (ARCHIVES, AREAS, ATTACHMENTS, INBOX, KIND_DIRECTORIES,
+                     MANIFEST_VERSION, PARA_ROOTS, PROJECTS, RESOURCES,
+                     TEMPLATES, VIEWS, VOCABULARY)
 from .input import read_inputs, require
 from .naming import assign_paths
 from .render import (KIND_NAMES, LABEL_ROLES, NOTE_NAMES, RELATION_NAMES, XL,
@@ -415,7 +417,7 @@ def preserve_history(spec, files, state_files, records, previous_data=None):
         return
     version, old_manifest, old_files, old_records, old_state_files = previous_data or read_previous(previous)
     for name, value in old_files.items():
-        if name.startswith('vocabulary/history/'):
+        if name.startswith(f'{VOCABULARY}/history/'):
             require(name not in files or files[name] == value, f'历史文件冲突：{name}')
             files[name] = value
     for name, value in old_state_files.items():
@@ -426,7 +428,7 @@ def preserve_history(spec, files, state_files, records, previous_data=None):
     current_by_identity = {json.dumps(r['identity'], sort_keys=True): r for r in records}
     all_paths = {r['path'] for r in records}
     old_active = [r for r in old_records if r['use'] != 'historical']
-    replacements = {r['path']: f'vocabulary/history/{version}/' + r['path'].removeprefix('vocabulary/') for r in old_active if r['use'] == 'current'}
+    replacements = {r['path']: f'{VOCABULARY}/history/{version}/' + r['path'].removeprefix(VOCABULARY + '/') for r in old_active if r['use'] == 'current'}
     replacements.update({r['path']: r['history'][-1]['path'] for r in old_active if r['use'] == 'retained' and r['history']})
     for old in old_records:
         if old['use'] == 'historical' and old['path'] not in all_paths:
@@ -458,15 +460,15 @@ def preserve_history(spec, files, state_files, records, previous_data=None):
 
 
 def initial_pages(records):
-    home = """# 知识库
+    home = f"""# 知识库
 
 ## 内容组织
 
-- `inbox/`：临时想法和待整理材料。
-- `projects/`：有明确目标和结束条件的项目内容。
-- `areas/`：需要持续维护的责任领域。
-- `resources/`：按兴趣和主题积累的知识与资料。
-- `archives/`：已结束或不再活跃的项目、领域和资源。
+- `{INBOX}/`：临时想法和待整理材料。
+- `{PROJECTS}/`：有明确目标和结束条件的项目内容。
+- `{AREAS}/`：需要持续维护的责任领域。
+- `{RESOURCES}/`：按兴趣和主题积累的知识与资料。
+- `{ARCHIVES}/`：已结束或不再活跃的项目、领域和资源。
 
 项目归档不改变文章所引用的概念或实体，也不自动更改文章状态。
 
@@ -474,15 +476,15 @@ def initial_pages(records):
 
 `subject` 说明主题，`entities` 说明涉及的具体对象，`type`、`genre` 和 `form` 分别记录文档类型、体裁和载体。按名称或别名选取条目，将内部链接填入属性；需要区分同名对象时查看定义和范围。
 
-`vocabulary/` 保存这些共用条目。文章位于不同目录时仍可引用同一对象，并按属性一起检索。定义、关系和来源可以按需查阅。
+`{VOCABULARY}/` 保存这些共用条目。文章位于不同目录时仍可引用同一对象，并按属性一起检索。定义、关系和来源可以按需查阅。
 
 ## 文章列表
 
-[[views/article-list.base|文章列表]]
+[[{VIEWS}/article-list.base|文章列表]]
 
 ## 写作素材
 
-`templates/` 保存模板，`attachments/` 保存附件。首页、模板和视图可按自己的工作习惯调整。
+`{TEMPLATES}/` 保存模板，`{ATTACHMENTS}/` 保存附件。首页、模板和视图可按自己的工作习惯调整。
 
 ## 属性类型
 
@@ -507,8 +509,8 @@ def initial_pages(records):
                        'order': ['file.name', 'note.title', 'note.type', 'note.subject', 'note.entities', 'note.status']}]}
     template = '## 正文\n\n## 参考资料\n\n'
     return {'home.md': home.encode(),
-            'views/article-list.base': yaml.safe_dump(base, allow_unicode=True, sort_keys=False).encode(),
-            'templates/article.md': template.encode()}
+            f'{VIEWS}/article-list.base': yaml.safe_dump(base, allow_unicode=True, sort_keys=False).encode(),
+            f'{TEMPLATES}/article.md': template.encode()}
 
 
 def resource_catalog(graph, sources, page_records):
@@ -568,7 +570,7 @@ def build_delivery(input_path: Path) -> Delivery:
                 'display': spec['display'], 'rules': rules, 'producer': spec['producer'],
                 'environment': environment, 'previous_delivery': spec.get('previous_delivery'),
                 'validation': validation,
-                'files': [{'path': p, 'role': 'history' if p.startswith('vocabulary/history/') else 'reference',
+                'files': [{'path': p, 'role': 'history' if p.startswith(f'{VOCABULARY}/history/') else 'reference',
                            'size': len(value), 'sha256': digest(value)} for p, value in sorted(files.items())],
                 'state_files': [{'path': p, 'role': 'raw_input' if p.startswith('inputs/') else 'metadata',
                                  'size': len(value), 'sha256': digest(value)} for p, value in sorted(state_files.items())]}

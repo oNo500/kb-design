@@ -24,7 +24,8 @@ import yaml
 from markdown_it import MarkdownIt
 
 from .common import ContractError, Delivery, digest, json_bytes, safe_relative
-from .layout import PARA_ROOTS, VAULT_DIRECTORIES, VOCABULARY, MANIFEST_VERSION
+from .layout import (MANIFEST_VERSION, PARA_ROOTS, TEMPLATES, VAULT_DIRECTORIES,
+                     VIEWS, VOCABULARY)
 
 MANIFEST = "manifest.json"
 CURRENT = "current.json"
@@ -130,7 +131,7 @@ def _tree(directory: Path) -> dict[str, Path]:
 
 def _manifest_entries(manifest: dict, field: str = "files") -> dict[str, dict]:
     if manifest.get("format_version") != MANIFEST_VERSION or manifest.get("mode") != "preview":
-        raise ContractError("只接受第 2 版 preview 交付清单；旧库需另行迁移")
+        raise ContractError(f"只接受第 {MANIFEST_VERSION} 版 preview 交付清单；旧库需另行迁移")
     rows = manifest.get(field)
     if not isinstance(rows, list):
         raise ContractError(f"交付清单 {field} 必须为列表")
@@ -165,8 +166,8 @@ def _delivery(delivery: Delivery) -> tuple[dict, str]:
     for path, data in delivery.vault_files.items():
         safe_relative(path)
         allowed = (path == "home.md"
-                   or path.startswith((VOCABULARY + "/", "templates/")) and path.endswith(".md")
-                   or path.startswith("views/") and path.endswith((".base", ".md")))
+                   or path.startswith((VOCABULARY + "/", TEMPLATES + "/")) and path.endswith(".md")
+                   or path.startswith(VIEWS + "/") and path.endswith((".base", ".md")))
         if not allowed or not isinstance(data, bytes):
             raise ContractError(f"初建文件超出允许范围或不是字节内容：{path}")
     for path, data in delivery.state_files.items():

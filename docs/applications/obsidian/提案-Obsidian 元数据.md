@@ -6,7 +6,7 @@
 
 ## 内容位置
 
-文章可以位于 projects、areas、resources、archives 及其子目录。名称和位置用于组织使用，不赋予对象身份、主题或状态；归档仍保留原 UUID 与元数据。inbox 是自由捕获区，词条、模板、视图和附件不作为文章扫描。
+文章可以位于 `01-projects`、`02-areas`、`03-resources`、`04-archives` 及其子目录。名称和位置用于组织使用，不赋予对象身份、主题或状态；归档仍保留原 UUID 与元数据。`00-inbox` 是自由捕获区，词条、模板、视图和附件不作为文章扫描。
 
 PARA 中显式声明 identifier 的记录按内容模型校验。无声明文件单列未登记及未检查，不归类为已通过，也不由程序判断它是资料还是待补元数据的文章。损坏的身份声明仍报错。普通正文可以链接资料，受控 source、relation 等字段继续要求符合相应对象与身份约束。
 
@@ -72,12 +72,12 @@ property 使用共同字段名。单值引用用 Text，多值引用用 List；�
 ```yaml
 identifier: "b5cb08aa-dc2f-4bbc-9d04-9634e8052c70"
 title: "JavaScript 数组排序教程"
-type: "[[vocabulary/document-types/教程|教程]]"
-genre: "[[vocabulary/genres/背景|背景]]"
+type: "[[05-vocabulary/document-types/教程|教程]]"
+genre: "[[05-vocabulary/genres/背景|背景]]"
 subject:
-  - "[[vocabulary/concepts/排序与查找|排序与查找]]"
+  - "[[05-vocabulary/concepts/排序与查找|排序与查找]]"
 entities:
-  - "[[vocabulary/entities/javascript|JavaScript]]"
+  - "[[05-vocabulary/entities/javascript|JavaScript]]"
 created: 2026-09-23
 status: draft
 ```

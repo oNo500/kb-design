@@ -15,7 +15,7 @@ from kb_obsidian_rdf.storage import initialize, state_directory
 def record(kind, token, label, *, aliases=(), use="current", selectable=True, definition=None):
     identity = {"iri": "urn:" + kind + ":" + token} if kind in {"concepts", "entities"} else {"catalog": kind, "id": token}
     summary = None if definition is None else {"text": definition, "language": "zh", "predicate": "http://www.w3.org/2004/02/skos/core#definition"}
-    return {"identity": identity, "kind": kind, "path": f"vocabulary/{'document-types' if kind == 'types' else kind}/{token}.md", "label": label,
+    return {"identity": identity, "kind": kind, "path": f"05-vocabulary/{'document-types' if kind == 'types' else kind}/{token}.md", "label": label,
             "sources": ["fixture"], "versions": ["v1"], "use": use,
             "trial_selectable": selectable, "formal_basis": None if "iri" in identity else ["fixture-approved"],
             "restrictions": [], "history": [], "entry": {"aliases": list(aliases), "summary": summary,
@@ -32,7 +32,7 @@ def make_vault(tmp_path, records):
         body = "---\n" + yaml.safe_dump({"identifier": item["identity"].get("iri", item["identity"].get("id")),
                                              "title": item["label"]}, allow_unicode=True) + "---\n\n# " + item["label"] + "\n\n" + "工程信息" * 5000
         pages[item["path"]] = body.encode()
-    files["manifest.json"] = json_bytes({"format_version": 2, "mode": "preview", "files": [
+    files["manifest.json"] = json_bytes({"format_version": 3, "mode": "preview", "files": [
         {"path": path, "role": "reference", "size": len(raw), "sha256": digest(raw)} for path, raw in sorted(pages.items())],
         "state_files": [{"path": path, "role": "state", "size": len(raw), "sha256": digest(raw)}
                         for path, raw in sorted(files.items())]})
@@ -52,7 +52,7 @@ def vocab(tmp_path):
     return make_vault(tmp_path, entries)
 
 
-def article(vault, name, *, folder="resources", subject=None, entities=None, identifier=None, body=""):
+def article(vault, name, *, folder="03-resources", subject=None, entities=None, identifier=None, body=""):
     metadata = {"identifier": identifier or str(uuid4()), "title": name, "type": "tutorial", "genre": "background",
                 "subject": subject or ["urn:concepts:ai"], "created": "2026-09-23", "status": "draft"}
     if entities is not None:
@@ -90,14 +90,14 @@ def test_history_can_be_read_explicitly_but_is_never_new_selection(vocab):
     assert not item["available"]
     with pytest.raises(query.QueryError):
         query.get_entry(vocab, field="subject", term="过时")
-    detail = query.get_entry(vocab, field="subject", reference="[[vocabulary/concepts/retired]]")
+    detail = query.get_entry(vocab, field="subject", reference="[[05-vocabulary/concepts/retired]]")
     assert detail["items"][0]["use"] == "retained"
     assert not detail["items"][0]["available"]
 
 
 def test_explicit_reference_keeps_identity_and_rejects_other_field(vocab):
     a = query.get_entry(vocab, field="subject", reference="urn:concepts:ai")["items"][0]
-    b = query.get_entry(vocab, field="subject", reference="vocabulary/concepts/ai.md")["items"][0]
+    b = query.get_entry(vocab, field="subject", reference="05-vocabulary/concepts/ai.md")["items"][0]
     assert a["identity"] == b["identity"]
     with pytest.raises(query.QueryError):
         query.get_entry(vocab, field="subject", reference="urn:entities:ai")
@@ -122,7 +122,7 @@ def test_changed_identity_map_manifest_or_receipt_cannot_feed_search(vocab, targ
 
 
 def test_get_checks_requested_page_but_search_is_explicitly_partial(vocab):
-    (vocab / "vocabulary/concepts/ai.md").write_text("changed")
+    (vocab / "05-vocabulary/concepts/ai.md").write_text("changed")
     assert query.search_entries(vocab, field="subject", query="AI")["verification"]["scope"] == "manifest_and_records"
     with pytest.raises(ContractError, match="摘要|变化"):
         query.get_entry(vocab, field="subject", term="AI")
@@ -166,7 +166,7 @@ def test_details_are_structured_not_raw_page_and_long_summary_is_bounded(tmp_pat
 
 def test_article_lookup_uses_only_actual_field_and_retains_formal_boundary(vocab):
     chosen = article(vocab, "已标引", entities=["urn:entities:ai"])
-    article(vocab, "仅提及", subject=["urn:concepts:first"], body="人工智能 [[vocabulary/concepts/ai]]")
+    article(vocab, "仅提及", subject=["urn:concepts:first"], body="人工智能 [[05-vocabulary/concepts/ai]]")
     found = query.find_articles(vocab, field="subject", term="AI")
     assert [i["path"] for i in found["items"]] == [chosen.relative_to(vocab).as_posix()]
     assert found["target"]["formal_basis"] is None
@@ -174,14 +174,14 @@ def test_article_lookup_uses_only_actual_field_and_retains_formal_boundary(vocab
 
 
 def test_article_lookup_spans_para_and_excludes_unclassified_captures(vocab):
-    for folder in ("projects/demo", "areas", "resources", "archives/finished"):
+    for folder in ("01-projects/demo", "02-areas", "03-resources", "04-archives/finished"):
         article(vocab, "说明", folder=folder, entities=["urn:entities:ai"])
-    inbox = vocab / "inbox"
+    inbox = vocab / "00-inbox"
     inbox.mkdir(exist_ok=True)
     (inbox / "capture.md").write_text("AI 的未整理随手记录，没有元数据")
-    article(vocab, "模板示例", folder="templates", entities=["urn:entities:ai"])
+    article(vocab, "模板示例", folder="07-templates", entities=["urn:entities:ai"])
 
-    expected = {"projects/demo/说明.md", "areas/说明.md", "resources/说明.md", "archives/finished/说明.md"}
+    expected = {"01-projects/demo/说明.md", "02-areas/说明.md", "03-resources/说明.md", "04-archives/finished/说明.md"}
     for field in ("subject", "entities"):
         found = query.find_articles(vocab, field=field, term="AI")
         assert found["ok"]
@@ -191,7 +191,7 @@ def test_article_lookup_spans_para_and_excludes_unclassified_captures(vocab):
 
 def test_plain_materials_never_become_indexed_articles_and_coverage_is_explicit(vocab):
     registered = article(vocab, "已登记", entities=["urn:entities:ai"])
-    plain = vocab / "resources/excerpt.md"
+    plain = vocab / "03-resources/excerpt.md"
     plain.write_text("---\ntitle: 未登记资料\nsubject: [urn:concepts:ai]\nentities: [urn:entities:ai]\n---\n# 资料\n")
     for field in ("subject", "entities"):
         found = query.find_articles(vocab, field=field, term="AI")
@@ -199,13 +199,13 @@ def test_plain_materials_never_become_indexed_articles_and_coverage_is_explicit(
         assert found["items"][0]["path"] == registered.relative_to(vocab).as_posix()
         assert found["verification"]["article_count"] == 1
         assert found["verification"]["unregistered_count"] == 1
-        assert found["unregistered"][0]["path"] == "resources/excerpt.md"
+        assert found["unregistered"][0]["path"] == "03-resources/excerpt.md"
         assert found["unregistered"][0]["reason"]
 
-    (vocab / "archives/broken.md").write_text("---\nidentifier: wrong\nsubject: [urn:concepts:ai]\n---\n坏记录\n")
+    (vocab / "04-archives/broken.md").write_text("---\nidentifier: wrong\nsubject: [urn:concepts:ai]\n---\n坏记录\n")
     found = query.find_articles(vocab, field="subject", term="AI")
     assert not found["ok"] and found["total"] == 1
-    assert any(item["path"] == "archives/broken.md" and item["code"] == "identifier" for item in found["issues"])
+    assert any(item["path"] == "04-archives/broken.md" and item["code"] == "identifier" for item in found["issues"])
 
 
 def test_descendant_lookup_traverses_edges_without_cycles_or_duplicate_article_hits(tmp_path):
@@ -236,12 +236,12 @@ def test_same_article_uuid_is_not_counted_twice_and_collision_is_reported(vocab)
 def test_historical_page_never_uses_current_hierarchy_when_identity_is_still_current(tmp_path):
     current = record("concepts", "a", "当前概念")
     historical = record("concepts", "a", "旧版概念", use="historical", selectable=False)
-    historical["path"] = "vocabulary/history/v1/concepts/a.md"
+    historical["path"] = "05-vocabulary/history/v1/concepts/a.md"
     child = record("concepts", "b", "当前下位")
     child["entry"]["relations"]["broader"].append({"identity": current["identity"], "label": current["label"], "path": current["path"]})
     vault = make_vault(tmp_path, [current, historical, child, record("types", "tutorial", "教程"), record("genres", "background", "背景")])
     article(vault, "当前下位文章", subject=["urn:concepts:b"])
-    reference = "[[vocabulary/history/v1/concepts/a]]"
+    reference = "[[05-vocabulary/history/v1/concepts/a]]"
     assert query.find_articles(vault, field="subject", reference=reference)["total"] == 0
     assert query.find_articles(vault, field="subject", reference="urn:concepts:a", descendants=True)["total"] == 1
     with pytest.raises(query.QueryError) as caught:

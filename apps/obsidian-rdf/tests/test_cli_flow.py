@@ -53,18 +53,18 @@ class CommandFlowTests(unittest.TestCase):
             state=state_directory(vault,state_root=state_root)
             self.assertFalse(any(p.suffix in {'.json','.ttl'} for p in vault.rglob('*')))
             self.assertFalse((vault/'preview-admin').exists())
-            (vault/'inbox'/'free-note.md').write_text('自由捕获，无须填写文章元数据。\n')
-            (vault/'resources'/'reading-material.md').write_text('# 外部资料\n\n保留原文和出处。\n')
+            (vault/'00-inbox'/'free-note.md').write_text('自由捕获，无须填写文章元数据。\n')
+            (vault/'03-resources'/'reading-material.md').write_text('# 外部资料\n\n保留原文和出处。\n')
             selected=run('search','--vault',vault,'--field','subject','--query','主题')
             self.assertEqual([item['identity'] for item in selected['items']],[{'iri':'urn:topic'}])
             self.assertEqual(run('get','--vault',vault,'--field','entities','--term','工具')['items'][0]['identity'],{'iri':'urn:tool'})
-            created=run('new','--vault',vault,'--title','JavaScript 测试_文章','--folder','projects/test-project','--type','tutorial',
+            created=run('new','--vault',vault,'--title','JavaScript 测试_文章','--folder','01-projects/test-project','--type','tutorial',
                         '--genre','background','--subject-name','主题','--entity-name','工具')
             article=vault/created['path']
             with article.open('a',encoding='utf-8') as out:
-                out.write((vault/'templates/article.md').read_text())
+                out.write((vault/'07-templates/article.md').read_text())
             initial=article.read_bytes()
-            self.assertEqual(created['path'],'projects/test-project/javascript-测试-文章.md')
+            self.assertEqual(created['path'],'01-projects/test-project/javascript-测试-文章.md')
             result=run('check','--vault',vault)
             self.assertEqual(result['checked_count'],1)
             self.assertTrue(result['formal_unconfirmed'])
@@ -76,8 +76,8 @@ class CommandFlowTests(unittest.TestCase):
             self.assertEqual([item['path'] for item in linked['items']],[created['path']])
             run('new','--vault',vault,'--title','错误文章','--type','tutorial',
                 '--genre','background','--subject','urn:tool',expected=1)
-            self.assertEqual(list((vault/'projects').rglob('*.md')),[article])
-            view=vault/'views/personal.base';view.write_text('views: []\n')
+            self.assertEqual(list((vault/'01-projects').rglob('*.md')),[article])
+            view=vault/'06-views/personal.base';view.write_text('views: []\n')
             data.write_text(data.read_text().replace('主题','新的显示名'))
             source['sha256']=digest(data.read_bytes());source['version']='2'
             entity_source['sha256']=digest(data.read_bytes());entity_source['version']='2'
@@ -92,11 +92,11 @@ class CommandFlowTests(unittest.TestCase):
             self.assertEqual(article.read_bytes(),initial)
             self.assertEqual(view.read_text(),'views: []\n')
             self.assertTrue(run('check','--vault',vault)['ok'])
-            archived=vault/'archives/test-project'/article.name
+            archived=vault/'04-archives/test-project'/article.name
             archived.parent.mkdir(parents=True)
             article.rename(archived)
             self.assertEqual(archived.read_bytes(),initial)
             matches=run('articles','--vault',vault,'--field','entities','--term','工具')
-            self.assertEqual(matches['items'][0]['path'],'archives/test-project/javascript-测试-文章.md')
+            self.assertEqual(matches['items'][0]['path'],'04-archives/test-project/javascript-测试-文章.md')
             self.assertEqual(matches['items'][0]['identifier'],created['identifier'])
             self.assertFalse(any(p.suffix in {'.json','.ttl'} for p in vault.rglob('*')))

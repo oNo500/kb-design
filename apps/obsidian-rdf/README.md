@@ -7,26 +7,26 @@
 ```text
 development-para/
 ├─ home.md
-├─ inbox/
-├─ projects/
-├─ areas/
-├─ resources/
-├─ archives/
-├─ vocabulary/
+├─ 00-inbox/
+├─ 01-projects/
+├─ 02-areas/
+├─ 03-resources/
+├─ 04-archives/
+├─ 05-vocabulary/
 │  ├─ concepts/
 │  ├─ entities/
 │  ├─ document-types/
 │  ├─ genres/
 │  ├─ forms/
 │  └─ references/
-├─ views/article-list.base
-├─ templates/article.md
-└─ attachments/
+├─ 06-views/article-list.base
+├─ 07-templates/article.md
+└─ 08-attachments/
 ```
 
 新文件和目录使用小写，空格与下划线替换为中划线。中文保留，页面 title、名称及原始 ID 不变。例如标题“JavaScript 数组排序教程”对应文件 `javascript-数组排序教程.md`。词条同目录重名以身份短摘要区分；文章同名不会覆盖，需作者明确区分。
 
-`inbox` 用于自由捕获，PARA 四区按用途组织内容，`vocabulary` 跨目录共同使用。归档不改文章 UUID、status 或条目状态；文件夹名称不自动成为主题。Obsidian 自己的 `.obsidian/` 配置由应用维护。
+`00-inbox` 用于自由捕获，PARA 四区按用途组织内容，`05-vocabulary` 跨目录共同使用。顶层编号固定导航顺序，目录内文件名和 `home.md` 不因编号改变。归档不改文章 UUID、status 或条目状态；文件夹名称不自动成为主题。Obsidian 自己的 `.obsidian/` 配置由应用维护。
 
 ## 数据流转
 
@@ -76,20 +76,20 @@ uv run kb-obsidian-rdf get \
 
 先限定字段，再查名称或别名：subject 查主题，entities 查实体，type、genre、form、references 分别查对应值域。省略 search 的 query 可列选项；默认排除不可新选用记录。
 
-get 的 link 输出可粘贴到文章属性，例如 `[[vocabulary/entities/javascript|JavaScript]]`。同名不唯一时返回候选，不自动选择；用 `--ref` 指定明确身份或路径。`--json` 返回结构化摘要，`--details` 才展开完整条目信息。
+get 的 link 输出可粘贴到文章属性，例如 `[[05-vocabulary/entities/javascript|JavaScript]]`。同名不唯一时返回候选，不自动选择；用 `--ref` 指定明确身份或路径。`--json` 返回结构化摘要，`--details` 才展开完整条目信息。
 
 ## 文章建立
 
 ```bash
 uv run kb-obsidian-rdf new \
   --vault output/obsidian-rdf/development-para \
-  --folder projects/knowledge-base \
+  --folder 01-projects/knowledge-base \
   --title 'JavaScript 数组排序教程' \
   --type tutorial --genre background \
   --subject-name '排序与查找' --entity-name JavaScript
 ```
 
-工具分配 UUID、日期和 draft，按原身份核对选择，再写入指定的 PARA 目录。省略 folder 时放 resources。精确身份仍可用 subject、entity 参数传入；不能根据文件夹或正文自动推定主题。
+工具分配 UUID、日期和 draft，按原身份核对选择，再写入指定的 PARA 目录。省略 folder 时放 `03-resources`。精确身份仍可用 subject、entity 参数传入；不能根据文件夹或正文自动推定主题。
 
 已建立文章可在 Obsidian 中继续写作。正文模板只提供小节，不重复添加主标题。工具刷新不覆盖 PARA 内容、私人视图、模板或附件。
 
@@ -156,17 +156,43 @@ uv run kb-obsidian-rdf refresh \
   --vault output/obsidian-rdf/development-para
 ```
 
-默认只比较变化。关闭该库、停止同步与其他编辑后，增加 `--apply --offline` 才切换。仅更新 vocabulary 与库外工程交付；首页、视图和模板只给候选差异，不覆盖用户修改。已有身份保持既有路径，改译名不等于批量改文章链接。
+默认只比较变化。关闭该库、停止同步与其他编辑后，增加 `--apply --offline` 才切换。仅更新 `05-vocabulary` 与库外工程交付；首页、视图和模板只给候选差异，不覆盖用户修改。已有身份保持既有路径，改译名不等于批量改文章链接。第 2 版实例须先显式迁移，普通刷新不自动增加目录编号。
 
-中断后保留现场，执行 `recover --vault <目录> --offline`。恢复核对两个位置的实际版本和新增引用，不通过删除用户内容来恢复，也不宣称跨目录事务或断电持久性。
+条目刷新中断后保留现场，执行 `recover --vault <目录> --offline`。恢复核对两个位置的实际版本和新增引用，不通过删除用户内容来恢复，也不宣称跨目录事务或断电持久性。
+
+## 布局迁移
+
+迁移脚本只接受第 2 版 PARA 开发实例，并将其转换为第 3 版编号布局。先准备计划：
+
+```bash
+uv run --package kb-obsidian-rdf python \
+  apps/obsidian-rdf/scripts/migrate-numbered-layout.py \
+  --vault output/obsidian-rdf/development-para
+```
+
+此命令只准备候选并输出 plan 文件的绝对路径，不改原库。计划保存在库外状态的 `layout-migrations/<operation-id>/` 下；应用时将完整原库与旧工程交付分别移入该目录的 `backup/`，另保留原绑定及安装凭据。
+
+关闭目标库、停止同步及其他外部编辑后，使用输出的 plan 路径应用迁移：
+
+```bash
+uv run --package kb-obsidian-rdf python \
+  apps/obsidian-rdf/scripts/migrate-numbered-layout.py \
+  --plan '<输出的 plan 绝对路径>' --apply --offline
+```
+
+迁移移动顶层目录并同步内部链接、查询路径、身份对应、文件清单及摘要，保留对象 ID、文章 UUID、正文内容和内部文件名。脚本当前只支持完整路径形式的原生 wikilinks；需要改写的普通 Markdown 链接或示例中的旧路径会在准备时拒绝，不能通过批量替换绕过。
+
+失败或中断时保留现场，使用同一条 `--plan … --apply --offline` 命令继续；布局迁移不使用普通 `recover` 命令恢复。
 
 ## 开发边界
 
-本版为 `0.2.0.dev0`，使用第 2 版分离交付。旧的 development、development-usage 实例保留原样，本版不静默搬出它们的工程数据或重命名旧文件；旧实例迁移另行列出写集。
+本版为 `0.3.0.dev0`，使用第 3 版分离交付与编号目录。旧的 development、development-usage 实例仍保留原样，不在上述布局迁移范围内，也不由普通刷新迁移。
 
-本轮仅验证新开发实例，正式库未修改，不做视觉检查。程序只生成初始结构及明确的受管理条目，运行中的知识库不是可清空重建的目录。
+本版用于开发实例，正式库切换另行决定。程序只生成初始结构及明确的受管理条目，运行中的知识库不是可清空重建的目录；版本说明和目录合同不表示某个既有实例已经迁移。
 
-本轮 164 项行为检查通过；2,779 个知识生成文件与 15 个工程交付文件重建一致。新库内没有工具的 TTL、JSON 清单或运行报告。验证和已知边界见[实施记录](../../work/plans/2026-09-23-obsidian-para-layout.md#验证结果)。
+此前 `0.2.0.dev0` 的验证结果为 164 项行为检查通过，2,779 个知识生成文件与 15 个工程交付文件重建一致；当时的新库内没有工具的 TTL、JSON 清单或运行报告。该结果不作为第 3 版或本次迁移的验证结论，历史证据见[实施记录](../../work/plans/2026-09-23-obsidian-para-layout.md#验证结果)。
+
+`0.3.0.dev0` 已通过 164 项原有行为测试及 11 项迁移检查，`development-para` 已完成编号迁移。原身份与输入保留，Obsidian 未解析链接为 0，文章查询及 Base 均能找到原示例。实际写集、备份和刷新预览见[编号迁移记录](../../work/plans/2026-09-23-obsidian-numbered-layout.md)。
 
 ```bash
 uv run --package kb-obsidian-rdf --with pytest \

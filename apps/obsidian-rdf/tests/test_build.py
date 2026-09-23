@@ -221,7 +221,7 @@ def test_auxiliary_active_requires_separate_adoption_and_retains_it(tmp_path):
     files=build_delivery(path)
     row = next(r for r in records(files) if r['kind']=='types')
     assert row['trial_selectable'] and row['formal_basis']==[evidence.as_uri()]
-    assert row['path'] == 'vocabulary/document-types/教程.md'
+    assert row['path'] == '05-vocabulary/document-types/教程.md'
     assert evidence.read_bytes() in files.state_files.values()
     evidence.write_text('Modified after input was pinned')
     with pytest.raises(ContractError, match='摘要'):
@@ -266,9 +266,9 @@ def test_historical_relation_uses_fixed_version_paths(tmp_path):
     files=build_delivery(path)
     parent=resource_path(old, 'https://example.org/c')
     child=resource_path(old, 'https://example.org/d')
-    history='vocabulary/history/'+old_hash+'/'+parent.removeprefix('vocabulary/')
+    history='05-vocabulary/history/'+old_hash+'/'+parent.removeprefix('05-vocabulary/')
     assert f'[[{child[:-3]}|' not in files.vault_files[history].decode()
-    assert f'[[vocabulary/history/{old_hash}/{child.removeprefix("vocabulary/")[:-3]}|' in files.vault_files[history].decode()
+    assert f'[[05-vocabulary/history/{old_hash}/{child.removeprefix("05-vocabulary/")[:-3]}|' in files.vault_files[history].decode()
 
 
 def test_registered_form_preserves_unassigned_state_without_losing_its_value_domain(tmp_path):
@@ -290,9 +290,9 @@ def test_new_paths_are_readable_and_same_name_identities_stay_distinct(tmp_path)
     ex:d a skos:Concept; skos:prefLabel "重复"@zh .
     ex:e a skos:Concept; skos:prefLabel "重复"@zh .''', ('c', 'd', 'e'))
     rows = {r['identity']['iri']: r for r in records(build_delivery(path))}
-    assert rows['https://example.org/c']['path'] == 'vocabulary/concepts/网络.md'
-    assert rows['https://example.org/d']['path'].startswith('vocabulary/concepts/重复-')
-    assert rows['https://example.org/e']['path'].startswith('vocabulary/concepts/重复-')
+    assert rows['https://example.org/c']['path'] == '05-vocabulary/concepts/网络.md'
+    assert rows['https://example.org/d']['path'].startswith('05-vocabulary/concepts/重复-')
+    assert rows['https://example.org/e']['path'].startswith('05-vocabulary/concepts/重复-')
     assert len({r['path'] for r in rows.values()}) == 3
     assert rows['https://example.org/d']['label'] == rows['https://example.org/e']['label'] == '重复'
 
@@ -382,14 +382,14 @@ def test_historical_structured_relations_follow_historical_paths(tmp_path):
     current = next(r for r in records(files) if r['identity'] == {'iri': 'https://example.org/c'} and r['use'] == 'current')
     historical = next(r for r in records(files) if r['identity'] == current['identity'] and r['use'] == 'historical')
     assert current['path'] == resource_path(old, 'https://example.org/c')
-    assert historical['entry']['relations']['narrower'][0]['path'].startswith(f'vocabulary/history/{old_hash}/')
+    assert historical['entry']['relations']['narrower'][0]['path'].startswith(f'05-vocabulary/history/{old_hash}/')
 
 
 def test_refresh_preserves_old_hash_path_after_label_change(tmp_path):
     path = input_file(tmp_path, 'ex:c a skos:Concept; skos:prefLabel "Before"@en .')
     old = build_delivery(path)
     old_path = resource_path(old, 'https://example.org/c')
-    hashed = reference_path('concepts', {'iri': 'https://example.org/c'}).replace('vocab/', 'vocabulary/', 1)
+    hashed = reference_path('concepts', {'iri': 'https://example.org/c'}).replace('vocab/', '05-vocabulary/', 1)
     legacy_records = json.loads(old.state_files['records.json'])
     legacy_records['records'][0]['path'] = hashed
     from kb_obsidian_rdf.common import json_bytes
@@ -416,19 +416,19 @@ def test_refresh_preserves_old_hash_path_after_label_change(tmp_path):
 def test_para_delivery_keeps_engineering_inputs_outside_vault(tmp_path):
     path = input_file(tmp_path, 'ex:c a skos:Concept; skos:prefLabel "Model_Context Protocol"@en .')
     files = build_delivery(path)
-    assert set(files.vault_files) == {'home.md', 'views/article-list.base', 'templates/article.md', 'vocabulary/concepts/model-context-protocol.md'}
+    assert set(files.vault_files) == {'home.md', '06-views/article-list.base', '07-templates/article.md', '05-vocabulary/concepts/model-context-protocol.md'}
     assert all(name == name.lower() and '_' not in name and ' ' not in name for name in files.vault_files)
     assert {'records.json', 'projection.json', 'validation.json', 'resources.json', 'manifest.json'} <= set(files.state_files)
     assert any(name.startswith('inputs/') for name in files.state_files)
-    page = files.vault_files['vocabulary/concepts/model-context-protocol.md']
+    page = files.vault_files['05-vocabulary/concepts/model-context-protocol.md']
     assert frontmatter(page)['title'] == 'Model_Context Protocol'
     assert frontmatter(page)['identifier'] == 'https://example.org/c'
     assert '[[inputs/' not in page.decode() and '[[vocab/' not in page.decode()
     home = files.vault_files['home.md'].decode()
-    assert all(root in home for root in ('inbox', 'projects', 'areas', 'resources', 'archives'))
+    assert all(root in home for root in ('00-inbox', '01-projects', '02-areas', '03-resources', '04-archives'))
     manifest = json.loads(files.state_files['manifest.json'])
-    assert manifest['format_version'] == 2
-    assert all(row['path'].startswith('vocabulary/') for row in manifest['files'])
+    assert manifest['format_version'] == 3
+    assert all(row['path'].startswith('05-vocabulary/') for row in manifest['files'])
     assert 'manifest.json' not in {row['path'] for row in manifest['state_files']}
 
 
@@ -438,7 +438,7 @@ def test_lowercase_filename_never_changes_case_sensitive_rdf_identity(tmp_path):
     row = records(files)[0]
     assert row['identity'] == {'iri': 'https://example.org/CaseKey'}
     assert row['label'] == 'Model_Context Protocol'
-    assert row['path'] == 'vocabulary/concepts/model-context-protocol.md'
+    assert row['path'] == '05-vocabulary/concepts/model-context-protocol.md'
     assert frontmatter(files.vault_files[row['path']])['identifier'] == 'https://example.org/CaseKey'
 
 
