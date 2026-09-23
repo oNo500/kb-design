@@ -416,7 +416,10 @@ def test_refresh_preserves_old_hash_path_after_label_change(tmp_path):
 def test_para_delivery_keeps_engineering_inputs_outside_vault(tmp_path):
     path = input_file(tmp_path, 'ex:c a skos:Concept; skos:prefLabel "Model_Context Protocol"@en .')
     files = build_delivery(path)
-    assert set(files.vault_files) == {'home.md', '06-views/article-list.base', '07-templates/article.md', '05-vocabulary/concepts/model-context-protocol.md'}
+    assert set(files.vault_files) == {'home.md', '06-views/article-list.base', '06-views/inbox.base',
+                                    '06-views/drafts.base', '06-views/recently-modified.base',
+                                    '07-templates/article.md', '05-vocabulary/concepts/model-context-protocol.md',
+                                    '.obsidian/app.json', '.obsidian/templates.json', '.obsidian/types.json'}
     assert all(name == name.lower() and '_' not in name and ' ' not in name for name in files.vault_files)
     assert {'records.json', 'projection.json', 'validation.json', 'resources.json', 'manifest.json'} <= set(files.state_files)
     assert any(name.startswith('inputs/') for name in files.state_files)

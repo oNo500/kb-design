@@ -19,14 +19,24 @@ development-para/
 │  ├─ genres/
 │  ├─ forms/
 │  └─ references/
-├─ 06-views/article-list.base
+├─ 06-views/
+│  ├─ article-list.base
+│  ├─ inbox.base
+│  ├─ drafts.base
+│  └─ recently-modified.base
 ├─ 07-templates/article.md
-└─ 08-attachments/
+├─ 08-attachments/
+└─ .obsidian/
+   ├─ app.json
+   ├─ templates.json
+   └─ types.json
 ```
 
 新文件和目录使用小写，空格与下划线替换为中划线。中文保留，页面 title、名称及原始 ID 不变。例如标题“JavaScript 数组排序教程”对应文件 `javascript-数组排序教程.md`。词条同目录重名以身份短摘要区分；文章同名不会覆盖，需作者明确区分。
 
-`00-inbox` 用于自由捕获，PARA 四区按用途组织内容，`05-vocabulary` 跨目录共同使用。顶层编号固定导航顺序，目录内文件名和 `home.md` 不因编号改变。归档不改文章 UUID、status 或条目状态；文件夹名称不自动成为主题。Obsidian 自己的 `.obsidian/` 配置由应用维护。
+`00-inbox` 用于自由捕获，PARA 四区按用途组织内容，`05-vocabulary` 跨目录共同使用。顶层编号固定导航顺序，目录内文件名和 `home.md` 不因编号改变。归档不改文章 UUID、status 或条目状态；文件夹名称不自动成为主题。
+
+新库的 `.obsidian/` 初始配置设置附件目录 `08-attachments`、模板目录 `07-templates`、自动更新内部链接及原生属性类型。界面的 List 类型在 `types.json` 中使用 `multitext`，aliases 使用原生专用类型 `aliases`。外观、工作区、插件开关等个人偏好由用户维护。
 
 ## 数据流转
 
@@ -60,7 +70,13 @@ uv run kb-obsidian-rdf init \
 
 输入准备核对三份既有 RDF 交付及辅助元数据词表，不修改原始数据。初建只接受空目标；其他 RDF 可以提供符合[输入合同](../../docs/applications/obsidian/提案-Obsidian%20导出与导入.md#输入清单)的清单。
 
-在 Obsidian 中把生成目录作为库打开，从 `home.md` 开始。正式目录以后通过 `--vault` 显式指定，指定目录不会自动批准正式数据采用。
+在 Obsidian 中把生成目录作为库打开，从 `home.md` 开始。模板功能通过 Obsidian 的 Templates 核心插件使用；工具不接管已有的插件开关。正式目录以后通过 `--vault` 显式指定，指定目录不会自动批准正式数据采用。
+
+## 常用视图
+
+收件箱只显示 `00-inbox` 下的 Markdown 文件，允许没有文章属性的临时笔记。草稿显示 PARA 四区中声明小写 UUIDv4 identifier 且 status 为 draft 的文章；最近修改覆盖同样声明 UUID 的文章，按文件实际修改时间从新到旧排序。两者均排除收件箱与词条目录。UUID 筛选不代替内容校验，也不表示正式准用。
+
+既有文章列表保留，用于查看 PARA 四区中的 Markdown 文件，包含自由笔记。所有视图都可由用户调整，普通词表刷新不会覆盖这些调整。
 
 ## 条目选择
 
@@ -135,6 +151,9 @@ output/obsidian-rdf/state/<库标识>/
 │  └─ inputs/
 ├─ reports/
 ├─ receipts/
+├─ product/
+│  ├─ baseline.json          初始及显式维护写入的文件摘要
+│  └─ operations/            每次维护的报告、候选及旧值备份
 └─ backups/
 ```
 
@@ -156,9 +175,31 @@ uv run kb-obsidian-rdf refresh \
   --vault output/obsidian-rdf/development-para
 ```
 
-默认只比较变化。关闭该库、停止同步与其他编辑后，增加 `--apply --offline` 才切换。仅更新 `05-vocabulary` 与库外工程交付；首页、视图和模板只给候选差异，不覆盖用户修改。已有身份保持既有路径，改译名不等于批量改文章链接。第 2 版实例须先显式迁移，普通刷新不自动增加目录编号。
+默认只比较变化。关闭该库、停止同步与其他编辑后，增加 `--apply --offline` 才切换。仅更新 `05-vocabulary` 与库外工程交付；配置、首页、视图和模板只给候选差异，不执行产物维护。已有身份保持既有路径，改译名不等于批量改文章链接。第 2 版实例须先显式迁移，普通刷新不自动增加目录编号。
 
 条目刷新中断后保留现场，执行 `recover --vault <目录> --offline`。恢复核对两个位置的实际版本和新增引用，不通过删除用户内容来恢复，也不宣称跨目录事务或断电持久性。
+
+## 产物维护
+
+维护配置、首页与常用视图时，先预览：
+
+```bash
+uv run kb-obsidian-rdf maintain \
+  --vault output/obsidian-rdf/development-para
+```
+
+默认只生成库外报告与候选，知识库文件不变。关闭目标库、停止同步和其他编辑后执行：
+
+```bash
+uv run kb-obsidian-rdf maintain \
+  --vault output/obsidian-rdf/development-para --apply --offline
+```
+
+配置只补缺项，已有不同值和未知属性原样保留并报告。缺失的视图和模板可以建立；已有文件即使与候选只有格式差异也不重写，其他差异留作候选供审阅。首页只有在完全符合本工具记录的生成基准，或符合本次明确识别的旧版首页时才更新；用户修改的首页保留。
+
+报告逐项列出文件、写入范围、差异、保留的设置、候选、备份、原摘要与实际结果，终端给出绝对路径。配置与首页的旧内容先备份，再逐文件写入并核对；基准独立保存在 `product/`，不进入词表交付清单。维护不刷新词表，词表刷新不维护配置；两种命令都不编辑文章及其引用。
+
+维护失败后保留已有成果和当次备份，修复报告所述原因后重试同一 `maintain --apply --offline` 命令。重试重新核对现有文件，补齐尚缺项，保留后来改变的个人值；不使用词表的 `recover` 命令，也不宣称多个文件整体原子切换。
 
 ## 布局迁移
 

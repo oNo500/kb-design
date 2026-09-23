@@ -1,0 +1,87 @@
+{
+  "completed_at": "2026-09-23T16:02:41.079064+00:00",
+  "base_commit": "7b599db5b5a32720ddc043ccf45eca992be478c3",
+  "scope": "vocabulary maintenance and Obsidian product maintenance, independent execution",
+  "tests": {
+    "command": "uv run --with pytest pytest packages/kb-vocab-maintenance/tests apps/obsidian-rdf/tests -q --tb=short",
+    "passed": 209
+  },
+  "vocabulary": {
+    "directory": "output/vocabulary/legacy-entities/20260923",
+    "manifest_sha256": "1aa54cf1819da03f1cdcdbf52ea4cc05b9cd6014d390a14502ac49c8b088b177",
+    "entities": 35,
+    "active": 19,
+    "candidate": 16,
+    "labels": 70,
+    "source_unchanged": true,
+    "shacl": {
+      "input_sha256": "a22373f1d90f8278e2108732dc29d705dbe8e138ff7959ba192f3c6517eb74e0",
+      "profile": "structure",
+      "local_label_targets": 70,
+      "conforms": true,
+      "counts": {},
+      "not_checked": [
+        "entity factual correctness",
+        "legacy adoption validity",
+        "topic correspondence",
+        "formal publication"
+      ]
+    },
+    "loaded_into_obsidian": false
+  },
+  "product": {
+    "vault": "/Users/xiu/code/kb-design/output/obsidian-rdf/development-para",
+    "written": [
+      ".obsidian/app.json",
+      ".obsidian/templates.json",
+      ".obsidian/types.json",
+      "06-views/drafts.base",
+      "06-views/inbox.base",
+      "06-views/recently-modified.base",
+      "home.md"
+    ],
+    "report_path": "/Users/xiu/code/kb-design/output/obsidian-rdf/state/4893c6f8f87f714e24a7fb99ff57989d5e20f6b0671220f1b479b6e43aefc7a8/product/operations/a605d41582254fe29de86b251b0ad700/report.json",
+    "vocabulary_manifest_sha256": "bb4094bd2cbf6ec29fbd5d70173e19999b300aeec574bf5f313e9c7c3f099ca4",
+    "protected_files_unchanged": true,
+    "templates": [
+      "article"
+    ],
+    "drafts": [
+      "01-projects/demo/javascript-数组排序教程.md"
+    ],
+    "recently_modified": [
+      "01-projects/demo/javascript-数组排序教程.md"
+    ],
+    "inbox": [],
+    "unresolved_links": 0,
+    "native_sort": {
+      "native_sort_rows": 2,
+      "distinct_times": 2,
+      "descending": true
+    },
+    "second_preview_write_set": []
+  },
+  "archive": "work/reviews/2026-09-23-maintenance-separation.json",
+  "formal_vault_changed": false,
+  "implementation_sha256": {
+    "packages/kb-vocab-maintenance/src/kb_vocab_maintenance/legacy.py": "e2b023f62d2e386c9bc7b738493967540ca368183c37fe1ab760969fc8ec6d0b",
+    "packages/kb-vocab-maintenance/src/kb_vocab_maintenance/__init__.py": "8a8462df32d9ddb3c481fcb0845c3d8c32366c2972393e099a5ab5cdf024f039",
+    "packages/kb-vocab-maintenance/src/kb_vocab_maintenance/edit.py": "c4a89c4a7c4d511a357aea68325decf91511b23e303dc599a61cd89c41885385",
+    "packages/kb-vocab-maintenance/src/kb_vocab_maintenance/cli.py": "67ca20abf7a3559d71ec2ef82082a98bf5a692bf7e72c56c32ab830a4f8772b0",
+    "packages/kb-vocab-maintenance/src/kb_vocab_maintenance/diff.py": "08dd06ec458b78a1be4ae5a1cce18981251d4d9b4b037b06bf590937b906922b",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/build.py": "2fd7a8393911a97991334b88470b7c2158b613f7f4b6fac4832382be9d6b7ab0",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/query.py": "a90d54ed52ed8e8bb287aa7a17990ad145d2395fb9c8f149c34f7c1cbb60c17f",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/render.py": "a3e03cfb35fc3ac9c14bf5f166826e8ebd370c2951ea69cdc5b579078688a9fe",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/naming.py": "10d75894fb215af235be6fbbe8ab15224ca332dcf6435b2b94c5dd6239278abf",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/layout.py": "8b327c2257c410738e7d4788e200f846fd6e5f31d0b8e428ced2ebea88097872",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/__init__.py": "7e6d69b9bf6f074089906f6ca57dafddafd49b7d10802211338b44626dda4039",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/content.py": "a7679ca899451f6405e6c6dcfcc2a0112704165b0a38faa0c49711abc965bc9e",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/cli.py": "d052caff577437492c97429892551a6767415242dcf78b8e70287bc625906afc",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/common.py": "4e56ea3de44f97df263e8121731eb84917cd4782f3a4273b51348c79e7747c9f",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/input.py": "eb1d80eac26fc09a9747d8e81bc0c7c58dd2f3b94cac24ad84fceb36be88a1eb",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/storage.py": "b7d71034c493e01c830eff34b9f9f21b2ef07fc069f0a48baa71f54591945661",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/product.py": "96bdf8c4fc74a0a102236d1d6700940aa31b760182f6b3baeba791c01e0dcd3e",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/prepare.py": "57cdc24a886ba5a6b04048d627602064e329b8aae66799a5f8a7baa847fadf1b"
+  }
+}

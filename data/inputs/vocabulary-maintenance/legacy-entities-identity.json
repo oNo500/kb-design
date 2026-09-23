@@ -1,0 +1,251 @@
+{
+  "entities": {
+    "anthropic": {
+      "entity_iri": "urn:uuid:613e49a5-e5af-4302-8fa2-fa5fc3414f03",
+      "labels": {
+        "en": "urn:uuid:5475e46f-3a80-4a6c-88f3-5c29ce1e583e",
+        "zh": "urn:uuid:d1b6af41-d6a7-4023-a393-f42964886614"
+      }
+    },
+    "antigravity": {
+      "entity_iri": "urn:uuid:704856f3-8060-4a9a-96c0-7485c14c4ed8",
+      "labels": {
+        "en": "urn:uuid:78811ec2-2acb-4e12-9861-002aa648dec3",
+        "zh": "urn:uuid:f84c04cd-7e65-4a5c-b934-9505bd6def26"
+      }
+    },
+    "astral": {
+      "entity_iri": "urn:uuid:1c307bfe-38cd-4af1-b500-8e3527143241",
+      "labels": {
+        "en": "urn:uuid:9775f052-9e59-477c-a585-3bf9e26f8203",
+        "zh": "urn:uuid:4a1dd2ed-bc02-44c1-bc6a-746a665fff06"
+      }
+    },
+    "bun": {
+      "entity_iri": "urn:uuid:78bb6ccd-32d3-44ec-ab93-b9fdbd728277",
+      "labels": {
+        "en": "urn:uuid:6f1820b8-a4bf-4a84-ae35-c6dd0e390350",
+        "zh": "urn:uuid:a5aca7ab-3c5d-40e5-9ab5-63c395bf6ed5"
+      }
+    },
+    "claude-code": {
+      "entity_iri": "urn:uuid:12e815ea-90ab-4113-9772-3dd669567c8c",
+      "labels": {
+        "en": "urn:uuid:be8d94cb-c070-48b9-839c-529c2d22d0a9",
+        "zh": "urn:uuid:fde685aa-f3ed-4339-8624-f65756e69254"
+      }
+    },
+    "codex": {
+      "entity_iri": "urn:uuid:c4f7d8be-04a8-4a40-8ba2-de9cac714b56",
+      "labels": {
+        "en": "urn:uuid:2d710006-b2c7-40a4-91e8-5b5e5917b7c2",
+        "zh": "urn:uuid:86ad3e2c-8949-4b53-9f2b-35bab39a1cfe"
+      }
+    },
+    "eslint": {
+      "entity_iri": "urn:uuid:071af9c3-570b-422c-8313-b8597f2d7c19",
+      "labels": {
+        "en": "urn:uuid:742dceea-0a74-4f5e-a938-1c4dabd20747",
+        "zh": "urn:uuid:7a84c88c-37c3-44de-b049-d15541ff8576"
+      }
+    },
+    "fastapi": {
+      "entity_iri": "urn:uuid:bc2e2c36-27d2-4540-979d-0a3d04cdf0a9",
+      "labels": {
+        "en": "urn:uuid:5d2adfce-e25f-4b93-b062-c4fe03dd6e9a",
+        "zh": "urn:uuid:8f77d14b-b469-4140-bbc6-3acd45c975f1"
+      }
+    },
+    "fnm": {
+      "entity_iri": "urn:uuid:40d0fa70-ee52-4612-8eaa-cd8d04761ece",
+      "labels": {
+        "en": "urn:uuid:29f27017-f85c-4cbe-a518-55149e68ed75",
+        "zh": "urn:uuid:d88b188b-284b-4831-98ad-c35d480dc8a9"
+      }
+    },
+    "go": {
+      "entity_iri": "urn:uuid:21e9799a-1305-42fa-ac7c-9418d893fc80",
+      "labels": {
+        "en": "urn:uuid:3a2e5840-a984-4a2f-a3c3-3fe395752e5c",
+        "zh": "urn:uuid:5595b536-054a-4970-a85f-9e0a6ce259cc"
+      }
+    },
+    "javascript": {
+      "entity_iri": "urn:uuid:0a892f2a-4106-4c45-8a2f-dbd32d7e0933",
+      "labels": {
+        "en": "urn:uuid:3a4e1ccd-572f-4f30-9595-8b1d9bdca793",
+        "zh": "urn:uuid:622740e3-392d-47f2-804e-1ae53153234e"
+      }
+    },
+    "kimi-code": {
+      "entity_iri": "urn:uuid:c022bbe1-416f-4f01-9d30-f4ade600d1e1",
+      "labels": {
+        "en": "urn:uuid:c3d74fb4-776b-4492-87ff-698b83308c4d",
+        "zh": "urn:uuid:abd08219-831e-441f-9c16-c2d95469b9c4"
+      }
+    },
+    "moonshot-ai": {
+      "entity_iri": "urn:uuid:a2272a2f-f1ec-4884-aca8-35b22eb90cd3",
+      "labels": {
+        "en": "urn:uuid:23363e9e-6774-4b7d-9dba-d3244f103770",
+        "zh": "urn:uuid:ac9bee63-a22c-40e7-90eb-aa7a1a6f09a2"
+      }
+    },
+    "nestjs": {
+      "entity_iri": "urn:uuid:28c3a257-26b0-4712-9148-650445bf0cd6",
+      "labels": {
+        "en": "urn:uuid:694aafe5-54e9-4719-8450-365ed4129163",
+        "zh": "urn:uuid:652c7a9d-d73a-4110-87cc-66965afe3e28"
+      }
+    },
+    "nextjs": {
+      "entity_iri": "urn:uuid:fb2d262d-d7a3-49bf-a968-7d7063510259",
+      "labels": {
+        "en": "urn:uuid:405c32e0-1c32-407b-9205-5ee9eced286e",
+        "zh": "urn:uuid:db8ad9ea-2c9c-42e9-9e8f-f1c294cc994b"
+      }
+    },
+    "nodejs": {
+      "entity_iri": "urn:uuid:087aec21-0296-45d0-9772-36022897be05",
+      "labels": {
+        "en": "urn:uuid:404d689a-ed60-4e44-ba89-9f328817e051",
+        "zh": "urn:uuid:d3e72cb0-45b9-4cc9-8c93-8613689bb39a"
+      }
+    },
+    "npm": {
+      "entity_iri": "urn:uuid:ce12dcb1-41ee-40ff-b9ef-4660293a222b",
+      "labels": {
+        "en": "urn:uuid:ce64c33d-4142-4fdb-a6c3-0d91fd4cae7e",
+        "zh": "urn:uuid:d41a2258-8758-4f1f-88d1-5f7d6b38cb99"
+      }
+    },
+    "obsidian": {
+      "entity_iri": "urn:uuid:2cf8074f-f498-4c8a-9c5e-5f90af0bbeeb",
+      "labels": {
+        "en": "urn:uuid:3ea5c0a5-cab1-4118-b34b-b4b16f9105a1",
+        "zh": "urn:uuid:f9923b60-6364-4a94-befa-63d4fb086941"
+      }
+    },
+    "openai": {
+      "entity_iri": "urn:uuid:b8187386-31c9-490c-891f-b886701b9339",
+      "labels": {
+        "en": "urn:uuid:3d4a5a04-4dfa-4b56-b9ca-28a53d188625",
+        "zh": "urn:uuid:eec5657d-fb9f-4736-95ed-02da5a514dc5"
+      }
+    },
+    "openclaw": {
+      "entity_iri": "urn:uuid:27bebe6b-4c83-4741-9a71-ac5c3366a302",
+      "labels": {
+        "en": "urn:uuid:6bae20cd-be5c-4c82-9a4d-758cd6143b58",
+        "zh": "urn:uuid:c6d1b2e0-5881-45cd-a260-9cd3a6bee1af"
+      }
+    },
+    "opencode": {
+      "entity_iri": "urn:uuid:9ca5e870-cea5-4168-923e-d4c7ef90b59f",
+      "labels": {
+        "en": "urn:uuid:b6d4ac84-2462-4dbe-a3ab-9ebad5961894",
+        "zh": "urn:uuid:e298c7b3-fe8c-461c-9664-0e4cb4598ba8"
+      }
+    },
+    "oxc": {
+      "entity_iri": "urn:uuid:039d43ed-6a01-4ef4-8292-019b4b8997ee",
+      "labels": {
+        "en": "urn:uuid:7cd615fb-79d7-4ff1-ab3d-33040b2b00f2",
+        "zh": "urn:uuid:1db948c2-e3ee-4ac3-99dd-694e687e0b44"
+      }
+    },
+    "pydantic": {
+      "entity_iri": "urn:uuid:9669882f-958d-48b3-b327-bb909085c937",
+      "labels": {
+        "en": "urn:uuid:5b993f85-f557-4ecb-a37a-279878b589c8",
+        "zh": "urn:uuid:b1363914-6860-4dd1-af30-9097286c69f6"
+      }
+    },
+    "pyright": {
+      "entity_iri": "urn:uuid:15b3ff24-daf9-4d7d-a170-3122e667fbf6",
+      "labels": {
+        "en": "urn:uuid:6f354f6c-f931-4eb0-a4e0-9e9befce9c8b",
+        "zh": "urn:uuid:86311943-d1b0-4932-928a-1806b4d3bb4f"
+      }
+    },
+    "pytest": {
+      "entity_iri": "urn:uuid:0aac1e0c-4206-4f63-b503-54782795cfda",
+      "labels": {
+        "en": "urn:uuid:2f1938e5-1011-48b7-bfa5-cc240d1cbdb6",
+        "zh": "urn:uuid:9474a141-4f94-4450-ab0a-5e0c79c0845b"
+      }
+    },
+    "python": {
+      "entity_iri": "urn:uuid:ab9dc0f2-11c3-4513-a12c-b454c1e65e92",
+      "labels": {
+        "en": "urn:uuid:0b3be841-621b-4afd-ae7f-4a65d2c56922",
+        "zh": "urn:uuid:cac52d31-cb93-4c51-b6fe-73c3b7d940f8"
+      }
+    },
+    "react": {
+      "entity_iri": "urn:uuid:f61e2308-ea01-4501-8dae-3e6b102468e0",
+      "labels": {
+        "en": "urn:uuid:cee45602-74f0-46ed-94dd-80ca59b96ed3",
+        "zh": "urn:uuid:280fbf2b-ccb1-4673-960b-1a5dc808ea3f"
+      }
+    },
+    "ruff": {
+      "entity_iri": "urn:uuid:331709df-8ad8-4064-b8fd-0a22f0955df8",
+      "labels": {
+        "en": "urn:uuid:4789e543-ff17-47ce-a4d6-2b3d3d459210",
+        "zh": "urn:uuid:06a6ade0-410a-4b1c-b255-ad29ccc65ba2"
+      }
+    },
+    "rust": {
+      "entity_iri": "urn:uuid:31a05694-1a3d-4ca7-8814-d03866fb8108",
+      "labels": {
+        "en": "urn:uuid:08fc914e-504c-427c-840d-9b52d65ed4d6",
+        "zh": "urn:uuid:4b147281-879c-43b3-96c1-bb892d60773b"
+      }
+    },
+    "ty": {
+      "entity_iri": "urn:uuid:e846e387-6d9c-4e6e-9834-551ef8b04890",
+      "labels": {
+        "en": "urn:uuid:e75de23d-beec-48e8-87e4-362fe7c762d7",
+        "zh": "urn:uuid:c3e22bc1-a264-4779-8e56-bfb2c6ae1a2d"
+      }
+    },
+    "typescript": {
+      "entity_iri": "urn:uuid:ac0bcf27-ab0d-4862-b66f-112db35c8f8b",
+      "labels": {
+        "en": "urn:uuid:670beeee-62c1-4970-b918-09781c8441bc",
+        "zh": "urn:uuid:68fcdd4e-4840-49e8-acbd-ceba5a61d5dd"
+      }
+    },
+    "uv": {
+      "entity_iri": "urn:uuid:c09f9880-38c8-417b-8678-57e64f2a12fa",
+      "labels": {
+        "en": "urn:uuid:9a374f62-6b8b-408a-a5f5-71d1db951a9f",
+        "zh": "urn:uuid:1bf2d4b4-944b-407b-b17a-dcbe4c7a8e91"
+      }
+    },
+    "vite": {
+      "entity_iri": "urn:uuid:ed26230f-1e54-4f2a-88df-a2281f3ed9b6",
+      "labels": {
+        "en": "urn:uuid:6e054599-8ddb-4687-b66f-cea36e9359ce",
+        "zh": "urn:uuid:aaff4a2c-6a42-44a3-a782-ff0922338222"
+      }
+    },
+    "vuejs": {
+      "entity_iri": "urn:uuid:ecbd060b-8ce1-4b34-9240-34a0ecae138a",
+      "labels": {
+        "en": "urn:uuid:63258399-cd2e-49af-aa1d-d9c8cc098e02",
+        "zh": "urn:uuid:0bb244ee-bb62-48e0-b030-c3f89d72ec0b"
+      }
+    },
+    "webpack": {
+      "entity_iri": "urn:uuid:d212175c-c4b2-43f6-8404-6ec2a84b6311",
+      "labels": {
+        "en": "urn:uuid:551fa88c-026f-4b91-a6a3-f46b9efb52de",
+        "zh": "urn:uuid:4af0d63a-f16b-4e18-82d9-fbd0f58f6d52"
+      }
+    }
+  },
+  "schema_version": 1,
+  "source_catalog": "urn:kb-design:data:entities"
+}

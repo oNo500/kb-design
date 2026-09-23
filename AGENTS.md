@@ -77,6 +77,8 @@
 - 根目录是 uv workspace，使用统一 `uv.lock`；`.python-version` 固定当前开发环境为 Python 3.13.5，成员包最低支持 Python 3.11
 - `apps/obsidian/` 通过 workspace 依赖使用 `packages/kb-core/`，核心包不依赖具体应用；核心入口是 `uv run kb-core <命令>`，应用入口是 `uv run kb-obsidian <命令>`
 - `apps/vocab-preview/` 提供 `uv run kb-vocab-preview`，只读展示工作区六份词表并自动更新；不要求提交，不写回词表，不代表数据已批准，见[预览归属](docs/applications/vocab-preview/决定-预览归属.md)
+- `packages/kb-vocab-maintenance/` 提供独立 RDF 词表资料收录、字段差异和带基准的描述字段修改，见[词表维护工程](docs/practices/vocabulary/设计-词表维护工程.md)。维护止于版本交付，不调用应用刷新或改文章；旧实体原编辑源及 candidate/active 状态保留，IRI 对应登记在 `data/inputs/vocabulary-maintenance/`，导入交付不自动进入应用。
+- `apps/obsidian-rdf/` 服务独立编号 PARA 开发库。`kb-obsidian-rdf maintain` 显式维护配置及视图，`refresh` 仅更新词条和当前交付，两者均不编辑文章，见[产物维护](docs/applications/obsidian/设计-产物维护.md)。正式库仍使用其原合同，不因开发库或新工具存在自动切换。
 - `output/` 保存 Git 忽略的持久应用数据，不属于构建清理对象；`build/` 保存 Git 忽略的可清理临时产物
 - 迁移前决定与 `work/archive/` 的旧路径按原 Git 基线解释，不重写历史正文；当前位置见[仓库布局](docs/development/决定-仓库布局.md)
 

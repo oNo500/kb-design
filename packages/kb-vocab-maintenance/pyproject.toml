@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kb-vocab-maintenance"
+version = "0.1.0"
+description = "Independent RDF vocabulary differences and reviewed property edits"
+requires-python = ">=3.11"
+dependencies = ["kb-core", "rdflib>=7.1,<8", "jsonschema==4.23.0", "PyYAML==6.0.3"]
+
+[project.scripts]
+kb-vocab-maintenance = "kb_vocab_maintenance.cli:main"
+
+[tool.uv.sources]
+kb-core = { workspace = true }
+
+[tool.setuptools.packages.find]
+where = ["src"]

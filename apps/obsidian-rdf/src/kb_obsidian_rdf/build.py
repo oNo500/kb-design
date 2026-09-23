@@ -15,9 +15,7 @@ import yaml
 
 from kb_vocab_shacl import read_shapes
 from .common import ContractError, Delivery, digest, json_bytes, reference_path, safe_relative
-from .layout import (ARCHIVES, AREAS, ATTACHMENTS, INBOX, KIND_DIRECTORIES,
-                     MANIFEST_VERSION, PARA_ROOTS, PROJECTS, RESOURCES,
-                     TEMPLATES, VIEWS, VOCABULARY)
+from .layout import KIND_DIRECTORIES, MANIFEST_VERSION, VOCABULARY
 from .input import read_inputs, require
 from .naming import assign_paths
 from .render import (KIND_NAMES, LABEL_ROLES, NOTE_NAMES, RELATION_NAMES, XL,
@@ -460,57 +458,8 @@ def preserve_history(spec, files, state_files, records, previous_data=None):
 
 
 def initial_pages(records):
-    home = f"""# 知识库
-
-## 内容组织
-
-- `{INBOX}/`：临时想法和待整理材料。
-- `{PROJECTS}/`：有明确目标和结束条件的项目内容。
-- `{AREAS}/`：需要持续维护的责任领域。
-- `{RESOURCES}/`：按兴趣和主题积累的知识与资料。
-- `{ARCHIVES}/`：已结束或不再活跃的项目、领域和资源。
-
-项目归档不改变文章所引用的概念或实体，也不自动更改文章状态。
-
-## 文章属性
-
-`subject` 说明主题，`entities` 说明涉及的具体对象，`type`、`genre` 和 `form` 分别记录文档类型、体裁和载体。按名称或别名选取条目，将内部链接填入属性；需要区分同名对象时查看定义和范围。
-
-`{VOCABULARY}/` 保存这些共用条目。文章位于不同目录时仍可引用同一对象，并按属性一起检索。定义、关系和来源可以按需查阅。
-
-## 文章列表
-
-[[{VIEWS}/article-list.base|文章列表]]
-
-## 写作素材
-
-`{TEMPLATES}/` 保存模板，`{ATTACHMENTS}/` 保存附件。首页、模板和视图可按自己的工作习惯调整。
-
-## 属性类型
-
-在 Obsidian 属性界面设置以下类型；同名属性类型作用于全库。
-
-| 属性 | 类型 |
-| --- | --- |
-| identifier、title、type、genre、status、form、level、source、language、isReplacedBy | Text |
-| subject、entities、references、relation、aliases | List |
-| created、modified | Date |
-
-属性中的链接用于引用条目；选择是否准确仍需结合文章内容判断。
-"""
-    base = {'filters': {'and': [
-                {'or': [f'file.inFolder("{root}")' for root in PARA_ROOTS]},
-                'file.ext == "md"']},
-            'properties': {'note.title': {'displayName': '标题'},
-                           'note.subject': {'displayName': '主题'},
-                           'note.entities': {'displayName': '实体'},
-                           'note.status': {'displayName': '状态'}},
-            'views': [{'type': 'table', 'name': '文章列表',
-                       'order': ['file.name', 'note.title', 'note.type', 'note.subject', 'note.entities', 'note.status']}]}
-    template = '## 正文\n\n## 参考资料\n\n'
-    return {'home.md': home.encode(),
-            f'{VIEWS}/article-list.base': yaml.safe_dump(base, allow_unicode=True, sort_keys=False).encode(),
-            f'{TEMPLATES}/article.md': template.encode()}
+    from .product import initial_files
+    return initial_files()
 
 
 def resource_catalog(graph, sources, page_records):

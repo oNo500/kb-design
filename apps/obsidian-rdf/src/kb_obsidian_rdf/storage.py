@@ -161,11 +161,12 @@ def _check_bytes(path: str, data: bytes, entry: dict):
 
 
 def _delivery(delivery: Delivery) -> tuple[dict, str]:
+    from .product import CONFIG_PATHS
     if not isinstance(delivery, Delivery) or MANIFEST not in delivery.state_files:
         raise ContractError("交付需要 Delivery 及库外 manifest.json")
     for path, data in delivery.vault_files.items():
         safe_relative(path)
-        allowed = (path == "home.md"
+        allowed = (path == "home.md" or path in CONFIG_PATHS
                    or path.startswith((VOCABULARY + "/", TEMPLATES + "/")) and path.endswith(".md")
                    or path.startswith(VIEWS + "/") and path.endswith((".base", ".md")))
         if not allowed or not isinstance(data, bytes):
@@ -353,6 +354,8 @@ def initialize(vault: Path, files: Delivery, state_root: Path | None = None) -> 
                                      for path, data in sorted(files.vault_files.items())]}
         _journal(state_dir, journal)
         try:
+            from .product import record_initial_baseline
+            record_initial_baseline(state_dir, files.vault_files)
             candidate_root = safe_path(state_dir, candidate)
             _stage_files(candidate_root / "vault", files.vault_files)
             for folder in VAULT_DIRECTORIES:

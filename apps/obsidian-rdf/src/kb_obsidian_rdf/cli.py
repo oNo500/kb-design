@@ -30,6 +30,9 @@ def _parser() -> argparse.ArgumentParser:
     refresh.add_argument("--input", required=True, type=Path)
     refresh.add_argument("--apply", action="store_true")
     refresh.add_argument("--offline", action="store_true", help="确认已关闭该库并暂停同步和外部编辑")
+    maintain = commands.add_parser("maintain", help="比较配置和视图；显式 --apply --offline 才维护，不刷新词表")
+    maintain.add_argument("--apply", action="store_true")
+    maintain.add_argument("--offline", action="store_true", help="确认已关闭该库并暂停同步和外部编辑")
     check = commands.add_parser("check", help="检查当前参考文件及文章字段和引用")
     check.add_argument("--path", action="append", dest="paths", help="限定文章路径，相对 vault，可重复")
     fields = ("subject", "entities", "type", "genre", "form", "references")
@@ -63,9 +66,9 @@ def _parser() -> argparse.ArgumentParser:
     create.add_argument("--language")
     recover = commands.add_parser("recover", help="核对中断现场并恢复完整参考输出")
     recover.add_argument("--offline", action="store_true", help="确认已关闭该库并暂停同步和外部编辑")
-    for command in (initialize, refresh, check, create, recover, search, get, articles):
+    for command in (initialize, refresh, maintain, check, create, recover, search, get, articles):
         command.add_argument("--vault", required=True, type=Path, help="显式目标目录，无正式库默认路径")
-    for command in (prepare, initialize, refresh, check, create, recover, search, get, articles):
+    for command in (prepare, initialize, refresh, maintain, check, create, recover, search, get, articles):
         command.add_argument("--json", action="store_true", help="向终端输出完整 JSON 结果")
         command.add_argument("--state-root", type=Path, help="库外工程状态根目录，默认使用项目 output/obsidian-rdf/state")
     return parser
@@ -120,6 +123,9 @@ def _vocabulary_summary(value: dict) -> list[str]:
 
 
 def _execute(args: argparse.Namespace) -> dict:
+    if args.command == "maintain":
+        from .product import maintain
+        return maintain(args.vault, apply=args.apply, offline=args.offline, state_root=args.state_root)
     if args.command == "search":
         from .query import search_entries
         return search_entries(args.vault, field=args.field, query=args.query,
@@ -226,6 +232,12 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"  {key}：{count}")
         elif args.command == "new":
             print(f"文章：{args.vault.resolve() / result['path']}")
+        elif args.command == "maintain":
+            print(f"产物维护：{result['status']}；拟写入 {len(result['write_set'])} 个文件；已写入 {len(result['written'])} 个文件。")
+            for item in result['changes']:
+                if item['action'] not in {"unchanged", "equivalent"}:
+                    print(f"  {item['action']}：{item['path']}")
+            print(f"完整写集、差异和结果：{result['report_path']}")
         elif args.command in {"init", "refresh"}:
             statuses = {"initialized": "已建立", "preview": "差异预览，未切换",
                         "installed": "已更新", "unchanged": "没有变化"}

@@ -51,7 +51,8 @@ class CommandFlowTests(unittest.TestCase):
                 return json.loads(result.stdout) if expected==0 else result
             run('init','--input',input_path,'--vault',vault)
             state=state_directory(vault,state_root=state_root)
-            self.assertFalse(any(p.suffix in {'.json','.ttl'} for p in vault.rglob('*')))
+            self.assertFalse(any(p.suffix in {'.json','.ttl'} for p in vault.rglob('*')
+                                 if not p.is_relative_to(vault/'.obsidian')))
             self.assertFalse((vault/'preview-admin').exists())
             (vault/'00-inbox'/'free-note.md').write_text('自由捕获，无须填写文章元数据。\n')
             (vault/'03-resources'/'reading-material.md').write_text('# 外部资料\n\n保留原文和出处。\n')
@@ -99,4 +100,5 @@ class CommandFlowTests(unittest.TestCase):
             matches=run('articles','--vault',vault,'--field','entities','--term','工具')
             self.assertEqual(matches['items'][0]['path'],'04-archives/test-project/javascript-测试-文章.md')
             self.assertEqual(matches['items'][0]['identifier'],created['identifier'])
-            self.assertFalse(any(p.suffix in {'.json','.ttl'} for p in vault.rglob('*')))
+            self.assertFalse(any(p.suffix in {'.json','.ttl'} for p in vault.rglob('*')
+                                 if not p.is_relative_to(vault/'.obsidian')))

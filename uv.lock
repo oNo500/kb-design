@@ -16,6 +16,7 @@ members = [
     "kb-topics",
     "kb-vocab",
     "kb-vocab-ccs",
+    "kb-vocab-maintenance",
     "kb-vocab-preview",
     "kb-vocab-rdf-preview",
     "kb-vocab-shacl",
@@ -431,6 +432,7 @@ dev = [
     { name = "kb-topics" },
     { name = "kb-vocab" },
     { name = "kb-vocab-ccs" },
+    { name = "kb-vocab-maintenance" },
     { name = "kb-vocab-preview" },
     { name = "kb-vocab-rdf-preview" },
     { name = "kb-vocab-shacl" },
@@ -448,6 +450,7 @@ dev = [
     { name = "kb-topics", editable = "packages/kb-topics" },
     { name = "kb-vocab", editable = "packages/kb-vocab" },
     { name = "kb-vocab-ccs", editable = "packages/kb-vocab-ccs" },
+    { name = "kb-vocab-maintenance", editable = "packages/kb-vocab-maintenance" },
     { name = "kb-vocab-preview", editable = "apps/vocab-preview" },
     { name = "kb-vocab-rdf-preview", editable = "apps/vocab-rdf-preview" },
     { name = "kb-vocab-shacl", editable = "packages/kb-vocab-shacl" },
@@ -563,6 +566,25 @@ requires-dist = [
     { name = "defusedxml", specifier = ">=0.7.1,<1" },
     { name = "kb-vocab-shacl", editable = "packages/kb-vocab-shacl" },
     { name = "pyshacl", specifier = ">=0.30,<0.32" },
+    { name = "rdflib", specifier = ">=7.1,<8" },
+]
+
+[[package]]
+name = "kb-vocab-maintenance"
+version = "0.1.0"
+source = { editable = "packages/kb-vocab-maintenance" }
+dependencies = [
+    { name = "jsonschema" },
+    { name = "kb-core" },
+    { name = "pyyaml" },
+    { name = "rdflib" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "jsonschema", specifier = "==4.23.0" },
+    { name = "kb-core", editable = "packages/kb-core" },
+    { name = "pyyaml", specifier = "==6.0.3" },
     { name = "rdflib", specifier = ">=7.1,<8" },
 ]
 

@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-23",
+  "baseline_commit": "7b599db",
+  "source": "docs/practices/vocabulary/提案-词表维护流水线.md",
+  "archive": "work/archive/specs/2026-09-23-maintenance-mixed/提案-词表维护流水线.md",
+  "sha256": "47948680c3a5a116906d0b4859b00de659f2248f6a90f53381c2c8ba7d548692",
+  "authority": "用户明确要求词表与 Obsidian 产物维护分开，收录执行并归档旧方案",
+  "destinations": {
+    "处理流程、职责分工、编辑源、请求与步骤、变更与确认、中断恢复、词表交付": "docs/practices/vocabulary/设计-词表维护工程.md",
+    "应用安装、配置、视图、应用恢复": "docs/applications/obsidian/设计-产物维护.md",
+    "文章登记与引用": "docs/applications/obsidian/提案-词表使用与维护.md",
+    "通用调度框架与跨进程人工等待": "保留为归档研究；本次未启用或引入依赖"
+  },
+  "retained_contracts": [
+    "docs/applications/obsidian/设计-Obsidian 映射.md",
+    "docs/practices/vocabulary/设计-实体记录现行合同.md"
+  ],
+  "effect": "归档旧混合提案；不撤销旧实例合同，不删除旧数据或实现"
+}
