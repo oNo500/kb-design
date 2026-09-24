@@ -474,9 +474,10 @@ requires-dist = [
 
 [[package]]
 name = "kb-obsidian-rdf"
-version = "0.3.0.dev0"
+version = "0.4.0"
 source = { editable = "apps/obsidian-rdf" }
 dependencies = [
+    { name = "kb-vocab-maintenance" },
     { name = "kb-vocab-shacl" },
     { name = "markdown-it-py" },
     { name = "pyshacl" },
@@ -486,6 +487,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "kb-vocab-maintenance", editable = "packages/kb-vocab-maintenance" },
     { name = "kb-vocab-shacl", editable = "packages/kb-vocab-shacl" },
     { name = "markdown-it-py", specifier = ">=4,<5" },
     { name = "pyshacl", specifier = ">=0.30,<1" },

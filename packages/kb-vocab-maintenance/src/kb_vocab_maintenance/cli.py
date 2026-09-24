@@ -30,6 +30,11 @@ def main(argv=None) -> int:
     entities.add_argument("--source", type=Path, required=True)
     entities.add_argument("--registry", type=Path, required=True)
     entities.add_argument("--output", type=Path, required=True)
+    build = commands.add_parser("build-entities", help="Build one entity vocabulary from pinned source deliveries")
+    build.add_argument("--config", type=Path, required=True)
+    build.add_argument("--source-root", type=Path, required=True)
+    build.add_argument("--output", type=Path, required=True)
+    build.add_argument("--current", type=Path, help="Explicitly create or replace only a current symlink after full delivery validation")
     args = parser.parse_args(argv)
     try:
         if args.command == "diff":
@@ -37,6 +42,11 @@ def main(argv=None) -> int:
         elif args.command == "import-entities":
             from .legacy import import_entities
             result = import_entities(args.source, args.registry, args.output)
+        elif args.command == "build-entities":
+            from .entities import build_entities, set_current
+            result = build_entities(args.config, args.source_root, args.output)
+            if args.current is not None:
+                set_current(args.output, args.current)
         elif args.action == "prepare":
             operations = json.loads(args.changes.read_bytes())
             if args.plan.resolve() == args.changes.resolve():

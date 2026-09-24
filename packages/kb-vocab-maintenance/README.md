@@ -1,6 +1,6 @@
 # 词表维护 (Vocabulary Maintenance)
 
-`kb-vocab-maintenance` 提供 RDF 字段差异、可审阅的描述属性编辑，以及现有实体资料转换。输出是独立维护产物，不代表语义采纳、正式发布或应用采用。
+`kb-vocab-maintenance` 提供 RDF 字段差异、可审阅的描述属性编辑、旧实体资料转换与统一实体词表构建。使用资格按显式配置及其固定决定计算；构建不改写来源状态，不代表正式发版或应用加载。
 
 ## 命令入口
 
@@ -12,9 +12,32 @@ uv run kb-vocab-maintenance import-entities \
   --output output/vocabulary/legacy-entities/20260923
 ```
 
-实体导入固定来源原件，保存实体与名称的稳定身份对应；原状态进入交付记录，未投影字段保留原值及回查位置。它不根据旧主题 ID 推断概念关系，不把候选变为活动记录。身份登记是后续导入的必要输入，不能删除后重新生成来替代原有身份。
+## 实体收录
 
-当前这份交付收录 35 条旧记录，保留 19 条 active 和 16 条 candidate。`entities.ttl` 是 RDF 交付；`source/entities.yaml`、`identity.json`、`unprojected.json` 和 manifest 负责原件、身份、未投影信息和版本核对。本次未将它自动加载到 Obsidian，也未改写原 YAML。后续来源变更复用同一登记，另选新的输出目录。
+`import-entities` 固定旧 YAML 原件，保存实体与名称的稳定身份对应。身份登记是后续导入的必要输入，不能删除后重新生成来替代原有身份；未投影字段保留原值及回查位置。旧资料交付收录 35 条记录，原有 19 条 active 与 16 条 candidate 均保留，不根据旧主题 ID 推断概念关系。
+
+`build-entities` 将配置所列实体交付合为一份 `entities.ttl`，保留全部 RDF 字段、实体与名称 IRI、字面值词法形式及完整原件。实体清单只来自来源 manifest 或实体审计记录，不把 PROV 来源资源及 XL Label 当作实体。
+
+```sh
+uv run kb-vocab-maintenance build-entities \
+  --config data/inputs/vocabulary-maintenance/entities.json \
+  --source-root . \
+  --output output/vocabulary/entities/versions/2026-09-24-r1
+```
+
+配置使用 `schema_version: 1`、`policy: basic-fields-v1`，并固定决定文件及各来源 manifest 的 SHA-256。`authority.path` 和 `sources[].directory` 相对 `--source-root`；来源声明 `key`、`manifest_sha256`、`entity_file`，有实体审计时再声明 `audit_file`。来源 manifest 必须完整列出交付内每份原件的文件哈希，额外文件、缺失、符号链接、内容漂移及重名 JSON 键均拒绝。
+
+实体须有稳定绝对 IRI、明确的既有实体类别、非空可用首选名及可定位的固定来源。普通首选名与完整 XL 首选名均可，保留实际语言，未标语言另列诊断。缺项记录保留并说明不可用原因；明确停用记录不重新启用。candidate、`facts_verified: false` 不单独阻止先用，也不被改写为 active。主题、定义、厂商与外部映射不作为附加必填项。
+
+名称相同的不同 IRI 不合并，manifest 列出同名提示。共享 IRI 的主体及可达描述必须一致；冲突的名称、投影或描述直接拒绝。完整同构来源图可重复引用；部分重叠来源图若包含共享空白节点描述，须另作明确处理，本命令拒绝自动合并。
+
+名称检查复用维护包既有规则。仅检查用临时图补足 XL 蕴含的普通标签，交付图不增加这些隐含字段。缺失或空白的 XL 名称保留原图，逐项报告，并使引用它的实体不可用；这些记录从临时冲突检查图排除，因此检查通过不等于原图完整符合。既存普通投影与 XL 文字矛盾、多 literalForm、同语言冲突首选名及跨名称角色文字冲突仍拒绝。
+
+统一交付包含一份供消费的 `entities.ttl`、构建配置、`build-context.json` 中固定的原来源根目录、决定原件、`sources/<key>/` 下各来源完整原件及 manifest。统一 manifest 记录逐实体来源状态、基本字段检查、可用与不可用清单、具体原因和同名提示；这些 JSON 是管理记录。验证时从固定配置与构建上下文重算来源路径、RDF 解析基准及其他来源元数据，逐字段拒绝 manifest 中的不一致；本地哈希核对不证明外部来源真实性。空白节点诊断使用规范化图中的标识，保证同输入重试一致。构建期间再次核对输入，发布到新版本目录；相同输入重跑逐文件核对字节后复用，不覆盖受损、缺失或额外内容。
+
+显式添加 `--current output/vocabulary/entities/current` 可在完整交付复验后创建或替换符号链接。入口必须位于交付目录外，已存在的普通目录或文件会被拒绝；命令不调用 Obsidian 刷新，不修改文章或原 YAML。
+
+## 字段编辑
 
 编辑请求是 JSON 数组，每项指定稳定主体 IRI、属性 IRI 和替换后的完整值集。例如，已有名称资源的文字修订：
 

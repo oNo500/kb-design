@@ -26,64 +26,50 @@ LEGACY_HOME_SHA256 = 'd353022070b849ce7191088a62574413b6186655b495093ed96af6a7c3
 def initial_files() -> dict[str, bytes]:
     home = f"""# 知识库
 
-## 内容组织
+## 常用入口
 
-- `{INBOX}/`：临时想法和待整理材料。
-- `{PROJECTS}/`：有明确目标和结束条件的项目内容。
-- `{AREAS}/`：需要持续维护的责任领域。
-- `{RESOURCES}/`：按兴趣和主题积累的知识与资料。
-- `{ARCHIVES}/`：已结束或不再活跃的项目、领域和资源。
+- [[{VIEWS}/inbox.base|收件箱]]
+- [[{VIEWS}/article-list.base|全部笔记]]
+- [[{VIEWS}/recently-modified.base|最近修改]]
 
-项目归档不改变文章所引用的概念或实体，也不自动更改文章状态。
+## 内容分类
 
-## 常用视图
+- [[{VIEWS}/projects.base|项目]]
+- [[{VIEWS}/areas.base|领域]]
+- [[{VIEWS}/resources.base|资源]]
+- [[{VIEWS}/archives.base|归档]]
 
-- [[{VIEWS}/inbox.base|收件箱]]：待整理的笔记与材料。
-- [[{VIEWS}/drafts.base|草稿]]：待完善的文章。
-- [[{VIEWS}/recently-modified.base|最近修改]]：最近编辑的文章，按修改时间从新到旧排列。
-- [[{VIEWS}/article-list.base|文章列表]]：各区文章与资料。
+## 维护入口
 
-## 文章属性
-
-`subject` 说明主题，`entities` 说明涉及的具体对象，`type`、`genre` 和 `form` 分别记录文档类型、体裁和载体。按名称或别名选取条目，将内部链接填入属性；需要区分同名对象时查看定义和范围。
-
-`{VOCABULARY}/` 保存这些共用条目。文章位于不同目录时仍可引用同一对象，并按属性一起检索。定义、关系和来源可以按需查阅。
-
-## 写作素材
-
-`{TEMPLATES}/` 保存模板，`{ATTACHMENTS}/` 保存附件。新库已设置模板目录、附件目录和自动更新内部链接；已有库保留自己的不同配置。首页、模板和视图可按自己的工作习惯调整。
-
-## 属性类型
-
-新库按以下类型设置属性；同名属性类型作用于全库。
-
-| 属性 | 类型 |
-| --- | --- |
-| identifier、title、type、genre、status、form、level、source、language、isReplacedBy | Text |
-| subject、entities、references、relation、aliases | List |
-| created、modified | Date |
-
-属性中的链接用于引用条目；选择是否准确仍需结合文章内容判断。
+- [[{VIEWS}/drafts.base|草稿]]
 """
     content_scope = [{'or': [f'file.inFolder("{root}")' for root in PARA_ROOTS]}, 'file.ext == "md"']
     uuid_declaration = '/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.matches(note.identifier)'
     declared = [*content_scope, 'note.identifier.isType("string")', uuid_declaration]
-    properties = {'note.title': {'displayName': '标题'}, 'note.subject': {'displayName': '主题'},
-                  'note.entities': {'displayName': '实体'}, 'note.status': {'displayName': '状态'},
+    properties = {'formula.title': {'displayName': '标题'}, 'note.subject': {'displayName': '主题'},
+                  'note.entities': {'displayName': '实体'}, 'note.type': {'displayName': '文档类型'},
+                  'note.status': {'displayName': '状态'}, 'file.folder': {'displayName': '目录'},
                   'file.mtime': {'displayName': '修改时间'}}
+    columns = ['formula.title', 'note.subject', 'note.entities', 'note.type', 'file.mtime']
     definitions = {
-        'article-list': ('文章列表', content_scope,
-                         ['file.name', 'note.title', 'note.type', 'note.subject', 'note.entities', 'note.status'], False),
-        'inbox': ('收件箱', [f'file.inFolder("{INBOX}")', 'file.ext == "md"'], ['file.name', 'file.mtime'], True),
-        'drafts': ('草稿', [*declared, 'note.status == "draft"'], ['file.name', 'note.title', 'note.subject', 'file.mtime'], True),
-        'recently-modified': ('最近修改', declared, ['file.name', 'note.title', 'note.status', 'file.mtime'], True),
+        'article-list': ('全部笔记', content_scope),
+        'inbox': ('收件箱', [f'file.inFolder("{INBOX}")', 'file.ext == "md"']),
+        'drafts': ('草稿', [*declared, 'note.status == "draft"']),
+        'recently-modified': ('最近修改', declared),
+        'projects': ('项目', [f'file.inFolder("{PROJECTS}")', 'file.ext == "md"']),
+        'areas': ('领域', [f'file.inFolder("{AREAS}")', 'file.ext == "md"']),
+        'resources': ('资源', [f'file.inFolder("{RESOURCES}")', 'file.ext == "md"']),
+        'archives': ('归档', [f'file.inFolder("{ARCHIVES}")', 'file.ext == "md"']),
     }
     files = {'home.md': home.encode(), f'{TEMPLATES}/article.md': '## 正文\n\n## 参考资料\n\n'.encode()}
-    for name, (label, filters, columns, sorted_by_time) in definitions.items():
-        view = {'type': 'table', 'name': label, 'order': columns}
-        if sorted_by_time:
-            view['sort'] = [{'property': 'file.mtime', 'direction': 'DESC'}]
-        base = {'filters': {'and': filters}, 'properties': properties, 'views': [view]}
+    for name, (label, filters) in definitions.items():
+        view = {'type': 'table', 'name': label, 'order': list(columns),
+                'sort': [{'property': 'file.mtime', 'direction': 'DESC'}]}
+        if name == 'resources':
+            view['groupBy'] = {'property': 'file.folder', 'direction': 'ASC'}
+        base = {'filters': {'and': filters},
+                'formulas': {'title': 'file.asLink(if(note.title, note.title, file.name))'},
+                'properties': properties, 'views': [view]}
         files[f'{VIEWS}/{name}.base'] = yaml.safe_dump(base, allow_unicode=True, sort_keys=False).encode()
     types = {name: 'text' for name in ('identifier', 'title', 'type', 'genre', 'status', 'form',
                                      'level', 'source', 'language', 'isReplacedBy')}

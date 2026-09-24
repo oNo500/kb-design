@@ -1,3 +1,3 @@
-"""RDF vocabulary consumer for independent Obsidian development vaults."""
+"""RDF vocabulary consumer for independent Obsidian vaults."""
 
-__version__ = "0.3.0.dev0"
+__version__ = "0.4.0"

@@ -1,4 +1,4 @@
-"""Explicit commands for RDF development vaults; no implicit formal destination."""
+"""Explicit commands for RDF-backed vaults; no implicit formal destination."""
 from __future__ import annotations
 
 import argparse
@@ -19,12 +19,14 @@ def _parser() -> argparse.ArgumentParser:
                                      description="为 Obsidian 文章查找词条、选择引用和检索内容")
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command", required=True)
-    prepare = commands.add_parser("prepare", help="固定项目现有词表和预览授权，生成输入清单")
+    prepare = commands.add_parser("prepare", help="固定词表版本与使用范围，生成输入清单")
     prepare.add_argument("--source-root", required=True, type=Path, help="包含原词表输出的项目根目录")
-    prepare.add_argument("--authority", required=True, type=Path, help="本次预览授权与范围记录")
+    prepare.add_argument("--authority", required=True, type=Path, help="本次使用授权与范围记录")
+    prepare.add_argument("--mode", choices=("preview", "formal"), default="preview", help="实例用途；默认开发预览")
+    prepare.add_argument("--entities", type=Path, help="正式创建使用的统一实体交付目录；current 会固定为具体版本")
     prepare.add_argument("--output", required=True, type=Path, help="新输入清单路径")
     prepare.add_argument("--previous-vault", type=Path, help="刷新时固定旧交付及历史依赖")
-    initialize = commands.add_parser("init", help="在新的目标目录建立开发预览库")
+    initialize = commands.add_parser("init", help="按输入清单在空目标建立知识库")
     initialize.add_argument("--input", required=True, type=Path)
     refresh = commands.add_parser("refresh", help="比较参考版本；显式 --apply 才写入")
     refresh.add_argument("--input", required=True, type=Path)
@@ -76,9 +78,12 @@ def _parser() -> argparse.ArgumentParser:
 
 def _report(vault: Path, result: dict, state_root: Path | None = None) -> Path:
     from .storage import safe_path, state_directory, vault_lock
-    lines = ["# 预览库检查", "", f"文章数量：{result.get('checked_count', 0)}。",
+    mode = result.get("mode", "preview")
+    usage = ("本库已按固定范围授权使用；字段与引用检查不代替内容语义审阅。" if mode == "formal"
+             else "本库用于开发预览，字段与引用通过不代表正式准用或内容语义已审阅。")
+    lines = ["# 知识库检查", "", f"文章数量：{result.get('checked_count', 0)}。",
              f"错误：{len(result.get('errors', []))}；其他提示：{len(result.get('issues', []))}。", "",
-             "本库用于开发预览，字段与引用通过不代表正式准用或内容语义已审阅。", ""]
+             usage, ""]
     unregistered = result.get("unregistered", [])
     lines.extend([f"未登记文件：{result.get('unregistered_count', len(unregistered))}；未纳入文章字段校验，不计作通过。", ""])
     if unregistered:
@@ -118,7 +123,9 @@ def _vocabulary_summary(value: dict) -> list[str]:
     if not profiles:
         lines.append("词表 SHACL 未执行或无结果记录。")
     if not value.get("entity_facts", {}).get("executed"):
-        lines.append("实体事实、内容语义及正式准用未由上述结构规则确认。")
+        lines.append("实体事实和内容语义未由上述结构规则确认。")
+    if value.get("formal_use", {}).get("confirmed"):
+        lines.append("本次应用使用范围已有明确授权，原词表状态及未核事项保留。")
     return lines
 
 
@@ -141,7 +148,8 @@ def _execute(args: argparse.Namespace) -> dict:
     if args.command == "prepare":
         from .prepare import prepare
         return prepare(args.source_root, args.output, authority=args.authority,
-                       previous_vault=args.previous_vault, state_root=args.state_root)
+                       previous_vault=args.previous_vault, state_root=args.state_root,
+                       mode=args.mode, entities=args.entities)
     if args.command in {"init", "refresh"}:
         from .build import build_delivery
         from .storage import initialize, refresh
@@ -157,10 +165,12 @@ def _execute(args: argparse.Namespace) -> dict:
             result = initialize(args.vault, delivery, state_root=args.state_root)
         else:
             result = refresh(args.vault, delivery, apply=args.apply, offline=args.offline, state_root=args.state_root)
-        result["preview_mode"] = True
+        manifest = json.loads(delivery.state_files["manifest.json"])
+        result["mode"] = manifest["mode"]
+        result["preview_mode"] = manifest["mode"] == "preview"
         records = json.loads(delivery.state_files["records.json"])["records"]
         result["resources"] = dict(Counter(row["kind"] for row in records if row["use"] == "current"))
-        result["vocabulary_validation"] = json.loads(delivery.state_files["manifest.json"])["validation"]
+        result["vocabulary_validation"] = manifest["validation"]
         return result
     if args.command == "new":
         from .content import new_content
@@ -247,7 +257,8 @@ def main(argv: list[str] | None = None) -> int:
                 print("参考变化：" + "；".join(f"{kind} {len(paths)}" for kind, paths in result["changes"].items()))
                 print(f"用户文件候选更新：{len(result.get('user_file_changes', []))}，不会覆盖原文件。")
             print("\n".join(_vocabulary_summary(result["vocabulary_validation"])))
-            print("开发预览；正式准用未确认。")
+            print("正式使用实例；来源状态与未核事项保留。" if result["mode"] == "formal"
+                  else "开发预览；正式准用未确认。")
         else:
             print(json_bytes(result).decode().rstrip())
         return 1 if result.get("ok") is False or result.get("errors") else 0

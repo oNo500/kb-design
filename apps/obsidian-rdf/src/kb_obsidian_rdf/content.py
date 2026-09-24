@@ -282,6 +282,7 @@ def _report(state: dict, articles: dict[str, _Article], selected: list[str], *, 
     references = _References(state, articles)
     result = {
         "ok": True, "errors": [], "issues": [], "formal_unconfirmed": [],
+        "mode": state['manifest']['mode'],
         "manifest_sha256": state["manifest_sha256"], "checked_count": len(selected),
         "unregistered": list(unregistered), "unregistered_count": len(unregistered),
         "coverage": {"roots": list(PARA_ROOTS), "identity_field": "identifier",
@@ -332,14 +333,14 @@ def _report(state: dict, articles: dict[str, _Article], selected: list[str], *, 
                 issue(path, field, "historical_reference", "旧引用可以读取；不证明可用于新的主题标引",
                       value, severity="warning")
             elif historical or not target["trial_selectable"]:
-                issue(path, field, "not_selectable", "该对象未获准本次试选，或只保留为历史入口", value)
+                issue(path, field, "not_selectable", "该对象未获准本次选用，或只保留为历史入口", value)
             if (not historical and target["kind"] in {"types", "genres", "forms", "references"}
                     and target.get("formal_basis") is None):
                 issue(path, field, "auxiliary_unapproved", "辅助值域仍须有具体采用依据，不能用概念试选权限代替", value)
             if target.get("formal_basis") is None:
                 result["formal_unconfirmed"].append({
                     "path": path, "field": field, "identity": target["identity"],
-                    "message": "仅预览，正式准用未确认",
+                    "message": "仅预览，正式准用未确认" if result['mode'] == 'preview' else '该对象未获本实例选用授权',
                 })
         return target
 

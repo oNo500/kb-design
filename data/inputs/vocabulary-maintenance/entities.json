@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "policy": "basic-fields-v1",
+  "authority": {
+    "path": "docs/model/entities/决定-实体统一使用.md",
+    "sha256": "257216711adc89f5e326ca249c97ab2f5f4d8a63697b4f1bd45cf74ddf6218a2"
+  },
+  "sources": [
+    {
+      "key": "ccs",
+      "directory": "output/vocabulary/ccs/partitioned-20260921-rdf",
+      "manifest_sha256": "80fe8644f4176321beadf824980623388347ff36b4cd9a6b61989be4d74da2d1",
+      "entity_file": "entities.ttl",
+      "audit_file": "entity-audit.json"
+    },
+    {
+      "key": "legacy",
+      "directory": "output/vocabulary/legacy-entities/20260923",
+      "manifest_sha256": "1aa54cf1819da03f1cdcdbf52ea4cc05b9cd6014d390a14502ac49c8b088b177",
+      "entity_file": "entities.ttl"
+    }
+  ]
+}

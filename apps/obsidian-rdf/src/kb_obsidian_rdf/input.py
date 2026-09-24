@@ -23,6 +23,7 @@ class Source:
     graph: Graph
     selected: set
     raw_path: str
+    entity_delivery: dict | None = None
 
 
 def require(value, message):
@@ -55,11 +56,15 @@ def frozen_file(spec, root, extension, files):
     return raw, name
 
 
-def authority(value, root, files):
+def authority(value, root, files, mode='preview'):
     require(isinstance(value, dict), '缺少预览授权 authority')
     for key in ('preview_reference', 'scope_reference'):
         require(isinstance(value.get(key), str) and bool(value[key].strip()), f'授权缺少 {key}')
     require(value.get('formal_reference') is None or isinstance(value['formal_reference'], str), '正式依据必须是引用或 null')
+    if mode == 'formal':
+        require(isinstance(value.get('formal_reference'), str) and value['formal_reference'].strip()
+                and isinstance(value.get('formal_evidence_sha256'), str) and value['formal_evidence_sha256'],
+                '正式输入必须提供本地正式使用依据及 formal_evidence_sha256')
     # 只有显式的本地证据和摘要才冻结正文；网络引用不在导出时联网读取。
     for reference_key, hash_key in (('preview_reference', 'evidence_sha256'), ('formal_reference', 'formal_evidence_sha256')):
         if value.get(hash_key):
@@ -67,10 +72,11 @@ def authority(value, root, files):
             url = urlsplit(value[reference_key])
             require(url.scheme == 'file', f'{hash_key} 需要 file URI 授权证据')
             require(url.netloc in ('', 'localhost'), '授权证据不能是远程 file URI')
-            frozen_file({'path': unquote(url.path), 'sha256': value[hash_key]}, root, 'md', files)
+            raw, _ = frozen_file({'path': unquote(url.path), 'sha256': value[hash_key]}, root, 'md', files)
+            require(raw.strip(), '授权依据不能为空')
 
 
-def source_scope(graph, spec):
+def source_scope(graph, spec, mode='preview'):
     scope = spec.get('scope')
     choices = {'subject_iris', 'concept_scheme_iris', 'entity_class_iris'}
     require(isinstance(scope, dict) and len(scope) == 1 and set(scope) <= choices, 'scope 范围须选择一种明确条件')
@@ -88,9 +94,93 @@ def source_scope(graph, spec):
         selected = {s for x in requested for s in graph.subjects(RDF.type, x)}
     require(not missing, f'声明范围在输入中不存在：{sorted(map(str, missing))}')
     require(all(isinstance(x, URIRef) for x in selected), '选定主体必须具有 IRI，不能使用空白节点身份')
-    trial = iri_list(spec.get('trial_subjects'), 'trial_subjects')
-    require(trial <= selected, f'预览试选超出授权范围：{sorted(map(str, trial - selected))}')
+    field = 'selectable_subjects' if mode == 'formal' else 'trial_subjects'
+    other = 'trial_subjects' if mode == 'formal' else 'selectable_subjects'
+    require(other not in spec, f'{mode} 输入不能混填 {other}')
+    selectable = iri_list(spec.get(field), field)
+    require(selectable <= selected, f'可选主体超出授权范围：{sorted(map(str, selectable - selected))}')
     return selected
+
+
+def routing_states(document, subjects):
+    """Read pending restrictions from the preserved routing decision itself."""
+    require(isinstance(document, dict) and document.get('confirmed') is True
+            and isinstance(document.get('items'), list), 'CCS 分流原件须为已确认处理清单')
+    states, seen = {}, set()
+    for row in document['items']:
+        require(isinstance(row, dict) and absolute_iri(row.get('source_id'))
+                and row.get('action') in ('concept', 'entity', 'both', 'pending'), 'CCS 分流记录无效')
+        iri = row['source_id']
+        require(iri not in seen, 'CCS 分流记录身份重复')
+        seen.add(iri)
+        if row['action'] == 'pending':
+            require(iri in subjects, 'CCS 未决身份未保留在完整概念范围')
+            states[iri] = {'routing_action': 'pending'}
+        if iri in subjects:
+            require(row['action'] != 'entity', '已分流实体仍在概念范围')
+    return states
+
+
+def routing_delivery(item, source_raw, routing_raw, artifacts):
+    """Bind the routing decision and graph to one pinned CCS delivery."""
+    manifest_raw = artifacts.get('manifest.json')
+    version = item.get('version')
+    require(isinstance(manifest_raw, bytes) and isinstance(version, dict)
+            and digest(manifest_raw) == version.get('manifest_sha256'),
+            'CCS 分流依据缺少同版本交付清单')
+    try:
+        manifest = json.loads(manifest_raw)
+    except (ValueError, UnicodeError) as exc:
+        raise ContractError(f'CCS 交付清单不是有效 JSON：{exc}') from exc
+    hashes = manifest.get('files') if isinstance(manifest, dict) else None
+    require(isinstance(hashes, dict)
+            and hashes.get('concepts.ttl') == digest(source_raw)
+            and hashes.get('plan.json') == digest(routing_raw)
+            and artifacts.get('plan.json') == routing_raw,
+            'CCS 分流原件与概念图不属于同一固定交付')
+
+
+def frozen_artifacts(item, root, files):
+    artifacts = item.get('artifacts', [])
+    require(isinstance(artifacts, list), 'artifacts 必须为列表')
+    result = {}
+    for artifact in artifacts:
+        require(isinstance(artifact, dict), '附属原件必须为对象')
+        name = artifact.get('name')
+        require(isinstance(name, str) and name and name not in result, '附属原件需要唯一 name')
+        extension = artifact.get('format')
+        require(extension in ('ttl', 'turtle', 'nt', 'json', 'yaml', 'yml', 'md', 'xml', 'txt'), '附属原件格式不受支持')
+        raw, _ = frozen_file(artifact, root, extension, files)
+        result[name] = raw
+    return result
+
+
+def entity_delivery(item, root, source_raw, selected, mode, artifacts):
+    """Validate complete originals before allowing a consumer to use eligibility."""
+    from kb_vocab_maintenance.entities import KIND_CLASSES, validate_delivery
+    descriptor = item.get('entity_delivery')
+    require(isinstance(descriptor, dict) and isinstance(descriptor.get('directory'), str), '实体输入缺少完整统一交付')
+    directory = Path(descriptor['directory'])
+    directory = directory if directory.is_absolute() else root / directory
+    # prepare resolves current; a later mutable symlink must never change the input.
+    require(directory.absolute() == directory.resolve(), '统一实体必须固定到非符号链接版本目录')
+    try:
+        manifest_raw = (directory/'manifest.json').read_bytes()
+        require(digest(manifest_raw) == descriptor.get('manifest_sha256'), '统一实体 manifest 摘要不符')
+        manifest = validate_delivery(directory)
+    except (ValueError, OSError, KeyError, TypeError) as exc:
+        raise ContractError(f'统一实体交付验证失败：{exc}') from exc
+    require(manifest.get('policy') == 'basic-fields-v1', '统一实体使用规则未经准用')
+    require(set(item['scope']) == {'entity_class_iris'}
+            and set(item['scope']['entity_class_iris']) <= set(KIND_CLASSES.values()), '统一实体须使用已采用实体类别范围')
+    require(set(map(str, selected)) == set(manifest['entity_iris']), '统一实体范围与完整 entity_iris 不符')
+    require(digest(source_raw) == manifest['graph_sha256'], '实体图与统一交付不符')
+    field = 'selectable_subjects' if mode == 'formal' else 'trial_subjects'
+    require(set(item[field]) == set(manifest['eligible_entity_iris']), '实体可选范围与复验可用清单不符')
+    required = {**manifest['files'], 'manifest.json': digest(manifest_raw)}
+    require(set(artifacts) == set(required), '统一实体必须固定完整原件文件集')
+    require(all(digest(artifacts[name]) == sha for name, sha in required.items()), '统一实体冻结原件与完整交付不符')
+    return manifest
 
 
 def read_inputs(path):
@@ -101,7 +191,8 @@ def read_inputs(path):
     except (ValueError, UnicodeError) as exc:
         raise ContractError(f'输入清单不是有效 JSON：{exc}') from exc
     require(isinstance(spec, dict) and type(spec.get('format_version')) is int and spec['format_version'] == 1, '输入清单 format_version 必须为 1')
-    require(spec.get('mode') == 'preview', '当前工具只接受 preview，不批准正式使用')
+    mode = spec.get('mode')
+    require(mode in ('preview', 'formal'), '输入 mode 必须为 preview 或 formal')
     require(isinstance(spec.get('sources'), list) and bool(spec['sources']), 'sources 需要非空列表')
     require(isinstance(spec.get('auxiliary', []), list), 'auxiliary 必须为列表')
     require(isinstance(spec.get('producer'), dict), '输入缺少 producer')
@@ -119,7 +210,7 @@ def read_inputs(path):
         require(item['key'] not in keys, f'输入 key 重复：{item["key"]}')
         keys.add(item['key'])
         require(isinstance(item.get('version'), (str, dict)) and bool(item['version']), f'{item["key"]} 缺少版本说明')
-        authority(item.get('authority'), root, files)
+        authority(item.get('authority'), root, files, mode)
     for item in spec['sources']:
         require(item.get('format') in ('turtle', 'ttl', 'nt', 'ntriples'), 'RDF 输入仅支持 Turtle 或 N-Triples')
         require(isinstance(item.get('identity'), (str, dict)) and bool(item['identity']), '来源缺少数据身份 identity')
@@ -134,11 +225,35 @@ def read_inputs(path):
         unresolved = any(isinstance(term, URIRef) and str(term).startswith(RELATIVE_BASE) for triple in graph for term in triple)
         require(not unresolved, f'{item["key"]} 相对 IRI 缺少来源 base_iri')
         require(all(absolute_iri(str(term)) for triple in graph for term in triple if isinstance(term, URIRef)), 'RDF 包含非绝对 IRI')
-        sources.append(Source(item, source_raw, graph, source_scope(graph, item), raw_path))
+        selected = source_scope(graph, item, mode)
+        artifacts = frozen_artifacts(item, root, files)
+        delivery = None
+        if item.get('entity_delivery') is not None:
+            delivery = entity_delivery(item, root, source_raw, selected, mode, artifacts)
+        elif mode == 'formal':
+            from kb_vocab_maintenance.entities import KIND_CLASSES
+            entity_roots = {subject for cls in KIND_CLASSES.values() for subject in graph.subjects(RDF.type, URIRef(cls))}
+            require('entity_class_iris' not in item['scope'] and not selected & entity_roots,
+                    '正式实体输入必须使用完整验证的统一交付')
+        if mode == 'formal' and item['key'] == 'ccs-concepts':
+            require(isinstance(item.get('routing'), dict), '正式 CCS 输入缺少固定分流依据')
+        if item.get('routing') is not None:
+            routing_raw, _ = frozen_file(item['routing'], root, 'json', files)
+            routing_delivery(item, source_raw, routing_raw, artifacts)
+            try:
+                states = routing_states(json.loads(routing_raw), set(map(str, selected)))
+            except (ValueError, UnicodeError) as exc:
+                raise ContractError(f'CCS 分流原件不是有效 JSON：{exc}') from exc
+            require(item.get('source_states') == states, 'CCS 来源状态与分流原件不符')
+            if mode == 'formal':
+                pending = {iri for iri, state in states.items() if state['routing_action'] == 'pending'}
+                require(not pending & set(item['selectable_subjects']), 'CCS 未决记录不能正式可选')
+        sources.append(Source(item, source_raw, graph, selected, raw_path, delivery))
     for item in spec.get('auxiliary', []):
         require(item.get('kind') in ('types', 'genres', 'forms', 'references'), '辅助输入 kind 不受支持')
         require(item.get('format') in ('yaml', 'yml', 'json'), '辅助输入仅支持 YAML 或 JSON')
         source_raw, raw_path = frozen_file(item, root, item['format'], files)
+        frozen_artifacts(item, root, files)
         try:
             data = yaml.safe_load(source_raw) if item['format'] != 'json' else json.loads(source_raw)
         except Exception as exc:

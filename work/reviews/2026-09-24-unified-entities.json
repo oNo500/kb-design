@@ -1,0 +1,50 @@
+{
+  "completed_at": "2026-09-23T17:37:34.853974+00:00",
+  "base_commit": "b93100353dc4bdfb79025379ad494bc120b46968",
+  "current": "output/vocabulary/entities/current",
+  "version": "/Users/xiu/code/kb-design/output/vocabulary/entities/versions/2026-09-24-r1",
+  "entity_records": 337,
+  "eligible_records": 337,
+  "ineligible": {},
+  "same_name_candidates": [
+    {
+      "entity_iris": [
+        "urn:kb-vocab-ccs:entity:a3a04a53-25c1-5844-81c8-21da17264380",
+        "urn:uuid:0a892f2a-4106-4c45-8a2f-dbd32d7e0933"
+      ],
+      "language": "en",
+      "text": "JavaScript"
+    }
+  ],
+  "manifest_sha256": "e312f63c080bd79a819b74703b3a9656f4bc3567a1709efef4486263a9dfc4ec",
+  "checks": {
+    "entity_records": 337,
+    "eligible": 337,
+    "same_name_groups": [
+      {
+        "entity_iris": [
+          "urn:kb-vocab-ccs:entity:a3a04a53-25c1-5844-81c8-21da17264380",
+          "urn:uuid:0a892f2a-4106-4c45-8a2f-dbd32d7e0933"
+        ],
+        "language": "en",
+        "text": "JavaScript"
+      }
+    ],
+    "input_graph_union_preserved": true,
+    "local_label_targets": 1156,
+    "profile": "structure",
+    "conforms": true,
+    "counts": {},
+    "graph_sha256": "148c8fd04fafd70b6a4cb010454e747bab31bfacf648f221598a463d3e14946a",
+    "external_facts_checked": false
+  },
+  "tests": {
+    "command": "uv run --with pytest pytest packages/kb-vocab-maintenance/tests -q --tb=short",
+    "passed": 43,
+    "subtests": 8
+  },
+  "obsidian_updated": false,
+  "original_states_preserved": true,
+  "external_facts_reviewed": false,
+  "superseded_unactivated_build": "output/vocabulary/entities/versions/2026-09-24"
+}

@@ -60,7 +60,8 @@
 - 来源与术语基础的原范围见[当前阶段](docs/governance/decision-making/决定-当前阶段.md)，后续以具体已采纳决定为准。六份词表的来源 v2 基线按[来源收尾](docs/model/sources/决定-来源收尾.md)保留；当前按[参考文献分离](docs/model/sources/决定-参考文献分离.md)将设计文献置于 `data/references/bibliography.yaml`，六份词表与书目严格使用来源 schema_version 3；17 条未核映射继续保留审查，不重开或提升为有效映射。完整术语数据、限定准入、生成与维护已实施，[术语发布](docs/model/terminology/决定-术语发布条件.md)在临时验收通过后启用结构化术语唯一编辑源及首批术语参考消费。正式义务、持久正式索引、委托、内容消费者、查询日志及回流仍未启用
 - Obsidian 是应用层，也是首个完整应用 target；`apps/obsidian/` 中的 `kb-obsidian` 工具读取所在设计仓库的干净 Git 快照，保留显式 `--design-root`，不使用提交白名单，见[工具归属](docs/applications/obsidian/决定-Obsidian%20工具归属.md)。默认持久 vault 位于 Git 忽略的 `output/obsidian/`，也支持显式外部 vault；应用实现和输出目录存在仍不等于消费者激活
 - `kb-obsidian` 已实现新 vault 初始化、显式词表及术语参考刷新、内容建立、内容校验和派生报告；刷新只更新 `kb/` 与 `app/manifest.json`，保留用户内容与配置，见[词表参考刷新](docs/applications/obsidian/决定-词表参考刷新.md)。本轮只在临时 vault 完成完整数据验收，未写入外部正式库；过去空库或单条 draft 的观察不能作为当前内容计数，实际内容消费者、查询日志与回流仍未激活
-- 新内容单元使用无前缀、小写 UUIDv4，UUID 文件名承担稳定路径，title 与派生 alias 等元数据承担人的检索；建立器只创建通过当前约束校验的 `draft`，不批准内容状态或正式分类
+- 新 RDF/PARA 正式实例按[正式库创建](docs/applications/obsidian/决定-正式库创建.md)位于 `/Users/xiu/Documents/knowledge-base`，在明确固定范围内使用词条、写作、引用和检索。原 `/Users/xiu/Documents/kb-vault` 是保留的旧库，不自动迁移；新实例的授权不改变来源事实核验和原状态，也不启用查询日志或自动回流。
+- 内容单元使用无前缀、小写 UUIDv4。旧 `kb-obsidian` 使用 UUID 文件名；新 RDF/PARA 工具使用可读、小写中划线文件名，独立 identifier 保留稳定身份。建立器只创建通过当前约束校验的 `draft`，不批准内容状态或正式分类。
 - 来源与术语参考的严格读取及书目分离，不等于内容消费者启用、外部 vault 同步或发版。archival 在来源用途记录中只可保留 proposed discovery，不具备 approved 用途；作为具体定义或语言材料的 basis 按独立合同核对。TBX 继续后置为无真实接收方的未生效草案
 
 ## 应用分层
@@ -77,8 +78,8 @@
 - 根目录是 uv workspace，使用统一 `uv.lock`；`.python-version` 固定当前开发环境为 Python 3.13.5，成员包最低支持 Python 3.11
 - `apps/obsidian/` 通过 workspace 依赖使用 `packages/kb-core/`，核心包不依赖具体应用；核心入口是 `uv run kb-core <命令>`，应用入口是 `uv run kb-obsidian <命令>`
 - `apps/vocab-preview/` 提供 `uv run kb-vocab-preview`，只读展示工作区六份词表并自动更新；不要求提交，不写回词表，不代表数据已批准，见[预览归属](docs/applications/vocab-preview/决定-预览归属.md)
-- `packages/kb-vocab-maintenance/` 提供独立 RDF 词表资料收录、字段差异和带基准的描述字段修改，见[词表维护工程](docs/practices/vocabulary/设计-词表维护工程.md)。维护止于版本交付，不调用应用刷新或改文章；旧实体原编辑源及 candidate/active 状态保留，IRI 对应登记在 `data/inputs/vocabulary-maintenance/`，导入交付不自动进入应用。
-- `apps/obsidian-rdf/` 服务独立编号 PARA 开发库。`kb-obsidian-rdf maintain` 显式维护配置及视图，`refresh` 仅更新词条和当前交付，两者均不编辑文章，见[产物维护](docs/applications/obsidian/设计-产物维护.md)。正式库仍使用其原合同，不因开发库或新工具存在自动切换。
+- `packages/kb-vocab-maintenance/` 提供独立 RDF 词表资料收录、字段差异和带基准的描述字段修改，见[词表维护工程](docs/practices/vocabulary/设计-词表维护工程.md)。实体按[统一使用](docs/model/entities/决定-实体统一使用.md)合成一份当前 RDF：稳定身份、名称、类别和可追溯来源齐全即可先用，保留 candidate/active 原值及未核说明，明确停用不自动恢复。IRI 对应和来源配置在 `data/inputs/vocabulary-maintenance/` 维护；词表维护止于交付，不调用应用刷新或改文章。
+- `apps/obsidian-rdf/` 服务独立编号 PARA 的 preview/formal 实例，模式与目标路径分别绑定，不借普通刷新转换。正式创建显式指定统一实体交付及使用依据；`maintain` 维护配置及视图，`refresh` 仅更新词条和当前交付，两者均不编辑文章，见[产物维护](docs/applications/obsidian/设计-产物维护.md)。
 - `output/` 保存 Git 忽略的持久应用数据，不属于构建清理对象；`build/` 保存 Git 忽略的可清理临时产物
 - 迁移前决定与 `work/archive/` 的旧路径按原 Git 基线解释，不重写历史正文；当前位置见[仓库布局](docs/development/决定-仓库布局.md)
 
@@ -112,7 +113,7 @@
 ## 规则
 
 每次执行我需要执行概要和时间，在我批准后才可以执行
-正式知识库位于仓库外的 ~/Documents/kb-vault/，本仓库维护模型、规则、词表和应用工具。AI 检查和验证知识库时优先使用 Obsidian CLI，避免使用 Computer Use。
+新的正式知识库位于仓库外的 ~/Documents/knowledge-base/，原 ~/Documents/kb-vault/ 保留为旧库；本仓库维护模型、规则、词表和应用工具。AI 检查和验证知识库时优先使用 Obsidian CLI，避免使用 Computer Use。
 避免自造词汇，使用业界术语或者业界惯例用词用语
 
 - **目的优先，整体一致**：约束做事方式，避免局部修补不断累积，破坏整体。

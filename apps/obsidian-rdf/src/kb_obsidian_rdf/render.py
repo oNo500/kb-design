@@ -171,8 +171,8 @@ def render_resource(record, graph, names, by_iri, source_info, *, projection=Non
     subject = URIRef(record['identity']['iri'])
     entry = record['entry']
     metadata = {'title': record['label'], 'identifier': str(subject), 'aliases': entry['aliases'],
-                'record_kind': record['kind'], 'fields': entry['fields'], 'preview': True,
-                'trial_selectable': record['trial_selectable']}
+                'record_kind': record['kind'], 'fields': entry['fields'], 'preview': record.get('mode', 'preview') == 'preview',
+                'trial_selectable': record['trial_selectable'], 'selectable': record['trial_selectable']}
     result = [frontmatter(metadata), f'# {md(record["label"])}', '']
     if entry['fields']:
         result.extend(['适用字段：' + '、'.join(f'`{field}`' for field in entry['fields']) + '。', ''])
@@ -181,7 +181,9 @@ def render_resource(record, graph, names, by_iri, source_info, *, projection=Non
     if record['restrictions']:
         result.extend(['## 使用限制', '', *[f'- {md(v)}' for v in record['restrictions']], ''])
     if not record['formal_basis']:
-        result.extend(['开发试用；正式准用未确认。', ''])
+        result.extend(['开发试用；正式准用未确认。' if record.get('mode', 'preview') == 'preview' else '未获本实例选用授权。', ''])
+    elif record.get('mode') == 'formal' and record['kind'] == 'entities':
+        result.extend(['本实例可按已固定范围引用；来源原状态保留，实体事实与语义审阅尚未执行。', ''])
 
     def mark(attachment, predicate, value):
         if projection is not None and not isinstance(value, BNode):
@@ -226,6 +228,16 @@ def render_resource(record, graph, names, by_iri, source_info, *, projection=Non
         result.append('')
 
     if record['kind'] == 'entities':
+        state = record.get('source_state')
+        originals = state.get('entity_delivery', []) if isinstance(state, dict) else []
+        if originals:
+            result.extend(['## 来源状态', ''])
+            for original in originals:
+                for source in original['sources']:
+                    result.append(f'- {md(source["key"])}：{md(json.dumps(source["state"], ensure_ascii=False, sort_keys=True))}。')
+                if original.get('ineligible_reasons'):
+                    result.append('- 不可选原因：' + '、'.join(md(reason) for reason in original['ineligible_reasons']) + '。')
+            result.append('')
         facts = [(p, v) for p, v in graph.predicate_objects(subject) if p in FACT_NAMES]
         if facts:
             result.extend(['## 来源事实', ''])
@@ -288,7 +300,8 @@ def render_auxiliary(record, data, raw_path):
     metadata = {'title': record['label'], 'identifier': record['identity']['id'],
                 'catalog': record['identity']['catalog'], 'aliases': entry['aliases'],
                 'record_kind': record['kind'], 'fields': entry['fields'],
-                'preview': True, 'trial_selectable': record['trial_selectable']}
+                'preview': record.get('mode', 'preview') == 'preview',
+                'trial_selectable': record['trial_selectable'], 'selectable': record['trial_selectable']}
     lines = [frontmatter(metadata), f'# {md(record["label"])}', '',
              '适用字段：' + '、'.join(f'`{field}`' for field in entry['fields']) + '。', '']
     if record['restrictions']:

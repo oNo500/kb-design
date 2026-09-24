@@ -418,6 +418,8 @@ def test_para_delivery_keeps_engineering_inputs_outside_vault(tmp_path):
     files = build_delivery(path)
     assert set(files.vault_files) == {'home.md', '06-views/article-list.base', '06-views/inbox.base',
                                     '06-views/drafts.base', '06-views/recently-modified.base',
+                                    '06-views/projects.base', '06-views/areas.base',
+                                    '06-views/resources.base', '06-views/archives.base',
                                     '07-templates/article.md', '05-vocabulary/concepts/model-context-protocol.md',
                                     '.obsidian/app.json', '.obsidian/templates.json', '.obsidian/types.json'}
     assert all(name == name.lower() and '_' not in name and ' ' not in name for name in files.vault_files)
@@ -428,7 +430,8 @@ def test_para_delivery_keeps_engineering_inputs_outside_vault(tmp_path):
     assert frontmatter(page)['identifier'] == 'https://example.org/c'
     assert '[[inputs/' not in page.decode() and '[[vocab/' not in page.decode()
     home = files.vault_files['home.md'].decode()
-    assert all(root in home for root in ('00-inbox', '01-projects', '02-areas', '03-resources', '04-archives'))
+    assert all(f'[[06-views/{name}.base|' in home
+               for name in ('inbox', 'projects', 'areas', 'resources', 'archives'))
     manifest = json.loads(files.state_files['manifest.json'])
     assert manifest['format_version'] == 3
     assert all(row['path'].startswith('05-vocabulary/') for row in manifest['files'])

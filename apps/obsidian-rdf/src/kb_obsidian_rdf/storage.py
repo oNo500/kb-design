@@ -129,9 +129,61 @@ def _tree(directory: Path) -> dict[str, Path]:
     return result
 
 
+def _formal_evidence(manifest: dict) -> set[str]:
+    """Require fixed local permission, independently of a caller's mode flag."""
+    if manifest.get('mode') != 'formal':
+        return set()
+    sources, auxiliary = manifest.get('sources'), manifest.get('auxiliary', [])
+    if not isinstance(sources, list) or not sources or not isinstance(auxiliary, list):
+        raise ContractError('正式交付缺少来源与使用依据')
+    expected = set()
+    for source in [*sources, *auxiliary]:
+        authority = source.get('authority') if isinstance(source, dict) else None
+        if not isinstance(authority, dict):
+            raise ContractError('正式交付缺少使用依据')
+        reference, sha = authority.get('formal_reference'), authority.get('formal_evidence_sha256')
+        url = urlsplit(reference) if isinstance(reference, str) else None
+        if (url is None or url.scheme != 'file' or url.netloc not in ('', 'localhost')
+                or not Path(unquote(url.path)).is_absolute()
+                or not isinstance(sha, str) or not re.fullmatch(r'[0-9a-f]{64}', sha)):
+            raise ContractError('正式使用依据必须是固定本地 file URI 与 SHA256')
+        expected.add(f'inputs/{sha}.md')
+    sha = manifest.get('input_sha256')
+    if not isinstance(sha, str) or not re.fullmatch(r'[0-9a-f]{64}', sha):
+        raise ContractError('正式交付缺少固定输入摘要')
+    expected.add(f'inputs/{sha}.json')
+    rows = manifest.get('state_files')
+    entries = {row.get('path'): row for row in rows if isinstance(row, dict)} if isinstance(rows, list) else {}
+    for path in expected:
+        entry = entries.get(path)
+        if not entry or entry.get('sha256') != Path(path).stem:
+            raise ContractError('正式使用依据与输入未固定于交付清单')
+    return expected
+
+
+def _formal_input(manifest: dict, read):
+    for path in _formal_evidence(manifest):
+        raw = read(path)
+        if digest(raw) != Path(path).stem:
+            raise ContractError(f'正式使用依据或输入摘要不符：{path}')
+        if path == f"inputs/{manifest['input_sha256']}.json":
+            original = _object(raw, path)
+            if original.get('mode') != 'formal':
+                raise ContractError('正式交付与固定输入模式不一致')
+            for field in ('sources', 'auxiliary'):
+                initial = original.get(field, [])
+                current = manifest.get(field, [])
+                if not isinstance(initial, list) or any(not isinstance(s, dict) for s in initial):
+                    raise ContractError('正式输入来源结构无效')
+                permissions = {s.get('key'): s.get('authority') for s in initial}
+                if permissions != {s.get('key'): s.get('authority') for s in current}:
+                    raise ContractError('正式交付使用依据与固定输入不一致')
+
+
 def _manifest_entries(manifest: dict, field: str = "files") -> dict[str, dict]:
-    if manifest.get("format_version") != MANIFEST_VERSION or manifest.get("mode") != "preview":
-        raise ContractError(f"只接受第 {MANIFEST_VERSION} 版 preview 交付清单；旧库需另行迁移")
+    if manifest.get("format_version") != MANIFEST_VERSION or manifest.get("mode") not in {'preview', 'formal'}:
+        raise ContractError(f"只接受第 {MANIFEST_VERSION} 版 preview/formal 模式交付清单；旧库需另行迁移")
+    _formal_evidence(manifest)
     rows = manifest.get(field)
     if not isinstance(rows, list):
         raise ContractError(f"交付清单 {field} 必须为列表")
@@ -184,6 +236,7 @@ def _delivery(delivery: Delivery) -> tuple[dict, str]:
             raise ContractError(f"交付文件集合与 {field} 清单不一致")
         for path, entry in entries.items():
             _check_bytes(path, supplied[path], entry)
+    _formal_input(manifest, delivery.state_files.__getitem__)
     return manifest, digest(delivery.state_files[MANIFEST])
 
 
@@ -211,7 +264,11 @@ def _read_snapshot(directory: Path, expected: str | None = None, *, full: bool =
             _check_bytes(path, _read(actual[path]), entry)
     records_raw = _read(safe_path(directory, "records.json"))
     _check_bytes("records.json", records_raw, state_files["records.json"])
-    return {"manifest": manifest, "manifest_sha256": manifest_hash, "records": _record_object(records_raw),
+    _formal_input(manifest, lambda path: _read(safe_path(directory, path)))
+    records = _record_object(records_raw)
+    if any(row.get('mode', 'preview') != manifest['mode'] for row in records['records']):
+        raise ContractError('身份记录与交付模式不一致')
+    return {"manifest": manifest, "manifest_sha256": manifest_hash, "records": records,
             "files": files, "state_files": state_files}
 
 
@@ -233,6 +290,7 @@ def _binding(vault: Path, state_dir: Path) -> dict:
     except (ValueError, TypeError, AttributeError):
         valid_id = False
     if (binding.get("tool") != TOOL or binding.get("format_version") != 1 or not valid_id
+            or binding.get('mode') not in {'preview', 'formal'}
             or not isinstance(binding.get("vault"), str)
             or _path_identity(Path(binding["vault"])) != _path_identity(vault)
             or binding.get("state_dir") != str(state_dir)):
@@ -257,6 +315,7 @@ def _current(vault: Path, state_root: Path | None, allow_pending: bool, *, full:
             or not re.fullmatch(r"[0-9a-f]{64}", receipt["manifest_sha256"])):
         raise ContractError("安装凭据不属于该知识库或尚未完成")
     snapshot = _read_snapshot(safe_path(state_dir, "current"), receipt["manifest_sha256"], full=full)
+    _same_mode(binding, snapshot['manifest'], receipt)
     if full:
         _verify_vocabulary(safe_path(vault, VOCABULARY), snapshot)
     return {**snapshot, "vault": str(vault), "state_dir": str(state_dir), "receipt": receipt, "pending": pending}
@@ -290,8 +349,15 @@ def _write(path: Path, data: bytes, *, exclusive: bool = False):
             temporary.unlink()
 
 
+def _same_mode(binding: dict, *values: dict):
+    if any(value.get('mode', 'preview') != binding['mode'] for value in values):
+        raise ContractError('绑定、交付或操作记录的模式不一致，不自动切换 preview/formal')
+
+
 def _receipt(vault: Path, state_dir: Path, binding: dict, snapshot: dict, operation: str, operation_id: str) -> dict:
+    _same_mode(binding, snapshot['manifest'])
     receipt = {"format_version": 1, "vault_id": binding["vault_id"], "target": binding["vault"],
+               "mode": binding['mode'],
                "operation": operation, "operation_id": operation_id, "result": "installed",
                "manifest_sha256": snapshot["manifest_sha256"],
                "input_sha256": snapshot["manifest"].get("input_sha256"),
@@ -341,12 +407,13 @@ def initialize(vault: Path, files: Delivery, state_root: Path | None = None) -> 
         if state_dir.exists():
             raise ContractError("外部状态实例已存在；先恢复未完成操作，不会覆盖或重新绑定")
         state_dir.mkdir(parents=True, exist_ok=False)
-        binding = {"format_version": 1, "tool": TOOL, "vault_id": str(uuid4()), "mode": "preview",
+        binding = {"format_version": 1, "tool": TOOL, "vault_id": str(uuid4()), "mode": manifest['mode'],
                    "vault": str(vault), "state_dir": str(state_dir)}
         _write(state_dir / "binding.json", json_bytes(binding), exclusive=True)
         operation_id = uuid4().hex
         candidate = f"staging/{operation_id}"
         journal = {"format_version": 2, "operation": "init", "vault_id": binding["vault_id"],
+                   "mode": binding['mode'],
                    "operation_id": operation_id, "candidate": candidate, "backup": None,
                    "old_manifest_sha256": None, "new_manifest_sha256": manifest_hash,
                    "write_set": ["vault", "current"], "stage": "preparing",
@@ -378,7 +445,7 @@ def initialize(vault: Path, files: Delivery, state_root: Path | None = None) -> 
             receipt = _receipt(vault, state_dir, binding, snapshot, "init", operation_id)
             _finish_journal(state_dir, journal, "new_installed")
             return {"status": "initialized", "vault": str(vault), "state_dir": str(state_dir),
-                    "manifest_sha256": manifest_hash, "receipt": receipt, "mode": "preview"}
+                    "manifest_sha256": manifest_hash, "receipt": receipt, "mode": manifest['mode']}
         except (OSError, ContractError) as error:
             raise ContractError(f"初始化未完成，库外候选和恢复记录已保留；请执行 recover 恢复。原因：{error}") from error
 
@@ -513,6 +580,8 @@ def refresh(vault: Path, files: Delivery, *, apply: bool = False,
     vault = _absolute(vault)
     with vault_lock(vault, state_root):
         state = inspect(vault, state_root=state_root)
+        if manifest['mode'] != state['manifest']['mode']:
+            raise ContractError('刷新模式与已绑定实例不一致，不自动切换 preview/formal')
         state_dir = Path(state["state_dir"])
         previous = manifest.get("previous_delivery")
         if not isinstance(previous, dict) or previous.get("sha256") != state["manifest_sha256"]:
@@ -521,6 +590,7 @@ def refresh(vault: Path, files: Delivery, *, apply: bool = False,
         changes = {"added": sorted(new.keys() - old.keys()), "removed": sorted(old.keys() - new.keys()),
                    "changed": sorted(path for path in old.keys() & new.keys() if old[path]["sha256"] != new[path]["sha256"])}
         result = {"status": "preview", "vault": str(vault), "state_dir": str(state_dir), "changes": changes,
+                  "mode": manifest['mode'],
                   "old_manifest_sha256": state["manifest_sha256"], "manifest_sha256": manifest_hash}
         candidate_state = {"manifest": manifest, "records": _record_object(files.state_files["records.json"]),
                            "files": new, "state_files": _manifest_entries(manifest, "state_files")}
@@ -543,6 +613,7 @@ def refresh(vault: Path, files: Delivery, *, apply: bool = False,
         snapshot = _read_snapshot(candidate_root / "current", manifest_hash)
         _verify_vocabulary(candidate_root / VOCABULARY, snapshot)
         journal = {"format_version": 2, "operation": "refresh", "vault_id": binding["vault_id"],
+                   "mode": binding['mode'],
                    "operation_id": operation_id, "old_manifest_sha256": state["manifest_sha256"],
                    "new_manifest_sha256": manifest_hash, "candidate": candidate, "backup": backup,
                    "write_set": [VOCABULARY, "current"], "stage": "prepared"}
@@ -573,6 +644,7 @@ def refresh(vault: Path, files: Delivery, *, apply: bool = False,
 
 def _validated_journal(state_dir: Path, binding: dict) -> dict:
     journal = _json(safe_path(state_dir, RECOVERY))
+    _same_mode(binding, journal)
     operation_id, operation = journal.get("operation_id"), journal.get("operation")
     if (not isinstance(operation_id, str) or not re.fullmatch(r"[0-9a-f]{32}", operation_id)
             or journal.get("format_version") != 2 or journal.get("vault_id") != binding["vault_id"]
@@ -603,6 +675,7 @@ def _initial_recovery(vault: Path, state_dir: Path, binding: dict, journal: dict
                 "preserved_state": str(preserved), "state_dir": str(state_dir)}
     state_source = state_dir / "current" if (state_dir / "current").exists() else candidate / "current"
     snapshot = _read_snapshot(state_source, expected)
+    _same_mode(binding, snapshot['manifest'])
     staged_vault = candidate / "vault"
     if staged_vault.exists():
         # Nothing may replace a user's nonempty target, even after an interruption.
@@ -642,6 +715,7 @@ def _refresh_recovery(vault: Path, state_dir: Path, binding: dict, journal: dict
         if not path.exists():
             continue
         snapshot = _read_snapshot(path)
+        _same_mode(binding, snapshot['manifest'])
         version = snapshot["manifest_sha256"]
         if version not in {old_hash, new_hash}:
             raise ContractError("当前或保留工程状态已变化，不覆盖未知版本")

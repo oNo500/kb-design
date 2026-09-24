@@ -1,0 +1,76 @@
+{
+  "completed_at": "2026-09-24T01:35:43.912150+00:00",
+  "base_commit": "b93100353dc4bdfb79025379ad494bc120b46968",
+  "vault": "/Users/xiu/Documents/knowledge-base",
+  "mode": "formal",
+  "state_dir": "/Users/xiu/code/kb-design/output/obsidian-rdf/state/1b52a4ef67cd5aea74b0bfb08743cc0ca7cdd507e1e58313a6a6005ff589574c",
+  "manifest_sha256": "f7c02b0100f13e602a4110a68170b56776f5fc03d6a959c8a2d8082fc7d96c22",
+  "records": {
+    "concepts": 2365,
+    "types": 6,
+    "entities": 337,
+    "forms": 16,
+    "genres": 5,
+    "references": 82
+  },
+  "selectable": {
+    "concepts": 2317,
+    "types": 6,
+    "entities": 337,
+    "forms": 16,
+    "genres": 5,
+    "references": 25
+  },
+  "initial_content_records": 0,
+  "native_checks": {
+    "path": "/Users/xiu/Documents/knowledge-base",
+    "templates": "article",
+    "drafts": [],
+    "recent": [],
+    "inbox": [],
+    "unresolved": "0"
+  },
+  "temporary_acceptance": {
+    "mode": "formal",
+    "article_check_errors": 0,
+    "formal_unconfirmed": 0,
+    "entity_identity": {
+      "iri": "urn:uuid:2cf8074f-f498-4c8a-9c5e-5f90af0bbeeb"
+    },
+    "entity_original_status": "candidate",
+    "entity_available": true,
+    "article_retrieved_by_identity": true,
+    "test_article_absent_from_initial_delivery": true
+  },
+  "tests": {
+    "command": "uv run --package kb-obsidian-rdf --with pytest pytest apps/obsidian-rdf/tests -q --tb=short",
+    "passed": 203
+  },
+  "old_vault_migrated": false,
+  "development_articles_copied": false,
+  "source_states_preserved": true,
+  "native_startup": {
+    "direct_open": "stalled during native loading; native readConfigJson/core-plugins timed out",
+    "default_core_plugin_file": "Created while diagnosing, using this installed Obsidian version native defaults; no pre-existing settings were overwritten. This alone did not resolve startup.",
+    "resolution": "Opened the exact folder through the native Open local vault folder picker; startup and subsequent CLI checks succeeded.",
+    "underlying_cause": "not established; no OS permission diagnosis claimed",
+    "visual_quality_review": false,
+    "accessibility_used_for_opening": true
+  },
+  "implementation_sha256": {
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/build.py": "4b0642f98e3f2efbc5fded0ca1c8154b9cbccc6ef28ed414c9bc7613a6fdd6a9",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/query.py": "95d75caa5ac79e0d2e77db2595a1ad08f496a433aa4fb9999ff1e70a0cd472ae",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/render.py": "a6c23773e4ab8776322285d1d537b6d2b3f492d6b9bcd09e448668e637b306b3",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/naming.py": "10d75894fb215af235be6fbbe8ab15224ca332dcf6435b2b94c5dd6239278abf",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/layout.py": "8b327c2257c410738e7d4788e200f846fd6e5f31d0b8e428ced2ebea88097872",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/__init__.py": "cb3887fefce9bfab56b42892e34d10e8fcc6a3e4783b1cb2f77511d301e08319",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/content.py": "70d9af8dbd9b558c2a9edc3db993a19e7cbc26bf743722625e31392ade3205ff",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/cli.py": "118109a263beadd2166cc3caf165699cd344434d2c305d1a641a87ccd7774986",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/common.py": "4e56ea3de44f97df263e8121731eb84917cd4782f3a4273b51348c79e7747c9f",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/input.py": "9882c33e78f45f3808dd86d9d517a1a03573d08713312727ba2188c672b3d82a",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/storage.py": "2ef5e8b4b5bb4212c9915aa1202340c0680b0570b7e6956c5081d26480336ef2",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/product.py": "96bdf8c4fc74a0a102236d1d6700940aa31b760182f6b3baeba791c01e0dcd3e",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/prepare.py": "8556a70a4810afec219db99fb825f9166fd19905cd8915523340361d3b458863"
+  }
+}

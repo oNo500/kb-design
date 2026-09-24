@@ -122,14 +122,16 @@ def _brief(record: dict, matched_alias: str | None = None) -> dict:
         limitations.append("旧交付没有结构化摘要，仅按名称查找；需重新生成以取得完整别名和详情")
     notices = []
     if record.get("formal_basis") is None:
-        notices.append("仅预览，正式准用未确认")
+        notices.append("仅预览，正式准用未确认" if record.get('mode', 'preview') == 'preview' else '未获本实例选用授权')
+    if record.get('mode') == 'formal' and record['kind'] == 'entities':
+        notices.append('应用使用授权不表示实体事实或语义审阅通过')
     if record["use"] != "current":
         notices.append("历史记录可供查阅，不供新的字段选择")
     return {"label": record["label"], "kind": record["kind"], "identity": record["identity"],
             "path": record["path"], "link": _wikilink(record), "summary": summary,
             "matched_alias": matched_alias, "available": _available(record),
             "fields": [field for field, kinds in _REFERENCES.items() if record["kind"] in kinds],
-            "use": record["use"], "formal_basis": record.get("formal_basis"),
+            "use": record["use"], "mode": record.get('mode', 'preview'), "formal_basis": record.get("formal_basis"),
             "restrictions": record["restrictions"], "limitations": limitations, "notices": notices}
 
 
@@ -137,7 +139,9 @@ def _verification(state: dict, *, page=None, articles=False) -> dict:
     return {"scope": "manifest_records_and_articles" if articles else "manifest_records_and_page" if page else "manifest_and_records",
             "manifest_sha256": state["manifest_sha256"], "records_sha256": state["state_files"]["records.json"]["sha256"],
             "page": None if page is None else {"path": page, "sha256": state["files"][page]["sha256"]},
-            "all_managed_files_checked": False, "shacl_rerun": False, "formal_use_checked": False}
+            "all_managed_files_checked": False, "shacl_rerun": False, "formal_use_checked": state['manifest']['mode'] == 'formal',
+            "formal_use_scope": 'application_use' if state['manifest']['mode'] == 'formal' else None,
+            "entity_facts_checked": False, "semantic_review_checked": False}
 
 
 def _match(record: dict, query: str):

@@ -1,11 +1,11 @@
 # Obsidian 词表应用 (Obsidian Vocabulary Use)
 
-`kb-obsidian-rdf` 为 PARA 知识库提供词条生成、选择、引用和检索。知识库保存文章、资料和可用条目；原始词表、版本清单、校验报告和恢复资料保存在库外。
+`kb-obsidian-rdf` 为 PARA 知识库提供词条生成、选择、引用和检索，支持独立的开发预览与正式使用实例。知识库保存文章、资料和可用条目；原始词表、版本清单、校验报告和恢复资料保存在库外。
 
 ## 文件结构
 
 ```text
-development-para/
+knowledge-base/
 ├─ home.md
 ├─ 00-inbox/
 ├─ 01-projects/
@@ -23,7 +23,11 @@ development-para/
 │  ├─ article-list.base
 │  ├─ inbox.base
 │  ├─ drafts.base
-│  └─ recently-modified.base
+│  ├─ recently-modified.base
+│  ├─ projects.base
+│  ├─ areas.base
+│  ├─ resources.base
+│  └─ archives.base
 ├─ 07-templates/article.md
 ├─ 08-attachments/
 └─ .obsidian/
@@ -53,9 +57,30 @@ PARA 知识库       库外工程状态
 查词 → 选择引用 → 写作 → 按引用找文章
 ```
 
-## 开发库生成
+## 正式库创建
 
-从工具所在仓库根目录执行：
+正式库位于 `/Users/xiu/Documents/knowledge-base`，创建范围见[正式库创建](../../docs/applications/obsidian/决定-正式库创建.md)。所有操作显式指定目标；原 `/Users/xiu/Documents/kb-vault` 与开发库独立保留。
+
+```bash
+uv run kb-obsidian-rdf prepare \
+  --mode formal \
+  --source-root /Users/xiu/code/kb-design \
+  --authority docs/applications/obsidian/决定-正式库创建.md \
+  --entities output/vocabulary/entities/current \
+  --output build/obsidian-formal/input.json
+
+uv run kb-obsidian-rdf init \
+  --input build/obsidian-formal/input.json \
+  --vault /Users/xiu/Documents/knowledge-base
+```
+
+prepare 将实体 current 固定到具体版本，复验统一交付，保存原状态、来源、基本字段结果及完整原件；正式使用采用该版本的可用清单，不会仅凭 candidate 禁用记录。CCS 分流未决概念保留查阅，不能自动新选用。辅助值域沿用其既有采用规则。
+
+正式模式须有本地使用范围与授权记录及摘要，不是把 preview 改成 formal 就能创建。初建只接受空目标，不复制开发文章、不迁移旧库内容。首次使用时，在 Obsidian 仓库管理器选择“打开本地仓库”，选定目标目录，再从 `home.md` 开始；之后可使用原生 CLI 打开已登记的实例。
+
+## 开发库创建
+
+省略 mode 或指定 preview 保持开发行为，示例如下：
 
 ```bash
 uv run kb-obsidian-rdf prepare \
@@ -68,41 +93,41 @@ uv run kb-obsidian-rdf init \
   --vault output/obsidian-rdf/development-para
 ```
 
-输入准备核对三份既有 RDF 交付及辅助元数据词表，不修改原始数据。初建只接受空目标；其他 RDF 可以提供符合[输入合同](../../docs/applications/obsidian/提案-Obsidian%20导出与导入.md#输入清单)的清单。
-
-在 Obsidian 中把生成目录作为库打开，从 `home.md` 开始。模板功能通过 Obsidian 的 Templates 核心插件使用；工具不接管已有的插件开关。正式目录以后通过 `--vault` 显式指定，指定目录不会自动批准正式数据采用。
+输入文件名已存在时须另选新名称。其他 RDF 可提供符合[输入合同](../../docs/applications/obsidian/提案-Obsidian%20导出与导入.md#输入清单)的清单；开发与正式实例不能借普通刷新互相转换。
 
 ## 常用视图
 
-收件箱只显示 `00-inbox` 下的 Markdown 文件，允许没有文章属性的临时笔记。草稿显示 PARA 四区中声明小写 UUIDv4 identifier 且 status 为 draft 的文章；最近修改覆盖同样声明 UUID 的文章，按文件实际修改时间从新到旧排序。两者均排除收件箱与词条目录。UUID 筛选不代替内容校验，也不表示正式准用。
+首页集中链接八个视图。收件箱展示 `00-inbox` 中的 Markdown 文件；项目、领域、资源、归档分别展示对应 PARA 目录，资源按所在子目录分组。全部笔记保留 `article-list.base` 路径，覆盖 PARA 四区中的 Markdown 文件，包含自由笔记，排除词条、模板和首页。
 
-既有文章列表保留，用于查看 PARA 四区中的 Markdown 文件，包含自由笔记。所有视图都可由用户调整，普通词表刷新不会覆盖这些调整。
+草稿限定 PARA 四区中声明小写 UUIDv4 identifier 且 status 为 draft 的文章；最近修改覆盖同样声明 UUID 的文章。目录移动不改变文章状态；视图筛选也不代替完整内容校验。
+
+默认显示可点击的标题、主题、实体、文档类型和修改时间，按文件修改时间降序排列。标题缺失时显示文件名。原生 Bases 筛选器可按属性进一步筛选，用户调整保留；普通词表刷新不覆盖视图。已有视图升级须显式审阅候选，不通过普通维护覆盖私人排序和筛选。语法依据见 [Bases](https://obsidian.md/help/bases/syntax)。
 
 ## 条目选择
 
 ```bash
 uv run kb-obsidian-rdf search \
-  --vault output/obsidian-rdf/development-para \
+  --vault /Users/xiu/Documents/knowledge-base \
   --field subject --query 人工智能
 
 uv run kb-obsidian-rdf get \
-  --vault output/obsidian-rdf/development-para \
-  --field entities --term JavaScript --link
+  --vault /Users/xiu/Documents/knowledge-base \
+  --field entities --term Obsidian --link
 ```
 
 先限定字段，再查名称或别名：subject 查主题，entities 查实体，type、genre、form、references 分别查对应值域。省略 search 的 query 可列选项；默认排除不可新选用记录。
 
-get 的 link 输出可粘贴到文章属性，例如 `[[05-vocabulary/entities/javascript|JavaScript]]`。同名不唯一时返回候选，不自动选择；用 `--ref` 指定明确身份或路径。`--json` 返回结构化摘要，`--details` 才展开完整条目信息。
+get 的 link 输出可粘贴到文章属性，例如 `[[05-vocabulary/entities/obsidian|Obsidian]]`。同名不唯一时返回候选，不自动选择；用 `--ref` 指定明确身份或路径。`--json` 返回结构化摘要，`--details` 才展开完整条目信息。
 
 ## 文章建立
 
 ```bash
 uv run kb-obsidian-rdf new \
-  --vault output/obsidian-rdf/development-para \
+  --vault /Users/xiu/Documents/knowledge-base \
   --folder 01-projects/knowledge-base \
-  --title 'JavaScript 数组排序教程' \
+  --title 'Obsidian 使用笔记' \
   --type tutorial --genre background \
-  --subject-name '排序与查找' --entity-name JavaScript
+  --subject-name '信息系统' --entity-name Obsidian
 ```
 
 工具分配 UUID、日期和 draft，按原身份核对选择，再写入指定的 PARA 目录。省略 folder 时放 `03-resources`。精确身份仍可用 subject、entity 参数传入；不能根据文件夹或正文自动推定主题。
@@ -113,11 +138,11 @@ uv run kb-obsidian-rdf new \
 
 ```bash
 uv run kb-obsidian-rdf articles \
-  --vault output/obsidian-rdf/development-para \
-  --field entities --term JavaScript
+  --vault /Users/xiu/Documents/knowledge-base \
+  --field entities --term Obsidian
 
 uv run kb-obsidian-rdf articles \
-  --vault output/obsidian-rdf/development-para \
+  --vault /Users/xiu/Documents/knowledge-base \
   --field subject --term 人工智能 --descendants
 ```
 
@@ -127,7 +152,7 @@ uv run kb-obsidian-rdf articles \
 
 ```bash
 uv run kb-obsidian-rdf check \
-  --vault output/obsidian-rdf/development-para
+  --vault /Users/xiu/Documents/knowledge-base
 ```
 
 声明 identifier 的记录按内容模型校验。无声明文件保留，列明为未登记、未检查，不计为通过，也不自动判定其文档类型。已有身份声明但格式损坏或字段不合法时仍报错；普通未登记文件不阻止创建新文章。
@@ -159,25 +184,29 @@ output/obsidian-rdf/state/<库标识>/
 
 中断时另有 `recovery.json`。状态不可当作普通构建缓存随意清理。所有命令可用 `--state-root /库外目录` 覆盖默认位置；读写时须使用一致的状态根目录。互斥锁位于目标库的父目录，同样在库外。
 
-当前开发版要求状态与库位于同一文件系统；不满足时写前拒绝，可显式选择同卷的库外状态目录。手工搬动库之后需要明确重新绑定，工具不会凭名称接管未知库。
+当前实现要求状态与库位于同一文件系统；不满足时写前拒绝，可显式选择同卷的库外状态目录。手工搬动库之后需要明确重新绑定，工具不会凭名称接管未知库。
 
 ## 条目更新
 
+正式库先固定新的数据版本和当前已安装基准，再预览更新：
+
 ```bash
 uv run kb-obsidian-rdf prepare \
+  --mode formal \
   --source-root /Users/xiu/code/kb-design \
-  --authority apps/obsidian-rdf/inputs/开发预览范围.md \
-  --previous-vault output/obsidian-rdf/development-para \
-  --output build/obsidian-para/next.json
+  --authority docs/applications/obsidian/决定-正式库创建.md \
+  --entities output/vocabulary/entities/current \
+  --previous-vault /Users/xiu/Documents/knowledge-base \
+  --output build/obsidian-formal/next.json
 
 uv run kb-obsidian-rdf refresh \
-  --input build/obsidian-para/next.json \
-  --vault output/obsidian-rdf/development-para
+  --input build/obsidian-formal/next.json \
+  --vault /Users/xiu/Documents/knowledge-base
 ```
 
-默认只比较变化。关闭该库、停止同步与其他编辑后，增加 `--apply --offline` 才切换。仅更新 `05-vocabulary` 与库外工程交付；配置、首页、视图和模板只给候选差异，不执行产物维护。已有身份保持既有路径，改译名不等于批量改文章链接。第 2 版实例须先显式迁移，普通刷新不自动增加目录编号。
+默认只比较变化。关闭该库、暂停其他编辑与同步后，增加 `--apply --offline` 才切换。仅更新 `05-vocabulary` 与库外工程交付，配置、首页、视图和模板只给候选差异，文章不在写集内。已有身份保持已安装路径，改译名不等于批量改文章链接。
 
-条目刷新中断后保留现场，执行 `recover --vault <目录> --offline`。恢复核对两个位置的实际版本和新增引用，不通过删除用户内容来恢复，也不宣称跨目录事务或断电持久性。
+开发库刷新继续使用 preview 输入与开发路径。第 2 版布局须显式迁移，模式不同也不能普通刷新。条目刷新中断后执行 `recover --vault <明确目标> --offline`；恢复核对实际数据及引用，不删除用户内容，也不宣称跨目录事务或断电持久性。
 
 ## 产物维护
 
@@ -185,14 +214,14 @@ uv run kb-obsidian-rdf refresh \
 
 ```bash
 uv run kb-obsidian-rdf maintain \
-  --vault output/obsidian-rdf/development-para
+  --vault /Users/xiu/Documents/knowledge-base
 ```
 
 默认只生成库外报告与候选，知识库文件不变。关闭目标库、停止同步和其他编辑后执行：
 
 ```bash
 uv run kb-obsidian-rdf maintain \
-  --vault output/obsidian-rdf/development-para --apply --offline
+  --vault /Users/xiu/Documents/knowledge-base --apply --offline
 ```
 
 配置只补缺项，已有不同值和未知属性原样保留并报告。缺失的视图和模板可以建立；已有文件即使与候选只有格式差异也不重写，其他差异留作候选供审阅。首页只有在完全符合本工具记录的生成基准，或符合本次明确识别的旧版首页时才更新；用户修改的首页保留。
@@ -225,19 +254,15 @@ uv run --package kb-obsidian-rdf python \
 
 失败或中断时保留现场，使用同一条 `--plan … --apply --offline` 命令继续；布局迁移不使用普通 `recover` 命令恢复。
 
-## 开发边界
+## 实例边界
 
-本版为 `0.3.0.dev0`，使用第 3 版分离交付与编号目录。旧的 development、development-usage 实例仍保留原样，不在上述布局迁移范围内，也不由普通刷新迁移。
+`0.4.0` 使用第 3 版分离交付和编号目录，明确区分 preview 与 formal。正式实例表示已经获准按指定范围写作和使用词条，不改变来源事实核验、词表状态或内容状态。工程文件与校验报告继续在库外保存。
 
-本版用于开发实例，正式库切换另行决定。程序只生成初始结构及明确的受管理条目，运行中的知识库不是可清空重建的目录；版本说明和目录合同不表示某个既有实例已经迁移。
-
-此前 `0.2.0.dev0` 的验证结果为 164 项行为检查通过，2,779 个知识生成文件与 15 个工程交付文件重建一致；当时的新库内没有工具的 TTL、JSON 清单或运行报告。该结果不作为第 3 版或本次迁移的验证结论，历史证据见[实施记录](../../work/plans/2026-09-23-obsidian-para-layout.md#验证结果)。
-
-`0.3.0.dev0` 已通过 164 项原有行为测试及 11 项迁移检查，`development-para` 已完成编号迁移。原身份与输入保留，Obsidian 未解析链接为 0，文章查询及 Base 均能找到原示例。实际写集、备份和刷新预览见[编号迁移记录](../../work/plans/2026-09-23-obsidian-numbered-layout.md)。
+旧 development、development-usage 实例和原 kb-vault 保留原样；运行中的知识库不可清空重建。对旧开发实例的编号迁移见[迁移记录](../../work/plans/2026-09-23-obsidian-numbered-layout.md)，配置与视图维护见[独立维护验收](../../work/reviews/2026-09-24-maintenance-adoption.json)。正式创建的临时验收、实际写集和结果见[本次实施](../../work/plans/2026-09-24-formal-obsidian.md)。
 
 ```bash
 uv run --package kb-obsidian-rdf --with pytest \
   pytest apps/obsidian-rdf/tests -q
 ```
 
-依赖依据见 [DEPENDENCIES.md](DEPENDENCIES.md)。设计见[使用与维护](../../docs/applications/obsidian/提案-词表使用与维护.md)、[元数据](../../docs/applications/obsidian/提案-Obsidian%20元数据.md)和[导出合同](../../docs/applications/obsidian/提案-Obsidian%20导出与导入.md)。
+依赖依据见 [DEPENDENCIES.md](DEPENDENCIES.md)。设计见[使用与维护](../../docs/applications/obsidian/提案-词表使用与维护.md)、[元数据](../../docs/applications/obsidian/提案-Obsidian%20元数据.md)、[导出合同](../../docs/applications/obsidian/提案-Obsidian%20导出与导入.md)与[产物维护](../../docs/applications/obsidian/设计-产物维护.md)。

@@ -73,10 +73,10 @@ def navigation_subjects(source):
     return selected
 
 
-def new_record(identity, kind, sources, versions, label):
+def new_record(identity, kind, sources, versions, label, mode='preview'):
     return {'identity': identity, 'kind': kind, 'sources': sorted(set(sources)),
             'versions': sorted(versions, key=lambda x: json.dumps(x, ensure_ascii=False, sort_keys=True)),
-            'use': 'current', 'path': reference_path(kind, identity), 'source_state': None,
+            'use': 'current', 'mode': mode, 'path': reference_path(kind, identity), 'source_state': None,
             'trial_selectable': False, 'formal_basis': None, 'restrictions': [], 'history': [], 'label': label}
 
 
@@ -125,11 +125,15 @@ def build_records(spec, sources, auxiliaries):
             require(kind == 'entities', '实体类别范围不能改写为概念范围')
         entry_names = names_for(graph, subject)
         label, fallback = display_name(entry_names, spec['display']['languages'], str(subject))
-        record = new_record({'iri': str(subject)}, kind, list(keys), [{'source_key': s.spec['key'], 'version': s.spec['version']} for s in actual_owners], label)
+        record = new_record({'iri': str(subject)}, kind, list(keys), [{'source_key': s.spec['key'], 'version': s.spec['version']} for s in actual_owners], label, spec.get('mode', 'preview'))
         ownership[subject] = actual_owners
         record['label_fallback'] = fallback
         record['source_types'] = sorted(map(str, graph.objects(subject, RDF.type)))
-        record['trial_selectable'] = kind in ('concepts', 'entities') and any(str(subject) in s.spec['trial_subjects'] for s in owners)
+        selection = 'selectable_subjects' if record['mode'] == 'formal' else 'trial_subjects'
+        record['trial_selectable'] = kind in ('concepts', 'entities') and any(str(subject) in s.spec[selection] for s in owners)
+        entity_deliveries = [s.entity_delivery for s in owners if getattr(s, 'entity_delivery', None) is not None]
+        if kind == 'entities' and entity_deliveries:
+            record['trial_selectable'] &= all(str(subject) in d['eligible_entity_iris'] for d in entity_deliveries)
         formal = sorted({s.spec['authority']['formal_reference'] for s in owners if s.spec['authority'].get('formal_reference')})
         record['formal_basis'] = formal or None
         state_values = list(graph.objects(subject, OWL.deprecated))
@@ -139,15 +143,29 @@ def build_records(spec, sources, auxiliaries):
                 raise ContractError(f'无法解释 owl:deprecated 原状态：{subject}')
             if any(v.toPython() is True for v in state_values):
                 record['trial_selectable'] = False
-                record['restrictions'].append('来源明确 owl:deprecated=true，不供新试选')
-        source_states = [s.spec.get('source_states', {}).get(str(subject)) for s in owners]
-        source_states = [state for state in source_states if state is not None]
+                record['restrictions'].append('来源明确 owl:deprecated=true，不供新选用')
+        state_owners = [s for s in owners if s.spec.get('source_states', {}).get(str(subject)) is not None]
+        source_states = [s.spec['source_states'][str(subject)] for s in state_owners]
         if source_states:
             record['source_state'] = {'rdf': record['source_state'], 'declared': source_states}
-            record['trial_selectable'] = False
-            record['restrictions'].append('来源另有状态声明，本适配器未解释其准用合同，仅供查看')
+            # A verified entity delivery supplies the adopted use policy. Its
+            # original candidate/active values remain evidence, not a new gate.
+            known_policy = kind == 'entities' and all(
+                getattr(s, 'entity_delivery', None) is not None
+                and s.spec['source_states'][str(subject)] in [
+                    original['state'] for original in s.entity_delivery['entities'][str(subject)]['sources']]
+                for s in state_owners)
+            if not known_policy:
+                record['trial_selectable'] = False
+                record['restrictions'].append('来源另有状态声明，本适配器未解释其准用合同，仅供查看')
+        entity_states = [deepcopy(d['entities'][str(subject)]) for d in entity_deliveries
+                         if str(subject) in d.get('entities', {})]
+        if entity_states:
+            if not source_states:
+                record['source_state'] = {'rdf': record['source_state'], 'declared': []}
+            record['source_state']['entity_delivery'] = entity_states
         if not record['trial_selectable'] and not record['restrictions']:
-            record['restrictions'].append('此记录不在概念或实体的预览试选范围')
+            record['restrictions'].append('此记录不在概念或实体的选用范围' if record['mode'] == 'formal' else '此记录不在概念或实体的预览试选范围')
         record['name_records'] = [{'iri': str(n['label']), 'role': n['role'], 'value': rdf_value(n['value'])} for n in entry_names if n['label'] is not None]
         records.append(record)
         names[str(subject)] = entry_names
@@ -164,7 +182,7 @@ def build_records(spec, sources, auxiliaries):
             labels = row.get('label', {})
             require(isinstance(labels, dict) and all(isinstance(v, str) for v in labels.values()), f'辅助名称结构不符：{identity}')
             label = next((labels[lang] for lang in spec['display']['languages'] if lang in labels), row['id'])
-            record = new_record(identity, item['kind'], [item['key']], [{'source_key': item['key'], 'version': item['version']}], label)
+            record = new_record(identity, item['kind'], [item['key']], [{'source_key': item['key'], 'version': item['version']}], label, spec.get('mode', 'preview'))
             record['source_state'] = {'status': row.get('status'), 'basis': row.get('basis'), 'match': row.get('match')}
             formal_reference = item['authority'].get('formal_reference')
             # 内容模型的“载体词表”保留现有成员及原状态，form 约束为表内值。
@@ -173,7 +191,7 @@ def build_records(spec, sources, auxiliaries):
             record['formal_basis'] = [formal_reference] if registered and formal_reference else None
             record['trial_selectable'] = registered and bool(record['formal_basis'])
             if not record['trial_selectable']:
-                record['restrictions'].append(f'辅助记录状态为 {row.get("status", "未声明")}；未确认属于已采纳值域时不供新试选')
+                record['restrictions'].append(f'辅助记录状态为 {row.get("status", "未声明")}；未确认属于已采纳值域时不供新选用')
             records.append(record)
             auxiliary_rows.append((record, row, raw_path))
     paths = [r['path'] for r in records]
@@ -329,6 +347,9 @@ def validate_graph(graph, spec, records):
     entities = [r for r in records if r['kind'] == 'entities' and r['use'] == 'current']
     entity_targets = sum(URIRef(r['identity']['iri']) in all_targets for r in entities)
     summary = {'shacl': {'executed': True, 'profiles': selections, 'results': len(results), 'covered_named_subjects': len({s for s in all_targets if isinstance(s, URIRef)})}, 'entity_facts': {'executed': False, 'records': len(entities), 'skos_shape_targeted': entity_targets, 'reason': '现有 SKOS 结构规则不定义实体事实合同；命中共享属性不等于已校验实体事实'}, 'optional_field_inventory': {'executed': False, 'reason': '本次构建未执行全字段缺失统计'}, 'semantic_review': {'executed': False}, 'formal_use': {'confirmed': False, 'reason': '开发预览不授予正式准用'}}
+    if spec.get('mode') == 'formal':
+        summary['formal_use'] = {'confirmed': True, 'scope': 'application_use',
+                                 'reason': '本实例应用使用授权及范围已固定；不表示实体事实或语义审阅通过'}
     implementation = {path.name: digest(path.read_bytes()) for path in sorted(Path(__file__).parent.glob('*.py'))}
     rules = dict(spec['rules']) | {'shacl_files': rule_files, 'projection_version': 3, 'metadata_version': 1, 'template_version': 3, 'implementation_sha256': implementation}
     return summary, {'format_version': 1, 'summary': summary, 'results': sorted(results, key=lambda r: json.dumps(r, ensure_ascii=False, sort_keys=True))}, rules
@@ -400,8 +421,9 @@ def historical_bytes(raw, replacements):
     props = yaml.safe_load(pieces[1])
     props['aliases'] = []
     props['trial_selectable'] = False
+    props['selectable'] = False
     props['historical'] = True
-    text = frontmatter(props) + '\n固定历史版本，只供读取旧引用，不供新试选。\n' + pieces[2]
+    text = frontmatter(props) + '\n固定历史版本，只供读取旧引用，不供新选用。\n' + pieces[2]
     for original, target in sorted(replacements.items(), key=lambda item: -len(item[0])):
         text = text.replace('[[' + original[:-3] + '|', '[[' + target[:-3] + '|').replace('[[' + original[:-3] + ']]', '[[' + target[:-3] + ']]')
         text = text.replace('link(' + json.dumps(original[:-3]) + ')',
@@ -414,6 +436,7 @@ def preserve_history(spec, files, state_files, records, previous_data=None):
     if previous is None:
         return
     version, old_manifest, old_files, old_records, old_state_files = previous_data or read_previous(previous)
+    require(json.loads(old_manifest)['mode'] == spec['mode'], '历史交付模式不一致，不能混用 preview 与 formal')
     for name, value in old_files.items():
         if name.startswith(f'{VOCABULARY}/history/'):
             require(name not in files or files[name] == value, f'历史文件冲突：{name}')
@@ -451,10 +474,10 @@ def preserve_history(spec, files, state_files, records, previous_data=None):
             continue
         retained = dict(old) | {'use': 'retained', 'trial_selectable': False, 'history': history, 'restrictions': ['当前输入未包含该身份；原因未记录，旧入口只供历史查阅']}
         records.append(retained)
-        fm = {'identifier': old['identity'].get('iri', old['identity'].get('id')), 'aliases': [], 'record_kind': old['kind'], 'preview': True, 'trial_selectable': False, 'retained': True}
+        fm = {'identifier': old['identity'].get('iri', old['identity'].get('id')), 'aliases': [], 'record_kind': old['kind'], 'preview': spec['mode'] == 'preview', 'trial_selectable': False, 'selectable': False, 'retained': True}
         target = history[-1]['path'] if history else None
         require(target is not None and target in files, '旧引用缺少固定历史文件')
-        files[old['path']] = (frontmatter(fm) + f'\n# {md(old["label"])}\n\n当前输入未包含此身份。本入口仅供历史查阅，不供新试选。来源未说明缺席原因，不能据此认定停用或后继。\n\n原身份：{md(json.dumps(old["identity"], ensure_ascii=False, sort_keys=True))}\n\n最后可用描述：[[{target[:-3]}|固定历史版本]]。\n').encode()
+        files[old['path']] = (frontmatter(fm) + f'\n# {md(old["label"])}\n\n当前输入未包含此身份。本入口仅供历史查阅，不供新选用。来源未说明缺席原因，不能据此认定停用或后继。\n\n原身份：{md(json.dumps(old["identity"], ensure_ascii=False, sort_keys=True))}\n\n最后可用描述：[[{target[:-3]}|固定历史版本]]。\n').encode()
 
 
 def initial_pages(records):
@@ -496,6 +519,8 @@ def build_delivery(input_path: Path) -> Delivery:
     records = [r for r in all_records if r['kind'] in KIND_DIRECTORIES]
     by_iri = {iri: record for iri, record in by_iri.items() if record['kind'] in KIND_DIRECTORIES}
     previous_data = read_previous(spec['previous_delivery']) if spec.get('previous_delivery') else None
+    if previous_data:
+        require(json.loads(previous_data[1])['mode'] == spec['mode'], '上次交付模式不一致，不能混用 preview 与 formal')
     assign_paths(records, previous_data[3] if previous_data else ())
     fill_entries(spec, graph, records, names, by_iri, ownership, aux_rows)
     files, displayed = {}, {}
@@ -513,7 +538,7 @@ def build_delivery(input_path: Path) -> Delivery:
     records.sort(key=lambda r: r['path'])
     state_files['records.json'] = json_bytes({'format_version': 1, 'records': records})
     environment = {'python': platform.python_version(), 'dependencies': {name: metadata.version(name) for name in ('rdflib', 'PyYAML', 'pyshacl', 'kb-vocab-shacl', 'markdown-it-py', 'mdurl')}}
-    manifest = {'format_version': MANIFEST_VERSION, 'mode': 'preview', 'input_sha256': input_hash,
+    manifest = {'format_version': MANIFEST_VERSION, 'mode': spec['mode'], 'input_sha256': input_hash,
                 'sources': [{**source.spec, 'raw_path': source.raw_path} for source in sources],
                 'auxiliary': [{**item, 'raw_path': raw_path} for item, _, raw_path in auxiliaries],
                 'display': spec['display'], 'rules': rules, 'producer': spec['producer'],
