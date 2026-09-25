@@ -17,7 +17,7 @@ def record(kind, token, *, iri=None, use="current", selectable=True):
     return {
         "identity": {"iri": iri} if iri else {"catalog": kind, "id": token},
         "kind": kind,
-        "path": f"05-vocabulary/{'document-types' if kind == 'types' else kind}/{token}.md",
+        "path": f"90-vocabulary/{'document-types' if kind == 'types' else kind}/{token}.md",
         "label": "同名",
         "sources": ["test"],
         "versions": ["v1"],
@@ -52,7 +52,7 @@ def vault(tmp_path, request):
     }
     pages = {item["path"]: b"# Reference\n" for item in records}
     files["manifest.json"] = json_bytes({
-        "format_version": 3, "mode": "preview",
+        "format_version": 4, "mode": "preview",
         "files": [{"path": path, "role": "reference", "size": len(data), "sha256": digest(data)}
                   for path, data in sorted(pages.items())],
         "state_files": [{"path": path, "role": "state", "size": len(data), "sha256": digest(data)}
@@ -63,11 +63,11 @@ def vault(tmp_path, request):
     return target
 
 
-def article(vault, name="一篇", *, folder="03-resources", **updates):
+def article(vault, name="一篇", *, folder="30-resources", **updates):
     metadata = {
         "identifier": "6894680b-09ca-4b29-bb82-206008c886ca", "title": name,
-        "type": "[[05-vocabulary/document-types/tutorial]]", "genre": "[[05-vocabulary/genres/background]]",
-        "subject": ["[[05-vocabulary/concepts/one]]"], "created": date(2026, 9, 23), "status": "draft",
+        "type": "[[90-vocabulary/document-types/tutorial]]", "genre": "[[90-vocabulary/genres/background]]",
+        "subject": ["[[90-vocabulary/concepts/one]]"], "created": date(2026, 9, 23), "status": "draft",
     }
     metadata.update(updates)
     path = vault / folder / f"{name}.md"
@@ -84,18 +84,18 @@ def codes(report):
 def test_article_scan_covers_para_and_leaves_free_capture_outside_content_model(tmp_path):
     from kb_obsidian_rdf.content import _articles
 
-    for directory in ("01-projects/demo", "02-areas", "03-resources", "04-archives"):
+    for directory in ("10-projects/demo", "20-areas", "30-resources", "40-archives"):
         folder = tmp_path / directory
         folder.mkdir(parents=True)
         (folder / "note.md").write_text("---\nidentifier: declared\ntitle: 内容\nstatus: active\n---\n# 内容\n")
-    for directory in ("00-inbox", "05-vocabulary/concepts", "06-views", "07-templates", "08-attachments"):
+    for directory in ("01-inbox", "90-vocabulary/concepts", "91-views", "92-templates", "93-attachments"):
         folder = tmp_path / directory
         folder.mkdir(parents=True)
         (folder / "capture.md").write_text("没有元数据的随手记录")
 
     found = _articles(tmp_path)
-    assert set(found) == {"01-projects/demo/note.md", "02-areas/note.md", "03-resources/note.md", "04-archives/note.md"}
-    assert found["04-archives/note.md"].metadata["status"] == "active"
+    assert set(found) == {"10-projects/demo/note.md", "20-areas/note.md", "30-resources/note.md", "40-archives/note.md"}
+    assert found["40-archives/note.md"].metadata["status"] == "active"
     assert not any(article.failure for article in found.values())
 
 
@@ -108,9 +108,9 @@ def test_new_preserves_identity_despite_identical_labels_and_does_not_overwrite(
     assert UUID(metadata["identifier"]).version == 4
     assert metadata["language"] == "zh-Hant"
     assert metadata["status"] == "draft"
-    assert "05-vocabulary/concepts/two" in metadata["subject"][0]
-    assert "05-vocabulary/entities/one" in metadata["entities"][0]
-    assert "05-vocabulary/references/guide" in metadata["references"][0]
+    assert "90-vocabulary/concepts/two" in metadata["subject"][0]
+    assert "90-vocabulary/entities/one" in metadata["entities"][0]
+    assert "90-vocabulary/references/guide" in metadata["references"][0]
     before = path.read_bytes()
     with pytest.raises(ContractError):
         new_content(vault, title="排序与来源", type_id="tutorial", genre_id="background",
@@ -122,20 +122,20 @@ def test_new_preserves_identity_despite_identical_labels_and_does_not_overwrite(
 
 def test_plain_materials_do_not_become_articles_or_block_new_content(vault):
     path = article(vault)
-    plain = vault / "03-resources/excerpt.md"
+    plain = vault / "30-resources/excerpt.md"
     plain.write_text("# 普通摘录\n\n保留来源原文，没有内容单元元数据。\n")
-    described = vault / "02-areas/reading.md"
+    described = vault / "20-areas/reading.md"
     described.write_text("---\ntitle: 阅读材料\nsubject: [urn:concept:one]\n---\n正文\n")
     before = {str(item): item.read_bytes() for item in (plain, described)}
 
     checked = check_content(vault)
     assert checked["ok"] and checked["checked_count"] == 1
     assert [item["path"] for item in checked["articles"]] == [path.relative_to(vault).as_posix()]
-    assert {item["path"] for item in checked["unregistered"]} == {"03-resources/excerpt.md", "02-areas/reading.md"}
+    assert {item["path"] for item in checked["unregistered"]} == {"30-resources/excerpt.md", "20-areas/reading.md"}
     assert all(item["reason"] for item in checked["unregistered"])
     assert checked["unregistered_count"] == 2
     assert checked["coverage"]["complete"] is False
-    only_material = check_content(vault, ["03-resources/excerpt.md"])
+    only_material = check_content(vault, ["30-resources/excerpt.md"])
     assert only_material["checked_count"] == 0 and only_material["unregistered_count"] == 2
     assert only_material["articles"] == []
 
@@ -148,12 +148,12 @@ def test_plain_materials_do_not_become_articles_or_block_new_content(vault):
 
 def test_removing_article_identifier_reports_unchecked_file_and_breaks_controlled_reference(vault):
     path = article(vault)
-    article(vault, "引用者", identifier="4c70ccf5-0b4a-45ac-a645-611f2f65755d", source="[[03-resources/一篇]]")
+    article(vault, "引用者", identifier="4c70ccf5-0b4a-45ac-a645-611f2f65755d", source="[[30-resources/一篇]]")
     path.write_text(path.read_text().replace("identifier: 6894680b-09ca-4b29-bb82-206008c886ca\n", ""))
     checked = check_content(vault)
     assert not checked["ok"] and checked["checked_count"] == 1
     assert checked["unregistered_count"] == 1 and checked["coverage"]["complete"] is False
-    assert checked["unregistered"][0]["path"] == "03-resources/一篇.md"
+    assert checked["unregistered"][0]["path"] == "30-resources/一篇.md"
     assert "unresolved_reference" in codes(checked)
 
 
@@ -167,22 +167,22 @@ def test_removing_article_identifier_reports_unchecked_file_and_breaks_controlle
 ])
 def test_declared_but_invalid_or_damaged_identity_still_fails(vault, frontmatter):
     article(vault)
-    broken = vault / "04-archives/broken.md"
+    broken = vault / "40-archives/broken.md"
     broken.write_text("---\n" + frontmatter + "---\n\n# 坏记录\n")
     checked = check_content(vault)
     assert not checked["ok"]
-    assert any(item["path"] == "04-archives/broken.md" for item in checked["errors"])
-    assert "04-archives/broken.md" not in {item["path"] for item in checked["unregistered"]}
+    assert any(item["path"] == "40-archives/broken.md" for item in checked["errors"])
+    assert "40-archives/broken.md" not in {item["path"] for item in checked["unregistered"]}
     with pytest.raises(ContractError):
         new_content(vault, title="未建立", type_id="tutorial", genre_id="background",
                     subjects=["urn:concept:one"])
-    assert not (vault / "03-resources/未建立.md").exists()
+    assert not (vault / "30-resources/未建立.md").exists()
 
 
 def test_unregistered_file_cannot_supply_controlled_content_reference(vault):
-    plain = vault / "03-resources/excerpt.md"
+    plain = vault / "30-resources/excerpt.md"
     plain.write_text("# 资料\n正文普通链接可以使用这份资料。\n")
-    article(vault, source="[[03-resources/excerpt]]")
+    article(vault, source="[[30-resources/excerpt]]")
     checked = check_content(vault)
     assert "unresolved_reference" in codes(checked)
     assert any(item["field"] == "source" for item in checked["errors"])
@@ -195,28 +195,28 @@ def test_unregistered_file_cannot_supply_controlled_content_reference(vault):
     "---\nexample: |\n  identifier: 字符串示例\nbroken: [\n---\n正文\n",
 ])
 def test_identifier_mentions_do_not_promote_unregistered_files(vault, text):
-    path = vault / "03-resources/example.md"
+    path = vault / "30-resources/example.md"
     path.write_text(text)
     checked = check_content(vault)
     assert checked["ok"] and checked["checked_count"] == 0
     assert checked["unregistered_count"] == 1
     assert checked["coverage"]["complete"] is False
-    assert checked["unregistered"][0]["path"] == "03-resources/example.md"
+    assert checked["unregistered"][0]["path"] == "30-resources/example.md"
 
 
 def test_new_uses_selected_para_folder_and_preserves_title_and_identity(vault):
-    result = new_content(vault, title="JavaScript 数组_Sort", folder="01-projects/js-notes",
+    result = new_content(vault, title="JavaScript 数组_Sort", folder="10-projects/js-notes",
                          type_id="tutorial", genre_id="background", subjects=["urn:concept:one"])
-    assert result["path"] == "01-projects/js-notes/javascript-数组-sort.md"
+    assert result["path"] == "10-projects/js-notes/javascript-数组-sort.md"
     path = vault / result["path"]
     metadata = yaml.safe_load(path.read_text().split("---", 2)[1])
     assert metadata["title"] == "JavaScript 数组_Sort"
     assert metadata["identifier"] == result["identifier"]
     assert check_content(vault)["ok"]
     with pytest.raises(ContractError, match="同名|冲突"):
-        new_content(vault, title="javascript 数组-sort", folder="01-projects/js-notes",
+        new_content(vault, title="javascript 数组-sort", folder="10-projects/js-notes",
                     type_id="tutorial", genre_id="background", subjects=["urn:concept:two"])
-    archived = vault / "04-archives/js-notes"
+    archived = vault / "40-archives/js-notes"
     archived.mkdir(parents=True)
     moved = archived / path.name
     path.rename(moved)
@@ -226,9 +226,9 @@ def test_new_uses_selected_para_folder_and_preserves_title_and_identity(vault):
     assert yaml.safe_load(moved.read_text().split("---", 2)[1])["status"] == "draft"
 
 
-@pytest.mark.parametrize("folder", ["00-inbox", "05-vocabulary", "notes", "../03-resources", "/03-resources",
-                                  "01-projects/../02-areas", "01-projects//demo", "01-Projects", "02-areas/My Area",
-                                  "03-resources/my_notes", "03-resources/..", "04-archives/"])
+@pytest.mark.parametrize("folder", ["01-inbox", "90-vocabulary", "notes", "../30-resources", "/30-resources",
+                                  "10-projects/../20-areas", "10-projects//demo", "01-Projects", "20-areas/My Area",
+                                  "30-resources/my_notes", "30-resources/..", "40-archives/"])
 def test_new_rejects_unmanaged_or_ambiguous_content_folders(vault, folder):
     with pytest.raises(ContractError):
         new_content(vault, title="不得建立", folder=folder,
@@ -249,7 +249,7 @@ def test_content_never_coerces_wrong_object_kind_or_display_text(vault, field, v
 
 
 def test_old_reference_remains_readable_but_cannot_be_selected_for_new_content(vault):
-    article(vault, subject=["[[05-vocabulary/concepts/retained]]"])
+    article(vault, subject=["[[90-vocabulary/concepts/retained]]"])
     report = check_content(vault)
     assert report["ok"]
     assert any(item["code"] == "historical_reference" for item in report["issues"])
@@ -263,33 +263,33 @@ def test_old_reference_remains_readable_but_cannot_be_selected_for_new_content(v
 def test_subset_check_still_detects_duplicate_uuid_elsewhere(vault):
     article(vault)
     article(vault, "另一篇")
-    report = check_content(vault, ["03-resources/一篇.md"])
+    report = check_content(vault, ["30-resources/一篇.md"])
     assert "duplicate_identifier" in codes(report)
     assert report["manifest_sha256"] == digest((state_directory(vault) / "current/manifest.json").read_bytes())
-    assert report["articles"][0]["sha256"] == digest((vault / "03-resources/一篇.md").read_bytes())
+    assert report["articles"][0]["sha256"] == digest((vault / "30-resources/一篇.md").read_bytes())
 
 
 def test_cross_article_relations_require_reciprocity_and_replacement_cannot_cycle(vault):
-    first = article(vault, folder="01-projects/demo", relation=["[[04-archives/另一篇]]"])
-    article(vault, "另一篇", folder="04-archives", identifier="4c70ccf5-0b4a-45ac-a645-611f2f65755d")
+    first = article(vault, folder="10-projects/demo", relation=["[[40-archives/另一篇]]"])
+    article(vault, "另一篇", folder="40-archives", identifier="4c70ccf5-0b4a-45ac-a645-611f2f65755d")
     assert "relation_not_reciprocal" in codes(check_content(vault, [str(first.relative_to(vault))]))
-    article(vault, "另一篇", folder="04-archives", identifier="4c70ccf5-0b4a-45ac-a645-611f2f65755d",
-            relation=["[[01-projects/demo/一篇]]"])
+    article(vault, "另一篇", folder="40-archives", identifier="4c70ccf5-0b4a-45ac-a645-611f2f65755d",
+            relation=["[[10-projects/demo/一篇]]"])
     assert check_content(vault)["ok"]
-    article(vault, folder="01-projects/demo", status="deprecated", isReplacedBy="[[04-archives/另一篇]]")
-    article(vault, "另一篇", folder="04-archives", identifier="4c70ccf5-0b4a-45ac-a645-611f2f65755d",
-            status="deprecated", isReplacedBy="[[01-projects/demo/一篇]]")
+    article(vault, folder="10-projects/demo", status="deprecated", isReplacedBy="[[40-archives/另一篇]]")
+    article(vault, "另一篇", folder="40-archives", identifier="4c70ccf5-0b4a-45ac-a645-611f2f65755d",
+            status="deprecated", isReplacedBy="[[10-projects/demo/一篇]]")
     assert "replacement_cycle" in codes(check_content(vault))
 
 
 @pytest.mark.parametrize("update,expected", [
-    ({"subject": "[[05-vocabulary/concepts/one]]"}, "field_type"),
+    ({"subject": "[[90-vocabulary/concepts/one]]"}, "field_type"),
     ({"subject": []}, "required"), ({"created": "2026-02-31"}, "date"),
     ({"modified": "2026-09-22"}, "date_order"),
     ({"identifier": "6894680B-09CA-4B29-BB82-206008C886CA"}, "identifier"),
     ({"language": "zh_Hant"}, "language"),
     ({"form": None}, "field_type"), ({"status": "published"}, "status"),
-    ({"isReplacedBy": "[[03-resources/一篇]]"}, "replacement_status"),
+    ({"isReplacedBy": "[[30-resources/一篇]]"}, "replacement_status"),
 ])
 def test_field_failures_are_reported_without_modifying_content(vault, update, expected):
     path = article(vault, **update)
@@ -306,17 +306,17 @@ def test_duplicate_yaml_key_does_not_silently_replace_controlled_value(vault):
 
 
 def test_new_refuses_managed_file_tampering_and_symlink_content_area(vault, tmp_path):
-    managed = vault / "05-vocabulary/concepts/one.md"
+    managed = vault / "90-vocabulary/concepts/one.md"
     managed.write_text("changed identity")
     with pytest.raises(ContractError):
         new_content(vault, title="不得写入", type_id="tutorial", genre_id="background",
                     subjects=["urn:concept:one"])
-    assert not (vault / "03-resources/不得写入.md").exists()
+    assert not (vault / "30-resources/不得写入.md").exists()
     managed.write_bytes(b"# Reference\n")
     outside = tmp_path / "outside"
     outside.mkdir()
-    (vault / "03-resources").rmdir()
-    (vault / "03-resources").symlink_to(outside, target_is_directory=True)
+    (vault / "30-resources").rmdir()
+    (vault / "30-resources").symlink_to(outside, target_is_directory=True)
     with pytest.raises(ContractError):
         new_content(vault, title="越界", type_id="tutorial", genre_id="background",
                     subjects=["urn:concept:one"])
@@ -342,7 +342,7 @@ def test_failed_article_write_never_installs_a_partial_draft(vault, monkeypatch)
     with pytest.raises(ContractError):
         new_content(vault, title="不完整文章", type_id="tutorial", genre_id="background",
                     subjects=["urn:concept:one"])
-    assert not (vault / "03-resources/不完整文章.md").exists()
+    assert not (vault / "30-resources/不完整文章.md").exists()
 
 
 @pytest.mark.parametrize("body,valid", [

@@ -1,0 +1,138 @@
+{
+  "checked_at": "2026-09-25T03:17:50.476828+00:00",
+  "vault": "/Users/xiu/Documents/knowledge-base",
+  "format_version": 4,
+  "tool_version": "0.5.0",
+  "article_identities_preserved": 34,
+  "controlled_records_preserved": 2811,
+  "frozen_inputs_preserved": 28,
+  "protected_theme_snippet_attachment_files": 3,
+  "new_unresolved_links": {},
+  "lost_links": [],
+  "views": {
+    "archives.base": {
+      "before": 0,
+      "after": 0,
+      "indexes_removed": []
+    },
+    "areas.base": {
+      "before": 3,
+      "after": 1,
+      "indexes_removed": [
+        "00-indexes/obsidian.md",
+        "00-indexes/开发环境.md"
+      ]
+    },
+    "article-list.base": {
+      "before": 34,
+      "after": 32,
+      "indexes_removed": [
+        "00-indexes/obsidian.md",
+        "00-indexes/开发环境.md"
+      ]
+    },
+    "development-environment.base": {
+      "before": 7,
+      "after": 6,
+      "indexes_removed": [
+        "00-indexes/开发环境.md"
+      ]
+    },
+    "drafts.base": {
+      "before": 34,
+      "after": 32,
+      "indexes_removed": [
+        "00-indexes/obsidian.md",
+        "00-indexes/开发环境.md"
+      ]
+    },
+    "inbox.base": {
+      "before": 0,
+      "after": 0,
+      "indexes_removed": []
+    },
+    "obsidian.base": {
+      "before": 2,
+      "after": 1,
+      "indexes_removed": [
+        "00-indexes/obsidian.md"
+      ]
+    },
+    "projects.base": {
+      "before": 2,
+      "after": 2,
+      "indexes_removed": []
+    },
+    "recently-modified.base": {
+      "before": 34,
+      "after": 32,
+      "indexes_removed": [
+        "00-indexes/obsidian.md",
+        "00-indexes/开发环境.md"
+      ]
+    },
+    "resources.base": {
+      "before": 29,
+      "after": 29,
+      "indexes_removed": []
+    }
+  },
+  "content_check": {
+    "ok": true,
+    "checked_count": 34,
+    "unregistered": [
+      "00-indexes/index.md"
+    ]
+  },
+  "user_index_preserved_by_maintain": true,
+  "tests_passed": 228,
+  "backup": "/Users/xiu/code/kb-design/output/obsidian-rdf/state/1b52a4ef67cd5aea74b0bfb08743cc0ca7cdd507e1e58313a6a6005ff589574c/layout-migrations/609c632e6d5944afaca6e5542a33b031/backup",
+  "initial_backup": "/Users/xiu/code/kb-design/output/content-maintenance/20260925T105930-navigation-layout",
+  "index_note_moves": {
+    "02-areas/obsidian.md": "00-indexes/obsidian.md",
+    "02-areas/开发环境.md": "00-indexes/开发环境.md",
+    "home.md": "00-indexes/index.md"
+  },
+  "verification": {
+    "application_suite": {
+      "command": "uv run --locked --with pytest pytest apps/obsidian-rdf/tests -q --tb=short",
+      "passed": 228
+    },
+    "final_migration_suite": {
+      "command": "uv run --locked --with pytest pytest apps/obsidian-rdf/tests/test_layout_migration.py apps/obsidian-rdf/tests/test_navigation_migration.py -q --tb=short",
+      "passed": 25
+    },
+    "copy_refresh": {
+      "status": "preview",
+      "current_files_changed": 0,
+      "removed": 0,
+      "historical_files_added": 2811
+    },
+    "repository_links": {
+      "issues": 23,
+      "new_issues": 0
+    }
+  },
+  "fixes": [
+    "Wiki links with a dot in the note name resolve to the existing .md resource and still block genuine missing targets.",
+    "CLI path/file/folder argument examples use the new roots without changing URL query parameters."
+  ],
+  "source_uncommitted": true,
+  "implementation_sha256": {
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/build.py": "4b0642f98e3f2efbc5fded0ca1c8154b9cbccc6ef28ed414c9bc7613a6fdd6a9",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/query.py": "95d75caa5ac79e0d2e77db2595a1ad08f496a433aa4fb9999ff1e70a0cd472ae",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/render.py": "a6c23773e4ab8776322285d1d537b6d2b3f492d6b9bcd09e448668e637b306b3",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/naming.py": "10d75894fb215af235be6fbbe8ab15224ca332dcf6435b2b94c5dd6239278abf",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/layout.py": "962908063bb2354ffc264b2beee65844010bae243613142eb3c983a045c7402f",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/__init__.py": "0cb58f80e7281479aad7501fadfc6cddbe9e56573d6eada7133e830a0a93582e",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/content.py": "26e10317f6ec1d11928446d3295f088234bd4c481d00163c95c33776b39fd5a6",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/cli.py": "c423f9b30c6692ca432f34abef3e9812195032cb563fad0c22958d504475f36f",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/common.py": "4e56ea3de44f97df263e8121731eb84917cd4782f3a4273b51348c79e7747c9f",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/input.py": "9882c33e78f45f3808dd86d9d517a1a03573d08713312727ba2188c672b3d82a",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/storage.py": "e9ccd3c4eda54b6d2a46e7ed4162a2b7c7d54b411d45c58d106d65b49fde56f3",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/product.py": "b5bbdc20b91fabfd0ba62806d7ad5560035ac705de9fa89d0f09b5788d8f250c",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "apps/obsidian-rdf/src/kb_obsidian_rdf/prepare.py": "8556a70a4810afec219db99fb825f9166fd19905cd8915523340361d3b458863",
+    "apps/obsidian-rdf/scripts/migrate-numbered-layout.py": "7f2b1a2acef7aaf851b4faddba7e2055369ffad70ccd55aa0ef80229fb78b9cd"
+  }
+}

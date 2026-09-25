@@ -54,14 +54,14 @@ def test_layout_plan_preserves_source_then_applies_identity_and_links(tmp_path):
     result = migration.apply(Path(plan['plan']), offline=True)
     assert result['status'] == 'installed'
     assert not (vault / 'projects').exists()
-    assert (vault / '01-projects/article.md').read_text() == article.replace('[[vocabulary/', '[[05-vocabulary/')
-    assert 'file.inFolder("01-projects")' in (vault / '06-views/article-list.base').read_text()
+    assert (vault / '10-projects/article.md').read_text() == article.replace('[[vocabulary/', '[[90-vocabulary/')
+    assert 'file.inFolder("10-projects")' in (vault / '91-views/article-list.base').read_text()
     snapshot = storage.inspect(vault, state_root=root)
     assert snapshot['records']['records'][0]['identity']['iri'] == 'https://example.org/vocabulary/one'
-    assert snapshot['records']['records'][0]['path'] == '05-vocabulary/concepts/one.md'
+    assert snapshot['records']['records'][0]['path'] == '90-vocabulary/concepts/one.md'
     assert (state / 'current/inputs/raw.ttl').read_bytes() == b'<urn:one> <urn:predicate> "vocabulary/original" .\n'
     assert json.loads((state / 'current/projection.json').read_text())['entries'][0]['value']['literal'] == 'vocabulary/original'
-    assert json.loads((vault / '.obsidian/workspace.json').read_text())['lastOpenFiles'] == ['05-vocabulary/concepts/one.md']
+    assert json.loads((vault / '.obsidian/workspace.json').read_text())['lastOpenFiles'] == ['90-vocabulary/concepts/one.md']
     assert (Path(result['backup']) / 'vault/projects/article.md').read_text() == article
     assert migration.apply(Path(plan['plan']), offline=True)['status'] == 'already-installed'
 
@@ -69,10 +69,10 @@ def test_layout_plan_preserves_source_then_applies_identity_and_links(tmp_path):
 def test_layout_refuses_changed_note_or_destination_collision(tmp_path):
     migration = load_migration()
     vault, root, _, _ = legacy(tmp_path)
-    (vault / '01-projects').mkdir()
+    (vault / '10-projects').mkdir()
     with pytest.raises(ContractError):
         migration.prepare(vault, root)
-    (vault / '01-projects').rmdir()
+    (vault / '10-projects').rmdir()
     plan = migration.prepare(vault, root)
     (vault / 'projects/article.md').write_text('new user text')
     with pytest.raises(ContractError):
@@ -85,14 +85,15 @@ def test_layout_refuses_changed_note_or_destination_collision(tmp_path):
     '`[[vocabulary/concepts/one]]`',
     '```text\n[[vocabulary/concepts/one]]\n```',
 ])
-def test_layout_refuses_unhandled_markdown_without_changing_the_note(tmp_path, content):
+def test_layout_prepares_markdown_and_examples_without_changing_the_note(tmp_path, content):
     migration = load_migration()
     vault, root, _, _ = legacy(tmp_path)
     note = vault / 'projects/article.md'
     note.write_text(content)
-    with pytest.raises(ContractError):
-        migration.prepare(vault, root)
+    result = migration.prepare(vault, root)
     assert note.read_text() == content
+    candidate = Path(result['plan']).parent / 'candidate-vault/10-projects/article.md'
+    assert candidate.read_text() == content.replace('vocabulary/', '90-vocabulary/')
 
 
 def test_layout_refuses_new_empty_folder_after_preparation(tmp_path):
@@ -139,5 +140,5 @@ def test_layout_resumes_each_directory_move_without_repeating_edits(tmp_path, mo
     assert (state / 'recovery.json').exists()
     monkeypatch.setattr(migration, 'move', original)
     assert migration.apply(Path(plan['plan']), offline=True)['status'] == 'installed'
-    assert (vault / '01-projects/article.md').read_text() == article.replace('[[vocabulary/', '[[05-vocabulary/')
+    assert (vault / '10-projects/article.md').read_text() == article.replace('[[vocabulary/', '[[90-vocabulary/')
     storage.inspect(vault, state_root=root)

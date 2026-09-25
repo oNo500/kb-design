@@ -80,6 +80,7 @@
 - `apps/obsidian/` 通过 workspace 依赖使用 `packages/kb-core/`，核心包不依赖具体应用；核心入口是 `uv run kb-core <命令>`，应用入口是 `uv run kb-obsidian <命令>`
 - `apps/vocab-preview/` 提供 `uv run kb-vocab-preview`，只读展示工作区六份词表并自动更新；不要求提交，不写回词表，不代表数据已批准，见[预览归属](docs/applications/vocab-preview/决定-预览归属.md)
 - `packages/kb-vocab-maintenance/` 提供独立 RDF 词表资料收录、字段差异和带基准的描述字段修改，见[词表维护工程](docs/practices/vocabulary/设计-词表维护工程.md)。实体按[统一使用](docs/model/entities/决定-实体统一使用.md)合成一份当前 RDF：稳定身份、名称、类别和可追溯来源齐全即可先用，保留 candidate/active 原值及未核说明，明确停用不自动恢复。IRI 对应和来源配置在 `data/inputs/vocabulary-maintenance/` 维护；词表维护止于交付，不调用应用刷新或改文章。
+- RDF/PARA 当前布局见[索引与存放](docs/applications/obsidian/决定-索引与存放.md)：`00-indexes` 人工导航，`01-inbox` 捕获，`10-projects`、`20-areas`、`30-resources`、`40-archives` 存放内容，`90-vocabulary`、`91-views`、`92-templates`、`93-attachments` 保存支撑文件。领域与资源默认平铺；人工索引中声明身份的笔记同样校验。旧版布局只能显式迁移，不能借刷新切换。
 - `apps/obsidian-rdf/` 服务独立编号 PARA 的 preview/formal 实例，模式与目标路径分别绑定，不借普通刷新转换。正式创建显式指定统一实体交付及使用依据；`maintain` 维护配置及视图，`refresh` 仅更新词条和当前交付，两者均不编辑文章，见[产物维护](docs/applications/obsidian/设计-产物维护.md)。
 - `output/` 保存 Git 忽略的持久应用数据，不属于构建清理对象；`build/` 保存 Git 忽略的可清理临时产物
 - 迁移前决定与 `work/archive/` 的旧路径按原 Git 基线解释，不重写历史正文；当前位置见[仓库布局](docs/development/决定-仓库布局.md)

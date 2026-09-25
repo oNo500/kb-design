@@ -23,9 +23,9 @@ def test_maintenance_preserves_preferences_and_custom_files_and_reports_all_chan
     (config / 'app.json').write_text('{"attachmentFolderPath":"my-files","alwaysUpdateLinks":false,"vimMode":true}')
     (config / 'types.json').write_text('{"types":{"subject":"text","personal":"number"}}')
     (config / 'templates.json').write_text('{"folder":"my-templates"}')
-    (vault / '06-views/drafts.base').write_text('views: [{type: table, name: Personal}]\n')
-    (vault / '07-templates/article.md').write_text('My writing template\n')
-    (vault / 'home.md').write_text('# My homepage\n')
+    (vault / '91-views/drafts.base').write_text('views: [{type: table, name: Personal}]\n')
+    (vault / '92-templates/article.md').write_text('My writing template\n')
+    (vault / '00-indexes/index.md').write_text('# My homepage\n')
     before = tree(vault)
     preview = product.maintain(vault)
     assert tree(vault) == before
@@ -33,18 +33,18 @@ def test_maintenance_preserves_preferences_and_custom_files_and_reports_all_chan
     with pytest.raises(ContractError, match='offline'):
         product.maintain(vault, apply=True)
     result = product.maintain(vault, apply=True, offline=True)
-    for name in ('.obsidian/app.json', '.obsidian/templates.json', '06-views/drafts.base',
-                 '07-templates/article.md', 'home.md'):
+    for name in ('.obsidian/app.json', '.obsidian/templates.json', '91-views/drafts.base',
+                 '92-templates/article.md', '00-indexes/index.md'):
         assert (vault / name).read_bytes() == before[name]
     types = json.loads((config / 'types.json').read_text())['types']
     assert types['subject'] == 'text' and types['personal'] == 'number'
     assert types['created'] == 'date'
     assert result['written'] == result['write_set']
     changes = {row['path']: row for row in result['changes']}
-    assert changes['home.md']['action'] == 'preserve'
+    assert changes['00-indexes/index.md']['action'] == 'preserve'
     assert changes['.obsidian/types.json']['preserved'][0]['property'] == 'types.subject'
     assert Path(changes['.obsidian/types.json']['backup']).read_bytes() == before['.obsidian/types.json']
-    assert Path(changes['home.md']['candidate']).is_file()
+    assert Path(changes['00-indexes/index.md']['candidate']).is_file()
     report = json.loads(Path(result['report_path']).read_text())
     assert report == result
     assert '+  "types"' in changes['.obsidian/types.json']['diff']
@@ -64,7 +64,7 @@ def test_maintenance_resumes_from_actual_partial_writes_and_retains_backups(tmp_
     write = product._write
 
     def fail(path, data, **kwargs):
-        if path.parent == vault / '06-views':
+        if path.parent == vault / '91-views':
             raise OSError('interrupted write')
         return write(path, data, **kwargs)
 
@@ -85,7 +85,7 @@ def test_maintenance_resumes_from_actual_partial_writes_and_retains_backups(tmp_
     assert '.obsidian/app.json' not in repaired['written']
     assert json.loads(app.read_text())['alwaysUpdateLinks'] is False
     assert Path(backup).read_bytes() == original
-    assert (vault / '06-views/drafts.base').is_file()
+    assert (vault / '91-views/drafts.base').is_file()
 
 
 def test_home_update_requires_matching_external_baseline(tmp_path):
@@ -95,13 +95,13 @@ def test_home_update_requires_matching_external_baseline(tmp_path):
     baseline = storage.state_directory(vault) / 'product/baseline.json'
     assert baseline.is_file()
     first = product.maintain(vault, apply=True, offline=True)
-    assert 'home.md' in first['written']
-    home = vault / 'home.md'
-    assert '[[06-views/drafts.base|' in home.read_text()
+    assert '00-indexes/index.md' in first['written']
+    home = vault / '00-indexes/index.md'
+    assert '[[91-views/drafts.base|' in home.read_text()
     home.write_text(home.read_text() + '\nMy additional content\n')
     raw = home.read_bytes()
     result = product.maintain(vault, apply=True, offline=True)
-    assert 'home.md' not in result['written']
+    assert '00-indexes/index.md' not in result['written']
     assert home.read_bytes() == raw
 
 
@@ -114,14 +114,14 @@ def test_refresh_does_not_replace_config_or_product_baseline(tmp_path):
     config = vault / '.obsidian/app.json'
     config.write_text('{"alwaysUpdateLinks": false}')
     baseline = storage.state_directory(vault) / 'product/baseline.json'
-    before = {name: raw for name, raw in tree(vault).items() if not name.startswith('05-vocabulary/')}
+    before = {name: raw for name, raw in tree(vault).items() if not name.startswith('90-vocabulary/')}
     baseline_bytes = baseline.read_bytes()
     candidate = delivery('after')
     candidate.vault_files.update(product.initial_files())
     result = storage.refresh(vault, candidate, apply=True, offline=True)
-    assert {name: raw for name, raw in tree(vault).items() if not name.startswith('05-vocabulary/')} == before
+    assert {name: raw for name, raw in tree(vault).items() if not name.startswith('90-vocabulary/')} == before
     assert baseline.read_bytes() == baseline_bytes
-    assert all(name.startswith('05-vocabulary/') for name in result['receipt']['written'])
+    assert all(name.startswith('90-vocabulary/') for name in result['receipt']['written'])
 
 
 def test_semantically_equal_view_is_not_reformatted_or_adopted(tmp_path):
@@ -129,13 +129,13 @@ def test_semantically_equal_view_is_not_reformatted_or_adopted(tmp_path):
     import yaml
     vault = tmp_path / 'vault'
     storage.initialize(vault, delivery())
-    view = vault / '06-views/recently-modified.base'
-    content = yaml.safe_load(product.initial_files()['06-views/recently-modified.base'])
+    view = vault / '91-views/recently-modified.base'
+    content = yaml.safe_load(product.initial_files()['91-views/recently-modified.base'])
     view.write_text('# Hand formatted\n' + yaml.safe_dump(content, sort_keys=True))
     before = view.read_bytes()
     result = product.maintain(vault, apply=True, offline=True)
     assert view.read_bytes() == before
-    change = next(row for row in result['changes'] if row['path'] == '06-views/recently-modified.base')
+    change = next(row for row in result['changes'] if row['path'] == '91-views/recently-modified.base')
     assert change['action'] == 'equivalent'
     assert str(view.relative_to(vault)) not in result['written']
 

@@ -12,22 +12,22 @@ def external_state(tmp_path, monkeypatch):
 
 
 def delivery(text="before", *, extra=None):
-    files = {"05-vocabulary/concepts/one.md": text.encode()}
+    files = {"90-vocabulary/concepts/one.md": text.encode()}
     state = {
         "records.json": json_bytes({"format_version": 1, "records": []}),
         "projection.json": json_bytes({"format_version": 1, "entries": []}),
     }
     for path, data in (extra or {}).items():
-        (files if path.startswith("05-vocabulary/") else state)[path] = data
+        (files if path.startswith("90-vocabulary/") else state)[path] = data
     entries = lambda items: [{"path": path, "role": "reference", "size": len(data),
                               "sha256": digest(data)} for path, data in sorted(items.items())]
-    manifest = {"format_version": 3, "mode": "preview",
+    manifest = {"format_version": 4, "mode": "preview",
                 "files": entries(files), "state_files": entries(state)}
     if text != "before" or extra:
         manifest["previous_delivery"] = {"sha256": digest(delivery().state_files["manifest.json"])}
     state["manifest.json"] = json_bytes(manifest)
-    files["06-views/topics.base"] = b"user view"
-    files["home.md"] = b"first entry"
+    files["91-views/topics.base"] = b"user view"
+    files["00-indexes/index.md"] = b"first entry"
     return Delivery(files, state)
 
 
@@ -50,25 +50,25 @@ def test_initialization_never_overwrites_nonempty_target(tmp_path):
 def test_refresh_refuses_managed_conflicts_without_touching_user_content(tmp_path, conflict):
     vault = tmp_path / "vault"
     storage.initialize(vault, delivery())
-    (vault / "03-resources").mkdir(exist_ok=True)
-    note = vault / "03-resources/mine.md"
-    note.write_text("[[05-vocabulary/concepts/one]]")
+    (vault / "30-resources").mkdir(exist_ok=True)
+    note = vault / "30-resources/mine.md"
+    note.write_text("[[90-vocabulary/concepts/one]]")
     if conflict == "edit":
-        (vault / "05-vocabulary/concepts/one.md").write_text("manual edit")
+        (vault / "90-vocabulary/concepts/one.md").write_text("manual edit")
     elif conflict == "unknown":
-        (vault / "05-vocabulary/private.md").write_text("private")
+        (vault / "90-vocabulary/private.md").write_text("private")
     else:
         outside = tmp_path / "outside.md"
         outside.write_text("must stay")
-        (vault / "05-vocabulary/concepts/one.md").unlink()
-        (vault / "05-vocabulary/concepts/one.md").symlink_to(outside)
+        (vault / "90-vocabulary/concepts/one.md").unlink()
+        (vault / "90-vocabulary/concepts/one.md").symlink_to(outside)
     with pytest.raises(ContractError):
         storage.refresh(vault, delivery("after"), apply=True, offline=True)
-    assert note.read_text() == "[[05-vocabulary/concepts/one]]"
+    assert note.read_text() == "[[90-vocabulary/concepts/one]]"
     if conflict == "edit":
-        assert (vault / "05-vocabulary/concepts/one.md").read_text() == "manual edit"
+        assert (vault / "90-vocabulary/concepts/one.md").read_text() == "manual edit"
     elif conflict == "unknown":
-        assert (vault / "05-vocabulary/private.md").read_text() == "private"
+        assert (vault / "90-vocabulary/private.md").read_text() == "private"
     else:
         assert outside.read_text() == "must stay"
 
@@ -76,20 +76,20 @@ def test_refresh_refuses_managed_conflicts_without_touching_user_content(tmp_pat
 def test_refresh_requires_explicit_apply_and_offline_and_preserves_user_files(tmp_path):
     vault = tmp_path / "vault"
     storage.initialize(vault, delivery())
-    view = vault / "06-views/topics.base"
+    view = vault / "91-views/topics.base"
     view.write_text("my view")
     result = storage.refresh(vault, delivery("after"))
     assert result["status"] == "preview"
-    assert (vault / "05-vocabulary/concepts/one.md").read_text() == "before"
+    assert (vault / "90-vocabulary/concepts/one.md").read_text() == "before"
     proposed = result["user_file_changes"]
-    assert proposed[0]["path"] == "06-views/topics.base"
+    assert proposed[0]["path"] == "91-views/topics.base"
     assert (Path(proposed[0]["candidate"])).read_bytes() == b"user view"
     assert "my view" in proposed[0]["diff"]
     with pytest.raises(ContractError, match="关闭"):
         storage.refresh(vault, delivery("after"), apply=True)
     result = storage.refresh(vault, delivery("after"), apply=True, offline=True)
     assert result["status"] == "installed"
-    assert (vault / "05-vocabulary/concepts/one.md").read_text() == "after"
+    assert (vault / "90-vocabulary/concepts/one.md").read_text() == "after"
     assert view.read_text() == "my view"
     assert storage.inspect(vault)["manifest_sha256"] == digest(delivery("after").state_files["manifest.json"])
 
@@ -117,7 +117,7 @@ def test_directory_swap_failure_has_prewrite_journal_and_recovers(tmp_path, monk
         storage.inspect(vault)
     result = storage.recover(vault, offline=True)
     assert result["status"] == "recovered"
-    assert (vault / "05-vocabulary/concepts/one.md").read_text() == ("after" if fail_on == 4 else "before")
+    assert (vault / "90-vocabulary/concepts/one.md").read_text() == ("after" if fail_on == 4 else "before")
     assert storage.inspect(vault)["pending"] is None
 
 
@@ -127,20 +127,20 @@ def test_recovery_refuses_rollback_that_would_break_new_article_reference(tmp_pa
     rename = storage._move_directory
 
     def fail(source, target):
-        if Path(target) == vault / "05-vocabulary":
+        if Path(target) == vault / "90-vocabulary":
             raise OSError("interrupted before candidate install")
         rename(source, target)
 
     with monkeypatch.context() as patch:
         patch.setattr(storage, "_move_directory", fail)
         with pytest.raises(ContractError):
-            storage.refresh(vault, delivery("after", extra={"05-vocabulary/concepts/new.md": b"new"}), apply=True, offline=True)
-    (vault / "03-resources").mkdir(exist_ok=True)
-    note = vault / "03-resources/new.md"
-    note.write_text('---\nsubject:\n  - "[[05-vocabulary/concepts/new]]"\n---\n')
+            storage.refresh(vault, delivery("after", extra={"90-vocabulary/concepts/new.md": b"new"}), apply=True, offline=True)
+    (vault / "30-resources").mkdir(exist_ok=True)
+    note = vault / "30-resources/new.md"
+    note.write_text('---\nsubject:\n  - "[[90-vocabulary/concepts/new]]"\n---\n')
     with pytest.raises(ContractError, match="引用"):
         storage.recover(vault, offline=True)
-    assert "05-vocabulary/concepts/new" in note.read_text()
+    assert "90-vocabulary/concepts/new" in note.read_text()
     assert (admin(vault, "recovery.json")).exists()
 
 
@@ -161,7 +161,7 @@ def test_all_tool_mutations_share_the_same_nonblocking_lock(tmp_path):
     with storage.vault_lock(vault):
         with pytest.raises(ContractError, match="占用"):
             storage.refresh(vault, delivery("after"), apply=True, offline=True)
-    assert (vault / "05-vocabulary/concepts/one.md").read_text() == "before"
+    assert (vault / "90-vocabulary/concepts/one.md").read_text() == "before"
 
 
 def test_missing_receipt_digest_cannot_disable_baseline_verification(tmp_path):
@@ -188,10 +188,10 @@ def test_recovery_completes_fully_installed_new_directory_after_receipt_failure(
         patch.setattr(storage, "_receipt", fail)
         with pytest.raises(ContractError, match="恢复"):
             storage.refresh(vault, delivery("after"), apply=True, offline=True)
-    assert (vault / "05-vocabulary/concepts/one.md").read_text() == "after"
+    assert (vault / "90-vocabulary/concepts/one.md").read_text() == "after"
     result = storage.recover(vault, offline=True)
     assert result["resolution"] == "new_installed"
-    assert (vault / "05-vocabulary/concepts/one.md").read_text() == "after"
+    assert (vault / "90-vocabulary/concepts/one.md").read_text() == "after"
     assert storage.inspect(vault)["pending"] is None
 
 
@@ -203,7 +203,7 @@ def test_recovery_refuses_raw_iri_dependency_introduced_after_interruption(tmp_p
     rename = storage._move_directory
 
     def fail(source, target):
-        if Path(target) == vault / "05-vocabulary":
+        if Path(target) == vault / "90-vocabulary":
             raise OSError("interrupt")
         rename(source, target)
 
@@ -211,7 +211,7 @@ def test_recovery_refuses_raw_iri_dependency_introduced_after_interruption(tmp_p
         patch.setattr(storage, "_move_directory", fail)
         with pytest.raises(ContractError):
             storage.refresh(vault, candidate, apply=True, offline=True)
-    (vault / "03-resources/new.md").write_text('---\nsubject: ["urn:test:new"]\n---\n')
+    (vault / "30-resources/new.md").write_text('---\nsubject: ["urn:test:new"]\n---\n')
     with pytest.raises(ContractError, match="原身份引用"):
         storage.recover(vault, offline=True)
     assert (admin(vault, "recovery.json")).exists()
@@ -238,7 +238,7 @@ def test_managed_file_modified_after_move_is_preserved_and_cannot_be_recovered_o
     def concurrent_edit(source, target):
         nonlocal edited
         rename(source, target)
-        if Path(source) == vault / "05-vocabulary":
+        if Path(source) == vault / "90-vocabulary":
             edited = Path(target) / "concepts/one.md"
             edited.write_text("late external edit")
 
@@ -279,7 +279,7 @@ def test_missing_candidate_cannot_silently_discard_unchecked_new_dependencies(tm
     shutil.rmtree(admin(vault, journal["candidate"]))
     with pytest.raises(ContractError, match="候选"):
         storage.recover(vault, offline=True)
-    assert (vault / "05-vocabulary/concepts/one.md").read_text() == "before"
+    assert (vault / "90-vocabulary/concepts/one.md").read_text() == "before"
     assert (admin(vault, "recovery.json")).exists()
 
 
@@ -289,61 +289,61 @@ def interrupted_refresh(tmp_path, monkeypatch):
     rename = storage._move_directory
 
     def fail(source, target):
-        if Path(target) == vault / "05-vocabulary":
+        if Path(target) == vault / "90-vocabulary":
             raise OSError("interrupted before candidate install")
         rename(source, target)
 
     with monkeypatch.context() as patch:
         patch.setattr(storage, "_move_directory", fail)
         with pytest.raises(ContractError):
-            storage.refresh(vault, delivery("after", extra={"05-vocabulary/concepts/new.md": b"new"}),
+            storage.refresh(vault, delivery("after", extra={"90-vocabulary/concepts/new.md": b"new"}),
                             apply=True, offline=True)
-    (vault / "03-resources/sub").mkdir()
+    (vault / "30-resources/sub").mkdir()
     return vault
 
 
 @pytest.mark.parametrize("body", [
-    "[new](../../05-vocabulary/concepts/new.md)",
-    "[new](./../../05-vocabulary/concepts/new.md)",
-    "[new](../../05-vocabulary/concepts/%6Eew.md#section)",
-    "[new](../../05-vocabulary/concepts/new.md 'title')",
-    "[new][target]\n\n[target]: ../../05-vocabulary/concepts/new.md",
-    "![new](../../05-vocabulary/concepts/new.md)",
-    "[[05-vocabulary/concepts/new|*新概念*]]",
+    "[new](../../90-vocabulary/concepts/new.md)",
+    "[new](./../../90-vocabulary/concepts/new.md)",
+    "[new](../../90-vocabulary/concepts/%6Eew.md#section)",
+    "[new](../../90-vocabulary/concepts/new.md 'title')",
+    "[new][target]\n\n[target]: ../../90-vocabulary/concepts/new.md",
+    "![new](../../90-vocabulary/concepts/new.md)",
+    "[[90-vocabulary/concepts/new|*新概念*]]",
 ])
 def test_recovery_resolves_real_article_links_before_any_rollback(tmp_path, monkeypatch, body):
     vault = interrupted_refresh(tmp_path, monkeypatch)
-    note = vault / "03-resources/sub/a.md"
+    note = vault / "30-resources/sub/a.md"
     note.write_text(body)
     with pytest.raises(ContractError, match="引用"):
         storage.recover(vault, offline=True)
     assert note.read_text() == body
     assert (admin(vault, "recovery.json")).exists()
-    assert not (vault / "05-vocabulary").exists()
+    assert not (vault / "90-vocabulary").exists()
 
 
 @pytest.mark.parametrize("body", [
-    "`[new](../../05-vocabulary/concepts/new.md)`",
-    "`[[05-vocabulary/concepts/new]]`",
-    "```markdown\n[new](../../05-vocabulary/concepts/new.md)\n[[05-vocabulary/concepts/new]]\n```",
-    r"\[[05-vocabulary/concepts/new]]",
-    r"\[new](../../05-vocabulary/concepts/new.md)",
-    "普通文字。\n\n[unused]: ../../05-vocabulary/concepts/new.md",
+    "`[new](../../90-vocabulary/concepts/new.md)`",
+    "`[[90-vocabulary/concepts/new]]`",
+    "```markdown\n[new](../../90-vocabulary/concepts/new.md)\n[[90-vocabulary/concepts/new]]\n```",
+    r"\[[90-vocabulary/concepts/new]]",
+    r"\[new](../../90-vocabulary/concepts/new.md)",
+    "普通文字。\n\n[unused]: ../../90-vocabulary/concepts/new.md",
 ])
 def test_recovery_does_not_treat_code_or_escaped_examples_as_dependencies(tmp_path, monkeypatch, body):
     vault = interrupted_refresh(tmp_path, monkeypatch)
-    note = vault / "03-resources/sub/a.md"
+    note = vault / "30-resources/sub/a.md"
     note.write_text(body)
     result = storage.recover(vault, offline=True)
     assert result["resolution"] == "old_restored"
     assert note.read_text() == body
-    assert (vault / "05-vocabulary/concepts/one.md").read_text() == "before"
+    assert (vault / "90-vocabulary/concepts/one.md").read_text() == "before"
 
 
 @pytest.mark.parametrize("href", ["../../../outside.md", "%2E%2E/%2E%2E/%2E%2E/outside.md"])
 def test_recovery_rejects_local_link_traversal_outside_vault(tmp_path, monkeypatch, href):
     vault = interrupted_refresh(tmp_path, monkeypatch)
-    (vault / "03-resources/sub/a.md").write_text(f"[outside]({href})")
+    (vault / "30-resources/sub/a.md").write_text(f"[outside]({href})")
     with pytest.raises(ContractError, match="不安全|越界"):
         storage.recover(vault, offline=True)
     assert (admin(vault, "recovery.json")).exists()
@@ -353,14 +353,14 @@ def test_engineering_data_never_enters_vault_and_fast_read_verifies_identity_dat
     vault = tmp_path / "vault"
     storage.initialize(vault, delivery())
     assert set(path.name for path in vault.iterdir()) == {
-        "home.md", "00-inbox", "01-projects", "02-areas", "03-resources", "04-archives",
-        "05-vocabulary", "06-views", "07-templates", "08-attachments",
+        "00-indexes", "01-inbox", "10-projects", "20-areas", "30-resources", "40-archives",
+        "90-vocabulary", "91-views", "92-templates", "93-attachments",
     }
     state = storage.read_state(vault)
     assert state["state_dir"] == str(storage.state_directory(vault))
     assert "records.json" in state["state_files"]
     assert state["records"] == {"format_version": 1, "records": []}
-    (vault / "05-vocabulary/concepts/one.md").write_text("late page edit")
+    (vault / "90-vocabulary/concepts/one.md").write_text("late page edit")
     assert storage.read_state(vault)["manifest_sha256"] == state["manifest_sha256"]
     with pytest.raises(ContractError, match="发生变化"):
         storage.inspect(vault)
@@ -393,22 +393,22 @@ def test_refresh_rejects_stale_previous_delivery(tmp_path):
     storage.refresh(vault, delivery("after"), apply=True, offline=True)
     with pytest.raises(ContractError, match="基准|上一"):
         storage.refresh(vault, delivery("outdated"), apply=True, offline=True)
-    assert (vault / "05-vocabulary/concepts/one.md").read_text() == "after"
+    assert (vault / "90-vocabulary/concepts/one.md").read_text() == "after"
 
 
-@pytest.mark.parametrize("folder", ["01-projects", "02-areas", "03-resources", "04-archives"])
+@pytest.mark.parametrize("folder", ["10-projects", "20-areas", "30-resources", "40-archives"])
 def test_all_para_areas_protect_references_during_recovery(tmp_path, monkeypatch, folder):
     vault = interrupted_refresh(tmp_path, monkeypatch)
     note = vault / folder / "new.md"
-    note.write_text("[[05-vocabulary/concepts/new]]")
+    note.write_text("[[90-vocabulary/concepts/new]]")
     with pytest.raises(ContractError, match="引用"):
         storage.recover(vault, offline=True)
-    assert note.read_text() == "[[05-vocabulary/concepts/new]]"
+    assert note.read_text() == "[[90-vocabulary/concepts/new]]"
 
 
 def test_inbox_is_not_interpreted_as_model_content_during_recovery(tmp_path, monkeypatch):
     vault = interrupted_refresh(tmp_path, monkeypatch)
-    (vault / "00-inbox/free-note.md").write_text('---\nunclosed yaml [\n[[05-vocabulary/concepts/new]]')
+    (vault / "01-inbox/free-note.md").write_text('---\nunclosed yaml [\n[[90-vocabulary/concepts/new]]')
     assert storage.recover(vault, offline=True)["resolution"] == "old_restored"
 
 
@@ -433,7 +433,7 @@ def test_initial_partial_install_has_external_recovery_and_can_finish(tmp_path, 
         storage.read_state(vault)
     assert storage.recover(vault, offline=True)["status"] == "recovered"
     assert storage.inspect(vault)["pending"] is None
-    assert (vault / "home.md").read_text() == "first entry"
+    assert (vault / "00-indexes/index.md").read_text() == "first entry"
 
 
 def test_state_on_other_filesystem_is_rejected_before_writes(tmp_path, monkeypatch):
@@ -476,7 +476,7 @@ def test_interrupted_initial_preparation_can_be_aborted_and_retried_without_losi
     assert storage.inspect(vault)["pending"] is None
 
 
-@pytest.mark.parametrize("path", ["03-resources/source.ttl", "06-views/report.json", "07-templates/manifest.json"])
+@pytest.mark.parametrize("path", ["30-resources/source.ttl", "91-views/report.json", "92-templates/manifest.json"])
 def test_delivery_cannot_leak_engineering_files_into_public_directories(tmp_path, path):
     vault = tmp_path / "vault"
     candidate = delivery()

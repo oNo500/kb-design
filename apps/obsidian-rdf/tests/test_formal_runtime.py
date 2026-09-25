@@ -26,10 +26,10 @@ def fixture_delivery(mode='preview', *, previous=None):
              'projection.json': json_bytes({'format_version': 1, 'entries': []}),
              f'inputs/{digest(original)}.json': original,
              f'inputs/{digest(evidence)}.md': evidence}
-    files = {'05-vocabulary/concepts/one.md': b'fixed page'}
+    files = {'90-vocabulary/concepts/one.md': b'fixed page'}
     entries = lambda values: [{'path': p, 'size': len(raw), 'sha256': digest(raw)}
                               for p, raw in values.items()]
-    manifest = {'format_version': 3, 'mode': mode, 'sources': [source], 'auxiliary': [],
+    manifest = {'format_version': 4, 'mode': mode, 'sources': [source], 'auxiliary': [],
                 'input_sha256': digest(original), 'files': entries(files),
                 'state_files': entries(state), 'previous_delivery': previous}
     state['manifest.json'] = json_bytes(manifest)
@@ -139,7 +139,7 @@ def test_recovery_rejects_a_changed_mode_before_moving_files(tmp_path, monkeypat
     with pytest.raises(ContractError, match='模式'):
         storage.recover(vault, offline=True)
     assert (state / 'recovery.json').exists()
-    assert (vault / '05-vocabulary/concepts/one.md').read_bytes() == b'fixed page'
+    assert (vault / '90-vocabulary/concepts/one.md').read_bytes() == b'fixed page'
 
 
 def test_history_never_imports_records_from_another_mode():

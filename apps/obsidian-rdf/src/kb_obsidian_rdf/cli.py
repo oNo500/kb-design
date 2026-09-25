@@ -11,7 +11,7 @@ import yaml
 
 from . import __version__
 from .common import ContractError, json_bytes, read_json
-from .layout import PROJECTS, RESOURCES
+from .layout import INDEXES, PROJECTS, RESOURCES
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -55,7 +55,7 @@ def _parser() -> argparse.ArgumentParser:
     articles.add_argument("--descendants", action="store_true", help="subject 检索包含明确的下位概念")
     create = commands.add_parser("new", help="创建一篇字段与引用有效的 draft")
     create.add_argument("--title", required=True)
-    create.add_argument("--folder", default=RESOURCES, help=f"PARA 四区中的目录，例如 {PROJECTS}/website-redesign")
+    create.add_argument("--folder", default=RESOURCES, help=f"人工索引目录 {INDEXES} 或 PARA 四区，例如 {PROJECTS}/website-redesign")
     create.add_argument("--type", required=True, dest="type_id")
     create.add_argument("--genre", required=True, dest="genre_id")
     create.add_argument("--subject", action="append", default=[], dest="subjects")

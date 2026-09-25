@@ -24,7 +24,7 @@ import yaml
 from markdown_it import MarkdownIt
 
 from .common import ContractError, Delivery, digest, json_bytes, safe_relative
-from .layout import (MANIFEST_VERSION, PARA_ROOTS, TEMPLATES, VAULT_DIRECTORIES,
+from .layout import (CONTENT_ROOTS, INDEXES, MANIFEST_VERSION, TEMPLATES, VAULT_DIRECTORIES,
                      VIEWS, VOCABULARY)
 
 MANIFEST = "manifest.json"
@@ -218,7 +218,7 @@ def _delivery(delivery: Delivery) -> tuple[dict, str]:
         raise ContractError("交付需要 Delivery 及库外 manifest.json")
     for path, data in delivery.vault_files.items():
         safe_relative(path)
-        allowed = (path == "home.md" or path in CONFIG_PATHS
+        allowed = (path == f"{INDEXES}/index.md" or path in CONFIG_PATHS
                    or path.startswith((VOCABULARY + "/", TEMPLATES + "/")) and path.endswith(".md")
                    or path.startswith(VIEWS + "/") and path.endswith((".base", ".md")))
         if not allowed or not isinstance(data, bytes):
@@ -509,7 +509,9 @@ def _reference_destination(kind: str, link: str, article: str) -> str | None:
     safe_relative(target)  # Reject absolute paths, NUL, backslash and vault escape.
     if not target.startswith(VOCABULARY + "/"):
         return None
-    if not posixpath.splitext(target)[1]:
+    # Wiki targets omit the Markdown suffix even when the note name contains
+    # a dot, such as node.js.md. Managed vocabulary pages are always Markdown.
+    if (kind == "wiki" and not target.endswith(".md")) or not posixpath.splitext(target)[1]:
         target += ".md"
     return target
 
@@ -528,7 +530,7 @@ def _dependencies(vault: Path, target: dict, alternate: dict | None = None):
     # opening bracket back into apparent Wiki-link syntax.
     parser = MarkdownIt("commonmark").disable("text_join")
     articles = {}
-    for root in PARA_ROOTS:
+    for root in CONTENT_ROOTS:
         directory = safe_path(vault, root)
         if directory.exists():
             articles.update({f"{root}/{relative}": path for relative, path in _tree(directory).items()})

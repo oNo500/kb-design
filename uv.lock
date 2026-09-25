@@ -474,7 +474,7 @@ requires-dist = [
 
 [[package]]
 name = "kb-obsidian-rdf"
-version = "0.4.0"
+version = "0.5.0"
 source = { editable = "apps/obsidian-rdf" }
 dependencies = [
     { name = "kb-vocab-maintenance" },

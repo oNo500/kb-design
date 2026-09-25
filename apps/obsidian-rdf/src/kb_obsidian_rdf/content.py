@@ -16,7 +16,7 @@ from markdown_it import MarkdownIt
 from rdflib import Literal
 
 from .common import ContractError, digest, safe_relative
-from .layout import KIND_DIRECTORIES, PARA_ROOTS, RESOURCES, VOCABULARY
+from .layout import CONTENT_ROOTS, KIND_DIRECTORIES, RESOURCES, VOCABULARY
 from .naming import filename_stem, path_key
 from .storage import inspect, safe_path, vault_lock
 
@@ -122,7 +122,7 @@ def _declares_identifier(article: _Article) -> bool:
 
 def _articles(vault: Path, *, unregistered: list[dict] | None = None) -> dict[str, _Article]:
     found = {}
-    for area in PARA_ROOTS:
+    for area in CONTENT_ROOTS:
         directory = safe_path(vault, area)
         if not directory.exists():
             continue
@@ -285,7 +285,7 @@ def _report(state: dict, articles: dict[str, _Article], selected: list[str], *, 
         "mode": state['manifest']['mode'],
         "manifest_sha256": state["manifest_sha256"], "checked_count": len(selected),
         "unregistered": list(unregistered), "unregistered_count": len(unregistered),
-        "coverage": {"roots": list(PARA_ROOTS), "identity_field": "identifier",
+        "coverage": {"roots": list(CONTENT_ROOTS), "identity_field": "identifier",
                      "complete": not unregistered},
         "vocabulary_validation": state["manifest"].get("validation"),
         "articles": [{"path": p, "identifier": articles[p].metadata.get("identifier"),
@@ -446,11 +446,11 @@ def check_content(vault: Path, paths: list[str] | None = None, *, state_root: Pa
                 relative = path.relative_to(vault).as_posix() if path.is_absolute() else value
                 safe_relative(relative)
             except (ValueError, TypeError) as error:
-                raise ContractError(f"检查路径不属于预览库：{value}") from error
+                raise ContractError(f"检查路径不属于当前知识库：{value}") from error
             if relative in {item["path"] for item in unregistered}:
                 continue  # Requested but not identified: report as unchecked, never passed.
             if relative not in articles:
-                raise ContractError(f"检查对象不是 PARA 内容区中的既有 Markdown 文章：{relative}")
+                raise ContractError(f"检查对象不是索引或 PARA 内容区中的既有 Markdown 文章：{relative}")
             if relative not in selected:
                 selected.append(relative)
     result = _report(state, articles, selected, unregistered=unregistered)
@@ -478,11 +478,11 @@ def new_content(vault: Path, *, title: str, type_id: str, genre_id: str,
     if any(not isinstance(values, (list, tuple)) for values in (subjects, entities, references)):
         raise ContractError("主题、实体和参考文献参数必须为引用列表")
     if not isinstance(folder, str):
-        raise ContractError("文章目录须为 PARA 内容区中的明确相对路径")
+        raise ContractError("文章目录须为索引或 PARA 内容区中的明确相对路径")
     safe_relative(folder)
     parts = folder.split("/")
-    if parts[0] not in PARA_ROOTS or any(filename_stem(part) != part for part in parts):
-        raise ContractError("文章目录须位于 " + "、".join(PARA_ROOTS) + "；目录名用小写与中划线")
+    if parts[0] not in CONTENT_ROOTS or any(filename_stem(part) != part for part in parts):
+        raise ContractError("文章目录须位于 " + "、".join(CONTENT_ROOTS) + "；目录名用小写与中划线")
     vault = Path(vault).absolute()
     with vault_lock(vault, state_root=state_root):
         state = inspect(vault, state_root=state_root)
