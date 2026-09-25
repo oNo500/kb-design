@@ -42,7 +42,7 @@ body {
   transition: background-color 120ms ease;
 }
 
-/* 链接统一使用主题强调色，外链以底部括线区分。 */
+/* 链接统一使用主题强调色，外链以双线标记区分。 */
 .theme-dark,
 .theme-light {
   --link-color: var(--user-accent);
@@ -94,18 +94,19 @@ body {
   background: none;
 }
 
-/* 外链：底线与两端短竖线，换行时每段保留完整括线。 */
+/* 外链：两条细线，悬停仅加深下方线条，尺寸与位置保持不变。 */
 .markdown-rendered .external-link,
 .markdown-source-view .external-link,
 .metadata-property-value .external-link,
 .markdown-source-view .cm-link:not(.cm-hmd-internal-link):not(.cm-hmd-footnote),
 .markdown-source-view .cm-url {
-  padding: 0 0.14em 0.13em;
+  padding: 0 0 0.15em;
   background-image: linear-gradient(var(--user-accent), var(--user-accent)),
-    linear-gradient(var(--user-accent), var(--user-accent)),
-    linear-gradient(var(--user-accent), var(--user-accent));
-  background-size: 100% 1px, 1px 0.34em, 1px 0.34em;
-  background-position: left bottom, left bottom, right bottom;
+    linear-gradient(color-mix(in srgb, var(--user-accent) 45%, transparent),
+                    color-mix(in srgb, var(--user-accent) 45%, transparent));
+  background-size: 100% 1px, 100% 1px;
+  background-position: left calc(100% - 3px), left bottom;
+  transition: none;
 }
 
 .markdown-rendered .external-link:hover,
@@ -115,8 +116,9 @@ body {
 .markdown-source-view .cm-url:hover {
   color: var(--user-accent);
   text-decoration: none;
-  background-size: 100% 2px, 1px 0.48em, 1px 0.48em;
-  background-color: color-mix(in srgb, var(--user-accent) 8%, transparent);
+  background-image: linear-gradient(var(--user-accent), var(--user-accent)),
+    linear-gradient(color-mix(in srgb, var(--user-accent) 75%, transparent),
+                    color-mix(in srgb, var(--user-accent) 75%, transparent));
 }
 
 /* 未创建的内链保持弱化强调色和虚线。 */
