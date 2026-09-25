@@ -1,0 +1,40 @@
+body {
+  /* 三档背景 */
+  --background-primary: var(--ctp-base);
+  --background-secondary: var(--ctp-mantle);
+  --background-modifier-border: transparent;
+
+  /* 三档文字 */
+  --text-normal: var(--ctp-text);
+  --text-muted: var(--ctp-subtext0);
+  --text-faint: var(--ctp-overlay0);
+
+  /*
+    主交互色：覆盖 Obsidian 内部 --accent-h/s/l，让派生链路产出 ctp accent。
+    必须 !important —— Obsidian 设置里的 accent picker 写 inline style 在 body 上，
+    inline 优先级 > 普通选择器规则，只有 !important 能赢。
+  */
+  --accent-h: var(--user-accent-h) !important;
+  --accent-s: var(--user-accent-s) !important;
+  --accent-l: var(--user-accent-l) !important;
+
+  /* on-accent 背景上的文字色（Obsidian 不会自己派生这个） */
+  --text-on-accent: var(--ctp-base);
+
+  /*
+    Settings 面板里 .setting-group .setting-items 卡片底色。
+    Obsidian 硬编码 #242424 跟主题脱钩；改 mantle 跟 sidebar 同语言。
+  */
+  --setting-items-background: var(--ctp-mantle);
+}
+
+/*
+  按钮 / select / input 走的标准变量 --interactive-normal / --interactive-hover。
+  Obsidian 在 .theme-dark { ... } 里硬编码 #363636 / #3f3f3f，specificity (0,1,0) 比 body 高，
+  所以这里也用 .theme-dark / .theme-light 选择器同 specificity，后加载赢，无需 !important。
+*/
+.theme-dark,
+.theme-light {
+  --interactive-normal: var(--ctp-surface0);
+  --interactive-hover: var(--ctp-surface1);
+}

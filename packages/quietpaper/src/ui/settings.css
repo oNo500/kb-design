@@ -1,0 +1,127 @@
+/*
+  Settings 主面板（.modal.mod-settings）。
+  popovers.css 给所有 .modal 设了 crust + 8px 通用浮窗样式；这里特地走 base + 12px：
+  Settings 是大型操作面板，调子靠近 editor 而不是浮窗，避免它"飘"。
+*/
+
+.modal.mod-settings {
+  background: var(--ctp-base);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px oklch(from var(--ctp-crust) l c h / 0.6);
+}
+
+/*
+  blur 仅给 settings：popovers.css 已经统一给所有 .modal-bg 配 blur(2px)，
+  Settings 是大面板需要更强压制感，独占 :has() 选择器命中它。
+*/
+.modal-container:has(.modal.mod-settings) .modal-bg {
+  background-color: oklch(from var(--ctp-crust) l c h / 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.modal.mod-settings .modal-close-button:hover,
+.modal.mod-settings .modal-setting-back-button:hover {
+  background: var(--ctp-surface0);
+  color: var(--ctp-text);
+}
+
+/* 左侧 nav：单独 mantle 区块（与主窗口 sidebar 同语言） */
+.modal.mod-settings .vertical-tab-header {
+  background: var(--ctp-mantle);
+  border-right: none;
+  padding: 16px 8px;
+}
+
+.modal.mod-settings .vertical-tab-header-group-title {
+  color: var(--ctp-overlay0);
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 8px 12px 4px;
+}
+
+.modal.mod-settings .vertical-tab-nav-item {
+  border-radius: 6px;
+  border: none;
+  color: var(--ctp-subtext0);
+  padding: 6px 10px;
+  margin: 1px 0;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.modal.mod-settings .vertical-tab-nav-item:hover {
+  background: var(--ctp-surface0);
+  color: var(--ctp-text);
+}
+
+.modal.mod-settings .vertical-tab-nav-item.is-active {
+  background: color-mix(in oklab, var(--user-accent) 16%, transparent);
+  color: var(--user-accent);
+}
+
+.modal.mod-settings .vertical-tab-nav-item-icon .svg-icon {
+  color: inherit;
+}
+
+/* 右侧 content 区：与 editor 同 base，跟左 nav 形成 base/mantle 主-辅关系 */
+.modal.mod-settings .vertical-tab-content-container {
+  background: var(--ctp-base);
+}
+
+.modal.mod-settings .vertical-tab-content {
+  padding: 24px 32px 76px;
+}
+
+.modal.mod-settings .modal-title {
+  color: var(--ctp-text);
+  font-weight: 600;
+}
+
+/*
+  setting-item 默认全部画顶线，组内首项用 :not(:first-child) 排除——
+  避免 :first-child 单独写规则跟其他 specificity 更高的规则冲突。
+*/
+.modal.mod-settings .setting-items > .setting-item:not(:first-child) {
+  border-top: 1px solid var(--ctp-surface0);
+}
+
+.modal.mod-settings .setting-item {
+  padding: 14px 0;
+}
+
+.modal.mod-settings .setting-item-heading {
+  padding-top: 28px;
+  padding-bottom: 8px;
+  margin-bottom: 4px;
+}
+
+.modal.mod-settings .setting-item-heading .setting-item-name {
+  color: var(--ctp-text);
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.modal.mod-settings .setting-item-name {
+  color: var(--ctp-text);
+}
+
+.modal.mod-settings .setting-item-description {
+  color: var(--ctp-subtext0);
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+
+.modal.mod-settings .setting-item-description code {
+  background: var(--ctp-surface0);
+  color: var(--ctp-pink);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* select / button / input 不在这里覆盖——走全局 --interactive-normal */
+
+.modal.mod-settings .clickable-icon.extra-setting-button:hover {
+  background: var(--ctp-surface0);
+  color: var(--ctp-text);
+}

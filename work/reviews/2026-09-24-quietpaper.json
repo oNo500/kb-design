@@ -1,0 +1,161 @@
+{
+  "completed_at": "2026-09-24T14:21:43.872461+00:00",
+  "base_commit": "99e7666bbee7ef86a8bb09a1fc95f95ec96d263b",
+  "upstream_commit": "42b29a545600e9ee538cfd9e8db1ef788658dbb5",
+  "package": "packages/quietpaper",
+  "imported_files": 48,
+  "modified_upstream_files": [
+    ".gitignore",
+    "README.md",
+    "build.ts",
+    "package.json",
+    "samples/01-typography-cjk.md",
+    "samples/02-code-blocks.md",
+    "samples/03-callouts.md",
+    "samples/04-links-and-tags.md",
+    "samples/05-properties.md",
+    "samples/06-images.md",
+    "samples/07-tables.md",
+    "samples/loading-check.md",
+    "tsconfig.json"
+  ],
+  "excluded_upstream_files": [
+    ".claude/CLAUDE.md"
+  ],
+  "css_and_theme_byte_identical_to_upstream": true,
+  "theme_css_bytes": 39538,
+  "theme_css_sha256": "426296621ee5c985bde1430d71670b33f34bf44aca0cb9b227e5b5a06d81a70a",
+  "bun_version": "1.3.0",
+  "dependencies": {
+    "source": "https://registry.npmjs.org/",
+    "advisory_endpoint": "https://registry.npmjs.org/-/npm/v1/security/advisories/bulk",
+    "locked_versions": {
+      "@catppuccin/palette": [
+        "1.8.0"
+      ],
+      "@types/bun": [
+        "1.3.13"
+      ],
+      "@types/node": [
+        "25.6.0"
+      ],
+      "bun-types": [
+        "1.3.13"
+      ],
+      "chokidar": [
+        "5.0.0"
+      ],
+      "detect-libc": [
+        "2.1.2"
+      ],
+      "lightningcss": [
+        "1.32.0"
+      ],
+      "lightningcss-android-arm64": [
+        "1.32.0"
+      ],
+      "lightningcss-darwin-arm64": [
+        "1.32.0"
+      ],
+      "lightningcss-darwin-x64": [
+        "1.32.0"
+      ],
+      "lightningcss-freebsd-x64": [
+        "1.32.0"
+      ],
+      "lightningcss-linux-arm-gnueabihf": [
+        "1.32.0"
+      ],
+      "lightningcss-linux-arm64-gnu": [
+        "1.32.0"
+      ],
+      "lightningcss-linux-arm64-musl": [
+        "1.32.0"
+      ],
+      "lightningcss-linux-x64-gnu": [
+        "1.32.0"
+      ],
+      "lightningcss-linux-x64-musl": [
+        "1.32.0"
+      ],
+      "lightningcss-win32-arm64-msvc": [
+        "1.32.0"
+      ],
+      "lightningcss-win32-x64-msvc": [
+        "1.32.0"
+      ],
+      "readdirp": [
+        "5.0.0"
+      ],
+      "undici-types": [
+        "7.19.2"
+      ]
+    },
+    "advisories": {},
+    "installed_disk_kib": 16212,
+    "new_third_party_dependencies": false,
+    "direct_packages": [
+      {
+        "name": "@catppuccin/palette",
+        "latest_release": "2026-03-21",
+        "locked_unpacked_bytes": 802243
+      },
+      {
+        "name": "@types/bun",
+        "latest_release": "2026-09-08",
+        "locked_unpacked_bytes": 3648
+      },
+      {
+        "name": "chokidar",
+        "latest_release": "2025-11-25",
+        "locked_unpacked_bytes": 82062
+      },
+      {
+        "name": "lightningcss",
+        "latest_release": "2026-07-20",
+        "locked_unpacked_bytes": 510515
+      }
+    ]
+  },
+  "checks": {
+    "frozen_install": "passed",
+    "production_build": "passed",
+    "deployment_tests": {
+      "passed": 7,
+      "failed": 0,
+      "command": "bun run --cwd packages/quietpaper test"
+    },
+    "document_links": {
+      "baseline_errors": 23,
+      "current_errors": 23,
+      "output_identical": true,
+      "new_errors": 0,
+      "baseline_method": "git archive HEAD in build; existing ignored output locations linked read-only for equivalent path resolution"
+    },
+    "whitespace": {
+      "local_changes": "passed",
+      "unchanged_upstream_css": [
+        {
+          "file": "packages/quietpaper/src/content/callouts.css",
+          "diagnostic": "packages/quietpaper/src/content/callouts.css:130: new blank line at EOF.\n"
+        },
+        {
+          "file": "packages/quietpaper/src/content/headings.css",
+          "diagnostic": "packages/quietpaper/src/content/headings.css:109: new blank line at EOF.\n"
+        },
+        {
+          "file": "packages/quietpaper/src/ui/navigation.css",
+          "diagnostic": "packages/quietpaper/src/ui/navigation.css:90: new blank line at EOF.\n"
+        }
+      ]
+    }
+  },
+  "actual_vault_written": false,
+  "theme_activated": false,
+  "visual_acceptance_performed": false,
+  "limitations": [
+    "Deployment writes the two theme files separately; no whole-theme atomic replacement guarantee.",
+    "Upstream snapshot has no license file.",
+    "Existing repository link errors remain unchanged."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "quietpaper",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "tokens": "bun build.ts tokens",
+    "build": "bun build.ts build",
+    "dev": "bun build.ts watch",
+    "sync": "bun build.ts sync",
+    "deploy": "bun build.ts deploy",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@catppuccin/palette": "^1.8.0",
+    "@types/bun": "^1.3.13",
+    "chokidar": "^5.0.0",
+    "lightningcss": "^1.32.0"
+  }
+}

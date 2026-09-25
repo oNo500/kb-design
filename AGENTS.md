@@ -75,7 +75,8 @@
 
 ## 工程路径
 
-- 根目录是 uv workspace，使用统一 `uv.lock`；`.python-version` 固定当前开发环境为 Python 3.13.5，成员包最低支持 Python 3.11
+- Python 工程由根 uv workspace 管理，使用统一 `uv.lock`；`.python-version` 固定当前开发环境为 Python 3.13.5，成员包最低支持 Python 3.11
+- `packages/quietpaper/` 是独立 Bun 主题包，保留包内 `bun.lock`，不加入 Python workspace。构建只写包内产物；部署必须显式指定 `--vault`，不自动安装或启用正式库主题，见[主题包接入](docs/development/决定-主题包接入.md)。
 - `apps/obsidian/` 通过 workspace 依赖使用 `packages/kb-core/`，核心包不依赖具体应用；核心入口是 `uv run kb-core <命令>`，应用入口是 `uv run kb-obsidian <命令>`
 - `apps/vocab-preview/` 提供 `uv run kb-vocab-preview`，只读展示工作区六份词表并自动更新；不要求提交，不写回词表，不代表数据已批准，见[预览归属](docs/applications/vocab-preview/决定-预览归属.md)
 - `packages/kb-vocab-maintenance/` 提供独立 RDF 词表资料收录、字段差异和带基准的描述字段修改，见[词表维护工程](docs/practices/vocabulary/设计-词表维护工程.md)。实体按[统一使用](docs/model/entities/决定-实体统一使用.md)合成一份当前 RDF：稳定身份、名称、类别和可追溯来源齐全即可先用，保留 candidate/active 原值及未核说明，明确停用不自动恢复。IRI 对应和来源配置在 `data/inputs/vocabulary-maintenance/` 维护；词表维护止于交付，不调用应用刷新或改文章。

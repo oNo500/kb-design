@@ -1,0 +1,38 @@
+@layer reset, tokens, overrides;
+
+@import "./tokens/generated.css"   layer(tokens);
+@import "./tokens/accent.css"      layer(tokens);
+
+/* unlayered：覆盖 Obsidian 内置规则（@layer 优先级低于 unlayered，Obsidian 默认全 unlayered） */
+
+/* base：全局基础规则，不针对具体组件 */
+@import "./base/reset.css";
+@import "./base/obsidian-vars.css";
+@import "./base/typography.css";
+@import "./base/responsive.css";
+@import "./base/print.css";
+
+/* content：写笔记时看到的元素 */
+@import "./content/headings.css";
+@import "./content/code.css";
+@import "./content/callouts.css";
+@import "./content/tags.css";
+@import "./content/blockquote.css";
+@import "./content/table.css";
+@import "./content/checkbox.css";
+@import "./content/lists.css";
+@import "./content/properties.css";
+@import "./content/embed.css";
+@import "./content/images.css";
+@import "./content/popovers.css";
+
+/* ui：操作 Obsidian 时看到的 chrome 与面板 */
+@import "./ui/navigation.css";
+@import "./ui/file-icons.css";
+@import "./ui/breadcrumb.css";
+@import "./ui/sidebar.css";
+@import "./ui/status-bar.css";
+@import "./ui/resize-handle.css";
+@import "./ui/search.css";
+@import "./ui/prompt.css";
+@import "./ui/settings.css";

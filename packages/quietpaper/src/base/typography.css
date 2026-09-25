@@ -1,0 +1,17 @@
+/*
+  中英混排字体栈：西文字体在前（匹配西文字符），中文字体在后（西文字体不含的中文字符回退到这里）。
+  Obsidian 把 --font-*-theme 拼到系统默认栈最前，因此主题只覆盖这一截。
+*/
+
+body {
+  /* macOS 字体反锯齿：从 subpixel 切到 grayscale，字体看着更锐不发虚 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* 正文 + UI：不覆盖 --font-text-theme / --font-interface-theme，
+     Obsidian 默认 fallback 链（ui-sans-serif → -apple-system → system-ui → Segoe UI → ...）
+     在 macOS 用 SF Pro + PingFang，Windows 用 Segoe UI + Microsoft YaHei */
+
+  /* 等宽（code block、行内 code）：JetBrains Mono 西文 + 系统 CJK 回退 */
+  --font-monospace-theme: "JetBrains Mono";
+}

@@ -1,0 +1,8 @@
+/*
+  顶部面包屑：路径段保持 Obsidian 默认 overlay0/subtext0，
+  仅当前文件名走 text 强色 —— 视觉锚点告诉用户"我在哪"
+*/
+.view-header-title-container .view-header-title {
+  color: var(--ctp-text);
+  font-weight: 500;
+}

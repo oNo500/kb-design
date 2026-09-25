@@ -31,7 +31,7 @@ historical = {'README.md'} | {
 }
 historical.update(current_path(row['new']) for row in topic_migration['files'] if row['role'] == 'history')
 historical.update(row['new'] for row in all_types_migration['files'] if row['kind'] == '决定')
-excluded_dirs = {'.git', '.venv', '.superpowers', '__pycache__', 'output', 'build'}
+excluded_dirs = {'.git', '.venv', 'node_modules', '.superpowers', '__pycache__', 'output', 'build'}
 files = []
 for directory, children, names in os.walk(root):
     children[:] = [name for name in children if name not in excluded_dirs]

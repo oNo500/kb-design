@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-09-25T00:19:24.903720+00:00",
+  "package": "packages/quietpaper",
+  "upstream_commit": "42b29a545600e9ee538cfd9e8db1ef788658dbb5",
+  "previous_import_record": "2026-09-24-quietpaper.json",
+  "current_link_style": "Shared theme accent; plain internal links; external bottom bracket with stronger hover; unresolved internal links remain dashed.",
+  "theme_css_bytes": 41156,
+  "theme_css_sha256": "30f4fe6c381d7ae7c9cfa0bbe81a0437507a0376cad93d9d2d88bcbb1e8a6a91",
+  "upstream_css_identical": false,
+  "production_build": "passed",
+  "deployment_tests": {
+    "passed": 7,
+    "failed": 0
+  },
+  "repository_links": {
+    "existing_errors": 23,
+    "new_errors": 0
+  },
+  "formal_vault": {
+    "path": "/Users/xiu/Documents/knowledge-base",
+    "installed_theme_matches_build": true,
+    "selected_theme": "quietpaper"
+  },
+  "temporary_comparison": "A scoped CSS snippet and comparison note remain in the external vault; neither is part of the theme package.",
+  "formatting": "Removed only extra EOF blank lines in three imported CSS files; rebuilt CSS still equals the deployed theme."
+}

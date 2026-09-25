@@ -1,0 +1,184 @@
+body {
+  /*
+    Workspace 分隔线 / 边框统一 transparent：
+    各区背景色差（ribbon = mantle, sidebar = mantle, editor = base）
+    已足够区分边界，1px 实线只是噪音。
+  */
+  --divider-color: transparent;
+  --divider-color-hover: var(--user-accent);
+  --titlebar-border-color: transparent;
+  --titlebar-background: var(--ctp-mantle);
+  --titlebar-background-focused: var(--ctp-mantle);
+  --status-bar-border-color: transparent;
+  --tab-divider-color: transparent;
+  --tab-outline-color: transparent;
+
+  /* Scrollbar：用 ctp 弱化色，hover/active 加强 */
+  --scrollbar-thumb-bg: var(--ctp-surface1);
+  --scrollbar-active-thumb-bg: var(--ctp-overlay0);
+  --scrollbar-bg: transparent;
+
+  /* 焦点环：用户主色，比默认中灰可见性强很多 */
+  --input-focus-border-color: var(--user-accent);
+  --background-modifier-border-focus: var(--user-accent);
+
+  /* 内容区宽度：中英混排 750px 比默认 700 略宽，给中文长句更顺的阅读节奏 */
+  --file-line-width: 750px;
+
+  /* 行高：中文 1.7 比默认 1.5 减压感强 */
+  --line-height-normal: 1.7;
+}
+
+/* Inline title：文档名已在 tab / 面包屑 / 文件树三处显示，
+   编辑区顶部再重复是冗余且与 h1 视觉打架，整段隐藏 */
+.inline-title {
+  display: none;
+}
+
+/* WebKit scrollbar：Obsidian 用了 native ::-webkit-scrollbar
+   覆盖 thumb 圆角 + hover 过渡 */
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  transition: background-color 120ms ease;
+}
+
+/* 链接统一使用主题强调色，外链以底部括线区分。 */
+.theme-dark,
+.theme-light {
+  --link-color: var(--user-accent);
+  --link-color-hover: var(--user-accent);
+  --link-external-color: var(--user-accent);
+  --link-external-color-hover: var(--user-accent);
+  --link-unresolved-color: color-mix(in srgb, var(--user-accent) 65%, var(--text-muted));
+  --link-unresolved-opacity: 1;
+}
+
+.markdown-rendered .internal-link,
+.markdown-source-view .internal-link,
+.metadata-property-value .internal-link,
+.markdown-source-view .cm-hmd-internal-link,
+.markdown-source-view .cm-link-alias,
+.markdown-rendered .external-link,
+.markdown-source-view .external-link,
+.metadata-property-value .external-link,
+.markdown-source-view .cm-link:not(.cm-hmd-internal-link):not(.cm-hmd-footnote),
+.markdown-source-view .cm-url {
+  color: var(--user-accent);
+  text-decoration: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  border-radius: 0;
+  padding: 0;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: background-size 150ms ease, background-color 150ms ease;
+}
+
+/* 内链：普通强调色文字，不添加背景装饰。 */
+.markdown-rendered .internal-link,
+.markdown-source-view .internal-link,
+.metadata-property-value .internal-link,
+.markdown-source-view .cm-hmd-internal-link,
+.markdown-source-view .cm-link-alias {
+  background: none;
+}
+
+.markdown-rendered .internal-link:hover,
+.markdown-source-view .internal-link:hover,
+.metadata-property-value .internal-link:hover,
+.markdown-source-view .cm-hmd-internal-link:hover,
+.markdown-source-view .cm-link-alias:hover {
+  color: var(--user-accent);
+  text-decoration: none;
+  background: none;
+}
+
+/* 外链：底线与两端短竖线，换行时每段保留完整括线。 */
+.markdown-rendered .external-link,
+.markdown-source-view .external-link,
+.metadata-property-value .external-link,
+.markdown-source-view .cm-link:not(.cm-hmd-internal-link):not(.cm-hmd-footnote),
+.markdown-source-view .cm-url {
+  padding: 0 0.14em 0.13em;
+  background-image: linear-gradient(var(--user-accent), var(--user-accent)),
+    linear-gradient(var(--user-accent), var(--user-accent)),
+    linear-gradient(var(--user-accent), var(--user-accent));
+  background-size: 100% 1px, 1px 0.34em, 1px 0.34em;
+  background-position: left bottom, left bottom, right bottom;
+}
+
+.markdown-rendered .external-link:hover,
+.markdown-source-view .external-link:hover,
+.metadata-property-value .external-link:hover,
+.markdown-source-view .cm-link:not(.cm-hmd-internal-link):not(.cm-hmd-footnote):hover,
+.markdown-source-view .cm-url:hover {
+  color: var(--user-accent);
+  text-decoration: none;
+  background-size: 100% 2px, 1px 0.48em, 1px 0.48em;
+  background-color: color-mix(in srgb, var(--user-accent) 8%, transparent);
+}
+
+/* 未创建的内链保持弱化强调色和虚线。 */
+.markdown-rendered .internal-link.is-unresolved,
+.markdown-source-view .internal-link.is-unresolved,
+.metadata-property-value .internal-link.is-unresolved,
+.markdown-source-view .cm-hmd-internal-link.is-unresolved,
+.markdown-source-view .cm-link-alias.is-unresolved {
+  color: var(--link-unresolved-color);
+  opacity: 1;
+  background: none;
+  text-decoration: underline dashed currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.markdown-rendered .internal-link.is-unresolved:hover,
+.markdown-source-view .internal-link.is-unresolved:hover,
+.metadata-property-value .internal-link.is-unresolved:hover,
+.markdown-source-view .cm-hmd-internal-link.is-unresolved:hover,
+.markdown-source-view .cm-link-alias.is-unresolved:hover {
+  color: var(--user-accent);
+  background: none;
+  text-decoration: underline dashed currentColor;
+  text-decoration-thickness: 1px;
+}
+
+/* 装饰只绘制在外层，避免 CodeMirror 嵌套文字重复叠加。 */
+.markdown-source-view :is(.cm-hmd-internal-link, .cm-link-alias, .cm-link, .cm-url) .cm-underline {
+  color: inherit;
+  text-decoration: inherit;
+  text-underline-offset: inherit;
+  background: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .markdown-rendered .internal-link,
+  .markdown-source-view .internal-link,
+  .metadata-property-value .internal-link,
+  .markdown-source-view .cm-hmd-internal-link,
+  .markdown-source-view .cm-link-alias,
+  .markdown-rendered .external-link,
+  .markdown-source-view .external-link,
+  .metadata-property-value .external-link,
+  .markdown-source-view .cm-link:not(.cm-hmd-internal-link):not(.cm-hmd-footnote),
+  .markdown-source-view .cm-url {
+    transition: none;
+  }
+}
+
+/* 全局焦点环：用户主色 + 微微 outline，比 Obsidian 默认更明显
+   focus-visible 而不是 focus，避免点击时也显示 */
+*:focus-visible {
+  outline: 2px solid var(--user-accent);
+  outline-offset: 2px;
+}
+
+/* 但输入框、按钮自己的边框已经走 --input-focus-border-color 了，
+   不需要额外 outline，避免双层 */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: none;
+}
